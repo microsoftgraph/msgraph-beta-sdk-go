@@ -41,7 +41,7 @@ func (m *CampaignSchedule) GetAdditionalData()(map[string]any) {
 func (m *CampaignSchedule) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCompletionDateTime gets the completionDateTime property value. The completionDateTime property
+// GetCompletionDateTime gets the completionDateTime property value. The date and time at which the campaign completed.
 // returns a *Time when successful
 func (m *CampaignSchedule) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completionDateTime")
@@ -99,7 +99,7 @@ func (m *CampaignSchedule) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetLaunchDateTime gets the launchDateTime property value. The launchDateTime property
+// GetLaunchDateTime gets the launchDateTime property value. The date and time at which the campaign was launched.
 // returns a *Time when successful
 func (m *CampaignSchedule) GetLaunchDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("launchDateTime")
@@ -123,7 +123,7 @@ func (m *CampaignSchedule) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. The current state of the campaign. The possible values are: unknown, draft, inProgress, scheduled, completed, failed, cancelled, excluded, deleted, unknownFutureValue.
 // returns a *CampaignStatus when successful
 func (m *CampaignSchedule) GetStatus()(*CampaignStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -181,14 +181,14 @@ func (m *CampaignSchedule) SetAdditionalData(value map[string]any)() {
 func (m *CampaignSchedule) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCompletionDateTime sets the completionDateTime property value. The completionDateTime property
+// SetCompletionDateTime sets the completionDateTime property value. The date and time at which the campaign completed.
 func (m *CampaignSchedule) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("completionDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLaunchDateTime sets the launchDateTime property value. The launchDateTime property
+// SetLaunchDateTime sets the launchDateTime property value. The date and time at which the campaign was launched.
 func (m *CampaignSchedule) SetLaunchDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("launchDateTime", value)
     if err != nil {
@@ -202,7 +202,7 @@ func (m *CampaignSchedule) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. The current state of the campaign. The possible values are: unknown, draft, inProgress, scheduled, completed, failed, cancelled, excluded, deleted, unknownFutureValue.
 func (m *CampaignSchedule) SetStatus(value *CampaignStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

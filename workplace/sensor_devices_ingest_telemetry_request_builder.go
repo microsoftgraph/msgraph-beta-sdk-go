@@ -30,8 +30,11 @@ func NewSensorDevicesIngestTelemetryRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewSensorDevicesIngestTelemetryRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action ingestTelemetry
+// Post ingest sensor telemetry for a workplace sensor device.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/workplacesensordevice-ingesttelemetry?view=graph-rest-1.0
 func (m *SensorDevicesIngestTelemetryRequestBuilder) Post(ctx context.Context, body SensorDevicesIngestTelemetryPostRequestBodyable, requestConfiguration *SensorDevicesIngestTelemetryRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *SensorDevicesIngestTelemetryRequestBuilder) Post(ctx context.Context, b
     }
     return nil
 }
-// ToPostRequestInformation invoke action ingestTelemetry
+// ToPostRequestInformation ingest sensor telemetry for a workplace sensor device.
 // returns a *RequestInformation when successful
 func (m *SensorDevicesIngestTelemetryRequestBuilder) ToPostRequestInformation(ctx context.Context, body SensorDevicesIngestTelemetryPostRequestBodyable, requestConfiguration *SensorDevicesIngestTelemetryRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

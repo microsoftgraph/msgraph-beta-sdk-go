@@ -40,7 +40,7 @@ func (m *TrainingCampaignReport) GetAdditionalData()(map[string]any) {
 func (m *TrainingCampaignReport) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCampaignUsers gets the campaignUsers property value. The campaignUsers property
+// GetCampaignUsers gets the campaignUsers property value. The overview of the attack simulation and training campaign.
 // returns a []UserSimulationDetailsable when successful
 func (m *TrainingCampaignReport) GetCampaignUsers()([]UserSimulationDetailsable) {
     val, err := m.GetBackingStore().Get("campaignUsers")
@@ -163,7 +163,7 @@ func (m *TrainingCampaignReport) SetAdditionalData(value map[string]any)() {
 func (m *TrainingCampaignReport) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCampaignUsers sets the campaignUsers property value. The campaignUsers property
+// SetCampaignUsers sets the campaignUsers property value. The overview of the attack simulation and training campaign.
 func (m *TrainingCampaignReport) SetCampaignUsers(value []UserSimulationDetailsable)() {
     err := m.GetBackingStore().Set("campaignUsers", value)
     if err != nil {

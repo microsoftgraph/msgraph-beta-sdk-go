@@ -110,7 +110,7 @@ func (m *PlannerTaskCompletionRequirementDetails) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetFormsRequirement gets the formsRequirement property value. The formsRequirement property
+// GetFormsRequirement gets the formsRequirement property value. Information about the requirements for completing the forms.
 // returns a PlannerFormsRequirementable when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetFormsRequirement()(PlannerFormsRequirementable) {
     val, err := m.GetBackingStore().Get("formsRequirement")
@@ -193,7 +193,7 @@ func (m *PlannerTaskCompletionRequirementDetails) SetChecklistRequirement(value 
         panic(err)
     }
 }
-// SetFormsRequirement sets the formsRequirement property value. The formsRequirement property
+// SetFormsRequirement sets the formsRequirement property value. Information about the requirements for completing the forms.
 func (m *PlannerTaskCompletionRequirementDetails) SetFormsRequirement(value PlannerFormsRequirementable)() {
     err := m.GetBackingStore().Set("formsRequirement", value)
     if err != nil {

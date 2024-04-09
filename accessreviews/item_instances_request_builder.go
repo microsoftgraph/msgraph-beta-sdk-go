@@ -11,7 +11,7 @@ import (
 type ItemInstancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemInstancesRequestBuilderGetQueryParameters the collection of access reviews instances past, present and future, if this object is a recurring access review.
+// ItemInstancesRequestBuilderGetQueryParameters the collection of access reviews instances past, present, and future, if this object is a recurring access review.
 type ItemInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemInstancesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ItemInstancesRequestBuilder) Count()(*ItemInstancesCountRequestBuilder) {
     return NewItemInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of access reviews instances past, present and future, if this object is a recurring access review.
+// Get the collection of access reviews instances past, present, and future, if this object is a recurring access review.
 // returns a AccessReviewCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInstancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInstancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemInstancesRequestBuilder) Post(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable), nil
 }
-// ToGetRequestInformation the collection of access reviews instances past, present and future, if this object is a recurring access review.
+// ToGetRequestInformation the collection of access reviews instances past, present, and future, if this object is a recurring access review.
 // returns a *RequestInformation when successful
 func (m *ItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +133,7 @@ func (m *ItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Contex
 // ToPostRequestInformation create new navigation property to instances for accessReviews
 // returns a *RequestInformation when successful
 func (m *ItemInstancesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable, requestConfiguration *ItemInstancesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/accessReviews/{accessReview%2Did}/instances", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

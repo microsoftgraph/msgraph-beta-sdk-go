@@ -153,7 +153,7 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetForms gets the forms property value. The forms property
+// GetForms gets the forms property value. Read-only. Represents a dictionary of data about the forms associated with a task. Each entry in the dictionary is a key-value pair, and the value is a plannerFormReference object.
 // returns a PlannerFormsDictionaryable when successful
 func (m *PlannerTaskDetails) GetForms()(PlannerFormsDictionaryable) {
     val, err := m.GetBackingStore().Get("forms")
@@ -286,7 +286,7 @@ func (m *PlannerTaskDetails) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetForms sets the forms property value. The forms property
+// SetForms sets the forms property value. Read-only. Represents a dictionary of data about the forms associated with a task. Each entry in the dictionary is a key-value pair, and the value is a plannerFormReference object.
 func (m *PlannerTaskDetails) SetForms(value PlannerFormsDictionaryable)() {
     err := m.GetBackingStore().Set("forms", value)
     if err != nil {

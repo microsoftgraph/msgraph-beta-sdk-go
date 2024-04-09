@@ -101,6 +101,18 @@ func (m *NetworkAccessTraffic) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
+// GetDescription gets the description property value. The description property
+// returns a *string when successful
+func (m *NetworkAccessTraffic) GetDescription()(*string) {
+    val, err := m.GetBackingStore().Get("description")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDestinationFQDN gets the destinationFQDN property value. Represents the Fully Qualified Domain Name (FQDN) of the destination host or server in a network communication. Supports $filter (eq) and $orderby.
 // returns a *string when successful
 func (m *NetworkAccessTraffic) GetDestinationFQDN()(*string) {
@@ -260,6 +272,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDescription(val)
         }
         return nil
     }
@@ -917,6 +939,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteStringValue("description", m.GetDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("destinationFQDN", m.GetDestinationFQDN())
         if err != nil {
             return err
@@ -1172,6 +1200,13 @@ func (m *NetworkAccessTraffic) SetCreatedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
+// SetDescription sets the description property value. The description property
+func (m *NetworkAccessTraffic) SetDescription(value *string)() {
+    err := m.GetBackingStore().Set("description", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDestinationFQDN sets the destinationFQDN property value. Represents the Fully Qualified Domain Name (FQDN) of the destination host or server in a network communication. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetDestinationFQDN(value *string)() {
     err := m.GetBackingStore().Set("destinationFQDN", value)
@@ -1413,6 +1448,7 @@ type NetworkAccessTrafficable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetConnectionId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDescription()(*string)
     GetDestinationFQDN()(*string)
     GetDestinationIp()(*string)
     GetDestinationPort()(*int32)
@@ -1452,6 +1488,7 @@ type NetworkAccessTrafficable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetConnectionId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDescription(value *string)()
     SetDestinationFQDN(value *string)()
     SetDestinationIp(value *string)()
     SetDestinationPort(value *int32)()

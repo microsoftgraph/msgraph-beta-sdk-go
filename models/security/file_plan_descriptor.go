@@ -21,14 +21,14 @@ func CreateFilePlanDescriptorFromDiscriminatorValue(parseNode i878a80d2330e89d26
     return NewFilePlanDescriptor(), nil
 }
 // GetAuthority gets the authority property value. Represents the file plan descriptor of type authority applied to a particular retention label.
-// returns a Authorityable when successful
-func (m *FilePlanDescriptor) GetAuthority()(Authorityable) {
+// returns a FilePlanAuthorityable when successful
+func (m *FilePlanDescriptor) GetAuthority()(FilePlanAuthorityable) {
     val, err := m.GetBackingStore().Get("authority")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Authorityable)
+        return val.(FilePlanAuthorityable)
     }
     return nil
 }
@@ -45,14 +45,14 @@ func (m *FilePlanDescriptor) GetAuthorityTemplate()(AuthorityTemplateable) {
     return nil
 }
 // GetCategory gets the category property value. The category property
-// returns a AppliedCategoryable when successful
-func (m *FilePlanDescriptor) GetCategory()(AppliedCategoryable) {
+// returns a FilePlanAppliedCategoryable when successful
+func (m *FilePlanDescriptor) GetCategory()(FilePlanAppliedCategoryable) {
     val, err := m.GetBackingStore().Get("category")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(AppliedCategoryable)
+        return val.(FilePlanAppliedCategoryable)
     }
     return nil
 }
@@ -69,14 +69,14 @@ func (m *FilePlanDescriptor) GetCategoryTemplate()(CategoryTemplateable) {
     return nil
 }
 // GetCitation gets the citation property value. Represents the file plan descriptor of type citation applied to a particular retention label.
-// returns a Citationable when successful
-func (m *FilePlanDescriptor) GetCitation()(Citationable) {
+// returns a FilePlanCitationable when successful
+func (m *FilePlanDescriptor) GetCitation()(FilePlanCitationable) {
     val, err := m.GetBackingStore().Get("citation")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Citationable)
+        return val.(FilePlanCitationable)
     }
     return nil
 }
@@ -93,14 +93,14 @@ func (m *FilePlanDescriptor) GetCitationTemplate()(CitationTemplateable) {
     return nil
 }
 // GetDepartment gets the department property value. Represents the file plan descriptor of type department applied to a particular retention label.
-// returns a Departmentable when successful
-func (m *FilePlanDescriptor) GetDepartment()(Departmentable) {
+// returns a FilePlanDepartmentable when successful
+func (m *FilePlanDescriptor) GetDepartment()(FilePlanDepartmentable) {
     val, err := m.GetBackingStore().Get("department")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Departmentable)
+        return val.(FilePlanDepartmentable)
     }
     return nil
 }
@@ -121,12 +121,12 @@ func (m *FilePlanDescriptor) GetDepartmentTemplate()(DepartmentTemplateable) {
 func (m *FilePlanDescriptor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["authority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAuthorityFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateFilePlanAuthorityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAuthority(val.(Authorityable))
+            m.SetAuthority(val.(FilePlanAuthorityable))
         }
         return nil
     }
@@ -141,12 +141,12 @@ func (m *FilePlanDescriptor) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAppliedCategoryFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateFilePlanAppliedCategoryFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCategory(val.(AppliedCategoryable))
+            m.SetCategory(val.(FilePlanAppliedCategoryable))
         }
         return nil
     }
@@ -161,12 +161,12 @@ func (m *FilePlanDescriptor) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["citation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCitationFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateFilePlanCitationFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCitation(val.(Citationable))
+            m.SetCitation(val.(FilePlanCitationable))
         }
         return nil
     }
@@ -181,12 +181,12 @@ func (m *FilePlanDescriptor) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["department"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateDepartmentFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateFilePlanDepartmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDepartment(val.(Departmentable))
+            m.SetDepartment(val.(FilePlanDepartmentable))
         }
         return nil
     }
@@ -315,7 +315,7 @@ func (m *FilePlanDescriptor) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     return nil
 }
 // SetAuthority sets the authority property value. Represents the file plan descriptor of type authority applied to a particular retention label.
-func (m *FilePlanDescriptor) SetAuthority(value Authorityable)() {
+func (m *FilePlanDescriptor) SetAuthority(value FilePlanAuthorityable)() {
     err := m.GetBackingStore().Set("authority", value)
     if err != nil {
         panic(err)
@@ -329,7 +329,7 @@ func (m *FilePlanDescriptor) SetAuthorityTemplate(value AuthorityTemplateable)()
     }
 }
 // SetCategory sets the category property value. The category property
-func (m *FilePlanDescriptor) SetCategory(value AppliedCategoryable)() {
+func (m *FilePlanDescriptor) SetCategory(value FilePlanAppliedCategoryable)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {
         panic(err)
@@ -343,7 +343,7 @@ func (m *FilePlanDescriptor) SetCategoryTemplate(value CategoryTemplateable)() {
     }
 }
 // SetCitation sets the citation property value. Represents the file plan descriptor of type citation applied to a particular retention label.
-func (m *FilePlanDescriptor) SetCitation(value Citationable)() {
+func (m *FilePlanDescriptor) SetCitation(value FilePlanCitationable)() {
     err := m.GetBackingStore().Set("citation", value)
     if err != nil {
         panic(err)
@@ -357,7 +357,7 @@ func (m *FilePlanDescriptor) SetCitationTemplate(value CitationTemplateable)() {
     }
 }
 // SetDepartment sets the department property value. Represents the file plan descriptor of type department applied to a particular retention label.
-func (m *FilePlanDescriptor) SetDepartment(value Departmentable)() {
+func (m *FilePlanDescriptor) SetDepartment(value FilePlanDepartmentable)() {
     err := m.GetBackingStore().Set("department", value)
     if err != nil {
         panic(err)
@@ -387,23 +387,23 @@ func (m *FilePlanDescriptor) SetFilePlanReferenceTemplate(value FilePlanReferenc
 type FilePlanDescriptorable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAuthority()(Authorityable)
+    GetAuthority()(FilePlanAuthorityable)
     GetAuthorityTemplate()(AuthorityTemplateable)
-    GetCategory()(AppliedCategoryable)
+    GetCategory()(FilePlanAppliedCategoryable)
     GetCategoryTemplate()(CategoryTemplateable)
-    GetCitation()(Citationable)
+    GetCitation()(FilePlanCitationable)
     GetCitationTemplate()(CitationTemplateable)
-    GetDepartment()(Departmentable)
+    GetDepartment()(FilePlanDepartmentable)
     GetDepartmentTemplate()(DepartmentTemplateable)
     GetFilePlanReference()(FilePlanReferenceable)
     GetFilePlanReferenceTemplate()(FilePlanReferenceTemplateable)
-    SetAuthority(value Authorityable)()
+    SetAuthority(value FilePlanAuthorityable)()
     SetAuthorityTemplate(value AuthorityTemplateable)()
-    SetCategory(value AppliedCategoryable)()
+    SetCategory(value FilePlanAppliedCategoryable)()
     SetCategoryTemplate(value CategoryTemplateable)()
-    SetCitation(value Citationable)()
+    SetCitation(value FilePlanCitationable)()
     SetCitationTemplate(value CitationTemplateable)()
-    SetDepartment(value Departmentable)()
+    SetDepartment(value FilePlanDepartmentable)()
     SetDepartmentTemplate(value DepartmentTemplateable)()
     SetFilePlanReference(value FilePlanReferenceable)()
     SetFilePlanReferenceTemplate(value FilePlanReferenceTemplateable)()

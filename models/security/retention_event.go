@@ -81,7 +81,7 @@ func (m *RetentionEvent) GetEventPropagationResults()([]EventPropagationResultab
     }
     return nil
 }
-// GetEventQueries gets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
+// GetEventQueries gets the eventQueries property value. The eventQueries property
 // returns a []EventQueryable when successful
 func (m *RetentionEvent) GetEventQueries()([]EventQueryable) {
     val, err := m.GetBackingStore().Get("eventQueries")
@@ -430,7 +430,7 @@ func (m *RetentionEvent) SetEventPropagationResults(value []EventPropagationResu
         panic(err)
     }
 }
-// SetEventQueries sets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
+// SetEventQueries sets the eventQueries property value. The eventQueries property
 func (m *RetentionEvent) SetEventQueries(value []EventQueryable)() {
     err := m.GetBackingStore().Set("eventQueries", value)
     if err != nil {

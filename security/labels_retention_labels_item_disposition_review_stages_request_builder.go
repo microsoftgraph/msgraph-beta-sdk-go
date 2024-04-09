@@ -46,17 +46,17 @@ type LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderPostRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByDispositionReviewStageId provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
-// returns a *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder when successful
-func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) ByDispositionReviewStageId(dispositionReviewStageId string)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilder) {
+// ByDispositionReviewStageStageNumber provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
+// returns a *LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageStageNumberItemRequestBuilder when successful
+func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) ByDispositionReviewStageStageNumber(dispositionReviewStageStageNumber string)(*LabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageStageNumberItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
-    if dispositionReviewStageId != "" {
-        urlTplParams["dispositionReviewStage%2Did"] = dispositionReviewStageId
+    if dispositionReviewStageStageNumber != "" {
+        urlTplParams["dispositionReviewStage%2DstageNumber"] = dispositionReviewStageStageNumber
     }
-    return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+    return NewLabelsRetentionLabelsItemDispositionReviewStagesDispositionReviewStageStageNumberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal instantiates a new LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder and sets the default values.
 func NewLabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) {
@@ -133,7 +133,7 @@ func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) ToGetRe
 // ToPostRequestInformation create new navigation property to dispositionReviewStages for security
 // returns a *RequestInformation when successful
 func (m *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DispositionReviewStageable, requestConfiguration *LabelsRetentionLabelsItemDispositionReviewStagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

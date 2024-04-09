@@ -30,8 +30,11 @@ func NewItemTeamDefinitionPrimaryChannelUnarchiveRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionPrimaryChannelUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action unarchive
+// Post restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the archive API. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-unarchive?view=graph-rest-1.0
 func (m *ItemTeamDefinitionPrimaryChannelUnarchiveRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamDefinitionPrimaryChannelUnarchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemTeamDefinitionPrimaryChannelUnarchiveRequestBuilder) Post(ctx conte
     }
     return nil
 }
-// ToPostRequestInformation invoke action unarchive
+// ToPostRequestInformation restore an archived channel. Unarchiving restores the ability for users to send messages and edit the channel. Channels are archived via the archive API. Unarchiving is an asynchronous operation; a channel is unarchived when the asynchronous unarchive operation completes successfully, which might occur after this method responds.
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionPrimaryChannelUnarchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionPrimaryChannelUnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

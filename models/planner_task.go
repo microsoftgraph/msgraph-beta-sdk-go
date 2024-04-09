@@ -50,7 +50,7 @@ func (m *PlannerTask) GetActiveChecklistItemCount()(*int32) {
     }
     return nil
 }
-// GetAppliedCategories gets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
+// GetAppliedCategories gets the appliedCategories property value. The categories to which the task is applied. See plannerAppliedCategories resource type for possible values.
 // returns a PlannerAppliedCategoriesable when successful
 func (m *PlannerTask) GetAppliedCategories()(PlannerAppliedCategoriesable) {
     val, err := m.GetBackingStore().Get("appliedCategories")
@@ -110,7 +110,7 @@ func (m *PlannerTask) GetAssignments()(PlannerAssignmentsable) {
     }
     return nil
 }
-// GetBucketId gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+// GetBucketId gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
 // returns a *string when successful
 func (m *PlannerTask) GetBucketId()(*string) {
     val, err := m.GetBackingStore().Get("bucketId")
@@ -218,7 +218,7 @@ func (m *PlannerTask) GetCreationSource()(PlannerTaskCreationable) {
     }
     return nil
 }
-// GetDetails gets the details property value. Read-only. Nullable. Additional details about the task.
+// GetDetails gets the details property value. Read-only. Nullable. More details about the task.
 // returns a PlannerTaskDetailsable when successful
 func (m *PlannerTask) GetDetails()(PlannerTaskDetailsable) {
     val, err := m.GetBackingStore().Get("details")
@@ -592,7 +592,7 @@ func (m *PlannerTask) GetIsArchived()(*bool) {
     }
     return nil
 }
-// GetIsOnMyDay gets the isOnMyDay property value. The isOnMyDay property
+// GetIsOnMyDay gets the isOnMyDay property value. A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.
 // returns a *bool when successful
 func (m *PlannerTask) GetIsOnMyDay()(*bool) {
     val, err := m.GetBackingStore().Get("isOnMyDay")
@@ -604,7 +604,7 @@ func (m *PlannerTask) GetIsOnMyDay()(*bool) {
     }
     return nil
 }
-// GetIsOnMyDayLastModifiedDate gets the isOnMyDayLastModifiedDate property value. The isOnMyDayLastModifiedDate property
+// GetIsOnMyDayLastModifiedDate gets the isOnMyDayLastModifiedDate property value. Read-only. The date on which task is added to or removed from MyDay.
 // returns a *DateOnly when successful
 func (m *PlannerTask) GetIsOnMyDayLastModifiedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("isOnMyDayLastModifiedDate")
@@ -664,7 +664,7 @@ func (m *PlannerTask) GetPreviewType()(*PlannerPreviewType) {
     }
     return nil
 }
-// GetPriority gets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+// GetPriority gets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
 // returns a *int32 when successful
 func (m *PlannerTask) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
@@ -712,7 +712,7 @@ func (m *PlannerTask) GetReferenceCount()(*int32) {
     }
     return nil
 }
-// GetSpecifiedCompletionRequirements gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+// GetSpecifiedCompletionRequirements gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: checklistCompletion,formCompletion, approvalCompletion. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
 // returns a *PlannerTaskCompletionRequirements when successful
 func (m *PlannerTask) GetSpecifiedCompletionRequirements()(*PlannerTaskCompletionRequirements) {
     val, err := m.GetBackingStore().Get("specifiedCompletionRequirements")
@@ -957,7 +957,7 @@ func (m *PlannerTask) SetActiveChecklistItemCount(value *int32)() {
         panic(err)
     }
 }
-// SetAppliedCategories sets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
+// SetAppliedCategories sets the appliedCategories property value. The categories to which the task is applied. See plannerAppliedCategories resource type for possible values.
 func (m *PlannerTask) SetAppliedCategories(value PlannerAppliedCategoriesable)() {
     err := m.GetBackingStore().Set("appliedCategories", value)
     if err != nil {
@@ -992,7 +992,7 @@ func (m *PlannerTask) SetAssignments(value PlannerAssignmentsable)() {
         panic(err)
     }
 }
-// SetBucketId sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+// SetBucketId sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It's 28 characters long and case-sensitive. Format validation is done on the service.
 func (m *PlannerTask) SetBucketId(value *string)() {
     err := m.GetBackingStore().Set("bucketId", value)
     if err != nil {
@@ -1055,7 +1055,7 @@ func (m *PlannerTask) SetCreationSource(value PlannerTaskCreationable)() {
         panic(err)
     }
 }
-// SetDetails sets the details property value. Read-only. Nullable. Additional details about the task.
+// SetDetails sets the details property value. Read-only. Nullable. More details about the task.
 func (m *PlannerTask) SetDetails(value PlannerTaskDetailsable)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {
@@ -1083,14 +1083,14 @@ func (m *PlannerTask) SetIsArchived(value *bool)() {
         panic(err)
     }
 }
-// SetIsOnMyDay sets the isOnMyDay property value. The isOnMyDay property
+// SetIsOnMyDay sets the isOnMyDay property value. A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.
 func (m *PlannerTask) SetIsOnMyDay(value *bool)() {
     err := m.GetBackingStore().Set("isOnMyDay", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsOnMyDayLastModifiedDate sets the isOnMyDayLastModifiedDate property value. The isOnMyDayLastModifiedDate property
+// SetIsOnMyDayLastModifiedDate sets the isOnMyDayLastModifiedDate property value. Read-only. The date on which task is added to or removed from MyDay.
 func (m *PlannerTask) SetIsOnMyDayLastModifiedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("isOnMyDayLastModifiedDate", value)
     if err != nil {
@@ -1125,7 +1125,7 @@ func (m *PlannerTask) SetPreviewType(value *PlannerPreviewType)() {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+// SetPriority sets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
 func (m *PlannerTask) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {
@@ -1153,7 +1153,7 @@ func (m *PlannerTask) SetReferenceCount(value *int32)() {
         panic(err)
     }
 }
-// SetSpecifiedCompletionRequirements sets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+// SetSpecifiedCompletionRequirements sets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: checklistCompletion,formCompletion, approvalCompletion. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
 func (m *PlannerTask) SetSpecifiedCompletionRequirements(value *PlannerTaskCompletionRequirements)() {
     err := m.GetBackingStore().Set("specifiedCompletionRequirements", value)
     if err != nil {

@@ -1780,6 +1780,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMessageTrace(), nil
                     case "#microsoft.graph.mfaCompletionMetric":
                         return NewMfaCompletionMetric(), nil
+                    case "#microsoft.graph.mfaFailure":
+                        return NewMfaFailure(), nil
                     case "#microsoft.graph.microsoftAccountUserConversationMember":
                         return NewMicrosoftAccountUserConversationMember(), nil
                     case "#microsoft.graph.microsoftApplicationDataAccessSettings":
@@ -2430,6 +2432,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewServicePrincipalRiskDetection(), nil
                     case "#microsoft.graph.servicePrincipalSignInActivity":
                         return NewServicePrincipalSignInActivity(), nil
+                    case "#microsoft.graph.serviceStorageQuotaBreakdown":
+                        return NewServiceStorageQuotaBreakdown(), nil
                     case "#microsoft.graph.serviceUpdateMessage":
                         return NewServiceUpdateMessage(), nil
                     case "#microsoft.graph.settingStateDeviceSummary":
@@ -2498,6 +2502,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewStartHoldMusicOperation(), nil
                     case "#microsoft.graph.stopHoldMusicOperation":
                         return NewStopHoldMusicOperation(), nil
+                    case "#microsoft.graph.storageQuotaBreakdown":
+                        return NewStorageQuotaBreakdown(), nil
+                    case "#microsoft.graph.storageSettings":
+                        return NewStorageSettings(), nil
                     case "#microsoft.graph.strongAuthenticationDetail":
                         return NewStrongAuthenticationDetail(), nil
                     case "#microsoft.graph.strongAuthenticationPhoneAppDetail":
@@ -2726,6 +2734,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUnifiedRoleScheduleBase(), nil
                     case "#microsoft.graph.unifiedRoleScheduleInstanceBase":
                         return NewUnifiedRoleScheduleInstanceBase(), nil
+                    case "#microsoft.graph.unifiedStorageQuota":
+                        return NewUnifiedStorageQuota(), nil
                     case "#microsoft.graph.unmanagedDeviceDiscoveryTask":
                         return NewUnmanagedDeviceDiscoveryTask(), nil
                     case "#microsoft.graph.unmuteParticipantOperation":
@@ -2872,6 +2882,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserSignInInsight(), nil
                     case "#microsoft.graph.userSignUpMetric":
                         return NewUserSignUpMetric(), nil
+                    case "#microsoft.graph.userStorage":
+                        return NewUserStorage(), nil
                     case "#microsoft.graph.userTeamwork":
                         return NewUserTeamwork(), nil
                     case "#microsoft.graph.userVirtualEventsRoot":

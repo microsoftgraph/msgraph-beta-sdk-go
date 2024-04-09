@@ -84,7 +84,7 @@ func (m *PlannerFormsRequirement) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRequiredForms gets the requiredForms property value. The requiredForms property
+// GetRequiredForms gets the requiredForms property value. Read-only. A collection of keys from the plannerFormsDictionary that identify the plannerFormReference objects that specify the requirements to complete the plannerTask.
 // returns a []string when successful
 func (m *PlannerFormsRequirement) GetRequiredForms()([]string) {
     val, err := m.GetBackingStore().Get("requiredForms")
@@ -136,7 +136,7 @@ func (m *PlannerFormsRequirement) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRequiredForms sets the requiredForms property value. The requiredForms property
+// SetRequiredForms sets the requiredForms property value. Read-only. A collection of keys from the plannerFormsDictionary that identify the plannerFormReference objects that specify the requirements to complete the plannerTask.
 func (m *PlannerFormsRequirement) SetRequiredForms(value []string)() {
     err := m.GetBackingStore().Set("requiredForms", value)
     if err != nil {

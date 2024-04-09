@@ -18,7 +18,7 @@ type AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderGetQueryParameters get trainingCampaigns from security
+// AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderGetQueryParameters read the properties and relationships of a trainingCampaign object.
 type AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewAttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewAttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property trainingCampaigns for security
+// Delete delete a trainingCampaign object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-delete-trainingcampaigns?view=graph-rest-1.0
 func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) De
     }
     return nil
 }
-// Get get trainingCampaigns from security
+// Get read the properties and relationships of a trainingCampaign object.
 // returns a TrainingCampaignable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/trainingcampaign-get?view=graph-rest-1.0
 func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable), nil
 }
-// Patch update the navigation property trainingCampaigns in security
+// Patch update the properties of a trainingCampaign object.
 // returns a TrainingCampaignable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/trainingcampaign-update?view=graph-rest-1.0
 func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable, requestConfiguration *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,10 +119,10 @@ func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) Pa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable), nil
 }
-// ToDeleteRequestInformation delete navigation property trainingCampaigns for security
+// ToDeleteRequestInformation delete a trainingCampaign object.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/attackSimulation/trainingCampaigns/{trainingCampaign%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +130,7 @@ func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get trainingCampaigns from security
+// ToGetRequestInformation read the properties and relationships of a trainingCampaign object.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,10 +144,10 @@ func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property trainingCampaigns in security
+// ToPatchRequestInformation update the properties of a trainingCampaign object.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable, requestConfiguration *AttackSimulationTrainingCampaignsTrainingCampaignItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/attackSimulation/trainingCampaigns/{trainingCampaign%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

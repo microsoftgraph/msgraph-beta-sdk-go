@@ -18,7 +18,7 @@ type MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationship
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilderGetQueryParameters list of relationships for this mobile app.
+// MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilderGetQueryParameters the set of direct relationships for this app.
 type MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelation
     }
     return nil
 }
-// Get list of relationships for this mobile app.
+// Get the set of direct relationships for this app.
 // returns a MobileAppRelationshipable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, error) {
@@ -113,7 +113,7 @@ func (m *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelation
 // ToDeleteRequestInformation delete navigation property relationships for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.androidManagedStoreApp/relationships/{mobileAppRelationship%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +121,7 @@ func (m *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation list of relationships for this mobile app.
+// ToGetRequestInformation the set of direct relationships for this app.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +138,7 @@ func (m *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelation
 // ToPatchRequestInformation update the navigation property relationships in deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable, requestConfiguration *MobileAppsItemGraphAndroidManagedStoreAppRelationshipsMobileAppRelationshipItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.androidManagedStoreApp/relationships/{mobileAppRelationship%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

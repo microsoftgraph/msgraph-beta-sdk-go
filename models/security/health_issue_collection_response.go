@@ -5,35 +5,35 @@ import (
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
 )
 
-type SubCategoryTemplateCollectionResponse struct {
+type HealthIssueCollectionResponse struct {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponse
 }
-// NewSubCategoryTemplateCollectionResponse instantiates a new SubCategoryTemplateCollectionResponse and sets the default values.
-func NewSubCategoryTemplateCollectionResponse()(*SubCategoryTemplateCollectionResponse) {
-    m := &SubCategoryTemplateCollectionResponse{
+// NewHealthIssueCollectionResponse instantiates a new HealthIssueCollectionResponse and sets the default values.
+func NewHealthIssueCollectionResponse()(*HealthIssueCollectionResponse) {
+    m := &HealthIssueCollectionResponse{
         BaseCollectionPaginationCountResponse: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewBaseCollectionPaginationCountResponse(),
     }
     return m
 }
-// CreateSubCategoryTemplateCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateHealthIssueCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateSubCategoryTemplateCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewSubCategoryTemplateCollectionResponse(), nil
+func CreateHealthIssueCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewHealthIssueCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *SubCategoryTemplateCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *HealthIssueCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSubCategoryTemplateFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateHealthIssueFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SubCategoryTemplateable, len(val))
+            res := make([]HealthIssueable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(SubCategoryTemplateable)
+                    res[i] = v.(HealthIssueable)
                 }
             }
             m.SetValue(res)
@@ -43,19 +43,19 @@ func (m *SubCategoryTemplateCollectionResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
-// returns a []SubCategoryTemplateable when successful
-func (m *SubCategoryTemplateCollectionResponse) GetValue()([]SubCategoryTemplateable) {
+// returns a []HealthIssueable when successful
+func (m *HealthIssueCollectionResponse) GetValue()([]HealthIssueable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]SubCategoryTemplateable)
+        return val.([]HealthIssueable)
     }
     return nil
 }
 // Serialize serializes information the current object
-func (m *SubCategoryTemplateCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *HealthIssueCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
     if err != nil {
         return err
@@ -75,15 +75,15 @@ func (m *SubCategoryTemplateCollectionResponse) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *SubCategoryTemplateCollectionResponse) SetValue(value []SubCategoryTemplateable)() {
+func (m *HealthIssueCollectionResponse) SetValue(value []HealthIssueable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
     }
 }
-type SubCategoryTemplateCollectionResponseable interface {
+type HealthIssueCollectionResponseable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]SubCategoryTemplateable)
-    SetValue(value []SubCategoryTemplateable)()
+    GetValue()([]HealthIssueable)
+    SetValue(value []HealthIssueable)()
 }

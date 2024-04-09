@@ -347,7 +347,7 @@ func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetForms gets the forms property value. The forms property
+// GetForms gets the forms property value. Rules and restrictions for forms. Allowed overrides are userCreated and applicationCreated. The following are the accepted values for the default rule and individual overrides: allow, add, addResponse, remove, update, block.
 // returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetForms()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("forms")
@@ -626,7 +626,7 @@ func (m *PlannerTaskPropertyRule) SetDueDate(value []string)() {
         panic(err)
     }
 }
-// SetForms sets the forms property value. The forms property
+// SetForms sets the forms property value. Rules and restrictions for forms. Allowed overrides are userCreated and applicationCreated. The following are the accepted values for the default rule and individual overrides: allow, add, addResponse, remove, update, block.
 func (m *PlannerTaskPropertyRule) SetForms(value PlannerFieldRulesable)() {
     err := m.GetBackingStore().Set("forms", value)
     if err != nil {

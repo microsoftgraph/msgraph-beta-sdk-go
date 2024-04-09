@@ -4,24 +4,24 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-type Citation struct {
+type FilePlanCitation struct {
     FilePlanDescriptorBase
 }
-// NewCitation instantiates a new Citation and sets the default values.
-func NewCitation()(*Citation) {
-    m := &Citation{
+// NewFilePlanCitation instantiates a new FilePlanCitation and sets the default values.
+func NewFilePlanCitation()(*FilePlanCitation) {
+    m := &FilePlanCitation{
         FilePlanDescriptorBase: *NewFilePlanDescriptorBase(),
     }
     return m
 }
-// CreateCitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateFilePlanCitationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateCitationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewCitation(), nil
+func CreateFilePlanCitationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewFilePlanCitation(), nil
 }
-// GetCitationJurisdiction gets the citationJurisdiction property value. Represents the jurisdiction or agency that published the citation.
+// GetCitationJurisdiction gets the citationJurisdiction property value. The citationJurisdiction property
 // returns a *string when successful
-func (m *Citation) GetCitationJurisdiction()(*string) {
+func (m *FilePlanCitation) GetCitationJurisdiction()(*string) {
     val, err := m.GetBackingStore().Get("citationJurisdiction")
     if err != nil {
         panic(err)
@@ -31,9 +31,9 @@ func (m *Citation) GetCitationJurisdiction()(*string) {
     }
     return nil
 }
-// GetCitationUrl gets the citationUrl property value. Represents the URL to the published citation.
+// GetCitationUrl gets the citationUrl property value. The citationUrl property
 // returns a *string when successful
-func (m *Citation) GetCitationUrl()(*string) {
+func (m *FilePlanCitation) GetCitationUrl()(*string) {
     val, err := m.GetBackingStore().Get("citationUrl")
     if err != nil {
         panic(err)
@@ -45,7 +45,7 @@ func (m *Citation) GetCitationUrl()(*string) {
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *Citation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *FilePlanCitation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.FilePlanDescriptorBase.GetFieldDeserializers()
     res["citationJurisdiction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
@@ -70,7 +70,7 @@ func (m *Citation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     return res
 }
 // Serialize serializes information the current object
-func (m *Citation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *FilePlanCitation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.FilePlanDescriptorBase.Serialize(writer)
     if err != nil {
         return err
@@ -89,21 +89,21 @@ func (m *Citation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetCitationJurisdiction sets the citationJurisdiction property value. Represents the jurisdiction or agency that published the citation.
-func (m *Citation) SetCitationJurisdiction(value *string)() {
+// SetCitationJurisdiction sets the citationJurisdiction property value. The citationJurisdiction property
+func (m *FilePlanCitation) SetCitationJurisdiction(value *string)() {
     err := m.GetBackingStore().Set("citationJurisdiction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCitationUrl sets the citationUrl property value. Represents the URL to the published citation.
-func (m *Citation) SetCitationUrl(value *string)() {
+// SetCitationUrl sets the citationUrl property value. The citationUrl property
+func (m *FilePlanCitation) SetCitationUrl(value *string)() {
     err := m.GetBackingStore().Set("citationUrl", value)
     if err != nil {
         panic(err)
     }
 }
-type Citationable interface {
+type FilePlanCitationable interface {
     FilePlanDescriptorBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCitationJurisdiction()(*string)
