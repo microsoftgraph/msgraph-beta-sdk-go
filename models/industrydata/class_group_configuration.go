@@ -1,0 +1,230 @@
+package industrydata
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+)
+
+type ClassGroupConfiguration struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewClassGroupConfiguration instantiates a new ClassGroupConfiguration and sets the default values.
+func NewClassGroupConfiguration()(*ClassGroupConfiguration) {
+    m := &ClassGroupConfiguration{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
+    return m
+}
+// CreateClassGroupConfigurationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateClassGroupConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewClassGroupConfiguration(), nil
+}
+// GetAdditionalAttributes gets the additionalAttributes property value. The different attributes to sync for the class groups. The possible values are: courseTitle, courseCode, courseSubject, courseGradeLevel, courseExternalId, academicSessionTitle, academicSessionExternalId, classCode, unknownFutureValue.
+// returns a []AdditionalClassGroupAttributes when successful
+func (m *ClassGroupConfiguration) GetAdditionalAttributes()([]AdditionalClassGroupAttributes) {
+    val, err := m.GetBackingStore().Get("additionalAttributes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdditionalClassGroupAttributes)
+    }
+    return nil
+}
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
+func (m *ClassGroupConfiguration) GetAdditionalData()(map[string]any) {
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetAdditionalOptions gets the additionalOptions property value. The additionalOptions property
+// returns a AdditionalClassGroupOptionsable when successful
+func (m *ClassGroupConfiguration) GetAdditionalOptions()(AdditionalClassGroupOptionsable) {
+    val, err := m.GetBackingStore().Get("additionalOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AdditionalClassGroupOptionsable)
+    }
+    return nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *ClassGroupConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetEnrollmentMappings gets the enrollmentMappings property value. The enrollmentMappings property
+// returns a EnrollmentMappingsable when successful
+func (m *ClassGroupConfiguration) GetEnrollmentMappings()(EnrollmentMappingsable) {
+    val, err := m.GetBackingStore().Get("enrollmentMappings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EnrollmentMappingsable)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *ClassGroupConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["additionalAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfEnumValues(ParseAdditionalClassGroupAttributes)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AdditionalClassGroupAttributes, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*AdditionalClassGroupAttributes))
+                }
+            }
+            m.SetAdditionalAttributes(res)
+        }
+        return nil
+    }
+    res["additionalOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAdditionalClassGroupOptionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAdditionalOptions(val.(AdditionalClassGroupOptionsable))
+        }
+        return nil
+    }
+    res["enrollmentMappings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEnrollmentMappingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnrollmentMappings(val.(EnrollmentMappingsable))
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
+func (m *ClassGroupConfiguration) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *ClassGroupConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAdditionalAttributes() != nil {
+        err := writer.WriteCollectionOfStringValues("additionalAttributes", SerializeAdditionalClassGroupAttributes(m.GetAdditionalAttributes()))
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("additionalOptions", m.GetAdditionalOptions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("enrollmentMappings", m.GetEnrollmentMappings())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAdditionalAttributes sets the additionalAttributes property value. The different attributes to sync for the class groups. The possible values are: courseTitle, courseCode, courseSubject, courseGradeLevel, courseExternalId, academicSessionTitle, academicSessionExternalId, classCode, unknownFutureValue.
+func (m *ClassGroupConfiguration) SetAdditionalAttributes(value []AdditionalClassGroupAttributes)() {
+    err := m.GetBackingStore().Set("additionalAttributes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *ClassGroupConfiguration) SetAdditionalData(value map[string]any)() {
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAdditionalOptions sets the additionalOptions property value. The additionalOptions property
+func (m *ClassGroupConfiguration) SetAdditionalOptions(value AdditionalClassGroupOptionsable)() {
+    err := m.GetBackingStore().Set("additionalOptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *ClassGroupConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetEnrollmentMappings sets the enrollmentMappings property value. The enrollmentMappings property
+func (m *ClassGroupConfiguration) SetEnrollmentMappings(value EnrollmentMappingsable)() {
+    err := m.GetBackingStore().Set("enrollmentMappings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *ClassGroupConfiguration) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type ClassGroupConfigurationable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAdditionalAttributes()([]AdditionalClassGroupAttributes)
+    GetAdditionalOptions()(AdditionalClassGroupOptionsable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetEnrollmentMappings()(EnrollmentMappingsable)
+    GetOdataType()(*string)
+    SetAdditionalAttributes(value []AdditionalClassGroupAttributes)()
+    SetAdditionalOptions(value AdditionalClassGroupOptionsable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetEnrollmentMappings(value EnrollmentMappingsable)()
+    SetOdataType(value *string)()
+}

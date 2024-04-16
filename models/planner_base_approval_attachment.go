@@ -96,7 +96,7 @@ func (m *PlannerBaseApprovalAttachment) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Status of the approval. The possible values are: requested, approved, rejected, cancelled, unknownFutureValue. Read-only.
 // returns a *PlannerApprovalStatus when successful
 func (m *PlannerBaseApprovalAttachment) GetStatus()(*PlannerApprovalStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -149,7 +149,7 @@ func (m *PlannerBaseApprovalAttachment) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Status of the approval. The possible values are: requested, approved, rejected, cancelled, unknownFutureValue. Read-only.
 func (m *PlannerBaseApprovalAttachment) SetStatus(value *PlannerApprovalStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

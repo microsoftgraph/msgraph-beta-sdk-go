@@ -57,7 +57,7 @@ func (m *InsightsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true if the specified type of insights is enabled for the organization; false if the specified type of insights is disabled for all users without exceptions. Default is true. Optional.
+// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.
 // returns a *bool when successful
 func (m *InsightsSettings) GetIsEnabledInOrganization()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabledInOrganization")
@@ -96,7 +96,7 @@ func (m *InsightsSettings) SetDisabledForGroup(value *string)() {
         panic(err)
     }
 }
-// SetIsEnabledInOrganization sets the isEnabledInOrganization property value. true if the specified type of insights is enabled for the organization; false if the specified type of insights is disabled for all users without exceptions. Default is true. Optional.
+// SetIsEnabledInOrganization sets the isEnabledInOrganization property value. true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.
 func (m *InsightsSettings) SetIsEnabledInOrganization(value *bool)() {
     err := m.GetBackingStore().Set("isEnabledInOrganization", value)
     if err != nil {

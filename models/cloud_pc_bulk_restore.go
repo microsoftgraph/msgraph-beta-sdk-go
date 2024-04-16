@@ -48,7 +48,7 @@ func (m *CloudPcBulkRestore) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetRestorePointDateTime gets the restorePointDateTime property value. The restorePointDateTime property
+// GetRestorePointDateTime gets the restorePointDateTime property value. The date and time point for the selected Cloud PCs to restore. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CloudPcBulkRestore) GetRestorePointDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restorePointDateTime")
@@ -93,7 +93,7 @@ func (m *CloudPcBulkRestore) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetRestorePointDateTime sets the restorePointDateTime property value. The restorePointDateTime property
+// SetRestorePointDateTime sets the restorePointDateTime property value. The date and time point for the selected Cloud PCs to restore. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcBulkRestore) SetRestorePointDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("restorePointDateTime", value)
     if err != nil {

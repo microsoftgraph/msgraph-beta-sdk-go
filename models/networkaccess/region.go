@@ -36,12 +36,15 @@ const (
     BRAZILSOUTH_REGION
     JAPANEAST_REGION
     JAPANWEST_REGION
-    UNKNOWNFUTUREVALUE_REGION
     KOREASOUTH_REGION
+    ITALYNORTH_REGION
+    FRANCESOUTH_REGION
+    ISRAELCENTRAL_REGION
+    UNKNOWNFUTUREVALUE_REGION
 )
 
 func (i Region) String() string {
-    return []string{"eastUS", "eastUS2", "westUS", "westUS2", "westUS3", "centralUS", "northCentralUS", "southCentralUS", "northEurope", "westEurope", "franceCentral", "germanyWestCentral", "switzerlandNorth", "ukSouth", "canadaEast", "canadaCentral", "southAfricaWest", "southAfricaNorth", "uaeNorth", "australiaEast", "westCentralUS", "centralIndia", "southEastAsia", "swedenCentral", "southIndia", "australiaSouthEast", "koreaCentral", "polandCentral", "brazilSouth", "japanEast", "japanWest", "unknownFutureValue", "koreaSouth"}[i]
+    return []string{"eastUS", "eastUS2", "westUS", "westUS2", "westUS3", "centralUS", "northCentralUS", "southCentralUS", "northEurope", "westEurope", "franceCentral", "germanyWestCentral", "switzerlandNorth", "ukSouth", "canadaEast", "canadaCentral", "southAfricaWest", "southAfricaNorth", "uaeNorth", "australiaEast", "westCentralUS", "centralIndia", "southEastAsia", "swedenCentral", "southIndia", "australiaSouthEast", "koreaCentral", "polandCentral", "brazilSouth", "japanEast", "japanWest", "koreaSouth", "italyNorth", "franceSouth", "israelCentral", "unknownFutureValue"}[i]
 }
 func ParseRegion(v string) (any, error) {
     result := EASTUS_REGION
@@ -108,10 +111,16 @@ func ParseRegion(v string) (any, error) {
             result = JAPANEAST_REGION
         case "japanWest":
             result = JAPANWEST_REGION
-        case "unknownFutureValue":
-            result = UNKNOWNFUTUREVALUE_REGION
         case "koreaSouth":
             result = KOREASOUTH_REGION
+        case "italyNorth":
+            result = ITALYNORTH_REGION
+        case "franceSouth":
+            result = FRANCESOUTH_REGION
+        case "israelCentral":
+            result = ISRAELCENTRAL_REGION
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_REGION
         default:
             return 0, errors.New("Unknown Region value: " + v)
     }

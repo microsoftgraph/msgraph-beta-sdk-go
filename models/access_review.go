@@ -20,7 +20,7 @@ func NewAccessReview()(*AccessReview) {
 func CreateAccessReviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReview(), nil
 }
-// GetBusinessFlowTemplateId gets the businessFlowTemplateId property value. The business flow template identifier. Required on create.  This value is case sensitive.
+// GetBusinessFlowTemplateId gets the businessFlowTemplateId property value. The business flow template identifier. Required on create. This value is case sensitive.
 // returns a *string when successful
 func (m *AccessReview) GetBusinessFlowTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("businessFlowTemplateId")
@@ -80,7 +80,7 @@ func (m *AccessReview) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
+// GetEndDateTime gets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date. Required on create.
 // returns a *Time when successful
 func (m *AccessReview) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -262,7 +262,7 @@ func (m *AccessReview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetInstances gets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
+// GetInstances gets the instances property value. The collection of access reviews instances past, present, and future, if this object is a recurring access review.
 // returns a []AccessReviewable when successful
 func (m *AccessReview) GetInstances()([]AccessReviewable) {
     val, err := m.GetBackingStore().Get("instances")
@@ -286,7 +286,7 @@ func (m *AccessReview) GetMyDecisions()([]AccessReviewDecisionable) {
     }
     return nil
 }
-// GetReviewedEntity gets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
+// GetReviewedEntity gets the reviewedEntity property value. The object for which the access review is reviewing the access rights assignments. This identity can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
 // returns a Identityable when successful
 func (m *AccessReview) GetReviewedEntity()(Identityable) {
     val, err := m.GetBackingStore().Get("reviewedEntity")
@@ -310,7 +310,7 @@ func (m *AccessReview) GetReviewers()([]AccessReviewReviewerable) {
     }
     return nil
 }
-// GetReviewerType gets the reviewerType property value. The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
+// GetReviewerType gets the reviewerType property value. The relationship type of reviewer to the target object, one of: self, delegated, entityOwners. Required on create.
 // returns a *string when successful
 func (m *AccessReview) GetReviewerType()(*string) {
     val, err := m.GetBackingStore().Get("reviewerType")
@@ -334,7 +334,7 @@ func (m *AccessReview) GetSettings()(AccessReviewSettingsable) {
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
+// GetStartDateTime gets the startDateTime property value. The date and time when the review is scheduled to be start. This date can be in the future.  Required on create.
 // returns a *Time when successful
 func (m *AccessReview) GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -474,7 +474,7 @@ func (m *AccessReview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetBusinessFlowTemplateId sets the businessFlowTemplateId property value. The business flow template identifier. Required on create.  This value is case sensitive.
+// SetBusinessFlowTemplateId sets the businessFlowTemplateId property value. The business flow template identifier. Required on create. This value is case sensitive.
 func (m *AccessReview) SetBusinessFlowTemplateId(value *string)() {
     err := m.GetBackingStore().Set("businessFlowTemplateId", value)
     if err != nil {
@@ -509,14 +509,14 @@ func (m *AccessReview) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.
+// SetEndDateTime sets the endDateTime property value. The DateTime when the review is scheduled to end. This must be at least one day later than the start date. Required on create.
 func (m *AccessReview) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInstances sets the instances property value. The collection of access reviews instances past, present and future, if this object is a recurring access review.
+// SetInstances sets the instances property value. The collection of access reviews instances past, present, and future, if this object is a recurring access review.
 func (m *AccessReview) SetInstances(value []AccessReviewable)() {
     err := m.GetBackingStore().Set("instances", value)
     if err != nil {
@@ -530,7 +530,7 @@ func (m *AccessReview) SetMyDecisions(value []AccessReviewDecisionable)() {
         panic(err)
     }
 }
-// SetReviewedEntity sets the reviewedEntity property value. The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
+// SetReviewedEntity sets the reviewedEntity property value. The object for which the access review is reviewing the access rights assignments. This identity can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.
 func (m *AccessReview) SetReviewedEntity(value Identityable)() {
     err := m.GetBackingStore().Set("reviewedEntity", value)
     if err != nil {
@@ -544,7 +544,7 @@ func (m *AccessReview) SetReviewers(value []AccessReviewReviewerable)() {
         panic(err)
     }
 }
-// SetReviewerType sets the reviewerType property value. The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.
+// SetReviewerType sets the reviewerType property value. The relationship type of reviewer to the target object, one of: self, delegated, entityOwners. Required on create.
 func (m *AccessReview) SetReviewerType(value *string)() {
     err := m.GetBackingStore().Set("reviewerType", value)
     if err != nil {
@@ -558,7 +558,7 @@ func (m *AccessReview) SetSettings(value AccessReviewSettingsable)() {
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.
+// SetStartDateTime sets the startDateTime property value. The date and time when the review is scheduled to be start. This date can be in the future.  Required on create.
 func (m *AccessReview) SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

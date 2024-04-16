@@ -85,6 +85,11 @@ func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuild
     }
     return nil
 }
+// DeploymentSummary provides operations to manage the deploymentSummary property of the microsoft.graph.windowsManagedAppProtection entity.
+// returns a *WindowsManagedAppProtectionsItemDeploymentSummaryRequestBuilder when successful
+func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) DeploymentSummary()(*WindowsManagedAppProtectionsItemDeploymentSummaryRequestBuilder) {
+    return NewWindowsManagedAppProtectionsItemDeploymentSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get windows managed app policies.
 // returns a WindowsManagedAppProtectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -133,7 +138,7 @@ func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuild
 // ToDeleteRequestInformation delete navigation property windowsManagedAppProtections for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -158,7 +163,7 @@ func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuild
 // ToPatchRequestInformation update the navigation property windowsManagedAppProtections in deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsManagedAppProtectionable, requestConfiguration *WindowsManagedAppProtectionsWindowsManagedAppProtectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceAppManagement/windowsManagedAppProtections/{windowsManagedAppProtection%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

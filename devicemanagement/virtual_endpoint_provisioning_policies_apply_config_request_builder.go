@@ -30,9 +30,12 @@ func NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action applyConfig
+// Post update the provisioning policy configuration for a set of Cloud PC devices by their IDs. This method supports retry and allows you to apply the configuration to a subset of Cloud PCs initially to test.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-applyconfig?view=graph-rest-1.0
 func (m *VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) Post(ctx context.Context, body VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -47,7 +50,7 @@ func (m *VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) Post(ctx 
     }
     return nil
 }
-// ToPostRequestInformation invoke action applyConfig
+// ToPostRequestInformation update the provisioning policy configuration for a set of Cloud PC devices by their IDs. This method supports retry and allows you to apply the configuration to a subset of Cloud PCs initially to test.
 // Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesApplyConfigPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesApplyConfigRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -106,6 +106,18 @@ func (m *WindowsManagedAppProtection) GetDeployedAppCount()(*int32) {
     }
     return nil
 }
+// GetDeploymentSummary gets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
+// returns a ManagedAppPolicyDeploymentSummaryable when successful
+func (m *WindowsManagedAppProtection) GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable) {
+    val, err := m.GetBackingStore().Get("deploymentSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ManagedAppPolicyDeploymentSummaryable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -189,6 +201,16 @@ func (m *WindowsManagedAppProtection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetDeployedAppCount(val)
+        }
+        return nil
+    }
+    res["deploymentSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateManagedAppPolicyDeploymentSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeploymentSummary(val.(ManagedAppPolicyDeploymentSummaryable))
         }
         return nil
     }
@@ -633,6 +655,12 @@ func (m *WindowsManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteObjectValue("deploymentSummary", m.GetDeploymentSummary())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isAssigned", m.GetIsAssigned())
         if err != nil {
             return err
@@ -787,6 +815,13 @@ func (m *WindowsManagedAppProtection) SetDeployedAppCount(value *int32)() {
         panic(err)
     }
 }
+// SetDeploymentSummary sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
+func (m *WindowsManagedAppProtection) SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)() {
+    err := m.GetBackingStore().Set("deploymentSummary", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsAssigned sets the isAssigned property value. When TRUE, indicates that the policy is deployed to some inclusion groups. When FALSE, indicates that the policy is not deployed to any inclusion groups. Default value is FALSE.
 func (m *WindowsManagedAppProtection) SetIsAssigned(value *bool)() {
     err := m.GetBackingStore().Set("isAssigned", value)
@@ -916,6 +951,7 @@ type WindowsManagedAppProtectionable interface {
     GetApps()([]ManagedMobileAppable)
     GetAssignments()([]TargetedManagedAppPolicyAssignmentable)
     GetDeployedAppCount()(*int32)
+    GetDeploymentSummary()(ManagedAppPolicyDeploymentSummaryable)
     GetIsAssigned()(*bool)
     GetMaximumAllowedDeviceThreatLevel()(*ManagedAppDeviceThreatLevel)
     GetMaximumRequiredOsVersion()(*string)
@@ -940,6 +976,7 @@ type WindowsManagedAppProtectionable interface {
     SetApps(value []ManagedMobileAppable)()
     SetAssignments(value []TargetedManagedAppPolicyAssignmentable)()
     SetDeployedAppCount(value *int32)()
+    SetDeploymentSummary(value ManagedAppPolicyDeploymentSummaryable)()
     SetIsAssigned(value *bool)()
     SetMaximumAllowedDeviceThreatLevel(value *ManagedAppDeviceThreatLevel)()
     SetMaximumRequiredOsVersion(value *string)()

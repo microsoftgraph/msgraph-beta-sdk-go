@@ -315,6 +315,22 @@ func (m *ManagedAppRegistration) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["managedAppLogCollectionRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateManagedAppLogCollectionRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ManagedAppLogCollectionRequestable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ManagedAppLogCollectionRequestable)
+                }
+            }
+            m.SetManagedAppLogCollectionRequests(res)
+        }
+        return nil
+    }
     res["managedDeviceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -416,6 +432,18 @@ func (m *ManagedAppRegistration) GetLastSyncDateTime()(*i336074805fc853987abe6f7
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetManagedAppLogCollectionRequests gets the managedAppLogCollectionRequests property value. Zero or more log collection requests triggered for the app.
+// returns a []ManagedAppLogCollectionRequestable when successful
+func (m *ManagedAppRegistration) GetManagedAppLogCollectionRequests()([]ManagedAppLogCollectionRequestable) {
+    val, err := m.GetBackingStore().Get("managedAppLogCollectionRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedAppLogCollectionRequestable)
     }
     return nil
 }
@@ -587,6 +615,18 @@ func (m *ManagedAppRegistration) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    if m.GetManagedAppLogCollectionRequests() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedAppLogCollectionRequests()))
+        for i, v := range m.GetManagedAppLogCollectionRequests() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("managedAppLogCollectionRequests", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("managedDeviceId", m.GetManagedDeviceId())
         if err != nil {
@@ -722,6 +762,13 @@ func (m *ManagedAppRegistration) SetLastSyncDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
+// SetManagedAppLogCollectionRequests sets the managedAppLogCollectionRequests property value. Zero or more log collection requests triggered for the app.
+func (m *ManagedAppRegistration) SetManagedAppLogCollectionRequests(value []ManagedAppLogCollectionRequestable)() {
+    err := m.GetBackingStore().Set("managedAppLogCollectionRequests", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManagedDeviceId sets the managedDeviceId property value. The Managed Device identifier of the host device. Value could be empty even when the host device is managed.
 func (m *ManagedAppRegistration) SetManagedDeviceId(value *string)() {
     err := m.GetBackingStore().Set("managedDeviceId", value)
@@ -780,6 +827,7 @@ type ManagedAppRegistrationable interface {
     GetFlaggedReasons()([]ManagedAppFlaggedReason)
     GetIntendedPolicies()([]ManagedAppPolicyable)
     GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManagedAppLogCollectionRequests()([]ManagedAppLogCollectionRequestable)
     GetManagedDeviceId()(*string)
     GetManagementSdkVersion()(*string)
     GetOperations()([]ManagedAppOperationable)
@@ -799,6 +847,7 @@ type ManagedAppRegistrationable interface {
     SetFlaggedReasons(value []ManagedAppFlaggedReason)()
     SetIntendedPolicies(value []ManagedAppPolicyable)()
     SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManagedAppLogCollectionRequests(value []ManagedAppLogCollectionRequestable)()
     SetManagedDeviceId(value *string)()
     SetManagementSdkVersion(value *string)()
     SetOperations(value []ManagedAppOperationable)()

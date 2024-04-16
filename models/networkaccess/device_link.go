@@ -21,7 +21,7 @@ func NewDeviceLink()(*DeviceLink) {
 func CreateDeviceLinkFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceLink(), nil
 }
-// GetBandwidthCapacityInMbps gets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
+// GetBandwidthCapacityInMbps gets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.
 // returns a *BandwidthCapacityInMbps when successful
 func (m *DeviceLink) GetBandwidthCapacityInMbps()(*BandwidthCapacityInMbps) {
     val, err := m.GetBackingStore().Get("bandwidthCapacityInMbps")
@@ -143,7 +143,7 @@ func (m *DeviceLink) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIpAddress gets the ipAddress property value. Specifies the client IPv4 of the link
+// GetIpAddress gets the ipAddress property value. The public IP address of your CPE (customer premise equipment) device.
 // returns a *string when successful
 func (m *DeviceLink) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
@@ -261,7 +261,7 @@ func (m *DeviceLink) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetBandwidthCapacityInMbps sets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.
+// SetBandwidthCapacityInMbps sets the bandwidthCapacityInMbps property value. Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.
 func (m *DeviceLink) SetBandwidthCapacityInMbps(value *BandwidthCapacityInMbps)() {
     err := m.GetBackingStore().Set("bandwidthCapacityInMbps", value)
     if err != nil {
@@ -282,7 +282,7 @@ func (m *DeviceLink) SetDeviceVendor(value *DeviceVendor)() {
         panic(err)
     }
 }
-// SetIpAddress sets the ipAddress property value. Specifies the client IPv4 of the link
+// SetIpAddress sets the ipAddress property value. The public IP address of your CPE (customer premise equipment) device.
 func (m *DeviceLink) SetIpAddress(value *string)() {
     err := m.GetBackingStore().Set("ipAddress", value)
     if err != nil {

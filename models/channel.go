@@ -44,7 +44,7 @@ func (m *Channel) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
+// GetDisplayName gets the displayName property value. Channel name as it appears to the user in Microsoft Teams. The maximum length is 50 characters.
 // returns a *string when successful
 func (m *Channel) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -270,7 +270,7 @@ func (m *Channel) GetFilesFolder()(DriveItemable) {
     }
     return nil
 }
-// GetIsArchived gets the isArchived property value. The isArchived property
+// GetIsArchived gets the isArchived property value. Indicates whether the channel is archived. Read-only.
 // returns a *bool when successful
 func (m *Channel) GetIsArchived()(*bool) {
     val, err := m.GetBackingStore().Get("isArchived")
@@ -306,7 +306,7 @@ func (m *Channel) GetMembers()([]ConversationMemberable) {
     }
     return nil
 }
-// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
+// GetMembershipType gets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
 // returns a *ChannelMembershipType when successful
 func (m *Channel) GetMembershipType()(*ChannelMembershipType) {
     val, err := m.GetBackingStore().Get("membershipType")
@@ -354,7 +354,7 @@ func (m *Channel) GetSharedWithTeams()([]SharedWithChannelTeamInfoable) {
     }
     return nil
 }
-// GetSummary gets the summary property value. Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+// GetSummary gets the summary property value. Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property is only returned if it appears in the $select clause of the Get channel method.
 // returns a ChannelSummaryable when successful
 func (m *Channel) GetSummary()(ChannelSummaryable) {
     val, err := m.GetBackingStore().Get("summary")
@@ -390,7 +390,7 @@ func (m *Channel) GetTenantId()(*string) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+// GetWebUrl gets the webUrl property value. A hyperlink to the channel in Microsoft Teams. This URL is supplied when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
 // returns a *string when successful
 func (m *Channel) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -545,7 +545,7 @@ func (m *Channel) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
+// SetDisplayName sets the displayName property value. Channel name as it appears to the user in Microsoft Teams. The maximum length is 50 characters.
 func (m *Channel) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -566,7 +566,7 @@ func (m *Channel) SetFilesFolder(value DriveItemable)() {
         panic(err)
     }
 }
-// SetIsArchived sets the isArchived property value. The isArchived property
+// SetIsArchived sets the isArchived property value. Indicates whether the channel is archived. Read-only.
 func (m *Channel) SetIsArchived(value *bool)() {
     err := m.GetBackingStore().Set("isArchived", value)
     if err != nil {
@@ -587,7 +587,7 @@ func (m *Channel) SetMembers(value []ConversationMemberable)() {
         panic(err)
     }
 }
-// SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
+// SetMembershipType sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
 func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
     err := m.GetBackingStore().Set("membershipType", value)
     if err != nil {
@@ -615,7 +615,7 @@ func (m *Channel) SetSharedWithTeams(value []SharedWithChannelTeamInfoable)() {
         panic(err)
     }
 }
-// SetSummary sets the summary property value. Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.
+// SetSummary sets the summary property value. Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property is only returned if it appears in the $select clause of the Get channel method.
 func (m *Channel) SetSummary(value ChannelSummaryable)() {
     err := m.GetBackingStore().Set("summary", value)
     if err != nil {
@@ -636,7 +636,7 @@ func (m *Channel) SetTenantId(value *string)() {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
+// SetWebUrl sets the webUrl property value. A hyperlink to the channel in Microsoft Teams. This URL is supplied when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
 func (m *Channel) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

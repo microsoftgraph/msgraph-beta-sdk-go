@@ -1516,6 +1516,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["invitedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInvitedBy(val.(DirectoryObjectable))
+        }
+        return nil
+    }
     res["isLicenseReconciliationNeeded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1683,6 +1693,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetMailNickname(val)
+        }
+        return nil
+    }
+    res["managedAppLogCollectionRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateManagedAppLogCollectionRequestFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ManagedAppLogCollectionRequestable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ManagedAppLogCollectionRequestable)
+                }
+            }
+            m.SetManagedAppLogCollectionRequests(res)
         }
         return nil
     }
@@ -2724,6 +2750,18 @@ func (m *User) GetInterests()([]string) {
     }
     return nil
 }
+// GetInvitedBy gets the invitedBy property value. The invitedBy property
+// returns a DirectoryObjectable when successful
+func (m *User) GetInvitedBy()(DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("invitedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DirectoryObjectable)
+    }
+    return nil
+}
 // GetIsLicenseReconciliationNeeded gets the isLicenseReconciliationNeeded property value. Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
 // returns a *bool when successful
 func (m *User) GetIsLicenseReconciliationNeeded()(*bool) {
@@ -2889,6 +2927,18 @@ func (m *User) GetMailNickname()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetManagedAppLogCollectionRequests gets the managedAppLogCollectionRequests property value. Zero or more log collection requests triggered for the user.
+// returns a []ManagedAppLogCollectionRequestable when successful
+func (m *User) GetManagedAppLogCollectionRequests()([]ManagedAppLogCollectionRequestable) {
+    val, err := m.GetBackingStore().Get("managedAppLogCollectionRequests")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedAppLogCollectionRequestable)
     }
     return nil
 }
@@ -3732,7 +3782,7 @@ func (m *User) GetUserPrincipalName()(*string) {
     }
     return nil
 }
-// GetUserType gets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
+// GetUserType gets the userType property value. A String value that can be used to classify user types in your directory. The possible values are Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
 // returns a *string when successful
 func (m *User) GetUserType()(*string) {
     val, err := m.GetBackingStore().Get("userType")
@@ -4321,6 +4371,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("invitedBy", m.GetInvitedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isLicenseReconciliationNeeded", m.GetIsLicenseReconciliationNeeded())
         if err != nil {
             return err
@@ -4430,6 +4486,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     {
         err = writer.WriteStringValue("mailNickname", m.GetMailNickname())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetManagedAppLogCollectionRequests() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedAppLogCollectionRequests()))
+        for i, v := range m.GetManagedAppLogCollectionRequests() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("managedAppLogCollectionRequests", cast)
         if err != nil {
             return err
         }
@@ -5479,6 +5547,13 @@ func (m *User) SetInterests(value []string)() {
         panic(err)
     }
 }
+// SetInvitedBy sets the invitedBy property value. The invitedBy property
+func (m *User) SetInvitedBy(value DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("invitedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsLicenseReconciliationNeeded sets the isLicenseReconciliationNeeded property value. Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
 func (m *User) SetIsLicenseReconciliationNeeded(value *bool)() {
     err := m.GetBackingStore().Set("isLicenseReconciliationNeeded", value)
@@ -5573,6 +5648,13 @@ func (m *User) SetMailFolders(value []MailFolderable)() {
 // SetMailNickname sets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetMailNickname(value *string)() {
     err := m.GetBackingStore().Set("mailNickname", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetManagedAppLogCollectionRequests sets the managedAppLogCollectionRequests property value. Zero or more log collection requests triggered for the user.
+func (m *User) SetManagedAppLogCollectionRequests(value []ManagedAppLogCollectionRequestable)() {
+    err := m.GetBackingStore().Set("managedAppLogCollectionRequests", value)
     if err != nil {
         panic(err)
     }
@@ -6067,7 +6149,7 @@ func (m *User) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetUserType sets the userType property value. A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
+// SetUserType sets the userType property value. A String value that can be used to classify user types in your directory. The possible values are Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?
 func (m *User) SetUserType(value *string)() {
     err := m.GetBackingStore().Set("userType", value)
     if err != nil {
@@ -6156,6 +6238,7 @@ type Userable interface {
     GetInformationProtection()(InformationProtectionable)
     GetInsights()(ItemInsightsable)
     GetInterests()([]string)
+    GetInvitedBy()(DirectoryObjectable)
     GetIsLicenseReconciliationNeeded()(*bool)
     GetIsManagementRestricted()(*bool)
     GetIsResourceAccount()(*bool)
@@ -6170,6 +6253,7 @@ type Userable interface {
     GetMailboxSettings()(MailboxSettingsable)
     GetMailFolders()([]MailFolderable)
     GetMailNickname()(*string)
+    GetManagedAppLogCollectionRequests()([]ManagedAppLogCollectionRequestable)
     GetManagedAppRegistrations()([]ManagedAppRegistrationable)
     GetManagedDevices()([]ManagedDeviceable)
     GetManager()(DirectoryObjectable)
@@ -6308,6 +6392,7 @@ type Userable interface {
     SetInformationProtection(value InformationProtectionable)()
     SetInsights(value ItemInsightsable)()
     SetInterests(value []string)()
+    SetInvitedBy(value DirectoryObjectable)()
     SetIsLicenseReconciliationNeeded(value *bool)()
     SetIsManagementRestricted(value *bool)()
     SetIsResourceAccount(value *bool)()
@@ -6322,6 +6407,7 @@ type Userable interface {
     SetMailboxSettings(value MailboxSettingsable)()
     SetMailFolders(value []MailFolderable)()
     SetMailNickname(value *string)()
+    SetManagedAppLogCollectionRequests(value []ManagedAppLogCollectionRequestable)()
     SetManagedAppRegistrations(value []ManagedAppRegistrationable)()
     SetManagedDevices(value []ManagedDeviceable)()
     SetManager(value DirectoryObjectable)()

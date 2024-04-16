@@ -41,7 +41,7 @@ func (m *WorkplaceSensorDeviceTelemetry) GetAdditionalData()(map[string]any) {
 func (m *WorkplaceSensorDeviceTelemetry) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBoolValue gets the boolValue property value. The value of the sensor.
+// GetBoolValue gets the boolValue property value. The value of the sensor can be true or false. Use it for sensors that report binary values, such as occupancy or heartbeat.
 // returns a *bool when successful
 func (m *WorkplaceSensorDeviceTelemetry) GetBoolValue()(*bool) {
     val, err := m.GetBackingStore().Get("boolValue")
@@ -53,7 +53,7 @@ func (m *WorkplaceSensorDeviceTelemetry) GetBoolValue()(*bool) {
     }
     return nil
 }
-// GetDeviceId gets the deviceId property value. The unique identifier of the device.
+// GetDeviceId gets the deviceId property value. The user-defined unique identifier of the device provided at the time of creation. Don't use the system generated identifier of the device.
 // returns a *string when successful
 func (m *WorkplaceSensorDeviceTelemetry) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -141,7 +141,7 @@ func (m *WorkplaceSensorDeviceTelemetry) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetIntValue gets the intValue property value. The value of the sensor.
+// GetIntValue gets the intValue property value. The value of the sensor as an integer. Use it for sensors that report numerical values, such as people count.
 // returns a *int32 when successful
 func (m *WorkplaceSensorDeviceTelemetry) GetIntValue()(*int32) {
     val, err := m.GetBackingStore().Get("intValue")
@@ -165,7 +165,7 @@ func (m *WorkplaceSensorDeviceTelemetry) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSensorId gets the sensorId property value. The unique identifier of a sensor within the device. If the sensor Id is not provided, the sensorType will be used as sensorId.
+// GetSensorId gets the sensorId property value. The user-defined unique identifier of the sensor on the device. Optional. If the device has multiple sensors of the same type, the property must be provided to identify each sensor. If the device has unique sensor types, the property can be omitted. The default value is the sensor type.
 // returns a *string when successful
 func (m *WorkplaceSensorDeviceTelemetry) GetSensorId()(*string) {
     val, err := m.GetBackingStore().Get("sensorId")
@@ -189,7 +189,7 @@ func (m *WorkplaceSensorDeviceTelemetry) GetSensorType()(*WorkplaceSensorType) {
     }
     return nil
 }
-// GetTimestamp gets the timestamp property value. The timestamp at which the sensor value was observed.
+// GetTimestamp gets the timestamp property value. The date and time when the sensor measured and reported its value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *WorkplaceSensorDeviceTelemetry) GetTimestamp()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("timestamp")
@@ -265,21 +265,21 @@ func (m *WorkplaceSensorDeviceTelemetry) SetAdditionalData(value map[string]any)
 func (m *WorkplaceSensorDeviceTelemetry) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBoolValue sets the boolValue property value. The value of the sensor.
+// SetBoolValue sets the boolValue property value. The value of the sensor can be true or false. Use it for sensors that report binary values, such as occupancy or heartbeat.
 func (m *WorkplaceSensorDeviceTelemetry) SetBoolValue(value *bool)() {
     err := m.GetBackingStore().Set("boolValue", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceId sets the deviceId property value. The unique identifier of the device.
+// SetDeviceId sets the deviceId property value. The user-defined unique identifier of the device provided at the time of creation. Don't use the system generated identifier of the device.
 func (m *WorkplaceSensorDeviceTelemetry) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIntValue sets the intValue property value. The value of the sensor.
+// SetIntValue sets the intValue property value. The value of the sensor as an integer. Use it for sensors that report numerical values, such as people count.
 func (m *WorkplaceSensorDeviceTelemetry) SetIntValue(value *int32)() {
     err := m.GetBackingStore().Set("intValue", value)
     if err != nil {
@@ -293,7 +293,7 @@ func (m *WorkplaceSensorDeviceTelemetry) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSensorId sets the sensorId property value. The unique identifier of a sensor within the device. If the sensor Id is not provided, the sensorType will be used as sensorId.
+// SetSensorId sets the sensorId property value. The user-defined unique identifier of the sensor on the device. Optional. If the device has multiple sensors of the same type, the property must be provided to identify each sensor. If the device has unique sensor types, the property can be omitted. The default value is the sensor type.
 func (m *WorkplaceSensorDeviceTelemetry) SetSensorId(value *string)() {
     err := m.GetBackingStore().Set("sensorId", value)
     if err != nil {
@@ -307,7 +307,7 @@ func (m *WorkplaceSensorDeviceTelemetry) SetSensorType(value *WorkplaceSensorTyp
         panic(err)
     }
 }
-// SetTimestamp sets the timestamp property value. The timestamp at which the sensor value was observed.
+// SetTimestamp sets the timestamp property value. The date and time when the sensor measured and reported its value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *WorkplaceSensorDeviceTelemetry) SetTimestamp(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("timestamp", value)
     if err != nil {

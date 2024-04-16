@@ -8,19 +8,19 @@ import (
 type DeviceManagementConfigurationPlatforms int
 
 const (
-    // Default. No platform type specified.
+    // Indicates the settings contained in this configuration don't have a platform set.
     NONE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 1
-    // Settings for Android platform.
+    // Indicates that the settings contained in associated configuration applies to the Android operating system. 
     ANDROID_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 2
-    // Settings for iOS platform.
+    // Indicates that the settings contained in associated configuration applies to the iOS operating system.
     IOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 4
-    // Settings for MacOS platform.
+    // Indicates that the settings contained in associated configuration applies to the MacOS operating system.
     MACOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 8
-    // Windows 10 X.
+    // Indicates that the settings contained in associated configuration applies to the Windows 10X operating system.
     WINDOWS10X_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 16
-    // Settings for Windows 10 platform.
+    // Indicates that the settings contained in associated configuration applies to the Windows 10 operating system.
     WINDOWS10_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 32
-    // Settings for Linux platform.
+    // Indicates that the settings contained in associated configuration applies to the Linux operating system.
     LINUX_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 64
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 128

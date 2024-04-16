@@ -119,6 +119,16 @@ func (m *UserSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["storage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserStorageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStorage(val.(UserStorageable))
+        }
+        return nil
+    }
     res["windows"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsSettingFromDiscriminatorValue)
         if err != nil {
@@ -173,6 +183,18 @@ func (m *UserSettings) GetShiftPreferences()(ShiftPreferencesable) {
     }
     return nil
 }
+// GetStorage gets the storage property value. The storage property
+// returns a UserStorageable when successful
+func (m *UserSettings) GetStorage()(UserStorageable) {
+    val, err := m.GetBackingStore().Get("storage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserStorageable)
+    }
+    return nil
+}
 // GetWindows gets the windows property value. The Windows settings of the user stored in the cloud.
 // returns a []WindowsSettingable when successful
 func (m *UserSettings) GetWindows()([]WindowsSettingable) {
@@ -223,6 +245,12 @@ func (m *UserSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     {
         err = writer.WriteObjectValue("shiftPreferences", m.GetShiftPreferences())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("storage", m.GetStorage())
         if err != nil {
             return err
         }
@@ -283,6 +311,13 @@ func (m *UserSettings) SetShiftPreferences(value ShiftPreferencesable)() {
         panic(err)
     }
 }
+// SetStorage sets the storage property value. The storage property
+func (m *UserSettings) SetStorage(value UserStorageable)() {
+    err := m.GetBackingStore().Set("storage", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindows sets the windows property value. The Windows settings of the user stored in the cloud.
 func (m *UserSettings) SetWindows(value []WindowsSettingable)() {
     err := m.GetBackingStore().Set("windows", value)
@@ -299,6 +334,7 @@ type UserSettingsable interface {
     GetItemInsights()(UserInsightsSettingsable)
     GetRegionalAndLanguageSettings()(RegionalAndLanguageSettingsable)
     GetShiftPreferences()(ShiftPreferencesable)
+    GetStorage()(UserStorageable)
     GetWindows()([]WindowsSettingable)
     SetContactMergeSuggestions(value ContactMergeSuggestionsable)()
     SetContributionToContentDiscoveryAsOrganizationDisabled(value *bool)()
@@ -306,5 +342,6 @@ type UserSettingsable interface {
     SetItemInsights(value UserInsightsSettingsable)()
     SetRegionalAndLanguageSettings(value RegionalAndLanguageSettingsable)()
     SetShiftPreferences(value ShiftPreferencesable)()
+    SetStorage(value UserStorageable)()
     SetWindows(value []WindowsSettingable)()
 }

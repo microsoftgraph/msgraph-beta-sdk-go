@@ -562,6 +562,18 @@ func (m *DeviceManagement) GetDeviceConfigurationDeviceStateSummaries()(DeviceCo
     }
     return nil
 }
+// GetDeviceConfigurationProfiles gets the deviceConfigurationProfiles property value. Profile Id of the object.
+// returns a []DeviceConfigurationProfileable when successful
+func (m *DeviceManagement) GetDeviceConfigurationProfiles()([]DeviceConfigurationProfileable) {
+    val, err := m.GetBackingStore().Get("deviceConfigurationProfiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceConfigurationProfileable)
+    }
+    return nil
+}
 // GetDeviceConfigurationRestrictedAppsViolations gets the deviceConfigurationRestrictedAppsViolations property value. Restricted apps violations for this account.
 // returns a []RestrictedAppsViolationable when successful
 func (m *DeviceManagement) GetDeviceConfigurationRestrictedAppsViolations()([]RestrictedAppsViolationable) {
@@ -1424,6 +1436,22 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["deviceConfigurationProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceConfigurationProfileable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DeviceConfigurationProfileable)
+                }
+            }
+            m.SetDeviceConfigurationProfiles(res)
+        }
+        return nil
+    }
     res["deviceConfigurationRestrictedAppsViolations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRestrictedAppsViolationFromDiscriminatorValue)
         if err != nil {
@@ -1787,6 +1815,38 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 }
             }
             m.SetGroupPolicyUploadedDefinitionFiles(res)
+        }
+        return nil
+    }
+    res["hardwareConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHardwareConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HardwareConfigurationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HardwareConfigurationable)
+                }
+            }
+            m.SetHardwareConfigurations(res)
+        }
+        return nil
+    }
+    res["hardwarePasswordInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHardwarePasswordInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HardwarePasswordInfoable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HardwarePasswordInfoable)
+                }
+            }
+            m.SetHardwarePasswordInfo(res)
         }
         return nil
     }
@@ -3535,6 +3595,30 @@ func (m *DeviceManagement) GetGroupPolicyUploadedDefinitionFiles()([]GroupPolicy
     }
     if val != nil {
         return val.([]GroupPolicyUploadedDefinitionFileable)
+    }
+    return nil
+}
+// GetHardwareConfigurations gets the hardwareConfigurations property value. The hardware configurations for this account.
+// returns a []HardwareConfigurationable when successful
+func (m *DeviceManagement) GetHardwareConfigurations()([]HardwareConfigurationable) {
+    val, err := m.GetBackingStore().Get("hardwareConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HardwareConfigurationable)
+    }
+    return nil
+}
+// GetHardwarePasswordInfo gets the hardwarePasswordInfo property value. The hardware password info for this account.
+// returns a []HardwarePasswordInfoable when successful
+func (m *DeviceManagement) GetHardwarePasswordInfo()([]HardwarePasswordInfoable) {
+    val, err := m.GetBackingStore().Get("hardwarePasswordInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HardwarePasswordInfoable)
     }
     return nil
 }
@@ -5380,6 +5464,18 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetDeviceConfigurationProfiles() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceConfigurationProfiles()))
+        for i, v := range m.GetDeviceConfigurationProfiles() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("deviceConfigurationProfiles", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDeviceConfigurationRestrictedAppsViolations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceConfigurationRestrictedAppsViolations()))
         for i, v := range m.GetDeviceConfigurationRestrictedAppsViolations() {
@@ -5646,6 +5742,30 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             }
         }
         err = writer.WriteCollectionOfObjectValues("groupPolicyUploadedDefinitionFiles", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetHardwareConfigurations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHardwareConfigurations()))
+        for i, v := range m.GetHardwareConfigurations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("hardwareConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetHardwarePasswordInfo() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHardwarePasswordInfo()))
+        for i, v := range m.GetHardwarePasswordInfo() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("hardwarePasswordInfo", cast)
         if err != nil {
             return err
         }
@@ -7157,6 +7277,13 @@ func (m *DeviceManagement) SetDeviceConfigurationDeviceStateSummaries(value Devi
         panic(err)
     }
 }
+// SetDeviceConfigurationProfiles sets the deviceConfigurationProfiles property value. Profile Id of the object.
+func (m *DeviceManagement) SetDeviceConfigurationProfiles(value []DeviceConfigurationProfileable)() {
+    err := m.GetBackingStore().Set("deviceConfigurationProfiles", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceConfigurationRestrictedAppsViolations sets the deviceConfigurationRestrictedAppsViolations property value. Restricted apps violations for this account.
 func (m *DeviceManagement) SetDeviceConfigurationRestrictedAppsViolations(value []RestrictedAppsViolationable)() {
     err := m.GetBackingStore().Set("deviceConfigurationRestrictedAppsViolations", value)
@@ -7321,6 +7448,20 @@ func (m *DeviceManagement) SetGroupPolicyObjectFiles(value []GroupPolicyObjectFi
 // SetGroupPolicyUploadedDefinitionFiles sets the groupPolicyUploadedDefinitionFiles property value. The available group policy uploaded definition files for this account.
 func (m *DeviceManagement) SetGroupPolicyUploadedDefinitionFiles(value []GroupPolicyUploadedDefinitionFileable)() {
     err := m.GetBackingStore().Set("groupPolicyUploadedDefinitionFiles", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHardwareConfigurations sets the hardwareConfigurations property value. The hardware configurations for this account.
+func (m *DeviceManagement) SetHardwareConfigurations(value []HardwareConfigurationable)() {
+    err := m.GetBackingStore().Set("hardwareConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHardwarePasswordInfo sets the hardwarePasswordInfo property value. The hardware password info for this account.
+func (m *DeviceManagement) SetHardwarePasswordInfo(value []HardwarePasswordInfoable)() {
+    err := m.GetBackingStore().Set("hardwarePasswordInfo", value)
     if err != nil {
         panic(err)
     }
@@ -8171,6 +8312,7 @@ type DeviceManagementable interface {
     GetDeviceComplianceScripts()([]DeviceComplianceScriptable)
     GetDeviceConfigurationConflictSummary()([]DeviceConfigurationConflictSummaryable)
     GetDeviceConfigurationDeviceStateSummaries()(DeviceConfigurationDeviceStateSummaryable)
+    GetDeviceConfigurationProfiles()([]DeviceConfigurationProfileable)
     GetDeviceConfigurationRestrictedAppsViolations()([]RestrictedAppsViolationable)
     GetDeviceConfigurations()([]DeviceConfigurationable)
     GetDeviceConfigurationsAllManagedDeviceCertificateStates()([]ManagedAllDeviceCertificateStateable)
@@ -8195,6 +8337,8 @@ type DeviceManagementable interface {
     GetGroupPolicyMigrationReports()([]GroupPolicyMigrationReportable)
     GetGroupPolicyObjectFiles()([]GroupPolicyObjectFileable)
     GetGroupPolicyUploadedDefinitionFiles()([]GroupPolicyUploadedDefinitionFileable)
+    GetHardwareConfigurations()([]HardwareConfigurationable)
+    GetHardwarePasswordInfo()([]HardwarePasswordInfoable)
     GetImportedDeviceIdentities()([]ImportedDeviceIdentityable)
     GetImportedWindowsAutopilotDeviceIdentities()([]ImportedWindowsAutopilotDeviceIdentityable)
     GetIntents()([]DeviceManagementIntentable)
@@ -8354,6 +8498,7 @@ type DeviceManagementable interface {
     SetDeviceComplianceScripts(value []DeviceComplianceScriptable)()
     SetDeviceConfigurationConflictSummary(value []DeviceConfigurationConflictSummaryable)()
     SetDeviceConfigurationDeviceStateSummaries(value DeviceConfigurationDeviceStateSummaryable)()
+    SetDeviceConfigurationProfiles(value []DeviceConfigurationProfileable)()
     SetDeviceConfigurationRestrictedAppsViolations(value []RestrictedAppsViolationable)()
     SetDeviceConfigurations(value []DeviceConfigurationable)()
     SetDeviceConfigurationsAllManagedDeviceCertificateStates(value []ManagedAllDeviceCertificateStateable)()
@@ -8378,6 +8523,8 @@ type DeviceManagementable interface {
     SetGroupPolicyMigrationReports(value []GroupPolicyMigrationReportable)()
     SetGroupPolicyObjectFiles(value []GroupPolicyObjectFileable)()
     SetGroupPolicyUploadedDefinitionFiles(value []GroupPolicyUploadedDefinitionFileable)()
+    SetHardwareConfigurations(value []HardwareConfigurationable)()
+    SetHardwarePasswordInfo(value []HardwarePasswordInfoable)()
     SetImportedDeviceIdentities(value []ImportedDeviceIdentityable)()
     SetImportedWindowsAutopilotDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentityable)()
     SetIntents(value []DeviceManagementIntentable)()

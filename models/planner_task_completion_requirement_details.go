@@ -35,7 +35,7 @@ func (m *PlannerTaskCompletionRequirementDetails) GetAdditionalData()(map[string
     }
     return val.(map[string]any)
 }
-// GetApprovalRequirement gets the approvalRequirement property value. The approvalRequirement property
+// GetApprovalRequirement gets the approvalRequirement property value. Information about the requirements of an approval.
 // returns a PlannerApprovalRequirementable when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetApprovalRequirement()(PlannerApprovalRequirementable) {
     val, err := m.GetBackingStore().Get("approvalRequirement")
@@ -110,7 +110,7 @@ func (m *PlannerTaskCompletionRequirementDetails) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetFormsRequirement gets the formsRequirement property value. The formsRequirement property
+// GetFormsRequirement gets the formsRequirement property value. Information about the requirements for completing the forms.
 // returns a PlannerFormsRequirementable when successful
 func (m *PlannerTaskCompletionRequirementDetails) GetFormsRequirement()(PlannerFormsRequirementable) {
     val, err := m.GetBackingStore().Get("formsRequirement")
@@ -175,7 +175,7 @@ func (m *PlannerTaskCompletionRequirementDetails) SetAdditionalData(value map[st
         panic(err)
     }
 }
-// SetApprovalRequirement sets the approvalRequirement property value. The approvalRequirement property
+// SetApprovalRequirement sets the approvalRequirement property value. Information about the requirements of an approval.
 func (m *PlannerTaskCompletionRequirementDetails) SetApprovalRequirement(value PlannerApprovalRequirementable)() {
     err := m.GetBackingStore().Set("approvalRequirement", value)
     if err != nil {
@@ -193,7 +193,7 @@ func (m *PlannerTaskCompletionRequirementDetails) SetChecklistRequirement(value 
         panic(err)
     }
 }
-// SetFormsRequirement sets the formsRequirement property value. The formsRequirement property
+// SetFormsRequirement sets the formsRequirement property value. Information about the requirements for completing the forms.
 func (m *PlannerTaskCompletionRequirementDetails) SetFormsRequirement(value PlannerFormsRequirementable)() {
     err := m.GetBackingStore().Set("formsRequirement", value)
     if err != nil {

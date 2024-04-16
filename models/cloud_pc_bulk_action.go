@@ -56,7 +56,7 @@ func CreateCloudPcBulkActionFromDiscriminatorValue(parseNode i878a80d2330e89d268
     }
     return NewCloudPcBulkAction(), nil
 }
-// GetActionSummary gets the actionSummary property value. The actionSummary property
+// GetActionSummary gets the actionSummary property value. Run summary of this bulk action.
 // returns a CloudPcBulkActionSummaryable when successful
 func (m *CloudPcBulkAction) GetActionSummary()(CloudPcBulkActionSummaryable) {
     val, err := m.GetBackingStore().Get("actionSummary")
@@ -80,7 +80,7 @@ func (m *CloudPcBulkAction) GetCloudPcIds()([]string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CloudPcBulkAction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -92,7 +92,7 @@ func (m *CloudPcBulkAction) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Name of the bulk action.
 // returns a *string when successful
 func (m *CloudPcBulkAction) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -166,7 +166,7 @@ func (m *CloudPcBulkAction) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetScheduledDuringMaintenanceWindow gets the scheduledDuringMaintenanceWindow property value. The scheduledDuringMaintenanceWindow property
+// GetScheduledDuringMaintenanceWindow gets the scheduledDuringMaintenanceWindow property value. Indicates whether the bulk actions can be initiated during maintenance window. When true, bulk action will use maintenance window to schedule action, When false means bulk action will not use the maintenance window. Default value is false.
 // returns a *bool when successful
 func (m *CloudPcBulkAction) GetScheduledDuringMaintenanceWindow()(*bool) {
     val, err := m.GetBackingStore().Get("scheduledDuringMaintenanceWindow")
@@ -216,7 +216,7 @@ func (m *CloudPcBulkAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetActionSummary sets the actionSummary property value. The actionSummary property
+// SetActionSummary sets the actionSummary property value. Run summary of this bulk action.
 func (m *CloudPcBulkAction) SetActionSummary(value CloudPcBulkActionSummaryable)() {
     err := m.GetBackingStore().Set("actionSummary", value)
     if err != nil {
@@ -230,21 +230,21 @@ func (m *CloudPcBulkAction) SetCloudPcIds(value []string)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcBulkAction) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Name of the bulk action.
 func (m *CloudPcBulkAction) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScheduledDuringMaintenanceWindow sets the scheduledDuringMaintenanceWindow property value. The scheduledDuringMaintenanceWindow property
+// SetScheduledDuringMaintenanceWindow sets the scheduledDuringMaintenanceWindow property value. Indicates whether the bulk actions can be initiated during maintenance window. When true, bulk action will use maintenance window to schedule action, When false means bulk action will not use the maintenance window. Default value is false.
 func (m *CloudPcBulkAction) SetScheduledDuringMaintenanceWindow(value *bool)() {
     err := m.GetBackingStore().Set("scheduledDuringMaintenanceWindow", value)
     if err != nil {

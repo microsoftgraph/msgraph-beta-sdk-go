@@ -282,7 +282,7 @@ func (m *AccessPackageResource) GetIsPendingOnboarding()(*bool) {
     }
     return nil
 }
-// GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group.
+// GetOriginId gets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).
 // returns a *string when successful
 func (m *AccessPackageResource) GetOriginId()(*string) {
     val, err := m.GetBackingStore().Get("originId")
@@ -294,7 +294,7 @@ func (m *AccessPackageResource) GetOriginId()(*string) {
     }
     return nil
 }
-// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).
 // returns a *string when successful
 func (m *AccessPackageResource) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
@@ -497,14 +497,14 @@ func (m *AccessPackageResource) SetIsPendingOnboarding(value *bool)() {
         panic(err)
     }
 }
-// SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group.
+// SetOriginId sets the originId property value. The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).
 func (m *AccessPackageResource) SetOriginId(value *string)() {
     err := m.GetBackingStore().Set("originId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.
+// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).
 func (m *AccessPackageResource) SetOriginSystem(value *string)() {
     err := m.GetBackingStore().Set("originSystem", value)
     if err != nil {

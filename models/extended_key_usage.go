@@ -5,7 +5,7 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ExtendedKeyUsage the Custom Extended Key Usage definition
+// ExtendedKeyUsage complex type that represents the extended key usage of a certificate. This is shared complex type.
 type ExtendedKeyUsage struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore

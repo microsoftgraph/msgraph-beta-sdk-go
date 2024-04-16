@@ -66,7 +66,7 @@ func (m *PlannerApprovalRequirement) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIsApprovalRequired gets the isApprovalRequired property value. The isApprovalRequired property
+// GetIsApprovalRequired gets the isApprovalRequired property value. Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.
 // returns a *bool when successful
 func (m *PlannerApprovalRequirement) GetIsApprovalRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isApprovalRequired")
@@ -123,7 +123,7 @@ func (m *PlannerApprovalRequirement) SetAdditionalData(value map[string]any)() {
 func (m *PlannerApprovalRequirement) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsApprovalRequired sets the isApprovalRequired property value. The isApprovalRequired property
+// SetIsApprovalRequired sets the isApprovalRequired property value. Specifies whether approval is required to complete the plannerTask. When this property is set to true, the task can only be marked complete if an approval is created for the task and approved.
 func (m *PlannerApprovalRequirement) SetIsApprovalRequired(value *bool)() {
     err := m.GetBackingStore().Set("isApprovalRequired", value)
     if err != nil {

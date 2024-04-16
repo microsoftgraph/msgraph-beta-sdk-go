@@ -1,0 +1,211 @@
+package industrydata
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
+)
+
+type EnrollmentMappings struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewEnrollmentMappings instantiates a new EnrollmentMappings and sets the default values.
+func NewEnrollmentMappings()(*EnrollmentMappings) {
+    m := &EnrollmentMappings{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
+    return m
+}
+// CreateEnrollmentMappingsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateEnrollmentMappingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewEnrollmentMappings(), nil
+}
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
+func (m *EnrollmentMappings) GetAdditionalData()(map[string]any) {
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *EnrollmentMappings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *EnrollmentMappings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["memberEnrollmentMappings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSectionRoleReferenceValueFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SectionRoleReferenceValueable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SectionRoleReferenceValueable)
+                }
+            }
+            m.SetMemberEnrollmentMappings(res)
+        }
+        return nil
+    }
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["ownerEnrollmentMappings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSectionRoleReferenceValueFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SectionRoleReferenceValueable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SectionRoleReferenceValueable)
+                }
+            }
+            m.SetOwnerEnrollmentMappings(res)
+        }
+        return nil
+    }
+    return res
+}
+// GetMemberEnrollmentMappings gets the memberEnrollmentMappings property value. The enrollmentMappings member for the class group.
+// returns a []SectionRoleReferenceValueable when successful
+func (m *EnrollmentMappings) GetMemberEnrollmentMappings()([]SectionRoleReferenceValueable) {
+    val, err := m.GetBackingStore().Get("memberEnrollmentMappings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SectionRoleReferenceValueable)
+    }
+    return nil
+}
+// GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
+func (m *EnrollmentMappings) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOwnerEnrollmentMappings gets the ownerEnrollmentMappings property value. The enrollmentMappings owner for the class group.
+// returns a []SectionRoleReferenceValueable when successful
+func (m *EnrollmentMappings) GetOwnerEnrollmentMappings()([]SectionRoleReferenceValueable) {
+    val, err := m.GetBackingStore().Get("ownerEnrollmentMappings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SectionRoleReferenceValueable)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *EnrollmentMappings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetMemberEnrollmentMappings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMemberEnrollmentMappings()))
+        for i, v := range m.GetMemberEnrollmentMappings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("memberEnrollmentMappings", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetOwnerEnrollmentMappings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOwnerEnrollmentMappings()))
+        for i, v := range m.GetOwnerEnrollmentMappings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("ownerEnrollmentMappings", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *EnrollmentMappings) SetAdditionalData(value map[string]any)() {
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *EnrollmentMappings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetMemberEnrollmentMappings sets the memberEnrollmentMappings property value. The enrollmentMappings member for the class group.
+func (m *EnrollmentMappings) SetMemberEnrollmentMappings(value []SectionRoleReferenceValueable)() {
+    err := m.GetBackingStore().Set("memberEnrollmentMappings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *EnrollmentMappings) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOwnerEnrollmentMappings sets the ownerEnrollmentMappings property value. The enrollmentMappings owner for the class group.
+func (m *EnrollmentMappings) SetOwnerEnrollmentMappings(value []SectionRoleReferenceValueable)() {
+    err := m.GetBackingStore().Set("ownerEnrollmentMappings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type EnrollmentMappingsable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetMemberEnrollmentMappings()([]SectionRoleReferenceValueable)
+    GetOdataType()(*string)
+    GetOwnerEnrollmentMappings()([]SectionRoleReferenceValueable)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetMemberEnrollmentMappings(value []SectionRoleReferenceValueable)()
+    SetOdataType(value *string)()
+    SetOwnerEnrollmentMappings(value []SectionRoleReferenceValueable)()
+}

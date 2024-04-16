@@ -98,7 +98,7 @@ func (m *TrainingCampaignReportOverview) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTrainingModuleCompletion gets the trainingModuleCompletion property value. The trainingModuleCompletion property
+// GetTrainingModuleCompletion gets the trainingModuleCompletion property value. Aggregate data of training completion.
 // returns a TrainingEventsContentable when successful
 func (m *TrainingCampaignReportOverview) GetTrainingModuleCompletion()(TrainingEventsContentable) {
     val, err := m.GetBackingStore().Get("trainingModuleCompletion")
@@ -110,7 +110,7 @@ func (m *TrainingCampaignReportOverview) GetTrainingModuleCompletion()(TrainingE
     }
     return nil
 }
-// GetTrainingNotificationDeliveryStatus gets the trainingNotificationDeliveryStatus property value. The trainingNotificationDeliveryStatus property
+// GetTrainingNotificationDeliveryStatus gets the trainingNotificationDeliveryStatus property value. Aggregate data of training mail delivery over the course of the training campaign.
 // returns a TrainingNotificationDeliveryable when successful
 func (m *TrainingCampaignReportOverview) GetTrainingNotificationDeliveryStatus()(TrainingNotificationDeliveryable) {
     val, err := m.GetBackingStore().Get("trainingNotificationDeliveryStatus")
@@ -122,7 +122,7 @@ func (m *TrainingCampaignReportOverview) GetTrainingNotificationDeliveryStatus()
     }
     return nil
 }
-// GetUserCompletionStatus gets the userCompletionStatus property value. The userCompletionStatus property
+// GetUserCompletionStatus gets the userCompletionStatus property value. Aggregate data of users training progress.
 // returns a UserTrainingCompletionSummaryable when successful
 func (m *TrainingCampaignReportOverview) GetUserCompletionStatus()(UserTrainingCompletionSummaryable) {
     val, err := m.GetBackingStore().Get("userCompletionStatus")
@@ -186,21 +186,21 @@ func (m *TrainingCampaignReportOverview) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTrainingModuleCompletion sets the trainingModuleCompletion property value. The trainingModuleCompletion property
+// SetTrainingModuleCompletion sets the trainingModuleCompletion property value. Aggregate data of training completion.
 func (m *TrainingCampaignReportOverview) SetTrainingModuleCompletion(value TrainingEventsContentable)() {
     err := m.GetBackingStore().Set("trainingModuleCompletion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTrainingNotificationDeliveryStatus sets the trainingNotificationDeliveryStatus property value. The trainingNotificationDeliveryStatus property
+// SetTrainingNotificationDeliveryStatus sets the trainingNotificationDeliveryStatus property value. Aggregate data of training mail delivery over the course of the training campaign.
 func (m *TrainingCampaignReportOverview) SetTrainingNotificationDeliveryStatus(value TrainingNotificationDeliveryable)() {
     err := m.GetBackingStore().Set("trainingNotificationDeliveryStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserCompletionStatus sets the userCompletionStatus property value. The userCompletionStatus property
+// SetUserCompletionStatus sets the userCompletionStatus property value. Aggregate data of users training progress.
 func (m *TrainingCampaignReportOverview) SetUserCompletionStatus(value UserTrainingCompletionSummaryable)() {
     err := m.GetBackingStore().Set("userCompletionStatus", value)
     if err != nil {

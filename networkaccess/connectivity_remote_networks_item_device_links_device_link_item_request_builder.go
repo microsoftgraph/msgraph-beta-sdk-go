@@ -18,7 +18,7 @@ type ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters get deviceLinks from networkAccess
+// ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters retrieves a specific device link associated with a remote network.
 type ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property deviceLinks for networkAccess
+// Delete removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-delete?view=graph-rest-1.0
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) 
     }
     return nil
 }
-// Get get deviceLinks from networkAccess
+// Get retrieves a specific device link associated with a remote network.
 // returns a DeviceLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-get?view=graph-rest-1.0
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,10 +116,10 @@ func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) 
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// ToDeleteRequestInformation delete navigation property deviceLinks for networkAccess
+// ToDeleteRequestInformation removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/deviceLinks/{deviceLink%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +127,7 @@ func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get deviceLinks from networkAccess
+// ToGetRequestInformation retrieves a specific device link associated with a remote network.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +144,7 @@ func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) 
 // ToPatchRequestInformation update the navigation property deviceLinks in networkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/deviceLinks/{deviceLink%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

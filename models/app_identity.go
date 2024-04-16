@@ -35,7 +35,7 @@ func (m *AppIdentity) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppId gets the appId property value. Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
+// GetAppId gets the appId property value. Refers to the unique identifier representing application ID in the Microsoft Entra ID.
 // returns a *string when successful
 func (m *AppIdentity) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
@@ -132,7 +132,7 @@ func (m *AppIdentity) GetOdataType()(*string) {
     }
     return nil
 }
-// GetServicePrincipalId gets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
+// GetServicePrincipalId gets the servicePrincipalId property value. Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
 // returns a *string when successful
 func (m *AppIdentity) GetServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalId")
@@ -203,7 +203,7 @@ func (m *AppIdentity) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppId sets the appId property value. Refers to the unique identifier representing Application Id in the Microsoft Entra ID.
+// SetAppId sets the appId property value. Refers to the unique identifier representing application ID in the Microsoft Entra ID.
 func (m *AppIdentity) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
@@ -228,7 +228,7 @@ func (m *AppIdentity) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetServicePrincipalId sets the servicePrincipalId property value. Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.
+// SetServicePrincipalId sets the servicePrincipalId property value. Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.
 func (m *AppIdentity) SetServicePrincipalId(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalId", value)
     if err != nil {

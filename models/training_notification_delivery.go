@@ -40,7 +40,7 @@ func (m *TrainingNotificationDelivery) GetAdditionalData()(map[string]any) {
 func (m *TrainingNotificationDelivery) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetFailedMessageDeliveryCount gets the failedMessageDeliveryCount property value. The failedMessageDeliveryCount property
+// GetFailedMessageDeliveryCount gets the failedMessageDeliveryCount property value. The number of users to whom mails couldn't be delivered.
 // returns a *int32 when successful
 func (m *TrainingNotificationDelivery) GetFailedMessageDeliveryCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedMessageDeliveryCount")
@@ -110,7 +110,7 @@ func (m *TrainingNotificationDelivery) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResolvedTargetsCount gets the resolvedTargetsCount property value. The resolvedTargetsCount property
+// GetResolvedTargetsCount gets the resolvedTargetsCount property value. The number of users whose email address was successfully resolved from target users.
 // returns a *int32 when successful
 func (m *TrainingNotificationDelivery) GetResolvedTargetsCount()(*int32) {
     val, err := m.GetBackingStore().Get("resolvedTargetsCount")
@@ -122,7 +122,7 @@ func (m *TrainingNotificationDelivery) GetResolvedTargetsCount()(*int32) {
     }
     return nil
 }
-// GetSuccessfulMessageDeliveryCount gets the successfulMessageDeliveryCount property value. The successfulMessageDeliveryCount property
+// GetSuccessfulMessageDeliveryCount gets the successfulMessageDeliveryCount property value. The number of users who received a mail while the training campaign was in the 'in progress' state.
 // returns a *int32 when successful
 func (m *TrainingNotificationDelivery) GetSuccessfulMessageDeliveryCount()(*int32) {
     val, err := m.GetBackingStore().Get("successfulMessageDeliveryCount")
@@ -179,7 +179,7 @@ func (m *TrainingNotificationDelivery) SetAdditionalData(value map[string]any)()
 func (m *TrainingNotificationDelivery) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFailedMessageDeliveryCount sets the failedMessageDeliveryCount property value. The failedMessageDeliveryCount property
+// SetFailedMessageDeliveryCount sets the failedMessageDeliveryCount property value. The number of users to whom mails couldn't be delivered.
 func (m *TrainingNotificationDelivery) SetFailedMessageDeliveryCount(value *int32)() {
     err := m.GetBackingStore().Set("failedMessageDeliveryCount", value)
     if err != nil {
@@ -193,14 +193,14 @@ func (m *TrainingNotificationDelivery) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResolvedTargetsCount sets the resolvedTargetsCount property value. The resolvedTargetsCount property
+// SetResolvedTargetsCount sets the resolvedTargetsCount property value. The number of users whose email address was successfully resolved from target users.
 func (m *TrainingNotificationDelivery) SetResolvedTargetsCount(value *int32)() {
     err := m.GetBackingStore().Set("resolvedTargetsCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSuccessfulMessageDeliveryCount sets the successfulMessageDeliveryCount property value. The successfulMessageDeliveryCount property
+// SetSuccessfulMessageDeliveryCount sets the successfulMessageDeliveryCount property value. The number of users who received a mail while the training campaign was in the 'in progress' state.
 func (m *TrainingNotificationDelivery) SetSuccessfulMessageDeliveryCount(value *int32)() {
     err := m.GetBackingStore().Set("successfulMessageDeliveryCount", value)
     if err != nil {

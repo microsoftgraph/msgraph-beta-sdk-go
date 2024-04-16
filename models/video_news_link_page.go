@@ -1,0 +1,187 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+type VideoNewsLinkPage struct {
+    BaseSitePage
+}
+// NewVideoNewsLinkPage instantiates a new VideoNewsLinkPage and sets the default values.
+func NewVideoNewsLinkPage()(*VideoNewsLinkPage) {
+    m := &VideoNewsLinkPage{
+        BaseSitePage: *NewBaseSitePage(),
+    }
+    return m
+}
+// CreateVideoNewsLinkPageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateVideoNewsLinkPageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewVideoNewsLinkPage(), nil
+}
+// GetBannerImageWebUrl gets the bannerImageWebUrl property value. The bannerImageWebUrl property
+// returns a *string when successful
+func (m *VideoNewsLinkPage) GetBannerImageWebUrl()(*string) {
+    val, err := m.GetBackingStore().Get("bannerImageWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *VideoNewsLinkPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.BaseSitePage.GetFieldDeserializers()
+    res["bannerImageWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBannerImageWebUrl(val)
+        }
+        return nil
+    }
+    res["newsSharepointIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNewsSharepointIds(val.(SharepointIdsable))
+        }
+        return nil
+    }
+    res["newsWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNewsWebUrl(val)
+        }
+        return nil
+    }
+    res["videoDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetISODurationValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVideoDuration(val)
+        }
+        return nil
+    }
+    return res
+}
+// GetNewsSharepointIds gets the newsSharepointIds property value. The newsSharepointIds property
+// returns a SharepointIdsable when successful
+func (m *VideoNewsLinkPage) GetNewsSharepointIds()(SharepointIdsable) {
+    val, err := m.GetBackingStore().Get("newsSharepointIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SharepointIdsable)
+    }
+    return nil
+}
+// GetNewsWebUrl gets the newsWebUrl property value. The newsWebUrl property
+// returns a *string when successful
+func (m *VideoNewsLinkPage) GetNewsWebUrl()(*string) {
+    val, err := m.GetBackingStore().Get("newsWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetVideoDuration gets the videoDuration property value. The videoDuration property
+// returns a *ISODuration when successful
+func (m *VideoNewsLinkPage) GetVideoDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
+    val, err := m.GetBackingStore().Get("videoDuration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *VideoNewsLinkPage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.BaseSitePage.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteStringValue("bannerImageWebUrl", m.GetBannerImageWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("newsSharepointIds", m.GetNewsSharepointIds())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("newsWebUrl", m.GetNewsWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteISODurationValue("videoDuration", m.GetVideoDuration())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBannerImageWebUrl sets the bannerImageWebUrl property value. The bannerImageWebUrl property
+func (m *VideoNewsLinkPage) SetBannerImageWebUrl(value *string)() {
+    err := m.GetBackingStore().Set("bannerImageWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetNewsSharepointIds sets the newsSharepointIds property value. The newsSharepointIds property
+func (m *VideoNewsLinkPage) SetNewsSharepointIds(value SharepointIdsable)() {
+    err := m.GetBackingStore().Set("newsSharepointIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetNewsWebUrl sets the newsWebUrl property value. The newsWebUrl property
+func (m *VideoNewsLinkPage) SetNewsWebUrl(value *string)() {
+    err := m.GetBackingStore().Set("newsWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetVideoDuration sets the videoDuration property value. The videoDuration property
+func (m *VideoNewsLinkPage) SetVideoDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
+    err := m.GetBackingStore().Set("videoDuration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type VideoNewsLinkPageable interface {
+    BaseSitePageable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBannerImageWebUrl()(*string)
+    GetNewsSharepointIds()(SharepointIdsable)
+    GetNewsWebUrl()(*string)
+    GetVideoDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
+    SetBannerImageWebUrl(value *string)()
+    SetNewsSharepointIds(value SharepointIdsable)()
+    SetNewsWebUrl(value *string)()
+    SetVideoDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
+}

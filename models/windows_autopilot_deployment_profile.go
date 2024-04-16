@@ -277,6 +277,16 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["hardwareHashExtractionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHardwareHashExtractionEnabled(val)
+        }
+        return nil
+    }
     res["language"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -297,6 +307,16 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["locale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLocale(val)
+        }
+        return nil
+    }
     res["managementServiceAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -307,6 +327,16 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["outOfBoxExperienceSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOutOfBoxExperienceSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOutOfBoxExperienceSetting(val.(OutOfBoxExperienceSettingable))
+        }
+        return nil
+    }
     res["outOfBoxExperienceSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOutOfBoxExperienceSettingsFromDiscriminatorValue)
         if err != nil {
@@ -314,6 +344,16 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         }
         if val != nil {
             m.SetOutOfBoxExperienceSettings(val.(OutOfBoxExperienceSettingsable))
+        }
+        return nil
+    }
+    res["preprovisioningAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPreprovisioningAllowed(val)
         }
         return nil
     }
@@ -334,6 +374,18 @@ func (m *WindowsAutopilotDeploymentProfile) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetHardwareHashExtractionEnabled gets the hardwareHashExtractionEnabled property value. Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+// returns a *bool when successful
+func (m *WindowsAutopilotDeploymentProfile) GetHardwareHashExtractionEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("hardwareHashExtractionEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetLanguage gets the language property value. Language configured on the device
 // returns a *string when successful
@@ -359,6 +411,18 @@ func (m *WindowsAutopilotDeploymentProfile) GetLastModifiedDateTime()(*i33607480
     }
     return nil
 }
+// GetLocale gets the locale property value. The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+// returns a *string when successful
+func (m *WindowsAutopilotDeploymentProfile) GetLocale()(*string) {
+    val, err := m.GetBackingStore().Get("locale")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetManagementServiceAppId gets the managementServiceAppId property value. AzureAD management app ID used during client device-based enrollment discovery
 // returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfile) GetManagementServiceAppId()(*string) {
@@ -371,6 +435,18 @@ func (m *WindowsAutopilotDeploymentProfile) GetManagementServiceAppId()(*string)
     }
     return nil
 }
+// GetOutOfBoxExperienceSetting gets the outOfBoxExperienceSetting property value. The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+// returns a OutOfBoxExperienceSettingable when successful
+func (m *WindowsAutopilotDeploymentProfile) GetOutOfBoxExperienceSetting()(OutOfBoxExperienceSettingable) {
+    val, err := m.GetBackingStore().Get("outOfBoxExperienceSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OutOfBoxExperienceSettingable)
+    }
+    return nil
+}
 // GetOutOfBoxExperienceSettings gets the outOfBoxExperienceSettings property value. Out of box experience setting
 // returns a OutOfBoxExperienceSettingsable when successful
 func (m *WindowsAutopilotDeploymentProfile) GetOutOfBoxExperienceSettings()(OutOfBoxExperienceSettingsable) {
@@ -380,6 +456,18 @@ func (m *WindowsAutopilotDeploymentProfile) GetOutOfBoxExperienceSettings()(OutO
     }
     if val != nil {
         return val.(OutOfBoxExperienceSettingsable)
+    }
+    return nil
+}
+// GetPreprovisioningAllowed gets the preprovisioningAllowed property value. Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.
+// returns a *bool when successful
+func (m *WindowsAutopilotDeploymentProfile) GetPreprovisioningAllowed()(*bool) {
+    val, err := m.GetBackingStore().Get("preprovisioningAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -475,6 +563,12 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i878a80d2330e89d268
         }
     }
     {
+        err = writer.WriteBoolValue("hardwareHashExtractionEnabled", m.GetHardwareHashExtractionEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("language", m.GetLanguage())
         if err != nil {
             return err
@@ -487,13 +581,31 @@ func (m *WindowsAutopilotDeploymentProfile) Serialize(writer i878a80d2330e89d268
         }
     }
     {
+        err = writer.WriteStringValue("locale", m.GetLocale())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("managementServiceAppId", m.GetManagementServiceAppId())
         if err != nil {
             return err
         }
     }
     {
+        err = writer.WriteObjectValue("outOfBoxExperienceSetting", m.GetOutOfBoxExperienceSetting())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("outOfBoxExperienceSettings", m.GetOutOfBoxExperienceSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("preprovisioningAllowed", m.GetPreprovisioningAllowed())
         if err != nil {
             return err
         }
@@ -576,6 +688,13 @@ func (m *WindowsAutopilotDeploymentProfile) SetExtractHardwareHash(value *bool)(
         panic(err)
     }
 }
+// SetHardwareHashExtractionEnabled sets the hardwareHashExtractionEnabled property value. Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+func (m *WindowsAutopilotDeploymentProfile) SetHardwareHashExtractionEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("hardwareHashExtractionEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLanguage sets the language property value. Language configured on the device
 func (m *WindowsAutopilotDeploymentProfile) SetLanguage(value *string)() {
     err := m.GetBackingStore().Set("language", value)
@@ -590,6 +709,13 @@ func (m *WindowsAutopilotDeploymentProfile) SetLastModifiedDateTime(value *i3360
         panic(err)
     }
 }
+// SetLocale sets the locale property value. The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+func (m *WindowsAutopilotDeploymentProfile) SetLocale(value *string)() {
+    err := m.GetBackingStore().Set("locale", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManagementServiceAppId sets the managementServiceAppId property value. AzureAD management app ID used during client device-based enrollment discovery
 func (m *WindowsAutopilotDeploymentProfile) SetManagementServiceAppId(value *string)() {
     err := m.GetBackingStore().Set("managementServiceAppId", value)
@@ -597,9 +723,23 @@ func (m *WindowsAutopilotDeploymentProfile) SetManagementServiceAppId(value *str
         panic(err)
     }
 }
+// SetOutOfBoxExperienceSetting sets the outOfBoxExperienceSetting property value. The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
+func (m *WindowsAutopilotDeploymentProfile) SetOutOfBoxExperienceSetting(value OutOfBoxExperienceSettingable)() {
+    err := m.GetBackingStore().Set("outOfBoxExperienceSetting", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOutOfBoxExperienceSettings sets the outOfBoxExperienceSettings property value. Out of box experience setting
 func (m *WindowsAutopilotDeploymentProfile) SetOutOfBoxExperienceSettings(value OutOfBoxExperienceSettingsable)() {
     err := m.GetBackingStore().Set("outOfBoxExperienceSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPreprovisioningAllowed sets the preprovisioningAllowed property value. Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.
+func (m *WindowsAutopilotDeploymentProfile) SetPreprovisioningAllowed(value *bool)() {
+    err := m.GetBackingStore().Set("preprovisioningAllowed", value)
     if err != nil {
         panic(err)
     }
@@ -624,10 +764,14 @@ type WindowsAutopilotDeploymentProfileable interface {
     GetEnableWhiteGlove()(*bool)
     GetEnrollmentStatusScreenSettings()(WindowsEnrollmentStatusScreenSettingsable)
     GetExtractHardwareHash()(*bool)
+    GetHardwareHashExtractionEnabled()(*bool)
     GetLanguage()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLocale()(*string)
     GetManagementServiceAppId()(*string)
+    GetOutOfBoxExperienceSetting()(OutOfBoxExperienceSettingable)
     GetOutOfBoxExperienceSettings()(OutOfBoxExperienceSettingsable)
+    GetPreprovisioningAllowed()(*bool)
     GetRoleScopeTagIds()([]string)
     SetAssignedDevices(value []WindowsAutopilotDeviceIdentityable)()
     SetAssignments(value []WindowsAutopilotDeploymentProfileAssignmentable)()
@@ -639,9 +783,13 @@ type WindowsAutopilotDeploymentProfileable interface {
     SetEnableWhiteGlove(value *bool)()
     SetEnrollmentStatusScreenSettings(value WindowsEnrollmentStatusScreenSettingsable)()
     SetExtractHardwareHash(value *bool)()
+    SetHardwareHashExtractionEnabled(value *bool)()
     SetLanguage(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLocale(value *string)()
     SetManagementServiceAppId(value *string)()
+    SetOutOfBoxExperienceSetting(value OutOfBoxExperienceSettingable)()
     SetOutOfBoxExperienceSettings(value OutOfBoxExperienceSettingsable)()
+    SetPreprovisioningAllowed(value *bool)()
     SetRoleScopeTagIds(value []string)()
 }

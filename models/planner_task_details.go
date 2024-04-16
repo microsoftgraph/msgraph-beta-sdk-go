@@ -19,7 +19,7 @@ func NewPlannerTaskDetails()(*PlannerTaskDetails) {
 func CreatePlannerTaskDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskDetails(), nil
 }
-// GetApprovalAttachment gets the approvalAttachment property value. The approvalAttachment property
+// GetApprovalAttachment gets the approvalAttachment property value. Detailed information about the approval that is attached to the task.
 // returns a PlannerBaseApprovalAttachmentable when successful
 func (m *PlannerTaskDetails) GetApprovalAttachment()(PlannerBaseApprovalAttachmentable) {
     val, err := m.GetBackingStore().Get("approvalAttachment")
@@ -153,7 +153,7 @@ func (m *PlannerTaskDetails) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetForms gets the forms property value. The forms property
+// GetForms gets the forms property value. Read-only. Represents a dictionary of data about the forms associated with a task. Each entry in the dictionary is a key-value pair, and the value is a plannerFormReference object.
 // returns a PlannerFormsDictionaryable when successful
 func (m *PlannerTaskDetails) GetForms()(PlannerFormsDictionaryable) {
     val, err := m.GetBackingStore().Get("forms")
@@ -258,7 +258,7 @@ func (m *PlannerTaskDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetApprovalAttachment sets the approvalAttachment property value. The approvalAttachment property
+// SetApprovalAttachment sets the approvalAttachment property value. Detailed information about the approval that is attached to the task.
 func (m *PlannerTaskDetails) SetApprovalAttachment(value PlannerBaseApprovalAttachmentable)() {
     err := m.GetBackingStore().Set("approvalAttachment", value)
     if err != nil {
@@ -286,7 +286,7 @@ func (m *PlannerTaskDetails) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetForms sets the forms property value. The forms property
+// SetForms sets the forms property value. Read-only. Represents a dictionary of data about the forms associated with a task. Each entry in the dictionary is a key-value pair, and the value is a plannerFormReference object.
 func (m *PlannerTaskDetails) SetForms(value PlannerFormsDictionaryable)() {
     err := m.GetBackingStore().Set("forms", value)
     if err != nil {

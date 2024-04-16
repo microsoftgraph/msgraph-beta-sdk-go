@@ -18,7 +18,7 @@ type ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetQueryParameters get remoteNetworks from networkAccess
+// ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetQueryParameters represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
 type ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,7 +85,7 @@ func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) DeviceLinks(
 func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) ForwardingProfiles()(*ConnectivityRemoteNetworksItemForwardingProfilesRequestBuilder) {
     return NewConnectivityRemoteNetworksItemForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get remoteNetworks from networkAccess
+// Get represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
 // returns a RemoteNetworkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.RemoteNetworkable, error) {
@@ -128,7 +128,7 @@ func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) Patch(ctx co
 // ToDeleteRequestInformation delete navigation property remoteNetworks for networkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -136,7 +136,7 @@ func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get remoteNetworks from networkAccess
+// ToGetRequestInformation represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -153,7 +153,7 @@ func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) ToGetRequest
 // ToPatchRequestInformation update the navigation property remoteNetworks in networkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.RemoteNetworkable, requestConfiguration *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

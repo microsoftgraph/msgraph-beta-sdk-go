@@ -9,10 +9,12 @@ const (
     ARTICLE_PAGELAYOUTTYPE
     HOME_PAGELAYOUTTYPE
     UNKNOWNFUTUREVALUE_PAGELAYOUTTYPE
+    NEWSLINK_PAGELAYOUTTYPE
+    VIDEONEWSLINK_PAGELAYOUTTYPE
 )
 
 func (i PageLayoutType) String() string {
-    return []string{"microsoftReserved", "article", "home", "unknownFutureValue"}[i]
+    return []string{"microsoftReserved", "article", "home", "unknownFutureValue", "newsLink", "videoNewsLink"}[i]
 }
 func ParsePageLayoutType(v string) (any, error) {
     result := MICROSOFTRESERVED_PAGELAYOUTTYPE
@@ -25,6 +27,10 @@ func ParsePageLayoutType(v string) (any, error) {
             result = HOME_PAGELAYOUTTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PAGELAYOUTTYPE
+        case "newsLink":
+            result = NEWSLINK_PAGELAYOUTTYPE
+        case "videoNewsLink":
+            result = VIDEONEWSLINK_PAGELAYOUTTYPE
         default:
             return 0, errors.New("Unknown PageLayoutType value: " + v)
     }

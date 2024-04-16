@@ -31,7 +31,7 @@ func (m *VirtualEndpoint) GetAuditEvents()([]CloudPcAuditEventable) {
     }
     return nil
 }
-// GetBulkActions gets the bulkActions property value. The bulkActions property
+// GetBulkActions gets the bulkActions property value. Bulk actions applied to a Cloud PC.
 // returns a []CloudPcBulkActionable when successful
 func (m *VirtualEndpoint) GetBulkActions()([]CloudPcBulkActionable) {
     val, err := m.GetBackingStore().Get("bulkActions")
@@ -684,7 +684,7 @@ func (m *VirtualEndpoint) SetAuditEvents(value []CloudPcAuditEventable)() {
         panic(err)
     }
 }
-// SetBulkActions sets the bulkActions property value. The bulkActions property
+// SetBulkActions sets the bulkActions property value. Bulk actions applied to a Cloud PC.
 func (m *VirtualEndpoint) SetBulkActions(value []CloudPcBulkActionable)() {
     err := m.GetBackingStore().Set("bulkActions", value)
     if err != nil {

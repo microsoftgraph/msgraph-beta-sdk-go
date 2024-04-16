@@ -101,16 +101,6 @@ func (m *OperationApprovalRequest) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
-    res["operationApprovalPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOperationApprovalPolicies(val)
-        }
-        return nil
-    }
     res["requestDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -178,18 +168,6 @@ func (m *OperationApprovalRequest) GetLastModifiedDateTime()(*i336074805fc853987
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    }
-    return nil
-}
-// GetOperationApprovalPolicies gets the operationApprovalPolicies property value. The operational approval policies used in the request. Indicates the policy and platform combinations that are required for this request to be approved or rejected. Read-only. This property is read-only.
-// returns a *string when successful
-func (m *OperationApprovalRequest) GetOperationApprovalPolicies()(*string) {
-    val, err := m.GetBackingStore().Get("operationApprovalPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -296,13 +274,6 @@ func (m *OperationApprovalRequest) SetLastModifiedDateTime(value *i336074805fc85
         panic(err)
     }
 }
-// SetOperationApprovalPolicies sets the operationApprovalPolicies property value. The operational approval policies used in the request. Indicates the policy and platform combinations that are required for this request to be approved or rejected. Read-only. This property is read-only.
-func (m *OperationApprovalRequest) SetOperationApprovalPolicies(value *string)() {
-    err := m.GetBackingStore().Set("operationApprovalPolicies", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRequestDateTime sets the requestDateTime property value. Indicates the DateTime that the request was made. The value cannot be modified and is automatically populated when the request is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-only. This property is read-only.
 func (m *OperationApprovalRequest) SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("requestDateTime", value)
@@ -345,7 +316,6 @@ type OperationApprovalRequestable interface {
     GetApprover()(IdentitySetable)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetOperationApprovalPolicies()(*string)
     GetRequestDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRequestJustification()(*string)
     GetRequestor()(IdentitySetable)
@@ -355,7 +325,6 @@ type OperationApprovalRequestable interface {
     SetApprover(value IdentitySetable)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetOperationApprovalPolicies(value *string)()
     SetRequestDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRequestJustification(value *string)()
     SetRequestor(value IdentitySetable)()

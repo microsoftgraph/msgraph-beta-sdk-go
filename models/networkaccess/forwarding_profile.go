@@ -22,7 +22,7 @@ func NewForwardingProfile()(*ForwardingProfile) {
 func CreateForwardingProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewForwardingProfile(), nil
 }
-// GetAssociations gets the associations property value. Specifies the users, groups, devices, and branch locations whose traffic is associated with the given traffic forwarding profile.
+// GetAssociations gets the associations property value. Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
 // returns a []Associationable when successful
 func (m *ForwardingProfile) GetAssociations()([]Associationable) {
     val, err := m.GetBackingStore().Get("associations")
@@ -161,7 +161,7 @@ func (m *ForwardingProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetAssociations sets the associations property value. Specifies the users, groups, devices, and branch locations whose traffic is associated with the given traffic forwarding profile.
+// SetAssociations sets the associations property value. Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
 func (m *ForwardingProfile) SetAssociations(value []Associationable)() {
     err := m.GetBackingStore().Set("associations", value)
     if err != nil {

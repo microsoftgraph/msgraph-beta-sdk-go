@@ -18,7 +18,7 @@ type AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetQueryParameters language specific details on a training.
+// AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetQueryParameters details about the language used in the training.
 type AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemR
     }
     return nil
 }
-// Get language specific details on a training.
+// Get details about the language used in the training.
 // returns a TrainingLanguageDetailable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailable, error) {
@@ -113,7 +113,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemR
 // ToDeleteRequestInformation delete navigation property languageDetails for security
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/attackSimulation/trainings/{training%2Did}/languageDetails/{trainingLanguageDetail%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +121,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation language specific details on a training.
+// ToGetRequestInformation details about the language used in the training.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +138,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemR
 // ToPatchRequestInformation update the navigation property languageDetails in security
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingLanguageDetailable, requestConfiguration *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/attackSimulation/trainings/{training%2Did}/languageDetails/{trainingLanguageDetail%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

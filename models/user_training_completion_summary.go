@@ -40,7 +40,7 @@ func (m *UserTrainingCompletionSummary) GetAdditionalData()(map[string]any) {
 func (m *UserTrainingCompletionSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCompletedUsersCount gets the completedUsersCount property value. The completedUsersCount property
+// GetCompletedUsersCount gets the completedUsersCount property value. The number of users who completed all the trainings before the due date.
 // returns a *int32 when successful
 func (m *UserTrainingCompletionSummary) GetCompletedUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("completedUsersCount")
@@ -118,7 +118,7 @@ func (m *UserTrainingCompletionSummary) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetInProgressUsersCount gets the inProgressUsersCount property value. The inProgressUsersCount property
+// GetInProgressUsersCount gets the inProgressUsersCount property value. The number of users who started at least one training.
 // returns a *int32 when successful
 func (m *UserTrainingCompletionSummary) GetInProgressUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("inProgressUsersCount")
@@ -130,7 +130,7 @@ func (m *UserTrainingCompletionSummary) GetInProgressUsersCount()(*int32) {
     }
     return nil
 }
-// GetNotCompletedUsersCount gets the notCompletedUsersCount property value. The notCompletedUsersCount property
+// GetNotCompletedUsersCount gets the notCompletedUsersCount property value. The number of users who didn't complete all the trainings before the due date.
 // returns a *int32 when successful
 func (m *UserTrainingCompletionSummary) GetNotCompletedUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("notCompletedUsersCount")
@@ -142,7 +142,7 @@ func (m *UserTrainingCompletionSummary) GetNotCompletedUsersCount()(*int32) {
     }
     return nil
 }
-// GetNotStartedUsersCount gets the notStartedUsersCount property value. The notStartedUsersCount property
+// GetNotStartedUsersCount gets the notStartedUsersCount property value. The number of users who didn't start any training.
 // returns a *int32 when successful
 func (m *UserTrainingCompletionSummary) GetNotStartedUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("notStartedUsersCount")
@@ -166,7 +166,7 @@ func (m *UserTrainingCompletionSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPreviouslyAssignedUsersCount gets the previouslyAssignedUsersCount property value. The previouslyAssignedUsersCount property
+// GetPreviouslyAssignedUsersCount gets the previouslyAssignedUsersCount property value. The number of users who are already assigned the same training.
 // returns a *int32 when successful
 func (m *UserTrainingCompletionSummary) GetPreviouslyAssignedUsersCount()(*int32) {
     val, err := m.GetBackingStore().Get("previouslyAssignedUsersCount")
@@ -235,28 +235,28 @@ func (m *UserTrainingCompletionSummary) SetAdditionalData(value map[string]any)(
 func (m *UserTrainingCompletionSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCompletedUsersCount sets the completedUsersCount property value. The completedUsersCount property
+// SetCompletedUsersCount sets the completedUsersCount property value. The number of users who completed all the trainings before the due date.
 func (m *UserTrainingCompletionSummary) SetCompletedUsersCount(value *int32)() {
     err := m.GetBackingStore().Set("completedUsersCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInProgressUsersCount sets the inProgressUsersCount property value. The inProgressUsersCount property
+// SetInProgressUsersCount sets the inProgressUsersCount property value. The number of users who started at least one training.
 func (m *UserTrainingCompletionSummary) SetInProgressUsersCount(value *int32)() {
     err := m.GetBackingStore().Set("inProgressUsersCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotCompletedUsersCount sets the notCompletedUsersCount property value. The notCompletedUsersCount property
+// SetNotCompletedUsersCount sets the notCompletedUsersCount property value. The number of users who didn't complete all the trainings before the due date.
 func (m *UserTrainingCompletionSummary) SetNotCompletedUsersCount(value *int32)() {
     err := m.GetBackingStore().Set("notCompletedUsersCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotStartedUsersCount sets the notStartedUsersCount property value. The notStartedUsersCount property
+// SetNotStartedUsersCount sets the notStartedUsersCount property value. The number of users who didn't start any training.
 func (m *UserTrainingCompletionSummary) SetNotStartedUsersCount(value *int32)() {
     err := m.GetBackingStore().Set("notStartedUsersCount", value)
     if err != nil {
@@ -270,7 +270,7 @@ func (m *UserTrainingCompletionSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPreviouslyAssignedUsersCount sets the previouslyAssignedUsersCount property value. The previouslyAssignedUsersCount property
+// SetPreviouslyAssignedUsersCount sets the previouslyAssignedUsersCount property value. The number of users who are already assigned the same training.
 func (m *UserTrainingCompletionSummary) SetPreviouslyAssignedUsersCount(value *int32)() {
     err := m.GetBackingStore().Set("previouslyAssignedUsersCount", value)
     if err != nil {

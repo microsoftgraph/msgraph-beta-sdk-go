@@ -36,6 +36,8 @@ func CreateReferenceValueFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                         return NewIdentifierTypeReferenceValue(), nil
                     case "#microsoft.graph.industryData.roleReferenceValue":
                         return NewRoleReferenceValue(), nil
+                    case "#microsoft.graph.industryData.sectionRoleReferenceValue":
+                        return NewSectionRoleReferenceValue(), nil
                     case "#microsoft.graph.industryData.userMatchTargetReferenceValue":
                         return NewUserMatchTargetReferenceValue(), nil
                     case "#microsoft.graph.industryData.yearReferenceValue":

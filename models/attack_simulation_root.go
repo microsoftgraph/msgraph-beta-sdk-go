@@ -253,7 +253,7 @@ func (m *AttackSimulationRoot) GetSimulations()([]Simulationable) {
     }
     return nil
 }
-// GetTrainingCampaigns gets the trainingCampaigns property value. The trainingCampaigns property
+// GetTrainingCampaigns gets the trainingCampaigns property value. Represents a training campaign in a tenant.
 // returns a []TrainingCampaignable when successful
 func (m *AttackSimulationRoot) GetTrainingCampaigns()([]TrainingCampaignable) {
     val, err := m.GetBackingStore().Get("trainingCampaigns")
@@ -442,7 +442,7 @@ func (m *AttackSimulationRoot) SetSimulations(value []Simulationable)() {
         panic(err)
     }
 }
-// SetTrainingCampaigns sets the trainingCampaigns property value. The trainingCampaigns property
+// SetTrainingCampaigns sets the trainingCampaigns property value. Represents a training campaign in a tenant.
 func (m *AttackSimulationRoot) SetTrainingCampaigns(value []TrainingCampaignable)() {
     err := m.GetBackingStore().Set("trainingCampaigns", value)
     if err != nil {

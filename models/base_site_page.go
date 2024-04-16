@@ -31,8 +31,12 @@ func CreateBaseSitePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.newsLinkPage":
+                        return NewNewsLinkPage(), nil
                     case "#microsoft.graph.sitePage":
                         return NewSitePage(), nil
+                    case "#microsoft.graph.videoNewsLinkPage":
+                        return NewVideoNewsLinkPage(), nil
                 }
             }
         }

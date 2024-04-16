@@ -75,6 +75,11 @@ func (m *IndustryDataRequestBuilder) InboundFlows()(*IndustryDataInboundFlowsReq
 func (m *IndustryDataRequestBuilder) Operations()(*IndustryDataOperationsRequestBuilder) {
     return NewIndustryDataOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OutboundProvisioningFlowSets provides operations to manage the outboundProvisioningFlowSets property of the microsoft.graph.industryData.industryDataRoot entity.
+// returns a *IndustryDataOutboundProvisioningFlowSetsRequestBuilder when successful
+func (m *IndustryDataRequestBuilder) OutboundProvisioningFlowSets()(*IndustryDataOutboundProvisioningFlowSetsRequestBuilder) {
+    return NewIndustryDataOutboundProvisioningFlowSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ReferenceDefinitions provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.
 // returns a *IndustryDataReferenceDefinitionsRequestBuilder when successful
 func (m *IndustryDataRequestBuilder) ReferenceDefinitions()(*IndustryDataReferenceDefinitionsRequestBuilder) {
