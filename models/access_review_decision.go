@@ -20,7 +20,7 @@ func NewAccessReviewDecision()(*AccessReviewDecision) {
 func CreateAccessReviewDecisionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewDecision(), nil
 }
-// GetAccessRecommendation gets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
+// GetAccessRecommendation gets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of: Approve, Deny, NotAvailable.
 // returns a *string when successful
 func (m *AccessReviewDecision) GetAccessRecommendation()(*string) {
     val, err := m.GetBackingStore().Get("accessRecommendation")
@@ -68,7 +68,7 @@ func (m *AccessReviewDecision) GetAppliedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetApplyResult gets the applyResult property value. The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
+// GetApplyResult gets the applyResult property value. The outcome of applying the decision, one of: NotApplied, Success, Failed, NotFound, NotSupported.
 // returns a *string when successful
 func (m *AccessReviewDecision) GetApplyResult()(*string) {
     val, err := m.GetBackingStore().Get("applyResult")
@@ -286,7 +286,7 @@ func (m *AccessReviewDecision) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAccessRecommendation sets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.
+// SetAccessRecommendation sets the accessRecommendation property value. The feature- generated recommendation shown to the reviewer, one of: Approve, Deny, NotAvailable.
 func (m *AccessReviewDecision) SetAccessRecommendation(value *string)() {
     err := m.GetBackingStore().Set("accessRecommendation", value)
     if err != nil {
@@ -314,7 +314,7 @@ func (m *AccessReviewDecision) SetAppliedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetApplyResult sets the applyResult property value. The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.
+// SetApplyResult sets the applyResult property value. The outcome of applying the decision, one of: NotApplied, Success, Failed, NotFound, NotSupported.
 func (m *AccessReviewDecision) SetApplyResult(value *string)() {
     err := m.GetBackingStore().Set("applyResult", value)
     if err != nil {

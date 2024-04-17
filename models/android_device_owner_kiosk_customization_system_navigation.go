@@ -10,7 +10,7 @@ const (
     NOTCONFIGURED_ANDROIDDEVICEOWNERKIOSKCUSTOMIZATIONSYSTEMNAVIGATION AndroidDeviceOwnerKioskCustomizationSystemNavigation = iota
     // Home and overview buttons are enabled.
     NAVIGATIONENABLED_ANDROIDDEVICEOWNERKIOSKCUSTOMIZATIONSYSTEMNAVIGATION
-    //  Only the home button is enabled.
+    // Only the home button is enabled.
     HOMEBUTTONONLY_ANDROIDDEVICEOWNERKIOSKCUSTOMIZATIONSYSTEMNAVIGATION
 )
 

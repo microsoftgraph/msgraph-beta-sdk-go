@@ -21,7 +21,7 @@ func NewPlannerTaskPropertyRule()(*PlannerTaskPropertyRule) {
 func CreatePlannerTaskPropertyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerTaskPropertyRule(), nil
 }
-// GetAppliedCategories gets the appliedCategories property value. Rules and restrictions for applied categories. This value does not currently support overrides. Accepted values for the default rule and individual overrides are allow, block.
+// GetAppliedCategories gets the appliedCategories property value. Rules and restrictions for applied categories. This value doesn't currently support overrides. Accepted values for the default rule and individual overrides are allow, block.
 // returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetAppliedCategories()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("appliedCategories")
@@ -33,7 +33,7 @@ func (m *PlannerTaskPropertyRule) GetAppliedCategories()(PlannerFieldRulesable) 
     }
     return nil
 }
-// GetApprovalAttachment gets the approvalAttachment property value. The approvalAttachment property
+// GetApprovalAttachment gets the approvalAttachment property value. Rules and restrictions for approval. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are: allow, add, remove, block.
 // returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetApprovalAttachment()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("approvalAttachment")
@@ -347,7 +347,7 @@ func (m *PlannerTaskPropertyRule) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetForms gets the forms property value. The forms property
+// GetForms gets the forms property value. Rules and restrictions for forms. Allowed overrides are userCreated and applicationCreated. The following are the accepted values for the default rule and individual overrides: allow, add, addResponse, remove, update, block.
 // returns a PlannerFieldRulesable when successful
 func (m *PlannerTaskPropertyRule) GetForms()(PlannerFieldRulesable) {
     val, err := m.GetBackingStore().Get("forms")
@@ -577,14 +577,14 @@ func (m *PlannerTaskPropertyRule) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetAppliedCategories sets the appliedCategories property value. Rules and restrictions for applied categories. This value does not currently support overrides. Accepted values for the default rule and individual overrides are allow, block.
+// SetAppliedCategories sets the appliedCategories property value. Rules and restrictions for applied categories. This value doesn't currently support overrides. Accepted values for the default rule and individual overrides are allow, block.
 func (m *PlannerTaskPropertyRule) SetAppliedCategories(value PlannerFieldRulesable)() {
     err := m.GetBackingStore().Set("appliedCategories", value)
     if err != nil {
         panic(err)
     }
 }
-// SetApprovalAttachment sets the approvalAttachment property value. The approvalAttachment property
+// SetApprovalAttachment sets the approvalAttachment property value. Rules and restrictions for approval. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are: allow, add, remove, block.
 func (m *PlannerTaskPropertyRule) SetApprovalAttachment(value PlannerFieldRulesable)() {
     err := m.GetBackingStore().Set("approvalAttachment", value)
     if err != nil {
@@ -626,7 +626,7 @@ func (m *PlannerTaskPropertyRule) SetDueDate(value []string)() {
         panic(err)
     }
 }
-// SetForms sets the forms property value. The forms property
+// SetForms sets the forms property value. Rules and restrictions for forms. Allowed overrides are userCreated and applicationCreated. The following are the accepted values for the default rule and individual overrides: allow, add, addResponse, remove, update, block.
 func (m *PlannerTaskPropertyRule) SetForms(value PlannerFieldRulesable)() {
     err := m.GetBackingStore().Set("forms", value)
     if err != nil {

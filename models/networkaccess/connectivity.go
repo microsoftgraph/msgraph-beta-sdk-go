@@ -20,7 +20,7 @@ func NewConnectivity()(*Connectivity) {
 func CreateConnectivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnectivity(), nil
 }
-// GetBranches gets the branches property value. Branches represent locations for connectivity.
+// GetBranches gets the branches property value. Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
 // returns a []BranchSiteable when successful
 func (m *Connectivity) GetBranches()([]BranchSiteable) {
     val, err := m.GetBackingStore().Get("branches")
@@ -86,7 +86,7 @@ func (m *Connectivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetRemoteNetworks gets the remoteNetworks property value. The remoteNetworks property
+// GetRemoteNetworks gets the remoteNetworks property value. Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
 // returns a []RemoteNetworkable when successful
 func (m *Connectivity) GetRemoteNetworks()([]RemoteNetworkable) {
     val, err := m.GetBackingStore().Get("remoteNetworks")
@@ -154,14 +154,14 @@ func (m *Connectivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetBranches sets the branches property value. Branches represent locations for connectivity.
+// SetBranches sets the branches property value. Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
 func (m *Connectivity) SetBranches(value []BranchSiteable)() {
     err := m.GetBackingStore().Set("branches", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRemoteNetworks sets the remoteNetworks property value. The remoteNetworks property
+// SetRemoteNetworks sets the remoteNetworks property value. Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
 func (m *Connectivity) SetRemoteNetworks(value []RemoteNetworkable)() {
     err := m.GetBackingStore().Set("remoteNetworks", value)
     if err != nil {

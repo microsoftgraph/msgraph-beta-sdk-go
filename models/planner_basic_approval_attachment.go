@@ -21,7 +21,7 @@ func NewPlannerBasicApprovalAttachment()(*PlannerBasicApprovalAttachment) {
 func CreatePlannerBasicApprovalAttachmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerBasicApprovalAttachment(), nil
 }
-// GetApprovalId gets the approvalId property value. The approvalId property
+// GetApprovalId gets the approvalId property value. Read-only. The identifier of the approval in the approval service.
 // returns a *string when successful
 func (m *PlannerBasicApprovalAttachment) GetApprovalId()(*string) {
     val, err := m.GetBackingStore().Get("approvalId")
@@ -63,7 +63,7 @@ func (m *PlannerBasicApprovalAttachment) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetApprovalId sets the approvalId property value. The approvalId property
+// SetApprovalId sets the approvalId property value. Read-only. The identifier of the approval in the approval service.
 func (m *PlannerBasicApprovalAttachment) SetApprovalId(value *string)() {
     err := m.GetBackingStore().Set("approvalId", value)
     if err != nil {

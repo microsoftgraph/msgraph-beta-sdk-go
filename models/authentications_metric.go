@@ -111,6 +111,26 @@ func (m *AuthenticationsMetric) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["identityProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIdentityProvider(val)
+        }
+        return nil
+    }
+    res["language"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLanguage(val)
+        }
+        return nil
+    }
     res["os"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -132,6 +152,30 @@ func (m *AuthenticationsMetric) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetIdentityProvider gets the identityProvider property value. The identityProvider property
+// returns a *string when successful
+func (m *AuthenticationsMetric) GetIdentityProvider()(*string) {
+    val, err := m.GetBackingStore().Get("identityProvider")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetLanguage gets the language property value. The language property
+// returns a *string when successful
+func (m *AuthenticationsMetric) GetLanguage()(*string) {
+    val, err := m.GetBackingStore().Get("language")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetOs gets the os property value. The platform for the device that the customers used. Supports $filter (eq).
 // returns a *string when successful
@@ -188,6 +232,18 @@ func (m *AuthenticationsMetric) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteStringValue("identityProvider", m.GetIdentityProvider())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("language", m.GetLanguage())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("os", m.GetOs())
         if err != nil {
             return err
@@ -229,6 +285,20 @@ func (m *AuthenticationsMetric) SetFactDate(value *i878a80d2330e89d26896388a3f48
         panic(err)
     }
 }
+// SetIdentityProvider sets the identityProvider property value. The identityProvider property
+func (m *AuthenticationsMetric) SetIdentityProvider(value *string)() {
+    err := m.GetBackingStore().Set("identityProvider", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLanguage sets the language property value. The language property
+func (m *AuthenticationsMetric) SetLanguage(value *string)() {
+    err := m.GetBackingStore().Set("language", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOs sets the os property value. The platform for the device that the customers used. Supports $filter (eq).
 func (m *AuthenticationsMetric) SetOs(value *string)() {
     err := m.GetBackingStore().Set("os", value)
@@ -250,12 +320,16 @@ type AuthenticationsMetricable interface {
     GetAttemptsCount()(*int64)
     GetCountry()(*string)
     GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetIdentityProvider()(*string)
+    GetLanguage()(*string)
     GetOs()(*string)
     GetSuccessCount()(*int64)
     SetAppid(value *string)()
     SetAttemptsCount(value *int64)()
     SetCountry(value *string)()
     SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetIdentityProvider(value *string)()
+    SetLanguage(value *string)()
     SetOs(value *string)()
     SetSuccessCount(value *int64)()
 }

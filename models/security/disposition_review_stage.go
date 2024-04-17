@@ -51,7 +51,7 @@ func (m *DispositionReviewStage) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["stageNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
@@ -87,14 +87,14 @@ func (m *DispositionReviewStage) GetReviewersEmailAddresses()([]string) {
     return nil
 }
 // GetStageNumber gets the stageNumber property value. The sequence number for each stage of the disposition review.
-// returns a *int32 when successful
-func (m *DispositionReviewStage) GetStageNumber()(*int32) {
+// returns a *string when successful
+func (m *DispositionReviewStage) GetStageNumber()(*string) {
     val, err := m.GetBackingStore().Get("stageNumber")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*int32)
+        return val.(*string)
     }
     return nil
 }
@@ -117,7 +117,7 @@ func (m *DispositionReviewStage) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
-        err = writer.WriteInt32Value("stageNumber", m.GetStageNumber())
+        err = writer.WriteStringValue("stageNumber", m.GetStageNumber())
         if err != nil {
             return err
         }
@@ -139,7 +139,7 @@ func (m *DispositionReviewStage) SetReviewersEmailAddresses(value []string)() {
     }
 }
 // SetStageNumber sets the stageNumber property value. The sequence number for each stage of the disposition review.
-func (m *DispositionReviewStage) SetStageNumber(value *int32)() {
+func (m *DispositionReviewStage) SetStageNumber(value *string)() {
     err := m.GetBackingStore().Set("stageNumber", value)
     if err != nil {
         panic(err)
@@ -150,8 +150,8 @@ type DispositionReviewStageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetName()(*string)
     GetReviewersEmailAddresses()([]string)
-    GetStageNumber()(*int32)
+    GetStageNumber()(*string)
     SetName(value *string)()
     SetReviewersEmailAddresses(value []string)()
-    SetStageNumber(value *int32)()
+    SetStageNumber(value *string)()
 }

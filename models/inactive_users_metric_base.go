@@ -39,6 +39,18 @@ func CreateInactiveUsersMetricBaseFromDiscriminatorValue(parseNode i878a80d2330e
     }
     return NewInactiveUsersMetricBase(), nil
 }
+// GetAppId gets the appId property value. The appId property
+// returns a *string when successful
+func (m *InactiveUsersMetricBase) GetAppId()(*string) {
+    val, err := m.GetBackingStore().Get("appId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFactDate gets the factDate property value. The factDate property
 // returns a *DateOnly when successful
 func (m *InactiveUsersMetricBase) GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
@@ -55,6 +67,16 @@ func (m *InactiveUsersMetricBase) GetFactDate()(*i878a80d2330e89d26896388a3f487e
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InactiveUsersMetricBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["appId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppId(val)
+        }
+        return nil
+    }
     res["factDate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
@@ -140,6 +162,12 @@ func (m *InactiveUsersMetricBase) Serialize(writer i878a80d2330e89d26896388a3f48
         return err
     }
     {
+        err = writer.WriteStringValue("appId", m.GetAppId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteDateOnlyValue("factDate", m.GetFactDate())
         if err != nil {
             return err
@@ -164,6 +192,13 @@ func (m *InactiveUsersMetricBase) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     return nil
+}
+// SetAppId sets the appId property value. The appId property
+func (m *InactiveUsersMetricBase) SetAppId(value *string)() {
+    err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetFactDate sets the factDate property value. The factDate property
 func (m *InactiveUsersMetricBase) SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
@@ -196,10 +231,12 @@ func (m *InactiveUsersMetricBase) SetInactive90DayCount(value *int64)() {
 type InactiveUsersMetricBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppId()(*string)
     GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetInactive30DayCount()(*int64)
     GetInactive60DayCount()(*int64)
     GetInactive90DayCount()(*int64)
+    SetAppId(value *string)()
     SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetInactive30DayCount(value *int64)()
     SetInactive60DayCount(value *int64)()

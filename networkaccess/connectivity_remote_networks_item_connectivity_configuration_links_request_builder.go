@@ -11,7 +11,7 @@ import (
 type ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilderGetQueryParameters get links from networkAccess
+// ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilderGetQueryParameters list of connectivity configurations for deviceLink objects.
 type ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuild
 func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilder) Count()(*ConnectivityRemoteNetworksItemConnectivityConfigurationLinksCountRequestBuilder) {
     return NewConnectivityRemoteNetworksItemConnectivityConfigurationLinksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get links from networkAccess
+// Get list of connectivity configurations for deviceLink objects.
 // returns a ConnectivityConfigurationLinkCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuil
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable), nil
 }
-// ToGetRequestInformation get links from networkAccess
+// ToGetRequestInformation list of connectivity configurations for deviceLink objects.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +133,7 @@ func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuil
 // ToPostRequestInformation create new navigation property to links for networkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable, requestConfiguration *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/connectivityConfiguration/links", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

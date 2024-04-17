@@ -92,7 +92,7 @@ func (m *RemoteNetworkConnectivityConfiguration) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetLinks gets the links property value. The links property
+// GetLinks gets the links property value. List of connectivity configurations for deviceLink objects.
 // returns a []ConnectivityConfigurationLinkable when successful
 func (m *RemoteNetworkConnectivityConfiguration) GetLinks()([]ConnectivityConfigurationLinkable) {
     val, err := m.GetBackingStore().Get("links")
@@ -116,7 +116,7 @@ func (m *RemoteNetworkConnectivityConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRemoteNetworkId gets the remoteNetworkId property value. The remoteNetworkId property
+// GetRemoteNetworkId gets the remoteNetworkId property value. Unique identifier or a specific reference assigned to a branchSite. Key.
 // returns a *string when successful
 func (m *RemoteNetworkConnectivityConfiguration) GetRemoteNetworkId()(*string) {
     val, err := m.GetBackingStore().Get("remoteNetworkId")
@@ -128,7 +128,7 @@ func (m *RemoteNetworkConnectivityConfiguration) GetRemoteNetworkId()(*string) {
     }
     return nil
 }
-// GetRemoteNetworkName gets the remoteNetworkName property value. The remoteNetworkName property
+// GetRemoteNetworkName gets the remoteNetworkName property value. Display name assigned to a branchSite.
 // returns a *string when successful
 func (m *RemoteNetworkConnectivityConfiguration) GetRemoteNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("remoteNetworkName")
@@ -191,7 +191,7 @@ func (m *RemoteNetworkConnectivityConfiguration) SetAdditionalData(value map[str
 func (m *RemoteNetworkConnectivityConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetLinks sets the links property value. The links property
+// SetLinks sets the links property value. List of connectivity configurations for deviceLink objects.
 func (m *RemoteNetworkConnectivityConfiguration) SetLinks(value []ConnectivityConfigurationLinkable)() {
     err := m.GetBackingStore().Set("links", value)
     if err != nil {
@@ -205,14 +205,14 @@ func (m *RemoteNetworkConnectivityConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRemoteNetworkId sets the remoteNetworkId property value. The remoteNetworkId property
+// SetRemoteNetworkId sets the remoteNetworkId property value. Unique identifier or a specific reference assigned to a branchSite. Key.
 func (m *RemoteNetworkConnectivityConfiguration) SetRemoteNetworkId(value *string)() {
     err := m.GetBackingStore().Set("remoteNetworkId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRemoteNetworkName sets the remoteNetworkName property value. The remoteNetworkName property
+// SetRemoteNetworkName sets the remoteNetworkName property value. Display name assigned to a branchSite.
 func (m *RemoteNetworkConnectivityConfiguration) SetRemoteNetworkName(value *string)() {
     err := m.GetBackingStore().Set("remoteNetworkName", value)
     if err != nil {

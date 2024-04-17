@@ -32,18 +32,18 @@ func CreateFilePlanDescriptorBaseFromDiscriminatorValue(parseNode i878a80d2330e8
             }
             if mappingValue != nil {
                 switch *mappingValue {
-                    case "#microsoft.graph.security.appliedCategory":
-                        return NewAppliedCategory(), nil
-                    case "#microsoft.graph.security.authority":
-                        return NewAuthority(), nil
-                    case "#microsoft.graph.security.citation":
-                        return NewCitation(), nil
-                    case "#microsoft.graph.security.department":
-                        return NewDepartment(), nil
+                    case "#microsoft.graph.security.filePlanAppliedCategory":
+                        return NewFilePlanAppliedCategory(), nil
+                    case "#microsoft.graph.security.filePlanAuthority":
+                        return NewFilePlanAuthority(), nil
+                    case "#microsoft.graph.security.filePlanCitation":
+                        return NewFilePlanCitation(), nil
+                    case "#microsoft.graph.security.filePlanDepartment":
+                        return NewFilePlanDepartment(), nil
                     case "#microsoft.graph.security.filePlanReference":
                         return NewFilePlanReference(), nil
-                    case "#microsoft.graph.security.subCategory":
-                        return NewSubCategory(), nil
+                    case "#microsoft.graph.security.filePlanSubcategory":
+                        return NewFilePlanSubcategory(), nil
                 }
             }
         }
@@ -68,7 +68,7 @@ func (m *FilePlanDescriptorBase) GetAdditionalData()(map[string]any) {
 func (m *FilePlanDescriptorBase) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. Unique string that defines the name for each file plan descriptor associated with a particular retention label.
+// GetDisplayName gets the displayName property value. Unique string that defines the name for the file plan descriptor associated with a particular retention label.
 // returns a *string when successful
 func (m *FilePlanDescriptorBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -151,7 +151,7 @@ func (m *FilePlanDescriptorBase) SetAdditionalData(value map[string]any)() {
 func (m *FilePlanDescriptorBase) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. Unique string that defines the name for each file plan descriptor associated with a particular retention label.
+// SetDisplayName sets the displayName property value. Unique string that defines the name for the file plan descriptor associated with a particular retention label.
 func (m *FilePlanDescriptorBase) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

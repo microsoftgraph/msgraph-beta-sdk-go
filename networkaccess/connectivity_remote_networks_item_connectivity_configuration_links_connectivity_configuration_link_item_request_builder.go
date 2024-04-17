@@ -18,7 +18,7 @@ type ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters get links from networkAccess
+// ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters list of connectivity configurations for deviceLink objects.
 type ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivit
     }
     return nil
 }
-// Get get links from networkAccess
+// Get list of connectivity configurations for deviceLink objects.
 // returns a ConnectivityConfigurationLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable, error) {
@@ -113,7 +113,7 @@ func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivit
 // ToDeleteRequestInformation delete navigation property links for networkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/connectivityConfiguration/links/{connectivityConfigurationLink%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +121,7 @@ func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivit
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get links from networkAccess
+// ToGetRequestInformation list of connectivity configurations for deviceLink objects.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +138,7 @@ func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivit
 // ToPatchRequestInformation update the navigation property links in networkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable, requestConfiguration *ConnectivityRemoteNetworksItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/networkAccess/connectivity/remoteNetworks/{remoteNetwork%2Did}/connectivityConfiguration/links/{connectivityConfigurationLink%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

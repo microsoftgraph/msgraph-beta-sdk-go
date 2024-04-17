@@ -381,6 +381,11 @@ func (m *UserItemRequestBuilder) Insights()(*ItemInsightsRequestBuilder) {
 func (m *UserItemRequestBuilder) InvalidateAllRefreshTokens()(*ItemInvalidateAllRefreshTokensRequestBuilder) {
     return NewItemInvalidateAllRefreshTokensRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// InvitedBy provides operations to manage the invitedBy property of the microsoft.graph.user entity.
+// returns a *ItemInvitedByRequestBuilder when successful
+func (m *UserItemRequestBuilder) InvitedBy()(*ItemInvitedByRequestBuilder) {
+    return NewItemInvitedByRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // IsManagedAppUserBlocked provides operations to call the isManagedAppUserBlocked method.
 // returns a *ItemIsManagedAppUserBlockedRequestBuilder when successful
 func (m *UserItemRequestBuilder) IsManagedAppUserBlocked()(*ItemIsManagedAppUserBlockedRequestBuilder) {
@@ -410,6 +415,11 @@ func (m *UserItemRequestBuilder) MailboxSettings()(*ItemMailboxSettingsRequestBu
 // returns a *ItemMailFoldersRequestBuilder when successful
 func (m *UserItemRequestBuilder) MailFolders()(*ItemMailFoldersRequestBuilder) {
     return NewItemMailFoldersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ManagedAppLogCollectionRequests provides operations to manage the managedAppLogCollectionRequests property of the microsoft.graph.user entity.
+// returns a *ItemManagedAppLogCollectionRequestsRequestBuilder when successful
+func (m *UserItemRequestBuilder) ManagedAppLogCollectionRequests()(*ItemManagedAppLogCollectionRequestsRequestBuilder) {
+    return NewItemManagedAppLogCollectionRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ManagedAppRegistrations provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
 // returns a *ItemManagedAppRegistrationsRequestBuilder when successful
@@ -622,7 +632,7 @@ func (m *UserItemRequestBuilder) Teamwork()(*ItemTeamworkRequestBuilder) {
 // ToDeleteRequestInformation delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
 // returns a *RequestInformation when successful
 func (m *UserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -652,7 +662,7 @@ func (m *UserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, re
 // ToPatchRequestInformation update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage. Customers through Microsoft Entra ID for customers can also use this API operation to update their details. See Default user permissions in customer tenants for the list of properties they can update.
 // returns a *RequestInformation when successful
 func (m *UserItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, requestConfiguration *UserItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/users/{user%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

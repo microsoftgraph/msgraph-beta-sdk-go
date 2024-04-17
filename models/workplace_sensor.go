@@ -40,7 +40,7 @@ func (m *WorkplaceSensor) GetAdditionalData()(map[string]any) {
 func (m *WorkplaceSensor) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The display name of the sensor.
+// GetDisplayName gets the displayName property value. The display name of the sensor. Optional.
 // returns a *string when successful
 func (m *WorkplaceSensor) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -120,7 +120,7 @@ func (m *WorkplaceSensor) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. The unique identifier of the place served by the sensor. Only needs to be provided if the sensor serves a different place than the device's location.
+// GetPlaceId gets the placeId property value. The unique identifier of the place that the sensor detects. If the device is installed in a room equipped with a mailbox, this property should match the ExternalDirectoryObjectId or Microsoft Entra object ID of the room mailbox. If the sensor detects the same place as the location of the device, the property can be omitted. The default value is the place identifier of the device. Optional.
 // returns a *string when successful
 func (m *WorkplaceSensor) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -132,7 +132,7 @@ func (m *WorkplaceSensor) GetPlaceId()(*string) {
     }
     return nil
 }
-// GetSensorId gets the sensorId property value. The unique identifier of a sensor within the device. If the sensor Id is not provided, the sensorType will be used as sensorId.
+// GetSensorId gets the sensorId property value. The user-defined unique identifier of the sensor on the device. If the device has multiple sensors of the same type, the property must be provided to identify each sensor. If the device has only one sensor of a type, the property can be omitted. The default value is the sensor type. Optional.
 // returns a *string when successful
 func (m *WorkplaceSensor) GetSensorId()(*string) {
     val, err := m.GetBackingStore().Get("sensorId")
@@ -208,7 +208,7 @@ func (m *WorkplaceSensor) SetAdditionalData(value map[string]any)() {
 func (m *WorkplaceSensor) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The display name of the sensor.
+// SetDisplayName sets the displayName property value. The display name of the sensor. Optional.
 func (m *WorkplaceSensor) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -222,14 +222,14 @@ func (m *WorkplaceSensor) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. The unique identifier of the place served by the sensor. Only needs to be provided if the sensor serves a different place than the device's location.
+// SetPlaceId sets the placeId property value. The unique identifier of the place that the sensor detects. If the device is installed in a room equipped with a mailbox, this property should match the ExternalDirectoryObjectId or Microsoft Entra object ID of the room mailbox. If the sensor detects the same place as the location of the device, the property can be omitted. The default value is the place identifier of the device. Optional.
 func (m *WorkplaceSensor) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSensorId sets the sensorId property value. The unique identifier of a sensor within the device. If the sensor Id is not provided, the sensorType will be used as sensorId.
+// SetSensorId sets the sensorId property value. The user-defined unique identifier of the sensor on the device. If the device has multiple sensors of the same type, the property must be provided to identify each sensor. If the device has only one sensor of a type, the property can be omitted. The default value is the sensor type. Optional.
 func (m *WorkplaceSensor) SetSensorId(value *string)() {
     err := m.GetBackingStore().Set("sensorId", value)
     if err != nil {

@@ -18,7 +18,7 @@ type VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilderDeleteRequestC
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilderGetQueryParameters get bulkActions from deviceManagement
+// VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcBulkAction object.
 type VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilder) Delete(c
     }
     return nil
 }
-// Get get bulkActions from deviceManagement
+// Get read the properties and relationships of a cloudPcBulkAction object.
 // returns a CloudPcBulkActionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcbulkaction-get?view=graph-rest-1.0
 func (m *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkActionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,7 +116,7 @@ func (m *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilder) Patch(ct
 // ToDeleteRequestInformation delete navigation property bulkActions for deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/virtualEndpoint/bulkActions/{cloudPcBulkAction%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -121,7 +124,7 @@ func (m *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilder) ToDelete
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get bulkActions from deviceManagement
+// ToGetRequestInformation read the properties and relationships of a cloudPcBulkAction object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +141,7 @@ func (m *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilder) ToGetReq
 // ToPatchRequestInformation update the navigation property bulkActions in deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkActionable, requestConfiguration *VirtualEndpointBulkActionsCloudPcBulkActionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/virtualEndpoint/bulkActions/{cloudPcBulkAction%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

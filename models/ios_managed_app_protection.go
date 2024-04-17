@@ -34,6 +34,18 @@ func (m *IosManagedAppProtection) GetAllowedIosDeviceModels()(*string) {
     }
     return nil
 }
+// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+// returns a *ManagedAppRemediationAction when successful
+func (m *IosManagedAppProtection) GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction) {
+    val, err := m.GetBackingStore().Get("appActionIfAccountIsClockedOut")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppRemediationAction)
+    }
+    return nil
+}
 // GetAppActionIfIosDeviceModelNotAllowed gets the appActionIfIosDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
 // returns a *ManagedAppRemediationAction when successful
 func (m *IosManagedAppProtection) GetAppActionIfIosDeviceModelNotAllowed()(*ManagedAppRemediationAction) {
@@ -70,7 +82,7 @@ func (m *IosManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     }
     return nil
 }
-// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
 // returns a *string when successful
 func (m *IosManagedAppProtection) GetCustomBrowserProtocol()(*string) {
     val, err := m.GetBackingStore().Get("customBrowserProtocol")
@@ -177,6 +189,16 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetAllowedIosDeviceModels(val)
+        }
+        return nil
+    }
+    res["appActionIfAccountIsClockedOut"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedAppRemediationAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppActionIfAccountIsClockedOut(val.(*ManagedAppRemediationAction))
         }
         return nil
     }
@@ -504,6 +526,13 @@ func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetAppActionIfAccountIsClockedOut() != nil {
+        cast := (*m.GetAppActionIfAccountIsClockedOut()).String()
+        err = writer.WriteStringValue("appActionIfAccountIsClockedOut", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAppActionIfIosDeviceModelNotAllowed() != nil {
         cast := (*m.GetAppActionIfIosDeviceModelNotAllowed()).String()
         err = writer.WriteStringValue("appActionIfIosDeviceModelNotAllowed", &cast)
@@ -641,6 +670,13 @@ func (m *IosManagedAppProtection) SetAllowedIosDeviceModels(value *string)() {
         panic(err)
     }
 }
+// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+func (m *IosManagedAppProtection) SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)() {
+    err := m.GetBackingStore().Set("appActionIfAccountIsClockedOut", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAppActionIfIosDeviceModelNotAllowed sets the appActionIfIosDeviceModelNotAllowed property value. An admin initiated action to be applied on a managed app.
 func (m *IosManagedAppProtection) SetAppActionIfIosDeviceModelNotAllowed(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfIosDeviceModelNotAllowed", value)
@@ -662,7 +698,7 @@ func (m *IosManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
         panic(err)
     }
 }
-// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
 func (m *IosManagedAppProtection) SetCustomBrowserProtocol(value *string)() {
     err := m.GetBackingStore().Set("customBrowserProtocol", value)
     if err != nil {
@@ -778,6 +814,7 @@ type IosManagedAppProtectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TargetedManagedAppProtectionable
     GetAllowedIosDeviceModels()(*string)
+    GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction)
     GetAppActionIfIosDeviceModelNotAllowed()(*ManagedAppRemediationAction)
     GetAppDataEncryptionType()(*ManagedAppDataEncryptionType)
     GetApps()([]ManagedMobileAppable)
@@ -798,6 +835,7 @@ type IosManagedAppProtectionable interface {
     GetProtectInboundDataFromUnknownSources()(*bool)
     GetThirdPartyKeyboardsBlocked()(*bool)
     SetAllowedIosDeviceModels(value *string)()
+    SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)()
     SetAppActionIfIosDeviceModelNotAllowed(value *ManagedAppRemediationAction)()
     SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)()
     SetApps(value []ManagedMobileAppable)()

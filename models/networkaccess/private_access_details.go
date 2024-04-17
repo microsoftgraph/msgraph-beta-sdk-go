@@ -174,6 +174,16 @@ func (m *PrivateAccessDetails) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["thirdPartyTokenDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateThirdPartyTokenDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetThirdPartyTokenDetails(val.(ThirdPartyTokenDetailsable))
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -197,6 +207,18 @@ func (m *PrivateAccessDetails) GetProcessingRegion()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetThirdPartyTokenDetails gets the thirdPartyTokenDetails property value. The thirdPartyTokenDetails property
+// returns a ThirdPartyTokenDetailsable when successful
+func (m *PrivateAccessDetails) GetThirdPartyTokenDetails()(ThirdPartyTokenDetailsable) {
+    val, err := m.GetBackingStore().Get("thirdPartyTokenDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ThirdPartyTokenDetailsable)
     }
     return nil
 }
@@ -242,6 +264,12 @@ func (m *PrivateAccessDetails) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("processingRegion", m.GetProcessingRegion())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("thirdPartyTokenDetails", m.GetThirdPartyTokenDetails())
         if err != nil {
             return err
         }
@@ -314,6 +342,13 @@ func (m *PrivateAccessDetails) SetProcessingRegion(value *string)() {
         panic(err)
     }
 }
+// SetThirdPartyTokenDetails sets the thirdPartyTokenDetails property value. The thirdPartyTokenDetails property
+func (m *PrivateAccessDetails) SetThirdPartyTokenDetails(value ThirdPartyTokenDetailsable)() {
+    err := m.GetBackingStore().Set("thirdPartyTokenDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type PrivateAccessDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -326,6 +361,7 @@ type PrivateAccessDetailsable interface {
     GetConnectorName()(*string)
     GetOdataType()(*string)
     GetProcessingRegion()(*string)
+    GetThirdPartyTokenDetails()(ThirdPartyTokenDetailsable)
     SetAccessType(value *AccessType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetConnectionStatus(value *ConnectionStatus)()
@@ -334,4 +370,5 @@ type PrivateAccessDetailsable interface {
     SetConnectorName(value *string)()
     SetOdataType(value *string)()
     SetProcessingRegion(value *string)()
+    SetThirdPartyTokenDetails(value ThirdPartyTokenDetailsable)()
 }

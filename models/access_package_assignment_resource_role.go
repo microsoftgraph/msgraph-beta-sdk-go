@@ -161,7 +161,7 @@ func (m *AccessPackageAssignmentResourceRole) GetOriginId()(*string) {
     }
     return nil
 }
-// GetOriginSystem gets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
+// GetOriginSystem gets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup, or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
 // returns a *string when successful
 func (m *AccessPackageAssignmentResourceRole) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
@@ -173,7 +173,7 @@ func (m *AccessPackageAssignmentResourceRole) GetOriginSystem()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The value is PendingFulfillment when the access package assignment hasn't yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
+// GetStatus gets the status property value. The value is PendingFulfillment before the access package assignment is delivered to the origin system, and Fulfilled after the access package assignment is delivered to the origin system.
 // returns a *string when successful
 func (m *AccessPackageAssignmentResourceRole) GetStatus()(*string) {
     val, err := m.GetBackingStore().Get("status")
@@ -276,14 +276,14 @@ func (m *AccessPackageAssignmentResourceRole) SetOriginId(value *string)() {
         panic(err)
     }
 }
-// SetOriginSystem sets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
+// SetOriginSystem sets the originSystem property value. The system where the role assignment is to be created or has been created for an access package assignment, such as SharePointOnline, AadGroup, or AadApplication, corresponding to the originSystem property of the accessPackageResourceRole.
 func (m *AccessPackageAssignmentResourceRole) SetOriginSystem(value *string)() {
     err := m.GetBackingStore().Set("originSystem", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The value is PendingFulfillment when the access package assignment hasn't yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.
+// SetStatus sets the status property value. The value is PendingFulfillment before the access package assignment is delivered to the origin system, and Fulfilled after the access package assignment is delivered to the origin system.
 func (m *AccessPackageAssignmentResourceRole) SetStatus(value *string)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

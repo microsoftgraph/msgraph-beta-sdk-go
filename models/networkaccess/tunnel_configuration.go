@@ -120,7 +120,7 @@ func (m *TunnelConfiguration) GetPreSharedKey()(*string) {
     }
     return nil
 }
-// GetZoneRedundancyPreSharedKey gets the zoneRedundancyPreSharedKey property value. The zoneRedundancyPreSharedKey property
+// GetZoneRedundancyPreSharedKey gets the zoneRedundancyPreSharedKey property value. Another key for zone redundant tunnel. Required only when you select zoneRedundancy redindancyTier when creating a deviceLink.
 // returns a *string when successful
 func (m *TunnelConfiguration) GetZoneRedundancyPreSharedKey()(*string) {
     val, err := m.GetBackingStore().Get("zoneRedundancyPreSharedKey")
@@ -185,7 +185,7 @@ func (m *TunnelConfiguration) SetPreSharedKey(value *string)() {
         panic(err)
     }
 }
-// SetZoneRedundancyPreSharedKey sets the zoneRedundancyPreSharedKey property value. The zoneRedundancyPreSharedKey property
+// SetZoneRedundancyPreSharedKey sets the zoneRedundancyPreSharedKey property value. Another key for zone redundant tunnel. Required only when you select zoneRedundancy redindancyTier when creating a deviceLink.
 func (m *TunnelConfiguration) SetZoneRedundancyPreSharedKey(value *string)() {
     err := m.GetBackingStore().Set("zoneRedundancyPreSharedKey", value)
     if err != nil {

@@ -82,10 +82,12 @@ const (
     INITIATEDEVICEATTESTATION_REMOTEACTION
     // Indicates remote device action to override assignments for a Device.
     CHANGEASSIGNMENTS_REMOTEACTION
+    // Indicates remote device action to delete a device from Intune portal.
+    DELETE_REMOTEACTION
 )
 
 func (i RemoteAction) String() string {
-    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh", "initiateDeviceAttestation", "changeAssignments"}[i]
+    return []string{"unknown", "factoryReset", "removeCompanyData", "resetPasscode", "remoteLock", "enableLostMode", "disableLostMode", "locateDevice", "rebootNow", "recoverPasscode", "cleanWindowsDevice", "logoutSharedAppleDeviceActiveUser", "quickScan", "fullScan", "windowsDefenderUpdateSignatures", "factoryResetKeepEnrollmentData", "updateDeviceAccount", "automaticRedeployment", "shutDown", "rotateBitLockerKeys", "rotateFileVaultKey", "getFileVaultKey", "setDeviceName", "activateDeviceEsim", "deprovision", "disable", "reenable", "moveDeviceToOrganizationalUnit", "initiateMobileDeviceManagementKeyRecovery", "initiateOnDemandProactiveRemediation", "rotateLocalAdminPassword", "unknownFutureValue", "launchRemoteHelp", "revokeAppleVppLicenses", "removeDeviceFirmwareConfigurationInterfaceManagement", "pauseConfigurationRefresh", "initiateDeviceAttestation", "changeAssignments", "delete"}[i]
 }
 func ParseRemoteAction(v string) (any, error) {
     result := UNKNOWN_REMOTEACTION
@@ -166,6 +168,8 @@ func ParseRemoteAction(v string) (any, error) {
             result = INITIATEDEVICEATTESTATION_REMOTEACTION
         case "changeAssignments":
             result = CHANGEASSIGNMENTS_REMOTEACTION
+        case "delete":
+            result = DELETE_REMOTEACTION
         default:
             return 0, errors.New("Unknown RemoteAction value: " + v)
     }

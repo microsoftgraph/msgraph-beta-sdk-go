@@ -23,33 +23,33 @@ func CreateCategoryTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CategoryTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.FilePlanDescriptorTemplate.GetFieldDeserializers()
-    res["subCategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSubCategoryTemplateFromDiscriminatorValue)
+    res["subcategories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSubcategoryTemplateFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SubCategoryTemplateable, len(val))
+            res := make([]SubcategoryTemplateable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(SubCategoryTemplateable)
+                    res[i] = v.(SubcategoryTemplateable)
                 }
             }
-            m.SetSubCategories(res)
+            m.SetSubcategories(res)
         }
         return nil
     }
     return res
 }
-// GetSubCategories gets the subCategories property value. Represents all subcategories under a particular category.
-// returns a []SubCategoryTemplateable when successful
-func (m *CategoryTemplate) GetSubCategories()([]SubCategoryTemplateable) {
-    val, err := m.GetBackingStore().Get("subCategories")
+// GetSubcategories gets the subcategories property value. The subcategories property
+// returns a []SubcategoryTemplateable when successful
+func (m *CategoryTemplate) GetSubcategories()([]SubcategoryTemplateable) {
+    val, err := m.GetBackingStore().Get("subcategories")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]SubCategoryTemplateable)
+        return val.([]SubcategoryTemplateable)
     }
     return nil
 }
@@ -59,23 +59,23 @@ func (m *CategoryTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if err != nil {
         return err
     }
-    if m.GetSubCategories() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubCategories()))
-        for i, v := range m.GetSubCategories() {
+    if m.GetSubcategories() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubcategories()))
+        for i, v := range m.GetSubcategories() {
             if v != nil {
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("subCategories", cast)
+        err = writer.WriteCollectionOfObjectValues("subcategories", cast)
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetSubCategories sets the subCategories property value. Represents all subcategories under a particular category.
-func (m *CategoryTemplate) SetSubCategories(value []SubCategoryTemplateable)() {
-    err := m.GetBackingStore().Set("subCategories", value)
+// SetSubcategories sets the subcategories property value. The subcategories property
+func (m *CategoryTemplate) SetSubcategories(value []SubcategoryTemplateable)() {
+    err := m.GetBackingStore().Set("subcategories", value)
     if err != nil {
         panic(err)
     }
@@ -83,6 +83,6 @@ func (m *CategoryTemplate) SetSubCategories(value []SubCategoryTemplateable)() {
 type CategoryTemplateable interface {
     FilePlanDescriptorTemplateable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetSubCategories()([]SubCategoryTemplateable)
-    SetSubCategories(value []SubCategoryTemplateable)()
+    GetSubcategories()([]SubcategoryTemplateable)
+    SetSubcategories(value []SubcategoryTemplateable)()
 }

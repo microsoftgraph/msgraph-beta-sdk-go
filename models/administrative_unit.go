@@ -21,7 +21,7 @@ func NewAdministrativeUnit()(*AdministrativeUnit) {
 func CreateAdministrativeUnitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdministrativeUnit(), nil
 }
-// GetDescription gets the description property value. An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
+// GetDescription gets the description property value. The description property
 // returns a *string when successful
 func (m *AdministrativeUnit) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -33,7 +33,7 @@ func (m *AdministrativeUnit) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// GetDisplayName gets the displayName property value. The displayName property
 // returns a *string when successful
 func (m *AdministrativeUnit) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -181,7 +181,7 @@ func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsMemberManagementRestricted gets the isMemberManagementRestricted property value. true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can't be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.
+// GetIsMemberManagementRestricted gets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
 // returns a *bool when successful
 func (m *AdministrativeUnit) GetIsMemberManagementRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isMemberManagementRestricted")
@@ -205,7 +205,7 @@ func (m *AdministrativeUnit) GetMembers()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetMembershipRule gets the membershipRule property value. Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.
+// GetMembershipRule gets the membershipRule property value. The membershipRule property
 // returns a *string when successful
 func (m *AdministrativeUnit) GetMembershipRule()(*string) {
     val, err := m.GetBackingStore().Get("membershipRule")
@@ -217,7 +217,7 @@ func (m *AdministrativeUnit) GetMembershipRule()(*string) {
     }
     return nil
 }
-// GetMembershipRuleProcessingState gets the membershipRuleProcessingState property value. Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.
+// GetMembershipRuleProcessingState gets the membershipRuleProcessingState property value. The membershipRuleProcessingState property
 // returns a *string when successful
 func (m *AdministrativeUnit) GetMembershipRuleProcessingState()(*string) {
     val, err := m.GetBackingStore().Get("membershipRuleProcessingState")
@@ -229,7 +229,7 @@ func (m *AdministrativeUnit) GetMembershipRuleProcessingState()(*string) {
     }
     return nil
 }
-// GetMembershipType gets the membershipType property value. Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.
+// GetMembershipType gets the membershipType property value. The membershipType property
 // returns a *string when successful
 func (m *AdministrativeUnit) GetMembershipType()(*string) {
     val, err := m.GetBackingStore().Get("membershipType")
@@ -253,7 +253,7 @@ func (m *AdministrativeUnit) GetScopedRoleMembers()([]ScopedRoleMembershipable) 
     }
     return nil
 }
-// GetVisibility gets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+// GetVisibility gets the visibility property value. The visibility property
 // returns a *string when successful
 func (m *AdministrativeUnit) GetVisibility()(*string) {
     val, err := m.GetBackingStore().Get("visibility")
@@ -351,14 +351,14 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetDescription sets the description property value. An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.
+// SetDescription sets the description property value. The description property
 func (m *AdministrativeUnit) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *AdministrativeUnit) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -372,7 +372,7 @@ func (m *AdministrativeUnit) SetExtensions(value []Extensionable)() {
         panic(err)
     }
 }
-// SetIsMemberManagementRestricted sets the isMemberManagementRestricted property value. true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can't be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.
+// SetIsMemberManagementRestricted sets the isMemberManagementRestricted property value. The isMemberManagementRestricted property
 func (m *AdministrativeUnit) SetIsMemberManagementRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isMemberManagementRestricted", value)
     if err != nil {
@@ -386,21 +386,21 @@ func (m *AdministrativeUnit) SetMembers(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetMembershipRule sets the membershipRule property value. Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.
+// SetMembershipRule sets the membershipRule property value. The membershipRule property
 func (m *AdministrativeUnit) SetMembershipRule(value *string)() {
     err := m.GetBackingStore().Set("membershipRule", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMembershipRuleProcessingState sets the membershipRuleProcessingState property value. Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.
+// SetMembershipRuleProcessingState sets the membershipRuleProcessingState property value. The membershipRuleProcessingState property
 func (m *AdministrativeUnit) SetMembershipRuleProcessingState(value *string)() {
     err := m.GetBackingStore().Set("membershipRuleProcessingState", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMembershipType sets the membershipType property value. Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.
+// SetMembershipType sets the membershipType property value. The membershipType property
 func (m *AdministrativeUnit) SetMembershipType(value *string)() {
     err := m.GetBackingStore().Set("membershipType", value)
     if err != nil {
@@ -414,7 +414,7 @@ func (m *AdministrativeUnit) SetScopedRoleMembers(value []ScopedRoleMembershipab
         panic(err)
     }
 }
-// SetVisibility sets the visibility property value. Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, the default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
+// SetVisibility sets the visibility property value. The visibility property
 func (m *AdministrativeUnit) SetVisibility(value *string)() {
     err := m.GetBackingStore().Set("visibility", value)
     if err != nil {

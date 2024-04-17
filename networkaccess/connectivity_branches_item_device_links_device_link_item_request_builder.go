@@ -18,7 +18,7 @@ type ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters retrieve the device link associated with a specific branch.
+// ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters each unique CPE device associated with a branch is specified. Supports $expand.
 type ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,7 +54,7 @@ func NewConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete removes the link between the branch and the CPE device, effectively removing the connection and associated configuration between them.
+// Delete removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -74,13 +74,10 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Delete
     }
     return nil
 }
-// Get retrieve the device link associated with a specific branch.
+// Get each unique CPE device associated with a branch is specified. Supports $expand.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a DeviceLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-get?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +95,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Get(ct
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// Patch update the device link associated with a specific branch.
+// Patch update the device link associated with a specific branch or remote network.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a DeviceLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -122,11 +119,11 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Patch(
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// ToDeleteRequestInformation removes the link between the branch and the CPE device, effectively removing the connection and associated configuration between them.
+// ToDeleteRequestInformation removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks/{deviceLink%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -134,7 +131,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToDele
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the device link associated with a specific branch.
+// ToGetRequestInformation each unique CPE device associated with a branch is specified. Supports $expand.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,11 +146,11 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToGetR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the device link associated with a specific branch.
+// ToPatchRequestInformation update the device link associated with a specific branch or remote network.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks/{deviceLink%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

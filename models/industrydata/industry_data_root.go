@@ -84,6 +84,22 @@ func (m *IndustryDataRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["outboundProvisioningFlowSets"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOutboundProvisioningFlowSetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OutboundProvisioningFlowSetable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(OutboundProvisioningFlowSetable)
+                }
+            }
+            m.SetOutboundProvisioningFlowSets(res)
+        }
+        return nil
+    }
     res["referenceDefinitions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateReferenceDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -190,6 +206,18 @@ func (m *IndustryDataRoot) GetOperations()([]ie233ee762e29b4ba6970aa2a2efce4b7fd
     }
     return nil
 }
+// GetOutboundProvisioningFlowSets gets the outboundProvisioningFlowSets property value. The outboundProvisioningFlowSets property
+// returns a []OutboundProvisioningFlowSetable when successful
+func (m *IndustryDataRoot) GetOutboundProvisioningFlowSets()([]OutboundProvisioningFlowSetable) {
+    val, err := m.GetBackingStore().Get("outboundProvisioningFlowSets")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OutboundProvisioningFlowSetable)
+    }
+    return nil
+}
 // GetReferenceDefinitions gets the referenceDefinitions property value. Set of user modifiable system picker types.
 // returns a []ReferenceDefinitionable when successful
 func (m *IndustryDataRoot) GetReferenceDefinitions()([]ReferenceDefinitionable) {
@@ -292,6 +320,18 @@ func (m *IndustryDataRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetOutboundProvisioningFlowSets() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOutboundProvisioningFlowSets()))
+        for i, v := range m.GetOutboundProvisioningFlowSets() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("outboundProvisioningFlowSets", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetReferenceDefinitions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetReferenceDefinitions()))
         for i, v := range m.GetReferenceDefinitions() {
@@ -375,6 +415,13 @@ func (m *IndustryDataRoot) SetOperations(value []ie233ee762e29b4ba6970aa2a2efce4
         panic(err)
     }
 }
+// SetOutboundProvisioningFlowSets sets the outboundProvisioningFlowSets property value. The outboundProvisioningFlowSets property
+func (m *IndustryDataRoot) SetOutboundProvisioningFlowSets(value []OutboundProvisioningFlowSetable)() {
+    err := m.GetBackingStore().Set("outboundProvisioningFlowSets", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetReferenceDefinitions sets the referenceDefinitions property value. Set of user modifiable system picker types.
 func (m *IndustryDataRoot) SetReferenceDefinitions(value []ReferenceDefinitionable)() {
     err := m.GetBackingStore().Set("referenceDefinitions", value)
@@ -416,6 +463,7 @@ type IndustryDataRootable interface {
     GetDataConnectors()([]IndustryDataConnectorable)
     GetInboundFlows()([]InboundFlowable)
     GetOperations()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable)
+    GetOutboundProvisioningFlowSets()([]OutboundProvisioningFlowSetable)
     GetReferenceDefinitions()([]ReferenceDefinitionable)
     GetRoleGroups()([]RoleGroupable)
     GetRuns()([]IndustryDataRunable)
@@ -424,6 +472,7 @@ type IndustryDataRootable interface {
     SetDataConnectors(value []IndustryDataConnectorable)()
     SetInboundFlows(value []InboundFlowable)()
     SetOperations(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LongRunningOperationable)()
+    SetOutboundProvisioningFlowSets(value []OutboundProvisioningFlowSetable)()
     SetReferenceDefinitions(value []ReferenceDefinitionable)()
     SetRoleGroups(value []RoleGroupable)()
     SetRuns(value []IndustryDataRunable)()

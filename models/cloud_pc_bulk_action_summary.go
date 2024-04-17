@@ -40,7 +40,7 @@ func (m *CloudPcBulkActionSummary) GetAdditionalData()(map[string]any) {
 func (m *CloudPcBulkActionSummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetFailedCount gets the failedCount property value. The failedCount property
+// GetFailedCount gets the failedCount property value. The number of Cloud PCs where the action failed.
 // returns a *int32 when successful
 func (m *CloudPcBulkActionSummary) GetFailedCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedCount")
@@ -118,7 +118,7 @@ func (m *CloudPcBulkActionSummary) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetInProgressCount gets the inProgressCount property value. The inProgressCount property
+// GetInProgressCount gets the inProgressCount property value. The number of Cloud PCs where the action is in progress.
 // returns a *int32 when successful
 func (m *CloudPcBulkActionSummary) GetInProgressCount()(*int32) {
     val, err := m.GetBackingStore().Get("inProgressCount")
@@ -130,7 +130,7 @@ func (m *CloudPcBulkActionSummary) GetInProgressCount()(*int32) {
     }
     return nil
 }
-// GetNotSupportedCount gets the notSupportedCount property value. The notSupportedCount property
+// GetNotSupportedCount gets the notSupportedCount property value. The number of Cloud PCs where the action isn't supported.
 // returns a *int32 when successful
 func (m *CloudPcBulkActionSummary) GetNotSupportedCount()(*int32) {
     val, err := m.GetBackingStore().Get("notSupportedCount")
@@ -154,7 +154,7 @@ func (m *CloudPcBulkActionSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPendingCount gets the pendingCount property value. The pendingCount property
+// GetPendingCount gets the pendingCount property value. The number of Cloud PCs where the action is pending.
 // returns a *int32 when successful
 func (m *CloudPcBulkActionSummary) GetPendingCount()(*int32) {
     val, err := m.GetBackingStore().Get("pendingCount")
@@ -166,7 +166,7 @@ func (m *CloudPcBulkActionSummary) GetPendingCount()(*int32) {
     }
     return nil
 }
-// GetSuccessfulCount gets the successfulCount property value. The successfulCount property
+// GetSuccessfulCount gets the successfulCount property value. The number of Cloud PCs where the action is successful.
 // returns a *int32 when successful
 func (m *CloudPcBulkActionSummary) GetSuccessfulCount()(*int32) {
     val, err := m.GetBackingStore().Get("successfulCount")
@@ -235,21 +235,21 @@ func (m *CloudPcBulkActionSummary) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcBulkActionSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFailedCount sets the failedCount property value. The failedCount property
+// SetFailedCount sets the failedCount property value. The number of Cloud PCs where the action failed.
 func (m *CloudPcBulkActionSummary) SetFailedCount(value *int32)() {
     err := m.GetBackingStore().Set("failedCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInProgressCount sets the inProgressCount property value. The inProgressCount property
+// SetInProgressCount sets the inProgressCount property value. The number of Cloud PCs where the action is in progress.
 func (m *CloudPcBulkActionSummary) SetInProgressCount(value *int32)() {
     err := m.GetBackingStore().Set("inProgressCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotSupportedCount sets the notSupportedCount property value. The notSupportedCount property
+// SetNotSupportedCount sets the notSupportedCount property value. The number of Cloud PCs where the action isn't supported.
 func (m *CloudPcBulkActionSummary) SetNotSupportedCount(value *int32)() {
     err := m.GetBackingStore().Set("notSupportedCount", value)
     if err != nil {
@@ -263,14 +263,14 @@ func (m *CloudPcBulkActionSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPendingCount sets the pendingCount property value. The pendingCount property
+// SetPendingCount sets the pendingCount property value. The number of Cloud PCs where the action is pending.
 func (m *CloudPcBulkActionSummary) SetPendingCount(value *int32)() {
     err := m.GetBackingStore().Set("pendingCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSuccessfulCount sets the successfulCount property value. The successfulCount property
+// SetSuccessfulCount sets the successfulCount property value. The number of Cloud PCs where the action is successful.
 func (m *CloudPcBulkActionSummary) SetSuccessfulCount(value *int32)() {
     err := m.GetBackingStore().Set("successfulCount", value)
     if err != nil {

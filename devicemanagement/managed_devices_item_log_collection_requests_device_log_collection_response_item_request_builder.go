@@ -75,6 +75,11 @@ func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemR
     }
     return nil
 }
+// DownloadDeviceLogs provides operations to call the downloadDeviceLogs method.
+// returns a *ManagedDevicesItemLogCollectionRequestsItemDownloadDeviceLogsRequestBuilder when successful
+func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) DownloadDeviceLogs()(*ManagedDevicesItemLogCollectionRequestsItemDownloadDeviceLogsRequestBuilder) {
+    return NewManagedDevicesItemLogCollectionRequestsItemDownloadDeviceLogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get list of log collection requests
 // returns a DeviceLogCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -118,7 +123,7 @@ func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemR
 // ToDeleteRequestInformation delete navigation property logCollectionRequests for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/logCollectionRequests/{deviceLogCollectionResponse%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -143,7 +148,7 @@ func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemR
 // ToPatchRequestInformation update the navigation property logCollectionRequests in deviceManagement
 // returns a *RequestInformation when successful
 func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceLogCollectionResponseable, requestConfiguration *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/logCollectionRequests/{deviceLogCollectionResponse%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

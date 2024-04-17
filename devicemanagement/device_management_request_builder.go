@@ -247,6 +247,11 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummary()(*D
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationDeviceStateSummaries()(*DeviceConfigurationDeviceStateSummariesRequestBuilder) {
     return NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DeviceConfigurationProfiles provides operations to manage the deviceConfigurationProfiles property of the microsoft.graph.deviceManagement entity.
+// returns a *DeviceConfigurationProfilesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) DeviceConfigurationProfiles()(*DeviceConfigurationProfilesRequestBuilder) {
+    return NewDeviceConfigurationProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // DeviceConfigurationRestrictedAppsViolations provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.
 // returns a *DeviceConfigurationRestrictedAppsViolationsRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationRestrictedAppsViolations()(*DeviceConfigurationRestrictedAppsViolationsRequestBuilder) {
@@ -446,6 +451,16 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyObjectFiles()(*GroupPolicyOb
 // returns a *GroupPolicyUploadedDefinitionFilesRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFiles()(*GroupPolicyUploadedDefinitionFilesRequestBuilder) {
     return NewGroupPolicyUploadedDefinitionFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// HardwareConfigurations provides operations to manage the hardwareConfigurations property of the microsoft.graph.deviceManagement entity.
+// returns a *HardwareConfigurationsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) HardwareConfigurations()(*HardwareConfigurationsRequestBuilder) {
+    return NewHardwareConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// HardwarePasswordInfo provides operations to manage the hardwarePasswordInfo property of the microsoft.graph.deviceManagement entity.
+// returns a *HardwarePasswordInfoRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) HardwarePasswordInfo()(*HardwarePasswordInfoRequestBuilder) {
+    return NewHardwarePasswordInfoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ImportedDeviceIdentities provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.
 // returns a *ImportedDeviceIdentitiesRequestBuilder when successful
@@ -704,7 +719,7 @@ func (m *DeviceManagementRequestBuilder) ToGetRequestInformation(ctx context.Con
 // ToPatchRequestInformation update deviceManagement
 // returns a *RequestInformation when successful
 func (m *DeviceManagementRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementable, requestConfiguration *DeviceManagementRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/deviceManagement", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

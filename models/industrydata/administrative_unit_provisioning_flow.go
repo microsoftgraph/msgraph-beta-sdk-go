@@ -1,0 +1,78 @@
+package industrydata
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+type AdministrativeUnitProvisioningFlow struct {
+    ProvisioningFlow
+}
+// NewAdministrativeUnitProvisioningFlow instantiates a new AdministrativeUnitProvisioningFlow and sets the default values.
+func NewAdministrativeUnitProvisioningFlow()(*AdministrativeUnitProvisioningFlow) {
+    m := &AdministrativeUnitProvisioningFlow{
+        ProvisioningFlow: *NewProvisioningFlow(),
+    }
+    odataTypeValue := "#microsoft.graph.industryData.administrativeUnitProvisioningFlow"
+    m.SetOdataType(&odataTypeValue)
+    return m
+}
+// CreateAdministrativeUnitProvisioningFlowFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateAdministrativeUnitProvisioningFlowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewAdministrativeUnitProvisioningFlow(), nil
+}
+// GetCreationOptions gets the creationOptions property value. The creationOptions property
+// returns a AdminUnitCreationOptionsable when successful
+func (m *AdministrativeUnitProvisioningFlow) GetCreationOptions()(AdminUnitCreationOptionsable) {
+    val, err := m.GetBackingStore().Get("creationOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AdminUnitCreationOptionsable)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *AdministrativeUnitProvisioningFlow) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.ProvisioningFlow.GetFieldDeserializers()
+    res["creationOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAdminUnitCreationOptionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreationOptions(val.(AdminUnitCreationOptionsable))
+        }
+        return nil
+    }
+    return res
+}
+// Serialize serializes information the current object
+func (m *AdministrativeUnitProvisioningFlow) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.ProvisioningFlow.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteObjectValue("creationOptions", m.GetCreationOptions())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetCreationOptions sets the creationOptions property value. The creationOptions property
+func (m *AdministrativeUnitProvisioningFlow) SetCreationOptions(value AdminUnitCreationOptionsable)() {
+    err := m.GetBackingStore().Set("creationOptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type AdministrativeUnitProvisioningFlowable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    ProvisioningFlowable
+    GetCreationOptions()(AdminUnitCreationOptionsable)
+    SetCreationOptions(value AdminUnitCreationOptionsable)()
+}

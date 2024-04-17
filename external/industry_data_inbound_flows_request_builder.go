@@ -11,7 +11,7 @@ import (
 type IndustryDataInboundFlowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataInboundFlowsRequestBuilderGetQueryParameters get a list of the inboundFileFlow objects and their properties.
+// IndustryDataInboundFlowsRequestBuilderGetQueryParameters get a list of the inboundFlow objects and their properties.
 type IndustryDataInboundFlowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,12 @@ func NewIndustryDataInboundFlowsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *IndustryDataInboundFlowsRequestBuilder) Count()(*IndustryDataInboundFlowsCountRequestBuilder) {
     return NewIndustryDataInboundFlowsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the inboundFileFlow objects and their properties.
+// Get get a list of the inboundFlow objects and their properties.
 // returns a InboundFlowCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0
 func (m *IndustryDataInboundFlowsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *IndustryDataInboundFlowsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable), nil
 }
-// ToGetRequestInformation get a list of the inboundFileFlow objects and their properties.
+// ToGetRequestInformation get a list of the inboundFlow objects and their properties.
 // returns a *RequestInformation when successful
 func (m *IndustryDataInboundFlowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataInboundFlowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,7 +139,7 @@ func (m *IndustryDataInboundFlowsRequestBuilder) ToGetRequestInformation(ctx con
 // ToPostRequestInformation create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
 // returns a *RequestInformation when successful
 func (m *IndustryDataInboundFlowsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustryDataInboundFlowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/external/industryData/inboundFlows", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

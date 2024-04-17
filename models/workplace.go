@@ -84,7 +84,7 @@ func (m *Workplace) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSensorDevices gets the sensorDevices property value. The sensorDevices property
+// GetSensorDevices gets the sensorDevices property value. A collection of sensor devices.
 // returns a []WorkplaceSensorDeviceable when successful
 func (m *Workplace) GetSensorDevices()([]WorkplaceSensorDeviceable) {
     val, err := m.GetBackingStore().Get("sensorDevices")
@@ -142,7 +142,7 @@ func (m *Workplace) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSensorDevices sets the sensorDevices property value. The sensorDevices property
+// SetSensorDevices sets the sensorDevices property value. A collection of sensor devices.
 func (m *Workplace) SetSensorDevices(value []WorkplaceSensorDeviceable)() {
     err := m.GetBackingStore().Set("sensorDevices", value)
     if err != nil {

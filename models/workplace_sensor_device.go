@@ -31,7 +31,7 @@ func (m *WorkplaceSensorDevice) GetDescription()(*string) {
     }
     return nil
 }
-// GetDeviceId gets the deviceId property value. The unique identifier of the device set by the user.
+// GetDeviceId gets the deviceId property value. The user-defined unique identifier of the device provided at the time of creation.
 // returns a *string when successful
 func (m *WorkplaceSensorDevice) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -173,7 +173,7 @@ func (m *WorkplaceSensorDevice) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIpV4Address gets the ipV4Address property value. The IPv4 Address of the device.
+// GetIpV4Address gets the ipV4Address property value. The IPv4 address of the device.
 // returns a *string when successful
 func (m *WorkplaceSensorDevice) GetIpV4Address()(*string) {
     val, err := m.GetBackingStore().Get("ipV4Address")
@@ -185,7 +185,7 @@ func (m *WorkplaceSensorDevice) GetIpV4Address()(*string) {
     }
     return nil
 }
-// GetIpV6Address gets the ipV6Address property value. The IPv6 Address of the device.
+// GetIpV6Address gets the ipV6Address property value. The IPv6 address of the device.
 // returns a *string when successful
 func (m *WorkplaceSensorDevice) GetIpV6Address()(*string) {
     val, err := m.GetBackingStore().Get("ipV6Address")
@@ -221,7 +221,7 @@ func (m *WorkplaceSensorDevice) GetManufacturer()(*string) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. The unique identifier of the place where the device is located.
+// GetPlaceId gets the placeId property value. The unique identifier of the place where the device is located. If the device is installed in a room equipped with a mailbox, this property should match the ExternalDirectoryObjectId or Microsoft Entra object ID of the room mailbox.
 // returns a *string when successful
 func (m *WorkplaceSensorDevice) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -233,7 +233,7 @@ func (m *WorkplaceSensorDevice) GetPlaceId()(*string) {
     }
     return nil
 }
-// GetSensors gets the sensors property value. A list of sensors associated with the device. Sensors can measure physical quantities such as temperature, humidity, occupancy,         etc.
+// GetSensors gets the sensors property value. A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, and more.
 // returns a []WorkplaceSensorable when successful
 func (m *WorkplaceSensorDevice) GetSensors()([]WorkplaceSensorable) {
     val, err := m.GetBackingStore().Get("sensors")
@@ -338,7 +338,7 @@ func (m *WorkplaceSensorDevice) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDeviceId sets the deviceId property value. The unique identifier of the device set by the user.
+// SetDeviceId sets the deviceId property value. The user-defined unique identifier of the device provided at the time of creation.
 func (m *WorkplaceSensorDevice) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
@@ -352,14 +352,14 @@ func (m *WorkplaceSensorDevice) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetIpV4Address sets the ipV4Address property value. The IPv4 Address of the device.
+// SetIpV4Address sets the ipV4Address property value. The IPv4 address of the device.
 func (m *WorkplaceSensorDevice) SetIpV4Address(value *string)() {
     err := m.GetBackingStore().Set("ipV4Address", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIpV6Address sets the ipV6Address property value. The IPv6 Address of the device.
+// SetIpV6Address sets the ipV6Address property value. The IPv6 address of the device.
 func (m *WorkplaceSensorDevice) SetIpV6Address(value *string)() {
     err := m.GetBackingStore().Set("ipV6Address", value)
     if err != nil {
@@ -380,14 +380,14 @@ func (m *WorkplaceSensorDevice) SetManufacturer(value *string)() {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. The unique identifier of the place where the device is located.
+// SetPlaceId sets the placeId property value. The unique identifier of the place where the device is located. If the device is installed in a room equipped with a mailbox, this property should match the ExternalDirectoryObjectId or Microsoft Entra object ID of the room mailbox.
 func (m *WorkplaceSensorDevice) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSensors sets the sensors property value. A list of sensors associated with the device. Sensors can measure physical quantities such as temperature, humidity, occupancy,         etc.
+// SetSensors sets the sensors property value. A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, and more.
 func (m *WorkplaceSensorDevice) SetSensors(value []WorkplaceSensorable)() {
     err := m.GetBackingStore().Set("sensors", value)
     if err != nil {

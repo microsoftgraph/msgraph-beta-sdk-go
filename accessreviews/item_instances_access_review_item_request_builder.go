@@ -18,7 +18,7 @@ type ItemInstancesAccessReviewItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemInstancesAccessReviewItemRequestBuilderGetQueryParameters the collection of access reviews instances past, present and future, if this object is a recurring access review.
+// ItemInstancesAccessReviewItemRequestBuilderGetQueryParameters the collection of access reviews instances past, present, and future, if this object is a recurring access review.
 type ItemInstancesAccessReviewItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,7 +80,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get the collection of access reviews instances past, present and future, if this object is a recurring access review.
+// Get the collection of access reviews instances past, present, and future, if this object is a recurring access review.
 // returns a AccessReviewable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInstancesAccessReviewItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInstancesAccessReviewItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable, error) {
@@ -148,7 +148,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) Stop()(*ItemInstancesItemS
 // ToDeleteRequestInformation delete navigation property instances for accessReviews
 // returns a *RequestInformation when successful
 func (m *ItemInstancesAccessReviewItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInstancesAccessReviewItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -156,7 +156,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of access reviews instances past, present and future, if this object is a recurring access review.
+// ToGetRequestInformation the collection of access reviews instances past, present, and future, if this object is a recurring access review.
 // returns a *RequestInformation when successful
 func (m *ItemInstancesAccessReviewItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInstancesAccessReviewItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -173,7 +173,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) ToGetRequestInformation(ct
 // ToPatchRequestInformation update the navigation property instances in accessReviews
 // returns a *RequestInformation when successful
 func (m *ItemInstancesAccessReviewItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable, requestConfiguration *ItemInstancesAccessReviewItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)

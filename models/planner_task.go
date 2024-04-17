@@ -38,7 +38,7 @@ func CreatePlannerTaskFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     }
     return NewPlannerTask(), nil
 }
-// GetActiveChecklistItemCount gets the activeChecklistItemCount property value. Number of checklist items with value set to false, representing incomplete items.
+// GetActiveChecklistItemCount gets the activeChecklistItemCount property value. The number of checklist items with value set to false, representing incomplete items.
 // returns a *int32 when successful
 func (m *PlannerTask) GetActiveChecklistItemCount()(*int32) {
     val, err := m.GetBackingStore().Get("activeChecklistItemCount")
@@ -50,7 +50,7 @@ func (m *PlannerTask) GetActiveChecklistItemCount()(*int32) {
     }
     return nil
 }
-// GetAppliedCategories gets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
+// GetAppliedCategories gets the appliedCategories property value. The categories to which the task is applied. See plannerAppliedCategories resource type for possible values.
 // returns a PlannerAppliedCategoriesable when successful
 func (m *PlannerTask) GetAppliedCategories()(PlannerAppliedCategoriesable) {
     val, err := m.GetBackingStore().Get("appliedCategories")
@@ -86,7 +86,7 @@ func (m *PlannerTask) GetAssignedToTaskBoardFormat()(PlannerAssignedToTaskBoardT
     }
     return nil
 }
-// GetAssigneePriority gets the assigneePriority property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+// GetAssigneePriority gets the assigneePriority property value. A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.
 // returns a *string when successful
 func (m *PlannerTask) GetAssigneePriority()(*string) {
     val, err := m.GetBackingStore().Get("assigneePriority")
@@ -110,7 +110,7 @@ func (m *PlannerTask) GetAssignments()(PlannerAssignmentsable) {
     }
     return nil
 }
-// GetBucketId gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+// GetBucketId gets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
 // returns a *string when successful
 func (m *PlannerTask) GetBucketId()(*string) {
     val, err := m.GetBackingStore().Get("bucketId")
@@ -134,7 +134,7 @@ func (m *PlannerTask) GetBucketTaskBoardFormat()(PlannerBucketTaskBoardTaskForma
     }
     return nil
 }
-// GetChecklistItemCount gets the checklistItemCount property value. Number of checklist items that are present on the task.
+// GetChecklistItemCount gets the checklistItemCount property value. The number of checklist items that are present on the task.
 // returns a *int32 when successful
 func (m *PlannerTask) GetChecklistItemCount()(*int32) {
     val, err := m.GetBackingStore().Get("checklistItemCount")
@@ -146,7 +146,7 @@ func (m *PlannerTask) GetChecklistItemCount()(*int32) {
     }
     return nil
 }
-// GetCompletedBy gets the completedBy property value. Identity of the user that completed the task.
+// GetCompletedBy gets the completedBy property value. The identity of the user that completed the task.
 // returns a IdentitySetable when successful
 func (m *PlannerTask) GetCompletedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("completedBy")
@@ -158,7 +158,7 @@ func (m *PlannerTask) GetCompletedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCompletedDateTime gets the completedDateTime property value. Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetCompletedDateTime gets the completedDateTime property value. Read-only. The date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 // returns a *Time when successful
 func (m *PlannerTask) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completedDateTime")
@@ -170,7 +170,7 @@ func (m *PlannerTask) GetCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetConversationThreadId gets the conversationThreadId property value. Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+// GetConversationThreadId gets the conversationThreadId property value. The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
 // returns a *string when successful
 func (m *PlannerTask) GetConversationThreadId()(*string) {
     val, err := m.GetBackingStore().Get("conversationThreadId")
@@ -182,7 +182,7 @@ func (m *PlannerTask) GetConversationThreadId()(*string) {
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. Identity of the user that created the task.
+// GetCreatedBy gets the createdBy property value. The identity of the user who created the task.
 // returns a IdentitySetable when successful
 func (m *PlannerTask) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -194,7 +194,7 @@ func (m *PlannerTask) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetCreatedDateTime gets the createdDateTime property value. Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 // returns a *Time when successful
 func (m *PlannerTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -206,7 +206,7 @@ func (m *PlannerTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetCreationSource gets the creationSource property value. Contains information about the origin of the task.
+// GetCreationSource gets the creationSource property value. Information about the origin of the task.
 // returns a PlannerTaskCreationable when successful
 func (m *PlannerTask) GetCreationSource()(PlannerTaskCreationable) {
     val, err := m.GetBackingStore().Get("creationSource")
@@ -218,7 +218,7 @@ func (m *PlannerTask) GetCreationSource()(PlannerTaskCreationable) {
     }
     return nil
 }
-// GetDetails gets the details property value. Read-only. Nullable. Additional details about the task.
+// GetDetails gets the details property value. Read-only. Nullable. More details about the task.
 // returns a PlannerTaskDetailsable when successful
 func (m *PlannerTask) GetDetails()(PlannerTaskDetailsable) {
     val, err := m.GetBackingStore().Get("details")
@@ -230,7 +230,7 @@ func (m *PlannerTask) GetDetails()(PlannerTaskDetailsable) {
     }
     return nil
 }
-// GetDueDateTime gets the dueDateTime property value. Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetDueDateTime gets the dueDateTime property value. The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 // returns a *Time when successful
 func (m *PlannerTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dueDateTime")
@@ -568,7 +568,7 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetHasDescription gets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+// GetHasDescription gets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.
 // returns a *bool when successful
 func (m *PlannerTask) GetHasDescription()(*bool) {
     val, err := m.GetBackingStore().Get("hasDescription")
@@ -592,7 +592,7 @@ func (m *PlannerTask) GetIsArchived()(*bool) {
     }
     return nil
 }
-// GetIsOnMyDay gets the isOnMyDay property value. The isOnMyDay property
+// GetIsOnMyDay gets the isOnMyDay property value. A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.
 // returns a *bool when successful
 func (m *PlannerTask) GetIsOnMyDay()(*bool) {
     val, err := m.GetBackingStore().Get("isOnMyDay")
@@ -604,7 +604,7 @@ func (m *PlannerTask) GetIsOnMyDay()(*bool) {
     }
     return nil
 }
-// GetIsOnMyDayLastModifiedDate gets the isOnMyDayLastModifiedDate property value. The isOnMyDayLastModifiedDate property
+// GetIsOnMyDayLastModifiedDate gets the isOnMyDayLastModifiedDate property value. Read-only. The date on which task is added to or removed from MyDay.
 // returns a *DateOnly when successful
 func (m *PlannerTask) GetIsOnMyDayLastModifiedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("isOnMyDayLastModifiedDate")
@@ -616,7 +616,7 @@ func (m *PlannerTask) GetIsOnMyDayLastModifiedDate()(*i878a80d2330e89d26896388a3
     }
     return nil
 }
-// GetOrderHint gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+// GetOrderHint gets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.
 // returns a *string when successful
 func (m *PlannerTask) GetOrderHint()(*string) {
     val, err := m.GetBackingStore().Get("orderHint")
@@ -628,7 +628,7 @@ func (m *PlannerTask) GetOrderHint()(*string) {
     }
     return nil
 }
-// GetPercentComplete gets the percentComplete property value. Percentage of task completion. When set to 100, the task is considered completed.
+// GetPercentComplete gets the percentComplete property value. The percentage of task completion. When set to 100, the task is completed.
 // returns a *int32 when successful
 func (m *PlannerTask) GetPercentComplete()(*int32) {
     val, err := m.GetBackingStore().Get("percentComplete")
@@ -652,7 +652,7 @@ func (m *PlannerTask) GetPlanId()(*string) {
     }
     return nil
 }
-// GetPreviewType gets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+// GetPreviewType gets the previewType property value. The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
 // returns a *PlannerPreviewType when successful
 func (m *PlannerTask) GetPreviewType()(*PlannerPreviewType) {
     val, err := m.GetBackingStore().Get("previewType")
@@ -664,7 +664,7 @@ func (m *PlannerTask) GetPreviewType()(*PlannerPreviewType) {
     }
     return nil
 }
-// GetPriority gets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+// GetPriority gets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
 // returns a *int32 when successful
 func (m *PlannerTask) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
@@ -712,7 +712,7 @@ func (m *PlannerTask) GetReferenceCount()(*int32) {
     }
     return nil
 }
-// GetSpecifiedCompletionRequirements gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+// GetSpecifiedCompletionRequirements gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
 // returns a *PlannerTaskCompletionRequirements when successful
 func (m *PlannerTask) GetSpecifiedCompletionRequirements()(*PlannerTaskCompletionRequirements) {
     val, err := m.GetBackingStore().Get("specifiedCompletionRequirements")
@@ -950,14 +950,14 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetActiveChecklistItemCount sets the activeChecklistItemCount property value. Number of checklist items with value set to false, representing incomplete items.
+// SetActiveChecklistItemCount sets the activeChecklistItemCount property value. The number of checklist items with value set to false, representing incomplete items.
 func (m *PlannerTask) SetActiveChecklistItemCount(value *int32)() {
     err := m.GetBackingStore().Set("activeChecklistItemCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppliedCategories sets the appliedCategories property value. The categories to which the task has been applied. See applied Categories for possible values.
+// SetAppliedCategories sets the appliedCategories property value. The categories to which the task is applied. See plannerAppliedCategories resource type for possible values.
 func (m *PlannerTask) SetAppliedCategories(value PlannerAppliedCategoriesable)() {
     err := m.GetBackingStore().Set("appliedCategories", value)
     if err != nil {
@@ -978,7 +978,7 @@ func (m *PlannerTask) SetAssignedToTaskBoardFormat(value PlannerAssignedToTaskBo
         panic(err)
     }
 }
-// SetAssigneePriority sets the assigneePriority property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+// SetAssigneePriority sets the assigneePriority property value. A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.
 func (m *PlannerTask) SetAssigneePriority(value *string)() {
     err := m.GetBackingStore().Set("assigneePriority", value)
     if err != nil {
@@ -992,7 +992,7 @@ func (m *PlannerTask) SetAssignments(value PlannerAssignmentsable)() {
         panic(err)
     }
 }
-// SetBucketId sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.
+// SetBucketId sets the bucketId property value. Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.
 func (m *PlannerTask) SetBucketId(value *string)() {
     err := m.GetBackingStore().Set("bucketId", value)
     if err != nil {
@@ -1006,70 +1006,70 @@ func (m *PlannerTask) SetBucketTaskBoardFormat(value PlannerBucketTaskBoardTaskF
         panic(err)
     }
 }
-// SetChecklistItemCount sets the checklistItemCount property value. Number of checklist items that are present on the task.
+// SetChecklistItemCount sets the checklistItemCount property value. The number of checklist items that are present on the task.
 func (m *PlannerTask) SetChecklistItemCount(value *int32)() {
     err := m.GetBackingStore().Set("checklistItemCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCompletedBy sets the completedBy property value. Identity of the user that completed the task.
+// SetCompletedBy sets the completedBy property value. The identity of the user that completed the task.
 func (m *PlannerTask) SetCompletedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("completedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCompletedDateTime sets the completedDateTime property value. Read-only. Date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetCompletedDateTime sets the completedDateTime property value. Read-only. The date and time at which the 'percentComplete' of the task is set to '100'. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetCompletedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("completedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConversationThreadId sets the conversationThreadId property value. Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
+// SetConversationThreadId sets the conversationThreadId property value. The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.
 func (m *PlannerTask) SetConversationThreadId(value *string)() {
     err := m.GetBackingStore().Set("conversationThreadId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. Identity of the user that created the task.
+// SetCreatedBy sets the createdBy property value. The identity of the user who created the task.
 func (m *PlannerTask) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetCreatedDateTime sets the createdDateTime property value. Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreationSource sets the creationSource property value. Contains information about the origin of the task.
+// SetCreationSource sets the creationSource property value. Information about the origin of the task.
 func (m *PlannerTask) SetCreationSource(value PlannerTaskCreationable)() {
     err := m.GetBackingStore().Set("creationSource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetails sets the details property value. Read-only. Nullable. Additional details about the task.
+// SetDetails sets the details property value. Read-only. Nullable. More details about the task.
 func (m *PlannerTask) SetDetails(value PlannerTaskDetailsable)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDueDateTime sets the dueDateTime property value. Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetDueDateTime sets the dueDateTime property value. The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("dueDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHasDescription sets the hasDescription property value. Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.
+// SetHasDescription sets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.
 func (m *PlannerTask) SetHasDescription(value *bool)() {
     err := m.GetBackingStore().Set("hasDescription", value)
     if err != nil {
@@ -1083,28 +1083,28 @@ func (m *PlannerTask) SetIsArchived(value *bool)() {
         panic(err)
     }
 }
-// SetIsOnMyDay sets the isOnMyDay property value. The isOnMyDay property
+// SetIsOnMyDay sets the isOnMyDay property value. A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.
 func (m *PlannerTask) SetIsOnMyDay(value *bool)() {
     err := m.GetBackingStore().Set("isOnMyDay", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsOnMyDayLastModifiedDate sets the isOnMyDayLastModifiedDate property value. The isOnMyDayLastModifiedDate property
+// SetIsOnMyDayLastModifiedDate sets the isOnMyDayLastModifiedDate property value. Read-only. The date on which task is added to or removed from MyDay.
 func (m *PlannerTask) SetIsOnMyDayLastModifiedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("isOnMyDayLastModifiedDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOrderHint sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+// SetOrderHint sets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.
 func (m *PlannerTask) SetOrderHint(value *string)() {
     err := m.GetBackingStore().Set("orderHint", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPercentComplete sets the percentComplete property value. Percentage of task completion. When set to 100, the task is considered completed.
+// SetPercentComplete sets the percentComplete property value. The percentage of task completion. When set to 100, the task is completed.
 func (m *PlannerTask) SetPercentComplete(value *int32)() {
     err := m.GetBackingStore().Set("percentComplete", value)
     if err != nil {
@@ -1118,14 +1118,14 @@ func (m *PlannerTask) SetPlanId(value *string)() {
         panic(err)
     }
 }
-// SetPreviewType sets the previewType property value. This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+// SetPreviewType sets the previewType property value. The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
 func (m *PlannerTask) SetPreviewType(value *PlannerPreviewType)() {
     err := m.GetBackingStore().Set("previewType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'.  Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+// SetPriority sets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
 func (m *PlannerTask) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {
@@ -1153,7 +1153,7 @@ func (m *PlannerTask) SetReferenceCount(value *int32)() {
         panic(err)
     }
 }
-// SetSpecifiedCompletionRequirements sets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+// SetSpecifiedCompletionRequirements sets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
 func (m *PlannerTask) SetSpecifiedCompletionRequirements(value *PlannerTaskCompletionRequirements)() {
     err := m.GetBackingStore().Set("specifiedCompletionRequirements", value)
     if err != nil {

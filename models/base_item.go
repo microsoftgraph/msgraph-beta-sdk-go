@@ -40,6 +40,8 @@ func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
                         return NewList(), nil
                     case "#microsoft.graph.listItem":
                         return NewListItem(), nil
+                    case "#microsoft.graph.newsLinkPage":
+                        return NewNewsLinkPage(), nil
                     case "#microsoft.graph.recycleBin":
                         return NewRecycleBin(), nil
                     case "#microsoft.graph.recycleBinItem":
@@ -50,6 +52,8 @@ func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
                         return NewSite(), nil
                     case "#microsoft.graph.sitePage":
                         return NewSitePage(), nil
+                    case "#microsoft.graph.videoNewsLinkPage":
+                        return NewVideoNewsLinkPage(), nil
                 }
             }
         }

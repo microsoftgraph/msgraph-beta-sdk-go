@@ -54,11 +54,8 @@ func NewLabelsCategoriesCategoryTemplateItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewLabelsCategoriesCategoryTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a categoryTemplate object.
+// Delete delete navigation property categories for security
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-delete-categories?view=graph-rest-1.0
 func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LabelsCategoriesCategoryTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,15 +113,15 @@ func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) Patch(ctx context.C
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable), nil
 }
-// SubCategories provides operations to manage the subCategories property of the microsoft.graph.security.categoryTemplate entity.
-// returns a *LabelsCategoriesItemSubCategoriesRequestBuilder when successful
-func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) SubCategories()(*LabelsCategoriesItemSubCategoriesRequestBuilder) {
-    return NewLabelsCategoriesItemSubCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// Subcategories provides operations to manage the subcategories property of the microsoft.graph.security.categoryTemplate entity.
+// returns a *LabelsCategoriesItemSubcategoriesRequestBuilder when successful
+func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) Subcategories()(*LabelsCategoriesItemSubcategoriesRequestBuilder) {
+    return NewLabelsCategoriesItemSubcategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a categoryTemplate object.
+// ToDeleteRequestInformation delete navigation property categories for security
 // returns a *RequestInformation when successful
 func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LabelsCategoriesCategoryTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
@@ -149,7 +146,7 @@ func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) ToGetRequestInforma
 // ToPatchRequestInformation update the navigation property categories in security
 // returns a *RequestInformation when successful
 func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable, requestConfiguration *LabelsCategoriesCategoryTemplateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}", m.BaseRequestBuilder.PathParameters)
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
