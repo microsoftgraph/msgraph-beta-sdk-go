@@ -11,7 +11,7 @@ import (
 type IndustryDataRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataRunsRequestBuilderGetQueryParameters get a list of the industryDataRun objects and their properties.
+// IndustryDataRunsRequestBuilderGetQueryParameters set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
 type IndustryDataRunsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewIndustryDataRunsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *IndustryDataRunsRequestBuilder) Count()(*IndustryDataRunsCountRequestBuilder) {
     return NewIndustryDataRunsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the industryDataRun objects and their properties.
+// Get set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
 // returns a IndustryDataRunCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-1.0
 func (m *IndustryDataRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRunsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRunCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +94,7 @@ func (m *IndustryDataRunsRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *IndustryDataRunsRequestBuilder) MicrosoftGraphIndustryDataGetStatistics()(*IndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) {
     return NewIndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get a list of the industryDataRun objects and their properties.
+// ToGetRequestInformation set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
 // returns a *RequestInformation when successful
 func (m *IndustryDataRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

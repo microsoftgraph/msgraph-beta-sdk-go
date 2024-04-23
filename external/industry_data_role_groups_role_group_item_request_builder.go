@@ -18,7 +18,7 @@ type IndustryDataRoleGroupsRoleGroupItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustryDataRoleGroupsRoleGroupItemRequestBuilderGetQueryParameters read the properties and relationships of a roleGroup object.
+// IndustryDataRoleGroupsRoleGroupItemRequestBuilderGetQueryParameters set of groups of individual roles that makes role-based admin simpler.
 type IndustryDataRoleGroupsRoleGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *IndustryDataRoleGroupsRoleGroupItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get read the properties and relationships of a roleGroup object.
+// Get set of groups of individual roles that makes role-based admin simpler.
 // returns a RoleGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-1.0
 func (m *IndustryDataRoleGroupsRoleGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRoleGroupsRoleGroupItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.RoleGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *IndustryDataRoleGroupsRoleGroupItemRequestBuilder) ToDeleteRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a roleGroup object.
+// ToGetRequestInformation set of groups of individual roles that makes role-based admin simpler.
 // returns a *RequestInformation when successful
 func (m *IndustryDataRoleGroupsRoleGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRoleGroupsRoleGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

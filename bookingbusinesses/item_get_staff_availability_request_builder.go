@@ -36,7 +36,7 @@ func NewItemGetStaffAvailabilityRequestBuilder(rawUrl string, requestAdapter i2a
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
 func (m *ItemGetStaffAvailabilityRequestBuilder) Post(ctx context.Context, body ItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *ItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(ItemGetStaffAvailabilityResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemGetStaffAvailabilityRequestBuilder) Post(ctx context.Context, body 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
 func (m *ItemGetStaffAvailabilityRequestBuilder) PostAsGetStaffAvailabilityPostResponse(ctx context.Context, body ItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *ItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(ItemGetStaffAvailabilityPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

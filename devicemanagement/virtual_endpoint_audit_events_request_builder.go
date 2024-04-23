@@ -11,7 +11,7 @@ import (
 type VirtualEndpointAuditEventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointAuditEventsRequestBuilderGetQueryParameters list all the cloudPcAuditEvent objects for the tenant.
+// VirtualEndpointAuditEventsRequestBuilderGetQueryParameters cloud PC audit event.
 type VirtualEndpointAuditEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewVirtualEndpointAuditEventsRequestBuilder(rawUrl string, requestAdapter i
 func (m *VirtualEndpointAuditEventsRequestBuilder) Count()(*VirtualEndpointAuditEventsCountRequestBuilder) {
     return NewVirtualEndpointAuditEventsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list all the cloudPcAuditEvent objects for the tenant.
+// Get cloud PC audit event.
 // returns a CloudPcAuditEventCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0
 func (m *VirtualEndpointAuditEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcAuditEventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *VirtualEndpointAuditEventsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcAuditEventable), nil
 }
-// ToGetRequestInformation list all the cloudPcAuditEvent objects for the tenant.
+// ToGetRequestInformation cloud PC audit event.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointAuditEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointAuditEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -36,7 +36,7 @@ func NewDeletedItemsItemGetMemberGroupsRequestBuilder(rawUrl string, requestAdap
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta
 func (m *DeletedItemsItemGetMemberGroupsRequestBuilder) Post(ctx context.Context, body DeletedItemsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *DeletedItemsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(DeletedItemsItemGetMemberGroupsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *DeletedItemsItemGetMemberGroupsRequestBuilder) Post(ctx context.Context
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-beta
 func (m *DeletedItemsItemGetMemberGroupsRequestBuilder) PostAsGetMemberGroupsPostResponse(ctx context.Context, body DeletedItemsItemGetMemberGroupsPostRequestBodyable, requestConfiguration *DeletedItemsItemGetMemberGroupsRequestBuilderPostRequestConfiguration)(DeletedItemsItemGetMemberGroupsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

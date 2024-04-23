@@ -91,7 +91,7 @@ func (m *GroupsRequestBuilder) EvaluateDynamicMembership()(*EvaluateDynamicMembe
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-list?view=graph-rest-beta
 func (m *GroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *GroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +124,7 @@ func (m *GroupsRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequest
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-post-groups?view=graph-rest-beta
 func (m *GroupsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, requestConfiguration *GroupsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

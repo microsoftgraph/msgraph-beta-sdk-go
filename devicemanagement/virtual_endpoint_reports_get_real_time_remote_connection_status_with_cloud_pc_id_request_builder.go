@@ -33,9 +33,12 @@ func NewVirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequ
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getRealTimeRemoteConnectionStatus
+// Get get the real-time connection status information, such as signInStatus or daysSinceLastUse, for a Cloud PC.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getrealtimeremoteconnectionstatus?view=graph-rest-beta
 func (m *VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdReq
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getRealTimeRemoteConnectionStatus
+// ToGetRequestInformation get the real-time connection status information, such as signInStatus or daysSinceLastUse, for a Cloud PC.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointReportsGetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

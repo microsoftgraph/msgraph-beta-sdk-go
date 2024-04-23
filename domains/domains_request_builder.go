@@ -81,7 +81,7 @@ func (m *DomainsRequestBuilder) Count()(*CountRequestBuilder) {
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/domain-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-list?view=graph-rest-beta
 func (m *DomainsRequestBuilder) Get(ctx context.Context, requestConfiguration *DomainsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +104,7 @@ func (m *DomainsRequestBuilder) Get(ctx context.Context, requestConfiguration *D
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/domain-post-domains?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-post-domains?view=graph-rest-beta
 func (m *DomainsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, requestConfiguration *DomainsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

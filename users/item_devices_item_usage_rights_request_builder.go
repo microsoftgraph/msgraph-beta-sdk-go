@@ -11,7 +11,7 @@ import (
 type ItemDevicesItemUsageRightsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemDevicesItemUsageRightsRequestBuilderGetQueryParameters retrieve a list of usageRight objects for a given device.
+// ItemDevicesItemUsageRightsRequestBuilderGetQueryParameters represents the usage rights a device has been granted.
 type ItemDevicesItemUsageRightsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemDevicesItemUsageRightsRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemDevicesItemUsageRightsRequestBuilder) Count()(*ItemDevicesItemUsageRightsCountRequestBuilder) {
     return NewItemDevicesItemUsageRightsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of usageRight objects for a given device.
+// Get represents the usage rights a device has been granted.
 // returns a UsageRightCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0
 func (m *ItemDevicesItemUsageRightsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesItemUsageRightsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemDevicesItemUsageRightsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightable), nil
 }
-// ToGetRequestInformation retrieve a list of usageRight objects for a given device.
+// ToGetRequestInformation represents the usage rights a device has been granted.
 // returns a *RequestInformation when successful
 func (m *ItemDevicesItemUsageRightsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemUsageRightsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

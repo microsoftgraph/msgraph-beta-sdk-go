@@ -10,7 +10,7 @@ import (
 type ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters invoke function getProvisionedCloudPCs
+// ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
 type ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,10 +57,13 @@ func NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBui
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get invoke function getProvisionedCloudPCs
+// Get get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
 // Deprecated: This method is obsolete. Use GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse instead.
 // returns a ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta
 func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,9 +81,12 @@ func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBu
     }
     return res.(ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponseable), nil
 }
-// GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse invoke function getProvisionedCloudPCs
+// GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
 // returns a ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta
 func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse(ctx context.Context, requestConfiguration *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +104,7 @@ func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBu
     }
     return res.(ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getProvisionedCloudPCs
+// ToGetRequestInformation get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

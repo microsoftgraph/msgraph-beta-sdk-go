@@ -10,7 +10,7 @@ import (
 type AdministrativeUnitsDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AdministrativeUnitsDeltaRequestBuilderGetQueryParameters invoke function delta
+// AdministrativeUnitsDeltaRequestBuilderGetQueryParameters get newly created, updated, or deleted administrativeUnits without having to perform a full read of the entire resource collection. For details, see Using delta query.
 type AdministrativeUnitsDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewAdministrativeUnitsDeltaRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewAdministrativeUnitsDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function delta
+// Get get newly created, updated, or deleted administrativeUnits without having to perform a full read of the entire resource collection. For details, see Using delta query.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a AdministrativeUnitsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-delta?view=graph-rest-beta
 func (m *AdministrativeUnitsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration)(AdministrativeUnitsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *AdministrativeUnitsDeltaRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(AdministrativeUnitsDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
+// GetAsDeltaGetResponse get newly created, updated, or deleted administrativeUnits without having to perform a full read of the entire resource collection. For details, see Using delta query.
 // returns a AdministrativeUnitsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-delta?view=graph-rest-beta
 func (m *AdministrativeUnitsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration)(AdministrativeUnitsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *AdministrativeUnitsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx conte
     }
     return res.(AdministrativeUnitsDeltaGetResponseable), nil
 }
-// ToGetRequestInformation invoke function delta
+// ToGetRequestInformation get newly created, updated, or deleted administrativeUnits without having to perform a full read of the entire resource collection. For details, see Using delta query.
 // returns a *RequestInformation when successful
 func (m *AdministrativeUnitsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

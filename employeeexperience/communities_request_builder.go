@@ -11,7 +11,7 @@ import (
 type CommunitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CommunitiesRequestBuilderGetQueryParameters read the properties and relationships of a community object.
+// CommunitiesRequestBuilderGetQueryParameters a collection of communities in Viva Engage.
 type CommunitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewCommunitiesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *CommunitiesRequestBuilder) Count()(*CommunitiesCountRequestBuilder) {
     return NewCommunitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a community object.
+// Get a collection of communities in Viva Engage.
 // returns a CommunityCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CommunitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *CommunitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommunityCollectionResponseable, error) {
@@ -96,12 +96,9 @@ func (m *CommunitiesRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommunityCollectionResponseable), nil
 }
-// Post create a new community in Viva Engage.
+// Post create new navigation property to communities for employeeExperience
 // returns a Communityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/employeeexperience-post-communities?view=graph-rest-1.0
 func (m *CommunitiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Communityable, requestConfiguration *CommunitiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Communityable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *CommunitiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Communityable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a community object.
+// ToGetRequestInformation a collection of communities in Viva Engage.
 // returns a *RequestInformation when successful
 func (m *CommunitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CommunitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +130,7 @@ func (m *CommunitiesRequestBuilder) ToGetRequestInformation(ctx context.Context,
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new community in Viva Engage.
+// ToPostRequestInformation create new navigation property to communities for employeeExperience
 // returns a *RequestInformation when successful
 func (m *CommunitiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Communityable, requestConfiguration *CommunitiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

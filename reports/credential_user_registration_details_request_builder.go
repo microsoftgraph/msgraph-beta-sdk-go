@@ -11,7 +11,7 @@ import (
 type CredentialUserRegistrationDetailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters get a list of credentialUserRegistrationDetails objects for a given tenant.
+// CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 type CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,13 +77,10 @@ func NewCredentialUserRegistrationDetailsRequestBuilder(rawUrl string, requestAd
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Count()(*CredentialUserRegistrationDetailsCountRequestBuilder) {
     return NewCredentialUserRegistrationDetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of credentialUserRegistrationDetails objects for a given tenant.
+// Get details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 // Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails
 // returns a CredentialUserRegistrationDetailsCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-1.0
 func (m *CredentialUserRegistrationDetailsRequestBuilder) Get(ctx context.Context, requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +119,7 @@ func (m *CredentialUserRegistrationDetailsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CredentialUserRegistrationDetailsable), nil
 }
-// ToGetRequestInformation get a list of credentialUserRegistrationDetails objects for a given tenant.
+// ToGetRequestInformation details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
 // Deprecated: The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails
 // returns a *RequestInformation when successful
 func (m *CredentialUserRegistrationDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CredentialUserRegistrationDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

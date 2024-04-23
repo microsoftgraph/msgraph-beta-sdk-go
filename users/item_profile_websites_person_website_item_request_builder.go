@@ -18,7 +18,7 @@ type ItemProfileWebsitesPersonWebsiteItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a personWebsite object from a user's profile.
+// ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetQueryParameters represents detailed information about websites associated with a user in various services.
 type ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemProfileWebsitesPersonWebsiteItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileWebsitesPersonWebsiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a personWebsite object from a user's profile.
+// Delete delete navigation property websites for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/personwebsite-delete?view=graph-rest-1.0
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get retrieve the properties and relationships of a personWebsite object from a user's profile.
+// Get represents detailed information about websites associated with a user in various services.
 // returns a PersonWebsiteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/personwebsite-get?view=graph-rest-1.0
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable), nil
 }
-// Patch update the properties of personWebsite object in a user's profile.
+// Patch update the navigation property websites in users
 // returns a PersonWebsiteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/personwebsite-update?view=graph-rest-1.0
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) Patch(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable), nil
 }
-// ToDeleteRequestInformation deletes a personWebsite object from a user's profile.
+// ToDeleteRequestInformation delete navigation property websites for users
 // returns a *RequestInformation when successful
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a personWebsite object from a user's profile.
+// ToGetRequestInformation represents detailed information about websites associated with a user in various services.
 // returns a *RequestInformation when successful
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToGetRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of personWebsite object in a user's profile.
+// ToPatchRequestInformation update the navigation property websites in users
 // returns a *RequestInformation when successful
 func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonWebsiteable, requestConfiguration *ItemProfileWebsitesPersonWebsiteItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type TeamTemplatesItemDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsRequestBuilderGetQueryParameters read the properties and relationships of a teamTemplateDefinition object.
+// TeamTemplatesItemDefinitionsRequestBuilderGetQueryParameters a generic representation of a team template definition for a team with a specific structure and configuration.
 type TeamTemplatesItemDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewTeamTemplatesItemDefinitionsRequestBuilder(rawUrl string, requestAdapter
 func (m *TeamTemplatesItemDefinitionsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a teamTemplateDefinition object.
+// Get a generic representation of a team template definition for a team with a specific structure and configuration.
 // returns a TeamTemplateDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamTemplatesItemDefinitionsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *TeamTemplatesItemDefinitionsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a teamTemplateDefinition object.
+// ToGetRequestInformation a generic representation of a team template definition for a team with a specific structure and configuration.
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

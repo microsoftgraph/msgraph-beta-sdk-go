@@ -18,7 +18,7 @@ type ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderGetQueryParameters read the properties and relationships of a tag object.
+// ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderGetQueryParameters the tags associated with the team.
 type ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemTeamDefinitionTagsTeamworkTagItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionTagsTeamworkTagItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a tag object permanently.
+// Delete delete navigation property tags for teamTemplateDefinition
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-delete?view=graph-rest-1.0
 func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get read the properties and relationships of a tag object.
+// Get the tags associated with the team.
 // returns a TeamworkTagable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-get?view=graph-rest-1.0
 func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,12 +95,9 @@ func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Get(ctx context.Co
 func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Members()(*ItemTeamDefinitionTagsItemMembersRequestBuilder) {
     return NewItemTeamDefinitionTagsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a teamworkTag object.
+// Patch update the navigation property tags in teamTemplateDefinition
 // returns a TeamworkTagable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamworktag-update?view=graph-rest-1.0
 func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable, requestConfiguration *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +115,7 @@ func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) Patch(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable), nil
 }
-// ToDeleteRequestInformation delete a tag object permanently.
+// ToDeleteRequestInformation delete navigation property tags for teamTemplateDefinition
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +126,7 @@ func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a tag object.
+// ToGetRequestInformation the tags associated with the team.
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +140,7 @@ func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a teamworkTag object.
+// ToPatchRequestInformation update the navigation property tags in teamTemplateDefinition
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkTagable, requestConfiguration *ItemTeamDefinitionTagsTeamworkTagItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

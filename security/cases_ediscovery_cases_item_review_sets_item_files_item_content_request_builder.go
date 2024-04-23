@@ -41,9 +41,6 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemFilesItemContentRequestBuilder(raw
 // Get get content for the navigation property files from security
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-list-files?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemReviewSetsItemFilesItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemFilesItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

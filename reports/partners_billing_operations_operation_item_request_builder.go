@@ -18,7 +18,7 @@ type PartnersBillingOperationsOperationItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PartnersBillingOperationsOperationItemRequestBuilderGetQueryParameters read the properties and relationships of an operation object.
+// PartnersBillingOperationsOperationItemRequestBuilderGetQueryParameters represents an operation to export the billing data of a partner.
 type PartnersBillingOperationsOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *PartnersBillingOperationsOperationItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get read the properties and relationships of an operation object.
+// Get represents an operation to export the billing data of a partner.
 // returns a Operationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/partners-billing-operation-get?view=graph-rest-1.0
 func (m *PartnersBillingOperationsOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PartnersBillingOperationsOperationItemRequestBuilderGetRequestConfiguration)(ibc1d41e06c1155c6505b27a1d0c17b20692636238b0ddb2acdaa2b4548e4f67b.Operationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *PartnersBillingOperationsOperationItemRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an operation object.
+// ToGetRequestInformation represents an operation to export the billing data of a partner.
 // returns a *RequestInformation when successful
 func (m *PartnersBillingOperationsOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnersBillingOperationsOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

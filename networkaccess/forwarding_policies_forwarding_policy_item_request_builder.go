@@ -18,7 +18,7 @@ type ForwardingPoliciesForwardingPolicyItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ForwardingPoliciesForwardingPolicyItemRequestBuilderGetQueryParameters retrieve information about a specific forwarding policy.
+// ForwardingPoliciesForwardingPolicyItemRequestBuilderGetQueryParameters a forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
 type ForwardingPoliciesForwardingPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get retrieve information about a specific forwarding policy.
+// Get a forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
 // returns a ForwardingPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicy-get?view=graph-rest-1.0
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingPoliciesForwardingPolicyItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -134,7 +131,7 @@ func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve information about a specific forwarding policy.
+// ToGetRequestInformation a forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
 // returns a *RequestInformation when successful
 func (m *ForwardingPoliciesForwardingPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingPoliciesForwardingPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

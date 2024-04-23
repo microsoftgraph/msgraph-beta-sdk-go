@@ -10,7 +10,7 @@ import (
 type GetCredentialUsageSummaryWithPeriodRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParameters invoke function getCredentialUsageSummary
+// GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParameters report the current state of how many users in your organization used the self-service password reset capabilities.
 type GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewGetCredentialUsageSummaryWithPeriodRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewGetCredentialUsageSummaryWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getCredentialUsageSummary
+// Get report the current state of how many users in your organization used the self-service password reset capabilities.
 // Deprecated: This method is obsolete. Use GetAsGetCredentialUsageSummaryWithPeriodGetResponse instead.
 // returns a GetCredentialUsageSummaryWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getcredentialusagesummary?view=graph-rest-beta
 func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetCredentialUsageSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetCredentialUsageSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) Get(ctx context.Cont
     }
     return res.(GetCredentialUsageSummaryWithPeriodResponseable), nil
 }
-// GetAsGetCredentialUsageSummaryWithPeriodGetResponse invoke function getCredentialUsageSummary
+// GetAsGetCredentialUsageSummaryWithPeriodGetResponse report the current state of how many users in your organization used the self-service password reset capabilities.
 // returns a GetCredentialUsageSummaryWithPeriodGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getcredentialusagesummary?view=graph-rest-beta
 func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) GetAsGetCredentialUsageSummaryWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetCredentialUsageSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetCredentialUsageSummaryWithPeriodGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) GetAsGetCredentialUs
     }
     return res.(GetCredentialUsageSummaryWithPeriodGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getCredentialUsageSummary
+// ToGetRequestInformation report the current state of how many users in your organization used the self-service password reset capabilities.
 // returns a *RequestInformation when successful
 func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetCredentialUsageSummaryWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

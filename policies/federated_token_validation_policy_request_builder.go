@@ -18,7 +18,7 @@ type FederatedTokenValidationPolicyRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FederatedTokenValidationPolicyRequestBuilderGetQueryParameters get a list of the federatedTokenValidationPolicy objects and their properties.
+// FederatedTokenValidationPolicyRequestBuilderGetQueryParameters represents a policy to control enabling or disabling validation of federation authentication tokens.
 type FederatedTokenValidationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get get a list of the federatedTokenValidationPolicy objects and their properties.
+// Get represents a policy to control enabling or disabling validation of federation authentication tokens.
 // returns a FederatedTokenValidationPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/policyroot-list-federatedtokenvalidationpolicy?view=graph-rest-1.0
 func (m *FederatedTokenValidationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedTokenValidationPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedTokenValidationPolicyable), nil
 }
-// Patch update the properties of a federatedTokenValidationPolicy object.
+// Patch update the navigation property federatedTokenValidationPolicy in policies
 // returns a FederatedTokenValidationPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-update?view=graph-rest-1.0
 func (m *FederatedTokenValidationPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedTokenValidationPolicyable, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedTokenValidationPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) ToDeleteRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a list of the federatedTokenValidationPolicy objects and their properties.
+// ToGetRequestInformation represents a policy to control enabling or disabling validation of federation authentication tokens.
 // returns a *RequestInformation when successful
 func (m *FederatedTokenValidationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) ToGetRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a federatedTokenValidationPolicy object.
+// ToPatchRequestInformation update the navigation property federatedTokenValidationPolicy in policies
 // returns a *RequestInformation when successful
 func (m *FederatedTokenValidationPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedTokenValidationPolicyable, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

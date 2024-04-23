@@ -18,7 +18,7 @@ type SensorDevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SensorDevicesWithDeviceIdRequestBuilderGetQueryParameters get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
+// SensorDevicesWithDeviceIdRequestBuilderGetQueryParameters a collection of sensor devices.
 type SensorDevicesWithDeviceIdRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,11 +57,8 @@ func NewSensorDevicesWithDeviceIdRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewSensorDevicesWithDeviceIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete a workplace sensor device.
+// Delete delete navigation property sensorDevices for workplace
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workplacesensordevice-delete?view=graph-rest-1.0
 func (m *SensorDevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *SensorDevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +73,9 @@ func (m *SensorDevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, re
     }
     return nil
 }
-// Get get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
+// Get a collection of sensor devices.
 // returns a WorkplaceSensorDeviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workplacesensordevice-get?view=graph-rest-1.0
 func (m *SensorDevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, requestConfiguration *SensorDevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +93,9 @@ func (m *SensorDevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable), nil
 }
-// Patch update the properties of a workplace sensor device.
+// Patch update the navigation property sensorDevices in workplace
 // returns a WorkplaceSensorDeviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workplacesensordevice-update?view=graph-rest-1.0
 func (m *SensorDevicesWithDeviceIdRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable, requestConfiguration *SensorDevicesWithDeviceIdRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +113,7 @@ func (m *SensorDevicesWithDeviceIdRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable), nil
 }
-// ToDeleteRequestInformation delete a workplace sensor device.
+// ToDeleteRequestInformation delete navigation property sensorDevices for workplace
 // returns a *RequestInformation when successful
 func (m *SensorDevicesWithDeviceIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SensorDevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +124,7 @@ func (m *SensorDevicesWithDeviceIdRequestBuilder) ToDeleteRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
+// ToGetRequestInformation a collection of sensor devices.
 // returns a *RequestInformation when successful
 func (m *SensorDevicesWithDeviceIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SensorDevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +138,7 @@ func (m *SensorDevicesWithDeviceIdRequestBuilder) ToGetRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a workplace sensor device.
+// ToPatchRequestInformation update the navigation property sensorDevices in workplace
 // returns a *RequestInformation when successful
 func (m *SensorDevicesWithDeviceIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable, requestConfiguration *SensorDevicesWithDeviceIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

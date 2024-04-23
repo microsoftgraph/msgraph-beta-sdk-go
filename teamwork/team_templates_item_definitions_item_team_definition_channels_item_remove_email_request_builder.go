@@ -34,7 +34,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemRemoveEmailReq
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemRemoveEmailRequestBuilder) Post(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemRemoveEmailRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

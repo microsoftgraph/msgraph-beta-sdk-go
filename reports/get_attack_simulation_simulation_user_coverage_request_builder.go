@@ -10,7 +10,7 @@ import (
 type GetAttackSimulationSimulationUserCoverageRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters invoke function getAttackSimulationSimulationUserCoverage
+// GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters get simulation coverage for users of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 type GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewGetAttackSimulationSimulationUserCoverageRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewGetAttackSimulationSimulationUserCoverageRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAttackSimulationSimulationUserCoverage
+// Get get simulation coverage for users of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // Deprecated: This method is obsolete. Use GetAsGetAttackSimulationSimulationUserCoverageGetResponse instead.
 // returns a GetAttackSimulationSimulationUserCoverageResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getattacksimulationsimulationusercoverage?view=graph-rest-beta
 func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(GetAttackSimulationSimulationUserCoverageResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,10 +69,13 @@ func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) Get(ctx contex
     }
     return res.(GetAttackSimulationSimulationUserCoverageResponseable), nil
 }
-// GetAsGetAttackSimulationSimulationUserCoverageGetResponse invoke function getAttackSimulationSimulationUserCoverage
+// GetAsGetAttackSimulationSimulationUserCoverageGetResponse get simulation coverage for users of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans
 // returns a GetAttackSimulationSimulationUserCoverageGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getattacksimulationsimulationusercoverage?view=graph-rest-beta
 func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) GetAsGetAttackSimulationSimulationUserCoverageGetResponse(ctx context.Context, requestConfiguration *GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(GetAttackSimulationSimulationUserCoverageGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,7 +93,7 @@ func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) GetAsGetAttack
     }
     return res.(GetAttackSimulationSimulationUserCoverageGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAttackSimulationSimulationUserCoverage
+// ToGetRequestInformation get simulation coverage for users of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
 // Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans
 // returns a *RequestInformation when successful
 func (m *GetAttackSimulationSimulationUserCoverageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

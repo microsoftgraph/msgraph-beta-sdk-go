@@ -36,7 +36,7 @@ func NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder(rawUrl stri
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-beta
 func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) Post(ctx context.Context, body ItemCalendarGroupsItemCalendarsItemGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderPostRequestConfiguration)(ItemCalendarGroupsItemCalendarsItemGetScheduleResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) Post(ctx 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-beta
 func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) PostAsGetSchedulePostResponse(ctx context.Context, body ItemCalendarGroupsItemCalendarsItemGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderPostRequestConfiguration)(ItemCalendarGroupsItemCalendarsItemGetSchedulePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -77,9 +77,6 @@ func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) Count()(*ItemTeamDefini
 // Get the shifts in the schedule.
 // returns a ShiftCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleShiftsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,12 +94,9 @@ func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftCollectionResponseable), nil
 }
-// Post create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+// Post create new navigation property to shifts for teamTemplateDefinition
 // returns a Shiftable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, requestConfiguration *ItemTeamDefinitionScheduleShiftsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +128,7 @@ func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) ToGetRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+// ToPostRequestInformation create new navigation property to shifts for teamTemplateDefinition
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionScheduleShiftsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Shiftable, requestConfiguration *ItemTeamDefinitionScheduleShiftsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

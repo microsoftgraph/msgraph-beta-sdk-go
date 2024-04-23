@@ -21,7 +21,7 @@ func NewHardwareConfiguration()(*HardwareConfiguration) {
 func CreateHardwareConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHardwareConfiguration(), nil
 }
-// GetAssignments gets the assignments property value. List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+// GetAssignments gets the assignments property value. A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
 // returns a []HardwareConfigurationAssignmentable when successful
 func (m *HardwareConfiguration) GetAssignments()([]HardwareConfigurationAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
@@ -33,7 +33,7 @@ func (m *HardwareConfiguration) GetAssignments()([]HardwareConfigurationAssignme
     }
     return nil
 }
-// GetConfigurationFileContent gets the configurationFileContent property value. File content of the hardware configuration
+// GetConfigurationFileContent gets the configurationFileContent property value. The file content contains custom hardware settings that will be applied to the assigned devices' BIOS. Max allowed file size is 5KB. Represented as bytes. Required.
 // returns a []byte when successful
 func (m *HardwareConfiguration) GetConfigurationFileContent()([]byte) {
     val, err := m.GetBackingStore().Get("configurationFileContent")
@@ -45,7 +45,7 @@ func (m *HardwareConfiguration) GetConfigurationFileContent()([]byte) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Timestamp of when the hardware configuration was created. This property is read-only.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time  of when the BIOS configuration profile was created. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-Only. This property is read-only.
 // returns a *Time when successful
 func (m *HardwareConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -57,7 +57,7 @@ func (m *HardwareConfiguration) GetCreatedDateTime()(*i336074805fc853987abe6f7fe
     }
     return nil
 }
-// GetDescription gets the description property value. Description of the hardware configuration
+// GetDescription gets the description property value. The description of the hardware configuration. Use this to provide context, purpose, applications, etc of the BIOS configuration profile for your organization's admins. Max length is 1000 characters. Optional.
 // returns a *string when successful
 func (m *HardwareConfiguration) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -69,7 +69,7 @@ func (m *HardwareConfiguration) GetDescription()(*string) {
     }
     return nil
 }
-// GetDeviceRunStates gets the deviceRunStates property value. List of run states for the hardware configuration across all devices
+// GetDeviceRunStates gets the deviceRunStates property value. List of run states for the hardware configuration across all devices. Read-Only.
 // returns a []HardwareConfigurationDeviceStateable when successful
 func (m *HardwareConfiguration) GetDeviceRunStates()([]HardwareConfigurationDeviceStateable) {
     val, err := m.GetBackingStore().Get("deviceRunStates")
@@ -81,7 +81,7 @@ func (m *HardwareConfiguration) GetDeviceRunStates()([]HardwareConfigurationDevi
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Name of the hardware configuration
+// GetDisplayName gets the displayName property value. The name of the hardware BIOS configuration profile. It serves as user-friendly name to identify hardware BIOS configuration profiles. Max length is 150 characters. Required. Read-Only.
 // returns a *string when successful
 func (m *HardwareConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -263,7 +263,7 @@ func (m *HardwareConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetFileName gets the fileName property value. File name of the hardware configuration
+// GetFileName gets the fileName property value. The file name for the BIOS configuration profile's ConfigurationFileContent. Max length is 150 characters. Required.
 // returns a *string when successful
 func (m *HardwareConfiguration) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
@@ -287,7 +287,7 @@ func (m *HardwareConfiguration) GetHardwareConfigurationFormat()(*HardwareConfig
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp of when the hardware configuration was modified. This property is read-only.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time  of when the BIOS configuration profile was last modified. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-Only. Read-Only. This property is read-only.
 // returns a *Time when successful
 func (m *HardwareConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -299,7 +299,7 @@ func (m *HardwareConfiguration) GetLastModifiedDateTime()(*i336074805fc853987abe
     }
     return nil
 }
-// GetPerDevicePasswordDisabled gets the perDevicePasswordDisabled property value. A value indicating whether per devcive pasword disabled
+// GetPerDevicePasswordDisabled gets the perDevicePasswordDisabled property value. When TRUE, indicates whether the policy-assigned devices' passwords are disabled. When FALSE, indicates they are enabled. Default is FALSE. Required.
 // returns a *bool when successful
 func (m *HardwareConfiguration) GetPerDevicePasswordDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("perDevicePasswordDisabled")
@@ -311,7 +311,7 @@ func (m *HardwareConfiguration) GetPerDevicePasswordDisabled()(*bool) {
     }
     return nil
 }
-// GetRoleScopeTagIds gets the roleScopeTagIds property value. List of Scope Tag IDs for the hardware configuration
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. A list of unique Scope Tag IDs associated with the hardware configuration. Optional.
 // returns a []string when successful
 func (m *HardwareConfiguration) GetRoleScopeTagIds()([]string) {
     val, err := m.GetBackingStore().Get("roleScopeTagIds")
@@ -323,7 +323,7 @@ func (m *HardwareConfiguration) GetRoleScopeTagIds()([]string) {
     }
     return nil
 }
-// GetRunSummary gets the runSummary property value. A summary of the results from an attempt to configure hardware settings
+// GetRunSummary gets the runSummary property value. A summary of the results from an attempt to configure hardware settings. Read-Only.
 // returns a HardwareConfigurationRunSummaryable when successful
 func (m *HardwareConfiguration) GetRunSummary()(HardwareConfigurationRunSummaryable) {
     val, err := m.GetBackingStore().Get("runSummary")
@@ -335,7 +335,7 @@ func (m *HardwareConfiguration) GetRunSummary()(HardwareConfigurationRunSummarya
     }
     return nil
 }
-// GetUserRunStates gets the userRunStates property value. List of run states for the hardware configuration across all users
+// GetUserRunStates gets the userRunStates property value. List of run states for the hardware configuration across all users. Read-Only.
 // returns a []HardwareConfigurationUserStateable when successful
 func (m *HardwareConfiguration) GetUserRunStates()([]HardwareConfigurationUserStateable) {
     val, err := m.GetBackingStore().Get("userRunStates")
@@ -347,7 +347,7 @@ func (m *HardwareConfiguration) GetUserRunStates()([]HardwareConfigurationUserSt
     }
     return nil
 }
-// GetVersion gets the version property value. Version of the hardware configuration (E.g. 1, 2, 3 ...)
+// GetVersion gets the version property value. The version of the hardware configuration (E.g. 1, 2, 3 ...). This is incremented after a change to the BIOS configuration profile's settings file name (FileName property), settings file content (ConfigurationFileContent property), or the PerDevicePasswordDisabled property. Read-Only.
 // returns a *int32 when successful
 func (m *HardwareConfiguration) GetVersion()(*int32) {
     val, err := m.GetBackingStore().Get("version")
@@ -458,49 +458,49 @@ func (m *HardwareConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAssignments sets the assignments property value. List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+// SetAssignments sets the assignments property value. A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
 func (m *HardwareConfiguration) SetAssignments(value []HardwareConfigurationAssignmentable)() {
     err := m.GetBackingStore().Set("assignments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConfigurationFileContent sets the configurationFileContent property value. File content of the hardware configuration
+// SetConfigurationFileContent sets the configurationFileContent property value. The file content contains custom hardware settings that will be applied to the assigned devices' BIOS. Max allowed file size is 5KB. Represented as bytes. Required.
 func (m *HardwareConfiguration) SetConfigurationFileContent(value []byte)() {
     err := m.GetBackingStore().Set("configurationFileContent", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Timestamp of when the hardware configuration was created. This property is read-only.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time  of when the BIOS configuration profile was created. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-Only. This property is read-only.
 func (m *HardwareConfiguration) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. Description of the hardware configuration
+// SetDescription sets the description property value. The description of the hardware configuration. Use this to provide context, purpose, applications, etc of the BIOS configuration profile for your organization's admins. Max length is 1000 characters. Optional.
 func (m *HardwareConfiguration) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceRunStates sets the deviceRunStates property value. List of run states for the hardware configuration across all devices
+// SetDeviceRunStates sets the deviceRunStates property value. List of run states for the hardware configuration across all devices. Read-Only.
 func (m *HardwareConfiguration) SetDeviceRunStates(value []HardwareConfigurationDeviceStateable)() {
     err := m.GetBackingStore().Set("deviceRunStates", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Name of the hardware configuration
+// SetDisplayName sets the displayName property value. The name of the hardware BIOS configuration profile. It serves as user-friendly name to identify hardware BIOS configuration profiles. Max length is 150 characters. Required. Read-Only.
 func (m *HardwareConfiguration) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFileName sets the fileName property value. File name of the hardware configuration
+// SetFileName sets the fileName property value. The file name for the BIOS configuration profile's ConfigurationFileContent. Max length is 150 characters. Required.
 func (m *HardwareConfiguration) SetFileName(value *string)() {
     err := m.GetBackingStore().Set("fileName", value)
     if err != nil {
@@ -514,42 +514,42 @@ func (m *HardwareConfiguration) SetHardwareConfigurationFormat(value *HardwareCo
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Timestamp of when the hardware configuration was modified. This property is read-only.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time  of when the BIOS configuration profile was last modified. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default. Read-Only. Read-Only. This property is read-only.
 func (m *HardwareConfiguration) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPerDevicePasswordDisabled sets the perDevicePasswordDisabled property value. A value indicating whether per devcive pasword disabled
+// SetPerDevicePasswordDisabled sets the perDevicePasswordDisabled property value. When TRUE, indicates whether the policy-assigned devices' passwords are disabled. When FALSE, indicates they are enabled. Default is FALSE. Required.
 func (m *HardwareConfiguration) SetPerDevicePasswordDisabled(value *bool)() {
     err := m.GetBackingStore().Set("perDevicePasswordDisabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleScopeTagIds sets the roleScopeTagIds property value. List of Scope Tag IDs for the hardware configuration
+// SetRoleScopeTagIds sets the roleScopeTagIds property value. A list of unique Scope Tag IDs associated with the hardware configuration. Optional.
 func (m *HardwareConfiguration) SetRoleScopeTagIds(value []string)() {
     err := m.GetBackingStore().Set("roleScopeTagIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRunSummary sets the runSummary property value. A summary of the results from an attempt to configure hardware settings
+// SetRunSummary sets the runSummary property value. A summary of the results from an attempt to configure hardware settings. Read-Only.
 func (m *HardwareConfiguration) SetRunSummary(value HardwareConfigurationRunSummaryable)() {
     err := m.GetBackingStore().Set("runSummary", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserRunStates sets the userRunStates property value. List of run states for the hardware configuration across all users
+// SetUserRunStates sets the userRunStates property value. List of run states for the hardware configuration across all users. Read-Only.
 func (m *HardwareConfiguration) SetUserRunStates(value []HardwareConfigurationUserStateable)() {
     err := m.GetBackingStore().Set("userRunStates", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVersion sets the version property value. Version of the hardware configuration (E.g. 1, 2, 3 ...)
+// SetVersion sets the version property value. The version of the hardware configuration (E.g. 1, 2, 3 ...). This is incremented after a change to the BIOS configuration profile's settings file name (FileName property), settings file content (ConfigurationFileContent property), or the PerDevicePasswordDisabled property. Read-Only.
 func (m *HardwareConfiguration) SetVersion(value *int32)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

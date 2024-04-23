@@ -11,7 +11,7 @@ import (
 type ManagedTenantsManagementTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsManagementTemplatesRequestBuilderGetQueryParameters get a list of the managementTemplate objects and their properties.
+// ManagedTenantsManagementTemplatesRequestBuilderGetQueryParameters the collection of baseline management templates across managed tenants.
 type ManagedTenantsManagementTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewManagedTenantsManagementTemplatesRequestBuilder(rawUrl string, requestAd
 func (m *ManagedTenantsManagementTemplatesRequestBuilder) Count()(*ManagedTenantsManagementTemplatesCountRequestBuilder) {
     return NewManagedTenantsManagementTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the managementTemplate objects and their properties.
+// Get the collection of baseline management templates across managed tenants.
 // returns a ManagementTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementtemplates?view=graph-rest-1.0
 func (m *ManagedTenantsManagementTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementTemplatesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ManagedTenantsManagementTemplatesRequestBuilder) Post(ctx context.Conte
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementTemplateable), nil
 }
-// ToGetRequestInformation get a list of the managementTemplate objects and their properties.
+// ToGetRequestInformation the collection of baseline management templates across managed tenants.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsManagementTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagementTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -34,7 +34,7 @@ func NewItemEventsItemSnoozeReminderRequestBuilder(rawUrl string, requestAdapter
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-beta
 func (m *ItemEventsItemSnoozeReminderRequestBuilder) Post(ctx context.Context, body ItemEventsItemSnoozeReminderPostRequestBodyable, requestConfiguration *ItemEventsItemSnoozeReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

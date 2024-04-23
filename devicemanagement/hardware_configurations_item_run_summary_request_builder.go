@@ -18,7 +18,7 @@ type HardwareConfigurationsItemRunSummaryRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// HardwareConfigurationsItemRunSummaryRequestBuilderGetQueryParameters a summary of the results from an attempt to configure hardware settings
+// HardwareConfigurationsItemRunSummaryRequestBuilderGetQueryParameters a summary of the results from an attempt to configure hardware settings. Read-Only.
 type HardwareConfigurationsItemRunSummaryRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *HardwareConfigurationsItemRunSummaryRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get a summary of the results from an attempt to configure hardware settings
+// Get a summary of the results from an attempt to configure hardware settings. Read-Only.
 // returns a HardwareConfigurationRunSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *HardwareConfigurationsItemRunSummaryRequestBuilder) Get(ctx context.Context, requestConfiguration *HardwareConfigurationsItemRunSummaryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HardwareConfigurationRunSummaryable, error) {
@@ -121,7 +121,7 @@ func (m *HardwareConfigurationsItemRunSummaryRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a summary of the results from an attempt to configure hardware settings
+// ToGetRequestInformation a summary of the results from an attempt to configure hardware settings. Read-Only.
 // returns a *RequestInformation when successful
 func (m *HardwareConfigurationsItemRunSummaryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HardwareConfigurationsItemRunSummaryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

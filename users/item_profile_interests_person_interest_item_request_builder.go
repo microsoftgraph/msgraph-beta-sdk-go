@@ -18,7 +18,7 @@ type ItemProfileInterestsPersonInterestItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileInterestsPersonInterestItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a personInterest object in a user's profile.
+// ItemProfileInterestsPersonInterestItemRequestBuilderGetQueryParameters provides detailed information about interests the user has associated with themselves in various services.
 type ItemProfileInterestsPersonInterestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemProfileInterestsPersonInterestItemRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileInterestsPersonInterestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a personInterest object from a user's profile.
+// Delete delete navigation property interests for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/personinterest-delete?view=graph-rest-1.0
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get retrieve the properties and relationships of a personInterest object in a user's profile.
+// Get provides detailed information about interests the user has associated with themselves in various services.
 // returns a PersonInterestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/personinterest-get?view=graph-rest-1.0
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Get(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable), nil
 }
-// Patch update the properties of a personInterest object in a user's profile.
+// Patch update the navigation property interests in users
 // returns a PersonInterestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/personinterest-update?view=graph-rest-1.0
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) Patch(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable), nil
 }
-// ToDeleteRequestInformation deletes a personInterest object from a user's profile.
+// ToDeleteRequestInformation delete navigation property interests for users
 // returns a *RequestInformation when successful
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a personInterest object in a user's profile.
+// ToGetRequestInformation provides detailed information about interests the user has associated with themselves in various services.
 // returns a *RequestInformation when successful
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToGetRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a personInterest object in a user's profile.
+// ToPatchRequestInformation update the navigation property interests in users
 // returns a *RequestInformation when successful
 func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonInterestable, requestConfiguration *ItemProfileInterestsPersonInterestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

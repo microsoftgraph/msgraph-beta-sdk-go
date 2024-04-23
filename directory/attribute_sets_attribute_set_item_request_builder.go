@@ -18,7 +18,7 @@ type AttributeSetsAttributeSetItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AttributeSetsAttributeSetItemRequestBuilderGetQueryParameters read the properties and relationships of an attributeSet object.
+// AttributeSetsAttributeSetItemRequestBuilderGetQueryParameters group of related custom security attribute definitions.
 type AttributeSetsAttributeSetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *AttributeSetsAttributeSetItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get read the properties and relationships of an attributeSet object.
+// Get group of related custom security attribute definitions.
 // returns a AttributeSetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/attributeset-get?view=graph-rest-1.0
 func (m *AttributeSetsAttributeSetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AttributeSetsAttributeSetItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeSetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *AttributeSetsAttributeSetItemRequestBuilder) Get(ctx context.Context, r
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeSetable), nil
 }
-// Patch update the properties of an attributeSet object.
+// Patch update the navigation property attributeSets in directory
 // returns a AttributeSetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/attributeset-update?view=graph-rest-1.0
 func (m *AttributeSetsAttributeSetItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeSetable, requestConfiguration *AttributeSetsAttributeSetItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeSetable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *AttributeSetsAttributeSetItemRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an attributeSet object.
+// ToGetRequestInformation group of related custom security attribute definitions.
 // returns a *RequestInformation when successful
 func (m *AttributeSetsAttributeSetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttributeSetsAttributeSetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *AttributeSetsAttributeSetItemRequestBuilder) ToGetRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an attributeSet object.
+// ToPatchRequestInformation update the navigation property attributeSets in directory
 // returns a *RequestInformation when successful
 func (m *AttributeSetsAttributeSetItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttributeSetable, requestConfiguration *AttributeSetsAttributeSetItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

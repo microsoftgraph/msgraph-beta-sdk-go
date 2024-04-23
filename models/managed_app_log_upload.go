@@ -87,7 +87,7 @@ func (m *ManagedAppLogUpload) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetManagedAppComponent gets the managedAppComponent property value. The Mobile Application Management (MAM) Logs Uploading Component.
+// GetManagedAppComponent gets the managedAppComponent property value. The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.
 // returns a *string when successful
 func (m *ManagedAppLogUpload) GetManagedAppComponent()(*string) {
     val, err := m.GetBackingStore().Get("managedAppComponent")
@@ -123,7 +123,7 @@ func (m *ManagedAppLogUpload) GetOdataType()(*string) {
     }
     return nil
 }
-// GetReferenceId gets the referenceId property value. A provider-specific reference id for the uploaded logs.
+// GetReferenceId gets the referenceId property value. A provider-specific reference id for the uploaded logs. Read-only.
 // returns a *string when successful
 func (m *ManagedAppLogUpload) GetReferenceId()(*string) {
     val, err := m.GetBackingStore().Get("referenceId")
@@ -180,7 +180,7 @@ func (m *ManagedAppLogUpload) SetAdditionalData(value map[string]any)() {
 func (m *ManagedAppLogUpload) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetManagedAppComponent sets the managedAppComponent property value. The Mobile Application Management (MAM) Logs Uploading Component.
+// SetManagedAppComponent sets the managedAppComponent property value. The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.
 func (m *ManagedAppLogUpload) SetManagedAppComponent(value *string)() {
     err := m.GetBackingStore().Set("managedAppComponent", value)
     if err != nil {
@@ -201,7 +201,7 @@ func (m *ManagedAppLogUpload) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetReferenceId sets the referenceId property value. A provider-specific reference id for the uploaded logs.
+// SetReferenceId sets the referenceId property value. A provider-specific reference id for the uploaded logs. Read-only.
 func (m *ManagedAppLogUpload) SetReferenceId(value *string)() {
     err := m.GetBackingStore().Set("referenceId", value)
     if err != nil {

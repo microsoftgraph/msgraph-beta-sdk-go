@@ -18,7 +18,7 @@ type BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetQueryParameters read the properties and relationships of a bookingCustomQuestion object.
+// BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetQueryParameters all custom questions of this business.
 type BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewBookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewBookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the specified bookingCustomQuestion object.
+// Delete delete navigation property customQuestions for solutions
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     }
     return nil
 }
-// Get read the properties and relationships of a bookingCustomQuestion object.
+// Get all custom questions of this business.
 // returns a BookingCustomQuestionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable), nil
 }
-// Patch update the properties of a bookingCustomQuestion object.
+// Patch update the navigation property customQuestions in solutions
 // returns a BookingCustomQuestionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable), nil
 }
-// ToDeleteRequestInformation delete the specified bookingCustomQuestion object.
+// ToDeleteRequestInformation delete navigation property customQuestions for solutions
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a bookingCustomQuestion object.
+// ToGetRequestInformation all custom questions of this business.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a bookingCustomQuestion object.
+// ToPatchRequestInformation update the navigation property customQuestions in solutions
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, requestConfiguration *BookingBusinessesItemCustomQuestionsBookingCustomQuestionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

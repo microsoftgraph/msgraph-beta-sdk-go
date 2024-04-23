@@ -36,7 +36,7 @@ func NewItemTeamMembersAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-beta
 func (m *ItemTeamMembersAddRequestBuilder) Post(ctx context.Context, body ItemTeamMembersAddPostRequestBodyable, requestConfiguration *ItemTeamMembersAddRequestBuilderPostRequestConfiguration)(ItemTeamMembersAddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemTeamMembersAddRequestBuilder) Post(ctx context.Context, body ItemTe
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-beta
 func (m *ItemTeamMembersAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body ItemTeamMembersAddPostRequestBodyable, requestConfiguration *ItemTeamMembersAddRequestBuilderPostRequestConfiguration)(ItemTeamMembersAddPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

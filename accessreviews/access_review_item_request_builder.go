@@ -68,7 +68,7 @@ func (m *AccessReviewItemRequestBuilder) Decisions()(*ItemDecisionsRequestBuilde
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-delete?view=graph-rest-beta
 func (m *AccessReviewItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AccessReviewItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +88,7 @@ func (m *AccessReviewItemRequestBuilder) Delete(ctx context.Context, requestConf
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-get?view=graph-rest-beta
 func (m *AccessReviewItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AccessReviewItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +121,7 @@ func (m *AccessReviewItemRequestBuilder) MyDecisions()(*ItemMyDecisionsRequestBu
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-update?view=graph-rest-beta
 func (m *AccessReviewItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable, requestConfiguration *AccessReviewItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

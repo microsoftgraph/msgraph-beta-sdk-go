@@ -11,7 +11,7 @@ import (
 type CollaborationAnalyzedEmailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CollaborationAnalyzedEmailsRequestBuilderGetQueryParameters read the properties and relationships of an analyzedEmail object.
+// CollaborationAnalyzedEmailsRequestBuilderGetQueryParameters contains metadata for analyzed emails.
 type CollaborationAnalyzedEmailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewCollaborationAnalyzedEmailsRequestBuilder(rawUrl string, requestAdapter 
 func (m *CollaborationAnalyzedEmailsRequestBuilder) Count()(*CollaborationAnalyzedEmailsCountRequestBuilder) {
     return NewCollaborationAnalyzedEmailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of an analyzedEmail object.
+// Get contains metadata for analyzed emails.
 // returns a AnalyzedEmailCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CollaborationAnalyzedEmailsRequestBuilder) Get(ctx context.Context, requestConfiguration *CollaborationAnalyzedEmailsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AnalyzedEmailCollectionResponseable, error) {
@@ -121,7 +121,7 @@ func (m *CollaborationAnalyzedEmailsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AnalyzedEmailable), nil
 }
-// ToGetRequestInformation read the properties and relationships of an analyzedEmail object.
+// ToGetRequestInformation contains metadata for analyzed emails.
 // returns a *RequestInformation when successful
 func (m *CollaborationAnalyzedEmailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CollaborationAnalyzedEmailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

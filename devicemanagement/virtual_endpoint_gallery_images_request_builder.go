@@ -11,7 +11,7 @@ import (
 type VirtualEndpointGalleryImagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointGalleryImagesRequestBuilderGetQueryParameters list the properties and relationships of the cloudPcGalleryImage objects.
+// VirtualEndpointGalleryImagesRequestBuilderGetQueryParameters the gallery image resource on Cloud PC.
 type VirtualEndpointGalleryImagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewVirtualEndpointGalleryImagesRequestBuilder(rawUrl string, requestAdapter
 func (m *VirtualEndpointGalleryImagesRequestBuilder) Count()(*VirtualEndpointGalleryImagesCountRequestBuilder) {
     return NewVirtualEndpointGalleryImagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the properties and relationships of the cloudPcGalleryImage objects.
+// Get the gallery image resource on Cloud PC.
 // returns a CloudPcGalleryImageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0
 func (m *VirtualEndpointGalleryImagesRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointGalleryImagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcGalleryImageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *VirtualEndpointGalleryImagesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcGalleryImageable), nil
 }
-// ToGetRequestInformation list the properties and relationships of the cloudPcGalleryImage objects.
+// ToGetRequestInformation the gallery image resource on Cloud PC.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointGalleryImagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointGalleryImagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

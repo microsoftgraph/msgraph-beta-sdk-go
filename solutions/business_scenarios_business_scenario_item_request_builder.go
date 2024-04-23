@@ -18,7 +18,7 @@ type BusinessScenariosBusinessScenarioItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosBusinessScenarioItemRequestBuilderGetQueryParameters read the properties and relationships of a businessScenario object.
+// BusinessScenariosBusinessScenarioItemRequestBuilderGetQueryParameters get businessScenarios from solutions
 type BusinessScenariosBusinessScenarioItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewBusinessScenariosBusinessScenarioItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessScenariosBusinessScenarioItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+// Delete delete navigation property businessScenarios for solutions
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0
 func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessScenariosBusinessScenarioItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get read the properties and relationships of a businessScenario object.
+// Get get businessScenarios from solutions
 // returns a BusinessScenarioable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0
 func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosBusinessScenarioItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable), nil
 }
-// Patch update the properties of a businessScenario object.
+// Patch update the navigation property businessScenarios in solutions
 // returns a BusinessScenarioable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0
 func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, requestConfiguration *BusinessScenariosBusinessScenarioItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +115,7 @@ func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) Patch(ctx context.
 func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) Planner()(*BusinessScenariosItemPlannerRequestBuilder) {
     return NewBusinessScenariosItemPlannerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+// ToDeleteRequestInformation delete navigation property businessScenarios for solutions
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosBusinessScenarioItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +126,7 @@ func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a businessScenario object.
+// ToGetRequestInformation get businessScenarios from solutions
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosBusinessScenarioItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +140,7 @@ func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a businessScenario object.
+// ToPatchRequestInformation update the navigation property businessScenarios in solutions
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosBusinessScenarioItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, requestConfiguration *BusinessScenariosBusinessScenarioItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

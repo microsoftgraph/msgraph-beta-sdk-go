@@ -35,9 +35,12 @@ func NewItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function itemAt
+// Get gets a row based on its position in the collection.
 // returns a WorkbookTableRowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablerowcollection-itemat?view=graph-rest-beta
 func (m *ItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableRowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,7 +63,7 @@ func (m *ItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilder) Get(c
 func (m *ItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilder) RangeEscaped()(*ItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRangeRequestBuilder) {
     return NewItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation invoke function itemAt
+// ToGetRequestInformation gets a row based on its position in the collection.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemRowsItemAtWithIndexRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

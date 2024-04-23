@@ -11,7 +11,7 @@ import (
 type ItemRoleSettingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRoleSettingsRequestBuilderGetQueryParameters retrieve the properties and relationships of a governanceRoleSetting.
+// ItemRoleSettingsRequestBuilderGetQueryParameters a collection of role settings for the provider.
 type ItemRoleSettingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemRoleSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *ItemRoleSettingsRequestBuilder) Count()(*ItemRoleSettingsCountRequestBuilder) {
     return NewItemRoleSettingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a governanceRoleSetting.
+// Get a collection of role settings for the provider.
 // returns a GovernanceRoleSettingCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRoleSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleSettingCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemRoleSettingsRequestBuilder) Post(ctx context.Context, body ie233ee7
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleSettingable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a governanceRoleSetting.
+// ToGetRequestInformation a collection of role settings for the provider.
 // returns a *RequestInformation when successful
 func (m *ItemRoleSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

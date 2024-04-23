@@ -11,7 +11,7 @@ import (
 type AttackSimulationTrainingCampaignsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationTrainingCampaignsRequestBuilderGetQueryParameters get a list of trainingCampaign objects and their properties.
+// AttackSimulationTrainingCampaignsRequestBuilderGetQueryParameters represents a training campaign in a tenant.
 type AttackSimulationTrainingCampaignsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewAttackSimulationTrainingCampaignsRequestBuilder(rawUrl string, requestAd
 func (m *AttackSimulationTrainingCampaignsRequestBuilder) Count()(*AttackSimulationTrainingCampaignsCountRequestBuilder) {
     return NewAttackSimulationTrainingCampaignsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of trainingCampaign objects and their properties.
+// Get represents a training campaign in a tenant.
 // returns a TrainingCampaignCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-list-trainingcampaigns?view=graph-rest-1.0
 func (m *AttackSimulationTrainingCampaignsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationTrainingCampaignsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *AttackSimulationTrainingCampaignsRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignCollectionResponseable), nil
 }
-// Post create a new trainingCampaign object.
+// Post create new navigation property to trainingCampaigns for security
 // returns a TrainingCampaignable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-post-trainingcampaigns?view=graph-rest-1.0
 func (m *AttackSimulationTrainingCampaignsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable, requestConfiguration *AttackSimulationTrainingCampaignsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *AttackSimulationTrainingCampaignsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable), nil
 }
-// ToGetRequestInformation get a list of trainingCampaign objects and their properties.
+// ToGetRequestInformation represents a training campaign in a tenant.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingCampaignsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingCampaignsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *AttackSimulationTrainingCampaignsRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new trainingCampaign object.
+// ToPostRequestInformation create new navigation property to trainingCampaigns for security
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingCampaignsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCampaignable, requestConfiguration *AttackSimulationTrainingCampaignsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

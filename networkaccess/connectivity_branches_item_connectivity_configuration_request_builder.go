@@ -18,7 +18,7 @@ type ConnectivityBranchesItemConnectivityConfigurationRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityBranchesItemConnectivityConfigurationRequestBuilderGetQueryParameters retrieve the IPSec tunnel configuration required to establish a bidirectional communication link between your organization's router and the Microsoft gateway. This information is vital for configuring your router (customer premise equipment) after creating a deviceLink.
+// ConnectivityBranchesItemConnectivityConfigurationRequestBuilderGetQueryParameters specifies the connectivity details of all device links associated with a branch.
 type ConnectivityBranchesItemConnectivityConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,13 +71,10 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationRequestBuilder) Delete
     }
     return nil
 }
-// Get retrieve the IPSec tunnel configuration required to establish a bidirectional communication link between your organization's router and the Microsoft gateway. This information is vital for configuring your router (customer premise equipment) after creating a deviceLink.
+// Get specifies the connectivity details of all device links associated with a branch.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a BranchConnectivityConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchconnectivityconfiguration-get?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemConnectivityConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchConnectivityConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -133,7 +130,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationRequestBuilder) ToDele
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the IPSec tunnel configuration required to establish a bidirectional communication link between your organization's router and the Microsoft gateway. This information is vital for configuring your router (customer premise equipment) after creating a deviceLink.
+// ToGetRequestInformation specifies the connectivity details of all device links associated with a branch.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemConnectivityConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

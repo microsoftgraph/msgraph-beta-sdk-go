@@ -59,7 +59,7 @@ func NewItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilder(rawUrl st
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta
 func (m *ItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemMailFoldersItemChildFoldersItemMessagesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,7 +82,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilder) Get(ctx
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-beta
 func (m *ItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesDeltaRequestBuilderGetRequestConfiguration)(ItemMailFoldersItemChildFoldersItemMessagesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

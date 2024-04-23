@@ -18,7 +18,7 @@ type ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestI
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters read the properties and relationships of a userConsentRequest object.
+// ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters a list of pending user consent requests. Supports $filter (eq).
 type ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     }
     return nil
 }
-// Get read the properties and relationships of a userConsentRequest object.
+// Get a list of pending user consent requests. Supports $filter (eq).
 // returns a UserConsentRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a userConsentRequest object.
+// ToGetRequestInformation a list of pending user consent requests. Supports $filter (eq).
 // returns a *RequestInformation when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

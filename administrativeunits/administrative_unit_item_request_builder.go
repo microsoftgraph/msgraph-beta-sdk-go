@@ -68,7 +68,7 @@ func NewAdministrativeUnitItemRequestBuilder(rawUrl string, requestAdapter i2ae4
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-delete?view=graph-rest-beta
 func (m *AdministrativeUnitItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AdministrativeUnitItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +93,7 @@ func (m *AdministrativeUnitItemRequestBuilder) Extensions()(*ItemExtensionsReque
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-beta
 func (m *AdministrativeUnitItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +131,7 @@ func (m *AdministrativeUnitItemRequestBuilder) Members()(*ItemMembersRequestBuil
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-update?view=graph-rest-beta
 func (m *AdministrativeUnitItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, requestConfiguration *AdministrativeUnitItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

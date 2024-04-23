@@ -18,7 +18,7 @@ type AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderGetQueryParameters represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
 type AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewAuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// Delete delete navigation property authenticationEventsFlows for identity
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventsflow-delete?view=graph-rest-1.0
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) De
     }
     return nil
 }
-// Get retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// Get represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
 // returns a AuthenticationEventsFlowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventsflow-get?view=graph-rest-1.0
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventsFlowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -106,12 +100,9 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) Ge
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) GraphExternalUsersSelfServiceSignUpEventsFlow()(*AuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder) {
     return NewAuthenticationEventsFlowsItemGraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+// Patch update the navigation property authenticationEventsFlows in identity
 // returns a AuthenticationEventsFlowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationeventsflow-update?view=graph-rest-1.0
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventsFlowable, requestConfiguration *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventsFlowable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -129,7 +120,7 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) Pa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventsFlowable), nil
 }
-// ToDeleteRequestInformation delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// ToDeleteRequestInformation delete navigation property authenticationEventsFlows for identity
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +131,7 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+// ToGetRequestInformation represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,7 +145,7 @@ func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+// ToPatchRequestInformation update the navigation property authenticationEventsFlows in identity
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationEventsFlowable, requestConfiguration *AuthenticationEventsFlowsAuthenticationEventsFlowItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

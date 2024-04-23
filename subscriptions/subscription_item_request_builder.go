@@ -56,7 +56,7 @@ func NewSubscriptionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-delete?view=graph-rest-beta
 func (m *SubscriptionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SubscriptionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,7 +76,7 @@ func (m *SubscriptionItemRequestBuilder) Delete(ctx context.Context, requestConf
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-get?view=graph-rest-beta
 func (m *SubscriptionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubscriptionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Subscriptionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +99,7 @@ func (m *SubscriptionItemRequestBuilder) Get(ctx context.Context, requestConfigu
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-update?view=graph-rest-beta
 func (m *SubscriptionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Subscriptionable, requestConfiguration *SubscriptionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Subscriptionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

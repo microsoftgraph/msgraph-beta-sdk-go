@@ -36,7 +36,7 @@ func NewItemSitesRemoveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-beta
 func (m *ItemSitesRemoveRequestBuilder) Post(ctx context.Context, body ItemSitesRemovePostRequestBodyable, requestConfiguration *ItemSitesRemoveRequestBuilderPostRequestConfiguration)(ItemSitesRemoveResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemSitesRemoveRequestBuilder) Post(ctx context.Context, body ItemSites
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-beta
 func (m *ItemSitesRemoveRequestBuilder) PostAsRemovePostResponse(ctx context.Context, body ItemSitesRemovePostRequestBodyable, requestConfiguration *ItemSitesRemoveRequestBuilderPostRequestConfiguration)(ItemSitesRemovePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

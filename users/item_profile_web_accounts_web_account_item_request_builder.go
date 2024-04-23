@@ -18,7 +18,7 @@ type ItemProfileWebAccountsWebAccountItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileWebAccountsWebAccountItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a webAccount object from a user's profile.
+// ItemProfileWebAccountsWebAccountItemRequestBuilderGetQueryParameters represents web accounts the user has indicated they use or has added to their user profile.
 type ItemProfileWebAccountsWebAccountItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemProfileWebAccountsWebAccountItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileWebAccountsWebAccountItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a webAccount object from a user's profile.
+// Delete delete navigation property webAccounts for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/webaccount-delete?view=graph-rest-1.0
 func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileWebAccountsWebAccountItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get retrieve the properties and relationships of a webAccount object from a user's profile.
+// Get represents web accounts the user has indicated they use or has added to their user profile.
 // returns a WebAccountable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/webaccount-get?view=graph-rest-1.0
 func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileWebAccountsWebAccountItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable), nil
 }
-// Patch update the properties of a webAccount object in a user's profile.
+// Patch update the navigation property webAccounts in users
 // returns a WebAccountable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/webaccount-update?view=graph-rest-1.0
 func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, requestConfiguration *ItemProfileWebAccountsWebAccountItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) Patch(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable), nil
 }
-// ToDeleteRequestInformation delete a webAccount object from a user's profile.
+// ToDeleteRequestInformation delete navigation property webAccounts for users
 // returns a *RequestInformation when successful
 func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileWebAccountsWebAccountItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a webAccount object from a user's profile.
+// ToGetRequestInformation represents web accounts the user has indicated they use or has added to their user profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileWebAccountsWebAccountItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) ToGetRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a webAccount object in a user's profile.
+// ToPatchRequestInformation update the navigation property webAccounts in users
 // returns a *RequestInformation when successful
 func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebAccountable, requestConfiguration *ItemProfileWebAccountsWebAccountItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

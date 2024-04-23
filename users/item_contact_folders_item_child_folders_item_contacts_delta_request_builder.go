@@ -57,7 +57,7 @@ func NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder(rawUrl
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-beta
 func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderGetRequestConfiguration)(ItemContactFoldersItemChildFoldersItemContactsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,7 +80,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) Get(
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contact-delta?view=graph-rest-beta
 func (m *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderGetRequestConfiguration)(ItemContactFoldersItemChildFoldersItemContactsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

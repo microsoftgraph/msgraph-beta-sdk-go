@@ -18,7 +18,7 @@ type ItemConnectorGroupsConnectorGroupItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemConnectorGroupsConnectorGroupItemRequestBuilderGetQueryParameters retrieve the properties of a connectorGroup.
+// ItemConnectorGroupsConnectorGroupItemRequestBuilderGetQueryParameters list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 type ItemConnectorGroupsConnectorGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -69,11 +69,8 @@ func NewItemConnectorGroupsConnectorGroupItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemConnectorGroupsConnectorGroupItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a connectorGroup. All connectors and applications must be removed from the connector group before a connector group can be deleted.
+// Delete delete navigation property connectorGroups for onPremisesPublishingProfiles
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/connectorgroup-delete?view=graph-rest-1.0
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConnectorGroupsConnectorGroupItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get retrieve the properties of a connectorGroup.
+// Get list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 // returns a ConnectorGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/connectorgroup-get?view=graph-rest-1.0
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemConnectorGroupsConnectorGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,12 +110,9 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Get(ctx context.Co
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Members()(*ItemConnectorGroupsItemMembersRequestBuilder) {
     return NewItemConnectorGroupsItemMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of a connectorGroup object.
+// Patch update the navigation property connectorGroups in onPremisesPublishingProfiles
 // returns a ConnectorGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/connectorgroup-update?view=graph-rest-1.0
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, requestConfiguration *ItemConnectorGroupsConnectorGroupItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -139,7 +130,7 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) Patch(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable), nil
 }
-// ToDeleteRequestInformation delete a connectorGroup. All connectors and applications must be removed from the connector group before a connector group can be deleted.
+// ToDeleteRequestInformation delete navigation property connectorGroups for onPremisesPublishingProfiles
 // returns a *RequestInformation when successful
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupsConnectorGroupItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +141,7 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of a connectorGroup.
+// ToGetRequestInformation list of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemConnectorGroupsConnectorGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -164,7 +155,7 @@ func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a connectorGroup object.
+// ToPatchRequestInformation update the navigation property connectorGroups in onPremisesPublishingProfiles
 // returns a *RequestInformation when successful
 func (m *ItemConnectorGroupsConnectorGroupItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConnectorGroupable, requestConfiguration *ItemConnectorGroupsConnectorGroupItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type EntitlementManagementRoleAssignmentSchedulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementRoleAssignmentSchedulesRequestBuilderGetQueryParameters get the schedules for active role assignment operations.
+// EntitlementManagementRoleAssignmentSchedulesRequestBuilderGetQueryParameters get roleAssignmentSchedules from roleManagement
 type EntitlementManagementRoleAssignmentSchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,12 +81,9 @@ func (m *EntitlementManagementRoleAssignmentSchedulesRequestBuilder) Count()(*En
 func (m *EntitlementManagementRoleAssignmentSchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementRoleAssignmentSchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get the schedules for active role assignment operations.
+// Get get roleAssignmentSchedules from roleManagement
 // returns a UnifiedRoleAssignmentScheduleCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0
 func (m *EntitlementManagementRoleAssignmentSchedulesRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentSchedulesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *EntitlementManagementRoleAssignmentSchedulesRequestBuilder) Post(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentScheduleable), nil
 }
-// ToGetRequestInformation get the schedules for active role assignment operations.
+// ToGetRequestInformation get roleAssignmentSchedules from roleManagement
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementRoleAssignmentSchedulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentSchedulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

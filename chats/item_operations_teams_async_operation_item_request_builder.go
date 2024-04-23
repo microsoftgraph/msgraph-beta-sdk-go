@@ -18,7 +18,7 @@ type ItemOperationsTeamsAsyncOperationItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOperationsTeamsAsyncOperationItemRequestBuilderGetQueryParameters get the specified Teams async operation that ran or is running on a specific resource.
+// ItemOperationsTeamsAsyncOperationItemRequestBuilderGetQueryParameters a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 type ItemOperationsTeamsAsyncOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemOperationsTeamsAsyncOperationItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get get the specified Teams async operation that ran or is running on a specific resource.
+// Get a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 // returns a TeamsAsyncOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamsasyncoperation-get?view=graph-rest-1.0
 func (m *ItemOperationsTeamsAsyncOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOperationsTeamsAsyncOperationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAsyncOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *ItemOperationsTeamsAsyncOperationItemRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the specified Teams async operation that ran or is running on a specific resource.
+// ToGetRequestInformation a collection of all the Teams async operations that ran or are running on the chat. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemOperationsTeamsAsyncOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOperationsTeamsAsyncOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilderGetQueryParameters list of run states for the hardware configuration across all users
+// HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilderGetQueryParameters list of run states for the hardware configuration across all users. Read-Only.
 type HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateIt
     }
     return nil
 }
-// Get list of run states for the hardware configuration across all users
+// Get list of run states for the hardware configuration across all users. Read-Only.
 // returns a HardwareConfigurationUserStateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HardwareConfigurationUserStateable, error) {
@@ -121,7 +121,7 @@ func (m *HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateIt
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation list of run states for the hardware configuration across all users
+// ToGetRequestInformation list of run states for the hardware configuration across all users. Read-Only.
 // returns a *RequestInformation when successful
 func (m *HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HardwareConfigurationsItemUserRunStatesHardwareConfigurationUserStateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

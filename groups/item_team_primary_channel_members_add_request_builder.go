@@ -36,7 +36,7 @@ func NewItemTeamPrimaryChannelMembersAddRequestBuilder(rawUrl string, requestAda
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-beta
 func (m *ItemTeamPrimaryChannelMembersAddRequestBuilder) Post(ctx context.Context, body ItemTeamPrimaryChannelMembersAddPostRequestBodyable, requestConfiguration *ItemTeamPrimaryChannelMembersAddRequestBuilderPostRequestConfiguration)(ItemTeamPrimaryChannelMembersAddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemTeamPrimaryChannelMembersAddRequestBuilder) Post(ctx context.Contex
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-beta
 func (m *ItemTeamPrimaryChannelMembersAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body ItemTeamPrimaryChannelMembersAddPostRequestBodyable, requestConfiguration *ItemTeamPrimaryChannelMembersAddRequestBuilderPostRequestConfiguration)(ItemTeamPrimaryChannelMembersAddPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

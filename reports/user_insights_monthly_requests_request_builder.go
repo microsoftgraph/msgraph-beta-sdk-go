@@ -11,7 +11,7 @@ import (
 type UserInsightsMonthlyRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserInsightsMonthlyRequestsRequestBuilderGetQueryParameters get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// UserInsightsMonthlyRequestsRequestBuilderGetQueryParameters insights for all user requests on apps registered in the tenant for a specified period.
 type UserInsightsMonthlyRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewUserInsightsMonthlyRequestsRequestBuilder(rawUrl string, requestAdapter 
 func (m *UserInsightsMonthlyRequestsRequestBuilder) Count()(*UserInsightsMonthlyRequestsCountRequestBuilder) {
     return NewUserInsightsMonthlyRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// Get insights for all user requests on apps registered in the tenant for a specified period.
 // returns a UserRequestsMetricCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-requests?view=graph-rest-1.0
 func (m *UserInsightsMonthlyRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsMonthlyRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRequestsMetricCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *UserInsightsMonthlyRequestsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRequestsMetricCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// ToGetRequestInformation insights for all user requests on apps registered in the tenant for a specified period.
 // returns a *RequestInformation when successful
 func (m *UserInsightsMonthlyRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsMonthlyRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

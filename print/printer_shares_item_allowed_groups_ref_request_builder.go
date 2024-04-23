@@ -11,7 +11,7 @@ import (
 type PrinterSharesItemAllowedGroupsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteQueryParameters revoke the specified group's access to submit print jobs to the associated printerShare.
+// PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteQueryParameters delete ref of navigation property allowedGroups for print
 type PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration s
     // Request query parameters
     QueryParameters *PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteQueryParameters
 }
-// PrinterSharesItemAllowedGroupsRefRequestBuilderGetQueryParameters retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+// PrinterSharesItemAllowedGroupsRefRequestBuilderGetQueryParameters the groups whose users have access to print using the printer.
 type PrinterSharesItemAllowedGroupsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewPrinterSharesItemAllowedGroupsRefRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterSharesItemAllowedGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete revoke the specified group's access to submit print jobs to the associated printerShare.
+// Delete delete ref of navigation property allowedGroups for print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
 func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,13 +86,10 @@ func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+// Get the groups whose users have access to print using the printer.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0
 func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) Get(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedGroupsRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,12 +107,9 @@ func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post grant the specified group access to submit print jobs to the associated printerShare.
+// Post create new navigation property ref to allowedGroups for print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0
 func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *PrinterSharesItemAllowedGroupsRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -133,7 +124,7 @@ func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToDeleteRequestInformation revoke the specified group's access to submit print jobs to the associated printerShare.
+// ToDeleteRequestInformation delete ref of navigation property allowedGroups for print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedGroupsRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -148,7 +139,7 @@ func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+// ToGetRequestInformation the groups whose users have access to print using the printer.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedGroupsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -163,7 +154,7 @@ func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation grant the specified group access to submit print jobs to the associated printerShare.
+// ToPostRequestInformation create new navigation property ref to allowedGroups for print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemAllowedGroupsRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *PrinterSharesItemAllowedGroupsRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

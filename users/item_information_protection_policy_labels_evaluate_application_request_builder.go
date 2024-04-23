@@ -36,7 +36,7 @@ func NewItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder(r
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-beta
 func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) Post(ctx context.Context, body ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBodyable, requestConfiguration *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderPostRequestConfiguration)(ItemInformationProtectionPolicyLabelsEvaluateApplicationResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,7 +60,7 @@ func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder)
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-beta
 func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) PostAsEvaluateApplicationPostResponse(ctx context.Context, body ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBodyable, requestConfiguration *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderPostRequestConfiguration)(ItemInformationProtectionPolicyLabelsEvaluateApplicationPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

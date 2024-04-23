@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetQueryParameters get the list of siteSource objecs associated with a legal hold.
+// EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the legal hold.
 type EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,13 +77,10 @@ func NewEdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder(rawUrl string
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Count()(*EdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemLegalHoldsItemSiteSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of siteSource objecs associated with a legal hold.
+// Get data source entity for SharePoint sites associated with the legal hold.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a SiteSourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-legalhold-list-sitesources?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,13 +98,10 @@ func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Get(ctx con
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceCollectionResponseable), nil
 }
-// Post adds a siteSource to a legalHold object.
+// Post create new navigation property to siteSources for compliance
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a SiteSourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-legalhold-post-sitesources?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -125,7 +119,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) Post(ctx co
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable), nil
 }
-// ToGetRequestInformation get the list of siteSource objecs associated with a legal hold.
+// ToGetRequestInformation data source entity for SharePoint sites associated with the legal hold.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -140,7 +134,7 @@ func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation adds a siteSource to a legalHold object.
+// ToPostRequestInformation create new navigation property to siteSources for compliance
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, requestConfiguration *EdiscoveryCasesItemLegalHoldsItemSiteSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

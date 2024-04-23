@@ -11,7 +11,7 @@ import (
 type MeUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MeUserRequestBuilderGetQueryParameters retrieve the simple directory user that corresponds to this educationUser.
+// MeUserRequestBuilderGetQueryParameters get user from education
 type MeUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,12 +40,9 @@ func NewMeUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
     urlParams["request-raw-url"] = rawUrl
     return NewMeUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve the simple directory user that corresponds to this educationUser.
+// Get get user from education
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0
 func (m *MeUserRequestBuilder) Get(ctx context.Context, requestConfiguration *MeUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +70,7 @@ func (m *MeUserRequestBuilder) MailboxSettings()(*MeUserMailboxSettingsRequestBu
 func (m *MeUserRequestBuilder) ServiceProvisioningErrors()(*MeUserServiceProvisioningErrorsRequestBuilder) {
     return NewMeUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve the simple directory user that corresponds to this educationUser.
+// ToGetRequestInformation get user from education
 // returns a *RequestInformation when successful
 func (m *MeUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

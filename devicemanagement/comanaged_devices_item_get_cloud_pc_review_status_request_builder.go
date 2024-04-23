@@ -31,9 +31,12 @@ func NewComanagedDevicesItemGetCloudPcReviewStatusRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewComanagedDevicesItemGetCloudPcReviewStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getCloudPcReviewStatus
+// Get get the review status of a specific Cloud PC device.
 // returns a CloudPcReviewStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-getcloudpcreviewstatus?view=graph-rest-beta
 func (m *ComanagedDevicesItemGetCloudPcReviewStatusRequestBuilder) Get(ctx context.Context, requestConfiguration *ComanagedDevicesItemGetCloudPcReviewStatusRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReviewStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *ComanagedDevicesItemGetCloudPcReviewStatusRequestBuilder) Get(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReviewStatusable), nil
 }
-// ToGetRequestInformation invoke function getCloudPcReviewStatus
+// ToGetRequestInformation get the review status of a specific Cloud PC device.
 // returns a *RequestInformation when successful
 func (m *ComanagedDevicesItemGetCloudPcReviewStatusRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ComanagedDevicesItemGetCloudPcReviewStatusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

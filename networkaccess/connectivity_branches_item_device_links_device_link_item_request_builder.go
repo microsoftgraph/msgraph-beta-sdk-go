@@ -54,12 +54,9 @@ func NewConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
+// Delete delete navigation property deviceLinks for networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-delete-devicelinks?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,13 +92,10 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Get(ct
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// Patch update the device link associated with a specific branch or remote network.
+// Patch update the navigation property deviceLinks in networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a DeviceLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-update?view=graph-rest-1.0
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +113,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) Patch(
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// ToDeleteRequestInformation removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
+// ToDeleteRequestInformation delete navigation property deviceLinks for networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -146,7 +140,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToGetR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the device link associated with a specific branch or remote network.
+// ToPatchRequestInformation update the navigation property deviceLinks in networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, requestConfiguration *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -81,7 +81,7 @@ func (m *ProgramControlsRequestBuilder) Count()(*CountRequestBuilder) {
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/programcontrol-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/programcontrol-list?view=graph-rest-beta
 func (m *ProgramControlsRequestBuilder) Get(ctx context.Context, requestConfiguration *ProgramControlsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +104,7 @@ func (m *ProgramControlsRequestBuilder) Get(ctx context.Context, requestConfigur
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/programcontrol-create?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/programcontrol-create?view=graph-rest-beta
 func (m *ProgramControlsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, requestConfiguration *ProgramControlsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

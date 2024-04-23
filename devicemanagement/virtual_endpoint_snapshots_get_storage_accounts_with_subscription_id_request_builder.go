@@ -10,7 +10,7 @@ import (
 type VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters invoke function getStorageAccounts
+// VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters list all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
 type VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -48,10 +48,13 @@ func NewVirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getStorageAccounts
+// Get list all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
 // Deprecated: This method is obsolete. Use GetAsGetStorageAccountsWithSubscriptionIdGetResponse instead.
 // returns a VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcsnapshot-getstorageaccounts?view=graph-rest-beta
 func (m *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilderGetRequestConfiguration)(VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -69,9 +72,12 @@ func (m *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuil
     }
     return res.(VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdResponseable), nil
 }
-// GetAsGetStorageAccountsWithSubscriptionIdGetResponse invoke function getStorageAccounts
+// GetAsGetStorageAccountsWithSubscriptionIdGetResponse list all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
 // returns a VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcsnapshot-getstorageaccounts?view=graph-rest-beta
 func (m *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilder) GetAsGetStorageAccountsWithSubscriptionIdGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilderGetRequestConfiguration)(VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +95,7 @@ func (m *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuil
     }
     return res.(VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getStorageAccounts
+// ToGetRequestInformation list all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsGetStorageAccountsWithSubscriptionIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -36,7 +36,7 @@ func NewAlertsUpdateAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-beta
 func (m *AlertsUpdateAlertsRequestBuilder) Post(ctx context.Context, body AlertsUpdateAlertsPostRequestBodyable, requestConfiguration *AlertsUpdateAlertsRequestBuilderPostRequestConfiguration)(AlertsUpdateAlertsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *AlertsUpdateAlertsRequestBuilder) Post(ctx context.Context, body Alerts
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-beta
 func (m *AlertsUpdateAlertsRequestBuilder) PostAsUpdateAlertsPostResponse(ctx context.Context, body AlertsUpdateAlertsPostRequestBodyable, requestConfiguration *AlertsUpdateAlertsRequestBuilderPostRequestConfiguration)(AlertsUpdateAlertsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

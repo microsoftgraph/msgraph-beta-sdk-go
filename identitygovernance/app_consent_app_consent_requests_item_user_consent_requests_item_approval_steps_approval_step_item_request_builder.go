@@ -18,7 +18,7 @@ type AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprova
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderGetQueryParameters retrieve the properties of an approvalStep object.
+// AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderGetQueryParameters used to represent the decision associated with a single step in the approval process configured in approvalStage.
 type AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApp
     }
     return nil
 }
-// Get retrieve the properties of an approvalStep object.
+// Get used to represent the decision associated with a single step in the approval process configured in approvalStage.
 // returns a ApprovalStepable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/approvalstep-get?view=graph-rest-1.0
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApp
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
-// Patch apply approve or deny decision on an approvalStep object.
+// Patch update the navigation property steps in identityGovernance
 // returns a ApprovalStepable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/approvalstep-update?view=graph-rest-1.0
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApp
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties of an approvalStep object.
+// ToGetRequestInformation used to represent the decision associated with a single step in the approval process configured in approvalStage.
 // returns a *RequestInformation when successful
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApp
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation apply approve or deny decision on an approvalStep object.
+// ToPatchRequestInformation update the navigation property steps in identityGovernance
 // returns a *RequestInformation when successful
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

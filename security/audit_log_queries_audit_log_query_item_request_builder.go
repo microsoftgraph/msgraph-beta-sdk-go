@@ -18,7 +18,7 @@ type AuditLogQueriesAuditLogQueryItemRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuditLogQueriesAuditLogQueryItemRequestBuilderGetQueryParameters read the properties and relationships of an auditLogQuery object.
+// AuditLogQueriesAuditLogQueryItemRequestBuilderGetQueryParameters get queries from security
 type AuditLogQueriesAuditLogQueryItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *AuditLogQueriesAuditLogQueryItemRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get read the properties and relationships of an auditLogQuery object.
+// Get get queries from security
 // returns a AuditLogQueryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-auditlogquery-get?view=graph-rest-1.0
 func (m *AuditLogQueriesAuditLogQueryItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuditLogQueriesAuditLogQueryItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AuditLogQueryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *AuditLogQueriesAuditLogQueryItemRequestBuilder) ToDeleteRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an auditLogQuery object.
+// ToGetRequestInformation get queries from security
 // returns a *RequestInformation when successful
 func (m *AuditLogQueriesAuditLogQueryItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditLogQueriesAuditLogQueryItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

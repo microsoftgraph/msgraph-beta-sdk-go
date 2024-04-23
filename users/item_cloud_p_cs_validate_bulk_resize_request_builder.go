@@ -36,7 +36,7 @@ func NewItemCloudPCsValidateBulkResizeRequestBuilder(rawUrl string, requestAdapt
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-beta
 func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) Post(ctx context.Context, body ItemCloudPCsValidateBulkResizePostRequestBodyable, requestConfiguration *ItemCloudPCsValidateBulkResizeRequestBuilderPostRequestConfiguration)(ItemCloudPCsValidateBulkResizeResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) Post(ctx context.Context,
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-beta
 func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) PostAsValidateBulkResizePostResponse(ctx context.Context, body ItemCloudPCsValidateBulkResizePostRequestBodyable, requestConfiguration *ItemCloudPCsValidateBulkResizeRequestBuilderPostRequestConfiguration)(ItemCloudPCsValidateBulkResizePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

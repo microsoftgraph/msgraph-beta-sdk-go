@@ -11,7 +11,7 @@ import (
 type ManagedTenantsTenantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsTenantsRequestBuilderGetQueryParameters get a list of the tenant objects and their properties.
+// ManagedTenantsTenantsRequestBuilderGetQueryParameters the collection of tenants associated with the managing entity.
 type ManagedTenantsTenantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewManagedTenantsTenantsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ManagedTenantsTenantsRequestBuilder) Count()(*ManagedTenantsTenantsCountRequestBuilder) {
     return NewManagedTenantsTenantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the tenant objects and their properties.
+// Get the collection of tenants associated with the managing entity.
 // returns a TenantCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenants?view=graph-rest-1.0
 func (m *ManagedTenantsTenantsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsTenantsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ManagedTenantsTenantsRequestBuilder) Post(ctx context.Context, body i72
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable), nil
 }
-// ToGetRequestInformation get a list of the tenant objects and their properties.
+// ToGetRequestInformation the collection of tenants associated with the managing entity.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsTenantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

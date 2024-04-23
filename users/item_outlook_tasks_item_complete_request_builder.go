@@ -36,7 +36,7 @@ func NewItemOutlookTasksItemCompleteRequestBuilder(rawUrl string, requestAdapter
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-beta
 func (m *ItemOutlookTasksItemCompleteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemOutlookTasksItemCompleteRequestBuilderPostRequestConfiguration)(ItemOutlookTasksItemCompleteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,7 +60,7 @@ func (m *ItemOutlookTasksItemCompleteRequestBuilder) Post(ctx context.Context, r
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-beta
 func (m *ItemOutlookTasksItemCompleteRequestBuilder) PostAsCompletePostResponse(ctx context.Context, requestConfiguration *ItemOutlookTasksItemCompleteRequestBuilderPostRequestConfiguration)(ItemOutlookTasksItemCompletePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

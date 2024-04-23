@@ -36,7 +36,7 @@ func NewItemPromoteRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-beta
 func (m *ItemPromoteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemPromoteRequestBuilderPostRequestConfiguration)(ItemPromoteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemPromoteRequestBuilder) Post(ctx context.Context, requestConfigurati
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-beta
 func (m *ItemPromoteRequestBuilder) PostAsPromotePostResponse(ctx context.Context, requestConfiguration *ItemPromoteRequestBuilderPostRequestConfiguration)(ItemPromotePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

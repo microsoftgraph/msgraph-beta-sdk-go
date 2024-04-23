@@ -11,7 +11,7 @@ import (
 type AlertRecordsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AlertRecordsRequestBuilderGetQueryParameters get a list of the alertRecord objects and their properties.
+// AlertRecordsRequestBuilderGetQueryParameters the collection of records of alert events.
 type AlertRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewAlertRecordsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *AlertRecordsRequestBuilder) Count()(*AlertRecordsCountRequestBuilder) {
     return NewAlertRecordsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the alertRecord objects and their properties.
+// Get the collection of records of alert events.
 // returns a AlertRecordCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-list?view=graph-rest-1.0
 func (m *AlertRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertRecordsRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *AlertRecordsRequestBuilder) Post(ctx context.Context, body i2edb12705e6
     }
     return res.(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable), nil
 }
-// ToGetRequestInformation get a list of the alertRecord objects and their properties.
+// ToGetRequestInformation the collection of records of alert events.
 // returns a *RequestInformation when successful
 func (m *AlertRecordsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertRecordsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

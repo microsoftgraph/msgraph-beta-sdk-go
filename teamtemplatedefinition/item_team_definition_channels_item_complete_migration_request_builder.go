@@ -34,7 +34,7 @@ func NewItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder(rawUrl str
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-beta
 func (m *ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemCompleteMigrationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

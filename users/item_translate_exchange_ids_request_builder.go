@@ -36,7 +36,7 @@ func NewItemTranslateExchangeIdsRequestBuilder(rawUrl string, requestAdapter i2a
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-beta
 func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(ItemTranslateExchangeIdsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-beta
 func (m *ItemTranslateExchangeIdsRequestBuilder) PostAsTranslateExchangeIdsPostResponse(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(ItemTranslateExchangeIdsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

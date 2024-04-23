@@ -18,7 +18,7 @@ type ItemProfileAccountUserAccountInformationItemRequestBuilderDeleteRequestConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileAccountUserAccountInformationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an userAccountInformation object in a user's profile.
+// ItemProfileAccountUserAccountInformationItemRequestBuilderGetQueryParameters get account from users
 type ItemProfileAccountUserAccountInformationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemProfileAccountUserAccountInformationItemRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileAccountUserAccountInformationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an userAccountInformation object from a user's profile.
+// Delete delete navigation property account for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/useraccountinformation-delete?view=graph-rest-1.0
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Delete(ctx 
     }
     return nil
 }
-// Get retrieve the properties and relationships of an userAccountInformation object in a user's profile.
+// Get get account from users
 // returns a UserAccountInformationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-1.0
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Get(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable), nil
 }
-// Patch update the properties of an userAccountInformation object in a user's profile.
+// Patch update the navigation property account in users
 // returns a UserAccountInformationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/useraccountinformation-update?view=graph-rest-1.0
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) Patch(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable), nil
 }
-// ToDeleteRequestInformation delete an userAccountInformation object from a user's profile.
+// ToDeleteRequestInformation delete navigation property account for users
 // returns a *RequestInformation when successful
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToDeleteReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an userAccountInformation object in a user's profile.
+// ToGetRequestInformation get account from users
 // returns a *RequestInformation when successful
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an userAccountInformation object in a user's profile.
+// ToPatchRequestInformation update the navigation property account in users
 // returns a *RequestInformation when successful
 func (m *ItemProfileAccountUserAccountInformationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserAccountInformationable, requestConfiguration *ItemProfileAccountUserAccountInformationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

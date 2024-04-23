@@ -40,9 +40,6 @@ func NewB2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilde
 // Get get media content for the navigation property overridesPages from identity
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-1.0
 func (m *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -10,7 +10,7 @@ import (
 type VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameters invoke function getSupportedCloudPcRemoteActions
+// VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameters get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
 type VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewVirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getSupportedCloudPcRemoteActions
+// Get get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
 // Deprecated: This method is obsolete. Use GetAsGetSupportedCloudPcRemoteActionsGetResponse instead.
 // returns a VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuild
     }
     return res.(VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsResponseable), nil
 }
-// GetAsGetSupportedCloudPcRemoteActionsGetResponse invoke function getSupportedCloudPcRemoteActions
+// GetAsGetSupportedCloudPcRemoteActionsGetResponse get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
 // returns a VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) GetAsGetSupportedCloudPcRemoteActionsGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuild
     }
     return res.(VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getSupportedCloudPcRemoteActions
+// ToGetRequestInformation get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

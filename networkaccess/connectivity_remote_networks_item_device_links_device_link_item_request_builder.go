@@ -18,7 +18,7 @@ type ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters retrieves a specific device link associated with a remote network.
+// ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters each unique CPE device associated with a remote network is specified. Supports $expand.
 type ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
+// Delete delete navigation property deviceLinks for networkAccess
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-delete?view=graph-rest-1.0
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) 
     }
     return nil
 }
-// Get retrieves a specific device link associated with a remote network.
+// Get each unique CPE device associated with a remote network is specified. Supports $expand.
 // returns a DeviceLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-devicelink-get?view=graph-rest-1.0
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) 
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// ToDeleteRequestInformation removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
+// ToDeleteRequestInformation delete navigation property deviceLinks for networkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +121,7 @@ func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieves a specific device link associated with a remote network.
+// ToGetRequestInformation each unique CPE device associated with a remote network is specified. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksDeviceLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

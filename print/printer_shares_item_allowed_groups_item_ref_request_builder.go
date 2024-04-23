@@ -30,12 +30,9 @@ func NewPrinterSharesItemAllowedGroupsItemRefRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterSharesItemAllowedGroupsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete revoke the specified group's access to submit print jobs to the associated printerShare.
+// Delete delete ref of navigation property allowedGroups for print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-allowedgroup?view=graph-rest-1.0
 func (m *PrinterSharesItemAllowedGroupsItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +47,7 @@ func (m *PrinterSharesItemAllowedGroupsItemRefRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// ToDeleteRequestInformation revoke the specified group's access to submit print jobs to the associated printerShare.
+// ToDeleteRequestInformation delete ref of navigation property allowedGroups for print
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemAllowedGroupsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

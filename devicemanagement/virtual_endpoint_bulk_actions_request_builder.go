@@ -11,7 +11,7 @@ import (
 type VirtualEndpointBulkActionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointBulkActionsRequestBuilderGetQueryParameters get a list of the cloudPcBulkAction objects and their properties.
+// VirtualEndpointBulkActionsRequestBuilderGetQueryParameters bulk actions applied to a Cloud PC.
 type VirtualEndpointBulkActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewVirtualEndpointBulkActionsRequestBuilder(rawUrl string, requestAdapter i
 func (m *VirtualEndpointBulkActionsRequestBuilder) Count()(*VirtualEndpointBulkActionsCountRequestBuilder) {
     return NewVirtualEndpointBulkActionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the cloudPcBulkAction objects and their properties.
+// Get bulk actions applied to a Cloud PC.
 // returns a CloudPcBulkActionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-bulkactions?view=graph-rest-1.0
 func (m *VirtualEndpointBulkActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointBulkActionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkActionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *VirtualEndpointBulkActionsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkActionCollectionResponseable), nil
 }
-// Post create a new cloudPcBulkAction object.
+// Post create new navigation property to bulkActions for deviceManagement
 // returns a CloudPcBulkActionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-post-bulkactions?view=graph-rest-1.0
 func (m *VirtualEndpointBulkActionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkActionable, requestConfiguration *VirtualEndpointBulkActionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkActionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *VirtualEndpointBulkActionsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkActionable), nil
 }
-// ToGetRequestInformation get a list of the cloudPcBulkAction objects and their properties.
+// ToGetRequestInformation bulk actions applied to a Cloud PC.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointBulkActionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointBulkActionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *VirtualEndpointBulkActionsRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new cloudPcBulkAction object.
+// ToPostRequestInformation create new navigation property to bulkActions for deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointBulkActionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkActionable, requestConfiguration *VirtualEndpointBulkActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

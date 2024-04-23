@@ -18,7 +18,7 @@ type CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateB
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderGetQueryParameters read the properties and relationships of a certificateBasedApplicationConfiguration object.
+// CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderGetQueryParameters defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
 type CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsCertifica
     urlParams["request-raw-url"] = rawUrl
     return NewCertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the properties and relationships of a certificateBasedApplicationConfiguration object.
+// Delete delete navigation property certificateBasedApplicationConfigurations for directory
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedapplicationconfiguration-delete?view=graph-rest-1.0
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertific
     }
     return nil
 }
-// Get read the properties and relationships of a certificateBasedApplicationConfiguration object.
+// Get defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
 // returns a CertificateBasedApplicationConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedapplicationconfiguration-get?view=graph-rest-1.0
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertific
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationable), nil
 }
-// Patch update the properties of a certificateBasedApplicationConfiguration object. To update the trustedCertificateAuthorities within a certificateBasedApplicationConfiguration object, use the Update certificateAuthorityAsEntity operation.
+// Patch update the navigation property certificateBasedApplicationConfigurations in directory
 // returns a CertificateBasedApplicationConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedapplicationconfiguration-update?view=graph-rest-1.0
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationable, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertific
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationable), nil
 }
-// ToDeleteRequestInformation delete the properties and relationships of a certificateBasedApplicationConfiguration object.
+// ToDeleteRequestInformation delete navigation property certificateBasedApplicationConfigurations for directory
 // returns a *RequestInformation when successful
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertific
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a certificateBasedApplicationConfiguration object.
+// ToGetRequestInformation defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
 // returns a *RequestInformation when successful
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertific
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a certificateBasedApplicationConfiguration object. To update the trustedCertificateAuthorities within a certificateBasedApplicationConfiguration object, use the Update certificateAuthorityAsEntity operation.
+// ToPatchRequestInformation update the navigation property certificateBasedApplicationConfigurations in directory
 // returns a *RequestInformation when successful
 func (m *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateBasedApplicationConfigurationable, requestConfiguration *CertificateAuthoritiesCertificateBasedApplicationConfigurationsCertificateBasedApplicationConfigurationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

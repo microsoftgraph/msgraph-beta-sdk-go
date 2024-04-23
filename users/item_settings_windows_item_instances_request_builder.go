@@ -11,7 +11,7 @@ import (
 type ItemSettingsWindowsItemInstancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSettingsWindowsItemInstancesRequestBuilderGetQueryParameters get a list of windowsSettingInstance objects and their properties for the signed-in user.
+// ItemSettingsWindowsItemInstancesRequestBuilderGetQueryParameters a collection of setting values for a given windowsSetting.
 type ItemSettingsWindowsItemInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemSettingsWindowsItemInstancesRequestBuilder(rawUrl string, requestAda
 func (m *ItemSettingsWindowsItemInstancesRequestBuilder) Count()(*ItemSettingsWindowsItemInstancesCountRequestBuilder) {
     return NewItemSettingsWindowsItemInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of windowsSettingInstance objects and their properties for the signed-in user.
+// Get a collection of setting values for a given windowsSetting.
 // returns a WindowsSettingInstanceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowssetting-list-instances?view=graph-rest-1.0
 func (m *ItemSettingsWindowsItemInstancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemSettingsWindowsItemInstancesRequestBuilder) Post(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable), nil
 }
-// ToGetRequestInformation get a list of windowsSettingInstance objects and their properties for the signed-in user.
+// ToGetRequestInformation a collection of setting values for a given windowsSetting.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

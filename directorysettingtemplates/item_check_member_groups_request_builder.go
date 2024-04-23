@@ -36,7 +36,7 @@ func NewItemCheckMemberGroupsRequestBuilder(rawUrl string, requestAdapter i2ae41
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
 func (m *ItemCheckMemberGroupsRequestBuilder) Post(ctx context.Context, body ItemCheckMemberGroupsPostRequestBodyable, requestConfiguration *ItemCheckMemberGroupsRequestBuilderPostRequestConfiguration)(ItemCheckMemberGroupsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemCheckMemberGroupsRequestBuilder) Post(ctx context.Context, body Ite
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta
 func (m *ItemCheckMemberGroupsRequestBuilder) PostAsCheckMemberGroupsPostResponse(ctx context.Context, body ItemCheckMemberGroupsPostRequestBodyable, requestConfiguration *ItemCheckMemberGroupsRequestBuilderPostRequestConfiguration)(ItemCheckMemberGroupsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

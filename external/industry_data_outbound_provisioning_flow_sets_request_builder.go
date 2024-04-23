@@ -11,7 +11,7 @@ import (
 type IndustryDataOutboundProvisioningFlowSetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataOutboundProvisioningFlowSetsRequestBuilderGetQueryParameters get a list of the outboundProvisioningFlowSet objects and their properties.
+// IndustryDataOutboundProvisioningFlowSetsRequestBuilderGetQueryParameters get outboundProvisioningFlowSets from external
 type IndustryDataOutboundProvisioningFlowSetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewIndustryDataOutboundProvisioningFlowSetsRequestBuilder(rawUrl string, re
 func (m *IndustryDataOutboundProvisioningFlowSetsRequestBuilder) Count()(*IndustryDataOutboundProvisioningFlowSetsCountRequestBuilder) {
     return NewIndustryDataOutboundProvisioningFlowSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the outboundProvisioningFlowSet objects and their properties.
+// Get get outboundProvisioningFlowSets from external
 // returns a OutboundProvisioningFlowSetCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydataroot-list-outboundprovisioningflowsets?view=graph-rest-1.0
 func (m *IndustryDataOutboundProvisioningFlowSetsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.OutboundProvisioningFlowSetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *IndustryDataOutboundProvisioningFlowSetsRequestBuilder) Post(ctx contex
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.OutboundProvisioningFlowSetable), nil
 }
-// ToGetRequestInformation get a list of the outboundProvisioningFlowSet objects and their properties.
+// ToGetRequestInformation get outboundProvisioningFlowSets from external
 // returns a *RequestInformation when successful
 func (m *IndustryDataOutboundProvisioningFlowSetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

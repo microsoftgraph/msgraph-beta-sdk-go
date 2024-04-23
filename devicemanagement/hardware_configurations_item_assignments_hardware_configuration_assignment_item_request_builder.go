@@ -18,7 +18,7 @@ type HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderGetQueryParameters list of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+// HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderGetQueryParameters a list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
 type HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentIte
     }
     return nil
 }
-// Get list of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+// Get a list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
 // returns a HardwareConfigurationAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HardwareConfigurationAssignmentable, error) {
@@ -121,7 +121,7 @@ func (m *HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentIte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation list of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+// ToGetRequestInformation a list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
 // returns a *RequestInformation when successful
 func (m *HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HardwareConfigurationsItemAssignmentsHardwareConfigurationAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

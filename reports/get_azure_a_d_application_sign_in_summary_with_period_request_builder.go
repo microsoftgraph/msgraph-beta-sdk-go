@@ -10,7 +10,7 @@ import (
 type GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters invoke function getAzureADApplicationSignInSummary
+// GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters retrieve applicationSigninSummary objects within either the last seven or 30 days.
 type GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewGetAzureADApplicationSignInSummaryWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getAzureADApplicationSignInSummary
+// Get retrieve applicationSigninSummary objects within either the last seven or 30 days.
 // Deprecated: This method is obsolete. Use GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponse instead.
 // returns a GetAzureADApplicationSignInSummaryWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getazureadapplicationsigninsummary?view=graph-rest-beta
 func (m *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetAzureADApplicationSignInSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) Get(ctx con
     }
     return res.(GetAzureADApplicationSignInSummaryWithPeriodResponseable), nil
 }
-// GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponse invoke function getAzureADApplicationSignInSummary
+// GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponse retrieve applicationSigninSummary objects within either the last seven or 30 days.
 // returns a GetAzureADApplicationSignInSummaryWithPeriodGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getazureadapplicationsigninsummary?view=graph-rest-beta
 func (m *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetAzureADApplicationSignInSummaryWithPeriodGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) GetAsGetAzu
     }
     return res.(GetAzureADApplicationSignInSummaryWithPeriodGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAzureADApplicationSignInSummary
+// ToGetRequestInformation retrieve applicationSigninSummary objects within either the last seven or 30 days.
 // returns a *RequestInformation when successful
 func (m *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

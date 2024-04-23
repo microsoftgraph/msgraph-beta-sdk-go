@@ -18,7 +18,7 @@ type WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetQueryParameters read the properties and relationships of a deployment object.
+// WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetQueryParameters deployments created using the deployment service.
 type WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesDeploymentsDeploymentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a deployment object.
+// Delete delete navigation property deployments for admin
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-deployment-delete?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,12 +75,9 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get read the properties and relationships of a deployment object.
+// Get deployments created using the deployment service.
 // returns a Deploymentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-deployment-get?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,12 +95,9 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Get(ctx context.
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable), nil
 }
-// Patch update the properties of a deployment object.
+// Patch update the navigation property deployments in admin
 // returns a Deploymentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-deployment-update?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Patch(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderPatchRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +115,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) Patch(ctx contex
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable), nil
 }
-// ToDeleteRequestInformation delete a deployment object.
+// ToDeleteRequestInformation delete navigation property deployments for admin
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +126,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a deployment object.
+// ToGetRequestInformation deployments created using the deployment service.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +140,7 @@ func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToGetRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a deployment object.
+// ToPatchRequestInformation update the navigation property deployments in admin
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesDeploymentsDeploymentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Deploymentable, requestConfiguration *WindowsUpdatesDeploymentsDeploymentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

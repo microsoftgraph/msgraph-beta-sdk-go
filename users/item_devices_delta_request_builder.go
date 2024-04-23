@@ -10,7 +10,7 @@ import (
 type ItemDevicesDeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemDevicesDeltaRequestBuilderGetQueryParameters invoke function delta
+// ItemDevicesDeltaRequestBuilderGetQueryParameters get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.
 type ItemDevicesDeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemDevicesDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewItemDevicesDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function delta
+// Get get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemDevicesDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-delta?view=graph-rest-beta
 func (m *ItemDevicesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesDeltaRequestBuilderGetRequestConfiguration)(ItemDevicesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemDevicesDeltaRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ItemDevicesDeltaResponseable), nil
 }
-// GetAsDeltaGetResponse invoke function delta
+// GetAsDeltaGetResponse get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.
 // returns a ItemDevicesDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-delta?view=graph-rest-beta
 func (m *ItemDevicesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemDevicesDeltaRequestBuilderGetRequestConfiguration)(ItemDevicesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemDevicesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Conte
     }
     return res.(ItemDevicesDeltaGetResponseable), nil
 }
-// ToGetRequestInformation invoke function delta
+// ToGetRequestInformation get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.
 // returns a *RequestInformation when successful
 func (m *ItemDevicesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

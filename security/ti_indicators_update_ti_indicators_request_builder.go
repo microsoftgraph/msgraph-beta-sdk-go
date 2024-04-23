@@ -36,7 +36,7 @@ func NewTiIndicatorsUpdateTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-beta
 func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsUpdateTiIndicatorsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) Post(ctx context.Context,
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-beta
 func (m *TiIndicatorsUpdateTiIndicatorsRequestBuilder) PostAsUpdateTiIndicatorsPostResponse(ctx context.Context, body TiIndicatorsUpdateTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsUpdateTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsUpdateTiIndicatorsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

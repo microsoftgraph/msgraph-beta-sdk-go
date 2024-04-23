@@ -51,7 +51,7 @@ func NewItemFindRoomListsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta
 func (m *ItemFindRoomListsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFindRoomListsRequestBuilderGetRequestConfiguration)(ItemFindRoomListsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,7 +74,7 @@ func (m *ItemFindRoomListsRequestBuilder) Get(ctx context.Context, requestConfig
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta
 func (m *ItemFindRoomListsRequestBuilder) GetAsFindRoomListsGetResponse(ctx context.Context, requestConfiguration *ItemFindRoomListsRequestBuilderGetRequestConfiguration)(ItemFindRoomListsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

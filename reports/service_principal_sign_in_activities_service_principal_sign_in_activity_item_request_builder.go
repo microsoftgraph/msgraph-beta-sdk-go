@@ -18,7 +18,7 @@ type ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilderGetQueryParameters get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
+// ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilderGetQueryParameters represents a collection of sign-in activities of service principals.
 type ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemReque
     }
     return nil
 }
-// Get get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
+// Get represents a collection of sign-in activities of service principals.
 // returns a ServicePrincipalSignInActivityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipalsigninactivity-get?view=graph-rest-1.0
 func (m *ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalSignInActivityable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a servicePrincipalSignInActivity object that contains sign-in activity information for a service principal in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
+// ToGetRequestInformation represents a collection of sign-in activities of service principals.
 // returns a *RequestInformation when successful
 func (m *ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ServicePrincipalSignInActivitiesServicePrincipalSignInActivityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -36,7 +36,7 @@ func NewItemRevokeSignInSessionsRequestBuilder(rawUrl string, requestAdapter i2a
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-beta
 func (m *ItemRevokeSignInSessionsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemRevokeSignInSessionsRequestBuilderPostRequestConfiguration)(ItemRevokeSignInSessionsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemRevokeSignInSessionsRequestBuilder) Post(ctx context.Context, reque
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-beta
 func (m *ItemRevokeSignInSessionsRequestBuilder) PostAsRevokeSignInSessionsPostResponse(ctx context.Context, requestConfiguration *ItemRevokeSignInSessionsRequestBuilderPostRequestConfiguration)(ItemRevokeSignInSessionsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

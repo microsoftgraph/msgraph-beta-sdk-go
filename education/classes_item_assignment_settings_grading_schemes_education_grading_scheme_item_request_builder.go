@@ -18,7 +18,7 @@ type ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilderGetQueryParameters read the properties and relationships of an educationGradingScheme object.
+// ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilderGetQueryParameters get gradingSchemes from education
 type ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemReq
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an educationGradingScheme object.
+// Delete delete navigation property gradingSchemes for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationgradingscheme-delete?view=graph-rest-1.0
 func (m *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRe
     }
     return nil
 }
-// Get read the properties and relationships of an educationGradingScheme object.
+// Get get gradingSchemes from education
 // returns a EducationGradingSchemeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationgradingscheme-get?view=graph-rest-1.0
 func (m *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +110,7 @@ func (m *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable), nil
 }
-// ToDeleteRequestInformation delete an educationGradingScheme object.
+// ToDeleteRequestInformation delete navigation property gradingSchemes for education
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +121,7 @@ func (m *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an educationGradingScheme object.
+// ToGetRequestInformation get gradingSchemes from education
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsGradingSchemesEducationGradingSchemeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

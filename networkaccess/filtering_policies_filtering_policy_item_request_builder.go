@@ -18,7 +18,7 @@ type FilteringPoliciesFilteringPolicyItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FilteringPoliciesFilteringPolicyItemRequestBuilderGetQueryParameters get a filteringPolicy object.
+// FilteringPoliciesFilteringPolicyItemRequestBuilderGetQueryParameters a filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
 type FilteringPoliciesFilteringPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get get a filteringPolicy object.
+// Get a filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
 // returns a FilteringPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-filteringpolicy-get?view=graph-rest-1.0
 func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FilteringPoliciesFilteringPolicyItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a filteringPolicy object.
+// ToGetRequestInformation a filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
 // returns a *RequestInformation when successful
 func (m *FilteringPoliciesFilteringPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringPoliciesFilteringPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

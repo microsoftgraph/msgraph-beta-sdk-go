@@ -34,7 +34,7 @@ func NewItemCalendarViewItemCancelRequestBuilder(rawUrl string, requestAdapter i
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/bookingappointment-cancel?view=graph-rest-beta
 func (m *ItemCalendarViewItemCancelRequestBuilder) Post(ctx context.Context, body ItemCalendarViewItemCancelPostRequestBodyable, requestConfiguration *ItemCalendarViewItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

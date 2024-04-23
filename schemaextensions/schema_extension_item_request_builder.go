@@ -58,7 +58,7 @@ func NewSchemaExtensionItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-delete?view=graph-rest-beta
 func (m *SchemaExtensionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SchemaExtensionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +78,7 @@ func (m *SchemaExtensionItemRequestBuilder) Delete(ctx context.Context, requestC
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-get?view=graph-rest-beta
 func (m *SchemaExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SchemaExtensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchemaExtensionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *SchemaExtensionItemRequestBuilder) Get(ctx context.Context, requestConf
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-update?view=graph-rest-beta
 func (m *SchemaExtensionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchemaExtensionable, requestConfiguration *SchemaExtensionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchemaExtensionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

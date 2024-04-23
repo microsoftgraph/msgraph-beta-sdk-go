@@ -11,7 +11,7 @@ import (
 type IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilderGetQueryParameters get a list of the provisioningFlow objects and their properties.
+// IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilderGetQueryParameters a flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
 type IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewIndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuil
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilder) Count()(*IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsCountRequestBuilder) {
     return NewIndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the provisioningFlow objects and their properties.
+// Get a flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
 // returns a ProvisioningFlowCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-outboundprovisioningflowset-list-provisioningflows?view=graph-rest-1.0
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBui
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowCollectionResponseable), nil
 }
-// Post create a new provisioningFlow object.
+// Post create new navigation property to provisioningFlows for external
 // returns a ProvisioningFlowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-outboundprovisioningflowset-post-provisioningflows?view=graph-rest-1.0
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilder) Post(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilderPostRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBui
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable), nil
 }
-// ToGetRequestInformation get a list of the provisioningFlow objects and their properties.
+// ToGetRequestInformation a flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
 // returns a *RequestInformation when successful
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBui
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new provisioningFlow object.
+// ToPostRequestInformation create new navigation property to provisioningFlows for external
 // returns a *RequestInformation when successful
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

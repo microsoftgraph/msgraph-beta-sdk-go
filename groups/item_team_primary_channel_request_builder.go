@@ -18,7 +18,7 @@ type ItemTeamPrimaryChannelRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamPrimaryChannelRequestBuilderGetQueryParameters get the default channel, General, of a team.
+// ItemTeamPrimaryChannelRequestBuilderGetQueryParameters the general channel for the team.
 type ItemTeamPrimaryChannelRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,12 +90,9 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) DoesUserHaveAccessuserIdUserIdTen
 func (m *ItemTeamPrimaryChannelRequestBuilder) FilesFolder()(*ItemTeamPrimaryChannelFilesFolderRequestBuilder) {
     return NewItemTeamPrimaryChannelFilesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the default channel, General, of a team.
+// Get the general channel for the team.
 // returns a Channelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-get-primarychannel?view=graph-rest-1.0
 func (m *ItemTeamPrimaryChannelRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -174,7 +171,7 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) ToDeleteRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the default channel, General, of a team.
+// ToGetRequestInformation the general channel for the team.
 // returns a *RequestInformation when successful
 func (m *ItemTeamPrimaryChannelRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamPrimaryChannelRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

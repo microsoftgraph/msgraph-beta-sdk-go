@@ -34,7 +34,7 @@ func NewItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder(rawU
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-decline?view=graph-rest-beta
 func (m *ItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilder) Post(ctx context.Context, body ItemCalendarsItemCalendarViewItemInstancesItemDeclinePostRequestBodyable, requestConfiguration *ItemCalendarsItemCalendarViewItemInstancesItemDeclineRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

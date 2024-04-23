@@ -34,7 +34,7 @@ func NewItemRenewRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-renew?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-renew?view=graph-rest-beta
 func (m *ItemRenewRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemRenewRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

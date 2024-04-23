@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderGetQueryParameters invoke function getKnownIssuesByTimeRange
+// WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderGetQueryParameters get known issues related to a particular product based on a specified timeframe in the past.
 type WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,10 +57,13 @@ func NewWindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTi
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getKnownIssuesByTimeRange
+// Get get known issues related to a particular product based on a specified timeframe in the past.
 // Deprecated: This method is obsolete. Use GetAsGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse instead.
 // returns a WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-product-getknownissuesbytimerange?view=graph-rest-beta
 func (m *WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderGetRequestConfiguration)(WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,9 +81,12 @@ func (m *WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByT
     }
     return res.(WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveResponseable), nil
 }
-// GetAsGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse invoke function getKnownIssuesByTimeRange
+// GetAsGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse get known issues related to a particular product based on a specified timeframe in the past.
 // returns a WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-product-getknownissuesbytimerange?view=graph-rest-beta
 func (m *WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilder) GetAsGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse(ctx context.Context, requestConfiguration *WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderGetRequestConfiguration)(WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +104,7 @@ func (m *WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByT
     }
     return res.(WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getKnownIssuesByTimeRange
+// ToGetRequestInformation get known issues related to a particular product based on a specified timeframe in the past.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesProductsItemMicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

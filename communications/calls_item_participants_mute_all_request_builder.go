@@ -36,7 +36,7 @@ func NewCallsItemParticipantsMuteAllRequestBuilder(rawUrl string, requestAdapter
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/participant-muteall?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/participant-muteall?view=graph-rest-beta
 func (m *CallsItemParticipantsMuteAllRequestBuilder) Post(ctx context.Context, body CallsItemParticipantsMuteAllPostRequestBodyable, requestConfiguration *CallsItemParticipantsMuteAllRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MuteParticipantsOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

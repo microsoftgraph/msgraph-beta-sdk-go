@@ -34,7 +34,7 @@ func NewItemSetVerifiedPublisherRequestBuilder(rawUrl string, requestAdapter i2a
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-beta
 func (m *ItemSetVerifiedPublisherRequestBuilder) Post(ctx context.Context, body ItemSetVerifiedPublisherPostRequestBodyable, requestConfiguration *ItemSetVerifiedPublisherRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

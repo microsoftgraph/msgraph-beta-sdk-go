@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesDeploymentAudiencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesDeploymentAudiencesRequestBuilderGetQueryParameters get a list of deploymentAudience objects and their properties.
+// WindowsUpdatesDeploymentAudiencesRequestBuilderGetQueryParameters the set of updatableAsset resources to which a deployment can apply.
 type WindowsUpdatesDeploymentAudiencesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewWindowsUpdatesDeploymentAudiencesRequestBuilder(rawUrl string, requestAd
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Count()(*WindowsUpdatesDeploymentAudiencesCountRequestBuilder) {
     return NewWindowsUpdatesDeploymentAudiencesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of deploymentAudience objects and their properties.
+// Get the set of updatableAsset resources to which a deployment can apply.
 // returns a DeploymentAudienceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-deploymentaudiences?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Get(ctx context.Contex
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceCollectionResponseable), nil
 }
-// Post create a new deploymentAudience object.
+// Post create new navigation property to deploymentAudiences for admin
 // returns a DeploymentAudienceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-deploymentaudiences?view=graph-rest-1.0
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, requestConfiguration *WindowsUpdatesDeploymentAudiencesRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) Post(ctx context.Conte
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable), nil
 }
-// ToGetRequestInformation get a list of deploymentAudience objects and their properties.
+// ToGetRequestInformation the set of updatableAsset resources to which a deployment can apply.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesDeploymentAudiencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new deploymentAudience object.
+// ToPostRequestInformation create new navigation property to deploymentAudiences for admin
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesDeploymentAudiencesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.DeploymentAudienceable, requestConfiguration *WindowsUpdatesDeploymentAudiencesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

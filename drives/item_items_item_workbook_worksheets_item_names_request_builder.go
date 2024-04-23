@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderGetQueryParameters retrieve a list of named item associated with the worksheet. 
+// ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderGetQueryParameters returns collection of names that are associated with the worksheet. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -86,12 +86,9 @@ func NewItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder(rawUrl string, re
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) Count()(*ItemItemsItemWorkbookWorksheetsItemNamesCountRequestBuilder) {
     return NewItemItemsItemWorkbookWorksheetsItemNamesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of named item associated with the worksheet. 
+// Get returns collection of names that are associated with the worksheet. Read-only.
 // returns a WorkbookNamedItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/worksheet-list-names?view=graph-rest-1.0
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) Post(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable), nil
 }
-// ToGetRequestInformation retrieve a list of named item associated with the worksheet. 
+// ToGetRequestInformation returns collection of names that are associated with the worksheet. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

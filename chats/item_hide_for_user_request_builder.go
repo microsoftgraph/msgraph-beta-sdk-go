@@ -34,7 +34,7 @@ func NewItemHideForUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-hideforuser?view=graph-rest-beta
 func (m *ItemHideForUserRequestBuilder) Post(ctx context.Context, body ItemHideForUserPostRequestBodyable, requestConfiguration *ItemHideForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

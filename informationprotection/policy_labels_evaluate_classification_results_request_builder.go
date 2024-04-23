@@ -36,7 +36,7 @@ func NewPolicyLabelsEvaluateClassificationResultsRequestBuilder(rawUrl string, r
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-beta
 func (m *PolicyLabelsEvaluateClassificationResultsRequestBuilder) Post(ctx context.Context, body PolicyLabelsEvaluateClassificationResultsPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateClassificationResultsRequestBuilderPostRequestConfiguration)(PolicyLabelsEvaluateClassificationResultsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,7 +60,7 @@ func (m *PolicyLabelsEvaluateClassificationResultsRequestBuilder) Post(ctx conte
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-beta
 func (m *PolicyLabelsEvaluateClassificationResultsRequestBuilder) PostAsEvaluateClassificationResultsPostResponse(ctx context.Context, body PolicyLabelsEvaluateClassificationResultsPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateClassificationResultsRequestBuilderPostRequestConfiguration)(PolicyLabelsEvaluateClassificationResultsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
