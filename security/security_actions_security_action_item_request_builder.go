@@ -18,7 +18,7 @@ type SecurityActionsSecurityActionItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SecurityActionsSecurityActionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a securityAction object.
+// SecurityActionsSecurityActionItemRequestBuilderGetQueryParameters get securityActions from security
 type SecurityActionsSecurityActionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get retrieve the properties and relationships of a securityAction object.
+// Get get securityActions from security
 // returns a SecurityActionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/securityaction-get?view=graph-rest-1.0
 func (m *SecurityActionsSecurityActionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a securityAction object.
+// ToGetRequestInformation get securityActions from security
 // returns a *RequestInformation when successful
 func (m *SecurityActionsSecurityActionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

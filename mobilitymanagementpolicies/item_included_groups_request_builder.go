@@ -11,7 +11,7 @@ import (
 type ItemIncludedGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemIncludedGroupsRequestBuilderGetQueryParameters get the list of groups that are included in a mobile app management policy.
+// ItemIncludedGroupsRequestBuilderGetQueryParameters microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
 type ItemIncludedGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewItemIncludedGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemIncludedGroupsRequestBuilder) Count()(*ItemIncludedGroupsCountRequestBuilder) {
     return NewItemIncludedGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of groups that are included in a mobile app management policy.
+// Get microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
 // returns a GroupCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0
 func (m *ItemIncludedGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemIncludedGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -97,7 +94,7 @@ func (m *ItemIncludedGroupsRequestBuilder) Get(ctx context.Context, requestConfi
 func (m *ItemIncludedGroupsRequestBuilder) Ref()(*ItemIncludedGroupsRefRequestBuilder) {
     return NewItemIncludedGroupsRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get the list of groups that are included in a mobile app management policy.
+// ToGetRequestInformation microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
 // returns a *RequestInformation when successful
 func (m *ItemIncludedGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemIncludedGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

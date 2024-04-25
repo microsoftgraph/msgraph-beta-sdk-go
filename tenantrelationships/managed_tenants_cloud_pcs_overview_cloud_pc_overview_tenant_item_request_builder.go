@@ -18,7 +18,7 @@ type ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcOverview object.
+// ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderGetQueryParameters overview of cloud PC information across managed tenants.
 type ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) 
     }
     return nil
 }
-// Get read the properties and relationships of a cloudPcOverview object.
+// Get overview of cloud PC information across managed tenants.
 // returns a CloudPcOverviewable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-cloudpcoverview-get?view=graph-rest-1.0
 func (m *ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcOverviewable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a cloudPcOverview object.
+// ToGetRequestInformation overview of cloud PC information across managed tenants.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsCloudPcsOverviewCloudPcOverviewTenantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

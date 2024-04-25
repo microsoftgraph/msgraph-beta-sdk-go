@@ -18,7 +18,7 @@ type ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a timeOffReason object by ID.
+// ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderGetQueryParameters the set of reasons for a time off in the schedule.
 type ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,11 +52,8 @@ func NewItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method doesn't remove the specified timeOffReason instance. timeOffItem instances that were assigned this reason remain assigned to this reason.
+// Delete delete navigation property timeOffReasons for teamTemplateDefinition
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,12 +68,9 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder
     }
     return nil
 }
-// Get retrieve the properties and relationships of a timeOffReason object by ID.
+// Get the set of reasons for a time off in the schedule.
 // returns a TimeOffReasonable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,12 +88,9 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable), nil
 }
-// Patch replace an existing timeOffReason. If the specified timeOffReason doesn't exist, this method returns 404 Not found.
+// Patch update the navigation property timeOffReasons in teamTemplateDefinition
 // returns a TimeOffReasonable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/timeoffreason-put?view=graph-rest-1.0
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable, requestConfiguration *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -117,7 +108,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable), nil
 }
-// ToDeleteRequestInformation mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method doesn't remove the specified timeOffReason instance. timeOffItem instances that were assigned this reason remain assigned to this reason.
+// ToDeleteRequestInformation delete navigation property timeOffReasons for teamTemplateDefinition
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,7 +119,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a timeOffReason object by ID.
+// ToGetRequestInformation the set of reasons for a time off in the schedule.
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,7 +133,7 @@ func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation replace an existing timeOffReason. If the specified timeOffReason doesn't exist, this method returns 404 Not found.
+// ToPatchRequestInformation update the navigation property timeOffReasons in teamTemplateDefinition
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimeOffReasonable, requestConfiguration *ItemTeamDefinitionScheduleTimeOffReasonsTimeOffReasonItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

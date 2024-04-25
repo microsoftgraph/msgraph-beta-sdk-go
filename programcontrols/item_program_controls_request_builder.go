@@ -11,7 +11,7 @@ import (
 type ItemProgramControlsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProgramControlsRequestBuilderGetQueryParameters in the Microsoft Entra access reviews feature, list all the programControl objects, linked to a particular program.
+// ItemProgramControlsRequestBuilderGetQueryParameters controls associated with the program.
 type ItemProgramControlsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemProgramControlsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemProgramControlsRequestBuilder) Count()(*ItemProgramControlsCountRequestBuilder) {
     return NewItemProgramControlsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get in the Microsoft Entra access reviews feature, list all the programControl objects, linked to a particular program.
+// Get controls associated with the program.
 // returns a ProgramControlCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/program-listcontrols?view=graph-rest-1.0
 func (m *ItemProgramControlsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProgramControlsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemProgramControlsRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProgramControlable), nil
 }
-// ToGetRequestInformation in the Microsoft Entra access reviews feature, list all the programControl objects, linked to a particular program.
+// ToGetRequestInformation controls associated with the program.
 // returns a *RequestInformation when successful
 func (m *ItemProgramControlsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProgramControlsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

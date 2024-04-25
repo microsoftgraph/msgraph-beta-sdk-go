@@ -11,7 +11,7 @@ import (
 type ItemAgreementAcceptancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAgreementAcceptancesRequestBuilderGetQueryParameters retrieve a user's agreementAcceptance objects.
+// ItemAgreementAcceptancesRequestBuilderGetQueryParameters the user's terms of use acceptance statuses. Read-only. Nullable.
 type ItemAgreementAcceptancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewItemAgreementAcceptancesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemAgreementAcceptancesRequestBuilder) Count()(*ItemAgreementAcceptancesCountRequestBuilder) {
     return NewItemAgreementAcceptancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a user's agreementAcceptance objects.
+// Get the user's terms of use acceptance statuses. Read-only. Nullable.
 // returns a AgreementAcceptanceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-agreementacceptances?view=graph-rest-1.0
 func (m *ItemAgreementAcceptancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgreementAcceptancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *ItemAgreementAcceptancesRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AgreementAcceptanceCollectionResponseable), nil
 }
-// ToGetRequestInformation retrieve a user's agreementAcceptance objects.
+// ToGetRequestInformation the user's terms of use acceptance statuses. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemAgreementAcceptancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgreementAcceptancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type AlertRecordsAlertRecordItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AlertRecordsAlertRecordItemRequestBuilderGetQueryParameters read the properties and relationships of an alertRecord object.
+// AlertRecordsAlertRecordItemRequestBuilderGetQueryParameters the collection of records of alert events.
 type AlertRecordsAlertRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *AlertRecordsAlertRecordItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get read the properties and relationships of an alertRecord object.
+// Get the collection of records of alert events.
 // returns a AlertRecordable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-get?view=graph-rest-1.0
 func (m *AlertRecordsAlertRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertRecordsAlertRecordItemRequestBuilderGetRequestConfiguration)(i2edb12705e6a63a8a0fb3f8c7a11f4ab12f4be764e61fa1094f401595fb171bf.AlertRecordable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *AlertRecordsAlertRecordItemRequestBuilder) ToDeleteRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an alertRecord object.
+// ToGetRequestInformation the collection of records of alert events.
 // returns a *RequestInformation when successful
 func (m *AlertRecordsAlertRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertRecordsAlertRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

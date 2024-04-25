@@ -10,7 +10,7 @@ import (
 type VirtualEndpointRetrieveScopedPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetQueryParameters invoke function retrieveScopedPermissions
+// VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetQueryParameters get the permissions and corresponding scope IDs for which the authenticated user has access.
 type VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewVirtualEndpointRetrieveScopedPermissionsRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointRetrieveScopedPermissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function retrieveScopedPermissions
+// Get get the permissions and corresponding scope IDs for which the authenticated user has access.
 // Deprecated: This method is obsolete. Use GetAsRetrieveScopedPermissionsGetResponse instead.
 // returns a VirtualEndpointRetrieveScopedPermissionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-retrievescopedpermissions?view=graph-rest-beta
 func (m *VirtualEndpointRetrieveScopedPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetRequestConfiguration)(VirtualEndpointRetrieveScopedPermissionsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *VirtualEndpointRetrieveScopedPermissionsRequestBuilder) Get(ctx context
     }
     return res.(VirtualEndpointRetrieveScopedPermissionsResponseable), nil
 }
-// GetAsRetrieveScopedPermissionsGetResponse invoke function retrieveScopedPermissions
+// GetAsRetrieveScopedPermissionsGetResponse get the permissions and corresponding scope IDs for which the authenticated user has access.
 // returns a VirtualEndpointRetrieveScopedPermissionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-retrievescopedpermissions?view=graph-rest-beta
 func (m *VirtualEndpointRetrieveScopedPermissionsRequestBuilder) GetAsRetrieveScopedPermissionsGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetRequestConfiguration)(VirtualEndpointRetrieveScopedPermissionsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *VirtualEndpointRetrieveScopedPermissionsRequestBuilder) GetAsRetrieveSc
     }
     return res.(VirtualEndpointRetrieveScopedPermissionsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function retrieveScopedPermissions
+// ToGetRequestInformation get the permissions and corresponding scope IDs for which the authenticated user has access.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointRetrieveScopedPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

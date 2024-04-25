@@ -10,7 +10,7 @@ import (
 type ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters invoke function reminderView
+// ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters return a list of event reminders in a user calendar within the specified start and end times.
 type ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get invoke function reminderView
+// Get return a list of event reminders in a user calendar within the specified start and end times.
 // Deprecated: This method is obsolete. Use GetAsReminderViewWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a ItemReminderViewWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta
 func (m *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ItemReminderViewWithStartDateTimeWithEndDateTimeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx
     }
     return res.(ItemReminderViewWithStartDateTimeWithEndDateTimeResponseable), nil
 }
-// GetAsReminderViewWithStartDateTimeWithEndDateTimeGetResponse invoke function reminderView
+// GetAsReminderViewWithStartDateTimeWithEndDateTimeGetResponse return a list of event reminders in a user calendar within the specified start and end times.
 // returns a ItemReminderViewWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta
 func (m *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsReminderViewWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ItemReminderViewWithStartDateTimeWithEndDateTimeGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsRe
     }
     return res.(ItemReminderViewWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
-// ToGetRequestInformation invoke function reminderView
+// ToGetRequestInformation return a list of event reminders in a user calendar within the specified start and end times.
 // returns a *RequestInformation when successful
 func (m *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

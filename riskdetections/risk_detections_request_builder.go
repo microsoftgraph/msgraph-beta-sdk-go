@@ -72,7 +72,7 @@ func NewRiskDetectionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-beta
 func (m *RiskDetectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskDetectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskDetectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -34,7 +34,7 @@ func NewRiskyServicePrincipalsDismissRequestBuilder(rawUrl string, requestAdapte
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskyserviceprincipal-dismiss?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskyserviceprincipal-dismiss?view=graph-rest-beta
 func (m *RiskyServicePrincipalsDismissRequestBuilder) Post(ctx context.Context, body RiskyServicePrincipalsDismissPostRequestBodyable, requestConfiguration *RiskyServicePrincipalsDismissRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

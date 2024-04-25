@@ -81,7 +81,7 @@ func (m *ListItem) GetDocumentSetVersions()([]DocumentSetVersionable) {
     }
     return nil
 }
-// GetDriveItem gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+// GetDriveItem gets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a driveItem
 // returns a DriveItemable when successful
 func (m *ListItem) GetDriveItem()(DriveItemable) {
     val, err := m.GetBackingStore().Get("driveItem")
@@ -358,7 +358,7 @@ func (m *ListItem) SetDocumentSetVersions(value []DocumentSetVersionable)() {
         panic(err)
     }
 }
-// SetDriveItem sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+// SetDriveItem sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a driveItem
 func (m *ListItem) SetDriveItem(value DriveItemable)() {
     err := m.GetBackingStore().Set("driveItem", value)
     if err != nil {

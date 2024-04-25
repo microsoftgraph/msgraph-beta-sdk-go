@@ -11,7 +11,7 @@ import (
 type ItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilderGetQueryParameters get the list of richLongRunningOperations associated with a site.
+// ItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilderGetQueryParameters the collection of long running operations for the site.
 type ItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -59,12 +59,9 @@ func NewItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the list of richLongRunningOperations associated with a site.
+// Get the collection of long running operations for the site.
 // returns a RichLongRunningOperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-operations?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RichLongRunningOperationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -102,7 +99,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilder) Post(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RichLongRunningOperationable), nil
 }
-// ToGetRequestInformation get the list of richLongRunningOperations associated with a site.
+// ToGetRequestInformation the collection of long running operations for the site.
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1OperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

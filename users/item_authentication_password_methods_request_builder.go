@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationPasswordMethodsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationPasswordMethodsRequestBuilderGetQueryParameters retrieve a list of password authentication method objects. This API returns exactly one object, as a user can have exactly one password.
+// ItemAuthenticationPasswordMethodsRequestBuilderGetQueryParameters represents the details of the password authentication method registered to a user for authentication.
 type ItemAuthenticationPasswordMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemAuthenticationPasswordMethodsRequestBuilder(rawUrl string, requestAd
 func (m *ItemAuthenticationPasswordMethodsRequestBuilder) Count()(*ItemAuthenticationPasswordMethodsCountRequestBuilder) {
     return NewItemAuthenticationPasswordMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of password authentication method objects. This API returns exactly one object, as a user can have exactly one password.
+// Get represents the details of the password authentication method registered to a user for authentication.
 // returns a PasswordAuthenticationMethodCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/authentication-list-passwordmethods?view=graph-rest-1.0
 func (m *ItemAuthenticationPasswordMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordAuthenticationMethodCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemAuthenticationPasswordMethodsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordAuthenticationMethodable), nil
 }
-// ToGetRequestInformation retrieve a list of password authentication method objects. This API returns exactly one object, as a user can have exactly one password.
+// ToGetRequestInformation represents the details of the password authentication method registered to a user for authentication.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationPasswordMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPasswordMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

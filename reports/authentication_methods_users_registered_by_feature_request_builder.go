@@ -31,9 +31,12 @@ func NewAuthenticationMethodsUsersRegisteredByFeatureRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewAuthenticationMethodsUsersRegisteredByFeatureRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function usersRegisteredByFeature
+// Get get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.
 // returns a UserRegistrationFeatureSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbyfeature?view=graph-rest-beta
 func (m *AuthenticationMethodsUsersRegisteredByFeatureRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationMethodsUsersRegisteredByFeatureRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationFeatureSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *AuthenticationMethodsUsersRegisteredByFeatureRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationFeatureSummaryable), nil
 }
-// ToGetRequestInformation invoke function usersRegisteredByFeature
+// ToGetRequestInformation get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.
 // returns a *RequestInformation when successful
 func (m *AuthenticationMethodsUsersRegisteredByFeatureRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsUsersRegisteredByFeatureRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

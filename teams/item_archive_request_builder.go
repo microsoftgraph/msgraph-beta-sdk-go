@@ -34,7 +34,7 @@ func NewItemArchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-beta
 func (m *ItemArchiveRequestBuilder) Post(ctx context.Context, body ItemArchivePostRequestBodyable, requestConfiguration *ItemArchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

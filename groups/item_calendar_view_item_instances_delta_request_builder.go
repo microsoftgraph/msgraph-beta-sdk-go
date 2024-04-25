@@ -61,7 +61,7 @@ func NewItemCalendarViewItemInstancesDeltaRequestBuilder(rawUrl string, requestA
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
 func (m *ItemCalendarViewItemInstancesDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewItemInstancesDeltaRequestBuilderGetRequestConfiguration)(ItemCalendarViewItemInstancesDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,7 +84,7 @@ func (m *ItemCalendarViewItemInstancesDeltaRequestBuilder) Get(ctx context.Conte
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-beta
 func (m *ItemCalendarViewItemInstancesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemCalendarViewItemInstancesDeltaRequestBuilderGetRequestConfiguration)(ItemCalendarViewItemInstancesDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

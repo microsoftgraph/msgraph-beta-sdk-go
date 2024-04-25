@@ -18,7 +18,7 @@ type B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters read the properties of a b2cAuthenticationMethodsPolicy object.
+// B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters the Azure AD B2C policies that define how end users register via local accounts.
 type B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get read the properties of a b2cAuthenticationMethodsPolicy object.
+// Get the Azure AD B2C policies that define how end users register via local accounts.
 // returns a B2cAuthenticationMethodsPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get?view=graph-rest-1.0
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,12 +90,9 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable), nil
 }
-// Patch update the properties of a b2cAuthenticationMethodsPolicy object.
+// Patch update the navigation property b2cAuthenticationMethodsPolicy in policies
 // returns a B2cAuthenticationMethodsPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update?view=graph-rest-1.0
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,7 +121,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToDeleteRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties of a b2cAuthenticationMethodsPolicy object.
+// ToGetRequestInformation the Azure AD B2C policies that define how end users register via local accounts.
 // returns a *RequestInformation when successful
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,7 @@ func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToGetRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a b2cAuthenticationMethodsPolicy object.
+// ToPatchRequestInformation update the navigation property b2cAuthenticationMethodsPolicy in policies
 // returns a *RequestInformation when successful
 func (m *B2cAuthenticationMethodsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.B2cAuthenticationMethodsPolicyable, requestConfiguration *B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

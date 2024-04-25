@@ -31,9 +31,12 @@ func NewKeySetsItemGetActiveKeyRequestBuilder(rawUrl string, requestAdapter i2ae
     urlParams["request-raw-url"] = rawUrl
     return NewKeySetsItemGetActiveKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getActiveKey
+// Get get the currently active trustFrameworkKey in a trustFrameworkKeySet. Only one key is active in the keyset at a time.
 // returns a TrustFrameworkKeyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/trustframeworkkeyset-getactivekey?view=graph-rest-beta
 func (m *KeySetsItemGetActiveKeyRequestBuilder) Get(ctx context.Context, requestConfiguration *KeySetsItemGetActiveKeyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *KeySetsItemGetActiveKeyRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable), nil
 }
-// ToGetRequestInformation invoke function getActiveKey
+// ToGetRequestInformation get the currently active trustFrameworkKey in a trustFrameworkKeySet. Only one key is active in the keyset at a time.
 // returns a *RequestInformation when successful
 func (m *KeySetsItemGetActiveKeyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *KeySetsItemGetActiveKeyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

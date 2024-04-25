@@ -11,7 +11,7 @@ import (
 type AttackSimulationOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationOperationsRequestBuilderGetQueryParameters get an attack simulation operation to track a long-running operation request for a tenant.
+// AttackSimulationOperationsRequestBuilderGetQueryParameters represents an attack simulation training operation.
 type AttackSimulationOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewAttackSimulationOperationsRequestBuilder(rawUrl string, requestAdapter i
 func (m *AttackSimulationOperationsRequestBuilder) Count()(*AttackSimulationOperationsCountRequestBuilder) {
     return NewAttackSimulationOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get an attack simulation operation to track a long-running operation request for a tenant.
+// Get represents an attack simulation training operation.
 // returns a AttackSimulationOperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AttackSimulationOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationOperationCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *AttackSimulationOperationsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttackSimulationOperationable), nil
 }
-// ToGetRequestInformation get an attack simulation operation to track a long-running operation request for a tenant.
+// ToGetRequestInformation represents an attack simulation training operation.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

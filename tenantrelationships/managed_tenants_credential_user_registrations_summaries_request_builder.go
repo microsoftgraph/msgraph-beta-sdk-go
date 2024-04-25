@@ -11,7 +11,7 @@ import (
 type ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters get a list of the credentialUserRegistrationsSummary objects and their properties.
+// ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 type ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder(rawUrl 
 func (m *ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder) Count()(*ManagedTenantsCredentialUserRegistrationsSummariesCountRequestBuilder) {
     return NewManagedTenantsCredentialUserRegistrationsSummariesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the credentialUserRegistrationsSummary objects and their properties.
+// Get summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 // returns a CredentialUserRegistrationsSummaryCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-credentialuserregistrationssummaries?view=graph-rest-1.0
 func (m *ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder) Post(
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CredentialUserRegistrationsSummaryable), nil
 }
-// ToGetRequestInformation get a list of the credentialUserRegistrationsSummary objects and their properties.
+// ToGetRequestInformation summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsCredentialUserRegistrationsSummariesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

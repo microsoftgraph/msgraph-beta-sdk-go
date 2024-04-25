@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
+// EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters get accessPackageAssignmentApprovals from identityGovernance
 type EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,7 +81,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) Co
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*EntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementAccessPackageAssignmentApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
+// Get get accessPackageAssignmentApprovals from identityGovernance
 // returns a ApprovalCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalCollectionResponseable, error) {
@@ -121,7 +121,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) Po
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable), nil
 }
-// ToGetRequestInformation retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
+// ToGetRequestInformation get accessPackageAssignmentApprovals from identityGovernance
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

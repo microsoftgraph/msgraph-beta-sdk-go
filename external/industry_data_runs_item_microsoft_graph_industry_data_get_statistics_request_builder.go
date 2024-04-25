@@ -31,9 +31,12 @@ func NewIndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getStatistics
+// Get get statistics for an industryDataRun.
 // returns a IndustryDataRunStatisticsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-getstatistics?view=graph-rest-beta
 func (m *IndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRunStatisticsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *IndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuild
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRunStatisticsable), nil
 }
-// ToGetRequestInformation invoke function getStatistics
+// ToGetRequestInformation get statistics for an industryDataRun.
 // returns a *RequestInformation when successful
 func (m *IndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

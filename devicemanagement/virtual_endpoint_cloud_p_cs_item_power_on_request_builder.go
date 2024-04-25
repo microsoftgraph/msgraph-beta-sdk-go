@@ -34,7 +34,7 @@ func NewVirtualEndpointCloudPCsItemPowerOnRequestBuilder(rawUrl string, requestA
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-poweron?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-poweron?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemPowerOnRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemPowerOnRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

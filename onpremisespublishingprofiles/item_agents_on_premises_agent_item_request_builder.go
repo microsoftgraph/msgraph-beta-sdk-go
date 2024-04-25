@@ -18,7 +18,7 @@ type ItemAgentsOnPremisesAgentItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAgentsOnPremisesAgentItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an onPremisesAgent object.
+// ItemAgentsOnPremisesAgentItemRequestBuilderGetQueryParameters list of existing onPremisesAgent objects. Read-only. Nullable.
 type ItemAgentsOnPremisesAgentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get retrieve the properties and relationships of an onPremisesAgent object.
+// Get list of existing onPremisesAgent objects. Read-only. Nullable.
 // returns a OnPremisesAgentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/onpremisesagent-get?view=graph-rest-1.0
 func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAgentsOnPremisesAgentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesAgentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an onPremisesAgent object.
+// ToGetRequestInformation list of existing onPremisesAgent objects. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAgentsOnPremisesAgentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

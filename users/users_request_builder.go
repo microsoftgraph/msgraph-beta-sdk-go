@@ -84,7 +84,7 @@ func (m *UsersRequestBuilder) Delta()(*DeltaRequestBuilder) {
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list?view=graph-rest-beta
 func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *UsersRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestB
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-beta
 func (m *UsersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, requestConfiguration *UsersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

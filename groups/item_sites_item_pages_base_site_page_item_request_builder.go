@@ -18,7 +18,7 @@ type ItemSitesItemPagesBaseSitePageItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemPagesBaseSitePageItemRequestBuilderGetQueryParameters get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
+// ItemSitesItemPagesBaseSitePageItemRequestBuilderGetQueryParameters the collection of pages in the baseSitePages list on this site.
 type ItemSitesItemPagesBaseSitePageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,12 +75,9 @@ func (m *ItemSitesItemPagesBaseSitePageItemRequestBuilder) Delete(ctx context.Co
     }
     return nil
 }
-// Get get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
+// Get the collection of pages in the baseSitePages list on this site.
 // returns a BaseSitePageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/basesitepage-get?view=graph-rest-1.0
 func (m *ItemSitesItemPagesBaseSitePageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemPagesBaseSitePageItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -139,7 +136,7 @@ func (m *ItemSitesItemPagesBaseSitePageItemRequestBuilder) ToDeleteRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the metadata for a [baseSitePage][] in the site pages [list][] in a [site][].
+// ToGetRequestInformation the collection of pages in the baseSitePages list on this site.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemPagesBaseSitePageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemPagesBaseSitePageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

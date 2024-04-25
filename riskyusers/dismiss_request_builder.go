@@ -34,7 +34,7 @@ func NewDismissRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskyusers-dismiss?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskyusers-dismiss?view=graph-rest-beta
 func (m *DismissRequestBuilder) Post(ctx context.Context, body DismissPostRequestBodyable, requestConfiguration *DismissRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

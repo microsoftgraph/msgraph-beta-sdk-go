@@ -11,7 +11,7 @@ import (
 type ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters invoke function entitiesSummaries
+// ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters get the number of users, devices, and workloads per traffic type in a specified time period.
 type ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,10 +52,13 @@ func NewReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWith
     urlParams["request-raw-url"] = rawUrl
     return NewReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get invoke function entitiesSummaries
+// Get get the number of users, devices, and workloads per traffic type in a specified time period.
 // Deprecated: This method is obsolete. Use GetAsEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-reports-entitiessummaries?view=graph-rest-beta
 func (m *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWit
     }
     return res.(ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeResponseable), nil
 }
-// GetAsEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse invoke function entitiesSummaries
+// GetAsEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse get the number of users, devices, and workloads per traffic type in a specified time period.
 // returns a ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-reports-entitiessummaries?view=graph-rest-beta
 func (m *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +99,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWit
     }
     return res.(ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
-// ToGetRequestInformation invoke function entitiesSummaries
+// ToGetRequestInformation get the number of users, devices, and workloads per traffic type in a specified time period.
 // returns a *RequestInformation when successful
 func (m *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

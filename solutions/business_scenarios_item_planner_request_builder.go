@@ -18,7 +18,7 @@ type BusinessScenariosItemPlannerRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosItemPlannerRequestBuilderGetQueryParameters read the properties and relationships of a businessScenarioPlanner object.
+// BusinessScenariosItemPlannerRequestBuilderGetQueryParameters planner content related to the scenario.
 type BusinessScenariosItemPlannerRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get read the properties and relationships of a businessScenarioPlanner object.
+// Get planner content related to the scenario.
 // returns a BusinessScenarioPlannerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-1.0
 func (m *BusinessScenariosItemPlannerRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioPlannerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -144,7 +141,7 @@ func (m *BusinessScenariosItemPlannerRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a businessScenarioPlanner object.
+// ToGetRequestInformation planner content related to the scenario.
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosItemPlannerRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosItemPlannerRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

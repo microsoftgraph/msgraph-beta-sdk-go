@@ -11,7 +11,7 @@ import (
 type ItemCloudClipboardItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCloudClipboardItemsRequestBuilderGetQueryParameters get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn't support using another user's credentials to get a cloudClipboardItem for a user. 
+// ItemCloudClipboardItemsRequestBuilderGetQueryParameters represents a collection of Cloud Clipboard items.
 type ItemCloudClipboardItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemCloudClipboardItemsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemCloudClipboardItemsRequestBuilder) Count()(*ItemCloudClipboardItemsCountRequestBuilder) {
     return NewItemCloudClipboardItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn't support using another user's credentials to get a cloudClipboardItem for a user. 
+// Get represents a collection of Cloud Clipboard items.
 // returns a CloudClipboardItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudclipboardroot-list-items?view=graph-rest-1.0
 func (m *ItemCloudClipboardItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudClipboardItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemCloudClipboardItemsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardItemable), nil
 }
-// ToGetRequestInformation get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn't support using another user's credentials to get a cloudClipboardItem for a user. 
+// ToGetRequestInformation represents a collection of Cloud Clipboard items.
 // returns a *RequestInformation when successful
 func (m *ItemCloudClipboardItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudClipboardItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -34,7 +34,7 @@ func NewItemSubscribeByMailRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-subscribebymail?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-subscribebymail?view=graph-rest-beta
 func (m *ItemSubscribeByMailRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSubscribeByMailRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

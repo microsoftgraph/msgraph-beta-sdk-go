@@ -18,7 +18,7 @@ type PeopleRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PeopleRequestBuilderGetQueryParameters retrieve the properties and relationships of a peopleAdminSettings object.
+// PeopleRequestBuilderGetQueryParameters represents a setting to control people-related admin settings in the tenant.
 type PeopleRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *PeopleRequestBuilder) Delete(ctx context.Context, requestConfiguration 
     }
     return nil
 }
-// Get retrieve the properties and relationships of a peopleAdminSettings object.
+// Get represents a setting to control people-related admin settings in the tenant.
 // returns a PeopleAdminSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-1.0
 func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *PeopleRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -139,7 +136,7 @@ func (m *PeopleRequestBuilder) ToDeleteRequestInformation(ctx context.Context, r
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a peopleAdminSettings object.
+// ToGetRequestInformation represents a setting to control people-related admin settings in the tenant.
 // returns a *RequestInformation when successful
 func (m *PeopleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PeopleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

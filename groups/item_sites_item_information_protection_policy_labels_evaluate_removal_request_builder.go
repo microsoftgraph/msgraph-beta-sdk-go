@@ -36,7 +36,7 @@ func NewItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuil
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta
 func (m *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) Post(ctx context.Context, body ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,7 +60,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBui
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta
 func (m *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilder) PostAsEvaluateRemovalPostResponse(ctx context.Context, body ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(ItemSitesItemInformationProtectionPolicyLabelsEvaluateRemovalPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

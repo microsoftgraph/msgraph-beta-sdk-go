@@ -11,7 +11,7 @@ import (
 type ItemCalendarGroupsItemCalendarsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters retrieve a list of calendars belonging to a calendar group.
+// ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters the calendars in the calendar group. Navigation property. Read-only. Nullable.
 type ItemCalendarGroupsItemCalendarsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,12 +72,9 @@ func NewItemCalendarGroupsItemCalendarsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Count()(*ItemCalendarGroupsItemCalendarsCountRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of calendars belonging to a calendar group.
+// Get the calendars in the calendar group. Navigation property. Read-only. Nullable.
 // returns a CalendarCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-list-calendars?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,12 +92,9 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarCollectionResponseable), nil
 }
-// Post use this API to create a new calendar in a calendar group for a user.
+// Post create new navigation property to calendars for users
 // returns a Calendarable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/calendargroup-post-calendars?view=graph-rest-1.0
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +112,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) Post(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable), nil
 }
-// ToGetRequestInformation retrieve a list of calendars belonging to a calendar group.
+// ToGetRequestInformation the calendars in the calendar group. Navigation property. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +126,7 @@ func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation use this API to create a new calendar in a calendar group for a user.
+// ToPostRequestInformation create new navigation property to calendars for users
 // returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Calendarable, requestConfiguration *ItemCalendarGroupsItemCalendarsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

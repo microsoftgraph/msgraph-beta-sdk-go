@@ -11,7 +11,7 @@ import (
 type CustomAuthenticationExtensionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CustomAuthenticationExtensionsRequestBuilderGetQueryParameters get a list of the customAuthenticationExtension objects and their properties. The following derived types are supported.
+// CustomAuthenticationExtensionsRequestBuilderGetQueryParameters get customAuthenticationExtensions from identity
 type CustomAuthenticationExtensionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewCustomAuthenticationExtensionsRequestBuilder(rawUrl string, requestAdapt
 func (m *CustomAuthenticationExtensionsRequestBuilder) Count()(*CustomAuthenticationExtensionsCountRequestBuilder) {
     return NewCustomAuthenticationExtensionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the customAuthenticationExtension objects and their properties. The following derived types are supported.
+// Get get customAuthenticationExtensions from identity
 // returns a CustomAuthenticationExtensionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-list-customauthenticationextensions?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *CustomAuthenticationExtensionsRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionCollectionResponseable), nil
 }
-// Post create a new customAuthenticationExtension object. The following derived types are currently supported.
+// Post create new navigation property to customAuthenticationExtensions for identity
 // returns a CustomAuthenticationExtensionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identitycontainer-post-customauthenticationextensions?view=graph-rest-1.0
 func (m *CustomAuthenticationExtensionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable, requestConfiguration *CustomAuthenticationExtensionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *CustomAuthenticationExtensionsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable), nil
 }
-// ToGetRequestInformation get a list of the customAuthenticationExtension objects and their properties. The following derived types are supported.
+// ToGetRequestInformation get customAuthenticationExtensions from identity
 // returns a *RequestInformation when successful
 func (m *CustomAuthenticationExtensionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CustomAuthenticationExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *CustomAuthenticationExtensionsRequestBuilder) ToGetRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new customAuthenticationExtension object. The following derived types are currently supported.
+// ToPostRequestInformation create new navigation property to customAuthenticationExtensions for identity
 // returns a *RequestInformation when successful
 func (m *CustomAuthenticationExtensionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAuthenticationExtensionable, requestConfiguration *CustomAuthenticationExtensionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -31,9 +31,12 @@ func NewVirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getCloudPcLaunchInfo
+// Get get the cloudPCLaunchInfo for the signed-in user.
 // returns a CloudPcLaunchInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcLaunchInfoable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *VirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcLaunchInfoable), nil
 }
-// ToGetRequestInformation invoke function getCloudPcLaunchInfo
+// ToGetRequestInformation get the cloudPCLaunchInfo for the signed-in user.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemGetCloudPcLaunchInfoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

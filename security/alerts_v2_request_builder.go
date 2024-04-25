@@ -11,7 +11,7 @@ import (
 type Alerts_v2RequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// Alerts_v2RequestBuilderGetQueryParameters get a list of alert resources that were created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
+// Alerts_v2RequestBuilderGetQueryParameters a collection of alerts in Microsoft 365 Defender.
 type Alerts_v2RequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewAlerts_v2RequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *Alerts_v2RequestBuilder) Count()(*Alerts_v2CountRequestBuilder) {
     return NewAlerts_v2CountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of alert resources that were created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
+// Get a collection of alerts in Microsoft 365 Defender.
 // returns a AlertCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-list-alerts_v2?view=graph-rest-1.0
 func (m *Alerts_v2RequestBuilder) Get(ctx context.Context, requestConfiguration *Alerts_v2RequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *Alerts_v2RequestBuilder) Post(ctx context.Context, body i084fa7ab3bba80
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Alertable), nil
 }
-// ToGetRequestInformation get a list of alert resources that were created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
+// ToGetRequestInformation a collection of alerts in Microsoft 365 Defender.
 // returns a *RequestInformation when successful
 func (m *Alerts_v2RequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *Alerts_v2RequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -36,7 +36,7 @@ func NewItemGetPasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, requ
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ItemGetPasswordSingleSignOnCredentialsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) PostAsGetPasswordSingleSignOnCredentialsPostResponse(ctx context.Context, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ItemGetPasswordSingleSignOnCredentialsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

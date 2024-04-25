@@ -11,7 +11,7 @@ import (
 type ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderGetQueryParameters get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
+// ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderGetQueryParameters names and descriptions of all valid authentication method modes in the system.
 type ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,13 +77,10 @@ func NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequest
 func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) Count()(*ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesCountRequestBuilder) {
     return NewConditionalAccessAuthenticationStrengthsAuthenticationMethodModesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
+// Get names and descriptions of all valid authentication method modes in the system.
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
 // returns a AuthenticationMethodModeDetailCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0
 func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModeDetailCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +119,7 @@ func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesReques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModeDetailable), nil
 }
-// ToGetRequestInformation get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
+// ToGetRequestInformation names and descriptions of all valid authentication method modes in the system.
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthsAuthenticationMethodModesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

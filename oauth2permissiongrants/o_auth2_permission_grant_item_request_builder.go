@@ -58,7 +58,7 @@ func NewOAuth2PermissionGrantItemRequestBuilder(rawUrl string, requestAdapter i2
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/oauth2permissiongrant-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/oauth2permissiongrant-delete?view=graph-rest-beta
 func (m *OAuth2PermissionGrantItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *OAuth2PermissionGrantItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +78,7 @@ func (m *OAuth2PermissionGrantItemRequestBuilder) Delete(ctx context.Context, re
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/oauth2permissiongrant-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/oauth2permissiongrant-get?view=graph-rest-beta
 func (m *OAuth2PermissionGrantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,7 +101,7 @@ func (m *OAuth2PermissionGrantItemRequestBuilder) Get(ctx context.Context, reque
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/oauth2permissiongrant-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/oauth2permissiongrant-update?view=graph-rest-beta
 func (m *OAuth2PermissionGrantItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, requestConfiguration *OAuth2PermissionGrantItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OAuth2PermissionGrantable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -30,10 +30,13 @@ func NewItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getVirtualAppointmentJoinWebUrl
+// Get get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
 // Deprecated: This method is obsolete. Use GetAsGetVirtualAppointmentJoinWebUrlGetResponse instead.
 // returns a ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
 func (m *ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,9 +54,12 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestB
     }
     return res.(ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlResponseable), nil
 }
-// GetAsGetVirtualAppointmentJoinWebUrlGetResponse invoke function getVirtualAppointmentJoinWebUrl
+// GetAsGetVirtualAppointmentJoinWebUrlGetResponse get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
 // returns a ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-getvirtualappointmentjoinweburl?view=graph-rest-beta
 func (m *ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilder) GetAsGetVirtualAppointmentJoinWebUrlGetResponse(ctx context.Context, requestConfiguration *ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,7 +77,7 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestB
     }
     return res.(ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getVirtualAppointmentJoinWebUrl
+// ToGetRequestInformation get a join web URL for a Teams Virtual Appointment. This web URL includes enhanced business-to-customer experiences such as mobile browser join and virtual lobby rooms. With Teams Premium, you can configure a custom lobby room experience for attendees by adding your company logo and access the Virtual Appointments usage report for organizational analytics.
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsWithJoinWebUrlGetVirtualAppointmentJoinWebUrlRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

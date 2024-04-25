@@ -18,7 +18,7 @@ type ItemTeamDefinitionRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemTeamDefinitionRequestBuilderGetQueryParameters get the properties of the team associated with a teamTemplateDefinition object.
+// ItemTeamDefinitionRequestBuilderGetQueryParameters collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
 type ItemTeamDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -95,12 +95,9 @@ func (m *ItemTeamDefinitionRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get get the properties of the team associated with a teamTemplateDefinition object.
+// Get collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
 // returns a Teamable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamtemplatedefinition-get-teamdefinition?view=graph-rest-1.0
 func (m *ItemTeamDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -219,7 +216,7 @@ func (m *ItemTeamDefinitionRequestBuilder) ToDeleteRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties of the team associated with a teamTemplateDefinition object.
+// ToGetRequestInformation collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

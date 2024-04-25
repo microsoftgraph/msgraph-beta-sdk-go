@@ -31,12 +31,12 @@ func NewItemSitesItemPermissionsItemRevokeGrantsRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesItemPermissionsItemRevokeGrantsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+// Post revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-beta
 func (m *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder) Post(ctx context.Context, body ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable, requestConfiguration *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -54,7 +54,7 @@ func (m *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder) Post(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// ToPostRequestInformation revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
+// ToPostRequestInformation revoke access to a listItem or driveItem granted via a sharing link by removing the specified recipient from the link.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSitesItemPermissionsItemRevokeGrantsPostRequestBodyable, requestConfiguration *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

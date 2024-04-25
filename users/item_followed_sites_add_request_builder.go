@@ -36,7 +36,7 @@ func NewItemFollowedSitesAddRequestBuilder(rawUrl string, requestAdapter i2ae418
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta
 func (m *ItemFollowedSitesAddRequestBuilder) Post(ctx context.Context, body ItemFollowedSitesAddPostRequestBodyable, requestConfiguration *ItemFollowedSitesAddRequestBuilderPostRequestConfiguration)(ItemFollowedSitesAddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemFollowedSitesAddRequestBuilder) Post(ctx context.Context, body Item
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta
 func (m *ItemFollowedSitesAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body ItemFollowedSitesAddPostRequestBodyable, requestConfiguration *ItemFollowedSitesAddRequestBuilderPostRequestConfiguration)(ItemFollowedSitesAddPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -18,7 +18,7 @@ type ItemGetByPathWithPathTermStoreRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemGetByPathWithPathTermStoreRequestBuilderGetQueryParameters read the properties and relationships of a store object.
+// ItemGetByPathWithPathTermStoreRequestBuilderGetQueryParameters the termStore under this site.
 type ItemGetByPathWithPathTermStoreRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *ItemGetByPathWithPathTermStoreRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get read the properties and relationships of a store object.
+// Get the termStore under this site.
 // returns a Storeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-store-get?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathTermStoreRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathTermStoreRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Storeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *ItemGetByPathWithPathTermStoreRequestBuilder) ToDeleteRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a store object.
+// ToGetRequestInformation the termStore under this site.
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathTermStoreRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathTermStoreRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

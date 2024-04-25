@@ -11,7 +11,7 @@ import (
 type ItemPrimaryChannelTabsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPrimaryChannelTabsRequestBuilderGetQueryParameters retrieve the list of tabs in the specified channel within a team. 
+// ItemPrimaryChannelTabsRequestBuilderGetQueryParameters a collection of all the tabs in the channel. A navigation property.
 type ItemPrimaryChannelTabsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemPrimaryChannelTabsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemPrimaryChannelTabsRequestBuilder) Count()(*ItemPrimaryChannelTabsCountRequestBuilder) {
     return NewItemPrimaryChannelTabsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the list of tabs in the specified channel within a team. 
+// Get a collection of all the tabs in the channel. A navigation property.
 // returns a TeamsTabCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0
 func (m *ItemPrimaryChannelTabsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPrimaryChannelTabsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsTabCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemPrimaryChannelTabsRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsTabable), nil
 }
-// ToGetRequestInformation retrieve the list of tabs in the specified channel within a team. 
+// ToGetRequestInformation a collection of all the tabs in the channel. A navigation property.
 // returns a *RequestInformation when successful
 func (m *ItemPrimaryChannelTabsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelTabsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

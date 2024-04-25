@@ -10,7 +10,7 @@ import (
 type VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetQueryParameters invoke function getSubscriptions
+// VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetQueryParameters list all subscriptions cloudPcSubscription that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
 type VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getSubscriptions
+// Get list all subscriptions cloudPcSubscription that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
 // Deprecated: This method is obsolete. Use GetAsGetSubscriptionsGetResponse instead.
 // returns a VirtualEndpointSnapshotsGetSubscriptionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcsnapshot-getsubscriptions?view=graph-rest-beta
 func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetRequestConfiguration)(VirtualEndpointSnapshotsGetSubscriptionsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) Get(ctx context
     }
     return res.(VirtualEndpointSnapshotsGetSubscriptionsResponseable), nil
 }
-// GetAsGetSubscriptionsGetResponse invoke function getSubscriptions
+// GetAsGetSubscriptionsGetResponse list all subscriptions cloudPcSubscription that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
 // returns a VirtualEndpointSnapshotsGetSubscriptionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcsnapshot-getsubscriptions?view=graph-rest-beta
 func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) GetAsGetSubscriptionsGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetRequestConfiguration)(VirtualEndpointSnapshotsGetSubscriptionsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) GetAsGetSubscri
     }
     return res.(VirtualEndpointSnapshotsGetSubscriptionsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getSubscriptions
+// ToGetRequestInformation list all subscriptions cloudPcSubscription that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

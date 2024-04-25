@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemChildHostPairsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemChildHostPairsRequestBuilderGetQueryParameters get the list of hostPair resources associated with a specified host, where that host is the *parent* and has an outgoing pairing to a *child*.
+// ThreatIntelligenceHostsItemChildHostPairsRequestBuilderGetQueryParameters the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
 type ThreatIntelligenceHostsItemChildHostPairsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewThreatIntelligenceHostsItemChildHostPairsRequestBuilder(rawUrl string, r
 func (m *ThreatIntelligenceHostsItemChildHostPairsRequestBuilder) Count()(*ThreatIntelligenceHostsItemChildHostPairsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemChildHostPairsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of hostPair resources associated with a specified host, where that host is the *parent* and has an outgoing pairing to a *child*.
+// Get the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
 // returns a HostPairCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-childhostpairs?view=graph-rest-1.0
 func (m *ThreatIntelligenceHostsItemChildHostPairsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemChildHostPairsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *ThreatIntelligenceHostsItemChildHostPairsRequestBuilder) Get(ctx contex
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostPairCollectionResponseable), nil
 }
-// ToGetRequestInformation get the list of hostPair resources associated with a specified host, where that host is the *parent* and has an outgoing pairing to a *child*.
+// ToGetRequestInformation the hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostsItemChildHostPairsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemChildHostPairsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

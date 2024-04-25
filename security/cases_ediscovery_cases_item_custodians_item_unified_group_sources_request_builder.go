@@ -11,7 +11,7 @@ import (
 type CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderGetQueryParameters get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+// CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderGetQueryParameters data source entity for groups associated with the custodian.
 type CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewCasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder(
 func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) Count()(*CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesCountRequestBuilder) {
     return NewCasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+// Get data source entity for groups associated with the custodian.
 // returns a UnifiedGroupSourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-unifiedgroupsources?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UnifiedGroupSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UnifiedGroupSourceCollectionResponseable), nil
 }
-// Post create a new unifiedGroupSource object associated with an eDiscovery custodian.
+// Post create new navigation property to unifiedGroupSources for security
 // returns a UnifiedGroupSourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-post-unifiedgroupsources?view=graph-rest-1.0
 func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UnifiedGroupSourceable, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UnifiedGroupSourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UnifiedGroupSourceable), nil
 }
-// ToGetRequestInformation get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+// ToGetRequestInformation data source entity for groups associated with the custodian.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new unifiedGroupSource object associated with an eDiscovery custodian.
+// ToPostRequestInformation create new navigation property to unifiedGroupSources for security
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UnifiedGroupSourceable, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

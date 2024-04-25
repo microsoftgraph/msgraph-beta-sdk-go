@@ -18,7 +18,7 @@ type OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetQueryParameters get the details of an outboundSharedUserProfile.
+// OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetQueryParameters get outboundSharedUserProfiles from directory
 type OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
     }
     return nil
 }
-// Get get the details of an outboundSharedUserProfile.
+// Get get outboundSharedUserProfiles from directory
 // returns a OutboundSharedUserProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outboundshareduserprofile-get?view=graph-rest-1.0
 func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutboundSharedUserProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the details of an outboundSharedUserProfile.
+// ToGetRequestInformation get outboundSharedUserProfiles from directory
 // returns a *RequestInformation when successful
 func (m *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesOutboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

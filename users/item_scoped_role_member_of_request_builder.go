@@ -11,7 +11,7 @@ import (
 type ItemScopedRoleMemberOfRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemScopedRoleMemberOfRequestBuilderGetQueryParameters retrieve a list of scopedRoleMembership for the user.
+// ItemScopedRoleMemberOfRequestBuilderGetQueryParameters the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 type ItemScopedRoleMemberOfRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemScopedRoleMemberOfRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemScopedRoleMemberOfRequestBuilder) Count()(*ItemScopedRoleMemberOfCountRequestBuilder) {
     return NewItemScopedRoleMemberOfCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of scopedRoleMembership for the user.
+// Get the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 // returns a ScopedRoleMembershipCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-1.0
 func (m *ItemScopedRoleMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScopedRoleMemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemScopedRoleMemberOfRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipable), nil
 }
-// ToGetRequestInformation retrieve a list of scopedRoleMembership for the user.
+// ToGetRequestInformation the scoped-role administrative unit memberships for this user. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemScopedRoleMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScopedRoleMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

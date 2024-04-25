@@ -18,7 +18,7 @@ type EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a unifiedRoleAssignment object.
+// EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters get roleAssignments from roleManagement
 type EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,11 +59,8 @@ func NewEnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewEnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a unifiedRoleAssignment object.
+// Delete delete navigation property roleAssignments for roleManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-1.0
 func (m *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -83,12 +80,9 @@ func (m *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilde
 func (m *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*EnterpriseAppsItemRoleAssignmentsItemDirectoryScopeRequestBuilder) {
     return NewEnterpriseAppsItemRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a unifiedRoleAssignment object.
+// Get get roleAssignments from roleManagement
 // returns a UnifiedRoleAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-1.0
 func (m *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +130,7 @@ func (m *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilde
 func (m *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) RoleDefinition()(*EnterpriseAppsItemRoleAssignmentsItemRoleDefinitionRequestBuilder) {
     return NewEnterpriseAppsItemRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a unifiedRoleAssignment object.
+// ToDeleteRequestInformation delete navigation property roleAssignments for roleManagement
 // returns a *RequestInformation when successful
 func (m *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +141,7 @@ func (m *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a unifiedRoleAssignment object.
+// ToGetRequestInformation get roleAssignments from roleManagement
 // returns a *RequestInformation when successful
 func (m *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

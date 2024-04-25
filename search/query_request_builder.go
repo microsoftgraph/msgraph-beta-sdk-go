@@ -36,7 +36,7 @@ func NewQueryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-beta
 func (m *QueryRequestBuilder) Post(ctx context.Context, body QueryPostRequestBodyable, requestConfiguration *QueryRequestBuilderPostRequestConfiguration)(QueryResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *QueryRequestBuilder) Post(ctx context.Context, body QueryPostRequestBod
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/search-query?view=graph-rest-beta
 func (m *QueryRequestBuilder) PostAsQueryPostResponse(ctx context.Context, body QueryPostRequestBodyable, requestConfiguration *QueryRequestBuilderPostRequestConfiguration)(QueryPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

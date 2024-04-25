@@ -34,7 +34,7 @@ func NewItemRemoveKeyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/application-removekey?view=graph-rest-beta
 func (m *ItemRemoveKeyRequestBuilder) Post(ctx context.Context, body ItemRemoveKeyPostRequestBodyable, requestConfiguration *ItemRemoveKeyRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

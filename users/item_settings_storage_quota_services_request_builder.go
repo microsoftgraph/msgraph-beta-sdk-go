@@ -11,7 +11,7 @@ import (
 type ItemSettingsStorageQuotaServicesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSettingsStorageQuotaServicesRequestBuilderGetQueryParameters get a list of serviceStorageQuotaBreakdown objects and their properties.
+// ItemSettingsStorageQuotaServicesRequestBuilderGetQueryParameters the breakdown of services contributing to the user's quota usage.
 type ItemSettingsStorageQuotaServicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemSettingsStorageQuotaServicesRequestBuilder(rawUrl string, requestAda
 func (m *ItemSettingsStorageQuotaServicesRequestBuilder) Count()(*ItemSettingsStorageQuotaServicesCountRequestBuilder) {
     return NewItemSettingsStorageQuotaServicesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of serviceStorageQuotaBreakdown objects and their properties.
+// Get the breakdown of services contributing to the user's quota usage.
 // returns a ServiceStorageQuotaBreakdownCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedstoragequota-list-services?view=graph-rest-1.0
 func (m *ItemSettingsStorageQuotaServicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsStorageQuotaServicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemSettingsStorageQuotaServicesRequestBuilder) Post(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable), nil
 }
-// ToGetRequestInformation get a list of serviceStorageQuotaBreakdown objects and their properties.
+// ToGetRequestInformation the breakdown of services contributing to the user's quota usage.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsStorageQuotaServicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsStorageQuotaServicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

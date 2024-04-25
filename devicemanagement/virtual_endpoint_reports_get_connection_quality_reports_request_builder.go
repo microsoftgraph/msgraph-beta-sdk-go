@@ -35,7 +35,7 @@ func NewVirtualEndpointReportsGetConnectionQualityReportsRequestBuilder(rawUrl s
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getconnectionqualityreports?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getconnectionqualityreports?view=graph-rest-beta
 func (m *VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetConnectionQualityReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetConnectionQualityReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

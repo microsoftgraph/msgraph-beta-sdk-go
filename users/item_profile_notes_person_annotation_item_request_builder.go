@@ -18,7 +18,7 @@ type ItemProfileNotesPersonAnnotationItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileNotesPersonAnnotationItemRequestBuilderGetQueryParameters read the properties and relationships of a personAnnotation object from a user's profile.
+// ItemProfileNotesPersonAnnotationItemRequestBuilderGetQueryParameters represents notes that a user has added to their profile.
 type ItemProfileNotesPersonAnnotationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemProfileNotesPersonAnnotationItemRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileNotesPersonAnnotationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a personAnnotation object from a user's profile.
+// Delete delete navigation property notes for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/personannotation-delete?view=graph-rest-1.0
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get read the properties and relationships of a personAnnotation object from a user's profile.
+// Get represents notes that a user has added to their profile.
 // returns a PersonAnnotationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/personannotation-get?view=graph-rest-1.0
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable), nil
 }
-// Patch update the properties of a personAnnotation object in a user's profile.
+// Patch update the navigation property notes in users
 // returns a PersonAnnotationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/personannotation-update?view=graph-rest-1.0
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Patch(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable), nil
 }
-// ToDeleteRequestInformation deletes a personAnnotation object from a user's profile.
+// ToDeleteRequestInformation delete navigation property notes for users
 // returns a *RequestInformation when successful
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a personAnnotation object from a user's profile.
+// ToGetRequestInformation represents notes that a user has added to their profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToGetRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a personAnnotation object in a user's profile.
+// ToPatchRequestInformation update the navigation property notes in users
 // returns a *RequestInformation when successful
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

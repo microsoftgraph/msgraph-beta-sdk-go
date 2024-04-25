@@ -178,7 +178,7 @@ func (m *UserItemRequestBuilder) CreatedObjects()(*ItemCreatedObjectsRequestBuil
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-beta
 func (m *UserItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -293,7 +293,7 @@ func (m *UserItemRequestBuilder) FollowedSites()(*ItemFollowedSitesRequestBuilde
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-get?view=graph-rest-beta
 func (m *UserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -501,7 +501,7 @@ func (m *UserItemRequestBuilder) OwnedObjects()(*ItemOwnedObjectsRequestBuilder)
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-update?view=graph-rest-beta
 func (m *UserItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, requestConfiguration *UserItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

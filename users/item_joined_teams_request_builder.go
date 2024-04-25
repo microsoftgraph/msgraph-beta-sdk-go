@@ -11,7 +11,7 @@ import (
 type ItemJoinedTeamsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemJoinedTeamsRequestBuilderGetQueryParameters get the teams in Microsoft Teams that the user is a direct member of.
+// ItemJoinedTeamsRequestBuilderGetQueryParameters the Microsoft Teams teams the user is a member of. Read-only. Nullable.
 type ItemJoinedTeamsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewItemJoinedTeamsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemJoinedTeamsRequestBuilder) Count()(*ItemJoinedTeamsCountRequestBuilder) {
     return NewItemJoinedTeamsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the teams in Microsoft Teams that the user is a direct member of.
+// Get the Microsoft Teams teams the user is a member of. Read-only. Nullable.
 // returns a TeamCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-1.0
 func (m *ItemJoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *ItemJoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable), nil
 }
-// ToGetRequestInformation get the teams in Microsoft Teams that the user is a direct member of.
+// ToGetRequestInformation the Microsoft Teams teams the user is a member of. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

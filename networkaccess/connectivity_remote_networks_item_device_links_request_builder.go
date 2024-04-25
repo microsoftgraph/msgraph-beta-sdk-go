@@ -11,7 +11,7 @@ import (
 type ConnectivityRemoteNetworksItemDeviceLinksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectivityRemoteNetworksItemDeviceLinksRequestBuilderGetQueryParameters retrieves a specific device link associated with a remote network.
+// ConnectivityRemoteNetworksItemDeviceLinksRequestBuilderGetQueryParameters each unique CPE device associated with a remote network is specified. Supports $expand.
 type ConnectivityRemoteNetworksItemDeviceLinksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewConnectivityRemoteNetworksItemDeviceLinksRequestBuilder(rawUrl string, r
 func (m *ConnectivityRemoteNetworksItemDeviceLinksRequestBuilder) Count()(*ConnectivityRemoteNetworksItemDeviceLinksCountRequestBuilder) {
     return NewConnectivityRemoteNetworksItemDeviceLinksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieves a specific device link associated with a remote network.
+// Get each unique CPE device associated with a remote network is specified. Supports $expand.
 // returns a DeviceLinkCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksItemDeviceLinksRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ConnectivityRemoteNetworksItemDeviceLinksRequestBuilder) Post(ctx conte
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.DeviceLinkable), nil
 }
-// ToGetRequestInformation retrieves a specific device link associated with a remote network.
+// ToGetRequestInformation each unique CPE device associated with a remote network is specified. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemDeviceLinksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemDeviceLinksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

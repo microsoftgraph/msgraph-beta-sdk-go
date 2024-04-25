@@ -11,7 +11,7 @@ import (
 type ManagedTenantsAggregatedPolicyCompliancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsAggregatedPolicyCompliancesRequestBuilderGetQueryParameters get a list of the aggregatedPolicyCompliance objects and their properties.
+// ManagedTenantsAggregatedPolicyCompliancesRequestBuilderGetQueryParameters aggregate view of device compliance policies across managed tenants.
 type ManagedTenantsAggregatedPolicyCompliancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewManagedTenantsAggregatedPolicyCompliancesRequestBuilder(rawUrl string, r
 func (m *ManagedTenantsAggregatedPolicyCompliancesRequestBuilder) Count()(*ManagedTenantsAggregatedPolicyCompliancesCountRequestBuilder) {
     return NewManagedTenantsAggregatedPolicyCompliancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the aggregatedPolicyCompliance objects and their properties.
+// Get aggregate view of device compliance policies across managed tenants.
 // returns a AggregatedPolicyComplianceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-aggregatedpolicycompliances?view=graph-rest-1.0
 func (m *ManagedTenantsAggregatedPolicyCompliancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsAggregatedPolicyCompliancesRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ManagedTenantsAggregatedPolicyCompliancesRequestBuilder) Post(ctx conte
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AggregatedPolicyComplianceable), nil
 }
-// ToGetRequestInformation get a list of the aggregatedPolicyCompliance objects and their properties.
+// ToGetRequestInformation aggregate view of device compliance policies across managed tenants.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsAggregatedPolicyCompliancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsAggregatedPolicyCompliancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

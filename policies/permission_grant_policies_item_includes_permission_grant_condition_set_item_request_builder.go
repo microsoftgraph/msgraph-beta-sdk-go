@@ -54,11 +54,8 @@ func NewPermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemReques
     urlParams["request-raw-url"] = rawUrl
     return NewPermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
+// Delete delete navigation property includes for policies
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-includes?view=graph-rest-1.0
 func (m *PermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,7 +110,7 @@ func (m *PermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemReque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionGrantConditionSetable), nil
 }
-// ToDeleteRequestInformation deletes a permissionGrantConditionSet from the includes collection of a permissionGrantPolicy.
+// ToDeleteRequestInformation delete navigation property includes for policies
 // returns a *RequestInformation when successful
 func (m *PermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PermissionGrantPoliciesItemIncludesPermissionGrantConditionSetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

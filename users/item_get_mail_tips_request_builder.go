@@ -36,7 +36,7 @@ func NewItemGetMailTipsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-beta
 func (m *ItemGetMailTipsRequestBuilder) Post(ctx context.Context, body ItemGetMailTipsPostRequestBodyable, requestConfiguration *ItemGetMailTipsRequestBuilderPostRequestConfiguration)(ItemGetMailTipsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *ItemGetMailTipsRequestBuilder) Post(ctx context.Context, body ItemGetMa
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-beta
 func (m *ItemGetMailTipsRequestBuilder) PostAsGetMailTipsPostResponse(ctx context.Context, body ItemGetMailTipsPostRequestBodyable, requestConfiguration *ItemGetMailTipsRequestBuilderPostRequestConfiguration)(ItemGetMailTipsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

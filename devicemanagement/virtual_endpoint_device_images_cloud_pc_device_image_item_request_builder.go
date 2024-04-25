@@ -18,7 +18,7 @@ type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters read the properties and relationships of a specific cloudPcDeviceImage object.
+// VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters the image resource on Cloud PC.
 type VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a cloudPcDeviceImage object.
+// Delete delete navigation property deviceImages for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Delete
     }
     return nil
 }
-// Get read the properties and relationships of a specific cloudPcDeviceImage object.
+// Get the image resource on Cloud PC.
 // returns a CloudPcDeviceImageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-1.0
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDeviceImageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +115,7 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Patch(
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) Reupload()(*VirtualEndpointDeviceImagesItemReuploadRequestBuilder) {
     return NewVirtualEndpointDeviceImagesItemReuploadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a cloudPcDeviceImage object.
+// ToDeleteRequestInformation delete navigation property deviceImages for deviceManagement
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +126,7 @@ func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToDele
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a specific cloudPcDeviceImage object.
+// ToGetRequestInformation the image resource on Cloud PC.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointDeviceImagesCloudPcDeviceImageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

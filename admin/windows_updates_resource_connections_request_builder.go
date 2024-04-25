@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesResourceConnectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesResourceConnectionsRequestBuilderGetQueryParameters get a list of the resourceConnection objects and their properties.
+// WindowsUpdatesResourceConnectionsRequestBuilderGetQueryParameters service connections to external resources such as analytics workspaces.
 type WindowsUpdatesResourceConnectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewWindowsUpdatesResourceConnectionsRequestBuilder(rawUrl string, requestAd
 func (m *WindowsUpdatesResourceConnectionsRequestBuilder) Count()(*WindowsUpdatesResourceConnectionsCountRequestBuilder) {
     return NewWindowsUpdatesResourceConnectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the resourceConnection objects and their properties.
+// Get service connections to external resources such as analytics workspaces.
 // returns a ResourceConnectionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-list-resourceconnections?view=graph-rest-1.0
 func (m *WindowsUpdatesResourceConnectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *WindowsUpdatesResourceConnectionsRequestBuilder) Get(ctx context.Contex
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionCollectionResponseable), nil
 }
-// Post create a new operationalInsightsConnection object.
+// Post create new navigation property to resourceConnections for admin
 // returns a ResourceConnectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/adminwindowsupdates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-1.0
 func (m *WindowsUpdatesResourceConnectionsRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, requestConfiguration *WindowsUpdatesResourceConnectionsRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *WindowsUpdatesResourceConnectionsRequestBuilder) Post(ctx context.Conte
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable), nil
 }
-// ToGetRequestInformation get a list of the resourceConnection objects and their properties.
+// ToGetRequestInformation service connections to external resources such as analytics workspaces.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesResourceConnectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesResourceConnectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *WindowsUpdatesResourceConnectionsRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new operationalInsightsConnection object.
+// ToPostRequestInformation create new navigation property to resourceConnections for admin
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesResourceConnectionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ResourceConnectionable, requestConfiguration *WindowsUpdatesResourceConnectionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

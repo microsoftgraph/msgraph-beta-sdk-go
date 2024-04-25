@@ -11,7 +11,7 @@ import (
 type FilteringPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FilteringPoliciesRequestBuilderGetQueryParameters get a list of the microsoft.graph.networkaccess.filteringPolicy objects and their properties.
+// FilteringPoliciesRequestBuilderGetQueryParameters a filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
 type FilteringPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewFilteringPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *FilteringPoliciesRequestBuilder) Count()(*FilteringPoliciesCountRequestBuilder) {
     return NewFilteringPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the microsoft.graph.networkaccess.filteringPolicy objects and their properties.
+// Get a filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
 // returns a FilteringPolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-filteringpolicies?view=graph-rest-1.0
 func (m *FilteringPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *FilteringPoliciesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *FilteringPoliciesRequestBuilder) Post(ctx context.Context, body i43e723
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable), nil
 }
-// ToGetRequestInformation get a list of the microsoft.graph.networkaccess.filteringPolicy objects and their properties.
+// ToGetRequestInformation a filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
 // returns a *RequestInformation when successful
 func (m *FilteringPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

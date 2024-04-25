@@ -18,7 +18,7 @@ type IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetQueryParameters read the properties and relationships of an industryDataConnector object.
+// IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetQueryParameters set of connectors for importing data from source systems.
 type IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an azureDataLakeConnector object.
+// Delete delete navigation property dataConnectors for external
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Dele
     }
     return nil
 }
-// Get read the properties and relationships of an industryDataConnector object.
+// Get set of connectors for importing data from source systems.
 // returns a IndustryDataConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,12 +95,9 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Get(
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) MicrosoftGraphIndustryDataValidate()(*IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) {
     return NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the properties of an industryDataConnector object.
+// Patch update the navigation property dataConnectors in external
 // returns a IndustryDataConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Patch(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderPatchRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -129,7 +120,7 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) Patc
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) SourceSystem()(*IndustryDataDataConnectorsItemSourceSystemRequestBuilder) {
     return NewIndustryDataDataConnectorsItemSourceSystemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete an azureDataLakeConnector object.
+// ToDeleteRequestInformation delete navigation property dataConnectors for external
 // returns a *RequestInformation when successful
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +131,7 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an industryDataConnector object.
+// ToGetRequestInformation set of connectors for importing data from source systems.
 // returns a *RequestInformation when successful
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,7 +145,7 @@ func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToGe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an industryDataConnector object.
+// ToPatchRequestInformation update the navigation property dataConnectors in external
 // returns a *RequestInformation when successful
 func (m *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsIndustryDataConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

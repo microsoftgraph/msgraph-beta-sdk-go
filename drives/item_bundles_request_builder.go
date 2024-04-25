@@ -11,7 +11,7 @@ import (
 type ItemBundlesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemBundlesRequestBuilderGetQueryParameters collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// ItemBundlesRequestBuilderGetQueryParameters collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
 type ItemBundlesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemBundlesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ItemBundlesRequestBuilder) Count()(*ItemBundlesCountRequestBuilder) {
     return NewItemBundlesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// Get collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
 // returns a DriveItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemBundlesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemBundlesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemBundlesRequestBuilder) Post(ctx context.Context, body ie233ee762e29
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToGetRequestInformation collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// ToGetRequestInformation collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
 // returns a *RequestInformation when successful
 func (m *ItemBundlesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemBundlesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

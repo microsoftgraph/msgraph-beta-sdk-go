@@ -11,7 +11,7 @@ import (
 type PendingExternalUserProfilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PendingExternalUserProfilesRequestBuilderGetQueryParameters retrieve the properties of all pendingExternalUserProfiles.
+// PendingExternalUserProfilesRequestBuilderGetQueryParameters collection of pending external user profiles representing collaborators in the directory that are unredeemed.
 type PendingExternalUserProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewPendingExternalUserProfilesRequestBuilder(rawUrl string, requestAdapter 
 func (m *PendingExternalUserProfilesRequestBuilder) Count()(*PendingExternalUserProfilesCountRequestBuilder) {
     return NewPendingExternalUserProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties of all pendingExternalUserProfiles.
+// Get collection of pending external user profiles representing collaborators in the directory that are unredeemed.
 // returns a PendingExternalUserProfileCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-pendingexternaluserprofile?view=graph-rest-1.0
 func (m *PendingExternalUserProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *PendingExternalUserProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PendingExternalUserProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *PendingExternalUserProfilesRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PendingExternalUserProfileCollectionResponseable), nil
 }
-// Post create a new pendingExternalUserProfile object.
+// Post create new navigation property to pendingExternalUserProfiles for directory
 // returns a PendingExternalUserProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/directory-post-pendingexternaluserprofile?view=graph-rest-1.0
 func (m *PendingExternalUserProfilesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PendingExternalUserProfileable, requestConfiguration *PendingExternalUserProfilesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PendingExternalUserProfileable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *PendingExternalUserProfilesRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PendingExternalUserProfileable), nil
 }
-// ToGetRequestInformation retrieve the properties of all pendingExternalUserProfiles.
+// ToGetRequestInformation collection of pending external user profiles representing collaborators in the directory that are unredeemed.
 // returns a *RequestInformation when successful
 func (m *PendingExternalUserProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PendingExternalUserProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *PendingExternalUserProfilesRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new pendingExternalUserProfile object.
+// ToPostRequestInformation create new navigation property to pendingExternalUserProfiles for directory
 // returns a *RequestInformation when successful
 func (m *PendingExternalUserProfilesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PendingExternalUserProfileable, requestConfiguration *PendingExternalUserProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -34,7 +34,7 @@ func NewForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesReques
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicy-updatepolicyrules?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicy-updatepolicyrules?view=graph-rest-beta
 func (m *ForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilder) Post(ctx context.Context, body ForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesUpdatePolicyRulesPostRequestBodyable, requestConfiguration *ForwardingPoliciesItemMicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -18,7 +18,7 @@ type ItemProfileSkillsSkillProficiencyItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileSkillsSkillProficiencyItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a skillproficiency object in a user's profile.
+// ItemProfileSkillsSkillProficiencyItemRequestBuilderGetQueryParameters represents detailed information about skills associated with a user in various services.
 type ItemProfileSkillsSkillProficiencyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemProfileSkillsSkillProficiencyItemRequestBuilder(rawUrl string, reque
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileSkillsSkillProficiencyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a skillProficiency object from a user's profile.
+// Delete delete navigation property skills for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/skillproficiency-delete?view=graph-rest-1.0
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get retrieve the properties and relationships of a skillproficiency object in a user's profile.
+// Get represents detailed information about skills associated with a user in various services.
 // returns a SkillProficiencyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-1.0
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable), nil
 }
-// Patch update the properties of a skillProficiency object in a user's profile.
+// Patch update the navigation property skills in users
 // returns a SkillProficiencyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/skillproficiency-update?view=graph-rest-1.0
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) Patch(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable), nil
 }
-// ToDeleteRequestInformation delete a skillProficiency object from a user's profile.
+// ToDeleteRequestInformation delete navigation property skills for users
 // returns a *RequestInformation when successful
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a skillproficiency object in a user's profile.
+// ToGetRequestInformation represents detailed information about skills associated with a user in various services.
 // returns a *RequestInformation when successful
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of a skillProficiency object in a user's profile.
+// ToPatchRequestInformation update the navigation property skills in users
 // returns a *RequestInformation when successful
 func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *ItemProfileSkillsSkillProficiencyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

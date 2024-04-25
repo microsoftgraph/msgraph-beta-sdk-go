@@ -10,7 +10,7 @@ import (
 type GetTimesOffRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetTimesOffRequestBuilderGetQueryParameters invoke function getTimesOff
+// GetTimesOffRequestBuilderGetQueryParameters get all time off objects across all teams to which a user is a direct member.
 type GetTimesOffRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewGetTimesOffRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     urlParams["request-raw-url"] = rawUrl
     return NewGetTimesOffRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getTimesOff
+// Get get all time off objects across all teams to which a user is a direct member.
 // Deprecated: This method is obsolete. Use GetAsGetTimesOffGetResponse instead.
 // returns a GetTimesOffResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-gettimesoff?view=graph-rest-beta
 func (m *GetTimesOffRequestBuilder) Get(ctx context.Context, requestConfiguration *GetTimesOffRequestBuilderGetRequestConfiguration)(GetTimesOffResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *GetTimesOffRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(GetTimesOffResponseable), nil
 }
-// GetAsGetTimesOffGetResponse invoke function getTimesOff
+// GetAsGetTimesOffGetResponse get all time off objects across all teams to which a user is a direct member.
 // returns a GetTimesOffGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-gettimesoff?view=graph-rest-beta
 func (m *GetTimesOffRequestBuilder) GetAsGetTimesOffGetResponse(ctx context.Context, requestConfiguration *GetTimesOffRequestBuilderGetRequestConfiguration)(GetTimesOffGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *GetTimesOffRequestBuilder) GetAsGetTimesOffGetResponse(ctx context.Cont
     }
     return res.(GetTimesOffGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getTimesOff
+// ToGetRequestInformation get all time off objects across all teams to which a user is a direct member.
 // returns a *RequestInformation when successful
 func (m *GetTimesOffRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetTimesOffRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

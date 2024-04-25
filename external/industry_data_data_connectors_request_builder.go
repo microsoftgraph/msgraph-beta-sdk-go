@@ -11,7 +11,7 @@ import (
 type IndustryDataDataConnectorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataDataConnectorsRequestBuilderGetQueryParameters get the industryDataConnector resources from the dataConnector navigation property.
+// IndustryDataDataConnectorsRequestBuilderGetQueryParameters set of connectors for importing data from source systems.
 type IndustryDataDataConnectorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewIndustryDataDataConnectorsRequestBuilder(rawUrl string, requestAdapter i
 func (m *IndustryDataDataConnectorsRequestBuilder) Count()(*IndustryDataDataConnectorsCountRequestBuilder) {
     return NewIndustryDataDataConnectorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the industryDataConnector resources from the dataConnector navigation property.
+// Get set of connectors for importing data from source systems.
 // returns a IndustryDataConnectorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *IndustryDataDataConnectorsRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorCollectionResponseable), nil
 }
-// Post create a new azureDataLakeConnector object.
+// Post create new navigation property to dataConnectors for external
 // returns a IndustryDataConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0
 func (m *IndustryDataDataConnectorsRequestBuilder) Post(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsRequestBuilderPostRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *IndustryDataDataConnectorsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable), nil
 }
-// ToGetRequestInformation get the industryDataConnector resources from the dataConnector navigation property.
+// ToGetRequestInformation set of connectors for importing data from source systems.
 // returns a *RequestInformation when successful
 func (m *IndustryDataDataConnectorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *IndustryDataDataConnectorsRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new azureDataLakeConnector object.
+// ToPostRequestInformation create new navigation property to dataConnectors for external
 // returns a *RequestInformation when successful
 func (m *IndustryDataDataConnectorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, requestConfiguration *IndustryDataDataConnectorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

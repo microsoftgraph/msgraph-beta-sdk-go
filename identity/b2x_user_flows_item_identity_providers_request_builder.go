@@ -11,7 +11,7 @@ import (
 type B2xUserFlowsItemIdentityProvidersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2xUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters get the identity providers in a b2xIdentityUserFlow object.
+// B2xUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters get identityProviders from identity
 type B2xUserFlowsItemIdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,13 +70,10 @@ func NewB2xUserFlowsItemIdentityProvidersRequestBuilder(rawUrl string, requestAd
 func (m *B2xUserFlowsItemIdentityProvidersRequestBuilder) Count()(*B2xUserFlowsItemIdentityProvidersCountRequestBuilder) {
     return NewB2xUserFlowsItemIdentityProvidersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the identity providers in a b2xIdentityUserFlow object.
+// Get get identityProviders from identity
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a IdentityProviderCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-identityproviders?view=graph-rest-1.0
 func (m *B2xUserFlowsItemIdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *B2xUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,7 +91,7 @@ func (m *B2xUserFlowsItemIdentityProvidersRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderCollectionResponseable), nil
 }
-// ToGetRequestInformation get the identity providers in a b2xIdentityUserFlow object.
+// ToGetRequestInformation get identityProviders from identity
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a *RequestInformation when successful
 func (m *B2xUserFlowsItemIdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemIdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

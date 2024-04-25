@@ -34,7 +34,7 @@ func NewItemItemsItemCheckoutRequestBuilder(rawUrl string, requestAdapter i2ae41
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-checkout?view=graph-rest-beta
 func (m *ItemItemsItemCheckoutRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemItemsItemCheckoutRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

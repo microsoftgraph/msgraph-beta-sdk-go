@@ -11,7 +11,7 @@ import (
 type UserInsightsDailySignUpsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserInsightsDailySignUpsRequestBuilderGetQueryParameters get a list of daily user sign-ups on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// UserInsightsDailySignUpsRequestBuilderGetQueryParameters total sign-ups on apps registered in the tenant for a specified period.
 type UserInsightsDailySignUpsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,12 +69,9 @@ func NewUserInsightsDailySignUpsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *UserInsightsDailySignUpsRequestBuilder) Count()(*UserInsightsDailySignUpsCountRequestBuilder) {
     return NewUserInsightsDailySignUpsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of daily user sign-ups on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// Get total sign-ups on apps registered in the tenant for a specified period.
 // returns a UserSignUpMetricCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/dailyuserinsightmetricsroot-list-signups?view=graph-rest-1.0
 func (m *UserInsightsDailySignUpsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsDailySignUpsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSignUpMetricCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +89,7 @@ func (m *UserInsightsDailySignUpsRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSignUpMetricCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of daily user sign-ups on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+// ToGetRequestInformation total sign-ups on apps registered in the tenant for a specified period.
 // returns a *RequestInformation when successful
 func (m *UserInsightsDailySignUpsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsDailySignUpsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

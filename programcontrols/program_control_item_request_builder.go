@@ -58,7 +58,7 @@ func NewProgramControlItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/programcontrol-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/programcontrol-delete?view=graph-rest-beta
 func (m *ProgramControlItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProgramControlItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

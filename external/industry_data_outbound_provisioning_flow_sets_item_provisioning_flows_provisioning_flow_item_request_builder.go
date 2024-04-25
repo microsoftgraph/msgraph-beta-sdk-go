@@ -18,7 +18,7 @@ type IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFl
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderGetQueryParameters read the properties and relationships of an administrativeUnitProvisioningFlow object.
+// IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderGetQueryParameters a flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
 type IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewIndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisionin
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a classGroupProvisioningFlow object.
+// Delete delete navigation property provisioningFlows for external
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-classgroupprovisioningflow-delete?view=graph-rest-1.0
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioni
     }
     return nil
 }
-// Get read the properties and relationships of an administrativeUnitProvisioningFlow object.
+// Get a flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
 // returns a ProvisioningFlowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-administrativeunitprovisioningflow-get?view=graph-rest-1.0
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioni
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable), nil
 }
-// Patch update the properties of an administrativeUnitProvisioningFlow object.
+// Patch update the navigation property provisioningFlows in external
 // returns a ProvisioningFlowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-administrativeunitprovisioningflow-update?view=graph-rest-1.0
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilder) Patch(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderPatchRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioni
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable), nil
 }
-// ToDeleteRequestInformation delete a classGroupProvisioningFlow object.
+// ToDeleteRequestInformation delete navigation property provisioningFlows for external
 // returns a *RequestInformation when successful
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioni
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an administrativeUnitProvisioningFlow object.
+// ToGetRequestInformation a flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
 // returns a *RequestInformation when successful
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioni
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an administrativeUnitProvisioningFlow object.
+// ToPatchRequestInformation update the navigation property provisioningFlows in external
 // returns a *RequestInformation when successful
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

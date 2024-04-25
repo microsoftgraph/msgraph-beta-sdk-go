@@ -31,10 +31,13 @@ func NewPrintersItemGetCapabilitiesRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewPrintersItemGetCapabilitiesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getCapabilities
+// Get get a list of capabilities for the printer.
 // Deprecated: The getCapabilities API is deprecated and will stop returning data on July 31, 2023. Please use the capabilities property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a PrinterCapabilitiesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printer-getcapabilities?view=graph-rest-beta
 func (m *PrintersItemGetCapabilitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemGetCapabilitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterCapabilitiesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -52,7 +55,7 @@ func (m *PrintersItemGetCapabilitiesRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterCapabilitiesable), nil
 }
-// ToGetRequestInformation invoke function getCapabilities
+// ToGetRequestInformation get a list of capabilities for the printer.
 // Deprecated: The getCapabilities API is deprecated and will stop returning data on July 31, 2023. Please use the capabilities property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a *RequestInformation when successful
 func (m *PrintersItemGetCapabilitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemGetCapabilitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

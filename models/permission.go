@@ -274,7 +274,7 @@ func (m *Permission) GetRoles()([]string) {
     }
     return nil
 }
-// GetShareId gets the shareId property value. A unique token that can be used to access this shared item via the [shares API][]. Read-only.
+// GetShareId gets the shareId property value. A unique token that can be used to access this shared item via the shares API. Read-only.
 // returns a *string when successful
 func (m *Permission) GetShareId()(*string) {
     val, err := m.GetBackingStore().Get("shareId")
@@ -442,7 +442,7 @@ func (m *Permission) SetRoles(value []string)() {
         panic(err)
     }
 }
-// SetShareId sets the shareId property value. A unique token that can be used to access this shared item via the [shares API][]. Read-only.
+// SetShareId sets the shareId property value. A unique token that can be used to access this shared item via the shares API. Read-only.
 func (m *Permission) SetShareId(value *string)() {
     err := m.GetBackingStore().Set("shareId", value)
     if err != nil {

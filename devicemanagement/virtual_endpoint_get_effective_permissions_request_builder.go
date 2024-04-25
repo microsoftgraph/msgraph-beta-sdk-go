@@ -10,7 +10,7 @@ import (
 type VirtualEndpointGetEffectivePermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointGetEffectivePermissionsRequestBuilderGetQueryParameters invoke function getEffectivePermissions
+// VirtualEndpointGetEffectivePermissionsRequestBuilderGetQueryParameters get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn't have access to.
 type VirtualEndpointGetEffectivePermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewVirtualEndpointGetEffectivePermissionsRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointGetEffectivePermissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getEffectivePermissions
+// Get get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn't have access to.
 // Deprecated: This method is obsolete. Use GetAsGetEffectivePermissionsGetResponse instead.
 // returns a VirtualEndpointGetEffectivePermissionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta
 func (m *VirtualEndpointGetEffectivePermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointGetEffectivePermissionsRequestBuilderGetRequestConfiguration)(VirtualEndpointGetEffectivePermissionsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *VirtualEndpointGetEffectivePermissionsRequestBuilder) Get(ctx context.C
     }
     return res.(VirtualEndpointGetEffectivePermissionsResponseable), nil
 }
-// GetAsGetEffectivePermissionsGetResponse invoke function getEffectivePermissions
+// GetAsGetEffectivePermissionsGetResponse get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn't have access to.
 // returns a VirtualEndpointGetEffectivePermissionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta
 func (m *VirtualEndpointGetEffectivePermissionsRequestBuilder) GetAsGetEffectivePermissionsGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointGetEffectivePermissionsRequestBuilderGetRequestConfiguration)(VirtualEndpointGetEffectivePermissionsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *VirtualEndpointGetEffectivePermissionsRequestBuilder) GetAsGetEffective
     }
     return res.(VirtualEndpointGetEffectivePermissionsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getEffectivePermissions
+// ToGetRequestInformation get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn't have access to.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointGetEffectivePermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointGetEffectivePermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

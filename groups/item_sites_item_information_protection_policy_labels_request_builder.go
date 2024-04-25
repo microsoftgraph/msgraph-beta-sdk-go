@@ -11,7 +11,7 @@ import (
 type ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemInformationProtectionPolicyLabelsRequestBuilderGetQueryParameters get a collection of information protection labels available to the user or to the organization.
+// ItemSitesItemInformationProtectionPolicyLabelsRequestBuilderGetQueryParameters get labels from groups
 type ItemSitesItemInformationProtectionPolicyLabelsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -97,13 +97,10 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) EvaluateR
 func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) ExtractLabel()(*ItemSitesItemInformationProtectionPolicyLabelsExtractLabelRequestBuilder) {
     return NewItemSitesItemInformationProtectionPolicyLabelsExtractLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a collection of information protection labels available to the user or to the organization.
+// Get get labels from groups
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 // returns a InformationProtectionLabelCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionpolicy-list-labels?view=graph-rest-1.0
 func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -142,7 +139,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) Post(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable), nil
 }
-// ToGetRequestInformation get a collection of information protection labels available to the user or to the organization.
+// ToGetRequestInformation get labels from groups
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

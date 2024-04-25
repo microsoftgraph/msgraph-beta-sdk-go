@@ -36,7 +36,7 @@ func NewAddRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta
 func (m *AddRequestBuilder) Post(ctx context.Context, body AddPostRequestBodyable, requestConfiguration *AddRequestBuilderPostRequestConfiguration)(AddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *AddRequestBuilder) Post(ctx context.Context, body AddPostRequestBodyabl
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-beta
 func (m *AddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body AddPostRequestBodyable, requestConfiguration *AddRequestBuilderPostRequestConfiguration)(AddPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

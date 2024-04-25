@@ -10,7 +10,7 @@ import (
 type GetOpenShiftsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// GetOpenShiftsRequestBuilderGetQueryParameters invoke function getOpenShifts
+// GetOpenShiftsRequestBuilderGetQueryParameters get all openShift objects across all teams a user is a direct member of.
 type GetOpenShiftsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewGetOpenShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewGetOpenShiftsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getOpenShifts
+// Get get all openShift objects across all teams a user is a direct member of.
 // Deprecated: This method is obsolete. Use GetAsGetOpenShiftsGetResponse instead.
 // returns a GetOpenShiftsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta
 func (m *GetOpenShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOpenShiftsRequestBuilderGetRequestConfiguration)(GetOpenShiftsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *GetOpenShiftsRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(GetOpenShiftsResponseable), nil
 }
-// GetAsGetOpenShiftsGetResponse invoke function getOpenShifts
+// GetAsGetOpenShiftsGetResponse get all openShift objects across all teams a user is a direct member of.
 // returns a GetOpenShiftsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta
 func (m *GetOpenShiftsRequestBuilder) GetAsGetOpenShiftsGetResponse(ctx context.Context, requestConfiguration *GetOpenShiftsRequestBuilderGetRequestConfiguration)(GetOpenShiftsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *GetOpenShiftsRequestBuilder) GetAsGetOpenShiftsGetResponse(ctx context.
     }
     return res.(GetOpenShiftsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getOpenShifts
+// ToGetRequestInformation get all openShift objects across all teams a user is a direct member of.
 // returns a *RequestInformation when successful
 func (m *GetOpenShiftsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetOpenShiftsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

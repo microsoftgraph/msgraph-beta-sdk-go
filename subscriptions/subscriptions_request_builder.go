@@ -64,7 +64,7 @@ func NewSubscriptionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-list?view=graph-rest-beta
 func (m *SubscriptionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SubscriptionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubscriptionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,7 +87,7 @@ func (m *SubscriptionsRequestBuilder) Get(ctx context.Context, requestConfigurat
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-beta
 func (m *SubscriptionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Subscriptionable, requestConfiguration *SubscriptionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Subscriptionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

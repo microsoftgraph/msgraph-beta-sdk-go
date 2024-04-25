@@ -34,7 +34,7 @@ func NewItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSetPositionRequestB
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chart-setposition?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chart-setposition?view=graph-rest-beta
 func (m *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSetPositionRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSetPositionPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemChartsItemWithNameSetPositionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

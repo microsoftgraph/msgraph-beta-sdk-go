@@ -33,7 +33,7 @@ func (m *Drive) GetActivities()([]ItemActivityOLDable) {
     }
     return nil
 }
-// GetBundles gets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// GetBundles gets the bundles property value. Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
 // returns a []DriveItemable when successful
 func (m *Drive) GetBundles()([]DriveItemable) {
     val, err := m.GetBackingStore().Get("bundles")
@@ -438,7 +438,7 @@ func (m *Drive) SetActivities(value []ItemActivityOLDable)() {
         panic(err)
     }
 }
-// SetBundles sets the bundles property value. Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+// SetBundles sets the bundles property value. Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
 func (m *Drive) SetBundles(value []DriveItemable)() {
     err := m.GetBackingStore().Set("bundles", value)
     if err != nil {

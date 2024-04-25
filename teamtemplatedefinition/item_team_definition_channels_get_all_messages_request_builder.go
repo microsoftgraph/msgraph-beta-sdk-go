@@ -10,7 +10,7 @@ import (
 type ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetQueryParameters invoke function getAllMessages
+// ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetQueryParameters retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 type ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -53,10 +53,13 @@ func NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionChannelsGetAllMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getAllMessages
+// Get retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // Deprecated: This method is obsolete. Use GetAsGetAllMessagesGetResponse instead.
 // returns a ItemTeamDefinitionChannelsGetAllMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-beta
 func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemTeamDefinitionChannelsGetAllMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,9 +77,12 @@ func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) Get(ctx context
     }
     return res.(ItemTeamDefinitionChannelsGetAllMessagesResponseable), nil
 }
-// GetAsGetAllMessagesGetResponse invoke function getAllMessages
+// GetAsGetAllMessagesGetResponse retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a ItemTeamDefinitionChannelsGetAllMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-getallmessages?view=graph-rest-beta
 func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(ItemTeamDefinitionChannelsGetAllMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,7 +100,7 @@ func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) GetAsGetAllMess
     }
     return res.(ItemTeamDefinitionChannelsGetAllMessagesGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getAllMessages
+// ToGetRequestInformation retrieve messages across all channels in a team, including text, audio, and video conversations. To learn more about using the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsGetAllMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -83,9 +83,6 @@ func (m *ItemCalendarViewRequestBuilder) Count()(*ItemCalendarViewCountRequestBu
 // Get the set of appointments of this business in a specified date range. Read-only. Nullable.
 // returns a BookingAppointmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-calendarview?view=graph-rest-1.0
 func (m *ItemCalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

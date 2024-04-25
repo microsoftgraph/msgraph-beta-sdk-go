@@ -18,7 +18,7 @@ type ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelIte
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an informationProtectionLabel object.
+// ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderGetQueryParameters get labels from groups
 type ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,13 +71,10 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabe
     }
     return nil
 }
-// Get retrieve the properties and relationships of an informationProtectionLabel object.
+// Get get labels from groups
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 // returns a InformationProtectionLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-get?view=graph-rest-1.0
 func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +125,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an informationProtectionLabel object.
+// ToGetRequestInformation get labels from groups
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

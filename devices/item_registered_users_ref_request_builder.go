@@ -11,7 +11,7 @@ import (
 type ItemRegisteredUsersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemRegisteredUsersRefRequestBuilderDeleteQueryParameters remove a user as a registered user of the device.
+// ItemRegisteredUsersRefRequestBuilderDeleteQueryParameters delete ref of navigation property registeredUsers for devices
 type ItemRegisteredUsersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -69,11 +69,8 @@ func NewItemRegisteredUsersRefRequestBuilder(rawUrl string, requestAdapter i2ae4
     urlParams["request-raw-url"] = rawUrl
     return NewItemRegisteredUsersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove a user as a registered user of the device.
+// Delete delete ref of navigation property registeredUsers for devices
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete-registeredusers?view=graph-rest-1.0
 func (m *ItemRegisteredUsersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemRegisteredUsersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,9 +88,6 @@ func (m *ItemRegisteredUsersRefRequestBuilder) Delete(ctx context.Context, reque
 // Get collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0
 func (m *ItemRegisteredUsersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRegisteredUsersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *ItemRegisteredUsersRefRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post add a registered user for the device.
+// Post create new navigation property ref to registeredUsers for devices
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0
 func (m *ItemRegisteredUsersRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemRegisteredUsersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *ItemRegisteredUsersRefRequestBuilder) Post(ctx context.Context, body ie
     }
     return nil
 }
-// ToDeleteRequestInformation remove a user as a registered user of the device.
+// ToDeleteRequestInformation delete ref of navigation property registeredUsers for devices
 // returns a *RequestInformation when successful
 func (m *ItemRegisteredUsersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemRegisteredUsersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/devices/{device%2Did}/registeredUsers/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *ItemRegisteredUsersRefRequestBuilder) ToGetRequestInformation(ctx conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add a registered user for the device.
+// ToPostRequestInformation create new navigation property ref to registeredUsers for devices
 // returns a *RequestInformation when successful
 func (m *ItemRegisteredUsersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemRegisteredUsersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/devices/{device%2Did}/registeredUsers/$ref", m.BaseRequestBuilder.PathParameters)

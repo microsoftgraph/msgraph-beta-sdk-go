@@ -11,7 +11,7 @@ import (
 type AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilderGetQueryParameters list the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
+// AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilderGetQueryParameters used to represent the decision associated with a single step in the approval process configured in approvalStage.
 type AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequ
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilder) Count()(*AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsCountRequestBuilder) {
     return NewAppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
+// Get used to represent the decision associated with a single step in the approval process configured in approvalStage.
 // returns a ApprovalStepCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/approval-list-steps?view=graph-rest-1.0
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilder) Get(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsReq
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
-// ToGetRequestInformation list the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
+// ToGetRequestInformation used to represent the decision associated with a single step in the approval process configured in approvalStage.
 // returns a *RequestInformation when successful
 func (m *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsItemUserConsentRequestsItemApprovalStepsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

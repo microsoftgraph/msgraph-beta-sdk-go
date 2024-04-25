@@ -11,7 +11,7 @@ import (
 type ItemItemsItemThumbnailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemThumbnailsRequestBuilderGetQueryParameters retrieve a collection of thumbnailSet resources for a driveItem resource. Zero or more thumbnailSet resources can represent a driveItem.Each thumbnailSet can have one or more thumbnail objects, which are images that represent the item.For example, a thumbnailSet may include thumbnail objects, such as common ones including small, medium, or large. There're many ways to work with thumbnails on OneDrive.Here are the most common ones:
+// ItemItemsItemThumbnailsRequestBuilderGetQueryParameters collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
 type ItemItemsItemThumbnailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemItemsItemThumbnailsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemItemsItemThumbnailsRequestBuilder) Count()(*ItemItemsItemThumbnailsCountRequestBuilder) {
     return NewItemItemsItemThumbnailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a collection of thumbnailSet resources for a driveItem resource. Zero or more thumbnailSet resources can represent a driveItem.Each thumbnailSet can have one or more thumbnail objects, which are images that represent the item.For example, a thumbnailSet may include thumbnail objects, such as common ones including small, medium, or large. There're many ways to work with thumbnails on OneDrive.Here are the most common ones:
+// Get collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
 // returns a ThumbnailSetCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-list-thumbnails?view=graph-rest-1.0
 func (m *ItemItemsItemThumbnailsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemThumbnailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThumbnailSetCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +116,7 @@ func (m *ItemItemsItemThumbnailsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThumbnailSetable), nil
 }
-// ToGetRequestInformation retrieve a collection of thumbnailSet resources for a driveItem resource. Zero or more thumbnailSet resources can represent a driveItem.Each thumbnailSet can have one or more thumbnail objects, which are images that represent the item.For example, a thumbnailSet may include thumbnail objects, such as common ones including small, medium, or large. There're many ways to work with thumbnails on OneDrive.Here are the most common ones:
+// ToGetRequestInformation collection of thumbnailSet objects associated with the item. For more information, see getting thumbnails. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemThumbnailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemThumbnailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

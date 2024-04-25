@@ -11,7 +11,7 @@ import (
 type ClassesItemMembersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemMembersRefRequestBuilderDeleteQueryParameters remove an educationUser from an educationClass.
+// ClassesItemMembersRefRequestBuilderDeleteQueryParameters delete ref of navigation property members for education
 type ClassesItemMembersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type ClassesItemMembersRefRequestBuilderDeleteRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ClassesItemMembersRefRequestBuilderDeleteQueryParameters
 }
-// ClassesItemMembersRefRequestBuilderGetQueryParameters retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+// ClassesItemMembersRefRequestBuilderGetQueryParameters all users in the class. Nullable.
 type ClassesItemMembersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,11 +69,8 @@ func NewClassesItemMembersRefRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemMembersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete remove an educationUser from an educationClass.
+// Delete delete ref of navigation property members for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-delete-members?view=graph-rest-1.0
 func (m *ClassesItemMembersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ClassesItemMembersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,12 +85,9 @@ func (m *ClassesItemMembersRefRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+// Get all users in the class. Nullable.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0
 func (m *ClassesItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemMembersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -111,11 +105,8 @@ func (m *ClassesItemMembersRefRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post add an educationUser member to an educationClass.
+// Post create new navigation property ref to members for education
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-post-members?view=graph-rest-1.0
 func (m *ClassesItemMembersRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ClassesItemMembersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +121,7 @@ func (m *ClassesItemMembersRefRequestBuilder) Post(ctx context.Context, body ie2
     }
     return nil
 }
-// ToDeleteRequestInformation remove an educationUser from an educationClass.
+// ToDeleteRequestInformation delete ref of navigation property members for education
 // returns a *RequestInformation when successful
 func (m *ClassesItemMembersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ClassesItemMembersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/education/classes/{educationClass%2Did}/members/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ClassesItemMembersRefRequestBuilder) ToDeleteRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+// ToGetRequestInformation all users in the class. Nullable.
 // returns a *RequestInformation when successful
 func (m *ClassesItemMembersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemMembersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/education/classes/{educationClass%2Did}/members/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -158,7 +149,7 @@ func (m *ClassesItemMembersRefRequestBuilder) ToGetRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add an educationUser member to an educationClass.
+// ToPostRequestInformation create new navigation property ref to members for education
 // returns a *RequestInformation when successful
 func (m *ClassesItemMembersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ClassesItemMembersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/education/classes/{educationClass%2Did}/members/$ref", m.BaseRequestBuilder.PathParameters)

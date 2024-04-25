@@ -36,7 +36,7 @@ func NewItemOutlookTaskFoldersItemTasksItemCompleteRequestBuilder(rawUrl string,
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-beta
 func (m *ItemOutlookTaskFoldersItemTasksItemCompleteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemCompleteRequestBuilderPostRequestConfiguration)(ItemOutlookTaskFoldersItemTasksItemCompleteResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,7 +60,7 @@ func (m *ItemOutlookTaskFoldersItemTasksItemCompleteRequestBuilder) Post(ctx con
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktask-complete?view=graph-rest-beta
 func (m *ItemOutlookTaskFoldersItemTasksItemCompleteRequestBuilder) PostAsCompletePostResponse(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersItemTasksItemCompleteRequestBuilderPostRequestConfiguration)(ItemOutlookTaskFoldersItemTasksItemCompletePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

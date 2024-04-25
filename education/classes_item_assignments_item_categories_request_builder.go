@@ -11,7 +11,7 @@ import (
 type ClassesItemAssignmentsItemCategoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemAssignmentsItemCategoriesRequestBuilderGetQueryParameters list all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// ClassesItemAssignmentsItemCategoriesRequestBuilderGetQueryParameters when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 type ClassesItemAssignmentsItemCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,12 +81,9 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Count()(*ClassesIte
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Delta()(*ClassesItemAssignmentsItemCategoriesDeltaRequestBuilder) {
     return NewClassesItemAssignmentsItemCategoriesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// Get when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 // returns a EducationCategoryCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationCategoryCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +126,7 @@ func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Post(ctx context.Co
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) Ref()(*ClassesItemAssignmentsItemCategoriesRefRequestBuilder) {
     return NewClassesItemAssignmentsItemCategoriesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation list all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+// ToGetRequestInformation when set, enables users to easily find assignments of a given type.  Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsItemCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

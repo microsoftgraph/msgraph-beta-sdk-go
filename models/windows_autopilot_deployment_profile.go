@@ -423,7 +423,7 @@ func (m *WindowsAutopilotDeploymentProfile) GetLocale()(*string) {
     }
     return nil
 }
-// GetManagementServiceAppId gets the managementServiceAppId property value. AzureAD management app ID used during client device-based enrollment discovery
+// GetManagementServiceAppId gets the managementServiceAppId property value. The Entra management service App ID which gets used during client device-based enrollment discovery. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
 // returns a *string when successful
 func (m *WindowsAutopilotDeploymentProfile) GetManagementServiceAppId()(*string) {
     val, err := m.GetBackingStore().Get("managementServiceAppId")
@@ -716,7 +716,7 @@ func (m *WindowsAutopilotDeploymentProfile) SetLocale(value *string)() {
         panic(err)
     }
 }
-// SetManagementServiceAppId sets the managementServiceAppId property value. AzureAD management app ID used during client device-based enrollment discovery
+// SetManagementServiceAppId sets the managementServiceAppId property value. The Entra management service App ID which gets used during client device-based enrollment discovery. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
 func (m *WindowsAutopilotDeploymentProfile) SetManagementServiceAppId(value *string)() {
     err := m.GetBackingStore().Set("managementServiceAppId", value)
     if err != nil {

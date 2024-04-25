@@ -10,7 +10,7 @@ import (
 type ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters invoke function getCloudPcRemoteActionResults
+// ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
 type ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,10 +45,13 @@ func NewManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getCloudPcRemoteActionResults
+// Get check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
 // Deprecated: This method is obsolete. Use GetAsGetCloudPcRemoteActionResultsGetResponse instead.
 // returns a ManagedDevicesItemGetCloudPcRemoteActionResultsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta
 func (m *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderGetRequestConfiguration)(ManagedDevicesItemGetCloudPcRemoteActionResultsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -66,9 +69,12 @@ func (m *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) Get(ctx 
     }
     return res.(ManagedDevicesItemGetCloudPcRemoteActionResultsResponseable), nil
 }
-// GetAsGetCloudPcRemoteActionResultsGetResponse invoke function getCloudPcRemoteActionResults
+// GetAsGetCloudPcRemoteActionResultsGetResponse check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
 // returns a ManagedDevicesItemGetCloudPcRemoteActionResultsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta
 func (m *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) GetAsGetCloudPcRemoteActionResultsGetResponse(ctx context.Context, requestConfiguration *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderGetRequestConfiguration)(ManagedDevicesItemGetCloudPcRemoteActionResultsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +92,7 @@ func (m *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) GetAsGet
     }
     return res.(ManagedDevicesItemGetCloudPcRemoteActionResultsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getCloudPcRemoteActionResults
+// ToGetRequestInformation check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
 // returns a *RequestInformation when successful
 func (m *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

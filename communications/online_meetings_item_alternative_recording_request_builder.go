@@ -40,9 +40,6 @@ func NewOnlineMeetingsItemAlternativeRecordingRequestBuilder(rawUrl string, requ
 // Get get alternativeRecording for the navigation property onlineMeetings from communications
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0
 func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemAlternativeRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

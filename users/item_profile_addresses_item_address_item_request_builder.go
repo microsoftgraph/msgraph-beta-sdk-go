@@ -18,7 +18,7 @@ type ItemProfileAddressesItemAddressItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileAddressesItemAddressItemRequestBuilderGetQueryParameters read the properties and relationships of an itemAddress object.
+// ItemProfileAddressesItemAddressItemRequestBuilderGetQueryParameters represents details of addresses associated with the user.
 type ItemProfileAddressesItemAddressItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewItemProfileAddressesItemAddressItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileAddressesItemAddressItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes an itemAddress object.
+// Delete delete navigation property addresses for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-1.0
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get read the properties and relationships of an itemAddress object.
+// Get represents details of addresses associated with the user.
 // returns a ItemAddressable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/itemaddress-get?view=graph-rest-1.0
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable), nil
 }
-// Patch update the properties of an itemAddress object.
+// Patch update the navigation property addresses in users
 // returns a ItemAddressable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/itemaddress-update?view=graph-rest-1.0
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable), nil
 }
-// ToDeleteRequestInformation deletes an itemAddress object.
+// ToDeleteRequestInformation delete navigation property addresses for users
 // returns a *RequestInformation when successful
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToDeleteRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an itemAddress object.
+// ToGetRequestInformation represents details of addresses associated with the user.
 // returns a *RequestInformation when successful
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToGetRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an itemAddress object.
+// ToPatchRequestInformation update the navigation property addresses in users
 // returns a *RequestInformation when successful
 func (m *ItemProfileAddressesItemAddressItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, requestConfiguration *ItemProfileAddressesItemAddressItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type BookingBusinessesItemCustomQuestionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookingBusinessesItemCustomQuestionsRequestBuilderGetQueryParameters get the bookingCustomQuestion resources associated with a bookingBusiness.
+// BookingBusinessesItemCustomQuestionsRequestBuilderGetQueryParameters all custom questions of this business.
 type BookingBusinessesItemCustomQuestionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewBookingBusinessesItemCustomQuestionsRequestBuilder(rawUrl string, reques
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Count()(*BookingBusinessesItemCustomQuestionsCountRequestBuilder) {
     return NewBookingBusinessesItemCustomQuestionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the bookingCustomQuestion resources associated with a bookingBusiness.
+// Get all custom questions of this business.
 // returns a BookingCustomQuestionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionCollectionResponseable), nil
 }
-// Post create a new bookingCustomQuestion object.
+// Post create new navigation property to customQuestions for solutions
 // returns a BookingCustomQuestionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, requestConfiguration *BookingBusinessesItemCustomQuestionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable), nil
 }
-// ToGetRequestInformation get the bookingCustomQuestion resources associated with a bookingBusiness.
+// ToGetRequestInformation all custom questions of this business.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemCustomQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) ToGetRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new bookingCustomQuestion object.
+// ToPostRequestInformation create new navigation property to customQuestions for solutions
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemCustomQuestionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingCustomQuestionable, requestConfiguration *BookingBusinessesItemCustomQuestionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

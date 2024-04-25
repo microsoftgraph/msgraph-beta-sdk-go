@@ -11,7 +11,7 @@ import (
 type ItemProfileAddressesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileAddressesRequestBuilderGetQueryParameters get the itemAddress resources from the addresses navigation property.
+// ItemProfileAddressesRequestBuilderGetQueryParameters represents details of addresses associated with the user.
 type ItemProfileAddressesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewItemProfileAddressesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemProfileAddressesRequestBuilder) Count()(*ItemProfileAddressesCountRequestBuilder) {
     return NewItemProfileAddressesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the itemAddress resources from the addresses navigation property.
+// Get represents details of addresses associated with the user.
 // returns a ItemAddressCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-1.0
 func (m *ItemProfileAddressesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAddressesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *ItemProfileAddressesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressCollectionResponseable), nil
 }
-// Post create a new itemAddress object in a user's profile.
+// Post create new navigation property to addresses for users
 // returns a ItemAddressable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/profile-post-addresses?view=graph-rest-1.0
 func (m *ItemProfileAddressesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, requestConfiguration *ItemProfileAddressesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *ItemProfileAddressesRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable), nil
 }
-// ToGetRequestInformation get the itemAddress resources from the addresses navigation property.
+// ToGetRequestInformation represents details of addresses associated with the user.
 // returns a *RequestInformation when successful
 func (m *ItemProfileAddressesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAddressesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *ItemProfileAddressesRequestBuilder) ToGetRequestInformation(ctx context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new itemAddress object in a user's profile.
+// ToPostRequestInformation create new navigation property to addresses for users
 // returns a *RequestInformation when successful
 func (m *ItemProfileAddressesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemAddressable, requestConfiguration *ItemProfileAddressesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -61,7 +61,7 @@ func NewDevicesWithDeviceIdRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-beta
 func (m *DevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *DevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,7 +81,7 @@ func (m *DevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, requestC
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-get?view=graph-rest-beta
 func (m *DevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +104,7 @@ func (m *DevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, requestConf
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/device-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/device-update?view=graph-rest-beta
 func (m *DevicesWithDeviceIdRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *DevicesWithDeviceIdRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

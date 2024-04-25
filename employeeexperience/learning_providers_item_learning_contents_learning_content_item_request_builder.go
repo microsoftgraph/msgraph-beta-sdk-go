@@ -18,7 +18,7 @@ type LearningProvidersItemLearningContentsLearningContentItemRequestBuilderDelet
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetQueryParameters get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
+// LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetQueryParameters learning catalog items for the provider.
 type LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilder(r
     urlParams["request-raw-url"] = rawUrl
     return NewLearningProvidersItemLearningContentsLearningContentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the specified learningContent resource that represents the metadata of the specified provider's ingested content.
+// Delete delete navigation property learningContents for employeeExperience
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/learningprovider-delete-learningcontents?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,12 +70,9 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
     }
     return nil
 }
-// Get get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
+// Get learning catalog items for the provider.
 // returns a LearningContentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/learningcontent-get?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,12 +90,9 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable), nil
 }
-// Patch update the specified learningContent resource. Used by a learning provider to ingest or update the metadata for their content in Viva Learning. If the specified learning content doesn't yet exist for the specified provider, this operation creates the metadata for the new content. Otherwise, this operation replaces the metadata of the existing content.
+// Patch update the navigation property learningContents in employeeExperience
 // returns a LearningContentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/learningcontent-update?view=graph-rest-1.0
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +110,7 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable), nil
 }
-// ToDeleteRequestInformation delete the specified learningContent resource that represents the metadata of the specified provider's ingested content.
+// ToDeleteRequestInformation delete navigation property learningContents for employeeExperience
 // returns a *RequestInformation when successful
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +121,7 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
+// ToGetRequestInformation learning catalog items for the provider.
 // returns a *RequestInformation when successful
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +135,7 @@ func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder)
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the specified learningContent resource. Used by a learning provider to ingest or update the metadata for their content in Viva Learning. If the specified learning content doesn't yet exist for the specified provider, this operation creates the metadata for the new content. Otherwise, this operation replaces the metadata of the existing content.
+// ToPatchRequestInformation update the navigation property learningContents in employeeExperience
 // returns a *RequestInformation when successful
 func (m *LearningProvidersItemLearningContentsLearningContentItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningContentable, requestConfiguration *LearningProvidersItemLearningContentsLearningContentItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

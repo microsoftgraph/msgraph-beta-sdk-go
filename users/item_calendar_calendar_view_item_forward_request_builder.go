@@ -34,7 +34,7 @@ func NewItemCalendarCalendarViewItemForwardRequestBuilder(rawUrl string, request
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-beta
 func (m *ItemCalendarCalendarViewItemForwardRequestBuilder) Post(ctx context.Context, body ItemCalendarCalendarViewItemForwardPostRequestBodyable, requestConfiguration *ItemCalendarCalendarViewItemForwardRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

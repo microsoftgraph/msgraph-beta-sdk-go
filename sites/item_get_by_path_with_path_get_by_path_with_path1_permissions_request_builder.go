@@ -11,7 +11,7 @@ import (
 type ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilderGetQueryParameters get the permission resources from the permissions navigation property on a site.
+// ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilderGetQueryParameters the permissions associated with the site. Nullable.
 type ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -59,12 +59,9 @@ func NewItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the permission resources from the permissions navigation property on a site.
+// Get the permissions associated with the site. Nullable.
 // returns a PermissionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-permissions?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,12 +79,9 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionCollectionResponseable), nil
 }
-// Post create a new permission object on a site.
+// Post create new navigation property to permissions for sites
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-post-permissions?view=graph-rest-1.0
 func (m *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -105,7 +99,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilder) Post(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// ToGetRequestInformation get the permission resources from the permissions navigation property on a site.
+// ToGetRequestInformation the permissions associated with the site. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,7 +113,7 @@ func (m *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilder) ToGet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new permission object on a site.
+// ToPostRequestInformation create new navigation property to permissions for sites
 // returns a *RequestInformation when successful
 func (m *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *ItemGetByPathWithPathGetByPathWithPath1PermissionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

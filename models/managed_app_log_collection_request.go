@@ -135,7 +135,7 @@ func (m *ManagedAppLogCollectionRequest) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetManagedAppRegistrationId gets the managedAppRegistrationId property value. The unique identifier of the app instance for which diagnostic was collected.
+// GetManagedAppRegistrationId gets the managedAppRegistrationId property value. The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
 // returns a *string when successful
 func (m *ManagedAppLogCollectionRequest) GetManagedAppRegistrationId()(*string) {
     val, err := m.GetBackingStore().Get("managedAppRegistrationId")
@@ -147,7 +147,7 @@ func (m *ManagedAppLogCollectionRequest) GetManagedAppRegistrationId()(*string) 
     }
     return nil
 }
-// GetRequestedBy gets the requestedBy property value. The user principal name associated with the request for the managed application log collection.
+// GetRequestedBy gets the requestedBy property value. The user principal name associated with the request for the managed application log collection. Read-only.
 // returns a *string when successful
 func (m *ManagedAppLogCollectionRequest) GetRequestedBy()(*string) {
     val, err := m.GetBackingStore().Get("requestedBy")
@@ -195,7 +195,7 @@ func (m *ManagedAppLogCollectionRequest) GetStatus()(*string) {
     }
     return nil
 }
-// GetUploadedLogs gets the uploadedLogs property value. The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs.
+// GetUploadedLogs gets the uploadedLogs property value. The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.
 // returns a []ManagedAppLogUploadable when successful
 func (m *ManagedAppLogCollectionRequest) GetUploadedLogs()([]ManagedAppLogUploadable) {
     val, err := m.GetBackingStore().Get("uploadedLogs")
@@ -307,14 +307,14 @@ func (m *ManagedAppLogCollectionRequest) SetCompletedDateTime(value *i336074805f
         panic(err)
     }
 }
-// SetManagedAppRegistrationId sets the managedAppRegistrationId property value. The unique identifier of the app instance for which diagnostic was collected.
+// SetManagedAppRegistrationId sets the managedAppRegistrationId property value. The unique identifier of the app instance for which diagnostic logs were collected. Read-only.
 func (m *ManagedAppLogCollectionRequest) SetManagedAppRegistrationId(value *string)() {
     err := m.GetBackingStore().Set("managedAppRegistrationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequestedBy sets the requestedBy property value. The user principal name associated with the request for the managed application log collection.
+// SetRequestedBy sets the requestedBy property value. The user principal name associated with the request for the managed application log collection. Read-only.
 func (m *ManagedAppLogCollectionRequest) SetRequestedBy(value *string)() {
     err := m.GetBackingStore().Set("requestedBy", value)
     if err != nil {
@@ -342,7 +342,7 @@ func (m *ManagedAppLogCollectionRequest) SetStatus(value *string)() {
         panic(err)
     }
 }
-// SetUploadedLogs sets the uploadedLogs property value. The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs.
+// SetUploadedLogs sets the uploadedLogs property value. The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.
 func (m *ManagedAppLogCollectionRequest) SetUploadedLogs(value []ManagedAppLogUploadable)() {
     err := m.GetBackingStore().Set("uploadedLogs", value)
     if err != nil {

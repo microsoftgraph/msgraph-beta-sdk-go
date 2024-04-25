@@ -34,7 +34,7 @@ func NewItemListContentTypesItemPublishRequestBuilder(rawUrl string, requestAdap
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-publish?view=graph-rest-beta
 func (m *ItemListContentTypesItemPublishRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemListContentTypesItemPublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

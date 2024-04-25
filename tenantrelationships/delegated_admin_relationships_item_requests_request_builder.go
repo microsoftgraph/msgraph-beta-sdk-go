@@ -11,7 +11,7 @@ import (
 type DelegatedAdminRelationshipsItemRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DelegatedAdminRelationshipsItemRequestsRequestBuilderGetQueryParameters get a list of the delegatedAdminRelationshipRequest objects and their properties.
+// DelegatedAdminRelationshipsItemRequestsRequestBuilderGetQueryParameters the requests associated with the delegated admin relationship.
 type DelegatedAdminRelationshipsItemRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,9 @@ func NewDelegatedAdminRelationshipsItemRequestsRequestBuilder(rawUrl string, req
 func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) Count()(*DelegatedAdminRelationshipsItemRequestsCountRequestBuilder) {
     return NewDelegatedAdminRelationshipsItemRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the delegatedAdminRelationshipRequest objects and their properties.
+// Get the requests associated with the delegated admin relationship.
 // returns a DelegatedAdminRelationshipRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-requests?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipRequestCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,12 +96,9 @@ func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) Get(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipRequestCollectionResponseable), nil
 }
-// Post create a new delegatedAdminRelationshipRequest object.
+// Post create new navigation property to requests for tenantRelationships
 // returns a DelegatedAdminRelationshipRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-requests?view=graph-rest-1.0
 func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipRequestable, requestConfiguration *DelegatedAdminRelationshipsItemRequestsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipRequestable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -122,7 +116,7 @@ func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) Post(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipRequestable), nil
 }
-// ToGetRequestInformation get a list of the delegatedAdminRelationshipRequest objects and their properties.
+// ToGetRequestInformation the requests associated with the delegated admin relationship.
 // returns a *RequestInformation when successful
 func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DelegatedAdminRelationshipsItemRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +130,7 @@ func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) ToGetRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new delegatedAdminRelationshipRequest object.
+// ToPostRequestInformation create new navigation property to requests for tenantRelationships
 // returns a *RequestInformation when successful
 func (m *DelegatedAdminRelationshipsItemRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DelegatedAdminRelationshipRequestable, requestConfiguration *DelegatedAdminRelationshipsItemRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

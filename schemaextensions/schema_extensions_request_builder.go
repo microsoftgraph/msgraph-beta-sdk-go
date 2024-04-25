@@ -81,7 +81,7 @@ func (m *SchemaExtensionsRequestBuilder) Count()(*CountRequestBuilder) {
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-list?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-list?view=graph-rest-beta
 func (m *SchemaExtensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SchemaExtensionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchemaExtensionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -104,7 +104,7 @@ func (m *SchemaExtensionsRequestBuilder) Get(ctx context.Context, requestConfigu
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-post-schemaextensions?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/schemaextension-post-schemaextensions?view=graph-rest-beta
 func (m *SchemaExtensionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchemaExtensionable, requestConfiguration *SchemaExtensionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SchemaExtensionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

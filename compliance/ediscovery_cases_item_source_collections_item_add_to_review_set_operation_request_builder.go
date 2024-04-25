@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetQueryParameters get the last addToReviewSetOperation object associated with a source collection. 
+// EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetQueryParameters adds the results of the sourceCollection to the specified reviewSet.
 type EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,13 +40,10 @@ func NewEdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get the last addToReviewSetOperation object associated with a source collection. 
+// Get adds the results of the sourceCollection to the specified reviewSet.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a AddToReviewSetOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-addtoreviewsetoperation?view=graph-rest-1.0
 func (m *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.AddToReviewSetOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -64,7 +61,7 @@ func (m *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestB
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.AddToReviewSetOperationable), nil
 }
-// ToGetRequestInformation get the last addToReviewSetOperation object associated with a source collection. 
+// ToGetRequestInformation adds the results of the sourceCollection to the specified reviewSet.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourceCollectionsItemAddToReviewSetOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

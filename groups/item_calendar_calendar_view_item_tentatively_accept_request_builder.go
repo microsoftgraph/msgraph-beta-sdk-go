@@ -34,7 +34,7 @@ func NewItemCalendarCalendarViewItemTentativelyAcceptRequestBuilder(rawUrl strin
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-tentativelyaccept?view=graph-rest-beta
 func (m *ItemCalendarCalendarViewItemTentativelyAcceptRequestBuilder) Post(ctx context.Context, body ItemCalendarCalendarViewItemTentativelyAcceptPostRequestBodyable, requestConfiguration *ItemCalendarCalendarViewItemTentativelyAcceptRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

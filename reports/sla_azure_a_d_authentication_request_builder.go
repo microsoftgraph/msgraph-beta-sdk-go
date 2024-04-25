@@ -18,7 +18,7 @@ type SlaAzureADAuthenticationRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SlaAzureADAuthenticationRequestBuilderGetQueryParameters read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant's actual performance against this commitment.
+// SlaAzureADAuthenticationRequestBuilderGetQueryParameters collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
 type SlaAzureADAuthenticationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,9 @@ func (m *SlaAzureADAuthenticationRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant's actual performance against this commitment.
+// Get collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
 // returns a AzureADAuthenticationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/azureadauthentication-get?view=graph-rest-1.0
 func (m *SlaAzureADAuthenticationRequestBuilder) Get(ctx context.Context, requestConfiguration *SlaAzureADAuthenticationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AzureADAuthenticationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *SlaAzureADAuthenticationRequestBuilder) ToDeleteRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant's actual performance against this commitment.
+// ToGetRequestInformation collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
 // returns a *RequestInformation when successful
 func (m *SlaAzureADAuthenticationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SlaAzureADAuthenticationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type ConnectivityBranchesBranchSiteItemRequestBuilderDeleteRequestConfiguration 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityBranchesBranchSiteItemRequestBuilderGetQueryParameters retrieve information about a specific branch.
+// ConnectivityBranchesBranchSiteItemRequestBuilderGetQueryParameters branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
 type ConnectivityBranchesBranchSiteItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,12 +59,9 @@ func NewConnectivityBranchesBranchSiteItemRequestBuilder(rawUrl string, requestA
     urlParams["request-raw-url"] = rawUrl
     return NewConnectivityBranchesBranchSiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a specific branch.
+// Delete delete navigation property branches for networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-delete?view=graph-rest-1.0
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,13 +86,10 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) DeviceLinks()(*Connec
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ForwardingProfiles()(*ConnectivityBranchesItemForwardingProfilesRequestBuilder) {
     return NewConnectivityBranchesItemForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve information about a specific branch.
+// Get branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a BranchSiteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-get?view=graph-rest-1.0
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,13 +107,10 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Get(ctx context.Conte
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable), nil
 }
-// Patch update the configuration or properties of a specific branch.
+// Patch update the navigation property branches in networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a BranchSiteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-branchsite-update?view=graph-rest-1.0
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -137,7 +128,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Patch(ctx context.Con
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable), nil
 }
-// ToDeleteRequestInformation delete a specific branch.
+// ToDeleteRequestInformation delete navigation property branches for networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -149,7 +140,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToDeleteRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve information about a specific branch.
+// ToGetRequestInformation branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -164,7 +155,7 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToGetRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the configuration or properties of a specific branch.
+// ToPatchRequestInformation update the navigation property branches in networkAccess
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesBranchSiteItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

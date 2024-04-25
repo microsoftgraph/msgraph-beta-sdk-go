@@ -11,7 +11,7 @@ import (
 type ItemPlannerPlansItemBucketsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPlannerPlansItemBucketsRequestBuilderGetQueryParameters retrieve a list of plannerBucket objects contained by a plannerPlan object.
+// ItemPlannerPlansItemBucketsRequestBuilderGetQueryParameters collection of buckets in the plan. Read-only. Nullable.
 type ItemPlannerPlansItemBucketsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,12 +81,9 @@ func (m *ItemPlannerPlansItemBucketsRequestBuilder) Count()(*ItemPlannerPlansIte
 func (m *ItemPlannerPlansItemBucketsRequestBuilder) Delta()(*ItemPlannerPlansItemBucketsDeltaRequestBuilder) {
     return NewItemPlannerPlansItemBucketsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of plannerBucket objects contained by a plannerPlan object.
+// Get collection of buckets in the plan. Read-only. Nullable.
 // returns a PlannerBucketCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-1.0
 func (m *ItemPlannerPlansItemBucketsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlansItemBucketsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +121,7 @@ func (m *ItemPlannerPlansItemBucketsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketable), nil
 }
-// ToGetRequestInformation retrieve a list of plannerBucket objects contained by a plannerPlan object.
+// ToGetRequestInformation collection of buckets in the plan. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemBucketsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemBucketsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

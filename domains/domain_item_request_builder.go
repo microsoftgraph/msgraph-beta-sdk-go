@@ -58,7 +58,7 @@ func NewDomainItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/domain-delete?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-delete?view=graph-rest-beta
 func (m *DomainItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DomainItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,7 +93,7 @@ func (m *DomainItemRequestBuilder) ForceDelete()(*ItemForceDeleteRequestBuilder)
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/domain-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-get?view=graph-rest-beta
 func (m *DomainItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DomainItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +116,7 @@ func (m *DomainItemRequestBuilder) Get(ctx context.Context, requestConfiguration
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/domain-update?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-update?view=graph-rest-beta
 func (m *DomainItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, requestConfiguration *DomainItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

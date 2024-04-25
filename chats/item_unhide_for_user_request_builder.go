@@ -34,7 +34,7 @@ func NewItemUnhideForUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-beta
 func (m *ItemUnhideForUserRequestBuilder) Post(ctx context.Context, body ItemUnhideForUserPostRequestBodyable, requestConfiguration *ItemUnhideForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

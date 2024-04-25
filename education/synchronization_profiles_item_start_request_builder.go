@@ -36,7 +36,7 @@ func NewSynchronizationProfilesItemStartRequestBuilder(rawUrl string, requestAda
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-beta
 func (m *SynchronizationProfilesItemStartRequestBuilder) Post(ctx context.Context, requestConfiguration *SynchronizationProfilesItemStartRequestBuilderPostRequestConfiguration)(SynchronizationProfilesItemStartResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -59,7 +59,7 @@ func (m *SynchronizationProfilesItemStartRequestBuilder) Post(ctx context.Contex
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-beta
 func (m *SynchronizationProfilesItemStartRequestBuilder) PostAsStartPostResponse(ctx context.Context, requestConfiguration *SynchronizationProfilesItemStartRequestBuilderPostRequestConfiguration)(SynchronizationProfilesItemStartPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

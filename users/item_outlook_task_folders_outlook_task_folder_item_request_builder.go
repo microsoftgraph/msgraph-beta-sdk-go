@@ -18,7 +18,7 @@ type ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetQueryParameters get the properties and relationships of the specified Outlook task folder.
+// ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetQueryParameters get taskFolders from users
 type ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -52,12 +52,9 @@ func NewItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete the specified Outlook task folder.
+// Delete delete navigation property taskFolders for users
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktaskfolder-delete?view=graph-rest-1.0
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,13 +69,10 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get get the properties and relationships of the specified Outlook task folder.
+// Get get taskFolders from users
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a OutlookTaskFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-1.0
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,13 +90,10 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
-// Patch update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, 'Tasks'.
+// Patch update the navigation property taskFolders in users
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a OutlookTaskFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/outlooktaskfolder-update?view=graph-rest-1.0
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -125,7 +116,7 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Patch(ctx co
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) Tasks()(*ItemOutlookTaskFoldersItemTasksRequestBuilder) {
     return NewItemOutlookTaskFoldersItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete the specified Outlook task folder.
+// ToDeleteRequestInformation delete navigation property taskFolders for users
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -137,7 +128,7 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the properties and relationships of the specified Outlook task folder.
+// ToGetRequestInformation get taskFolders from users
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -152,7 +143,7 @@ func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToGetRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, 'Tasks'.
+// ToPatchRequestInformation update the navigation property taskFolders in users
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskFoldersOutlookTaskFolderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

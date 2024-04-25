@@ -93,7 +93,7 @@ func (m *PermissionGrantPolicy) GetIncludes()([]PermissionGrantConditionSetable)
     }
     return nil
 }
-// GetResourceScopeType gets the resourceScopeType property value. The resource type the pre-approval policy applies to. Possible values: group for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.
+// GetResourceScopeType gets the resourceScopeType property value. The resource type the pre-approval policy applies to. Possible values: team for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.
 // returns a *ResourceScopeType when successful
 func (m *PermissionGrantPolicy) GetResourceScopeType()(*ResourceScopeType) {
     val, err := m.GetBackingStore().Get("resourceScopeType")
@@ -158,7 +158,7 @@ func (m *PermissionGrantPolicy) SetIncludes(value []PermissionGrantConditionSeta
         panic(err)
     }
 }
-// SetResourceScopeType sets the resourceScopeType property value. The resource type the pre-approval policy applies to. Possible values: group for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.
+// SetResourceScopeType sets the resourceScopeType property value. The resource type the pre-approval policy applies to. Possible values: team for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.
 func (m *PermissionGrantPolicy) SetResourceScopeType(value *ResourceScopeType)() {
     err := m.GetBackingStore().Set("resourceScopeType", value)
     if err != nil {

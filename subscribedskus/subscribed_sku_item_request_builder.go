@@ -73,7 +73,7 @@ func (m *SubscribedSkuItemRequestBuilder) Delete(ctx context.Context, requestCon
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/subscribedsku-get?view=graph-rest-1.0
+// [Find more info here]: https://learn.microsoft.com/graph/api/subscribedsku-get?view=graph-rest-beta
 func (m *SubscribedSkuItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubscribedSkuItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubscribedSkuable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
