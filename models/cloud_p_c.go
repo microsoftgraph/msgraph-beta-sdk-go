@@ -32,6 +32,18 @@ func (m *CloudPC) GetAadDeviceId()(*string) {
     }
     return nil
 }
+// GetAllotmentDisplayName gets the allotmentDisplayName property value. The allotment name divides tenant licenses into smaller batches or groups that helps restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.
+// returns a *string when successful
+func (m *CloudPC) GetAllotmentDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("allotmentDisplayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetConnectionSettings gets the connectionSettings property value. The connectionSettings property
 // returns a CloudPcConnectionSettingsable when successful
 func (m *CloudPC) GetConnectionSettings()(CloudPcConnectionSettingsable) {
@@ -103,6 +115,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetAadDeviceId(val)
+        }
+        return nil
+    }
+    res["allotmentDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllotmentDisplayName(val)
         }
         return nil
     }
@@ -667,6 +689,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteStringValue("allotmentDisplayName", m.GetAllotmentDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("connectionSettings", m.GetConnectionSettings())
         if err != nil {
             return err
@@ -846,6 +874,13 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
 // SetAadDeviceId sets the aadDeviceId property value. The Microsoft Entra device ID of the Cloud PC.
 func (m *CloudPC) SetAadDeviceId(value *string)() {
     err := m.GetBackingStore().Set("aadDeviceId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllotmentDisplayName sets the allotmentDisplayName property value. The allotment name divides tenant licenses into smaller batches or groups that helps restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.
+func (m *CloudPC) SetAllotmentDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("allotmentDisplayName", value)
     if err != nil {
         panic(err)
     }
@@ -1043,6 +1078,7 @@ type CloudPCable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAadDeviceId()(*string)
+    GetAllotmentDisplayName()(*string)
     GetConnectionSettings()(CloudPcConnectionSettingsable)
     GetConnectivityResult()(CloudPcConnectivityResultable)
     GetDisasterRecoveryCapability()(CloudPcDisasterRecoveryCapabilityable)
@@ -1071,6 +1107,7 @@ type CloudPCable interface {
     GetUserAccountType()(*CloudPcUserAccountType)
     GetUserPrincipalName()(*string)
     SetAadDeviceId(value *string)()
+    SetAllotmentDisplayName(value *string)()
     SetConnectionSettings(value CloudPcConnectionSettingsable)()
     SetConnectivityResult(value CloudPcConnectivityResultable)()
     SetDisasterRecoveryCapability(value CloudPcDisasterRecoveryCapabilityable)()

@@ -101,7 +101,7 @@ func (m *DomainDnsRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetIsOptional gets the isOptional property value. If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
+// GetIsOptional gets the isOptional property value. If false, the customer must configure this record at the DNS host for Microsoft Online Services to operate correctly with the domain.
 // returns a *bool when successful
 func (m *DomainDnsRecord) GetIsOptional()(*bool) {
     val, err := m.GetBackingStore().Get("isOptional")
@@ -125,7 +125,7 @@ func (m *DomainDnsRecord) GetLabel()(*string) {
     }
     return nil
 }
-// GetRecordType gets the recordType property value. Indicates what type of DNS record this entity represents. The value can be one of the following: CName, Mx, Srv, Txt.
+// GetRecordType gets the recordType property value. Indicates what type of DNS record this entity represents. The value can be one of the following values: CName, Mx, Srv, Txt.
 // returns a *string when successful
 func (m *DomainDnsRecord) GetRecordType()(*string) {
     val, err := m.GetBackingStore().Get("recordType")
@@ -199,7 +199,7 @@ func (m *DomainDnsRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetIsOptional sets the isOptional property value. If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
+// SetIsOptional sets the isOptional property value. If false, the customer must configure this record at the DNS host for Microsoft Online Services to operate correctly with the domain.
 func (m *DomainDnsRecord) SetIsOptional(value *bool)() {
     err := m.GetBackingStore().Set("isOptional", value)
     if err != nil {
@@ -213,7 +213,7 @@ func (m *DomainDnsRecord) SetLabel(value *string)() {
         panic(err)
     }
 }
-// SetRecordType sets the recordType property value. Indicates what type of DNS record this entity represents. The value can be one of the following: CName, Mx, Srv, Txt.
+// SetRecordType sets the recordType property value. Indicates what type of DNS record this entity represents. The value can be one of the following values: CName, Mx, Srv, Txt.
 func (m *DomainDnsRecord) SetRecordType(value *string)() {
     err := m.GetBackingStore().Set("recordType", value)
     if err != nil {

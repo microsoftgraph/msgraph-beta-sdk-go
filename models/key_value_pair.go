@@ -76,7 +76,7 @@ func (m *KeyValuePair) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetName gets the name property value. Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+// GetName gets the name property value. Name for this key-value pair
 // returns a *string when successful
 func (m *KeyValuePair) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -100,7 +100,7 @@ func (m *KeyValuePair) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+// GetValue gets the value property value. Value for this key-value pair
 // returns a *string when successful
 func (m *KeyValuePair) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -151,7 +151,7 @@ func (m *KeyValuePair) SetAdditionalData(value map[string]any)() {
 func (m *KeyValuePair) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. Name for this key-value pair. For more information about possible names for each resource type that uses this configuration, see keyValuePair names and values.
+// SetName sets the name property value. Name for this key-value pair
 func (m *KeyValuePair) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -165,7 +165,7 @@ func (m *KeyValuePair) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. Value for this key-value pair. For more information about possible values for each resource type that uses this configuration, see keyValuePair names and values.
+// SetValue sets the value property value. Value for this key-value pair
 func (m *KeyValuePair) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
