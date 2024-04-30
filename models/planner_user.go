@@ -31,7 +31,7 @@ func (m *PlannerUser) GetAll()([]PlannerDeltaable) {
     }
     return nil
 }
-// GetFavoritePlanReferences gets the favoritePlanReferences property value. A collection that contains the references to the plans that the user has marked as favorites.
+// GetFavoritePlanReferences gets the favoritePlanReferences property value. A collection that contains the references to the plans that the user marked as favorites.
 // returns a PlannerFavoritePlanReferenceCollectionable when successful
 func (m *PlannerUser) GetFavoritePlanReferences()(PlannerFavoritePlanReferenceCollectionable) {
     val, err := m.GetBackingStore().Get("favoritePlanReferences")
@@ -193,7 +193,7 @@ func (m *PlannerUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetMyDayTasks gets the myDayTasks property value. The myDayTasks property
+// GetMyDayTasks gets the myDayTasks property value. Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
 // returns a []PlannerTaskable when successful
 func (m *PlannerUser) GetMyDayTasks()([]PlannerTaskable) {
     val, err := m.GetBackingStore().Get("myDayTasks")
@@ -217,7 +217,7 @@ func (m *PlannerUser) GetPlans()([]PlannerPlanable) {
     }
     return nil
 }
-// GetRecentPlanReferences gets the recentPlanReferences property value. A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
+// GetRecentPlanReferences gets the recentPlanReferences property value. A collection that contains references to the plans that the user recently viewed in apps that support recent plans.
 // returns a PlannerRecentPlanReferenceCollectionable when successful
 func (m *PlannerUser) GetRecentPlanReferences()(PlannerRecentPlanReferenceCollectionable) {
     val, err := m.GetBackingStore().Get("recentPlanReferences")
@@ -229,7 +229,7 @@ func (m *PlannerUser) GetRecentPlanReferences()(PlannerRecentPlanReferenceCollec
     }
     return nil
 }
-// GetRecentPlans gets the recentPlans property value. Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// GetRecentPlans gets the recentPlans property value. Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
 // returns a []PlannerPlanable when successful
 func (m *PlannerUser) GetRecentPlans()([]PlannerPlanable) {
     val, err := m.GetBackingStore().Get("recentPlans")
@@ -376,7 +376,7 @@ func (m *PlannerUser) SetAll(value []PlannerDeltaable)() {
         panic(err)
     }
 }
-// SetFavoritePlanReferences sets the favoritePlanReferences property value. A collection that contains the references to the plans that the user has marked as favorites.
+// SetFavoritePlanReferences sets the favoritePlanReferences property value. A collection that contains the references to the plans that the user marked as favorites.
 func (m *PlannerUser) SetFavoritePlanReferences(value PlannerFavoritePlanReferenceCollectionable)() {
     err := m.GetBackingStore().Set("favoritePlanReferences", value)
     if err != nil {
@@ -390,7 +390,7 @@ func (m *PlannerUser) SetFavoritePlans(value []PlannerPlanable)() {
         panic(err)
     }
 }
-// SetMyDayTasks sets the myDayTasks property value. The myDayTasks property
+// SetMyDayTasks sets the myDayTasks property value. Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
 func (m *PlannerUser) SetMyDayTasks(value []PlannerTaskable)() {
     err := m.GetBackingStore().Set("myDayTasks", value)
     if err != nil {
@@ -404,14 +404,14 @@ func (m *PlannerUser) SetPlans(value []PlannerPlanable)() {
         panic(err)
     }
 }
-// SetRecentPlanReferences sets the recentPlanReferences property value. A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
+// SetRecentPlanReferences sets the recentPlanReferences property value. A collection that contains references to the plans that the user recently viewed in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlanReferences(value PlannerRecentPlanReferenceCollectionable)() {
     err := m.GetBackingStore().Set("recentPlanReferences", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecentPlans sets the recentPlans property value. Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// SetRecentPlans sets the recentPlans property value. Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
 func (m *PlannerUser) SetRecentPlans(value []PlannerPlanable)() {
     err := m.GetBackingStore().Set("recentPlans", value)
     if err != nil {

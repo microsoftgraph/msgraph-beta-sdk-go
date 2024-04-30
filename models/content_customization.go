@@ -104,12 +104,62 @@ func (m *ContentCustomization) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["registrationCampaign"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateKeyValueFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]KeyValueable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(KeyValueable)
+                }
+            }
+            m.SetRegistrationCampaign(res)
+        }
+        return nil
+    }
+    res["registrationCampaignRelativeUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegistrationCampaignRelativeUrl(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *ContentCustomization) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetRegistrationCampaign gets the registrationCampaign property value. The registrationCampaign property
+// returns a []KeyValueable when successful
+func (m *ContentCustomization) GetRegistrationCampaign()([]KeyValueable) {
+    val, err := m.GetBackingStore().Get("registrationCampaign")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]KeyValueable)
+    }
+    return nil
+}
+// GetRegistrationCampaignRelativeUrl gets the registrationCampaignRelativeUrl property value. The registrationCampaignRelativeUrl property
+// returns a *string when successful
+func (m *ContentCustomization) GetRegistrationCampaignRelativeUrl()(*string) {
+    val, err := m.GetBackingStore().Get("registrationCampaignRelativeUrl")
     if err != nil {
         panic(err)
     }
@@ -140,6 +190,24 @@ func (m *ContentCustomization) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetRegistrationCampaign() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRegistrationCampaign()))
+        for i, v := range m.GetRegistrationCampaign() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("registrationCampaign", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("registrationCampaignRelativeUrl", m.GetRegistrationCampaignRelativeUrl())
         if err != nil {
             return err
         }
@@ -184,6 +252,20 @@ func (m *ContentCustomization) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetRegistrationCampaign sets the registrationCampaign property value. The registrationCampaign property
+func (m *ContentCustomization) SetRegistrationCampaign(value []KeyValueable)() {
+    err := m.GetBackingStore().Set("registrationCampaign", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRegistrationCampaignRelativeUrl sets the registrationCampaignRelativeUrl property value. The registrationCampaignRelativeUrl property
+func (m *ContentCustomization) SetRegistrationCampaignRelativeUrl(value *string)() {
+    err := m.GetBackingStore().Set("registrationCampaignRelativeUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type ContentCustomizationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -192,8 +274,12 @@ type ContentCustomizationable interface {
     GetAttributeCollectionRelativeUrl()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
+    GetRegistrationCampaign()([]KeyValueable)
+    GetRegistrationCampaignRelativeUrl()(*string)
     SetAttributeCollection(value []KeyValueable)()
     SetAttributeCollectionRelativeUrl(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
+    SetRegistrationCampaign(value []KeyValueable)()
+    SetRegistrationCampaignRelativeUrl(value *string)()
 }

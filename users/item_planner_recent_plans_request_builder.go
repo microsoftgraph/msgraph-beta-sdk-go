@@ -11,7 +11,7 @@ import (
 type ItemPlannerRecentPlansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPlannerRecentPlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// ItemPlannerRecentPlansRequestBuilderGetQueryParameters read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
 type ItemPlannerRecentPlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewItemPlannerRecentPlansRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemPlannerRecentPlansRequestBuilder) Count()(*ItemPlannerRecentPlansCountRequestBuilder) {
     return NewItemPlannerRecentPlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// Get read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
 // returns a PlannerPlanCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerRecentPlansRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerRecentPlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
@@ -89,7 +89,7 @@ func (m *ItemPlannerRecentPlansRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable), nil
 }
-// ToGetRequestInformation read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+// ToGetRequestInformation read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
 // returns a *RequestInformation when successful
 func (m *ItemPlannerRecentPlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRecentPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

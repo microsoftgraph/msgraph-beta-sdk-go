@@ -10,7 +10,7 @@ import (
 type VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetQueryParameters get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+// VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetQueryParameters get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
 type VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,7 +54,7 @@ func NewVirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+// Get get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
 // Deprecated: This method is obsolete. Use GetAsGetByUserRoleWithRoleGetResponse instead.
 // returns a VirtualEventsWebinarsGetByUserRoleWithRoleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -78,7 +78,7 @@ func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) Get(ctx conte
     }
     return res.(VirtualEventsWebinarsGetByUserRoleWithRoleResponseable), nil
 }
-// GetAsGetByUserRoleWithRoleGetResponse get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+// GetAsGetByUserRoleWithRoleGetResponse get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
 // returns a VirtualEventsWebinarsGetByUserRoleWithRoleGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -101,7 +101,7 @@ func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) GetAsGetByUse
     }
     return res.(VirtualEventsWebinarsGetByUserRoleWithRoleGetResponseable), nil
 }
-// ToGetRequestInformation get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+// ToGetRequestInformation get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsWebinarsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
