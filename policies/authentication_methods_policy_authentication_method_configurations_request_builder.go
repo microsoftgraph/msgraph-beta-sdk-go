@@ -11,7 +11,7 @@ import (
 type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilderGetQueryParameters represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+// AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilderGetQueryParameters read the properties and relationships of an externalAuthenticationMethodConfiguration object.
 type AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewAuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuil
 func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder) Count()(*AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCountRequestBuilder) {
     return NewAuthenticationMethodsPolicyAuthenticationMethodConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+// Get read the properties and relationships of an externalAuthenticationMethodConfiguration object.
 // returns a AuthenticationMethodConfigurationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBui
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodConfigurationable), nil
 }
-// ToGetRequestInformation represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+// ToGetRequestInformation read the properties and relationships of an externalAuthenticationMethodConfiguration object.
 // returns a *RequestInformation when successful
 func (m *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationMethodsPolicyAuthenticationMethodConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -26,10 +26,12 @@ const (
     GPSLOCATIONCONDITION_REQUIREMENTPROVIDER
     RISKBASEDPOLICY_REQUIREMENTPROVIDER
     UNKNOWNFUTUREVALUE_REQUIREMENTPROVIDER
+    SCOPEBASEDAUTHREQUIREMENTPOLICY_REQUIREMENTPROVIDER
+    AUTHENTICATIONSTRENGTHS_REQUIREMENTPROVIDER
 )
 
 func (i RequirementProvider) String() string {
-    return []string{"user", "request", "servicePrincipal", "v1ConditionalAccess", "multiConditionalAccess", "tenantSessionRiskPolicy", "accountCompromisePolicies", "v1ConditionalAccessDependency", "v1ConditionalAccessPolicyIdRequested", "mfaRegistrationRequiredByIdentityProtectionPolicy", "baselineProtection", "mfaRegistrationRequiredByBaselineProtection", "mfaRegistrationRequiredByMultiConditionalAccess", "enforcedForCspAdmins", "securityDefaults", "mfaRegistrationRequiredBySecurityDefaults", "proofUpCodeRequest", "crossTenantOutboundRule", "gpsLocationCondition", "riskBasedPolicy", "unknownFutureValue"}[i]
+    return []string{"user", "request", "servicePrincipal", "v1ConditionalAccess", "multiConditionalAccess", "tenantSessionRiskPolicy", "accountCompromisePolicies", "v1ConditionalAccessDependency", "v1ConditionalAccessPolicyIdRequested", "mfaRegistrationRequiredByIdentityProtectionPolicy", "baselineProtection", "mfaRegistrationRequiredByBaselineProtection", "mfaRegistrationRequiredByMultiConditionalAccess", "enforcedForCspAdmins", "securityDefaults", "mfaRegistrationRequiredBySecurityDefaults", "proofUpCodeRequest", "crossTenantOutboundRule", "gpsLocationCondition", "riskBasedPolicy", "unknownFutureValue", "scopeBasedAuthRequirementPolicy", "authenticationStrengths"}[i]
 }
 func ParseRequirementProvider(v string) (any, error) {
     result := USER_REQUIREMENTPROVIDER
@@ -76,6 +78,10 @@ func ParseRequirementProvider(v string) (any, error) {
             result = RISKBASEDPOLICY_REQUIREMENTPROVIDER
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REQUIREMENTPROVIDER
+        case "scopeBasedAuthRequirementPolicy":
+            result = SCOPEBASEDAUTHREQUIREMENTPOLICY_REQUIREMENTPROVIDER
+        case "authenticationStrengths":
+            result = AUTHENTICATIONSTRENGTHS_REQUIREMENTPROVIDER
         default:
             return 0, errors.New("Unknown RequirementProvider value: " + v)
     }

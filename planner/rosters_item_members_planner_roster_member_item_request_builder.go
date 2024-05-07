@@ -18,7 +18,7 @@ type RostersItemMembersPlannerRosterMemberItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RostersItemMembersPlannerRosterMemberItemRequestBuilderGetQueryParameters retrieves the members of the plannerRoster.
+// RostersItemMembersPlannerRosterMemberItemRequestBuilderGetQueryParameters read the properties and relationships of a plannerRosterMember object.
 type RostersItemMembersPlannerRosterMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewRostersItemMembersPlannerRosterMemberItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewRostersItemMembersPlannerRosterMemberItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property members for planner
+// Delete delete a plannerRosterMember object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerrostermember-delete?view=graph-rest-beta
 func (m *RostersItemMembersPlannerRosterMemberItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RostersItemMembersPlannerRosterMemberItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *RostersItemMembersPlannerRosterMemberItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get retrieves the members of the plannerRoster.
+// Get read the properties and relationships of a plannerRosterMember object.
 // returns a PlannerRosterMemberable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerrostermember-get?view=graph-rest-beta
 func (m *RostersItemMembersPlannerRosterMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RostersItemMembersPlannerRosterMemberItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *RostersItemMembersPlannerRosterMemberItemRequestBuilder) Patch(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterMemberable), nil
 }
-// ToDeleteRequestInformation delete navigation property members for planner
+// ToDeleteRequestInformation delete a plannerRosterMember object.
 // returns a *RequestInformation when successful
 func (m *RostersItemMembersPlannerRosterMemberItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RostersItemMembersPlannerRosterMemberItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +127,7 @@ func (m *RostersItemMembersPlannerRosterMemberItemRequestBuilder) ToDeleteReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieves the members of the plannerRoster.
+// ToGetRequestInformation read the properties and relationships of a plannerRosterMember object.
 // returns a *RequestInformation when successful
 func (m *RostersItemMembersPlannerRosterMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RostersItemMembersPlannerRosterMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

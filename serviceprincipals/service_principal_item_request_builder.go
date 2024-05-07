@@ -76,6 +76,11 @@ func (m *ServicePrincipalItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemb
 func (m *ServicePrincipalItemRequestBuilder) ClaimsMappingPolicies()(*ItemClaimsMappingPoliciesRequestBuilder) {
     return NewItemClaimsMappingPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ClaimsPolicy provides operations to manage the claimsPolicy property of the microsoft.graph.servicePrincipal entity.
+// returns a *ItemClaimsPolicyRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) ClaimsPolicy()(*ItemClaimsPolicyRequestBuilder) {
+    return NewItemClaimsPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewServicePrincipalItemRequestBuilderInternal instantiates a new ServicePrincipalItemRequestBuilder and sets the default values.
 func NewServicePrincipalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicePrincipalItemRequestBuilder) {
     m := &ServicePrincipalItemRequestBuilder{

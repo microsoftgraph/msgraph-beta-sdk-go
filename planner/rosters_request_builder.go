@@ -11,7 +11,7 @@ import (
 type RostersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RostersRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified rosters
+// RostersRequestBuilderGetQueryParameters read the properties and relationships of a plannerRoster object.
 type RostersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewRostersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 func (m *RostersRequestBuilder) Count()(*RostersCountRequestBuilder) {
     return NewRostersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read-only. Nullable. Returns a collection of the specified rosters
+// Get read the properties and relationships of a plannerRoster object.
 // returns a PlannerRosterCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RostersRequestBuilder) Get(ctx context.Context, requestConfiguration *RostersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterCollectionResponseable, error) {
@@ -96,9 +96,12 @@ func (m *RostersRequestBuilder) Get(ctx context.Context, requestConfiguration *R
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterCollectionResponseable), nil
 }
-// Post create new navigation property to rosters for planner
+// Post create a new plannerRoster object.
 // returns a PlannerRosterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/planner-post-rosters?view=graph-rest-beta
 func (m *RostersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, requestConfiguration *RostersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *RostersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable), nil
 }
-// ToGetRequestInformation read-only. Nullable. Returns a collection of the specified rosters
+// ToGetRequestInformation read the properties and relationships of a plannerRoster object.
 // returns a *RequestInformation when successful
 func (m *RostersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RostersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +133,7 @@ func (m *RostersRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to rosters for planner
+// ToPostRequestInformation create a new plannerRoster object.
 // returns a *RequestInformation when successful
 func (m *RostersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, requestConfiguration *RostersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

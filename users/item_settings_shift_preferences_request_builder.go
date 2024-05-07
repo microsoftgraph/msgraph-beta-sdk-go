@@ -18,7 +18,7 @@ type ItemSettingsShiftPreferencesRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters the shift preferences for the user.
+// ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters retrieve the properties and relationships of a shiftPreferences object by ID.
 type ItemSettingsShiftPreferencesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get the shift preferences for the user.
+// Get retrieve the properties and relationships of a shiftPreferences object by ID.
 // returns a ShiftPreferencesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/shiftpreferences-get?view=graph-rest-beta
 func (m *ItemSettingsShiftPreferencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable), nil
 }
-// Patch update the navigation property shiftPreferences in users
+// Patch update the properties and relationships of a shiftPreferences object.
 // returns a ShiftPreferencesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/shiftpreferences-put?view=graph-rest-beta
 func (m *ItemSettingsShiftPreferencesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the shift preferences for the user.
+// ToGetRequestInformation retrieve the properties and relationships of a shiftPreferences object by ID.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property shiftPreferences in users
+// ToPatchRequestInformation update the properties and relationships of a shiftPreferences object.
 // returns a *RequestInformation when successful
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

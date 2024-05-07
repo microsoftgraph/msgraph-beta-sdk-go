@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetQueryParameters components related to this vulnerability article.
+// ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetQueryParameters get a list of vulnerabilityComponent objects related to a known vulnerability.
 type ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder(rawUrl str
 func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Count()(*ThreatIntelligenceVulnerabilitiesItemComponentsCountRequestBuilder) {
     return NewThreatIntelligenceVulnerabilitiesItemComponentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get components related to this vulnerability article.
+// Get get a list of vulnerabilityComponent objects related to a known vulnerability.
 // returns a VulnerabilityComponentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-beta
 func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.VulnerabilityComponentCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) Post(ctx
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.VulnerabilityComponentable), nil
 }
-// ToGetRequestInformation components related to this vulnerability article.
+// ToGetRequestInformation get a list of vulnerabilityComponent objects related to a known vulnerability.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceVulnerabilitiesItemComponentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderGetQueryParameters returns a list of case caseOperation objects for this case.
+// CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderGetQueryParameters read the properties and relationships of a caseOperation object.
 type CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Dele
     }
     return nil
 }
-// Get returns a list of case caseOperation objects for this case.
+// Get read the properties and relationships of a caseOperation object.
 // returns a CaseOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-caseoperation-get?view=graph-rest-beta
 func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CaseOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation returns a list of case caseOperation objects for this case.
+// ToGetRequestInformation read the properties and relationships of a caseOperation object.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemOperationsCaseOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

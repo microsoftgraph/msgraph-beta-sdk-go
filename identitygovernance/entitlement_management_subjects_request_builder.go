@@ -11,7 +11,7 @@ import (
 type EntitlementManagementSubjectsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementSubjectsRequestBuilderGetQueryParameters represents the subjects within entitlement management.
+// EntitlementManagementSubjectsRequestBuilderGetQueryParameters get the properties of an existing accessPackageSubject object.
 type EntitlementManagementSubjectsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewEntitlementManagementSubjectsRequestBuilder(rawUrl string, requestAdapte
 func (m *EntitlementManagementSubjectsRequestBuilder) Count()(*EntitlementManagementSubjectsCountRequestBuilder) {
     return NewEntitlementManagementSubjectsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the subjects within entitlement management.
+// Get get the properties of an existing accessPackageSubject object.
 // returns a AccessPackageSubjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackagesubject-get?view=graph-rest-beta
 func (m *EntitlementManagementSubjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementSubjectsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSubjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *EntitlementManagementSubjectsRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageSubjectable), nil
 }
-// ToGetRequestInformation represents the subjects within entitlement management.
+// ToGetRequestInformation get the properties of an existing accessPackageSubject object.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementSubjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementSubjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

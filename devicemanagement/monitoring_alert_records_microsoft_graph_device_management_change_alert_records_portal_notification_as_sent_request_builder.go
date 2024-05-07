@@ -30,7 +30,7 @@ func NewMonitoringAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPo
     urlParams["request-raw-url"] = rawUrl
     return NewMonitoringAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action changeAlertRecordsPortalNotificationAsSent
+// Post set the isPortalNotificationSent property of all portal notification resources associated with the specified alertRecord to true, marking them as sent. A maximum of 100 alertRecord IDs can be received at one time, and a maximum of 100 portal notification resources can be changed in the isPortalNotificationSent property status.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MonitoringAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder) Post(ctx context.Context, body MonitoringAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentChangeAlertRecordsPortalNotificationAsSentPostRequestBodyable, requestConfiguration *MonitoringAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -46,7 +46,7 @@ func (m *MonitoringAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsP
     }
     return nil
 }
-// ToPostRequestInformation invoke action changeAlertRecordsPortalNotificationAsSent
+// ToPostRequestInformation set the isPortalNotificationSent property of all portal notification resources associated with the specified alertRecord to true, marking them as sent. A maximum of 100 alertRecord IDs can be received at one time, and a maximum of 100 portal notification resources can be changed in the isPortalNotificationSent property status.
 // returns a *RequestInformation when successful
 func (m *MonitoringAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilder) ToPostRequestInformation(ctx context.Context, body MonitoringAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentChangeAlertRecordsPortalNotificationAsSentPostRequestBodyable, requestConfiguration *MonitoringAlertRecordsMicrosoftGraphDeviceManagementChangeAlertRecordsPortalNotificationAsSentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

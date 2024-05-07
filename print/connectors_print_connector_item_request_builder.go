@@ -18,7 +18,7 @@ type ConnectorsPrintConnectorItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectorsPrintConnectorItemRequestBuilderGetQueryParameters the list of available print connectors.
+// ConnectorsPrintConnectorItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a printConnector object.
 type ConnectorsPrintConnectorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewConnectorsPrintConnectorItemRequestBuilder(rawUrl string, requestAdapter
     urlParams["request-raw-url"] = rawUrl
     return NewConnectorsPrintConnectorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property connectors for print
+// Delete delete (unregister) a printConnector.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printconnector-delete?view=graph-rest-beta
 func (m *ConnectorsPrintConnectorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get the list of available print connectors.
+// Get retrieve the properties and relationships of a printConnector object.
 // returns a PrintConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printconnector-get?view=graph-rest-beta
 func (m *ConnectorsPrintConnectorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorable), nil
 }
-// Patch update the navigation property connectors in print
+// Patch update the properties of a printConnector object.
 // returns a PrintConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printconnector-update?view=graph-rest-beta
 func (m *ConnectorsPrintConnectorItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorable, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) Patch(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorable), nil
 }
-// ToDeleteRequestInformation delete navigation property connectors for print
+// ToDeleteRequestInformation delete (unregister) a printConnector.
 // returns a *RequestInformation when successful
 func (m *ConnectorsPrintConnectorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the list of available print connectors.
+// ToGetRequestInformation retrieve the properties and relationships of a printConnector object.
 // returns a *RequestInformation when successful
 func (m *ConnectorsPrintConnectorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *ConnectorsPrintConnectorItemRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property connectors in print
+// ToPatchRequestInformation update the properties of a printConnector object.
 // returns a *RequestInformation when successful
 func (m *ConnectorsPrintConnectorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintConnectorable, requestConfiguration *ConnectorsPrintConnectorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

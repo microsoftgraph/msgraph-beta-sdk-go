@@ -11,7 +11,7 @@ import (
 type IdentitiesHealthIssuesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IdentitiesHealthIssuesRequestBuilderGetQueryParameters represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+// IdentitiesHealthIssuesRequestBuilderGetQueryParameters get a list of health issue objects and their properties.
 type IdentitiesHealthIssuesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewIdentitiesHealthIssuesRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *IdentitiesHealthIssuesRequestBuilder) Count()(*IdentitiesHealthIssuesCountRequestBuilder) {
     return NewIdentitiesHealthIssuesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+// Get get a list of health issue objects and their properties.
 // returns a HealthIssueCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-identitycontainer-list-healthissues?view=graph-rest-beta
 func (m *IdentitiesHealthIssuesRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesHealthIssuesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *IdentitiesHealthIssuesRequestBuilder) Post(ctx context.Context, body i0
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueable), nil
 }
-// ToGetRequestInformation represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+// ToGetRequestInformation get a list of health issue objects and their properties.
 // returns a *RequestInformation when successful
 func (m *IdentitiesHealthIssuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesHealthIssuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

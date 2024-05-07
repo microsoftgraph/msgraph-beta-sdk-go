@@ -11,7 +11,7 @@ import (
 type RecommendationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RecommendationsRequestBuilderGetQueryParameters list of recommended improvements to improve tenant posture.
+// RecommendationsRequestBuilderGetQueryParameters get a list of the recommendation objects and their properties.
 type RecommendationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewRecommendationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *RecommendationsRequestBuilder) Count()(*RecommendationsCountRequestBuilder) {
     return NewRecommendationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of recommended improvements to improve tenant posture.
+// Get get a list of the recommendation objects and their properties.
 // returns a RecommendationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-recommendation?view=graph-rest-beta
 func (m *RecommendationsRequestBuilder) Get(ctx context.Context, requestConfiguration *RecommendationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecommendationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *RecommendationsRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable), nil
 }
-// ToGetRequestInformation list of recommended improvements to improve tenant posture.
+// ToGetRequestInformation get a list of the recommendation objects and their properties.
 // returns a *RequestInformation when successful
 func (m *RecommendationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RecommendationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

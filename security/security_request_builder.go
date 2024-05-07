@@ -147,6 +147,11 @@ func (m *SecurityRequestBuilder) Labels()(*LabelsRequestBuilder) {
 func (m *SecurityRequestBuilder) MicrosoftGraphSecurityRunHuntingQuery()(*MicrosoftGraphSecurityRunHuntingQueryRequestBuilder) {
     return NewMicrosoftGraphSecurityRunHuntingQueryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Partner provides operations to manage the partner property of the microsoft.graph.security entity.
+// returns a *PartnerRequestBuilder when successful
+func (m *SecurityRequestBuilder) Partner()(*PartnerRequestBuilder) {
+    return NewPartnerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update security
 // returns a Securityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

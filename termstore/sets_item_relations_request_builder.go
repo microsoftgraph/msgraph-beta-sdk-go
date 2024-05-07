@@ -11,7 +11,7 @@ import (
 type SetsItemRelationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SetsItemRelationsRequestBuilderGetQueryParameters indicates which terms have been pinned or reused directly under the set.
+// SetsItemRelationsRequestBuilderGetQueryParameters get the different relation of a [term] or [set] from the relations navigation property.
 type SetsItemRelationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewSetsItemRelationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *SetsItemRelationsRequestBuilder) Count()(*SetsItemRelationsCountRequestBuilder) {
     return NewSetsItemRelationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get indicates which terms have been pinned or reused directly under the set.
+// Get get the different relation of a [term] or [set] from the relations navigation property.
 // returns a RelationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-beta
 func (m *SetsItemRelationsRequestBuilder) Get(ctx context.Context, requestConfiguration *SetsItemRelationsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.RelationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *SetsItemRelationsRequestBuilder) Post(ctx context.Context, body i45fc41
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Relationable), nil
 }
-// ToGetRequestInformation indicates which terms have been pinned or reused directly under the set.
+// ToGetRequestInformation get the different relation of a [term] or [set] from the relations navigation property.
 // returns a *RequestInformation when successful
 func (m *SetsItemRelationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SetsItemRelationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

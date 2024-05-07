@@ -11,7 +11,7 @@ import (
 type EngagementAsyncOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EngagementAsyncOperationsRequestBuilderGetQueryParameters a collection of long-running, asynchronous operations related to Viva Engage.
+// EngagementAsyncOperationsRequestBuilderGetQueryParameters get an engagementAsyncOperation to track a long-running operation request.
 type EngagementAsyncOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewEngagementAsyncOperationsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *EngagementAsyncOperationsRequestBuilder) Count()(*EngagementAsyncOperationsCountRequestBuilder) {
     return NewEngagementAsyncOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of long-running, asynchronous operations related to Viva Engage.
+// Get get an engagementAsyncOperation to track a long-running operation request.
 // returns a EngagementAsyncOperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EngagementAsyncOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *EngagementAsyncOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EngagementAsyncOperationCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *EngagementAsyncOperationsRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EngagementAsyncOperationable), nil
 }
-// ToGetRequestInformation a collection of long-running, asynchronous operations related to Viva Engage.
+// ToGetRequestInformation get an engagementAsyncOperation to track a long-running operation request.
 // returns a *RequestInformation when successful
 func (m *EngagementAsyncOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EngagementAsyncOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

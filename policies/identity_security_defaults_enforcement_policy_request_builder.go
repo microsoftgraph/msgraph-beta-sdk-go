@@ -18,7 +18,7 @@ type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters the policy that represents the security defaults that protect against common attacks.
+// IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 type IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get the policy that represents the security defaults that protect against common attacks.
+// Get retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 // returns a IdentitySecurityDefaultsEnforcementPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-get?view=graph-rest-beta
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySecurityDefaultsEnforcementPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySecurityDefaultsEnforcementPolicyable), nil
 }
-// Patch update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+// Patch update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 // returns a IdentitySecurityDefaultsEnforcementPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitysecuritydefaultsenforcementpolicy-update?view=graph-rest-beta
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySecurityDefaultsEnforcementPolicyable, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySecurityDefaultsEnforcementPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToDeleteReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the policy that represents the security defaults that protect against common attacks.
+// ToGetRequestInformation retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
 // returns a *RequestInformation when successful
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToGetRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
+// ToPatchRequestInformation update the properties of an identitySecurityDefaultsEnforcementPolicy object.
 // returns a *RequestInformation when successful
 func (m *IdentitySecurityDefaultsEnforcementPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySecurityDefaultsEnforcementPolicyable, requestConfiguration *IdentitySecurityDefaultsEnforcementPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

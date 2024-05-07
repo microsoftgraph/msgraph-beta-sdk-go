@@ -37,9 +37,12 @@ func NewAlerts_v2ItemCommentsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *Alerts_v2ItemCommentsRequestBuilder) Count()(*Alerts_v2ItemCommentsCountRequestBuilder) {
     return NewAlerts_v2ItemCommentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post sets a new value for the collection of alertComment.
+// Post create a comment for an existing alert based on the specified alert id property.
 // returns a []AlertCommentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-alert-post-comments?view=graph-rest-beta
 func (m *Alerts_v2ItemCommentsRequestBuilder) Post(ctx context.Context, body []i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCommentable, requestConfiguration *Alerts_v2ItemCommentsRequestBuilderPostRequestConfiguration)([]i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCommentable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,7 +63,7 @@ func (m *Alerts_v2ItemCommentsRequestBuilder) Post(ctx context.Context, body []i
     }
     return val, nil
 }
-// ToPostRequestInformation sets a new value for the collection of alertComment.
+// ToPostRequestInformation create a comment for an existing alert based on the specified alert id property.
 // returns a *RequestInformation when successful
 func (m *Alerts_v2ItemCommentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body []i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AlertCommentable, requestConfiguration *Alerts_v2ItemCommentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

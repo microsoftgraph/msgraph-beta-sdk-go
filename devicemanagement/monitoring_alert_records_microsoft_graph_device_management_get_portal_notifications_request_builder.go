@@ -10,7 +10,7 @@ import (
 type MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters invoke function getPortalNotifications
+// MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
 type MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -45,7 +45,7 @@ func NewMonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificatio
     urlParams["request-raw-url"] = rawUrl
     return NewMonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getPortalNotifications
+// Get get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
 // Deprecated: This method is obsolete. Use GetAsGetPortalNotificationsGetResponse instead.
 // returns a MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsGetPortalNotificationsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -66,7 +66,7 @@ func (m *MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificati
     }
     return res.(MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsGetPortalNotificationsResponseable), nil
 }
-// GetAsGetPortalNotificationsGetResponse invoke function getPortalNotifications
+// GetAsGetPortalNotificationsGetResponse get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
 // returns a MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsGetPortalNotificationsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder) GetAsGetPortalNotificationsGetResponse(ctx context.Context, requestConfiguration *MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetRequestConfiguration)(MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsGetPortalNotificationsGetResponseable, error) {
@@ -86,7 +86,7 @@ func (m *MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificati
     }
     return res.(MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsGetPortalNotificationsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getPortalNotifications
+// ToGetRequestInformation get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
 // returns a *RequestInformation when successful
 func (m *MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MonitoringAlertRecordsMicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

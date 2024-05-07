@@ -18,7 +18,7 @@ type ContinuousAccessEvaluationPolicyRequestBuilderDeleteRequestConfiguration st
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParameters represents entry point for continuous access evaluation policy.
+// ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParameters read the properties and relationships of a continuousAccessEvaluationPolicy object.
 type ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Delete(ctx context.Cont
     }
     return nil
 }
-// Get represents entry point for continuous access evaluation policy.
+// Get read the properties and relationships of a continuousAccessEvaluationPolicy object.
 // returns a ContinuousAccessEvaluationPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/continuousaccessevaluationpolicy-get?view=graph-rest-beta
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable), nil
 }
-// Patch update the navigation property continuousAccessEvaluationPolicy in identity
+// Patch update the properties of a continuousAccessEvaluationPolicy object.
 // returns a ContinuousAccessEvaluationPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/continuousaccessevaluationpolicy-update?view=graph-rest-beta
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToDeleteRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents entry point for continuous access evaluation policy.
+// ToGetRequestInformation read the properties and relationships of a continuousAccessEvaluationPolicy object.
 // returns a *RequestInformation when successful
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToGetRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property continuousAccessEvaluationPolicy in identity
+// ToPatchRequestInformation update the properties of a continuousAccessEvaluationPolicy object.
 // returns a *RequestInformation when successful
 func (m *ContinuousAccessEvaluationPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContinuousAccessEvaluationPolicyable, requestConfiguration *ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

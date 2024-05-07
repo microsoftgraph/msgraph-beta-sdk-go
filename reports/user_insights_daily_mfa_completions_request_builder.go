@@ -11,7 +11,7 @@ import (
 type UserInsightsDailyMfaCompletionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserInsightsDailyMfaCompletionsRequestBuilderGetQueryParameters insights for MFA usage on apps registered in the tenant for a specified period.
+// UserInsightsDailyMfaCompletionsRequestBuilderGetQueryParameters get a list of daily MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
 type UserInsightsDailyMfaCompletionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewUserInsightsDailyMfaCompletionsRequestBuilder(rawUrl string, requestAdap
 func (m *UserInsightsDailyMfaCompletionsRequestBuilder) Count()(*UserInsightsDailyMfaCompletionsCountRequestBuilder) {
     return NewUserInsightsDailyMfaCompletionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get insights for MFA usage on apps registered in the tenant for a specified period.
+// Get get a list of daily MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
 // returns a MfaCompletionMetricCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/dailyuserinsightmetricsroot-list-mfacompletions?view=graph-rest-beta
 func (m *UserInsightsDailyMfaCompletionsRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsDailyMfaCompletionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MfaCompletionMetricCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *UserInsightsDailyMfaCompletionsRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MfaCompletionMetricCollectionResponseable), nil
 }
-// ToGetRequestInformation insights for MFA usage on apps registered in the tenant for a specified period.
+// ToGetRequestInformation get a list of daily MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
 // returns a *RequestInformation when successful
 func (m *UserInsightsDailyMfaCompletionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsDailyMfaCompletionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

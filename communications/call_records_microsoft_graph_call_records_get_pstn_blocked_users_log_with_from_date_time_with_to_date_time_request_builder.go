@@ -11,7 +11,7 @@ import (
 type CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters invoke function getPstnBlockedUsersLog
+// CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters get the log of users who are blocked/unblocked from making public switched telephone network (PSTN) calls in Microsoft Teams as a collection of pstnBlockedUsersLogRow entries. The log includes information about each blocked user such as their assigned phone number and the reason they were blocked/unblocked from making calls.
 type CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,7 +52,7 @@ func NewCallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTi
     urlParams["request-raw-url"] = rawUrl
     return NewCallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get invoke function getPstnBlockedUsersLog
+// Get get the log of users who are blocked/unblocked from making public switched telephone network (PSTN) calls in Microsoft Teams as a collection of pstnBlockedUsersLogRow entries. The log includes information about each blocked user such as their assigned phone number and the reason they were blocked/unblocked from making calls.
 // Deprecated: This method is obsolete. Use GetAsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse instead.
 // returns a CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -73,7 +73,7 @@ func (m *CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateT
     }
     return res.(CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeResponseable), nil
 }
-// GetAsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse invoke function getPstnBlockedUsersLog
+// GetAsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse get the log of users who are blocked/unblocked from making public switched telephone network (PSTN) calls in Microsoft Teams as a collection of pstnBlockedUsersLogRow entries. The log includes information about each blocked user such as their assigned phone number and the reason they were blocked/unblocked from making calls.
 // returns a CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilder) GetAsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponse(ctx context.Context, requestConfiguration *CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration)(CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponseable, error) {
@@ -93,7 +93,7 @@ func (m *CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateT
     }
     return res.(CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getPstnBlockedUsersLog
+// ToGetRequestInformation get the log of users who are blocked/unblocked from making public switched telephone network (PSTN) calls in Microsoft Teams as a collection of pstnBlockedUsersLogRow entries. The log includes information about each blocked user such as their assigned phone number and the reason they were blocked/unblocked from making calls.
 // returns a *RequestInformation when successful
 func (m *CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallRecordsMicrosoftGraphCallRecordsGetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

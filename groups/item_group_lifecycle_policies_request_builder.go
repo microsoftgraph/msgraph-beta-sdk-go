@@ -11,7 +11,7 @@ import (
 type ItemGroupLifecyclePoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGroupLifecyclePoliciesRequestBuilderGetQueryParameters the collection of lifecycle policies for this group. Read-only. Nullable.
+// ItemGroupLifecyclePoliciesRequestBuilderGetQueryParameters retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 type ItemGroupLifecyclePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewItemGroupLifecyclePoliciesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemGroupLifecyclePoliciesRequestBuilder) Count()(*ItemGroupLifecyclePoliciesCountRequestBuilder) {
     return NewItemGroupLifecyclePoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of lifecycle policies for this group. Read-only. Nullable.
+// Get retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 // returns a GroupLifecyclePolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-beta
 func (m *ItemGroupLifecyclePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *ItemGroupLifecyclePoliciesRequestBuilder) Post(ctx context.Context, bod
 func (m *ItemGroupLifecyclePoliciesRequestBuilder) RenewGroup()(*ItemGroupLifecyclePoliciesRenewGroupRequestBuilder) {
     return NewItemGroupLifecyclePoliciesRenewGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the collection of lifecycle policies for this group. Read-only. Nullable.
+// ToGetRequestInformation retrieves a list of groupLifecyclePolicy objects to which a group belongs.
 // returns a *RequestInformation when successful
 func (m *ItemGroupLifecyclePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGroupLifecyclePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

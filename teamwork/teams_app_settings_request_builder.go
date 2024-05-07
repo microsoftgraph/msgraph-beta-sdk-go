@@ -18,7 +18,7 @@ type TeamsAppSettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsAppSettingsRequestBuilderGetQueryParameters represents tenant-wide settings for all Teams apps in the tenant.
+// TeamsAppSettingsRequestBuilderGetQueryParameters read the properties and relationships of a teamsAppSettings object.
 type TeamsAppSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *TeamsAppSettingsRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Get represents tenant-wide settings for all Teams apps in the tenant.
+// Get read the properties and relationships of a teamsAppSettings object.
 // returns a TeamsAppSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamsappsettings-get?view=graph-rest-beta
 func (m *TeamsAppSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsAppSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *TeamsAppSettingsRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppSettingsable), nil
 }
-// Patch update the navigation property teamsAppSettings in teamwork
+// Patch update the properties of a teamsAppSettings object.
 // returns a TeamsAppSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamsappsettings-update?view=graph-rest-beta
 func (m *TeamsAppSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppSettingsable, requestConfiguration *TeamsAppSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *TeamsAppSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents tenant-wide settings for all Teams apps in the tenant.
+// ToGetRequestInformation read the properties and relationships of a teamsAppSettings object.
 // returns a *RequestInformation when successful
 func (m *TeamsAppSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsAppSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *TeamsAppSettingsRequestBuilder) ToGetRequestInformation(ctx context.Con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property teamsAppSettings in teamwork
+// ToPatchRequestInformation update the properties of a teamsAppSettings object.
 // returns a *RequestInformation when successful
 func (m *TeamsAppSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppSettingsable, requestConfiguration *TeamsAppSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type CallRecordsItemParticipants_v2RequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallRecordsItemParticipants_v2RequestBuilderGetQueryParameters list of distinct participants in the call.
+// CallRecordsItemParticipants_v2RequestBuilderGetQueryParameters get the list of participant objects associated with a callRecord.
 type CallRecordsItemParticipants_v2RequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewCallRecordsItemParticipants_v2RequestBuilder(rawUrl string, requestAdapt
 func (m *CallRecordsItemParticipants_v2RequestBuilder) Count()(*CallRecordsItemParticipants_v2CountRequestBuilder) {
     return NewCallRecordsItemParticipants_v2CountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of distinct participants in the call.
+// Get get the list of participant objects associated with a callRecord.
 // returns a ParticipantCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/callrecords-callrecord-list-participants_v2?view=graph-rest-beta
 func (m *CallRecordsItemParticipants_v2RequestBuilder) Get(ctx context.Context, requestConfiguration *CallRecordsItemParticipants_v2RequestBuilderGetRequestConfiguration)(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.ParticipantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *CallRecordsItemParticipants_v2RequestBuilder) Post(ctx context.Context,
     }
     return res.(iabe42a55de44a0960e4cc683a105812061defb936fe89e1bc4ab83c390c3839f.Participantable), nil
 }
-// ToGetRequestInformation list of distinct participants in the call.
+// ToGetRequestInformation get the list of participant objects associated with a callRecord.
 // returns a *RequestInformation when successful
 func (m *CallRecordsItemParticipants_v2RequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallRecordsItemParticipants_v2RequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

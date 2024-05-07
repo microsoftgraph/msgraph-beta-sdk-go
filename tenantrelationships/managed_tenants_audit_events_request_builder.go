@@ -11,7 +11,7 @@ import (
 type ManagedTenantsAuditEventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsAuditEventsRequestBuilderGetQueryParameters the collection of audit events across managed tenants.
+// ManagedTenantsAuditEventsRequestBuilderGetQueryParameters get a list of the auditEvent objects and their properties.
 type ManagedTenantsAuditEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewManagedTenantsAuditEventsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ManagedTenantsAuditEventsRequestBuilder) Count()(*ManagedTenantsAuditEventsCountRequestBuilder) {
     return NewManagedTenantsAuditEventsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of audit events across managed tenants.
+// Get get a list of the auditEvent objects and their properties.
 // returns a AuditEventCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-auditevents?view=graph-rest-beta
 func (m *ManagedTenantsAuditEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsAuditEventsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ManagedTenantsAuditEventsRequestBuilder) Post(ctx context.Context, body
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.AuditEventable), nil
 }
-// ToGetRequestInformation the collection of audit events across managed tenants.
+// ToGetRequestInformation get a list of the auditEvent objects and their properties.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsAuditEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsAuditEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderGetQueryParameters a generic representation of a team template definition for a team with a specific structure and configuration.
+// TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderGetQueryParameters read the properties and relationships of a teamTemplateDefinition object.
 type TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) D
     }
     return nil
 }
-// Get a generic representation of a team template definition for a team with a specific structure and configuration.
+// Get read the properties and relationships of a teamTemplateDefinition object.
 // returns a TeamTemplateDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamtemplatedefinition-get?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +129,7 @@ func (m *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a generic representation of a team template definition for a team with a specific structure and configuration.
+// ToGetRequestInformation read the properties and relationships of a teamTemplateDefinition object.
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsTeamTemplateDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

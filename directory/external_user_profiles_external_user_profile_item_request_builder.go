@@ -18,7 +18,7 @@ type ExternalUserProfilesExternalUserProfileItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExternalUserProfilesExternalUserProfileItemRequestBuilderGetQueryParameters collection of external user profiles that represent collaborators in the directory.
+// ExternalUserProfilesExternalUserProfileItemRequestBuilderGetQueryParameters retrieve the properties of a specific externalUserProfile.
 type ExternalUserProfilesExternalUserProfileItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewExternalUserProfilesExternalUserProfileItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewExternalUserProfilesExternalUserProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property externalUserProfiles for directory
+// Delete delete an externalUserProfile object. Note: To permanently delete the externalUserProfile, follow permanently delete an item. To restore an externalUserProfile, follow restore a deleted item.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-delete-externaluserprofiles?view=graph-rest-beta
 func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExternalUserProfilesExternalUserProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get collection of external user profiles that represent collaborators in the directory.
+// Get retrieve the properties of a specific externalUserProfile.
 // returns a ExternalUserProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externaluserprofile-get?view=graph-rest-beta
 func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExternalUserProfilesExternalUserProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalUserProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalUserProfileable), nil
 }
-// Patch update the navigation property externalUserProfiles in directory
+// Patch update the properties of a externalUserProfile object.
 // returns a ExternalUserProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externaluserprofile-update?view=graph-rest-beta
 func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalUserProfileable, requestConfiguration *ExternalUserProfilesExternalUserProfileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalUserProfileable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) Patch(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalUserProfileable), nil
 }
-// ToDeleteRequestInformation delete navigation property externalUserProfiles for directory
+// ToDeleteRequestInformation delete an externalUserProfile object. Note: To permanently delete the externalUserProfile, follow permanently delete an item. To restore an externalUserProfile, follow restore a deleted item.
 // returns a *RequestInformation when successful
 func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExternalUserProfilesExternalUserProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation collection of external user profiles that represent collaborators in the directory.
+// ToGetRequestInformation retrieve the properties of a specific externalUserProfile.
 // returns a *RequestInformation when successful
 func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExternalUserProfilesExternalUserProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) ToGetRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property externalUserProfiles in directory
+// ToPatchRequestInformation update the properties of a externalUserProfile object.
 // returns a *RequestInformation when successful
 func (m *ExternalUserProfilesExternalUserProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalUserProfileable, requestConfiguration *ExternalUserProfilesExternalUserProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -46,11 +46,6 @@ type UserInsightsMonthlyRequestBuilderPatchRequestConfiguration struct {
 func (m *UserInsightsMonthlyRequestBuilder) ActiveUsers()(*UserInsightsMonthlyActiveUsersRequestBuilder) {
     return NewUserInsightsMonthlyActiveUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ActiveUsersBreakdown provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
-// returns a *UserInsightsMonthlyActiveUsersBreakdownRequestBuilder when successful
-func (m *UserInsightsMonthlyRequestBuilder) ActiveUsersBreakdown()(*UserInsightsMonthlyActiveUsersBreakdownRequestBuilder) {
-    return NewUserInsightsMonthlyActiveUsersBreakdownRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Authentications provides operations to manage the authentications property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
 // returns a *UserInsightsMonthlyAuthenticationsRequestBuilder when successful
 func (m *UserInsightsMonthlyRequestBuilder) Authentications()(*UserInsightsMonthlyAuthenticationsRequestBuilder) {

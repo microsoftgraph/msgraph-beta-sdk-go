@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceWhoisRecordsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceWhoisRecordsRequestBuilderGetQueryParameters a list of whoisRecord objects.
+// ThreatIntelligenceWhoisRecordsRequestBuilderGetQueryParameters get a list of whoisRecord objects.
 type ThreatIntelligenceWhoisRecordsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewThreatIntelligenceWhoisRecordsRequestBuilder(rawUrl string, requestAdapt
 func (m *ThreatIntelligenceWhoisRecordsRequestBuilder) Count()(*ThreatIntelligenceWhoisRecordsCountRequestBuilder) {
     return NewThreatIntelligenceWhoisRecordsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a list of whoisRecord objects.
+// Get get a list of whoisRecord objects.
 // returns a WhoisRecordCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-threatintelligence-list-whoisrecords?view=graph-rest-beta
 func (m *ThreatIntelligenceWhoisRecordsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.WhoisRecordCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ThreatIntelligenceWhoisRecordsRequestBuilder) Post(ctx context.Context,
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.WhoisRecordable), nil
 }
-// ToGetRequestInformation a list of whoisRecord objects.
+// ToGetRequestInformation get a list of whoisRecord objects.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceWhoisRecordsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceWhoisRecordsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

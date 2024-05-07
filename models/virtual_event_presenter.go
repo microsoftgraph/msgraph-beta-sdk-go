@@ -83,7 +83,7 @@ func (m *VirtualEventPresenter) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetIdentity gets the identity property value. Identity information of the presenter. The supported identites are: communicationsGuestIdentity and communicationsUserIdentity.
+// GetIdentity gets the identity property value. Identity information of the presenter. The supported identities are: communicationsGuestIdentity and communicationsUserIdentity.
 // returns a Identityable when successful
 func (m *VirtualEventPresenter) GetIdentity()(Identityable) {
     val, err := m.GetBackingStore().Get("identity")
@@ -164,7 +164,7 @@ func (m *VirtualEventPresenter) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetIdentity sets the identity property value. Identity information of the presenter. The supported identites are: communicationsGuestIdentity and communicationsUserIdentity.
+// SetIdentity sets the identity property value. Identity information of the presenter. The supported identities are: communicationsGuestIdentity and communicationsUserIdentity.
 func (m *VirtualEventPresenter) SetIdentity(value Identityable)() {
     err := m.GetBackingStore().Set("identity", value)
     if err != nil {

@@ -18,7 +18,7 @@ type IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderGetQueryParameters set of years represented in the system.
+// IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderGetQueryParameters read the properties and relationships of a yearTimePeriodDefinition object.
 type IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewIndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property years for external
+// Delete delete a yearTimePeriodDefinition object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-beta
 func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get set of years represented in the system.
+// Get read the properties and relationships of a yearTimePeriodDefinition object.
 // returns a YearTimePeriodDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-beta
 func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Get(ctx co
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable), nil
 }
-// Patch update the navigation property years in external
+// Patch update the properties of a yearTimePeriodDefinition object.
 // returns a YearTimePeriodDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-beta
 func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Patch(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, requestConfiguration *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderPatchRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) Patch(ctx 
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable), nil
 }
-// ToDeleteRequestInformation delete navigation property years for external
+// ToDeleteRequestInformation delete a yearTimePeriodDefinition object.
 // returns a *RequestInformation when successful
 func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation set of years represented in the system.
+// ToGetRequestInformation read the properties and relationships of a yearTimePeriodDefinition object.
 // returns a *RequestInformation when successful
 func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) ToGetReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property years in external
+// ToPatchRequestInformation update the properties of a yearTimePeriodDefinition object.
 // returns a *RequestInformation when successful
 func (m *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, requestConfiguration *IndustryDataYearsYearTimePeriodDefinitionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

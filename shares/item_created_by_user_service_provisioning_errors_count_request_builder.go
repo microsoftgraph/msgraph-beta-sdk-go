@@ -12,6 +12,8 @@ type ItemCreatedByUserServiceProvisioningErrorsCountRequestBuilder struct {
 }
 // ItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderGetQueryParameters get the number of the resource
 type ItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
 }
@@ -27,7 +29,7 @@ type ItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderGetRequestConf
 // NewItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderInternal instantiates a new ItemCreatedByUserServiceProvisioningErrorsCountRequestBuilder and sets the default values.
 func NewItemCreatedByUserServiceProvisioningErrorsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCreatedByUserServiceProvisioningErrorsCountRequestBuilder) {
     m := &ItemCreatedByUserServiceProvisioningErrorsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/createdByUser/serviceProvisioningErrors/$count{?%24search}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/createdByUser/serviceProvisioningErrors/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemSubdomainsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetQueryParameters the subdomains that are associated with this host.
+// ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetQueryParameters get the list of subdomain resources associated with a host.
 type ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewThreatIntelligenceHostsItemSubdomainsRequestBuilder(rawUrl string, reque
 func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) Count()(*ThreatIntelligenceHostsItemSubdomainsCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemSubdomainsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the subdomains that are associated with this host.
+// Get get the list of subdomain resources associated with a host.
 // returns a SubdomainCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-subdomains?view=graph-rest-beta
 func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SubdomainCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) Get(ctx context.Co
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SubdomainCollectionResponseable), nil
 }
-// ToGetRequestInformation the subdomains that are associated with this host.
+// ToGetRequestInformation get the list of subdomain resources associated with a host.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostsItemSubdomainsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemSubdomainsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

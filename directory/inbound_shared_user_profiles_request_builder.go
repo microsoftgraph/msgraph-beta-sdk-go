@@ -11,7 +11,7 @@ import (
 type InboundSharedUserProfilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// InboundSharedUserProfilesRequestBuilderGetQueryParameters a collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+// InboundSharedUserProfilesRequestBuilderGetQueryParameters retrieve the properties of all inboundSharedUserProfiles.
 type InboundSharedUserProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewInboundSharedUserProfilesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *InboundSharedUserProfilesRequestBuilder) Count()(*InboundSharedUserProfilesCountRequestBuilder) {
     return NewInboundSharedUserProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+// Get retrieve the properties of all inboundSharedUserProfiles.
 // returns a InboundSharedUserProfileCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-inboundshareduserprofiles?view=graph-rest-beta
 func (m *InboundSharedUserProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *InboundSharedUserProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *InboundSharedUserProfilesRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InboundSharedUserProfileable), nil
 }
-// ToGetRequestInformation a collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+// ToGetRequestInformation retrieve the properties of all inboundSharedUserProfiles.
 // returns a *RequestInformation when successful
 func (m *InboundSharedUserProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InboundSharedUserProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

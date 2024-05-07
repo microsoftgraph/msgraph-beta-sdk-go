@@ -11,7 +11,7 @@ import (
 type VirtualEndpointFrontLineServicePlansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointFrontLineServicePlansRequestBuilderGetQueryParameters front-line service plans for a Cloud PC.
+// VirtualEndpointFrontLineServicePlansRequestBuilderGetQueryParameters get a list of the cloudPcFrontLineServicePlan objects and their properties.
 type VirtualEndpointFrontLineServicePlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewVirtualEndpointFrontLineServicePlansRequestBuilder(rawUrl string, reques
 func (m *VirtualEndpointFrontLineServicePlansRequestBuilder) Count()(*VirtualEndpointFrontLineServicePlansCountRequestBuilder) {
     return NewVirtualEndpointFrontLineServicePlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get front-line service plans for a Cloud PC.
+// Get get a list of the cloudPcFrontLineServicePlan objects and their properties.
 // returns a CloudPcFrontLineServicePlanCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-frontlineserviceplans?view=graph-rest-beta
 func (m *VirtualEndpointFrontLineServicePlansRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointFrontLineServicePlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcFrontLineServicePlanCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *VirtualEndpointFrontLineServicePlansRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcFrontLineServicePlanable), nil
 }
-// ToGetRequestInformation front-line service plans for a Cloud PC.
+// ToGetRequestInformation get a list of the cloudPcFrontLineServicePlan objects and their properties.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointFrontLineServicePlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointFrontLineServicePlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

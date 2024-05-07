@@ -11,7 +11,7 @@ import (
 type AttackSimulationTrainingsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationTrainingsRequestBuilderGetQueryParameters represents details about attack simulation trainings.
+// AttackSimulationTrainingsRequestBuilderGetQueryParameters get a list of the training objects and their properties.
 type AttackSimulationTrainingsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewAttackSimulationTrainingsRequestBuilder(rawUrl string, requestAdapter i2
 func (m *AttackSimulationTrainingsRequestBuilder) Count()(*AttackSimulationTrainingsCountRequestBuilder) {
     return NewAttackSimulationTrainingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents details about attack simulation trainings.
+// Get get a list of the training objects and their properties.
 // returns a TrainingCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/attacksimulationroot-list-trainings?view=graph-rest-beta
 func (m *AttackSimulationTrainingsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationTrainingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrainingCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *AttackSimulationTrainingsRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Trainingable), nil
 }
-// ToGetRequestInformation represents details about attack simulation trainings.
+// ToGetRequestInformation get a list of the training objects and their properties.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationTrainingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationTrainingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ClassesItemGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemGroupRequestBuilderGetQueryParameters get group from education
+// ClassesItemGroupRequestBuilderGetQueryParameters retrieve the Microsoft 365 group that corresponds to this educationClass.
 type ClassesItemGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,9 +40,12 @@ func NewClassesItemGroupRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get group from education
+// Get retrieve the Microsoft 365 group that corresponds to this educationClass.
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-get-group?view=graph-rest-beta
 func (m *ClassesItemGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -65,7 +68,7 @@ func (m *ClassesItemGroupRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *ClassesItemGroupRequestBuilder) ServiceProvisioningErrors()(*ClassesItemGroupServiceProvisioningErrorsRequestBuilder) {
     return NewClassesItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get group from education
+// ToGetRequestInformation retrieve the Microsoft 365 group that corresponds to this educationClass.
 // returns a *RequestInformation when successful
 func (m *ClassesItemGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

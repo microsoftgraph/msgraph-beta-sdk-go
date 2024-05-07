@@ -41,7 +41,7 @@ func NewReportsMicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTime
     urlParams["request-raw-url"] = rawUrl
     return NewReportsMicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil, nil)
 }
-// Get invoke function getCrossTenantSummary
+// Get get a summary of the cross-tenant access patterns.
 // returns a CrossTenantSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ReportsMicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CrossTenantSummaryable, error) {
@@ -61,7 +61,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTim
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CrossTenantSummaryable), nil
 }
-// ToGetRequestInformation invoke function getCrossTenantSummary
+// ToGetRequestInformation get a summary of the cross-tenant access patterns.
 // returns a *RequestInformation when successful
 func (m *ReportsMicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

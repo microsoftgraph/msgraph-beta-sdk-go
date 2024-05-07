@@ -11,7 +11,7 @@ import (
 type ItemMyDecisionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMyDecisionsRequestBuilderGetQueryParameters the collection of decisions for the caller, if the caller is a reviewer.
+// ItemMyDecisionsRequestBuilderGetQueryParameters in the Microsoft Entra access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
 type ItemMyDecisionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewItemMyDecisionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *ItemMyDecisionsRequestBuilder) Count()(*ItemMyDecisionsCountRequestBuilder) {
     return NewItemMyDecisionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of decisions for the caller, if the caller is a reviewer.
+// Get in the Microsoft Entra access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
 // returns a AccessReviewDecisionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-listmydecisions?view=graph-rest-beta
 func (m *ItemMyDecisionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMyDecisionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ItemMyDecisionsRequestBuilder) Post(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewDecisionable), nil
 }
-// ToGetRequestInformation the collection of decisions for the caller, if the caller is a reviewer.
+// ToGetRequestInformation in the Microsoft Entra access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
 // returns a *RequestInformation when successful
 func (m *ItemMyDecisionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMyDecisionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

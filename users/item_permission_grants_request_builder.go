@@ -11,7 +11,7 @@ import (
 type ItemPermissionGrantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPermissionGrantsRequestBuilderGetQueryParameters list all resource-specific permission grants of a user.
+// ItemPermissionGrantsRequestBuilderGetQueryParameters list all resource-specific permission grants of a user. This list specifies the Microsoft Entra apps that have access to the user, along with the corresponding kind of resource-specific access that each app has.
 type ItemPermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewItemPermissionGrantsRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ItemPermissionGrantsRequestBuilder) Count()(*ItemPermissionGrantsCountRequestBuilder) {
     return NewItemPermissionGrantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list all resource-specific permission grants of a user.
+// Get list all resource-specific permission grants of a user. This list specifies the Microsoft Entra apps that have access to the user, along with the corresponding kind of resource-specific access that each app has.
 // returns a ResourceSpecificPermissionGrantCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-permissiongrants?view=graph-rest-beta
 func (m *ItemPermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPermissionGrantsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ItemPermissionGrantsRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
 }
-// ToGetRequestInformation list all resource-specific permission grants of a user.
+// ToGetRequestInformation list all resource-specific permission grants of a user. This list specifies the Microsoft Entra apps that have access to the user, along with the corresponding kind of resource-specific access that each app has.
 // returns a *RequestInformation when successful
 func (m *ItemPermissionGrantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPermissionGrantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type AttackSimulationSimulationAutomationsItemRunsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetQueryParameters a collection of simulation automation runs.
+// AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetQueryParameters get a list of the attack simulation automation runs for a tenant.
 type AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewAttackSimulationSimulationAutomationsItemRunsRequestBuilder(rawUrl strin
 func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) Count()(*AttackSimulationSimulationAutomationsItemRunsCountRequestBuilder) {
     return NewAttackSimulationSimulationAutomationsItemRunsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of simulation automation runs.
+// Get get a list of the attack simulation automation runs for a tenant.
 // returns a SimulationAutomationRunCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-beta
 func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) Get(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SimulationAutomationRunCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) Post(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SimulationAutomationRunable), nil
 }
-// ToGetRequestInformation a collection of simulation automation runs.
+// ToGetRequestInformation get a list of the attack simulation automation runs for a tenant.
 // returns a *RequestInformation when successful
 func (m *AttackSimulationSimulationAutomationsItemRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AttackSimulationSimulationAutomationsItemRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

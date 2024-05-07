@@ -11,7 +11,7 @@ import (
 type ItemProfileEmailsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemProfileEmailsRequestBuilderGetQueryParameters represents detailed information about email addresses associated with the user.
+// ItemProfileEmailsRequestBuilderGetQueryParameters retrieve the properties and relationships of an itemEmail object in a user's profile.
 type ItemProfileEmailsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemProfileEmailsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *ItemProfileEmailsRequestBuilder) Count()(*ItemProfileEmailsCountRequestBuilder) {
     return NewItemProfileEmailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents detailed information about email addresses associated with the user.
+// Get retrieve the properties and relationships of an itemEmail object in a user's profile.
 // returns a ItemEmailCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileEmailsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileEmailsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemProfileEmailsRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable), nil
 }
-// ToGetRequestInformation represents detailed information about email addresses associated with the user.
+// ToGetRequestInformation retrieve the properties and relationships of an itemEmail object in a user's profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfileEmailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEmailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

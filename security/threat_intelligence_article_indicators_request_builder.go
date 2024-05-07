@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceArticleIndicatorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceArticleIndicatorsRequestBuilderGetQueryParameters refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
+// ThreatIntelligenceArticleIndicatorsRequestBuilderGetQueryParameters read the properties and relationships of an articleIndicator object.
 type ThreatIntelligenceArticleIndicatorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewThreatIntelligenceArticleIndicatorsRequestBuilder(rawUrl string, request
 func (m *ThreatIntelligenceArticleIndicatorsRequestBuilder) Count()(*ThreatIntelligenceArticleIndicatorsCountRequestBuilder) {
     return NewThreatIntelligenceArticleIndicatorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of an articleIndicator object.
 // returns a ArticleIndicatorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ThreatIntelligenceArticleIndicatorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceArticleIndicatorsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ArticleIndicatorCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ThreatIntelligenceArticleIndicatorsRequestBuilder) Post(ctx context.Con
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.ArticleIndicatorable), nil
 }
-// ToGetRequestInformation refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of an articleIndicator object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceArticleIndicatorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceArticleIndicatorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemTagsRequestBuilderGetQueryParameters returns a list of tag objects associated to this case.
+// EdiscoveryCasesItemTagsRequestBuilderGetQueryParameters retrieve a list of tag objects from an eDiscovery case.
 type EdiscoveryCasesItemTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,10 +77,13 @@ func NewEdiscoveryCasesItemTagsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *EdiscoveryCasesItemTagsRequestBuilder) Count()(*EdiscoveryCasesItemTagsCountRequestBuilder) {
     return NewEdiscoveryCasesItemTagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns a list of tag objects associated to this case.
+// Get retrieve a list of tag objects from an eDiscovery case.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a TagCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-beta
 func (m *EdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,10 +106,13 @@ func (m *EdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, request
 func (m *EdiscoveryCasesItemTagsRequestBuilder) MicrosoftGraphEdiscoveryAsHierarchy()(*EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder) {
     return NewEdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create new navigation property to tags for compliance
+// Post create a new tag for the specified case.  The tags are used in review sets while reviewing content.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a Tagable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-beta
 func (m *EdiscoveryCasesItemTagsRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, requestConfiguration *EdiscoveryCasesItemTagsRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *EdiscoveryCasesItemTagsRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable), nil
 }
-// ToGetRequestInformation returns a list of tag objects associated to this case.
+// ToGetRequestInformation retrieve a list of tag objects from an eDiscovery case.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,7 +145,7 @@ func (m *EdiscoveryCasesItemTagsRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to tags for compliance
+// ToPostRequestInformation create a new tag for the specified case.  The tags are used in review sets while reviewing content.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemTagsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Tagable, requestConfiguration *EdiscoveryCasesItemTagsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

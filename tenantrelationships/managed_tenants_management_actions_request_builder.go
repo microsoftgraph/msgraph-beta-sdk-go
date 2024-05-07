@@ -11,7 +11,7 @@ import (
 type ManagedTenantsManagementActionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsManagementActionsRequestBuilderGetQueryParameters the collection of baseline management actions across managed tenants.
+// ManagedTenantsManagementActionsRequestBuilderGetQueryParameters get a list of the managementAction objects and their properties.
 type ManagedTenantsManagementActionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewManagedTenantsManagementActionsRequestBuilder(rawUrl string, requestAdap
 func (m *ManagedTenantsManagementActionsRequestBuilder) Count()(*ManagedTenantsManagementActionsCountRequestBuilder) {
     return NewManagedTenantsManagementActionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of baseline management actions across managed tenants.
+// Get get a list of the managementAction objects and their properties.
 // returns a ManagementActionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactions?view=graph-rest-beta
 func (m *ManagedTenantsManagementActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementActionsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ManagedTenantsManagementActionsRequestBuilder) Post(ctx context.Context
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionable), nil
 }
-// ToGetRequestInformation the collection of baseline management actions across managed tenants.
+// ToGetRequestInformation get a list of the managementAction objects and their properties.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsManagementActionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagementActionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type SetsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SetsRequestBuilderGetQueryParameters collection of all sets available in the term store.
+// SetsRequestBuilderGetQueryParameters read the properties and relationships of a set object.
 type SetsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewSetsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1
 func (m *SetsRequestBuilder) Count()(*SetsCountRequestBuilder) {
     return NewSetsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get collection of all sets available in the term store.
+// Get read the properties and relationships of a set object.
 // returns a SetCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SetsRequestBuilder) Get(ctx context.Context, requestConfiguration *SetsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.SetCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *SetsRequestBuilder) Post(ctx context.Context, body i45fc41673b99130d86c
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable), nil
 }
-// ToGetRequestInformation collection of all sets available in the term store.
+// ToGetRequestInformation read the properties and relationships of a set object.
 // returns a *RequestInformation when successful
 func (m *SetsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SetsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

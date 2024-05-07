@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationSignInPreferencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationSignInPreferencesRequestBuilderGetQueryParameters the settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
+// ItemAuthenticationSignInPreferencesRequestBuilderGetQueryParameters read the properties and relationships of a signInPreferences object.
 type ItemAuthenticationSignInPreferencesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,9 +47,12 @@ func NewItemAuthenticationSignInPreferencesRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationSignInPreferencesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
+// Get read the properties and relationships of a signInPreferences object.
 // returns a SignInPreferencesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authentication-get?view=graph-rest-beta
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -67,9 +70,12 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable), nil
 }
-// Patch update property signInPreferences value.
+// Patch update the properties of a signInPreferences object.
 // returns a SignInPreferencesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authentication-update?view=graph-rest-beta
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -87,7 +93,7 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Patch(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable), nil
 }
-// ToGetRequestInformation the settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
+// ToGetRequestInformation read the properties and relationships of a signInPreferences object.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -101,7 +107,7 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToGetRequestInformat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update property signInPreferences value.
+// ToPatchRequestInformation update the properties of a signInPreferences object.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

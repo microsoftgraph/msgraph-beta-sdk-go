@@ -18,7 +18,7 @@ type LabelsCitationsCitationTemplateItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsCitationsCitationTemplateItemRequestBuilderGetQueryParameters the specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
+// LabelsCitationsCitationTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a citationTemplate object.
 type LabelsCitationsCitationTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *LabelsCitationsCitationTemplateItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get the specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
+// Get read the properties and relationships of a citationTemplate object.
 // returns a CitationTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-citationtemplate-get?view=graph-rest-beta
 func (m *LabelsCitationsCitationTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsCitationsCitationTemplateItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CitationTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *LabelsCitationsCitationTemplateItemRequestBuilder) ToDeleteRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
+// ToGetRequestInformation read the properties and relationships of a citationTemplate object.
 // returns a *RequestInformation when successful
 func (m *LabelsCitationsCitationTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsCitationsCitationTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

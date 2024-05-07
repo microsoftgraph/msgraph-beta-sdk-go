@@ -31,18 +31,6 @@ func (m *MonthlyUserInsightMetricsRoot) GetActiveUsers()([]ActiveUsersMetricable
     }
     return nil
 }
-// GetActiveUsersBreakdown gets the activeUsersBreakdown property value. The activeUsersBreakdown property
-// returns a []ActiveUsersBreakdownMetricable when successful
-func (m *MonthlyUserInsightMetricsRoot) GetActiveUsersBreakdown()([]ActiveUsersBreakdownMetricable) {
-    val, err := m.GetBackingStore().Get("activeUsersBreakdown")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ActiveUsersBreakdownMetricable)
-    }
-    return nil
-}
 // GetAuthentications gets the authentications property value. Insights for authentications on apps registered in the tenant for a specified period.
 // returns a []AuthenticationsMetricable when successful
 func (m *MonthlyUserInsightMetricsRoot) GetAuthentications()([]AuthenticationsMetricable) {
@@ -72,22 +60,6 @@ func (m *MonthlyUserInsightMetricsRoot) GetFieldDeserializers()(map[string]func(
                 }
             }
             m.SetActiveUsers(res)
-        }
-        return nil
-    }
-    res["activeUsersBreakdown"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateActiveUsersBreakdownMetricFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ActiveUsersBreakdownMetricable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ActiveUsersBreakdownMetricable)
-                }
-            }
-            m.SetActiveUsersBreakdown(res)
         }
         return nil
     }
@@ -295,18 +267,6 @@ func (m *MonthlyUserInsightMetricsRoot) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
-    if m.GetActiveUsersBreakdown() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetActiveUsersBreakdown()))
-        for i, v := range m.GetActiveUsersBreakdown() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("activeUsersBreakdown", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetAuthentications() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAuthentications()))
         for i, v := range m.GetAuthentications() {
@@ -400,13 +360,6 @@ func (m *MonthlyUserInsightMetricsRoot) SetActiveUsers(value []ActiveUsersMetric
         panic(err)
     }
 }
-// SetActiveUsersBreakdown sets the activeUsersBreakdown property value. The activeUsersBreakdown property
-func (m *MonthlyUserInsightMetricsRoot) SetActiveUsersBreakdown(value []ActiveUsersBreakdownMetricable)() {
-    err := m.GetBackingStore().Set("activeUsersBreakdown", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetAuthentications sets the authentications property value. Insights for authentications on apps registered in the tenant for a specified period.
 func (m *MonthlyUserInsightMetricsRoot) SetAuthentications(value []AuthenticationsMetricable)() {
     err := m.GetBackingStore().Set("authentications", value)
@@ -460,7 +413,6 @@ type MonthlyUserInsightMetricsRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetActiveUsers()([]ActiveUsersMetricable)
-    GetActiveUsersBreakdown()([]ActiveUsersBreakdownMetricable)
     GetAuthentications()([]AuthenticationsMetricable)
     GetInactiveUsers()([]MonthlyInactiveUsersMetricable)
     GetInactiveUsersByApplication()([]MonthlyInactiveUsersByApplicationMetricable)
@@ -469,7 +421,6 @@ type MonthlyUserInsightMetricsRootable interface {
     GetSignUps()([]UserSignUpMetricable)
     GetSummary()([]InsightSummaryable)
     SetActiveUsers(value []ActiveUsersMetricable)()
-    SetActiveUsersBreakdown(value []ActiveUsersBreakdownMetricable)()
     SetAuthentications(value []AuthenticationsMetricable)()
     SetInactiveUsers(value []MonthlyInactiveUsersMetricable)()
     SetInactiveUsersByApplication(value []MonthlyInactiveUsersByApplicationMetricable)()

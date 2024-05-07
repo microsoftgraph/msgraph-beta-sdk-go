@@ -31,7 +31,7 @@ func NewManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphMana
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action changeDeploymentStatus
+// Post changes the tenant level deployment status for the management action. This information is used to provide insights into what management actions are in a specific state. As example there might be a plan to apply the require multi-factor authentication for admins, so it would be ideal to change the status to planned to reflect the appropriate status.
 // returns a ManagementActionDeploymentStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilder) Post(ctx context.Context, body ManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphManagedTenantsChangeDeploymentStatusChangeDeploymentStatusPostRequestBodyable, requestConfiguration *ManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable, error) {
@@ -51,7 +51,7 @@ func (m *ManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphMan
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable), nil
 }
-// ToPostRequestInformation invoke action changeDeploymentStatus
+// ToPostRequestInformation changes the tenant level deployment status for the management action. This information is used to provide insights into what management actions are in a specific state. As example there might be a plan to apply the require multi-factor authentication for admins, so it would be ideal to change the status to planned to reflect the appropriate status.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphManagedTenantsChangeDeploymentStatusChangeDeploymentStatusPostRequestBodyable, requestConfiguration *ManagedTenantsManagementActionTenantDeploymentStatusesMicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

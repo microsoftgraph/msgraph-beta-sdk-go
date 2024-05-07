@@ -18,7 +18,7 @@ type TenantStatusRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TenantStatusRequestBuilderGetQueryParameters represents the status of the Global Secure Access services for the tenant.
+// TenantStatusRequestBuilderGetQueryParameters retrieve the onboarding status of a specific tenant.
 type TenantStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *TenantStatusRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get represents the status of the Global Secure Access services for the tenant.
+// Get retrieve the onboarding status of a specific tenant.
 // returns a TenantStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-tenantstatus-get?view=graph-rest-beta
 func (m *TenantStatusRequestBuilder) Get(ctx context.Context, requestConfiguration *TenantStatusRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.TenantStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *TenantStatusRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the status of the Global Secure Access services for the tenant.
+// ToGetRequestInformation retrieve the onboarding status of a specific tenant.
 // returns a *RequestInformation when successful
 func (m *TenantStatusRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TenantStatusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

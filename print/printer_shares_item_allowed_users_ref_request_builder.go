@@ -11,7 +11,7 @@ import (
 type PrinterSharesItemAllowedUsersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrinterSharesItemAllowedUsersRefRequestBuilderDeleteQueryParameters delete ref of navigation property allowedUsers for print
+// PrinterSharesItemAllowedUsersRefRequestBuilderDeleteQueryParameters revoke the specified user's access to submit print jobs to the associated printerShare.
 type PrinterSharesItemAllowedUsersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -69,9 +69,12 @@ func NewPrinterSharesItemAllowedUsersRefRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewPrinterSharesItemAllowedUsersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property allowedUsers for print
+// Delete revoke the specified user's access to submit print jobs to the associated printerShare.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printershare-delete-alloweduser?view=graph-rest-beta
 func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property allowedUsers for print
+// ToDeleteRequestInformation revoke the specified user's access to submit print jobs to the associated printerShare.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemAllowedUsersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

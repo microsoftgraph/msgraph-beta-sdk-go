@@ -11,6 +11,13 @@ import (
 type ItemListItemsItemActivitiesItemDriveItemContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemListItemsItemActivitiesItemDriveItemContentRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemListItemsItemActivitiesItemDriveItemContentRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // ItemListItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters get content for the navigation property driveItem from drives
 type ItemListItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters struct {
     // Format of the content
@@ -44,6 +51,22 @@ func NewItemListItemsItemActivitiesItemDriveItemContentRequestBuilder(rawUrl str
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemListItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete delete content for the navigation property driveItem in drives
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *ItemListItemsItemActivitiesItemDriveItemContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListItemsItemActivitiesItemDriveItemContentRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get get content for the navigation property driveItem from drives
 // returns a []byte when successful
@@ -84,6 +107,17 @@ func (m *ItemListItemsItemActivitiesItemDriveItemContentRequestBuilder) Put(ctx 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
+}
+// ToDeleteRequestInformation delete content for the navigation property driveItem in drives
+// returns a *RequestInformation when successful
+func (m *ItemListItemsItemActivitiesItemDriveItemContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemActivitiesItemDriveItemContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation get content for the navigation property driveItem from drives
 // returns a *RequestInformation when successful

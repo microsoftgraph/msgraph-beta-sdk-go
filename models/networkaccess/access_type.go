@@ -8,10 +8,11 @@ const (
     QUICKACCESS_ACCESSTYPE AccessType = iota
     PRIVATEACCESS_ACCESSTYPE
     UNKNOWNFUTUREVALUE_ACCESSTYPE
+    APPACCESS_ACCESSTYPE
 )
 
 func (i AccessType) String() string {
-    return []string{"quickAccess", "privateAccess", "unknownFutureValue"}[i]
+    return []string{"quickAccess", "privateAccess", "unknownFutureValue", "appAccess"}[i]
 }
 func ParseAccessType(v string) (any, error) {
     result := QUICKACCESS_ACCESSTYPE
@@ -22,6 +23,8 @@ func ParseAccessType(v string) (any, error) {
             result = PRIVATEACCESS_ACCESSTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSTYPE
+        case "appAccess":
+            result = APPACCESS_ACCESSTYPE
         default:
             return 0, errors.New("Unknown AccessType value: " + v)
     }

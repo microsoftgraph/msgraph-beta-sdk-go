@@ -18,7 +18,7 @@ type LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetQueryParameters specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+// LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a filePlanReferenceTemplate object.
 type LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) De
     }
     return nil
 }
-// Get specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+// Get read the properties and relationships of a filePlanReferenceTemplate object.
 // returns a FilePlanReferenceTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-fileplanreferencetemplate-get?view=graph-rest-beta
 func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.FilePlanReferenceTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation specifies a unique alpha-numeric identifier for an organization’s retention schedule.
+// ToGetRequestInformation read the properties and relationships of a filePlanReferenceTemplate object.
 // returns a *RequestInformation when successful
 func (m *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsFilePlanReferencesFilePlanReferenceTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

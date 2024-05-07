@@ -11,7 +11,7 @@ import (
 type SynchronizationProfilesItemErrorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SynchronizationProfilesItemErrorsRequestBuilderGetQueryParameters all errors associated with this synchronization profile.
+// SynchronizationProfilesItemErrorsRequestBuilderGetQueryParameters get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
 type SynchronizationProfilesItemErrorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewSynchronizationProfilesItemErrorsRequestBuilder(rawUrl string, requestAd
 func (m *SynchronizationProfilesItemErrorsRequestBuilder) Count()(*SynchronizationProfilesItemErrorsCountRequestBuilder) {
     return NewSynchronizationProfilesItemErrorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get all errors associated with this synchronization profile.
+// Get get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
 // returns a EducationSynchronizationErrorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-beta
 func (m *SynchronizationProfilesItemErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *SynchronizationProfilesItemErrorsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorable), nil
 }
-// ToGetRequestInformation all errors associated with this synchronization profile.
+// ToGetRequestInformation get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemErrorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

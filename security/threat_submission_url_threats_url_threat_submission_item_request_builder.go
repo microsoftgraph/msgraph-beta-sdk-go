@@ -18,7 +18,7 @@ type ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderGetQueryParameters get urlThreats from security
+// ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderGetQueryParameters read the properties and relationships of an urlThreatSubmission object.
 type ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder) Delete
     }
     return nil
 }
-// Get get urlThreats from security
+// Get read the properties and relationships of an urlThreatSubmission object.
 // returns a UrlThreatSubmissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-urlthreatsubmission-get?view=graph-rest-beta
 func (m *ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UrlThreatSubmissionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder) ToDele
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get urlThreats from security
+// ToGetRequestInformation read the properties and relationships of an urlThreatSubmission object.
 // returns a *RequestInformation when successful
 func (m *ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatSubmissionUrlThreatsUrlThreatSubmissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

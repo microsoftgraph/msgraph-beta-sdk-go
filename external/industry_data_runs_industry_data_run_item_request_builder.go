@@ -11,7 +11,7 @@ import (
 type IndustryDataRunsIndustryDataRunItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustryDataRunsIndustryDataRunItemRequestBuilderGetQueryParameters set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+// IndustryDataRunsIndustryDataRunItemRequestBuilderGetQueryParameters read the properties and relationships of an industryDataRun object.
 type IndustryDataRunsIndustryDataRunItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -45,9 +45,12 @@ func NewIndustryDataRunsIndustryDataRunItemRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewIndustryDataRunsIndustryDataRunItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+// Get read the properties and relationships of an industryDataRun object.
 // returns a IndustryDataRunable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-beta
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustryDataRunsIndustryDataRunItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataRunable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,7 @@ func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) Get(ctx context.Cont
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) MicrosoftGraphIndustryDataGetStatistics()(*IndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) {
     return NewIndustryDataRunsItemMicrosoftGraphIndustryDataGetStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+// ToGetRequestInformation read the properties and relationships of an industryDataRun object.
 // returns a *RequestInformation when successful
 func (m *IndustryDataRunsIndustryDataRunItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsIndustryDataRunItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

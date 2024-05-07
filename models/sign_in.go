@@ -236,6 +236,18 @@ func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
     }
     return nil
 }
+// GetConditionalAccessAudiences gets the conditionalAccessAudiences property value. A list that indicates the audience that was evaluated by Conditional Access during a sign-in event.  Supports $filter (eq).
+// returns a []ConditionalAccessAudienceable when successful
+func (m *SignIn) GetConditionalAccessAudiences()([]ConditionalAccessAudienceable) {
+    val, err := m.GetBackingStore().Get("conditionalAccessAudiences")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConditionalAccessAudienceable)
+    }
+    return nil
+}
 // GetConditionalAccessStatus gets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue.  Supports $filter (eq).
 // returns a *ConditionalAccessStatus when successful
 func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
@@ -540,6 +552,22 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["conditionalAccessAudiences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessAudienceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConditionalAccessAudienceable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ConditionalAccessAudienceable)
+                }
+            }
+            m.SetConditionalAccessAudiences(res)
+        }
+        return nil
+    }
     res["conditionalAccessStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseConditionalAccessStatus)
         if err != nil {
@@ -610,6 +638,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["globalSecureAccessIpAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGlobalSecureAccessIpAddress(val)
+        }
+        return nil
+    }
     res["homeTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -677,6 +715,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         if val != nil {
             m.SetIsTenantRestricted(val)
+        }
+        return nil
+    }
+    res["isThroughGlobalSecureAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsThroughGlobalSecureAccess(val)
         }
         return nil
     }
@@ -1068,6 +1116,18 @@ func (m *SignIn) GetFlaggedForReview()(*bool) {
     }
     return nil
 }
+// GetGlobalSecureAccessIpAddress gets the globalSecureAccessIpAddress property value. The Global Secure Access IP address that the sign-in was initiated from.
+// returns a *string when successful
+func (m *SignIn) GetGlobalSecureAccessIpAddress()(*string) {
+    val, err := m.GetBackingStore().Get("globalSecureAccessIpAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetHomeTenantId gets the homeTenantId property value. The tenant identifier of the user initiating the sign-in. Not applicable in Managed Identity or service principal sign ins.
 // returns a *string when successful
 func (m *SignIn) GetHomeTenantId()(*string) {
@@ -1144,6 +1204,18 @@ func (m *SignIn) GetIsInteractive()(*bool) {
 // returns a *bool when successful
 func (m *SignIn) GetIsTenantRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isTenantRestricted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsThroughGlobalSecureAccess gets the isThroughGlobalSecureAccess property value. Indicates whether a user came through Global Secure Access service.
+// returns a *bool when successful
+func (m *SignIn) GetIsThroughGlobalSecureAccess()(*bool) {
+    val, err := m.GetBackingStore().Get("isThroughGlobalSecureAccess")
     if err != nil {
         panic(err)
     }
@@ -1731,6 +1803,18 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    if m.GetConditionalAccessAudiences() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditionalAccessAudiences()))
+        for i, v := range m.GetConditionalAccessAudiences() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("conditionalAccessAudiences", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetConditionalAccessStatus() != nil {
         cast := (*m.GetConditionalAccessStatus()).String()
         err = writer.WriteStringValue("conditionalAccessStatus", &cast)
@@ -1776,6 +1860,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("globalSecureAccessIpAddress", m.GetGlobalSecureAccessIpAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("homeTenantId", m.GetHomeTenantId())
         if err != nil {
             return err
@@ -1814,6 +1904,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     {
         err = writer.WriteBoolValue("isTenantRestricted", m.GetIsTenantRestricted())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isThroughGlobalSecureAccess", m.GetIsThroughGlobalSecureAccess())
         if err != nil {
             return err
         }
@@ -2177,6 +2273,13 @@ func (m *SignIn) SetClientCredentialType(value *ClientCredentialType)() {
         panic(err)
     }
 }
+// SetConditionalAccessAudiences sets the conditionalAccessAudiences property value. A list that indicates the audience that was evaluated by Conditional Access during a sign-in event.  Supports $filter (eq).
+func (m *SignIn) SetConditionalAccessAudiences(value []ConditionalAccessAudienceable)() {
+    err := m.GetBackingStore().Set("conditionalAccessAudiences", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConditionalAccessStatus sets the conditionalAccessStatus property value. The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue.  Supports $filter (eq).
 func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
     err := m.GetBackingStore().Set("conditionalAccessStatus", value)
@@ -2226,6 +2329,13 @@ func (m *SignIn) SetFlaggedForReview(value *bool)() {
         panic(err)
     }
 }
+// SetGlobalSecureAccessIpAddress sets the globalSecureAccessIpAddress property value. The Global Secure Access IP address that the sign-in was initiated from.
+func (m *SignIn) SetGlobalSecureAccessIpAddress(value *string)() {
+    err := m.GetBackingStore().Set("globalSecureAccessIpAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetHomeTenantId sets the homeTenantId property value. The tenant identifier of the user initiating the sign-in. Not applicable in Managed Identity or service principal sign ins.
 func (m *SignIn) SetHomeTenantId(value *string)() {
     err := m.GetBackingStore().Set("homeTenantId", value)
@@ -2271,6 +2381,13 @@ func (m *SignIn) SetIsInteractive(value *bool)() {
 // SetIsTenantRestricted sets the isTenantRestricted property value. Shows whether the sign in event was subject to a Microsoft Entra tenant restriction policy.
 func (m *SignIn) SetIsTenantRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isTenantRestricted", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsThroughGlobalSecureAccess sets the isThroughGlobalSecureAccess property value. Indicates whether a user came through Global Secure Access service.
+func (m *SignIn) SetIsThroughGlobalSecureAccess(value *bool)() {
+    err := m.GetBackingStore().Set("isThroughGlobalSecureAccess", value)
     if err != nil {
         panic(err)
     }
@@ -2541,6 +2658,7 @@ type SignInable interface {
     GetAzureResourceId()(*string)
     GetClientAppUsed()(*string)
     GetClientCredentialType()(*ClientCredentialType)
+    GetConditionalAccessAudiences()([]ConditionalAccessAudienceable)
     GetConditionalAccessStatus()(*ConditionalAccessStatus)
     GetCorrelationId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -2548,6 +2666,7 @@ type SignInable interface {
     GetDeviceDetail()(DeviceDetailable)
     GetFederatedCredentialId()(*string)
     GetFlaggedForReview()(*bool)
+    GetGlobalSecureAccessIpAddress()(*string)
     GetHomeTenantId()(*string)
     GetHomeTenantName()(*string)
     GetIncomingTokenType()(*IncomingTokenType)
@@ -2555,6 +2674,7 @@ type SignInable interface {
     GetIpAddressFromResourceProvider()(*string)
     GetIsInteractive()(*bool)
     GetIsTenantRestricted()(*bool)
+    GetIsThroughGlobalSecureAccess()(*bool)
     GetLocation()(SignInLocationable)
     GetManagedServiceIdentity()(ManagedIdentityable)
     GetMfaDetail()(MfaDetailable)
@@ -2608,6 +2728,7 @@ type SignInable interface {
     SetAzureResourceId(value *string)()
     SetClientAppUsed(value *string)()
     SetClientCredentialType(value *ClientCredentialType)()
+    SetConditionalAccessAudiences(value []ConditionalAccessAudienceable)()
     SetConditionalAccessStatus(value *ConditionalAccessStatus)()
     SetCorrelationId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -2615,6 +2736,7 @@ type SignInable interface {
     SetDeviceDetail(value DeviceDetailable)()
     SetFederatedCredentialId(value *string)()
     SetFlaggedForReview(value *bool)()
+    SetGlobalSecureAccessIpAddress(value *string)()
     SetHomeTenantId(value *string)()
     SetHomeTenantName(value *string)()
     SetIncomingTokenType(value *IncomingTokenType)()
@@ -2622,6 +2744,7 @@ type SignInable interface {
     SetIpAddressFromResourceProvider(value *string)()
     SetIsInteractive(value *bool)()
     SetIsTenantRestricted(value *bool)()
+    SetIsThroughGlobalSecureAccess(value *bool)()
     SetLocation(value SignInLocationable)()
     SetManagedServiceIdentity(value ManagedIdentityable)()
     SetMfaDetail(value MfaDetailable)()

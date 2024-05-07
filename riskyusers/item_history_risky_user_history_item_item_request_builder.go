@@ -18,7 +18,7 @@ type ItemHistoryRiskyUserHistoryItemItemRequestBuilderDeleteRequestConfiguration
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemHistoryRiskyUserHistoryItemItemRequestBuilderGetQueryParameters get history from riskyUsers
+// ItemHistoryRiskyUserHistoryItemItemRequestBuilderGetQueryParameters get a riskyUserHistoryItem object of a riskyUser.
 type ItemHistoryRiskyUserHistoryItemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ItemHistoryRiskyUserHistoryItemItemRequestBuilder) Delete(ctx context.C
     }
     return nil
 }
-// Get get history from riskyUsers
+// Get get a riskyUserHistoryItem object of a riskyUser.
 // returns a RiskyUserHistoryItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskyuserhistoryitem-get?view=graph-rest-beta
 func (m *ItemHistoryRiskyUserHistoryItemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemHistoryRiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *ItemHistoryRiskyUserHistoryItemItemRequestBuilder) ToDeleteRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get history from riskyUsers
+// ToGetRequestInformation get a riskyUserHistoryItem object of a riskyUser.
 // returns a *RequestInformation when successful
 func (m *ItemHistoryRiskyUserHistoryItemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemHistoryRiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

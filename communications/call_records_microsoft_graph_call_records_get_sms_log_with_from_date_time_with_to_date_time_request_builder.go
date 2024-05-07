@@ -11,7 +11,7 @@ import (
 type CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters invoke function getSmsLog
+// CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters get the log of a sent/received SMS as a collection of smsLogRow entries.
 type CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -52,7 +52,7 @@ func NewCallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateT
     urlParams["request-raw-url"] = rawUrl
     return NewCallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get invoke function getSmsLog
+// Get get the log of a sent/received SMS as a collection of smsLogRow entries.
 // Deprecated: This method is obsolete. Use GetAsGetSmsLogWithFromDateTimeWithToDateTimeGetResponse instead.
 // returns a CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeGetSmsLogWithFromDateTimeWithToDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -73,7 +73,7 @@ func (m *CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDate
     }
     return res.(CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeGetSmsLogWithFromDateTimeWithToDateTimeResponseable), nil
 }
-// GetAsGetSmsLogWithFromDateTimeWithToDateTimeGetResponse invoke function getSmsLog
+// GetAsGetSmsLogWithFromDateTimeWithToDateTimeGetResponse get the log of a sent/received SMS as a collection of smsLogRow entries.
 // returns a CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeGetSmsLogWithFromDateTimeWithToDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder) GetAsGetSmsLogWithFromDateTimeWithToDateTimeGetResponse(ctx context.Context, requestConfiguration *CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration)(CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeGetSmsLogWithFromDateTimeWithToDateTimeGetResponseable, error) {
@@ -93,7 +93,7 @@ func (m *CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDate
     }
     return res.(CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeGetSmsLogWithFromDateTimeWithToDateTimeGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getSmsLog
+// ToGetRequestInformation get the log of a sent/received SMS as a collection of smsLogRow entries.
 // returns a *RequestInformation when successful
 func (m *CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallRecordsMicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -191,6 +191,18 @@ func (m *ServicePrincipal) GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
     }
     return nil
 }
+// GetClaimsPolicy gets the claimsPolicy property value. The claimsPolicy property
+// returns a CustomClaimsPolicyable when successful
+func (m *ServicePrincipal) GetClaimsPolicy()(CustomClaimsPolicyable) {
+    val, err := m.GetBackingStore().Get("claimsPolicy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CustomClaimsPolicyable)
+    }
+    return nil
+}
 // GetCreatedObjects gets the createdObjects property value. Directory objects created by this service principal. Read-only. Nullable.
 // returns a []DirectoryObjectable when successful
 func (m *ServicePrincipal) GetCreatedObjects()([]DirectoryObjectable) {
@@ -482,6 +494,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 }
             }
             m.SetClaimsMappingPolicies(res)
+        }
+        return nil
+    }
+    res["claimsPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCustomClaimsPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClaimsPolicy(val.(CustomClaimsPolicyable))
         }
         return nil
     }
@@ -1571,6 +1593,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("claimsPolicy", m.GetClaimsPolicy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCreatedObjects() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCreatedObjects()))
         for i, v := range m.GetCreatedObjects() {
@@ -2025,6 +2053,13 @@ func (m *ServicePrincipal) SetClaimsMappingPolicies(value []ClaimsMappingPolicya
         panic(err)
     }
 }
+// SetClaimsPolicy sets the claimsPolicy property value. The claimsPolicy property
+func (m *ServicePrincipal) SetClaimsPolicy(value CustomClaimsPolicyable)() {
+    err := m.GetBackingStore().Set("claimsPolicy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedObjects sets the createdObjects property value. Directory objects created by this service principal. Read-only. Nullable.
 func (m *ServicePrincipal) SetCreatedObjects(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("createdObjects", value)
@@ -2343,6 +2378,7 @@ type ServicePrincipalable interface {
     GetAppRoleAssignments()([]AppRoleAssignmentable)
     GetAppRoles()([]AppRoleable)
     GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
+    GetClaimsPolicy()(CustomClaimsPolicyable)
     GetCreatedObjects()([]DirectoryObjectable)
     GetCustomSecurityAttributes()(CustomSecurityAttributeValueable)
     GetDelegatedPermissionClassifications()([]DelegatedPermissionClassificationable)
@@ -2400,6 +2436,7 @@ type ServicePrincipalable interface {
     SetAppRoleAssignments(value []AppRoleAssignmentable)()
     SetAppRoles(value []AppRoleable)()
     SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
+    SetClaimsPolicy(value CustomClaimsPolicyable)()
     SetCreatedObjects(value []DirectoryObjectable)()
     SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)()
     SetDelegatedPermissionClassifications(value []DelegatedPermissionClassificationable)()

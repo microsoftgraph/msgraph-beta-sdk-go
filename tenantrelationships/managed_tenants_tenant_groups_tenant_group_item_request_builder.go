@@ -18,7 +18,7 @@ type ManagedTenantsTenantGroupsTenantGroupItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsTenantGroupsTenantGroupItemRequestBuilderGetQueryParameters the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+// ManagedTenantsTenantGroupsTenantGroupItemRequestBuilderGetQueryParameters read the properties and relationships of a tenantGroup object.
 type ManagedTenantsTenantGroupsTenantGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+// Get read the properties and relationships of a tenantGroup object.
 // returns a TenantGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenantgroup-get?view=graph-rest-beta
 func (m *ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsTenantGroupsTenantGroupItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.TenantGroupable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) ToDeleteReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+// ToGetRequestInformation read the properties and relationships of a tenantGroup object.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsTenantGroupsTenantGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsTenantGroupsTenantGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
