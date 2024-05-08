@@ -18,7 +18,7 @@ type LabelsCategoriesCategoryTemplateItemRequestBuilderDeleteRequestConfiguratio
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LabelsCategoriesCategoryTemplateItemRequestBuilderGetQueryParameters specifies a group of similar types of content in a particular department.
+// LabelsCategoriesCategoryTemplateItemRequestBuilderGetQueryParameters read the properties and relationships of a categoryTemplate object.
 type LabelsCategoriesCategoryTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get specifies a group of similar types of content in a particular department.
+// Get read the properties and relationships of a categoryTemplate object.
 // returns a CategoryTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-categorytemplate-get?view=graph-rest-beta
 func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsCategoriesCategoryTemplateItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +129,7 @@ func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation specifies a group of similar types of content in a particular department.
+// ToGetRequestInformation read the properties and relationships of a categoryTemplate object.
 // returns a *RequestInformation when successful
 func (m *LabelsCategoriesCategoryTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsCategoriesCategoryTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

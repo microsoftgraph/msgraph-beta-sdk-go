@@ -54,8 +54,11 @@ func NewItemProfileCertificationsPersonCertificationItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfileCertificationsPersonCertificationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property certifications for users
+// Delete deletes a personCertification object from a user's profile.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/personcertification-delete?view=graph-rest-beta
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Get(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable), nil
 }
-// Patch update the navigation property certifications in users
+// Patch update the properties of a personCertification object from a user's profile.
 // returns a PersonCertificationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/personcertification-update?view=graph-rest-beta
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Patch(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable), nil
 }
-// ToDeleteRequestInformation delete navigation property certifications for users
+// ToDeleteRequestInformation deletes a personCertification object from a user's profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToGetRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property certifications in users
+// ToPatchRequestInformation update the properties of a personCertification object from a user's profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

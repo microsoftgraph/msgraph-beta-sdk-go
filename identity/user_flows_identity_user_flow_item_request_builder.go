@@ -18,7 +18,7 @@ type UserFlowsIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UserFlowsIdentityUserFlowItemRequestBuilderGetQueryParameters get userFlows from identity
+// UserFlowsIdentityUserFlowItemRequestBuilderGetQueryParameters retrieve the properties and associations for an userFlow object.
 type UserFlowsIdentityUserFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,9 +54,12 @@ func NewUserFlowsIdentityUserFlowItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewUserFlowsIdentityUserFlowItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property userFlows for identity
+// Delete delete an existing userFlow object.
 // Deprecated: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflow-delete?view=graph-rest-beta
 func (m *UserFlowsIdentityUserFlowItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserFlowsIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,10 +74,13 @@ func (m *UserFlowsIdentityUserFlowItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get get userFlows from identity
+// Get retrieve the properties and associations for an userFlow object.
 // Deprecated: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
 // returns a IdentityUserFlowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflow-get?view=graph-rest-beta
 func (m *UserFlowsIdentityUserFlowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserFlowsIdentityUserFlowItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,7 +119,7 @@ func (m *UserFlowsIdentityUserFlowItemRequestBuilder) Patch(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityUserFlowable), nil
 }
-// ToDeleteRequestInformation delete navigation property userFlows for identity
+// ToDeleteRequestInformation delete an existing userFlow object.
 // Deprecated: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
 // returns a *RequestInformation when successful
 func (m *UserFlowsIdentityUserFlowItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UserFlowsIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -125,7 +131,7 @@ func (m *UserFlowsIdentityUserFlowItemRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get userFlows from identity
+// ToGetRequestInformation retrieve the properties and associations for an userFlow object.
 // Deprecated: The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider
 // returns a *RequestInformation when successful
 func (m *UserFlowsIdentityUserFlowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserFlowsIdentityUserFlowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

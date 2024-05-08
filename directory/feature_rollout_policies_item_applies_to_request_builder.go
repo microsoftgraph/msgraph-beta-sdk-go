@@ -11,7 +11,7 @@ import (
 type FeatureRolloutPoliciesItemAppliesToRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FeatureRolloutPoliciesItemAppliesToRequestBuilderGetQueryParameters nullable. Specifies a list of directoryObjects that feature is enabled for.
+// FeatureRolloutPoliciesItemAppliesToRequestBuilderGetQueryParameters nullable. Specifies a list of directoryObject resources that feature is enabled for.
 type FeatureRolloutPoliciesItemAppliesToRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewFeatureRolloutPoliciesItemAppliesToRequestBuilder(rawUrl string, request
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Count()(*FeatureRolloutPoliciesItemAppliesToCountRequestBuilder) {
     return NewFeatureRolloutPoliciesItemAppliesToCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get nullable. Specifies a list of directoryObjects that feature is enabled for.
+// Get nullable. Specifies a list of directoryObject resources that feature is enabled for.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -123,7 +123,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Post(ctx context.Con
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) Ref()(*FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) {
     return NewFeatureRolloutPoliciesItemAppliesToRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation nullable. Specifies a list of directoryObjects that feature is enabled for.
+// ToGetRequestInformation nullable. Specifies a list of directoryObject resources that feature is enabled for.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies
 // returns a *RequestInformation when successful
 func (m *FeatureRolloutPoliciesItemAppliesToRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

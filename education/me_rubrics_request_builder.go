@@ -11,7 +11,7 @@ import (
 type MeRubricsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MeRubricsRequestBuilderGetQueryParameters when set, the grading rubric attached to the assignment.
+// MeRubricsRequestBuilderGetQueryParameters retrieve a list of educationRubric objects.
 type MeRubricsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewMeRubricsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *MeRubricsRequestBuilder) Count()(*MeRubricsCountRequestBuilder) {
     return NewMeRubricsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get when set, the grading rubric attached to the assignment.
+// Get retrieve a list of educationRubric objects.
 // returns a EducationRubricCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-list-rubrics?view=graph-rest-beta
 func (m *MeRubricsRequestBuilder) Get(ctx context.Context, requestConfiguration *MeRubricsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *MeRubricsRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricCollectionResponseable), nil
 }
-// Post create new navigation property to rubrics for education
+// Post create a new educationRubric object.
 // returns a EducationRubricable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationuser-post-rubrics?view=graph-rest-beta
 func (m *MeRubricsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable, requestConfiguration *MeRubricsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *MeRubricsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable), nil
 }
-// ToGetRequestInformation when set, the grading rubric attached to the assignment.
+// ToGetRequestInformation retrieve a list of educationRubric objects.
 // returns a *RequestInformation when successful
 func (m *MeRubricsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MeRubricsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *MeRubricsRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to rubrics for education
+// ToPostRequestInformation create a new educationRubric object.
 // returns a *RequestInformation when successful
 func (m *MeRubricsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRubricable, requestConfiguration *MeRubricsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

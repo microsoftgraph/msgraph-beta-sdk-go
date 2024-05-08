@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemCustodiansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemCustodiansRequestBuilderGetQueryParameters returns a list of case custodian objects for this case.  Nullable.
+// EdiscoveryCasesItemCustodiansRequestBuilderGetQueryParameters get a list of the custodian objects and their properties.
 type EdiscoveryCasesItemCustodiansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,10 +77,13 @@ func NewEdiscoveryCasesItemCustodiansRequestBuilder(rawUrl string, requestAdapte
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Count()(*EdiscoveryCasesItemCustodiansCountRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns a list of case custodian objects for this case.  Nullable.
+// Get get a list of the custodian objects and their properties.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a CustodianCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-case-list-custodians?view=graph-rest-beta
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CustodianCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -108,10 +111,13 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryAp
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create new navigation property to custodians for compliance
+// Post create a new custodian object. After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a Custodianable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-case-post-custodians?view=graph-rest-beta
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -129,7 +135,7 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable), nil
 }
-// ToGetRequestInformation returns a list of case custodian objects for this case.  Nullable.
+// ToGetRequestInformation get a list of the custodian objects and their properties.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -144,7 +150,7 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ToGetRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to custodians for compliance
+// ToPostRequestInformation create a new custodian object. After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, requestConfiguration *EdiscoveryCasesItemCustodiansRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

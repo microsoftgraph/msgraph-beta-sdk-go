@@ -11,7 +11,7 @@ import (
 type ItemEndpointsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemEndpointsRequestBuilderGetQueryParameters endpoints for the group. Read-only. Nullable.
+// ItemEndpointsRequestBuilderGetQueryParameters retrieve a list of endpoint objects.
 type ItemEndpointsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewItemEndpointsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *ItemEndpointsRequestBuilder) Count()(*ItemEndpointsCountRequestBuilder) {
     return NewItemEndpointsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get endpoints for the group. Read-only. Nullable.
+// Get retrieve a list of endpoint objects.
 // returns a EndpointCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-endpoints?view=graph-rest-beta
 func (m *ItemEndpointsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEndpointsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EndpointCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ItemEndpointsRequestBuilder) Post(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Endpointable), nil
 }
-// ToGetRequestInformation endpoints for the group. Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of endpoint objects.
 // returns a *RequestInformation when successful
 func (m *ItemEndpointsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEndpointsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

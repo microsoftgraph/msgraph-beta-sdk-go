@@ -47,8 +47,11 @@ func NewItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticat
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property platformCredentialMethods for users
+// Delete delete a platformCredentialAuthenticationMethod object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-delete?view=graph-rest-beta
 func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -88,7 +91,7 @@ func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthentica
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlatformCredentialAuthenticationMethodable), nil
 }
-// ToDeleteRequestInformation delete navigation property platformCredentialMethods for users
+// ToDeleteRequestInformation delete a platformCredentialAuthenticationMethod object.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

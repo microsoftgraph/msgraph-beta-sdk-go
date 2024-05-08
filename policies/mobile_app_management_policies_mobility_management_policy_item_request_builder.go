@@ -18,7 +18,7 @@ type MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderDelete
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetQueryParameters the policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
+// MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a mobilityManagementPolicy object.
 type MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewMobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property mobileAppManagementPolicies for policies
+// Delete delete a mobilityManagementPolicy object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete?view=graph-rest-beta
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
     }
     return nil
 }
-// Get the policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
+// Get read the properties and relationships of a mobilityManagementPolicy object.
 // returns a MobilityManagementPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-get?view=graph-rest-beta
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,9 +101,12 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) IncludedGroups()(*MobileAppManagementPoliciesItemIncludedGroupsRequestBuilder) {
     return NewMobileAppManagementPoliciesItemIncludedGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property mobileAppManagementPolicies in policies
+// Patch update the properties of a mobilityManagementPolicy object.
 // returns a MobilityManagementPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-update?view=graph-rest-beta
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -115,7 +124,7 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable), nil
 }
-// ToDeleteRequestInformation delete navigation property mobileAppManagementPolicies for policies
+// ToDeleteRequestInformation delete a mobilityManagementPolicy object.
 // returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +135,7 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
+// ToGetRequestInformation read the properties and relationships of a mobilityManagementPolicy object.
 // returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +149,7 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property mobileAppManagementPolicies in policies
+// ToPatchRequestInformation update the properties of a mobilityManagementPolicy object.
 // returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

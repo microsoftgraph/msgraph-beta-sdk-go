@@ -11,7 +11,7 @@ import (
 type SchoolsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsRequestBuilderGetQueryParameters get schools from education
+// SchoolsRequestBuilderGetQueryParameters retrieve a list of all school objects.
 type SchoolsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,9 +81,12 @@ func (m *SchoolsRequestBuilder) Count()(*SchoolsCountRequestBuilder) {
 func (m *SchoolsRequestBuilder) Delta()(*SchoolsDeltaRequestBuilder) {
     return NewSchoolsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get schools from education
+// Get retrieve a list of all school objects.
 // returns a EducationSchoolCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationroot-list-schools?view=graph-rest-beta
 func (m *SchoolsRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,9 +104,12 @@ func (m *SchoolsRequestBuilder) Get(ctx context.Context, requestConfiguration *S
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolCollectionResponseable), nil
 }
-// Post create new navigation property to schools for education
+// Post create a school.
 // returns a EducationSchoolable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationroot-post-schools?view=graph-rest-beta
 func (m *SchoolsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable, requestConfiguration *SchoolsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *SchoolsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable), nil
 }
-// ToGetRequestInformation get schools from education
+// ToGetRequestInformation retrieve a list of all school objects.
 // returns a *RequestInformation when successful
 func (m *SchoolsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *SchoolsRequestBuilder) ToGetRequestInformation(ctx context.Context, req
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to schools for education
+// ToPostRequestInformation create a school.
 // returns a *RequestInformation when successful
 func (m *SchoolsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSchoolable, requestConfiguration *SchoolsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type CallsItemAudioRoutingGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CallsItemAudioRoutingGroupsRequestBuilderGetQueryParameters get audioRoutingGroups from communications
+// CallsItemAudioRoutingGroupsRequestBuilderGetQueryParameters retrieve a list of audioRoutingGroup objects.
 type CallsItemAudioRoutingGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewCallsItemAudioRoutingGroupsRequestBuilder(rawUrl string, requestAdapter 
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Count()(*CallsItemAudioRoutingGroupsCountRequestBuilder) {
     return NewCallsItemAudioRoutingGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get audioRoutingGroups from communications
+// Get retrieve a list of audioRoutingGroup objects.
 // returns a AudioRoutingGroupCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-beta
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Get(ctx context.Context, req
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupCollectionResponseable), nil
 }
-// Post create new navigation property to audioRoutingGroups for communications
+// Post create a new audioRoutingGroup.
 // returns a AudioRoutingGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-beta
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable), nil
 }
-// ToGetRequestInformation get audioRoutingGroups from communications
+// ToGetRequestInformation retrieve a list of audioRoutingGroup objects.
 // returns a *RequestInformation when successful
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to audioRoutingGroups for communications
+// ToPostRequestInformation create a new audioRoutingGroup.
 // returns a *RequestInformation when successful
 func (m *CallsItemAudioRoutingGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AudioRoutingGroupable, requestConfiguration *CallsItemAudioRoutingGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type ItemMemberOfGraphGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMemberOfGraphGroupRequestBuilderGetQueryParameters get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+// ItemMemberOfGraphGroupRequestBuilderGetQueryParameters get groups and administrative units that the group is a direct member of. This operation is not transitive. Unlike getting a user's Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
 type ItemMemberOfGraphGroupRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,9 +57,12 @@ func NewItemMemberOfGraphGroupRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemMemberOfGraphGroupRequestBuilder) Count()(*ItemMemberOfGraphGroupCountRequestBuilder) {
     return NewItemMemberOfGraphGroupCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+// Get get groups and administrative units that the group is a direct member of. This operation is not transitive. Unlike getting a user's Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
 // returns a GroupCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-beta
 func (m *ItemMemberOfGraphGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMemberOfGraphGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -77,7 +80,7 @@ func (m *ItemMemberOfGraphGroupRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
 }
-// ToGetRequestInformation get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+// ToGetRequestInformation get groups and administrative units that the group is a direct member of. This operation is not transitive. Unlike getting a user's Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
 // returns a *RequestInformation when successful
 func (m *ItemMemberOfGraphGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMemberOfGraphGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

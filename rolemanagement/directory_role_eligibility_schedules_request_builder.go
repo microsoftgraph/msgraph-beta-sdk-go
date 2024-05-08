@@ -11,7 +11,7 @@ import (
 type DirectoryRoleEligibilitySchedulesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DirectoryRoleEligibilitySchedulesRequestBuilderGetQueryParameters get roleEligibilitySchedules from roleManagement
+// DirectoryRoleEligibilitySchedulesRequestBuilderGetQueryParameters get a list of the unifiedRoleEligibilitySchedule objects and their properties.
 type DirectoryRoleEligibilitySchedulesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,9 +81,12 @@ func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) Count()(*DirectoryRole
 func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*DirectoryRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilder) {
     return NewDirectoryRoleEligibilitySchedulesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
-// Get get roleEligibilitySchedules from roleManagement
+// Get get a list of the unifiedRoleEligibilitySchedule objects and their properties.
 // returns a UnifiedRoleEligibilityScheduleCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedules?view=graph-rest-beta
 func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleEligibilitySchedulesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleEligibilityScheduleable), nil
 }
-// ToGetRequestInformation get roleEligibilitySchedules from roleManagement
+// ToGetRequestInformation get a list of the unifiedRoleEligibilitySchedule objects and their properties.
 // returns a *RequestInformation when successful
 func (m *DirectoryRoleEligibilitySchedulesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRoleEligibilitySchedulesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

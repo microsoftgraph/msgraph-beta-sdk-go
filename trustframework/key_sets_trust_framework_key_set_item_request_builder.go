@@ -18,7 +18,7 @@ type KeySetsTrustFrameworkKeySetItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// KeySetsTrustFrameworkKeySetItemRequestBuilderGetQueryParameters get keySets from trustFramework
+// KeySetsTrustFrameworkKeySetItemRequestBuilderGetQueryParameters retrieve the properties and associations for a Trustframeworkkeyset.
 type KeySetsTrustFrameworkKeySetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewKeySetsTrustFrameworkKeySetItemRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewKeySetsTrustFrameworkKeySetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property keySets for trustFramework
+// Delete delete a trustFrameworkKeySet.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/trustframeworkkeyset-delete?view=graph-rest-beta
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Delete(ctx context.Conte
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) GenerateKey()(*KeySetsItemGenerateKeyRequestBuilder) {
     return NewKeySetsItemGenerateKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get keySets from trustFramework
+// Get retrieve the properties and associations for a Trustframeworkkeyset.
 // returns a TrustFrameworkKeySetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/trustframeworkkeyset-get?view=graph-rest-beta
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -100,9 +106,17 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Get(ctx context.Context,
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) GetActiveKey()(*KeySetsItemGetActiveKeyRequestBuilder) {
     return NewKeySetsItemGetActiveKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property keySets in trustFramework
+// Keys_v2 provides operations to manage the keys_v2 property of the microsoft.graph.trustFrameworkKeySet entity.
+// returns a *KeySetsItemKeys_v2RequestBuilder when successful
+func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Keys_v2()(*KeySetsItemKeys_v2RequestBuilder) {
+    return NewKeySetsItemKeys_v2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Patch update the properties of a trustFrameworkKeyset. This operation will replace the content of an existing keyset. Specifying the ID in the request payload is optional.
 // returns a TrustFrameworkKeySetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/trustframeworkkeyset-update?view=graph-rest-beta
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -120,7 +134,7 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) Patch(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable), nil
 }
-// ToDeleteRequestInformation delete navigation property keySets for trustFramework
+// ToDeleteRequestInformation delete a trustFrameworkKeySet.
 // returns a *RequestInformation when successful
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,7 +145,7 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get keySets from trustFramework
+// ToGetRequestInformation retrieve the properties and associations for a Trustframeworkkeyset.
 // returns a *RequestInformation when successful
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -145,7 +159,7 @@ func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property keySets in trustFramework
+// ToPatchRequestInformation update the properties of a trustFrameworkKeyset. This operation will replace the content of an existing keyset. Specifying the ID in the request payload is optional.
 // returns a *RequestInformation when successful
 func (m *KeySetsTrustFrameworkKeySetItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeySetable, requestConfiguration *KeySetsTrustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

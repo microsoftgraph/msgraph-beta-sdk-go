@@ -11,7 +11,7 @@ import (
 type ManagedTenantsCloudPcConnectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ManagedTenantsCloudPcConnectionsRequestBuilderGetQueryParameters the collection of cloud PC connections across managed tenants.
+// ManagedTenantsCloudPcConnectionsRequestBuilderGetQueryParameters get a list of the cloudPcConnection objects and their properties.
 type ManagedTenantsCloudPcConnectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewManagedTenantsCloudPcConnectionsRequestBuilder(rawUrl string, requestAda
 func (m *ManagedTenantsCloudPcConnectionsRequestBuilder) Count()(*ManagedTenantsCloudPcConnectionsCountRequestBuilder) {
     return NewManagedTenantsCloudPcConnectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of cloud PC connections across managed tenants.
+// Get get a list of the cloudPcConnection objects and their properties.
 // returns a CloudPcConnectionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-beta
 func (m *ManagedTenantsCloudPcConnectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsCloudPcConnectionsRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ManagedTenantsCloudPcConnectionsRequestBuilder) Post(ctx context.Contex
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.CloudPcConnectionable), nil
 }
-// ToGetRequestInformation the collection of cloud PC connections across managed tenants.
+// ToGetRequestInformation get a list of the cloudPcConnection objects and their properties.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsCloudPcConnectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsCloudPcConnectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

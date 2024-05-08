@@ -18,7 +18,7 @@ type EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepI
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetQueryParameters used to represent the decision associated with a single step in the approval process configured in approvalStage.
+// EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetQueryParameters retrieve the properties of an approvalStep object.
 type EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalS
     }
     return nil
 }
-// Get used to represent the decision associated with a single step in the approval process configured in approvalStage.
+// Get retrieve the properties of an approvalStep object.
 // returns a ApprovalStepable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/approvalstep-get?view=graph-rest-beta
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalS
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable), nil
 }
-// Patch update the navigation property steps in identityGovernance
+// Patch apply approve or deny decision on an approvalStep object.
 // returns a ApprovalStepable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/approvalstep-update?view=graph-rest-beta
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalS
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation used to represent the decision associated with a single step in the approval process configured in approvalStage.
+// ToGetRequestInformation retrieve the properties of an approvalStep object.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalS
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property steps in identityGovernance
+// ToPatchRequestInformation apply approve or deny decision on an approvalStep object.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalStepable, requestConfiguration *EntitlementManagementAccessPackageAssignmentApprovalsItemStepsApprovalStepItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

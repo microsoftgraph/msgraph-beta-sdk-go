@@ -18,7 +18,7 @@ type VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetQueryParameters the export jobs created for downloading reports.
+// VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetQueryParameters read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
 type VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) Del
     }
     return nil
 }
-// Get the export jobs created for downloading reports.
+// Get read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
 // returns a CloudPcExportJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcexportjob-get?view=graph-rest-beta
 func (m *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExportJobable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the export jobs created for downloading reports.
+// ToGetRequestInformation read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointReportsExportJobsCloudPcExportJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

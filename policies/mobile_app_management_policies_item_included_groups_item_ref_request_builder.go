@@ -30,8 +30,11 @@ func NewMobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property includedGroups for policies
+// Delete delete a group from the list of groups included in a mobile app management policy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-beta
 func (m *MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilder) Del
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property includedGroups for policies
+// ToDeleteRequestInformation delete a group from the list of groups included in a mobile app management policy.
 // returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsItemRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

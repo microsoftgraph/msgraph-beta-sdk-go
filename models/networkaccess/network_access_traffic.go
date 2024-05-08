@@ -615,6 +615,22 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["vendorNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetVendorNames(res)
+        }
+        return nil
+    }
     return res
 }
 // GetFilteringProfileId gets the filteringProfileId property value. The filteringProfileId property
@@ -905,6 +921,18 @@ func (m *NetworkAccessTraffic) GetUserPrincipalName()(*string) {
     }
     return nil
 }
+// GetVendorNames gets the vendorNames property value. The vendorNames property
+// returns a []string when successful
+func (m *NetworkAccessTraffic) GetVendorNames()([]string) {
+    val, err := m.GetBackingStore().Get("vendorNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAction() != nil {
@@ -1142,6 +1170,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("userPrincipalName", m.GetUserPrincipalName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetVendorNames() != nil {
+        err := writer.WriteCollectionOfStringValues("vendorNames", m.GetVendorNames())
         if err != nil {
             return err
         }
@@ -1438,6 +1472,13 @@ func (m *NetworkAccessTraffic) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
+// SetVendorNames sets the vendorNames property value. The vendorNames property
+func (m *NetworkAccessTraffic) SetVendorNames(value []string)() {
+    err := m.GetBackingStore().Set("vendorNames", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type NetworkAccessTrafficable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -1482,6 +1523,7 @@ type NetworkAccessTrafficable interface {
     GetTransportProtocol()(*NetworkingProtocol)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
+    GetVendorNames()([]string)
     SetAction(value *FilteringPolicyAction)()
     SetAgentVersion(value *string)()
     SetApplicationSnapshot(value ApplicationSnapshotable)()
@@ -1522,4 +1564,5 @@ type NetworkAccessTrafficable interface {
     SetTransportProtocol(value *NetworkingProtocol)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()
+    SetVendorNames(value []string)()
 }

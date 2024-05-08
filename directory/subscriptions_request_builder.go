@@ -11,7 +11,7 @@ import (
 type SubscriptionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SubscriptionsRequestBuilderGetQueryParameters list of commercial subscriptions that an organization has.
+// SubscriptionsRequestBuilderGetQueryParameters get the list of commercial subscriptions that an organization has acquired.
 type SubscriptionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewSubscriptionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *SubscriptionsRequestBuilder) Count()(*SubscriptionsCountRequestBuilder) {
     return NewSubscriptionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of commercial subscriptions that an organization has.
+// Get get the list of commercial subscriptions that an organization has acquired.
 // returns a CompanySubscriptionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-beta
 func (m *SubscriptionsRequestBuilder) Get(ctx context.Context, requestConfiguration *SubscriptionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CompanySubscriptionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *SubscriptionsRequestBuilder) Post(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CompanySubscriptionable), nil
 }
-// ToGetRequestInformation list of commercial subscriptions that an organization has.
+// ToGetRequestInformation get the list of commercial subscriptions that an organization has acquired.
 // returns a *RequestInformation when successful
 func (m *SubscriptionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubscriptionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

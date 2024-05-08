@@ -46,11 +46,6 @@ type UserInsightsDailyRequestBuilderPatchRequestConfiguration struct {
 func (m *UserInsightsDailyRequestBuilder) ActiveUsers()(*UserInsightsDailyActiveUsersRequestBuilder) {
     return NewUserInsightsDailyActiveUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ActiveUsersBreakdown provides operations to manage the activeUsersBreakdown property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
-// returns a *UserInsightsDailyActiveUsersBreakdownRequestBuilder when successful
-func (m *UserInsightsDailyRequestBuilder) ActiveUsersBreakdown()(*UserInsightsDailyActiveUsersBreakdownRequestBuilder) {
-    return NewUserInsightsDailyActiveUsersBreakdownRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Authentications provides operations to manage the authentications property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
 // returns a *UserInsightsDailyAuthenticationsRequestBuilder when successful
 func (m *UserInsightsDailyRequestBuilder) Authentications()(*UserInsightsDailyAuthenticationsRequestBuilder) {

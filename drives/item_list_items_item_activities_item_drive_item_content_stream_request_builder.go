@@ -10,6 +10,13 @@ import (
 type ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilderGetRequestConfiguration struct {
     // Request headers
@@ -36,6 +43,22 @@ func NewItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilder(rawU
     urlParams := make(map[string]string)
     urlParams["request-raw-url"] = rawUrl
     return NewItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Delete the content stream, if the item represents a file.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
 }
 // Get the content stream, if the item represents a file.
 // returns a []byte when successful
@@ -76,6 +99,17 @@ func (m *ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilder) Pu
         return nil, nil
     }
     return res.([]byte), nil
+}
+// ToDeleteRequestInformation the content stream, if the item represents a file.
+// returns a *RequestInformation when successful
+func (m *ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemListItemsItemActivitiesItemDriveItemContentStreamRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
 }
 // ToGetRequestInformation the content stream, if the item represents a file.
 // returns a *RequestInformation when successful

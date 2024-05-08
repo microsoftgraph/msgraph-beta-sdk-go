@@ -10,6 +10,13 @@ import (
 type B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
@@ -37,7 +44,23 @@ func NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get media content for the navigation property defaultPages from identity
+// Delete the unique identifier for an entity. Read-only.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Get the unique identifier for an entity. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -57,7 +80,7 @@ func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     }
     return res.([]byte), nil
 }
-// Put update media content for the navigation property defaultPages in identity
+// Put the unique identifier for an entity. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -77,7 +100,18 @@ func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation get media content for the navigation property defaultPages from identity
+// ToDeleteRequestInformation the unique identifier for an entity. Read-only.
+// returns a *RequestInformation when successful
+func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToGetRequestInformation the unique identifier for an entity. Read-only.
 // returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -88,7 +122,7 @@ func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update media content for the navigation property defaultPages in identity
+// ToPutRequestInformation the unique identifier for an entity. Read-only.
 // returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *B2cUserFlowsItemLanguagesItemDefaultPagesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

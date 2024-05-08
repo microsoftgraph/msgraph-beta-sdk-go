@@ -18,7 +18,7 @@ type TasksItemBucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+// TasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
 type TasksItemBucketTaskBoardFormatRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *TasksItemBucketTaskBoardFormatRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+// Get retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
 // returns a PlannerBucketTaskBoardTaskFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-get?view=graph-rest-beta
 func (m *TasksItemBucketTaskBoardFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *TasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *TasksItemBucketTaskBoardFormatRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable), nil
 }
-// Patch update the navigation property bucketTaskBoardFormat in planner
+// Patch update the properties of a plannerBucketTaskBoardTaskFormat object.
 // returns a PlannerBucketTaskBoardTaskFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerbuckettaskboardtaskformat-update?view=graph-rest-beta
 func (m *TasksItemBucketTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable, requestConfiguration *TasksItemBucketTaskBoardFormatRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *TasksItemBucketTaskBoardFormatRequestBuilder) ToDeleteRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by bucket.
+// ToGetRequestInformation retrieve the properties and relationships of plannerBucketTaskBoardTaskFormat object.
 // returns a *RequestInformation when successful
 func (m *TasksItemBucketTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TasksItemBucketTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *TasksItemBucketTaskBoardFormatRequestBuilder) ToGetRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property bucketTaskBoardFormat in planner
+// ToPatchRequestInformation update the properties of a plannerBucketTaskBoardTaskFormat object.
 // returns a *RequestInformation when successful
 func (m *TasksItemBucketTaskBoardFormatRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerBucketTaskBoardTaskFormatable, requestConfiguration *TasksItemBucketTaskBoardFormatRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

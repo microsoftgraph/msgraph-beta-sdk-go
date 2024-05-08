@@ -55,6 +55,7 @@ func NewHostSecurityProfilesHostSecurityProfileItemRequestBuilder(rawUrl string,
     return NewHostSecurityProfilesHostSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property hostSecurityProfiles for security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *HostSecurityProfilesHostSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) Delete(ctx c
     return nil
 }
 // Get get hostSecurityProfiles from security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a HostSecurityProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *HostSecurityProfilesHostSecurityProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HostSecurityProfileable, error) {
@@ -91,6 +93,7 @@ func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HostSecurityProfileable), nil
 }
 // Patch update the navigation property hostSecurityProfiles in security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a HostSecurityProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HostSecurityProfileable, requestConfiguration *HostSecurityProfilesHostSecurityProfileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HostSecurityProfileable, error) {
@@ -111,6 +114,7 @@ func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) Patch(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HostSecurityProfileable), nil
 }
 // ToDeleteRequestInformation delete navigation property hostSecurityProfiles for security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *HostSecurityProfilesHostSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) ToDeleteRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation get hostSecurityProfiles from security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HostSecurityProfilesHostSecurityProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property hostSecurityProfiles in security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HostSecurityProfileable, requestConfiguration *HostSecurityProfilesHostSecurityProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) ToPatchReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *HostSecurityProfilesHostSecurityProfileItemRequestBuilder when successful
 func (m *HostSecurityProfilesHostSecurityProfileItemRequestBuilder) WithUrl(rawUrl string)(*HostSecurityProfilesHostSecurityProfileItemRequestBuilder) {
     return NewHostSecurityProfilesHostSecurityProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

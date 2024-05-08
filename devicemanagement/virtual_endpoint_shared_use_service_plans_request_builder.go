@@ -11,7 +11,7 @@ import (
 type VirtualEndpointSharedUseServicePlansRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointSharedUseServicePlansRequestBuilderGetQueryParameters get sharedUseServicePlans from deviceManagement
+// VirtualEndpointSharedUseServicePlansRequestBuilderGetQueryParameters get a list of the cloudPcSharedUseServicePlan objects and their properties.
 type VirtualEndpointSharedUseServicePlansRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,10 +77,13 @@ func NewVirtualEndpointSharedUseServicePlansRequestBuilder(rawUrl string, reques
 func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) Count()(*VirtualEndpointSharedUseServicePlansCountRequestBuilder) {
     return NewVirtualEndpointSharedUseServicePlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get sharedUseServicePlans from deviceManagement
+// Get get a list of the cloudPcSharedUseServicePlan objects and their properties.
 // Deprecated: The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans
 // returns a CloudPcSharedUseServicePlanCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-shareduseserviceplans?view=graph-rest-beta
 func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSharedUseServicePlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSharedUseServicePlanCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) Post(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSharedUseServicePlanable), nil
 }
-// ToGetRequestInformation get sharedUseServicePlans from deviceManagement
+// ToGetRequestInformation get a list of the cloudPcSharedUseServicePlan objects and their properties.
 // Deprecated: The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointSharedUseServicePlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSharedUseServicePlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

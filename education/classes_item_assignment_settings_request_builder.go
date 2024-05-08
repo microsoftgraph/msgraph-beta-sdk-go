@@ -18,7 +18,7 @@ type ClassesItemAssignmentSettingsRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ClassesItemAssignmentSettingsRequestBuilderGetQueryParameters specifies class-level assignments settings.
+// ClassesItemAssignmentSettingsRequestBuilderGetQueryParameters read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
 type ClassesItemAssignmentSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,9 +75,12 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get specifies class-level assignments settings.
+// Get read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
 // returns a EducationAssignmentSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentsettings-get?view=graph-rest-beta
 func (m *ClassesItemAssignmentSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,9 +108,12 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) GradingCategories()(*Class
 func (m *ClassesItemAssignmentSettingsRequestBuilder) GradingSchemes()(*ClassesItemAssignmentSettingsGradingSchemesRequestBuilder) {
     return NewClassesItemAssignmentSettingsGradingSchemesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property assignmentSettings in education
+// Patch update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
 // returns a EducationAssignmentSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-beta
 func (m *ClassesItemAssignmentSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -136,7 +142,7 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation specifies class-level assignments settings.
+// ToGetRequestInformation read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,7 +156,7 @@ func (m *ClassesItemAssignmentSettingsRequestBuilder) ToGetRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property assignmentSettings in education
+// ToPatchRequestInformation update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentSettingsable, requestConfiguration *ClassesItemAssignmentSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

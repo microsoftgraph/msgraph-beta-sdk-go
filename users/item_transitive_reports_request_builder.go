@@ -11,7 +11,7 @@ import (
 type ItemTransitiveReportsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTransitiveReportsRequestBuilderGetQueryParameters the transitive reports for a user. Read-only.
+// ItemTransitiveReportsRequestBuilderGetQueryParameters retrieve a count of transitive reports for a user.
 type ItemTransitiveReportsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewItemTransitiveReportsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ItemTransitiveReportsRequestBuilder) Count()(*ItemTransitiveReportsCountRequestBuilder) {
     return NewItemTransitiveReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the transitive reports for a user. Read-only.
+// Get retrieve a count of transitive reports for a user.
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-get-transitivereports?view=graph-rest-beta
 func (m *ItemTransitiveReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTransitiveReportsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *ItemTransitiveReportsRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// ToGetRequestInformation the transitive reports for a user. Read-only.
+// ToGetRequestInformation retrieve a count of transitive reports for a user.
 // returns a *RequestInformation when successful
 func (m *ItemTransitiveReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

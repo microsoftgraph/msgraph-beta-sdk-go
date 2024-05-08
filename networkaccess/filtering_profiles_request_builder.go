@@ -11,7 +11,7 @@ import (
 type FilteringProfilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FilteringProfilesRequestBuilderGetQueryParameters a filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+// FilteringProfilesRequestBuilderGetQueryParameters get a list of the filteringProfile objects and their properties.
 type FilteringProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewFilteringProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *FilteringProfilesRequestBuilder) Count()(*FilteringProfilesCountRequestBuilder) {
     return NewFilteringProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+// Get get a list of the filteringProfile objects and their properties.
 // returns a FilteringProfileCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-filteringprofile-list?view=graph-rest-beta
 func (m *FilteringProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *FilteringProfilesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *FilteringProfilesRequestBuilder) Post(ctx context.Context, body i43e723
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringProfileable), nil
 }
-// ToGetRequestInformation a filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+// ToGetRequestInformation get a list of the filteringProfile objects and their properties.
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

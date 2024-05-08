@@ -11,7 +11,7 @@ import (
 type RoleManagementAlertsAlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RoleManagementAlertsAlertsRequestBuilderGetQueryParameters represents the alert entity.
+// RoleManagementAlertsAlertsRequestBuilderGetQueryParameters get a list of the unifiedRoleManagementAlert objects and their properties.
 type RoleManagementAlertsAlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewRoleManagementAlertsAlertsRequestBuilder(rawUrl string, requestAdapter i
 func (m *RoleManagementAlertsAlertsRequestBuilder) Count()(*RoleManagementAlertsAlertsCountRequestBuilder) {
     return NewRoleManagementAlertsAlertsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents the alert entity.
+// Get get a list of the unifiedRoleManagementAlert objects and their properties.
 // returns a UnifiedRoleManagementAlertCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/rolemanagementalert-list-alerts?view=graph-rest-beta
 func (m *RoleManagementAlertsAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleManagementAlertCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *RoleManagementAlertsAlertsRequestBuilder) Post(ctx context.Context, bod
 func (m *RoleManagementAlertsAlertsRequestBuilder) Refresh()(*RoleManagementAlertsAlertsRefreshRequestBuilder) {
     return NewRoleManagementAlertsAlertsRefreshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation represents the alert entity.
+// ToGetRequestInformation get a list of the unifiedRoleManagementAlert objects and their properties.
 // returns a *RequestInformation when successful
 func (m *RoleManagementAlertsAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleManagementAlertsAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

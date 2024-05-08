@@ -519,6 +519,16 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["viewpoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDriveItemViewpointFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetViewpoint(val.(DriveItemViewpointable))
+        }
+        return nil
+    }
     res["webDavUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -853,6 +863,18 @@ func (m *DriveItem) GetVideo()(Videoable) {
     }
     return nil
 }
+// GetViewpoint gets the viewpoint property value. Returns information specific to the calling user for this drive item. Read-only.
+// returns a DriveItemViewpointable when successful
+func (m *DriveItem) GetViewpoint()(DriveItemViewpointable) {
+    val, err := m.GetBackingStore().Get("viewpoint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DriveItemViewpointable)
+    }
+    return nil
+}
 // GetWebDavUrl gets the webDavUrl property value. WebDAV compatible URL for the item.
 // returns a *string when successful
 func (m *DriveItem) GetWebDavUrl()(*string) {
@@ -1130,6 +1152,12 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteObjectValue("viewpoint", m.GetViewpoint())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("webDavUrl", m.GetWebDavUrl())
         if err != nil {
             return err
@@ -1388,6 +1416,13 @@ func (m *DriveItem) SetVideo(value Videoable)() {
         panic(err)
     }
 }
+// SetViewpoint sets the viewpoint property value. Returns information specific to the calling user for this drive item. Read-only.
+func (m *DriveItem) SetViewpoint(value DriveItemViewpointable)() {
+    err := m.GetBackingStore().Set("viewpoint", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWebDavUrl sets the webDavUrl property value. WebDAV compatible URL for the item.
 func (m *DriveItem) SetWebDavUrl(value *string)() {
     err := m.GetBackingStore().Set("webDavUrl", value)
@@ -1440,6 +1475,7 @@ type DriveItemable interface {
     GetThumbnails()([]ThumbnailSetable)
     GetVersions()([]DriveItemVersionable)
     GetVideo()(Videoable)
+    GetViewpoint()(DriveItemViewpointable)
     GetWebDavUrl()(*string)
     GetWorkbook()(Workbookable)
     SetActivities(value []ItemActivityOLDable)()
@@ -1477,6 +1513,7 @@ type DriveItemable interface {
     SetThumbnails(value []ThumbnailSetable)()
     SetVersions(value []DriveItemVersionable)()
     SetVideo(value Videoable)()
+    SetViewpoint(value DriveItemViewpointable)()
     SetWebDavUrl(value *string)()
     SetWorkbook(value Workbookable)()
 }

@@ -11,7 +11,7 @@ import (
 type ItemHistoryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemHistoryRequestBuilderGetQueryParameters get history from riskyUsers
+// ItemHistoryRequestBuilderGetQueryParameters get the risk history of a riskyUser resource.
 type ItemHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewItemHistoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 func (m *ItemHistoryRequestBuilder) Count()(*ItemHistoryCountRequestBuilder) {
     return NewItemHistoryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get history from riskyUsers
+// Get get the risk history of a riskyUser resource.
 // returns a RiskyUserHistoryItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-beta
 func (m *ItemHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemHistoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ItemHistoryRequestBuilder) Post(ctx context.Context, body ie233ee762e29
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserHistoryItemable), nil
 }
-// ToGetRequestInformation get history from riskyUsers
+// ToGetRequestInformation get the risk history of a riskyUser resource.
 // returns a *RequestInformation when successful
 func (m *ItemHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

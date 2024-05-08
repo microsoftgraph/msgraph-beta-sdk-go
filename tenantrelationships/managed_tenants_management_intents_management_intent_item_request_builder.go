@@ -18,7 +18,7 @@ type ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderDeleteRequ
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetQueryParameters the collection of baseline management intents across managed tenants.
+// ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetQueryParameters read the properties and relationships of a managementIntent object.
 type ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) Dele
     }
     return nil
 }
-// Get the collection of baseline management intents across managed tenants.
+// Get read the properties and relationships of a managementIntent object.
 // returns a ManagementIntentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managementintent-get?view=graph-rest-beta
 func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementIntentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of baseline management intents across managed tenants.
+// ToGetRequestInformation read the properties and relationships of a managementIntent object.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ManagedTenantsManagementIntentsManagementIntentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

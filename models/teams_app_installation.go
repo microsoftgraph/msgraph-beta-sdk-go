@@ -63,6 +63,16 @@ func (m *TeamsAppInstallation) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["scopeInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamsAppInstallationScopeInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScopeInfo(val.(TeamsAppInstallationScopeInfoable))
+        }
+        return nil
+    }
     res["teamsApp"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTeamsAppFromDiscriminatorValue)
         if err != nil {
@@ -84,6 +94,18 @@ func (m *TeamsAppInstallation) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetScopeInfo gets the scopeInfo property value. The scopeInfo property
+// returns a TeamsAppInstallationScopeInfoable when successful
+func (m *TeamsAppInstallation) GetScopeInfo()(TeamsAppInstallationScopeInfoable) {
+    val, err := m.GetBackingStore().Get("scopeInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamsAppInstallationScopeInfoable)
+    }
+    return nil
 }
 // GetTeamsApp gets the teamsApp property value. The app that is installed.
 // returns a TeamsAppable when successful
@@ -122,6 +144,12 @@ func (m *TeamsAppInstallation) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteObjectValue("scopeInfo", m.GetScopeInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("teamsApp", m.GetTeamsApp())
         if err != nil {
             return err
@@ -138,6 +166,13 @@ func (m *TeamsAppInstallation) Serialize(writer i878a80d2330e89d26896388a3f487ee
 // SetConsentedPermissionSet sets the consentedPermissionSet property value. The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
 func (m *TeamsAppInstallation) SetConsentedPermissionSet(value TeamsAppPermissionSetable)() {
     err := m.GetBackingStore().Set("consentedPermissionSet", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetScopeInfo sets the scopeInfo property value. The scopeInfo property
+func (m *TeamsAppInstallation) SetScopeInfo(value TeamsAppInstallationScopeInfoable)() {
+    err := m.GetBackingStore().Set("scopeInfo", value)
     if err != nil {
         panic(err)
     }
@@ -160,9 +195,11 @@ type TeamsAppInstallationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConsentedPermissionSet()(TeamsAppPermissionSetable)
+    GetScopeInfo()(TeamsAppInstallationScopeInfoable)
     GetTeamsApp()(TeamsAppable)
     GetTeamsAppDefinition()(TeamsAppDefinitionable)
     SetConsentedPermissionSet(value TeamsAppPermissionSetable)()
+    SetScopeInfo(value TeamsAppInstallationScopeInfoable)()
     SetTeamsApp(value TeamsAppable)()
     SetTeamsAppDefinition(value TeamsAppDefinitionable)()
 }

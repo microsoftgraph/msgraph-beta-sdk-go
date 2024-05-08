@@ -10,6 +10,13 @@ import (
 type ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
@@ -37,7 +44,23 @@ func NewItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get media content for the navigation property messages from users
+// Delete the unique identifier for an entity. Read-only.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Get the unique identifier for an entity. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -57,7 +80,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
     }
     return res.([]byte), nil
 }
-// Put update media content for the navigation property messages in users
+// Put the unique identifier for an entity. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -77,7 +100,18 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation get media content for the navigation property messages from users
+// ToDeleteRequestInformation the unique identifier for an entity. Read-only.
+// returns a *RequestInformation when successful
+func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToGetRequestInformation the unique identifier for an entity. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -88,7 +122,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update media content for the navigation property messages in users
+// ToPutRequestInformation the unique identifier for an entity. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type ThreatIntelligenceHostCookiesHostCookieItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligenceHostCookiesHostCookieItemRequestBuilderGetQueryParameters retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+// ThreatIntelligenceHostCookiesHostCookieItemRequestBuilderGetQueryParameters read the properties and relationships of a hostCookie object.
 type ThreatIntelligenceHostCookiesHostCookieItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+// Get read the properties and relationships of a hostCookie object.
 // returns a HostCookieable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-hostcookie-get?view=graph-rest-beta
 func (m *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostCookieable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +129,7 @@ func (m *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
+// ToGetRequestInformation read the properties and relationships of a hostCookie object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostCookiesHostCookieItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

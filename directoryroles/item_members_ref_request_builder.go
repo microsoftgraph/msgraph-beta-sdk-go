@@ -11,7 +11,7 @@ import (
 type ItemMembersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMembersRefRequestBuilderDeleteQueryParameters delete ref of navigation property members for directoryRoles
+// ItemMembersRefRequestBuilderDeleteQueryParameters remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 type ItemMembersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type ItemMembersRefRequestBuilderDeleteRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemMembersRefRequestBuilderDeleteQueryParameters
 }
-// ItemMembersRefRequestBuilderGetQueryParameters users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
+// ItemMembersRefRequestBuilderGetQueryParameters retrieve a list of the users that are assigned to the directory role.  Only users can be assigned to a directory role. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 type ItemMembersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,8 +69,11 @@ func NewItemMembersRefRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewItemMembersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property members for directoryRoles
+// Delete remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryrole-delete-member?view=graph-rest-beta
 func (m *ItemMembersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMembersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,9 +88,12 @@ func (m *ItemMembersRefRequestBuilder) Delete(ctx context.Context, requestConfig
     }
     return nil
 }
-// Get users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
+// Get retrieve a list of the users that are assigned to the directory role.  Only users can be assigned to a directory role. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryrole-list-members?view=graph-rest-beta
 func (m *ItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMembersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,8 +111,11 @@ func (m *ItemMembersRefRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to members for directoryRoles
+// Post create a new directory role member. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directoryrole-post-members?view=graph-rest-beta
 func (m *ItemMembersRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemMembersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +130,7 @@ func (m *ItemMembersRefRequestBuilder) Post(ctx context.Context, body ie233ee762
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property members for directoryRoles
+// ToDeleteRequestInformation remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 // returns a *RequestInformation when successful
 func (m *ItemMembersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMembersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *ItemMembersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
+// ToGetRequestInformation retrieve a list of the users that are assigned to the directory role.  Only users can be assigned to a directory role. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 // returns a *RequestInformation when successful
 func (m *ItemMembersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMembersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -149,7 +158,7 @@ func (m *ItemMembersRefRequestBuilder) ToGetRequestInformation(ctx context.Conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to members for directoryRoles
+// ToPostRequestInformation create a new directory role member. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
 // returns a *RequestInformation when successful
 func (m *ItemMembersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemMembersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/$ref", m.BaseRequestBuilder.PathParameters)

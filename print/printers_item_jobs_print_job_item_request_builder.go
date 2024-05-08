@@ -18,7 +18,7 @@ type PrintersItemJobsPrintJobItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PrintersItemJobsPrintJobItemRequestBuilderGetQueryParameters get jobs from print
+// PrintersItemJobsPrintJobItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a print job.
 type PrintersItemJobsPrintJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,9 +90,12 @@ func (m *PrintersItemJobsPrintJobItemRequestBuilder) Delete(ctx context.Context,
 func (m *PrintersItemJobsPrintJobItemRequestBuilder) Documents()(*PrintersItemJobsItemDocumentsRequestBuilder) {
     return NewPrintersItemJobsItemDocumentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get jobs from print
+// Get retrieve the properties and relationships of a print job.
 // returns a PrintJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printjob-get?view=graph-rest-beta
 func (m *PrintersItemJobsPrintJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemJobsPrintJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,9 +113,12 @@ func (m *PrintersItemJobsPrintJobItemRequestBuilder) Get(ctx context.Context, re
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobable), nil
 }
-// Patch update the navigation property jobs in print
+// Patch update a print job. Only the configuration property can be updated. Updating a print job will only succeed if a printTask in a processing state, started by a trigger that the requesting app created, is associated with the print job. For details about how to register a task trigger, see Extending Universal Print to support pull printing.
 // returns a PrintJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printjob-update?view=graph-rest-beta
 func (m *PrintersItemJobsPrintJobItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobable, requestConfiguration *PrintersItemJobsPrintJobItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -161,7 +167,7 @@ func (m *PrintersItemJobsPrintJobItemRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get jobs from print
+// ToGetRequestInformation retrieve the properties and relationships of a print job.
 // returns a *RequestInformation when successful
 func (m *PrintersItemJobsPrintJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemJobsPrintJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -175,7 +181,7 @@ func (m *PrintersItemJobsPrintJobItemRequestBuilder) ToGetRequestInformation(ctx
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property jobs in print
+// ToPatchRequestInformation update a print job. Only the configuration property can be updated. Updating a print job will only succeed if a printTask in a processing state, started by a trigger that the requesting app created, is associated with the print job. For details about how to register a task trigger, see Extending Universal Print to support pull printing.
 // returns a *RequestInformation when successful
 func (m *PrintersItemJobsPrintJobItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobable, requestConfiguration *PrintersItemJobsPrintJobItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

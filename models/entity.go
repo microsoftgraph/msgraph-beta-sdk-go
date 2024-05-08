@@ -88,8 +88,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAccessReviewStage(), nil
                     case "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile":
                         return NewActiveDirectoryWindowsAutopilotDeploymentProfile(), nil
-                    case "#microsoft.graph.activeUsersBreakdownMetric":
-                        return NewActiveUsersBreakdownMetric(), nil
                     case "#microsoft.graph.activeUsersMetric":
                         return NewActiveUsersMetric(), nil
                     case "#microsoft.graph.activityBasedTimeoutPolicy":
@@ -740,6 +738,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCustomAuthenticationExtension(), nil
                     case "#microsoft.graph.customCalloutExtension":
                         return NewCustomCalloutExtension(), nil
+                    case "#microsoft.graph.customClaimsPolicy":
+                        return NewCustomClaimsPolicy(), nil
                     case "#microsoft.graph.customExtensionHandler":
                         return NewCustomExtensionHandler(), nil
                     case "#microsoft.graph.customExtensionStageSetting":
@@ -1226,6 +1226,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewExtensionProperty(), nil
                     case "#microsoft.graph.external":
                         return NewExternal(), nil
+                    case "#microsoft.graph.externalAuthenticationMethodConfiguration":
+                        return NewExternalAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.externalConnection":
                         return NewExternalConnection(), nil
                     case "#microsoft.graph.externalDomainName":

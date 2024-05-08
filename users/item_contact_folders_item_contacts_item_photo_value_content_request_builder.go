@@ -10,6 +10,13 @@ import (
 type ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
+// ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
 // ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration struct {
     // Request headers
@@ -37,7 +44,23 @@ func NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get media content for the navigation property photo from users
+// Delete optional contact picture. You can get or set a photo for a contact.
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Get optional contact picture. You can get or set a photo for a contact.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -57,7 +80,7 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) Get(
     }
     return res.([]byte), nil
 }
-// Put update media content for the navigation property photo in users
+// Put optional contact picture. You can get or set a photo for a contact.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -77,7 +100,18 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) Put(
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation get media content for the navigation property photo from users
+// ToDeleteRequestInformation optional contact picture. You can get or set a photo for a contact.
+// returns a *RequestInformation when successful
+func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToGetRequestInformation optional contact picture. You can get or set a photo for a contact.
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -88,7 +122,7 @@ func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToGe
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update media content for the navigation property photo in users
+// ToPutRequestInformation optional contact picture. You can get or set a photo for a contact.
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemContactFoldersItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

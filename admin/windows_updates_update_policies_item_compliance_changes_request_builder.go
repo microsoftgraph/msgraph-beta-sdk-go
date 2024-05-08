@@ -11,7 +11,7 @@ import (
 type WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetQueryParameters compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
+// WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetQueryParameters get a list of the complianceChange objects and their properties.
 type WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewWindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder(rawUrl s
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Count()(*WindowsUpdatesUpdatePoliciesItemComplianceChangesCountRequestBuilder) {
     return NewWindowsUpdatesUpdatePoliciesItemComplianceChangesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
+// Get get a list of the complianceChange objects and their properties.
 // returns a ComplianceChangeCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-list-compliancechanges?view=graph-rest-beta
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Get(ct
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeCollectionResponseable), nil
 }
-// Post create new navigation property to complianceChanges for admin
+// Post create a new contentApproval object.
 // returns a ComplianceChangeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-post-compliancechanges-contentapproval?view=graph-rest-beta
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Post(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderPostRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) Post(c
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable), nil
 }
-// ToGetRequestInformation compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
+// ToGetRequestInformation get a list of the complianceChange objects and their properties.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ToGetR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to complianceChanges for admin
+// ToPostRequestInformation create a new contentApproval object.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ComplianceChangeable, requestConfiguration *WindowsUpdatesUpdatePoliciesItemComplianceChangesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type OnPremisesSynchronizationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// OnPremisesSynchronizationRequestBuilderGetQueryParameters a container for on-premises directory synchronization functionalities that are available for the organization.
+// OnPremisesSynchronizationRequestBuilderGetQueryParameters read the properties and relationships of an onPremisesDirectorySynchronization object.
 type OnPremisesSynchronizationRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewOnPremisesSynchronizationRequestBuilder(rawUrl string, requestAdapter i2
 func (m *OnPremisesSynchronizationRequestBuilder) Count()(*OnPremisesSynchronizationCountRequestBuilder) {
     return NewOnPremisesSynchronizationCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a container for on-premises directory synchronization functionalities that are available for the organization.
+// Get read the properties and relationships of an onPremisesDirectorySynchronization object.
 // returns a OnPremisesDirectorySynchronizationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnPremisesSynchronizationRequestBuilder) Get(ctx context.Context, requestConfiguration *OnPremisesSynchronizationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesDirectorySynchronizationCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *OnPremisesSynchronizationRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesDirectorySynchronizationable), nil
 }
-// ToGetRequestInformation a container for on-premises directory synchronization functionalities that are available for the organization.
+// ToGetRequestInformation read the properties and relationships of an onPremisesDirectorySynchronization object.
 // returns a *RequestInformation when successful
 func (m *OnPremisesSynchronizationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnPremisesSynchronizationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

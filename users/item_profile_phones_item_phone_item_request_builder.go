@@ -54,8 +54,11 @@ func NewItemProfilePhonesItemPhoneItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemProfilePhonesItemPhoneItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property phones for users
+// Delete delete an itemPhone object from the user's profile.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-beta
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable), nil
 }
-// Patch update the navigation property phones in users
+// Patch update the properties of an itemPhone object in a user's profile.
 // returns a ItemPhoneable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-beta
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +116,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) Patch(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable), nil
 }
-// ToDeleteRequestInformation delete navigation property phones for users
+// ToDeleteRequestInformation delete an itemPhone object from the user's profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToGetRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property phones in users
+// ToPatchRequestInformation update the properties of an itemPhone object in a user's profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, requestConfiguration *ItemProfilePhonesItemPhoneItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type PresencesPresenceItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PresencesPresenceItemRequestBuilderGetQueryParameters get presences from communications
+// PresencesPresenceItemRequestBuilderGetQueryParameters get a user's presence information.
 type PresencesPresenceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,9 +80,12 @@ func (m *PresencesPresenceItemRequestBuilder) Delete(ctx context.Context, reques
     }
     return nil
 }
-// Get get presences from communications
+// Get get a user's presence information.
 // returns a Presenceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta
 func (m *PresencesPresenceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PresencesPresenceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -146,7 +149,7 @@ func (m *PresencesPresenceItemRequestBuilder) ToDeleteRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get presences from communications
+// ToGetRequestInformation get a user's presence information.
 // returns a *RequestInformation when successful
 func (m *PresencesPresenceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PresencesPresenceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

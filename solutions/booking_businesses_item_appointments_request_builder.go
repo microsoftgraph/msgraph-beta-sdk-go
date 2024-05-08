@@ -11,7 +11,7 @@ import (
 type BookingBusinessesItemAppointmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BookingBusinessesItemAppointmentsRequestBuilderGetQueryParameters all the appointments of this business. Read-only. Nullable.
+// BookingBusinessesItemAppointmentsRequestBuilderGetQueryParameters get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
 type BookingBusinessesItemAppointmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewBookingBusinessesItemAppointmentsRequestBuilder(rawUrl string, requestAd
 func (m *BookingBusinessesItemAppointmentsRequestBuilder) Count()(*BookingBusinessesItemAppointmentsCountRequestBuilder) {
     return NewBookingBusinessesItemAppointmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get all the appointments of this business. Read-only. Nullable.
+// Get get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
 // returns a BookingAppointmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *BookingBusinessesItemAppointmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *BookingBusinessesItemAppointmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *BookingBusinessesItemAppointmentsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingAppointmentable), nil
 }
-// ToGetRequestInformation all the appointments of this business. Read-only. Nullable.
+// ToGetRequestInformation get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
 // returns a *RequestInformation when successful
 func (m *BookingBusinessesItemAppointmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BookingBusinessesItemAppointmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

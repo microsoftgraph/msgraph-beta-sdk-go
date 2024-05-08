@@ -11,7 +11,7 @@ import (
 type AppCredentialSignInActivitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AppCredentialSignInActivitiesRequestBuilderGetQueryParameters represents a collection of sign-in activities of application credentials.
+// AppCredentialSignInActivitiesRequestBuilderGetQueryParameters get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.
 type AppCredentialSignInActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewAppCredentialSignInActivitiesRequestBuilder(rawUrl string, requestAdapte
 func (m *AppCredentialSignInActivitiesRequestBuilder) Count()(*AppCredentialSignInActivitiesCountRequestBuilder) {
     return NewAppCredentialSignInActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents a collection of sign-in activities of application credentials.
+// Get get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.
 // returns a AppCredentialSignInActivityCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-list-appcredentialsigninactivities?view=graph-rest-beta
 func (m *AppCredentialSignInActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *AppCredentialSignInActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCredentialSignInActivityCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *AppCredentialSignInActivitiesRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCredentialSignInActivityable), nil
 }
-// ToGetRequestInformation represents a collection of sign-in activities of application credentials.
+// ToGetRequestInformation get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.
 // returns a *RequestInformation when successful
 func (m *AppCredentialSignInActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AppCredentialSignInActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

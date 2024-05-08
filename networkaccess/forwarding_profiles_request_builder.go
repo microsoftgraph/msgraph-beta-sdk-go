@@ -11,7 +11,7 @@ import (
 type ForwardingProfilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ForwardingProfilesRequestBuilderGetQueryParameters a forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
+// ForwardingProfilesRequestBuilderGetQueryParameters retrieve a list of forwarding profiles.
 type ForwardingProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewForwardingProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ForwardingProfilesRequestBuilder) Count()(*ForwardingProfilesCountRequestBuilder) {
     return NewForwardingProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
+// Get retrieve a list of forwarding profiles.
 // returns a ForwardingProfileCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-forwardingprofiles?view=graph-rest-beta
 func (m *ForwardingProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingProfilesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ForwardingProfilesRequestBuilder) Post(ctx context.Context, body i43e72
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingProfileable), nil
 }
-// ToGetRequestInformation a forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
+// ToGetRequestInformation retrieve a list of forwarding profiles.
 // returns a *RequestInformation when successful
 func (m *ForwardingProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

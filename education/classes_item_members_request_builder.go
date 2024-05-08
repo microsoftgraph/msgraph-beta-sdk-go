@@ -11,7 +11,7 @@ import (
 type ClassesItemMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemMembersRequestBuilderGetQueryParameters all users in the class. Nullable.
+// ClassesItemMembersRequestBuilderGetQueryParameters retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
 type ClassesItemMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewClassesItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ClassesItemMembersRequestBuilder) Count()(*ClassesItemMembersCountRequestBuilder) {
     return NewClassesItemMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get all users in the class. Nullable.
+// Get retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
 // returns a EducationUserCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-beta
 func (m *ClassesItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationUserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,7 +97,7 @@ func (m *ClassesItemMembersRequestBuilder) Get(ctx context.Context, requestConfi
 func (m *ClassesItemMembersRequestBuilder) Ref()(*ClassesItemMembersRefRequestBuilder) {
     return NewClassesItemMembersRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation all users in the class. Nullable.
+// ToGetRequestInformation retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
 // returns a *RequestInformation when successful
 func (m *ClassesItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

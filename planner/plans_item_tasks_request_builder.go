@@ -11,7 +11,7 @@ import (
 type PlansItemTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PlansItemTasksRequestBuilderGetQueryParameters collection of tasks in the plan. Read-only. Nullable.
+// PlansItemTasksRequestBuilderGetQueryParameters retrieve a list of plannerTask objects associated with a plannerPlan object.
 type PlansItemTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,9 +81,12 @@ func (m *PlansItemTasksRequestBuilder) Count()(*PlansItemTasksCountRequestBuilde
 func (m *PlansItemTasksRequestBuilder) Delta()(*PlansItemTasksDeltaRequestBuilder) {
     return NewPlansItemTasksDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get collection of tasks in the plan. Read-only. Nullable.
+// Get retrieve a list of plannerTask objects associated with a plannerPlan object.
 // returns a PlannerTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-beta
 func (m *PlansItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *PlansItemTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -121,7 +124,7 @@ func (m *PlansItemTasksRequestBuilder) Post(ctx context.Context, body ie233ee762
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable), nil
 }
-// ToGetRequestInformation collection of tasks in the plan. Read-only. Nullable.
+// ToGetRequestInformation retrieve a list of plannerTask objects associated with a plannerPlan object.
 // returns a *RequestInformation when successful
 func (m *PlansItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PlansItemTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

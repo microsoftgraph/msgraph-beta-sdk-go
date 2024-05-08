@@ -18,7 +18,7 @@ type ItemProfileEmailsItemEmailItemRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemProfileEmailsItemEmailItemRequestBuilderGetQueryParameters represents detailed information about email addresses associated with the user.
+// ItemProfileEmailsItemEmailItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an itemEmail object in a user's profile.
 type ItemProfileEmailsItemEmailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get represents detailed information about email addresses associated with the user.
+// Get retrieve the properties and relationships of an itemEmail object in a user's profile.
 // returns a ItemEmailable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/itememail-get?view=graph-rest-beta
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable), nil
 }
-// Patch update the navigation property emails in users
+// Patch update the properties of an itemEmail object in a user's profile.
 // returns a ItemEmailable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/itememail-update?view=graph-rest-beta
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToDeleteRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents detailed information about email addresses associated with the user.
+// ToGetRequestInformation retrieve the properties and relationships of an itemEmail object in a user's profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToGetRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property emails in users
+// ToPatchRequestInformation update the properties of an itemEmail object in a user's profile.
 // returns a *RequestInformation when successful
 func (m *ItemProfileEmailsItemEmailItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemEmailable, requestConfiguration *ItemProfileEmailsItemEmailItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -18,7 +18,7 @@ type ConnectionsExternalConnectionItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectionsExternalConnectionItemRequestBuilderGetQueryParameters get connections from external
+// ConnectionsExternalConnectionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an externalConnection.
 type ConnectionsExternalConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewConnectionsExternalConnectionItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewConnectionsExternalConnectionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property connections for external
+// Delete delete an externalConnection.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-beta
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get get connections from external
+// Get retrieve the properties and relationships of an externalConnection.
 // returns a ExternalConnectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-beta
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderGetRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalConnectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,9 +111,12 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) Items()(*ConnectionsIt
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Operations()(*ConnectionsItemOperationsRequestBuilder) {
     return NewConnectionsItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property connections in external
+// Patch update the properties of an externalConnection.
 // returns a ExternalConnectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-beta
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Patch(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalConnectionable, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderPatchRequestConfiguration)(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalConnectionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -135,7 +144,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) Quota()(*ConnectionsIt
 func (m *ConnectionsExternalConnectionItemRequestBuilder) Schema()(*ConnectionsItemSchemaRequestBuilder) {
     return NewConnectionsItemSchemaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property connections for external
+// ToDeleteRequestInformation delete an externalConnection.
 // returns a *RequestInformation when successful
 func (m *ConnectionsExternalConnectionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,7 +155,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get connections from external
+// ToGetRequestInformation retrieve the properties and relationships of an externalConnection.
 // returns a *RequestInformation when successful
 func (m *ConnectionsExternalConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,7 +169,7 @@ func (m *ConnectionsExternalConnectionItemRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property connections in external
+// ToPatchRequestInformation update the properties of an externalConnection.
 // returns a *RequestInformation when successful
 func (m *ConnectionsExternalConnectionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalConnectionable, requestConfiguration *ConnectionsExternalConnectionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

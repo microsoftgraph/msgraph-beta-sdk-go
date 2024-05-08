@@ -11,7 +11,7 @@ import (
 type AuthorizationPolicyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthorizationPolicyRequestBuilderGetQueryParameters the policy that controls Microsoft Entra authorization settings.
+// AuthorizationPolicyRequestBuilderGetQueryParameters retrieve the properties of an authorizationPolicy object.
 type AuthorizationPolicyRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewAuthorizationPolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *AuthorizationPolicyRequestBuilder) Count()(*AuthorizationPolicyCountRequestBuilder) {
     return NewAuthorizationPolicyCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the policy that controls Microsoft Entra authorization settings.
+// Get retrieve the properties of an authorizationPolicy object.
 // returns a AuthorizationPolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authorizationpolicy-get?view=graph-rest-beta
 func (m *AuthorizationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthorizationPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *AuthorizationPolicyRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationPolicyable), nil
 }
-// ToGetRequestInformation the policy that controls Microsoft Entra authorization settings.
+// ToGetRequestInformation retrieve the properties of an authorizationPolicy object.
 // returns a *RequestInformation when successful
 func (m *AuthorizationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthorizationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

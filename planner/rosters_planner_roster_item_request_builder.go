@@ -18,7 +18,7 @@ type RostersPlannerRosterItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// RostersPlannerRosterItemRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the specified rosters
+// RostersPlannerRosterItemRequestBuilderGetQueryParameters read the properties and relationships of a plannerRoster object.
 type RostersPlannerRosterItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewRostersPlannerRosterItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewRostersPlannerRosterItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property rosters for planner
+// Delete delete a plannerRoster object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerroster-delete?view=graph-rest-beta
 func (m *RostersPlannerRosterItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *RostersPlannerRosterItemRequestBuilder) Delete(ctx context.Context, req
     }
     return nil
 }
-// Get read-only. Nullable. Returns a collection of the specified rosters
+// Get read the properties and relationships of a plannerRoster object.
 // returns a PlannerRosterable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerroster-get?view=graph-rest-beta
 func (m *RostersPlannerRosterItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerRosterable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -120,7 +126,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) Patch(ctx context.Context, body
 func (m *RostersPlannerRosterItemRequestBuilder) Plans()(*RostersItemPlansRequestBuilder) {
     return NewRostersItemPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property rosters for planner
+// ToDeleteRequestInformation delete a plannerRoster object.
 // returns a *RequestInformation when successful
 func (m *RostersPlannerRosterItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,7 +137,7 @@ func (m *RostersPlannerRosterItemRequestBuilder) ToDeleteRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read-only. Nullable. Returns a collection of the specified rosters
+// ToGetRequestInformation read the properties and relationships of a plannerRoster object.
 // returns a *RequestInformation when successful
 func (m *RostersPlannerRosterItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RostersPlannerRosterItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteQueryParameters delete ref of navigation property includedGroups for policies
+// MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteQueryParameters delete a group from the list of groups included in a mobile app management policy.
 type MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteRequest
     // Request query parameters
     QueryParameters *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteQueryParameters
 }
-// MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderGetQueryParameters microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
+// MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderGetQueryParameters get the list of groups that are included in a mobile app management policy.
 type MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,8 +69,11 @@ func NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewMobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property includedGroups for policies
+// Delete delete a group from the list of groups included in a mobile app management policy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-beta
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,9 +88,12 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Delete(
     }
     return nil
 }
-// Get microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
+// Get get the list of groups that are included in a mobile app management policy.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-beta
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,8 +111,11 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Get(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to includedGroups for policies
+// Post add groups to be included in a mobile app management policy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-post-includedgroups?view=graph-rest-beta
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +130,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) Post(ct
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property includedGroups for policies
+// ToDeleteRequestInformation delete a group from the list of groups included in a mobile app management policy.
 // returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToDelet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
+// ToGetRequestInformation get the list of groups that are included in a mobile app management policy.
 // returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -149,7 +158,7 @@ func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToGetRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to includedGroups for policies
+// ToPostRequestInformation add groups to be included in a mobile app management policy.
 // returns a *RequestInformation when successful
 func (m *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *MobileAppManagementPoliciesItemIncludedGroupsRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref", m.BaseRequestBuilder.PathParameters)

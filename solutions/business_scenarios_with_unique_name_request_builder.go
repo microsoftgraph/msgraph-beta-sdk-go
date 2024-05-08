@@ -18,7 +18,7 @@ type BusinessScenariosWithUniqueNameRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters get businessScenarios from solutions
+// BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters read the properties and relationships of a businessScenario object.
 type BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewBusinessScenariosWithUniqueNameRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessScenariosWithUniqueNameRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete navigation property businessScenarios for solutions
+// Delete delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-beta
 func (m *BusinessScenariosWithUniqueNameRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessScenariosWithUniqueNameRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *BusinessScenariosWithUniqueNameRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get get businessScenarios from solutions
+// Get read the properties and relationships of a businessScenario object.
 // returns a BusinessScenarioable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-beta
 func (m *BusinessScenariosWithUniqueNameRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessScenariosWithUniqueNameRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +99,12 @@ func (m *BusinessScenariosWithUniqueNameRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable), nil
 }
-// Patch update the navigation property businessScenarios in solutions
+// Patch update the properties of a businessScenario object.
 // returns a BusinessScenarioable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-beta
 func (m *BusinessScenariosWithUniqueNameRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, requestConfiguration *BusinessScenariosWithUniqueNameRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -113,7 +122,7 @@ func (m *BusinessScenariosWithUniqueNameRequestBuilder) Patch(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable), nil
 }
-// ToDeleteRequestInformation delete navigation property businessScenarios for solutions
+// ToDeleteRequestInformation delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosWithUniqueNameRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosWithUniqueNameRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +133,7 @@ func (m *BusinessScenariosWithUniqueNameRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get businessScenarios from solutions
+// ToGetRequestInformation read the properties and relationships of a businessScenario object.
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosWithUniqueNameRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessScenariosWithUniqueNameRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +147,7 @@ func (m *BusinessScenariosWithUniqueNameRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property businessScenarios in solutions
+// ToPatchRequestInformation update the properties of a businessScenario object.
 // returns a *RequestInformation when successful
 func (m *BusinessScenariosWithUniqueNameRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioable, requestConfiguration *BusinessScenariosWithUniqueNameRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

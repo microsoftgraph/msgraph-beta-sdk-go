@@ -18,7 +18,7 @@ type ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters resource to grant access to users or groups.
+// ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a unifiedRoleAssignment object.
 type ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,8 +59,11 @@ func NewExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property roleAssignments for roleManagement
+// Delete delete a unifiedRoleAssignment object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignment-delete?view=graph-rest-beta
 func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,9 +83,12 @@ func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Delete(
 func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) DirectoryScope()(*ExchangeRoleAssignmentsItemDirectoryScopeRequestBuilder) {
     return NewExchangeRoleAssignmentsItemDirectoryScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get resource to grant access to users or groups.
+// Get retrieve the properties and relationships of a unifiedRoleAssignment object.
 // returns a UnifiedRoleAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/unifiedroleassignment-get?view=graph-rest-beta
 func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -130,7 +136,7 @@ func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) Princip
 func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) RoleDefinition()(*ExchangeRoleAssignmentsItemRoleDefinitionRequestBuilder) {
     return NewExchangeRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property roleAssignments for roleManagement
+// ToDeleteRequestInformation delete a unifiedRoleAssignment object.
 // returns a *RequestInformation when successful
 func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +147,7 @@ func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToDelet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation resource to grant access to users or groups.
+// ToGetRequestInformation retrieve the properties and relationships of a unifiedRoleAssignment object.
 // returns a *RequestInformation when successful
 func (m *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

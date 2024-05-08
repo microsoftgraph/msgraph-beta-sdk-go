@@ -18,7 +18,7 @@ type ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters workload-specific scope object that represents the resources for which the principal has been granted access.
+// ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 type ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property customAppScopes for roleManagement
+// Delete delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customappscope-delete?view=graph-rest-beta
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get workload-specific scope object that represents the resources for which the principal has been granted access.
+// Get get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // returns a CustomAppScopeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customappscope-get?view=graph-rest-beta
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable), nil
 }
-// Patch update the navigation property customAppScopes in roleManagement
+// Patch update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // returns a CustomAppScopeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customappscope-update?view=graph-rest-beta
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Patch(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable), nil
 }
-// ToDeleteRequestInformation delete navigation property customAppScopes for roleManagement
+// ToDeleteRequestInformation delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // returns a *RequestInformation when successful
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToDeleteReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation workload-specific scope object that represents the resources for which the principal has been granted access.
+// ToGetRequestInformation get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // returns a *RequestInformation when successful
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToGetRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property customAppScopes in roleManagement
+// ToPatchRequestInformation update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
 // returns a *RequestInformation when successful
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

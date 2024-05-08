@@ -101,15 +101,15 @@ func (m *ItemOnlineMeetingsRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingCollectionResponseable), nil
 }
-// GetAllRecordings provides operations to call the getAllRecordings method.
-// returns a *ItemOnlineMeetingsGetAllRecordingsRequestBuilder when successful
-func (m *ItemOnlineMeetingsRequestBuilder) GetAllRecordings()(*ItemOnlineMeetingsGetAllRecordingsRequestBuilder) {
-    return NewItemOnlineMeetingsGetAllRecordingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// GetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime provides operations to call the getAllRecordings method.
+// returns a *ItemOnlineMeetingsGetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder when successful
+func (m *ItemOnlineMeetingsRequestBuilder) GetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime()(*ItemOnlineMeetingsGetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewItemOnlineMeetingsGetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GetAllTranscripts provides operations to call the getAllTranscripts method.
-// returns a *ItemOnlineMeetingsGetAllTranscriptsRequestBuilder when successful
-func (m *ItemOnlineMeetingsRequestBuilder) GetAllTranscripts()(*ItemOnlineMeetingsGetAllTranscriptsRequestBuilder) {
-    return NewItemOnlineMeetingsGetAllTranscriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// GetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime provides operations to call the getAllTranscripts method.
+// returns a *ItemOnlineMeetingsGetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder when successful
+func (m *ItemOnlineMeetingsRequestBuilder) GetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime()(*ItemOnlineMeetingsGetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewItemOnlineMeetingsGetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to onlineMeetings for users
 // returns a OnlineMeetingable when successful

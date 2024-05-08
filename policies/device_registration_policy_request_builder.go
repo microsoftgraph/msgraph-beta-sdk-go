@@ -11,7 +11,7 @@ import (
 type DeviceRegistrationPolicyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeviceRegistrationPolicyRequestBuilderGetQueryParameters get deviceRegistrationPolicy from policies
+// DeviceRegistrationPolicyRequestBuilderGetQueryParameters read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 type DeviceRegistrationPolicyRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -38,9 +38,12 @@ func NewDeviceRegistrationPolicyRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewDeviceRegistrationPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get deviceRegistrationPolicy from policies
+// Get read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 // returns a DeviceRegistrationPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/deviceregistrationpolicy-get?view=graph-rest-beta
 func (m *DeviceRegistrationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceRegistrationPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -58,7 +61,7 @@ func (m *DeviceRegistrationPolicyRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceRegistrationPolicyable), nil
 }
-// ToGetRequestInformation get deviceRegistrationPolicy from policies
+// ToGetRequestInformation read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 // returns a *RequestInformation when successful
 func (m *DeviceRegistrationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

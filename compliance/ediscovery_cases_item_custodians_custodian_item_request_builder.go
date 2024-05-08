@@ -18,7 +18,7 @@ type EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderGetQueryParameters returns a list of case custodian objects for this case.  Nullable.
+// EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderGetQueryParameters read the properties and relationships of a custodian object.
 type EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,10 +71,13 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get returns a list of case custodian objects for this case.  Nullable.
+// Get read the properties and relationships of a custodian object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a Custodianable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-custodian-get?view=graph-rest-beta
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,10 +125,13 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGrap
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryUpdateIndex()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryUpdateIndexRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryUpdateIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property custodians in compliance
+// Patch update the properties of a custodian object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a Custodianable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-custodian-update?view=graph-rest-beta
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Patch(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, requestConfiguration *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderPatchRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -160,7 +166,7 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) ToDeleteReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation returns a list of case custodian objects for this case.  Nullable.
+// ToGetRequestInformation read the properties and relationships of a custodian object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -175,7 +181,7 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) ToGetRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property custodians in compliance
+// ToPatchRequestInformation update the properties of a custodian object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable, requestConfiguration *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -18,7 +18,7 @@ type EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetQueryParameters returns a list of reviewSet objects in the case. Read-only. Nullable.
+// EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a reviewSet object.
 type EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,10 +71,13 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Delete(ctx co
     }
     return nil
 }
-// Get returns a list of reviewSet objects in the case. Read-only. Nullable.
+// Get retrieve the properties and relationships of a reviewSet object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a ReviewSetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-reviewset-get?view=graph-rest-beta
 func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.ReviewSetable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -140,7 +143,7 @@ func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) ToDeleteReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation returns a list of reviewSet objects in the case. Read-only. Nullable.
+// ToGetRequestInformation retrieve the properties and relationships of a reviewSet object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemReviewSetsReviewSetItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

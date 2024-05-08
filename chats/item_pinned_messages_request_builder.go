@@ -11,7 +11,7 @@ import (
 type ItemPinnedMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPinnedMessagesRequestBuilderGetQueryParameters a collection of all the pinned messages in the chat. Nullable.
+// ItemPinnedMessagesRequestBuilderGetQueryParameters get a list of pinnedChatMessages in a chat.
 type ItemPinnedMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewItemPinnedMessagesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemPinnedMessagesRequestBuilder) Count()(*ItemPinnedMessagesCountRequestBuilder) {
     return NewItemPinnedMessagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of all the pinned messages in the chat. Nullable.
+// Get get a list of pinnedChatMessages in a chat.
 // returns a PinnedChatMessageInfoCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-list-pinnedmessages?view=graph-rest-beta
 func (m *ItemPinnedMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPinnedMessagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *ItemPinnedMessagesRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoCollectionResponseable), nil
 }
-// Post create new navigation property to pinnedMessages for chats
+// Post pin a chat message in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
 // returns a PinnedChatMessageInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chat-post-pinnedmessages?view=graph-rest-beta
 func (m *ItemPinnedMessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoable, requestConfiguration *ItemPinnedMessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *ItemPinnedMessagesRequestBuilder) Post(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoable), nil
 }
-// ToGetRequestInformation a collection of all the pinned messages in the chat. Nullable.
+// ToGetRequestInformation get a list of pinnedChatMessages in a chat.
 // returns a *RequestInformation when successful
 func (m *ItemPinnedMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPinnedMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *ItemPinnedMessagesRequestBuilder) ToGetRequestInformation(ctx context.C
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to pinnedMessages for chats
+// ToPostRequestInformation pin a chat message in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
 // returns a *RequestInformation when successful
 func (m *ItemPinnedMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoable, requestConfiguration *ItemPinnedMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

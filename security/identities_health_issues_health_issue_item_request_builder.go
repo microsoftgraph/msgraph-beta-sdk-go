@@ -18,7 +18,7 @@ type IdentitiesHealthIssuesHealthIssueItemRequestBuilderDeleteRequestConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentitiesHealthIssuesHealthIssueItemRequestBuilderGetQueryParameters represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+// IdentitiesHealthIssuesHealthIssueItemRequestBuilderGetQueryParameters read the properties and relationships of a healthIssue object.
 type IdentitiesHealthIssuesHealthIssueItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) Delete(ctx context
     }
     return nil
 }
-// Get represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+// Get read the properties and relationships of a healthIssue object.
 // returns a HealthIssueable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-healthissue-get?view=graph-rest-beta
 func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesHealthIssuesHealthIssueItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) Get(ctx context.Co
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueable), nil
 }
-// Patch update the navigation property healthIssues in security
+// Patch update the properties of a healthIssue object.
 // returns a HealthIssueable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-healthissue-update?view=graph-rest-beta
 func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueable, requestConfiguration *IdentitiesHealthIssuesHealthIssueItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) ToDeleteRequestInf
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+// ToGetRequestInformation read the properties and relationships of a healthIssue object.
 // returns a *RequestInformation when successful
 func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesHealthIssuesHealthIssueItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) ToGetRequestInform
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property healthIssues in security
+// ToPatchRequestInformation update the properties of a healthIssue object.
 // returns a *RequestInformation when successful
 func (m *IdentitiesHealthIssuesHealthIssueItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueable, requestConfiguration *IdentitiesHealthIssuesHealthIssueItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

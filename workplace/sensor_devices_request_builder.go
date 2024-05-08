@@ -11,7 +11,7 @@ import (
 type SensorDevicesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SensorDevicesRequestBuilderGetQueryParameters a collection of sensor devices.
+// SensorDevicesRequestBuilderGetQueryParameters get a list of all workplace sensor devices created for a tenant.
 type SensorDevicesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewSensorDevicesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *SensorDevicesRequestBuilder) Count()(*SensorDevicesCountRequestBuilder) {
     return NewSensorDevicesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of sensor devices.
+// Get get a list of all workplace sensor devices created for a tenant.
 // returns a WorkplaceSensorDeviceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/workplace-list-sensordevices?view=graph-rest-beta
 func (m *SensorDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *SensorDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,9 +104,12 @@ func (m *SensorDevicesRequestBuilder) Get(ctx context.Context, requestConfigurat
 func (m *SensorDevicesRequestBuilder) IngestTelemetry()(*SensorDevicesIngestTelemetryRequestBuilder) {
     return NewSensorDevicesIngestTelemetryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create new navigation property to sensorDevices for workplace
+// Post create a new workplace sensor device.
 // returns a WorkplaceSensorDeviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/workplace-post-sensordevices?view=graph-rest-beta
 func (m *SensorDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable, requestConfiguration *SensorDevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *SensorDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable), nil
 }
-// ToGetRequestInformation a collection of sensor devices.
+// ToGetRequestInformation get a list of all workplace sensor devices created for a tenant.
 // returns a *RequestInformation when successful
 func (m *SensorDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SensorDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *SensorDevicesRequestBuilder) ToGetRequestInformation(ctx context.Contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to sensorDevices for workplace
+// ToPostRequestInformation create a new workplace sensor device.
 // returns a *RequestInformation when successful
 func (m *SensorDevicesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkplaceSensorDeviceable, requestConfiguration *SensorDevicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

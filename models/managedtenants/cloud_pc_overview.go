@@ -25,6 +25,16 @@ func CreateCloudPcOverviewFromDiscriminatorValue(parseNode i878a80d2330e89d26896
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["frontlineLicensesCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFrontlineLicensesCount(val)
+        }
+        return nil
+    }
     res["lastRefreshedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -226,6 +236,18 @@ func (m *CloudPcOverview) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetFrontlineLicensesCount gets the frontlineLicensesCount property value. The total number of cloud PC devices that have the Frontline SKU. Optional. Read-only.
+// returns a *int32 when successful
+func (m *CloudPcOverview) GetFrontlineLicensesCount()(*int32) {
+    val, err := m.GetBackingStore().Get("frontlineLicensesCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // GetLastRefreshedDateTime gets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 // returns a *Time when successful
@@ -474,6 +496,12 @@ func (m *CloudPcOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         return err
     }
     {
+        err = writer.WriteInt32Value("frontlineLicensesCount", m.GetFrontlineLicensesCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastRefreshedDateTime", m.GetLastRefreshedDateTime())
         if err != nil {
             return err
@@ -594,6 +622,13 @@ func (m *CloudPcOverview) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     return nil
+}
+// SetFrontlineLicensesCount sets the frontlineLicensesCount property value. The total number of cloud PC devices that have the Frontline SKU. Optional. Read-only.
+func (m *CloudPcOverview) SetFrontlineLicensesCount(value *int32)() {
+    err := m.GetBackingStore().Set("frontlineLicensesCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetLastRefreshedDateTime sets the lastRefreshedDateTime property value. Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.
 func (m *CloudPcOverview) SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
@@ -738,6 +773,7 @@ func (m *CloudPcOverview) SetTotalEnterpriseLicenses(value *int32)() {
 type CloudPcOverviewable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetFrontlineLicensesCount()(*int32)
     GetLastRefreshedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetNumberOfCloudPcConnectionStatusFailed()(*int32)
     GetNumberOfCloudPcConnectionStatusPassed()(*int32)
@@ -758,6 +794,7 @@ type CloudPcOverviewable interface {
     GetTotalCloudPcConnectionStatus()(*int32)
     GetTotalCloudPcStatus()(*int32)
     GetTotalEnterpriseLicenses()(*int32)
+    SetFrontlineLicensesCount(value *int32)()
     SetLastRefreshedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetNumberOfCloudPcConnectionStatusFailed(value *int32)()
     SetNumberOfCloudPcConnectionStatusPassed(value *int32)()

@@ -15,12 +15,13 @@ const (
     DEVICECODE_PROTOCOLTYPE = 32
     UNKNOWNFUTUREVALUE_PROTOCOLTYPE = 64
     AUTHENTICATIONTRANSFER_PROTOCOLTYPE = 128
+    NATIVEAUTH_PROTOCOLTYPE = 256
 )
 
 func (i ProtocolType) String() string {
     var values []string
-    options := []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue", "authenticationTransfer"}
-    for p := 0; p < 8; p++ {
+    options := []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue", "authenticationTransfer", "nativeAuth"}
+    for p := 0; p < 9; p++ {
         mantis := ProtocolType(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -49,6 +50,8 @@ func ParseProtocolType(v string) (any, error) {
                 result |= UNKNOWNFUTUREVALUE_PROTOCOLTYPE
             case "authenticationTransfer":
                 result |= AUTHENTICATIONTRANSFER_PROTOCOLTYPE
+            case "nativeAuth":
+                result |= NATIVEAUTH_PROTOCOLTYPE
             default:
                 return 0, errors.New("Unknown ProtocolType value: " + v)
         }

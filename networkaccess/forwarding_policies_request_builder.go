@@ -11,7 +11,7 @@ import (
 type ForwardingPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ForwardingPoliciesRequestBuilderGetQueryParameters a forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
+// ForwardingPoliciesRequestBuilderGetQueryParameters retrieve a list of forwarding policies associated with a specific traffic forwarding profile.
 type ForwardingPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewForwardingPoliciesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ForwardingPoliciesRequestBuilder) Count()(*ForwardingPoliciesCountRequestBuilder) {
     return NewForwardingPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
+// Get retrieve a list of forwarding policies associated with a specific traffic forwarding profile.
 // returns a ForwardingPolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-forwardingpolicies?view=graph-rest-beta
 func (m *ForwardingPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ForwardingPoliciesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ForwardingPoliciesRequestBuilder) Post(ctx context.Context, body i43e72
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ForwardingPolicyable), nil
 }
-// ToGetRequestInformation a forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
+// ToGetRequestInformation retrieve a list of forwarding policies associated with a specific traffic forwarding profile.
 // returns a *RequestInformation when successful
 func (m *ForwardingPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ForwardingPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

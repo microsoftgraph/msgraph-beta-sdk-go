@@ -11,7 +11,7 @@ import (
 type DirectoryResourceNamespacesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DirectoryResourceNamespacesRequestBuilderGetQueryParameters get resourceNamespaces from roleManagement
+// DirectoryResourceNamespacesRequestBuilderGetQueryParameters get a list of the unifiedRbacResourceNamespace objects and their properties.
 type DirectoryResourceNamespacesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewDirectoryResourceNamespacesRequestBuilder(rawUrl string, requestAdapter 
 func (m *DirectoryResourceNamespacesRequestBuilder) Count()(*DirectoryResourceNamespacesCountRequestBuilder) {
     return NewDirectoryResourceNamespacesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get resourceNamespaces from roleManagement
+// Get get a list of the unifiedRbacResourceNamespace objects and their properties.
 // returns a UnifiedRbacResourceNamespaceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-beta
 func (m *DirectoryResourceNamespacesRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *DirectoryResourceNamespacesRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable), nil
 }
-// ToGetRequestInformation get resourceNamespaces from roleManagement
+// ToGetRequestInformation get a list of the unifiedRbacResourceNamespace objects and their properties.
 // returns a *RequestInformation when successful
 func (m *DirectoryResourceNamespacesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

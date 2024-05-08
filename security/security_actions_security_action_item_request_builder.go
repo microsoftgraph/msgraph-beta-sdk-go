@@ -18,7 +18,7 @@ type SecurityActionsSecurityActionItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SecurityActionsSecurityActionItemRequestBuilderGetQueryParameters get securityActions from security
+// SecurityActionsSecurityActionItemRequestBuilderGetQueryParameters retrieve the properties and relationships of a securityAction object.
 type SecurityActionsSecurityActionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -60,6 +60,7 @@ func NewSecurityActionsSecurityActionItemRequestBuilder(rawUrl string, requestAd
     return NewSecurityActionsSecurityActionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property securityActions for security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SecurityActionsSecurityActionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -75,9 +76,13 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) Delete(ctx context.Con
     }
     return nil
 }
-// Get get securityActions from security
+// Get retrieve the properties and relationships of a securityAction object.
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a SecurityActionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/securityaction-get?view=graph-rest-beta
 func (m *SecurityActionsSecurityActionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,6 +101,7 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable), nil
 }
 // Patch update the navigation property securityActions in security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a SecurityActionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SecurityActionsSecurityActionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable, error) {
@@ -116,6 +122,7 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) Patch(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable), nil
 }
 // ToDeleteRequestInformation delete navigation property securityActions for security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *SecurityActionsSecurityActionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +133,8 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get securityActions from security
+// ToGetRequestInformation retrieve the properties and relationships of a securityAction object.
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *SecurityActionsSecurityActionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +149,7 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property securityActions in security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *SecurityActionsSecurityActionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecurityActionable, requestConfiguration *SecurityActionsSecurityActionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +165,7 @@ func (m *SecurityActionsSecurityActionItemRequestBuilder) ToPatchRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *SecurityActionsSecurityActionItemRequestBuilder when successful
 func (m *SecurityActionsSecurityActionItemRequestBuilder) WithUrl(rawUrl string)(*SecurityActionsSecurityActionItemRequestBuilder) {
     return NewSecurityActionsSecurityActionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

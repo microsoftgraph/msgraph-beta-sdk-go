@@ -8,13 +8,13 @@ const (
     UNKNOWN_THREATTYPE ThreatType = iota
     SPAM_THREATTYPE
     MALWARE_THREATTYPE
-    PHISHING_THREATTYPE
+    PHISH_THREATTYPE
     NONE_THREATTYPE
     UNKNOWNFUTUREVALUE_THREATTYPE
 )
 
 func (i ThreatType) String() string {
-    return []string{"unknown", "spam", "malware", "phishing", "none", "unknownFutureValue"}[i]
+    return []string{"unknown", "spam", "malware", "phish", "none", "unknownFutureValue"}[i]
 }
 func ParseThreatType(v string) (any, error) {
     result := UNKNOWN_THREATTYPE
@@ -25,8 +25,8 @@ func ParseThreatType(v string) (any, error) {
             result = SPAM_THREATTYPE
         case "malware":
             result = MALWARE_THREATTYPE
-        case "phishing":
-            result = PHISHING_THREATTYPE
+        case "phish":
+            result = PHISH_THREATTYPE
         case "none":
             result = NONE_THREATTYPE
         case "unknownFutureValue":

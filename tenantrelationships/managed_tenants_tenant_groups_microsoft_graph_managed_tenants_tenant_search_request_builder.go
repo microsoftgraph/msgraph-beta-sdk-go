@@ -30,7 +30,7 @@ func NewManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchReques
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action tenantSearch
+// Post searches for the specified managed tenants across tenant groups.
 // Deprecated: This method is obsolete. Use PostAsTenantSearchPostResponse instead.
 // returns a ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -51,7 +51,7 @@ func (m *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchReque
     }
     return res.(ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchResponseable), nil
 }
-// PostAsTenantSearchPostResponse invoke action tenantSearch
+// PostAsTenantSearchPostResponse searches for the specified managed tenants across tenant groups.
 // returns a ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilder) PostAsTenantSearchPostResponse(ctx context.Context, body ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchPostRequestBodyable, requestConfiguration *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilderPostRequestConfiguration)(ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchPostResponseable, error) {
@@ -71,7 +71,7 @@ func (m *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchReque
     }
     return res.(ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchPostResponseable), nil
 }
-// ToPostRequestInformation invoke action tenantSearch
+// ToPostRequestInformation searches for the specified managed tenants across tenant groups.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchTenantSearchPostRequestBodyable, requestConfiguration *ManagedTenantsTenantGroupsMicrosoftGraphManagedTenantsTenantSearchRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

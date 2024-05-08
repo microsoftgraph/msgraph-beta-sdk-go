@@ -403,19 +403,13 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["recipientEmailAddresses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+    res["recipientEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetRecipientEmailAddresses(res)
+            m.SetRecipientEmailAddress(val)
         }
         return nil
     }
@@ -469,13 +463,19 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["threatType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseThreatType)
+    res["threatTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfEnumValues(ParseThreatType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetThreatType(val.(*ThreatType))
+            res := make([]ThreatType, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*ThreatType))
+                }
+            }
+            m.SetThreatTypes(res)
         }
         return nil
     }
@@ -627,15 +627,15 @@ func (m *AnalyzedEmail) GetPolicyAction()(*string) {
     }
     return nil
 }
-// GetRecipientEmailAddresses gets the recipientEmailAddresses property value. Contains the email addresses of the recipients.
-// returns a []string when successful
-func (m *AnalyzedEmail) GetRecipientEmailAddresses()([]string) {
-    val, err := m.GetBackingStore().Get("recipientEmailAddresses")
+// GetRecipientEmailAddress gets the recipientEmailAddress property value. Contains the email address of the recipient.
+// returns a *string when successful
+func (m *AnalyzedEmail) GetRecipientEmailAddress()(*string) {
+    val, err := m.GetBackingStore().Get("recipientEmailAddress")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.(*string)
     }
     return nil
 }
@@ -699,15 +699,15 @@ func (m *AnalyzedEmail) GetSubject()(*string) {
     }
     return nil
 }
-// GetThreatType gets the threatType property value. Indicates the threat types. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.
-// returns a *ThreatType when successful
-func (m *AnalyzedEmail) GetThreatType()(*ThreatType) {
-    val, err := m.GetBackingStore().Get("threatType")
+// GetThreatTypes gets the threatTypes property value. Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.
+// returns a []ThreatType when successful
+func (m *AnalyzedEmail) GetThreatTypes()([]ThreatType) {
+    val, err := m.GetBackingStore().Get("threatTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ThreatType)
+        return val.([]ThreatType)
     }
     return nil
 }
@@ -880,8 +880,8 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    if m.GetRecipientEmailAddresses() != nil {
-        err = writer.WriteCollectionOfStringValues("recipientEmailAddresses", m.GetRecipientEmailAddresses())
+    {
+        err = writer.WriteStringValue("recipientEmailAddress", m.GetRecipientEmailAddress())
         if err != nil {
             return err
         }
@@ -916,9 +916,8 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    if m.GetThreatType() != nil {
-        cast := (*m.GetThreatType()).String()
-        err = writer.WriteStringValue("threatType", &cast)
+    if m.GetThreatTypes() != nil {
+        err = writer.WriteCollectionOfStringValues("threatTypes", SerializeThreatType(m.GetThreatTypes()))
         if err != nil {
             return err
         }
@@ -1090,9 +1089,9 @@ func (m *AnalyzedEmail) SetPolicyAction(value *string)() {
         panic(err)
     }
 }
-// SetRecipientEmailAddresses sets the recipientEmailAddresses property value. Contains the email addresses of the recipients.
-func (m *AnalyzedEmail) SetRecipientEmailAddresses(value []string)() {
-    err := m.GetBackingStore().Set("recipientEmailAddresses", value)
+// SetRecipientEmailAddress sets the recipientEmailAddress property value. Contains the email address of the recipient.
+func (m *AnalyzedEmail) SetRecipientEmailAddress(value *string)() {
+    err := m.GetBackingStore().Set("recipientEmailAddress", value)
     if err != nil {
         panic(err)
     }
@@ -1132,9 +1131,9 @@ func (m *AnalyzedEmail) SetSubject(value *string)() {
         panic(err)
     }
 }
-// SetThreatType sets the threatType property value. Indicates the threat types. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.
-func (m *AnalyzedEmail) SetThreatType(value *ThreatType)() {
-    err := m.GetBackingStore().Set("threatType", value)
+// SetThreatTypes sets the threatTypes property value. Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.
+func (m *AnalyzedEmail) SetThreatTypes(value []ThreatType)() {
+    err := m.GetBackingStore().Set("threatTypes", value)
     if err != nil {
         panic(err)
     }
@@ -1177,13 +1176,13 @@ type AnalyzedEmailable interface {
     GetPhishConfidenceLevel()(*string)
     GetPolicy()(*string)
     GetPolicyAction()(*string)
-    GetRecipientEmailAddresses()([]string)
+    GetRecipientEmailAddress()(*string)
     GetReturnPath()(*string)
     GetSenderDetail()(AnalyzedEmailSenderDetailable)
     GetSizeInBytes()(*int32)
     GetSpamConfidenceLevel()(*string)
     GetSubject()(*string)
-    GetThreatType()(*ThreatType)
+    GetThreatTypes()([]ThreatType)
     GetUrls()([]AnalyzedEmailUrlable)
     GetUrlsCount()(*int32)
     SetAlertIds(value []string)()
@@ -1207,13 +1206,13 @@ type AnalyzedEmailable interface {
     SetPhishConfidenceLevel(value *string)()
     SetPolicy(value *string)()
     SetPolicyAction(value *string)()
-    SetRecipientEmailAddresses(value []string)()
+    SetRecipientEmailAddress(value *string)()
     SetReturnPath(value *string)()
     SetSenderDetail(value AnalyzedEmailSenderDetailable)()
     SetSizeInBytes(value *int32)()
     SetSpamConfidenceLevel(value *string)()
     SetSubject(value *string)()
-    SetThreatType(value *ThreatType)()
+    SetThreatTypes(value []ThreatType)()
     SetUrls(value []AnalyzedEmailUrlable)()
     SetUrlsCount(value *int32)()
 }

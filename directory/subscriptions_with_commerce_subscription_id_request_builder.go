@@ -18,7 +18,7 @@ type SubscriptionsWithCommerceSubscriptionIdRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SubscriptionsWithCommerceSubscriptionIdRequestBuilderGetQueryParameters list of commercial subscriptions that an organization has.
+// SubscriptionsWithCommerceSubscriptionIdRequestBuilderGetQueryParameters get a specific commercial subscription that an organization has acquired.
 type SubscriptionsWithCommerceSubscriptionIdRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *SubscriptionsWithCommerceSubscriptionIdRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get list of commercial subscriptions that an organization has.
+// Get get a specific commercial subscription that an organization has acquired.
 // returns a CompanySubscriptionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/companysubscription-get?view=graph-rest-beta
 func (m *SubscriptionsWithCommerceSubscriptionIdRequestBuilder) Get(ctx context.Context, requestConfiguration *SubscriptionsWithCommerceSubscriptionIdRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CompanySubscriptionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *SubscriptionsWithCommerceSubscriptionIdRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation list of commercial subscriptions that an organization has.
+// ToGetRequestInformation get a specific commercial subscription that an organization has acquired.
 // returns a *RequestInformation when successful
 func (m *SubscriptionsWithCommerceSubscriptionIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubscriptionsWithCommerceSubscriptionIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

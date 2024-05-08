@@ -11,7 +11,7 @@ import (
 type MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteQueryParameters delete ref of navigation property includedGroups for policies
+// MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteQueryParameters delete a group from the list of groups included in a mobile device management policy.
 type MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteRequ
     // Request query parameters
     QueryParameters *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteQueryParameters
 }
-// MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderGetQueryParameters microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
+// MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderGetQueryParameters get the list of groups that are included in a mobile device management policy.
 type MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,8 +69,11 @@ func NewMobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder(rawUrl
     urlParams["request-raw-url"] = rawUrl
     return NewMobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property includedGroups for policies
+// Delete delete a group from the list of groups included in a mobile device management policy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobiledevicemanagementpolicies-delete-includedgroups?view=graph-rest-beta
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,9 +88,12 @@ func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) Dele
     }
     return nil
 }
-// Get microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
+// Get get the list of groups that are included in a mobile device management policy.
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobiledevicemanagementpolicies-list-includedgroups?view=graph-rest-beta
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,8 +111,11 @@ func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) Get(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to includedGroups for policies
+// Post add groups to be included in a mobile app management policy.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mobiledevicemanagementpolicies-post-includedgroups?view=graph-rest-beta
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +130,7 @@ func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) Post
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property includedGroups for policies
+// ToDeleteRequestInformation delete a group from the list of groups included in a mobile device management policy.
 // returns a *RequestInformation when successful
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToDe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
+// ToGetRequestInformation get the list of groups that are included in a mobile device management policy.
 // returns a *RequestInformation when successful
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -149,7 +158,7 @@ func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToGe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to includedGroups for policies
+// ToPostRequestInformation add groups to be included in a mobile app management policy.
 // returns a *RequestInformation when successful
 func (m *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *MobileDeviceManagementPoliciesItemIncludedGroupsRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref", m.BaseRequestBuilder.PathParameters)

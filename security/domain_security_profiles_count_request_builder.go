@@ -40,6 +40,7 @@ func NewDomainSecurityProfilesCountRequestBuilder(rawUrl string, requestAdapter 
     return NewDomainSecurityProfilesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DomainSecurityProfilesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *DomainSecurityProfilesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -60,6 +61,7 @@ func (m *DomainSecurityProfilesCountRequestBuilder) Get(ctx context.Context, req
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *DomainSecurityProfilesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DomainSecurityProfilesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -74,6 +76,7 @@ func (m *DomainSecurityProfilesCountRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *DomainSecurityProfilesCountRequestBuilder when successful
 func (m *DomainSecurityProfilesCountRequestBuilder) WithUrl(rawUrl string)(*DomainSecurityProfilesCountRequestBuilder) {
     return NewDomainSecurityProfilesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

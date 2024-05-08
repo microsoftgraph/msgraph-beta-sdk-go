@@ -25,7 +25,7 @@ type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteRequestConfigurat
     // Request query parameters
     QueryParameters *FeatureRolloutPoliciesItemAppliesToRefRequestBuilderDeleteQueryParameters
 }
-// FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetQueryParameters nullable. Specifies a list of directoryObjects that feature is enabled for.
+// FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetQueryParameters nullable. Specifies a list of directoryObject resources that feature is enabled for.
 type FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -86,7 +86,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get nullable. Specifies a list of directoryObjects that feature is enabled for.
+// Get nullable. Specifies a list of directoryObject resources that feature is enabled for.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -139,7 +139,7 @@ func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation nullable. Specifies a list of directoryObjects that feature is enabled for.
+// ToGetRequestInformation nullable. Specifies a list of directoryObject resources that feature is enabled for.
 // Deprecated: Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies
 // returns a *RequestInformation when successful
 func (m *FeatureRolloutPoliciesItemAppliesToRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FeatureRolloutPoliciesItemAppliesToRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

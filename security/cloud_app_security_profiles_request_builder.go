@@ -47,6 +47,7 @@ type CloudAppSecurityProfilesRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByCloudAppSecurityProfileId provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder when successful
 func (m *CloudAppSecurityProfilesRequestBuilder) ByCloudAppSecurityProfileId(cloudAppSecurityProfileId string)(*CloudAppSecurityProfilesCloudAppSecurityProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *CloudAppSecurityProfilesRequestBuilder) Count()(*CloudAppSecurityProfil
     return NewCloudAppSecurityProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get cloudAppSecurityProfiles from security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a CloudAppSecurityProfileCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CloudAppSecurityProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudAppSecurityProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *CloudAppSecurityProfilesRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileCollectionResponseable), nil
 }
 // Post create new navigation property to cloudAppSecurityProfiles for security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a CloudAppSecurityProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CloudAppSecurityProfilesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, requestConfiguration *CloudAppSecurityProfilesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, error) {
@@ -117,6 +120,7 @@ func (m *CloudAppSecurityProfilesRequestBuilder) Post(ctx context.Context, body 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable), nil
 }
 // ToGetRequestInformation get cloudAppSecurityProfiles from security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *CloudAppSecurityProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CloudAppSecurityProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *CloudAppSecurityProfilesRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to cloudAppSecurityProfiles for security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *CloudAppSecurityProfilesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudAppSecurityProfileable, requestConfiguration *CloudAppSecurityProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *CloudAppSecurityProfilesRequestBuilder) ToPostRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *CloudAppSecurityProfilesRequestBuilder when successful
 func (m *CloudAppSecurityProfilesRequestBuilder) WithUrl(rawUrl string)(*CloudAppSecurityProfilesRequestBuilder) {
     return NewCloudAppSecurityProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

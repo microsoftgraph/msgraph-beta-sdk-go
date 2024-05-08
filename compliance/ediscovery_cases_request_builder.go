@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesRequestBuilderGetQueryParameters get cases from compliance
+// EdiscoveryCasesRequestBuilderGetQueryParameters retrieve a list of case objects.
 type EdiscoveryCasesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,10 +77,13 @@ func NewEdiscoveryCasesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 func (m *EdiscoveryCasesRequestBuilder) Count()(*EdiscoveryCasesCountRequestBuilder) {
     return NewEdiscoveryCasesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get cases from compliance
+// Get retrieve a list of case objects.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a CaseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-case-list?view=graph-rest-beta
 func (m *EdiscoveryCasesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,10 +101,13 @@ func (m *EdiscoveryCasesRequestBuilder) Get(ctx context.Context, requestConfigur
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseCollectionResponseable), nil
 }
-// Post create new navigation property to cases for compliance
+// Post create a new case object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a CaseEscapedable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-beta
 func (m *EdiscoveryCasesRequestBuilder) Post(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, requestConfiguration *EdiscoveryCasesRequestBuilderPostRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *EdiscoveryCasesRequestBuilder) Post(ctx context.Context, body ic154d683
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable), nil
 }
-// ToGetRequestInformation get cases from compliance
+// ToGetRequestInformation retrieve a list of case objects.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -134,7 +140,7 @@ func (m *EdiscoveryCasesRequestBuilder) ToGetRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to cases for compliance
+// ToPostRequestInformation create a new case object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable, requestConfiguration *EdiscoveryCasesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -11,7 +11,7 @@ import (
 type ThreatIntelligenceHostsItemTrackersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligenceHostsItemTrackersRequestBuilderGetQueryParameters the hostTrackers that are associated with this host.
+// ThreatIntelligenceHostsItemTrackersRequestBuilderGetQueryParameters get a list of hostTracker resources.
 type ThreatIntelligenceHostsItemTrackersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewThreatIntelligenceHostsItemTrackersRequestBuilder(rawUrl string, request
 func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) Count()(*ThreatIntelligenceHostsItemTrackersCountRequestBuilder) {
     return NewThreatIntelligenceHostsItemTrackersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the hostTrackers that are associated with this host.
+// Get get a list of hostTracker resources.
 // returns a HostTrackerCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-host-list-trackers?view=graph-rest-beta
 func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemTrackersRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostTrackerCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) Get(ctx context.Cont
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HostTrackerCollectionResponseable), nil
 }
-// ToGetRequestInformation the hostTrackers that are associated with this host.
+// ToGetRequestInformation get a list of hostTracker resources.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligenceHostsItemTrackersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligenceHostsItemTrackersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

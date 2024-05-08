@@ -11,7 +11,7 @@ import (
 type LearningProvidersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LearningProvidersRequestBuilderGetQueryParameters a collection of learning providers.
+// LearningProvidersRequestBuilderGetQueryParameters get a list of the learningProvider resources registered in Viva Learning for a tenant.
 type LearningProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewLearningProvidersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *LearningProvidersRequestBuilder) Count()(*LearningProvidersCountRequestBuilder) {
     return NewLearningProvidersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of learning providers.
+// Get get a list of the learningProvider resources registered in Viva Learning for a tenant.
 // returns a LearningProviderCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/employeeexperience-list-learningproviders?view=graph-rest-beta
 func (m *LearningProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *LearningProvidersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *LearningProvidersRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderCollectionResponseable), nil
 }
-// Post create new navigation property to learningProviders for employeeExperience
+// Post create a new learningProvider object and register it with Viva Learning using the specified display name and logos for different themes.
 // returns a LearningProviderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/employeeexperience-post-learningproviders?view=graph-rest-beta
 func (m *LearningProvidersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, requestConfiguration *LearningProvidersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *LearningProvidersRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable), nil
 }
-// ToGetRequestInformation a collection of learning providers.
+// ToGetRequestInformation get a list of the learningProvider resources registered in Viva Learning for a tenant.
 // returns a *RequestInformation when successful
 func (m *LearningProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LearningProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *LearningProvidersRequestBuilder) ToGetRequestInformation(ctx context.Co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to learningProviders for employeeExperience
+// ToPostRequestInformation create a new learningProvider object and register it with Viva Learning using the specified display name and logos for different themes.
 // returns a *RequestInformation when successful
 func (m *LearningProvidersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.LearningProviderable, requestConfiguration *LearningProvidersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

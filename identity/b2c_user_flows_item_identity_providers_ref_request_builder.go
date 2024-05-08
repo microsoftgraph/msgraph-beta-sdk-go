@@ -11,7 +11,7 @@ import (
 type B2cUserFlowsItemIdentityProvidersRefRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteQueryParameters delete ref of navigation property identityProviders for identity
+// B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteQueryParameters delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
 type B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteQueryParameters struct {
     // The delete Uri
     Id *string `uriparametername:"%40id"`
@@ -25,7 +25,7 @@ type B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteRequestConfiguratio
     // Request query parameters
     QueryParameters *B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteQueryParameters
 }
-// B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetQueryParameters get ref of identityProviders from identity
+// B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetQueryParameters get the identity providers in a b2cIdentityUserFlow object.
 type B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewB2cUserFlowsItemIdentityProvidersRefRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemIdentityProvidersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete ref of navigation property identityProviders for identity
+// Delete delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete-identityproviders?view=graph-rest-beta
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,10 +89,13 @@ func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Delete(ctx context.
     }
     return nil
 }
-// Get get ref of identityProviders from identity
+// Get get the identity providers in a b2cIdentityUserFlow object.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-beta
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -107,9 +113,12 @@ func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Get(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
-// Post create new navigation property ref to identityProviders for identity
+// Post add identity providers in a b2cIdentityUserFlow object.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/b2cidentityuserflow-post-identityproviders?view=graph-rest-beta
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +133,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) Post(ctx context.Co
     }
     return nil
 }
-// ToDeleteRequestInformation delete ref of navigation property identityProviders for identity
+// ToDeleteRequestInformation delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -139,7 +148,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) ToDeleteRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get ref of identityProviders from identity
+// ToGetRequestInformation get the identity providers in a b2cIdentityUserFlow object.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -154,7 +163,7 @@ func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) ToGetRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property ref to identityProviders for identity
+// ToPostRequestInformation add identity providers in a b2cIdentityUserFlow object.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemIdentityProvidersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *B2cUserFlowsItemIdentityProvidersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

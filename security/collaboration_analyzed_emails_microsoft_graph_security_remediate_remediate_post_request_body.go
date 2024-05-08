@@ -60,18 +60,6 @@ func (m *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePost
     }
     return nil
 }
-// GetApproverUpn gets the approverUpn property value. The approverUpn property
-// returns a *string when successful
-func (m *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePostRequestBody) GetApproverUpn()(*string) {
-    val, err := m.GetBackingStore().Get("approverUpn")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -128,16 +116,6 @@ func (m *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePost
                 }
             }
             m.SetAnalyzedEmails(res)
-        }
-        return nil
-    }
-    res["approverUpn"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetApproverUpn(val)
         }
         return nil
     }
@@ -229,12 +207,6 @@ func (m *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePost
         }
     }
     {
-        err := writer.WriteStringValue("approverUpn", m.GetApproverUpn())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -288,13 +260,6 @@ func (m *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePost
         panic(err)
     }
 }
-// SetApproverUpn sets the approverUpn property value. The approverUpn property
-func (m *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePostRequestBody) SetApproverUpn(value *string)() {
-    err := m.GetBackingStore().Set("approverUpn", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -333,7 +298,6 @@ type CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePostRequ
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAction()(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RemediationAction)
     GetAnalyzedEmails()([]i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AnalyzedEmailable)
-    GetApproverUpn()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDescription()(*string)
     GetDisplayName()(*string)
@@ -341,7 +305,6 @@ type CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePostRequ
     GetSeverity()(*i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RemediationSeverity)
     SetAction(value *i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.RemediationAction)()
     SetAnalyzedEmails(value []i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.AnalyzedEmailable)()
-    SetApproverUpn(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()

@@ -11,7 +11,7 @@ import (
 type ConnectivityBranchesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectivityBranchesRequestBuilderGetQueryParameters branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
+// ConnectivityBranchesRequestBuilderGetQueryParameters retrieve a list of branches within a tenant connected to the Global Secure Access services.
 type ConnectivityBranchesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,10 +77,13 @@ func NewConnectivityBranchesRequestBuilder(rawUrl string, requestAdapter i2ae418
 func (m *ConnectivityBranchesRequestBuilder) Count()(*ConnectivityBranchesCountRequestBuilder) {
     return NewConnectivityBranchesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
+// Get retrieve a list of branches within a tenant connected to the Global Secure Access services.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a BranchSiteCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-connectivity-list-branches?view=graph-rest-beta
 func (m *ConnectivityBranchesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,10 +101,13 @@ func (m *ConnectivityBranchesRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteCollectionResponseable), nil
 }
-// Post create new navigation property to branches for networkAccess
+// Post create a new branch.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a BranchSiteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-connectivity-post-branches?view=graph-rest-beta
 func (m *ConnectivityBranchesRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *ConnectivityBranchesRequestBuilder) Post(ctx context.Context, body i43e
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable), nil
 }
-// ToGetRequestInformation branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
+// ToGetRequestInformation retrieve a list of branches within a tenant connected to the Global Secure Access services.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -134,7 +140,7 @@ func (m *ConnectivityBranchesRequestBuilder) ToGetRequestInformation(ctx context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to branches for networkAccess
+// ToPostRequestInformation create a new branch.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.BranchSiteable, requestConfiguration *ConnectivityBranchesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

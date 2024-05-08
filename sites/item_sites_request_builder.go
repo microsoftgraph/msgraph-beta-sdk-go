@@ -11,7 +11,7 @@ import (
 type ItemSitesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesRequestBuilderGetQueryParameters the collection of the sub-sites under this site.
+// ItemSitesRequestBuilderGetQueryParameters get a collection of subsites defined for a site.
 type ItemSitesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewItemSitesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 func (m *ItemSitesRequestBuilder) Count()(*ItemSitesCountRequestBuilder) {
     return NewItemSitesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection of the sub-sites under this site.
+// Get get a collection of subsites defined for a site.
 // returns a SiteCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-list-subsites?view=graph-rest-beta
 func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable), nil
 }
-// ToGetRequestInformation the collection of the sub-sites under this site.
+// ToGetRequestInformation get a collection of subsites defined for a site.
 // returns a *RequestInformation when successful
 func (m *ItemSitesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

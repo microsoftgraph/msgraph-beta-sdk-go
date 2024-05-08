@@ -11,7 +11,7 @@ import (
 type ItemTermStoreGroupsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTermStoreGroupsRequestBuilderGetQueryParameters collection of all groups available in the term store.
+// ItemTermStoreGroupsRequestBuilderGetQueryParameters read the properties and relationships of a term store group object.
 type ItemTermStoreGroupsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemTermStoreGroupsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemTermStoreGroupsRequestBuilder) Count()(*ItemTermStoreGroupsCountRequestBuilder) {
     return NewItemTermStoreGroupsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get collection of all groups available in the term store.
+// Get read the properties and relationships of a term store group object.
 // returns a GroupCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTermStoreGroupsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTermStoreGroupsRequestBuilderGetRequestConfiguration)(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.GroupCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemTermStoreGroupsRequestBuilder) Post(ctx context.Context, body i45fc
     }
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Groupable), nil
 }
-// ToGetRequestInformation collection of all groups available in the term store.
+// ToGetRequestInformation read the properties and relationships of a term store group object.
 // returns a *RequestInformation when successful
 func (m *ItemTermStoreGroupsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTermStoreGroupsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

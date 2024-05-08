@@ -11,7 +11,7 @@ import (
 type DeletedItemsGraphGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeletedItemsGraphGroupRequestBuilderGetQueryParameters get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+// DeletedItemsGraphGroupRequestBuilderGetQueryParameters retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, externalUserProfile, group, administrative unit, pendingExternalUserProfile, and user resources.
 type DeletedItemsGraphGroupRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,9 +57,12 @@ func NewDeletedItemsGraphGroupRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *DeletedItemsGraphGroupRequestBuilder) Count()(*DeletedItemsGraphGroupCountRequestBuilder) {
     return NewDeletedItemsGraphGroupCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+// Get retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, externalUserProfile, group, administrative unit, pendingExternalUserProfile, and user resources.
 // returns a GroupCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-beta
 func (m *DeletedItemsGraphGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedItemsGraphGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -77,7 +80,7 @@ func (m *DeletedItemsGraphGroupRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupCollectionResponseable), nil
 }
-// ToGetRequestInformation get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+// ToGetRequestInformation retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, externalUserProfile, group, administrative unit, pendingExternalUserProfile, and user resources.
 // returns a *RequestInformation when successful
 func (m *DeletedItemsGraphGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsGraphGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

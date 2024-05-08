@@ -11,7 +11,7 @@ import (
 type LabelsCategoriesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LabelsCategoriesRequestBuilderGetQueryParameters specifies a group of similar types of content in a particular department.
+// LabelsCategoriesRequestBuilderGetQueryParameters get a list of the categoryTemplate objects and their properties.
 type LabelsCategoriesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewLabelsCategoriesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 func (m *LabelsCategoriesRequestBuilder) Count()(*LabelsCategoriesCountRequestBuilder) {
     return NewLabelsCategoriesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get specifies a group of similar types of content in a particular department.
+// Get get a list of the categoryTemplate objects and their properties.
 // returns a CategoryTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-list-categories?view=graph-rest-beta
 func (m *LabelsCategoriesRequestBuilder) Get(ctx context.Context, requestConfiguration *LabelsCategoriesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *LabelsCategoriesRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateCollectionResponseable), nil
 }
-// Post create new navigation property to categories for security
+// Post create a new categoryTemplate object.
 // returns a CategoryTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-labelsroot-post-categories?view=graph-rest-beta
 func (m *LabelsCategoriesRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable, requestConfiguration *LabelsCategoriesRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *LabelsCategoriesRequestBuilder) Post(ctx context.Context, body i084fa7a
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable), nil
 }
-// ToGetRequestInformation specifies a group of similar types of content in a particular department.
+// ToGetRequestInformation get a list of the categoryTemplate objects and their properties.
 // returns a *RequestInformation when successful
 func (m *LabelsCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LabelsCategoriesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *LabelsCategoriesRequestBuilder) ToGetRequestInformation(ctx context.Con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to categories for security
+// ToPostRequestInformation create a new categoryTemplate object.
 // returns a *RequestInformation when successful
 func (m *LabelsCategoriesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CategoryTemplateable, requestConfiguration *LabelsCategoriesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

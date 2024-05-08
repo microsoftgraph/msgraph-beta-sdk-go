@@ -11,7 +11,7 @@ import (
 type SchoolsItemAdministrativeUnitRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SchoolsItemAdministrativeUnitRequestBuilderGetQueryParameters get administrativeUnit from education
+// SchoolsItemAdministrativeUnitRequestBuilderGetQueryParameters retrieve the directory administrativeUnit that corresponds to this educationSchool.
 type SchoolsItemAdministrativeUnitRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,9 +47,12 @@ func NewSchoolsItemAdministrativeUnitRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewSchoolsItemAdministrativeUnitRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get administrativeUnit from education
+// Get retrieve the directory administrativeUnit that corresponds to this educationSchool.
 // returns a AdministrativeUnitable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-get-administrativeUnit?view=graph-rest-beta
 func (m *SchoolsItemAdministrativeUnitRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemAdministrativeUnitRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -87,7 +90,7 @@ func (m *SchoolsItemAdministrativeUnitRequestBuilder) Patch(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable), nil
 }
-// ToGetRequestInformation get administrativeUnit from education
+// ToGetRequestInformation retrieve the directory administrativeUnit that corresponds to this educationSchool.
 // returns a *RequestInformation when successful
 func (m *SchoolsItemAdministrativeUnitRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SchoolsItemAdministrativeUnitRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

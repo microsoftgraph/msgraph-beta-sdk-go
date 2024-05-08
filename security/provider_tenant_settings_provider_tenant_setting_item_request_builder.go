@@ -55,6 +55,7 @@ func NewProviderTenantSettingsProviderTenantSettingItemRequestBuilder(rawUrl str
     return NewProviderTenantSettingsProviderTenantSettingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property providerTenantSettings for security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProviderTenantSettingsProviderTenantSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) Delete(c
     return nil
 }
 // Get get providerTenantSettings from security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a ProviderTenantSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ProviderTenantSettingsProviderTenantSettingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProviderTenantSettingable, error) {
@@ -91,6 +93,7 @@ func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) Get(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProviderTenantSettingable), nil
 }
 // Patch update the navigation property providerTenantSettings in security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a ProviderTenantSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProviderTenantSettingable, requestConfiguration *ProviderTenantSettingsProviderTenantSettingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProviderTenantSettingable, error) {
@@ -111,6 +114,7 @@ func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) Patch(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProviderTenantSettingable), nil
 }
 // ToDeleteRequestInformation delete navigation property providerTenantSettings for security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ProviderTenantSettingsProviderTenantSettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) ToDelete
     return requestInfo, nil
 }
 // ToGetRequestInformation get providerTenantSettings from security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ProviderTenantSettingsProviderTenantSettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) ToGetReq
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property providerTenantSettings in security
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *RequestInformation when successful
 func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProviderTenantSettingable, requestConfiguration *ProviderTenantSettingsProviderTenantSettingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) ToPatchR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
 // returns a *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder when successful
 func (m *ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) WithUrl(rawUrl string)(*ProviderTenantSettingsProviderTenantSettingItemRequestBuilder) {
     return NewProviderTenantSettingsProviderTenantSettingItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
