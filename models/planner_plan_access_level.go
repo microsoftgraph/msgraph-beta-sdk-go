@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PlannerPlanAccessLevel int
 
 const (
@@ -26,7 +23,7 @@ func ParsePlannerPlanAccessLevel(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLANNERPLANACCESSLEVEL
         default:
-            return 0, errors.New("Unknown PlannerPlanAccessLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

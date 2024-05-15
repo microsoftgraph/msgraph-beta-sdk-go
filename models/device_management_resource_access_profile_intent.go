@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The administrator intent for the assignment of the profile.
 type DeviceManagementResourceAccessProfileIntent int
 
@@ -23,7 +20,7 @@ func ParseDeviceManagementResourceAccessProfileIntent(v string) (any, error) {
         case "remove":
             result = REMOVE_DEVICEMANAGEMENTRESOURCEACCESSPROFILEINTENT
         default:
-            return 0, errors.New("Unknown DeviceManagementResourceAccessProfileIntent value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

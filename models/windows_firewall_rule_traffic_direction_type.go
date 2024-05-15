@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Firewall rule traffic directions.
 type WindowsFirewallRuleTrafficDirectionType int
 
@@ -27,7 +24,7 @@ func ParseWindowsFirewallRuleTrafficDirectionType(v string) (any, error) {
         case "in":
             result = IN_WINDOWSFIREWALLRULETRAFFICDIRECTIONTYPE
         default:
-            return 0, errors.New("Unknown WindowsFirewallRuleTrafficDirectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

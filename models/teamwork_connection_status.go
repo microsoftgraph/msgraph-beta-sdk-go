@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamworkConnectionStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseTeamworkConnectionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKCONNECTIONSTATUS
         default:
-            return 0, errors.New("Unknown TeamworkConnectionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

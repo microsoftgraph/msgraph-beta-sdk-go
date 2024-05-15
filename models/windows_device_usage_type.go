@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WindowsDeviceUsageType int
 
 const (
@@ -22,7 +19,7 @@ func ParseWindowsDeviceUsageType(v string) (any, error) {
         case "shared":
             result = SHARED_WINDOWSDEVICEUSAGETYPE
         default:
-            return 0, errors.New("Unknown WindowsDeviceUsageType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Encryption state
 type EncryptionState int
 
@@ -23,7 +20,7 @@ func ParseEncryptionState(v string) (any, error) {
         case "encrypted":
             result = ENCRYPTED_ENCRYPTIONSTATE
         default:
-            return 0, errors.New("Unknown EncryptionState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

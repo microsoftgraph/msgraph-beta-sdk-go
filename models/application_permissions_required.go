@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ApplicationPermissionsRequired int
 
 const (
@@ -35,7 +32,7 @@ func ParseApplicationPermissionsRequired(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPLICATIONPERMISSIONSREQUIRED
         default:
-            return 0, errors.New("Unknown ApplicationPermissionsRequired value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

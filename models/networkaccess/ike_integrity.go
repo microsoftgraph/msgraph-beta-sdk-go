@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type IkeIntegrity int
 
 const (
@@ -29,7 +26,7 @@ func ParseIkeIntegrity(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IKEINTEGRITY
         default:
-            return 0, errors.New("Unknown IkeIntegrity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

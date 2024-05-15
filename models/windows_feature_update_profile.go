@@ -185,6 +185,16 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["installFeatureUpdatesOptional"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInstallFeatureUpdatesOptional(val)
+        }
+        return nil
+    }
     res["installLatestWindows10OnWindows11IneligibleDevice"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -232,6 +242,18 @@ func (m *WindowsFeatureUpdateProfile) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetInstallFeatureUpdatesOptional gets the installFeatureUpdatesOptional property value. If true, the Windows 11 update will become optional
+// returns a *bool when successful
+func (m *WindowsFeatureUpdateProfile) GetInstallFeatureUpdatesOptional()(*bool) {
+    val, err := m.GetBackingStore().Get("installFeatureUpdatesOptional")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetInstallLatestWindows10OnWindows11IneligibleDevice gets the installLatestWindows10OnWindows11IneligibleDevice property value. If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
 // returns a *bool when successful
@@ -336,6 +358,12 @@ func (m *WindowsFeatureUpdateProfile) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteBoolValue("installFeatureUpdatesOptional", m.GetInstallFeatureUpdatesOptional())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("installLatestWindows10OnWindows11IneligibleDevice", m.GetInstallLatestWindows10OnWindows11IneligibleDevice())
         if err != nil {
             return err
@@ -410,6 +438,13 @@ func (m *WindowsFeatureUpdateProfile) SetFeatureUpdateVersion(value *string)() {
         panic(err)
     }
 }
+// SetInstallFeatureUpdatesOptional sets the installFeatureUpdatesOptional property value. If true, the Windows 11 update will become optional
+func (m *WindowsFeatureUpdateProfile) SetInstallFeatureUpdatesOptional(value *bool)() {
+    err := m.GetBackingStore().Set("installFeatureUpdatesOptional", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetInstallLatestWindows10OnWindows11IneligibleDevice sets the installLatestWindows10OnWindows11IneligibleDevice property value. If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
 func (m *WindowsFeatureUpdateProfile) SetInstallLatestWindows10OnWindows11IneligibleDevice(value *bool)() {
     err := m.GetBackingStore().Set("installLatestWindows10OnWindows11IneligibleDevice", value)
@@ -448,6 +483,7 @@ type WindowsFeatureUpdateProfileable interface {
     GetDisplayName()(*string)
     GetEndOfSupportDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetFeatureUpdateVersion()(*string)
+    GetInstallFeatureUpdatesOptional()(*bool)
     GetInstallLatestWindows10OnWindows11IneligibleDevice()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRoleScopeTagIds()([]string)
@@ -459,6 +495,7 @@ type WindowsFeatureUpdateProfileable interface {
     SetDisplayName(value *string)()
     SetEndOfSupportDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetFeatureUpdateVersion(value *string)()
+    SetInstallFeatureUpdatesOptional(value *bool)()
     SetInstallLatestWindows10OnWindows11IneligibleDevice(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRoleScopeTagIds(value []string)()

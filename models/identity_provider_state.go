@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type IdentityProviderState int
 
 const (
@@ -23,7 +20,7 @@ func ParseIdentityProviderState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IDENTITYPROVIDERSTATE
         default:
-            return 0, errors.New("Unknown IdentityProviderState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

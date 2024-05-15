@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Enum indicating additional details regarding why an application has a particular install state.
 type ResultantAppStateDetail int
 
@@ -159,7 +156,7 @@ func ParseResultantAppStateDetail(v string) (any, error) {
         case "contentDownloaded":
             result = CONTENTDOWNLOADED_RESULTANTAPPSTATEDETAIL
         default:
-            return 0, errors.New("Unknown ResultantAppStateDetail value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

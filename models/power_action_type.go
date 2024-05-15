@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Power action types
 type PowerActionType int
 
@@ -35,7 +32,7 @@ func ParsePowerActionType(v string) (any, error) {
         case "shutdown":
             result = SHUTDOWN_POWERACTIONTYPE
         default:
-            return 0, errors.New("Unknown PowerActionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

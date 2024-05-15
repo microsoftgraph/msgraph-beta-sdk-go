@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Defines the Action Types for an Intune Application.
 type MobileAppActionType int
 
@@ -35,7 +32,7 @@ func ParseMobileAppActionType(v string) (any, error) {
         case "userRequestedInstall":
             result = USERREQUESTEDINSTALL_MOBILEAPPACTIONTYPE
         default:
-            return 0, errors.New("Unknown MobileAppActionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

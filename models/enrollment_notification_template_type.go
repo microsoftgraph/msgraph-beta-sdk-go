@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // This enum indicates the Template type for which the enrollment notification applies.
 type EnrollmentNotificationTemplateType int
 
@@ -27,7 +24,7 @@ func ParseEnrollmentNotificationTemplateType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONTEMPLATETYPE
         default:
-            return 0, errors.New("Unknown EnrollmentNotificationTemplateType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Wired Network authentication method.
 type WiredNetworkAuthenticationMethod int
 
@@ -31,7 +28,7 @@ func ParseWiredNetworkAuthenticationMethod(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONMETHOD
         default:
-            return 0, errors.New("Unknown WiredNetworkAuthenticationMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

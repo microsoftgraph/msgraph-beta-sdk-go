@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EducationSynchronizationProfileState int
 
 const (
@@ -32,7 +29,7 @@ func ParseEducationSynchronizationProfileState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EDUCATIONSYNCHRONIZATIONPROFILESTATE
         default:
-            return 0, errors.New("Unknown EducationSynchronizationProfileState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

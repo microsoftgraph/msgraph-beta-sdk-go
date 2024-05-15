@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Scheduled Action Type Enum
 type DeviceManagementComplianceActionType int
 
@@ -47,7 +44,7 @@ func ParseDeviceManagementComplianceActionType(v string) (any, error) {
         case "remoteLock":
             result = REMOTELOCK_DEVICEMANAGEMENTCOMPLIANCEACTIONTYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementComplianceActionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Wi-Fi Proxy Settings.
 type WiFiProxySetting int
 
@@ -31,7 +28,7 @@ func ParseWiFiProxySetting(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WIFIPROXYSETTING
         default:
-            return 0, errors.New("Unknown WiFiProxySetting value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

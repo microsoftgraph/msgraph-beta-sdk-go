@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ConnectorGroupRegion int
 
 const (
@@ -32,7 +29,7 @@ func ParseConnectorGroupRegion(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTORGROUPREGION
         default:
-            return 0, errors.New("Unknown ConnectorGroupRegion value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

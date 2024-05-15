@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Defender’s action to take on detected Potentially Unwanted Application (PUA).
 type DefenderPotentiallyUnwantedAppAction int
 
@@ -27,7 +24,7 @@ func ParseDefenderPotentiallyUnwantedAppAction(v string) (any, error) {
         case "audit":
             result = AUDIT_DEFENDERPOTENTIALLYUNWANTEDAPPACTION
         default:
-            return 0, errors.New("Unknown DefenderPotentiallyUnwantedAppAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

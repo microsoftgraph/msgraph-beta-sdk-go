@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type ConnectivityState int
 
 const (
@@ -29,7 +26,7 @@ func ParseConnectivityState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONNECTIVITYSTATE
         default:
-            return 0, errors.New("Unknown ConnectivityState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

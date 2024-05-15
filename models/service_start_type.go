@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of xbox service start type
 type ServiceStartType int
 
@@ -27,7 +24,7 @@ func ParseServiceStartType(v string) (any, error) {
         case "disabled":
             result = DISABLED_SERVICESTARTTYPE
         default:
-            return 0, errors.New("Unknown ServiceStartType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

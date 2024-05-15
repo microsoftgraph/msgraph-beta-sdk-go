@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TransformationExtractType int
 
 const (
@@ -23,7 +20,7 @@ func ParseTransformationExtractType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TRANSFORMATIONEXTRACTTYPE
         default:
-            return 0, errors.New("Unknown TransformationExtractType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of VPN security association encryption algorithm
 type VpnEncryptionAlgorithmType int
 
@@ -51,7 +48,7 @@ func ParseVpnEncryptionAlgorithmType(v string) (any, error) {
         case "chaCha20Poly1305":
             result = CHACHA20POLY1305_VPNENCRYPTIONALGORITHMTYPE
         default:
-            return 0, errors.New("Unknown VpnEncryptionAlgorithmType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

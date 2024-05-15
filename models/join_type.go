@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device enrollment join type.
 type JoinType int
 
@@ -31,7 +28,7 @@ func ParseJoinType(v string) (any, error) {
         case "hybridAzureADJoined":
             result = HYBRIDAZUREADJOINED_JOINTYPE
         default:
-            return 0, errors.New("Unknown JoinType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

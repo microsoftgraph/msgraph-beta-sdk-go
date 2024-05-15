@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ApplicationKeyUsage int
 
 const (
@@ -23,7 +20,7 @@ func ParseApplicationKeyUsage(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPLICATIONKEYUSAGE
         default:
-            return 0, errors.New("Unknown ApplicationKeyUsage value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

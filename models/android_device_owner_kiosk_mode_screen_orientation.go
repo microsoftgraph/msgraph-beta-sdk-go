@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner Kiosk Mode managed home screen orientation.
 type AndroidDeviceOwnerKioskModeScreenOrientation int
 
@@ -31,7 +28,7 @@ func ParseAndroidDeviceOwnerKioskModeScreenOrientation(v string) (any, error) {
         case "autoRotate":
             result = AUTOROTATE_ANDROIDDEVICEOWNERKIOSKMODESCREENORIENTATION
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerKioskModeScreenOrientation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

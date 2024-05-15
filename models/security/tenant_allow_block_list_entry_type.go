@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type TenantAllowBlockListEntryType int
 
 const (
@@ -29,7 +26,7 @@ func ParseTenantAllowBlockListEntryType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TENANTALLOWBLOCKLISTENTRYTYPE
         default:
-            return 0, errors.New("Unknown TenantAllowBlockListEntryType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

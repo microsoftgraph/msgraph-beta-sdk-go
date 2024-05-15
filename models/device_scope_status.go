@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.
 type DeviceScopeStatus int
 
@@ -35,7 +32,7 @@ func ParseDeviceScopeStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICESCOPESTATUS
         default:
-            return 0, errors.New("Unknown DeviceScopeStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

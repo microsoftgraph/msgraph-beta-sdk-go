@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of Credential Guard settings.
 type DeviceGuardLocalSystemAuthorityCredentialGuardType int
 
@@ -31,7 +28,7 @@ func ParseDeviceGuardLocalSystemAuthorityCredentialGuardType(v string) (any, err
         case "disable":
             result = DISABLE_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDTYPE
         default:
-            return 0, errors.New("Unknown DeviceGuardLocalSystemAuthorityCredentialGuardType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

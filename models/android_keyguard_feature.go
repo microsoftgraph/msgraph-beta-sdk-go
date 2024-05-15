@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android keyguard feature.
 type AndroidKeyguardFeature int
 
@@ -59,7 +56,7 @@ func ParseAndroidKeyguardFeature(v string) (any, error) {
         case "biometrics":
             result = BIOMETRICS_ANDROIDKEYGUARDFEATURE
         default:
-            return 0, errors.New("Unknown AndroidKeyguardFeature value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

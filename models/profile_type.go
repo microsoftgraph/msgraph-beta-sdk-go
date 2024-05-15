@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Profile Type
 type ProfileType int
 
@@ -43,7 +40,7 @@ func ParseProfileType(v string) (any, error) {
         case "dcV1DeviceRestrictions":
             result = DCV1DEVICERESTRICTIONS_PROFILETYPE
         default:
-            return 0, errors.New("Unknown ProfileType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EmailType int
 
 const (
@@ -29,7 +26,7 @@ func ParseEmailType(v string) (any, error) {
         case "other":
             result = OTHER_EMAILTYPE
         default:
-            return 0, errors.New("Unknown EmailType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

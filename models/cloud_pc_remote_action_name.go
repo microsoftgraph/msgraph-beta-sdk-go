@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcRemoteActionName int
 
 const (
@@ -56,7 +53,7 @@ func ParseCloudPcRemoteActionName(v string) (any, error) {
         case "moveRegion":
             result = MOVEREGION_CLOUDPCREMOTEACTIONNAME
         default:
-            return 0, errors.New("Unknown CloudPcRemoteActionName value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

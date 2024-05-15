@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Subject Name Format Options for Apple devices.
 type AppleSubjectNameFormat int
 
@@ -39,7 +36,7 @@ func ParseAppleSubjectNameFormat(v string) (any, error) {
         case "commonNameAsSerialNumber":
             result = COMMONNAMEASSERIALNUMBER_APPLESUBJECTNAMEFORMAT
         default:
-            return 0, errors.New("Unknown AppleSubjectNameFormat value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

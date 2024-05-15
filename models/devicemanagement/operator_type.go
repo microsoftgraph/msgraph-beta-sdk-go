@@ -1,7 +1,4 @@
 package devicemanagement
-import (
-    "errors"
-)
 type OperatorType int
 
 const (
@@ -35,7 +32,7 @@ func ParseOperatorType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OPERATORTYPE
         default:
-            return 0, errors.New("Unknown OperatorType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

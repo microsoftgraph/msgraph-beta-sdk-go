@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner Kiosk Mode managed home screen icon size.
 type AndroidDeviceOwnerKioskModeIconSize int
 
@@ -39,7 +36,7 @@ func ParseAndroidDeviceOwnerKioskModeIconSize(v string) (any, error) {
         case "largest":
             result = LARGEST_ANDROIDDEVICEOWNERKIOSKMODEICONSIZE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerKioskModeIconSize value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

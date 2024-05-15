@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device app management task category.
 type DeviceAppManagementTaskCategory int
 
@@ -23,7 +20,7 @@ func ParseDeviceAppManagementTaskCategory(v string) (any, error) {
         case "advancedThreatProtection":
             result = ADVANCEDTHREATPROTECTION_DEVICEAPPMANAGEMENTTASKCATEGORY
         default:
-            return 0, errors.New("Unknown DeviceAppManagementTaskCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

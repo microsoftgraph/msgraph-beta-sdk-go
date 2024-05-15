@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.
 type WindowsDefenderApplicationControlSupplementalPolicyStatuses int
 
@@ -35,7 +32,7 @@ func ParseWindowsDefenderApplicationControlSupplementalPolicyStatuses(v string) 
         case "policyNotFound":
             result = POLICYNOTFOUND_WINDOWSDEFENDERAPPLICATIONCONTROLSUPPLEMENTALPOLICYSTATUSES
         default:
-            return 0, errors.New("Unknown WindowsDefenderApplicationControlSupplementalPolicyStatuses value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // VPN connection types.
 type Windows10VpnConnectionType int
 
@@ -67,7 +64,7 @@ func ParseWindows10VpnConnectionType(v string) (any, error) {
         case "microsoftTunnel":
             result = MICROSOFTTUNNEL_WINDOWS10VPNCONNECTIONTYPE
         default:
-            return 0, errors.New("Unknown Windows10VpnConnectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

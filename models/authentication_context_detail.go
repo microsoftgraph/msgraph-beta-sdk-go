@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthenticationContextDetail int
 
 const (
@@ -26,7 +23,7 @@ func ParseAuthenticationContextDetail(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONCONTEXTDETAIL
         default:
-            return 0, errors.New("Unknown AuthenticationContextDetail value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

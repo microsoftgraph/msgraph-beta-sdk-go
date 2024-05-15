@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Category Ingestion source
 type IngestionSource int
 
@@ -31,7 +28,7 @@ func ParseIngestionSource(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INGESTIONSOURCE
         default:
-            return 0, errors.New("Unknown IngestionSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

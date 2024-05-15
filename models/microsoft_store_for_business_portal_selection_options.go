@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -39,7 +38,7 @@ func ParseMicrosoftStoreForBusinessPortalSelectionOptions(v string) (any, error)
             case "privateStore":
                 result |= PRIVATESTORE_MICROSOFTSTOREFORBUSINESSPORTALSELECTIONOPTIONS
             default:
-                return 0, errors.New("Unknown MicrosoftStoreForBusinessPortalSelectionOptions value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

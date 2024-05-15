@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcStatus int
 
 const (
@@ -56,7 +53,7 @@ func ParseCloudPcStatus(v string) (any, error) {
         case "updatingSingleSignOn":
             result = UPDATINGSINGLESIGNON_CLOUDPCSTATUS
         default:
-            return 0, errors.New("Unknown CloudPcStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

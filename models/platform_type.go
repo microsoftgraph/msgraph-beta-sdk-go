@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Platform Type
 type PlatformType int
 
@@ -43,7 +40,7 @@ func ParsePlatformType(v string) (any, error) {
         case "windows10":
             result = WINDOWS10_PLATFORMTYPE
         default:
-            return 0, errors.New("Unknown PlatformType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

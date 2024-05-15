@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The scheduling priority options for downloading and preparing the requested mac OS update
 type MacOSPriority int
 
@@ -27,7 +24,7 @@ func ParseMacOSPriority(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MACOSPRIORITY
         default:
-            return 0, errors.New("Unknown MacOSPriority value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

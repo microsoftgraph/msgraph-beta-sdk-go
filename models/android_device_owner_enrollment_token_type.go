@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enrollment token type for an enrollment profile.
 type AndroidDeviceOwnerEnrollmentTokenType int
 
@@ -27,7 +24,7 @@ func ParseAndroidDeviceOwnerEnrollmentTokenType(v string) (any, error) {
         case "deviceStaging":
             result = DEVICESTAGING_ANDROIDDEVICEOWNERENROLLMENTTOKENTYPE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerEnrollmentTokenType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

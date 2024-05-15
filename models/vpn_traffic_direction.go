@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Specify whether the rule applies to inbound traffic or outbound traffic.
 type VpnTrafficDirection int
 
@@ -27,7 +24,7 @@ func ParseVpnTrafficDirection(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VPNTRAFFICDIRECTION
         default:
-            return 0, errors.New("Unknown VpnTrafficDirection value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

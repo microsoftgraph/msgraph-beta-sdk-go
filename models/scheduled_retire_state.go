@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Cancel or confirm scheduled retire 
 type ScheduledRetireState int
 
@@ -27,7 +24,7 @@ func ParseScheduledRetireState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SCHEDULEDRETIRESTATE
         default:
-            return 0, errors.New("Unknown ScheduledRetireState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

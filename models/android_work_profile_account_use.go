@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum representing possible values for account use in work profile.
 type AndroidWorkProfileAccountUse int
 
@@ -31,7 +28,7 @@ func ParseAndroidWorkProfileAccountUse(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANDROIDWORKPROFILEACCOUNTUSE
         default:
-            return 0, errors.New("Unknown AndroidWorkProfileAccountUse value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RootDomains int
 
 const (
@@ -35,7 +32,7 @@ func ParseRootDomains(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ROOTDOMAINS
         default:
-            return 0, errors.New("Unknown RootDomains value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AwsPolicyType int
 
 const (
@@ -23,7 +20,7 @@ func ParseAwsPolicyType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AWSPOLICYTYPE
         default:
-            return 0, errors.New("Unknown AwsPolicyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

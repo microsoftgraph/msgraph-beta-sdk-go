@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Forward Secrecy Group values for Windows10 VPN policies with IKEv2 connection type.
 type PerfectForwardSecrecyGroup int
 
@@ -43,7 +40,7 @@ func ParsePerfectForwardSecrecyGroup(v string) (any, error) {
         case "pfs24":
             result = PFS24_PERFECTFORWARDSECRECYGROUP
         default:
-            return 0, errors.New("Unknown PerfectForwardSecrecyGroup value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

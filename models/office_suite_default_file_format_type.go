@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Describes the OfficeSuiteApp file format types that can be selected.
 type OfficeSuiteDefaultFileFormatType int
 
@@ -31,7 +28,7 @@ func ParseOfficeSuiteDefaultFileFormatType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OFFICESUITEDEFAULTFILEFORMATTYPE
         default:
-            return 0, errors.New("Unknown OfficeSuiteDefaultFileFormatType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

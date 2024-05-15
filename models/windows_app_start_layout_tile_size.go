@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The tile size of Windows app in the start layout.
 type WindowsAppStartLayoutTileSize int
 
@@ -35,7 +32,7 @@ func ParseWindowsAppStartLayoutTileSize(v string) (any, error) {
         case "large":
             result = LARGE_WINDOWSAPPSTARTLAYOUTTILESIZE
         default:
-            return 0, errors.New("Unknown WindowsAppStartLayoutTileSize value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

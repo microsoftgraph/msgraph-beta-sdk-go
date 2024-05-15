@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type ForwardingCategory int
 
 const (
@@ -26,7 +23,7 @@ func ParseForwardingCategory(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FORWARDINGCATEGORY
         default:
-            return 0, errors.New("Unknown ForwardingCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

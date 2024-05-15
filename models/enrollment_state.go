@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EnrollmentState int
 
 const (
@@ -38,7 +35,7 @@ func ParseEnrollmentState(v string) (any, error) {
         case "blocked":
             result = BLOCKED_ENROLLMENTSTATE
         default:
-            return 0, errors.New("Unknown EnrollmentState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

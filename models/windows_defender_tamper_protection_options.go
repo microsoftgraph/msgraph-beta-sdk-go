@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Defender TamperProtection setting options
 type WindowsDefenderTamperProtectionOptions int
 
@@ -27,7 +24,7 @@ func ParseWindowsDefenderTamperProtectionOptions(v string) (any, error) {
         case "disable":
             result = DISABLE_WINDOWSDEFENDERTAMPERPROTECTIONOPTIONS
         default:
-            return 0, errors.New("Unknown WindowsDefenderTamperProtectionOptions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

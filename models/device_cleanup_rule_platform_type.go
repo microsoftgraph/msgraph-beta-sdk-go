@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Define the platform type for which the admin wants to create the device clean up rule
 type DeviceCleanupRulePlatformType int
 
@@ -59,7 +56,7 @@ func ParseDeviceCleanupRulePlatformType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICECLEANUPRULEPLATFORMTYPE
         default:
-            return 0, errors.New("Unknown DeviceCleanupRulePlatformType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

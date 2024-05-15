@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Wi-Fi Authentication Type Settings.
 type WifiAuthenticationType int
 
@@ -35,7 +32,7 @@ func ParseWifiAuthenticationType(v string) (any, error) {
         case "guest":
             result = GUEST_WIFIAUTHENTICATIONTYPE
         default:
-            return 0, errors.New("Unknown WifiAuthenticationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

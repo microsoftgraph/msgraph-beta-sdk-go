@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Certificate Issuance State Options.
 type CertificateIssuanceStates int
 
@@ -84,7 +81,7 @@ func ParseCertificateIssuanceStates(v string) (any, error) {
         case "requested":
             result = REQUESTED_CERTIFICATEISSUANCESTATES
         default:
-            return 0, errors.New("Unknown CertificateIssuanceStates value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

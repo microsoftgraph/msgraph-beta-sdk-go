@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Criteria which defines the type of device this access rule will apply to
 type DeviceManagementExchangeAccessRuleType int
 
@@ -23,7 +20,7 @@ func ParseDeviceManagementExchangeAccessRuleType(v string) (any, error) {
         case "model":
             result = MODEL_DEVICEMANAGEMENTEXCHANGEACCESSRULETYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementExchangeAccessRuleType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

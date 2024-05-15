@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AccountStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseAccountStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCOUNTSTATUS
         default:
-            return 0, errors.New("Unknown AccountStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

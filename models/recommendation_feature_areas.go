@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RecommendationFeatureAreas int
 
 const (
@@ -38,7 +35,7 @@ func ParseRecommendationFeatureAreas(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECOMMENDATIONFEATUREAREAS
         default:
-            return 0, errors.New("Unknown RecommendationFeatureAreas value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

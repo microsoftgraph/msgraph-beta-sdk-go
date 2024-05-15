@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Provider type for per-app VPN.
 type VpnProviderType int
 
@@ -27,7 +24,7 @@ func ParseVpnProviderType(v string) (any, error) {
         case "packetTunnel":
             result = PACKETTUNNEL_VPNPROVIDERTYPE
         default:
-            return 0, errors.New("Unknown VpnProviderType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

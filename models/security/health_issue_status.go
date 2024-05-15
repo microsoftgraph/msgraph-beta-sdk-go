@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type HealthIssueStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseHealthIssueStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_HEALTHISSUESTATUS
         default:
-            return 0, errors.New("Unknown HealthIssueStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

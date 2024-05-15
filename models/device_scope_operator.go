@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.
 type DeviceScopeOperator int
 
@@ -27,7 +24,7 @@ func ParseDeviceScopeOperator(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICESCOPEOPERATOR
         default:
-            return 0, errors.New("Unknown DeviceScopeOperator value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

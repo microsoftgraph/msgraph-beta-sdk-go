@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RoutingMode int
 
 const (
@@ -20,7 +17,7 @@ func ParseRoutingMode(v string) (any, error) {
         case "multicast":
             result = MULTICAST_ROUTINGMODE
         default:
-            return 0, errors.New("Unknown RoutingMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

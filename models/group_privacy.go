@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type GroupPrivacy int
 
 const (
@@ -26,7 +23,7 @@ func ParseGroupPrivacy(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_GROUPPRIVACY
         default:
-            return 0, errors.New("Unknown GroupPrivacy value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

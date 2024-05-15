@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android For Work default app permission policy type.
 type AndroidForWorkDefaultAppPermissionPolicyType int
 
@@ -31,7 +28,7 @@ func ParseAndroidForWorkDefaultAppPermissionPolicyType(v string) (any, error) {
         case "autoDeny":
             result = AUTODENY_ANDROIDFORWORKDEFAULTAPPPERMISSIONPOLICYTYPE
         default:
-            return 0, errors.New("Unknown AndroidForWorkDefaultAppPermissionPolicyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

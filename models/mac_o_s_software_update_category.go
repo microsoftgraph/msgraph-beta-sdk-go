@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // MacOS Software Update Category
 type MacOSSoftwareUpdateCategory int
 
@@ -31,7 +28,7 @@ func ParseMacOSSoftwareUpdateCategory(v string) (any, error) {
         case "other":
             result = OTHER_MACOSSOFTWAREUPDATECATEGORY
         default:
-            return 0, errors.New("Unknown MacOSSoftwareUpdateCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

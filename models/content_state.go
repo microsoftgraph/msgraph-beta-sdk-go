@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ContentState int
 
 const (
@@ -23,7 +20,7 @@ func ParseContentState(v string) (any, error) {
         case "use":
             result = USE_CONTENTSTATE
         default:
-            return 0, errors.New("Unknown ContentState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

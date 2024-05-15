@@ -1,7 +1,4 @@
 package managedtenants
-import (
-    "errors"
-)
 type DelegatedPrivilegeStatus int
 
 const (
@@ -29,7 +26,7 @@ func ParseDelegatedPrivilegeStatus(v string) (any, error) {
         case "delegatedAndGranularDelegetedAdminPrivileges":
             result = DELEGATEDANDGRANULARDELEGETEDADMINPRIVILEGES_DELEGATEDPRIVILEGESTATUS
         default:
-            return 0, errors.New("Unknown DelegatedPrivilegeStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

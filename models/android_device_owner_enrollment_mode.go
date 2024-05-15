@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enrollment mode for an enrollment profile.
 type AndroidDeviceOwnerEnrollmentMode int
 
@@ -32,7 +29,7 @@ func ParseAndroidDeviceOwnerEnrollmentMode(v string) (any, error) {
         case "corporateOwnedAOSPUserAssociatedDevice":
             result = CORPORATEOWNEDAOSPUSERASSOCIATEDDEVICE_ANDROIDDEVICEOWNERENROLLMENTMODE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerEnrollmentMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

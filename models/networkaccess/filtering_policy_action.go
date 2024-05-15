@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type FilteringPolicyAction int
 
 const (
@@ -23,7 +20,7 @@ func ParseFilteringPolicyAction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FILTERINGPOLICYACTION
         default:
-            return 0, errors.New("Unknown FilteringPolicyAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

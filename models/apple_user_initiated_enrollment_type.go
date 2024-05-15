@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AppleUserInitiatedEnrollmentType int
 
 const (
@@ -38,7 +35,7 @@ func ParseAppleUserInitiatedEnrollmentType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPLEUSERINITIATEDENROLLMENTTYPE
         default:
-            return 0, errors.New("Unknown AppleUserInitiatedEnrollmentType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

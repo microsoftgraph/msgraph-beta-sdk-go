@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Allow(Not Configured) or prevent(Block) the syncing of Microsoft Edge Browser settings. Option to prevent syncing across devices, but allow user override.
 type BrowserSyncSetting int
 
@@ -27,7 +24,7 @@ func ParseBrowserSyncSetting(v string) (any, error) {
         case "blocked":
             result = BLOCKED_BROWSERSYNCSETTING
         default:
-            return 0, errors.New("Unknown BrowserSyncSetting value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

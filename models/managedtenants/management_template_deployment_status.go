@@ -1,7 +1,4 @@
 package managedtenants
-import (
-    "errors"
-)
 type ManagementTemplateDeploymentStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseManagementTemplateDeploymentStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEMENTTEMPLATEDEPLOYMENTSTATUS
         default:
-            return 0, errors.New("Unknown ManagementTemplateDeploymentStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

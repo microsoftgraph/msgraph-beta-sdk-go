@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Contains all supported Powershell Script output detection type.
 type Win32LobAppPowerShellScriptDetectionType int
 
@@ -43,7 +40,7 @@ func ParseWin32LobAppPowerShellScriptDetectionType(v string) (any, error) {
         case "boolean":
             result = BOOLEAN_WIN32LOBAPPPOWERSHELLSCRIPTDETECTIONTYPE
         default:
-            return 0, errors.New("Unknown Win32LobAppPowerShellScriptDetectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

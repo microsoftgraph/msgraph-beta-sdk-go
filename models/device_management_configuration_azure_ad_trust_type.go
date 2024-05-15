@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Required AAD Trust Type
 type DeviceManagementConfigurationAzureAdTrustType int
 
@@ -31,7 +28,7 @@ func ParseDeviceManagementConfigurationAzureAdTrustType(v string) (any, error) {
         case "mdmOnly":
             result = MDMONLY_DEVICEMANAGEMENTCONFIGURATIONAZUREADTRUSTTYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationAzureAdTrustType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

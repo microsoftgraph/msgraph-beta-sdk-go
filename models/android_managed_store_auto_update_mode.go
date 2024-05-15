@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Prioritization for automatic updates of Android Managed Store apps set on assignment.
 type AndroidManagedStoreAutoUpdateMode int
 
@@ -31,7 +28,7 @@ func ParseAndroidManagedStoreAutoUpdateMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
         default:
-            return 0, errors.New("Unknown AndroidManagedStoreAutoUpdateMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

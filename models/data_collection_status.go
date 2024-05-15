@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DataCollectionStatus int
 
 const (
@@ -23,7 +20,7 @@ func ParseDataCollectionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DATACOLLECTIONSTATUS
         default:
-            return 0, errors.New("Unknown DataCollectionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

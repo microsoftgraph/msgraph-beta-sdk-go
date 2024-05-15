@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MailboxRecipientType int
 
 const (
@@ -35,7 +32,7 @@ func ParseMailboxRecipientType(v string) (any, error) {
         case "others":
             result = OTHERS_MAILBOXRECIPIENTTYPE
         default:
-            return 0, errors.New("Unknown MailboxRecipientType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

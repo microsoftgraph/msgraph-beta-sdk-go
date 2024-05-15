@@ -1,7 +1,4 @@
 package managedtenants
-import (
-    "errors"
-)
 type TenantOnboardingStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseTenantOnboardingStatus(v string) (any, error) {
         case "disabled":
             result = DISABLED_TENANTONBOARDINGSTATUS
         default:
-            return 0, errors.New("Unknown TenantOnboardingStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

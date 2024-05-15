@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ResourceScopeType int
 
 const (
@@ -29,7 +26,7 @@ func ParseResourceScopeType(v string) (any, error) {
         case "team":
             result = TEAM_RESOURCESCOPETYPE
         default:
-            return 0, errors.New("Unknown ResourceScopeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

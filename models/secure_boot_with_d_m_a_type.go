@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of Secure Boot with DMA
 type SecureBootWithDMAType int
 
@@ -27,7 +24,7 @@ func ParseSecureBootWithDMAType(v string) (any, error) {
         case "withDMA":
             result = WITHDMA_SECUREBOOTWITHDMATYPE
         default:
-            return 0, errors.New("Unknown SecureBootWithDMAType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

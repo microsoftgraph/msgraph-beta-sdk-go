@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcAuditActorType int
 
 const (
@@ -26,7 +23,7 @@ func ParseCloudPcAuditActorType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCAUDITACTORTYPE
         default:
-            return 0, errors.New("Unknown CloudPcAuditActorType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

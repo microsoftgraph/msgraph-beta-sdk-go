@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type MonitoringSignal int
 
 const (
@@ -23,7 +20,7 @@ func ParseMonitoringSignal(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MONITORINGSIGNAL
         default:
-            return 0, errors.New("Unknown MonitoringSignal value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

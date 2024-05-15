@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ClassificationMethod int
 
 const (
@@ -26,7 +23,7 @@ func ParseClassificationMethod(v string) (any, error) {
         case "machineLearning":
             result = MACHINELEARNING_CLASSIFICATIONMETHOD
         default:
-            return 0, errors.New("Unknown ClassificationMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

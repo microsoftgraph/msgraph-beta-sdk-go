@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum type to represent approval actions of single or list of drivers.
 type DriverApprovalAction int
 
@@ -27,7 +24,7 @@ func ParseDriverApprovalAction(v string) (any, error) {
         case "suspend":
             result = SUSPEND_DRIVERAPPROVALACTION
         default:
-            return 0, errors.New("Unknown DriverApprovalAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

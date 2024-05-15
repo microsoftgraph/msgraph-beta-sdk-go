@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MeetingRegistrantStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseMeetingRegistrantStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEETINGREGISTRANTSTATUS
         default:
-            return 0, errors.New("Unknown MeetingRegistrantStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

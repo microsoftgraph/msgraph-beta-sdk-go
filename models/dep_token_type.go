@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DepTokenType int
 
 const (
@@ -26,7 +23,7 @@ func ParseDepTokenType(v string) (any, error) {
         case "appleSchoolManager":
             result = APPLESCHOOLMANAGER_DEPTOKENTYPE
         default:
-            return 0, errors.New("Unknown DepTokenType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

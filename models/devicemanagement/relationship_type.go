@@ -1,7 +1,4 @@
 package devicemanagement
-import (
-    "errors"
-)
 type RelationshipType int
 
 const (
@@ -23,7 +20,7 @@ func ParseRelationshipType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RELATIONSHIPTYPE
         default:
-            return 0, errors.New("Unknown RelationshipType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

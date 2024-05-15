@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Specify how the Microsoft Edge settings are restricted based on kiosk mode.
 type EdgeKioskModeRestrictionType int
 
@@ -35,7 +32,7 @@ func ParseEdgeKioskModeRestrictionType(v string) (any, error) {
         case "publicBrowsingMultiApp":
             result = PUBLICBROWSINGMULTIAPP_EDGEKIOSKMODERESTRICTIONTYPE
         default:
-            return 0, errors.New("Unknown EdgeKioskModeRestrictionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

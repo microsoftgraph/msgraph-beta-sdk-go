@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Extensible Authentication Protocol (EAP) configuration types.
 type EapType int
 
@@ -43,7 +40,7 @@ func ParseEapType(v string) (any, error) {
         case "teap":
             result = TEAP_EAPTYPE
         default:
-            return 0, errors.New("Unknown EapType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The VPN action to take for a specific service.
 type VpnServiceExceptionAction int
 
@@ -27,7 +24,7 @@ func ParseVpnServiceExceptionAction(v string) (any, error) {
         case "dropTraffic":
             result = DROPTRAFFIC_VPNSERVICEEXCEPTIONACTION
         default:
-            return 0, errors.New("Unknown VpnServiceExceptionAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

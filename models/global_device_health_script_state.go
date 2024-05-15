@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates whether global device health scripts are enabled and are in which state
 type GlobalDeviceHealthScriptState int
 
@@ -27,7 +24,7 @@ func ParseGlobalDeviceHealthScriptState(v string) (any, error) {
         case "enabled":
             result = ENABLED_GLOBALDEVICEHEALTHSCRIPTSTATE
         default:
-            return 0, errors.New("Unknown GlobalDeviceHealthScriptState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

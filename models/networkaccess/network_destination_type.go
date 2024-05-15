@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type NetworkDestinationType int
 
 const (
@@ -35,7 +32,7 @@ func ParseNetworkDestinationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_NETWORKDESTINATIONTYPE
         default:
-            return 0, errors.New("Unknown NetworkDestinationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

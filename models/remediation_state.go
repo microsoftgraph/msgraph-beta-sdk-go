@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the type of execution status of the device management script.
 type RemediationState int
 
@@ -39,7 +36,7 @@ func ParseRemediationState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REMEDIATIONSTATE
         default:
-            return 0, errors.New("Unknown RemediationState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

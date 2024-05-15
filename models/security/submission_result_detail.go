@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type SubmissionResultDetail int
 
 const (
@@ -176,7 +173,7 @@ func ParseSubmissionResultDetail(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBMISSIONRESULTDETAIL
         default:
-            return 0, errors.New("Unknown SubmissionResultDetail value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

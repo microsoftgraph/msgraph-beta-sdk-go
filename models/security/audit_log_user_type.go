@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type AuditLogUserType int
 
 const (
@@ -50,7 +47,7 @@ func ParseAuditLogUserType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUDITLOGUSERTYPE
         default:
-            return 0, errors.New("Unknown AuditLogUserType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the type of content allowed to be cached by Apple's content caching service.
 type MacOSContentCachingType int
 
@@ -27,7 +24,7 @@ func ParseMacOSContentCachingType(v string) (any, error) {
         case "sharedContentOnly":
             result = SHAREDCONTENTONLY_MACOSCONTENTCACHINGTYPE
         default:
-            return 0, errors.New("Unknown MacOSContentCachingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

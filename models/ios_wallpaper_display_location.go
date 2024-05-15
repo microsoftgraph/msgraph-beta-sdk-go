@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum type for wallpaper display location specifier.
 type IosWallpaperDisplayLocation int
 
@@ -31,7 +28,7 @@ func ParseIosWallpaperDisplayLocation(v string) (any, error) {
         case "lockAndHomeScreens":
             result = LOCKANDHOMESCREENS_IOSWALLPAPERDISPLAYLOCATION
         default:
-            return 0, errors.New("Unknown IosWallpaperDisplayLocation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

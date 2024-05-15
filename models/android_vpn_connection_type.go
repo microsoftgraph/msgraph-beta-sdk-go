@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android VPN connection type.
 type AndroidVpnConnectionType int
 
@@ -51,7 +48,7 @@ func ParseAndroidVpnConnectionType(v string) (any, error) {
         case "microsoftProtect":
             result = MICROSOFTPROTECT_ANDROIDVPNCONNECTIONTYPE
         default:
-            return 0, errors.New("Unknown AndroidVpnConnectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Values to restrict peer selection by.
 type DeliveryOptimizationRestrictPeerSelectionByOptions int
 
@@ -23,7 +20,7 @@ func ParseDeliveryOptimizationRestrictPeerSelectionByOptions(v string) (any, err
         case "subnetMask":
             result = SUBNETMASK_DELIVERYOPTIMIZATIONRESTRICTPEERSELECTIONBYOPTIONS
         default:
-            return 0, errors.New("Unknown DeliveryOptimizationRestrictPeerSelectionByOptions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

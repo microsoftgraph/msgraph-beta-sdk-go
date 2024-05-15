@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Username source.
 type UsernameSource int
 
@@ -27,7 +24,7 @@ func ParseUsernameSource(v string) (any, error) {
         case "samAccountName":
             result = SAMACCOUNTNAME_USERNAMESOURCE
         default:
-            return 0, errors.New("Unknown UsernameSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

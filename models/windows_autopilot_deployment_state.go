@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Deployment states for Autopilot devices
 type WindowsAutopilotDeploymentState int
 
@@ -47,7 +44,7 @@ func ParseWindowsAutopilotDeploymentState(v string) (any, error) {
         case "successOnRetry":
             result = SUCCESSONRETRY_WINDOWSAUTOPILOTDEPLOYMENTSTATE
         default:
-            return 0, errors.New("Unknown WindowsAutopilotDeploymentState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

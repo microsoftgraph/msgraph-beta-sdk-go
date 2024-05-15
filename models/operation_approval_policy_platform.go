@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -63,7 +62,7 @@ func ParseOperationApprovalPolicyPlatform(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYPLATFORM
             default:
-                return 0, errors.New("Unknown OperationApprovalPolicyPlatform value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

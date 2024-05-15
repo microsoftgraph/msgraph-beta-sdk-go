@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Error code for rule validation.
 type DeviceComplianceScriptRulesValidationError int
 
@@ -143,7 +140,7 @@ func ParseDeviceComplianceScriptRulesValidationError(v string) (any, error) {
         case "remediationStringsMissing":
             result = REMEDIATIONSTRINGSMISSING_DEVICECOMPLIANCESCRIPTRULESVALIDATIONERROR
         default:
-            return 0, errors.New("Unknown DeviceComplianceScriptRulesValidationError value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

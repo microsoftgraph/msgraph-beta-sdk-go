@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WindowsAutopilotEnrollmentType int
 
 const (
@@ -41,7 +38,7 @@ func ParseWindowsAutopilotEnrollmentType(v string) (any, error) {
         case "offlineDomainJoinedWithOfflineAutopilotProfile":
             result = OFFLINEDOMAINJOINEDWITHOFFLINEAUTOPILOTPROFILE_WINDOWSAUTOPILOTENROLLMENTTYPE
         default:
-            return 0, errors.New("Unknown WindowsAutopilotEnrollmentType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

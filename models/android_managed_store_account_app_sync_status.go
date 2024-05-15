@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Sync status of the tenant with the Google EMM API
 type AndroidManagedStoreAccountAppSyncStatus int
 
@@ -33,7 +30,7 @@ func ParseAndroidManagedStoreAccountAppSyncStatus(v string) (any, error) {
         case "none":
             result = NONE_ANDROIDMANAGEDSTOREACCOUNTAPPSYNCSTATUS
         default:
-            return 0, errors.New("Unknown AndroidManagedStoreAccountAppSyncStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

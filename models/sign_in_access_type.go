@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -47,7 +46,7 @@ func ParseSignInAccessType(v string) (any, error) {
             case "passthrough":
                 result |= PASSTHROUGH_SIGNINACCESSTYPE
             default:
-                return 0, errors.New("Unknown SignInAccessType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

@@ -1,7 +1,4 @@
 package managedtenants
-import (
-    "errors"
-)
 type ManagementParameterValueType int
 
 const (
@@ -41,7 +38,7 @@ func ParseManagementParameterValueType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEMENTPARAMETERVALUETYPE
         default:
-            return 0, errors.New("Unknown ManagementParameterValueType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

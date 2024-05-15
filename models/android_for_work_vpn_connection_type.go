@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android For Work VPN connection type.
 type AndroidForWorkVpnConnectionType int
 
@@ -39,7 +36,7 @@ func ParseAndroidForWorkVpnConnectionType(v string) (any, error) {
         case "citrix":
             result = CITRIX_ANDROIDFORWORKVPNCONNECTIONTYPE
         default:
-            return 0, errors.New("Unknown AndroidForWorkVpnConnectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

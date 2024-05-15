@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrintDuplexConfiguration int
 
 const (
@@ -23,7 +20,7 @@ func ParsePrintDuplexConfiguration(v string) (any, error) {
         case "oneSided":
             result = ONESIDED_PRINTDUPLEXCONFIGURATION
         default:
-            return 0, errors.New("Unknown PrintDuplexConfiguration value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

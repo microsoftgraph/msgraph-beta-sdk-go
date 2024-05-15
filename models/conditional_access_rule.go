@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ConditionalAccessRule int
 
 const (
@@ -125,7 +122,7 @@ func ParseConditionalAccessRule(v string) (any, error) {
         case "insiderRisk":
             result = INSIDERRISK_CONDITIONALACCESSRULE
         default:
-            return 0, errors.New("Unknown ConditionalAccessRule value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

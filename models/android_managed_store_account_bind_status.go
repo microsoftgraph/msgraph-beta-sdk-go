@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Bind status of the tenant with the Google EMM API
 type AndroidManagedStoreAccountBindStatus int
 
@@ -27,7 +24,7 @@ func ParseAndroidManagedStoreAccountBindStatus(v string) (any, error) {
         case "unbinding":
             result = UNBINDING_ANDROIDMANAGEDSTOREACCOUNTBINDSTATUS
         default:
-            return 0, errors.New("Unknown AndroidManagedStoreAccountBindStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

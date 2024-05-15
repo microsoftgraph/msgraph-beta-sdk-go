@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type UpdateCategory int
 
 const (
@@ -26,7 +23,7 @@ func ParseUpdateCategory(v string) (any, error) {
         case "driver":
             result = DRIVER_UPDATECATEGORY
         default:
-            return 0, errors.New("Unknown UpdateCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

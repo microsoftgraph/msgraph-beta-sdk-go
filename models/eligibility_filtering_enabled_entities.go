@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -41,7 +40,7 @@ func ParseEligibilityFilteringEnabledEntities(v string) (any, error) {
             case "timeOffReason":
                 result |= TIMEOFFREASON_ELIGIBILITYFILTERINGENABLEDENTITIES
             default:
-                return 0, errors.New("Unknown EligibilityFilteringEnabledEntities value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

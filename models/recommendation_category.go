@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RecommendationCategory int
 
 const (
@@ -23,7 +20,7 @@ func ParseRecommendationCategory(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECOMMENDATIONCATEGORY
         default:
-            return 0, errors.New("Unknown RecommendationCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

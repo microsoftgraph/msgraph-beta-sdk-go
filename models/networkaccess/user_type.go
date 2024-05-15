@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type UserType int
 
 const (
@@ -23,7 +20,7 @@ func ParseUserType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERTYPE
         default:
-            return 0, errors.New("Unknown UserType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

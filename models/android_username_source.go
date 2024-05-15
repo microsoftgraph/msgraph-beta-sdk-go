@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android username source.
 type AndroidUsernameSource int
 
@@ -31,7 +28,7 @@ func ParseAndroidUsernameSource(v string) (any, error) {
         case "primarySmtpAddress":
             result = PRIMARYSMTPADDRESS_ANDROIDUSERNAMESOURCE
         default:
-            return 0, errors.New("Unknown AndroidUsernameSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for LocalSecurityOptionsSmartCardRemovalBehaviorType
 type LocalSecurityOptionsSmartCardRemovalBehaviorType int
 
@@ -31,7 +28,7 @@ func ParseLocalSecurityOptionsSmartCardRemovalBehaviorType(v string) (any, error
         case "disconnectRemoteDesktopSession":
             result = DISCONNECTREMOTEDESKTOPSESSION_LOCALSECURITYOPTIONSSMARTCARDREMOVALBEHAVIORTYPE
         default:
-            return 0, errors.New("Unknown LocalSecurityOptionsSmartCardRemovalBehaviorType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

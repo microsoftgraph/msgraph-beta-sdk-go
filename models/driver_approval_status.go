@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum type to represent approval status of a driver.
 type DriverApprovalStatus int
 
@@ -31,7 +28,7 @@ func ParseDriverApprovalStatus(v string) (any, error) {
         case "suspended":
             result = SUSPENDED_DRIVERAPPROVALSTATUS
         default:
-            return 0, errors.New("Unknown DriverApprovalStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

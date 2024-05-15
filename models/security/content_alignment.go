@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type ContentAlignment int
 
 const (
@@ -23,7 +20,7 @@ func ParseContentAlignment(v string) (any, error) {
         case "center":
             result = CENTER_CONTENTALIGNMENT
         default:
-            return 0, errors.New("Unknown ContentAlignment value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

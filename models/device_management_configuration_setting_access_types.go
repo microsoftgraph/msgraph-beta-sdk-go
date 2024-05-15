@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -47,7 +46,7 @@ func ParseDeviceManagementConfigurationSettingAccessTypes(v string) (any, error)
             case "execute":
                 result |= EXECUTE_DEVICEMANAGEMENTCONFIGURATIONSETTINGACCESSTYPES
             default:
-                return 0, errors.New("Unknown DeviceManagementConfigurationSettingAccessTypes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

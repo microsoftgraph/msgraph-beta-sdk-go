@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type Label int
 
 const (
@@ -41,7 +38,7 @@ func ParseLabel(v string) (any, error) {
         case "fileExtension":
             result = FILEEXTENSION_LABEL
         default:
-            return 0, errors.New("Unknown Label value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrintPresentationDirection int
 
 const (
@@ -38,7 +35,7 @@ func ParsePrintPresentationDirection(v string) (any, error) {
         case "clockwiseFromBottomRight":
             result = CLOCKWISEFROMBOTTOMRIGHT_PRINTPRESENTATIONDIRECTION
         default:
-            return 0, errors.New("Unknown PrintPresentationDirection value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

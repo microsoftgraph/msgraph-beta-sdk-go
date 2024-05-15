@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type BookingReminderRecipients int
 
 const (
@@ -23,7 +20,7 @@ func ParseBookingReminderRecipients(v string) (any, error) {
         case "customer":
             result = CUSTOMER_BOOKINGREMINDERRECIPIENTS
         default:
-            return 0, errors.New("Unknown BookingReminderRecipients value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

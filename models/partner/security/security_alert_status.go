@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type SecurityAlertStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseSecurityAlertStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SECURITYALERTSTATUS
         default:
-            return 0, errors.New("Unknown SecurityAlertStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

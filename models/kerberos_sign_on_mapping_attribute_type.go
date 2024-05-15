@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type KerberosSignOnMappingAttributeType int
 
 const (
@@ -29,7 +26,7 @@ func ParseKerberosSignOnMappingAttributeType(v string) (any, error) {
         case "onPremisesSAMAccountName":
             result = ONPREMISESSAMACCOUNTNAME_KERBEROSSIGNONMAPPINGATTRIBUTETYPE
         default:
-            return 0, errors.New("Unknown KerberosSignOnMappingAttributeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

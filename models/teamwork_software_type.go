@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamworkSoftwareType int
 
 const (
@@ -35,7 +32,7 @@ func ParseTeamworkSoftwareType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKSOFTWARETYPE
         default:
-            return 0, errors.New("Unknown TeamworkSoftwareType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

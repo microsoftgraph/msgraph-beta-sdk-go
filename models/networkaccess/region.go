@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type Region int
 
 const (
@@ -122,7 +119,7 @@ func ParseRegion(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGION
         default:
-            return 0, errors.New("Unknown Region value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

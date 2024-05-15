@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type RedundancyTier int
 
 const (
@@ -23,7 +20,7 @@ func ParseRedundancyTier(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REDUNDANCYTIER
         default:
-            return 0, errors.New("Unknown RedundancyTier value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

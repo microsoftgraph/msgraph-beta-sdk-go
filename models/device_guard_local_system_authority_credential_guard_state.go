@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DeviceGuardLocalSystemAuthorityCredentialGuardState int
 
 const (
@@ -34,7 +31,7 @@ func ParseDeviceGuardLocalSystemAuthorityCredentialGuardState(v string) (any, er
         case "virtualizationBasedSecurityNotRunning":
             result = VIRTUALIZATIONBASEDSECURITYNOTRUNNING_DEVICEGUARDLOCALSYSTEMAUTHORITYCREDENTIALGUARDSTATE
         default:
-            return 0, errors.New("Unknown DeviceGuardLocalSystemAuthorityCredentialGuardState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

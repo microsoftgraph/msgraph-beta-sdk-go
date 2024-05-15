@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The Enum to specify the Office365 Updates Channel.
 type OfficeUpdateChannel int
 
@@ -33,7 +30,7 @@ func ParseOfficeUpdateChannel(v string) (any, error) {
         case "monthlyEnterprise":
             result = MONTHLYENTERPRISE_OFFICEUPDATECHANNEL
         default:
-            return 0, errors.New("Unknown OfficeUpdateChannel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

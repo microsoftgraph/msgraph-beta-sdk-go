@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type FileProcessingStatus int
 
 const (
@@ -71,7 +68,7 @@ func ParseFileProcessingStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FILEPROCESSINGSTATUS
         default:
-            return 0, errors.New("Unknown FileProcessingStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

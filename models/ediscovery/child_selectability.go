@@ -1,7 +1,4 @@
 package ediscovery
-import (
-    "errors"
-)
 type ChildSelectability int
 
 const (
@@ -20,7 +17,7 @@ func ParseChildSelectability(v string) (any, error) {
         case "Many":
             result = MANY_CHILDSELECTABILITY
         default:
-            return 0, errors.New("Unknown ChildSelectability value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

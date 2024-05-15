@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Microsoft Launcher Search Bar Placement selection.
 type MicrosoftLauncherSearchBarPlacement int
 
@@ -31,7 +28,7 @@ func ParseMicrosoftLauncherSearchBarPlacement(v string) (any, error) {
         case "hide":
             result = HIDE_MICROSOFTLAUNCHERSEARCHBARPLACEMENT
         default:
-            return 0, errors.New("Unknown MicrosoftLauncherSearchBarPlacement value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

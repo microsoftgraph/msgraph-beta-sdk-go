@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TokenProtectionStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseTokenProtectionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TOKENPROTECTIONSTATUS
         default:
-            return 0, errors.New("Unknown TokenProtectionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

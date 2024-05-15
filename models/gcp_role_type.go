@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type GcpRoleType int
 
 const (
@@ -23,7 +20,7 @@ func ParseGcpRoleType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_GCPROLETYPE
         default:
-            return 0, errors.New("Unknown GcpRoleType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

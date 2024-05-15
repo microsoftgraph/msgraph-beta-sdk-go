@@ -11,7 +11,7 @@ import (
 type ItemActivitiesItemHistoryItemsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemActivitiesItemHistoryItemsRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// ItemActivitiesItemHistoryItemsRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
 type ItemActivitiesItemHistoryItemsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemActivitiesItemHistoryItemsRequestBuilder(rawUrl string, requestAdapt
 func (m *ItemActivitiesItemHistoryItemsRequestBuilder) Count()(*ItemActivitiesItemHistoryItemsCountRequestBuilder) {
     return NewItemActivitiesItemHistoryItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// Get optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
 // returns a ActivityHistoryItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemActivitiesItemHistoryItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemActivitiesItemHistoryItemsRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemable), nil
 }
-// ToGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// ToGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
 // returns a *RequestInformation when successful
 func (m *ItemActivitiesItemHistoryItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

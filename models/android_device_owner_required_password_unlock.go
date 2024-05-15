@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum representing possible values for required password unlock.
 type AndroidDeviceOwnerRequiredPasswordUnlock int
 
@@ -27,7 +24,7 @@ func ParseAndroidDeviceOwnerRequiredPasswordUnlock(v string) (any, error) {
         case "unkownFutureValue":
             result = UNKOWNFUTUREVALUE_ANDROIDDEVICEOWNERREQUIREDPASSWORDUNLOCK
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerRequiredPasswordUnlock value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

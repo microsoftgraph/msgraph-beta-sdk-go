@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type BookingInvoiceStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseBookingInvoiceStatus(v string) (any, error) {
         case "corrective":
             result = CORRECTIVE_BOOKINGINVOICESTATUS
         default:
-            return 0, errors.New("Unknown BookingInvoiceStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

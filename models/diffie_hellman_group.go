@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Diffie Hellman Group values for Windows10 VPN policies with IKEv2 connection type.
 type DiffieHellmanGroup int
 
@@ -39,7 +36,7 @@ func ParseDiffieHellmanGroup(v string) (any, error) {
         case "group24":
             result = GROUP24_DIFFIEHELLMANGROUP
         default:
-            return 0, errors.New("Unknown DiffieHellmanGroup value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

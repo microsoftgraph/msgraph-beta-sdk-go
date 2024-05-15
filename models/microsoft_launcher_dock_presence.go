@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Microsoft Launcher Dock Presence selection.
 type MicrosoftLauncherDockPresence int
 
@@ -31,7 +28,7 @@ func ParseMicrosoftLauncherDockPresence(v string) (any, error) {
         case "disabled":
             result = DISABLED_MICROSOFTLAUNCHERDOCKPRESENCE
         default:
-            return 0, errors.New("Unknown MicrosoftLauncherDockPresence value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

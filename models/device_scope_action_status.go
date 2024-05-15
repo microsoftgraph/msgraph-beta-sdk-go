@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the status of the attempted device scope action
 type DeviceScopeActionStatus int
 
@@ -27,7 +24,7 @@ func ParseDeviceScopeActionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICESCOPEACTIONSTATUS
         default:
-            return 0, errors.New("Unknown DeviceScopeActionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

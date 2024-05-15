@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Supported evaluation results for filter.
 type AssignmentFilterEvaluationResult int
 
@@ -39,7 +36,7 @@ func ParseAssignmentFilterEvaluationResult(v string) (any, error) {
         case "notEvaluated":
             result = NOTEVALUATED_ASSIGNMENTFILTEREVALUATIONRESULT
         default:
-            return 0, errors.New("Unknown AssignmentFilterEvaluationResult value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

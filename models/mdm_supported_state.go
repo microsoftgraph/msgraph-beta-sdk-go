@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Mdm Support Status of the setting.
 type MdmSupportedState int
 
@@ -31,7 +28,7 @@ func ParseMdmSupportedState(v string) (any, error) {
         case "deprecated":
             result = DEPRECATED_MDMSUPPORTEDSTATE
         default:
-            return 0, errors.New("Unknown MdmSupportedState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

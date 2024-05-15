@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type NetworkingProtocol int
 
 const (
@@ -83,7 +80,7 @@ func ParseNetworkingProtocol(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_NETWORKINGPROTOCOL
         default:
-            return 0, errors.New("Unknown NetworkingProtocol value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

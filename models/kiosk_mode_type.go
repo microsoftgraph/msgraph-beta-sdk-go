@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of Android Kiosk Mode.
 type KioskModeType int
 
@@ -27,7 +24,7 @@ func ParseKioskModeType(v string) (any, error) {
         case "multiAppMode":
             result = MULTIAPPMODE_KIOSKMODETYPE
         default:
-            return 0, errors.New("Unknown KioskModeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

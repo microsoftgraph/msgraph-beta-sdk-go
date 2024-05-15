@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner possible values for states of the device's app auto update policy.
 type AndroidDeviceOwnerAppAutoUpdatePolicyType int
 
@@ -35,7 +32,7 @@ func ParseAndroidDeviceOwnerAppAutoUpdatePolicyType(v string) (any, error) {
         case "always":
             result = ALWAYS_ANDROIDDEVICEOWNERAPPAUTOUPDATEPOLICYTYPE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerAppAutoUpdatePolicyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

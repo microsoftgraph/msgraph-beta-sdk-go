@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents the type of pricing of a booking service.
 type BookingPriceType int
 
@@ -47,7 +44,7 @@ func ParseBookingPriceType(v string) (any, error) {
         case "notSet":
             result = NOTSET_BOOKINGPRICETYPE
         default:
-            return 0, errors.New("Unknown BookingPriceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

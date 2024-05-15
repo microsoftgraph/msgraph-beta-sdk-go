@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Specifies the type of scope for a Role Assignment.
 type RoleAssignmentScopeType int
 
@@ -31,7 +28,7 @@ func ParseRoleAssignmentScopeType(v string) (any, error) {
         case "allDevicesAndLicensedUsers":
             result = ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
         default:
-            return 0, errors.New("Unknown RoleAssignmentScopeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

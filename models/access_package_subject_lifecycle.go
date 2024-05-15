@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AccessPackageSubjectLifecycle int
 
 const (
@@ -26,7 +23,7 @@ func ParseAccessPackageSubjectLifecycle(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGESUBJECTLIFECYCLE
         default:
-            return 0, errors.New("Unknown AccessPackageSubjectLifecycle value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

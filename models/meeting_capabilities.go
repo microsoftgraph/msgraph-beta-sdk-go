@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MeetingCapabilities int
 
 const (
@@ -20,7 +17,7 @@ func ParseMeetingCapabilities(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEETINGCAPABILITIES
         default:
-            return 0, errors.New("Unknown MeetingCapabilities value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

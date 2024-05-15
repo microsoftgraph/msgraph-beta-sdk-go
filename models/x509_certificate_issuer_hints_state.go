@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type X509CertificateIssuerHintsState int
 
 const (
@@ -23,7 +20,7 @@ func ParseX509CertificateIssuerHintsState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_X509CERTIFICATEISSUERHINTSSTATE
         default:
-            return 0, errors.New("Unknown X509CertificateIssuerHintsState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

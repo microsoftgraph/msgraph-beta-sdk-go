@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PermissionsModificationCapability int
 
 const (
@@ -26,7 +23,7 @@ func ParsePermissionsModificationCapability(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PERMISSIONSMODIFICATIONCAPABILITY
         default:
-            return 0, errors.New("Unknown PermissionsModificationCapability value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

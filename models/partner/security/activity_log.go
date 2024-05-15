@@ -133,7 +133,7 @@ func (m *ActivityLog) GetStatusTo()(*SecurityAlertStatus) {
     }
     return nil
 }
-// GetUpdatedBy gets the updatedBy property value. The updatedBy property
+// GetUpdatedBy gets the updatedBy property value. The UPN of the partner user who did the status update activity. This attribute is set by the system.
 // returns a *string when successful
 func (m *ActivityLog) GetUpdatedBy()(*string) {
     val, err := m.GetBackingStore().Get("updatedBy")
@@ -145,7 +145,7 @@ func (m *ActivityLog) GetUpdatedBy()(*string) {
     }
     return nil
 }
-// GetUpdatedDateTime gets the updatedDateTime property value. The updatedDateTime property
+// GetUpdatedDateTime gets the updatedDateTime property value. The date and time for the status update activity. This attribute is set by the system. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ActivityLog) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("updatedDateTime")
@@ -231,14 +231,14 @@ func (m *ActivityLog) SetStatusTo(value *SecurityAlertStatus)() {
         panic(err)
     }
 }
-// SetUpdatedBy sets the updatedBy property value. The updatedBy property
+// SetUpdatedBy sets the updatedBy property value. The UPN of the partner user who did the status update activity. This attribute is set by the system.
 func (m *ActivityLog) SetUpdatedBy(value *string)() {
     err := m.GetBackingStore().Set("updatedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUpdatedDateTime sets the updatedDateTime property value. The updatedDateTime property
+// SetUpdatedDateTime sets the updatedDateTime property value. The date and time for the status update activity. This attribute is set by the system. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ActivityLog) SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("updatedDateTime", value)
     if err != nil {

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows VPN connection type.
 type WindowsVpnConnectionType int
 
@@ -31,7 +28,7 @@ func ParseWindowsVpnConnectionType(v string) (any, error) {
         case "checkPointCapsuleVpn":
             result = CHECKPOINTCAPSULEVPN_WINDOWSVPNCONNECTIONTYPE
         default:
-            return 0, errors.New("Unknown WindowsVpnConnectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

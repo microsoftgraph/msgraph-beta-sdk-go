@@ -196,6 +196,22 @@ func (m *ItemFacet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["sources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateProfileSourceAnnotationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ProfileSourceAnnotationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ProfileSourceAnnotationable)
+                }
+            }
+            m.SetSources(res)
+        }
+        return nil
+    }
     return res
 }
 // GetInference gets the inference property value. Contains inference detail if the entity is inferred by the creating or modifying application.
@@ -258,6 +274,18 @@ func (m *ItemFacet) GetSource()(PersonDataSourcesable) {
     }
     return nil
 }
+// GetSources gets the sources property value. The sources property
+// returns a []ProfileSourceAnnotationable when successful
+func (m *ItemFacet) GetSources()([]ProfileSourceAnnotationable) {
+    val, err := m.GetBackingStore().Get("sources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProfileSourceAnnotationable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *ItemFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -309,6 +337,18 @@ func (m *ItemFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     {
         err = writer.WriteObjectValue("source", m.GetSource())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSources() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSources()))
+        for i, v := range m.GetSources() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sources", cast)
         if err != nil {
             return err
         }
@@ -371,6 +411,13 @@ func (m *ItemFacet) SetSource(value PersonDataSourcesable)() {
         panic(err)
     }
 }
+// SetSources sets the sources property value. The sources property
+func (m *ItemFacet) SetSources(value []ProfileSourceAnnotationable)() {
+    err := m.GetBackingStore().Set("sources", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type ItemFacetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -382,6 +429,7 @@ type ItemFacetable interface {
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSource()(PersonDataSourcesable)
+    GetSources()([]ProfileSourceAnnotationable)
     SetAllowedAudiences(value *AllowedAudiences)()
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -390,4 +438,5 @@ type ItemFacetable interface {
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSource(value PersonDataSourcesable)()
+    SetSources(value []ProfileSourceAnnotationable)()
 }

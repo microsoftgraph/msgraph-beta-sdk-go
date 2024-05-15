@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ShiftWorkCloudPcAccessState int
 
 const (
@@ -35,7 +32,7 @@ func ParseShiftWorkCloudPcAccessState(v string) (any, error) {
         case "standbyMode":
             result = STANDBYMODE_SHIFTWORKCLOUDPCACCESSSTATE
         default:
-            return 0, errors.New("Unknown ShiftWorkCloudPcAccessState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

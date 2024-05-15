@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Determines how often to check if a peer connection is still alive
 type VpnDeadPeerDetectionRate int
 
@@ -31,7 +28,7 @@ func ParseVpnDeadPeerDetectionRate(v string) (any, error) {
         case "high":
             result = HIGH_VPNDEADPEERDETECTIONRATE
         default:
-            return 0, errors.New("Unknown VpnDeadPeerDetectionRate value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

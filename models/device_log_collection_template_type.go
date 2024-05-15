@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Enum for the template type used for collecting logs
 type DeviceLogCollectionTemplateType int
 
@@ -23,7 +20,7 @@ func ParseDeviceLogCollectionTemplateType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICELOGCOLLECTIONTEMPLATETYPE
         default:
-            return 0, errors.New("Unknown DeviceLogCollectionTemplateType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SiteAccessType int
 
 const (
@@ -23,7 +20,7 @@ func ParseSiteAccessType(v string) (any, error) {
         case "limited":
             result = LIMITED_SITEACCESSTYPE
         default:
-            return 0, errors.New("Unknown SiteAccessType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

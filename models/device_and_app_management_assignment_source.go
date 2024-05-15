@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents source of assignment.
 type DeviceAndAppManagementAssignmentSource int
 
@@ -23,7 +20,7 @@ func ParseDeviceAndAppManagementAssignmentSource(v string) (any, error) {
         case "policySets":
             result = POLICYSETS_DEVICEANDAPPMANAGEMENTASSIGNMENTSOURCE
         default:
-            return 0, errors.New("Unknown DeviceAndAppManagementAssignmentSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -103,7 +103,7 @@ func (m *VirtualEventWebinar) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetRegistrationConfiguration gets the registrationConfiguration property value. The registrationConfiguration property
+// GetRegistrationConfiguration gets the registrationConfiguration property value. Registration configuration of the webinar.
 // returns a VirtualEventWebinarRegistrationConfigurationable when successful
 func (m *VirtualEventWebinar) GetRegistrationConfiguration()(VirtualEventWebinarRegistrationConfigurationable) {
     val, err := m.GetBackingStore().Get("registrationConfiguration")
@@ -186,7 +186,7 @@ func (m *VirtualEventWebinar) SetCoOrganizers(value []CommunicationsUserIdentity
         panic(err)
     }
 }
-// SetRegistrationConfiguration sets the registrationConfiguration property value. The registrationConfiguration property
+// SetRegistrationConfiguration sets the registrationConfiguration property value. Registration configuration of the webinar.
 func (m *VirtualEventWebinar) SetRegistrationConfiguration(value VirtualEventWebinarRegistrationConfigurationable)() {
     err := m.GetBackingStore().Set("registrationConfiguration", value)
     if err != nil {

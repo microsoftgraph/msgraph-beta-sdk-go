@@ -1,7 +1,4 @@
 package devicemanagement
-import (
-    "errors"
-)
 type ConditionCategory int
 
 const (
@@ -41,7 +38,7 @@ func ParseConditionCategory(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONCATEGORY
         default:
-            return 0, errors.New("Unknown ConditionCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

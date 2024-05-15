@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseHashAlgorithms(v string) (any, error) {
             case "sha2":
                 result |= SHA2_HASHALGORITHMS
             default:
-                return 0, errors.New("Unknown HashAlgorithms value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

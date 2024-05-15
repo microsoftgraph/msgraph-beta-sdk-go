@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates if machine is physical or virtual. Possible values are: physical or virtual
 type UserExperienceAnalyticsMachineType int
 
@@ -31,7 +28,7 @@ func ParseUserExperienceAnalyticsMachineType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSMACHINETYPE
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsMachineType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

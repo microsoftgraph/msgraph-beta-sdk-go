@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type DeviceCategory int
 
 const (
@@ -26,7 +23,7 @@ func ParseDeviceCategory(v string) (any, error) {
         case "remoteNetwork":
             result = REMOTENETWORK_DEVICECATEGORY
         default:
-            return 0, errors.New("Unknown DeviceCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

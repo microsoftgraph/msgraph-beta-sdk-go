@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the type of app that a VPN traffic rule is associated with.
 type VpnTrafficRuleAppType int
 
@@ -27,7 +24,7 @@ func ParseVpnTrafficRuleAppType(v string) (any, error) {
         case "universal":
             result = UNIVERSAL_VPNTRAFFICRULEAPPTYPE
         default:
-            return 0, errors.New("Unknown VpnTrafficRuleAppType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

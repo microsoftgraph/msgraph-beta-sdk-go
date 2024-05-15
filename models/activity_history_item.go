@@ -20,7 +20,7 @@ func NewActivityHistoryItem()(*ActivityHistoryItem) {
 func CreateActivityHistoryItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActivityHistoryItem(), nil
 }
-// GetActiveDurationSeconds gets the activeDurationSeconds property value. The activeDurationSeconds property
+// GetActiveDurationSeconds gets the activeDurationSeconds property value. Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
 // returns a *int32 when successful
 func (m *ActivityHistoryItem) GetActiveDurationSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("activeDurationSeconds")
@@ -44,7 +44,7 @@ func (m *ActivityHistoryItem) GetActivity()(UserActivityable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Set by the server. DateTime in UTC when the object was created on the server.
 // returns a *Time when successful
 func (m *ActivityHistoryItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -56,7 +56,7 @@ func (m *ActivityHistoryItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
 // returns a *Time when successful
 func (m *ActivityHistoryItem) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -164,7 +164,7 @@ func (m *ActivityHistoryItem) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetLastActiveDateTime gets the lastActiveDateTime property value. The lastActiveDateTime property
+// GetLastActiveDateTime gets the lastActiveDateTime property value. Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
 // returns a *Time when successful
 func (m *ActivityHistoryItem) GetLastActiveDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActiveDateTime")
@@ -176,7 +176,7 @@ func (m *ActivityHistoryItem) GetLastActiveDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Set by the server. DateTime in UTC when the object was modified on the server.
 // returns a *Time when successful
 func (m *ActivityHistoryItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -188,7 +188,7 @@ func (m *ActivityHistoryItem) GetLastModifiedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetStartedDateTime gets the startedDateTime property value. The startedDateTime property
+// GetStartedDateTime gets the startedDateTime property value. Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
 // returns a *Time when successful
 func (m *ActivityHistoryItem) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
@@ -200,7 +200,7 @@ func (m *ActivityHistoryItem) GetStartedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
 // returns a *Status when successful
 func (m *ActivityHistoryItem) GetStatus()(*Status) {
     val, err := m.GetBackingStore().Get("status")
@@ -212,7 +212,7 @@ func (m *ActivityHistoryItem) GetStatus()(*Status) {
     }
     return nil
 }
-// GetUserTimezone gets the userTimezone property value. The userTimezone property
+// GetUserTimezone gets the userTimezone property value. Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
 // returns a *string when successful
 func (m *ActivityHistoryItem) GetUserTimezone()(*string) {
     val, err := m.GetBackingStore().Get("userTimezone")
@@ -287,7 +287,7 @@ func (m *ActivityHistoryItem) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetActiveDurationSeconds sets the activeDurationSeconds property value. The activeDurationSeconds property
+// SetActiveDurationSeconds sets the activeDurationSeconds property value. Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
 func (m *ActivityHistoryItem) SetActiveDurationSeconds(value *int32)() {
     err := m.GetBackingStore().Set("activeDurationSeconds", value)
     if err != nil {
@@ -301,49 +301,49 @@ func (m *ActivityHistoryItem) SetActivity(value UserActivityable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Set by the server. DateTime in UTC when the object was created on the server.
 func (m *ActivityHistoryItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. Optional. UTC DateTime when the activityHistoryItem will undergo hard-delete. Can be set by the client.
 func (m *ActivityHistoryItem) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastActiveDateTime sets the lastActiveDateTime property value. The lastActiveDateTime property
+// SetLastActiveDateTime sets the lastActiveDateTime property value. Optional. UTC DateTime when the activityHistoryItem (activity session) was last understood as active or finished - if null, activityHistoryItem status should be Ongoing.
 func (m *ActivityHistoryItem) SetLastActiveDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastActiveDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Set by the server. DateTime in UTC when the object was modified on the server.
 func (m *ActivityHistoryItem) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartedDateTime sets the startedDateTime property value. The startedDateTime property
+// SetStartedDateTime sets the startedDateTime property value. Required. UTC DateTime when the activityHistoryItem (activity session) was started. Required for timeline history.
 func (m *ActivityHistoryItem) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.
 func (m *ActivityHistoryItem) SetStatus(value *Status)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserTimezone sets the userTimezone property value. The userTimezone property
+// SetUserTimezone sets the userTimezone property value. Optional. The timezone in which the user's device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.
 func (m *ActivityHistoryItem) SetUserTimezone(value *string)() {
     err := m.GetBackingStore().Set("userTimezone", value)
     if err != nil {

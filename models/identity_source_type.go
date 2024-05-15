@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type IdentitySourceType int
 
 const (
@@ -20,7 +17,7 @@ func ParseIdentitySourceType(v string) (any, error) {
         case "external":
             result = EXTERNAL_IDENTITYSOURCETYPE
         default:
-            return 0, errors.New("Unknown IdentitySourceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

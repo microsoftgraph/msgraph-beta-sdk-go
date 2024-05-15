@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device type.
 type DeviceTypes int
 
@@ -103,7 +100,7 @@ func ParseDeviceTypes(v string) (any, error) {
         case "unknown":
             result = UNKNOWN_DEVICETYPES
         default:
-            return 0, errors.New("Unknown DeviceTypes value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

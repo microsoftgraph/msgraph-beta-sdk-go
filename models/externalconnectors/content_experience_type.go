@@ -1,6 +1,5 @@
 package externalconnectors
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseContentExperienceType(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_CONTENTEXPERIENCETYPE
             default:
-                return 0, errors.New("Unknown ContentExperienceType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

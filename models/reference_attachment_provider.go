@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ReferenceAttachmentProvider int
 
 const (
@@ -26,7 +23,7 @@ func ParseReferenceAttachmentProvider(v string) (any, error) {
         case "dropbox":
             result = DROPBOX_REFERENCEATTACHMENTPROVIDER
         default:
-            return 0, errors.New("Unknown ReferenceAttachmentProvider value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

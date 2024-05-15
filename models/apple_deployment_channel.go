@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel
 type AppleDeploymentChannel int
 
@@ -23,7 +20,7 @@ func ParseAppleDeploymentChannel(v string) (any, error) {
         case "userChannel":
             result = USERCHANNEL_APPLEDEPLOYMENTCHANNEL
         default:
-            return 0, errors.New("Unknown AppleDeploymentChannel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

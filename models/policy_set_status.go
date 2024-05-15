@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The enum to specify the status of PolicySet.
 type PolicySetStatus int
 
@@ -39,7 +36,7 @@ func ParsePolicySetStatus(v string) (any, error) {
         case "notAssigned":
             result = NOTASSIGNED_POLICYSETSTATUS
         default:
-            return 0, errors.New("Unknown PolicySetStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

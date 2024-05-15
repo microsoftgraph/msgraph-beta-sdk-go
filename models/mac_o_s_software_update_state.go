@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // MacOS Software Update State
 type MacOSSoftwareUpdateState int
 
@@ -75,7 +72,7 @@ func ParseMacOSSoftwareUpdateState(v string) (any, error) {
         case "commandFailed":
             result = COMMANDFAILED_MACOSSOFTWAREUPDATESTATE
         default:
-            return 0, errors.New("Unknown MacOSSoftwareUpdateState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

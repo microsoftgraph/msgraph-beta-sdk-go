@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Exchange Active Sync authentication method.
 type EasAuthenticationMethod int
 
@@ -27,7 +24,7 @@ func ParseEasAuthenticationMethod(v string) (any, error) {
         case "derivedCredential":
             result = DERIVEDCREDENTIAL_EASAUTHENTICATIONMETHOD
         default:
-            return 0, errors.New("Unknown EasAuthenticationMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type TrafficForwardingType int
 
 const (
@@ -26,7 +23,7 @@ func ParseTrafficForwardingType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TRAFFICFORWARDINGTYPE
         default:
-            return 0, errors.New("Unknown TrafficForwardingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the type of execution status of the device management script.
 type RunState int
 
@@ -39,7 +36,7 @@ func ParseRunState(v string) (any, error) {
         case "notApplicable":
             result = NOTAPPLICABLE_RUNSTATE
         default:
-            return 0, errors.New("Unknown RunState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

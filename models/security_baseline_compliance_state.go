@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Security Baseline Compliance State
 type SecurityBaselineComplianceState int
 
@@ -39,7 +36,7 @@ func ParseSecurityBaselineComplianceState(v string) (any, error) {
         case "conflict":
             result = CONFLICT_SECURITYBASELINECOMPLIANCESTATE
         default:
-            return 0, errors.New("Unknown SecurityBaselineComplianceState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

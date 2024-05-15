@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DeviceGuardVirtualizationBasedSecurityHardwareRequirementState int
 
 const (
@@ -34,7 +31,7 @@ func ParseDeviceGuardVirtualizationBasedSecurityHardwareRequirementState(v strin
         case "hyperVNotAvailable":
             result = HYPERVNOTAVAILABLE_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYHARDWAREREQUIREMENTSTATE
         default:
-            return 0, errors.New("Unknown DeviceGuardVirtualizationBasedSecurityHardwareRequirementState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

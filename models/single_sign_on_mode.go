@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SingleSignOnMode int
 
 const (
@@ -35,7 +32,7 @@ func ParseSingleSignOnMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SINGLESIGNONMODE
         default:
-            return 0, errors.New("Unknown SingleSignOnMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

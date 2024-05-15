@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.
 type AospWifiSecurityType int
 
@@ -27,7 +24,7 @@ func ParseAospWifiSecurityType(v string) (any, error) {
         case "wep":
             result = WEP_AOSPWIFISECURITYTYPE
         default:
-            return 0, errors.New("Unknown AospWifiSecurityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

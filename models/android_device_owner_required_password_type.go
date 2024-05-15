@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner policy required password type.
 type AndroidDeviceOwnerRequiredPasswordType int
 
@@ -51,7 +48,7 @@ func ParseAndroidDeviceOwnerRequiredPasswordType(v string) (any, error) {
         case "customPassword":
             result = CUSTOMPASSWORD_ANDROIDDEVICEOWNERREQUIREDPASSWORDTYPE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerRequiredPasswordType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

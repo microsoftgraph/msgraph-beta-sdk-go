@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device type.
 type DeviceType int
 
@@ -123,7 +120,7 @@ func ParseDeviceType(v string) (any, error) {
         case "cloudPC":
             result = CLOUDPC_DEVICETYPE
         default:
-            return 0, errors.New("Unknown DeviceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

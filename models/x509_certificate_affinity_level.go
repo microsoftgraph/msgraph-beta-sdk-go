@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type X509CertificateAffinityLevel int
 
 const (
@@ -23,7 +20,7 @@ func ParseX509CertificateAffinityLevel(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_X509CERTIFICATEAFFINITYLEVEL
         default:
-            return 0, errors.New("Unknown X509CertificateAffinityLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

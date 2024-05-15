@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PermissionsDefinitionIdentityType int
 
 const (
@@ -32,7 +29,7 @@ func ParsePermissionsDefinitionIdentityType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PERMISSIONSDEFINITIONIDENTITYTYPE
         default:
-            return 0, errors.New("Unknown PermissionsDefinitionIdentityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

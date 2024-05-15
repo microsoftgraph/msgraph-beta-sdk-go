@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the status of the device in the correlation group. Eg: Device status can be anomalous, affected, at risk.
 type UserExperienceAnalyticsDeviceStatus int
 
@@ -31,7 +28,7 @@ func ParseUserExperienceAnalyticsDeviceStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSDEVICESTATUS
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsDeviceStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

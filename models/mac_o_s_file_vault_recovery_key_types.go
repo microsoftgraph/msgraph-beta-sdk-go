@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -39,7 +38,7 @@ func ParseMacOSFileVaultRecoveryKeyTypes(v string) (any, error) {
             case "personalRecoveryKey":
                 result |= PERSONALRECOVERYKEY_MACOSFILEVAULTRECOVERYKEYTYPES
             default:
-                return 0, errors.New("Unknown MacOSFileVaultRecoveryKeyTypes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

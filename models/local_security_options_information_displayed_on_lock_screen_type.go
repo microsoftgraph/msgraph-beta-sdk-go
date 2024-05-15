@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for LocalSecurityOptionsInformationDisplayedOnLockScreen
 type LocalSecurityOptionsInformationDisplayedOnLockScreenType int
 
@@ -31,7 +28,7 @@ func ParseLocalSecurityOptionsInformationDisplayedOnLockScreenType(v string) (an
         case "administratorsAndInteractiveUsers":
             result = ADMINISTRATORSANDINTERACTIVEUSERS_LOCALSECURITYOPTIONSINFORMATIONDISPLAYEDONLOCKSCREENTYPE
         default:
-            return 0, errors.New("Unknown LocalSecurityOptionsInformationDisplayedOnLockScreenType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

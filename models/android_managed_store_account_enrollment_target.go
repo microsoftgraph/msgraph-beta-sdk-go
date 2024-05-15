@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android for Work device management targeting type for the account
 type AndroidManagedStoreAccountEnrollmentTarget int
 
@@ -27,7 +24,7 @@ func ParseAndroidManagedStoreAccountEnrollmentTarget(v string) (any, error) {
         case "targetedAsEnrollmentRestrictions":
             result = TARGETEDASENROLLMENTRESTRICTIONS_ANDROIDMANAGEDSTOREACCOUNTENROLLMENTTARGET
         default:
-            return 0, errors.New("Unknown AndroidManagedStoreAccountEnrollmentTarget value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

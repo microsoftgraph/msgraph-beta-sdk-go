@@ -1,7 +1,4 @@
 package devicemanagement
-import (
-    "errors"
-)
 type NotificationChannelType int
 
 const (
@@ -29,7 +26,7 @@ func ParseNotificationChannelType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_NOTIFICATIONCHANNELTYPE
         default:
-            return 0, errors.New("Unknown NotificationChannelType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The administrator intent for the assignment of the profile.
 type DeviceConfigAssignmentIntent int
 
@@ -23,7 +20,7 @@ func ParseDeviceConfigAssignmentIntent(v string) (any, error) {
         case "remove":
             result = REMOVE_DEVICECONFIGASSIGNMENTINTENT
         default:
-            return 0, errors.New("Unknown DeviceConfigAssignmentIntent value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

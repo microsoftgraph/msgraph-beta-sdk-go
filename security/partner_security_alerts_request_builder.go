@@ -11,7 +11,7 @@ import (
 type PartnerSecurityAlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PartnerSecurityAlertsRequestBuilderGetQueryParameters get securityAlerts from security
+// PartnerSecurityAlertsRequestBuilderGetQueryParameters get a list of the partnerSecurityAlert objects and their properties.
 type PartnerSecurityAlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewPartnerSecurityAlertsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *PartnerSecurityAlertsRequestBuilder) Count()(*PartnerSecurityAlertsCountRequestBuilder) {
     return NewPartnerSecurityAlertsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get securityAlerts from security
+// Get get a list of the partnerSecurityAlert objects and their properties.
 // returns a PartnerSecurityAlertCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/partner-security-partnersecurityalert-list-securityalerts?view=graph-rest-beta
 func (m *PartnerSecurityAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *PartnerSecurityAlertsRequestBuilderGetRequestConfiguration)(if063350b43a6e623648b394d8f6b8221a26a9ae46bc715ec386eaf438133b186.PartnerSecurityAlertCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *PartnerSecurityAlertsRequestBuilder) Post(ctx context.Context, body if0
     }
     return res.(if063350b43a6e623648b394d8f6b8221a26a9ae46bc715ec386eaf438133b186.PartnerSecurityAlertable), nil
 }
-// ToGetRequestInformation get securityAlerts from security
+// ToGetRequestInformation get a list of the partnerSecurityAlert objects and their properties.
 // returns a *RequestInformation when successful
 func (m *PartnerSecurityAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnerSecurityAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

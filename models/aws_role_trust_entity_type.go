@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -44,7 +43,7 @@ func ParseAwsRoleTrustEntityType(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_AWSROLETRUSTENTITYTYPE
             default:
-                return 0, errors.New("Unknown AwsRoleTrustEntityType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

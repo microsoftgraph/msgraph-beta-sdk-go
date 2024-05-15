@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Type of Group Policy File or Definition.
 type GroupPolicyType int
 
@@ -23,7 +20,7 @@ func ParseGroupPolicyType(v string) (any, error) {
         case "admxIngested":
             result = ADMXINGESTED_GROUPPOLICYTYPE
         default:
-            return 0, errors.New("Unknown GroupPolicyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

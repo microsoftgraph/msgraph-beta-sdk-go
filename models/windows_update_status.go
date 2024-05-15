@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows update for business configuration device states
 type WindowsUpdateStatus int
 
@@ -31,7 +28,7 @@ func ParseWindowsUpdateStatus(v string) (any, error) {
         case "failed":
             result = FAILED_WINDOWSUPDATESTATUS
         default:
-            return 0, errors.New("Unknown WindowsUpdateStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Wi-Fi Security Types.
 type WiFiSecurityType int
 
@@ -39,7 +36,7 @@ func ParseWiFiSecurityType(v string) (any, error) {
         case "wpa2Enterprise":
             result = WPA2ENTERPRISE_WIFISECURITYTYPE
         default:
-            return 0, errors.New("Unknown WiFiSecurityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

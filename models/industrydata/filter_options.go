@@ -1,7 +1,4 @@
 package industrydata
-import (
-    "errors"
-)
 type FilterOptions int
 
 const (
@@ -20,7 +17,7 @@ func ParseFilterOptions(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FILTEROPTIONS
         default:
-            return 0, errors.New("Unknown FilterOptions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

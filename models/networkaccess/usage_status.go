@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type UsageStatus int
 
 const (
@@ -23,7 +20,7 @@ func ParseUsageStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USAGESTATUS
         default:
-            return 0, errors.New("Unknown UsageStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

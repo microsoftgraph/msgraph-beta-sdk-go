@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SignInIdentifierType int
 
 const (
@@ -32,7 +29,7 @@ func ParseSignInIdentifierType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SIGNINIDENTIFIERTYPE
         default:
-            return 0, errors.New("Unknown SignInIdentifierType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PageOrientation int
 
 const (
@@ -20,7 +17,7 @@ func ParsePageOrientation(v string) (any, error) {
         case "diagonal":
             result = DIAGONAL_PAGEORIENTATION
         default:
-            return 0, errors.New("Unknown PageOrientation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

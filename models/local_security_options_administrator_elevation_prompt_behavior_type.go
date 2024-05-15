@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for LocalSecurityOptionsAdministratorElevationPromptBehavior
 type LocalSecurityOptionsAdministratorElevationPromptBehaviorType int
 
@@ -43,7 +40,7 @@ func ParseLocalSecurityOptionsAdministratorElevationPromptBehaviorType(v string)
         case "promptForConsentForNonWindowsBinaries":
             result = PROMPTFORCONSENTFORNONWINDOWSBINARIES_LOCALSECURITYOPTIONSADMINISTRATORELEVATIONPROMPTBEHAVIORTYPE
         default:
-            return 0, errors.New("Unknown LocalSecurityOptionsAdministratorElevationPromptBehaviorType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

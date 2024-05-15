@@ -344,6 +344,16 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["requiredLicenses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseRequiredLicenses)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequiredLicenses(val.(*RequiredLicenses))
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseRecommendationStatus)
         if err != nil {
@@ -512,6 +522,18 @@ func (m *RecommendationBase) GetRemediationImpact()(*string) {
     }
     return nil
 }
+// GetRequiredLicenses gets the requiredLicenses property value. The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue.
+// returns a *RequiredLicenses when successful
+func (m *RecommendationBase) GetRequiredLicenses()(*RequiredLicenses) {
+    val, err := m.GetBackingStore().Get("requiredLicenses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*RequiredLicenses)
+    }
+    return nil
+}
 // GetStatus gets the status property value. The status property
 // returns a *RecommendationStatus when successful
 func (m *RecommendationBase) GetStatus()(*RecommendationStatus) {
@@ -665,6 +687,13 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetRequiredLicenses() != nil {
+        cast := (*m.GetRequiredLicenses()).String()
+        err = writer.WriteStringValue("requiredLicenses", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -814,6 +843,13 @@ func (m *RecommendationBase) SetRemediationImpact(value *string)() {
         panic(err)
     }
 }
+// SetRequiredLicenses sets the requiredLicenses property value. The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue.
+func (m *RecommendationBase) SetRequiredLicenses(value *RequiredLicenses)() {
+    err := m.GetBackingStore().Set("requiredLicenses", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The status property
 func (m *RecommendationBase) SetStatus(value *RecommendationStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -844,6 +880,7 @@ type RecommendationBaseable interface {
     GetRecommendationType()(*RecommendationType)
     GetReleaseType()(*string)
     GetRemediationImpact()(*string)
+    GetRequiredLicenses()(*RequiredLicenses)
     GetStatus()(*RecommendationStatus)
     SetActionSteps(value []ActionStepable)()
     SetBenefits(value *string)()
@@ -865,5 +902,6 @@ type RecommendationBaseable interface {
     SetRecommendationType(value *RecommendationType)()
     SetReleaseType(value *string)()
     SetRemediationImpact(value *string)()
+    SetRequiredLicenses(value *RequiredLicenses)()
     SetStatus(value *RecommendationStatus)()
 }

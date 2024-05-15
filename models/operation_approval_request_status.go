@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the status of the Approval Request. The status of a request will change when an action is successfully performed on it, such as when it is `approved` or `rejected`, or when the request's expiration DateTime passes and the result is `expired`.
 type OperationApprovalRequestStatus int
 
@@ -47,7 +44,7 @@ func ParseOperationApprovalRequestStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OPERATIONAPPROVALREQUESTSTATUS
         default:
-            return 0, errors.New("Unknown OperationApprovalRequestStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

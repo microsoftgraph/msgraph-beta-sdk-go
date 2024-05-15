@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MfaFailureReasonCode int
 
 const (
@@ -32,7 +29,7 @@ func ParseMfaFailureReasonCode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MFAFAILUREREASONCODE
         default:
-            return 0, errors.New("Unknown MfaFailureReasonCode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

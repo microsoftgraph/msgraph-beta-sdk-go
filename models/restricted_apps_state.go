@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Restricted apps state
 type RestrictedAppsState int
 
@@ -23,7 +20,7 @@ func ParseRestrictedAppsState(v string) (any, error) {
         case "notApprovedApps":
             result = NOTAPPROVEDAPPS_RESTRICTEDAPPSSTATE
         default:
-            return 0, errors.New("Unknown RestrictedAppsState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

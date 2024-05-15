@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type DeliveryLocation int
 
 const (
@@ -44,7 +41,7 @@ func ParseDeliveryLocation(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DELIVERYLOCATION
         default:
-            return 0, errors.New("Unknown DeliveryLocation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

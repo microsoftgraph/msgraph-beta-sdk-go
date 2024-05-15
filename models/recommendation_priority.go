@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RecommendationPriority int
 
 const (
@@ -23,7 +20,7 @@ func ParseRecommendationPriority(v string) (any, error) {
         case "high":
             result = HIGH_RECOMMENDATIONPRIORITY
         default:
-            return 0, errors.New("Unknown RecommendationPriority value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

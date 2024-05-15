@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Edge kiosk type
 type WindowsEdgeKioskType int
 
@@ -23,7 +20,7 @@ func ParseWindowsEdgeKioskType(v string) (any, error) {
         case "fullScreen":
             result = FULLSCREEN_WINDOWSEDGEKIOSKTYPE
         default:
-            return 0, errors.New("Unknown WindowsEdgeKioskType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

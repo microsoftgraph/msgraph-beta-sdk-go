@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Chassis type.
 type ChassisType int
 
@@ -51,7 +48,7 @@ func ParseChassisType(v string) (any, error) {
         case "mobileUnknown":
             result = MOBILEUNKNOWN_CHASSISTYPE
         default:
-            return 0, errors.New("Unknown ChassisType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

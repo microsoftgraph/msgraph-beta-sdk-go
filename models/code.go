@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Error code for rule validation.
 type Code int
 
@@ -143,7 +140,7 @@ func ParseCode(v string) (any, error) {
         case "remediationStringsMissing":
             result = REMEDIATIONSTRINGSMISSING_CODE
         default:
-            return 0, errors.New("Unknown Code value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

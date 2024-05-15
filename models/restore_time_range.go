@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RestoreTimeRange int
 
 const (
@@ -26,7 +23,7 @@ func ParseRestoreTimeRange(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RESTORETIMERANGE
         default:
-            return 0, errors.New("Unknown RestoreTimeRange value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

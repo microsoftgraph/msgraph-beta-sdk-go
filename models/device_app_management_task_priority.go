@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device app management task priority.
 type DeviceAppManagementTaskPriority int
 
@@ -27,7 +24,7 @@ func ParseDeviceAppManagementTaskPriority(v string) (any, error) {
         case "low":
             result = LOW_DEVICEAPPMANAGEMENTTASKPRIORITY
         default:
-            return 0, errors.New("Unknown DeviceAppManagementTaskPriority value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

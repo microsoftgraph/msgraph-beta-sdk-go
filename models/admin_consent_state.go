@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Admin consent state.
 type AdminConsentState int
 
@@ -27,7 +24,7 @@ func ParseAdminConsentState(v string) (any, error) {
         case "notGranted":
             result = NOTGRANTED_ADMINCONSENTSTATE
         default:
-            return 0, errors.New("Unknown AdminConsentState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

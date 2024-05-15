@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // VPN Authentication Method.
 type VpnAuthenticationMethod int
 
@@ -35,7 +32,7 @@ func ParseVpnAuthenticationMethod(v string) (any, error) {
         case "azureAD":
             result = AZUREAD_VPNAUTHENTICATIONMETHOD
         default:
-            return 0, errors.New("Unknown VpnAuthenticationMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

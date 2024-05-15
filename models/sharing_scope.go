@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SharingScope int
 
 const (
@@ -32,7 +29,7 @@ func ParseSharingScope(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SHARINGSCOPE
         default:
-            return 0, errors.New("Unknown SharingScope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

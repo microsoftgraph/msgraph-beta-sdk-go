@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Encryption readiness state
 type EncryptionReadinessState int
 
@@ -23,7 +20,7 @@ func ParseEncryptionReadinessState(v string) (any, error) {
         case "ready":
             result = READY_ENCRYPTIONREADINESSSTATE
         default:
-            return 0, errors.New("Unknown EncryptionReadinessState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

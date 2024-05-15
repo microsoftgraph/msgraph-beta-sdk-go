@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the supersedence type associated with a relationship between two mobile apps.
 type MobileAppSupersedenceType int
 
@@ -23,7 +20,7 @@ func ParseMobileAppSupersedenceType(v string) (any, error) {
         case "replace":
             result = REPLACE_MOBILEAPPSUPERSEDENCETYPE
         default:
-            return 0, errors.New("Unknown MobileAppSupersedenceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

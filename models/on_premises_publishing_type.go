@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type OnPremisesPublishingType int
 
 const (
@@ -35,7 +32,7 @@ func ParseOnPremisesPublishingType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE
         default:
-            return 0, errors.New("Unknown OnPremisesPublishingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

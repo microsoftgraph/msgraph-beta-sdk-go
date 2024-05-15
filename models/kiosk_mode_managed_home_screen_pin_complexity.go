@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Complexity of PIN for Managed Home Screen sign-in session.
 type KioskModeManagedHomeScreenPinComplexity int
 
@@ -27,7 +24,7 @@ func ParseKioskModeManagedHomeScreenPinComplexity(v string) (any, error) {
         case "complex":
             result = COMPLEX_KIOSKMODEMANAGEDHOMESCREENPINCOMPLEXITY
         default:
-            return 0, errors.New("Unknown KioskModeManagedHomeScreenPinComplexity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

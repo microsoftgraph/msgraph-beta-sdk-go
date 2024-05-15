@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ActionState int
 
 const (
@@ -35,7 +32,7 @@ func ParseActionState(v string) (any, error) {
         case "notSupported":
             result = NOTSUPPORTED_ACTIONSTATE
         default:
-            return 0, errors.New("Unknown ActionState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

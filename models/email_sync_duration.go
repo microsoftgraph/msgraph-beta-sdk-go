@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for email sync duration.
 type EmailSyncDuration int
 
@@ -43,7 +40,7 @@ func ParseEmailSyncDuration(v string) (any, error) {
         case "unlimited":
             result = UNLIMITED_EMAILSYNCDURATION
         default:
-            return 0, errors.New("Unknown EmailSyncDuration value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

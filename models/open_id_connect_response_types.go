@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseOpenIdConnectResponseTypes(v string) (any, error) {
             case "token":
                 result |= TOKEN_OPENIDCONNECTRESPONSETYPES
             default:
-                return 0, errors.New("Unknown OpenIdConnectResponseTypes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SensitiveTypeSource int
 
 const (
@@ -20,7 +17,7 @@ func ParseSensitiveTypeSource(v string) (any, error) {
         case "tenant":
             result = TENANT_SENSITIVETYPESOURCE
         default:
-            return 0, errors.New("Unknown SensitiveTypeSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

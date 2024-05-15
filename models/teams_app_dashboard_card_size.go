@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamsAppDashboardCardSize int
 
 const (
@@ -23,7 +20,7 @@ func ParseTeamsAppDashboardCardSize(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSAPPDASHBOARDCARDSIZE
         default:
-            return 0, errors.New("Unknown TeamsAppDashboardCardSize value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PropertyType int
 
 const (
@@ -41,7 +38,7 @@ func ParsePropertyType(v string) (any, error) {
         case "dateTimeCollection":
             result = DATETIMECOLLECTION_PROPERTYTYPE
         default:
-            return 0, errors.New("Unknown PropertyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

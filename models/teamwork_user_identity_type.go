@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamworkUserIdentityType int
 
 const (
@@ -44,7 +41,7 @@ func ParseTeamworkUserIdentityType(v string) (any, error) {
         case "azureCommunicationServicesUser":
             result = AZURECOMMUNICATIONSERVICESUSER_TEAMWORKUSERIDENTITYTYPE
         default:
-            return 0, errors.New("Unknown TeamworkUserIdentityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

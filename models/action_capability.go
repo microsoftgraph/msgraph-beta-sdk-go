@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ActionCapability int
 
 const (
@@ -23,7 +20,7 @@ func ParseActionCapability(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACTIONCAPABILITY
         default:
-            return 0, errors.New("Unknown ActionCapability value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

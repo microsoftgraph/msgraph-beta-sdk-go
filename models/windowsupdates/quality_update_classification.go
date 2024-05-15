@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type QualityUpdateClassification int
 
 const (
@@ -26,7 +23,7 @@ func ParseQualityUpdateClassification(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_QUALITYUPDATECLASSIFICATION
         default:
-            return 0, errors.New("Unknown QualityUpdateClassification value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

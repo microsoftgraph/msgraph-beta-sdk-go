@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type X509CertificateRuleType int
 
 const (
@@ -26,7 +23,7 @@ func ParseX509CertificateRuleType(v string) (any, error) {
         case "issuerSubjectAndPolicyOID":
             result = ISSUERSUBJECTANDPOLICYOID_X509CERTIFICATERULETYPE
         default:
-            return 0, errors.New("Unknown X509CertificateRuleType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

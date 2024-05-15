@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AccessPackageCustomExtensionHandlerStatus int
 
 const (
@@ -23,7 +20,7 @@ func ParseAccessPackageCustomExtensionHandlerStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ACCESSPACKAGECUSTOMEXTENSIONHANDLERSTATUS
         default:
-            return 0, errors.New("Unknown AccessPackageCustomExtensionHandlerStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

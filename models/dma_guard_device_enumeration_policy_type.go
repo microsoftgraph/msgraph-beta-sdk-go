@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of the DmaGuardDeviceEnumerationPolicy.
 type DmaGuardDeviceEnumerationPolicyType int
 
@@ -27,7 +24,7 @@ func ParseDmaGuardDeviceEnumerationPolicyType(v string) (any, error) {
         case "allowAll":
             result = ALLOWALL_DMAGUARDDEVICEENUMERATIONPOLICYTYPE
         default:
-            return 0, errors.New("Unknown DmaGuardDeviceEnumerationPolicyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

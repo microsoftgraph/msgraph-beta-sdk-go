@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RecommendationType int
 
 const (
@@ -134,7 +131,7 @@ func ParseRecommendationType(v string) (any, error) {
         case "mfaServerDeprecation":
             result = MFASERVERDEPRECATION_RECOMMENDATIONTYPE
         default:
-            return 0, errors.New("Unknown RecommendationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WindowsAutopilotProfileAssignmentStatus int
 
 const (
@@ -42,7 +39,7 @@ func ParseWindowsAutopilotProfileAssignmentStatus(v string) (any, error) {
         case "failed":
             result = FAILED_WINDOWSAUTOPILOTPROFILEASSIGNMENTSTATUS
         default:
-            return 0, errors.New("Unknown WindowsAutopilotProfileAssignmentStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

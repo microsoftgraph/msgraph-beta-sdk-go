@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Type of Group Policy uploaded definition file status.
 type GroupPolicyUploadedDefinitionFileStatus int
 
@@ -43,7 +40,7 @@ func ParseGroupPolicyUploadedDefinitionFileStatus(v string) (any, error) {
         case "removalFailed":
             result = REMOVALFAILED_GROUPPOLICYUPLOADEDDEFINITIONFILESTATUS
         default:
-            return 0, errors.New("Unknown GroupPolicyUploadedDefinitionFileStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

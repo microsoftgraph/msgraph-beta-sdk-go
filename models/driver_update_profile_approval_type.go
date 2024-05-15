@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum type to represent approval type of a driver update profile.
 type DriverUpdateProfileApprovalType int
 
@@ -23,7 +20,7 @@ func ParseDriverUpdateProfileApprovalType(v string) (any, error) {
         case "automatic":
             result = AUTOMATIC_DRIVERUPDATEPROFILEAPPROVALTYPE
         default:
-            return 0, errors.New("Unknown DriverUpdateProfileApprovalType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

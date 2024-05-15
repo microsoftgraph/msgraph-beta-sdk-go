@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type IncompatiblePrinterSettings int
 
 const (
@@ -23,7 +20,7 @@ func ParseIncompatiblePrinterSettings(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INCOMPATIBLEPRINTERSETTINGS
         default:
-            return 0, errors.New("Unknown IncompatiblePrinterSettings value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

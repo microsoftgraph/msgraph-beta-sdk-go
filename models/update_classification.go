@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for automatic update classification.
 type UpdateClassification int
 
@@ -31,7 +28,7 @@ func ParseUpdateClassification(v string) (any, error) {
         case "none":
             result = NONE_UPDATECLASSIFICATION
         default:
-            return 0, errors.New("Unknown UpdateClassification value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

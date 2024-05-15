@@ -18,7 +18,7 @@ type PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderGetQueryParameters get securityAlerts from security
+// PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderGetQueryParameters read the properties and relationships of a partnerSecurityAlert object.
 type PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get get securityAlerts from security
+// Get read the properties and relationships of a partnerSecurityAlert object.
 // returns a PartnerSecurityAlertable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/partner-security-partnersecurityalert-get?view=graph-rest-beta
 func (m *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderGetRequestConfiguration)(if063350b43a6e623648b394d8f6b8221a26a9ae46bc715ec386eaf438133b186.PartnerSecurityAlertable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder) Get(ctx co
     }
     return res.(if063350b43a6e623648b394d8f6b8221a26a9ae46bc715ec386eaf438133b186.PartnerSecurityAlertable), nil
 }
-// Patch update the navigation property securityAlerts in security
+// Patch update the properties of a partnerSecurityAlert object.
 // returns a PartnerSecurityAlertable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/partner-security-partnersecurityalert-update?view=graph-rest-beta
 func (m *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder) Patch(ctx context.Context, body if063350b43a6e623648b394d8f6b8221a26a9ae46bc715ec386eaf438133b186.PartnerSecurityAlertable, requestConfiguration *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderPatchRequestConfiguration)(if063350b43a6e623648b394d8f6b8221a26a9ae46bc715ec386eaf438133b186.PartnerSecurityAlertable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get securityAlerts from security
+// ToGetRequestInformation read the properties and relationships of a partnerSecurityAlert object.
 // returns a *RequestInformation when successful
 func (m *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder) ToGetReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property securityAlerts in security
+// ToPatchRequestInformation update the properties of a partnerSecurityAlert object.
 // returns a *RequestInformation when successful
 func (m *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body if063350b43a6e623648b394d8f6b8221a26a9ae46bc715ec386eaf438133b186.PartnerSecurityAlertable, requestConfiguration *PartnerSecurityAlertsPartnerSecurityAlertItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

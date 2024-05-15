@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An admin initiated action to be applied on a managed app.
 type ManagedAppRemediationAction int
 
@@ -27,7 +24,7 @@ func ParseManagedAppRemediationAction(v string) (any, error) {
         case "warn":
             result = WARN_MANAGEDAPPREMEDIATIONACTION
         default:
-            return 0, errors.New("Unknown ManagedAppRemediationAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

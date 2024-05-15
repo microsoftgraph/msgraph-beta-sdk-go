@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Management state of device in Microsoft Intune.
 type ManagementState int
 
@@ -63,7 +60,7 @@ func ParseManagementState(v string) (any, error) {
         case "discovered":
             result = DISCOVERED_MANAGEMENTSTATE
         default:
-            return 0, errors.New("Unknown ManagementState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

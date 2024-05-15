@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Enum of possible MicrosoftTunnelServer health status types
 type MicrosoftTunnelServerHealthStatus int
 
@@ -47,7 +44,7 @@ func ParseMicrosoftTunnelServerHealthStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MICROSOFTTUNNELSERVERHEALTHSTATUS
         default:
-            return 0, errors.New("Unknown MicrosoftTunnelServerHealthStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

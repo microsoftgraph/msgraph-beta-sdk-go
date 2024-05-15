@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the device licensing status after Windows device based subscription has been enabled.
 type DeviceLicensingStatus int
 
@@ -79,7 +76,7 @@ func ParseDeviceLicensingStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICELICENSINGSTATUS
         default:
-            return 0, errors.New("Unknown DeviceLicensingStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

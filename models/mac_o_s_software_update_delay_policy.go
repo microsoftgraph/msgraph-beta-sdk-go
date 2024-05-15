@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -47,7 +46,7 @@ func ParseMacOSSoftwareUpdateDelayPolicy(v string) (any, error) {
             case "delayMajorOsUpdateVisibility":
                 result |= DELAYMAJOROSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY
             default:
-                return 0, errors.New("Unknown MacOSSoftwareUpdateDelayPolicy value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

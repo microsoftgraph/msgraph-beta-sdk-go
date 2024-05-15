@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum representing the possible values of Android MAC Address Randomization Mode.
 type MacAddressRandomizationMode int
 
@@ -27,7 +24,7 @@ func ParseMacAddressRandomizationMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MACADDRESSRANDOMIZATIONMODE
         default:
-            return 0, errors.New("Unknown MacAddressRandomizationMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

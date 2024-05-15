@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EncryptWith int
 
 const (
@@ -20,7 +17,7 @@ func ParseEncryptWith(v string) (any, error) {
         case "userDefinedRights":
             result = USERDEFINEDRIGHTS_ENCRYPTWITH
         default:
-            return 0, errors.New("Unknown EncryptWith value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

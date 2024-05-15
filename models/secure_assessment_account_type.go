@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Type of accounts that are allowed for Windows10SecureAssessment ConfigurationAccount.
 type SecureAssessmentAccountType int
 
@@ -31,7 +28,7 @@ func ParseSecureAssessmentAccountType(v string) (any, error) {
         case "localGuestAccount":
             result = LOCALGUESTACCOUNT_SECUREASSESSMENTACCOUNTTYPE
         default:
-            return 0, errors.New("Unknown SecureAssessmentAccountType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

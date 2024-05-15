@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Restrict managed app notification
 type ManagedAppNotificationRestriction int
 
@@ -27,7 +24,7 @@ func ParseManagedAppNotificationRestriction(v string) (any, error) {
         case "block":
             result = BLOCK_MANAGEDAPPNOTIFICATIONRESTRICTION
         default:
-            return 0, errors.New("Unknown ManagedAppNotificationRestriction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

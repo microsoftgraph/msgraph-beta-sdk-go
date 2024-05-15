@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ConnectorStatus int
 
 const (
@@ -20,7 +17,7 @@ func ParseConnectorStatus(v string) (any, error) {
         case "inactive":
             result = INACTIVE_CONNECTORSTATUS
         default:
-            return 0, errors.New("Unknown ConnectorStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type SensorType int
 
 const (
@@ -32,7 +29,7 @@ func ParseSensorType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SENSORTYPE
         default:
-            return 0, errors.New("Unknown SensorType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

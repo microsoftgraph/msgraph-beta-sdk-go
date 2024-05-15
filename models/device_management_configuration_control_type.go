@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Setting control type representation in the UX
 type DeviceManagementConfigurationControlType int
 
@@ -47,7 +44,7 @@ func ParseDeviceManagementConfigurationControlType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONCONTROLTYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationControlType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // VPN On-Demand Rule Connection Domain Action.
 type VpnOnDemandRuleConnectionDomainAction int
 
@@ -23,7 +20,7 @@ func ParseVpnOnDemandRuleConnectionDomainAction(v string) (any, error) {
         case "neverConnect":
             result = NEVERCONNECT_VPNONDEMANDRULECONNECTIONDOMAINACTION
         default:
-            return 0, errors.New("Unknown VpnOnDemandRuleConnectionDomainAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

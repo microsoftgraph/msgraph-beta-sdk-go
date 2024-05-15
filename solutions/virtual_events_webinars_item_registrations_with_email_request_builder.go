@@ -41,6 +41,11 @@ type VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilderPatchRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Cancel provides operations to call the cancel method.
+// returns a *VirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilder when successful
+func (m *VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder) Cancel()(*VirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilder) {
+    return NewVirtualEventsWebinarsItemRegistrationsWithEmailCancelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewVirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilderInternal instantiates a new VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder and sets the default values.
 func NewVirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter, email *string)(*VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder) {
     m := &VirtualEventsWebinarsItemRegistrationsWithEmailRequestBuilder{

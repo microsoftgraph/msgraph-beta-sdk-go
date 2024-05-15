@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Group Policy Definition Class Type.
 type GroupPolicyDefinitionClassType int
 
@@ -23,7 +20,7 @@ func ParseGroupPolicyDefinitionClassType(v string) (any, error) {
         case "machine":
             result = MACHINE_GROUPPOLICYDEFINITIONCLASSTYPE
         default:
-            return 0, errors.New("Unknown GroupPolicyDefinitionClassType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

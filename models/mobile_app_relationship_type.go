@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates whether the target of a relationship is the parent or the child in the relationship.
 type MobileAppRelationshipType int
 
@@ -23,7 +20,7 @@ func ParseMobileAppRelationshipType(v string) (any, error) {
         case "parent":
             result = PARENT_MOBILEAPPRELATIONSHIPTYPE
         default:
-            return 0, errors.New("Unknown MobileAppRelationshipType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

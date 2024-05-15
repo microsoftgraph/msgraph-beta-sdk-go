@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Sync status of the tenant with the Google EMM API
 type AndroidForWorkSyncStatus int
 
@@ -33,7 +30,7 @@ func ParseAndroidForWorkSyncStatus(v string) (any, error) {
         case "none":
             result = NONE_ANDROIDFORWORKSYNCSTATUS
         default:
-            return 0, errors.New("Unknown AndroidForWorkSyncStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

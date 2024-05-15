@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Authoring source of a policy
 type SecurityBaselinePolicySourceType int
 
@@ -21,7 +18,7 @@ func ParseSecurityBaselinePolicySourceType(v string) (any, error) {
         case "deviceIntent":
             result = DEVICEINTENT_SECURITYBASELINEPOLICYSOURCETYPE
         default:
-            return 0, errors.New("Unknown SecurityBaselinePolicySourceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

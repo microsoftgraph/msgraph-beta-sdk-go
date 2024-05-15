@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MessageEventType int
 
 const (
@@ -80,7 +77,7 @@ func ParseMessageEventType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MESSAGEEVENTTYPE
         default:
-            return 0, errors.New("Unknown MessageEventType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

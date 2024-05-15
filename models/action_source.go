@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ActionSource int
 
 const (
@@ -26,7 +23,7 @@ func ParseActionSource(v string) (any, error) {
         case "default":
             result = DEFAULT_ACTIONSOURCE
         default:
-            return 0, errors.New("Unknown ActionSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Used together with personalApplications to control how apps in the personal profile are allowed or blocked.
 type PersonalProfilePersonalPlayStoreMode int
 
@@ -27,7 +24,7 @@ func ParsePersonalProfilePersonalPlayStoreMode(v string) (any, error) {
         case "allowedApps":
             result = ALLOWEDAPPS_PERSONALPROFILEPERSONALPLAYSTOREMODE
         default:
-            return 0, errors.New("Unknown PersonalProfilePersonalPlayStoreMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

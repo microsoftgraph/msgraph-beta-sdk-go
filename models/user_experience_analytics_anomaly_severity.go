@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.
 type UserExperienceAnalyticsAnomalySeverity int
 
@@ -39,7 +36,7 @@ func ParseUserExperienceAnalyticsAnomalySeverity(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSANOMALYSEVERITY
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsAnomalySeverity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

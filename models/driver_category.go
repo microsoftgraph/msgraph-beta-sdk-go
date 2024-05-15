@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum type to represent which category a driver belongs to.
 type DriverCategory int
 
@@ -27,7 +24,7 @@ func ParseDriverCategory(v string) (any, error) {
         case "other":
             result = OTHER_DRIVERCATEGORY
         default:
-            return 0, errors.New("Unknown DriverCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

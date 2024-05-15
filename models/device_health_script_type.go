@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the type of device script.
 type DeviceHealthScriptType int
 
@@ -23,7 +20,7 @@ func ParseDeviceHealthScriptType(v string) (any, error) {
         case "managedInstallerScript":
             result = MANAGEDINSTALLERSCRIPT_DEVICEHEALTHSCRIPTTYPE
         default:
-            return 0, errors.New("Unknown DeviceHealthScriptType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

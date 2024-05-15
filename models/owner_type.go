@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Owner type of device.
 type OwnerType int
 
@@ -27,7 +24,7 @@ func ParseOwnerType(v string) (any, error) {
         case "personal":
             result = PERSONAL_OWNERTYPE
         default:
-            return 0, errors.New("Unknown OwnerType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

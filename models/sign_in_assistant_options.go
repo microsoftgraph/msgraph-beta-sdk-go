@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Values for the SignInAssistantSettings.
 type SignInAssistantOptions int
 
@@ -23,7 +20,7 @@ func ParseSignInAssistantOptions(v string) (any, error) {
         case "disabled":
             result = DISABLED_SIGNINASSISTANTOPTIONS
         default:
-            return 0, errors.New("Unknown SignInAssistantOptions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

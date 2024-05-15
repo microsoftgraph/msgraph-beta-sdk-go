@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcServicePlanType int
 
 const (
@@ -23,7 +20,7 @@ func ParseCloudPcServicePlanType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCSERVICEPLANTYPE
         default:
-            return 0, errors.New("Unknown CloudPcServicePlanType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

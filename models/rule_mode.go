@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RuleMode int
 
 const (
@@ -29,7 +26,7 @@ func ParseRuleMode(v string) (any, error) {
         case "test":
             result = TEST_RULEMODE
         default:
-            return 0, errors.New("Unknown RuleMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

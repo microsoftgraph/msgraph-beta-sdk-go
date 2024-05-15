@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type IpSecEncryption int
 
 const (
@@ -29,7 +26,7 @@ func ParseIpSecEncryption(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IPSECENCRYPTION
         default:
-            return 0, errors.New("Unknown IpSecEncryption value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

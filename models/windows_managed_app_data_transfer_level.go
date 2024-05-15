@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Data can be transferred from/to these classes of apps
 type WindowsManagedAppDataTransferLevel int
 
@@ -23,7 +20,7 @@ func ParseWindowsManagedAppDataTransferLevel(v string) (any, error) {
         case "none":
             result = NONE_WINDOWSMANAGEDAPPDATATRANSFERLEVEL
         default:
-            return 0, errors.New("Unknown WindowsManagedAppDataTransferLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

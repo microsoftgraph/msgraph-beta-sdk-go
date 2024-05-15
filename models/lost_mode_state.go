@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // State of lost mode, indicating if lost mode is enabled or disabled
 type LostModeState int
 
@@ -23,7 +20,7 @@ func ParseLostModeState(v string) (any, error) {
         case "enabled":
             result = ENABLED_LOSTMODESTATE
         default:
-            return 0, errors.New("Unknown LostModeState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

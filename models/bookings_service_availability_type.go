@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type BookingsServiceAvailabilityType int
 
 const (
@@ -26,7 +23,7 @@ func ParseBookingsServiceAvailabilityType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BOOKINGSSERVICEAVAILABILITYTYPE
         default:
-            return 0, errors.New("Unknown BookingsServiceAvailabilityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

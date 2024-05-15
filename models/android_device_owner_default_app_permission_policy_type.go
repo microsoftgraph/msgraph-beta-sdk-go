@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner default app permission policy type.
 type AndroidDeviceOwnerDefaultAppPermissionPolicyType int
 
@@ -31,7 +28,7 @@ func ParseAndroidDeviceOwnerDefaultAppPermissionPolicyType(v string) (any, error
         case "autoDeny":
             result = AUTODENY_ANDROIDDEVICEOWNERDEFAULTAPPPERMISSIONPOLICYTYPE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerDefaultAppPermissionPolicyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

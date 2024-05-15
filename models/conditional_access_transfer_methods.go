@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseConditionalAccessTransferMethods(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_CONDITIONALACCESSTRANSFERMETHODS
             default:
-                return 0, errors.New("Unknown ConditionalAccessTransferMethods value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

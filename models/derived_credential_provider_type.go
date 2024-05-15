@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Provider type for Derived Credentials.
 type DerivedCredentialProviderType int
 
@@ -35,7 +32,7 @@ func ParseDerivedCredentialProviderType(v string) (any, error) {
         case "intercede":
             result = INTERCEDE_DERIVEDCREDENTIALPROVIDERTYPE
         default:
-            return 0, errors.New("Unknown DerivedCredentialProviderType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

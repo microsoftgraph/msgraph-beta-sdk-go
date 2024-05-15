@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -95,7 +94,7 @@ func ParseAdvancedBitLockerState(v string) (any, error) {
             case "networkError":
                 result |= NETWORKERROR_ADVANCEDBITLOCKERSTATE
             default:
-                return 0, errors.New("Unknown AdvancedBitLockerState value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

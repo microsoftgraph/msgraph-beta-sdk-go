@@ -85,6 +85,16 @@ func (m *ManagedAppLogUpload) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedAppLogUploadState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStatus(val.(*ManagedAppLogUploadState))
+        }
+        return nil
+    }
     return res
 }
 // GetManagedAppComponent gets the managedAppComponent property value. The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.
@@ -135,6 +145,18 @@ func (m *ManagedAppLogUpload) GetReferenceId()(*string) {
     }
     return nil
 }
+// GetStatus gets the status property value. Represents the current status of the associated `managedAppLogCollectionRequest`.
+// returns a *ManagedAppLogUploadState when successful
+func (m *ManagedAppLogUpload) GetStatus()(*ManagedAppLogUploadState) {
+    val, err := m.GetBackingStore().Get("status")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedAppLogUploadState)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *ManagedAppLogUpload) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -157,6 +179,13 @@ func (m *ManagedAppLogUpload) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err := writer.WriteStringValue("referenceId", m.GetReferenceId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetStatus() != nil {
+        cast := (*m.GetStatus()).String()
+        err := writer.WriteStringValue("status", &cast)
         if err != nil {
             return err
         }
@@ -208,6 +237,13 @@ func (m *ManagedAppLogUpload) SetReferenceId(value *string)() {
         panic(err)
     }
 }
+// SetStatus sets the status property value. Represents the current status of the associated `managedAppLogCollectionRequest`.
+func (m *ManagedAppLogUpload) SetStatus(value *ManagedAppLogUploadState)() {
+    err := m.GetBackingStore().Set("status", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type ManagedAppLogUploadable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -217,9 +253,11 @@ type ManagedAppLogUploadable interface {
     GetManagedAppComponentDescription()(*string)
     GetOdataType()(*string)
     GetReferenceId()(*string)
+    GetStatus()(*ManagedAppLogUploadState)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetManagedAppComponent(value *string)()
     SetManagedAppComponentDescription(value *string)()
     SetOdataType(value *string)()
     SetReferenceId(value *string)()
+    SetStatus(value *ManagedAppLogUploadState)()
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type OriginalTransferMethods int
 
 const (
@@ -26,7 +23,7 @@ func ParseOriginalTransferMethods(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ORIGINALTRANSFERMETHODS
         default:
-            return 0, errors.New("Unknown OriginalTransferMethods value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

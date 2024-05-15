@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum representing possible values for delegated app scope.
 type AndroidDeviceOwnerDelegatedAppScopeType int
 
@@ -35,7 +32,7 @@ func ParseAndroidDeviceOwnerDelegatedAppScopeType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANDROIDDEVICEOWNERDELEGATEDAPPSCOPETYPE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerDelegatedAppScopeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

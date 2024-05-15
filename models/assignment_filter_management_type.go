@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Supported filter management types whether its devices or apps.
 type AssignmentFilterManagementType int
 
@@ -27,7 +24,7 @@ func ParseAssignmentFilterManagementType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ASSIGNMENTFILTERMANAGEMENTTYPE
         default:
-            return 0, errors.New("Unknown AssignmentFilterManagementType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthorizationSystemActionType int
 
 const (
@@ -23,7 +20,7 @@ func ParseAuthorizationSystemActionType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHORIZATIONSYSTEMACTIONTYPE
         default:
-            return 0, errors.New("Unknown AuthorizationSystemActionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

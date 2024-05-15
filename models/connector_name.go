@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Connectors name for connector status
 type ConnectorName int
 
@@ -79,7 +76,7 @@ func ParseConnectorName(v string) (any, error) {
         case "futureValue":
             result = FUTUREVALUE_CONNECTORNAME
         default:
-            return 0, errors.New("Unknown ConnectorName value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

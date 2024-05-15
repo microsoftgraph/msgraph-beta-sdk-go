@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Type of Group Policy operation status.
 type GroupPolicyOperationStatus int
 
@@ -31,7 +28,7 @@ func ParseGroupPolicyOperationStatus(v string) (any, error) {
         case "failed":
             result = FAILED_GROUPPOLICYOPERATIONSTATUS
         default:
-            return 0, errors.New("Unknown GroupPolicyOperationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

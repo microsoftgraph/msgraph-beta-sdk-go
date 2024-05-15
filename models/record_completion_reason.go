@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RecordCompletionReason int
 
 const (
@@ -41,7 +38,7 @@ func ParseRecordCompletionReason(v string) (any, error) {
         case "unspecifiedError":
             result = UNSPECIFIEDERROR_RECORDCOMPLETIONREASON
         default:
-            return 0, errors.New("Unknown RecordCompletionReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

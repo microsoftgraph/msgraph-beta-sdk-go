@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Key Size Options.
 type KeySize int
 
@@ -27,7 +24,7 @@ func ParseKeySize(v string) (any, error) {
         case "size4096":
             result = SIZE4096_KEYSIZE
         default:
-            return 0, errors.New("Unknown KeySize value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

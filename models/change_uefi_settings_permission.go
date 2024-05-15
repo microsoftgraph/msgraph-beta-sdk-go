@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Defines the permission level granted to users to enable them change Uefi settings
 type ChangeUefiSettingsPermission int
 
@@ -23,7 +20,7 @@ func ParseChangeUefiSettingsPermission(v string) (any, error) {
         case "none":
             result = NONE_CHANGEUEFISETTINGSPERMISSION
         default:
-            return 0, errors.New("Unknown ChangeUefiSettingsPermission value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package managedtenants
-import (
-    "errors"
-)
 type ManagementActionStatus int
 
 const (
@@ -44,7 +41,7 @@ func ParseManagementActionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEMENTACTIONSTATUS
         default:
-            return 0, errors.New("Unknown ManagementActionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

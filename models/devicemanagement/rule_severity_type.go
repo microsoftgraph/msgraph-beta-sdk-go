@@ -1,7 +1,4 @@
 package devicemanagement
-import (
-    "errors"
-)
 type RuleSeverityType int
 
 const (
@@ -29,7 +26,7 @@ func ParseRuleSeverityType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RULESEVERITYTYPE
         default:
-            return 0, errors.New("Unknown RuleSeverityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

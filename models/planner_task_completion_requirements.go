@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -44,7 +43,7 @@ func ParsePlannerTaskCompletionRequirements(v string) (any, error) {
             case "completionInHostedApp":
                 result |= COMPLETIONINHOSTEDAPP_PLANNERTASKCOMPLETIONREQUIREMENTS
             default:
-                return 0, errors.New("Unknown PlannerTaskCompletionRequirements value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

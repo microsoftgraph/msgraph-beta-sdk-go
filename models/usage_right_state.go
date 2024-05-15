@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type UsageRightState int
 
 const (
@@ -29,7 +26,7 @@ func ParseUsageRightState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USAGERIGHTSTATE
         default:
-            return 0, errors.New("Unknown UsageRightState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

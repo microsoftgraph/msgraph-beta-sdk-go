@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for username source or email source.
 type UserEmailSource int
 
@@ -23,7 +20,7 @@ func ParseUserEmailSource(v string) (any, error) {
         case "primarySmtpAddress":
             result = PRIMARYSMTPADDRESS_USEREMAILSOURCE
         default:
-            return 0, errors.New("Unknown UserEmailSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

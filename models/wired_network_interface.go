@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Apple network interface type.
 type WiredNetworkInterface int
 
@@ -43,7 +40,7 @@ func ParseWiredNetworkInterface(v string) (any, error) {
         case "thirdEthernet":
             result = THIRDETHERNET_WIREDNETWORKINTERFACE
         default:
-            return 0, errors.New("Unknown WiredNetworkInterface value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

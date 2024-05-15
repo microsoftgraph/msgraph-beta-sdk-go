@@ -1,7 +1,4 @@
 package industrydata
-import (
-    "errors"
-)
 type ReadinessStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseReadinessStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_READINESSSTATUS
         default:
-            return 0, errors.New("Unknown ReadinessStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

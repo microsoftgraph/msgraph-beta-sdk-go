@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents various network types for Zebra FOTA deployment.
 type ZebraFotaNetworkType int
 
@@ -35,7 +32,7 @@ func ParseZebraFotaNetworkType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ZEBRAFOTANETWORKTYPE
         default:
-            return 0, errors.New("Unknown ZebraFotaNetworkType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An admin enforced Android SafetyNet Device Attestation requirement on a managed app.
 type AndroidManagedAppSafetyNetDeviceAttestationType int
 
@@ -27,7 +24,7 @@ func ParseAndroidManagedAppSafetyNetDeviceAttestationType(v string) (any, error)
         case "basicIntegrityAndDeviceCertification":
             result = BASICINTEGRITYANDDEVICECERTIFICATION_ANDROIDMANAGEDAPPSAFETYNETDEVICEATTESTATIONTYPE
         default:
-            return 0, errors.New("Unknown AndroidManagedAppSafetyNetDeviceAttestationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

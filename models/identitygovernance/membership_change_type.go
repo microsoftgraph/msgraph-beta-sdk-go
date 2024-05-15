@@ -1,7 +1,4 @@
 package identitygovernance
-import (
-    "errors"
-)
 type MembershipChangeType int
 
 const (
@@ -23,7 +20,7 @@ func ParseMembershipChangeType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MEMBERSHIPCHANGETYPE
         default:
-            return 0, errors.New("Unknown MembershipChangeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

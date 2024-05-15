@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WindowsAutopilotDeviceType int
 
 const (
@@ -38,7 +35,7 @@ func ParseWindowsAutopilotDeviceType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WINDOWSAUTOPILOTDEVICETYPE
         default:
-            return 0, errors.New("Unknown WindowsAutopilotDeviceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -43,7 +42,7 @@ func ParseDeviceManagementConfigurationSettingVisibility(v string) (any, error) 
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGVISIBILITY
             default:
-                return 0, errors.New("Unknown DeviceManagementConfigurationSettingVisibility value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

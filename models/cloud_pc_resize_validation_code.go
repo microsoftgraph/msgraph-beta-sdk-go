@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcResizeValidationCode int
 
 const (
@@ -35,7 +32,7 @@ func ParseCloudPcResizeValidationCode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCRESIZEVALIDATIONCODE
         default:
-            return 0, errors.New("Unknown CloudPcResizeValidationCode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

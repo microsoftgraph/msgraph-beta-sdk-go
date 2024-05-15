@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user's defined preview settings.
 type IosNotificationPreviewVisibility int
 
@@ -31,7 +28,7 @@ func ParseIosNotificationPreviewVisibility(v string) (any, error) {
         case "neverShow":
             result = NEVERSHOW_IOSNOTIFICATIONPREVIEWVISIBILITY
         default:
-            return 0, errors.New("Unknown IosNotificationPreviewVisibility value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AutoAdmittedUsersType int
 
 const (
@@ -20,7 +17,7 @@ func ParseAutoAdmittedUsersType(v string) (any, error) {
         case "everyone":
             result = EVERYONE_AUTOADMITTEDUSERSTYPE
         default:
-            return 0, errors.New("Unknown AutoAdmittedUsersType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

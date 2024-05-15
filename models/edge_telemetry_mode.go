@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Type of browsing data sent to Microsoft 365 analytics
 type EdgeTelemetryMode int
 
@@ -31,7 +28,7 @@ func ParseEdgeTelemetryMode(v string) (any, error) {
         case "intranetAndInternet":
             result = INTRANETANDINTERNET_EDGETELEMETRYMODE
         default:
-            return 0, errors.New("Unknown EdgeTelemetryMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

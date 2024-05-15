@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type IkeEncryption int
 
 const (
@@ -32,7 +29,7 @@ func ParseIkeEncryption(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IKEENCRYPTION
         default:
-            return 0, errors.New("Unknown IkeEncryption value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

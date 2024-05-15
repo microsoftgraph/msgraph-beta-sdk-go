@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the device's feature type. Possible values are: manufacturer, model, osVersion, application or driver.
 type UserExperienceAnalyticsAnomalyDeviceFeatureType int
 
@@ -39,7 +36,7 @@ func ParseUserExperienceAnalyticsAnomalyDeviceFeatureType(v string) (any, error)
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSANOMALYDEVICEFEATURETYPE
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsAnomalyDeviceFeatureType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

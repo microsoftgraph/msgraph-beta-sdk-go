@@ -96,16 +96,6 @@ func (m *OperationApprovalPoliciesRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OperationApprovalPolicyCollectionResponseable), nil
 }
-// GetApprovableOperations provides operations to call the getApprovableOperations method.
-// returns a *OperationApprovalPoliciesGetApprovableOperationsRequestBuilder when successful
-func (m *OperationApprovalPoliciesRequestBuilder) GetApprovableOperations()(*OperationApprovalPoliciesGetApprovableOperationsRequestBuilder) {
-    return NewOperationApprovalPoliciesGetApprovableOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetOperationsRequiringApproval provides operations to call the getOperationsRequiringApproval method.
-// returns a *OperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilder when successful
-func (m *OperationApprovalPoliciesRequestBuilder) GetOperationsRequiringApproval()(*OperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilder) {
-    return NewOperationApprovalPoliciesGetOperationsRequiringApprovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Post create new navigation property to operationApprovalPolicies for deviceManagement
 // returns a OperationApprovalPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

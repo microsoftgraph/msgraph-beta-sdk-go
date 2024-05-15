@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Userless enrollment block status, indicating whether the next device enrollment will be blocked.
 type WindowsAutopilotUserlessEnrollmentStatus int
 
@@ -31,7 +28,7 @@ func ParseWindowsAutopilotUserlessEnrollmentStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WINDOWSAUTOPILOTUSERLESSENROLLMENTSTATUS
         default:
-            return 0, errors.New("Unknown WindowsAutopilotUserlessEnrollmentStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

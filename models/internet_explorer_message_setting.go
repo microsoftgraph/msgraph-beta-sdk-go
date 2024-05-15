@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // What message will be displayed by Edge before switching to Internet Explorer.
 type InternetExplorerMessageSetting int
 
@@ -31,7 +28,7 @@ func ParseInternetExplorerMessageSetting(v string) (any, error) {
         case "keepGoing":
             result = KEEPGOING_INTERNETEXPLORERMESSAGESETTING
         default:
-            return 0, errors.New("Unknown InternetExplorerMessageSetting value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

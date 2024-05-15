@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android action taken when an app requests a dangerous permission.
 type AndroidPermissionActionType int
 
@@ -24,7 +21,7 @@ func ParseAndroidPermissionActionType(v string) (any, error) {
         case "autoDeny":
             result = AUTODENY_ANDROIDPERMISSIONACTIONTYPE
         default:
-            return 0, errors.New("Unknown AndroidPermissionActionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

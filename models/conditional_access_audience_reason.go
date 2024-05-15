@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -62,7 +61,7 @@ func ParseConditionalAccessAudienceReason(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_CONDITIONALACCESSAUDIENCEREASON
             default:
-                return 0, errors.New("Unknown ConditionalAccessAudienceReason value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

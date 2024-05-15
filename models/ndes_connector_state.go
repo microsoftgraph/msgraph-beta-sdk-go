@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The current status of the Ndes Connector.
 type NdesConnectorState int
 
@@ -27,7 +24,7 @@ func ParseNdesConnectorState(v string) (any, error) {
         case "inactive":
             result = INACTIVE_NDESCONNECTORSTATE
         default:
-            return 0, errors.New("Unknown NdesConnectorState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

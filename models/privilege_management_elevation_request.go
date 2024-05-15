@@ -22,14 +22,14 @@ func CreatePrivilegeManagementElevationRequestFromDiscriminatorValue(parseNode i
     return NewPrivilegeManagementElevationRequest(), nil
 }
 // GetApplicationDetail gets the applicationDetail property value. Details of the application which is being requested to elevate, allowing the admin to understand the identity of the application. It includes file info such as FilePath, FileHash, FilePublisher, and etc. Returned by default. Read-only.
-// returns a ApplicationDetailable when successful
-func (m *PrivilegeManagementElevationRequest) GetApplicationDetail()(ApplicationDetailable) {
+// returns a ElevationRequestApplicationDetailable when successful
+func (m *PrivilegeManagementElevationRequest) GetApplicationDetail()(ElevationRequestApplicationDetailable) {
     val, err := m.GetBackingStore().Get("applicationDetail")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(ApplicationDetailable)
+        return val.(ElevationRequestApplicationDetailable)
     }
     return nil
 }
@@ -50,12 +50,12 @@ func (m *PrivilegeManagementElevationRequest) GetDeviceName()(*string) {
 func (m *PrivilegeManagementElevationRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["applicationDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateApplicationDetailFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateElevationRequestApplicationDetailFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetApplicationDetail(val.(ApplicationDetailable))
+            m.SetApplicationDetail(val.(ElevationRequestApplicationDetailable))
         }
         return nil
     }
@@ -429,7 +429,7 @@ func (m *PrivilegeManagementElevationRequest) Serialize(writer i878a80d2330e89d2
     return nil
 }
 // SetApplicationDetail sets the applicationDetail property value. Details of the application which is being requested to elevate, allowing the admin to understand the identity of the application. It includes file info such as FilePath, FileHash, FilePublisher, and etc. Returned by default. Read-only.
-func (m *PrivilegeManagementElevationRequest) SetApplicationDetail(value ApplicationDetailable)() {
+func (m *PrivilegeManagementElevationRequest) SetApplicationDetail(value ElevationRequestApplicationDetailable)() {
     err := m.GetBackingStore().Set("applicationDetail", value)
     if err != nil {
         panic(err)
@@ -529,7 +529,7 @@ func (m *PrivilegeManagementElevationRequest) SetStatus(value *ElevationRequestS
 type PrivilegeManagementElevationRequestable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetApplicationDetail()(ApplicationDetailable)
+    GetApplicationDetail()(ElevationRequestApplicationDetailable)
     GetDeviceName()(*string)
     GetRequestCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRequestedByUserId()(*string)
@@ -543,7 +543,7 @@ type PrivilegeManagementElevationRequestable interface {
     GetReviewCompletedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetReviewerJustification()(*string)
     GetStatus()(*ElevationRequestState)
-    SetApplicationDetail(value ApplicationDetailable)()
+    SetApplicationDetail(value ElevationRequestApplicationDetailable)()
     SetDeviceName(value *string)()
     SetRequestCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRequestedByUserId(value *string)()

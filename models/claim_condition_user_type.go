@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ClaimConditionUserType int
 
 const (
@@ -32,7 +29,7 @@ func ParseClaimConditionUserType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLAIMCONDITIONUSERTYPE
         default:
-            return 0, errors.New("Unknown ClaimConditionUserType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

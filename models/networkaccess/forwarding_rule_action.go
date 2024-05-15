@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type ForwardingRuleAction int
 
 const (
@@ -23,7 +20,7 @@ func ParseForwardingRuleAction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FORWARDINGRULEACTION
         default:
-            return 0, errors.New("Unknown ForwardingRuleAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

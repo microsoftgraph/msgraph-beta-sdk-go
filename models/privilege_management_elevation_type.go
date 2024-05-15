@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the type of elevation occured
 type PrivilegeManagementElevationType int
 
@@ -39,7 +36,7 @@ func ParsePrivilegeManagementElevationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRIVILEGEMANAGEMENTELEVATIONTYPE
         default:
-            return 0, errors.New("Unknown PrivilegeManagementElevationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

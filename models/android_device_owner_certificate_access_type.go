@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum representing possible values for cross profile data sharing.
 type AndroidDeviceOwnerCertificateAccessType int
 
@@ -27,7 +24,7 @@ func ParseAndroidDeviceOwnerCertificateAccessType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANDROIDDEVICEOWNERCERTIFICATEACCESSTYPE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerCertificateAccessType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

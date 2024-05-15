@@ -1,7 +1,4 @@
 package callrecords
-import (
-    "errors"
-)
 type PstnUserBlockMode int
 
 const (
@@ -23,7 +20,7 @@ func ParsePstnUserBlockMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PSTNUSERBLOCKMODE
         default:
-            return 0, errors.New("Unknown PstnUserBlockMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

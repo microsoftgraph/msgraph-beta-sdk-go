@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthenticationAppPolicyStatus int
 
 const (
@@ -68,7 +65,7 @@ func ParseAuthenticationAppPolicyStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONAPPPOLICYSTATUS
         default:
-            return 0, errors.New("Unknown AuthenticationAppPolicyStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

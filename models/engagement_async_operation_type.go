@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EngagementAsyncOperationType int
 
 const (
@@ -20,7 +17,7 @@ func ParseEngagementAsyncOperationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ENGAGEMENTASYNCOPERATIONTYPE
         default:
-            return 0, errors.New("Unknown EngagementAsyncOperationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

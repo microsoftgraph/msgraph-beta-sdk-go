@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AccessType int
 
 const (
@@ -20,7 +17,7 @@ func ParseAccessType(v string) (any, error) {
         case "deny":
             result = DENY_ACCESSTYPE
         default:
-            return 0, errors.New("Unknown AccessType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

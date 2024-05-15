@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type GcpAccessType int
 
 const (
@@ -26,7 +23,7 @@ func ParseGcpAccessType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_GCPACCESSTYPE
         default:
-            return 0, errors.New("Unknown GcpAccessType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

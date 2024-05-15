@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents various schedule modes for Zebra FOTA deployment.
 type ZebraFotaScheduleMode int
 
@@ -27,7 +24,7 @@ func ParseZebraFotaScheduleMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ZEBRAFOTASCHEDULEMODE
         default:
-            return 0, errors.New("Unknown ZebraFotaScheduleMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

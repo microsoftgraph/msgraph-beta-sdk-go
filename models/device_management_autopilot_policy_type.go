@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DeviceManagementAutopilotPolicyType int
 
 const (
@@ -26,7 +23,7 @@ func ParseDeviceManagementAutopilotPolicyType(v string) (any, error) {
         case "configurationPolicy":
             result = CONFIGURATIONPOLICY_DEVICEMANAGEMENTAUTOPILOTPOLICYTYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementAutopilotPolicyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

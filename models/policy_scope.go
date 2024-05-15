@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PolicyScope int
 
 const (
@@ -26,7 +23,7 @@ func ParsePolicyScope(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_POLICYSCOPE
         default:
-            return 0, errors.New("Unknown PolicyScope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

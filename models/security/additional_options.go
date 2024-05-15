@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -47,7 +46,7 @@ func ParseAdditionalOptions(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_ADDITIONALOPTIONS
             default:
-                return 0, errors.New("Unknown AdditionalOptions value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

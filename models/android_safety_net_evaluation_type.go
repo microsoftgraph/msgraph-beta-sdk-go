@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum representing the Android Play Integrity API evaluation types.
 type AndroidSafetyNetEvaluationType int
 
@@ -23,7 +20,7 @@ func ParseAndroidSafetyNetEvaluationType(v string) (any, error) {
         case "hardwareBacked":
             result = HARDWAREBACKED_ANDROIDSAFETYNETEVALUATIONTYPE
         default:
-            return 0, errors.New("Unknown AndroidSafetyNetEvaluationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

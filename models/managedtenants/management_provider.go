@@ -1,7 +1,4 @@
 package managedtenants
-import (
-    "errors"
-)
 type ManagementProvider int
 
 const (
@@ -29,7 +26,7 @@ func ParseManagementProvider(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEMENTPROVIDER
         default:
-            return 0, errors.New("Unknown ManagementProvider value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

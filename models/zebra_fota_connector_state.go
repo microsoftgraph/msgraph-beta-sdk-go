@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents various states for Zebra FOTA connector.
 type ZebraFotaConnectorState int
 
@@ -31,7 +28,7 @@ func ParseZebraFotaConnectorState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ZEBRAFOTACONNECTORSTATE
         default:
-            return 0, errors.New("Unknown ZebraFotaConnectorState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

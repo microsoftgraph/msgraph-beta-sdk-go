@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Describes the various states for an embedded SIM activation code.
 type EmbeddedSIMDeviceStateValue int
 
@@ -47,7 +44,7 @@ func ParseEmbeddedSIMDeviceStateValue(v string) (any, error) {
         case "removedByUser":
             result = REMOVEDBYUSER_EMBEDDEDSIMDEVICESTATEVALUE
         default:
-            return 0, errors.New("Unknown EmbeddedSIMDeviceStateValue value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

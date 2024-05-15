@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // BitLocker recovery password rotation type
 type BitLockerRecoveryPasswordRotationType int
 
@@ -31,7 +28,7 @@ func ParseBitLockerRecoveryPasswordRotationType(v string) (any, error) {
         case "enabledForAzureAdAndHybrid":
             result = ENABLEDFORAZUREADANDHYBRID_BITLOCKERRECOVERYPASSWORDROTATIONTYPE
         default:
-            return 0, errors.New("Unknown BitLockerRecoveryPasswordRotationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

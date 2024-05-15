@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the level of prevalence of the correlation group features in the anomaly. Possible values are: high, medium or low
 type UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence int
 
@@ -31,7 +28,7 @@ func ParseUserExperienceAnalyticsAnomalyCorrelationGroupPrevalence(v string) (an
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSANOMALYCORRELATIONGROUPPREVALENCE
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

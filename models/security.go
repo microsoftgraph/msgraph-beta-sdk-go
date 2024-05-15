@@ -2,22 +2,38 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type Security struct {
-    Entity
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
 // NewSecurity instantiates a new Security and sets the default values.
 func NewSecurity()(*Security) {
     m := &Security{
-        Entity: *NewEntity(),
     }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateSecurityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateSecurityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSecurity(), nil
+}
+// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+// returns a map[string]any when successful
+func (m *Security) GetAdditionalData()(map[string]any) {
+    val , err :=  m.backingStore.Get("additionalData")
+    if err != nil {
+        panic(err)
+    }
+    if val == nil {
+        var value = make(map[string]any);
+        m.SetAdditionalData(value);
+    }
+    return val.(map[string]any)
 }
 // GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 // returns a []Alertable when successful
@@ -42,6 +58,11 @@ func (m *Security) GetAttackSimulation()(AttackSimulationRootable) {
         return val.(AttackSimulationRootable)
     }
     return nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *Security) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
 }
 // GetCloudAppSecurityProfiles gets the cloudAppSecurityProfiles property value. The cloudAppSecurityProfiles property
 // returns a []CloudAppSecurityProfileable when successful
@@ -70,7 +91,7 @@ func (m *Security) GetDomainSecurityProfiles()([]DomainSecurityProfileable) {
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["alerts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAlertFromDiscriminatorValue)
         if err != nil {
@@ -177,19 +198,13 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
-    res["providerStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateSecurityProviderStatusFromDiscriminatorValue)
+    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]SecurityProviderStatusable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(SecurityProviderStatusable)
-                }
-            }
-            m.SetProviderStatus(res)
+            m.SetOdataType(val)
         }
         return nil
     }
@@ -343,15 +358,15 @@ func (m *Security) GetIpSecurityProfiles()([]IpSecurityProfileable) {
     }
     return nil
 }
-// GetProviderStatus gets the providerStatus property value. The providerStatus property
-// returns a []SecurityProviderStatusable when successful
-func (m *Security) GetProviderStatus()([]SecurityProviderStatusable) {
-    val, err := m.GetBackingStore().Get("providerStatus")
+// GetOdataType gets the @odata.type property value. The OdataType property
+// returns a *string when successful
+func (m *Security) GetOdataType()(*string) {
+    val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]SecurityProviderStatusable)
+        return val.(*string)
     }
     return nil
 }
@@ -441,10 +456,6 @@ func (m *Security) GetUserSecurityProfiles()([]UserSecurityProfileable) {
 }
 // Serialize serializes information the current object
 func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
-    if err != nil {
-        return err
-    }
     if m.GetAlerts() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlerts()))
         for i, v := range m.GetAlerts() {
@@ -452,13 +463,13 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("alerts", cast)
+        err := writer.WriteCollectionOfObjectValues("alerts", cast)
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteObjectValue("attackSimulation", m.GetAttackSimulation())
+        err := writer.WriteObjectValue("attackSimulation", m.GetAttackSimulation())
         if err != nil {
             return err
         }
@@ -470,7 +481,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("cloudAppSecurityProfiles", cast)
+        err := writer.WriteCollectionOfObjectValues("cloudAppSecurityProfiles", cast)
         if err != nil {
             return err
         }
@@ -482,7 +493,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("domainSecurityProfiles", cast)
+        err := writer.WriteCollectionOfObjectValues("domainSecurityProfiles", cast)
         if err != nil {
             return err
         }
@@ -494,7 +505,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("fileSecurityProfiles", cast)
+        err := writer.WriteCollectionOfObjectValues("fileSecurityProfiles", cast)
         if err != nil {
             return err
         }
@@ -506,7 +517,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("hostSecurityProfiles", cast)
+        err := writer.WriteCollectionOfObjectValues("hostSecurityProfiles", cast)
         if err != nil {
             return err
         }
@@ -518,19 +529,13 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("ipSecurityProfiles", cast)
+        err := writer.WriteCollectionOfObjectValues("ipSecurityProfiles", cast)
         if err != nil {
             return err
         }
     }
-    if m.GetProviderStatus() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProviderStatus()))
-        for i, v := range m.GetProviderStatus() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("providerStatus", cast)
+    {
+        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
         }
@@ -542,7 +547,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("providerTenantSettings", cast)
+        err := writer.WriteCollectionOfObjectValues("providerTenantSettings", cast)
         if err != nil {
             return err
         }
@@ -554,7 +559,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("secureScoreControlProfiles", cast)
+        err := writer.WriteCollectionOfObjectValues("secureScoreControlProfiles", cast)
         if err != nil {
             return err
         }
@@ -566,7 +571,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("secureScores", cast)
+        err := writer.WriteCollectionOfObjectValues("secureScores", cast)
         if err != nil {
             return err
         }
@@ -578,7 +583,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("securityActions", cast)
+        err := writer.WriteCollectionOfObjectValues("securityActions", cast)
         if err != nil {
             return err
         }
@@ -590,7 +595,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("subjectRightsRequests", cast)
+        err := writer.WriteCollectionOfObjectValues("subjectRightsRequests", cast)
         if err != nil {
             return err
         }
@@ -602,7 +607,7 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("tiIndicators", cast)
+        err := writer.WriteCollectionOfObjectValues("tiIndicators", cast)
         if err != nil {
             return err
         }
@@ -614,12 +619,25 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
                 cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
             }
         }
-        err = writer.WriteCollectionOfObjectValues("userSecurityProfiles", cast)
+        err := writer.WriteCollectionOfObjectValues("userSecurityProfiles", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+func (m *Security) SetAdditionalData(value map[string]any)() {
+    err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
 func (m *Security) SetAlerts(value []Alertable)() {
@@ -634,6 +652,10 @@ func (m *Security) SetAttackSimulation(value AttackSimulationRootable)() {
     if err != nil {
         panic(err)
     }
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *Security) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
 }
 // SetCloudAppSecurityProfiles sets the cloudAppSecurityProfiles property value. The cloudAppSecurityProfiles property
 func (m *Security) SetCloudAppSecurityProfiles(value []CloudAppSecurityProfileable)() {
@@ -670,9 +692,9 @@ func (m *Security) SetIpSecurityProfiles(value []IpSecurityProfileable)() {
         panic(err)
     }
 }
-// SetProviderStatus sets the providerStatus property value. The providerStatus property
-func (m *Security) SetProviderStatus(value []SecurityProviderStatusable)() {
-    err := m.GetBackingStore().Set("providerStatus", value)
+// SetOdataType sets the @odata.type property value. The OdataType property
+func (m *Security) SetOdataType(value *string)() {
+    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -727,16 +749,18 @@ func (m *Security) SetUserSecurityProfiles(value []UserSecurityProfileable)() {
     }
 }
 type Securityable interface {
-    Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlerts()([]Alertable)
     GetAttackSimulation()(AttackSimulationRootable)
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCloudAppSecurityProfiles()([]CloudAppSecurityProfileable)
     GetDomainSecurityProfiles()([]DomainSecurityProfileable)
     GetFileSecurityProfiles()([]FileSecurityProfileable)
     GetHostSecurityProfiles()([]HostSecurityProfileable)
     GetIpSecurityProfiles()([]IpSecurityProfileable)
-    GetProviderStatus()([]SecurityProviderStatusable)
+    GetOdataType()(*string)
     GetProviderTenantSettings()([]ProviderTenantSettingable)
     GetSecureScoreControlProfiles()([]SecureScoreControlProfileable)
     GetSecureScores()([]SecureScoreable)
@@ -746,12 +770,13 @@ type Securityable interface {
     GetUserSecurityProfiles()([]UserSecurityProfileable)
     SetAlerts(value []Alertable)()
     SetAttackSimulation(value AttackSimulationRootable)()
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCloudAppSecurityProfiles(value []CloudAppSecurityProfileable)()
     SetDomainSecurityProfiles(value []DomainSecurityProfileable)()
     SetFileSecurityProfiles(value []FileSecurityProfileable)()
     SetHostSecurityProfiles(value []HostSecurityProfileable)()
     SetIpSecurityProfiles(value []IpSecurityProfileable)()
-    SetProviderStatus(value []SecurityProviderStatusable)()
+    SetOdataType(value *string)()
     SetProviderTenantSettings(value []ProviderTenantSettingable)()
     SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)()
     SetSecureScores(value []SecureScoreable)()

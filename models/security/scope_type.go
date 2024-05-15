@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type ScopeType int
 
 const (
@@ -20,7 +17,7 @@ func ParseScopeType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SCOPETYPE
         default:
-            return 0, errors.New("Unknown ScopeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

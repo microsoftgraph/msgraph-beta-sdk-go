@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AnalyticsActivityType int
 
 const (
@@ -29,7 +26,7 @@ func ParseAnalyticsActivityType(v string) (any, error) {
         case "Call":
             result = CALL_ANALYTICSACTIVITYTYPE
         default:
-            return 0, errors.New("Unknown AnalyticsActivityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

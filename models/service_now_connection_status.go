@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Status of ServiceNow Connection
 type ServiceNowConnectionStatus int
 
@@ -27,7 +24,7 @@ func ParseServiceNowConnectionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SERVICENOWCONNECTIONSTATUS
         default:
-            return 0, errors.New("Unknown ServiceNowConnectionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

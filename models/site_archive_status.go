@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SiteArchiveStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseSiteArchiveStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SITEARCHIVESTATUS
         default:
-            return 0, errors.New("Unknown SiteArchiveStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ConditionalAccessWhatIfReasons int
 
 const (
@@ -77,7 +74,7 @@ func ParseConditionalAccessWhatIfReasons(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CONDITIONALACCESSWHATIFREASONS
         default:
-            return 0, errors.New("Unknown ConditionalAccessWhatIfReasons value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

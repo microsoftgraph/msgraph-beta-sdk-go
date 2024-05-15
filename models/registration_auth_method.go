@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RegistrationAuthMethod int
 
 const (
@@ -44,7 +41,7 @@ func ParseRegistrationAuthMethod(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGISTRATIONAUTHMETHOD
         default:
-            return 0, errors.New("Unknown RegistrationAuthMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

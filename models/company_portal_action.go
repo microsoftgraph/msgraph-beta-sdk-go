@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Action on a device that can be executed in the Company Portal
 type CompanyPortalAction int
 
@@ -27,7 +24,7 @@ func ParseCompanyPortalAction(v string) (any, error) {
         case "reset":
             result = RESET_COMPANYPORTALACTION
         default:
-            return 0, errors.New("Unknown CompanyPortalAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PermissionsRequestOccurrenceStatus int
 
 const (
@@ -35,7 +32,7 @@ func ParsePermissionsRequestOccurrenceStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PERMISSIONSREQUESTOCCURRENCESTATUS
         default:
-            return 0, errors.New("Unknown PermissionsRequestOccurrenceStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

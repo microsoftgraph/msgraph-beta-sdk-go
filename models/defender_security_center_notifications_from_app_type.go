@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for defenderSecurityCenterNotificationsFromApp
 type DefenderSecurityCenterNotificationsFromAppType int
 
@@ -27,7 +24,7 @@ func ParseDefenderSecurityCenterNotificationsFromAppType(v string) (any, error) 
         case "blockAllNotifications":
             result = BLOCKALLNOTIFICATIONS_DEFENDERSECURITYCENTERNOTIFICATIONSFROMAPPTYPE
         default:
-            return 0, errors.New("Unknown DefenderSecurityCenterNotificationsFromAppType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

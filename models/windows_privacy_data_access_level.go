@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Determine the access level to specific Windows privacy data category.
 type WindowsPrivacyDataAccessLevel int
 
@@ -31,7 +28,7 @@ func ParseWindowsPrivacyDataAccessLevel(v string) (any, error) {
         case "userInControl":
             result = USERINCONTROL_WINDOWSPRIVACYDATAACCESSLEVEL
         default:
-            return 0, errors.New("Unknown WindowsPrivacyDataAccessLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

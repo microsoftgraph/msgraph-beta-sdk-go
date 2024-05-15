@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android For Work cross profile data sharing type.
 type AndroidForWorkCrossProfileDataSharingType int
 
@@ -31,7 +28,7 @@ func ParseAndroidForWorkCrossProfileDataSharingType(v string) (any, error) {
         case "noRestrictions":
             result = NORESTRICTIONS_ANDROIDFORWORKCROSSPROFILEDATASHARINGTYPE
         default:
-            return 0, errors.New("Unknown AndroidForWorkCrossProfileDataSharingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

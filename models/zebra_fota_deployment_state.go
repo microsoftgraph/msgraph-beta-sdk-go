@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents the state of Zebra FOTA deployment.
 type ZebraFotaDeploymentState int
 
@@ -47,7 +44,7 @@ func ParseZebraFotaDeploymentState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ZEBRAFOTADEPLOYMENTSTATE
         default:
-            return 0, errors.New("Unknown ZebraFotaDeploymentState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

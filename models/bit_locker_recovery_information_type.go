@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // BitLockerRecoveryInformationType types
 type BitLockerRecoveryInformationType int
 
@@ -23,7 +20,7 @@ func ParseBitLockerRecoveryInformationType(v string) (any, error) {
         case "passwordOnly":
             result = PASSWORDONLY_BITLOCKERRECOVERYINFORMATIONTYPE
         default:
-            return 0, errors.New("Unknown BitLockerRecoveryInformationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

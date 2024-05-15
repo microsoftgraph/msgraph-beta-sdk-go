@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type GroupAccessType int
 
 const (
@@ -26,7 +23,7 @@ func ParseGroupAccessType(v string) (any, error) {
         case "public":
             result = PUBLIC_GROUPACCESSTYPE
         default:
-            return 0, errors.New("Unknown GroupAccessType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

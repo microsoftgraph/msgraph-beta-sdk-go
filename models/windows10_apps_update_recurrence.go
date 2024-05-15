@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for App update on Windows10 recurrence.
 type Windows10AppsUpdateRecurrence int
 
@@ -31,7 +28,7 @@ func ParseWindows10AppsUpdateRecurrence(v string) (any, error) {
         case "monthly":
             result = MONTHLY_WINDOWS10APPSUPDATERECURRENCE
         default:
-            return 0, errors.New("Unknown Windows10AppsUpdateRecurrence value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

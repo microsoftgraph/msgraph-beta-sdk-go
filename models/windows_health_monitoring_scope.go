@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -47,7 +46,7 @@ func ParseWindowsHealthMonitoringScope(v string) (any, error) {
             case "privilegeManagement":
                 result |= PRIVILEGEMANAGEMENT_WINDOWSHEALTHMONITORINGSCOPE
             default:
-                return 0, errors.New("Unknown WindowsHealthMonitoringScope value: " + v)
+                return nil, nil
         }
     }
     return &result, nil
