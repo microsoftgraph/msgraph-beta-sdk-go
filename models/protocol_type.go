@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -53,7 +52,7 @@ func ParseProtocolType(v string) (any, error) {
             case "nativeAuth":
                 result |= NATIVEAUTH_PROTOCOLTYPE
             default:
-                return 0, errors.New("Unknown ProtocolType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

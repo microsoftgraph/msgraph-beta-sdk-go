@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Key Storage Provider (KSP) Import Options.
 type KeyStorageProviderOption int
 
@@ -31,7 +28,7 @@ func ParseKeyStorageProviderOption(v string) (any, error) {
         case "useSoftwareKsp":
             result = USESOFTWAREKSP_KEYSTORAGEPROVIDEROPTION
         default:
-            return 0, errors.New("Unknown KeyStorageProviderOption value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

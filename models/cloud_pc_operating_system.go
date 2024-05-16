@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcOperatingSystem int
 
 const (
@@ -23,7 +20,7 @@ func ParseCloudPcOperatingSystem(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCOPERATINGSYSTEM
         default:
-            return 0, errors.New("Unknown CloudPcOperatingSystem value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

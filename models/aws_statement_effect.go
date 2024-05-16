@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AwsStatementEffect int
 
 const (
@@ -23,7 +20,7 @@ func ParseAwsStatementEffect(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AWSSTATEMENTEFFECT
         default:
-            return 0, errors.New("Unknown AwsStatementEffect value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

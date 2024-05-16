@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type UsageAuthMethod int
 
 const (
@@ -47,7 +44,7 @@ func ParseUsageAuthMethod(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USAGEAUTHMETHOD
         default:
-            return 0, errors.New("Unknown UsageAuthMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

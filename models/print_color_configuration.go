@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrintColorConfiguration int
 
 const (
@@ -26,7 +23,7 @@ func ParsePrintColorConfiguration(v string) (any, error) {
         case "auto":
             result = AUTO_PRINTCOLORCONFIGURATION
         default:
-            return 0, errors.New("Unknown PrintColorConfiguration value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

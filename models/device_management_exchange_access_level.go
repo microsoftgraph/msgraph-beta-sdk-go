@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Access Level in Exchange.
 type DeviceManagementExchangeAccessLevel int
 
@@ -31,7 +28,7 @@ func ParseDeviceManagementExchangeAccessLevel(v string) (any, error) {
         case "quarantine":
             result = QUARANTINE_DEVICEMANAGEMENTEXCHANGEACCESSLEVEL
         default:
-            return 0, errors.New("Unknown DeviceManagementExchangeAccessLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

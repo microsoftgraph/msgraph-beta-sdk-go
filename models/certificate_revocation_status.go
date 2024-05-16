@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Certificate Revocation Status.
 type CertificateRevocationStatus int
 
@@ -35,7 +32,7 @@ func ParseCertificateRevocationStatus(v string) (any, error) {
         case "revoked":
             result = REVOKED_CERTIFICATEREVOCATIONSTATUS
         default:
-            return 0, errors.New("Unknown CertificateRevocationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

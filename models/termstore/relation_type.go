@@ -1,7 +1,4 @@
 package termstore
-import (
-    "errors"
-)
 type RelationType int
 
 const (
@@ -20,7 +17,7 @@ func ParseRelationType(v string) (any, error) {
         case "reuse":
             result = REUSE_RELATIONTYPE
         default:
-            return 0, errors.New("Unknown RelationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CallEventType int
 
 const (
@@ -26,7 +23,7 @@ func ParseCallEventType(v string) (any, error) {
         case "rosterUpdated":
             result = ROSTERUPDATED_CALLEVENTTYPE
         default:
-            return 0, errors.New("Unknown CallEventType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Extensible Authentication Protocol (EAP) Configuration Types.
 type AndroidEapType int
 
@@ -27,7 +24,7 @@ func ParseAndroidEapType(v string) (any, error) {
         case "peap":
             result = PEAP_ANDROIDEAPTYPE
         default:
-            return 0, errors.New("Unknown AndroidEapType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

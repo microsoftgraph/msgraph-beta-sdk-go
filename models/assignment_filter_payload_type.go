@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents the payload type AssignmentFilter is being assigned to.
 type AssignmentFilterPayloadType int
 
@@ -23,7 +20,7 @@ func ParseAssignmentFilterPayloadType(v string) (any, error) {
         case "enrollmentRestrictions":
             result = ENROLLMENTRESTRICTIONS_ASSIGNMENTFILTERPAYLOADTYPE
         default:
-            return 0, errors.New("Unknown AssignmentFilterPayloadType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type PfsGroup int
 
 const (
@@ -44,7 +41,7 @@ func ParsePfsGroup(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PFSGROUP
         default:
-            return 0, errors.New("Unknown PfsGroup value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

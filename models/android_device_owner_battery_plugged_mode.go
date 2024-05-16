@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner possible values for states of the device's plugged-in power modes.
 type AndroidDeviceOwnerBatteryPluggedMode int
 
@@ -31,7 +28,7 @@ func ParseAndroidDeviceOwnerBatteryPluggedMode(v string) (any, error) {
         case "wireless":
             result = WIRELESS_ANDROIDDEVICEOWNERBATTERYPLUGGEDMODE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerBatteryPluggedMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

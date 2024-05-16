@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Process identifier types for MacOS Privacy Preferences
 type MacOSProcessIdentifierType int
 
@@ -23,7 +20,7 @@ func ParseMacOSProcessIdentifierType(v string) (any, error) {
         case "path":
             result = PATH_MACOSPROCESSIDENTIFIERTYPE
         default:
-            return 0, errors.New("Unknown MacOSProcessIdentifierType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

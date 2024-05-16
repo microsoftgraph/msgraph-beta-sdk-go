@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android profile applicability
 type AndroidProfileApplicability int
 
@@ -24,7 +21,7 @@ func ParseAndroidProfileApplicability(v string) (any, error) {
         case "androidDeviceOwner":
             result = ANDROIDDEVICEOWNER_ANDROIDPROFILEAPPLICABILITY
         default:
-            return 0, errors.New("Unknown AndroidProfileApplicability value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package ediscovery
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -32,7 +31,7 @@ func ParseSourceType(v string) (any, error) {
             case "site":
                 result |= SITE_SOURCETYPE
             default:
-                return 0, errors.New("Unknown SourceType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

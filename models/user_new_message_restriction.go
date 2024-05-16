@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type UserNewMessageRestriction int
 
 const (
@@ -26,7 +23,7 @@ func ParseUserNewMessageRestriction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERNEWMESSAGERESTRICTION
         default:
-            return 0, errors.New("Unknown UserNewMessageRestriction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

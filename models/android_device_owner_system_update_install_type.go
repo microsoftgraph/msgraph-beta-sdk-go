@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // System Update Types for Android Device Owner.
 type AndroidDeviceOwnerSystemUpdateInstallType int
 
@@ -31,7 +28,7 @@ func ParseAndroidDeviceOwnerSystemUpdateInstallType(v string) (any, error) {
         case "automatic":
             result = AUTOMATIC_ANDROIDDEVICEOWNERSYSTEMUPDATEINSTALLTYPE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerSystemUpdateInstallType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

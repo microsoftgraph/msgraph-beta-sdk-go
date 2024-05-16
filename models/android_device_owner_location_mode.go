@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner Location Mode Type
 type AndroidDeviceOwnerLocationMode int
 
@@ -27,7 +24,7 @@ func ParseAndroidDeviceOwnerLocationMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANDROIDDEVICEOWNERLOCATIONMODE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerLocationMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

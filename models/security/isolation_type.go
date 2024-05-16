@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type IsolationType int
 
 const (
@@ -23,7 +20,7 @@ func ParseIsolationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ISOLATIONTYPE
         default:
-            return 0, errors.New("Unknown IsolationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

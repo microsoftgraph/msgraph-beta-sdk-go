@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PlannerApprovalStatus int
 
 const (
@@ -29,7 +26,7 @@ func ParsePlannerApprovalStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLANNERAPPROVALSTATUS
         default:
-            return 0, errors.New("Unknown PlannerApprovalStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

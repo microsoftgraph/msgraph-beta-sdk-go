@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type HuntingRuleRunStatus int
 
 const (
@@ -29,7 +26,7 @@ func ParseHuntingRuleRunStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_HUNTINGRULERUNSTATUS
         default:
-            return 0, errors.New("Unknown HuntingRuleRunStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

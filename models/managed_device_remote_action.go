@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ManagedDeviceRemoteAction int
 
 const (
@@ -94,7 +91,7 @@ func ParseManagedDeviceRemoteAction(v string) (any, error) {
         case "initiateDeviceAttestation":
             result = INITIATEDEVICEATTESTATION_MANAGEDDEVICEREMOTEACTION
         default:
-            return 0, errors.New("Unknown ManagedDeviceRemoteAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

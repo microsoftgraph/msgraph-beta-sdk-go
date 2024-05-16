@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -39,7 +38,7 @@ func ParseMacOSSystemExtensionType(v string) (any, error) {
             case "endpointSecurityExtensionsAllowed":
                 result |= ENDPOINTSECURITYEXTENSIONSALLOWED_MACOSSYSTEMEXTENSIONTYPE
             default:
-                return 0, errors.New("Unknown MacOSSystemExtensionType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

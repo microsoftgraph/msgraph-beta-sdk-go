@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Contains all supported file system detection type.
 type Win32LobAppFileSystemDetectionType int
 
@@ -43,7 +40,7 @@ func ParseWin32LobAppFileSystemDetectionType(v string) (any, error) {
         case "doesNotExist":
             result = DOESNOTEXIST_WIN32LOBAPPFILESYSTEMDETECTIONTYPE
         default:
-            return 0, errors.New("Unknown Win32LobAppFileSystemDetectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

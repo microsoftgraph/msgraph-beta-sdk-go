@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The onboarding status of the tenant.
 type OnboardingStatus int
 
@@ -39,7 +36,7 @@ func ParseOnboardingStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ONBOARDINGSTATUS
         default:
-            return 0, errors.New("Unknown OnboardingStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

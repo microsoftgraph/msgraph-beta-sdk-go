@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamTemplateAudience int
 
 const (
@@ -26,7 +23,7 @@ func ParseTeamTemplateAudience(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMTEMPLATEAUDIENCE
         default:
-            return 0, errors.New("Unknown TeamTemplateAudience value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Describes applicability for the mode the device is in
 type DeviceManagementConfigurationDeviceMode int
 
@@ -23,7 +20,7 @@ func ParseDeviceManagementConfigurationDeviceMode(v string) (any, error) {
         case "kiosk":
             result = KIOSK_DEVICEMANAGEMENTCONFIGURATIONDEVICEMODE
         default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationDeviceMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

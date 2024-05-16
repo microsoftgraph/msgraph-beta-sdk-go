@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MsiType int
 
 const (
@@ -26,7 +23,7 @@ func ParseMsiType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MSITYPE
         default:
-            return 0, errors.New("Unknown MsiType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

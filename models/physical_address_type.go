@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PhysicalAddressType int
 
 const (
@@ -26,7 +23,7 @@ func ParsePhysicalAddressType(v string) (any, error) {
         case "other":
             result = OTHER_PHYSICALADDRESSTYPE
         default:
-            return 0, errors.New("Unknown PhysicalAddressType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

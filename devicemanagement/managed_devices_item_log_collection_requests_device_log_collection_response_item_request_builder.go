@@ -75,11 +75,6 @@ func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemR
     }
     return nil
 }
-// DownloadDeviceLogs provides operations to call the downloadDeviceLogs method.
-// returns a *ManagedDevicesItemLogCollectionRequestsItemDownloadDeviceLogsRequestBuilder when successful
-func (m *ManagedDevicesItemLogCollectionRequestsDeviceLogCollectionResponseItemRequestBuilder) DownloadDeviceLogs()(*ManagedDevicesItemLogCollectionRequestsItemDownloadDeviceLogsRequestBuilder) {
-    return NewManagedDevicesItemLogCollectionRequestsItemDownloadDeviceLogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Get list of log collection requests
 // returns a DeviceLogCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

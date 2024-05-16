@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Data type for a configuration item inside an Android application's custom configuration schema
 type AndroidManagedStoreAppConfigurationSchemaItemDataType int
 
@@ -39,7 +36,7 @@ func ParseAndroidManagedStoreAppConfigurationSchemaItemDataType(v string) (any, 
         case "hidden":
             result = HIDDEN_ANDROIDMANAGEDSTOREAPPCONFIGURATIONSCHEMAITEMDATATYPE
         default:
-            return 0, errors.New("Unknown AndroidManagedStoreAppConfigurationSchemaItemDataType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

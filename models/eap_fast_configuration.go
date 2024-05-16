@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Available settings for EAP-FAST Configuration.
 type EapFastConfiguration int
 
@@ -31,7 +28,7 @@ func ParseEapFastConfiguration(v string) (any, error) {
         case "useProtectedAccessCredentialAndProvisionAnonymously":
             result = USEPROTECTEDACCESSCREDENTIALANDPROVISIONANONYMOUSLY_EAPFASTCONFIGURATION
         default:
-            return 0, errors.New("Unknown EapFastConfiguration value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Administrator configured device compliance state Enum
 type AdministratorConfiguredDeviceComplianceState int
 
@@ -23,7 +20,7 @@ func ParseAdministratorConfiguredDeviceComplianceState(v string) (any, error) {
         case "nonCompliant":
             result = NONCOMPLIANT_ADMINISTRATORCONFIGUREDDEVICECOMPLIANCESTATE
         default:
-            return 0, errors.New("Unknown AdministratorConfiguredDeviceComplianceState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

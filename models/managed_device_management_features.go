@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device management features.
 type ManagedDeviceManagementFeatures int
 
@@ -23,7 +20,7 @@ func ParseManagedDeviceManagementFeatures(v string) (any, error) {
         case "microsoftManagedDesktop":
             result = MICROSOFTMANAGEDDESKTOP_MANAGEDDEVICEMANAGEMENTFEATURES
         default:
-            return 0, errors.New("Unknown ManagedDeviceManagementFeatures value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

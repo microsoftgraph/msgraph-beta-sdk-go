@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Determines which content caches other content caches will peer with.
 type MacOSContentCachingPeerPolicy int
 
@@ -31,7 +28,7 @@ func ParseMacOSContentCachingPeerPolicy(v string) (any, error) {
         case "peersInCustomLocalNetworks":
             result = PEERSINCUSTOMLOCALNETWORKS_MACOSCONTENTCACHINGPEERPOLICY
         default:
-            return 0, errors.New("Unknown MacOSContentCachingPeerPolicy value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

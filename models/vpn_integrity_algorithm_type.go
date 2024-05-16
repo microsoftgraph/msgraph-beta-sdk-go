@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of VPN security association integrity algorithm
 type VpnIntegrityAlgorithmType int
 
@@ -39,7 +36,7 @@ func ParseVpnIntegrityAlgorithmType(v string) (any, error) {
         case "md5":
             result = MD5_VPNINTEGRITYALGORITHMTYPE
         default:
-            return 0, errors.New("Unknown VpnIntegrityAlgorithmType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

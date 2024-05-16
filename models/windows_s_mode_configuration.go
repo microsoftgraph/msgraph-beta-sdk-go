@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The possible options to configure S mode unlock
 type WindowsSModeConfiguration int
 
@@ -27,7 +24,7 @@ func ParseWindowsSModeConfiguration(v string) (any, error) {
         case "unlock":
             result = UNLOCK_WINDOWSSMODECONFIGURATION
         default:
-            return 0, errors.New("Unknown WindowsSModeConfiguration value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

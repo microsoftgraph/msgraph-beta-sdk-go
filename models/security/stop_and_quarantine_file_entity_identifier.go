@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseStopAndQuarantineFileEntityIdentifier(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_STOPANDQUARANTINEFILEENTITYIDENTIFIER
             default:
-                return 0, errors.New("Unknown StopAndQuarantineFileEntityIdentifier value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

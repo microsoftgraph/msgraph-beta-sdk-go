@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WindowsAutopilotSyncStatus int
 
 const (
@@ -30,7 +27,7 @@ func ParseWindowsAutopilotSyncStatus(v string) (any, error) {
         case "failed":
             result = FAILED_WINDOWSAUTOPILOTSYNCSTATUS
         default:
-            return 0, errors.New("Unknown WindowsAutopilotSyncStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

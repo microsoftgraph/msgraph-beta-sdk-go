@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.
 type WindowsAutopilotDeviceRemediationState int
 
@@ -35,7 +32,7 @@ func ParseWindowsAutopilotDeviceRemediationState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WINDOWSAUTOPILOTDEVICEREMEDIATIONSTATE
         default:
-            return 0, errors.New("Unknown WindowsAutopilotDeviceRemediationState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

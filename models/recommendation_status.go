@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RecommendationStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseRecommendationStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS
         default:
-            return 0, errors.New("Unknown RecommendationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

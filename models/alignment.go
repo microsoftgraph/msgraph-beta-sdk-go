@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type Alignment int
 
 const (
@@ -23,7 +20,7 @@ func ParseAlignment(v string) (any, error) {
         case "center":
             result = CENTER_ALIGNMENT
         default:
-            return 0, errors.New("Unknown Alignment value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

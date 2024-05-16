@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of Defender Attack Surface Reduction Rules
 type DefenderAttackSurfaceType int
 
@@ -35,7 +32,7 @@ func ParseDefenderAttackSurfaceType(v string) (any, error) {
         case "disable":
             result = DISABLE_DEFENDERATTACKSURFACETYPE
         default:
-            return 0, errors.New("Unknown DefenderAttackSurfaceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

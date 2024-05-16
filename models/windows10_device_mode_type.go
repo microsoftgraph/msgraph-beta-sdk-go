@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows 10 Device Mode type.
 type Windows10DeviceModeType int
 
@@ -23,7 +20,7 @@ func ParseWindows10DeviceModeType(v string) (any, error) {
         case "sModeConfiguration":
             result = SMODECONFIGURATION_WINDOWS10DEVICEMODETYPE
         default:
-            return 0, errors.New("Unknown Windows10DeviceModeType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

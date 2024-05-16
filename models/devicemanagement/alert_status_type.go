@@ -1,7 +1,4 @@
 package devicemanagement
-import (
-    "errors"
-)
 type AlertStatusType int
 
 const (
@@ -23,7 +20,7 @@ func ParseAlertStatusType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ALERTSTATUSTYPE
         default:
-            return 0, errors.New("Unknown AlertStatusType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

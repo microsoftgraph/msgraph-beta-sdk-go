@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcConnectivityEventResult int
 
 const (
@@ -26,7 +23,7 @@ func ParseCloudPcConnectivityEventResult(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCCONNECTIVITYEVENTRESULT
         default:
-            return 0, errors.New("Unknown CloudPcConnectivityEventResult value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

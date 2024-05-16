@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.
 type AndroidRequiredPasswordComplexity int
 
@@ -31,7 +28,7 @@ func ParseAndroidRequiredPasswordComplexity(v string) (any, error) {
         case "high":
             result = HIGH_ANDROIDREQUIREDPASSWORDCOMPLEXITY
         default:
-            return 0, errors.New("Unknown AndroidRequiredPasswordComplexity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

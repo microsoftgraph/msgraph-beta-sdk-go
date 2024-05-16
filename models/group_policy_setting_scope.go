@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Scope of the group policy setting.
 type GroupPolicySettingScope int
 
@@ -27,7 +24,7 @@ func ParseGroupPolicySettingScope(v string) (any, error) {
         case "user":
             result = USER_GROUPPOLICYSETTINGSCOPE
         default:
-            return 0, errors.New("Unknown GroupPolicySettingScope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

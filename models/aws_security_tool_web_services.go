@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -50,7 +49,7 @@ func ParseAwsSecurityToolWebServices(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_AWSSECURITYTOOLWEBSERVICES
             default:
-                return 0, errors.New("Unknown AwsSecurityToolWebServices value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

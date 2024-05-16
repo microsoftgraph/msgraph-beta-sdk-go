@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type FrontlineCloudPcAccessState int
 
 const (
@@ -35,7 +32,7 @@ func ParseFrontlineCloudPcAccessState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FRONTLINECLOUDPCACCESSSTATE
         default:
-            return 0, errors.New("Unknown FrontlineCloudPcAccessState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

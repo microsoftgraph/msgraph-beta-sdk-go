@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device app management task status.
 type DeviceAppManagementTaskStatus int
 
@@ -35,7 +32,7 @@ func ParseDeviceAppManagementTaskStatus(v string) (any, error) {
         case "rejected":
             result = REJECTED_DEVICEAPPMANAGEMENTTASKSTATUS
         default:
-            return 0, errors.New("Unknown DeviceAppManagementTaskStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

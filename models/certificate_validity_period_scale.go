@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Certificate Validity Period Options.
 type CertificateValidityPeriodScale int
 
@@ -27,7 +24,7 @@ func ParseCertificateValidityPeriodScale(v string) (any, error) {
         case "years":
             result = YEARS_CERTIFICATEVALIDITYPERIODSCALE
         default:
-            return 0, errors.New("Unknown CertificateValidityPeriodScale value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

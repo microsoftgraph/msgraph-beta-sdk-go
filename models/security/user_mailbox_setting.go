@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -83,7 +82,7 @@ func ParseUserMailboxSetting(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_USERMAILBOXSETTING
             default:
-                return 0, errors.New("Unknown UserMailboxSetting value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

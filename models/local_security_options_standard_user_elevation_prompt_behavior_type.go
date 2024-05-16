@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for LocalSecurityOptionsStandardUserElevationPromptBehavior
 type LocalSecurityOptionsStandardUserElevationPromptBehaviorType int
 
@@ -31,7 +28,7 @@ func ParseLocalSecurityOptionsStandardUserElevationPromptBehaviorType(v string) 
         case "promptForCredentials":
             result = PROMPTFORCREDENTIALS_LOCALSECURITYOPTIONSSTANDARDUSERELEVATIONPROMPTBEHAVIORTYPE
         default:
-            return 0, errors.New("Unknown LocalSecurityOptionsStandardUserElevationPromptBehaviorType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

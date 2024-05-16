@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ExternalAuthenticationType int
 
 const (
@@ -20,7 +17,7 @@ func ParseExternalAuthenticationType(v string) (any, error) {
         case "aadPreAuthentication":
             result = AADPREAUTHENTICATION_EXTERNALAUTHENTICATIONTYPE
         default:
-            return 0, errors.New("Unknown ExternalAuthenticationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

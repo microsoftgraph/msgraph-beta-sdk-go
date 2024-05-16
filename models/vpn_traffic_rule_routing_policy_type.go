@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Specifies the routing policy for a VPN traffic rule.
 type VpnTrafficRuleRoutingPolicyType int
 
@@ -27,7 +24,7 @@ func ParseVpnTrafficRuleRoutingPolicyType(v string) (any, error) {
         case "forceTunnel":
             result = FORCETUNNEL_VPNTRAFFICRULEROUTINGPOLICYTYPE
         default:
-            return 0, errors.New("Unknown VpnTrafficRuleRoutingPolicyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

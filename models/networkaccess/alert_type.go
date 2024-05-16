@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type AlertType int
 
 const (
@@ -38,7 +35,7 @@ func ParseAlertType(v string) (any, error) {
         case "webContentBlocked":
             result = WEBCONTENTBLOCKED_ALERTTYPE
         default:
-            return 0, errors.New("Unknown AlertType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type QualityUpdateCadence int
 
 const (
@@ -23,7 +20,7 @@ func ParseQualityUpdateCadence(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_QUALITYUPDATECADENCE
         default:
-            return 0, errors.New("Unknown QualityUpdateCadence value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type BodyType int
 
 const (
@@ -23,7 +20,7 @@ func ParseBodyType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BODYTYPE
         default:
-            return 0, errors.New("Unknown BodyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

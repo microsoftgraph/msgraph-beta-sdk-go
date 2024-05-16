@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseConditionalAccessInsiderRiskLevels(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_CONDITIONALACCESSINSIDERRISKLEVELS
             default:
-                return 0, errors.New("Unknown ConditionalAccessInsiderRiskLevels value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

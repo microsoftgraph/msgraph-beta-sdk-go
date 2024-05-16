@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -43,7 +42,7 @@ func ParseWindowsFirewallRuleInterfaceTypes(v string) (any, error) {
             case "lan":
                 result |= LAN_WINDOWSFIREWALLRULEINTERFACETYPES
             default:
-                return 0, errors.New("Unknown WindowsFirewallRuleInterfaceTypes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

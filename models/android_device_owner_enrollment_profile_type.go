@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner Enrollment Profile types.
 type AndroidDeviceOwnerEnrollmentProfileType int
 
@@ -27,7 +24,7 @@ func ParseAndroidDeviceOwnerEnrollmentProfileType(v string) (any, error) {
         case "fullyManaged":
             result = FULLYMANAGED_ANDROIDDEVICEOWNERENROLLMENTPROFILETYPE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerEnrollmentProfileType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

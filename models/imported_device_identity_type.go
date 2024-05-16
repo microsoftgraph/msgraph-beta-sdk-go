@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ImportedDeviceIdentityType int
 
 const (
@@ -30,7 +27,7 @@ func ParseImportedDeviceIdentityType(v string) (any, error) {
         case "manufacturerModelSerial":
             result = MANUFACTURERMODELSERIAL_IMPORTEDDEVICEIDENTITYTYPE
         default:
-            return 0, errors.New("Unknown ImportedDeviceIdentityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

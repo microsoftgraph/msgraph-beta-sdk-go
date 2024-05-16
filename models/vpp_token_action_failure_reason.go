@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible types of reasons for an Apple Volume Purchase Program token action failure.
 type VppTokenActionFailureReason int
 
@@ -35,7 +32,7 @@ func ParseVppTokenActionFailureReason(v string) (any, error) {
         case "expiredApplePushNotificationCertificate":
             result = EXPIREDAPPLEPUSHNOTIFICATIONCERTIFICATE_VPPTOKENACTIONFAILUREREASON
         default:
-            return 0, errors.New("Unknown VppTokenActionFailureReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

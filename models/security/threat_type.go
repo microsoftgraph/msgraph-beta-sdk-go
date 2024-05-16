@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type ThreatType int
 
 const (
@@ -32,7 +29,7 @@ func ParseThreatType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_THREATTYPE
         default:
-            return 0, errors.New("Unknown ThreatType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

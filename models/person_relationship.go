@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PersonRelationship int
 
 const (
@@ -62,7 +59,7 @@ func ParsePersonRelationship(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PERSONRELATIONSHIP
         default:
-            return 0, errors.New("Unknown PersonRelationship value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

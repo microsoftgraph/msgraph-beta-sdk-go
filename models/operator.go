@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Operator for rules.
 type Operator int
 
@@ -115,7 +112,7 @@ func ParseOperator(v string) (any, error) {
         case "excludesAll":
             result = EXCLUDESALL_OPERATOR
         default:
-            return 0, errors.New("Unknown Operator value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

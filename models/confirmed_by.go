@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseConfirmedBy(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_CONFIRMEDBY
             default:
-                return 0, errors.New("Unknown ConfirmedBy value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

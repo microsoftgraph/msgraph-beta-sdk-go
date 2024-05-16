@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Values for the InkWorkspaceAccess setting.
 type InkAccessSetting int
 
@@ -27,7 +24,7 @@ func ParseInkAccessSetting(v string) (any, error) {
         case "disabled":
             result = DISABLED_INKACCESSSETTING
         default:
-            return 0, errors.New("Unknown InkAccessSetting value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcPartnerAgentInstallStatus int
 
 const (
@@ -35,7 +32,7 @@ func ParseCloudPcPartnerAgentInstallStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCPARTNERAGENTINSTALLSTATUS
         default:
-            return 0, errors.New("Unknown CloudPcPartnerAgentInstallStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

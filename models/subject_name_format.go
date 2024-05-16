@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Subject Name Format Options.
 type SubjectNameFormat int
 
@@ -51,7 +48,7 @@ func ParseSubjectNameFormat(v string) (any, error) {
         case "commonNameAsDurableDeviceId":
             result = COMMONNAMEASDURABLEDEVICEID_SUBJECTNAMEFORMAT
         default:
-            return 0, errors.New("Unknown SubjectNameFormat value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -100,7 +100,7 @@ func (m *BookingQuestionAssignment) GetOdataType()(*string) {
     }
     return nil
 }
-// GetQuestionId gets the questionId property value. If it's mandatory to answer the custom question.
+// GetQuestionId gets the questionId property value. The ID of the custom question.
 // returns a *string when successful
 func (m *BookingQuestionAssignment) GetQuestionId()(*string) {
     val, err := m.GetBackingStore().Get("questionId")
@@ -165,7 +165,7 @@ func (m *BookingQuestionAssignment) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetQuestionId sets the questionId property value. If it's mandatory to answer the custom question.
+// SetQuestionId sets the questionId property value. The ID of the custom question.
 func (m *BookingQuestionAssignment) SetQuestionId(value *string)() {
     err := m.GetBackingStore().Set("questionId", value)
     if err != nil {

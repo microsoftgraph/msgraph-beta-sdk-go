@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner Play Store mode type.
 type AndroidDeviceOwnerPlayStoreMode int
 
@@ -27,7 +24,7 @@ func ParseAndroidDeviceOwnerPlayStoreMode(v string) (any, error) {
         case "blockList":
             result = BLOCKLIST_ANDROIDDEVICEOWNERPLAYSTOREMODE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerPlayStoreMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

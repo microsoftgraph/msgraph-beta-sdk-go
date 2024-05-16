@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type Status int
 
 const (
@@ -23,7 +20,7 @@ func ParseStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_STATUS
         default:
-            return 0, errors.New("Unknown Status value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

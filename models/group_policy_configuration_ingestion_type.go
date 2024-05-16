@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Group Policy Configuration Ingestion Type
 type GroupPolicyConfigurationIngestionType int
 
@@ -35,7 +32,7 @@ func ParseGroupPolicyConfigurationIngestionType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_GROUPPOLICYCONFIGURATIONINGESTIONTYPE
         default:
-            return 0, errors.New("Unknown GroupPolicyConfigurationIngestionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Data types for rules.
 type DeviceComplianceScriptRuleDataType int
 
@@ -75,7 +72,7 @@ func ParseDeviceComplianceScriptRuleDataType(v string) (any, error) {
         case "versionArray":
             result = VERSIONARRAY_DEVICECOMPLIANCESCRIPTRULEDATATYPE
         default:
-            return 0, errors.New("Unknown DeviceComplianceScriptRuleDataType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

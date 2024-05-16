@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Configuration manager client state
 type ConfigurationManagerClientState int
 
@@ -39,7 +36,7 @@ func ParseConfigurationManagerClientState(v string) (any, error) {
         case "communicationError":
             result = COMMUNICATIONERROR_CONFIGURATIONMANAGERCLIENTSTATE
         default:
-            return 0, errors.New("Unknown ConfigurationManagerClientState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,6 +1,5 @@
 package managedtenants
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -41,7 +40,7 @@ func ParseNotificationDestination(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_NOTIFICATIONDESTINATION
             default:
-                return 0, errors.New("Unknown NotificationDestination value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

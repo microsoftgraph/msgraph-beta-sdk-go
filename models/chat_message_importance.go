@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ChatMessageImportance int
 
 const (
@@ -23,7 +20,7 @@ func ParseChatMessageImportance(v string) (any, error) {
         case "urgent":
             result = URGENT_CHATMESSAGEIMPORTANCE
         default:
-            return 0, errors.New("Unknown ChatMessageImportance value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

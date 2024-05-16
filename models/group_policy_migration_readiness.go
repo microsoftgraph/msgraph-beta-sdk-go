@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates if the Group Policy Object file is covered and ready for Intune migration.
 type GroupPolicyMigrationReadiness int
 
@@ -35,7 +32,7 @@ func ParseGroupPolicyMigrationReadiness(v string) (any, error) {
         case "notApplicable":
             result = NOTAPPLICABLE_GROUPPOLICYMIGRATIONREADINESS
         default:
-            return 0, errors.New("Unknown GroupPolicyMigrationReadiness value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

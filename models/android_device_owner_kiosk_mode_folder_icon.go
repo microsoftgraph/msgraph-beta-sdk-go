@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner Kiosk Mode folder icon type.
 type AndroidDeviceOwnerKioskModeFolderIcon int
 
@@ -35,7 +32,7 @@ func ParseAndroidDeviceOwnerKioskModeFolderIcon(v string) (any, error) {
         case "lightCircle":
             result = LIGHTCIRCLE_ANDROIDDEVICEOWNERKIOSKMODEFOLDERICON
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerKioskModeFolderIcon value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

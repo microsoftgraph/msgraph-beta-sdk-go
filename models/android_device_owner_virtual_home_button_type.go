@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android Device Owner Kiosk Mode managed home screen virtual home button type.
 type AndroidDeviceOwnerVirtualHomeButtonType int
 
@@ -27,7 +24,7 @@ func ParseAndroidDeviceOwnerVirtualHomeButtonType(v string) (any, error) {
         case "floating":
             result = FLOATING_ANDROIDDEVICEOWNERVIRTUALHOMEBUTTONTYPE
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerVirtualHomeButtonType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

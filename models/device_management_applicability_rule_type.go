@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Supported Applicability rule types for Device Configuration
 type DeviceManagementApplicabilityRuleType int
 
@@ -23,7 +20,7 @@ func ParseDeviceManagementApplicabilityRuleType(v string) (any, error) {
         case "exclude":
             result = EXCLUDE_DEVICEMANAGEMENTAPPLICABILITYRULETYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementApplicabilityRuleType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

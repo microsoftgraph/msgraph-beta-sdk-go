@@ -1,7 +1,4 @@
 package managedtenants
-import (
-    "errors"
-)
 type WorkloadActionStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseWorkloadActionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKLOADACTIONSTATUS
         default:
-            return 0, errors.New("Unknown WorkloadActionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

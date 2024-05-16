@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ComanagementEligibleType int
 
 const (
@@ -37,7 +34,7 @@ func ParseComanagementEligibleType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_COMANAGEMENTELIGIBLETYPE
         default:
-            return 0, errors.New("Unknown ComanagementEligibleType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

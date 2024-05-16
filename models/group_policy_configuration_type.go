@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Group Policy Configuration Type
 type GroupPolicyConfigurationType int
 
@@ -23,7 +20,7 @@ func ParseGroupPolicyConfigurationType(v string) (any, error) {
         case "preference":
             result = PREFERENCE_GROUPPOLICYCONFIGURATIONTYPE
         default:
-            return 0, errors.New("Unknown GroupPolicyConfigurationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

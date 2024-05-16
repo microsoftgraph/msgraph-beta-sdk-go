@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows privacy data category specifier for privacy data access.
 type WindowsPrivacyDataCategory int
 
@@ -91,7 +88,7 @@ func ParseWindowsPrivacyDataCategory(v string) (any, error) {
         case "trustedDevices":
             result = TRUSTEDDEVICES_WINDOWSPRIVACYDATACATEGORY
         default:
-            return 0, errors.New("Unknown WindowsPrivacyDataCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

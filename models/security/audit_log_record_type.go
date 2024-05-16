@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type AuditLogRecordType int
 
 const (
@@ -773,7 +770,7 @@ func ParseAuditLogRecordType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUDITLOGRECORDTYPE
         default:
-            return 0, errors.New("Unknown AuditLogRecordType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

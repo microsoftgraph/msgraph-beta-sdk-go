@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SetupStatus int
 
 const (
@@ -38,7 +35,7 @@ func ParseSetupStatus(v string) (any, error) {
         case "disabled":
             result = DISABLED_SETUPSTATUS
         default:
-            return 0, errors.New("Unknown SetupStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

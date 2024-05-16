@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DiamondModel int
 
 const (
@@ -32,7 +29,7 @@ func ParseDiamondModel(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DIAMONDMODEL
         default:
-            return 0, errors.New("Unknown DiamondModel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

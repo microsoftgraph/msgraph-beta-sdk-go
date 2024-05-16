@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type RemediationAction int
 
 const (
@@ -32,7 +29,7 @@ func ParseRemediationAction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REMEDIATIONACTION
         default:
-            return 0, errors.New("Unknown RemediationAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

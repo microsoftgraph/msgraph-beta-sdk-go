@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows 10 VPN connection types.
 type Windows10VpnAuthenticationMethod int
 
@@ -31,7 +28,7 @@ func ParseWindows10VpnAuthenticationMethod(v string) (any, error) {
         case "derivedCredential":
             result = DERIVEDCREDENTIAL_WINDOWS10VPNAUTHENTICATIONMETHOD
         default:
-            return 0, errors.New("Unknown Windows10VpnAuthenticationMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

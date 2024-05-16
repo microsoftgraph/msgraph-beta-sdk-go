@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Domainname source.
 type DomainNameSource int
 
@@ -23,7 +20,7 @@ func ParseDomainNameSource(v string) (any, error) {
         case "netBiosDomainName":
             result = NETBIOSDOMAINNAME_DOMAINNAMESOURCE
         default:
-            return 0, errors.New("Unknown DomainNameSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

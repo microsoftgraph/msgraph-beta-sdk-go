@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Wi-Fi Network Single Sign On Type Settings.
 type NetworkSingleSignOnType int
 
@@ -27,7 +24,7 @@ func ParseNetworkSingleSignOnType(v string) (any, error) {
         case "postlogon":
             result = POSTLOGON_NETWORKSINGLESIGNONTYPE
         default:
-            return 0, errors.New("Unknown NetworkSingleSignOnType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

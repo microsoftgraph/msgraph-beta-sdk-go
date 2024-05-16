@@ -1,7 +1,4 @@
 package ediscovery
-import (
-    "errors"
-)
 type LegalHoldStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseLegalHoldStatus(v string) (any, error) {
         case "UnknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LEGALHOLDSTATUS
         default:
-            return 0, errors.New("Unknown LegalHoldStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

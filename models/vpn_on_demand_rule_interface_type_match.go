@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // VPN On-Demand Rule Connection network interface type.
 type VpnOnDemandRuleInterfaceTypeMatch int
 
@@ -31,7 +28,7 @@ func ParseVpnOnDemandRuleInterfaceTypeMatch(v string) (any, error) {
         case "cellular":
             result = CELLULAR_VPNONDEMANDRULEINTERFACETYPEMATCH
         default:
-            return 0, errors.New("Unknown VpnOnDemandRuleInterfaceTypeMatch value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

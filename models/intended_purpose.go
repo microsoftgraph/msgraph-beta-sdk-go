@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // PFX Import Options.
 type IntendedPurpose int
 
@@ -35,7 +32,7 @@ func ParseIntendedPurpose(v string) (any, error) {
         case "wifi":
             result = WIFI_INTENDEDPURPOSE
         default:
-            return 0, errors.New("Unknown IntendedPurpose value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

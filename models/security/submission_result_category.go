@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type SubmissionResultCategory int
 
 const (
@@ -44,7 +41,7 @@ func ParseSubmissionResultCategory(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBMISSIONRESULTCATEGORY
         default:
-            return 0, errors.New("Unknown SubmissionResultCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

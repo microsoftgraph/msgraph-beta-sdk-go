@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type DeploymentStateValue int
 
 const (
@@ -32,7 +29,7 @@ func ParseDeploymentStateValue(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEPLOYMENTSTATEVALUE
         default:
-            return 0, errors.New("Unknown DeploymentStateValue value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcSupportedRegionStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParseCloudPcSupportedRegionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCSUPPORTEDREGIONSTATUS
         default:
-            return 0, errors.New("Unknown CloudPcSupportedRegionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

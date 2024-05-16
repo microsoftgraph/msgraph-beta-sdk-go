@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcPowerState int
 
 const (
@@ -23,7 +20,7 @@ func ParseCloudPcPowerState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCPOWERSTATE
         default:
-            return 0, errors.New("Unknown CloudPcPowerState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type GcpEncryption int
 
 const (
@@ -23,7 +20,7 @@ func ParseGcpEncryption(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_GCPENCRYPTION
         default:
-            return 0, errors.New("Unknown GcpEncryption value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

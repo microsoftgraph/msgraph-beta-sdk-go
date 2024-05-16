@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type UserAssetIdentifier int
 
 const (
@@ -71,7 +68,7 @@ func ParseUserAssetIdentifier(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERASSETIDENTIFIER
         default:
-            return 0, errors.New("Unknown UserAssetIdentifier value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

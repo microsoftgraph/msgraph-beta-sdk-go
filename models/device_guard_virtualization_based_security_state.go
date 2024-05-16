@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DeviceGuardVirtualizationBasedSecurityState int
 
 const (
@@ -42,7 +39,7 @@ func ParseDeviceGuardVirtualizationBasedSecurityState(v string) (any, error) {
         case "other":
             result = OTHER_DEVICEGUARDVIRTUALIZATIONBASEDSECURITYSTATE
         default:
-            return 0, errors.New("Unknown DeviceGuardVirtualizationBasedSecurityState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

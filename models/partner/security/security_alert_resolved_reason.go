@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type SecurityAlertResolvedReason int
 
 const (
@@ -26,7 +23,7 @@ func ParseSecurityAlertResolvedReason(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SECURITYALERTRESOLVEDREASON
         default:
-            return 0, errors.New("Unknown SecurityAlertResolvedReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

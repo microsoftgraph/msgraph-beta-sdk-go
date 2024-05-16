@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RoutingPolicy int
 
 const (
@@ -32,7 +29,7 @@ func ParseRoutingPolicy(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ROUTINGPOLICY
         default:
-            return 0, errors.New("Unknown RoutingPolicy value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

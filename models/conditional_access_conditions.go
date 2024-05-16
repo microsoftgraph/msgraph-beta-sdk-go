@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -80,7 +79,7 @@ func ParseConditionalAccessConditions(v string) (any, error) {
             case "insiderRisk":
                 result |= INSIDERRISK_CONDITIONALACCESSCONDITIONS
             default:
-                return 0, errors.New("Unknown ConditionalAccessConditions value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WatermarkLayout int
 
 const (
@@ -20,7 +17,7 @@ func ParseWatermarkLayout(v string) (any, error) {
         case "diagonal":
             result = DIAGONAL_WATERMARKLAYOUT
         default:
-            return 0, errors.New("Unknown WatermarkLayout value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcDeviceImageStatusDetails int
 
 const (
@@ -44,7 +41,7 @@ func ParseCloudPcDeviceImageStatusDetails(v string) (any, error) {
         case "sourceImageSizeExceedsLimitation":
             result = SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGESTATUSDETAILS
         default:
-            return 0, errors.New("Unknown CloudPcDeviceImageStatusDetails value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

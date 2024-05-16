@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -39,7 +38,7 @@ func ParseAndroidTargetedPlatforms(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_ANDROIDTARGETEDPLATFORMS
             default:
-                return 0, errors.New("Unknown AndroidTargetedPlatforms value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

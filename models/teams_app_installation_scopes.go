@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseTeamsAppInstallationScopes(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_TEAMSAPPINSTALLATIONSCOPES
             default:
-                return 0, errors.New("Unknown TeamsAppInstallationScopes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // App source options for macOS Gatekeeper.
 type MacOSGatekeeperAppSources int
 
@@ -31,7 +28,7 @@ func ParseMacOSGatekeeperAppSources(v string) (any, error) {
         case "anywhere":
             result = ANYWHERE_MACOSGATEKEEPERAPPSOURCES
         default:
-            return 0, errors.New("Unknown MacOSGatekeeperAppSources value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

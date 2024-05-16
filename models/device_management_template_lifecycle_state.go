@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Describes current lifecycle state of a template
 type DeviceManagementTemplateLifecycleState int
 
@@ -39,7 +36,7 @@ func ParseDeviceManagementTemplateLifecycleState(v string) (any, error) {
         case "retired":
             result = RETIRED_DEVICEMANAGEMENTTEMPLATELIFECYCLESTATE
         default:
-            return 0, errors.New("Unknown DeviceManagementTemplateLifecycleState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for the Certificate Destination Store.
 type CertificateDestinationStore int
 
@@ -27,7 +24,7 @@ func ParseCertificateDestinationStore(v string) (any, error) {
         case "userCertStoreIntermediate":
             result = USERCERTSTOREINTERMEDIATE_CERTIFICATEDESTINATIONSTORE
         default:
-            return 0, errors.New("Unknown CertificateDestinationStore value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DeviceManagementConfigurationWindowsSkus int
 
 const (
@@ -59,7 +56,7 @@ func ParseDeviceManagementConfigurationWindowsSkus(v string) (any, error) {
         case "surfaceHub":
             result = SURFACEHUB_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
         default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationWindowsSkus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

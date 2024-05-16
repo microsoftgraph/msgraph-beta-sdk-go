@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SamlAttributeNameFormat int
 
 const (
@@ -26,7 +23,7 @@ func ParseSamlAttributeNameFormat(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SAMLATTRIBUTENAMEFORMAT
         default:
-            return 0, errors.New("Unknown SamlAttributeNameFormat value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

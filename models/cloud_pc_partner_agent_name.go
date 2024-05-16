@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcPartnerAgentName int
 
 const (
@@ -26,7 +23,7 @@ func ParseCloudPcPartnerAgentName(v string) (any, error) {
         case "hp":
             result = HP_CLOUDPCPARTNERAGENTNAME
         default:
-            return 0, errors.New("Unknown CloudPcPartnerAgentName value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

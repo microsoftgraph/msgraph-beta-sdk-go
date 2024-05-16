@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Update behavior options for macOS software updates.
 type MacOSSoftwareUpdateBehavior int
 
@@ -39,7 +36,7 @@ func ParseMacOSSoftwareUpdateBehavior(v string) (any, error) {
         case "installLater":
             result = INSTALLLATER_MACOSSOFTWAREUPDATEBEHAVIOR
         default:
-            return 0, errors.New("Unknown MacOSSoftwareUpdateBehavior value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

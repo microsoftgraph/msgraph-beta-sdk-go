@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device Management Certification Authority Types.
 type DeviceManagementCertificationAuthority int
 
@@ -27,7 +24,7 @@ func ParseDeviceManagementCertificationAuthority(v string) (any, error) {
         case "digiCert":
             result = DIGICERT_DEVICEMANAGEMENTCERTIFICATIONAUTHORITY
         default:
-            return 0, errors.New("Unknown DeviceManagementCertificationAuthority value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

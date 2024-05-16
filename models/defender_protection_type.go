@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of Defender PUA Protection
 type DefenderProtectionType int
 
@@ -35,7 +32,7 @@ func ParseDefenderProtectionType(v string) (any, error) {
         case "notConfigured":
             result = NOTCONFIGURED_DEFENDERPROTECTIONTYPE
         default:
-            return 0, errors.New("Unknown DefenderProtectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

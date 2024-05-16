@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for monitoring file activity.
 type DefenderRealtimeScanDirection int
 
@@ -27,7 +24,7 @@ func ParseDefenderRealtimeScanDirection(v string) (any, error) {
         case "monitorOutgoingFilesOnly":
             result = MONITOROUTGOINGFILESONLY_DEFENDERREALTIMESCANDIRECTION
         default:
-            return 0, errors.New("Unknown DefenderRealtimeScanDirection value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package industrydata
-import (
-    "errors"
-)
 type InboundDomain int
 
 const (
@@ -20,7 +17,7 @@ func ParseInboundDomain(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INBOUNDDOMAIN
         default:
-            return 0, errors.New("Unknown InboundDomain value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

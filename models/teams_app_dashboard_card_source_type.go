@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamsAppDashboardCardSourceType int
 
 const (
@@ -20,7 +17,7 @@ func ParseTeamsAppDashboardCardSourceType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMSAPPDASHBOARDCARDSOURCETYPE
         default:
-            return 0, errors.New("Unknown TeamsAppDashboardCardSourceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

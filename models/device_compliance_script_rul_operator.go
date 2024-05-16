@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Operator for rules.
 type DeviceComplianceScriptRulOperator int
 
@@ -115,7 +112,7 @@ func ParseDeviceComplianceScriptRulOperator(v string) (any, error) {
         case "excludesAll":
             result = EXCLUDESALL_DEVICECOMPLIANCESCRIPTRULOPERATOR
         default:
-            return 0, errors.New("Unknown DeviceComplianceScriptRulOperator value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package managedtenants
-import (
-    "errors"
-)
 type WorkloadOnboardingStatus int
 
 const (
@@ -23,7 +20,7 @@ func ParseWorkloadOnboardingStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKLOADONBOARDINGSTATUS
         default:
-            return 0, errors.New("Unknown WorkloadOnboardingStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

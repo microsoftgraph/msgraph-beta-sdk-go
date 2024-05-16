@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Wired Network Authentication Type Settings.
 type WiredNetworkAuthenticationType int
 
@@ -39,7 +36,7 @@ func ParseWiredNetworkAuthenticationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WIREDNETWORKAUTHENTICATIONTYPE
         default:
-            return 0, errors.New("Unknown WiredNetworkAuthenticationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

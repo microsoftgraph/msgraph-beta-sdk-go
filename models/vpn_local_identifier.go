@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of VPN local identifier
 type VpnLocalIdentifier int
 
@@ -27,7 +24,7 @@ func ParseVpnLocalIdentifier(v string) (any, error) {
         case "clientCertificateSubjectName":
             result = CLIENTCERTIFICATESUBJECTNAME_VPNLOCALIDENTIFIER
         default:
-            return 0, errors.New("Unknown VpnLocalIdentifier value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

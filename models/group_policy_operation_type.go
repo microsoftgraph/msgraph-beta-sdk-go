@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Type of Group Policy operation.
 type GroupPolicyOperationType int
 
@@ -43,7 +40,7 @@ func ParseGroupPolicyOperationType(v string) (any, error) {
         case "remove":
             result = REMOVE_GROUPPOLICYOPERATIONTYPE
         default:
-            return 0, errors.New("Unknown GroupPolicyOperationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

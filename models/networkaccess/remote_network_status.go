@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type RemoteNetworkStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseRemoteNetworkStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REMOTENETWORKSTATUS
         default:
-            return 0, errors.New("Unknown RemoteNetworkStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -101,7 +101,7 @@ func (m *OperationApprovalPolicySet) GetPolicyPlatform()(*OperationApprovalPolic
     }
     return nil
 }
-// GetPolicyType gets the policyType property value. The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.
+// GetPolicyType gets the policyType property value. The set of available policy types that can be configured for approval. The policy type must always be defined in an OperationApprovalRequest.
 // returns a *OperationApprovalPolicyType when successful
 func (m *OperationApprovalPolicySet) GetPolicyType()(*OperationApprovalPolicyType) {
     val, err := m.GetBackingStore().Get("policyType")
@@ -168,7 +168,7 @@ func (m *OperationApprovalPolicySet) SetPolicyPlatform(value *OperationApprovalP
         panic(err)
     }
 }
-// SetPolicyType sets the policyType property value. The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.
+// SetPolicyType sets the policyType property value. The set of available policy types that can be configured for approval. The policy type must always be defined in an OperationApprovalRequest.
 func (m *OperationApprovalPolicySet) SetPolicyType(value *OperationApprovalPolicyType)() {
     err := m.GetBackingStore().Set("policyType", value)
     if err != nil {

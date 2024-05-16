@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type WindowsUserType int
 
 const (
@@ -20,7 +17,7 @@ func ParseWindowsUserType(v string) (any, error) {
         case "standard":
             result = STANDARD_WINDOWSUSERTYPE
         default:
-            return 0, errors.New("Unknown WindowsUserType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

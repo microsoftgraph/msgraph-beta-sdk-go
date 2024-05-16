@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Bind status of the tenant with the Google EMM API
 type AndroidForWorkBindStatus int
 
@@ -27,7 +24,7 @@ func ParseAndroidForWorkBindStatus(v string) (any, error) {
         case "unbinding":
             result = UNBINDING_ANDROIDFORWORKBINDSTATUS
         default:
-            return 0, errors.New("Unknown AndroidForWorkBindStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

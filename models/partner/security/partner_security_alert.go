@@ -21,7 +21,7 @@ func NewPartnerSecurityAlert()(*PartnerSecurityAlert) {
 func CreatePartnerSecurityAlertFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPartnerSecurityAlert(), nil
 }
-// GetActivityLogs gets the activityLogs property value. The activityLogs property
+// GetActivityLogs gets the activityLogs property value. Represents the activity by a partner and includes details of state transitions, who performed them, and when they occurred.
 // returns a []ActivityLogable when successful
 func (m *PartnerSecurityAlert) GetActivityLogs()([]ActivityLogable) {
     val, err := m.GetBackingStore().Get("activityLogs")
@@ -33,7 +33,7 @@ func (m *PartnerSecurityAlert) GetActivityLogs()([]ActivityLogable) {
     }
     return nil
 }
-// GetAdditionalDetails gets the additionalDetails property value. The additionalDetails property
+// GetAdditionalDetails gets the additionalDetails property value. A bag of name-value pairs that contain additional details about an alert.
 // returns a AdditionalDataDictionaryable when successful
 func (m *PartnerSecurityAlert) GetAdditionalDetails()(AdditionalDataDictionaryable) {
     val, err := m.GetBackingStore().Get("additionalDetails")
@@ -45,7 +45,7 @@ func (m *PartnerSecurityAlert) GetAdditionalDetails()(AdditionalDataDictionaryab
     }
     return nil
 }
-// GetAffectedResources gets the affectedResources property value. The affectedResources property
+// GetAffectedResources gets the affectedResources property value. Contains details of the resources affected by the security alert.
 // returns a []AffectedResourceable when successful
 func (m *PartnerSecurityAlert) GetAffectedResources()([]AffectedResourceable) {
     val, err := m.GetBackingStore().Get("affectedResources")
@@ -57,7 +57,7 @@ func (m *PartnerSecurityAlert) GetAffectedResources()([]AffectedResourceable) {
     }
     return nil
 }
-// GetAlertType gets the alertType property value. The alertType property
+// GetAlertType gets the alertType property value. The type of vulnerability that impacts the customer due to this alert.
 // returns a *string when successful
 func (m *PartnerSecurityAlert) GetAlertType()(*string) {
     val, err := m.GetBackingStore().Get("alertType")
@@ -69,7 +69,7 @@ func (m *PartnerSecurityAlert) GetAlertType()(*string) {
     }
     return nil
 }
-// GetCatalogOfferId gets the catalogOfferId property value. The catalogOfferId property
+// GetCatalogOfferId gets the catalogOfferId property value. The modern offer category ID of the subscription.
 // returns a *string when successful
 func (m *PartnerSecurityAlert) GetCatalogOfferId()(*string) {
     val, err := m.GetBackingStore().Get("catalogOfferId")
@@ -93,7 +93,7 @@ func (m *PartnerSecurityAlert) GetConfidenceLevel()(*SecurityAlertConfidence) {
     }
     return nil
 }
-// GetCustomerTenantId gets the customerTenantId property value. The customerTenantId property
+// GetCustomerTenantId gets the customerTenantId property value. The impacted customer tenant associated with the alert.
 // returns a *string when successful
 func (m *PartnerSecurityAlert) GetCustomerTenantId()(*string) {
     val, err := m.GetBackingStore().Get("customerTenantId")
@@ -105,7 +105,7 @@ func (m *PartnerSecurityAlert) GetCustomerTenantId()(*string) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description for each alert.
 // returns a *string when successful
 func (m *PartnerSecurityAlert) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -117,7 +117,7 @@ func (m *PartnerSecurityAlert) GetDescription()(*string) {
     }
     return nil
 }
-// GetDetectedDateTime gets the detectedDateTime property value. The detectedDateTime property
+// GetDetectedDateTime gets the detectedDateTime property value. Time when the alert was detected or created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *PartnerSecurityAlert) GetDetectedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("detectedDateTime")
@@ -129,7 +129,7 @@ func (m *PartnerSecurityAlert) GetDetectedDateTime()(*i336074805fc853987abe6f7fe
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the alert.
 // returns a *string when successful
 func (m *PartnerSecurityAlert) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -359,7 +359,7 @@ func (m *PartnerSecurityAlert) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetFirstObservedDateTime gets the firstObservedDateTime property value. The firstObservedDateTime property
+// GetFirstObservedDateTime gets the firstObservedDateTime property value. Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  subscription.
 // returns a *Time when successful
 func (m *PartnerSecurityAlert) GetFirstObservedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstObservedDateTime")
@@ -371,7 +371,7 @@ func (m *PartnerSecurityAlert) GetFirstObservedDateTime()(*i336074805fc853987abe
     }
     return nil
 }
-// GetIsTest gets the isTest property value. The isTest property
+// GetIsTest gets the isTest property value. Indicates whehter an alert is a test alert.
 // returns a *bool when successful
 func (m *PartnerSecurityAlert) GetIsTest()(*bool) {
     val, err := m.GetBackingStore().Get("isTest")
@@ -383,7 +383,7 @@ func (m *PartnerSecurityAlert) GetIsTest()(*bool) {
     }
     return nil
 }
-// GetLastObservedDateTime gets the lastObservedDateTime property value. The lastObservedDateTime property
+// GetLastObservedDateTime gets the lastObservedDateTime property value. Time of the latest activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *PartnerSecurityAlert) GetLastObservedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastObservedDateTime")
@@ -395,7 +395,7 @@ func (m *PartnerSecurityAlert) GetLastObservedDateTime()(*i336074805fc853987abe6
     }
     return nil
 }
-// GetResolvedBy gets the resolvedBy property value. The resolvedBy property
+// GetResolvedBy gets the resolvedBy property value. The UPN of the partner user who resolved the alert.
 // returns a *string when successful
 func (m *PartnerSecurityAlert) GetResolvedBy()(*string) {
     val, err := m.GetBackingStore().Get("resolvedBy")
@@ -407,7 +407,7 @@ func (m *PartnerSecurityAlert) GetResolvedBy()(*string) {
     }
     return nil
 }
-// GetResolvedOnDateTime gets the resolvedOnDateTime property value. The resolvedOnDateTime property
+// GetResolvedOnDateTime gets the resolvedOnDateTime property value. Time when the alert was resolved. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *PartnerSecurityAlert) GetResolvedOnDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("resolvedOnDateTime")
@@ -419,7 +419,7 @@ func (m *PartnerSecurityAlert) GetResolvedOnDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetResolvedReason gets the resolvedReason property value. The resolvedReason property
+// GetResolvedReason gets the resolvedReason property value. The reason provided by the partner for addressing the alert. The possible values are: legitimate, ignore, fraud, unknownFutureValue.
 // returns a *SecurityAlertResolvedReason when successful
 func (m *PartnerSecurityAlert) GetResolvedReason()(*SecurityAlertResolvedReason) {
     val, err := m.GetBackingStore().Get("resolvedReason")
@@ -455,7 +455,7 @@ func (m *PartnerSecurityAlert) GetStatus()(*SecurityAlertStatus) {
     }
     return nil
 }
-// GetSubscriptionId gets the subscriptionId property value. The subscriptionId property
+// GetSubscriptionId gets the subscriptionId property value. The subscription associated with the alert for the customer.
 // returns a *string when successful
 func (m *PartnerSecurityAlert) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
@@ -467,7 +467,7 @@ func (m *PartnerSecurityAlert) GetSubscriptionId()(*string) {
     }
     return nil
 }
-// GetValueAddedResellerTenantId gets the valueAddedResellerTenantId property value. The valueAddedResellerTenantId property
+// GetValueAddedResellerTenantId gets the valueAddedResellerTenantId property value. The value-added reseller tenant associated with the partner tenant and customer tenant.
 // returns a *string when successful
 func (m *PartnerSecurityAlert) GetValueAddedResellerTenantId()(*string) {
     val, err := m.GetBackingStore().Get("valueAddedResellerTenantId")
@@ -623,35 +623,35 @@ func (m *PartnerSecurityAlert) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetActivityLogs sets the activityLogs property value. The activityLogs property
+// SetActivityLogs sets the activityLogs property value. Represents the activity by a partner and includes details of state transitions, who performed them, and when they occurred.
 func (m *PartnerSecurityAlert) SetActivityLogs(value []ActivityLogable)() {
     err := m.GetBackingStore().Set("activityLogs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAdditionalDetails sets the additionalDetails property value. The additionalDetails property
+// SetAdditionalDetails sets the additionalDetails property value. A bag of name-value pairs that contain additional details about an alert.
 func (m *PartnerSecurityAlert) SetAdditionalDetails(value AdditionalDataDictionaryable)() {
     err := m.GetBackingStore().Set("additionalDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAffectedResources sets the affectedResources property value. The affectedResources property
+// SetAffectedResources sets the affectedResources property value. Contains details of the resources affected by the security alert.
 func (m *PartnerSecurityAlert) SetAffectedResources(value []AffectedResourceable)() {
     err := m.GetBackingStore().Set("affectedResources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlertType sets the alertType property value. The alertType property
+// SetAlertType sets the alertType property value. The type of vulnerability that impacts the customer due to this alert.
 func (m *PartnerSecurityAlert) SetAlertType(value *string)() {
     err := m.GetBackingStore().Set("alertType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCatalogOfferId sets the catalogOfferId property value. The catalogOfferId property
+// SetCatalogOfferId sets the catalogOfferId property value. The modern offer category ID of the subscription.
 func (m *PartnerSecurityAlert) SetCatalogOfferId(value *string)() {
     err := m.GetBackingStore().Set("catalogOfferId", value)
     if err != nil {
@@ -665,70 +665,70 @@ func (m *PartnerSecurityAlert) SetConfidenceLevel(value *SecurityAlertConfidence
         panic(err)
     }
 }
-// SetCustomerTenantId sets the customerTenantId property value. The customerTenantId property
+// SetCustomerTenantId sets the customerTenantId property value. The impacted customer tenant associated with the alert.
 func (m *PartnerSecurityAlert) SetCustomerTenantId(value *string)() {
     err := m.GetBackingStore().Set("customerTenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description for each alert.
 func (m *PartnerSecurityAlert) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetectedDateTime sets the detectedDateTime property value. The detectedDateTime property
+// SetDetectedDateTime sets the detectedDateTime property value. Time when the alert was detected or created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PartnerSecurityAlert) SetDetectedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("detectedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the alert.
 func (m *PartnerSecurityAlert) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFirstObservedDateTime sets the firstObservedDateTime property value. The firstObservedDateTime property
+// SetFirstObservedDateTime sets the firstObservedDateTime property value. Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  subscription.
 func (m *PartnerSecurityAlert) SetFirstObservedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstObservedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsTest sets the isTest property value. The isTest property
+// SetIsTest sets the isTest property value. Indicates whehter an alert is a test alert.
 func (m *PartnerSecurityAlert) SetIsTest(value *bool)() {
     err := m.GetBackingStore().Set("isTest", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastObservedDateTime sets the lastObservedDateTime property value. The lastObservedDateTime property
+// SetLastObservedDateTime sets the lastObservedDateTime property value. Time of the latest activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PartnerSecurityAlert) SetLastObservedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastObservedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResolvedBy sets the resolvedBy property value. The resolvedBy property
+// SetResolvedBy sets the resolvedBy property value. The UPN of the partner user who resolved the alert.
 func (m *PartnerSecurityAlert) SetResolvedBy(value *string)() {
     err := m.GetBackingStore().Set("resolvedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResolvedOnDateTime sets the resolvedOnDateTime property value. The resolvedOnDateTime property
+// SetResolvedOnDateTime sets the resolvedOnDateTime property value. Time when the alert was resolved. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PartnerSecurityAlert) SetResolvedOnDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("resolvedOnDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResolvedReason sets the resolvedReason property value. The resolvedReason property
+// SetResolvedReason sets the resolvedReason property value. The reason provided by the partner for addressing the alert. The possible values are: legitimate, ignore, fraud, unknownFutureValue.
 func (m *PartnerSecurityAlert) SetResolvedReason(value *SecurityAlertResolvedReason)() {
     err := m.GetBackingStore().Set("resolvedReason", value)
     if err != nil {
@@ -749,14 +749,14 @@ func (m *PartnerSecurityAlert) SetStatus(value *SecurityAlertStatus)() {
         panic(err)
     }
 }
-// SetSubscriptionId sets the subscriptionId property value. The subscriptionId property
+// SetSubscriptionId sets the subscriptionId property value. The subscription associated with the alert for the customer.
 func (m *PartnerSecurityAlert) SetSubscriptionId(value *string)() {
     err := m.GetBackingStore().Set("subscriptionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValueAddedResellerTenantId sets the valueAddedResellerTenantId property value. The valueAddedResellerTenantId property
+// SetValueAddedResellerTenantId sets the valueAddedResellerTenantId property value. The value-added reseller tenant associated with the partner tenant and customer tenant.
 func (m *PartnerSecurityAlert) SetValueAddedResellerTenantId(value *string)() {
     err := m.GetBackingStore().Set("valueAddedResellerTenantId", value)
     if err != nil {

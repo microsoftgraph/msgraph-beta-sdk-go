@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Processor architecture
 type ManagedDeviceArchitecture int
 
@@ -35,7 +32,7 @@ func ParseManagedDeviceArchitecture(v string) (any, error) {
         case "arM64":
             result = ARM64_MANAGEDDEVICEARCHITECTURE
         default:
-            return 0, errors.New("Unknown ManagedDeviceArchitecture value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

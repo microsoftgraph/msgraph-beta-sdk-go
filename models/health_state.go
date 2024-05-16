@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates health state of the Windows management app.
 type HealthState int
 
@@ -27,7 +24,7 @@ func ParseHealthState(v string) (any, error) {
         case "unhealthy":
             result = UNHEALTHY_HEALTHSTATE
         default:
-            return 0, errors.New("Unknown HealthState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

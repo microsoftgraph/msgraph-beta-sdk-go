@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Supported values for the intended purpose of a user PFX certificate.
 type UserPfxIntendedPurpose int
 
@@ -35,7 +32,7 @@ func ParseUserPfxIntendedPurpose(v string) (any, error) {
         case "wifi":
             result = WIFI_USERPFXINTENDEDPURPOSE
         default:
-            return 0, errors.New("Unknown UserPfxIntendedPurpose value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

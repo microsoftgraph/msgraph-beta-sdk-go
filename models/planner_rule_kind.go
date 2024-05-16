@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PlannerRuleKind int
 
 const (
@@ -26,7 +23,7 @@ func ParsePlannerRuleKind(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLANNERRULEKIND
         default:
-            return 0, errors.New("Unknown PlannerRuleKind value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

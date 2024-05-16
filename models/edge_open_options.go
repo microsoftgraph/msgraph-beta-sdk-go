@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for the EdgeOpensWith setting.
 type EdgeOpenOptions int
 
@@ -35,7 +32,7 @@ func ParseEdgeOpenOptions(v string) (any, error) {
         case "specificPages":
             result = SPECIFICPAGES_EDGEOPENOPTIONS
         default:
-            return 0, errors.New("Unknown EdgeOpenOptions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

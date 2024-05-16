@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type PolicyStatus int
 
 const (
@@ -26,7 +23,7 @@ func ParsePolicyStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_POLICYSTATUS
         default:
-            return 0, errors.New("Unknown PolicyStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

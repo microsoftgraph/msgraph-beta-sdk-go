@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Wi-Fi Security Types for AOSP Device Owner.
 type AospDeviceOwnerWiFiSecurityType int
 
@@ -31,7 +28,7 @@ func ParseAospDeviceOwnerWiFiSecurityType(v string) (any, error) {
         case "wpaEnterprise":
             result = WPAENTERPRISE_AOSPDEVICEOWNERWIFISECURITYTYPE
         default:
-            return 0, errors.New("Unknown AospDeviceOwnerWiFiSecurityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

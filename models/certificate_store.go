@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // CertificateStore types
 type CertificateStore int
 
@@ -21,7 +18,7 @@ func ParseCertificateStore(v string) (any, error) {
         case "machine":
             result = MACHINE_CERTIFICATESTORE
         default:
-            return 0, errors.New("Unknown CertificateStore value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

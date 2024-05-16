@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -51,7 +50,7 @@ func ParseDeviceManagementSubscriptions(v string) (any, error) {
             case "intune_SMB":
                 result |= INTUNE_SMB_DEVICEMANAGEMENTSUBSCRIPTIONS
             default:
-                return 0, errors.New("Unknown DeviceManagementSubscriptions value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

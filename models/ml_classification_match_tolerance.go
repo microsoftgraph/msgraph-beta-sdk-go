@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -32,7 +31,7 @@ func ParseMlClassificationMatchTolerance(v string) (any, error) {
             case "near":
                 result |= NEAR_MLCLASSIFICATIONMATCHTOLERANCE
             default:
-                return 0, errors.New("Unknown MlClassificationMatchTolerance value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

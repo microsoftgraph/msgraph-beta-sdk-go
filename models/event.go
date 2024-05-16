@@ -296,6 +296,16 @@ func (m *Event) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["iCalUId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetICalUId(val)
+        }
+        return nil
+    }
     res["importance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseImportance)
         if err != nil {
@@ -673,6 +683,18 @@ func (m *Event) GetHideAttendees()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetICalUId gets the iCalUId property value. A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
+// returns a *string when successful
+func (m *Event) GetICalUId()(*string) {
+    val, err := m.GetBackingStore().Get("iCalUId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1174,6 +1196,12 @@ func (m *Event) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("iCalUId", m.GetICalUId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetImportance() != nil {
         cast := (*m.GetImportance()).String()
         err = writer.WriteStringValue("importance", &cast)
@@ -1487,6 +1515,13 @@ func (m *Event) SetHideAttendees(value *bool)() {
         panic(err)
     }
 }
+// SetICalUId sets the iCalUId property value. A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
+func (m *Event) SetICalUId(value *string)() {
+    err := m.GetBackingStore().Set("iCalUId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetImportance sets the importance property value. The importance of the event. Possible values are: low, normal, high.
 func (m *Event) SetImportance(value *Importance)() {
     err := m.GetBackingStore().Set("importance", value)
@@ -1733,6 +1768,7 @@ type Eventable interface {
     GetExtensions()([]Extensionable)
     GetHasAttachments()(*bool)
     GetHideAttendees()(*bool)
+    GetICalUId()(*string)
     GetImportance()(*Importance)
     GetInstances()([]Eventable)
     GetIsAllDay()(*bool)
@@ -1778,6 +1814,7 @@ type Eventable interface {
     SetExtensions(value []Extensionable)()
     SetHasAttachments(value *bool)()
     SetHideAttendees(value *bool)()
+    SetICalUId(value *string)()
     SetImportance(value *Importance)()
     SetInstances(value []Eventable)()
     SetIsAllDay(value *bool)()

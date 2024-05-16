@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Non-EAP methods for authentication when PEAP is the selected EAP type.
 type NonEapAuthenticationMethodForPeap int
 
@@ -23,7 +20,7 @@ func ParseNonEapAuthenticationMethodForPeap(v string) (any, error) {
         case "microsoftChapVersionTwo":
             result = MICROSOFTCHAPVERSIONTWO_NONEAPAUTHENTICATIONMETHODFORPEAP
         default:
-            return 0, errors.New("Unknown NonEapAuthenticationMethodForPeap value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

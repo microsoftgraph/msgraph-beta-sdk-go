@@ -2252,6 +2252,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewProfileCardProperty(), nil
                     case "#microsoft.graph.profilePhoto":
                         return NewProfilePhoto(), nil
+                    case "#microsoft.graph.profileSource":
+                        return NewProfileSource(), nil
                     case "#microsoft.graph.program":
                         return NewProgram(), nil
                     case "#microsoft.graph.programControl":
@@ -2386,8 +2388,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSecureScore(), nil
                     case "#microsoft.graph.secureScoreControlProfile":
                         return NewSecureScoreControlProfile(), nil
-                    case "#microsoft.graph.security":
-                        return NewSecurity(), nil
                     case "#microsoft.graph.securityAction":
                         return NewSecurityAction(), nil
                     case "#microsoft.graph.securityBaselineCategoryStateSummary":

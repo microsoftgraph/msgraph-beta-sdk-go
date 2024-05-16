@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -43,7 +42,7 @@ func ParseFileVaultState(v string) (any, error) {
             case "escrowNotEnabled":
                 result |= ESCROWNOTENABLED_FILEVAULTSTATE
             default:
-                return 0, errors.New("Unknown FileVaultState value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

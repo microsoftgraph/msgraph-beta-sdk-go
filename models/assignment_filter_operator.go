@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents the different type of operators which can be used to craft the AssignmentFilter rule.
 type AssignmentFilterOperator int
 
@@ -59,7 +56,7 @@ func ParseAssignmentFilterOperator(v string) (any, error) {
         case "notEndsWith":
             result = NOTENDSWITH_ASSIGNMENTFILTEROPERATOR
         default:
-            return 0, errors.New("Unknown AssignmentFilterOperator value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The endpoint security configuration applicable platform.
 type EndpointSecurityConfigurationApplicablePlatform int
 
@@ -31,7 +28,7 @@ func ParseEndpointSecurityConfigurationApplicablePlatform(v string) (any, error)
         case "windows10AndWindowsServer":
             result = WINDOWS10ANDWINDOWSSERVER_ENDPOINTSECURITYCONFIGURATIONAPPLICABLEPLATFORM
         default:
-            return 0, errors.New("Unknown EndpointSecurityConfigurationApplicablePlatform value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

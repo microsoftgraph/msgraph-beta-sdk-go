@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // type tracking the encryption state of a secret setting value
 type DeviceManagementConfigurationSecretSettingValueState int
 
@@ -27,7 +24,7 @@ func ParseDeviceManagementConfigurationSecretSettingValueState(v string) (any, e
         case "encryptedValueToken":
             result = ENCRYPTEDVALUETOKEN_DEVICEMANAGEMENTCONFIGURATIONSECRETSETTINGVALUESTATE
         default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationSecretSettingValueState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

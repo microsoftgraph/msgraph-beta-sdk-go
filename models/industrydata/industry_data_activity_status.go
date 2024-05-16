@@ -1,7 +1,4 @@
 package industrydata
-import (
-    "errors"
-)
 type IndustryDataActivityStatus int
 
 const (
@@ -35,7 +32,7 @@ func ParseIndustryDataActivityStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INDUSTRYDATAACTIVITYSTATUS
         default:
-            return 0, errors.New("Unknown IndustryDataActivityStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

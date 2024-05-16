@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RoleSummaryStatus int
 
 const (
@@ -20,7 +17,7 @@ func ParseRoleSummaryStatus(v string) (any, error) {
         case "bad":
             result = BAD_ROLESUMMARYSTATUS
         default:
-            return 0, errors.New("Unknown RoleSummaryStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

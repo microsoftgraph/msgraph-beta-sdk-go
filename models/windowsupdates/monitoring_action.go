@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type MonitoringAction int
 
 const (
@@ -26,7 +23,7 @@ func ParseMonitoringAction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MONITORINGACTION
         default:
-            return 0, errors.New("Unknown MonitoringAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

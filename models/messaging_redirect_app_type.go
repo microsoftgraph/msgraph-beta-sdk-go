@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.
 type MessagingRedirectAppType int
 
@@ -31,7 +28,7 @@ func ParseMessagingRedirectAppType(v string) (any, error) {
         case "blocked":
             result = BLOCKED_MESSAGINGREDIRECTAPPTYPE
         default:
-            return 0, errors.New("Unknown MessagingRedirectAppType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

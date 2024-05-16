@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Data type for a configuration item inside an Android for Work application's custom configuration schema
 type AndroidForWorkAppConfigurationSchemaItemDataType int
 
@@ -39,7 +36,7 @@ func ParseAndroidForWorkAppConfigurationSchemaItemDataType(v string) (any, error
         case "hidden":
             result = HIDDEN_ANDROIDFORWORKAPPCONFIGURATIONSCHEMAITEMDATATYPE
         default:
-            return 0, errors.New("Unknown AndroidForWorkAppConfigurationSchemaItemDataType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

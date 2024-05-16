@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Android For Work required password type.
 type AndroidForWorkRequiredPasswordType int
 
@@ -47,7 +44,7 @@ func ParseAndroidForWorkRequiredPasswordType(v string) (any, error) {
         case "alphanumericWithSymbols":
             result = ALPHANUMERICWITHSYMBOLS_ANDROIDFORWORKREQUIREDPASSWORDTYPE
         default:
-            return 0, errors.New("Unknown AndroidForWorkRequiredPasswordType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

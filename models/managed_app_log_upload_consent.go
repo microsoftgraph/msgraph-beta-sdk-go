@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents the current consent status of the associated `managedAppLogCollectionRequest`.
 type ManagedAppLogUploadConsent int
 
@@ -31,7 +28,7 @@ func ParseManagedAppLogUploadConsent(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MANAGEDAPPLOGUPLOADCONSENT
         default:
-            return 0, errors.New("Unknown ManagedAppLogUploadConsent value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

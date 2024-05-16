@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Delivery state of Configuration Manager device action
 type ConfigurationManagerActionDeliveryStatus int
 
@@ -35,7 +32,7 @@ func ParseConfigurationManagerActionDeliveryStatus(v string) (any, error) {
         case "deliveredToOnPremisesServer":
             result = DELIVEREDTOONPREMISESSERVER_CONFIGURATIONMANAGERACTIONDELIVERYSTATUS
         default:
-            return 0, errors.New("Unknown ConfigurationManagerActionDeliveryStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type DhGroup int
 
 const (
@@ -32,7 +29,7 @@ func ParseDhGroup(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DHGROUP
         default:
-            return 0, errors.New("Unknown DhGroup value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

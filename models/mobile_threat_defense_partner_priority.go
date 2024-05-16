@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.
 type MobileThreatDefensePartnerPriority int
 
@@ -27,7 +24,7 @@ func ParseMobileThreatDefensePartnerPriority(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MOBILETHREATDEFENSEPARTNERPRIORITY
         default:
-            return 0, errors.New("Unknown MobileThreatDefensePartnerPriority value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

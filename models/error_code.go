@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ErrorCode int
 
 const (
@@ -30,7 +27,7 @@ func ParseErrorCode(v string) (any, error) {
         case "deleted":
             result = DELETED_ERRORCODE
         default:
-            return 0, errors.New("Unknown ErrorCode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

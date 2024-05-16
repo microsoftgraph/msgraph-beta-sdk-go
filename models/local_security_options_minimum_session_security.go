@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for LocalSecurityOptionsMinimumSessionSecurity
 type LocalSecurityOptionsMinimumSessionSecurity int
 
@@ -31,7 +28,7 @@ func ParseLocalSecurityOptionsMinimumSessionSecurity(v string) (any, error) {
         case "ntlmV2And128BitEncryption":
             result = NTLMV2AND128BITENCRYPTION_LOCALSECURITYOPTIONSMINIMUMSESSIONSECURITY
         default:
-            return 0, errors.New("Unknown LocalSecurityOptionsMinimumSessionSecurity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

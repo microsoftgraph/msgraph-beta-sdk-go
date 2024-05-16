@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ConnectorGroupType int
 
 const (
@@ -17,7 +14,7 @@ func ParseConnectorGroupType(v string) (any, error) {
         case "applicationProxy":
             result = APPLICATIONPROXY_CONNECTORGROUPTYPE
         default:
-            return 0, errors.New("Unknown ConnectorGroupType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

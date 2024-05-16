@@ -280,7 +280,7 @@ func (m *UserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetHistoryItems gets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// GetHistoryItems gets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
 // returns a []ActivityHistoryItemable when successful
 func (m *UserActivity) GetHistoryItems()([]ActivityHistoryItemable) {
     val, err := m.GetBackingStore().Get("historyItems")
@@ -502,7 +502,7 @@ func (m *UserActivity) SetFallbackUrl(value *string)() {
         panic(err)
     }
 }
-// SetHistoryItems sets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's historyItems.
+// SetHistoryItems sets the historyItems property value. Optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
 func (m *UserActivity) SetHistoryItems(value []ActivityHistoryItemable)() {
     err := m.GetBackingStore().Set("historyItems", value)
     if err != nil {

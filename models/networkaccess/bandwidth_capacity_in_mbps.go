@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type BandwidthCapacityInMbps int
 
 const (
@@ -29,7 +26,7 @@ func ParseBandwidthCapacityInMbps(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BANDWIDTHCAPACITYINMBPS
         default:
-            return 0, errors.New("Unknown BandwidthCapacityInMbps value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

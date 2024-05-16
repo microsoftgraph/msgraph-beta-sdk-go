@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type UserDefaultAuthenticationMethodType int
 
 const (
@@ -35,7 +32,7 @@ func ParseUserDefaultAuthenticationMethodType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERDEFAULTAUTHENTICATIONMETHODTYPE
         default:
-            return 0, errors.New("Unknown UserDefaultAuthenticationMethodType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

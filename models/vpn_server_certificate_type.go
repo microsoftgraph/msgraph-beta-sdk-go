@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of certificate the VPN server will present to the VPN client for authentication
 type VpnServerCertificateType int
 
@@ -31,7 +28,7 @@ func ParseVpnServerCertificateType(v string) (any, error) {
         case "ecdsa521":
             result = ECDSA521_VPNSERVERCERTIFICATETYPE
         default:
-            return 0, errors.New("Unknown VpnServerCertificateType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

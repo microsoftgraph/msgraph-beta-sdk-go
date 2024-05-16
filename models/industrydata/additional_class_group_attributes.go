@@ -1,7 +1,4 @@
 package industrydata
-import (
-    "errors"
-)
 type AdditionalClassGroupAttributes int
 
 const (
@@ -41,7 +38,7 @@ func ParseAdditionalClassGroupAttributes(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ADDITIONALCLASSGROUPATTRIBUTES
         default:
-            return 0, errors.New("Unknown AdditionalClassGroupAttributes value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

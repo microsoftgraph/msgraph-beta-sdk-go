@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum representing possible values for kiosk customization system navigation.
 type AndroidDeviceOwnerKioskCustomizationStatusBar int
 
@@ -27,7 +24,7 @@ func ParseAndroidDeviceOwnerKioskCustomizationStatusBar(v string) (any, error) {
         case "systemInfoOnly":
             result = SYSTEMINFOONLY_ANDROIDDEVICEOWNERKIOSKCUSTOMIZATIONSTATUSBAR
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerKioskCustomizationStatusBar value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

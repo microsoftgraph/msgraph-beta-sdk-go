@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ApplicationMode int
 
 const (
@@ -23,7 +20,7 @@ func ParseApplicationMode(v string) (any, error) {
         case "recommended":
             result = RECOMMENDED_APPLICATIONMODE
         default:
-            return 0, errors.New("Unknown ApplicationMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

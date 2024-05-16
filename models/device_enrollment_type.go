@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible ways of adding a mobile device to management.
 type DeviceEnrollmentType int
 
@@ -91,7 +88,7 @@ func ParseDeviceEnrollmentType(v string) (any, error) {
         case "androidAOSPUserlessDeviceEnrollment":
             result = ANDROIDAOSPUSERLESSDEVICEENROLLMENT_DEVICEENROLLMENTTYPE
         default:
-            return 0, errors.New("Unknown DeviceEnrollmentType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

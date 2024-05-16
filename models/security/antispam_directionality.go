@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type AntispamDirectionality int
 
 const (
@@ -29,7 +26,7 @@ func ParseAntispamDirectionality(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ANTISPAMDIRECTIONALITY
         default:
-            return 0, errors.New("Unknown AntispamDirectionality value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

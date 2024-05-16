@@ -1,7 +1,4 @@
 package termstore
-import (
-    "errors"
-)
 type TermGroupScope int
 
 const (
@@ -23,7 +20,7 @@ func ParseTermGroupScope(v string) (any, error) {
         case "siteCollection":
             result = SITECOLLECTION_TERMGROUPSCOPE
         default:
-            return 0, errors.New("Unknown TermGroupScope value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

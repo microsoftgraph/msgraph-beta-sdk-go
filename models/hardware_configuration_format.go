@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the supported oems of hardware configuration
 type HardwareConfigurationFormat int
 
@@ -27,7 +24,7 @@ func ParseHardwareConfigurationFormat(v string) (any, error) {
         case "surfaceDock":
             result = SURFACEDOCK_HARDWARECONFIGURATIONFORMAT
         default:
-            return 0, errors.New("Unknown HardwareConfigurationFormat value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

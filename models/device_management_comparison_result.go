@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Setting comparison result type
 type DeviceManagementComparisonResult int
 
@@ -35,7 +32,7 @@ func ParseDeviceManagementComparisonResult(v string) (any, error) {
         case "removed":
             result = REMOVED_DEVICEMANAGEMENTCOMPARISONRESULT
         default:
-            return 0, errors.New("Unknown DeviceManagementComparisonResult value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

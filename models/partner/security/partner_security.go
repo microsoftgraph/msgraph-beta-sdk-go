@@ -42,7 +42,7 @@ func (m *PartnerSecurity) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetSecurityAlerts gets the securityAlerts property value. The securityAlerts property
+// GetSecurityAlerts gets the securityAlerts property value. The security alerts or a vulnerability of a CSP partner's customer that the partner must be made aware of for further action.
 // returns a []PartnerSecurityAlertable when successful
 func (m *PartnerSecurity) GetSecurityAlerts()([]PartnerSecurityAlertable) {
     val, err := m.GetBackingStore().Get("securityAlerts")
@@ -74,7 +74,7 @@ func (m *PartnerSecurity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetSecurityAlerts sets the securityAlerts property value. The securityAlerts property
+// SetSecurityAlerts sets the securityAlerts property value. The security alerts or a vulnerability of a CSP partner's customer that the partner must be made aware of for further action.
 func (m *PartnerSecurity) SetSecurityAlerts(value []PartnerSecurityAlertable)() {
     err := m.GetBackingStore().Set("securityAlerts", value)
     if err != nil {

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Template subtype
 type DeviceManagementTemplateSubtype int
 
@@ -55,7 +52,7 @@ func ParseDeviceManagementTemplateSubtype(v string) (any, error) {
         case "firewallSharedPortlist":
             result = FIREWALLSHAREDPORTLIST_DEVICEMANAGEMENTTEMPLATESUBTYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementTemplateSubtype value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

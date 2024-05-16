@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the type of elevated process
 type PrivilegeManagementProcessType int
 
@@ -31,7 +28,7 @@ func ParsePrivilegeManagementProcessType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRIVILEGEMANAGEMENTPROCESSTYPE
         default:
-            return 0, errors.New("Unknown PrivilegeManagementProcessType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

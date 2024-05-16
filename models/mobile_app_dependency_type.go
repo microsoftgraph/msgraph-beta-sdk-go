@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the dependency type associated with a relationship between two mobile apps.
 type MobileAppDependencyType int
 
@@ -23,7 +20,7 @@ func ParseMobileAppDependencyType(v string) (any, error) {
         case "autoInstall":
             result = AUTOINSTALL_MOBILEAPPDEPENDENCYTYPE
         default:
-            return 0, errors.New("Unknown MobileAppDependencyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

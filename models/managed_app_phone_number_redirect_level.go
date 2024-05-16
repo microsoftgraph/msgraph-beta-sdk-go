@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The classes of apps that are allowed to click-to-open a phone number, for making phone calls or sending text messages.
 type ManagedAppPhoneNumberRedirectLevel int
 
@@ -31,7 +28,7 @@ func ParseManagedAppPhoneNumberRedirectLevel(v string) (any, error) {
         case "blocked":
             result = BLOCKED_MANAGEDAPPPHONENUMBERREDIRECTLEVEL
         default:
-            return 0, errors.New("Unknown ManagedAppPhoneNumberRedirectLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

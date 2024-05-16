@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // This enum represents associated assignment payload type
 type AssociatedAssignmentPayloadType int
 
@@ -63,7 +60,7 @@ func ParseAssociatedAssignmentPayloadType(v string) (any, error) {
         case "deviceManagmentConfigurationAndCompliancePolicy":
             result = DEVICEMANAGMENTCONFIGURATIONANDCOMPLIANCEPOLICY_ASSOCIATEDASSIGNMENTPAYLOADTYPE
         default:
-            return 0, errors.New("Unknown AssociatedAssignmentPayloadType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

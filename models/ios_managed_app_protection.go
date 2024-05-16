@@ -34,6 +34,18 @@ func (m *IosManagedAppProtection) GetAllowedIosDeviceModels()(*string) {
     }
     return nil
 }
+// GetAllowWidgetContentSync gets the allowWidgetContentSync property value. Indicates  if content sync for widgets is allowed for iOS on App Protection Policies
+// returns a *bool when successful
+func (m *IosManagedAppProtection) GetAllowWidgetContentSync()(*bool) {
+    val, err := m.GetBackingStore().Get("allowWidgetContentSync")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
 // returns a *ManagedAppRemediationAction when successful
 func (m *IosManagedAppProtection) GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction) {
@@ -189,6 +201,16 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetAllowedIosDeviceModels(val)
+        }
+        return nil
+    }
+    res["allowWidgetContentSync"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowWidgetContentSync(val)
         }
         return nil
     }
@@ -526,6 +548,12 @@ func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("allowWidgetContentSync", m.GetAllowWidgetContentSync())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAppActionIfAccountIsClockedOut() != nil {
         cast := (*m.GetAppActionIfAccountIsClockedOut()).String()
         err = writer.WriteStringValue("appActionIfAccountIsClockedOut", &cast)
@@ -666,6 +694,13 @@ func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f48
 // SetAllowedIosDeviceModels sets the allowedIosDeviceModels property value. Semicolon seperated list of device models allowed, as a string, for the managed app to work.
 func (m *IosManagedAppProtection) SetAllowedIosDeviceModels(value *string)() {
     err := m.GetBackingStore().Set("allowedIosDeviceModels", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowWidgetContentSync sets the allowWidgetContentSync property value. Indicates  if content sync for widgets is allowed for iOS on App Protection Policies
+func (m *IosManagedAppProtection) SetAllowWidgetContentSync(value *bool)() {
+    err := m.GetBackingStore().Set("allowWidgetContentSync", value)
     if err != nil {
         panic(err)
     }
@@ -814,6 +849,7 @@ type IosManagedAppProtectionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     TargetedManagedAppProtectionable
     GetAllowedIosDeviceModels()(*string)
+    GetAllowWidgetContentSync()(*bool)
     GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction)
     GetAppActionIfIosDeviceModelNotAllowed()(*ManagedAppRemediationAction)
     GetAppDataEncryptionType()(*ManagedAppDataEncryptionType)
@@ -835,6 +871,7 @@ type IosManagedAppProtectionable interface {
     GetProtectInboundDataFromUnknownSources()(*bool)
     GetThirdPartyKeyboardsBlocked()(*bool)
     SetAllowedIosDeviceModels(value *string)()
+    SetAllowWidgetContentSync(value *bool)()
     SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)()
     SetAppActionIfIosDeviceModelNotAllowed(value *ManagedAppRemediationAction)()
     SetAppDataEncryptionType(value *ManagedAppDataEncryptionType)()

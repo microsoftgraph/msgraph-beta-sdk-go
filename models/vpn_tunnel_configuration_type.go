@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of tunnels that will be present to the VPN client for configuration
 type VpnTunnelConfigurationType int
 
@@ -27,7 +24,7 @@ func ParseVpnTunnelConfigurationType(v string) (any, error) {
         case "wifi":
             result = WIFI_VPNTUNNELCONFIGURATIONTYPE
         default:
-            return 0, errors.New("Unknown VpnTunnelConfigurationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

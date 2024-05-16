@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type VirtualEventRegistrationQuestionAnswerInputType int
 
 const (
@@ -32,7 +29,7 @@ func ParseVirtualEventRegistrationQuestionAnswerInputType(v string) (any, error)
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VIRTUALEVENTREGISTRATIONQUESTIONANSWERINPUTTYPE
         default:
-            return 0, errors.New("Unknown VirtualEventRegistrationQuestionAnswerInputType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

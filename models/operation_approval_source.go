@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Source of the action on the approval request.
 type OperationApprovalSource int
 
@@ -31,7 +28,7 @@ func ParseOperationApprovalSource(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OPERATIONAPPROVALSOURCE
         default:
-            return 0, errors.New("Unknown OperationApprovalSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

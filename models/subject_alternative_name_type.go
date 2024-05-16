@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -51,7 +50,7 @@ func ParseSubjectAlternativeNameType(v string) (any, error) {
             case "universalResourceIdentifier":
                 result |= UNIVERSALRESOURCEIDENTIFIER_SUBJECTALTERNATIVENAMETYPE
             default:
-                return 0, errors.New("Unknown SubjectAlternativeNameType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

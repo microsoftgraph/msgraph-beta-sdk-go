@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows quality update classification
 type WindowsQualityUpdateClassification int
 
@@ -27,7 +24,7 @@ func ParseWindowsQualityUpdateClassification(v string) (any, error) {
         case "nonSecurity":
             result = NONSECURITY_WINDOWSQUALITYUPDATECLASSIFICATION
         default:
-            return 0, errors.New("Unknown WindowsQualityUpdateClassification value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

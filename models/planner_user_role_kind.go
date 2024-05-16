@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PlannerUserRoleKind int
 
 const (
@@ -20,7 +17,7 @@ func ParsePlannerUserRoleKind(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLANNERUSERROLEKIND
         default:
-            return 0, errors.New("Unknown PlannerUserRoleKind value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

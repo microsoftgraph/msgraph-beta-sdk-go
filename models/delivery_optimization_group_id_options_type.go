@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for the DeliveryOptimizationGroupIdOptionsType setting.
 type DeliveryOptimizationGroupIdOptionsType int
 
@@ -35,7 +32,7 @@ func ParseDeliveryOptimizationGroupIdOptionsType(v string) (any, error) {
         case "dnsSuffix":
             result = DNSSUFFIX_DELIVERYOPTIMIZATIONGROUPIDOPTIONSTYPE
         default:
-            return 0, errors.New("Unknown DeliveryOptimizationGroupIdOptionsType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

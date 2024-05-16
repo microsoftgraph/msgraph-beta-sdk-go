@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MessageStatus int
 
 const (
@@ -38,7 +35,7 @@ func ParseMessageStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MESSAGESTATUS
         default:
-            return 0, errors.New("Unknown MessageStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

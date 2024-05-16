@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type RequestedDeploymentStateValue int
 
 const (
@@ -26,7 +23,7 @@ func ParseRequestedDeploymentStateValue(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REQUESTEDDEPLOYMENTSTATEVALUE
         default:
-            return 0, errors.New("Unknown RequestedDeploymentStateValue value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

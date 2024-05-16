@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // ManagedInstallerStatus
 type ManagedInstallerStatus int
 
@@ -23,7 +20,7 @@ func ParseManagedInstallerStatus(v string) (any, error) {
         case "enabled":
             result = ENABLED_MANAGEDINSTALLERSTATUS
         default:
-            return 0, errors.New("Unknown ManagedInstallerStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

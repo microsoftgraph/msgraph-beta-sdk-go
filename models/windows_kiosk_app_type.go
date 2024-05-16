@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of Windows kiosk app.
 type WindowsKioskAppType int
 
@@ -31,7 +28,7 @@ func ParseWindowsKioskAppType(v string) (any, error) {
         case "aumId":
             result = AUMID_WINDOWSKIOSKAPPTYPE
         default:
-            return 0, errors.New("Unknown WindowsKioskAppType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

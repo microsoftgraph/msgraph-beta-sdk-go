@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AzureEncryption int
 
 const (
@@ -26,7 +23,7 @@ func ParseAzureEncryption(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AZUREENCRYPTION
         default:
-            return 0, errors.New("Unknown AzureEncryption value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

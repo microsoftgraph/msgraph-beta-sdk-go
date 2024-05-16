@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // State of remote assistance for the account
 type RemoteAssistanceState int
 
@@ -23,7 +20,7 @@ func ParseRemoteAssistanceState(v string) (any, error) {
         case "enabled":
             result = ENABLED_REMOTEASSISTANCESTATE
         default:
-            return 0, errors.New("Unknown RemoteAssistanceState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

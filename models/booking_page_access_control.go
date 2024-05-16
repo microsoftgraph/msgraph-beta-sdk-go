@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type BookingPageAccessControl int
 
 const (
@@ -23,7 +20,7 @@ func ParseBookingPageAccessControl(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_BOOKINGPAGEACCESSCONTROL
         default:
-            return 0, errors.New("Unknown BookingPageAccessControl value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthorizationSystemType int
 
 const (
@@ -26,7 +23,7 @@ func ParseAuthorizationSystemType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHORIZATIONSYSTEMTYPE
         default:
-            return 0, errors.New("Unknown AuthorizationSystemType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

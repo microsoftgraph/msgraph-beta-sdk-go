@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of VPN client authentication type
 type VpnClientAuthenticationType int
 
@@ -23,7 +20,7 @@ func ParseVpnClientAuthenticationType(v string) (any, error) {
         case "deviceAuthentication":
             result = DEVICEAUTHENTICATION_VPNCLIENTAUTHENTICATIONTYPE
         default:
-            return 0, errors.New("Unknown VpnClientAuthenticationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

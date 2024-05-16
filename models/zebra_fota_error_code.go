@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An error code indicating the failure reason, when the deployment state is createFailed. Possible values: See zebraFotaErrorCode enum.
 type ZebraFotaErrorCode int
 
@@ -47,7 +44,7 @@ func ParseZebraFotaErrorCode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ZEBRAFOTAERRORCODE
         default:
-            return 0, errors.New("Unknown ZebraFotaErrorCode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

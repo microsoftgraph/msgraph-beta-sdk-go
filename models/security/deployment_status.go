@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type DeploymentStatus int
 
 const (
@@ -44,7 +41,7 @@ func ParseDeploymentStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEPLOYMENTSTATUS
         default:
-            return 0, errors.New("Unknown DeploymentStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

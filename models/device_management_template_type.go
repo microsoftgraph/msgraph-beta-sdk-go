@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Template type
 type DeviceManagementTemplateType int
 
@@ -63,7 +60,7 @@ func ParseDeviceManagementTemplateType(v string) (any, error) {
         case "firewallSharedSettings":
             result = FIREWALLSHAREDSETTINGS_DEVICEMANAGEMENTTEMPLATETYPE
         default:
-            return 0, errors.New("Unknown DeviceManagementTemplateType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

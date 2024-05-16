@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type NetworkType int
 
 const (
@@ -32,7 +29,7 @@ func ParseNetworkType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_NETWORKTYPE
         default:
-            return 0, errors.New("Unknown NetworkType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

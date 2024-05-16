@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamworkSupportedClient int
 
 const (
@@ -32,7 +29,7 @@ func ParseTeamworkSupportedClient(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKSUPPORTEDCLIENT
         default:
-            return 0, errors.New("Unknown TeamworkSupportedClient value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

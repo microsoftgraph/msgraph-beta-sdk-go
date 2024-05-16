@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PlannerExternalTaskSourceDisplayType int
 
 const (
@@ -23,7 +20,7 @@ func ParsePlannerExternalTaskSourceDisplayType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLANNEREXTERNALTASKSOURCEDISPLAYTYPE
         default:
-            return 0, errors.New("Unknown PlannerExternalTaskSourceDisplayType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

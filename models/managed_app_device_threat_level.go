@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The maxium threat level allowed for an app to be compliant.
 type ManagedAppDeviceThreatLevel int
 
@@ -35,7 +32,7 @@ func ParseManagedAppDeviceThreatLevel(v string) (any, error) {
         case "high":
             result = HIGH_MANAGEDAPPDEVICETHREATLEVEL
         default:
-            return 0, errors.New("Unknown ManagedAppDeviceThreatLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

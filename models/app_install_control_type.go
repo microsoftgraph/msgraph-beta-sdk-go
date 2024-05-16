@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // App Install control Setting
 type AppInstallControlType int
 
@@ -35,7 +32,7 @@ func ParseAppInstallControlType(v string) (any, error) {
         case "preferStore":
             result = PREFERSTORE_APPINSTALLCONTROLTYPE
         default:
-            return 0, errors.New("Unknown AppInstallControlType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

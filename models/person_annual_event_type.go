@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PersonAnnualEventType int
 
 const (
@@ -29,7 +26,7 @@ func ParsePersonAnnualEventType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PERSONANNUALEVENTTYPE
         default:
-            return 0, errors.New("Unknown PersonAnnualEventType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

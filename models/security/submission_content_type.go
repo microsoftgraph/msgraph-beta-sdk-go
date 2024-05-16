@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type SubmissionContentType int
 
 const (
@@ -29,7 +26,7 @@ func ParseSubmissionContentType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBMISSIONCONTENTTYPE
         default:
-            return 0, errors.New("Unknown SubmissionContentType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

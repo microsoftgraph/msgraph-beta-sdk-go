@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of the ConfigurationUsage list.
 type ConfigurationUsage int
 
@@ -31,7 +28,7 @@ func ParseConfigurationUsage(v string) (any, error) {
         case "notConfigured":
             result = NOTCONFIGURED_CONFIGURATIONUSAGE
         default:
-            return 0, errors.New("Unknown ConfigurationUsage value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

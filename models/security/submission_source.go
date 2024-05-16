@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type SubmissionSource int
 
 const (
@@ -23,7 +20,7 @@ func ParseSubmissionSource(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBMISSIONSOURCE
         default:
-            return 0, errors.New("Unknown SubmissionSource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

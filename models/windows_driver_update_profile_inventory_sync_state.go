@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows DnF update inventory sync state.
 type WindowsDriverUpdateProfileInventorySyncState int
 
@@ -27,7 +24,7 @@ func ParseWindowsDriverUpdateProfileInventorySyncState(v string) (any, error) {
         case "failure":
             result = FAILURE_WINDOWSDRIVERUPDATEPROFILEINVENTORYSYNCSTATE
         default:
-            return 0, errors.New("Unknown WindowsDriverUpdateProfileInventorySyncState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

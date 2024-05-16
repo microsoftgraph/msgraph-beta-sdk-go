@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.
 type UserExperienceAnalyticsAnomalyState int
 
@@ -39,7 +36,7 @@ func ParseUserExperienceAnalyticsAnomalyState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSANOMALYSTATE
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsAnomalyState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

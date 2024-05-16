@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Apple VPN connection type.
 type AppleVpnConnectionType int
 
@@ -91,7 +88,7 @@ func ParseAppleVpnConnectionType(v string) (any, error) {
         case "microsoftProtect":
             result = MICROSOFTPROTECT_APPLEVPNCONNECTIONTYPE
         default:
-            return 0, errors.New("Unknown AppleVpnConnectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

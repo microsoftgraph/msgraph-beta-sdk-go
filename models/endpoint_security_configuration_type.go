@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The endpoint security policy type.
 type EndpointSecurityConfigurationType int
 
@@ -43,7 +40,7 @@ func ParseEndpointSecurityConfigurationType(v string) (any, error) {
         case "accountProtection":
             result = ACCOUNTPROTECTION_ENDPOINTSECURITYCONFIGURATIONTYPE
         default:
-            return 0, errors.New("Unknown EndpointSecurityConfigurationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

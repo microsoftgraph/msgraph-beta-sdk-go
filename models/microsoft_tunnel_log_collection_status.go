@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Enum type that represent the status of log collection
 type MicrosoftTunnelLogCollectionStatus int
 
@@ -31,7 +28,7 @@ func ParseMicrosoftTunnelLogCollectionStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
         default:
-            return 0, errors.New("Unknown MicrosoftTunnelLogCollectionStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

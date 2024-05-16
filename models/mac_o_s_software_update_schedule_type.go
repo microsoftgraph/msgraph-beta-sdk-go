@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Update schedule type for macOS software updates.
 type MacOSSoftwareUpdateScheduleType int
 
@@ -27,7 +24,7 @@ func ParseMacOSSoftwareUpdateScheduleType(v string) (any, error) {
         case "updateOutsideOfTimeWindows":
             result = UPDATEOUTSIDEOFTIMEWINDOWS_MACOSSOFTWAREUPDATESCHEDULETYPE
         default:
-            return 0, errors.New("Unknown MacOSSoftwareUpdateScheduleType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

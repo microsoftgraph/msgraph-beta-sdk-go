@@ -1,7 +1,4 @@
 package devicemanagement
-import (
-    "errors"
-)
 type AlertRuleTemplate int
 
 const (
@@ -35,7 +32,7 @@ func ParseAlertRuleTemplate(v string) (any, error) {
         case "cloudPcInaccessibleScenario":
             result = CLOUDPCINACCESSIBLESCENARIO_ALERTRULETEMPLATE
         default:
-            return 0, errors.New("Unknown AlertRuleTemplate value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Supported values for the derived credential issuer.
 type DeviceManagementDerivedCredentialIssuer int
 
@@ -31,7 +28,7 @@ func ParseDeviceManagementDerivedCredentialIssuer(v string) (any, error) {
         case "xTec":
             result = XTEC_DEVICEMANAGEMENTDERIVEDCREDENTIALISSUER
         default:
-            return 0, errors.New("Unknown DeviceManagementDerivedCredentialIssuer value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

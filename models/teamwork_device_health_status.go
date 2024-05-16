@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TeamworkDeviceHealthStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseTeamworkDeviceHealthStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TEAMWORKDEVICEHEALTHSTATUS
         default:
-            return 0, errors.New("Unknown TeamworkDeviceHealthStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

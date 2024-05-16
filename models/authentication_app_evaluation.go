@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthenticationAppEvaluation int
 
 const (
@@ -23,7 +20,7 @@ func ParseAuthenticationAppEvaluation(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONAPPEVALUATION
         default:
-            return 0, errors.New("Unknown AuthenticationAppEvaluation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

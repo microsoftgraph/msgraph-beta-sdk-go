@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ReplyRestriction int
 
 const (
@@ -23,7 +20,7 @@ func ParseReplyRestriction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REPLYRESTRICTION
         default:
-            return 0, errors.New("Unknown ReplyRestriction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

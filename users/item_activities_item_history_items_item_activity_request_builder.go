@@ -11,7 +11,7 @@ import (
 type ItemActivitiesItemHistoryItemsItemActivityRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetQueryParameters get activity from users
+// ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetQueryParameters optional. NavigationProperty/Containment; navigation property to the associated activity.
 type ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemActivitiesItemHistoryItemsItemActivityRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewItemActivitiesItemHistoryItemsItemActivityRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get activity from users
+// Get optional. NavigationProperty/Containment; navigation property to the associated activity.
 // returns a UserActivityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, error) {
@@ -60,7 +60,7 @@ func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) Get(ctx conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable), nil
 }
-// ToGetRequestInformation get activity from users
+// ToGetRequestInformation optional. NavigationProperty/Containment; navigation property to the associated activity.
 // returns a *RequestInformation when successful
 func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

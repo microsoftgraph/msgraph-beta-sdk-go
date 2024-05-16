@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Wi-Fi authentication method.
 type WiFiAuthenticationMethod int
 
@@ -27,7 +24,7 @@ func ParseWiFiAuthenticationMethod(v string) (any, error) {
         case "derivedCredential":
             result = DERIVEDCREDENTIAL_WIFIAUTHENTICATIONMETHOD
         default:
-            return 0, errors.New("Unknown WiFiAuthenticationMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

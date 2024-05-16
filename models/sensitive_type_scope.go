@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -32,7 +31,7 @@ func ParseSensitiveTypeScope(v string) (any, error) {
             case "partialDocument":
                 result |= PARTIALDOCUMENT_SENSITIVETYPESCOPE
             default:
-                return 0, errors.New("Unknown SensitiveTypeScope value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

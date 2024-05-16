@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for ApplicationGuardEnabledOptions
 type ApplicationGuardEnabledOptions int
 
@@ -31,7 +28,7 @@ func ParseApplicationGuardEnabledOptions(v string) (any, error) {
         case "enabledForEdgeAndOffice":
             result = ENABLEDFOREDGEANDOFFICE_APPLICATIONGUARDENABLEDOPTIONS
         default:
-            return 0, errors.New("Unknown ApplicationGuardEnabledOptions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

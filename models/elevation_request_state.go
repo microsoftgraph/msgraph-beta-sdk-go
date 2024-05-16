@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates state of elevation request
 type ElevationRequestState int
 
@@ -43,7 +40,7 @@ func ParseElevationRequestState(v string) (any, error) {
         case "revoked":
             result = REVOKED_ELEVATIONREQUESTSTATE
         default:
-            return 0, errors.New("Unknown ElevationRequestState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

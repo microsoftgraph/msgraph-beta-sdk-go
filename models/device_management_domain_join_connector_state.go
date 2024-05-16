@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The ODJ request states.
 type DeviceManagementDomainJoinConnectorState int
 
@@ -27,7 +24,7 @@ func ParseDeviceManagementDomainJoinConnectorState(v string) (any, error) {
         case "inactive":
             result = INACTIVE_DEVICEMANAGEMENTDOMAINJOINCONNECTORSTATE
         default:
-            return 0, errors.New("Unknown DeviceManagementDomainJoinConnectorState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

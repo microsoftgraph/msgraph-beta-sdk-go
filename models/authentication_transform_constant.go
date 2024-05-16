@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Authentication transform values for Windows10 VPN policies with IKEv2 connection type.
 type AuthenticationTransformConstant int
 
@@ -39,7 +36,7 @@ func ParseAuthenticationTransformConstant(v string) (any, error) {
         case "aes256Gcm":
             result = AES256GCM_AUTHENTICATIONTRANSFORMCONSTANT
         default:
-            return 0, errors.New("Unknown AuthenticationTransformConstant value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

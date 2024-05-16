@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Locations which can be used to bring data into organization documents
 type ManagedAppDataIngestionLocation int
 
@@ -31,7 +28,7 @@ func ParseManagedAppDataIngestionLocation(v string) (any, error) {
         case "photoLibrary":
             result = PHOTOLIBRARY_MANAGEDAPPDATAINGESTIONLOCATION
         default:
-            return 0, errors.New("Unknown ManagedAppDataIngestionLocation value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

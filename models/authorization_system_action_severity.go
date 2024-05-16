@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthorizationSystemActionSeverity int
 
 const (
@@ -23,7 +20,7 @@ func ParseAuthorizationSystemActionSeverity(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHORIZATIONSYSTEMACTIONSEVERITY
         default:
-            return 0, errors.New("Unknown AuthorizationSystemActionSeverity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

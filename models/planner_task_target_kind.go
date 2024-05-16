@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PlannerTaskTargetKind int
 
 const (
@@ -20,7 +17,7 @@ func ParsePlannerTaskTargetKind(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLANNERTASKTARGETKIND
         default:
-            return 0, errors.New("Unknown PlannerTaskTargetKind value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

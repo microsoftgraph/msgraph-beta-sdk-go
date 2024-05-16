@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -43,7 +42,7 @@ func ParseDeviceManagementConfigurationSettingUsage(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
             default:
-                return 0, errors.New("Unknown DeviceManagementConfigurationSettingUsage value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

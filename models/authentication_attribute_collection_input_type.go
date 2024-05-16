@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthenticationAttributeCollectionInputType int
 
 const (
@@ -29,7 +26,7 @@ func ParseAuthenticationAttributeCollectionInputType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONATTRIBUTECOLLECTIONINPUTTYPE
         default:
-            return 0, errors.New("Unknown AuthenticationAttributeCollectionInputType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

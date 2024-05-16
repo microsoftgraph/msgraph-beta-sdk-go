@@ -88,7 +88,7 @@ func (m *AffectedResource) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceId gets the resourceId property value. The resourceId property
+// GetResourceId gets the resourceId property value. The resource path of the resource affected by the security alert.
 // returns a *string when successful
 func (m *AffectedResource) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
@@ -100,7 +100,7 @@ func (m *AffectedResource) GetResourceId()(*string) {
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. The resourceType property
+// GetResourceType gets the resourceType property value. The type of resource.
 // returns a *string when successful
 func (m *AffectedResource) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
@@ -158,14 +158,14 @@ func (m *AffectedResource) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. The resourceId property
+// SetResourceId sets the resourceId property value. The resource path of the resource affected by the security alert.
 func (m *AffectedResource) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. The resourceType property
+// SetResourceType sets the resourceType property value. The type of resource.
 func (m *AffectedResource) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {

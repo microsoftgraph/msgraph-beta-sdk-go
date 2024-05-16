@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type DeviceAssetIdentifier int
 
 const (
@@ -32,7 +29,7 @@ func ParseDeviceAssetIdentifier(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEASSETIDENTIFIER
         default:
-            return 0, errors.New("Unknown DeviceAssetIdentifier value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

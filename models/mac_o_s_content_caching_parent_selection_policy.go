@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Determines how content caches select a parent cache.
 type MacOSContentCachingParentSelectionPolicy int
 
@@ -39,7 +36,7 @@ func ParseMacOSContentCachingParentSelectionPolicy(v string) (any, error) {
         case "stickyAvailable":
             result = STICKYAVAILABLE_MACOSCONTENTCACHINGPARENTSELECTIONPOLICY
         default:
-            return 0, errors.New("Unknown MacOSContentCachingParentSelectionPolicy value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

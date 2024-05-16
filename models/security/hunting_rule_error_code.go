@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type HuntingRuleErrorCode int
 
 const (
@@ -44,7 +41,7 @@ func ParseHuntingRuleErrorCode(v string) (any, error) {
         case "noImpactedEntity":
             result = NOIMPACTEDENTITY_HUNTINGRULEERRORCODE
         default:
-            return 0, errors.New("Unknown HuntingRuleErrorCode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

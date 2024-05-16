@@ -1,7 +1,4 @@
 package managedtenants
-import (
-    "errors"
-)
 type TenantOnboardingEligibilityReason int
 
 const (
@@ -32,7 +29,7 @@ func ParseTenantOnboardingEligibilityReason(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TENANTONBOARDINGELIGIBILITYREASON
         default:
-            return 0, errors.New("Unknown TenantOnboardingEligibilityReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

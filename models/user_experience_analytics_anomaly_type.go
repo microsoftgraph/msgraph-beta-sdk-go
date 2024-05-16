@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the category of the anomaly. Eg: anomaly type can be device, application, stop error, driver or other.
 type UserExperienceAnalyticsAnomalyType int
 
@@ -39,7 +36,7 @@ func ParseUserExperienceAnalyticsAnomalyType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USEREXPERIENCEANALYTICSANOMALYTYPE
         default:
-            return 0, errors.New("Unknown UserExperienceAnalyticsAnomalyType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

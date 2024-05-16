@@ -5,27 +5,27 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ApplicationDetail the details of the application which the user has requested to elevate
-type ApplicationDetail struct {
+// ElevationRequestApplicationDetail the details of the application which the user has requested to elevate
+type ElevationRequestApplicationDetail struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewApplicationDetail instantiates a new ApplicationDetail and sets the default values.
-func NewApplicationDetail()(*ApplicationDetail) {
-    m := &ApplicationDetail{
+// NewElevationRequestApplicationDetail instantiates a new ElevationRequestApplicationDetail and sets the default values.
+func NewElevationRequestApplicationDetail()(*ElevationRequestApplicationDetail) {
+    m := &ElevationRequestApplicationDetail{
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateApplicationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateElevationRequestApplicationDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateApplicationDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewApplicationDetail(), nil
+func CreateElevationRequestApplicationDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewElevationRequestApplicationDetail(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *ApplicationDetail) GetAdditionalData()(map[string]any) {
+func (m *ElevationRequestApplicationDetail) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
         panic(err)
@@ -38,12 +38,12 @@ func (m *ApplicationDetail) GetAdditionalData()(map[string]any) {
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *ApplicationDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+func (m *ElevationRequestApplicationDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *ApplicationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ElevationRequestApplicationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["fileDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
@@ -147,9 +147,9 @@ func (m *ApplicationDetail) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetFileDescription gets the fileDescription property value. The path of the file in the request for elevation, for example, %programfiles%/git/cmd
+// GetFileDescription gets the fileDescription property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
 // returns a *string when successful
-func (m *ApplicationDetail) GetFileDescription()(*string) {
+func (m *ElevationRequestApplicationDetail) GetFileDescription()(*string) {
     val, err := m.GetBackingStore().Get("fileDescription")
     if err != nil {
         panic(err)
@@ -161,7 +161,7 @@ func (m *ApplicationDetail) GetFileDescription()(*string) {
 }
 // GetFileHash gets the fileHash property value. The SHA256 hash of the file in the request for elevation, for example, '18ee24150dcb1d96752a4d6dd0f20dfd8ba8c38527e40aa8509b7adecf78f9c6'
 // returns a *string when successful
-func (m *ApplicationDetail) GetFileHash()(*string) {
+func (m *ElevationRequestApplicationDetail) GetFileHash()(*string) {
     val, err := m.GetBackingStore().Get("fileHash")
     if err != nil {
         panic(err)
@@ -173,7 +173,7 @@ func (m *ApplicationDetail) GetFileHash()(*string) {
 }
 // GetFileName gets the fileName property value. The name of the file in the request for elevation, for example, git.exe
 // returns a *string when successful
-func (m *ApplicationDetail) GetFileName()(*string) {
+func (m *ElevationRequestApplicationDetail) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
     if err != nil {
         panic(err)
@@ -183,9 +183,9 @@ func (m *ApplicationDetail) GetFileName()(*string) {
     }
     return nil
 }
-// GetFilePath gets the filePath property value. The path of the file in the request for elevation, for example, %programfiles%/git/cmd
+// GetFilePath gets the filePath property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
 // returns a *string when successful
-func (m *ApplicationDetail) GetFilePath()(*string) {
+func (m *ElevationRequestApplicationDetail) GetFilePath()(*string) {
     val, err := m.GetBackingStore().Get("filePath")
     if err != nil {
         panic(err)
@@ -197,7 +197,7 @@ func (m *ApplicationDetail) GetFilePath()(*string) {
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
-func (m *ApplicationDetail) GetOdataType()(*string) {
+func (m *ElevationRequestApplicationDetail) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
@@ -209,7 +209,7 @@ func (m *ApplicationDetail) GetOdataType()(*string) {
 }
 // GetProductInternalName gets the productInternalName property value. The internal name of the application for which elevation request has been made. For example, 'git'
 // returns a *string when successful
-func (m *ApplicationDetail) GetProductInternalName()(*string) {
+func (m *ElevationRequestApplicationDetail) GetProductInternalName()(*string) {
     val, err := m.GetBackingStore().Get("productInternalName")
     if err != nil {
         panic(err)
@@ -221,7 +221,7 @@ func (m *ApplicationDetail) GetProductInternalName()(*string) {
 }
 // GetProductName gets the productName property value. The product name of the application for which elevation request has been made. For example, 'Git'
 // returns a *string when successful
-func (m *ApplicationDetail) GetProductName()(*string) {
+func (m *ElevationRequestApplicationDetail) GetProductName()(*string) {
     val, err := m.GetBackingStore().Get("productName")
     if err != nil {
         panic(err)
@@ -233,7 +233,7 @@ func (m *ApplicationDetail) GetProductName()(*string) {
 }
 // GetProductVersion gets the productVersion property value. The product version of the application for which elevation request has been made. For example, '2.40.1.0'
 // returns a *string when successful
-func (m *ApplicationDetail) GetProductVersion()(*string) {
+func (m *ElevationRequestApplicationDetail) GetProductVersion()(*string) {
     val, err := m.GetBackingStore().Get("productVersion")
     if err != nil {
         panic(err)
@@ -243,9 +243,9 @@ func (m *ApplicationDetail) GetProductVersion()(*string) {
     }
     return nil
 }
-// GetPublisherCert gets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encodedleafcert1, encodedleafcert2....]
+// GetPublisherCert gets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encoded_leaf_cert1, encoded_leaf_cert2....]
 // returns a *string when successful
-func (m *ApplicationDetail) GetPublisherCert()(*string) {
+func (m *ElevationRequestApplicationDetail) GetPublisherCert()(*string) {
     val, err := m.GetBackingStore().Get("publisherCert")
     if err != nil {
         panic(err)
@@ -257,7 +257,7 @@ func (m *ApplicationDetail) GetPublisherCert()(*string) {
 }
 // GetPublisherName gets the publisherName property value. The certificate issuer name of the certificate used to sign the application, for example, 'Sectigo Public Code Signing CA R36'
 // returns a *string when successful
-func (m *ApplicationDetail) GetPublisherName()(*string) {
+func (m *ElevationRequestApplicationDetail) GetPublisherName()(*string) {
     val, err := m.GetBackingStore().Get("publisherName")
     if err != nil {
         panic(err)
@@ -268,7 +268,7 @@ func (m *ApplicationDetail) GetPublisherName()(*string) {
     return nil
 }
 // Serialize serializes information the current object
-func (m *ApplicationDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *ElevationRequestApplicationDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("fileDescription", m.GetFileDescription())
         if err != nil {
@@ -338,87 +338,87 @@ func (m *ApplicationDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     return nil
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ApplicationDetail) SetAdditionalData(value map[string]any)() {
+func (m *ElevationRequestApplicationDetail) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *ApplicationDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+func (m *ElevationRequestApplicationDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFileDescription sets the fileDescription property value. The path of the file in the request for elevation, for example, %programfiles%/git/cmd
-func (m *ApplicationDetail) SetFileDescription(value *string)() {
+// SetFileDescription sets the fileDescription property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
+func (m *ElevationRequestApplicationDetail) SetFileDescription(value *string)() {
     err := m.GetBackingStore().Set("fileDescription", value)
     if err != nil {
         panic(err)
     }
 }
 // SetFileHash sets the fileHash property value. The SHA256 hash of the file in the request for elevation, for example, '18ee24150dcb1d96752a4d6dd0f20dfd8ba8c38527e40aa8509b7adecf78f9c6'
-func (m *ApplicationDetail) SetFileHash(value *string)() {
+func (m *ElevationRequestApplicationDetail) SetFileHash(value *string)() {
     err := m.GetBackingStore().Set("fileHash", value)
     if err != nil {
         panic(err)
     }
 }
 // SetFileName sets the fileName property value. The name of the file in the request for elevation, for example, git.exe
-func (m *ApplicationDetail) SetFileName(value *string)() {
+func (m *ElevationRequestApplicationDetail) SetFileName(value *string)() {
     err := m.GetBackingStore().Set("fileName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFilePath sets the filePath property value. The path of the file in the request for elevation, for example, %programfiles%/git/cmd
-func (m *ApplicationDetail) SetFilePath(value *string)() {
+// SetFilePath sets the filePath property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
+func (m *ElevationRequestApplicationDetail) SetFilePath(value *string)() {
     err := m.GetBackingStore().Set("filePath", value)
     if err != nil {
         panic(err)
     }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ApplicationDetail) SetOdataType(value *string)() {
+func (m *ElevationRequestApplicationDetail) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
 }
 // SetProductInternalName sets the productInternalName property value. The internal name of the application for which elevation request has been made. For example, 'git'
-func (m *ApplicationDetail) SetProductInternalName(value *string)() {
+func (m *ElevationRequestApplicationDetail) SetProductInternalName(value *string)() {
     err := m.GetBackingStore().Set("productInternalName", value)
     if err != nil {
         panic(err)
     }
 }
 // SetProductName sets the productName property value. The product name of the application for which elevation request has been made. For example, 'Git'
-func (m *ApplicationDetail) SetProductName(value *string)() {
+func (m *ElevationRequestApplicationDetail) SetProductName(value *string)() {
     err := m.GetBackingStore().Set("productName", value)
     if err != nil {
         panic(err)
     }
 }
 // SetProductVersion sets the productVersion property value. The product version of the application for which elevation request has been made. For example, '2.40.1.0'
-func (m *ApplicationDetail) SetProductVersion(value *string)() {
+func (m *ElevationRequestApplicationDetail) SetProductVersion(value *string)() {
     err := m.GetBackingStore().Set("productVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPublisherCert sets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encodedleafcert1, encodedleafcert2....]
-func (m *ApplicationDetail) SetPublisherCert(value *string)() {
+// SetPublisherCert sets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encoded_leaf_cert1, encoded_leaf_cert2....]
+func (m *ElevationRequestApplicationDetail) SetPublisherCert(value *string)() {
     err := m.GetBackingStore().Set("publisherCert", value)
     if err != nil {
         panic(err)
     }
 }
 // SetPublisherName sets the publisherName property value. The certificate issuer name of the certificate used to sign the application, for example, 'Sectigo Public Code Signing CA R36'
-func (m *ApplicationDetail) SetPublisherName(value *string)() {
+func (m *ElevationRequestApplicationDetail) SetPublisherName(value *string)() {
     err := m.GetBackingStore().Set("publisherName", value)
     if err != nil {
         panic(err)
     }
 }
-type ApplicationDetailable interface {
+type ElevationRequestApplicationDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

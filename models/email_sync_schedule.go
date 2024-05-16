@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for email sync schedule.
 type EmailSyncSchedule int
 
@@ -43,7 +40,7 @@ func ParseEmailSyncSchedule(v string) (any, error) {
         case "basedOnMyUsage":
             result = BASEDONMYUSAGE_EMAILSYNCSCHEDULE
         default:
-            return 0, errors.New("Unknown EmailSyncSchedule value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package industrydata
-import (
-    "errors"
-)
 type AdditionalUserAttributes int
 
 const (
@@ -23,7 +20,7 @@ func ParseAdditionalUserAttributes(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ADDITIONALUSERATTRIBUTES
         default:
-            return 0, errors.New("Unknown AdditionalUserAttributes value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

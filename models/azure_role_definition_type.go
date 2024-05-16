@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AzureRoleDefinitionType int
 
 const (
@@ -23,7 +20,7 @@ func ParseAzureRoleDefinitionType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AZUREROLEDEFINITIONTYPE
         default:
-            return 0, errors.New("Unknown AzureRoleDefinitionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

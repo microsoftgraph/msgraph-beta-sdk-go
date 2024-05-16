@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type VirtualEventRegistrationPredefinedQuestionLabel int
 
 const (
@@ -41,7 +38,7 @@ func ParseVirtualEventRegistrationPredefinedQuestionLabel(v string) (any, error)
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_VIRTUALEVENTREGISTRATIONPREDEFINEDQUESTIONLABEL
         default:
-            return 0, errors.New("Unknown VirtualEventRegistrationPredefinedQuestionLabel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents the level to which the device's clipboard may be shared between apps
 type WindowsManagedAppClipboardSharingLevel int
 
@@ -23,7 +20,7 @@ func ParseWindowsManagedAppClipboardSharingLevel(v string) (any, error) {
         case "none":
             result = NONE_WINDOWSMANAGEDAPPCLIPBOARDSHARINGLEVEL
         default:
-            return 0, errors.New("Unknown WindowsManagedAppClipboardSharingLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

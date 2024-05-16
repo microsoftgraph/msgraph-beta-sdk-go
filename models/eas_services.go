@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -50,7 +49,7 @@ func ParseEasServices(v string) (any, error) {
             case "reminders":
                 result |= REMINDERS_EASSERVICES
             default:
-                return 0, errors.New("Unknown EasServices value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

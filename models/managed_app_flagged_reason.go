@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The reason for which a user has been flagged
 type ManagedAppFlaggedReason int
 
@@ -31,7 +28,7 @@ func ParseManagedAppFlaggedReason(v string) (any, error) {
         case "androidFactoryRomModified":
             result = ANDROIDFACTORYROMMODIFIED_MANAGEDAPPFLAGGEDREASON
         default:
-            return 0, errors.New("Unknown ManagedAppFlaggedReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

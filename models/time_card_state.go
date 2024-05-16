@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TimeCardState int
 
 const (
@@ -26,7 +23,7 @@ func ParseTimeCardState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TIMECARDSTATE
         default:
-            return 0, errors.New("Unknown TimeCardState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

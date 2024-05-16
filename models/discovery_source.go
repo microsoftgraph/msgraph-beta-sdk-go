@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DiscoverySource int
 
 const (
@@ -26,7 +23,7 @@ func ParseDiscoverySource(v string) (any, error) {
         case "deviceEnrollmentProgram":
             result = DEVICEENROLLMENTPROGRAM_DISCOVERYSOURCE
         default:
-            return 0, errors.New("Unknown DiscoverySource value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

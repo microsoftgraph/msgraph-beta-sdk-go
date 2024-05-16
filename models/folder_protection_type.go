@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values of Folder Protection
 type FolderProtectionType int
 
@@ -35,7 +32,7 @@ func ParseFolderProtectionType(v string) (any, error) {
         case "auditDiskModification":
             result = AUDITDISKMODIFICATION_FOLDERPROTECTIONTYPE
         default:
-            return 0, errors.New("Unknown FolderProtectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type FeatureType int
 
 const (
@@ -23,7 +20,7 @@ func ParseFeatureType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FEATURETYPE
         default:
-            return 0, errors.New("Unknown FeatureType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

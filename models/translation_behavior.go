@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TranslationBehavior int
 
 const (
@@ -23,7 +20,7 @@ func ParseTranslationBehavior(v string) (any, error) {
         case "No":
             result = NO_TRANSLATIONBEHAVIOR
         default:
-            return 0, errors.New("Unknown TranslationBehavior value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

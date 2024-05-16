@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type UserAction int
 
 const (
@@ -23,7 +20,7 @@ func ParseUserAction(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USERACTION
         default:
-            return 0, errors.New("Unknown UserAction value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

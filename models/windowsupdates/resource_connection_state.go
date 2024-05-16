@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type ResourceConnectionState int
 
 const (
@@ -26,7 +23,7 @@ func ParseResourceConnectionState(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RESOURCECONNECTIONSTATE
         default:
-            return 0, errors.New("Unknown ResourceConnectionState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

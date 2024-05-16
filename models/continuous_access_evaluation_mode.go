@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ContinuousAccessEvaluationMode int
 
 const (
@@ -26,7 +23,7 @@ func ParseContinuousAccessEvaluationMode(v string) (any, error) {
         case "strictLocation":
             result = STRICTLOCATION_CONTINUOUSACCESSEVALUATIONMODE
         default:
-            return 0, errors.New("Unknown ContinuousAccessEvaluationMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

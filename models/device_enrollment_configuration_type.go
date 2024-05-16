@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Describes the TemplateFamily for the Template entity
 type DeviceEnrollmentConfigurationType int
 
@@ -67,7 +64,7 @@ func ParseDeviceEnrollmentConfigurationType(v string) (any, error) {
         case "enrollmentNotificationsConfiguration":
             result = ENROLLMENTNOTIFICATIONSCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
         default:
-            return 0, errors.New("Unknown DeviceEnrollmentConfigurationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

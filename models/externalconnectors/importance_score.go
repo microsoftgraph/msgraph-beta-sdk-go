@@ -1,7 +1,4 @@
 package externalconnectors
-import (
-    "errors"
-)
 type ImportanceScore int
 
 const (
@@ -29,7 +26,7 @@ func ParseImportanceScore(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IMPORTANCESCORE
         default:
-            return 0, errors.New("Unknown ImportanceScore value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

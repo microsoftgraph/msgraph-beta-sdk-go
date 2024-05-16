@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AssignmentMethod int
 
 const (
@@ -23,7 +20,7 @@ func ParseAssignmentMethod(v string) (any, error) {
         case "auto":
             result = AUTO_ASSIGNMENTMETHOD
         default:
-            return 0, errors.New("Unknown AssignmentMethod value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

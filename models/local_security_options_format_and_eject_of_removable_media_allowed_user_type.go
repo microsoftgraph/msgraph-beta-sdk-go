@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser
 type LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType int
 
@@ -31,7 +28,7 @@ func ParseLocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType(v st
         case "administratorsAndInteractiveUsers":
             result = ADMINISTRATORSANDINTERACTIVEUSERS_LOCALSECURITYOPTIONSFORMATANDEJECTOFREMOVABLEMEDIAALLOWEDUSERTYPE
         default:
-            return 0, errors.New("Unknown LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

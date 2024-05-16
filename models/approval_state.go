@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ApprovalState int
 
 const (
@@ -29,7 +26,7 @@ func ParseApprovalState(v string) (any, error) {
         case "canceled":
             result = CANCELED_APPROVALSTATE
         default:
-            return 0, errors.New("Unknown ApprovalState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

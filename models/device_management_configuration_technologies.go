@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -79,7 +78,7 @@ func ParseDeviceManagementConfigurationTechnologies(v string) (any, error) {
             case "windowsOsRecovery":
                 result |= WINDOWSOSRECOVERY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             default:
-                return 0, errors.New("Unknown DeviceManagementConfigurationTechnologies value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

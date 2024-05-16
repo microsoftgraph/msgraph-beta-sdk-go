@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type MailboxAssetIdentifier int
 
 const (
@@ -44,7 +41,7 @@ func ParseMailboxAssetIdentifier(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MAILBOXASSETIDENTIFIER
         default:
-            return 0, errors.New("Unknown MailboxAssetIdentifier value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

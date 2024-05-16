@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -38,7 +37,7 @@ func ParseCloudPcManagementService(v string) (any, error) {
             case "rpaBox":
                 result |= RPABOX_CLOUDPCMANAGEMENTSERVICE
             default:
-                return 0, errors.New("Unknown CloudPcManagementService value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

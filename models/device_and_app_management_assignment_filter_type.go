@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents type of the assignment filter.
 type DeviceAndAppManagementAssignmentFilterType int
 
@@ -27,7 +24,7 @@ func ParseDeviceAndAppManagementAssignmentFilterType(v string) (any, error) {
         case "exclude":
             result = EXCLUDE_DEVICEANDAPPMANAGEMENTASSIGNMENTFILTERTYPE
         default:
-            return 0, errors.New("Unknown DeviceAndAppManagementAssignmentFilterType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

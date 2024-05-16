@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents various update types for Zebra FOTA deployment.
 type ZebraFotaUpdateType int
 
@@ -31,7 +28,7 @@ func ParseZebraFotaUpdateType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ZEBRAFOTAUPDATETYPE
         default:
-            return 0, errors.New("Unknown ZebraFotaUpdateType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

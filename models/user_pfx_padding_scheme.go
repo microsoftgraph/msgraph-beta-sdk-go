@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Supported values for the padding scheme used by encryption provider.
 type UserPfxPaddingScheme int
 
@@ -39,7 +36,7 @@ func ParseUserPfxPaddingScheme(v string) (any, error) {
         case "oaepSha512":
             result = OAEPSHA512_USERPFXPADDINGSCHEME
         default:
-            return 0, errors.New("Unknown UserPfxPaddingScheme value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

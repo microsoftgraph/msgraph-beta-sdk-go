@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseTokenFormat(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_TOKENFORMAT
             default:
-                return 0, errors.New("Unknown TokenFormat value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values "enabled" or "disabled". Windows 10 devices will have value "notApplicable".
 type AzureAttestationSettingStatus int
 
@@ -31,7 +28,7 @@ func ParseAzureAttestationSettingStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AZUREATTESTATIONSETTINGSTATUS
         default:
-            return 0, errors.New("Unknown AzureAttestationSettingStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

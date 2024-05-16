@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -62,7 +61,7 @@ func ParseWorkforceIntegrationSupportedEntities(v string) (any, error) {
             case "timeOffRequest":
                 result |= TIMEOFFREQUEST_WORKFORCEINTEGRATIONSUPPORTEDENTITIES
             default:
-                return 0, errors.New("Unknown WorkforceIntegrationSupportedEntities value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

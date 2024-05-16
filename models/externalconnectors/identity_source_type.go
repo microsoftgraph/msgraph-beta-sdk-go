@@ -1,7 +1,4 @@
 package externalconnectors
-import (
-    "errors"
-)
 type IdentitySourceType int
 
 const (
@@ -23,7 +20,7 @@ func ParseIdentitySourceType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_IDENTITYSOURCETYPE
         default:
-            return 0, errors.New("Unknown IdentitySourceType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

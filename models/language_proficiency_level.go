@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type LanguageProficiencyLevel int
 
 const (
@@ -35,7 +32,7 @@ func ParseLanguageProficiencyLevel(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_LANGUAGEPROFICIENCYLEVEL
         default:
-            return 0, errors.New("Unknown LanguageProficiencyLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

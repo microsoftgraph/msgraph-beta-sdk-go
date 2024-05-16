@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // This enum indicates the platform type for which the enrollment restriction applies.
 type EnrollmentRestrictionPlatformType int
 
@@ -51,7 +48,7 @@ func ParseEnrollmentRestrictionPlatformType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ENROLLMENTRESTRICTIONPLATFORMTYPE
         default:
-            return 0, errors.New("Unknown EnrollmentRestrictionPlatformType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

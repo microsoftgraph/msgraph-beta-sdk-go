@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type AuditLogQueryStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseAuditLogQueryStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUDITLOGQUERYSTATUS
         default:
-            return 0, errors.New("Unknown AuditLogQueryStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

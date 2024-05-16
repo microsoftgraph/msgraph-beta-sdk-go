@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -35,7 +34,7 @@ func ParseKeyUsages(v string) (any, error) {
             case "digitalSignature":
                 result |= DIGITALSIGNATURE_KEYUSAGES
             default:
-                return 0, errors.New("Unknown KeyUsages value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

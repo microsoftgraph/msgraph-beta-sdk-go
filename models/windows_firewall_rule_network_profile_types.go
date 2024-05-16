@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -43,7 +42,7 @@ func ParseWindowsFirewallRuleNetworkProfileTypes(v string) (any, error) {
             case "public":
                 result |= PUBLIC_WINDOWSFIREWALLRULENETWORKPROFILETYPES
             default:
-                return 0, errors.New("Unknown WindowsFirewallRuleNetworkProfileTypes value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

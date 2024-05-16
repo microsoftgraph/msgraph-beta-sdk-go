@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An enum representing possible values for cross profile data sharing.
 type AndroidDeviceOwnerCrossProfileDataSharing int
 
@@ -35,7 +32,7 @@ func ParseAndroidDeviceOwnerCrossProfileDataSharing(v string) (any, error) {
         case "unkownFutureValue":
             result = UNKOWNFUTUREVALUE_ANDROIDDEVICEOWNERCROSSPROFILEDATASHARING
         default:
-            return 0, errors.New("Unknown AndroidDeviceOwnerCrossProfileDataSharing value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

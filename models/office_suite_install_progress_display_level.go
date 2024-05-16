@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The Enum to specify the level of display for the Installation Progress Setup UI on the Device.
 type OfficeSuiteInstallProgressDisplayLevel int
 
@@ -21,7 +18,7 @@ func ParseOfficeSuiteInstallProgressDisplayLevel(v string) (any, error) {
         case "full":
             result = FULL_OFFICESUITEINSTALLPROGRESSDISPLAYLEVEL
         default:
-            return 0, errors.New("Unknown OfficeSuiteInstallProgressDisplayLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

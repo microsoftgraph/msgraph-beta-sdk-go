@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Supported certificate sources for email signing and encryption.
 type EmailCertificateType int
 
@@ -27,7 +24,7 @@ func ParseEmailCertificateType(v string) (any, error) {
         case "derivedCredential":
             result = DERIVEDCREDENTIAL_EMAILCERTIFICATETYPE
         default:
-            return 0, errors.New("Unknown EmailCertificateType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

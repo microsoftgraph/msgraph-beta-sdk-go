@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows 10 VPN profile target types.
 type Windows10VpnProfileTarget int
 
@@ -27,7 +24,7 @@ func ParseWindows10VpnProfileTarget(v string) (any, error) {
         case "autoPilotDevice":
             result = AUTOPILOTDEVICE_WINDOWS10VPNPROFILETARGET
         default:
-            return 0, errors.New("Unknown Windows10VpnProfileTarget value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

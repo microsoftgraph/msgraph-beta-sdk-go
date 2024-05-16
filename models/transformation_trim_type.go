@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type TransformationTrimType int
 
 const (
@@ -26,7 +23,7 @@ func ParseTransformationTrimType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_TRANSFORMATIONTRIMTYPE
         default:
-            return 0, errors.New("Unknown TransformationTrimType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

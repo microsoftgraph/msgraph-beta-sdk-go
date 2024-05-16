@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The type of user account on Windows that was used to performed the elevation.
 type PrivilegeManagementEndUserType int
 
@@ -35,7 +32,7 @@ func ParsePrivilegeManagementEndUserType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRIVILEGEMANAGEMENTENDUSERTYPE
         default:
-            return 0, errors.New("Unknown PrivilegeManagementEndUserType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type InsiderRiskLevel int
 
 const (
@@ -29,7 +26,7 @@ func ParseInsiderRiskLevel(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_INSIDERRISKLEVEL
         default:
-            return 0, errors.New("Unknown InsiderRiskLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

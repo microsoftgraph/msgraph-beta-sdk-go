@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcReportName int
 
 const (
@@ -62,7 +59,7 @@ func ParseCloudPcReportName(v string) (any, error) {
         case "inaccessibleCloudPcTrendReport":
             result = INACCESSIBLECLOUDPCTRENDREPORT_CLOUDPCREPORTNAME
         default:
-            return 0, errors.New("Unknown CloudPcReportName value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

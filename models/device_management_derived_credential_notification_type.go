@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -39,7 +38,7 @@ func ParseDeviceManagementDerivedCredentialNotificationType(v string) (any, erro
             case "email":
                 result |= EMAIL_DEVICEMANAGEMENTDERIVEDCREDENTIALNOTIFICATIONTYPE
             default:
-                return 0, errors.New("Unknown DeviceManagementDerivedCredentialNotificationType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

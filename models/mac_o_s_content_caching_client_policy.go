@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Determines which clients a content cache will serve.
 type MacOSContentCachingClientPolicy int
 
@@ -35,7 +32,7 @@ func ParseMacOSContentCachingClientPolicy(v string) (any, error) {
         case "clientsInCustomLocalNetworksWithFallback":
             result = CLIENTSINCUSTOMLOCALNETWORKSWITHFALLBACK_MACOSCONTENTCACHINGCLIENTPOLICY
         default:
-            return 0, errors.New("Unknown MacOSContentCachingClientPolicy value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

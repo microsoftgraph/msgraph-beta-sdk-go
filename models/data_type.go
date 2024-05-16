@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Data types for rules.
 type DataType int
 
@@ -75,7 +72,7 @@ func ParseDataType(v string) (any, error) {
         case "versionArray":
             result = VERSIONARRAY_DATATYPE
         default:
-            return 0, errors.New("Unknown DataType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

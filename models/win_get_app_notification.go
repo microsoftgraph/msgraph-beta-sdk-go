@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Contains value for notification status.
 type WinGetAppNotification int
 
@@ -31,7 +28,7 @@ func ParseWinGetAppNotification(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WINGETAPPNOTIFICATION
         default:
-            return 0, errors.New("Unknown WinGetAppNotification value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

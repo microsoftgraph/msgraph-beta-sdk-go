@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthenticationStrengthResult int
 
 const (
@@ -44,7 +41,7 @@ func ParseAuthenticationStrengthResult(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONSTRENGTHRESULT
         default:
-            return 0, errors.New("Unknown AuthenticationStrengthResult value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

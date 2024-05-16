@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Action type on Configuration Manager client
 type ConfigurationManagerActionType int
 
@@ -43,7 +40,7 @@ func ParseConfigurationManagerActionType(v string) (any, error) {
         case "windowsDefenderUpdateSignatures":
             result = WINDOWSDEFENDERUPDATESIGNATURES_CONFIGURATIONMANAGERACTIONTYPE
         default:
-            return 0, errors.New("Unknown ConfigurationManagerActionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

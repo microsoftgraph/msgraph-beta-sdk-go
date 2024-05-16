@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Connector health state for connector status
 type ConnectorHealthState int
 
@@ -31,7 +28,7 @@ func ParseConnectorHealthState(v string) (any, error) {
         case "unknown":
             result = UNKNOWN_CONNECTORHEALTHSTATE
         default:
-            return 0, errors.New("Unknown ConnectorHealthState value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

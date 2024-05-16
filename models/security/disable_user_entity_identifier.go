@@ -1,6 +1,5 @@
 package security
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -41,7 +40,7 @@ func ParseDisableUserEntityIdentifier(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_DISABLEUSERENTITYIDENTIFIER
             default:
-                return 0, errors.New("Unknown DisableUserEntityIdentifier value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

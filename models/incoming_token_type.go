@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -44,7 +43,7 @@ func ParseIncomingTokenType(v string) (any, error) {
             case "remoteDesktopToken":
                 result |= REMOTEDESKTOPTOKEN_INCOMINGTOKENTYPE
             default:
-                return 0, errors.New("Unknown IncomingTokenType value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

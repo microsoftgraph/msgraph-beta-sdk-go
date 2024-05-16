@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type Platform int
 
 const (
@@ -38,7 +35,7 @@ func ParsePlatform(v string) (any, error) {
         case "macOS":
             result = MACOS_PLATFORM
         default:
-            return 0, errors.New("Unknown Platform value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

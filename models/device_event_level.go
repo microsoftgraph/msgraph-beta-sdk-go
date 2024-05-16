@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates device event level. Possible values are: None, Verbose, Information, Warning, Error, Critical
 type DeviceEventLevel int
 
@@ -43,7 +40,7 @@ func ParseDeviceEventLevel(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEEVENTLEVEL
         default:
-            return 0, errors.New("Unknown DeviceEventLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

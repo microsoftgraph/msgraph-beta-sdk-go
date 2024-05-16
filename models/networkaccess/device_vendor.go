@@ -1,7 +1,4 @@
 package networkaccess
-import (
-    "errors"
-)
 type DeviceVendor int
 
 const (
@@ -62,7 +59,7 @@ func ParseDeviceVendor(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEVENDOR
         default:
-            return 0, errors.New("Unknown DeviceVendor value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

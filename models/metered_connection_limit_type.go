@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Metered Connection Limit Settings.
 type MeteredConnectionLimitType int
 
@@ -27,7 +24,7 @@ func ParseMeteredConnectionLimitType(v string) (any, error) {
         case "variable":
             result = VARIABLE_METEREDCONNECTIONLIMITTYPE
         default:
-            return 0, errors.New("Unknown MeteredConnectionLimitType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

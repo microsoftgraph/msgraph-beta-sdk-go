@@ -1,7 +1,4 @@
 package ediscovery
-import (
-    "errors"
-)
 type DataSourceContainerStatus int
 
 const (
@@ -23,7 +20,7 @@ func ParseDataSourceContainerStatus(v string) (any, error) {
         case "UnknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DATASOURCECONTAINERSTATUS
         default:
-            return 0, errors.New("Unknown DataSourceContainerStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

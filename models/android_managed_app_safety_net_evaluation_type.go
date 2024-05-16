@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // An admin enforced Android SafetyNet evaluation type requirement on a managed app.
 type AndroidManagedAppSafetyNetEvaluationType int
 
@@ -23,7 +20,7 @@ func ParseAndroidManagedAppSafetyNetEvaluationType(v string) (any, error) {
         case "hardwareBacked":
             result = HARDWAREBACKED_ANDROIDMANAGEDAPPSAFETYNETEVALUATIONTYPE
         default:
-            return 0, errors.New("Unknown AndroidManagedAppSafetyNetEvaluationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

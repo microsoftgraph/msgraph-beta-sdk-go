@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Setting type of the group policy.
 type GroupPolicySettingType int
 
@@ -127,7 +124,7 @@ func ParseGroupPolicySettingType(v string) (any, error) {
         case "startMenuSettings":
             result = STARTMENUSETTINGS_GROUPPOLICYSETTINGTYPE
         default:
-            return 0, errors.New("Unknown GroupPolicySettingType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

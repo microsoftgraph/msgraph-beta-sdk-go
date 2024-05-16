@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -55,7 +54,7 @@ func ParseEnrollmentNotificationBrandingOptions(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS
             default:
-                return 0, errors.New("Unknown EnrollmentNotificationBrandingOptions value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

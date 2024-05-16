@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrintMediaType int
 
 const (
@@ -53,7 +50,7 @@ func ParsePrintMediaType(v string) (any, error) {
         case "labels":
             result = LABELS_PRINTMEDIATYPE
         default:
-            return 0, errors.New("Unknown PrintMediaType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

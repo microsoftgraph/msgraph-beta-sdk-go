@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type EducationSynchronizationStatus int
 
 const (
@@ -41,7 +38,7 @@ func ParseEducationSynchronizationStatus(v string) (any, error) {
         case "validating":
             result = VALIDATING_EDUCATIONSYNCHRONIZATIONSTATUS
         default:
-            return 0, errors.New("Unknown EducationSynchronizationStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

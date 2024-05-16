@@ -44,7 +44,7 @@ func (m *AccessReviewInstanceDecisionItem) GetAppliedBy()(UserIdentityable) {
     }
     return nil
 }
-// GetAppliedDateTime gets the appliedDateTime property value. The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
+// GetAppliedDateTime gets the appliedDateTime property value. The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
 // returns a *Time when successful
 func (m *AccessReviewInstanceDecisionItem) GetAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("appliedDateTime")
@@ -56,7 +56,7 @@ func (m *AccessReviewInstanceDecisionItem) GetAppliedDateTime()(*i336074805fc853
     }
     return nil
 }
-// GetApplyResult gets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
+// GetApplyResult gets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetApplyResult()(*string) {
     val, err := m.GetBackingStore().Get("applyResult")
@@ -274,7 +274,7 @@ func (m *AccessReviewInstanceDecisionItem) GetInsights()([]GovernanceInsightable
     }
     return nil
 }
-// GetInstance gets the instance property value. There is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+// GetInstance gets the instance property value. There's exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
 // returns a AccessReviewInstanceable when successful
 func (m *AccessReviewInstanceDecisionItem) GetInstance()(AccessReviewInstanceable) {
     val, err := m.GetBackingStore().Get("instance")
@@ -334,7 +334,7 @@ func (m *AccessReviewInstanceDecisionItem) GetPrincipalResourceMembership()(Deci
     }
     return nil
 }
-// GetRecommendation gets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
+// GetRecommendation gets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within 30 days of start of review. Recommend deny if sign-in is greater than 30 days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetRecommendation()(*string) {
     val, err := m.GetBackingStore().Get("recommendation")
@@ -394,7 +394,7 @@ func (m *AccessReviewInstanceDecisionItem) GetReviewedDateTime()(*i336074805fc85
     }
     return nil
 }
-// GetTarget gets the target property value. The target of this specific decision. Decision targets can be of different types – each one with its own specific properties. See accessReviewInstanceDecisionItemTarget. Read-only.  This property has been replaced by the principal and resource properties in v1.0.
+// GetTarget gets the target property value. The target of this specific decision. Decision targets can be of different types – each one with its own specific properties. See accessReviewInstanceDecisionItemTarget. Read-only.  This property is replaced by the principal and resource properties in v1.0.
 // returns a AccessReviewInstanceDecisionItemTargetable when successful
 func (m *AccessReviewInstanceDecisionItem) GetTarget()(AccessReviewInstanceDecisionItemTargetable) {
     val, err := m.GetBackingStore().Get("target")
@@ -536,14 +536,14 @@ func (m *AccessReviewInstanceDecisionItem) SetAppliedBy(value UserIdentityable)(
         panic(err)
     }
 }
-// SetAppliedDateTime sets the appliedDateTime property value. The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
+// SetAppliedDateTime sets the appliedDateTime property value. The timestamp when the approval decision was applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("appliedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetApplyResult sets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
+// SetApplyResult sets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetApplyResult(value *string)() {
     err := m.GetBackingStore().Set("applyResult", value)
     if err != nil {
@@ -564,7 +564,7 @@ func (m *AccessReviewInstanceDecisionItem) SetInsights(value []GovernanceInsight
         panic(err)
     }
 }
-// SetInstance sets the instance property value. There is exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
+// SetInstance sets the instance property value. There's exactly one accessReviewInstance associated with each decision. The instance is the parent of the decision item, representing the recurrence of the access review the decision is made on.
 func (m *AccessReviewInstanceDecisionItem) SetInstance(value AccessReviewInstanceable)() {
     err := m.GetBackingStore().Set("instance", value)
     if err != nil {
@@ -599,7 +599,7 @@ func (m *AccessReviewInstanceDecisionItem) SetPrincipalResourceMembership(value 
         panic(err)
     }
 }
-// SetRecommendation sets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within thirty days of start of review. Recommend deny if sign-in is greater than thirty days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
+// SetRecommendation sets the recommendation property value. A system-generated recommendation for the approval decision based off last interactive sign-in to tenant. Recommend approve if sign-in is within 30 days of start of review. Recommend deny if sign-in is greater than 30 days of start of review. Recommendation not available otherwise. Possible values: Approve, Deny, or NoInfoAvailable. Supports $select, $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetRecommendation(value *string)() {
     err := m.GetBackingStore().Set("recommendation", value)
     if err != nil {
@@ -634,7 +634,7 @@ func (m *AccessReviewInstanceDecisionItem) SetReviewedDateTime(value *i336074805
         panic(err)
     }
 }
-// SetTarget sets the target property value. The target of this specific decision. Decision targets can be of different types – each one with its own specific properties. See accessReviewInstanceDecisionItemTarget. Read-only.  This property has been replaced by the principal and resource properties in v1.0.
+// SetTarget sets the target property value. The target of this specific decision. Decision targets can be of different types – each one with its own specific properties. See accessReviewInstanceDecisionItemTarget. Read-only.  This property is replaced by the principal and resource properties in v1.0.
 func (m *AccessReviewInstanceDecisionItem) SetTarget(value AccessReviewInstanceDecisionItemTargetable)() {
     err := m.GetBackingStore().Set("target", value)
     if err != nil {

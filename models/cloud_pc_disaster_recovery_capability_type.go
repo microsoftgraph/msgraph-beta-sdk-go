@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcDisasterRecoveryCapabilityType int
 
 const (
@@ -26,7 +23,7 @@ func ParseCloudPcDisasterRecoveryCapabilityType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCDISASTERRECOVERYCAPABILITYTYPE
         default:
-            return 0, errors.New("Unknown CloudPcDisasterRecoveryCapabilityType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

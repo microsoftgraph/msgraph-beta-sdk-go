@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type AzureADDeviceRegistrationErrorReason int
 
 const (
@@ -29,7 +26,7 @@ func ParseAzureADDeviceRegistrationErrorReason(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AZUREADDEVICEREGISTRATIONERRORREASON
         default:
-            return 0, errors.New("Unknown AzureADDeviceRegistrationErrorReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -35,7 +35,7 @@ func (m *MfaDetail) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthDetail gets the authDetail property value. Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
+// GetAuthDetail gets the authDetail property value. Indicates the MFA auth detail for the corresponding sign-in activity when the MFA Required is 'Yes'.
 // returns a *string when successful
 func (m *MfaDetail) GetAuthDetail()(*string) {
     val, err := m.GetBackingStore().Get("authDetail")
@@ -47,7 +47,7 @@ func (m *MfaDetail) GetAuthDetail()(*string) {
     }
     return nil
 }
-// GetAuthMethod gets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
+// GetAuthMethod gets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the values) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
 // returns a *string when successful
 func (m *MfaDetail) GetAuthMethod()(*string) {
     val, err := m.GetBackingStore().Get("authMethod")
@@ -147,14 +147,14 @@ func (m *MfaDetail) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthDetail sets the authDetail property value. Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is 'Yes'.
+// SetAuthDetail sets the authDetail property value. Indicates the MFA auth detail for the corresponding sign-in activity when the MFA Required is 'Yes'.
 func (m *MfaDetail) SetAuthDetail(value *string)() {
     err := m.GetBackingStore().Set("authDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthMethod sets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
+// SetAuthMethod sets the authMethod property value. Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the values) for the corresponding sign-in activity when the MFA Required field is 'Yes'.
 func (m *MfaDetail) SetAuthMethod(value *string)() {
     err := m.GetBackingStore().Set("authMethod", value)
     if err != nil {

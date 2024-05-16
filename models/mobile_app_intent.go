@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Indicates the status of the mobile app on the device.
 type MobileAppIntent int
 
@@ -43,7 +40,7 @@ func ParseMobileAppIntent(v string) (any, error) {
         case "exclude":
             result = EXCLUDE_MOBILEAPPINTENT
         default:
-            return 0, errors.New("Unknown MobileAppIntent value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

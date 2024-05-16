@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type StatusDetail int
 
 const (
@@ -32,7 +29,7 @@ func ParseStatusDetail(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_STATUSDETAIL
         default:
-            return 0, errors.New("Unknown StatusDetail value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

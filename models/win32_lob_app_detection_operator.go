@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -55,7 +54,7 @@ func ParseWin32LobAppDetectionOperator(v string) (any, error) {
             case "lessThanOrEqual":
                 result |= LESSTHANOREQUAL_WIN32LOBAPPDETECTIONOPERATOR
             default:
-                return 0, errors.New("Unknown Win32LobAppDetectionOperator value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

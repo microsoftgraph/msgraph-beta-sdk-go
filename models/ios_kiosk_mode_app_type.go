@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // App source options for iOS kiosk mode.
 type IosKioskModeAppType int
 
@@ -31,7 +28,7 @@ func ParseIosKioskModeAppType(v string) (any, error) {
         case "builtInApp":
             result = BUILTINAPP_IOSKIOSKMODEAPPTYPE
         default:
-            return 0, errors.New("Unknown IosKioskModeAppType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for LanManagerAuthenticationLevel
 type LanManagerAuthenticationLevel int
 
@@ -39,7 +36,7 @@ func ParseLanManagerAuthenticationLevel(v string) (any, error) {
         case "lmNtlmV2AndNotLmOrNtm":
             result = LMNTLMV2ANDNOTLMORNTM_LANMANAGERAUTHENTICATIONLEVEL
         default:
-            return 0, errors.New("Unknown LanManagerAuthenticationLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

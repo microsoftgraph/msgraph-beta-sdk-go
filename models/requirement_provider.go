@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type RequirementProvider int
 
 const (
@@ -83,7 +80,7 @@ func ParseRequirementProvider(v string) (any, error) {
         case "authenticationStrengths":
             result = AUTHENTICATIONSTRENGTHS_REQUIREMENTPROVIDER
         default:
-            return 0, errors.New("Unknown RequirementProvider value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

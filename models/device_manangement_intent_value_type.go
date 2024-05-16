@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DeviceManangementIntentValueType int
 
 const (
@@ -38,7 +35,7 @@ func ParseDeviceManangementIntentValueType(v string) (any, error) {
         case "abstractComplex":
             result = ABSTRACTCOMPLEX_DEVICEMANANGEMENTINTENTVALUETYPE
         default:
-            return 0, errors.New("Unknown DeviceManangementIntentValueType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

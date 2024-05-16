@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for DefenderSubmitSamplesConsentType
 type DefenderSubmitSamplesConsentType int
 
@@ -31,7 +28,7 @@ func ParseDefenderSubmitSamplesConsentType(v string) (any, error) {
         case "sendAllSamplesAutomatically":
             result = SENDALLSAMPLESAUTOMATICALLY_DEFENDERSUBMITSAMPLESCONSENTTYPE
         default:
-            return 0, errors.New("Unknown DefenderSubmitSamplesConsentType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

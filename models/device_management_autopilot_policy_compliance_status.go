@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DeviceManagementAutopilotPolicyComplianceStatus int
 
 const (
@@ -32,7 +29,7 @@ func ParseDeviceManagementAutopilotPolicyComplianceStatus(v string) (any, error)
         case "error":
             result = ERROR_DEVICEMANAGEMENTAUTOPILOTPOLICYCOMPLIANCESTATUS
         default:
-            return 0, errors.New("Unknown DeviceManagementAutopilotPolicyComplianceStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

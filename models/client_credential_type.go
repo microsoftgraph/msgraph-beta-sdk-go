@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ClientCredentialType int
 
 const (
@@ -35,7 +32,7 @@ func ParseClientCredentialType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLIENTCREDENTIALTYPE
         default:
-            return 0, errors.New("Unknown ClientCredentialType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

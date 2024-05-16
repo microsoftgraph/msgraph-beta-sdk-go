@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type SafeguardCategory int
 
 const (
@@ -20,7 +17,7 @@ func ParseSafeguardCategory(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SAFEGUARDCATEGORY
         default:
-            return 0, errors.New("Unknown SafeguardCategory value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

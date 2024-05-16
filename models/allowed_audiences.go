@@ -1,6 +1,5 @@
 package models
 import (
-    "errors"
     "math"
     "strings"
 )
@@ -50,7 +49,7 @@ func ParseAllowedAudiences(v string) (any, error) {
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_ALLOWEDAUDIENCES
             default:
-                return 0, errors.New("Unknown AllowedAudiences value: " + v)
+                return nil, nil
         }
     }
     return &result, nil

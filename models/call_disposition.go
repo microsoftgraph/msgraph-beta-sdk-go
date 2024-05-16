@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CallDisposition int
 
 const (
@@ -23,7 +20,7 @@ func ParseCallDisposition(v string) (any, error) {
         case "forward":
             result = FORWARD_CALLDISPOSITION
         default:
-            return 0, errors.New("Unknown CallDisposition value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Contains all supported registry data detection type.
 type Win32LobAppRegistryDetectionType int
 
@@ -39,7 +36,7 @@ func ParseWin32LobAppRegistryDetectionType(v string) (any, error) {
         case "version":
             result = VERSION_WIN32LOBAPPREGISTRYDETECTIONTYPE
         default:
-            return 0, errors.New("Unknown Win32LobAppRegistryDetectionType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

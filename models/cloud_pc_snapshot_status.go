@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcSnapshotStatus int
 
 const (
@@ -20,7 +17,7 @@ func ParseCloudPcSnapshotStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTSTATUS
         default:
-            return 0, errors.New("Unknown CloudPcSnapshotStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

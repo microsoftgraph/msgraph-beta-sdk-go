@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type OpenIdConnectResponseMode int
 
 const (
@@ -23,7 +20,7 @@ func ParseOpenIdConnectResponseMode(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OPENIDCONNECTRESPONSEMODE
         default:
-            return 0, errors.New("Unknown OpenIdConnectResponseMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

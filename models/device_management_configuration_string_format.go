@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type DeviceManagementConfigurationStringFormat int
 
 const (
@@ -81,7 +78,7 @@ func ParseDeviceManagementConfigurationStringFormat(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSTRINGFORMAT
         default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationStringFormat value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

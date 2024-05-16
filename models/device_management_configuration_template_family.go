@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Describes the TemplateFamily for the Template entity
 type DeviceManagementConfigurationTemplateFamily int
 
@@ -83,7 +80,7 @@ func ParseDeviceManagementConfigurationTemplateFamily(v string) (any, error) {
         case "companyPortal":
             result = COMPANYPORTAL_DEVICEMANAGEMENTCONFIGURATIONTEMPLATEFAMILY
         default:
-            return 0, errors.New("Unknown DeviceManagementConfigurationTemplateFamily value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

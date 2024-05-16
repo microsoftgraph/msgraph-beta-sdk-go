@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ReferenceAttachmentPermission int
 
 const (
@@ -35,7 +32,7 @@ func ParseReferenceAttachmentPermission(v string) (any, error) {
         case "organizationEdit":
             result = ORGANIZATIONEDIT_REFERENCEATTACHMENTPERMISSION
         default:
-            return 0, errors.New("Unknown ReferenceAttachmentPermission value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

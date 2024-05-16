@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcExportJobStatus int
 
 const (
@@ -29,7 +26,7 @@ func ParseCloudPcExportJobStatus(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCEXPORTJOBSTATUS
         default:
-            return 0, errors.New("Unknown CloudPcExportJobStatus value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

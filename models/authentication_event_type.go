@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type AuthenticationEventType int
 
 const (
@@ -23,7 +20,7 @@ func ParseAuthenticationEventType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUTHENTICATIONEVENTTYPE
         default:
-            return 0, errors.New("Unknown AuthenticationEventType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PlayPromptCompletionReason int
 
 const (
@@ -26,7 +23,7 @@ func ParsePlayPromptCompletionReason(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLAYPROMPTCOMPLETIONREASON
         default:
-            return 0, errors.New("Unknown PlayPromptCompletionReason value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

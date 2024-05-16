@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Options available for enrollment flow customization
 type EnrollmentAvailabilityOptions int
 
@@ -27,7 +24,7 @@ func ParseEnrollmentAvailabilityOptions(v string) (any, error) {
         case "unavailable":
             result = UNAVAILABLE_ENROLLMENTAVAILABILITYOPTIONS
         default:
-            return 0, errors.New("Unknown EnrollmentAvailabilityOptions value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Device scope configuration parameter. It will be expend in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.
 type DeviceScopeParameter int
 
@@ -27,7 +24,7 @@ func ParseDeviceScopeParameter(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICESCOPEPARAMETER
         default:
-            return 0, errors.New("Unknown DeviceScopeParameter value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

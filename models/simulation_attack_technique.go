@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type SimulationAttackTechnique int
 
 const (
@@ -41,7 +38,7 @@ func ParseSimulationAttackTechnique(v string) (any, error) {
         case "phishTraining":
             result = PHISHTRAINING_SIMULATIONATTACKTECHNIQUE
         default:
-            return 0, errors.New("Unknown SimulationAttackTechnique value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

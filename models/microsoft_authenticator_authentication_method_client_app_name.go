@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type MicrosoftAuthenticatorAuthenticationMethodClientAppName int
 
 const (
@@ -23,7 +20,7 @@ func ParseMicrosoftAuthenticatorAuthenticationMethodClientAppName(v string) (any
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MICROSOFTAUTHENTICATORAUTHENTICATIONMETHODCLIENTAPPNAME
         default:
-            return 0, errors.New("Unknown MicrosoftAuthenticatorAuthenticationMethodClientAppName value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

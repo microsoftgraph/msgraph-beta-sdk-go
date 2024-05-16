@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Windows 10 Application type.
 type Windows10AppType int
 
@@ -23,7 +20,7 @@ func ParseWindows10AppType(v string) (any, error) {
         case "universal":
             result = UNIVERSAL_WINDOWS10APPTYPE
         default:
-            return 0, errors.New("Unknown Windows10AppType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

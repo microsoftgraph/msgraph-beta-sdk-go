@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Possible values for defenderSecurityCenterITContactDisplay
 type DefenderSecurityCenterITContactDisplayType int
 
@@ -31,7 +28,7 @@ func ParseDefenderSecurityCenterITContactDisplayType(v string) (any, error) {
         case "displayOnlyInNotifications":
             result = DISPLAYONLYINNOTIFICATIONS_DEFENDERSECURITYCENTERITCONTACTDISPLAYTYPE
         default:
-            return 0, errors.New("Unknown DefenderSecurityCenterITContactDisplayType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

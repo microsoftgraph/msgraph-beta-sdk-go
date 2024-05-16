@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type ExportFormat int
 
 const (
@@ -26,7 +23,7 @@ func ParseExportFormat(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_EXPORTFORMAT
         default:
-            return 0, errors.New("Unknown ExportFormat value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

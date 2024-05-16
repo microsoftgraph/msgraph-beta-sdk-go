@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // The Enum to specify the Office365 ProductIds that represent the Office365 Suite SKUs.
 type OfficeProductId int
 
@@ -27,7 +24,7 @@ func ParseOfficeProductId(v string) (any, error) {
         case "projectProRetail":
             result = PROJECTPRORETAIL_OFFICEPRODUCTID
         default:
-            return 0, errors.New("Unknown OfficeProductId value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

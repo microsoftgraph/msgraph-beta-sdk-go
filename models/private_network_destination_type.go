@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type PrivateNetworkDestinationType int
 
 const (
@@ -32,7 +29,7 @@ func ParsePrivateNetworkDestinationType(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PRIVATENETWORKDESTINATIONTYPE
         default:
-            return 0, errors.New("Unknown PrivateNetworkDestinationType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

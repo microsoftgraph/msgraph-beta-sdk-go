@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 // Represents the expected type for a macOS custom attribute script value.
 type DeviceCustomAttributeValueType int
 
@@ -27,7 +24,7 @@ func ParseDeviceCustomAttributeValueType(v string) (any, error) {
         case "dateTime":
             result = DATETIME_DEVICECUSTOMATTRIBUTEVALUETYPE
         default:
-            return 0, errors.New("Unknown DeviceCustomAttributeValueType value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

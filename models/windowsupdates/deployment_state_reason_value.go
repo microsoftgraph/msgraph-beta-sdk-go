@@ -1,7 +1,4 @@
 package windowsupdates
-import (
-    "errors"
-)
 type DeploymentStateReasonValue int
 
 const (
@@ -32,7 +29,7 @@ func ParseDeploymentStateReasonValue(v string) (any, error) {
         case "faultedByContentOutdated":
             result = FAULTEDBYCONTENTOUTDATED_DEPLOYMENTSTATEREASONVALUE
         default:
-            return 0, errors.New("Unknown DeploymentStateReasonValue value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

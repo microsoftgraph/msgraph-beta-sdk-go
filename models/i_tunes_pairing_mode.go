@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type ITunesPairingMode int
 
 const (
@@ -26,7 +23,7 @@ func ParseITunesPairingMode(v string) (any, error) {
         case "requiresCertificate":
             result = REQUIRESCERTIFICATE_ITUNESPAIRINGMODE
         default:
-            return 0, errors.New("Unknown ITunesPairingMode value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

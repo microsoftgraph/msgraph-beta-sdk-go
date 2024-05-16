@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type CloudPcUserAccessLevel int
 
 const (
@@ -23,7 +20,7 @@ func ParseCloudPcUserAccessLevel(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCUSERACCESSLEVEL
         default:
-            return 0, errors.New("Unknown CloudPcUserAccessLevel value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

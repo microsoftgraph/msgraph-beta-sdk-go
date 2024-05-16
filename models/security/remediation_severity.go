@@ -1,7 +1,4 @@
 package security
-import (
-    "errors"
-)
 type RemediationSeverity int
 
 const (
@@ -26,7 +23,7 @@ func ParseRemediationSeverity(v string) (any, error) {
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REMEDIATIONSEVERITY
         default:
-            return 0, errors.New("Unknown RemediationSeverity value: " + v)
+            return nil, nil
     }
     return &result, nil
 }

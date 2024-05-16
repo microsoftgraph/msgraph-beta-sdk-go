@@ -1,7 +1,4 @@
 package models
-import (
-    "errors"
-)
 type Priority int
 
 const (
@@ -23,7 +20,7 @@ func ParsePriority(v string) (any, error) {
         case "Low":
             result = LOW_PRIORITY
         default:
-            return 0, errors.New("Unknown Priority value: " + v)
+            return nil, nil
     }
     return &result, nil
 }
