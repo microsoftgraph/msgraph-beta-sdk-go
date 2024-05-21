@@ -43,7 +43,7 @@ func (m *ConditionalAccessRoot) GetAuthenticationStrength()(AuthenticationStreng
     }
     return nil
 }
-// GetAuthenticationStrengths gets the authenticationStrengths property value. The authenticationStrengths property
+// GetAuthenticationStrengths gets the authenticationStrengths property value. DEPRECATED. See the authenticationStrength relationship instead.
 // returns a AuthenticationStrengthRootable when successful
 func (m *ConditionalAccessRoot) GetAuthenticationStrengths()(AuthenticationStrengthRootable) {
     val, err := m.GetBackingStore().Get("authenticationStrengths")
@@ -263,7 +263,7 @@ func (m *ConditionalAccessRoot) SetAuthenticationStrength(value AuthenticationSt
         panic(err)
     }
 }
-// SetAuthenticationStrengths sets the authenticationStrengths property value. The authenticationStrengths property
+// SetAuthenticationStrengths sets the authenticationStrengths property value. DEPRECATED. See the authenticationStrength relationship instead.
 func (m *ConditionalAccessRoot) SetAuthenticationStrengths(value AuthenticationStrengthRootable)() {
     err := m.GetBackingStore().Set("authenticationStrengths", value)
     if err != nil {

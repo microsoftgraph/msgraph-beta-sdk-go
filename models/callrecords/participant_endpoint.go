@@ -158,7 +158,7 @@ func (m *ParticipantEndpoint) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIdentity gets the identity property value. The identity property
+// GetIdentity gets the identity property value. Identity associated with the endpoint. The identity property is deprecated and will stop returning data on June 30, 2026. Going forward, use the associatedIdentity property.
 // returns a IdentitySetable when successful
 func (m *ParticipantEndpoint) GetIdentity()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("identity")
@@ -267,7 +267,7 @@ func (m *ParticipantEndpoint) SetFeedback(value UserFeedbackable)() {
         panic(err)
     }
 }
-// SetIdentity sets the identity property value. The identity property
+// SetIdentity sets the identity property value. Identity associated with the endpoint. The identity property is deprecated and will stop returning data on June 30, 2026. Going forward, use the associatedIdentity property.
 func (m *ParticipantEndpoint) SetIdentity(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
     err := m.GetBackingStore().Set("identity", value)
     if err != nil {

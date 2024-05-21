@@ -44,7 +44,7 @@ func NewOnlineMeetingsItemAlternativeRecordingRequestBuilder(rawUrl string, requ
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemAlternativeRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete alternativeRecording for the navigation property onlineMeetings in app
+// Delete the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnlineMeetingsItemAlternativeRecordingRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -60,7 +60,7 @@ func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get get alternativeRecording for the navigation property onlineMeetings from app
+// Get the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemAlternativeRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -80,7 +80,7 @@ func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) Get(ctx context.C
     }
     return res.([]byte), nil
 }
-// Put update alternativeRecording for the navigation property onlineMeetings in app
+// Put the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemAlternativeRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -100,7 +100,7 @@ func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) Put(ctx context.C
     }
     return res.([]byte), nil
 }
-// ToDeleteRequestInformation delete alternativeRecording for the navigation property onlineMeetings in app
+// ToDeleteRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemAlternativeRecordingRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -111,7 +111,7 @@ func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get alternativeRecording for the navigation property onlineMeetings from app
+// ToGetRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemAlternativeRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,7 +122,7 @@ func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) ToGetRequestInfor
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update alternativeRecording for the navigation property onlineMeetings in app
+// ToPutRequestInformation the content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemAlternativeRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemAlternativeRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -19,10 +19,32 @@ func NewPlannerRoster()(*PlannerRoster) {
 func CreatePlannerRosterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerRoster(), nil
 }
+// GetAssignedSensitivityLabel gets the assignedSensitivityLabel property value. The assignedSensitivityLabel property
+// returns a SensitivityLabelAssignmentable when successful
+func (m *PlannerRoster) GetAssignedSensitivityLabel()(SensitivityLabelAssignmentable) {
+    val, err := m.GetBackingStore().Get("assignedSensitivityLabel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SensitivityLabelAssignmentable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *PlannerRoster) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["assignedSensitivityLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSensitivityLabelAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAssignedSensitivityLabel(val.(SensitivityLabelAssignmentable))
+        }
+        return nil
+    }
     res["members"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePlannerRosterMemberFromDiscriminatorValue)
         if err != nil {
@@ -87,6 +109,12 @@ func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("assignedSensitivityLabel", m.GetAssignedSensitivityLabel())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMembers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMembers()))
         for i, v := range m.GetMembers() {
@@ -113,6 +141,13 @@ func (m *PlannerRoster) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
+// SetAssignedSensitivityLabel sets the assignedSensitivityLabel property value. The assignedSensitivityLabel property
+func (m *PlannerRoster) SetAssignedSensitivityLabel(value SensitivityLabelAssignmentable)() {
+    err := m.GetBackingStore().Set("assignedSensitivityLabel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMembers sets the members property value. Retrieves the members of the plannerRoster.
 func (m *PlannerRoster) SetMembers(value []PlannerRosterMemberable)() {
     err := m.GetBackingStore().Set("members", value)
@@ -130,8 +165,10 @@ func (m *PlannerRoster) SetPlans(value []PlannerPlanable)() {
 type PlannerRosterable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignedSensitivityLabel()(SensitivityLabelAssignmentable)
     GetMembers()([]PlannerRosterMemberable)
     GetPlans()([]PlannerPlanable)
+    SetAssignedSensitivityLabel(value SensitivityLabelAssignmentable)()
     SetMembers(value []PlannerRosterMemberable)()
     SetPlans(value []PlannerPlanable)()
 }

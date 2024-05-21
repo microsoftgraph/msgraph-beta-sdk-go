@@ -37,7 +37,7 @@ func (m *ValueBasedAttribute) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The static value to be used an the attribute.
 // returns a *string when successful
 func (m *ValueBasedAttribute) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -63,7 +63,7 @@ func (m *ValueBasedAttribute) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The static value to be used an the attribute.
 func (m *ValueBasedAttribute) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

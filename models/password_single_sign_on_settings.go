@@ -72,7 +72,7 @@ func (m *PasswordSingleSignOnSettings) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetFields gets the fields property value. The fields property
+// GetFields gets the fields property value. The fields to capture to fill the user credentials for password-based single sign-on.
 // returns a []PasswordSingleSignOnFieldable when successful
 func (m *PasswordSingleSignOnSettings) GetFields()([]PasswordSingleSignOnFieldable) {
     val, err := m.GetBackingStore().Get("fields")
@@ -135,7 +135,7 @@ func (m *PasswordSingleSignOnSettings) SetAdditionalData(value map[string]any)()
 func (m *PasswordSingleSignOnSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFields sets the fields property value. The fields property
+// SetFields sets the fields property value. The fields to capture to fill the user credentials for password-based single sign-on.
 func (m *PasswordSingleSignOnSettings) SetFields(value []PasswordSingleSignOnFieldable)() {
     err := m.GetBackingStore().Set("fields", value)
     if err != nil {

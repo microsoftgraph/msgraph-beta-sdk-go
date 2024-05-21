@@ -34,7 +34,7 @@ func (m *Group) GetAcceptedSenders()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetAccessType gets the accessType property value. The accessType property
+// GetAccessType gets the accessType property value. Indicates the type of access to the group. Possible values are none, private, secret, and public.
 // returns a *GroupAccessType when successful
 func (m *Group) GetAccessType()(*GroupAccessType) {
     val, err := m.GetBackingStore().Get("accessType")
@@ -1356,7 +1356,7 @@ func (m *Group) GetIsArchived()(*bool) {
     }
     return nil
 }
-// GetIsAssignableToRole gets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
+// GetIsAssignableToRole gets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
 // returns a *bool when successful
 func (m *Group) GetIsAssignableToRole()(*bool) {
     val, err := m.GetBackingStore().Get("isAssignableToRole")
@@ -1368,7 +1368,7 @@ func (m *Group) GetIsAssignableToRole()(*bool) {
     }
     return nil
 }
-// GetIsFavorite gets the isFavorite property value. The isFavorite property
+// GetIsFavorite gets the isFavorite property value. Indicates whether the user marked the group as favorite.
 // returns a *bool when successful
 func (m *Group) GetIsFavorite()(*bool) {
     val, err := m.GetBackingStore().Get("isFavorite")
@@ -1692,7 +1692,7 @@ func (m *Group) GetPlanner()(PlannerGroupable) {
     }
     return nil
 }
-// GetPreferredDataLocation gets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+// GetPreferredDataLocation gets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned at least one of the following Microsoft Entra roles:  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
 // returns a *string when successful
 func (m *Group) GetPreferredDataLocation()(*string) {
     val, err := m.GetBackingStore().Get("preferredDataLocation")
@@ -2614,7 +2614,7 @@ func (m *Group) SetAcceptedSenders(value []DirectoryObjectable)() {
         panic(err)
     }
 }
-// SetAccessType sets the accessType property value. The accessType property
+// SetAccessType sets the accessType property value. Indicates the type of access to the group. Possible values are none, private, secret, and public.
 func (m *Group) SetAccessType(value *GroupAccessType)() {
     err := m.GetBackingStore().Set("accessType", value)
     if err != nil {
@@ -2810,14 +2810,14 @@ func (m *Group) SetIsArchived(value *bool)() {
         panic(err)
     }
 }
-// SetIsAssignableToRole sets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
+// SetIsAssignableToRole sets the isAssignableToRole property value. Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can't contain DynamicMembership). Only callers with at least the Privileged Role Administrator role can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).
 func (m *Group) SetIsAssignableToRole(value *bool)() {
     err := m.GetBackingStore().Set("isAssignableToRole", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsFavorite sets the isFavorite property value. The isFavorite property
+// SetIsFavorite sets the isFavorite property value. Indicates whether the user marked the group as favorite.
 func (m *Group) SetIsFavorite(value *bool)() {
     err := m.GetBackingStore().Set("isFavorite", value)
     if err != nil {
@@ -3006,7 +3006,7 @@ func (m *Group) SetPlanner(value PlannerGroupable)() {
         panic(err)
     }
 }
-// SetPreferredDataLocation sets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
+// SetPreferredDataLocation sets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned at least one of the following Microsoft Entra roles:  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.
 func (m *Group) SetPreferredDataLocation(value *string)() {
     err := m.GetBackingStore().Set("preferredDataLocation", value)
     if err != nil {

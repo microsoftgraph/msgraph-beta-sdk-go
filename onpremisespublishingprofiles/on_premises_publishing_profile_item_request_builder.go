@@ -51,6 +51,11 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroups()(*ItemAgent
 func (m *OnPremisesPublishingProfileItemRequestBuilder) Agents()(*ItemAgentsRequestBuilder) {
     return NewItemAgentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ApplicationSegments provides operations to manage the applicationSegments property of the microsoft.graph.onPremisesPublishingProfile entity.
+// returns a *ItemApplicationSegmentsRequestBuilder when successful
+func (m *OnPremisesPublishingProfileItemRequestBuilder) ApplicationSegments()(*ItemApplicationSegmentsRequestBuilder) {
+    return NewItemApplicationSegmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ConnectorGroups provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
 // returns a *ItemConnectorGroupsRequestBuilder when successful
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroups()(*ItemConnectorGroupsRequestBuilder) {

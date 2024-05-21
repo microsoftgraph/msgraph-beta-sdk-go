@@ -81,7 +81,7 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrinc
     }
     return nil
 }
-// GetServicePrincipalId gets the servicePrincipalId property value. The servicePrincipalId property
+// GetServicePrincipalId gets the servicePrincipalId property value. The identifier of the service principal whose access is being reviewed.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) GetServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalId")
@@ -133,7 +133,7 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetServicePrinc
         panic(err)
     }
 }
-// SetServicePrincipalId sets the servicePrincipalId property value. The servicePrincipalId property
+// SetServicePrincipalId sets the servicePrincipalId property value. The identifier of the service principal whose access is being reviewed.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalTarget) SetServicePrincipalId(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalId", value)
     if err != nil {

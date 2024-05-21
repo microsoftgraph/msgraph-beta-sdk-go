@@ -44,7 +44,7 @@ func NewOnlineMeetingsItemRecordingRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewOnlineMeetingsItemRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete recording for the navigation property onlineMeetings in communications
+// Delete the content stream of the recording of a Teams live event. Read-only.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemRecordingRequestBuilder) Delete(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -60,7 +60,7 @@ func (m *OnlineMeetingsItemRecordingRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get get recording for the navigation property onlineMeetings from communications
+// Get the content stream of the recording of a Teams live event. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -80,7 +80,7 @@ func (m *OnlineMeetingsItemRecordingRequestBuilder) Get(ctx context.Context, req
     }
     return res.([]byte), nil
 }
-// Put update recording for the navigation property onlineMeetings in communications
+// Put the content stream of the recording of a Teams live event. Read-only.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -100,7 +100,7 @@ func (m *OnlineMeetingsItemRecordingRequestBuilder) Put(ctx context.Context, bod
     }
     return res.([]byte), nil
 }
-// ToDeleteRequestInformation delete recording for the navigation property onlineMeetings in communications
+// ToDeleteRequestInformation the content stream of the recording of a Teams live event. Read-only.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemRecordingRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -111,7 +111,7 @@ func (m *OnlineMeetingsItemRecordingRequestBuilder) ToDeleteRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get recording for the navigation property onlineMeetings from communications
+// ToGetRequestInformation the content stream of the recording of a Teams live event. Read-only.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,7 +122,7 @@ func (m *OnlineMeetingsItemRecordingRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update recording for the navigation property onlineMeetings in communications
+// ToPutRequestInformation the content stream of the recording of a Teams live event. Read-only.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *OnlineMeetingsItemRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -92,7 +92,7 @@ func (m *ProfileSourceAnnotation) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetIsDefaultSource gets the isDefaultSource property value. The isDefaultSource property
+// GetIsDefaultSource gets the isDefaultSource property value. Indicates whether the source is the default one.
 // returns a *bool when successful
 func (m *ProfileSourceAnnotation) GetIsDefaultSource()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultSource")
@@ -116,7 +116,7 @@ func (m *ProfileSourceAnnotation) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProperties gets the properties property value. The properties property
+// GetProperties gets the properties property value. The names of properties that have data from this source.
 // returns a []string when successful
 func (m *ProfileSourceAnnotation) GetProperties()([]string) {
     val, err := m.GetBackingStore().Get("properties")
@@ -185,7 +185,7 @@ func (m *ProfileSourceAnnotation) SetAdditionalData(value map[string]any)() {
 func (m *ProfileSourceAnnotation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsDefaultSource sets the isDefaultSource property value. The isDefaultSource property
+// SetIsDefaultSource sets the isDefaultSource property value. Indicates whether the source is the default one.
 func (m *ProfileSourceAnnotation) SetIsDefaultSource(value *bool)() {
     err := m.GetBackingStore().Set("isDefaultSource", value)
     if err != nil {
@@ -199,7 +199,7 @@ func (m *ProfileSourceAnnotation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProperties sets the properties property value. The properties property
+// SetProperties sets the properties property value. The names of properties that have data from this source.
 func (m *ProfileSourceAnnotation) SetProperties(value []string)() {
     err := m.GetBackingStore().Set("properties", value)
     if err != nil {

@@ -21,6 +21,18 @@ func NewIpApplicationSegment()(*IpApplicationSegment) {
 func CreateIpApplicationSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpApplicationSegment(), nil
 }
+// GetApplication gets the application property value. The application property
+// returns a Applicationable when successful
+func (m *IpApplicationSegment) GetApplication()(Applicationable) {
+    val, err := m.GetBackingStore().Get("application")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Applicationable)
+    }
+    return nil
+}
 // GetDestinationHost gets the destinationHost property value. The destinationHost property
 // returns a *string when successful
 func (m *IpApplicationSegment) GetDestinationHost()(*string) {
@@ -49,6 +61,16 @@ func (m *IpApplicationSegment) GetDestinationType()(*PrivateNetworkDestinationTy
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ApplicationSegment.GetFieldDeserializers()
+    res["application"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateApplicationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApplication(val.(Applicationable))
+        }
+        return nil
+    }
     res["destinationHost"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -150,6 +172,12 @@ func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     {
+        err = writer.WriteObjectValue("application", m.GetApplication())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("destinationHost", m.GetDestinationHost())
         if err != nil {
             return err
@@ -182,6 +210,13 @@ func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     return nil
+}
+// SetApplication sets the application property value. The application property
+func (m *IpApplicationSegment) SetApplication(value Applicationable)() {
+    err := m.GetBackingStore().Set("application", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetDestinationHost sets the destinationHost property value. The destinationHost property
 func (m *IpApplicationSegment) SetDestinationHost(value *string)() {
@@ -221,11 +256,13 @@ func (m *IpApplicationSegment) SetProtocol(value *PrivateNetworkProtocol)() {
 type IpApplicationSegmentable interface {
     ApplicationSegmentable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApplication()(Applicationable)
     GetDestinationHost()(*string)
     GetDestinationType()(*PrivateNetworkDestinationType)
     GetPort()(*int32)
     GetPorts()([]string)
     GetProtocol()(*PrivateNetworkProtocol)
+    SetApplication(value Applicationable)()
     SetDestinationHost(value *string)()
     SetDestinationType(value *PrivateNetworkDestinationType)()
     SetPort(value *int32)()

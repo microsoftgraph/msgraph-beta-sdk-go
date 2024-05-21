@@ -76,7 +76,7 @@ func (m *ConditionalAccessConditionSet) GetClientApplications()(ConditionalAcces
     }
     return nil
 }
-// GetClientAppTypes gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
+// GetClientAppTypes gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member is deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
 // returns a []ConditionalAccessClientApp when successful
 func (m *ConditionalAccessConditionSet) GetClientAppTypes()([]ConditionalAccessClientApp) {
     val, err := m.GetBackingStore().Get("clientAppTypes")
@@ -282,7 +282,7 @@ func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetInsiderRiskLevels gets the insiderRiskLevels property value. The insiderRiskLevels property
+// GetInsiderRiskLevels gets the insiderRiskLevels property value. Insider risk levels included in the policy. The possible values are: minor, moderate, elevated, unknownFutureValue.
 // returns a *ConditionalAccessInsiderRiskLevels when successful
 func (m *ConditionalAccessConditionSet) GetInsiderRiskLevels()(*ConditionalAccessInsiderRiskLevels) {
     val, err := m.GetBackingStore().Get("insiderRiskLevels")
@@ -505,7 +505,7 @@ func (m *ConditionalAccessConditionSet) SetClientApplications(value ConditionalA
         panic(err)
     }
 }
-// SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
+// SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member is deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
 func (m *ConditionalAccessConditionSet) SetClientAppTypes(value []ConditionalAccessClientApp)() {
     err := m.GetBackingStore().Set("clientAppTypes", value)
     if err != nil {
@@ -526,7 +526,7 @@ func (m *ConditionalAccessConditionSet) SetDeviceStates(value ConditionalAccessD
         panic(err)
     }
 }
-// SetInsiderRiskLevels sets the insiderRiskLevels property value. The insiderRiskLevels property
+// SetInsiderRiskLevels sets the insiderRiskLevels property value. Insider risk levels included in the policy. The possible values are: minor, moderate, elevated, unknownFutureValue.
 func (m *ConditionalAccessConditionSet) SetInsiderRiskLevels(value *ConditionalAccessInsiderRiskLevels)() {
     err := m.GetBackingStore().Set("insiderRiskLevels", value)
     if err != nil {

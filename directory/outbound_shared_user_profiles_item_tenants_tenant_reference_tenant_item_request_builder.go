@@ -18,7 +18,7 @@ type OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderGetQueryParameters the collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+// OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderGetQueryParameters the collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
 type OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBu
     }
     return nil
 }
-// Get the collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+// Get the collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
 // returns a TenantReferenceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantReferenceable, error) {
@@ -126,7 +126,7 @@ func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBu
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+// ToGetRequestInformation the collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
 // returns a *RequestInformation when successful
 func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

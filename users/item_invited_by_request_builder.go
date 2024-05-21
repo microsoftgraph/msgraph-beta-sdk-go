@@ -11,7 +11,7 @@ import (
 type ItemInvitedByRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemInvitedByRequestBuilderGetQueryParameters get invitedBy from users
+// ItemInvitedByRequestBuilderGetQueryParameters get the user or servicePrincipal that invited the specified user into the tenant.
 type ItemInvitedByRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,9 +40,12 @@ func NewItemInvitedByRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     urlParams["request-raw-url"] = rawUrl
     return NewItemInvitedByRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get invitedBy from users
+// Get get the user or servicePrincipal that invited the specified user into the tenant.
 // returns a DirectoryObjectable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-list-invitedby?view=graph-rest-beta
 func (m *ItemInvitedByRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInvitedByRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,7 +63,7 @@ func (m *ItemInvitedByRequestBuilder) Get(ctx context.Context, requestConfigurat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ToGetRequestInformation get invitedBy from users
+// ToGetRequestInformation get the user or servicePrincipal that invited the specified user into the tenant.
 // returns a *RequestInformation when successful
 func (m *ItemInvitedByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInvitedByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

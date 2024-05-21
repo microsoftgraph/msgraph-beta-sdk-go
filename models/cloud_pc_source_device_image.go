@@ -118,7 +118,7 @@ func (m *CloudPcSourceDeviceImage) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The unique identifier (ID) of the source image. Read-only. The id property is deprecated and will stop returning data on January 31, 2024. Going forward, use the resourceId property.
 // returns a *string when successful
 func (m *CloudPcSourceDeviceImage) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -242,7 +242,7 @@ func (m *CloudPcSourceDeviceImage) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The unique identifier (ID) of the source image. Read-only. The id property is deprecated and will stop returning data on January 31, 2024. Going forward, use the resourceId property.
 func (m *CloudPcSourceDeviceImage) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

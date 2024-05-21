@@ -595,7 +595,7 @@ func (m *Call) GetParticipants()([]Participantable) {
     }
     return nil
 }
-// GetRequestedModalities gets the requestedModalities property value. The requestedModalities property
+// GetRequestedModalities gets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
 // returns a []Modality when successful
 func (m *Call) GetRequestedModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("requestedModalities")
@@ -607,7 +607,7 @@ func (m *Call) GetRequestedModalities()([]Modality) {
     }
     return nil
 }
-// GetResultInfo gets the resultInfo property value. The resultInfo property
+// GetResultInfo gets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
 // returns a ResultInfoable when successful
 func (m *Call) GetResultInfo()(ResultInfoable) {
     val, err := m.GetBackingStore().Get("resultInfo")
@@ -619,7 +619,7 @@ func (m *Call) GetResultInfo()(ResultInfoable) {
     }
     return nil
 }
-// GetRingingTimeoutInSeconds gets the ringingTimeoutInSeconds property value. The ringingTimeoutInSeconds property
+// GetRingingTimeoutInSeconds gets the ringingTimeoutInSeconds property value. Ringing timeout in seconds for outgoing peer to peer calls. The max value for this attribute is 115 seconds.
 // returns a *int32 when successful
 func (m *Call) GetRingingTimeoutInSeconds()(*int32) {
     val, err := m.GetBackingStore().Get("ringingTimeoutInSeconds")
@@ -631,7 +631,7 @@ func (m *Call) GetRingingTimeoutInSeconds()(*int32) {
     }
     return nil
 }
-// GetRoutingPolicies gets the routingPolicies property value. The routingPolicies property
+// GetRoutingPolicies gets the routingPolicies property value. This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.
 // returns a []RoutingPolicy when successful
 func (m *Call) GetRoutingPolicies()([]RoutingPolicy) {
     val, err := m.GetBackingStore().Get("routingPolicies")
@@ -643,7 +643,7 @@ func (m *Call) GetRoutingPolicies()([]RoutingPolicy) {
     }
     return nil
 }
-// GetSource gets the source property value. The source property
+// GetSource gets the source property value. The originator of the call.
 // returns a ParticipantInfoable when successful
 func (m *Call) GetSource()(ParticipantInfoable) {
     val, err := m.GetBackingStore().Get("source")
@@ -655,7 +655,7 @@ func (m *Call) GetSource()(ParticipantInfoable) {
     }
     return nil
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
 // returns a *CallState when successful
 func (m *Call) GetState()(*CallState) {
     val, err := m.GetBackingStore().Get("state")
@@ -667,7 +667,7 @@ func (m *Call) GetState()(*CallState) {
     }
     return nil
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. The subject of the conversation.
 // returns a *string when successful
 func (m *Call) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
@@ -679,7 +679,7 @@ func (m *Call) GetSubject()(*string) {
     }
     return nil
 }
-// GetTargets gets the targets property value. The targets property
+// GetTargets gets the targets property value. The targets of the call. Required information for creating peer to peer call.
 // returns a []InvitationParticipantInfoable when successful
 func (m *Call) GetTargets()([]InvitationParticipantInfoable) {
     val, err := m.GetBackingStore().Get("targets")
@@ -691,7 +691,7 @@ func (m *Call) GetTargets()([]InvitationParticipantInfoable) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Read-only. tenantId in Microsoft Entra ID.
 // returns a *string when successful
 func (m *Call) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -1091,63 +1091,63 @@ func (m *Call) SetParticipants(value []Participantable)() {
         panic(err)
     }
 }
-// SetRequestedModalities sets the requestedModalities property value. The requestedModalities property
+// SetRequestedModalities sets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
 func (m *Call) SetRequestedModalities(value []Modality)() {
     err := m.GetBackingStore().Set("requestedModalities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResultInfo sets the resultInfo property value. The resultInfo property
+// SetResultInfo sets the resultInfo property value. The result information. For example, the result can hold termination reason. Read-only.
 func (m *Call) SetResultInfo(value ResultInfoable)() {
     err := m.GetBackingStore().Set("resultInfo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRingingTimeoutInSeconds sets the ringingTimeoutInSeconds property value. The ringingTimeoutInSeconds property
+// SetRingingTimeoutInSeconds sets the ringingTimeoutInSeconds property value. Ringing timeout in seconds for outgoing peer to peer calls. The max value for this attribute is 115 seconds.
 func (m *Call) SetRingingTimeoutInSeconds(value *int32)() {
     err := m.GetBackingStore().Set("ringingTimeoutInSeconds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoutingPolicies sets the routingPolicies property value. The routingPolicies property
+// SetRoutingPolicies sets the routingPolicies property value. This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.
 func (m *Call) SetRoutingPolicies(value []RoutingPolicy)() {
     err := m.GetBackingStore().Set("routingPolicies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSource sets the source property value. The source property
+// SetSource sets the source property value. The originator of the call.
 func (m *Call) SetSource(value ParticipantInfoable)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.
 func (m *Call) SetState(value *CallState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. The subject of the conversation.
 func (m *Call) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargets sets the targets property value. The targets property
+// SetTargets sets the targets property value. The targets of the call. Required information for creating peer to peer call.
 func (m *Call) SetTargets(value []InvitationParticipantInfoable)() {
     err := m.GetBackingStore().Set("targets", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Read-only. tenantId in Microsoft Entra ID.
 func (m *Call) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

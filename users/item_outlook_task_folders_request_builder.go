@@ -11,7 +11,7 @@ import (
 type ItemOutlookTaskFoldersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemOutlookTaskFoldersRequestBuilderGetQueryParameters get taskFolders from users
+// ItemOutlookTaskFoldersRequestBuilderGetQueryParameters the user's Outlook task folders. Read-only. Nullable.
 type ItemOutlookTaskFoldersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -75,7 +75,7 @@ func NewItemOutlookTaskFoldersRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *ItemOutlookTaskFoldersRequestBuilder) Count()(*ItemOutlookTaskFoldersCountRequestBuilder) {
     return NewItemOutlookTaskFoldersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get taskFolders from users
+// Get the user's Outlook task folders. Read-only. Nullable.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a OutlookTaskFolderCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -117,7 +117,7 @@ func (m *ItemOutlookTaskFoldersRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
-// ToGetRequestInformation get taskFolders from users
+// ToGetRequestInformation the user's Outlook task folders. Read-only. Nullable.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTaskFoldersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

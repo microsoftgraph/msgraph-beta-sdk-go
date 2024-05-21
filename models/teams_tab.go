@@ -155,7 +155,7 @@ func (m *TeamsTab) GetTeamsApp()(TeamsAppable) {
     }
     return nil
 }
-// GetTeamsAppId gets the teamsAppId property value. The teamsAppId property
+// GetTeamsAppId gets the teamsAppId property value. App definition identifier of the tab. This value can't be changed after tab creation. Because this property is deprecated, we recommend expanding teamsApp to retrieve the application that is linked to the tab.
 // returns a *string when successful
 func (m *TeamsTab) GetTeamsAppId()(*string) {
     val, err := m.GetBackingStore().Get("teamsAppId")
@@ -264,7 +264,7 @@ func (m *TeamsTab) SetTeamsApp(value TeamsAppable)() {
         panic(err)
     }
 }
-// SetTeamsAppId sets the teamsAppId property value. The teamsAppId property
+// SetTeamsAppId sets the teamsAppId property value. App definition identifier of the tab. This value can't be changed after tab creation. Because this property is deprecated, we recommend expanding teamsApp to retrieve the application that is linked to the tab.
 func (m *TeamsTab) SetTeamsAppId(value *string)() {
     err := m.GetBackingStore().Set("teamsAppId", value)
     if err != nil {

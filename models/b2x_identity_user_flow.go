@@ -111,7 +111,7 @@ func (m *B2xIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIdentityProviders gets the identityProviders property value. The identityProviders property
+// GetIdentityProviders gets the identityProviders property value. The identity providers included in the user flow.
 // returns a []IdentityProviderable when successful
 func (m *B2xIdentityUserFlow) GetIdentityProviders()([]IdentityProviderable) {
     val, err := m.GetBackingStore().Get("identityProviders")
@@ -228,7 +228,7 @@ func (m *B2xIdentityUserFlow) SetApiConnectorConfiguration(value UserFlowApiConn
         panic(err)
     }
 }
-// SetIdentityProviders sets the identityProviders property value. The identityProviders property
+// SetIdentityProviders sets the identityProviders property value. The identity providers included in the user flow.
 func (m *B2xIdentityUserFlow) SetIdentityProviders(value []IdentityProviderable)() {
     err := m.GetBackingStore().Set("identityProviders", value)
     if err != nil {

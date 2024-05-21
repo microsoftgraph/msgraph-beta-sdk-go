@@ -191,7 +191,7 @@ func (m *ServicePrincipal) GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
     }
     return nil
 }
-// GetClaimsPolicy gets the claimsPolicy property value. The claimsPolicy property
+// GetClaimsPolicy gets the claimsPolicy property value. A claims policy that allows application admins to customize the claims that will be emitted in tokens affected by this policy.
 // returns a CustomClaimsPolicyable when successful
 func (m *ServicePrincipal) GetClaimsPolicy()(CustomClaimsPolicyable) {
     val, err := m.GetBackingStore().Get("claimsPolicy")
@@ -2053,7 +2053,7 @@ func (m *ServicePrincipal) SetClaimsMappingPolicies(value []ClaimsMappingPolicya
         panic(err)
     }
 }
-// SetClaimsPolicy sets the claimsPolicy property value. The claimsPolicy property
+// SetClaimsPolicy sets the claimsPolicy property value. A claims policy that allows application admins to customize the claims that will be emitted in tokens affected by this policy.
 func (m *ServicePrincipal) SetClaimsPolicy(value CustomClaimsPolicyable)() {
     err := m.GetBackingStore().Set("claimsPolicy", value)
     if err != nil {

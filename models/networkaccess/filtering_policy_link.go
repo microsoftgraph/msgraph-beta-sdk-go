@@ -104,7 +104,7 @@ func (m *FilteringPolicyLink) GetLoggingState()(*Status) {
     }
     return nil
 }
-// GetPriority gets the priority property value. The priority property
+// GetPriority gets the priority property value. Provides an integer priority level for each instance of a URL filtering policy linked to a profile. Required.
 // returns a *int64 when successful
 func (m *FilteringPolicyLink) GetPriority()(*int64) {
     val, err := m.GetBackingStore().Get("priority")
@@ -170,7 +170,7 @@ func (m *FilteringPolicyLink) SetLoggingState(value *Status)() {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority property
+// SetPriority sets the priority property value. Provides an integer priority level for each instance of a URL filtering policy linked to a profile. Required.
 func (m *FilteringPolicyLink) SetPriority(value *int64)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {

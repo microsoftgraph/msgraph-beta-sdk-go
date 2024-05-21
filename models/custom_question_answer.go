@@ -2,43 +2,22 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type CustomQuestionAnswer struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+    Entity
 }
 // NewCustomQuestionAnswer instantiates a new CustomQuestionAnswer and sets the default values.
 func NewCustomQuestionAnswer()(*CustomQuestionAnswer) {
     m := &CustomQuestionAnswer{
+        Entity: *NewEntity(),
     }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCustomQuestionAnswerFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateCustomQuestionAnswerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomQuestionAnswer(), nil
-}
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// returns a map[string]any when successful
-func (m *CustomQuestionAnswer) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
-}
-// GetBackingStore gets the BackingStore property value. Stores model information.
-// returns a BackingStore when successful
-func (m *CustomQuestionAnswer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
 }
 // GetDisplayName gets the displayName property value. Display name of the custom registration question. Read-only.
 // returns a *string when successful
@@ -55,7 +34,7 @@ func (m *CustomQuestionAnswer) GetDisplayName()(*string) {
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CustomQuestionAnswer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res := m.Entity.GetFieldDeserializers()
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -63,16 +42,6 @@ func (m *CustomQuestionAnswer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
         }
         return nil
     }
@@ -97,18 +66,6 @@ func (m *CustomQuestionAnswer) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
-// returns a *string when successful
-func (m *CustomQuestionAnswer) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetQuestionId gets the questionId property value. ID the custom registration question. Read-only.
 // returns a *string when successful
@@ -136,59 +93,33 @@ func (m *CustomQuestionAnswer) GetValue()(*string) {
 }
 // Serialize serializes information the current object
 func (m *CustomQuestionAnswer) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
     {
-        err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        err = writer.WriteStringValue("questionId", m.GetQuestionId())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("questionId", m.GetQuestionId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("value", m.GetValue())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        err = writer.WriteStringValue("value", m.GetValue())
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CustomQuestionAnswer) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *CustomQuestionAnswer) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
-}
 // SetDisplayName sets the displayName property value. Display name of the custom registration question. Read-only.
 func (m *CustomQuestionAnswer) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CustomQuestionAnswer) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
@@ -208,17 +139,12 @@ func (m *CustomQuestionAnswer) SetValue(value *string)() {
     }
 }
 type CustomQuestionAnswerable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
-    GetOdataType()(*string)
     GetQuestionId()(*string)
     GetValue()(*string)
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
-    SetOdataType(value *string)()
     SetQuestionId(value *string)()
     SetValue(value *string)()
 }

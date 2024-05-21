@@ -218,7 +218,7 @@ func (m *CloudPcUserSetting) GetRestorePointSetting()(CloudPcRestorePointSetting
     }
     return nil
 }
-// GetSelfServiceEnabled gets the selfServiceEnabled property value. The selfServiceEnabled property
+// GetSelfServiceEnabled gets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.
 // returns a *bool when successful
 func (m *CloudPcUserSetting) GetSelfServiceEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("selfServiceEnabled")
@@ -354,7 +354,7 @@ func (m *CloudPcUserSetting) SetRestorePointSetting(value CloudPcRestorePointSet
         panic(err)
     }
 }
-// SetSelfServiceEnabled sets the selfServiceEnabled property value. The selfServiceEnabled property
+// SetSelfServiceEnabled sets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.
 func (m *CloudPcUserSetting) SetSelfServiceEnabled(value *bool)() {
     err := m.GetBackingStore().Set("selfServiceEnabled", value)
     if err != nil {

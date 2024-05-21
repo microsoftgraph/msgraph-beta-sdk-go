@@ -122,7 +122,7 @@ func (m *MicrosoftManagedDesktop) GetProfile()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop and, if enabled, specifies the type of plan managing the device. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The type property is deprecated and will stop returning data on January 31, 2024. Going forward, use the managedType property.
 // returns a *MicrosoftManagedDesktopType when successful
 func (m *MicrosoftManagedDesktop) GetTypeEscaped()(*MicrosoftManagedDesktopType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -202,7 +202,7 @@ func (m *MicrosoftManagedDesktop) SetProfile(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. Indicates whether the provisioning policy enables Microsoft Managed Desktop and, if enabled, specifies the type of plan managing the device. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The type property is deprecated and will stop returning data on January 31, 2024. Going forward, use the managedType property.
 func (m *MicrosoftManagedDesktop) SetTypeEscaped(value *MicrosoftManagedDesktopType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

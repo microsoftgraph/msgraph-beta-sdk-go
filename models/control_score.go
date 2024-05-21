@@ -40,7 +40,7 @@ func (m *ControlScore) GetAdditionalData()(map[string]any) {
 func (m *ControlScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetControlCategory gets the controlCategory property value. The controlCategory property
+// GetControlCategory gets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
 // returns a *string when successful
 func (m *ControlScore) GetControlCategory()(*string) {
     val, err := m.GetBackingStore().Get("controlCategory")
@@ -52,7 +52,7 @@ func (m *ControlScore) GetControlCategory()(*string) {
     }
     return nil
 }
-// GetControlName gets the controlName property value. The controlName property
+// GetControlName gets the controlName property value. Control unique name
 // returns a *string when successful
 func (m *ControlScore) GetControlName()(*string) {
     val, err := m.GetBackingStore().Get("controlName")
@@ -64,7 +64,7 @@ func (m *ControlScore) GetControlName()(*string) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the control.
 // returns a *string when successful
 func (m *ControlScore) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -144,7 +144,7 @@ func (m *ControlScore) GetOdataType()(*string) {
     }
     return nil
 }
-// GetScore gets the score property value. The score property
+// GetScore gets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
 // returns a *float64 when successful
 func (m *ControlScore) GetScore()(*float64) {
     val, err := m.GetBackingStore().Get("score")
@@ -207,21 +207,21 @@ func (m *ControlScore) SetAdditionalData(value map[string]any)() {
 func (m *ControlScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetControlCategory sets the controlCategory property value. The controlCategory property
+// SetControlCategory sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
 func (m *ControlScore) SetControlCategory(value *string)() {
     err := m.GetBackingStore().Set("controlCategory", value)
     if err != nil {
         panic(err)
     }
 }
-// SetControlName sets the controlName property value. The controlName property
+// SetControlName sets the controlName property value. Control unique name
 func (m *ControlScore) SetControlName(value *string)() {
     err := m.GetBackingStore().Set("controlName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the control.
 func (m *ControlScore) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -235,7 +235,7 @@ func (m *ControlScore) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetScore sets the score property value. The score property
+// SetScore sets the score property value. Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
 func (m *ControlScore) SetScore(value *float64)() {
     err := m.GetBackingStore().Set("score", value)
     if err != nil {

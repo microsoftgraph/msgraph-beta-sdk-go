@@ -60,7 +60,7 @@ func (m *CustomClaimBase) GetAdditionalData()(map[string]any) {
 func (m *CustomClaimBase) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetConfigurations gets the configurations property value. The configurations property
+// GetConfigurations gets the configurations property value. One or more configurations that describe how the claim is sourced and under what conditions.
 // returns a []CustomClaimConfigurationable when successful
 func (m *CustomClaimBase) GetConfigurations()([]CustomClaimConfigurationable) {
     val, err := m.GetBackingStore().Get("configurations")
@@ -155,7 +155,7 @@ func (m *CustomClaimBase) SetAdditionalData(value map[string]any)() {
 func (m *CustomClaimBase) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetConfigurations sets the configurations property value. The configurations property
+// SetConfigurations sets the configurations property value. One or more configurations that describe how the claim is sourced and under what conditions.
 func (m *CustomClaimBase) SetConfigurations(value []CustomClaimConfigurationable)() {
     err := m.GetBackingStore().Set("configurations", value)
     if err != nil {

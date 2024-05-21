@@ -45,7 +45,7 @@ func NewItemOnenoteResourcesItemContentRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnenoteResourcesItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete content for the navigation property resources in users
+// Delete the content of the resource.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteResourcesItemContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnenoteResourcesItemContentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -61,7 +61,7 @@ func (m *ItemOnenoteResourcesItemContentRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get get content for the navigation property resources from users
+// Get the content of the resource.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteResourcesItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteResourcesItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -81,7 +81,7 @@ func (m *ItemOnenoteResourcesItemContentRequestBuilder) Get(ctx context.Context,
     }
     return res.([]byte), nil
 }
-// Put update content for the navigation property resources in users
+// Put the content of the resource.
 // returns a OnenoteResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteResourcesItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemOnenoteResourcesItemContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteResourceable, error) {
@@ -101,7 +101,7 @@ func (m *ItemOnenoteResourcesItemContentRequestBuilder) Put(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteResourceable), nil
 }
-// ToDeleteRequestInformation delete content for the navigation property resources in users
+// ToDeleteRequestInformation the content of the resource.
 // returns a *RequestInformation when successful
 func (m *ItemOnenoteResourcesItemContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteResourcesItemContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -112,7 +112,7 @@ func (m *ItemOnenoteResourcesItemContentRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get content for the navigation property resources from users
+// ToGetRequestInformation the content of the resource.
 // returns a *RequestInformation when successful
 func (m *ItemOnenoteResourcesItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteResourcesItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -123,7 +123,7 @@ func (m *ItemOnenoteResourcesItemContentRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update content for the navigation property resources in users
+// ToPutRequestInformation the content of the resource.
 // returns a *RequestInformation when successful
 func (m *ItemOnenoteResourcesItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemOnenoteResourcesItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

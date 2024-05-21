@@ -64,7 +64,7 @@ func (m *ConditionalAccessDevices) GetExcludeDevices()([]string) {
     }
     return nil
 }
-// GetExcludeDeviceStates gets the excludeDeviceStates property value. The excludeDeviceStates property
+// GetExcludeDeviceStates gets the excludeDeviceStates property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
 // returns a []string when successful
 func (m *ConditionalAccessDevices) GetExcludeDeviceStates()([]string) {
     val, err := m.GetBackingStore().Get("excludeDeviceStates")
@@ -178,7 +178,7 @@ func (m *ConditionalAccessDevices) GetIncludeDevices()([]string) {
     }
     return nil
 }
-// GetIncludeDeviceStates gets the includeDeviceStates property value. The includeDeviceStates property
+// GetIncludeDeviceStates gets the includeDeviceStates property value. States in the scope of the policy. All is the only allowed value.
 // returns a []string when successful
 func (m *ConditionalAccessDevices) GetIncludeDeviceStates()([]string) {
     val, err := m.GetBackingStore().Get("includeDeviceStates")
@@ -273,7 +273,7 @@ func (m *ConditionalAccessDevices) SetExcludeDevices(value []string)() {
         panic(err)
     }
 }
-// SetExcludeDeviceStates sets the excludeDeviceStates property value. The excludeDeviceStates property
+// SetExcludeDeviceStates sets the excludeDeviceStates property value. States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.
 func (m *ConditionalAccessDevices) SetExcludeDeviceStates(value []string)() {
     err := m.GetBackingStore().Set("excludeDeviceStates", value)
     if err != nil {
@@ -287,7 +287,7 @@ func (m *ConditionalAccessDevices) SetIncludeDevices(value []string)() {
         panic(err)
     }
 }
-// SetIncludeDeviceStates sets the includeDeviceStates property value. The includeDeviceStates property
+// SetIncludeDeviceStates sets the includeDeviceStates property value. States in the scope of the policy. All is the only allowed value.
 func (m *ConditionalAccessDevices) SetIncludeDeviceStates(value []string)() {
     err := m.GetBackingStore().Set("includeDeviceStates", value)
     if err != nil {

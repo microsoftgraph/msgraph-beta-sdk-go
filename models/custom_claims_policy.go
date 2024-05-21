@@ -19,7 +19,7 @@ func NewCustomClaimsPolicy()(*CustomClaimsPolicy) {
 func CreateCustomClaimsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomClaimsPolicy(), nil
 }
-// GetAudienceOverride gets the audienceOverride property value. The audienceOverride property
+// GetAudienceOverride gets the audienceOverride property value. If specified, it overrides the content of the audience claim for WS-Federation and SAML2 protocols. A custom signing key must be used for audienceOverride to be applied, otherwise, the audienceOverride value is ignored. The value provided must be in the format of an absolute URI.
 // returns a *string when successful
 func (m *CustomClaimsPolicy) GetAudienceOverride()(*string) {
     val, err := m.GetBackingStore().Get("audienceOverride")
@@ -31,7 +31,7 @@ func (m *CustomClaimsPolicy) GetAudienceOverride()(*string) {
     }
     return nil
 }
-// GetClaims gets the claims property value. The claims property
+// GetClaims gets the claims property value. Defines which claims are present in the tokens affected by the policy, in addition to the basic claim and the core claim set. Inherited from customclaimbase.
 // returns a []CustomClaimBaseable when successful
 func (m *CustomClaimsPolicy) GetClaims()([]CustomClaimBaseable) {
     val, err := m.GetBackingStore().Get("claims")
@@ -95,7 +95,7 @@ func (m *CustomClaimsPolicy) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIncludeApplicationIdInIssuer gets the includeApplicationIdInIssuer property value. The includeApplicationIdInIssuer property
+// GetIncludeApplicationIdInIssuer gets the includeApplicationIdInIssuer property value. Indicates whether the application ID is added to the claim. It is relevant only for SAML2.0 and if a custom signing key is used. the default value is true. Optional.
 // returns a *bool when successful
 func (m *CustomClaimsPolicy) GetIncludeApplicationIdInIssuer()(*bool) {
     val, err := m.GetBackingStore().Get("includeApplicationIdInIssuer")
@@ -107,7 +107,7 @@ func (m *CustomClaimsPolicy) GetIncludeApplicationIdInIssuer()(*bool) {
     }
     return nil
 }
-// GetIncludeBasicClaimSet gets the includeBasicClaimSet property value. The includeBasicClaimSet property
+// GetIncludeBasicClaimSet gets the includeBasicClaimSet property value. Determines whether the basic claim set is included in tokens affected by this policy. If set to true, all claims in the basic claim set are emitted in tokens affected by the policy. By default the basic claim set isn't in the tokens unless they're explicitly configured in this policy.
 // returns a *bool when successful
 func (m *CustomClaimsPolicy) GetIncludeBasicClaimSet()(*bool) {
     val, err := m.GetBackingStore().Get("includeBasicClaimSet")
@@ -157,28 +157,28 @@ func (m *CustomClaimsPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAudienceOverride sets the audienceOverride property value. The audienceOverride property
+// SetAudienceOverride sets the audienceOverride property value. If specified, it overrides the content of the audience claim for WS-Federation and SAML2 protocols. A custom signing key must be used for audienceOverride to be applied, otherwise, the audienceOverride value is ignored. The value provided must be in the format of an absolute URI.
 func (m *CustomClaimsPolicy) SetAudienceOverride(value *string)() {
     err := m.GetBackingStore().Set("audienceOverride", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClaims sets the claims property value. The claims property
+// SetClaims sets the claims property value. Defines which claims are present in the tokens affected by the policy, in addition to the basic claim and the core claim set. Inherited from customclaimbase.
 func (m *CustomClaimsPolicy) SetClaims(value []CustomClaimBaseable)() {
     err := m.GetBackingStore().Set("claims", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncludeApplicationIdInIssuer sets the includeApplicationIdInIssuer property value. The includeApplicationIdInIssuer property
+// SetIncludeApplicationIdInIssuer sets the includeApplicationIdInIssuer property value. Indicates whether the application ID is added to the claim. It is relevant only for SAML2.0 and if a custom signing key is used. the default value is true. Optional.
 func (m *CustomClaimsPolicy) SetIncludeApplicationIdInIssuer(value *bool)() {
     err := m.GetBackingStore().Set("includeApplicationIdInIssuer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncludeBasicClaimSet sets the includeBasicClaimSet property value. The includeBasicClaimSet property
+// SetIncludeBasicClaimSet sets the includeBasicClaimSet property value. Determines whether the basic claim set is included in tokens affected by this policy. If set to true, all claims in the basic claim set are emitted in tokens affected by the policy. By default the basic claim set isn't in the tokens unless they're explicitly configured in this policy.
 func (m *CustomClaimsPolicy) SetIncludeBasicClaimSet(value *bool)() {
     err := m.GetBackingStore().Set("includeBasicClaimSet", value)
     if err != nil {
