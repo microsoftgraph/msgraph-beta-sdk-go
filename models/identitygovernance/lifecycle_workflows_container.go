@@ -74,6 +74,16 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["insights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInsightsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInsights(val.(Insightsable))
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLifecycleManagementSettingsFromDiscriminatorValue)
         if err != nil {
@@ -133,6 +143,18 @@ func (m *LifecycleWorkflowsContainer) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
+}
+// GetInsights gets the insights property value. The insight container holding workflow insight summaries for a tenant.
+// returns a Insightsable when successful
+func (m *LifecycleWorkflowsContainer) GetInsights()(Insightsable) {
+    val, err := m.GetBackingStore().Get("insights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Insightsable)
+    }
+    return nil
 }
 // GetSettings gets the settings property value. The settings property
 // returns a LifecycleManagementSettingsable when successful
@@ -207,6 +229,12 @@ func (m *LifecycleWorkflowsContainer) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteObjectValue("insights", m.GetInsights())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
             return err
@@ -264,6 +292,13 @@ func (m *LifecycleWorkflowsContainer) SetDeletedItems(value ie233ee762e29b4ba697
         panic(err)
     }
 }
+// SetInsights sets the insights property value. The insight container holding workflow insight summaries for a tenant.
+func (m *LifecycleWorkflowsContainer) SetInsights(value Insightsable)() {
+    err := m.GetBackingStore().Set("insights", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettings sets the settings property value. The settings property
 func (m *LifecycleWorkflowsContainer) SetSettings(value LifecycleManagementSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
@@ -297,12 +332,14 @@ type LifecycleWorkflowsContainerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCustomTaskExtensions()([]CustomTaskExtensionable)
     GetDeletedItems()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)
+    GetInsights()(Insightsable)
     GetSettings()(LifecycleManagementSettingsable)
     GetTaskDefinitions()([]TaskDefinitionable)
     GetWorkflows()([]Workflowable)
     GetWorkflowTemplates()([]WorkflowTemplateable)
     SetCustomTaskExtensions(value []CustomTaskExtensionable)()
     SetDeletedItems(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeletedItemContainerable)()
+    SetInsights(value Insightsable)()
     SetSettings(value LifecycleManagementSettingsable)()
     SetTaskDefinitions(value []TaskDefinitionable)()
     SetWorkflows(value []Workflowable)()

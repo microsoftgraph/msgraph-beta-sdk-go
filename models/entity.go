@@ -2040,6 +2040,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewParticipantLeftNotification(), nil
                     case "#microsoft.graph.partners":
                         return NewPartners(), nil
+                    case "#microsoft.graph.passkeyAuthenticationMethodTarget":
+                        return NewPasskeyAuthenticationMethodTarget(), nil
                     case "#microsoft.graph.passwordAuthenticationMethod":
                         return NewPasswordAuthenticationMethod(), nil
                     case "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod":

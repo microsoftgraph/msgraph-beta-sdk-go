@@ -69,7 +69,7 @@ func (m *RetentionEvent) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEventPropagationResults gets the eventPropagationResults property value. The eventPropagationResults property
+// GetEventPropagationResults gets the eventPropagationResults property value. Represents the success status of a created event and additional information.
 // returns a []EventPropagationResultable when successful
 func (m *RetentionEvent) GetEventPropagationResults()([]EventPropagationResultable) {
     val, err := m.GetBackingStore().Get("eventPropagationResults")
@@ -81,7 +81,7 @@ func (m *RetentionEvent) GetEventPropagationResults()([]EventPropagationResultab
     }
     return nil
 }
-// GetEventQueries gets the eventQueries property value. The eventQueries property
+// GetEventQueries gets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
 // returns a []EventQueryable when successful
 func (m *RetentionEvent) GetEventQueries()([]EventQueryable) {
     val, err := m.GetBackingStore().Get("eventQueries")
@@ -93,7 +93,7 @@ func (m *RetentionEvent) GetEventQueries()([]EventQueryable) {
     }
     return nil
 }
-// GetEventStatus gets the eventStatus property value. The eventStatus property
+// GetEventStatus gets the eventStatus property value. Status of event propogation to the scoped locations after the event has been created.
 // returns a RetentionEventStatusable when successful
 func (m *RetentionEvent) GetEventStatus()(RetentionEventStatusable) {
     val, err := m.GetBackingStore().Get("eventStatus")
@@ -423,21 +423,21 @@ func (m *RetentionEvent) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetEventPropagationResults sets the eventPropagationResults property value. The eventPropagationResults property
+// SetEventPropagationResults sets the eventPropagationResults property value. Represents the success status of a created event and additional information.
 func (m *RetentionEvent) SetEventPropagationResults(value []EventPropagationResultable)() {
     err := m.GetBackingStore().Set("eventPropagationResults", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventQueries sets the eventQueries property value. The eventQueries property
+// SetEventQueries sets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
 func (m *RetentionEvent) SetEventQueries(value []EventQueryable)() {
     err := m.GetBackingStore().Set("eventQueries", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventStatus sets the eventStatus property value. The eventStatus property
+// SetEventStatus sets the eventStatus property value. Status of event propogation to the scoped locations after the event has been created.
 func (m *RetentionEvent) SetEventStatus(value RetentionEventStatusable)() {
     err := m.GetBackingStore().Set("eventStatus", value)
     if err != nil {

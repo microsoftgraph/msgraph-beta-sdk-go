@@ -90,6 +90,11 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioni
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.ProvisioningFlowable), nil
 }
+// MicrosoftGraphIndustryDataReset provides operations to call the reset method.
+// returns a *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsItemMicrosoftGraphIndustryDataResetRequestBuilder when successful
+func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioningFlowItemRequestBuilder) MicrosoftGraphIndustryDataReset()(*IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsItemMicrosoftGraphIndustryDataResetRequestBuilder) {
+    return NewIndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsItemMicrosoftGraphIndustryDataResetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property provisioningFlows in external
 // returns a ProvisioningFlowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

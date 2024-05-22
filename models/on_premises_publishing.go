@@ -496,7 +496,7 @@ func (m *OnPremisesPublishing) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
+// GetOnPremisesApplicationSegments gets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application. This property is deprecated and will stop returning data on June 1, 2023. Use segmentsConfiguration instead.
 // returns a []OnPremisesApplicationSegmentable when successful
 func (m *OnPremisesPublishing) GetOnPremisesApplicationSegments()([]OnPremisesApplicationSegmentable) {
     val, err := m.GetBackingStore().Get("onPremisesApplicationSegments")
@@ -871,7 +871,7 @@ func (m *OnPremisesPublishing) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. The onPremisesApplicationSegments property
+// SetOnPremisesApplicationSegments sets the onPremisesApplicationSegments property value. Represents the application segment collection for an on-premises wildcard application. This property is deprecated and will stop returning data on June 1, 2023. Use segmentsConfiguration instead.
 func (m *OnPremisesPublishing) SetOnPremisesApplicationSegments(value []OnPremisesApplicationSegmentable)() {
     err := m.GetBackingStore().Set("onPremisesApplicationSegments", value)
     if err != nil {

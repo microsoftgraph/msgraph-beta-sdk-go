@@ -48,7 +48,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetail()(*string) 
     }
     return nil
 }
-// GetAdditionalDetails gets the additionalDetails property value. The additionalDetails property
+// GetAdditionalDetails gets the additionalDetails property value. More details about the health check or the recommended action. Read-only. The additionalDetails property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the additionalDetail property.
 // returns a *string when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetAdditionalDetails()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetails")
@@ -353,7 +353,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalDetail(value *stri
         panic(err)
     }
 }
-// SetAdditionalDetails sets the additionalDetails property value. The additionalDetails property
+// SetAdditionalDetails sets the additionalDetails property value. More details about the health check or the recommended action. Read-only. The additionalDetails property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the additionalDetail property.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetAdditionalDetails(value *string)() {
     err := m.GetBackingStore().Set("additionalDetails", value)
     if err != nil {

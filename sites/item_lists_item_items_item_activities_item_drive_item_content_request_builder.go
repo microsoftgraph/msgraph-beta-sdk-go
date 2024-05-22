@@ -11,7 +11,7 @@ import (
 type ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters get content for the navigation property driveItem from sites
+// ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters the content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.
 type ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetQueryParameters struct {
     // Format of the content
     Format *string `uriparametername:"%24format"`
@@ -45,7 +45,7 @@ func NewItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get content for the navigation property driveItem from sites
+// Get the content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -65,7 +65,7 @@ func (m *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) Get
     }
     return res.([]byte), nil
 }
-// Put update content for the navigation property driveItem in sites
+// Put the content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
@@ -85,7 +85,7 @@ func (m *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) Put
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToGetRequestInformation get content for the navigation property driveItem from sites
+// ToGetRequestInformation the content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.
 // returns a *RequestInformation when successful
 func (m *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -99,7 +99,7 @@ func (m *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) ToG
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update content for the navigation property driveItem in sites
+// ToPutRequestInformation the content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.
 // returns a *RequestInformation when successful
 func (m *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemListsItemItemsItemActivitiesItemDriveItemContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -39,7 +39,7 @@ func CreateTenantRelationshipAccessPolicyBaseFromDiscriminatorValue(parseNode i8
     }
     return NewTenantRelationshipAccessPolicyBase(), nil
 }
-// GetDefinition gets the definition property value. The definition property
+// GetDefinition gets the definition property value. The raw JSON definition of the cross-tenant access policy. Deprecated. Do not use.
 // returns a []string when successful
 func (m *TenantRelationshipAccessPolicyBase) GetDefinition()([]string) {
     val, err := m.GetBackingStore().Get("definition")
@@ -87,7 +87,7 @@ func (m *TenantRelationshipAccessPolicyBase) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetDefinition sets the definition property value. The definition property
+// SetDefinition sets the definition property value. The raw JSON definition of the cross-tenant access policy. Deprecated. Do not use.
 func (m *TenantRelationshipAccessPolicyBase) SetDefinition(value []string)() {
     err := m.GetBackingStore().Set("definition", value)
     if err != nil {

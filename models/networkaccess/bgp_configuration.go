@@ -108,7 +108,7 @@ func (m *BgpConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIpAddress gets the ipAddress property value. The ipAddress property
+// GetIpAddress gets the ipAddress property value. Specifies the BGP IP address.
 // returns a *string when successful
 func (m *BgpConfiguration) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
@@ -214,7 +214,7 @@ func (m *BgpConfiguration) SetAsn(value *int32)() {
 func (m *BgpConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIpAddress sets the ipAddress property value. The ipAddress property
+// SetIpAddress sets the ipAddress property value. Specifies the BGP IP address.
 func (m *BgpConfiguration) SetIpAddress(value *string)() {
     err := m.GetBackingStore().Set("ipAddress", value)
     if err != nil {

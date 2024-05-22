@@ -12,7 +12,7 @@ var clientOptions = core.GraphClientOptions{
 	GraphServiceVersion: "beta",
 	/** The SDK version */
 	// x-release-please-start-version
-	GraphServiceLibraryVersion: "0.103.0",
+	GraphServiceLibraryVersion: "0.104.0",
 	// x-release-please-end
 }
 

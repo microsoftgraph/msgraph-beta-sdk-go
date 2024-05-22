@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.104.0]- 2024-05-22
+
+### Changed
+
+- Weekly generation.
+
 ## [0.103.0]- 2024-05-16
 
 ### Changed

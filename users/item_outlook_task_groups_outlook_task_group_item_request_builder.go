@@ -18,7 +18,7 @@ type ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetQueryParameters get taskGroups from users
+// ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetQueryParameters the user's Outlook task groups. Read-only. Nullable.
 type ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -69,7 +69,7 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get get taskGroups from users
+// Get the user's Outlook task groups. Read-only. Nullable.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a OutlookTaskGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -128,7 +128,7 @@ func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToDeleteReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get taskGroups from users
+// ToGetRequestInformation the user's Outlook task groups. Read-only. Nullable.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsOutlookTaskGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

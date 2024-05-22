@@ -211,7 +211,7 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOffer gets the offer property value. The offer property
+// GetOffer gets the offer property value. The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The offer property is deprecated and will stop returning data on January 31, 2024. Going forward, use the offerName property.
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetOffer()(*string) {
     val, err := m.GetBackingStore().Get("offer")
@@ -223,7 +223,7 @@ func (m *CloudPcGalleryImage) GetOffer()(*string) {
     }
     return nil
 }
-// GetOfferDisplayName gets the offerDisplayName property value. The offerDisplayName property
+// GetOfferDisplayName gets the offerDisplayName property value. The official display offer name of this gallery image. For example, Windows 10 Enterprise + OS Optimizations. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetOfferDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("offerDisplayName")
@@ -247,7 +247,7 @@ func (m *CloudPcGalleryImage) GetOfferName()(*string) {
     }
     return nil
 }
-// GetPublisher gets the publisher property value. The publisher property
+// GetPublisher gets the publisher property value. The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The publisher property is deprecated and will stop returning data on January 31, 2024. Going forward, use the publisherName property.
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("publisher")
@@ -271,7 +271,7 @@ func (m *CloudPcGalleryImage) GetPublisherName()(*string) {
     }
     return nil
 }
-// GetRecommendedSku gets the recommendedSku property value. The recommendedSku property
+// GetRecommendedSku gets the recommendedSku property value. The recommended Cloud PC SKU for this gallery image. Read-only. The recommendedSku property is deprecated and will stop returning data on January 31, 2024.
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetRecommendedSku()(*string) {
     val, err := m.GetBackingStore().Get("recommendedSku")
@@ -295,7 +295,7 @@ func (m *CloudPcGalleryImage) GetSizeInGB()(*int32) {
     }
     return nil
 }
-// GetSku gets the sku property value. The sku property
+// GetSku gets the sku property value. The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only. The sku property is deprecated and will stop returning data on January 31, 2024. Going forward, use the skuName property.
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetSku()(*string) {
     val, err := m.GetBackingStore().Get("sku")
@@ -307,7 +307,7 @@ func (m *CloudPcGalleryImage) GetSku()(*string) {
     }
     return nil
 }
-// GetSkuDisplayName gets the skuDisplayName property value. The skuDisplayName property
+// GetSkuDisplayName gets the skuDisplayName property value. The official display SKU name of this gallery image. For example, 2004. Read-only. The skuDisplayName property is deprecated and will stop returning data on January 31, 2024.
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetSkuDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("skuDisplayName")
@@ -475,14 +475,14 @@ func (m *CloudPcGalleryImage) SetExpirationDate(value *i878a80d2330e89d26896388a
         panic(err)
     }
 }
-// SetOffer sets the offer property value. The offer property
+// SetOffer sets the offer property value. The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The offer property is deprecated and will stop returning data on January 31, 2024. Going forward, use the offerName property.
 func (m *CloudPcGalleryImage) SetOffer(value *string)() {
     err := m.GetBackingStore().Set("offer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOfferDisplayName sets the offerDisplayName property value. The offerDisplayName property
+// SetOfferDisplayName sets the offerDisplayName property value. The official display offer name of this gallery image. For example, Windows 10 Enterprise + OS Optimizations. The offerDisplayName property is deprecated and will stop returning data on January 31, 2024.
 func (m *CloudPcGalleryImage) SetOfferDisplayName(value *string)() {
     err := m.GetBackingStore().Set("offerDisplayName", value)
     if err != nil {
@@ -496,7 +496,7 @@ func (m *CloudPcGalleryImage) SetOfferName(value *string)() {
         panic(err)
     }
 }
-// SetPublisher sets the publisher property value. The publisher property
+// SetPublisher sets the publisher property value. The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The publisher property is deprecated and will stop returning data on January 31, 2024. Going forward, use the publisherName property.
 func (m *CloudPcGalleryImage) SetPublisher(value *string)() {
     err := m.GetBackingStore().Set("publisher", value)
     if err != nil {
@@ -510,7 +510,7 @@ func (m *CloudPcGalleryImage) SetPublisherName(value *string)() {
         panic(err)
     }
 }
-// SetRecommendedSku sets the recommendedSku property value. The recommendedSku property
+// SetRecommendedSku sets the recommendedSku property value. The recommended Cloud PC SKU for this gallery image. Read-only. The recommendedSku property is deprecated and will stop returning data on January 31, 2024.
 func (m *CloudPcGalleryImage) SetRecommendedSku(value *string)() {
     err := m.GetBackingStore().Set("recommendedSku", value)
     if err != nil {
@@ -524,14 +524,14 @@ func (m *CloudPcGalleryImage) SetSizeInGB(value *int32)() {
         panic(err)
     }
 }
-// SetSku sets the sku property value. The sku property
+// SetSku sets the sku property value. The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only. The sku property is deprecated and will stop returning data on January 31, 2024. Going forward, use the skuName property.
 func (m *CloudPcGalleryImage) SetSku(value *string)() {
     err := m.GetBackingStore().Set("sku", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSkuDisplayName sets the skuDisplayName property value. The skuDisplayName property
+// SetSkuDisplayName sets the skuDisplayName property value. The official display SKU name of this gallery image. For example, 2004. Read-only. The skuDisplayName property is deprecated and will stop returning data on January 31, 2024.
 func (m *CloudPcGalleryImage) SetSkuDisplayName(value *string)() {
     err := m.GetBackingStore().Set("skuDisplayName", value)
     if err != nil {

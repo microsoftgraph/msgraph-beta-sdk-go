@@ -57,7 +57,7 @@ func (m *ExtractTransformation) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetTypeEscaped gets the type property value. The type property
+// GetTypeEscaped gets the type property value. The type of extract transformation to apply.
 // returns a *string when successful
 func (m *ExtractTransformation) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -69,7 +69,7 @@ func (m *ExtractTransformation) GetTypeEscaped()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The value to be used as part of the transformation.
 // returns a *string when successful
 func (m *ExtractTransformation) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -81,7 +81,7 @@ func (m *ExtractTransformation) GetValue()(*string) {
     }
     return nil
 }
-// GetValue2 gets the value2 property value. The value2 property
+// GetValue2 gets the value2 property value. An optional secondary value to be used when dealing with between extract operations.
 // returns a *string when successful
 func (m *ExtractTransformation) GetValue2()(*string) {
     val, err := m.GetBackingStore().Get("value2")
@@ -119,21 +119,21 @@ func (m *ExtractTransformation) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetTypeEscaped sets the type property value. The type property
+// SetTypeEscaped sets the type property value. The type of extract transformation to apply.
 func (m *ExtractTransformation) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The value to be used as part of the transformation.
 func (m *ExtractTransformation) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValue2 sets the value2 property value. The value2 property
+// SetValue2 sets the value2 property value. An optional secondary value to be used when dealing with between extract operations.
 func (m *ExtractTransformation) SetValue2(value *string)() {
     err := m.GetBackingStore().Set("value2", value)
     if err != nil {

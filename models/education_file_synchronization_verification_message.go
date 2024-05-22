@@ -98,7 +98,7 @@ func (m *EducationFileSynchronizationVerificationMessage) GetFieldDeserializers(
     }
     return res
 }
-// GetFileName gets the fileName property value. The fileName property
+// GetFileName gets the fileName property value. Source file that contains the error.
 // returns a *string when successful
 func (m *EducationFileSynchronizationVerificationMessage) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
@@ -186,7 +186,7 @@ func (m *EducationFileSynchronizationVerificationMessage) SetDescription(value *
         panic(err)
     }
 }
-// SetFileName sets the fileName property value. The fileName property
+// SetFileName sets the fileName property value. Source file that contains the error.
 func (m *EducationFileSynchronizationVerificationMessage) SetFileName(value *string)() {
     err := m.GetBackingStore().Set("fileName", value)
     if err != nil {

@@ -76,7 +76,7 @@ func (m *CertificationControl) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Certification control name.
 // returns a *string when successful
 func (m *CertificationControl) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -100,7 +100,7 @@ func (m *CertificationControl) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. URL for the Microsoft Service Trust Portal.
 // returns a *string when successful
 func (m *CertificationControl) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
@@ -151,7 +151,7 @@ func (m *CertificationControl) SetAdditionalData(value map[string]any)() {
 func (m *CertificationControl) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Certification control name.
 func (m *CertificationControl) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -165,7 +165,7 @@ func (m *CertificationControl) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. URL for the Microsoft Service Trust Portal.
 func (m *CertificationControl) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

@@ -96,7 +96,7 @@ func (m *BaseItem) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f307
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description of the item.
 // returns a *string when successful
 func (m *BaseItem) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -403,7 +403,7 @@ func (m *BaseItem) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description of the item.
 func (m *BaseItem) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {

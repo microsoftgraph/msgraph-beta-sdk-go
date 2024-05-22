@@ -56,7 +56,7 @@ func CreateOutlookItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     }
     return NewOutlookItem(), nil
 }
-// GetCategories gets the categories property value. The categories property
+// GetCategories gets the categories property value. The categories associated with the item.
 // returns a []string when successful
 func (m *OutlookItem) GetCategories()([]string) {
     val, err := m.GetBackingStore().Get("categories")
@@ -68,7 +68,7 @@ func (m *OutlookItem) GetCategories()([]string) {
     }
     return nil
 }
-// GetChangeKey gets the changeKey property value. The changeKey property
+// GetChangeKey gets the changeKey property value. Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 // returns a *string when successful
 func (m *OutlookItem) GetChangeKey()(*string) {
     val, err := m.GetBackingStore().Get("changeKey")
@@ -188,14 +188,14 @@ func (m *OutlookItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetCategories sets the categories property value. The categories property
+// SetCategories sets the categories property value. The categories associated with the item.
 func (m *OutlookItem) SetCategories(value []string)() {
     err := m.GetBackingStore().Set("categories", value)
     if err != nil {
         panic(err)
     }
 }
-// SetChangeKey sets the changeKey property value. The changeKey property
+// SetChangeKey sets the changeKey property value. Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
 func (m *OutlookItem) SetChangeKey(value *string)() {
     err := m.GetBackingStore().Set("changeKey", value)
     if err != nil {

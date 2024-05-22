@@ -185,10 +185,20 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Resize()(*ItemCloudPCsItemResize
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Restore()(*ItemCloudPCsItemRestoreRequestBuilder) {
     return NewItemCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveReviewStatus provides operations to call the retrieveReviewStatus method.
+// returns a *ItemCloudPCsItemRetrieveReviewStatusRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveReviewStatus()(*ItemCloudPCsItemRetrieveReviewStatusRequestBuilder) {
+    return NewItemCloudPCsItemRetrieveReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
 // returns a *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
     return NewItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SetReviewStatus provides operations to call the setReviewStatus method.
+// returns a *ItemCloudPCsItemSetReviewStatusRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) SetReviewStatus()(*ItemCloudPCsItemSetReviewStatusRequestBuilder) {
+    return NewItemCloudPCsItemSetReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Start provides operations to call the start method.
 // returns a *ItemCloudPCsItemStartRequestBuilder when successful

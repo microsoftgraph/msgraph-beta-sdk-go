@@ -23,7 +23,7 @@ func NewNetworkAccessTraffic()(*NetworkAccessTraffic) {
 func CreateNetworkAccessTrafficFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkAccessTraffic(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. Indicates what action to take based on filtering policies. The possible values are: block, allow.
 // returns a *FilteringPolicyAction when successful
 func (m *NetworkAccessTraffic) GetAction()(*FilteringPolicyAction) {
     val, err := m.GetBackingStore().Get("action")
@@ -1188,7 +1188,7 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. Indicates what action to take based on filtering policies. The possible values are: block, allow.
 func (m *NetworkAccessTraffic) SetAction(value *FilteringPolicyAction)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {

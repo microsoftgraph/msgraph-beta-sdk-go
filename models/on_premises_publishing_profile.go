@@ -43,6 +43,18 @@ func (m *OnPremisesPublishingProfile) GetAgents()([]OnPremisesAgentable) {
     }
     return nil
 }
+// GetApplicationSegments gets the applicationSegments property value. The applicationSegments property
+// returns a []IpApplicationSegmentable when successful
+func (m *OnPremisesPublishingProfile) GetApplicationSegments()([]IpApplicationSegmentable) {
+    val, err := m.GetBackingStore().Get("applicationSegments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IpApplicationSegmentable)
+    }
+    return nil
+}
 // GetConnectorGroups gets the connectorGroups property value. List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 // returns a []ConnectorGroupable when successful
 func (m *OnPremisesPublishingProfile) GetConnectorGroups()([]ConnectorGroupable) {
@@ -100,6 +112,22 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
                 }
             }
             m.SetAgents(res)
+        }
+        return nil
+    }
+    res["applicationSegments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIpApplicationSegmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IpApplicationSegmentable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(IpApplicationSegmentable)
+                }
+            }
+            m.SetApplicationSegments(res)
         }
         return nil
     }
@@ -261,6 +289,18 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetApplicationSegments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApplicationSegments()))
+        for i, v := range m.GetApplicationSegments() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("applicationSegments", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetConnectorGroups() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnectorGroups()))
         for i, v := range m.GetConnectorGroups() {
@@ -331,6 +371,13 @@ func (m *OnPremisesPublishingProfile) SetAgents(value []OnPremisesAgentable)() {
         panic(err)
     }
 }
+// SetApplicationSegments sets the applicationSegments property value. The applicationSegments property
+func (m *OnPremisesPublishingProfile) SetApplicationSegments(value []IpApplicationSegmentable)() {
+    err := m.GetBackingStore().Set("applicationSegments", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConnectorGroups sets the connectorGroups property value. List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
 func (m *OnPremisesPublishingProfile) SetConnectorGroups(value []ConnectorGroupable)() {
     err := m.GetBackingStore().Set("connectorGroups", value)
@@ -378,6 +425,7 @@ type OnPremisesPublishingProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAgentGroups()([]OnPremisesAgentGroupable)
     GetAgents()([]OnPremisesAgentable)
+    GetApplicationSegments()([]IpApplicationSegmentable)
     GetConnectorGroups()([]ConnectorGroupable)
     GetConnectors()([]Connectorable)
     GetHybridAgentUpdaterConfiguration()(HybridAgentUpdaterConfigurationable)
@@ -386,6 +434,7 @@ type OnPremisesPublishingProfileable interface {
     GetPublishedResources()([]PublishedResourceable)
     SetAgentGroups(value []OnPremisesAgentGroupable)()
     SetAgents(value []OnPremisesAgentable)()
+    SetApplicationSegments(value []IpApplicationSegmentable)()
     SetConnectorGroups(value []ConnectorGroupable)()
     SetConnectors(value []Connectorable)()
     SetHybridAgentUpdaterConfiguration(value HybridAgentUpdaterConfigurationable)()

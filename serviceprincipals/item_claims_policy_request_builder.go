@@ -18,7 +18,7 @@ type ItemClaimsPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemClaimsPolicyRequestBuilderGetQueryParameters get claimsPolicy from servicePrincipals
+// ItemClaimsPolicyRequestBuilderGetQueryParameters get the properties and relationships of a customClaimsPolicy object.
 type ItemClaimsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *ItemClaimsPolicyRequestBuilder) Delete(ctx context.Context, requestConf
     }
     return nil
 }
-// Get get claimsPolicy from servicePrincipals
+// Get get the properties and relationships of a customClaimsPolicy object.
 // returns a CustomClaimsPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/customclaimspolicy-get?view=graph-rest-beta
 func (m *ItemClaimsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemClaimsPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *ItemClaimsPolicyRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable), nil
 }
-// Patch update the navigation property claimsPolicy in servicePrincipals
+// Patch create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
 // returns a CustomClaimsPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-put-customclaimspolicy?view=graph-rest-beta
 func (m *ItemClaimsPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, requestConfiguration *ItemClaimsPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *ItemClaimsPolicyRequestBuilder) ToDeleteRequestInformation(ctx context.
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get claimsPolicy from servicePrincipals
+// ToGetRequestInformation get the properties and relationships of a customClaimsPolicy object.
 // returns a *RequestInformation when successful
 func (m *ItemClaimsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemClaimsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *ItemClaimsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property claimsPolicy in servicePrincipals
+// ToPatchRequestInformation create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
 // returns a *RequestInformation when successful
 func (m *ItemClaimsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, requestConfiguration *ItemClaimsPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

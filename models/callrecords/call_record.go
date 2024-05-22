@@ -219,7 +219,7 @@ func (m *CallRecord) GetModalities()([]Modality) {
     }
     return nil
 }
-// GetOrganizer gets the organizer property value. The organizer property
+// GetOrganizer gets the organizer property value. The organizing party's identity. The organizer property is deprecated and will stop returning data on June 30, 2026. Going forward, use the organizer_v2 relationship.
 // returns a IdentitySetable when successful
 func (m *CallRecord) GetOrganizer()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("organizer")
@@ -243,7 +243,7 @@ func (m *CallRecord) GetOrganizerV2()(Organizerable) {
     }
     return nil
 }
-// GetParticipants gets the participants property value. The participants property
+// GetParticipants gets the participants property value. List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.
 // returns a []IdentitySetable when successful
 func (m *CallRecord) GetParticipants()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable) {
     val, err := m.GetBackingStore().Get("participants")
@@ -442,7 +442,7 @@ func (m *CallRecord) SetModalities(value []Modality)() {
         panic(err)
     }
 }
-// SetOrganizer sets the organizer property value. The organizer property
+// SetOrganizer sets the organizer property value. The organizing party's identity. The organizer property is deprecated and will stop returning data on June 30, 2026. Going forward, use the organizer_v2 relationship.
 func (m *CallRecord) SetOrganizer(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
     err := m.GetBackingStore().Set("organizer", value)
     if err != nil {
@@ -456,7 +456,7 @@ func (m *CallRecord) SetOrganizerV2(value Organizerable)() {
         panic(err)
     }
 }
-// SetParticipants sets the participants property value. The participants property
+// SetParticipants sets the participants property value. List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.
 func (m *CallRecord) SetParticipants(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentitySetable)() {
     err := m.GetBackingStore().Set("participants", value)
     if err != nil {

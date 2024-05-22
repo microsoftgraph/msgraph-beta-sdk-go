@@ -188,10 +188,20 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Resize()(*VirtualEndp
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Restore()(*VirtualEndpointCloudPCsItemRestoreRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveReviewStatus provides operations to call the retrieveReviewStatus method.
+// returns a *VirtualEndpointCloudPCsItemRetrieveReviewStatusRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveReviewStatus()(*VirtualEndpointCloudPCsItemRetrieveReviewStatusRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemRetrieveReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
 // returns a *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SetReviewStatus provides operations to call the setReviewStatus method.
+// returns a *VirtualEndpointCloudPCsItemSetReviewStatusRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) SetReviewStatus()(*VirtualEndpointCloudPCsItemSetReviewStatusRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemSetReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Start provides operations to call the start method.
 // returns a *VirtualEndpointCloudPCsItemStartRequestBuilder when successful

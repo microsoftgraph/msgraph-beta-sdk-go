@@ -435,7 +435,7 @@ func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
     }
     return nil
 }
-// GetSharedUseServicePlans gets the sharedUseServicePlans property value. The sharedUseServicePlans property
+// GetSharedUseServicePlans gets the sharedUseServicePlans property value. Cloud PC shared-use service plans. The sharedUseServicePlans relationship is deprecated and stopped returning data on October 8, 2023. Going forward, use the frontLineServicePlans relationship.
 // returns a []CloudPcSharedUseServicePlanable when successful
 func (m *VirtualEndpoint) GetSharedUseServicePlans()([]CloudPcSharedUseServicePlanable) {
     val, err := m.GetBackingStore().Get("sharedUseServicePlans")
@@ -768,7 +768,7 @@ func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlanable)() {
         panic(err)
     }
 }
-// SetSharedUseServicePlans sets the sharedUseServicePlans property value. The sharedUseServicePlans property
+// SetSharedUseServicePlans sets the sharedUseServicePlans property value. Cloud PC shared-use service plans. The sharedUseServicePlans relationship is deprecated and stopped returning data on October 8, 2023. Going forward, use the frontLineServicePlans relationship.
 func (m *VirtualEndpoint) SetSharedUseServicePlans(value []CloudPcSharedUseServicePlanable)() {
     err := m.GetBackingStore().Set("sharedUseServicePlans", value)
     if err != nil {

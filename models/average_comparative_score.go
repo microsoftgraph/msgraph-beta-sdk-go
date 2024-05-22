@@ -35,7 +35,7 @@ func (m *AverageComparativeScore) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAverageScore gets the averageScore property value. The averageScore property
+// GetAverageScore gets the averageScore property value. Average score within a specified basis.
 // returns a *float64 when successful
 func (m *AverageComparativeScore) GetAverageScore()(*float64) {
     val, err := m.GetBackingStore().Get("averageScore")
@@ -52,7 +52,7 @@ func (m *AverageComparativeScore) GetAverageScore()(*float64) {
 func (m *AverageComparativeScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBasis gets the basis property value. The basis property
+// GetBasis gets the basis property value. Scope type (by AllTenants, TotalSeats, IndustryTypes).
 // returns a *string when successful
 func (m *AverageComparativeScore) GetBasis()(*string) {
     val, err := m.GetBackingStore().Get("basis")
@@ -147,7 +147,7 @@ func (m *AverageComparativeScore) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAverageScore sets the averageScore property value. The averageScore property
+// SetAverageScore sets the averageScore property value. Average score within a specified basis.
 func (m *AverageComparativeScore) SetAverageScore(value *float64)() {
     err := m.GetBackingStore().Set("averageScore", value)
     if err != nil {
@@ -158,7 +158,7 @@ func (m *AverageComparativeScore) SetAverageScore(value *float64)() {
 func (m *AverageComparativeScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBasis sets the basis property value. The basis property
+// SetBasis sets the basis property value. Scope type (by AllTenants, TotalSeats, IndustryTypes).
 func (m *AverageComparativeScore) SetBasis(value *string)() {
     err := m.GetBackingStore().Set("basis", value)
     if err != nil {

@@ -21,7 +21,7 @@ func NewRegexReplaceTransformation()(*RegexReplaceTransformation) {
 func CreateRegexReplaceTransformationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRegexReplaceTransformation(), nil
 }
-// GetAdditionalAttributes gets the additionalAttributes property value. The additionalAttributes property
+// GetAdditionalAttributes gets the additionalAttributes property value. Additional attributes that can be referenced within the replacement string.
 // returns a []SourcedAttributeable when successful
 func (m *RegexReplaceTransformation) GetAdditionalAttributes()([]SourcedAttributeable) {
     val, err := m.GetBackingStore().Get("additionalAttributes")
@@ -75,7 +75,7 @@ func (m *RegexReplaceTransformation) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetRegex gets the regex property value. The regex property
+// GetRegex gets the regex property value. The regular expression to be applied on the input directory attribute or constant.
 // returns a *string when successful
 func (m *RegexReplaceTransformation) GetRegex()(*string) {
     val, err := m.GetBackingStore().Get("regex")
@@ -87,7 +87,7 @@ func (m *RegexReplaceTransformation) GetRegex()(*string) {
     }
     return nil
 }
-// GetReplacement gets the replacement property value. The replacement property
+// GetReplacement gets the replacement property value. The transformation output replacement pattern with regular expression output group and input parameter group reference.
 // returns a *string when successful
 func (m *RegexReplaceTransformation) GetReplacement()(*string) {
     val, err := m.GetBackingStore().Get("replacement")
@@ -131,21 +131,21 @@ func (m *RegexReplaceTransformation) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAdditionalAttributes sets the additionalAttributes property value. The additionalAttributes property
+// SetAdditionalAttributes sets the additionalAttributes property value. Additional attributes that can be referenced within the replacement string.
 func (m *RegexReplaceTransformation) SetAdditionalAttributes(value []SourcedAttributeable)() {
     err := m.GetBackingStore().Set("additionalAttributes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegex sets the regex property value. The regex property
+// SetRegex sets the regex property value. The regular expression to be applied on the input directory attribute or constant.
 func (m *RegexReplaceTransformation) SetRegex(value *string)() {
     err := m.GetBackingStore().Set("regex", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReplacement sets the replacement property value. The replacement property
+// SetReplacement sets the replacement property value. The transformation output replacement pattern with regular expression output group and input parameter group reference.
 func (m *RegexReplaceTransformation) SetReplacement(value *string)() {
     err := m.GetBackingStore().Set("replacement", value)
     if err != nil {

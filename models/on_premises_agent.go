@@ -135,7 +135,7 @@ func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
     }
     return nil
 }
-// GetSupportedPublishingTypes gets the supportedPublishingTypes property value. The supportedPublishingTypes property
+// GetSupportedPublishingTypes gets the supportedPublishingTypes property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
 // returns a []OnPremisesPublishingType when successful
 func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]OnPremisesPublishingType) {
     val, err := m.GetBackingStore().Get("supportedPublishingTypes")
@@ -220,7 +220,7 @@ func (m *OnPremisesAgent) SetStatus(value *AgentStatus)() {
         panic(err)
     }
 }
-// SetSupportedPublishingTypes sets the supportedPublishingTypes property value. The supportedPublishingTypes property
+// SetSupportedPublishingTypes sets the supportedPublishingTypes property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
 func (m *OnPremisesAgent) SetSupportedPublishingTypes(value []OnPremisesPublishingType)() {
     err := m.GetBackingStore().Set("supportedPublishingTypes", value)
     if err != nil {

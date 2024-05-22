@@ -100,7 +100,7 @@ func (m *TransformationAttribute) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTreatAsMultiValue gets the treatAsMultiValue property value. The treatAsMultiValue property
+// GetTreatAsMultiValue gets the treatAsMultiValue property value. This flag is only relevant in the case where the attribute is multivalued. By default, transformations are only applied to the first element in a multi-valued claim, however setting this flag to true ensures the transformation is applied to all values, resulting in a multivalued output.
 // returns a *bool when successful
 func (m *TransformationAttribute) GetTreatAsMultiValue()(*bool) {
     val, err := m.GetBackingStore().Get("treatAsMultiValue")
@@ -165,7 +165,7 @@ func (m *TransformationAttribute) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTreatAsMultiValue sets the treatAsMultiValue property value. The treatAsMultiValue property
+// SetTreatAsMultiValue sets the treatAsMultiValue property value. This flag is only relevant in the case where the attribute is multivalued. By default, transformations are only applied to the first element in a multi-valued claim, however setting this flag to true ensures the transformation is applied to all values, resulting in a multivalued output.
 func (m *TransformationAttribute) SetTreatAsMultiValue(value *bool)() {
     err := m.GetBackingStore().Set("treatAsMultiValue", value)
     if err != nil {

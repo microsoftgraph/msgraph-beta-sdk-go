@@ -19,7 +19,7 @@ func NewWorkbookRangeView()(*WorkbookRangeView) {
 func CreateWorkbookRangeViewFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWorkbookRangeView(), nil
 }
-// GetCellAddresses gets the cellAddresses property value. The cellAddresses property
+// GetCellAddresses gets the cellAddresses property value. Represents the cell addresses
 // returns a Jsonable when successful
 func (m *WorkbookRangeView) GetCellAddresses()(Jsonable) {
     val, err := m.GetBackingStore().Get("cellAddresses")
@@ -381,7 +381,7 @@ func (m *WorkbookRangeView) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetCellAddresses sets the cellAddresses property value. The cellAddresses property
+// SetCellAddresses sets the cellAddresses property value. Represents the cell addresses
 func (m *WorkbookRangeView) SetCellAddresses(value Jsonable)() {
     err := m.GetBackingStore().Set("cellAddresses", value)
     if err != nil {

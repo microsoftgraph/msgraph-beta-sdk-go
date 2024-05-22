@@ -59,7 +59,7 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetFieldDeserializers()(
     }
     return res
 }
-// GetUpns gets the upns property value. The upns property
+// GetUpns gets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN of each mailbox, for example, Monica.Thompson@contoso.com. Going forward, use the userPrincipalNames property. If you specify either upns or userPrincipalNames, the same values are populated automatically to the other property.
 // returns a []string when successful
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) GetUpns()([]string) {
     val, err := m.GetBackingStore().Get("upns")
@@ -103,7 +103,7 @@ func (m *SubjectRightsRequestEnumeratedMailboxLocation) Serialize(writer i878a80
     }
     return nil
 }
-// SetUpns sets the upns property value. The upns property
+// SetUpns sets the upns property value. Collection of mailboxes that should be included in the search. Includes the UPN of each mailbox, for example, Monica.Thompson@contoso.com. Going forward, use the userPrincipalNames property. If you specify either upns or userPrincipalNames, the same values are populated automatically to the other property.
 func (m *SubjectRightsRequestEnumeratedMailboxLocation) SetUpns(value []string)() {
     err := m.GetBackingStore().Set("upns", value)
     if err != nil {

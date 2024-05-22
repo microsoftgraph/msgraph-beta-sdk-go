@@ -164,7 +164,7 @@ func (m *CrossTenantSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRarelyUsedTenantCount gets the rarelyUsedTenantCount property value. The rarelyUsedTenantCount property
+// GetRarelyUsedTenantCount gets the rarelyUsedTenantCount property value. The number of tenants that are rarely used.
 // returns a *int32 when successful
 func (m *CrossTenantSummary) GetRarelyUsedTenantCount()(*int32) {
     val, err := m.GetBackingStore().Get("rarelyUsedTenantCount")
@@ -291,7 +291,7 @@ func (m *CrossTenantSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRarelyUsedTenantCount sets the rarelyUsedTenantCount property value. The rarelyUsedTenantCount property
+// SetRarelyUsedTenantCount sets the rarelyUsedTenantCount property value. The number of tenants that are rarely used.
 func (m *CrossTenantSummary) SetRarelyUsedTenantCount(value *int32)() {
     err := m.GetBackingStore().Set("rarelyUsedTenantCount", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetQueryParameters get userFlowIdentityProviders from identity
+// B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetQueryParameters the identity providers included in the user flow.
 type B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewB2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder(rawUrl string, r
 func (m *B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder) Count()(*B2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilder) {
     return NewB2cUserFlowsItemUserFlowIdentityProvidersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get userFlowIdentityProviders from identity
+// Get the identity providers included in the user flow.
 // returns a IdentityProviderBaseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable, error) {
@@ -89,7 +89,7 @@ func (m *B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder) Get(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable), nil
 }
-// ToGetRequestInformation get userFlowIdentityProviders from identity
+// ToGetRequestInformation the identity providers included in the user flow.
 // returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemUserFlowIdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

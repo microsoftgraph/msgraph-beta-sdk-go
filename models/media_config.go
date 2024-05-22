@@ -98,7 +98,7 @@ func (m *MediaConfig) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRemoveFromDefaultAudioGroup gets the removeFromDefaultAudioGroup property value. The removeFromDefaultAudioGroup property
+// GetRemoveFromDefaultAudioGroup gets the removeFromDefaultAudioGroup property value. Remove media from the default audio group.
 // returns a *bool when successful
 func (m *MediaConfig) GetRemoveFromDefaultAudioGroup()(*bool) {
     val, err := m.GetBackingStore().Get("removeFromDefaultAudioGroup")
@@ -150,7 +150,7 @@ func (m *MediaConfig) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRemoveFromDefaultAudioGroup sets the removeFromDefaultAudioGroup property value. The removeFromDefaultAudioGroup property
+// SetRemoveFromDefaultAudioGroup sets the removeFromDefaultAudioGroup property value. Remove media from the default audio group.
 func (m *MediaConfig) SetRemoveFromDefaultAudioGroup(value *bool)() {
     err := m.GetBackingStore().Set("removeFromDefaultAudioGroup", value)
     if err != nil {

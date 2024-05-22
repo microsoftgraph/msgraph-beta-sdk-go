@@ -32,7 +32,7 @@ func (m *AccessReviewScheduleDefinition) GetAdditionalNotificationRecipients()([
     }
     return nil
 }
-// GetBackupReviewers gets the backupReviewers property value. The backupReviewers property
+// GetBackupReviewers gets the backupReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn't exist, or manager is specified as reviewer but a user's manager doesn't exist.  Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.
 // returns a []AccessReviewReviewerScopeable when successful
 func (m *AccessReviewScheduleDefinition) GetBackupReviewers()([]AccessReviewReviewerScopeable) {
     val, err := m.GetBackingStore().Get("backupReviewers")
@@ -561,7 +561,7 @@ func (m *AccessReviewScheduleDefinition) SetAdditionalNotificationRecipients(val
         panic(err)
     }
 }
-// SetBackupReviewers sets the backupReviewers property value. The backupReviewers property
+// SetBackupReviewers sets the backupReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn't exist, or manager is specified as reviewer but a user's manager doesn't exist.  Supports $select. Note: This property has been replaced by fallbackReviewers. However, specifying either backupReviewers or fallbackReviewers automatically populates the same values to the other property.
 func (m *AccessReviewScheduleDefinition) SetBackupReviewers(value []AccessReviewReviewerScopeable)() {
     err := m.GetBackingStore().Set("backupReviewers", value)
     if err != nil {

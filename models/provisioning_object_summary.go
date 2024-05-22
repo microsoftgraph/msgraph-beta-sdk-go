@@ -20,7 +20,7 @@ func NewProvisioningObjectSummary()(*ProvisioningObjectSummary) {
 func CreateProvisioningObjectSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProvisioningObjectSummary(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Microsoft Entra activity list. This is deprecated. Please use provisioningAction instead. Supports $filter (eq, contains).
 // returns a *string when successful
 func (m *ProvisioningObjectSummary) GetAction()(*string) {
     val, err := m.GetBackingStore().Get("action")
@@ -386,7 +386,7 @@ func (m *ProvisioningObjectSummary) GetSourceSystem()(ProvisioningSystemable) {
     }
     return nil
 }
-// GetStatusInfo gets the statusInfo property value. The statusInfo property
+// GetStatusInfo gets the statusInfo property value. Details of provisioning status. This is deprecated. Please use provisioningStatusInfo instead. Supports $filter (eq, contains) for status.
 // returns a StatusBaseable when successful
 func (m *ProvisioningObjectSummary) GetStatusInfo()(StatusBaseable) {
     val, err := m.GetBackingStore().Get("statusInfo")
@@ -563,7 +563,7 @@ func (m *ProvisioningObjectSummary) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Microsoft Entra activity list. This is deprecated. Please use provisioningAction instead. Supports $filter (eq, contains).
 func (m *ProvisioningObjectSummary) SetAction(value *string)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
@@ -661,7 +661,7 @@ func (m *ProvisioningObjectSummary) SetSourceSystem(value ProvisioningSystemable
         panic(err)
     }
 }
-// SetStatusInfo sets the statusInfo property value. The statusInfo property
+// SetStatusInfo sets the statusInfo property value. Details of provisioning status. This is deprecated. Please use provisioningStatusInfo instead. Supports $filter (eq, contains) for status.
 func (m *ProvisioningObjectSummary) SetStatusInfo(value StatusBaseable)() {
     err := m.GetBackingStore().Set("statusInfo", value)
     if err != nil {

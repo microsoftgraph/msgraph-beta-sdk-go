@@ -11,7 +11,7 @@ import (
 type B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderGetQueryParameters get identityProviders from identity
+// B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderGetQueryParameters the identity providers included in the user flow.
 type B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewB2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewB2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get identityProviders from identity
+// Get the identity providers included in the user flow.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a IdentityProviderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -61,7 +61,7 @@ func (m *B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderable), nil
 }
-// ToGetRequestInformation get identityProviders from identity
+// ToGetRequestInformation the identity providers included in the user flow.
 // Deprecated: The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider
 // returns a *RequestInformation when successful
 func (m *B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2xUserFlowsItemIdentityProvidersIdentityProviderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

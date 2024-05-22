@@ -123,7 +123,7 @@ func (m *HybridAgentUpdaterConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUpdateWindow gets the updateWindow property value. The updateWindow property
+// GetUpdateWindow gets the updateWindow property value. The time window during which the agent can receive updates.
 // returns a UpdateWindowable when successful
 func (m *HybridAgentUpdaterConfiguration) GetUpdateWindow()(UpdateWindowable) {
     val, err := m.GetBackingStore().Get("updateWindow")
@@ -201,7 +201,7 @@ func (m *HybridAgentUpdaterConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUpdateWindow sets the updateWindow property value. The updateWindow property
+// SetUpdateWindow sets the updateWindow property value. The time window during which the agent can receive updates.
 func (m *HybridAgentUpdaterConfiguration) SetUpdateWindow(value UpdateWindowable)() {
     err := m.GetBackingStore().Set("updateWindow", value)
     if err != nil {

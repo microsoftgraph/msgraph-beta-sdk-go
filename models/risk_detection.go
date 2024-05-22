@@ -416,7 +416,7 @@ func (m *RiskDetection) GetRiskState()(*RiskState) {
     }
     return nil
 }
-// GetRiskType gets the riskType property value. The riskType property
+// GetRiskType gets the riskType property value. List of risk event types.Note: This property is deprecated. Use riskEventType instead.
 // returns a *RiskEventType when successful
 func (m *RiskDetection) GetRiskType()(*RiskEventType) {
     val, err := m.GetBackingStore().Get("riskType")
@@ -734,7 +734,7 @@ func (m *RiskDetection) SetRiskState(value *RiskState)() {
         panic(err)
     }
 }
-// SetRiskType sets the riskType property value. The riskType property
+// SetRiskType sets the riskType property value. List of risk event types.Note: This property is deprecated. Use riskEventType instead.
 func (m *RiskDetection) SetRiskType(value *RiskEventType)() {
     err := m.GetBackingStore().Set("riskType", value)
     if err != nil {

@@ -53,7 +53,7 @@ func (m *CustomClaimCondition) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetMemberOf gets the memberOf property value. The memberOf property
+// GetMemberOf gets the memberOf property value. A list of groups (GUIDs) to which the user/application must be a member for this condition to be applied.
 // returns a []string when successful
 func (m *CustomClaimCondition) GetMemberOf()([]string) {
     val, err := m.GetBackingStore().Get("memberOf")
@@ -65,7 +65,7 @@ func (m *CustomClaimCondition) GetMemberOf()([]string) {
     }
     return nil
 }
-// GetUserType gets the userType property value. The userType property
+// GetUserType gets the userType property value. The type of user this condition applies to. The possible values are: any, members, allGuests, aadGuests, externalGuests, unknownFutureValue.
 // returns a *ClaimConditionUserType when successful
 func (m *CustomClaimCondition) GetUserType()(*ClaimConditionUserType) {
     val, err := m.GetBackingStore().Get("userType")
@@ -98,14 +98,14 @@ func (m *CustomClaimCondition) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetMemberOf sets the memberOf property value. The memberOf property
+// SetMemberOf sets the memberOf property value. A list of groups (GUIDs) to which the user/application must be a member for this condition to be applied.
 func (m *CustomClaimCondition) SetMemberOf(value []string)() {
     err := m.GetBackingStore().Set("memberOf", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserType sets the userType property value. The userType property
+// SetUserType sets the userType property value. The type of user this condition applies to. The possible values are: any, members, allGuests, aadGuests, externalGuests, unknownFutureValue.
 func (m *CustomClaimCondition) SetUserType(value *ClaimConditionUserType)() {
     err := m.GetBackingStore().Set("userType", value)
     if err != nil {

@@ -59,7 +59,7 @@ func (m *TrimTransformation) GetTypeEscaped()(*TransformationTrimType) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The value to be used as part of the transformation.
 // returns a *string when successful
 func (m *TrimTransformation) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -99,7 +99,7 @@ func (m *TrimTransformation) SetTypeEscaped(value *TransformationTrimType)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The value to be used as part of the transformation.
 func (m *TrimTransformation) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

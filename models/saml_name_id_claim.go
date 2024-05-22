@@ -59,7 +59,7 @@ func (m *SamlNameIdClaim) GetNameIdFormat()(*SamlNameIDFormat) {
     }
     return nil
 }
-// GetServiceProviderNameQualifier gets the serviceProviderNameQualifier property value. The serviceProviderNameQualifier property
+// GetServiceProviderNameQualifier gets the serviceProviderNameQualifier property value. Allows the specification of a service provider name qualifier reflected in the sAML response. The value provided must match one of the service provider names configured for the application and is only applicable for IdP-initiated applications (the sign-on URL should be empty for the IdP-initiated applications), in all other cases this value is ignored.
 // returns a *string when successful
 func (m *SamlNameIdClaim) GetServiceProviderNameQualifier()(*string) {
     val, err := m.GetBackingStore().Get("serviceProviderNameQualifier")
@@ -99,7 +99,7 @@ func (m *SamlNameIdClaim) SetNameIdFormat(value *SamlNameIDFormat)() {
         panic(err)
     }
 }
-// SetServiceProviderNameQualifier sets the serviceProviderNameQualifier property value. The serviceProviderNameQualifier property
+// SetServiceProviderNameQualifier sets the serviceProviderNameQualifier property value. Allows the specification of a service provider name qualifier reflected in the sAML response. The value provided must match one of the service provider names configured for the application and is only applicable for IdP-initiated applications (the sign-on URL should be empty for the IdP-initiated applications), in all other cases this value is ignored.
 func (m *SamlNameIdClaim) SetServiceProviderNameQualifier(value *string)() {
     err := m.GetBackingStore().Set("serviceProviderNameQualifier", value)
     if err != nil {

@@ -73,7 +73,7 @@ func (m *CustomClaim) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the claim to be emitted.
 // returns a *string when successful
 func (m *CustomClaim) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -85,7 +85,7 @@ func (m *CustomClaim) GetName()(*string) {
     }
     return nil
 }
-// GetNamespace gets the namespace property value. The namespace property
+// GetNamespace gets the namespace property value. An optional namespace to be included as part of the claim name.
 // returns a *string when successful
 func (m *CustomClaim) GetNamespace()(*string) {
     val, err := m.GetBackingStore().Get("namespace")
@@ -97,7 +97,7 @@ func (m *CustomClaim) GetNamespace()(*string) {
     }
     return nil
 }
-// GetSamlAttributeNameFormat gets the samlAttributeNameFormat property value. The samlAttributeNameFormat property
+// GetSamlAttributeNameFormat gets the samlAttributeNameFormat property value. If specified, it sets the nameFormat attribute associated with the claim in the SAML response. The possible values are: unspecified, uri, basic, unknownFutureValue.
 // returns a *SamlAttributeNameFormat when successful
 func (m *CustomClaim) GetSamlAttributeNameFormat()(*SamlAttributeNameFormat) {
     val, err := m.GetBackingStore().Get("samlAttributeNameFormat")
@@ -109,7 +109,7 @@ func (m *CustomClaim) GetSamlAttributeNameFormat()(*SamlAttributeNameFormat) {
     }
     return nil
 }
-// GetTokenFormat gets the tokenFormat property value. The tokenFormat property
+// GetTokenFormat gets the tokenFormat property value. List of token formats for which this claim should be emitted. The possible values are: saml,jwt, unknownFutureValue
 // returns a []TokenFormat when successful
 func (m *CustomClaim) GetTokenFormat()([]TokenFormat) {
     val, err := m.GetBackingStore().Get("tokenFormat")
@@ -154,28 +154,28 @@ func (m *CustomClaim) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the claim to be emitted.
 func (m *CustomClaim) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNamespace sets the namespace property value. The namespace property
+// SetNamespace sets the namespace property value. An optional namespace to be included as part of the claim name.
 func (m *CustomClaim) SetNamespace(value *string)() {
     err := m.GetBackingStore().Set("namespace", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSamlAttributeNameFormat sets the samlAttributeNameFormat property value. The samlAttributeNameFormat property
+// SetSamlAttributeNameFormat sets the samlAttributeNameFormat property value. If specified, it sets the nameFormat attribute associated with the claim in the SAML response. The possible values are: unspecified, uri, basic, unknownFutureValue.
 func (m *CustomClaim) SetSamlAttributeNameFormat(value *SamlAttributeNameFormat)() {
     err := m.GetBackingStore().Set("samlAttributeNameFormat", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTokenFormat sets the tokenFormat property value. The tokenFormat property
+// SetTokenFormat sets the tokenFormat property value. List of token formats for which this claim should be emitted. The possible values are: saml,jwt, unknownFutureValue
 func (m *CustomClaim) SetTokenFormat(value []TokenFormat)() {
     err := m.GetBackingStore().Set("tokenFormat", value)
     if err != nil {
