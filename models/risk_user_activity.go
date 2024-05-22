@@ -52,7 +52,7 @@ func (m *RiskUserActivity) GetDetail()(*RiskDetail) {
     }
     return nil
 }
-// GetEventTypes gets the eventTypes property value. The eventTypes property
+// GetEventTypes gets the eventTypes property value. List of risk event types. Deprecated. Use riskEventType instead.
 // returns a []RiskEventType when successful
 func (m *RiskUserActivity) GetEventTypes()([]RiskEventType) {
     val, err := m.GetBackingStore().Get("eventTypes")
@@ -134,7 +134,7 @@ func (m *RiskUserActivity) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRiskEventTypes gets the riskEventTypes property value. The riskEventTypes property
+// GetRiskEventTypes gets the riskEventTypes property value. The type of risk event detected. The possible values are: anonymizedIPAddress, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel. For more information about each value, see Risk types and detection.
 // returns a []string when successful
 func (m *RiskUserActivity) GetRiskEventTypes()([]string) {
     val, err := m.GetBackingStore().Get("riskEventTypes")
@@ -199,7 +199,7 @@ func (m *RiskUserActivity) SetDetail(value *RiskDetail)() {
         panic(err)
     }
 }
-// SetEventTypes sets the eventTypes property value. The eventTypes property
+// SetEventTypes sets the eventTypes property value. List of risk event types. Deprecated. Use riskEventType instead.
 func (m *RiskUserActivity) SetEventTypes(value []RiskEventType)() {
     err := m.GetBackingStore().Set("eventTypes", value)
     if err != nil {
@@ -213,7 +213,7 @@ func (m *RiskUserActivity) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRiskEventTypes sets the riskEventTypes property value. The riskEventTypes property
+// SetRiskEventTypes sets the riskEventTypes property value. The type of risk event detected. The possible values are: anonymizedIPAddress, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel. For more information about each value, see Risk types and detection.
 func (m *RiskUserActivity) SetRiskEventTypes(value []string)() {
     err := m.GetBackingStore().Set("riskEventTypes", value)
     if err != nil {

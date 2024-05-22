@@ -670,7 +670,7 @@ func (m *EducationUser) GetMobilePhone()(*string) {
     }
     return nil
 }
-// GetOfficeLocation gets the officeLocation property value. The officeLocation property
+// GetOfficeLocation gets the officeLocation property value. The office location for the user.
 // returns a *string when successful
 func (m *EducationUser) GetOfficeLocation()(*string) {
     val, err := m.GetBackingStore().Get("officeLocation")
@@ -1333,7 +1333,7 @@ func (m *EducationUser) SetMobilePhone(value *string)() {
         panic(err)
     }
 }
-// SetOfficeLocation sets the officeLocation property value. The officeLocation property
+// SetOfficeLocation sets the officeLocation property value. The office location for the user.
 func (m *EducationUser) SetOfficeLocation(value *string)() {
     err := m.GetBackingStore().Set("officeLocation", value)
     if err != nil {

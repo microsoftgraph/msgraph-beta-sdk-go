@@ -81,7 +81,7 @@ func (m *DriveItem) GetChildren()([]DriveItemable) {
     }
     return nil
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. The content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.
 // returns a []byte when successful
 func (m *DriveItem) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
@@ -1206,7 +1206,7 @@ func (m *DriveItem) SetChildren(value []DriveItemable)() {
         panic(err)
     }
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. The content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.
 func (m *DriveItem) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {

@@ -80,7 +80,7 @@ func (m *SecureScoreControlProfile) GetControlCategory()(*string) {
     }
     return nil
 }
-// GetControlStateUpdates gets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+// GetControlStateUpdates gets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
 // returns a []SecureScoreControlStateUpdateable when successful
 func (m *SecureScoreControlProfile) GetControlStateUpdates()([]SecureScoreControlStateUpdateable) {
     val, err := m.GetBackingStore().Get("controlStateUpdates")
@@ -330,7 +330,7 @@ func (m *SecureScoreControlProfile) GetImplementationCost()(*string) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
 // returns a *Time when successful
 func (m *SecureScoreControlProfile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -402,7 +402,7 @@ func (m *SecureScoreControlProfile) GetService()(*string) {
     }
     return nil
 }
-// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+// GetThreats gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
 // returns a []string when successful
 func (m *SecureScoreControlProfile) GetThreats()([]string) {
     val, err := m.GetBackingStore().Get("threats")
@@ -450,7 +450,7 @@ func (m *SecureScoreControlProfile) GetUserImpact()(*string) {
     }
     return nil
 }
-// GetVendorInformation gets the vendorInformation property value. The vendorInformation property
+// GetVendorInformation gets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
 // returns a SecurityVendorInformationable when successful
 func (m *SecureScoreControlProfile) GetVendorInformation()(SecurityVendorInformationable) {
     val, err := m.GetBackingStore().Get("vendorInformation")
@@ -631,7 +631,7 @@ func (m *SecureScoreControlProfile) SetControlCategory(value *string)() {
         panic(err)
     }
 }
-// SetControlStateUpdates sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).
+// SetControlStateUpdates sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
 func (m *SecureScoreControlProfile) SetControlStateUpdates(value []SecureScoreControlStateUpdateable)() {
     err := m.GetBackingStore().Set("controlStateUpdates", value)
     if err != nil {
@@ -652,7 +652,7 @@ func (m *SecureScoreControlProfile) SetImplementationCost(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
 func (m *SecureScoreControlProfile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
@@ -694,7 +694,7 @@ func (m *SecureScoreControlProfile) SetService(value *string)() {
         panic(err)
     }
 }
-// SetThreats sets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).
+// SetThreats sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).
 func (m *SecureScoreControlProfile) SetThreats(value []string)() {
     err := m.GetBackingStore().Set("threats", value)
     if err != nil {
@@ -722,7 +722,7 @@ func (m *SecureScoreControlProfile) SetUserImpact(value *string)() {
         panic(err)
     }
 }
-// SetVendorInformation sets the vendorInformation property value. The vendorInformation property
+// SetVendorInformation sets the vendorInformation property value. Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.
 func (m *SecureScoreControlProfile) SetVendorInformation(value SecurityVendorInformationable)() {
     err := m.GetBackingStore().Set("vendorInformation", value)
     if err != nil {

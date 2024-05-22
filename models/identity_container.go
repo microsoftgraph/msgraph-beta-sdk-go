@@ -59,7 +59,7 @@ func (m *IdentityContainer) GetAuthenticationEventListeners()([]AuthenticationEv
     }
     return nil
 }
-// GetAuthenticationEventsFlows gets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
+// GetAuthenticationEventsFlows gets the authenticationEventsFlows property value. Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.
 // returns a []AuthenticationEventsFlowable when successful
 func (m *IdentityContainer) GetAuthenticationEventsFlows()([]AuthenticationEventsFlowable) {
     val, err := m.GetBackingStore().Get("authenticationEventsFlows")
@@ -521,7 +521,7 @@ func (m *IdentityContainer) SetAuthenticationEventListeners(value []Authenticati
         panic(err)
     }
 }
-// SetAuthenticationEventsFlows sets the authenticationEventsFlows property value. Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
+// SetAuthenticationEventsFlows sets the authenticationEventsFlows property value. Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.
 func (m *IdentityContainer) SetAuthenticationEventsFlows(value []AuthenticationEventsFlowable)() {
     err := m.GetBackingStore().Set("authenticationEventsFlows", value)
     if err != nil {

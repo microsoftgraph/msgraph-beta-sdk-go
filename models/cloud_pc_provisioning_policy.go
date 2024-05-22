@@ -43,6 +43,18 @@ func (m *CloudPcProvisioningPolicy) GetAssignments()([]CloudPcProvisioningPolicy
     }
     return nil
 }
+// GetAutopatch gets the autopatch property value. The autopatch property
+// returns a CloudPcProvisioningPolicyAutopatchable when successful
+func (m *CloudPcProvisioningPolicy) GetAutopatch()(CloudPcProvisioningPolicyAutopatchable) {
+    val, err := m.GetBackingStore().Get("autopatch")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcProvisioningPolicyAutopatchable)
+    }
+    return nil
+}
 // GetCloudPcGroupDisplayName gets the cloudPcGroupDisplayName property value. The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
 // returns a *string when successful
 func (m *CloudPcProvisioningPolicy) GetCloudPcGroupDisplayName()(*string) {
@@ -88,18 +100,6 @@ func (m *CloudPcProvisioningPolicy) GetDisplayName()(*string) {
     }
     if val != nil {
         return val.(*string)
-    }
-    return nil
-}
-// GetDomainJoinConfiguration gets the domainJoinConfiguration property value. The domainJoinConfiguration property
-// returns a CloudPcDomainJoinConfigurationable when successful
-func (m *CloudPcProvisioningPolicy) GetDomainJoinConfiguration()(CloudPcDomainJoinConfigurationable) {
-    val, err := m.GetBackingStore().Get("domainJoinConfiguration")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(CloudPcDomainJoinConfigurationable)
     }
     return nil
 }
@@ -157,6 +157,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["autopatch"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcProvisioningPolicyAutopatchFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutopatch(val.(CloudPcProvisioningPolicyAutopatchable))
+        }
+        return nil
+    }
     res["cloudPcGroupDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -194,16 +204,6 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetDisplayName(val)
-        }
-        return nil
-    }
-    res["domainJoinConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCloudPcDomainJoinConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDomainJoinConfiguration(val.(CloudPcDomainJoinConfigurationable))
         }
         return nil
     }
@@ -300,16 +300,6 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetMicrosoftManagedDesktop(val.(MicrosoftManagedDesktopable))
-        }
-        return nil
-    }
-    res["onPremisesConnectionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOnPremisesConnectionId(val)
         }
         return nil
     }
@@ -445,18 +435,6 @@ func (m *CloudPcProvisioningPolicy) GetMicrosoftManagedDesktop()(MicrosoftManage
     }
     return nil
 }
-// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The onPremisesConnectionId property
-// returns a *string when successful
-func (m *CloudPcProvisioningPolicy) GetOnPremisesConnectionId()(*string) {
-    val, err := m.GetBackingStore().Get("onPremisesConnectionId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetProvisioningType gets the provisioningType property value. Specifies the type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member. For example, a dedicated service plan can be assigned to only one user and provision only one Cloud PC. The shared and sharedByUser plans require customers to purchase a shared service plan. Each shared license purchased can enable up to three Cloud PCs, with only one user signed in at a time. The sharedByEntraGroup plan also requires the purchase of a shared service plan. Each shared license under this plan can enable one Cloud PC, which is shared for the group according to the assignments of this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy is created.
 // returns a *CloudPcProvisioningType when successful
 func (m *CloudPcProvisioningPolicy) GetProvisioningType()(*CloudPcProvisioningType) {
@@ -493,7 +471,7 @@ func (m *CloudPcProvisioningPolicy) GetWindowsSetting()(CloudPcWindowsSettingabl
     }
     return nil
 }
-// GetWindowsSettings gets the windowsSettings property value. The windowsSettings property
+// GetWindowsSettings gets the windowsSettings property value. Specific Windows settings to configure during the creation of Cloud PCs for this provisioning policy. Supports $select. The windowsSettings property is deprecated and will stop returning data on January 31, 2024. Going forward, use the windowsSetting property.
 // returns a CloudPcWindowsSettingsable when successful
 func (m *CloudPcProvisioningPolicy) GetWindowsSettings()(CloudPcWindowsSettingsable) {
     val, err := m.GetBackingStore().Get("windowsSettings")
@@ -530,6 +508,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteObjectValue("autopatch", m.GetAutopatch())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("cloudPcGroupDisplayName", m.GetCloudPcGroupDisplayName())
         if err != nil {
             return err
@@ -549,12 +533,6 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteObjectValue("domainJoinConfiguration", m.GetDomainJoinConfiguration())
         if err != nil {
             return err
         }
@@ -621,12 +599,6 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("onPremisesConnectionId", m.GetOnPremisesConnectionId())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetProvisioningType() != nil {
         cast := (*m.GetProvisioningType()).String()
         err = writer.WriteStringValue("provisioningType", &cast)
@@ -668,6 +640,13 @@ func (m *CloudPcProvisioningPolicy) SetAssignments(value []CloudPcProvisioningPo
         panic(err)
     }
 }
+// SetAutopatch sets the autopatch property value. The autopatch property
+func (m *CloudPcProvisioningPolicy) SetAutopatch(value CloudPcProvisioningPolicyAutopatchable)() {
+    err := m.GetBackingStore().Set("autopatch", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCloudPcGroupDisplayName sets the cloudPcGroupDisplayName property value. The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.
 func (m *CloudPcProvisioningPolicy) SetCloudPcGroupDisplayName(value *string)() {
     err := m.GetBackingStore().Set("cloudPcGroupDisplayName", value)
@@ -692,13 +671,6 @@ func (m *CloudPcProvisioningPolicy) SetDescription(value *string)() {
 // SetDisplayName sets the displayName property value. The display name for the provisioning policy.
 func (m *CloudPcProvisioningPolicy) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetDomainJoinConfiguration sets the domainJoinConfiguration property value. The domainJoinConfiguration property
-func (m *CloudPcProvisioningPolicy) SetDomainJoinConfiguration(value CloudPcDomainJoinConfigurationable)() {
-    err := m.GetBackingStore().Set("domainJoinConfiguration", value)
     if err != nil {
         panic(err)
     }
@@ -766,13 +738,6 @@ func (m *CloudPcProvisioningPolicy) SetMicrosoftManagedDesktop(value MicrosoftMa
         panic(err)
     }
 }
-// SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The onPremisesConnectionId property
-func (m *CloudPcProvisioningPolicy) SetOnPremisesConnectionId(value *string)() {
-    err := m.GetBackingStore().Set("onPremisesConnectionId", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetProvisioningType sets the provisioningType property value. Specifies the type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member. For example, a dedicated service plan can be assigned to only one user and provision only one Cloud PC. The shared and sharedByUser plans require customers to purchase a shared service plan. Each shared license purchased can enable up to three Cloud PCs, with only one user signed in at a time. The sharedByEntraGroup plan also requires the purchase of a shared service plan. Each shared license under this plan can enable one Cloud PC, which is shared for the group according to the assignments of this policy. By default, the license type is dedicated if the provisioningType isn't specified when you create the cloudPcProvisioningPolicy. You can't change this property after the cloudPcProvisioningPolicy is created.
 func (m *CloudPcProvisioningPolicy) SetProvisioningType(value *CloudPcProvisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
@@ -794,7 +759,7 @@ func (m *CloudPcProvisioningPolicy) SetWindowsSetting(value CloudPcWindowsSettin
         panic(err)
     }
 }
-// SetWindowsSettings sets the windowsSettings property value. The windowsSettings property
+// SetWindowsSettings sets the windowsSettings property value. Specific Windows settings to configure during the creation of Cloud PCs for this provisioning policy. Supports $select. The windowsSettings property is deprecated and will stop returning data on January 31, 2024. Going forward, use the windowsSetting property.
 func (m *CloudPcProvisioningPolicy) SetWindowsSettings(value CloudPcWindowsSettingsable)() {
     err := m.GetBackingStore().Set("windowsSettings", value)
     if err != nil {
@@ -806,11 +771,11 @@ type CloudPcProvisioningPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlternateResourceUrl()(*string)
     GetAssignments()([]CloudPcProvisioningPolicyAssignmentable)
+    GetAutopatch()(CloudPcProvisioningPolicyAutopatchable)
     GetCloudPcGroupDisplayName()(*string)
     GetCloudPcNamingTemplate()(*string)
     GetDescription()(*string)
     GetDisplayName()(*string)
-    GetDomainJoinConfiguration()(CloudPcDomainJoinConfigurationable)
     GetDomainJoinConfigurations()([]CloudPcDomainJoinConfigurationable)
     GetEnableSingleSignOn()(*bool)
     GetGracePeriodInHours()(*int32)
@@ -820,18 +785,17 @@ type CloudPcProvisioningPolicyable interface {
     GetLocalAdminEnabled()(*bool)
     GetManagedBy()(*CloudPcManagementService)
     GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable)
-    GetOnPremisesConnectionId()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
     GetScopeIds()([]string)
     GetWindowsSetting()(CloudPcWindowsSettingable)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetAlternateResourceUrl(value *string)()
     SetAssignments(value []CloudPcProvisioningPolicyAssignmentable)()
+    SetAutopatch(value CloudPcProvisioningPolicyAutopatchable)()
     SetCloudPcGroupDisplayName(value *string)()
     SetCloudPcNamingTemplate(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
-    SetDomainJoinConfiguration(value CloudPcDomainJoinConfigurationable)()
     SetDomainJoinConfigurations(value []CloudPcDomainJoinConfigurationable)()
     SetEnableSingleSignOn(value *bool)()
     SetGracePeriodInHours(value *int32)()
@@ -841,7 +805,6 @@ type CloudPcProvisioningPolicyable interface {
     SetLocalAdminEnabled(value *bool)()
     SetManagedBy(value *CloudPcManagementService)()
     SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)()
-    SetOnPremisesConnectionId(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()
     SetScopeIds(value []string)()
     SetWindowsSetting(value CloudPcWindowsSettingable)()

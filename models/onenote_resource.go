@@ -21,7 +21,7 @@ func NewOnenoteResource()(*OnenoteResource) {
 func CreateOnenoteResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnenoteResource(), nil
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. The content of the resource.
 // returns a []byte when successful
 func (m *OnenoteResource) GetContent()([]byte) {
     val, err := m.GetBackingStore().Get("content")
@@ -33,7 +33,7 @@ func (m *OnenoteResource) GetContent()([]byte) {
     }
     return nil
 }
-// GetContentUrl gets the contentUrl property value. The contentUrl property
+// GetContentUrl gets the contentUrl property value. The URL for the content stream.
 // returns a *string when successful
 func (m *OnenoteResource) GetContentUrl()(*string) {
     val, err := m.GetBackingStore().Get("contentUrl")
@@ -91,14 +91,14 @@ func (m *OnenoteResource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. The content of the resource.
 func (m *OnenoteResource) SetContent(value []byte)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentUrl sets the contentUrl property value. The contentUrl property
+// SetContentUrl sets the contentUrl property value. The URL for the content stream.
 func (m *OnenoteResource) SetContentUrl(value *string)() {
     err := m.GetBackingStore().Set("contentUrl", value)
     if err != nil {

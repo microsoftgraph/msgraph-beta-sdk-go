@@ -47,7 +47,7 @@ func (m *SubstringTransformation) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetIndex gets the index property value. The index property
+// GetIndex gets the index property value. The start index of the substring operation, where 0 is the first character in the string.
 // returns a *int32 when successful
 func (m *SubstringTransformation) GetIndex()(*int32) {
     val, err := m.GetBackingStore().Get("index")
@@ -59,7 +59,7 @@ func (m *SubstringTransformation) GetIndex()(*int32) {
     }
     return nil
 }
-// GetLength gets the length property value. The length property
+// GetLength gets the length property value. The maximum length of the string, starting from the provided index.
 // returns a *int32 when successful
 func (m *SubstringTransformation) GetLength()(*int32) {
     val, err := m.GetBackingStore().Get("length")
@@ -91,14 +91,14 @@ func (m *SubstringTransformation) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetIndex sets the index property value. The index property
+// SetIndex sets the index property value. The start index of the substring operation, where 0 is the first character in the string.
 func (m *SubstringTransformation) SetIndex(value *int32)() {
     err := m.GetBackingStore().Set("index", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLength sets the length property value. The length property
+// SetLength sets the length property value. The maximum length of the string, starting from the provided index.
 func (m *SubstringTransformation) SetLength(value *int32)() {
     err := m.GetBackingStore().Set("length", value)
     if err != nil {

@@ -18,7 +18,7 @@ type ItemOutlookTasksOutlookTaskItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOutlookTasksOutlookTaskItemRequestBuilderGetQueryParameters get tasks from users
+// ItemOutlookTasksOutlookTaskItemRequestBuilderGetQueryParameters the user's Outlook tasks. Read-only. Nullable.
 type ItemOutlookTasksOutlookTaskItemRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
@@ -79,7 +79,7 @@ func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get get tasks from users
+// Get the user's Outlook tasks. Read-only. Nullable.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a OutlookTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -133,7 +133,7 @@ func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get tasks from users
+// ToGetRequestInformation the user's Outlook tasks. Read-only. Nullable.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTasksOutlookTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

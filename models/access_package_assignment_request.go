@@ -32,7 +32,7 @@ func (m *AccessPackageAssignmentRequest) GetAccessPackage()(AccessPackageable) {
     }
     return nil
 }
-// GetAccessPackageAssignment gets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
+// GetAccessPackageAssignment gets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
 // returns a AccessPackageAssignmentable when successful
 func (m *AccessPackageAssignmentRequest) GetAccessPackageAssignment()(AccessPackageAssignmentable) {
     val, err := m.GetBackingStore().Get("accessPackageAssignment")
@@ -104,7 +104,7 @@ func (m *AccessPackageAssignmentRequest) GetCustomExtensionHandlerInstances()([]
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 // returns a *Time when successful
 func (m *AccessPackageAssignmentRequest) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -306,7 +306,7 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetIsValidationOnly gets the isValidationOnly property value. True if the request is not to be processed for assignment.
+// GetIsValidationOnly gets the isValidationOnly property value. True if the request isn't to be processed for assignment.
 // returns a *bool when successful
 func (m *AccessPackageAssignmentRequest) GetIsValidationOnly()(*bool) {
     val, err := m.GetBackingStore().Get("isValidationOnly")
@@ -342,7 +342,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestor()(AccessPackageSubjectable
     }
     return nil
 }
-// GetRequestState gets the requestState property value. One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.
+// GetRequestState gets the requestState property value. One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted, or Scheduled. Read-only.
 // returns a *string when successful
 func (m *AccessPackageAssignmentRequest) GetRequestState()(*string) {
     val, err := m.GetBackingStore().Get("requestState")
@@ -366,7 +366,7 @@ func (m *AccessPackageAssignmentRequest) GetRequestStatus()(*string) {
     }
     return nil
 }
-// GetRequestType gets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
+// GetRequestType gets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.
 // returns a *string when successful
 func (m *AccessPackageAssignmentRequest) GetRequestType()(*string) {
     val, err := m.GetBackingStore().Get("requestType")
@@ -390,7 +390,7 @@ func (m *AccessPackageAssignmentRequest) GetSchedule()(RequestScheduleable) {
     }
     return nil
 }
-// GetVerifiedCredentialsData gets the verifiedCredentialsData property value. The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.
+// GetVerifiedCredentialsData gets the verifiedCredentialsData property value. The details of the verifiable credential that the requestor presented, such as the issuer and claims. Read-only.
 // returns a []VerifiedCredentialDataable when successful
 func (m *AccessPackageAssignmentRequest) GetVerifiedCredentialsData()([]VerifiedCredentialDataable) {
     val, err := m.GetBackingStore().Get("verifiedCredentialsData")
@@ -537,7 +537,7 @@ func (m *AccessPackageAssignmentRequest) SetAccessPackage(value AccessPackageabl
         panic(err)
     }
 }
-// SetAccessPackageAssignment sets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
+// SetAccessPackageAssignment sets the accessPackageAssignment property value. For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
 func (m *AccessPackageAssignmentRequest) SetAccessPackageAssignment(value AccessPackageAssignmentable)() {
     err := m.GetBackingStore().Set("accessPackageAssignment", value)
     if err != nil {
@@ -579,14 +579,14 @@ func (m *AccessPackageAssignmentRequest) SetCustomExtensionHandlerInstances(valu
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *AccessPackageAssignmentRequest) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsValidationOnly sets the isValidationOnly property value. True if the request is not to be processed for assignment.
+// SetIsValidationOnly sets the isValidationOnly property value. True if the request isn't to be processed for assignment.
 func (m *AccessPackageAssignmentRequest) SetIsValidationOnly(value *bool)() {
     err := m.GetBackingStore().Set("isValidationOnly", value)
     if err != nil {
@@ -607,7 +607,7 @@ func (m *AccessPackageAssignmentRequest) SetRequestor(value AccessPackageSubject
         panic(err)
     }
 }
-// SetRequestState sets the requestState property value. One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.
+// SetRequestState sets the requestState property value. One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted, or Scheduled. Read-only.
 func (m *AccessPackageAssignmentRequest) SetRequestState(value *string)() {
     err := m.GetBackingStore().Set("requestState", value)
     if err != nil {
@@ -621,7 +621,7 @@ func (m *AccessPackageAssignmentRequest) SetRequestStatus(value *string)() {
         panic(err)
     }
 }
-// SetRequestType sets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
+// SetRequestType sets the requestType property value. One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.
 func (m *AccessPackageAssignmentRequest) SetRequestType(value *string)() {
     err := m.GetBackingStore().Set("requestType", value)
     if err != nil {
@@ -635,7 +635,7 @@ func (m *AccessPackageAssignmentRequest) SetSchedule(value RequestScheduleable)(
         panic(err)
     }
 }
-// SetVerifiedCredentialsData sets the verifiedCredentialsData property value. The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.
+// SetVerifiedCredentialsData sets the verifiedCredentialsData property value. The details of the verifiable credential that the requestor presented, such as the issuer and claims. Read-only.
 func (m *AccessPackageAssignmentRequest) SetVerifiedCredentialsData(value []VerifiedCredentialDataable)() {
     err := m.GetBackingStore().Set("verifiedCredentialsData", value)
     if err != nil {

@@ -18,7 +18,7 @@ type ConditionalAccessAuthenticationStrengthsRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessAuthenticationStrengthsRequestBuilderGetQueryParameters get authenticationStrengths from identity
+// ConditionalAccessAuthenticationStrengthsRequestBuilderGetQueryParameters dEPRECATED. See the authenticationStrength relationship instead.
 type ConditionalAccessAuthenticationStrengthsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -76,7 +76,7 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get get authenticationStrengths from identity
+// Get dEPRECATED. See the authenticationStrength relationship instead.
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
 // returns a AuthenticationStrengthRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -135,7 +135,7 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) ToDeleteRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get authenticationStrengths from identity
+// ToGetRequestInformation dEPRECATED. See the authenticationStrength relationship instead.
 // Deprecated: The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessAuthenticationStrengthsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

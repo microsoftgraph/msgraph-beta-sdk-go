@@ -36,7 +36,7 @@ func (m *SecureScoreControlStateUpdate) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAssignedTo gets the assignedTo property value. The assignedTo property
+// GetAssignedTo gets the assignedTo property value. Assign the control to the user who will take the action
 // returns a *string when successful
 func (m *SecureScoreControlStateUpdate) GetAssignedTo()(*string) {
     val, err := m.GetBackingStore().Get("assignedTo")
@@ -53,7 +53,7 @@ func (m *SecureScoreControlStateUpdate) GetAssignedTo()(*string) {
 func (m *SecureScoreControlStateUpdate) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetComment gets the comment property value. The comment property
+// GetComment gets the comment property value. Provides optional comment about the control
 // returns a *string when successful
 func (m *SecureScoreControlStateUpdate) GetComment()(*string) {
     val, err := m.GetBackingStore().Get("comment")
@@ -143,7 +143,7 @@ func (m *SecureScoreControlStateUpdate) GetOdataType()(*string) {
     }
     return nil
 }
-// GetState gets the state property value. The state property
+// GetState gets the state property value. State of the control can be modified using PATCH command(Ex: ignored, thirdParty etc)
 // returns a *string when successful
 func (m *SecureScoreControlStateUpdate) GetState()(*string) {
     val, err := m.GetBackingStore().Get("state")
@@ -155,7 +155,7 @@ func (m *SecureScoreControlStateUpdate) GetState()(*string) {
     }
     return nil
 }
-// GetUpdatedBy gets the updatedBy property value. The updatedBy property
+// GetUpdatedBy gets the updatedBy property value. ID of the user who updated tenant state
 // returns a *string when successful
 func (m *SecureScoreControlStateUpdate) GetUpdatedBy()(*string) {
     val, err := m.GetBackingStore().Get("updatedBy")
@@ -167,7 +167,7 @@ func (m *SecureScoreControlStateUpdate) GetUpdatedBy()(*string) {
     }
     return nil
 }
-// GetUpdatedDateTime gets the updatedDateTime property value. The updatedDateTime property
+// GetUpdatedDateTime gets the updatedDateTime property value. Time at which control state was updated
 // returns a *Time when successful
 func (m *SecureScoreControlStateUpdate) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("updatedDateTime")
@@ -232,7 +232,7 @@ func (m *SecureScoreControlStateUpdate) SetAdditionalData(value map[string]any)(
         panic(err)
     }
 }
-// SetAssignedTo sets the assignedTo property value. The assignedTo property
+// SetAssignedTo sets the assignedTo property value. Assign the control to the user who will take the action
 func (m *SecureScoreControlStateUpdate) SetAssignedTo(value *string)() {
     err := m.GetBackingStore().Set("assignedTo", value)
     if err != nil {
@@ -243,7 +243,7 @@ func (m *SecureScoreControlStateUpdate) SetAssignedTo(value *string)() {
 func (m *SecureScoreControlStateUpdate) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetComment sets the comment property value. The comment property
+// SetComment sets the comment property value. Provides optional comment about the control
 func (m *SecureScoreControlStateUpdate) SetComment(value *string)() {
     err := m.GetBackingStore().Set("comment", value)
     if err != nil {
@@ -257,21 +257,21 @@ func (m *SecureScoreControlStateUpdate) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetState sets the state property value. The state property
+// SetState sets the state property value. State of the control can be modified using PATCH command(Ex: ignored, thirdParty etc)
 func (m *SecureScoreControlStateUpdate) SetState(value *string)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUpdatedBy sets the updatedBy property value. The updatedBy property
+// SetUpdatedBy sets the updatedBy property value. ID of the user who updated tenant state
 func (m *SecureScoreControlStateUpdate) SetUpdatedBy(value *string)() {
     err := m.GetBackingStore().Set("updatedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUpdatedDateTime sets the updatedDateTime property value. The updatedDateTime property
+// SetUpdatedDateTime sets the updatedDateTime property value. Time at which control state was updated
 func (m *SecureScoreControlStateUpdate) SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("updatedDateTime", value)
     if err != nil {

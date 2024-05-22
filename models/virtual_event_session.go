@@ -21,7 +21,7 @@ func NewVirtualEventSession()(*VirtualEventSession) {
 func CreateVirtualEventSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewVirtualEventSession(), nil
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. The virtual event session end time.
 // returns a DateTimeTimeZoneable when successful
 func (m *VirtualEventSession) GetEndDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -115,7 +115,7 @@ func (m *VirtualEventSession) GetRegistrations()([]VirtualEventRegistrationable)
     }
     return nil
 }
-// GetStartDateTime gets the startDateTime property value. The startDateTime property
+// GetStartDateTime gets the startDateTime property value. The virtual event session start time.
 // returns a DateTimeTimeZoneable when successful
 func (m *VirtualEventSession) GetStartDateTime()(DateTimeTimeZoneable) {
     val, err := m.GetBackingStore().Get("startDateTime")
@@ -171,7 +171,7 @@ func (m *VirtualEventSession) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. The virtual event session end time.
 func (m *VirtualEventSession) SetEndDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
@@ -192,7 +192,7 @@ func (m *VirtualEventSession) SetRegistrations(value []VirtualEventRegistrationa
         panic(err)
     }
 }
-// SetStartDateTime sets the startDateTime property value. The startDateTime property
+// SetStartDateTime sets the startDateTime property value. The virtual event session start time.
 func (m *VirtualEventSession) SetStartDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("startDateTime", value)
     if err != nil {

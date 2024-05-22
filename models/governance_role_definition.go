@@ -31,7 +31,7 @@ func (m *GovernanceRoleDefinition) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalId gets the externalId property value. The external id of the role definition.
+// GetExternalId gets the externalId property value. The external ID of the role definition.
 // returns a *string when successful
 func (m *GovernanceRoleDefinition) GetExternalId()(*string) {
     val, err := m.GetBackingStore().Get("externalId")
@@ -121,7 +121,7 @@ func (m *GovernanceRoleDefinition) GetResource()(GovernanceResourceable) {
     }
     return nil
 }
-// GetResourceId gets the resourceId property value. Required. The id of the resource associated with the role definition.
+// GetResourceId gets the resourceId property value. Required. The ID of the resource associated with the role definition.
 // returns a *string when successful
 func (m *GovernanceRoleDefinition) GetResourceId()(*string) {
     val, err := m.GetBackingStore().Get("resourceId")
@@ -145,7 +145,7 @@ func (m *GovernanceRoleDefinition) GetRoleSetting()(GovernanceRoleSettingable) {
     }
     return nil
 }
-// GetTemplateId gets the templateId property value. The templateId property
+// GetTemplateId gets the templateId property value. The unique identifier for the template.
 // returns a *string when successful
 func (m *GovernanceRoleDefinition) GetTemplateId()(*string) {
     val, err := m.GetBackingStore().Get("templateId")
@@ -208,7 +208,7 @@ func (m *GovernanceRoleDefinition) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetExternalId sets the externalId property value. The external id of the role definition.
+// SetExternalId sets the externalId property value. The external ID of the role definition.
 func (m *GovernanceRoleDefinition) SetExternalId(value *string)() {
     err := m.GetBackingStore().Set("externalId", value)
     if err != nil {
@@ -222,7 +222,7 @@ func (m *GovernanceRoleDefinition) SetResource(value GovernanceResourceable)() {
         panic(err)
     }
 }
-// SetResourceId sets the resourceId property value. Required. The id of the resource associated with the role definition.
+// SetResourceId sets the resourceId property value. Required. The ID of the resource associated with the role definition.
 func (m *GovernanceRoleDefinition) SetResourceId(value *string)() {
     err := m.GetBackingStore().Set("resourceId", value)
     if err != nil {
@@ -236,7 +236,7 @@ func (m *GovernanceRoleDefinition) SetRoleSetting(value GovernanceRoleSettingabl
         panic(err)
     }
 }
-// SetTemplateId sets the templateId property value. The templateId property
+// SetTemplateId sets the templateId property value. The unique identifier for the template.
 func (m *GovernanceRoleDefinition) SetTemplateId(value *string)() {
     err := m.GetBackingStore().Set("templateId", value)
     if err != nil {

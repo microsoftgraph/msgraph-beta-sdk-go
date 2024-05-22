@@ -86,7 +86,7 @@ func (m *CloudPcRestorePointSetting) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetFrequencyInHours gets the frequencyInHours property value. The frequencyInHours property
+// GetFrequencyInHours gets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours. The frequencyInHours property is deprecated and will stop returning data on January 31, 2024. Going forward, use the frequencyType property.
 // returns a *int32 when successful
 func (m *CloudPcRestorePointSetting) GetFrequencyInHours()(*int32) {
     val, err := m.GetBackingStore().Get("frequencyInHours")
@@ -180,7 +180,7 @@ func (m *CloudPcRestorePointSetting) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcRestorePointSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFrequencyInHours sets the frequencyInHours property value. The frequencyInHours property
+// SetFrequencyInHours sets the frequencyInHours property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours. The frequencyInHours property is deprecated and will stop returning data on January 31, 2024. Going forward, use the frequencyType property.
 func (m *CloudPcRestorePointSetting) SetFrequencyInHours(value *int32)() {
     err := m.GetBackingStore().Set("frequencyInHours", value)
     if err != nil {

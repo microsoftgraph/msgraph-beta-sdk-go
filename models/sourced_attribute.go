@@ -57,7 +57,7 @@ func (m *SourcedAttribute) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. The identifier of the attribute on the specified source.
 // returns a *string when successful
 func (m *SourcedAttribute) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -69,7 +69,7 @@ func (m *SourcedAttribute) GetId()(*string) {
     }
     return nil
 }
-// GetIsExtensionAttribute gets the isExtensionAttribute property value. The isExtensionAttribute property
+// GetIsExtensionAttribute gets the isExtensionAttribute property value. A flag that indicates if the name specified is that of an extension attribute.
 // returns a *bool when successful
 func (m *SourcedAttribute) GetIsExtensionAttribute()(*bool) {
     val, err := m.GetBackingStore().Get("isExtensionAttribute")
@@ -81,7 +81,7 @@ func (m *SourcedAttribute) GetIsExtensionAttribute()(*bool) {
     }
     return nil
 }
-// GetSource gets the source property value. The source property
+// GetSource gets the source property value. The source where the claim is going to retrieve its value. Valid sources include user, application, resource, audience and company.
 // returns a *string when successful
 func (m *SourcedAttribute) GetSource()(*string) {
     val, err := m.GetBackingStore().Get("source")
@@ -119,21 +119,21 @@ func (m *SourcedAttribute) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. The identifier of the attribute on the specified source.
 func (m *SourcedAttribute) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsExtensionAttribute sets the isExtensionAttribute property value. The isExtensionAttribute property
+// SetIsExtensionAttribute sets the isExtensionAttribute property value. A flag that indicates if the name specified is that of an extension attribute.
 func (m *SourcedAttribute) SetIsExtensionAttribute(value *bool)() {
     err := m.GetBackingStore().Set("isExtensionAttribute", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSource sets the source property value. The source property
+// SetSource sets the source property value. The source where the claim is going to retrieve its value. Valid sources include user, application, resource, audience and company.
 func (m *SourcedAttribute) SetSource(value *string)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {

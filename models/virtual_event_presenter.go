@@ -95,7 +95,7 @@ func (m *VirtualEventPresenter) GetIdentity()(Identityable) {
     }
     return nil
 }
-// GetPresenterDetails gets the presenterDetails property value. Other detail information of the presenter.
+// GetPresenterDetails gets the presenterDetails property value. Other detail information of the presenter. This property returns null when the virtual event type is virtualEventTownhall.
 // returns a VirtualEventPresenterDetailsable when successful
 func (m *VirtualEventPresenter) GetPresenterDetails()(VirtualEventPresenterDetailsable) {
     val, err := m.GetBackingStore().Get("presenterDetails")
@@ -171,7 +171,7 @@ func (m *VirtualEventPresenter) SetIdentity(value Identityable)() {
         panic(err)
     }
 }
-// SetPresenterDetails sets the presenterDetails property value. Other detail information of the presenter.
+// SetPresenterDetails sets the presenterDetails property value. Other detail information of the presenter. This property returns null when the virtual event type is virtualEventTownhall.
 func (m *VirtualEventPresenter) SetPresenterDetails(value VirtualEventPresenterDetailsable)() {
     err := m.GetBackingStore().Set("presenterDetails", value)
     if err != nil {

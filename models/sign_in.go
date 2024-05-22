@@ -68,7 +68,7 @@ func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListener
     }
     return nil
 }
-// GetAppTokenProtectionStatus gets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
+// GetAppTokenProtectionStatus gets the appTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the app token was bound to the device.
 // returns a *TokenProtectionStatus when successful
 func (m *SignIn) GetAppTokenProtectionStatus()(*TokenProtectionStatus) {
     val, err := m.GetBackingStore().Get("appTokenProtectionStatus")
@@ -1248,7 +1248,7 @@ func (m *SignIn) GetManagedServiceIdentity()(ManagedIdentityable) {
     }
     return nil
 }
-// GetMfaDetail gets the mfaDetail property value. The mfaDetail property
+// GetMfaDetail gets the mfaDetail property value. This property is deprecated.
 // returns a MfaDetailable when successful
 func (m *SignIn) GetMfaDetail()(MfaDetailable) {
     val, err := m.GetBackingStore().Get("mfaDetail")
@@ -2175,7 +2175,7 @@ func (m *SignIn) SetAppliedEventListeners(value []AppliedAuthenticationEventList
         panic(err)
     }
 }
-// SetAppTokenProtectionStatus sets the appTokenProtectionStatus property value. The appTokenProtectionStatus property
+// SetAppTokenProtectionStatus sets the appTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the app token was bound to the device.
 func (m *SignIn) SetAppTokenProtectionStatus(value *TokenProtectionStatus)() {
     err := m.GetBackingStore().Set("appTokenProtectionStatus", value)
     if err != nil {
@@ -2406,7 +2406,7 @@ func (m *SignIn) SetManagedServiceIdentity(value ManagedIdentityable)() {
         panic(err)
     }
 }
-// SetMfaDetail sets the mfaDetail property value. The mfaDetail property
+// SetMfaDetail sets the mfaDetail property value. This property is deprecated.
 func (m *SignIn) SetMfaDetail(value MfaDetailable)() {
     err := m.GetBackingStore().Set("mfaDetail", value)
     if err != nil {

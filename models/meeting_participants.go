@@ -52,7 +52,7 @@ func (m *MeetingParticipants) GetAttendees()([]MeetingParticipantInfoable) {
 func (m *MeetingParticipants) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContributors gets the contributors property value. The contributors property
+// GetContributors gets the contributors property value. For broadcast meeting only.
 // returns a []MeetingParticipantInfoable when successful
 func (m *MeetingParticipants) GetContributors()([]MeetingParticipantInfoable) {
     val, err := m.GetBackingStore().Get("contributors")
@@ -162,7 +162,7 @@ func (m *MeetingParticipants) GetOrganizer()(MeetingParticipantInfoable) {
     }
     return nil
 }
-// GetProducers gets the producers property value. The producers property
+// GetProducers gets the producers property value. For broadcast meeting only.
 // returns a []MeetingParticipantInfoable when successful
 func (m *MeetingParticipants) GetProducers()([]MeetingParticipantInfoable) {
     val, err := m.GetBackingStore().Get("producers")
@@ -250,7 +250,7 @@ func (m *MeetingParticipants) SetAttendees(value []MeetingParticipantInfoable)()
 func (m *MeetingParticipants) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContributors sets the contributors property value. The contributors property
+// SetContributors sets the contributors property value. For broadcast meeting only.
 func (m *MeetingParticipants) SetContributors(value []MeetingParticipantInfoable)() {
     err := m.GetBackingStore().Set("contributors", value)
     if err != nil {
@@ -271,7 +271,7 @@ func (m *MeetingParticipants) SetOrganizer(value MeetingParticipantInfoable)() {
         panic(err)
     }
 }
-// SetProducers sets the producers property value. The producers property
+// SetProducers sets the producers property value. For broadcast meeting only.
 func (m *MeetingParticipants) SetProducers(value []MeetingParticipantInfoable)() {
     err := m.GetBackingStore().Set("producers", value)
     if err != nil {

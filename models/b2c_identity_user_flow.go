@@ -143,7 +143,7 @@ func (m *B2cIdentityUserFlow) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIdentityProviders gets the identityProviders property value. The identityProviders property
+// GetIdentityProviders gets the identityProviders property value. The identity providers included in the user flow.
 // returns a []IdentityProviderable when successful
 func (m *B2cIdentityUserFlow) GetIdentityProviders()([]IdentityProviderable) {
     val, err := m.GetBackingStore().Get("identityProviders")
@@ -191,7 +191,7 @@ func (m *B2cIdentityUserFlow) GetUserAttributeAssignments()([]IdentityUserFlowAt
     }
     return nil
 }
-// GetUserFlowIdentityProviders gets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
+// GetUserFlowIdentityProviders gets the userFlowIdentityProviders property value. The identity providers included in the user flow.
 // returns a []IdentityProviderBaseable when successful
 func (m *B2cIdentityUserFlow) GetUserFlowIdentityProviders()([]IdentityProviderBaseable) {
     val, err := m.GetBackingStore().Get("userFlowIdentityProviders")
@@ -291,7 +291,7 @@ func (m *B2cIdentityUserFlow) SetDefaultLanguageTag(value *string)() {
         panic(err)
     }
 }
-// SetIdentityProviders sets the identityProviders property value. The identityProviders property
+// SetIdentityProviders sets the identityProviders property value. The identity providers included in the user flow.
 func (m *B2cIdentityUserFlow) SetIdentityProviders(value []IdentityProviderable)() {
     err := m.GetBackingStore().Set("identityProviders", value)
     if err != nil {
@@ -319,7 +319,7 @@ func (m *B2cIdentityUserFlow) SetUserAttributeAssignments(value []IdentityUserFl
         panic(err)
     }
 }
-// SetUserFlowIdentityProviders sets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
+// SetUserFlowIdentityProviders sets the userFlowIdentityProviders property value. The identity providers included in the user flow.
 func (m *B2cIdentityUserFlow) SetUserFlowIdentityProviders(value []IdentityProviderBaseable)() {
     err := m.GetBackingStore().Set("userFlowIdentityProviders", value)
     if err != nil {

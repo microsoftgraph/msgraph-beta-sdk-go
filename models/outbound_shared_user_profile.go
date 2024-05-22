@@ -94,7 +94,7 @@ func (m *OutboundSharedUserProfile) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenants gets the tenants property value. The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+// GetTenants gets the tenants property value. The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
 // returns a []TenantReferenceable when successful
 func (m *OutboundSharedUserProfile) GetTenants()([]TenantReferenceable) {
     val, err := m.GetBackingStore().Get("tenants")
@@ -170,7 +170,7 @@ func (m *OutboundSharedUserProfile) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenants sets the tenants property value. The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+// SetTenants sets the tenants property value. The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
 func (m *OutboundSharedUserProfile) SetTenants(value []TenantReferenceable)() {
     err := m.GetBackingStore().Set("tenants", value)
     if err != nil {

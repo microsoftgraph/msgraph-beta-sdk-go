@@ -56,7 +56,7 @@ func (m *SecurityAction) GetAzureTenantId()(*string) {
     }
     return nil
 }
-// GetClientContext gets the clientContext property value. The clientContext property
+// GetClientContext gets the clientContext property value. Unique client context string. Can have a maximum of 256 characters.
 // returns a *string when successful
 func (m *SecurityAction) GetClientContext()(*string) {
     val, err := m.GetBackingStore().Get("clientContext")
@@ -472,7 +472,7 @@ func (m *SecurityAction) SetAzureTenantId(value *string)() {
         panic(err)
     }
 }
-// SetClientContext sets the clientContext property value. The clientContext property
+// SetClientContext sets the clientContext property value. Unique client context string. Can have a maximum of 256 characters.
 func (m *SecurityAction) SetClientContext(value *string)() {
     err := m.GetBackingStore().Set("clientContext", value)
     if err != nil {

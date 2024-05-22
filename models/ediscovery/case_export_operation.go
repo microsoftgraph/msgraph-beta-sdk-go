@@ -165,7 +165,7 @@ func (m *CaseExportOperation) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOutputFolderId gets the outputFolderId property value. The outputFolderId property
+// GetOutputFolderId gets the outputFolderId property value. The output folder ID.
 // returns a *string when successful
 func (m *CaseExportOperation) GetOutputFolderId()(*string) {
     val, err := m.GetBackingStore().Get("outputFolderId")
@@ -294,7 +294,7 @@ func (m *CaseExportOperation) SetExportStructure(value *ExportFileStructure)() {
         panic(err)
     }
 }
-// SetOutputFolderId sets the outputFolderId property value. The outputFolderId property
+// SetOutputFolderId sets the outputFolderId property value. The output folder ID.
 func (m *CaseExportOperation) SetOutputFolderId(value *string)() {
     err := m.GetBackingStore().Set("outputFolderId", value)
     if err != nil {

@@ -31,7 +31,6 @@ func NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilder(rawUrl string
     return NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. Currently, the region is the only policy setting that you can apply.
-// Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -51,7 +50,6 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) Post(ctx co
     return nil
 }
 // ToPostRequestInformation apply the current provisioning policy configuration to all Cloud PC devices under a specified policy. Currently, the region is the only policy setting that you can apply.
-// Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemApplyPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,7 +65,6 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId
 // returns a *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointProvisioningPoliciesItemApplyRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesItemApplyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

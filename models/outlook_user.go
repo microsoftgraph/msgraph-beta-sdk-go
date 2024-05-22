@@ -101,7 +101,7 @@ func (m *OutlookUser) GetMasterCategories()([]OutlookCategoryable) {
     }
     return nil
 }
-// GetTaskFolders gets the taskFolders property value. The taskFolders property
+// GetTaskFolders gets the taskFolders property value. The user's Outlook task folders. Read-only. Nullable.
 // returns a []OutlookTaskFolderable when successful
 func (m *OutlookUser) GetTaskFolders()([]OutlookTaskFolderable) {
     val, err := m.GetBackingStore().Get("taskFolders")
@@ -113,7 +113,7 @@ func (m *OutlookUser) GetTaskFolders()([]OutlookTaskFolderable) {
     }
     return nil
 }
-// GetTaskGroups gets the taskGroups property value. The taskGroups property
+// GetTaskGroups gets the taskGroups property value. The user's Outlook task groups. Read-only. Nullable.
 // returns a []OutlookTaskGroupable when successful
 func (m *OutlookUser) GetTaskGroups()([]OutlookTaskGroupable) {
     val, err := m.GetBackingStore().Get("taskGroups")
@@ -125,7 +125,7 @@ func (m *OutlookUser) GetTaskGroups()([]OutlookTaskGroupable) {
     }
     return nil
 }
-// GetTasks gets the tasks property value. The tasks property
+// GetTasks gets the tasks property value. The user's Outlook tasks. Read-only. Nullable.
 // returns a []OutlookTaskable when successful
 func (m *OutlookUser) GetTasks()([]OutlookTaskable) {
     val, err := m.GetBackingStore().Get("tasks")
@@ -200,21 +200,21 @@ func (m *OutlookUser) SetMasterCategories(value []OutlookCategoryable)() {
         panic(err)
     }
 }
-// SetTaskFolders sets the taskFolders property value. The taskFolders property
+// SetTaskFolders sets the taskFolders property value. The user's Outlook task folders. Read-only. Nullable.
 func (m *OutlookUser) SetTaskFolders(value []OutlookTaskFolderable)() {
     err := m.GetBackingStore().Set("taskFolders", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTaskGroups sets the taskGroups property value. The taskGroups property
+// SetTaskGroups sets the taskGroups property value. The user's Outlook task groups. Read-only. Nullable.
 func (m *OutlookUser) SetTaskGroups(value []OutlookTaskGroupable)() {
     err := m.GetBackingStore().Set("taskGroups", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTasks sets the tasks property value. The tasks property
+// SetTasks sets the tasks property value. The user's Outlook tasks. Read-only. Nullable.
 func (m *OutlookUser) SetTasks(value []OutlookTaskable)() {
     err := m.GetBackingStore().Set("tasks", value)
     if err != nil {

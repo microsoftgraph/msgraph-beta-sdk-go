@@ -466,7 +466,7 @@ func (m *SearchRequest) GetSortProperties()([]SortPropertyable) {
     }
     return nil
 }
-// GetStoredFields gets the stored_fields property value. The stored_fields property
+// GetStoredFields gets the stored_fields property value. This is now replaced by the fields property.
 // returns a []string when successful
 func (m *SearchRequest) GetStoredFields()([]string) {
     val, err := m.GetBackingStore().Get("stored_fields")
@@ -749,7 +749,7 @@ func (m *SearchRequest) SetSortProperties(value []SortPropertyable)() {
         panic(err)
     }
 }
-// SetStoredFields sets the stored_fields property value. The stored_fields property
+// SetStoredFields sets the stored_fields property value. This is now replaced by the fields property.
 func (m *SearchRequest) SetStoredFields(value []string)() {
     err := m.GetBackingStore().Set("stored_fields", value)
     if err != nil {

@@ -20,7 +20,7 @@ func NewFilePlanDescriptor()(*FilePlanDescriptor) {
 func CreateFilePlanDescriptorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFilePlanDescriptor(), nil
 }
-// GetAuthority gets the authority property value. Represents the file plan descriptor of type authority applied to a particular retention label.
+// GetAuthority gets the authority property value. The authority property
 // returns a FilePlanAuthorityable when successful
 func (m *FilePlanDescriptor) GetAuthority()(FilePlanAuthorityable) {
     val, err := m.GetBackingStore().Get("authority")
@@ -68,7 +68,7 @@ func (m *FilePlanDescriptor) GetCategoryTemplate()(CategoryTemplateable) {
     }
     return nil
 }
-// GetCitation gets the citation property value. Represents the file plan descriptor of type citation applied to a particular retention label.
+// GetCitation gets the citation property value. The citation property
 // returns a FilePlanCitationable when successful
 func (m *FilePlanDescriptor) GetCitation()(FilePlanCitationable) {
     val, err := m.GetBackingStore().Get("citation")
@@ -92,7 +92,7 @@ func (m *FilePlanDescriptor) GetCitationTemplate()(CitationTemplateable) {
     }
     return nil
 }
-// GetDepartment gets the department property value. Represents the file plan descriptor of type department applied to a particular retention label.
+// GetDepartment gets the department property value. The department property
 // returns a FilePlanDepartmentable when successful
 func (m *FilePlanDescriptor) GetDepartment()(FilePlanDepartmentable) {
     val, err := m.GetBackingStore().Get("department")
@@ -222,7 +222,7 @@ func (m *FilePlanDescriptor) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFilePlanReference gets the filePlanReference property value. Represents the file plan descriptor of type filePlanReference applied to a particular retention label.
+// GetFilePlanReference gets the filePlanReference property value. The filePlanReference property
 // returns a FilePlanReferenceable when successful
 func (m *FilePlanDescriptor) GetFilePlanReference()(FilePlanReferenceable) {
     val, err := m.GetBackingStore().Get("filePlanReference")
@@ -314,7 +314,7 @@ func (m *FilePlanDescriptor) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAuthority sets the authority property value. Represents the file plan descriptor of type authority applied to a particular retention label.
+// SetAuthority sets the authority property value. The authority property
 func (m *FilePlanDescriptor) SetAuthority(value FilePlanAuthorityable)() {
     err := m.GetBackingStore().Set("authority", value)
     if err != nil {
@@ -342,7 +342,7 @@ func (m *FilePlanDescriptor) SetCategoryTemplate(value CategoryTemplateable)() {
         panic(err)
     }
 }
-// SetCitation sets the citation property value. Represents the file plan descriptor of type citation applied to a particular retention label.
+// SetCitation sets the citation property value. The citation property
 func (m *FilePlanDescriptor) SetCitation(value FilePlanCitationable)() {
     err := m.GetBackingStore().Set("citation", value)
     if err != nil {
@@ -356,7 +356,7 @@ func (m *FilePlanDescriptor) SetCitationTemplate(value CitationTemplateable)() {
         panic(err)
     }
 }
-// SetDepartment sets the department property value. Represents the file plan descriptor of type department applied to a particular retention label.
+// SetDepartment sets the department property value. The department property
 func (m *FilePlanDescriptor) SetDepartment(value FilePlanDepartmentable)() {
     err := m.GetBackingStore().Set("department", value)
     if err != nil {
@@ -370,7 +370,7 @@ func (m *FilePlanDescriptor) SetDepartmentTemplate(value DepartmentTemplateable)
         panic(err)
     }
 }
-// SetFilePlanReference sets the filePlanReference property value. Represents the file plan descriptor of type filePlanReference applied to a particular retention label.
+// SetFilePlanReference sets the filePlanReference property value. The filePlanReference property
 func (m *FilePlanDescriptor) SetFilePlanReference(value FilePlanReferenceable)() {
     err := m.GetBackingStore().Set("filePlanReference", value)
     if err != nil {

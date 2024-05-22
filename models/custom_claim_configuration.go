@@ -35,7 +35,7 @@ func (m *CustomClaimConfiguration) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAttribute gets the attribute property value. The attribute property
+// GetAttribute gets the attribute property value. The attribute on which we source this property.
 // returns a CustomClaimAttributeBaseable when successful
 func (m *CustomClaimConfiguration) GetAttribute()(CustomClaimAttributeBaseable) {
     val, err := m.GetBackingStore().Get("attribute")
@@ -52,7 +52,7 @@ func (m *CustomClaimConfiguration) GetAttribute()(CustomClaimAttributeBaseable) 
 func (m *CustomClaimConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCondition gets the condition property value. The condition property
+// GetCondition gets the condition property value. The condition, if any, associated with this configuration.
 // returns a CustomClaimConditionBaseable when successful
 func (m *CustomClaimConfiguration) GetCondition()(CustomClaimConditionBaseable) {
     val, err := m.GetBackingStore().Get("condition")
@@ -128,7 +128,7 @@ func (m *CustomClaimConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTransformations gets the transformations property value. The transformations property
+// GetTransformations gets the transformations property value. An ordered list of transformations that are applied in sequence.
 // returns a []CustomClaimTransformationable when successful
 func (m *CustomClaimConfiguration) GetTransformations()([]CustomClaimTransformationable) {
     val, err := m.GetBackingStore().Get("transformations")
@@ -187,7 +187,7 @@ func (m *CustomClaimConfiguration) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAttribute sets the attribute property value. The attribute property
+// SetAttribute sets the attribute property value. The attribute on which we source this property.
 func (m *CustomClaimConfiguration) SetAttribute(value CustomClaimAttributeBaseable)() {
     err := m.GetBackingStore().Set("attribute", value)
     if err != nil {
@@ -198,7 +198,7 @@ func (m *CustomClaimConfiguration) SetAttribute(value CustomClaimAttributeBaseab
 func (m *CustomClaimConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCondition sets the condition property value. The condition property
+// SetCondition sets the condition property value. The condition, if any, associated with this configuration.
 func (m *CustomClaimConfiguration) SetCondition(value CustomClaimConditionBaseable)() {
     err := m.GetBackingStore().Set("condition", value)
     if err != nil {
@@ -212,7 +212,7 @@ func (m *CustomClaimConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTransformations sets the transformations property value. The transformations property
+// SetTransformations sets the transformations property value. An ordered list of transformations that are applied in sequence.
 func (m *CustomClaimConfiguration) SetTransformations(value []CustomClaimTransformationable)() {
     err := m.GetBackingStore().Set("transformations", value)
     if err != nil {

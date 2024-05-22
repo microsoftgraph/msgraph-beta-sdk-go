@@ -274,7 +274,7 @@ func (m *ItemFacet) GetSource()(PersonDataSourcesable) {
     }
     return nil
 }
-// GetSources gets the sources property value. The sources property
+// GetSources gets the sources property value. Where the values within an entity originated if synced from another source.
 // returns a []ProfileSourceAnnotationable when successful
 func (m *ItemFacet) GetSources()([]ProfileSourceAnnotationable) {
     val, err := m.GetBackingStore().Get("sources")
@@ -411,7 +411,7 @@ func (m *ItemFacet) SetSource(value PersonDataSourcesable)() {
         panic(err)
     }
 }
-// SetSources sets the sources property value. The sources property
+// SetSources sets the sources property value. Where the values within an entity originated if synced from another source.
 func (m *ItemFacet) SetSources(value []ProfileSourceAnnotationable)() {
     err := m.GetBackingStore().Set("sources", value)
     if err != nil {

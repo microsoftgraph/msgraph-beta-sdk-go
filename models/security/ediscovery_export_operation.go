@@ -19,7 +19,7 @@ func NewEdiscoveryExportOperation()(*EdiscoveryExportOperation) {
 func CreateEdiscoveryExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryExportOperation(), nil
 }
-// GetAzureBlobContainer gets the azureBlobContainer property value. The azureBlobContainer property
+// GetAzureBlobContainer gets the azureBlobContainer property value. The name of the Azure storage location where the export is stored. This only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and will stop returning data on April 30th, 2023.
 // returns a *string when successful
 func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobContainer")
@@ -31,7 +31,7 @@ func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
     }
     return nil
 }
-// GetAzureBlobToken gets the azureBlobToken property value. The azureBlobToken property
+// GetAzureBlobToken gets the azureBlobToken property value. The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and will stop returning data on April 30, 2023.
 // returns a *string when successful
 func (m *EdiscoveryExportOperation) GetAzureBlobToken()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobToken")
@@ -55,7 +55,7 @@ func (m *EdiscoveryExportOperation) GetDescription()(*string) {
     }
     return nil
 }
-// GetExportFileMetadata gets the exportFileMetadata property value. The exportFileMetadata property
+// GetExportFileMetadata gets the exportFileMetadata property value. Contains the properties for an export file metadata, including downloadUrl, fileName, and size. If you export to an Azure storage location, this property returns empty.
 // returns a []ExportFileMetadataable when successful
 func (m *EdiscoveryExportOperation) GetExportFileMetadata()([]ExportFileMetadataable) {
     val, err := m.GetBackingStore().Get("exportFileMetadata")
@@ -203,7 +203,7 @@ func (m *EdiscoveryExportOperation) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetOutputFolderId gets the outputFolderId property value. The outputFolderId property
+// GetOutputFolderId gets the outputFolderId property value. The output folder ID. The outputFolderId property is deprecated and will stop returning data on April 30, 2023.
 // returns a *string when successful
 func (m *EdiscoveryExportOperation) GetOutputFolderId()(*string) {
     val, err := m.GetBackingStore().Get("outputFolderId")
@@ -327,14 +327,14 @@ func (m *EdiscoveryExportOperation) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAzureBlobContainer sets the azureBlobContainer property value. The azureBlobContainer property
+// SetAzureBlobContainer sets the azureBlobContainer property value. The name of the Azure storage location where the export is stored. This only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and will stop returning data on April 30th, 2023.
 func (m *EdiscoveryExportOperation) SetAzureBlobContainer(value *string)() {
     err := m.GetBackingStore().Set("azureBlobContainer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAzureBlobToken sets the azureBlobToken property value. The azureBlobToken property
+// SetAzureBlobToken sets the azureBlobToken property value. The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and will stop returning data on April 30, 2023.
 func (m *EdiscoveryExportOperation) SetAzureBlobToken(value *string)() {
     err := m.GetBackingStore().Set("azureBlobToken", value)
     if err != nil {
@@ -348,7 +348,7 @@ func (m *EdiscoveryExportOperation) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetExportFileMetadata sets the exportFileMetadata property value. The exportFileMetadata property
+// SetExportFileMetadata sets the exportFileMetadata property value. Contains the properties for an export file metadata, including downloadUrl, fileName, and size. If you export to an Azure storage location, this property returns empty.
 func (m *EdiscoveryExportOperation) SetExportFileMetadata(value []ExportFileMetadataable)() {
     err := m.GetBackingStore().Set("exportFileMetadata", value)
     if err != nil {
@@ -369,7 +369,7 @@ func (m *EdiscoveryExportOperation) SetExportStructure(value *ExportFileStructur
         panic(err)
     }
 }
-// SetOutputFolderId sets the outputFolderId property value. The outputFolderId property
+// SetOutputFolderId sets the outputFolderId property value. The output folder ID. The outputFolderId property is deprecated and will stop returning data on April 30, 2023.
 func (m *EdiscoveryExportOperation) SetOutputFolderId(value *string)() {
     err := m.GetBackingStore().Set("outputFolderId", value)
     if err != nil {

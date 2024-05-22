@@ -59,7 +59,7 @@ func (m *JoinTransformation) GetInput2()(TransformationAttributeable) {
     }
     return nil
 }
-// GetSeparator gets the separator property value. The separator property
+// GetSeparator gets the separator property value. The separator value to be used.
 // returns a *string when successful
 func (m *JoinTransformation) GetSeparator()(*string) {
     val, err := m.GetBackingStore().Get("separator")
@@ -98,7 +98,7 @@ func (m *JoinTransformation) SetInput2(value TransformationAttributeable)() {
         panic(err)
     }
 }
-// SetSeparator sets the separator property value. The separator property
+// SetSeparator sets the separator property value. The separator value to be used.
 func (m *JoinTransformation) SetSeparator(value *string)() {
     err := m.GetBackingStore().Set("separator", value)
     if err != nil {

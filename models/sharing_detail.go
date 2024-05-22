@@ -143,7 +143,7 @@ func (m *SharingDetail) GetSharedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
     return nil
 }
-// GetSharingReference gets the sharingReference property value. The sharingReference property
+// GetSharingReference gets the sharingReference property value. Reference properties of the document, such as the URL and type of the document. Read-only
 // returns a ResourceReferenceable when successful
 func (m *SharingDetail) GetSharingReference()(ResourceReferenceable) {
     val, err := m.GetBackingStore().Get("sharingReference")
@@ -251,7 +251,7 @@ func (m *SharingDetail) SetSharedDateTime(value *i336074805fc853987abe6f7fe3ad97
         panic(err)
     }
 }
-// SetSharingReference sets the sharingReference property value. The sharingReference property
+// SetSharingReference sets the sharingReference property value. Reference properties of the document, such as the URL and type of the document. Read-only
 func (m *SharingDetail) SetSharingReference(value ResourceReferenceable)() {
     err := m.GetBackingStore().Set("sharingReference", value)
     if err != nil {
