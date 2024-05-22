@@ -5,7 +5,7 @@
     "include-component-in-tag": false,
     "packages": {
         ".": {
-          "package-name": "github.com/microsoftgraph/msgraph-sdk-go",
+          "package-name": "github.com/microsoftgraph/msgraph-beta-sdk-go",
           "changelog-path": "CHANGELOG.md",
           "extra-files": [
             "graph_request_adapter.go"
