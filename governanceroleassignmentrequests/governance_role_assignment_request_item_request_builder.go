@@ -121,9 +121,9 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) Resource()(*ItemReso
     return NewItemResourceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleAssignmentRequest entity.
-// returns a *ItemRoleDefinitionRequestBuilder when successful
-func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) RoleDefinition()(*ItemRoleDefinitionRequestBuilder) {
-    return NewItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoledefinitionRoleDefinitionRequestBuilder when successful
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) RoleDefinition()(*ItemRoledefinitionRoleDefinitionRequestBuilder) {
+    return NewItemRoledefinitionRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Subject provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignmentRequest entity.
 // returns a *ItemSubjectRequestBuilder when successful
@@ -171,9 +171,9 @@ func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) ToPatchRequestInform
     return requestInfo, nil
 }
 // UpdateRequest provides operations to call the updateRequest method.
-// returns a *ItemUpdateRequestRequestBuilder when successful
-func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) UpdateRequest()(*ItemUpdateRequestRequestBuilder) {
-    return NewItemUpdateRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemUpdaterequestUpdateRequestRequestBuilder when successful
+func (m *GovernanceRoleAssignmentRequestItemRequestBuilder) UpdateRequest()(*ItemUpdaterequestUpdateRequestRequestBuilder) {
+    return NewItemUpdaterequestUpdateRequestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *GovernanceRoleAssignmentRequestItemRequestBuilder when successful

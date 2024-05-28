@@ -105,14 +105,14 @@ func (m *DevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *D
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
-// returns a *GetByIdsRequestBuilder when successful
-func (m *DevicesRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
-    return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetbyidsGetByIdsRequestBuilder when successful
+func (m *DevicesRequestBuilder) GetByIds()(*GetbyidsGetByIdsRequestBuilder) {
+    return NewGetbyidsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-// returns a *GetUserOwnedObjectsRequestBuilder when successful
-func (m *DevicesRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestBuilder) {
-    return NewGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetuserownedobjectsGetUserOwnedObjectsRequestBuilder when successful
+func (m *DevicesRequestBuilder) GetUserOwnedObjects()(*GetuserownedobjectsGetUserOwnedObjectsRequestBuilder) {
+    return NewGetuserownedobjectsGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new device.
 // returns a Deviceable when successful
@@ -167,9 +167,9 @@ func (m *DevicesRequestBuilder) ToPostRequestInformation(ctx context.Context, bo
     return requestInfo, nil
 }
 // ValidateProperties provides operations to call the validateProperties method.
-// returns a *ValidatePropertiesRequestBuilder when successful
-func (m *DevicesRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
-    return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ValidatepropertiesValidatePropertiesRequestBuilder when successful
+func (m *DevicesRequestBuilder) ValidateProperties()(*ValidatepropertiesValidatePropertiesRequestBuilder) {
+    return NewValidatepropertiesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *DevicesRequestBuilder when successful

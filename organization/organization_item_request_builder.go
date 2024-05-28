@@ -47,19 +47,19 @@ func (m *OrganizationItemRequestBuilder) Branding()(*ItemBrandingRequestBuilder)
     return NewItemBrandingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CertificateBasedAuthConfiguration provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
-// returns a *ItemCertificateBasedAuthConfigurationRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) CertificateBasedAuthConfiguration()(*ItemCertificateBasedAuthConfigurationRequestBuilder) {
-    return NewItemCertificateBasedAuthConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCertificatebasedauthconfigurationCertificateBasedAuthConfigurationRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) CertificateBasedAuthConfiguration()(*ItemCertificatebasedauthconfigurationCertificateBasedAuthConfigurationRequestBuilder) {
+    return NewItemCertificatebasedauthconfigurationCertificateBasedAuthConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
-// returns a *ItemCheckMemberGroupsRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckmembergroupsCheckMemberGroupsRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) CheckMemberGroups()(*ItemCheckmembergroupsCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckmembergroupsCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberObjects provides operations to call the checkMemberObjects method.
-// returns a *ItemCheckMemberObjectsRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) CheckMemberObjects()(*ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckmemberobjectsCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewOrganizationItemRequestBuilderInternal instantiates a new OrganizationItemRequestBuilder and sets the default values.
 func NewOrganizationItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*OrganizationItemRequestBuilder) {
@@ -119,19 +119,19 @@ func (m *OrganizationItemRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Organizationable), nil
 }
 // GetMemberGroups provides operations to call the getMemberGroups method.
-// returns a *ItemGetMemberGroupsRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
-    return NewItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetmembergroupsGetMemberGroupsRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) GetMemberGroups()(*ItemGetmembergroupsGetMemberGroupsRequestBuilder) {
+    return NewItemGetmembergroupsGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetMemberObjects provides operations to call the getMemberObjects method.
-// returns a *ItemGetMemberObjectsRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
-    return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetmemberobjectsGetMemberObjectsRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) GetMemberObjects()(*ItemGetmemberobjectsGetMemberObjectsRequestBuilder) {
+    return NewItemGetmemberobjectsGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PartnerInformation provides operations to manage the partnerInformation property of the microsoft.graph.organization entity.
-// returns a *ItemPartnerInformationRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) PartnerInformation()(*ItemPartnerInformationRequestBuilder) {
-    return NewItemPartnerInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPartnerinformationPartnerInformationRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) PartnerInformation()(*ItemPartnerinformationPartnerInformationRequestBuilder) {
+    return NewItemPartnerinformationPartnerInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.
 // returns a Organizationable when successful
@@ -162,9 +162,9 @@ func (m *OrganizationItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
     return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetMobileDeviceManagementAuthority provides operations to call the setMobileDeviceManagementAuthority method.
-// returns a *ItemSetMobileDeviceManagementAuthorityRequestBuilder when successful
-func (m *OrganizationItemRequestBuilder) SetMobileDeviceManagementAuthority()(*ItemSetMobileDeviceManagementAuthorityRequestBuilder) {
-    return NewItemSetMobileDeviceManagementAuthorityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSetmobiledevicemanagementauthoritySetMobileDeviceManagementAuthorityRequestBuilder when successful
+func (m *OrganizationItemRequestBuilder) SetMobileDeviceManagementAuthority()(*ItemSetmobiledevicemanagementauthoritySetMobileDeviceManagementAuthorityRequestBuilder) {
+    return NewItemSetmobiledevicemanagementauthoritySetMobileDeviceManagementAuthorityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.organization entity.
 // returns a *ItemSettingsRequestBuilder when successful

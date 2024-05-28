@@ -42,9 +42,9 @@ type WindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilderPatchRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CatalogEntry provides operations to manage the catalogEntry property of the microsoft.graph.windowsUpdates.productRevision entity.
-// returns a *WindowsUpdatesProductsItemRevisionsItemCatalogEntryRequestBuilder when successful
-func (m *WindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilder) CatalogEntry()(*WindowsUpdatesProductsItemRevisionsItemCatalogEntryRequestBuilder) {
-    return NewWindowsUpdatesProductsItemRevisionsItemCatalogEntryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsUpdatesProductsItemRevisionsItemCatalogentryCatalogEntryRequestBuilder when successful
+func (m *WindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilder) CatalogEntry()(*WindowsUpdatesProductsItemRevisionsItemCatalogentryCatalogEntryRequestBuilder) {
+    return NewWindowsUpdatesProductsItemRevisionsItemCatalogentryCatalogEntryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewWindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilderInternal instantiates a new WindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilder and sets the default values.
 func NewWindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilder) {
@@ -96,9 +96,9 @@ func (m *WindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilder) G
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.ProductRevisionable), nil
 }
 // KnowledgeBaseArticle provides operations to manage the knowledgeBaseArticle property of the microsoft.graph.windowsUpdates.productRevision entity.
-// returns a *WindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilder when successful
-func (m *WindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilder) KnowledgeBaseArticle()(*WindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilder) {
-    return NewWindowsUpdatesProductsItemRevisionsItemKnowledgeBaseArticleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsUpdatesProductsItemRevisionsItemKnowledgebasearticleKnowledgeBaseArticleRequestBuilder when successful
+func (m *WindowsUpdatesProductsItemRevisionsProductRevisionItemRequestBuilder) KnowledgeBaseArticle()(*WindowsUpdatesProductsItemRevisionsItemKnowledgebasearticleKnowledgeBaseArticleRequestBuilder) {
+    return NewWindowsUpdatesProductsItemRevisionsItemKnowledgebasearticleKnowledgeBaseArticleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property revisions in admin
 // returns a ProductRevisionable when successful

@@ -42,9 +42,9 @@ type CollaborationRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AnalyzedEmails provides operations to manage the analyzedEmails property of the microsoft.graph.security.collaborationRoot entity.
-// returns a *CollaborationAnalyzedEmailsRequestBuilder when successful
-func (m *CollaborationRequestBuilder) AnalyzedEmails()(*CollaborationAnalyzedEmailsRequestBuilder) {
-    return NewCollaborationAnalyzedEmailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CollaborationAnalyzedemailsAnalyzedEmailsRequestBuilder when successful
+func (m *CollaborationRequestBuilder) AnalyzedEmails()(*CollaborationAnalyzedemailsAnalyzedEmailsRequestBuilder) {
+    return NewCollaborationAnalyzedemailsAnalyzedEmailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewCollaborationRequestBuilderInternal instantiates a new CollaborationRequestBuilder and sets the default values.
 func NewCollaborationRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CollaborationRequestBuilder) {

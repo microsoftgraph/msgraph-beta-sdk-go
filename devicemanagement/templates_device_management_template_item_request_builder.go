@@ -47,9 +47,9 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Categories()(*Temp
     return NewTemplatesItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CompareWithTemplateId provides operations to call the compare method.
-// returns a *TemplatesItemCompareWithTemplateIdRequestBuilder when successful
-func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CompareWithTemplateId(templateId *string)(*TemplatesItemCompareWithTemplateIdRequestBuilder) {
-    return NewTemplatesItemCompareWithTemplateIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, templateId)
+// returns a *TemplatesItemComparewithtemplateidCompareWithTemplateIdRequestBuilder when successful
+func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CompareWithTemplateId(templateId *string)(*TemplatesItemComparewithtemplateidCompareWithTemplateIdRequestBuilder) {
+    return NewTemplatesItemComparewithtemplateidCompareWithTemplateIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, templateId)
 }
 // NewTemplatesDeviceManagementTemplateItemRequestBuilderInternal instantiates a new TemplatesDeviceManagementTemplateItemRequestBuilder and sets the default values.
 func NewTemplatesDeviceManagementTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TemplatesDeviceManagementTemplateItemRequestBuilder) {
@@ -65,9 +65,9 @@ func NewTemplatesDeviceManagementTemplateItemRequestBuilder(rawUrl string, reque
     return NewTemplatesDeviceManagementTemplateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateInstance provides operations to call the createInstance method.
-// returns a *TemplatesItemCreateInstanceRequestBuilder when successful
-func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CreateInstance()(*TemplatesItemCreateInstanceRequestBuilder) {
-    return NewTemplatesItemCreateInstanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TemplatesItemCreateinstanceCreateInstanceRequestBuilder when successful
+func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) CreateInstance()(*TemplatesItemCreateinstanceCreateInstanceRequestBuilder) {
+    return NewTemplatesItemCreateinstanceCreateInstanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property templates for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -106,9 +106,9 @@ func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) Get(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateable), nil
 }
 // MigratableTo provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.
-// returns a *TemplatesItemMigratableToRequestBuilder when successful
-func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) MigratableTo()(*TemplatesItemMigratableToRequestBuilder) {
-    return NewTemplatesItemMigratableToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TemplatesItemMigratabletoMigratableToRequestBuilder when successful
+func (m *TemplatesDeviceManagementTemplateItemRequestBuilder) MigratableTo()(*TemplatesItemMigratabletoMigratableToRequestBuilder) {
+    return NewTemplatesItemMigratabletoMigratableToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property templates in deviceManagement
 // returns a DeviceManagementTemplateable when successful

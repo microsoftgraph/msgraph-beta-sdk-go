@@ -71,9 +71,9 @@ func (m *GoalsRequestBuilder) Delete(ctx context.Context, requestConfiguration *
     return nil
 }
 // ExportJobs provides operations to manage the exportJobs property of the microsoft.graph.goals entity.
-// returns a *GoalsExportJobsRequestBuilder when successful
-func (m *GoalsRequestBuilder) ExportJobs()(*GoalsExportJobsRequestBuilder) {
-    return NewGoalsExportJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GoalsExportjobsExportJobsRequestBuilder when successful
+func (m *GoalsRequestBuilder) ExportJobs()(*GoalsExportjobsExportJobsRequestBuilder) {
+    return NewGoalsExportjobsExportJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents a collection of goals in a Viva Goals organization.
 // returns a Goalsable when successful

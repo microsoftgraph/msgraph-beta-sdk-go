@@ -91,14 +91,14 @@ func (m *InvitationItemRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Invitationable), nil
 }
 // InvitedUser provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
-// returns a *ItemInvitedUserRequestBuilder when successful
-func (m *InvitationItemRequestBuilder) InvitedUser()(*ItemInvitedUserRequestBuilder) {
-    return NewItemInvitedUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemInviteduserInvitedUserRequestBuilder when successful
+func (m *InvitationItemRequestBuilder) InvitedUser()(*ItemInviteduserInvitedUserRequestBuilder) {
+    return NewItemInviteduserInvitedUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InvitedUserSponsors provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
-// returns a *ItemInvitedUserSponsorsRequestBuilder when successful
-func (m *InvitationItemRequestBuilder) InvitedUserSponsors()(*ItemInvitedUserSponsorsRequestBuilder) {
-    return NewItemInvitedUserSponsorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemInvitedusersponsorsInvitedUserSponsorsRequestBuilder when successful
+func (m *InvitationItemRequestBuilder) InvitedUserSponsors()(*ItemInvitedusersponsorsInvitedUserSponsorsRequestBuilder) {
+    return NewItemInvitedusersponsorsInvitedUserSponsorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in invitations
 // returns a Invitationable when successful

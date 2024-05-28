@@ -77,9 +77,9 @@ func (m *ItemApprovalsRequestBuilder) Count()(*ItemApprovalsCountRequestBuilder)
     return NewItemApprovalsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
-// returns a *ItemApprovalsFilterByCurrentUserWithOnRequestBuilder when successful
-func (m *ItemApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ItemApprovalsFilterByCurrentUserWithOnRequestBuilder) {
-    return NewItemApprovalsFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
+// returns a *ItemApprovalsFilterbycurrentuserwithonFilterByCurrentUserWithOnRequestBuilder when successful
+func (m *ItemApprovalsRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ItemApprovalsFilterbycurrentuserwithonFilterByCurrentUserWithOnRequestBuilder) {
+    return NewItemApprovalsFilterbycurrentuserwithonFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get get approvals from users
 // returns a ApprovalCollectionResponseable when successful

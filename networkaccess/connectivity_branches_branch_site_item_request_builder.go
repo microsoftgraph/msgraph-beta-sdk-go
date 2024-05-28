@@ -42,9 +42,9 @@ type ConnectivityBranchesBranchSiteItemRequestBuilderPatchRequestConfiguration s
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ConnectivityConfiguration provides operations to manage the connectivityConfiguration property of the microsoft.graph.networkaccess.branchSite entity.
-// returns a *ConnectivityBranchesItemConnectivityConfigurationRequestBuilder when successful
-func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ConnectivityConfiguration()(*ConnectivityBranchesItemConnectivityConfigurationRequestBuilder) {
-    return NewConnectivityBranchesItemConnectivityConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ConnectivityBranchesItemConnectivityconfigurationConnectivityConfigurationRequestBuilder when successful
+func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ConnectivityConfiguration()(*ConnectivityBranchesItemConnectivityconfigurationConnectivityConfigurationRequestBuilder) {
+    return NewConnectivityBranchesItemConnectivityconfigurationConnectivityConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewConnectivityBranchesBranchSiteItemRequestBuilderInternal instantiates a new ConnectivityBranchesBranchSiteItemRequestBuilder and sets the default values.
 func NewConnectivityBranchesBranchSiteItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ConnectivityBranchesBranchSiteItemRequestBuilder) {
@@ -80,14 +80,14 @@ func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) Delete(ctx context.Co
     return nil
 }
 // DeviceLinks provides operations to manage the deviceLinks property of the microsoft.graph.networkaccess.branchSite entity.
-// returns a *ConnectivityBranchesItemDeviceLinksRequestBuilder when successful
-func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) DeviceLinks()(*ConnectivityBranchesItemDeviceLinksRequestBuilder) {
-    return NewConnectivityBranchesItemDeviceLinksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ConnectivityBranchesItemDevicelinksDeviceLinksRequestBuilder when successful
+func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) DeviceLinks()(*ConnectivityBranchesItemDevicelinksDeviceLinksRequestBuilder) {
+    return NewConnectivityBranchesItemDevicelinksDeviceLinksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ForwardingProfiles provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.branchSite entity.
-// returns a *ConnectivityBranchesItemForwardingProfilesRequestBuilder when successful
-func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ForwardingProfiles()(*ConnectivityBranchesItemForwardingProfilesRequestBuilder) {
-    return NewConnectivityBranchesItemForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ConnectivityBranchesItemForwardingprofilesForwardingProfilesRequestBuilder when successful
+func (m *ConnectivityBranchesBranchSiteItemRequestBuilder) ForwardingProfiles()(*ConnectivityBranchesItemForwardingprofilesForwardingProfilesRequestBuilder) {
+    return NewConnectivityBranchesItemForwardingprofilesForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve information about a specific branch.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess

@@ -71,9 +71,9 @@ func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) Delete(ctx context.Con
     return nil
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.itemActivityOLD entity.
-// returns a *ItemActivitiesItemDriveItemRequestBuilder when successful
-func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) DriveItem()(*ItemActivitiesItemDriveItemRequestBuilder) {
-    return NewItemActivitiesItemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemActivitiesItemDriveitemDriveItemRequestBuilder when successful
+func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) DriveItem()(*ItemActivitiesItemDriveitemDriveItemRequestBuilder) {
+    return NewItemActivitiesItemDriveitemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of recent activities that took place under this drive.
 // returns a ItemActivityOLDable when successful
@@ -96,9 +96,9 @@ func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable), nil
 }
 // ListItem provides operations to manage the listItem property of the microsoft.graph.itemActivityOLD entity.
-// returns a *ItemActivitiesItemListItemRequestBuilder when successful
-func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) ListItem()(*ItemActivitiesItemListItemRequestBuilder) {
-    return NewItemActivitiesItemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemActivitiesItemListitemListItemRequestBuilder when successful
+func (m *ItemActivitiesItemActivityOLDItemRequestBuilder) ListItem()(*ItemActivitiesItemListitemListItemRequestBuilder) {
+    return NewItemActivitiesItemListitemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property activities in drives
 // returns a ItemActivityOLDable when successful

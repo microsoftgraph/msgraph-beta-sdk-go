@@ -1276,6 +1276,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFileClassificationRequest(), nil
                     case "#microsoft.graph.fileSecurityProfile":
                         return NewFileSecurityProfile(), nil
+                    case "#microsoft.graph.fileStorage":
+                        return NewFileStorage(), nil
+                    case "#microsoft.graph.fileStorageContainer":
+                        return NewFileStorageContainer(), nil
                     case "#microsoft.graph.filterOperatorSchema":
                         return NewFilterOperatorSchema(), nil
                     case "#microsoft.graph.finding":

@@ -174,7 +174,7 @@ func (m *AccessPackageResourceRequest) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetIsValidationOnly gets the isValidationOnly property value. If set, does not add the resource.
+// GetIsValidationOnly gets the isValidationOnly property value. If set, doesn't add the resource.
 // returns a *bool when successful
 func (m *AccessPackageResourceRequest) GetIsValidationOnly()(*bool) {
     val, err := m.GetBackingStore().Get("isValidationOnly")
@@ -210,7 +210,7 @@ func (m *AccessPackageResourceRequest) GetRequestor()(AccessPackageSubjectable) 
     }
     return nil
 }
-// GetRequestState gets the requestState property value. The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
+// GetRequestState gets the requestState property value. The outcome of whether the service was able to add the resource to the catalog. The value is Delivered if the resource was added or removed. Read-Only.
 // returns a *string when successful
 func (m *AccessPackageResourceRequest) GetRequestState()(*string) {
     val, err := m.GetBackingStore().Get("requestState")
@@ -342,7 +342,7 @@ func (m *AccessPackageResourceRequest) SetExpirationDateTime(value *i336074805fc
         panic(err)
     }
 }
-// SetIsValidationOnly sets the isValidationOnly property value. If set, does not add the resource.
+// SetIsValidationOnly sets the isValidationOnly property value. If set, doesn't add the resource.
 func (m *AccessPackageResourceRequest) SetIsValidationOnly(value *bool)() {
     err := m.GetBackingStore().Set("isValidationOnly", value)
     if err != nil {
@@ -363,7 +363,7 @@ func (m *AccessPackageResourceRequest) SetRequestor(value AccessPackageSubjectab
         panic(err)
     }
 }
-// SetRequestState sets the requestState property value. The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.
+// SetRequestState sets the requestState property value. The outcome of whether the service was able to add the resource to the catalog. The value is Delivered if the resource was added or removed. Read-Only.
 func (m *AccessPackageResourceRequest) SetRequestState(value *string)() {
     err := m.GetBackingStore().Set("requestState", value)
     if err != nil {

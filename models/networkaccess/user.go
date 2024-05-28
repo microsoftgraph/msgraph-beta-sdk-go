@@ -67,6 +67,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["firstAccessDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFirstAccessDateTime(val)
+        }
+        return nil
+    }
     res["lastAccessDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -87,6 +97,26 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["totalBytesReceived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalBytesReceived(val)
+        }
+        return nil
+    }
+    res["totalBytesSent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTotalBytesSent(val)
+        }
+        return nil
+    }
     res["trafficType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTrafficType)
         if err != nil {
@@ -94,6 +124,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetTrafficType(val.(*TrafficType))
+        }
+        return nil
+    }
+    res["transactionCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt64Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTransactionCount(val)
         }
         return nil
     }
@@ -129,6 +169,18 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
     }
     return res
 }
+// GetFirstAccessDateTime gets the firstAccessDateTime property value. The firstAccessDateTime property
+// returns a *Time when successful
+func (m *User) GetFirstAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("firstAccessDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetLastAccessDateTime gets the lastAccessDateTime property value. The date and time of the most recent access.
 // returns a *Time when successful
 func (m *User) GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -153,6 +205,30 @@ func (m *User) GetOdataType()(*string) {
     }
     return nil
 }
+// GetTotalBytesReceived gets the totalBytesReceived property value. The totalBytesReceived property
+// returns a *int64 when successful
+func (m *User) GetTotalBytesReceived()(*int64) {
+    val, err := m.GetBackingStore().Get("totalBytesReceived")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
+}
+// GetTotalBytesSent gets the totalBytesSent property value. The totalBytesSent property
+// returns a *int64 when successful
+func (m *User) GetTotalBytesSent()(*int64) {
+    val, err := m.GetBackingStore().Get("totalBytesSent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
+    }
+    return nil
+}
 // GetTrafficType gets the trafficType property value. The trafficType property
 // returns a *TrafficType when successful
 func (m *User) GetTrafficType()(*TrafficType) {
@@ -162,6 +238,18 @@ func (m *User) GetTrafficType()(*TrafficType) {
     }
     if val != nil {
         return val.(*TrafficType)
+    }
+    return nil
+}
+// GetTransactionCount gets the transactionCount property value. The transactionCount property
+// returns a *int64 when successful
+func (m *User) GetTransactionCount()(*int64) {
+    val, err := m.GetBackingStore().Get("transactionCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int64)
     }
     return nil
 }
@@ -210,6 +298,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err := writer.WriteTimeValue("firstAccessDateTime", m.GetFirstAccessDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteTimeValue("lastAccessDateTime", m.GetLastAccessDateTime())
         if err != nil {
             return err
@@ -221,9 +315,27 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    {
+        err := writer.WriteInt64Value("totalBytesReceived", m.GetTotalBytesReceived())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt64Value("totalBytesSent", m.GetTotalBytesSent())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTrafficType() != nil {
         cast := (*m.GetTrafficType()).String()
         err := writer.WriteStringValue("trafficType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt64Value("transactionCount", m.GetTransactionCount())
         if err != nil {
             return err
         }
@@ -273,6 +385,13 @@ func (m *User) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetFirstAccessDateTime sets the firstAccessDateTime property value. The firstAccessDateTime property
+func (m *User) SetFirstAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("firstAccessDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastAccessDateTime sets the lastAccessDateTime property value. The date and time of the most recent access.
 func (m *User) SetLastAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastAccessDateTime", value)
@@ -287,9 +406,30 @@ func (m *User) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetTotalBytesReceived sets the totalBytesReceived property value. The totalBytesReceived property
+func (m *User) SetTotalBytesReceived(value *int64)() {
+    err := m.GetBackingStore().Set("totalBytesReceived", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTotalBytesSent sets the totalBytesSent property value. The totalBytesSent property
+func (m *User) SetTotalBytesSent(value *int64)() {
+    err := m.GetBackingStore().Set("totalBytesSent", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTrafficType sets the trafficType property value. The trafficType property
 func (m *User) SetTrafficType(value *TrafficType)() {
     err := m.GetBackingStore().Set("trafficType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTransactionCount sets the transactionCount property value. The transactionCount property
+func (m *User) SetTransactionCount(value *int64)() {
+    err := m.GetBackingStore().Set("transactionCount", value)
     if err != nil {
         panic(err)
     }
@@ -321,17 +461,25 @@ type Userable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
+    GetFirstAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
+    GetTotalBytesReceived()(*int64)
+    GetTotalBytesSent()(*int64)
     GetTrafficType()(*TrafficType)
+    GetTransactionCount()(*int64)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
     GetUserType()(*UserType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
+    SetFirstAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
+    SetTotalBytesReceived(value *int64)()
+    SetTotalBytesSent(value *int64)()
     SetTrafficType(value *TrafficType)()
+    SetTransactionCount(value *int64)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()
     SetUserType(value *UserType)()

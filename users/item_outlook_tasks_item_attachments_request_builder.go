@@ -78,9 +78,9 @@ func (m *ItemOutlookTasksItemAttachmentsRequestBuilder) Count()(*ItemOutlookTask
     return NewItemOutlookTasksItemAttachmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
-// returns a *ItemOutlookTasksItemAttachmentsCreateUploadSessionRequestBuilder when successful
-func (m *ItemOutlookTasksItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemOutlookTasksItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewItemOutlookTasksItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOutlookTasksItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder when successful
+func (m *ItemOutlookTasksItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemOutlookTasksItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder) {
+    return NewItemOutlookTasksItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of attachment objects attached to an Outlook task.
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks

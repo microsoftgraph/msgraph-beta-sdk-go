@@ -91,9 +91,9 @@ func (m *ItemConnectorsConnectorItemRequestBuilder) Get(ctx context.Context, req
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Connectorable), nil
 }
 // MemberOf provides operations to manage the memberOf property of the microsoft.graph.connector entity.
-// returns a *ItemConnectorsItemMemberOfRequestBuilder when successful
-func (m *ItemConnectorsConnectorItemRequestBuilder) MemberOf()(*ItemConnectorsItemMemberOfRequestBuilder) {
-    return NewItemConnectorsItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemConnectorsItemMemberofMemberOfRequestBuilder when successful
+func (m *ItemConnectorsConnectorItemRequestBuilder) MemberOf()(*ItemConnectorsItemMemberofMemberOfRequestBuilder) {
+    return NewItemConnectorsItemMemberofMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property connectors in onPremisesPublishingProfiles
 // returns a Connectorable when successful

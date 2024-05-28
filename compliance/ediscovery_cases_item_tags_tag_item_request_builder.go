@@ -42,9 +42,9 @@ type EdiscoveryCasesItemTagsTagItemRequestBuilderPatchRequestConfiguration struc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ChildTags provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
-// returns a *EdiscoveryCasesItemTagsItemChildTagsRequestBuilder when successful
-func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) ChildTags()(*EdiscoveryCasesItemTagsItemChildTagsRequestBuilder) {
-    return NewEdiscoveryCasesItemTagsItemChildTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilder when successful
+func (m *EdiscoveryCasesItemTagsTagItemRequestBuilder) ChildTags()(*EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilder) {
+    return NewEdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal instantiates a new EdiscoveryCasesItemTagsTagItemRequestBuilder and sets the default values.
 func NewEdiscoveryCasesItemTagsTagItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*EdiscoveryCasesItemTagsTagItemRequestBuilder) {

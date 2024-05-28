@@ -91,9 +91,9 @@ func (m *CompaniesItemItemsItemItemRequestBuilder) Get(ctx context.Context, requ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Itemable), nil
 }
 // ItemCategory provides operations to manage the itemCategory property of the microsoft.graph.item entity.
-// returns a *CompaniesItemItemsItemItemCategoryRequestBuilder when successful
-func (m *CompaniesItemItemsItemItemRequestBuilder) ItemCategory()(*CompaniesItemItemsItemItemCategoryRequestBuilder) {
-    return NewCompaniesItemItemsItemItemCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemItemsItemItemcategoryItemCategoryRequestBuilder when successful
+func (m *CompaniesItemItemsItemItemRequestBuilder) ItemCategory()(*CompaniesItemItemsItemItemcategoryItemCategoryRequestBuilder) {
+    return NewCompaniesItemItemsItemItemcategoryItemCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property items in financials
 // returns a Itemable when successful

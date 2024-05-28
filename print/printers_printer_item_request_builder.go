@@ -102,9 +102,9 @@ func (m *PrintersPrinterItemRequestBuilder) Get(ctx context.Context, requestConf
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable), nil
 }
 // GetCapabilities provides operations to call the getCapabilities method.
-// returns a *PrintersItemGetCapabilitiesRequestBuilder when successful
-func (m *PrintersPrinterItemRequestBuilder) GetCapabilities()(*PrintersItemGetCapabilitiesRequestBuilder) {
-    return NewPrintersItemGetCapabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PrintersItemGetcapabilitiesGetCapabilitiesRequestBuilder when successful
+func (m *PrintersPrinterItemRequestBuilder) GetCapabilities()(*PrintersItemGetcapabilitiesGetCapabilitiesRequestBuilder) {
+    return NewPrintersItemGetcapabilitiesGetCapabilitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Jobs provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
 // returns a *PrintersItemJobsRequestBuilder when successful
@@ -135,14 +135,14 @@ func (m *PrintersPrinterItemRequestBuilder) Patch(ctx context.Context, body ie23
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Printerable), nil
 }
 // ResetDefaults provides operations to call the resetDefaults method.
-// returns a *PrintersItemResetDefaultsRequestBuilder when successful
-func (m *PrintersPrinterItemRequestBuilder) ResetDefaults()(*PrintersItemResetDefaultsRequestBuilder) {
-    return NewPrintersItemResetDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PrintersItemResetdefaultsResetDefaultsRequestBuilder when successful
+func (m *PrintersPrinterItemRequestBuilder) ResetDefaults()(*PrintersItemResetdefaultsResetDefaultsRequestBuilder) {
+    return NewPrintersItemResetdefaultsResetDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RestoreFactoryDefaults provides operations to call the restoreFactoryDefaults method.
-// returns a *PrintersItemRestoreFactoryDefaultsRequestBuilder when successful
-func (m *PrintersPrinterItemRequestBuilder) RestoreFactoryDefaults()(*PrintersItemRestoreFactoryDefaultsRequestBuilder) {
-    return NewPrintersItemRestoreFactoryDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PrintersItemRestorefactorydefaultsRestoreFactoryDefaultsRequestBuilder when successful
+func (m *PrintersPrinterItemRequestBuilder) RestoreFactoryDefaults()(*PrintersItemRestorefactorydefaultsRestoreFactoryDefaultsRequestBuilder) {
+    return NewPrintersItemRestorefactorydefaultsRestoreFactoryDefaultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Share provides operations to manage the share property of the microsoft.graph.printer entity.
 // returns a *PrintersItemShareRequestBuilder when successful
@@ -155,9 +155,9 @@ func (m *PrintersPrinterItemRequestBuilder) Shares()(*PrintersItemSharesRequestB
     return NewPrintersItemSharesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaskTriggers provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
-// returns a *PrintersItemTaskTriggersRequestBuilder when successful
-func (m *PrintersPrinterItemRequestBuilder) TaskTriggers()(*PrintersItemTaskTriggersRequestBuilder) {
-    return NewPrintersItemTaskTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PrintersItemTasktriggersTaskTriggersRequestBuilder when successful
+func (m *PrintersPrinterItemRequestBuilder) TaskTriggers()(*PrintersItemTasktriggersTaskTriggersRequestBuilder) {
+    return NewPrintersItemTasktriggersTaskTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete (unregister) a printer.
 // returns a *RequestInformation when successful

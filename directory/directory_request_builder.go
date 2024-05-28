@@ -35,19 +35,19 @@ type DirectoryRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AdministrativeUnits provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
-// returns a *AdministrativeUnitsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) AdministrativeUnits()(*AdministrativeUnitsRequestBuilder) {
-    return NewAdministrativeUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AdministrativeunitsAdministrativeUnitsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) AdministrativeUnits()(*AdministrativeunitsAdministrativeUnitsRequestBuilder) {
+    return NewAdministrativeunitsAdministrativeUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AttributeSets provides operations to manage the attributeSets property of the microsoft.graph.directory entity.
-// returns a *AttributeSetsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) AttributeSets()(*AttributeSetsRequestBuilder) {
-    return NewAttributeSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AttributesetsAttributeSetsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) AttributeSets()(*AttributesetsAttributeSetsRequestBuilder) {
+    return NewAttributesetsAttributeSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CertificateAuthorities provides operations to manage the certificateAuthorities property of the microsoft.graph.directory entity.
-// returns a *CertificateAuthoritiesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) CertificateAuthorities()(*CertificateAuthoritiesRequestBuilder) {
-    return NewCertificateAuthoritiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CertificateauthoritiesCertificateAuthoritiesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) CertificateAuthorities()(*CertificateauthoritiesCertificateAuthoritiesRequestBuilder) {
+    return NewCertificateauthoritiesCertificateAuthoritiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewDirectoryRequestBuilderInternal instantiates a new DirectoryRequestBuilder and sets the default values.
 func NewDirectoryRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectoryRequestBuilder) {
@@ -63,34 +63,34 @@ func NewDirectoryRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewDirectoryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CustomSecurityAttributeDefinitions provides operations to manage the customSecurityAttributeDefinitions property of the microsoft.graph.directory entity.
-// returns a *CustomSecurityAttributeDefinitionsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitions()(*CustomSecurityAttributeDefinitionsRequestBuilder) {
-    return NewCustomSecurityAttributeDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CustomsecurityattributedefinitionsCustomSecurityAttributeDefinitionsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) CustomSecurityAttributeDefinitions()(*CustomsecurityattributedefinitionsCustomSecurityAttributeDefinitionsRequestBuilder) {
+    return NewCustomsecurityattributedefinitionsCustomSecurityAttributeDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeletedItems provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
-// returns a *DeletedItemsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) DeletedItems()(*DeletedItemsRequestBuilder) {
-    return NewDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DeleteditemsDeletedItemsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) DeletedItems()(*DeleteditemsDeletedItemsRequestBuilder) {
+    return NewDeleteditemsDeletedItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceLocalCredentials provides operations to manage the deviceLocalCredentials property of the microsoft.graph.directory entity.
-// returns a *DeviceLocalCredentialsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) DeviceLocalCredentials()(*DeviceLocalCredentialsRequestBuilder) {
-    return NewDeviceLocalCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DevicelocalcredentialsDeviceLocalCredentialsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) DeviceLocalCredentials()(*DevicelocalcredentialsDeviceLocalCredentialsRequestBuilder) {
+    return NewDevicelocalcredentialsDeviceLocalCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExternalUserProfiles provides operations to manage the externalUserProfiles property of the microsoft.graph.directory entity.
-// returns a *ExternalUserProfilesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) ExternalUserProfiles()(*ExternalUserProfilesRequestBuilder) {
-    return NewExternalUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ExternaluserprofilesExternalUserProfilesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) ExternalUserProfiles()(*ExternaluserprofilesExternalUserProfilesRequestBuilder) {
+    return NewExternaluserprofilesExternalUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FeatureRolloutPolicies provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.
-// returns a *FeatureRolloutPoliciesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) FeatureRolloutPolicies()(*FeatureRolloutPoliciesRequestBuilder) {
-    return NewFeatureRolloutPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *FeaturerolloutpoliciesFeatureRolloutPoliciesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) FeatureRolloutPolicies()(*FeaturerolloutpoliciesFeatureRolloutPoliciesRequestBuilder) {
+    return NewFeaturerolloutpoliciesFeatureRolloutPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FederationConfigurations provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
-// returns a *FederationConfigurationsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) FederationConfigurations()(*FederationConfigurationsRequestBuilder) {
-    return NewFederationConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *FederationconfigurationsFederationConfigurationsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) FederationConfigurations()(*FederationconfigurationsFederationConfigurationsRequestBuilder) {
+    return NewFederationconfigurationsFederationConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get directory
 // returns a Directoryable when successful
@@ -113,24 +113,24 @@ func (m *DirectoryRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Directoryable), nil
 }
 // ImpactedResources provides operations to manage the impactedResources property of the microsoft.graph.directory entity.
-// returns a *ImpactedResourcesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) ImpactedResources()(*ImpactedResourcesRequestBuilder) {
-    return NewImpactedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ImpactedresourcesImpactedResourcesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) ImpactedResources()(*ImpactedresourcesImpactedResourcesRequestBuilder) {
+    return NewImpactedresourcesImpactedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InboundSharedUserProfiles provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
-// returns a *InboundSharedUserProfilesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) InboundSharedUserProfiles()(*InboundSharedUserProfilesRequestBuilder) {
-    return NewInboundSharedUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *InboundshareduserprofilesInboundSharedUserProfilesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) InboundSharedUserProfiles()(*InboundshareduserprofilesInboundSharedUserProfilesRequestBuilder) {
+    return NewInboundshareduserprofilesInboundSharedUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OnPremisesSynchronization provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
-// returns a *OnPremisesSynchronizationRequestBuilder when successful
-func (m *DirectoryRequestBuilder) OnPremisesSynchronization()(*OnPremisesSynchronizationRequestBuilder) {
-    return NewOnPremisesSynchronizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *OnpremisessynchronizationOnPremisesSynchronizationRequestBuilder when successful
+func (m *DirectoryRequestBuilder) OnPremisesSynchronization()(*OnpremisessynchronizationOnPremisesSynchronizationRequestBuilder) {
+    return NewOnpremisessynchronizationOnPremisesSynchronizationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OutboundSharedUserProfiles provides operations to manage the outboundSharedUserProfiles property of the microsoft.graph.directory entity.
-// returns a *OutboundSharedUserProfilesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) OutboundSharedUserProfiles()(*OutboundSharedUserProfilesRequestBuilder) {
-    return NewOutboundSharedUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *OutboundshareduserprofilesOutboundSharedUserProfilesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) OutboundSharedUserProfiles()(*OutboundshareduserprofilesOutboundSharedUserProfilesRequestBuilder) {
+    return NewOutboundshareduserprofilesOutboundSharedUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update directory
 // returns a Directoryable when successful
@@ -153,9 +153,9 @@ func (m *DirectoryRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Directoryable), nil
 }
 // PendingExternalUserProfiles provides operations to manage the pendingExternalUserProfiles property of the microsoft.graph.directory entity.
-// returns a *PendingExternalUserProfilesRequestBuilder when successful
-func (m *DirectoryRequestBuilder) PendingExternalUserProfiles()(*PendingExternalUserProfilesRequestBuilder) {
-    return NewPendingExternalUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PendingexternaluserprofilesPendingExternalUserProfilesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) PendingExternalUserProfiles()(*PendingexternaluserprofilesPendingExternalUserProfilesRequestBuilder) {
+    return NewPendingexternaluserprofilesPendingExternalUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Recommendations provides operations to manage the recommendations property of the microsoft.graph.directory entity.
 // returns a *RecommendationsRequestBuilder when successful
@@ -163,9 +163,9 @@ func (m *DirectoryRequestBuilder) Recommendations()(*RecommendationsRequestBuild
     return NewRecommendationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SharedEmailDomains provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
-// returns a *SharedEmailDomainsRequestBuilder when successful
-func (m *DirectoryRequestBuilder) SharedEmailDomains()(*SharedEmailDomainsRequestBuilder) {
-    return NewSharedEmailDomainsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SharedemaildomainsSharedEmailDomainsRequestBuilder when successful
+func (m *DirectoryRequestBuilder) SharedEmailDomains()(*SharedemaildomainsSharedEmailDomainsRequestBuilder) {
+    return NewSharedemaildomainsSharedEmailDomainsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
 // returns a *SubscriptionsRequestBuilder when successful
@@ -173,14 +173,14 @@ func (m *DirectoryRequestBuilder) Subscriptions()(*SubscriptionsRequestBuilder) 
     return NewSubscriptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SubscriptionsWithCommerceSubscriptionId provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
-// returns a *SubscriptionsWithCommerceSubscriptionIdRequestBuilder when successful
-func (m *DirectoryRequestBuilder) SubscriptionsWithCommerceSubscriptionId(commerceSubscriptionId *string)(*SubscriptionsWithCommerceSubscriptionIdRequestBuilder) {
-    return NewSubscriptionsWithCommerceSubscriptionIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, commerceSubscriptionId)
+// returns a *SubscriptionswithcommercesubscriptionidSubscriptionsWithCommerceSubscriptionIdRequestBuilder when successful
+func (m *DirectoryRequestBuilder) SubscriptionsWithCommerceSubscriptionId(commerceSubscriptionId *string)(*SubscriptionswithcommercesubscriptionidSubscriptionsWithCommerceSubscriptionIdRequestBuilder) {
+    return NewSubscriptionswithcommercesubscriptionidSubscriptionsWithCommerceSubscriptionIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, commerceSubscriptionId)
 }
 // SubscriptionsWithOcpSubscriptionId provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
-// returns a *SubscriptionsWithOcpSubscriptionIdRequestBuilder when successful
-func (m *DirectoryRequestBuilder) SubscriptionsWithOcpSubscriptionId(ocpSubscriptionId *string)(*SubscriptionsWithOcpSubscriptionIdRequestBuilder) {
-    return NewSubscriptionsWithOcpSubscriptionIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, ocpSubscriptionId)
+// returns a *SubscriptionswithocpsubscriptionidSubscriptionsWithOcpSubscriptionIdRequestBuilder when successful
+func (m *DirectoryRequestBuilder) SubscriptionsWithOcpSubscriptionId(ocpSubscriptionId *string)(*SubscriptionswithocpsubscriptionidSubscriptionsWithOcpSubscriptionIdRequestBuilder) {
+    return NewSubscriptionswithocpsubscriptionidSubscriptionsWithOcpSubscriptionIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, ocpSubscriptionId)
 }
 // ToGetRequestInformation get directory
 // returns a *RequestInformation when successful

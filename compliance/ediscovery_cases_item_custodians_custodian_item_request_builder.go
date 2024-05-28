@@ -96,34 +96,34 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Get(ctx conte
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable), nil
 }
 // LastIndexOperation provides operations to manage the lastIndexOperation property of the microsoft.graph.ediscovery.dataSourceContainer entity.
-// returns a *EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) LastIndexOperation()(*EdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemLastIndexOperationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) LastIndexOperation()(*EdiscoveryCasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphEdiscoveryActivate provides operations to call the activate method.
-// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryActivate()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryactivateMicrosoftGraphEdiscoveryActivateRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryActivate()(*EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryactivateMicrosoftGraphEdiscoveryActivateRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryactivateMicrosoftGraphEdiscoveryActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphEdiscoveryApplyHold provides operations to call the applyHold method.
-// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryApplyHoldRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryApplyHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryapplyholdMicrosoftGraphEdiscoveryApplyHoldRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryapplyholdMicrosoftGraphEdiscoveryApplyHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryapplyholdMicrosoftGraphEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphEdiscoveryRelease provides operations to call the release method.
-// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryReleaseRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryRelease()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryReleaseRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryReleaseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryreleaseMicrosoftGraphEdiscoveryReleaseRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryRelease()(*EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryreleaseMicrosoftGraphEdiscoveryReleaseRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryreleaseMicrosoftGraphEdiscoveryReleaseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphEdiscoveryRemoveHold provides operations to call the removeHold method.
-// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryremoveholdMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryremoveholdMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryremoveholdMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphEdiscoveryUpdateIndex provides operations to call the updateIndex method.
-// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryUpdateIndexRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryUpdateIndex()(*EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryUpdateIndexRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryUpdateIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryupdateindexMicrosoftGraphEdiscoveryUpdateIndexRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) MicrosoftGraphEdiscoveryUpdateIndex()(*EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryupdateindexMicrosoftGraphEdiscoveryUpdateIndexRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryupdateindexMicrosoftGraphEdiscoveryUpdateIndexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of a custodian object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
@@ -150,9 +150,9 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) Patch(ctx con
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.Custodianable), nil
 }
 // SiteSources provides operations to manage the siteSources property of the microsoft.graph.ediscovery.custodian entity.
-// returns a *EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) SiteSources()(*EdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemSiteSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) SiteSources()(*EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemSitesourcesSiteSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property custodians for compliance
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
@@ -198,14 +198,14 @@ func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) ToPatchReques
     return requestInfo, nil
 }
 // UnifiedGroupSources provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.custodian entity.
-// returns a *EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UnifiedGroupSources()(*EdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemUnifiedGroupSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourcesRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UnifiedGroupSources()(*EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourcesRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserSources provides operations to manage the userSources property of the microsoft.graph.ediscovery.custodian entity.
-// returns a *EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UserSources()(*EdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansItemUserSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansItemUsersourcesUserSourcesRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansCustodianItemRequestBuilder) UserSources()(*EdiscoveryCasesItemCustodiansItemUsersourcesUserSourcesRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansItemUsersourcesUserSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace

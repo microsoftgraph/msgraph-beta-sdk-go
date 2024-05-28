@@ -52,9 +52,9 @@ func (m *SharesItemJobsPrintJobItemRequestBuilder) Cancel()(*SharesItemJobsItemC
     return NewSharesItemJobsItemCancelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CancelPrintJob provides operations to call the cancelPrintJob method.
-// returns a *SharesItemJobsItemCancelPrintJobRequestBuilder when successful
-func (m *SharesItemJobsPrintJobItemRequestBuilder) CancelPrintJob()(*SharesItemJobsItemCancelPrintJobRequestBuilder) {
-    return NewSharesItemJobsItemCancelPrintJobRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SharesItemJobsItemCancelprintjobCancelPrintJobRequestBuilder when successful
+func (m *SharesItemJobsPrintJobItemRequestBuilder) CancelPrintJob()(*SharesItemJobsItemCancelprintjobCancelPrintJobRequestBuilder) {
+    return NewSharesItemJobsItemCancelprintjobCancelPrintJobRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSharesItemJobsPrintJobItemRequestBuilderInternal instantiates a new SharesItemJobsPrintJobItemRequestBuilder and sets the default values.
 func NewSharesItemJobsPrintJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SharesItemJobsPrintJobItemRequestBuilder) {
@@ -141,9 +141,9 @@ func (m *SharesItemJobsPrintJobItemRequestBuilder) Start()(*SharesItemJobsItemSt
     return NewSharesItemJobsItemStartRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // StartPrintJob provides operations to call the startPrintJob method.
-// returns a *SharesItemJobsItemStartPrintJobRequestBuilder when successful
-func (m *SharesItemJobsPrintJobItemRequestBuilder) StartPrintJob()(*SharesItemJobsItemStartPrintJobRequestBuilder) {
-    return NewSharesItemJobsItemStartPrintJobRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SharesItemJobsItemStartprintjobStartPrintJobRequestBuilder when successful
+func (m *SharesItemJobsPrintJobItemRequestBuilder) StartPrintJob()(*SharesItemJobsItemStartprintjobStartPrintJobRequestBuilder) {
+    return NewSharesItemJobsItemStartprintjobStartPrintJobRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.printJob entity.
 // returns a *SharesItemJobsItemTasksRequestBuilder when successful

@@ -46,9 +46,9 @@ func (m *ItemSpecialDriveItemItemRequestBuilder) Content()(*ItemSpecialItemConte
     return NewItemSpecialItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ContentStream provides operations to manage the media for the drive entity.
-// returns a *ItemSpecialItemContentStreamRequestBuilder when successful
-func (m *ItemSpecialDriveItemItemRequestBuilder) ContentStream()(*ItemSpecialItemContentStreamRequestBuilder) {
-    return NewItemSpecialItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSpecialItemContentstreamContentStreamRequestBuilder when successful
+func (m *ItemSpecialDriveItemItemRequestBuilder) ContentStream()(*ItemSpecialItemContentstreamContentStreamRequestBuilder) {
+    return NewItemSpecialItemContentstreamContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get collection of common folders available in OneDrive. Read-only. Nullable.
 // returns a DriveItemable when successful

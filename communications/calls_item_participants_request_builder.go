@@ -105,9 +105,9 @@ func (m *CallsItemParticipantsRequestBuilder) Invite()(*CallsItemParticipantsInv
     return NewCallsItemParticipantsInviteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MuteAll provides operations to call the muteAll method.
-// returns a *CallsItemParticipantsMuteAllRequestBuilder when successful
-func (m *CallsItemParticipantsRequestBuilder) MuteAll()(*CallsItemParticipantsMuteAllRequestBuilder) {
-    return NewCallsItemParticipantsMuteAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemParticipantsMuteallMuteAllRequestBuilder when successful
+func (m *CallsItemParticipantsRequestBuilder) MuteAll()(*CallsItemParticipantsMuteallMuteAllRequestBuilder) {
+    return NewCallsItemParticipantsMuteallMuteAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to participants for communications
 // returns a Participantable when successful

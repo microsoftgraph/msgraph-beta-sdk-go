@@ -48,14 +48,14 @@ func NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder(rawUrl s
     return NewItemAuthenticationMethodsAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DisableSmsSignIn provides operations to call the disableSmsSignIn method.
-// returns a *ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder when successful
-func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*ItemAuthenticationMethodsItemDisableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationMethodsItemDisableSmsSignInRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationMethodsItemDisablesmssigninDisableSmsSignInRequestBuilder when successful
+func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) DisableSmsSignIn()(*ItemAuthenticationMethodsItemDisablesmssigninDisableSmsSignInRequestBuilder) {
+    return NewItemAuthenticationMethodsItemDisablesmssigninDisableSmsSignInRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EnableSmsSignIn provides operations to call the enableSmsSignIn method.
-// returns a *ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder when successful
-func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) {
-    return NewItemAuthenticationMethodsItemEnableSmsSignInRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationMethodsItemEnablesmssigninEnableSmsSignInRequestBuilder when successful
+func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) EnableSmsSignIn()(*ItemAuthenticationMethodsItemEnablesmssigninEnableSmsSignInRequestBuilder) {
+    return NewItemAuthenticationMethodsItemEnablesmssigninEnableSmsSignInRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents all authentication methods registered to a user.
 // returns a AuthenticationMethodable when successful
@@ -98,9 +98,9 @@ func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) Patch(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodable), nil
 }
 // ResetPassword provides operations to call the resetPassword method.
-// returns a *ItemAuthenticationMethodsItemResetPasswordRequestBuilder when successful
-func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ResetPassword()(*ItemAuthenticationMethodsItemResetPasswordRequestBuilder) {
-    return NewItemAuthenticationMethodsItemResetPasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationMethodsItemResetpasswordResetPasswordRequestBuilder when successful
+func (m *ItemAuthenticationMethodsAuthenticationMethodItemRequestBuilder) ResetPassword()(*ItemAuthenticationMethodsItemResetpasswordResetPasswordRequestBuilder) {
+    return NewItemAuthenticationMethodsItemResetpasswordResetPasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation represents all authentication methods registered to a user.
 // returns a *RequestInformation when successful

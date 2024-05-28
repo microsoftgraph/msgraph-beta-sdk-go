@@ -55,9 +55,9 @@ func NewItemSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewItemSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContactMergeSuggestions provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.
-// returns a *ItemSettingsContactMergeSuggestionsRequestBuilder when successful
-func (m *ItemSettingsRequestBuilder) ContactMergeSuggestions()(*ItemSettingsContactMergeSuggestionsRequestBuilder) {
-    return NewItemSettingsContactMergeSuggestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSettingsContactmergesuggestionsContactMergeSuggestionsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) ContactMergeSuggestions()(*ItemSettingsContactmergesuggestionsContactMergeSuggestionsRequestBuilder) {
+    return NewItemSettingsContactmergesuggestionsContactMergeSuggestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property settings for users
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -96,9 +96,9 @@ func (m *ItemSettingsRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable), nil
 }
 // ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.userSettings entity.
-// returns a *ItemSettingsItemInsightsRequestBuilder when successful
-func (m *ItemSettingsRequestBuilder) ItemInsights()(*ItemSettingsItemInsightsRequestBuilder) {
-    return NewItemSettingsItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSettingsIteminsightsItemInsightsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) ItemInsights()(*ItemSettingsIteminsightsItemInsightsRequestBuilder) {
+    return NewItemSettingsIteminsightsItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property settings in users
 // returns a UserSettingsable when successful
@@ -121,14 +121,14 @@ func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSettingsable), nil
 }
 // RegionalAndLanguageSettings provides operations to manage the regionalAndLanguageSettings property of the microsoft.graph.userSettings entity.
-// returns a *ItemSettingsRegionalAndLanguageSettingsRequestBuilder when successful
-func (m *ItemSettingsRequestBuilder) RegionalAndLanguageSettings()(*ItemSettingsRegionalAndLanguageSettingsRequestBuilder) {
-    return NewItemSettingsRegionalAndLanguageSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSettingsRegionalandlanguagesettingsRegionalAndLanguageSettingsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) RegionalAndLanguageSettings()(*ItemSettingsRegionalandlanguagesettingsRegionalAndLanguageSettingsRequestBuilder) {
+    return NewItemSettingsRegionalandlanguagesettingsRegionalAndLanguageSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ShiftPreferences provides operations to manage the shiftPreferences property of the microsoft.graph.userSettings entity.
-// returns a *ItemSettingsShiftPreferencesRequestBuilder when successful
-func (m *ItemSettingsRequestBuilder) ShiftPreferences()(*ItemSettingsShiftPreferencesRequestBuilder) {
-    return NewItemSettingsShiftPreferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSettingsShiftpreferencesShiftPreferencesRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) ShiftPreferences()(*ItemSettingsShiftpreferencesShiftPreferencesRequestBuilder) {
+    return NewItemSettingsShiftpreferencesShiftPreferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Storage provides operations to manage the storage property of the microsoft.graph.userSettings entity.
 // returns a *ItemSettingsStorageRequestBuilder when successful

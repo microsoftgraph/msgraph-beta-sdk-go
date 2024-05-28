@@ -61,9 +61,9 @@ func (m *ItemTeamGroupRequestBuilder) Get(ctx context.Context, requestConfigurat
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *ItemTeamGroupServiceProvisioningErrorsRequestBuilder when successful
-func (m *ItemTeamGroupRequestBuilder) ServiceProvisioningErrors()(*ItemTeamGroupServiceProvisioningErrorsRequestBuilder) {
-    return NewItemTeamGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
+func (m *ItemTeamGroupRequestBuilder) ServiceProvisioningErrors()(*ItemTeamGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
+    return NewItemTeamGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get group from groups
 // returns a *RequestInformation when successful

@@ -42,9 +42,9 @@ type RostersPlannerRosterItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AssignSensitivityLabel provides operations to call the assignSensitivityLabel method.
-// returns a *RostersItemAssignSensitivityLabelRequestBuilder when successful
-func (m *RostersPlannerRosterItemRequestBuilder) AssignSensitivityLabel()(*RostersItemAssignSensitivityLabelRequestBuilder) {
-    return NewRostersItemAssignSensitivityLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RostersItemAssignsensitivitylabelAssignSensitivityLabelRequestBuilder when successful
+func (m *RostersPlannerRosterItemRequestBuilder) AssignSensitivityLabel()(*RostersItemAssignsensitivitylabelAssignSensitivityLabelRequestBuilder) {
+    return NewRostersItemAssignsensitivitylabelAssignSensitivityLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewRostersPlannerRosterItemRequestBuilderInternal instantiates a new RostersPlannerRosterItemRequestBuilder and sets the default values.
 func NewRostersPlannerRosterItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RostersPlannerRosterItemRequestBuilder) {

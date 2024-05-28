@@ -58,24 +58,24 @@ func NewNetworkAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
     return NewNetworkAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
 // FilteringPolicies provides operations to manage the filteringPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
-// returns a *FilteringPoliciesRequestBuilder when successful
-func (m *NetworkAccessRequestBuilder) FilteringPolicies()(*FilteringPoliciesRequestBuilder) {
-    return NewFilteringPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *FilteringpoliciesFilteringPoliciesRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) FilteringPolicies()(*FilteringpoliciesFilteringPoliciesRequestBuilder) {
+    return NewFilteringpoliciesFilteringPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilteringProfiles provides operations to manage the filteringProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.
-// returns a *FilteringProfilesRequestBuilder when successful
-func (m *NetworkAccessRequestBuilder) FilteringProfiles()(*FilteringProfilesRequestBuilder) {
-    return NewFilteringProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *FilteringprofilesFilteringProfilesRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) FilteringProfiles()(*FilteringprofilesFilteringProfilesRequestBuilder) {
+    return NewFilteringprofilesFilteringProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ForwardingPolicies provides operations to manage the forwardingPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
-// returns a *ForwardingPoliciesRequestBuilder when successful
-func (m *NetworkAccessRequestBuilder) ForwardingPolicies()(*ForwardingPoliciesRequestBuilder) {
-    return NewForwardingPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ForwardingpoliciesForwardingPoliciesRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) ForwardingPolicies()(*ForwardingpoliciesForwardingPoliciesRequestBuilder) {
+    return NewForwardingpoliciesForwardingPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ForwardingProfiles provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.
-// returns a *ForwardingProfilesRequestBuilder when successful
-func (m *NetworkAccessRequestBuilder) ForwardingProfiles()(*ForwardingProfilesRequestBuilder) {
-    return NewForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ForwardingprofilesForwardingProfilesRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) ForwardingProfiles()(*ForwardingprofilesForwardingProfilesRequestBuilder) {
+    return NewForwardingprofilesForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get networkAccess
 // returns a NetworkAccessRootable when successful
@@ -103,9 +103,9 @@ func (m *NetworkAccessRequestBuilder) Logs()(*LogsRequestBuilder) {
     return NewLogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphNetworkaccessOnboard provides operations to call the onboard method.
-// returns a *MicrosoftGraphNetworkaccessOnboardRequestBuilder when successful
-func (m *NetworkAccessRequestBuilder) MicrosoftGraphNetworkaccessOnboard()(*MicrosoftGraphNetworkaccessOnboardRequestBuilder) {
-    return NewMicrosoftGraphNetworkaccessOnboardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MicrosoftgraphnetworkaccessonboardMicrosoftGraphNetworkaccessOnboardRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) MicrosoftGraphNetworkaccessOnboard()(*MicrosoftgraphnetworkaccessonboardMicrosoftGraphNetworkaccessOnboardRequestBuilder) {
+    return NewMicrosoftgraphnetworkaccessonboardMicrosoftGraphNetworkaccessOnboardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update networkAccess
 // returns a NetworkAccessRootable when successful
@@ -138,9 +138,9 @@ func (m *NetworkAccessRequestBuilder) Settings()(*SettingsRequestBuilder) {
     return NewSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TenantStatus provides operations to manage the tenantStatus property of the microsoft.graph.networkaccess.networkAccessRoot entity.
-// returns a *TenantStatusRequestBuilder when successful
-func (m *NetworkAccessRequestBuilder) TenantStatus()(*TenantStatusRequestBuilder) {
-    return NewTenantStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TenantstatusTenantStatusRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) TenantStatus()(*TenantstatusTenantStatusRequestBuilder) {
+    return NewTenantstatusTenantStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get networkAccess
 // returns a *RequestInformation when successful

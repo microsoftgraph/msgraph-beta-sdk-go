@@ -110,6 +110,11 @@ func (m *AlertsAlertItemRequestBuilder) Patch(ctx context.Context, body i43e723c
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Alertable), nil
 }
+// Policy provides operations to manage the policy property of the microsoft.graph.networkaccess.alert entity.
+// returns a *AlertsItemPolicyRequestBuilder when successful
+func (m *AlertsAlertItemRequestBuilder) Policy()(*AlertsItemPolicyRequestBuilder) {
+    return NewAlertsItemPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property alerts for networkAccess
 // returns a *RequestInformation when successful
 func (m *AlertsAlertItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AlertsAlertItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -1,0 +1,27 @@
+package reports
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodGetResponseable instead.
+type Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponse struct {
+    Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodGetResponse
+}
+// NewGetoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponse instantiates a new Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponse and sets the default values.
+func NewGetoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponse()(*Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponse) {
+    m := &Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponse{
+        Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodGetResponse: *NewGetoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodGetResponse(),
+    }
+    return m
+}
+// CreateGetoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateGetoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewGetoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponse(), nil
+}
+// Deprecated: This class is obsolete. Use Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodGetResponseable instead.
+type Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodResponseable interface {
+    Getoffice365activeusercountswithperiodGetOffice365ActiveUserCountsWithPeriodGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

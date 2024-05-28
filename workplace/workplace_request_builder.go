@@ -88,14 +88,14 @@ func (m *WorkplaceRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Workplaceable), nil
 }
 // SensorDevices provides operations to manage the sensorDevices property of the microsoft.graph.workplace entity.
-// returns a *SensorDevicesRequestBuilder when successful
-func (m *WorkplaceRequestBuilder) SensorDevices()(*SensorDevicesRequestBuilder) {
-    return NewSensorDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SensordevicesSensorDevicesRequestBuilder when successful
+func (m *WorkplaceRequestBuilder) SensorDevices()(*SensordevicesSensorDevicesRequestBuilder) {
+    return NewSensordevicesSensorDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SensorDevicesWithDeviceId provides operations to manage the sensorDevices property of the microsoft.graph.workplace entity.
-// returns a *SensorDevicesWithDeviceIdRequestBuilder when successful
-func (m *WorkplaceRequestBuilder) SensorDevicesWithDeviceId(deviceId *string)(*SensorDevicesWithDeviceIdRequestBuilder) {
-    return NewSensorDevicesWithDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, deviceId)
+// returns a *SensordeviceswithdeviceidSensorDevicesWithDeviceIdRequestBuilder when successful
+func (m *WorkplaceRequestBuilder) SensorDevicesWithDeviceId(deviceId *string)(*SensordeviceswithdeviceidSensorDevicesWithDeviceIdRequestBuilder) {
+    return NewSensordeviceswithdeviceidSensorDevicesWithDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, deviceId)
 }
 // ToGetRequestInformation get workplace
 // returns a *RequestInformation when successful

@@ -33,19 +33,19 @@ func (m *CompaniesCompanyItemRequestBuilder) Accounts()(*CompaniesItemAccountsRe
     return NewCompaniesItemAccountsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AgedAccountsPayable provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.
-// returns a *CompaniesItemAgedAccountsPayableRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsPayable()(*CompaniesItemAgedAccountsPayableRequestBuilder) {
-    return NewCompaniesItemAgedAccountsPayableRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemAgedaccountspayableAgedAccountsPayableRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsPayable()(*CompaniesItemAgedaccountspayableAgedAccountsPayableRequestBuilder) {
+    return NewCompaniesItemAgedaccountspayableAgedAccountsPayableRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AgedAccountsReceivable provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.
-// returns a *CompaniesItemAgedAccountsReceivableRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsReceivable()(*CompaniesItemAgedAccountsReceivableRequestBuilder) {
-    return NewCompaniesItemAgedAccountsReceivableRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemAgedaccountsreceivableAgedAccountsReceivableRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) AgedAccountsReceivable()(*CompaniesItemAgedaccountsreceivableAgedAccountsReceivableRequestBuilder) {
+    return NewCompaniesItemAgedaccountsreceivableAgedAccountsReceivableRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CompanyInformation provides operations to manage the companyInformation property of the microsoft.graph.company entity.
-// returns a *CompaniesItemCompanyInformationRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) CompanyInformation()(*CompaniesItemCompanyInformationRequestBuilder) {
-    return NewCompaniesItemCompanyInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemCompanyinformationCompanyInformationRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) CompanyInformation()(*CompaniesItemCompanyinformationCompanyInformationRequestBuilder) {
+    return NewCompaniesItemCompanyinformationCompanyInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewCompaniesCompanyItemRequestBuilderInternal instantiates a new CompaniesCompanyItemRequestBuilder and sets the default values.
 func NewCompaniesCompanyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CompaniesCompanyItemRequestBuilder) {
@@ -61,9 +61,9 @@ func NewCompaniesCompanyItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewCompaniesCompanyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CountriesRegions provides operations to manage the countriesRegions property of the microsoft.graph.company entity.
-// returns a *CompaniesItemCountriesRegionsRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) CountriesRegions()(*CompaniesItemCountriesRegionsRequestBuilder) {
-    return NewCompaniesItemCountriesRegionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemCountriesregionsCountriesRegionsRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) CountriesRegions()(*CompaniesItemCountriesregionsCountriesRegionsRequestBuilder) {
+    return NewCompaniesItemCountriesregionsCountriesRegionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Currencies provides operations to manage the currencies property of the microsoft.graph.company entity.
 // returns a *CompaniesItemCurrenciesRequestBuilder when successful
@@ -71,14 +71,14 @@ func (m *CompaniesCompanyItemRequestBuilder) Currencies()(*CompaniesItemCurrenci
     return NewCompaniesItemCurrenciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CustomerPaymentJournals provides operations to manage the customerPaymentJournals property of the microsoft.graph.company entity.
-// returns a *CompaniesItemCustomerPaymentJournalsRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) CustomerPaymentJournals()(*CompaniesItemCustomerPaymentJournalsRequestBuilder) {
-    return NewCompaniesItemCustomerPaymentJournalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemCustomerpaymentjournalsCustomerPaymentJournalsRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) CustomerPaymentJournals()(*CompaniesItemCustomerpaymentjournalsCustomerPaymentJournalsRequestBuilder) {
+    return NewCompaniesItemCustomerpaymentjournalsCustomerPaymentJournalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CustomerPayments provides operations to manage the customerPayments property of the microsoft.graph.company entity.
-// returns a *CompaniesItemCustomerPaymentsRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) CustomerPayments()(*CompaniesItemCustomerPaymentsRequestBuilder) {
-    return NewCompaniesItemCustomerPaymentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemCustomerpaymentsCustomerPaymentsRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) CustomerPayments()(*CompaniesItemCustomerpaymentsCustomerPaymentsRequestBuilder) {
+    return NewCompaniesItemCustomerpaymentsCustomerPaymentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Customers provides operations to manage the customers property of the microsoft.graph.company entity.
 // returns a *CompaniesItemCustomersRequestBuilder when successful
@@ -91,9 +91,9 @@ func (m *CompaniesCompanyItemRequestBuilder) Dimensions()(*CompaniesItemDimensio
     return NewCompaniesItemDimensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DimensionValues provides operations to manage the dimensionValues property of the microsoft.graph.company entity.
-// returns a *CompaniesItemDimensionValuesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) DimensionValues()(*CompaniesItemDimensionValuesRequestBuilder) {
-    return NewCompaniesItemDimensionValuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemDimensionvaluesDimensionValuesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) DimensionValues()(*CompaniesItemDimensionvaluesDimensionValuesRequestBuilder) {
+    return NewCompaniesItemDimensionvaluesDimensionValuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Employees provides operations to manage the employees property of the microsoft.graph.company entity.
 // returns a *CompaniesItemEmployeesRequestBuilder when successful
@@ -101,9 +101,9 @@ func (m *CompaniesCompanyItemRequestBuilder) Employees()(*CompaniesItemEmployees
     return NewCompaniesItemEmployeesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GeneralLedgerEntries provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
-// returns a *CompaniesItemGeneralLedgerEntriesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) GeneralLedgerEntries()(*CompaniesItemGeneralLedgerEntriesRequestBuilder) {
-    return NewCompaniesItemGeneralLedgerEntriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemGeneralledgerentriesGeneralLedgerEntriesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) GeneralLedgerEntries()(*CompaniesItemGeneralledgerentriesGeneralLedgerEntriesRequestBuilder) {
+    return NewCompaniesItemGeneralledgerentriesGeneralLedgerEntriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get companies from financials
 // returns a Companyable when successful
@@ -126,9 +126,9 @@ func (m *CompaniesCompanyItemRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Companyable), nil
 }
 // ItemCategories provides operations to manage the itemCategories property of the microsoft.graph.company entity.
-// returns a *CompaniesItemItemCategoriesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) ItemCategories()(*CompaniesItemItemCategoriesRequestBuilder) {
-    return NewCompaniesItemItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemItemcategoriesItemCategoriesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) ItemCategories()(*CompaniesItemItemcategoriesItemCategoriesRequestBuilder) {
+    return NewCompaniesItemItemcategoriesItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Items provides operations to manage the items property of the microsoft.graph.company entity.
 // returns a *CompaniesItemItemsRequestBuilder when successful
@@ -136,9 +136,9 @@ func (m *CompaniesCompanyItemRequestBuilder) Items()(*CompaniesItemItemsRequestB
     return NewCompaniesItemItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // JournalLines provides operations to manage the journalLines property of the microsoft.graph.company entity.
-// returns a *CompaniesItemJournalLinesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) JournalLines()(*CompaniesItemJournalLinesRequestBuilder) {
-    return NewCompaniesItemJournalLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemJournallinesJournalLinesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) JournalLines()(*CompaniesItemJournallinesJournalLinesRequestBuilder) {
+    return NewCompaniesItemJournallinesJournalLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Journals provides operations to manage the journals property of the microsoft.graph.company entity.
 // returns a *CompaniesItemJournalsRequestBuilder when successful
@@ -146,14 +146,14 @@ func (m *CompaniesCompanyItemRequestBuilder) Journals()(*CompaniesItemJournalsRe
     return NewCompaniesItemJournalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PaymentMethods provides operations to manage the paymentMethods property of the microsoft.graph.company entity.
-// returns a *CompaniesItemPaymentMethodsRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) PaymentMethods()(*CompaniesItemPaymentMethodsRequestBuilder) {
-    return NewCompaniesItemPaymentMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemPaymentmethodsPaymentMethodsRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) PaymentMethods()(*CompaniesItemPaymentmethodsPaymentMethodsRequestBuilder) {
+    return NewCompaniesItemPaymentmethodsPaymentMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PaymentTerms provides operations to manage the paymentTerms property of the microsoft.graph.company entity.
-// returns a *CompaniesItemPaymentTermsRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) PaymentTerms()(*CompaniesItemPaymentTermsRequestBuilder) {
-    return NewCompaniesItemPaymentTermsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemPaymenttermsPaymentTermsRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) PaymentTerms()(*CompaniesItemPaymenttermsPaymentTermsRequestBuilder) {
+    return NewCompaniesItemPaymenttermsPaymentTermsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.company entity.
 // returns a *CompaniesItemPictureRequestBuilder when successful
@@ -161,69 +161,69 @@ func (m *CompaniesCompanyItemRequestBuilder) Picture()(*CompaniesItemPictureRequ
     return NewCompaniesItemPictureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PurchaseInvoiceLines provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.
-// returns a *CompaniesItemPurchaseInvoiceLinesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoiceLines()(*CompaniesItemPurchaseInvoiceLinesRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoiceLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemPurchaseinvoicelinesPurchaseInvoiceLinesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoiceLines()(*CompaniesItemPurchaseinvoicelinesPurchaseInvoiceLinesRequestBuilder) {
+    return NewCompaniesItemPurchaseinvoicelinesPurchaseInvoiceLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PurchaseInvoices provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.
-// returns a *CompaniesItemPurchaseInvoicesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoices()(*CompaniesItemPurchaseInvoicesRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemPurchaseinvoicesPurchaseInvoicesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) PurchaseInvoices()(*CompaniesItemPurchaseinvoicesPurchaseInvoicesRequestBuilder) {
+    return NewCompaniesItemPurchaseinvoicesPurchaseInvoicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesCreditMemoLines provides operations to manage the salesCreditMemoLines property of the microsoft.graph.company entity.
-// returns a *CompaniesItemSalesCreditMemoLinesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemoLines()(*CompaniesItemSalesCreditMemoLinesRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemoLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalescreditmemolinesSalesCreditMemoLinesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemoLines()(*CompaniesItemSalescreditmemolinesSalesCreditMemoLinesRequestBuilder) {
+    return NewCompaniesItemSalescreditmemolinesSalesCreditMemoLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesCreditMemos provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.
-// returns a *CompaniesItemSalesCreditMemosRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemos()(*CompaniesItemSalesCreditMemosRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalescreditmemosSalesCreditMemosRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) SalesCreditMemos()(*CompaniesItemSalescreditmemosSalesCreditMemosRequestBuilder) {
+    return NewCompaniesItemSalescreditmemosSalesCreditMemosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesInvoiceLines provides operations to manage the salesInvoiceLines property of the microsoft.graph.company entity.
-// returns a *CompaniesItemSalesInvoiceLinesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) SalesInvoiceLines()(*CompaniesItemSalesInvoiceLinesRequestBuilder) {
-    return NewCompaniesItemSalesInvoiceLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesinvoicelinesSalesInvoiceLinesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) SalesInvoiceLines()(*CompaniesItemSalesinvoicelinesSalesInvoiceLinesRequestBuilder) {
+    return NewCompaniesItemSalesinvoicelinesSalesInvoiceLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesInvoices provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
-// returns a *CompaniesItemSalesInvoicesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) SalesInvoices()(*CompaniesItemSalesInvoicesRequestBuilder) {
-    return NewCompaniesItemSalesInvoicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesinvoicesSalesInvoicesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) SalesInvoices()(*CompaniesItemSalesinvoicesSalesInvoicesRequestBuilder) {
+    return NewCompaniesItemSalesinvoicesSalesInvoicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesOrderLines provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.
-// returns a *CompaniesItemSalesOrderLinesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) SalesOrderLines()(*CompaniesItemSalesOrderLinesRequestBuilder) {
-    return NewCompaniesItemSalesOrderLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesorderlinesSalesOrderLinesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) SalesOrderLines()(*CompaniesItemSalesorderlinesSalesOrderLinesRequestBuilder) {
+    return NewCompaniesItemSalesorderlinesSalesOrderLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesOrders provides operations to manage the salesOrders property of the microsoft.graph.company entity.
-// returns a *CompaniesItemSalesOrdersRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) SalesOrders()(*CompaniesItemSalesOrdersRequestBuilder) {
-    return NewCompaniesItemSalesOrdersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesordersSalesOrdersRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) SalesOrders()(*CompaniesItemSalesordersSalesOrdersRequestBuilder) {
+    return NewCompaniesItemSalesordersSalesOrdersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesQuoteLines provides operations to manage the salesQuoteLines property of the microsoft.graph.company entity.
-// returns a *CompaniesItemSalesQuoteLinesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) SalesQuoteLines()(*CompaniesItemSalesQuoteLinesRequestBuilder) {
-    return NewCompaniesItemSalesQuoteLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesquotelinesSalesQuoteLinesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) SalesQuoteLines()(*CompaniesItemSalesquotelinesSalesQuoteLinesRequestBuilder) {
+    return NewCompaniesItemSalesquotelinesSalesQuoteLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SalesQuotes provides operations to manage the salesQuotes property of the microsoft.graph.company entity.
-// returns a *CompaniesItemSalesQuotesRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) SalesQuotes()(*CompaniesItemSalesQuotesRequestBuilder) {
-    return NewCompaniesItemSalesQuotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesquotesSalesQuotesRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) SalesQuotes()(*CompaniesItemSalesquotesSalesQuotesRequestBuilder) {
+    return NewCompaniesItemSalesquotesSalesQuotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ShipmentMethods provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.
-// returns a *CompaniesItemShipmentMethodsRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) ShipmentMethods()(*CompaniesItemShipmentMethodsRequestBuilder) {
-    return NewCompaniesItemShipmentMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemShipmentmethodsShipmentMethodsRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) ShipmentMethods()(*CompaniesItemShipmentmethodsShipmentMethodsRequestBuilder) {
+    return NewCompaniesItemShipmentmethodsShipmentMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaxAreas provides operations to manage the taxAreas property of the microsoft.graph.company entity.
-// returns a *CompaniesItemTaxAreasRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) TaxAreas()(*CompaniesItemTaxAreasRequestBuilder) {
-    return NewCompaniesItemTaxAreasRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemTaxareasTaxAreasRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) TaxAreas()(*CompaniesItemTaxareasTaxAreasRequestBuilder) {
+    return NewCompaniesItemTaxareasTaxAreasRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TaxGroups provides operations to manage the taxGroups property of the microsoft.graph.company entity.
-// returns a *CompaniesItemTaxGroupsRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) TaxGroups()(*CompaniesItemTaxGroupsRequestBuilder) {
-    return NewCompaniesItemTaxGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemTaxgroupsTaxGroupsRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) TaxGroups()(*CompaniesItemTaxgroupsTaxGroupsRequestBuilder) {
+    return NewCompaniesItemTaxgroupsTaxGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get companies from financials
 // returns a *RequestInformation when successful
@@ -240,9 +240,9 @@ func (m *CompaniesCompanyItemRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // UnitsOfMeasure provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.
-// returns a *CompaniesItemUnitsOfMeasureRequestBuilder when successful
-func (m *CompaniesCompanyItemRequestBuilder) UnitsOfMeasure()(*CompaniesItemUnitsOfMeasureRequestBuilder) {
-    return NewCompaniesItemUnitsOfMeasureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemUnitsofmeasureUnitsOfMeasureRequestBuilder when successful
+func (m *CompaniesCompanyItemRequestBuilder) UnitsOfMeasure()(*CompaniesItemUnitsofmeasureUnitsOfMeasureRequestBuilder) {
+    return NewCompaniesItemUnitsofmeasureUnitsOfMeasureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Vendors provides operations to manage the vendors property of the microsoft.graph.company entity.
 // returns a *CompaniesItemVendorsRequestBuilder when successful

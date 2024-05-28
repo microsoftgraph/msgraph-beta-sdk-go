@@ -111,9 +111,9 @@ func (m *LogsRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Logsable), nil
 }
 // RemoteNetworks provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.logs entity.
-// returns a *LogsRemoteNetworksRequestBuilder when successful
-func (m *LogsRequestBuilder) RemoteNetworks()(*LogsRemoteNetworksRequestBuilder) {
-    return NewLogsRemoteNetworksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *LogsRemotenetworksRemoteNetworksRequestBuilder when successful
+func (m *LogsRequestBuilder) RemoteNetworks()(*LogsRemotenetworksRemoteNetworksRequestBuilder) {
+    return NewLogsRemotenetworksRemoteNetworksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property logs for networkAccess
 // returns a *RequestInformation when successful

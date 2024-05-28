@@ -91,9 +91,9 @@ func (m *PartnersBillingUsageBilledRequestBuilder) Get(ctx context.Context, requ
     return res.(ibc1d41e06c1155c6505b27a1d0c17b20692636238b0ddb2acdaa2b4548e4f67b.BilledUsageable), nil
 }
 // MicrosoftGraphPartnersBillingExport provides operations to call the export method.
-// returns a *PartnersBillingUsageBilledMicrosoftGraphPartnersBillingExportRequestBuilder when successful
-func (m *PartnersBillingUsageBilledRequestBuilder) MicrosoftGraphPartnersBillingExport()(*PartnersBillingUsageBilledMicrosoftGraphPartnersBillingExportRequestBuilder) {
-    return NewPartnersBillingUsageBilledMicrosoftGraphPartnersBillingExportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PartnersBillingUsageBilledMicrosoftgraphpartnersbillingexportMicrosoftGraphPartnersBillingExportRequestBuilder when successful
+func (m *PartnersBillingUsageBilledRequestBuilder) MicrosoftGraphPartnersBillingExport()(*PartnersBillingUsageBilledMicrosoftgraphpartnersbillingexportMicrosoftGraphPartnersBillingExportRequestBuilder) {
+    return NewPartnersBillingUsageBilledMicrosoftgraphpartnersbillingexportMicrosoftGraphPartnersBillingExportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property billed in reports
 // returns a BilledUsageable when successful

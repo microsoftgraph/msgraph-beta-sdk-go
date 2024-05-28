@@ -1,0 +1,27 @@
+package teamwork
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddPostResponseable instead.
+type TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponse struct {
+    TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddPostResponse
+}
+// NewTeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponse instantiates a new TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponse and sets the default values.
+func NewTeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponse()(*TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponse) {
+    m := &TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponse{
+        TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddPostResponse: *NewTeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddPostResponse(),
+    }
+    return m
+}
+// CreateTeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateTeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewTeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponse(), nil
+}
+// Deprecated: This class is obsolete. Use TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddPostResponseable instead.
+type TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddResponseable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TeamtemplatesItemDefinitionsItemTeamdefinitionChannelsItemMembersAddPostResponseable
+}

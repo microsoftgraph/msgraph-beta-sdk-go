@@ -102,9 +102,9 @@ func (m *SetsSetItemRequestBuilder) Get(ctx context.Context, requestConfiguratio
     return res.(i45fc41673b99130d86c1854da651a8f416ed902eef3acbecd5738f9ef72690a8.Setable), nil
 }
 // ParentGroup provides operations to manage the parentGroup property of the microsoft.graph.termStore.set entity.
-// returns a *SetsItemParentGroupRequestBuilder when successful
-func (m *SetsSetItemRequestBuilder) ParentGroup()(*SetsItemParentGroupRequestBuilder) {
-    return NewSetsItemParentGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SetsItemParentgroupParentGroupRequestBuilder when successful
+func (m *SetsSetItemRequestBuilder) ParentGroup()(*SetsItemParentgroupParentGroupRequestBuilder) {
+    return NewSetsItemParentgroupParentGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the properties of a set object.
 // returns a Setable when successful

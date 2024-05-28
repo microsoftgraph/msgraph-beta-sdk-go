@@ -116,9 +116,9 @@ func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemVersionable), nil
 }
 // RestoreVersion provides operations to call the restoreVersion method.
-// returns a *ItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilder when successful
-func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) RestoreVersion()(*ItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemVersionsItemRestoreVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemListsItemItemsItemVersionsItemRestoreversionRestoreVersionRequestBuilder when successful
+func (m *ItemSitesItemListsItemItemsItemVersionsListItemVersionItemRequestBuilder) RestoreVersion()(*ItemSitesItemListsItemItemsItemVersionsItemRestoreversionRestoreVersionRequestBuilder) {
+    return NewItemSitesItemListsItemItemsItemVersionsItemRestoreversionRestoreVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property versions for groups
 // returns a *RequestInformation when successful

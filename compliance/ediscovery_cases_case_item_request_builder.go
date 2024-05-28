@@ -104,24 +104,24 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Get(ctx context.Context, request
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable), nil
 }
 // LegalHolds provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
-// returns a *EdiscoveryCasesItemLegalHoldsRequestBuilder when successful
-func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHolds()(*EdiscoveryCasesItemLegalHoldsRequestBuilder) {
-    return NewEdiscoveryCasesItemLegalHoldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemLegalholdsLegalHoldsRequestBuilder when successful
+func (m *EdiscoveryCasesCaseItemRequestBuilder) LegalHolds()(*EdiscoveryCasesItemLegalholdsLegalHoldsRequestBuilder) {
+    return NewEdiscoveryCasesItemLegalholdsLegalHoldsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphEdiscoveryClose provides operations to call the close method.
-// returns a *EdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilder when successful
-func (m *EdiscoveryCasesCaseItemRequestBuilder) MicrosoftGraphEdiscoveryClose()(*EdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilder) {
-    return NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryCloseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemMicrosoftgraphediscoverycloseMicrosoftGraphEdiscoveryCloseRequestBuilder when successful
+func (m *EdiscoveryCasesCaseItemRequestBuilder) MicrosoftGraphEdiscoveryClose()(*EdiscoveryCasesItemMicrosoftgraphediscoverycloseMicrosoftGraphEdiscoveryCloseRequestBuilder) {
+    return NewEdiscoveryCasesItemMicrosoftgraphediscoverycloseMicrosoftGraphEdiscoveryCloseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphEdiscoveryReopen provides operations to call the reopen method.
-// returns a *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder when successful
-func (m *EdiscoveryCasesCaseItemRequestBuilder) MicrosoftGraphEdiscoveryReopen()(*EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) {
-    return NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemMicrosoftgraphediscoveryreopenMicrosoftGraphEdiscoveryReopenRequestBuilder when successful
+func (m *EdiscoveryCasesCaseItemRequestBuilder) MicrosoftGraphEdiscoveryReopen()(*EdiscoveryCasesItemMicrosoftgraphediscoveryreopenMicrosoftGraphEdiscoveryReopenRequestBuilder) {
+    return NewEdiscoveryCasesItemMicrosoftgraphediscoveryreopenMicrosoftGraphEdiscoveryReopenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NoncustodialDataSources provides operations to manage the noncustodialDataSources property of the microsoft.graph.ediscovery.case entity.
-// returns a *EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder when successful
-func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSources()(*EdiscoveryCasesItemNoncustodialDataSourcesRequestBuilder) {
-    return NewEdiscoveryCasesItemNoncustodialDataSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemNoncustodialdatasourcesNoncustodialDataSourcesRequestBuilder when successful
+func (m *EdiscoveryCasesCaseItemRequestBuilder) NoncustodialDataSources()(*EdiscoveryCasesItemNoncustodialdatasourcesNoncustodialDataSourcesRequestBuilder) {
+    return NewEdiscoveryCasesItemNoncustodialdatasourcesNoncustodialDataSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
 // returns a *EdiscoveryCasesItemOperationsRequestBuilder when successful
@@ -153,9 +153,9 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Patch(ctx context.Context, body 
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseEscapedable), nil
 }
 // ReviewSets provides operations to manage the reviewSets property of the microsoft.graph.ediscovery.case entity.
-// returns a *EdiscoveryCasesItemReviewSetsRequestBuilder when successful
-func (m *EdiscoveryCasesCaseItemRequestBuilder) ReviewSets()(*EdiscoveryCasesItemReviewSetsRequestBuilder) {
-    return NewEdiscoveryCasesItemReviewSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemReviewsetsReviewSetsRequestBuilder when successful
+func (m *EdiscoveryCasesCaseItemRequestBuilder) ReviewSets()(*EdiscoveryCasesItemReviewsetsReviewSetsRequestBuilder) {
+    return NewEdiscoveryCasesItemReviewsetsReviewSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.ediscovery.case entity.
 // returns a *EdiscoveryCasesItemSettingsRequestBuilder when successful
@@ -163,9 +163,9 @@ func (m *EdiscoveryCasesCaseItemRequestBuilder) Settings()(*EdiscoveryCasesItemS
     return NewEdiscoveryCasesItemSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SourceCollections provides operations to manage the sourceCollections property of the microsoft.graph.ediscovery.case entity.
-// returns a *EdiscoveryCasesItemSourceCollectionsRequestBuilder when successful
-func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollections()(*EdiscoveryCasesItemSourceCollectionsRequestBuilder) {
-    return NewEdiscoveryCasesItemSourceCollectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemSourcecollectionsSourceCollectionsRequestBuilder when successful
+func (m *EdiscoveryCasesCaseItemRequestBuilder) SourceCollections()(*EdiscoveryCasesItemSourcecollectionsSourceCollectionsRequestBuilder) {
+    return NewEdiscoveryCasesItemSourcecollectionsSourceCollectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tags provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.
 // returns a *EdiscoveryCasesItemTagsRequestBuilder when successful

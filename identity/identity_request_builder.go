@@ -35,34 +35,34 @@ type IdentityRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ApiConnectors provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
-// returns a *ApiConnectorsRequestBuilder when successful
-func (m *IdentityRequestBuilder) ApiConnectors()(*ApiConnectorsRequestBuilder) {
-    return NewApiConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ApiconnectorsApiConnectorsRequestBuilder when successful
+func (m *IdentityRequestBuilder) ApiConnectors()(*ApiconnectorsApiConnectorsRequestBuilder) {
+    return NewApiconnectorsApiConnectorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuthenticationEventListeners provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.
-// returns a *AuthenticationEventListenersRequestBuilder when successful
-func (m *IdentityRequestBuilder) AuthenticationEventListeners()(*AuthenticationEventListenersRequestBuilder) {
-    return NewAuthenticationEventListenersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AuthenticationeventlistenersAuthenticationEventListenersRequestBuilder when successful
+func (m *IdentityRequestBuilder) AuthenticationEventListeners()(*AuthenticationeventlistenersAuthenticationEventListenersRequestBuilder) {
+    return NewAuthenticationeventlistenersAuthenticationEventListenersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuthenticationEventsFlows provides operations to manage the authenticationEventsFlows property of the microsoft.graph.identityContainer entity.
-// returns a *AuthenticationEventsFlowsRequestBuilder when successful
-func (m *IdentityRequestBuilder) AuthenticationEventsFlows()(*AuthenticationEventsFlowsRequestBuilder) {
-    return NewAuthenticationEventsFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AuthenticationeventsflowsAuthenticationEventsFlowsRequestBuilder when successful
+func (m *IdentityRequestBuilder) AuthenticationEventsFlows()(*AuthenticationeventsflowsAuthenticationEventsFlowsRequestBuilder) {
+    return NewAuthenticationeventsflowsAuthenticationEventsFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // B2cUserFlows provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.
-// returns a *B2cUserFlowsRequestBuilder when successful
-func (m *IdentityRequestBuilder) B2cUserFlows()(*B2cUserFlowsRequestBuilder) {
-    return NewB2cUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *B2cuserflowsB2cUserFlowsRequestBuilder when successful
+func (m *IdentityRequestBuilder) B2cUserFlows()(*B2cuserflowsB2cUserFlowsRequestBuilder) {
+    return NewB2cuserflowsB2cUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // B2xUserFlows provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
-// returns a *B2xUserFlowsRequestBuilder when successful
-func (m *IdentityRequestBuilder) B2xUserFlows()(*B2xUserFlowsRequestBuilder) {
-    return NewB2xUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *B2xuserflowsB2xUserFlowsRequestBuilder when successful
+func (m *IdentityRequestBuilder) B2xUserFlows()(*B2xuserflowsB2xUserFlowsRequestBuilder) {
+    return NewB2xuserflowsB2xUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConditionalAccess the conditionalAccess property
-// returns a *ConditionalAccessRequestBuilder when successful
-func (m *IdentityRequestBuilder) ConditionalAccess()(*ConditionalAccessRequestBuilder) {
-    return NewConditionalAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ConditionalaccessConditionalAccessRequestBuilder when successful
+func (m *IdentityRequestBuilder) ConditionalAccess()(*ConditionalaccessConditionalAccessRequestBuilder) {
+    return NewConditionalaccessConditionalAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewIdentityRequestBuilderInternal instantiates a new IdentityRequestBuilder and sets the default values.
 func NewIdentityRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentityRequestBuilder) {
@@ -78,14 +78,14 @@ func NewIdentityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewIdentityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContinuousAccessEvaluationPolicy provides operations to manage the continuousAccessEvaluationPolicy property of the microsoft.graph.identityContainer entity.
-// returns a *ContinuousAccessEvaluationPolicyRequestBuilder when successful
-func (m *IdentityRequestBuilder) ContinuousAccessEvaluationPolicy()(*ContinuousAccessEvaluationPolicyRequestBuilder) {
-    return NewContinuousAccessEvaluationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ContinuousaccessevaluationpolicyContinuousAccessEvaluationPolicyRequestBuilder when successful
+func (m *IdentityRequestBuilder) ContinuousAccessEvaluationPolicy()(*ContinuousaccessevaluationpolicyContinuousAccessEvaluationPolicyRequestBuilder) {
+    return NewContinuousaccessevaluationpolicyContinuousAccessEvaluationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CustomAuthenticationExtensions provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
-// returns a *CustomAuthenticationExtensionsRequestBuilder when successful
-func (m *IdentityRequestBuilder) CustomAuthenticationExtensions()(*CustomAuthenticationExtensionsRequestBuilder) {
-    return NewCustomAuthenticationExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CustomauthenticationextensionsCustomAuthenticationExtensionsRequestBuilder when successful
+func (m *IdentityRequestBuilder) CustomAuthenticationExtensions()(*CustomauthenticationextensionsCustomAuthenticationExtensionsRequestBuilder) {
+    return NewCustomauthenticationextensionsCustomAuthenticationExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get identity
 // returns a IdentityContainerable when successful
@@ -108,9 +108,9 @@ func (m *IdentityRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable), nil
 }
 // IdentityProviders provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
-// returns a *IdentityProvidersRequestBuilder when successful
-func (m *IdentityRequestBuilder) IdentityProviders()(*IdentityProvidersRequestBuilder) {
-    return NewIdentityProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IdentityprovidersIdentityProvidersRequestBuilder when successful
+func (m *IdentityRequestBuilder) IdentityProviders()(*IdentityprovidersIdentityProvidersRequestBuilder) {
+    return NewIdentityprovidersIdentityProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update identity
 // returns a IdentityContainerable when successful
@@ -162,14 +162,14 @@ func (m *IdentityRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // UserFlowAttributes provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
-// returns a *UserFlowAttributesRequestBuilder when successful
-func (m *IdentityRequestBuilder) UserFlowAttributes()(*UserFlowAttributesRequestBuilder) {
-    return NewUserFlowAttributesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserflowattributesUserFlowAttributesRequestBuilder when successful
+func (m *IdentityRequestBuilder) UserFlowAttributes()(*UserflowattributesUserFlowAttributesRequestBuilder) {
+    return NewUserflowattributesUserFlowAttributesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserFlows provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.
-// returns a *UserFlowsRequestBuilder when successful
-func (m *IdentityRequestBuilder) UserFlows()(*UserFlowsRequestBuilder) {
-    return NewUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UserflowsUserFlowsRequestBuilder when successful
+func (m *IdentityRequestBuilder) UserFlows()(*UserflowsUserFlowsRequestBuilder) {
+    return NewUserflowsUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *IdentityRequestBuilder when successful

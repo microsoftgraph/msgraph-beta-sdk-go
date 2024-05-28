@@ -91,9 +91,9 @@ func (m *PartnersBillingUsageUnbilledRequestBuilder) Get(ctx context.Context, re
     return res.(ibc1d41e06c1155c6505b27a1d0c17b20692636238b0ddb2acdaa2b4548e4f67b.UnbilledUsageable), nil
 }
 // MicrosoftGraphPartnersBillingExport provides operations to call the export method.
-// returns a *PartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportRequestBuilder when successful
-func (m *PartnersBillingUsageUnbilledRequestBuilder) MicrosoftGraphPartnersBillingExport()(*PartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportRequestBuilder) {
-    return NewPartnersBillingUsageUnbilledMicrosoftGraphPartnersBillingExportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PartnersBillingUsageUnbilledMicrosoftgraphpartnersbillingexportMicrosoftGraphPartnersBillingExportRequestBuilder when successful
+func (m *PartnersBillingUsageUnbilledRequestBuilder) MicrosoftGraphPartnersBillingExport()(*PartnersBillingUsageUnbilledMicrosoftgraphpartnersbillingexportMicrosoftGraphPartnersBillingExportRequestBuilder) {
+    return NewPartnersBillingUsageUnbilledMicrosoftgraphpartnersbillingexportMicrosoftGraphPartnersBillingExportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property unbilled in reports
 // returns a UnbilledUsageable when successful

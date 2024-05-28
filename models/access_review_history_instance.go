@@ -132,7 +132,7 @@ func (m *AccessReviewHistoryInstance) GetFulfilledDateTime()(*i336074805fc853987
     }
     return nil
 }
-// GetReviewHistoryPeriodEndDateTime gets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews ending on or before this date are in the fetched history data.
+// GetReviewHistoryPeriodEndDateTime gets the reviewHistoryPeriodEndDateTime property value. The date and time for which reviews ended before this date are included in the fetched history data.
 // returns a *Time when successful
 func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewHistoryPeriodEndDateTime")
@@ -144,7 +144,7 @@ func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodEndDateTime()(*i3360
     }
     return nil
 }
-// GetReviewHistoryPeriodStartDateTime gets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or after this date are in the fetched history data.
+// GetReviewHistoryPeriodStartDateTime gets the reviewHistoryPeriodStartDateTime property value. The date and time for which reviews started on or after this date are included in the fetched history data.
 // returns a *Time when successful
 func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("reviewHistoryPeriodStartDateTime")
@@ -156,7 +156,7 @@ func (m *AccessReviewHistoryInstance) GetReviewHistoryPeriodStartDateTime()(*i33
     }
     return nil
 }
-// GetRunDateTime gets the runDateTime property value. Timestamp when the instance's history data is scheduled to be generated.
+// GetRunDateTime gets the runDateTime property value. The date and time when the instance's history data is scheduled to be generated.
 // returns a *Time when successful
 func (m *AccessReviewHistoryInstance) GetRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("runDateTime")
@@ -168,7 +168,7 @@ func (m *AccessReviewHistoryInstance) GetRunDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetStatus gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance's data by calling generateDownloadUri method.
+// GetStatus gets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status is marked as done, you can generate a link retrieve the instance's data by calling generateDownloadUri method.
 // returns a *AccessReviewHistoryStatus when successful
 func (m *AccessReviewHistoryInstance) GetStatus()(*AccessReviewHistoryStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -252,28 +252,28 @@ func (m *AccessReviewHistoryInstance) SetFulfilledDateTime(value *i336074805fc85
         panic(err)
     }
 }
-// SetReviewHistoryPeriodEndDateTime sets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews ending on or before this date are in the fetched history data.
+// SetReviewHistoryPeriodEndDateTime sets the reviewHistoryPeriodEndDateTime property value. The date and time for which reviews ended before this date are included in the fetched history data.
 func (m *AccessReviewHistoryInstance) SetReviewHistoryPeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("reviewHistoryPeriodEndDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReviewHistoryPeriodStartDateTime sets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or after this date are in the fetched history data.
+// SetReviewHistoryPeriodStartDateTime sets the reviewHistoryPeriodStartDateTime property value. The date and time for which reviews started on or after this date are included in the fetched history data.
 func (m *AccessReviewHistoryInstance) SetReviewHistoryPeriodStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("reviewHistoryPeriodStartDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRunDateTime sets the runDateTime property value. Timestamp when the instance's history data is scheduled to be generated.
+// SetRunDateTime sets the runDateTime property value. The date and time when the instance's history data is scheduled to be generated.
 func (m *AccessReviewHistoryInstance) SetRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("runDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance's data by calling generateDownloadUri method.
+// SetStatus sets the status property value. Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status is marked as done, you can generate a link retrieve the instance's data by calling generateDownloadUri method.
 func (m *AccessReviewHistoryInstance) SetStatus(value *AccessReviewHistoryStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

@@ -91,9 +91,9 @@ func (m *PartnersBillingReconciliationBilledRequestBuilder) Get(ctx context.Cont
     return res.(ibc1d41e06c1155c6505b27a1d0c17b20692636238b0ddb2acdaa2b4548e4f67b.BilledReconciliationable), nil
 }
 // MicrosoftGraphPartnersBillingExport provides operations to call the export method.
-// returns a *PartnersBillingReconciliationBilledMicrosoftGraphPartnersBillingExportRequestBuilder when successful
-func (m *PartnersBillingReconciliationBilledRequestBuilder) MicrosoftGraphPartnersBillingExport()(*PartnersBillingReconciliationBilledMicrosoftGraphPartnersBillingExportRequestBuilder) {
-    return NewPartnersBillingReconciliationBilledMicrosoftGraphPartnersBillingExportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PartnersBillingReconciliationBilledMicrosoftgraphpartnersbillingexportMicrosoftGraphPartnersBillingExportRequestBuilder when successful
+func (m *PartnersBillingReconciliationBilledRequestBuilder) MicrosoftGraphPartnersBillingExport()(*PartnersBillingReconciliationBilledMicrosoftgraphpartnersbillingexportMicrosoftGraphPartnersBillingExportRequestBuilder) {
+    return NewPartnersBillingReconciliationBilledMicrosoftgraphpartnersbillingexportMicrosoftGraphPartnersBillingExportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property billed in reports
 // returns a BilledReconciliationable when successful

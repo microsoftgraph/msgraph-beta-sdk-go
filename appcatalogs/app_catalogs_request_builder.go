@@ -88,9 +88,9 @@ func (m *AppCatalogsRequestBuilder) Patch(ctx context.Context, body ie233ee762e2
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppCatalogsable), nil
 }
 // TeamsApps provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
-// returns a *TeamsAppsRequestBuilder when successful
-func (m *AppCatalogsRequestBuilder) TeamsApps()(*TeamsAppsRequestBuilder) {
-    return NewTeamsAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TeamsappsTeamsAppsRequestBuilder when successful
+func (m *AppCatalogsRequestBuilder) TeamsApps()(*TeamsappsTeamsAppsRequestBuilder) {
+    return NewTeamsappsTeamsAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get appCatalogs
 // returns a *RequestInformation when successful

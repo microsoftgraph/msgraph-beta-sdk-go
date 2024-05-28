@@ -116,9 +116,9 @@ func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) Patch(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
 // RevokeGrants provides operations to call the revokeGrants method.
-// returns a *ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder when successful
-func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*ItemSitesItemPermissionsItemRevokeGrantsRequestBuilder) {
-    return NewItemSitesItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemPermissionsItemRevokegrantsRevokeGrantsRequestBuilder when successful
+func (m *ItemSitesItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*ItemSitesItemPermissionsItemRevokegrantsRevokeGrantsRequestBuilder) {
+    return NewItemSitesItemPermissionsItemRevokegrantsRevokeGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property permissions for groups
 // returns a *RequestInformation when successful

@@ -76,9 +76,9 @@ func (m *ItemPlannerRequestBuilder) Delete(ctx context.Context, requestConfigura
     return nil
 }
 // FavoritePlans provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
-// returns a *ItemPlannerFavoritePlansRequestBuilder when successful
-func (m *ItemPlannerRequestBuilder) FavoritePlans()(*ItemPlannerFavoritePlansRequestBuilder) {
-    return NewItemPlannerFavoritePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPlannerFavoriteplansFavoritePlansRequestBuilder when successful
+func (m *ItemPlannerRequestBuilder) FavoritePlans()(*ItemPlannerFavoriteplansFavoritePlansRequestBuilder) {
+    return NewItemPlannerFavoriteplansFavoritePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get selective Planner services available to the user. Read-only. Nullable.
 // returns a PlannerUserable when successful
@@ -101,9 +101,9 @@ func (m *ItemPlannerRequestBuilder) Get(ctx context.Context, requestConfiguratio
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerUserable), nil
 }
 // MyDayTasks provides operations to manage the myDayTasks property of the microsoft.graph.plannerUser entity.
-// returns a *ItemPlannerMyDayTasksRequestBuilder when successful
-func (m *ItemPlannerRequestBuilder) MyDayTasks()(*ItemPlannerMyDayTasksRequestBuilder) {
-    return NewItemPlannerMyDayTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPlannerMydaytasksMyDayTasksRequestBuilder when successful
+func (m *ItemPlannerRequestBuilder) MyDayTasks()(*ItemPlannerMydaytasksMyDayTasksRequestBuilder) {
+    return NewItemPlannerMydaytasksMyDayTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property planner in users
 // returns a PlannerUserable when successful
@@ -131,14 +131,14 @@ func (m *ItemPlannerRequestBuilder) Plans()(*ItemPlannerPlansRequestBuilder) {
     return NewItemPlannerPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RecentPlans provides operations to manage the recentPlans property of the microsoft.graph.plannerUser entity.
-// returns a *ItemPlannerRecentPlansRequestBuilder when successful
-func (m *ItemPlannerRequestBuilder) RecentPlans()(*ItemPlannerRecentPlansRequestBuilder) {
-    return NewItemPlannerRecentPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPlannerRecentplansRecentPlansRequestBuilder when successful
+func (m *ItemPlannerRequestBuilder) RecentPlans()(*ItemPlannerRecentplansRecentPlansRequestBuilder) {
+    return NewItemPlannerRecentplansRecentPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RosterPlans provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
-// returns a *ItemPlannerRosterPlansRequestBuilder when successful
-func (m *ItemPlannerRequestBuilder) RosterPlans()(*ItemPlannerRosterPlansRequestBuilder) {
-    return NewItemPlannerRosterPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPlannerRosterplansRosterPlansRequestBuilder when successful
+func (m *ItemPlannerRequestBuilder) RosterPlans()(*ItemPlannerRosterplansRosterPlansRequestBuilder) {
+    return NewItemPlannerRosterplansRosterPlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.plannerUser entity.
 // returns a *ItemPlannerTasksRequestBuilder when successful

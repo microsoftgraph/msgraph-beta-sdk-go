@@ -35,9 +35,9 @@ type CommunicationsRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CallRecords provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
-// returns a *CallRecordsRequestBuilder when successful
-func (m *CommunicationsRequestBuilder) CallRecords()(*CallRecordsRequestBuilder) {
-    return NewCallRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallrecordsCallRecordsRequestBuilder when successful
+func (m *CommunicationsRequestBuilder) CallRecords()(*CallrecordsCallRecordsRequestBuilder) {
+    return NewCallrecordsCallRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Calls provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
 // returns a *CallsRequestBuilder when successful
@@ -78,19 +78,19 @@ func (m *CommunicationsRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudCommunicationsable), nil
 }
 // GetPresencesByUserId provides operations to call the getPresencesByUserId method.
-// returns a *GetPresencesByUserIdRequestBuilder when successful
-func (m *CommunicationsRequestBuilder) GetPresencesByUserId()(*GetPresencesByUserIdRequestBuilder) {
-    return NewGetPresencesByUserIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetpresencesbyuseridGetPresencesByUserIdRequestBuilder when successful
+func (m *CommunicationsRequestBuilder) GetPresencesByUserId()(*GetpresencesbyuseridGetPresencesByUserIdRequestBuilder) {
+    return NewGetpresencesbyuseridGetPresencesByUserIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OnlineMeetings provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
-// returns a *OnlineMeetingsRequestBuilder when successful
-func (m *CommunicationsRequestBuilder) OnlineMeetings()(*OnlineMeetingsRequestBuilder) {
-    return NewOnlineMeetingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *OnlinemeetingsOnlineMeetingsRequestBuilder when successful
+func (m *CommunicationsRequestBuilder) OnlineMeetings()(*OnlinemeetingsOnlineMeetingsRequestBuilder) {
+    return NewOnlinemeetingsOnlineMeetingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OnlineMeetingsWithJoinWebUrl provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
-// returns a *OnlineMeetingsWithJoinWebUrlRequestBuilder when successful
-func (m *CommunicationsRequestBuilder) OnlineMeetingsWithJoinWebUrl(joinWebUrl *string)(*OnlineMeetingsWithJoinWebUrlRequestBuilder) {
-    return NewOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
+// returns a *OnlinemeetingswithjoinweburlOnlineMeetingsWithJoinWebUrlRequestBuilder when successful
+func (m *CommunicationsRequestBuilder) OnlineMeetingsWithJoinWebUrl(joinWebUrl *string)(*OnlinemeetingswithjoinweburlOnlineMeetingsWithJoinWebUrlRequestBuilder) {
+    return NewOnlinemeetingswithjoinweburlOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
 }
 // Patch update communications
 // returns a CloudCommunicationsable when successful

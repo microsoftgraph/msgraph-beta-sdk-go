@@ -47,9 +47,9 @@ type ItemChannelsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllMessages provides operations to call the allMessages method.
-// returns a *ItemChannelsAllMessagesRequestBuilder when successful
-func (m *ItemChannelsRequestBuilder) AllMessages()(*ItemChannelsAllMessagesRequestBuilder) {
-    return NewItemChannelsAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsAllmessagesAllMessagesRequestBuilder when successful
+func (m *ItemChannelsRequestBuilder) AllMessages()(*ItemChannelsAllmessagesAllMessagesRequestBuilder) {
+    return NewItemChannelsAllmessagesAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByChannelId provides operations to manage the channels property of the microsoft.graph.team entity.
 // returns a *ItemChannelsChannelItemRequestBuilder when successful
@@ -105,14 +105,14 @@ func (m *ItemChannelsRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable), nil
 }
 // GetAllMessages provides operations to call the getAllMessages method.
-// returns a *ItemChannelsGetAllMessagesRequestBuilder when successful
-func (m *ItemChannelsRequestBuilder) GetAllMessages()(*ItemChannelsGetAllMessagesRequestBuilder) {
-    return NewItemChannelsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsGetallmessagesGetAllMessagesRequestBuilder when successful
+func (m *ItemChannelsRequestBuilder) GetAllMessages()(*ItemChannelsGetallmessagesGetAllMessagesRequestBuilder) {
+    return NewItemChannelsGetallmessagesGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
-// returns a *ItemChannelsGetAllRetainedMessagesRequestBuilder when successful
-func (m *ItemChannelsRequestBuilder) GetAllRetainedMessages()(*ItemChannelsGetAllRetainedMessagesRequestBuilder) {
-    return NewItemChannelsGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChannelsGetallretainedmessagesGetAllRetainedMessagesRequestBuilder when successful
+func (m *ItemChannelsRequestBuilder) GetAllRetainedMessages()(*ItemChannelsGetallretainedmessagesGetAllRetainedMessagesRequestBuilder) {
+    return NewItemChannelsGetallretainedmessagesGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel's displayName is 50 characters. This display name appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.
 // returns a Channelable when successful
