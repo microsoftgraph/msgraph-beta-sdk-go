@@ -1,0 +1,1987 @@
+package storage
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder provides operations to manage the functions property of the microsoft.graph.workbook entity.
+type FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetQueryParameters get functions from storage
+type FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+}
+// FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetQueryParameters
+}
+// FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderPatchRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderPatchRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// Abs provides operations to call the abs method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAbsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Abs()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAbsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAbsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AccrInt provides operations to call the accrInt method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAccrintAccrIntRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AccrInt()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAccrintAccrIntRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAccrintAccrIntRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AccrIntM provides operations to call the accrIntM method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAccrintmAccrIntMRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AccrIntM()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAccrintmAccrIntMRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAccrintmAccrIntMRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Acos provides operations to call the acos method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcosRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Acos()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcosRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Acosh provides operations to call the acosh method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcoshRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Acosh()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcoshRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcoshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Acot provides operations to call the acot method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcotRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Acot()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcotRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Acoth provides operations to call the acoth method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcothRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Acoth()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcothRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAcothRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AmorDegrc provides operations to call the amorDegrc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAmordegrcAmorDegrcRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AmorDegrc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAmordegrcAmorDegrcRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAmordegrcAmorDegrcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AmorLinc provides operations to call the amorLinc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAmorlincAmorLincRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AmorLinc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAmorlincAmorLincRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAmorlincAmorLincRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// And provides operations to call the and method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAndRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) And()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAndRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAndRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Arabic provides operations to call the arabic method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsArabicRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Arabic()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsArabicRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsArabicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Areas provides operations to call the areas method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAreasRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Areas()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAreasRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAreasRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Asc provides operations to call the asc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAscRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Asc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAscRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Asin provides operations to call the asin method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAsinRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Asin()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAsinRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAsinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Asinh provides operations to call the asinh method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAsinhRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Asinh()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAsinhRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAsinhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Atan provides operations to call the atan method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAtanRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Atan()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAtanRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAtanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Atan2 provides operations to call the atan2 method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAtan2RequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Atan2()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAtan2RequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAtan2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Atanh provides operations to call the atanh method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAtanhRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Atanh()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAtanhRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAtanhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AveDev provides operations to call the aveDev method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAvedevAveDevRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AveDev()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAvedevAveDevRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAvedevAveDevRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Average provides operations to call the average method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Average()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AverageA provides operations to call the averageA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageaAverageARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AverageA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageaAverageARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageaAverageARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AverageIf provides operations to call the averageIf method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageifAverageIfRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AverageIf()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageifAverageIfRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageifAverageIfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AverageIfs provides operations to call the averageIfs method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageifsAverageIfsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) AverageIfs()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageifsAverageIfsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsAverageifsAverageIfsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BahtText provides operations to call the bahtText method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBahttextBahtTextRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BahtText()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBahttextBahtTextRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBahttextBahtTextRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Base provides operations to call the base method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBaseRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Base()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBaseRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBaseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BesselI provides operations to call the besselI method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesseliBesselIRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BesselI()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesseliBesselIRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesseliBesselIRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BesselJ provides operations to call the besselJ method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesseljBesselJRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BesselJ()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesseljBesselJRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesseljBesselJRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BesselK provides operations to call the besselK method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesselkBesselKRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BesselK()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesselkBesselKRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesselkBesselKRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// BesselY provides operations to call the besselY method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesselyBesselYRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) BesselY()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesselyBesselYRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBesselyBesselYRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Beta_Dist provides operations to call the beta_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBeta_distBeta_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Beta_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBeta_distBeta_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBeta_distBeta_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Beta_Inv provides operations to call the beta_Inv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBeta_invBeta_InvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Beta_Inv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBeta_invBeta_InvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBeta_invBeta_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bin2Dec provides operations to call the bin2Dec method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBin2decBin2DecRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bin2Dec()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBin2decBin2DecRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBin2decBin2DecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bin2Hex provides operations to call the bin2Hex method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBin2hexBin2HexRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bin2Hex()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBin2hexBin2HexRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBin2hexBin2HexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bin2Oct provides operations to call the bin2Oct method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBin2octBin2OctRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bin2Oct()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBin2octBin2OctRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBin2octBin2OctRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Binom_Dist provides operations to call the binom_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBinom_distBinom_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Binom_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBinom_distBinom_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBinom_distBinom_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Binom_Dist_Range provides operations to call the binom_Dist_Range method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBinom_dist_rangeBinom_Dist_RangeRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Binom_Dist_Range()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBinom_dist_rangeBinom_Dist_RangeRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBinom_dist_rangeBinom_Dist_RangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Binom_Inv provides operations to call the binom_Inv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBinom_invBinom_InvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Binom_Inv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBinom_invBinom_InvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBinom_invBinom_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitand provides operations to call the bitand method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitandRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitand()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitandRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitandRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitlshift provides operations to call the bitlshift method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitlshiftRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitlshift()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitlshiftRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitlshiftRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitor provides operations to call the bitor method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitorRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitor()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitorRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitrshift provides operations to call the bitrshift method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitrshiftRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitrshift()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitrshiftRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitrshiftRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Bitxor provides operations to call the bitxor method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitxorRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Bitxor()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitxorRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsBitxorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ceiling_Math provides operations to call the ceiling_Math method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCeiling_mathCeiling_MathRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ceiling_Math()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCeiling_mathCeiling_MathRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCeiling_mathCeiling_MathRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ceiling_Precise provides operations to call the ceiling_Precise method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCeiling_preciseCeiling_PreciseRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ceiling_Precise()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCeiling_preciseCeiling_PreciseRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCeiling_preciseCeiling_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Char provides operations to call the char method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCharRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Char()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCharRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCharRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ChiSq_Dist provides operations to call the chiSq_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_distChiSq_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ChiSq_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_distChiSq_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_distChiSq_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ChiSq_Dist_RT provides operations to call the chiSq_Dist_RT method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_dist_rtChiSq_Dist_RTRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ChiSq_Dist_RT()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_dist_rtChiSq_Dist_RTRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_dist_rtChiSq_Dist_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ChiSq_Inv provides operations to call the chiSq_Inv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_invChiSq_InvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ChiSq_Inv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_invChiSq_InvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_invChiSq_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ChiSq_Inv_RT provides operations to call the chiSq_Inv_RT method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_inv_rtChiSq_Inv_RTRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ChiSq_Inv_RT()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_inv_rtChiSq_Inv_RTRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChisq_inv_rtChiSq_Inv_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Choose provides operations to call the choose method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChooseRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Choose()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChooseRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsChooseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Clean provides operations to call the clean method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCleanRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Clean()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCleanRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCleanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Code provides operations to call the code method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCodeRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Code()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCodeRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCodeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Columns provides operations to call the columns method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsColumnsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Columns()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsColumnsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsColumnsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Combin provides operations to call the combin method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCombinRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Combin()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCombinRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCombinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Combina provides operations to call the combina method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCombinaRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Combina()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCombinaRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCombinaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Complex provides operations to call the complex method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsComplexRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Complex()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsComplexRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsComplexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Concatenate provides operations to call the concatenate method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConcatenateRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Concatenate()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConcatenateRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConcatenateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Confidence_Norm provides operations to call the confidence_Norm method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConfidence_normConfidence_NormRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Confidence_Norm()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConfidence_normConfidence_NormRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConfidence_normConfidence_NormRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Confidence_T provides operations to call the confidence_T method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConfidence_tConfidence_TRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Confidence_T()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConfidence_tConfidence_TRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConfidence_tConfidence_TRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderInternal instantiates a new FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder and sets the default values.
+func NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) {
+    m := &FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/drive/items/{driveItem%2Did}/workbook/functions{?%24expand,%24select}", pathParameters),
+    }
+    return m
+}
+// NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder instantiates a new FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder and sets the default values.
+func NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Convert provides operations to call the convert method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConvertRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Convert()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConvertRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsConvertRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Cos provides operations to call the cos method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCosRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Cos()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCosRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Cosh provides operations to call the cosh method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoshRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Cosh()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoshRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Cot provides operations to call the cot method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCotRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Cot()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCotRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Coth provides operations to call the coth method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCothRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Coth()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCothRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCothRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Count provides operations to call the count method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Count()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CountA provides operations to call the countA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountaCountARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CountA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountaCountARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountaCountARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CountBlank provides operations to call the countBlank method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountblankCountBlankRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CountBlank()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountblankCountBlankRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountblankCountBlankRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CountIf provides operations to call the countIf method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountifCountIfRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CountIf()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountifCountIfRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountifCountIfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CountIfs provides operations to call the countIfs method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountifsCountIfsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CountIfs()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountifsCountIfsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCountifsCountIfsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupDayBs provides operations to call the coupDayBs method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupdaybsCoupDayBsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupDayBs()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupdaybsCoupDayBsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupdaybsCoupDayBsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupDays provides operations to call the coupDays method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupdaysCoupDaysRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupDays()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupdaysCoupDaysRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupdaysCoupDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupDaysNc provides operations to call the coupDaysNc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupdaysncCoupDaysNcRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupDaysNc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupdaysncCoupDaysNcRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupdaysncCoupDaysNcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupNcd provides operations to call the coupNcd method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupncdCoupNcdRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupNcd()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupncdCoupNcdRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupncdCoupNcdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupNum provides operations to call the coupNum method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupnumCoupNumRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupNum()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupnumCoupNumRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCoupnumCoupNumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CoupPcd provides operations to call the coupPcd method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCouppcdCoupPcdRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CoupPcd()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCouppcdCoupPcdRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCouppcdCoupPcdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Csc provides operations to call the csc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCscRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Csc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCscRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Csch provides operations to call the csch method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCschRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Csch()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCschRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCschRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CumIPmt provides operations to call the cumIPmt method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCumipmtCumIPmtRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CumIPmt()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCumipmtCumIPmtRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCumipmtCumIPmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CumPrinc provides operations to call the cumPrinc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCumprincCumPrincRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) CumPrinc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCumprincCumPrincRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsCumprincCumPrincRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Date provides operations to call the date method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDateRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Date()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDateRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Datevalue provides operations to call the datevalue method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDatevalueRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Datevalue()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDatevalueRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDatevalueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Daverage provides operations to call the daverage method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDaverageRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Daverage()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDaverageRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDaverageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Day provides operations to call the day method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDayRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Day()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDayRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDayRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Days provides operations to call the days method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDaysRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Days()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDaysRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Days360 provides operations to call the days360 method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDays360RequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Days360()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDays360RequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDays360RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Db provides operations to call the db method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDbRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Db()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDbRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dbcs provides operations to call the dbcs method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDbcsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dbcs()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDbcsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDbcsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dcount provides operations to call the dcount method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDcountRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dcount()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDcountRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDcountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DcountA provides operations to call the dcountA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDcountaDcountARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DcountA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDcountaDcountARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDcountaDcountARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ddb provides operations to call the ddb method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDdbRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ddb()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDdbRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDdbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dec2Bin provides operations to call the dec2Bin method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDec2binDec2BinRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dec2Bin()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDec2binDec2BinRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDec2binDec2BinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dec2Hex provides operations to call the dec2Hex method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDec2hexDec2HexRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dec2Hex()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDec2hexDec2HexRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDec2hexDec2HexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dec2Oct provides operations to call the dec2Oct method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDec2octDec2OctRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dec2Oct()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDec2octDec2OctRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDec2octDec2OctRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Decimal provides operations to call the decimal method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDecimalRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Decimal()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDecimalRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDecimalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Degrees provides operations to call the degrees method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDegreesRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Degrees()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDegreesRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDegreesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Delete delete navigation property functions for storage
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Delete(ctx context.Context, requestConfiguration *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Delta provides operations to call the delta method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDeltaRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Delta()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDeltaRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DevSq provides operations to call the devSq method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDevsqDevSqRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DevSq()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDevsqDevSqRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDevsqDevSqRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dget provides operations to call the dget method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDgetRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dget()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDgetRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDgetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Disc provides operations to call the disc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDiscRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Disc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDiscRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDiscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dmax provides operations to call the dmax method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDmaxRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dmax()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDmaxRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDmaxRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dmin provides operations to call the dmin method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDminRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dmin()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDminRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDminRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dollar provides operations to call the dollar method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDollarRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dollar()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDollarRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDollarRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DollarDe provides operations to call the dollarDe method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDollardeDollarDeRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DollarDe()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDollardeDollarDeRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDollardeDollarDeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DollarFr provides operations to call the dollarFr method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDollarfrDollarFrRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DollarFr()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDollarfrDollarFrRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDollarfrDollarFrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dproduct provides operations to call the dproduct method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDproductRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dproduct()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDproductRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDproductRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DstDev provides operations to call the dstDev method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDstdevDstDevRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DstDev()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDstdevDstDevRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDstdevDstDevRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DstDevP provides operations to call the dstDevP method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDstdevpDstDevPRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DstDevP()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDstdevpDstDevPRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDstdevpDstDevPRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dsum provides operations to call the dsum method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDsumRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dsum()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDsumRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDsumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Duration provides operations to call the duration method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDurationRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Duration()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDurationRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Dvar provides operations to call the dvar method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDvarRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Dvar()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDvarRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDvarRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DvarP provides operations to call the dvarP method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDvarpDvarPRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) DvarP()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDvarpDvarPRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsDvarpDvarPRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ecma_Ceiling provides operations to call the ecma_Ceiling method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEcma_ceilingEcma_CeilingRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ecma_Ceiling()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEcma_ceilingEcma_CeilingRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEcma_ceilingEcma_CeilingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Edate provides operations to call the edate method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEdateRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Edate()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEdateRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEdateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Effect provides operations to call the effect method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEffectRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Effect()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEffectRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEffectRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// EoMonth provides operations to call the eoMonth method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEomonthEoMonthRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) EoMonth()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEomonthEoMonthRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEomonthEoMonthRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Erf provides operations to call the erf method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErfRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Erf()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErfRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Erf_Precise provides operations to call the erf_Precise method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErf_preciseErf_PreciseRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Erf_Precise()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErf_preciseErf_PreciseRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErf_preciseErf_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ErfC provides operations to call the erfC method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErfcErfCRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ErfC()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErfcErfCRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErfcErfCRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ErfC_Precise provides operations to call the erfC_Precise method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErfc_preciseErfC_PreciseRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ErfC_Precise()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErfc_preciseErfC_PreciseRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsErfc_preciseErfC_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Error_Type provides operations to call the error_Type method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsError_typeError_TypeRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Error_Type()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsError_typeError_TypeRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsError_typeError_TypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Even provides operations to call the even method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEvenRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Even()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEvenRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsEvenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Exact provides operations to call the exact method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsExactRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Exact()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsExactRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsExactRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Exp provides operations to call the exp method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsExpRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Exp()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsExpRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsExpRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Expon_Dist provides operations to call the expon_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsExpon_distExpon_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Expon_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsExpon_distExpon_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsExpon_distExpon_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// F_Dist provides operations to call the f_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_distF_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) F_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_distF_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_distF_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// F_Dist_RT provides operations to call the f_Dist_RT method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_dist_rtF_Dist_RTRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) F_Dist_RT()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_dist_rtF_Dist_RTRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_dist_rtF_Dist_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// F_Inv provides operations to call the f_Inv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_invF_InvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) F_Inv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_invF_InvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_invF_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// F_Inv_RT provides operations to call the f_Inv_RT method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_inv_rtF_Inv_RTRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) F_Inv_RT()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_inv_rtF_Inv_RTRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsF_inv_rtF_Inv_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fact provides operations to call the fact method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFactRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fact()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFactRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFactRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// FactDouble provides operations to call the factDouble method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFactdoubleFactDoubleRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) FactDouble()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFactdoubleFactDoubleRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFactdoubleFactDoubleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// False provides operations to call the false method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFalseRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) False()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFalseRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFalseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Find provides operations to call the find method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFindRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Find()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFindRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFindRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// FindB provides operations to call the findB method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFindbFindBRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) FindB()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFindbFindBRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFindbFindBRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fisher provides operations to call the fisher method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFisherRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fisher()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFisherRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFisherRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// FisherInv provides operations to call the fisherInv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFisherinvFisherInvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) FisherInv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFisherinvFisherInvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFisherinvFisherInvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fixed provides operations to call the fixed method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFixedRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fixed()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFixedRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFixedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Floor_Math provides operations to call the floor_Math method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFloor_mathFloor_MathRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Floor_Math()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFloor_mathFloor_MathRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFloor_mathFloor_MathRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Floor_Precise provides operations to call the floor_Precise method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFloor_preciseFloor_PreciseRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Floor_Precise()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFloor_preciseFloor_PreciseRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFloor_preciseFloor_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fv provides operations to call the fv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Fvschedule provides operations to call the fvschedule method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFvscheduleRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Fvschedule()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFvscheduleRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsFvscheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gamma provides operations to call the gamma method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGammaRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gamma()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGammaRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGammaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gamma_Dist provides operations to call the gamma_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGamma_distGamma_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gamma_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGamma_distGamma_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGamma_distGamma_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gamma_Inv provides operations to call the gamma_Inv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGamma_invGamma_InvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gamma_Inv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGamma_invGamma_InvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGamma_invGamma_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GammaLn provides operations to call the gammaLn method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGammalnGammaLnRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) GammaLn()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGammalnGammaLnRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGammalnGammaLnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GammaLn_Precise provides operations to call the gammaLn_Precise method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGammaln_preciseGammaLn_PreciseRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) GammaLn_Precise()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGammaln_preciseGammaLn_PreciseRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGammaln_preciseGammaLn_PreciseRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gauss provides operations to call the gauss method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGaussRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gauss()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGaussRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGaussRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Gcd provides operations to call the gcd method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGcdRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Gcd()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGcdRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGcdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GeoMean provides operations to call the geoMean method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGeomeanGeoMeanRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) GeoMean()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGeomeanGeoMeanRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGeomeanGeoMeanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GeStep provides operations to call the geStep method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGestepGeStepRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) GeStep()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGestepGeStepRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsGestepGeStepRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get get functions from storage
+// returns a WorkbookFunctionsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Get(ctx context.Context, requestConfiguration *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionsable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookFunctionsFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionsable), nil
+}
+// HarMean provides operations to call the harMean method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHarmeanHarMeanRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) HarMean()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHarmeanHarMeanRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHarmeanHarMeanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hex2Bin provides operations to call the hex2Bin method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHex2binHex2BinRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hex2Bin()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHex2binHex2BinRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHex2binHex2BinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hex2Dec provides operations to call the hex2Dec method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHex2decHex2DecRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hex2Dec()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHex2decHex2DecRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHex2decHex2DecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hex2Oct provides operations to call the hex2Oct method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHex2octHex2OctRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hex2Oct()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHex2octHex2OctRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHex2octHex2OctRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hlookup provides operations to call the hlookup method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHlookupRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hlookup()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHlookupRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHlookupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hour provides operations to call the hour method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHourRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hour()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHourRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHourRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Hyperlink provides operations to call the hyperlink method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHyperlinkRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Hyperlink()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHyperlinkRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHyperlinkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// HypGeom_Dist provides operations to call the hypGeom_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHypgeom_distHypGeom_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) HypGeom_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHypgeom_distHypGeom_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsHypgeom_distHypGeom_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IfEscaped provides operations to call the if method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIfRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IfEscaped()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIfRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImAbs provides operations to call the imAbs method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImabsImAbsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImAbs()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImabsImAbsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImabsImAbsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Imaginary provides operations to call the imaginary method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImaginaryRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Imaginary()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImaginaryRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImaginaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImArgument provides operations to call the imArgument method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImargumentImArgumentRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImArgument()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImargumentImArgumentRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImargumentImArgumentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImConjugate provides operations to call the imConjugate method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImconjugateImConjugateRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImConjugate()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImconjugateImConjugateRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImconjugateImConjugateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCos provides operations to call the imCos method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcosImCosRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCos()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcosImCosRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcosImCosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCosh provides operations to call the imCosh method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcoshImCoshRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCosh()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcoshImCoshRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcoshImCoshRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCot provides operations to call the imCot method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcotImCotRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCot()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcotImCotRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcotImCotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCsc provides operations to call the imCsc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcscImCscRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCsc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcscImCscRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcscImCscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImCsch provides operations to call the imCsch method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcschImCschRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImCsch()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcschImCschRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImcschImCschRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImDiv provides operations to call the imDiv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImdivImDivRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImDiv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImdivImDivRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImdivImDivRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImExp provides operations to call the imExp method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImexpImExpRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImExp()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImexpImExpRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImexpImExpRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImLn provides operations to call the imLn method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImlnImLnRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImLn()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImlnImLnRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImlnImLnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImLog10 provides operations to call the imLog10 method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImlog10ImLog10RequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImLog10()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImlog10ImLog10RequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImlog10ImLog10RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImLog2 provides operations to call the imLog2 method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImlog2ImLog2RequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImLog2()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImlog2ImLog2RequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImlog2ImLog2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImPower provides operations to call the imPower method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImpowerImPowerRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImPower()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImpowerImPowerRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImpowerImPowerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImProduct provides operations to call the imProduct method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImproductImProductRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImProduct()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImproductImProductRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImproductImProductRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImReal provides operations to call the imReal method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImrealImRealRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImReal()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImrealImRealRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImrealImRealRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSec provides operations to call the imSec method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsecImSecRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSec()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsecImSecRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsecImSecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSech provides operations to call the imSech method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsechImSechRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSech()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsechImSechRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsechImSechRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSin provides operations to call the imSin method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsinImSinRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSin()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsinImSinRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsinImSinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSinh provides operations to call the imSinh method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsinhImSinhRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSinh()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsinhImSinhRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsinhImSinhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSqrt provides operations to call the imSqrt method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsqrtImSqrtRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSqrt()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsqrtImSqrtRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsqrtImSqrtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSub provides operations to call the imSub method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsubImSubRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSub()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsubImSubRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsubImSubRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImSum provides operations to call the imSum method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsumImSumRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImSum()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsumImSumRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImsumImSumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ImTan provides operations to call the imTan method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImtanImTanRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ImTan()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImtanImTanRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsImtanImTanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Int provides operations to call the int method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIntRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Int()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIntRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIntRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IntRate provides operations to call the intRate method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIntrateIntRateRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IntRate()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIntrateIntRateRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIntrateIntRateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ipmt provides operations to call the ipmt method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIpmtRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ipmt()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIpmtRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIpmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Irr provides operations to call the irr method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIrrRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Irr()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIrrRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIrrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsErr provides operations to call the isErr method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIserrIsErrRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsErr()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIserrIsErrRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIserrIsErrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsError provides operations to call the isError method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIserrorIsErrorRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsError()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIserrorIsErrorRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIserrorIsErrorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsEven provides operations to call the isEven method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsevenIsEvenRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsEven()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsevenIsEvenRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsevenIsEvenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsFormula provides operations to call the isFormula method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsformulaIsFormulaRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsFormula()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsformulaIsFormulaRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsformulaIsFormulaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsLogical provides operations to call the isLogical method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIslogicalIsLogicalRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsLogical()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIslogicalIsLogicalRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIslogicalIsLogicalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsNA provides operations to call the isNA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsnaIsNARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsNA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsnaIsNARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsnaIsNARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsNonText provides operations to call the isNonText method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsnontextIsNonTextRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsNonText()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsnontextIsNonTextRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsnontextIsNonTextRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsNumber provides operations to call the isNumber method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsnumberIsNumberRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsNumber()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsnumberIsNumberRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsnumberIsNumberRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Iso_Ceiling provides operations to call the iso_Ceiling method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIso_ceilingIso_CeilingRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Iso_Ceiling()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIso_ceilingIso_CeilingRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIso_ceilingIso_CeilingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsOdd provides operations to call the isOdd method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsoddIsOddRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsOdd()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsoddIsOddRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsoddIsOddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsoWeekNum provides operations to call the isoWeekNum method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsoweeknumIsoWeekNumRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsoWeekNum()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsoweeknumIsoWeekNumRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsoweeknumIsoWeekNumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ispmt provides operations to call the ispmt method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIspmtRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ispmt()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIspmtRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIspmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Isref provides operations to call the isref method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsrefRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Isref()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsrefRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIsrefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// IsText provides operations to call the isText method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIstextIsTextRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) IsText()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIstextIsTextRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsIstextIsTextRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Kurt provides operations to call the kurt method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsKurtRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Kurt()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsKurtRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsKurtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Large provides operations to call the large method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLargeRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Large()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLargeRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLargeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Lcm provides operations to call the lcm method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLcmRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Lcm()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLcmRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLcmRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Left provides operations to call the left method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLeftRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Left()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLeftRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLeftRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Leftb provides operations to call the leftb method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLeftbRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Leftb()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLeftbRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLeftbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Len provides operations to call the len method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLenRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Len()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLenRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Lenb provides operations to call the lenb method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLenbRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Lenb()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLenbRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLenbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ln provides operations to call the ln method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLnRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ln()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLnRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Log provides operations to call the log method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLogRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Log()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLogRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLogRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Log10 provides operations to call the log10 method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLog10RequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Log10()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLog10RequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLog10RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LogNorm_Dist provides operations to call the logNorm_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLognorm_distLogNorm_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) LogNorm_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLognorm_distLogNorm_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLognorm_distLogNorm_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// LogNorm_Inv provides operations to call the logNorm_Inv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLognorm_invLogNorm_InvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) LogNorm_Inv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLognorm_invLogNorm_InvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLognorm_invLogNorm_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Lookup provides operations to call the lookup method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLookupRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Lookup()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLookupRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLookupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Lower provides operations to call the lower method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLowerRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Lower()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLowerRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsLowerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Match provides operations to call the match method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMatchRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Match()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMatchRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMatchRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Max provides operations to call the max method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMaxRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Max()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMaxRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMaxRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MaxA provides operations to call the maxA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMaxaMaxARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) MaxA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMaxaMaxARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMaxaMaxARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mduration provides operations to call the mduration method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMdurationRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mduration()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMdurationRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMdurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Median provides operations to call the median method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMedianRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Median()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMedianRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMedianRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mid provides operations to call the mid method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMidRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mid()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMidRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMidRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Midb provides operations to call the midb method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMidbRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Midb()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMidbRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMidbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Min provides operations to call the min method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMinRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Min()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMinRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MinA provides operations to call the minA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMinaMinARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) MinA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMinaMinARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMinaMinARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Minute provides operations to call the minute method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMinuteRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Minute()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMinuteRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMinuteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mirr provides operations to call the mirr method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMirrRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mirr()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMirrRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMirrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mod provides operations to call the mod method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsModRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mod()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsModRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsModRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Month provides operations to call the month method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMonthRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Month()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMonthRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMonthRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Mround provides operations to call the mround method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMroundRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Mround()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMroundRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMroundRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MultiNomial provides operations to call the multiNomial method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMultinomialMultiNomialRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) MultiNomial()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMultinomialMultiNomialRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsMultinomialMultiNomialRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// N provides operations to call the n method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) N()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Na provides operations to call the na method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNaRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Na()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNaRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NegBinom_Dist provides operations to call the negBinom_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNegbinom_distNegBinom_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) NegBinom_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNegbinom_distNegBinom_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNegbinom_distNegBinom_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NetworkDays provides operations to call the networkDays method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNetworkdaysNetworkDaysRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) NetworkDays()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNetworkdaysNetworkDaysRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNetworkdaysNetworkDaysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NetworkDays_Intl provides operations to call the networkDays_Intl method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNetworkdays_intlNetworkDays_IntlRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) NetworkDays_Intl()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNetworkdays_intlNetworkDays_IntlRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNetworkdays_intlNetworkDays_IntlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Nominal provides operations to call the nominal method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNominalRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Nominal()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNominalRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNominalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Norm_Dist provides operations to call the norm_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_distNorm_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Norm_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_distNorm_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_distNorm_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Norm_Inv provides operations to call the norm_Inv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_invNorm_InvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Norm_Inv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_invNorm_InvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_invNorm_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Norm_S_Dist provides operations to call the norm_S_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_s_distNorm_S_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Norm_S_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_s_distNorm_S_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_s_distNorm_S_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Norm_S_Inv provides operations to call the norm_S_Inv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_s_invNorm_S_InvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Norm_S_Inv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_s_invNorm_S_InvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNorm_s_invNorm_S_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Not provides operations to call the not method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNotRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Not()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNotRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Now provides operations to call the now method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNowRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Now()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNowRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Nper provides operations to call the nper method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNperRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Nper()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNperRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNperRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Npv provides operations to call the npv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNpvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Npv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNpvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNpvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// NumberValue provides operations to call the numberValue method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNumbervalueNumberValueRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) NumberValue()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNumbervalueNumberValueRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsNumbervalueNumberValueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Oct2Bin provides operations to call the oct2Bin method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOct2binOct2BinRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Oct2Bin()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOct2binOct2BinRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOct2binOct2BinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Oct2Dec provides operations to call the oct2Dec method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOct2decOct2DecRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Oct2Dec()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOct2decOct2DecRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOct2decOct2DecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Oct2Hex provides operations to call the oct2Hex method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOct2hexOct2HexRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Oct2Hex()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOct2hexOct2HexRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOct2hexOct2HexRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Odd provides operations to call the odd method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Odd()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OddFPrice provides operations to call the oddFPrice method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddfpriceOddFPriceRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) OddFPrice()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddfpriceOddFPriceRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddfpriceOddFPriceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OddFYield provides operations to call the oddFYield method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddfyieldOddFYieldRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) OddFYield()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddfyieldOddFYieldRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddfyieldOddFYieldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OddLPrice provides operations to call the oddLPrice method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddlpriceOddLPriceRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) OddLPrice()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddlpriceOddLPriceRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddlpriceOddLPriceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OddLYield provides operations to call the oddLYield method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddlyieldOddLYieldRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) OddLYield()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddlyieldOddLYieldRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOddlyieldOddLYieldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Or provides operations to call the or method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOrRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Or()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOrRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsOrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Patch update the navigation property functions in storage
+// returns a WorkbookFunctionsable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionsable, requestConfiguration *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionsable, error) {
+    requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWorkbookFunctionsFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionsable), nil
+}
+// Pduration provides operations to call the pduration method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPdurationRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Pduration()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPdurationRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPdurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Percentile_Exc provides operations to call the percentile_Exc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentile_excPercentile_ExcRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Percentile_Exc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentile_excPercentile_ExcRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentile_excPercentile_ExcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Percentile_Inc provides operations to call the percentile_Inc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentile_incPercentile_IncRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Percentile_Inc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentile_incPercentile_IncRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentile_incPercentile_IncRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PercentRank_Exc provides operations to call the percentRank_Exc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentrank_excPercentRank_ExcRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) PercentRank_Exc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentrank_excPercentRank_ExcRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentrank_excPercentRank_ExcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PercentRank_Inc provides operations to call the percentRank_Inc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentrank_incPercentRank_IncRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) PercentRank_Inc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentrank_incPercentRank_IncRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPercentrank_incPercentRank_IncRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Permut provides operations to call the permut method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPermutRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Permut()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPermutRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPermutRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Permutationa provides operations to call the permutationa method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPermutationaRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Permutationa()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPermutationaRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPermutationaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Phi provides operations to call the phi method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPhiRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Phi()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPhiRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPhiRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Pi provides operations to call the pi method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPiRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Pi()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPiRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPiRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Pmt provides operations to call the pmt method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPmtRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Pmt()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPmtRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Poisson_Dist provides operations to call the poisson_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPoisson_distPoisson_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Poisson_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPoisson_distPoisson_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPoisson_distPoisson_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Power provides operations to call the power method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPowerRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Power()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPowerRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPowerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Ppmt provides operations to call the ppmt method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPpmtRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Ppmt()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPpmtRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPpmtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Price provides operations to call the price method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPriceRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Price()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPriceRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPriceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PriceDisc provides operations to call the priceDisc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPricediscPriceDiscRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) PriceDisc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPricediscPriceDiscRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPricediscPriceDiscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// PriceMat provides operations to call the priceMat method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPricematPriceMatRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) PriceMat()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPricematPriceMatRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPricematPriceMatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Product provides operations to call the product method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsProductRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Product()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsProductRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsProductRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Proper provides operations to call the proper method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsProperRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Proper()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsProperRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsProperRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Pv provides operations to call the pv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Pv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsPvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Quartile_Exc provides operations to call the quartile_Exc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsQuartile_excQuartile_ExcRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Quartile_Exc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsQuartile_excQuartile_ExcRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsQuartile_excQuartile_ExcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Quartile_Inc provides operations to call the quartile_Inc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsQuartile_incQuartile_IncRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Quartile_Inc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsQuartile_incQuartile_IncRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsQuartile_incQuartile_IncRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Quotient provides operations to call the quotient method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsQuotientRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Quotient()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsQuotientRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsQuotientRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Radians provides operations to call the radians method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRadiansRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Radians()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRadiansRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRadiansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rand provides operations to call the rand method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRandRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rand()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRandRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRandRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RandBetween provides operations to call the randBetween method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRandbetweenRandBetweenRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) RandBetween()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRandbetweenRandBetweenRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRandbetweenRandBetweenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rank_Avg provides operations to call the rank_Avg method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRank_avgRank_AvgRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rank_Avg()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRank_avgRank_AvgRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRank_avgRank_AvgRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rank_Eq provides operations to call the rank_Eq method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRank_eqRank_EqRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rank_Eq()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRank_eqRank_EqRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRank_eqRank_EqRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rate provides operations to call the rate method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRateRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rate()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRateRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Received provides operations to call the received method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReceivedRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Received()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReceivedRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReceivedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Replace provides operations to call the replace method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReplaceRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Replace()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReplaceRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReplaceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ReplaceB provides operations to call the replaceB method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReplacebReplaceBRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ReplaceB()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReplacebReplaceBRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReplacebReplaceBRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rept provides operations to call the rept method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReptRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rept()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReptRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsReptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Right provides operations to call the right method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRightRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Right()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRightRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRightRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rightb provides operations to call the rightb method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRightbRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rightb()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRightbRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRightbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Roman provides operations to call the roman method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRomanRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Roman()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRomanRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRomanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Round provides operations to call the round method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRoundRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Round()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRoundRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRoundRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RoundDown provides operations to call the roundDown method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRounddownRoundDownRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) RoundDown()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRounddownRoundDownRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRounddownRoundDownRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RoundUp provides operations to call the roundUp method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRoundupRoundUpRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) RoundUp()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRoundupRoundUpRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRoundupRoundUpRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rows provides operations to call the rows method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRowsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rows()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRowsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Rri provides operations to call the rri method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRriRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Rri()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRriRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRriRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sec provides operations to call the sec method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSecRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sec()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSecRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSecRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sech provides operations to call the sech method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSechRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sech()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSechRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSechRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Second provides operations to call the second method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSecondRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Second()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSecondRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSecondRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SeriesSum provides operations to call the seriesSum method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSeriessumSeriesSumRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SeriesSum()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSeriessumSeriesSumRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSeriessumSeriesSumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sheet provides operations to call the sheet method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSheetRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sheet()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSheetRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSheetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sheets provides operations to call the sheets method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSheetsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sheets()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSheetsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSheetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sign provides operations to call the sign method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSignRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sign()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSignRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSignRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sin provides operations to call the sin method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSinRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sin()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSinRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSinRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sinh provides operations to call the sinh method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSinhRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sinh()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSinhRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSinhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Skew provides operations to call the skew method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSkewRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Skew()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSkewRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSkewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Skew_p provides operations to call the skew_p method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSkew_pRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Skew_p()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSkew_pRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSkew_pRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sln provides operations to call the sln method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSlnRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sln()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSlnRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSlnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Small provides operations to call the small method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSmallRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Small()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSmallRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSmallRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sqrt provides operations to call the sqrt method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSqrtRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sqrt()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSqrtRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSqrtRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SqrtPi provides operations to call the sqrtPi method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSqrtpiSqrtPiRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SqrtPi()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSqrtpiSqrtPiRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSqrtpiSqrtPiRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Standardize provides operations to call the standardize method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStandardizeRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Standardize()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStandardizeRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStandardizeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StDev_P provides operations to call the stDev_P method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdev_pStDev_PRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) StDev_P()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdev_pStDev_PRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdev_pStDev_PRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StDev_S provides operations to call the stDev_S method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdev_sStDev_SRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) StDev_S()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdev_sStDev_SRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdev_sStDev_SRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StDevA provides operations to call the stDevA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdevaStDevARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) StDevA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdevaStDevARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdevaStDevARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StDevPA provides operations to call the stDevPA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdevpaStDevPARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) StDevPA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdevpaStDevPARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsStdevpaStDevPARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Substitute provides operations to call the substitute method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSubstituteRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Substitute()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSubstituteRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSubstituteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Subtotal provides operations to call the subtotal method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSubtotalRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Subtotal()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSubtotalRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSubtotalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Sum provides operations to call the sum method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Sum()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SumIf provides operations to call the sumIf method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumifSumIfRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SumIf()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumifSumIfRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumifSumIfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SumIfs provides operations to call the sumIfs method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumifsSumIfsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SumIfs()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumifsSumIfsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumifsSumIfsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SumSq provides operations to call the sumSq method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumsqSumSqRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) SumSq()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumsqSumSqRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSumsqSumSqRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Syd provides operations to call the syd method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSydRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Syd()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSydRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsSydRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T provides operations to call the t method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Dist provides operations to call the t_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_distT_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_distT_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_distT_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Dist_2T provides operations to call the t_Dist_2T method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_dist_2tT_Dist_2TRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Dist_2T()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_dist_2tT_Dist_2TRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_dist_2tT_Dist_2TRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Dist_RT provides operations to call the t_Dist_RT method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_dist_rtT_Dist_RTRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Dist_RT()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_dist_rtT_Dist_RTRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_dist_rtT_Dist_RTRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Inv provides operations to call the t_Inv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_invT_InvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Inv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_invT_InvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_invT_InvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// T_Inv_2T provides operations to call the t_Inv_2T method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_inv_2tT_Inv_2TRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) T_Inv_2T()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_inv_2tT_Inv_2TRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsT_inv_2tT_Inv_2TRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Tan provides operations to call the tan method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTanRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Tan()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTanRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Tanh provides operations to call the tanh method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTanhRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Tanh()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTanhRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTanhRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TbillEq provides operations to call the tbillEq method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTbilleqTbillEqRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TbillEq()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTbilleqTbillEqRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTbilleqTbillEqRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TbillPrice provides operations to call the tbillPrice method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTbillpriceTbillPriceRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TbillPrice()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTbillpriceTbillPriceRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTbillpriceTbillPriceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TbillYield provides operations to call the tbillYield method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTbillyieldTbillYieldRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TbillYield()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTbillyieldTbillYieldRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTbillyieldTbillYieldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Text provides operations to call the text method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTextRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Text()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTextRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTextRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Time provides operations to call the time method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTimeRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Time()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTimeRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Timevalue provides operations to call the timevalue method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTimevalueRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Timevalue()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTimevalueRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTimevalueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Today provides operations to call the today method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTodayRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Today()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTodayRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTodayRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ToDeleteRequestInformation delete navigation property functions for storage
+// returns a *RequestInformation when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToGetRequestInformation get functions from storage
+// returns a *RequestInformation when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToPatchRequestInformation update the navigation property functions in storage
+// returns a *RequestInformation when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookFunctionsable, requestConfiguration *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    return requestInfo, nil
+}
+// Trim provides operations to call the trim method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTrimRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Trim()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTrimRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTrimRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TrimMean provides operations to call the trimMean method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTrimmeanTrimMeanRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TrimMean()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTrimmeanTrimMeanRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTrimmeanTrimMeanRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// True provides operations to call the true method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTrueRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) True()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTrueRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTrueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Trunc provides operations to call the trunc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTruncRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Trunc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTruncRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTruncRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TypeEscaped provides operations to call the type method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTypeRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) TypeEscaped()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTypeRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsTypeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Unichar provides operations to call the unichar method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUnicharRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Unichar()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUnicharRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUnicharRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Unicode provides operations to call the unicode method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUnicodeRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Unicode()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUnicodeRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUnicodeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Upper provides operations to call the upper method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUpperRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Upper()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUpperRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUpperRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Usdollar provides operations to call the usdollar method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUsdollarRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Usdollar()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUsdollarRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsUsdollarRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Value provides operations to call the value method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsValueRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Value()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsValueRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsValueRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Var_P provides operations to call the var_P method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVar_pVar_PRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Var_P()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVar_pVar_PRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVar_pVar_PRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Var_S provides operations to call the var_S method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVar_sVar_SRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Var_S()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVar_sVar_SRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVar_sVar_SRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// VarA provides operations to call the varA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVaraVarARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) VarA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVaraVarARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVaraVarARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// VarPA provides operations to call the varPA method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVarpaVarPARequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) VarPA()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVarpaVarPARequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVarpaVarPARequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Vdb provides operations to call the vdb method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVdbRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Vdb()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVdbRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVdbRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Vlookup provides operations to call the vlookup method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVlookupRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Vlookup()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVlookupRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsVlookupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Weekday provides operations to call the weekday method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWeekdayRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Weekday()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWeekdayRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWeekdayRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WeekNum provides operations to call the weekNum method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWeeknumWeekNumRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) WeekNum()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWeeknumWeekNumRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWeeknumWeekNumRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Weibull_Dist provides operations to call the weibull_Dist method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWeibull_distWeibull_DistRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Weibull_Dist()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWeibull_distWeibull_DistRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWeibull_distWeibull_DistRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) WithUrl(rawUrl string)(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}
+// WorkDay provides operations to call the workDay method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWorkdayWorkDayRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) WorkDay()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWorkdayWorkDayRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWorkdayWorkDayRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WorkDay_Intl provides operations to call the workDay_Intl method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWorkday_intlWorkDay_IntlRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) WorkDay_Intl()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWorkday_intlWorkDay_IntlRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsWorkday_intlWorkDay_IntlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Xirr provides operations to call the xirr method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsXirrRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Xirr()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsXirrRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsXirrRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Xnpv provides operations to call the xnpv method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsXnpvRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Xnpv()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsXnpvRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsXnpvRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Xor provides operations to call the xor method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsXorRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Xor()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsXorRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsXorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Year provides operations to call the year method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYearRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Year()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYearRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYearRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// YearFrac provides operations to call the yearFrac method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYearfracYearFracRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) YearFrac()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYearfracYearFracRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYearfracYearFracRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Yield provides operations to call the yield method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYieldRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Yield()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYieldRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYieldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// YieldDisc provides operations to call the yieldDisc method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYielddiscYieldDiscRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) YieldDisc()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYielddiscYieldDiscRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYielddiscYieldDiscRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// YieldMat provides operations to call the yieldMat method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYieldmatYieldMatRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) YieldMat()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYieldmatYieldMatRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsYieldmatYieldMatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Z_Test provides operations to call the z_Test method.
+// returns a *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsZ_testZ_TestRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsRequestBuilder) Z_Test()(*FilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsZ_testZ_TestRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookFunctionsZ_testZ_TestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

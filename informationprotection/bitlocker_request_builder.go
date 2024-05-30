@@ -61,9 +61,9 @@ func (m *BitlockerRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Bitlockerable), nil
 }
 // RecoveryKeys provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
-// returns a *BitlockerRecoveryKeysRequestBuilder when successful
-func (m *BitlockerRequestBuilder) RecoveryKeys()(*BitlockerRecoveryKeysRequestBuilder) {
-    return NewBitlockerRecoveryKeysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *BitlockerRecoverykeysRecoveryKeysRequestBuilder when successful
+func (m *BitlockerRequestBuilder) RecoveryKeys()(*BitlockerRecoverykeysRecoveryKeysRequestBuilder) {
+    return NewBitlockerRecoverykeysRecoveryKeysRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get bitlocker from informationProtection
 // returns a *RequestInformation when successful

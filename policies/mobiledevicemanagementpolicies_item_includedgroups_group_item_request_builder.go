@@ -1,0 +1,33 @@
+package policies
+
+import (
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+)
+
+// MobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder builds and executes requests for operations under \policies\mobileDeviceManagementPolicies\{mobilityManagementPolicy-id}\includedGroups\{group-id}
+type MobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// NewMobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilderInternal instantiates a new MobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder and sets the default values.
+func NewMobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder) {
+    m := &MobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}", pathParameters),
+    }
+    return m
+}
+// NewMobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder instantiates a new MobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder and sets the default values.
+func NewMobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewMobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Ref provides operations to manage the collection of policyRoot entities.
+// returns a *MobiledevicemanagementpoliciesItemIncludedgroupsItemRefRequestBuilder when successful
+func (m *MobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder) Ref()(*MobiledevicemanagementpoliciesItemIncludedgroupsItemRefRequestBuilder) {
+    return NewMobiledevicemanagementpoliciesItemIncludedgroupsItemRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ServiceProvisioningErrors the serviceProvisioningErrors property
+// returns a *MobiledevicemanagementpoliciesItemIncludedgroupsItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
+func (m *MobiledevicemanagementpoliciesItemIncludedgroupsGroupItemRequestBuilder) ServiceProvisioningErrors()(*MobiledevicemanagementpoliciesItemIncludedgroupsItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
+    return NewMobiledevicemanagementpoliciesItemIncludedgroupsItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}

@@ -33,7 +33,7 @@ func (m *PartnerSecurityAlert) GetActivityLogs()([]ActivityLogable) {
     }
     return nil
 }
-// GetAdditionalDetails gets the additionalDetails property value. A bag of name-value pairs that contain additional details about an alert.
+// GetAdditionalDetails gets the additionalDetails property value. A bag of name-value pairs that contain more details about an alert.
 // returns a AdditionalDataDictionaryable when successful
 func (m *PartnerSecurityAlert) GetAdditionalDetails()(AdditionalDataDictionaryable) {
     val, err := m.GetBackingStore().Get("additionalDetails")
@@ -57,7 +57,7 @@ func (m *PartnerSecurityAlert) GetAffectedResources()([]AffectedResourceable) {
     }
     return nil
 }
-// GetAlertType gets the alertType property value. The type of vulnerability that impacts the customer due to this alert.
+// GetAlertType gets the alertType property value. The type of vulnerability that impacts the customer due to this alert. For more information, see Security alerts reference guide.
 // returns a *string when successful
 func (m *PartnerSecurityAlert) GetAlertType()(*string) {
     val, err := m.GetBackingStore().Get("alertType")
@@ -359,7 +359,7 @@ func (m *PartnerSecurityAlert) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetFirstObservedDateTime gets the firstObservedDateTime property value. Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  subscription.
+// GetFirstObservedDateTime gets the firstObservedDateTime property value. Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *PartnerSecurityAlert) GetFirstObservedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstObservedDateTime")
@@ -371,7 +371,7 @@ func (m *PartnerSecurityAlert) GetFirstObservedDateTime()(*i336074805fc853987abe
     }
     return nil
 }
-// GetIsTest gets the isTest property value. Indicates whehter an alert is a test alert.
+// GetIsTest gets the isTest property value. Indicates whether an alert is a test alert.
 // returns a *bool when successful
 func (m *PartnerSecurityAlert) GetIsTest()(*bool) {
     val, err := m.GetBackingStore().Get("isTest")
@@ -630,7 +630,7 @@ func (m *PartnerSecurityAlert) SetActivityLogs(value []ActivityLogable)() {
         panic(err)
     }
 }
-// SetAdditionalDetails sets the additionalDetails property value. A bag of name-value pairs that contain additional details about an alert.
+// SetAdditionalDetails sets the additionalDetails property value. A bag of name-value pairs that contain more details about an alert.
 func (m *PartnerSecurityAlert) SetAdditionalDetails(value AdditionalDataDictionaryable)() {
     err := m.GetBackingStore().Set("additionalDetails", value)
     if err != nil {
@@ -644,7 +644,7 @@ func (m *PartnerSecurityAlert) SetAffectedResources(value []AffectedResourceable
         panic(err)
     }
 }
-// SetAlertType sets the alertType property value. The type of vulnerability that impacts the customer due to this alert.
+// SetAlertType sets the alertType property value. The type of vulnerability that impacts the customer due to this alert. For more information, see Security alerts reference guide.
 func (m *PartnerSecurityAlert) SetAlertType(value *string)() {
     err := m.GetBackingStore().Set("alertType", value)
     if err != nil {
@@ -693,14 +693,14 @@ func (m *PartnerSecurityAlert) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetFirstObservedDateTime sets the firstObservedDateTime property value. Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  subscription.
+// SetFirstObservedDateTime sets the firstObservedDateTime property value. Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *PartnerSecurityAlert) SetFirstObservedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstObservedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsTest sets the isTest property value. Indicates whehter an alert is a test alert.
+// SetIsTest sets the isTest property value. Indicates whether an alert is a test alert.
 func (m *PartnerSecurityAlert) SetIsTest(value *bool)() {
     err := m.GetBackingStore().Set("isTest", value)
     if err != nil {

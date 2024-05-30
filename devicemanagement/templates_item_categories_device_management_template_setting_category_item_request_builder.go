@@ -111,14 +111,14 @@ func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateSettingCategoryable), nil
 }
 // RecommendedSettings provides operations to manage the recommendedSettings property of the microsoft.graph.deviceManagementTemplateSettingCategory entity.
-// returns a *TemplatesItemCategoriesItemRecommendedSettingsRequestBuilder when successful
-func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) RecommendedSettings()(*TemplatesItemCategoriesItemRecommendedSettingsRequestBuilder) {
-    return NewTemplatesItemCategoriesItemRecommendedSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TemplatesItemCategoriesItemRecommendedsettingsRecommendedSettingsRequestBuilder when successful
+func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) RecommendedSettings()(*TemplatesItemCategoriesItemRecommendedsettingsRecommendedSettingsRequestBuilder) {
+    return NewTemplatesItemCategoriesItemRecommendedsettingsRecommendedSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SettingDefinitions provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
-// returns a *TemplatesItemCategoriesItemSettingDefinitionsRequestBuilder when successful
-func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) SettingDefinitions()(*TemplatesItemCategoriesItemSettingDefinitionsRequestBuilder) {
-    return NewTemplatesItemCategoriesItemSettingDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TemplatesItemCategoriesItemSettingdefinitionsSettingDefinitionsRequestBuilder when successful
+func (m *TemplatesItemCategoriesDeviceManagementTemplateSettingCategoryItemRequestBuilder) SettingDefinitions()(*TemplatesItemCategoriesItemSettingdefinitionsSettingDefinitionsRequestBuilder) {
+    return NewTemplatesItemCategoriesItemSettingdefinitionsSettingDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 // returns a *RequestInformation when successful

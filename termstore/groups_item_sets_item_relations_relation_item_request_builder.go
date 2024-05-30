@@ -71,9 +71,9 @@ func (m *GroupsItemSetsItemRelationsRelationItemRequestBuilder) Delete(ctx conte
     return nil
 }
 // FromTerm provides operations to manage the fromTerm property of the microsoft.graph.termStore.relation entity.
-// returns a *GroupsItemSetsItemRelationsItemFromTermRequestBuilder when successful
-func (m *GroupsItemSetsItemRelationsRelationItemRequestBuilder) FromTerm()(*GroupsItemSetsItemRelationsItemFromTermRequestBuilder) {
-    return NewGroupsItemSetsItemRelationsItemFromTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GroupsItemSetsItemRelationsItemFromtermFromTermRequestBuilder when successful
+func (m *GroupsItemSetsItemRelationsRelationItemRequestBuilder) FromTerm()(*GroupsItemSetsItemRelationsItemFromtermFromTermRequestBuilder) {
+    return NewGroupsItemSetsItemRelationsItemFromtermFromTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get indicates which terms have been pinned or reused directly under the set.
 // returns a Relationable when successful
@@ -161,9 +161,9 @@ func (m *GroupsItemSetsItemRelationsRelationItemRequestBuilder) ToPatchRequestIn
     return requestInfo, nil
 }
 // ToTerm provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.
-// returns a *GroupsItemSetsItemRelationsItemToTermRequestBuilder when successful
-func (m *GroupsItemSetsItemRelationsRelationItemRequestBuilder) ToTerm()(*GroupsItemSetsItemRelationsItemToTermRequestBuilder) {
-    return NewGroupsItemSetsItemRelationsItemToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GroupsItemSetsItemRelationsItemTotermToTermRequestBuilder when successful
+func (m *GroupsItemSetsItemRelationsRelationItemRequestBuilder) ToTerm()(*GroupsItemSetsItemRelationsItemTotermToTermRequestBuilder) {
+    return NewGroupsItemSetsItemRelationsItemTotermToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *GroupsItemSetsItemRelationsRelationItemRequestBuilder when successful

@@ -100,9 +100,9 @@ func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteCollectionResponseable), nil
 }
 // GetAllSites provides operations to call the getAllSites method.
-// returns a *ItemSitesGetAllSitesRequestBuilder when successful
-func (m *ItemSitesRequestBuilder) GetAllSites()(*ItemSitesGetAllSitesRequestBuilder) {
-    return NewItemSitesGetAllSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesGetallsitesGetAllSitesRequestBuilder when successful
+func (m *ItemSitesRequestBuilder) GetAllSites()(*ItemSitesGetallsitesGetAllSitesRequestBuilder) {
+    return NewItemSitesGetallsitesGetAllSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Remove provides operations to call the remove method.
 // returns a *ItemSitesRemoveRequestBuilder when successful

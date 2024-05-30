@@ -61,14 +61,14 @@ func (m *CommunitiesItemOwnersUserItemRequestBuilder) Get(ctx context.Context, r
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable), nil
 }
 // MailboxSettings the mailboxSettings property
-// returns a *CommunitiesItemOwnersItemMailboxSettingsRequestBuilder when successful
-func (m *CommunitiesItemOwnersUserItemRequestBuilder) MailboxSettings()(*CommunitiesItemOwnersItemMailboxSettingsRequestBuilder) {
-    return NewCommunitiesItemOwnersItemMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CommunitiesItemOwnersItemMailboxsettingsMailboxSettingsRequestBuilder when successful
+func (m *CommunitiesItemOwnersUserItemRequestBuilder) MailboxSettings()(*CommunitiesItemOwnersItemMailboxsettingsMailboxSettingsRequestBuilder) {
+    return NewCommunitiesItemOwnersItemMailboxsettingsMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *CommunitiesItemOwnersItemServiceProvisioningErrorsRequestBuilder when successful
-func (m *CommunitiesItemOwnersUserItemRequestBuilder) ServiceProvisioningErrors()(*CommunitiesItemOwnersItemServiceProvisioningErrorsRequestBuilder) {
-    return NewCommunitiesItemOwnersItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CommunitiesItemOwnersItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
+func (m *CommunitiesItemOwnersUserItemRequestBuilder) ServiceProvisioningErrors()(*CommunitiesItemOwnersItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
+    return NewCommunitiesItemOwnersItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the admins of the community. Limited to 100 users. If this property isn't specified when you create the community, the calling user is automatically assigned as the community owner.
 // returns a *RequestInformation when successful

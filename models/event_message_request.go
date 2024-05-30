@@ -99,7 +99,7 @@ func (m *EventMessageRequest) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetMeetingRequestType gets the meetingRequestType property value. The meetingRequestType property
+// GetMeetingRequestType gets the meetingRequestType property value. The type of meeting request. Possible values are: none, newMeetingRequest, fullUpdate, informationalUpdate, silentUpdate, outdated, and principalWantsCopy.
 // returns a *MeetingRequestType when successful
 func (m *EventMessageRequest) GetMeetingRequestType()(*MeetingRequestType) {
     val, err := m.GetBackingStore().Get("meetingRequestType")
@@ -211,7 +211,7 @@ func (m *EventMessageRequest) SetAllowNewTimeProposals(value *bool)() {
         panic(err)
     }
 }
-// SetMeetingRequestType sets the meetingRequestType property value. The meetingRequestType property
+// SetMeetingRequestType sets the meetingRequestType property value. The type of meeting request. Possible values are: none, newMeetingRequest, fullUpdate, informationalUpdate, silentUpdate, outdated, and principalWantsCopy.
 func (m *EventMessageRequest) SetMeetingRequestType(value *MeetingRequestType)() {
     err := m.GetBackingStore().Set("meetingRequestType", value)
     if err != nil {

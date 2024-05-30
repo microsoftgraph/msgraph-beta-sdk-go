@@ -45,14 +45,14 @@ func (m *SecurityRequestBuilder) Alerts_v2()(*Alerts_v2RequestBuilder) {
     return NewAlerts_v2RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AttackSimulation provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
-// returns a *AttackSimulationRequestBuilder when successful
-func (m *SecurityRequestBuilder) AttackSimulation()(*AttackSimulationRequestBuilder) {
-    return NewAttackSimulationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AttacksimulationAttackSimulationRequestBuilder when successful
+func (m *SecurityRequestBuilder) AttackSimulation()(*AttacksimulationAttackSimulationRequestBuilder) {
+    return NewAttacksimulationAttackSimulationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuditLog provides operations to manage the auditLog property of the microsoft.graph.security entity.
-// returns a *AuditLogRequestBuilder when successful
-func (m *SecurityRequestBuilder) AuditLog()(*AuditLogRequestBuilder) {
-    return NewAuditLogRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AuditlogAuditLogRequestBuilder when successful
+func (m *SecurityRequestBuilder) AuditLog()(*AuditlogAuditLogRequestBuilder) {
+    return NewAuditlogAuditLogRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Cases provides operations to manage the cases property of the microsoft.graph.security entity.
 // returns a *CasesRequestBuilder when successful
@@ -60,9 +60,9 @@ func (m *SecurityRequestBuilder) Cases()(*CasesRequestBuilder) {
     return NewCasesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CloudAppSecurityProfiles provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.
-// returns a *CloudAppSecurityProfilesRequestBuilder when successful
-func (m *SecurityRequestBuilder) CloudAppSecurityProfiles()(*CloudAppSecurityProfilesRequestBuilder) {
-    return NewCloudAppSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CloudappsecurityprofilesCloudAppSecurityProfilesRequestBuilder when successful
+func (m *SecurityRequestBuilder) CloudAppSecurityProfiles()(*CloudappsecurityprofilesCloudAppSecurityProfilesRequestBuilder) {
+    return NewCloudappsecurityprofilesCloudAppSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Collaboration provides operations to manage the collaboration property of the microsoft.graph.security entity.
 // returns a *CollaborationRequestBuilder when successful
@@ -83,14 +83,14 @@ func NewSecurityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewSecurityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DomainSecurityProfiles provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
-// returns a *DomainSecurityProfilesRequestBuilder when successful
-func (m *SecurityRequestBuilder) DomainSecurityProfiles()(*DomainSecurityProfilesRequestBuilder) {
-    return NewDomainSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DomainsecurityprofilesDomainSecurityProfilesRequestBuilder when successful
+func (m *SecurityRequestBuilder) DomainSecurityProfiles()(*DomainsecurityprofilesDomainSecurityProfilesRequestBuilder) {
+    return NewDomainsecurityprofilesDomainSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FileSecurityProfiles provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.
-// returns a *FileSecurityProfilesRequestBuilder when successful
-func (m *SecurityRequestBuilder) FileSecurityProfiles()(*FileSecurityProfilesRequestBuilder) {
-    return NewFileSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *FilesecurityprofilesFileSecurityProfilesRequestBuilder when successful
+func (m *SecurityRequestBuilder) FileSecurityProfiles()(*FilesecurityprofilesFileSecurityProfilesRequestBuilder) {
+    return NewFilesecurityprofilesFileSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get security
 // returns a Securityable when successful
@@ -113,9 +113,9 @@ func (m *SecurityRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable), nil
 }
 // HostSecurityProfiles provides operations to manage the hostSecurityProfiles property of the microsoft.graph.security entity.
-// returns a *HostSecurityProfilesRequestBuilder when successful
-func (m *SecurityRequestBuilder) HostSecurityProfiles()(*HostSecurityProfilesRequestBuilder) {
-    return NewHostSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *HostsecurityprofilesHostSecurityProfilesRequestBuilder when successful
+func (m *SecurityRequestBuilder) HostSecurityProfiles()(*HostsecurityprofilesHostSecurityProfilesRequestBuilder) {
+    return NewHostsecurityprofilesHostSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Identities provides operations to manage the identities property of the microsoft.graph.security entity.
 // returns a *IdentitiesRequestBuilder when successful
@@ -128,14 +128,14 @@ func (m *SecurityRequestBuilder) Incidents()(*IncidentsRequestBuilder) {
     return NewIncidentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // InformationProtection provides operations to manage the informationProtection property of the microsoft.graph.security entity.
-// returns a *InformationProtectionRequestBuilder when successful
-func (m *SecurityRequestBuilder) InformationProtection()(*InformationProtectionRequestBuilder) {
-    return NewInformationProtectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *InformationprotectionInformationProtectionRequestBuilder when successful
+func (m *SecurityRequestBuilder) InformationProtection()(*InformationprotectionInformationProtectionRequestBuilder) {
+    return NewInformationprotectionInformationProtectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // IpSecurityProfiles provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.
-// returns a *IpSecurityProfilesRequestBuilder when successful
-func (m *SecurityRequestBuilder) IpSecurityProfiles()(*IpSecurityProfilesRequestBuilder) {
-    return NewIpSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IpsecurityprofilesIpSecurityProfilesRequestBuilder when successful
+func (m *SecurityRequestBuilder) IpSecurityProfiles()(*IpsecurityprofilesIpSecurityProfilesRequestBuilder) {
+    return NewIpsecurityprofilesIpSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Labels provides operations to manage the labels property of the microsoft.graph.security entity.
 // returns a *LabelsRequestBuilder when successful
@@ -143,9 +143,9 @@ func (m *SecurityRequestBuilder) Labels()(*LabelsRequestBuilder) {
     return NewLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphSecurityRunHuntingQuery provides operations to call the runHuntingQuery method.
-// returns a *MicrosoftGraphSecurityRunHuntingQueryRequestBuilder when successful
-func (m *SecurityRequestBuilder) MicrosoftGraphSecurityRunHuntingQuery()(*MicrosoftGraphSecurityRunHuntingQueryRequestBuilder) {
-    return NewMicrosoftGraphSecurityRunHuntingQueryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MicrosoftgraphsecurityrunhuntingqueryMicrosoftGraphSecurityRunHuntingQueryRequestBuilder when successful
+func (m *SecurityRequestBuilder) MicrosoftGraphSecurityRunHuntingQuery()(*MicrosoftgraphsecurityrunhuntingqueryMicrosoftGraphSecurityRunHuntingQueryRequestBuilder) {
+    return NewMicrosoftgraphsecurityrunhuntingqueryMicrosoftGraphSecurityRunHuntingQueryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Partner provides operations to manage the partner property of the microsoft.graph.security entity.
 // returns a *PartnerRequestBuilder when successful
@@ -173,9 +173,9 @@ func (m *SecurityRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Securityable), nil
 }
 // ProviderTenantSettings provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.
-// returns a *ProviderTenantSettingsRequestBuilder when successful
-func (m *SecurityRequestBuilder) ProviderTenantSettings()(*ProviderTenantSettingsRequestBuilder) {
-    return NewProviderTenantSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ProvidertenantsettingsProviderTenantSettingsRequestBuilder when successful
+func (m *SecurityRequestBuilder) ProviderTenantSettings()(*ProvidertenantsettingsProviderTenantSettingsRequestBuilder) {
+    return NewProvidertenantsettingsProviderTenantSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Rules provides operations to manage the rules property of the microsoft.graph.security entity.
 // returns a *RulesRequestBuilder when successful
@@ -183,39 +183,39 @@ func (m *SecurityRequestBuilder) Rules()(*RulesRequestBuilder) {
     return NewRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SecureScoreControlProfiles provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
-// returns a *SecureScoreControlProfilesRequestBuilder when successful
-func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*SecureScoreControlProfilesRequestBuilder) {
-    return NewSecureScoreControlProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SecurescorecontrolprofilesSecureScoreControlProfilesRequestBuilder when successful
+func (m *SecurityRequestBuilder) SecureScoreControlProfiles()(*SecurescorecontrolprofilesSecureScoreControlProfilesRequestBuilder) {
+    return NewSecurescorecontrolprofilesSecureScoreControlProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SecureScores provides operations to manage the secureScores property of the microsoft.graph.security entity.
-// returns a *SecureScoresRequestBuilder when successful
-func (m *SecurityRequestBuilder) SecureScores()(*SecureScoresRequestBuilder) {
-    return NewSecureScoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SecurescoresSecureScoresRequestBuilder when successful
+func (m *SecurityRequestBuilder) SecureScores()(*SecurescoresSecureScoresRequestBuilder) {
+    return NewSecurescoresSecureScoresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SecurityActions provides operations to manage the securityActions property of the microsoft.graph.security entity.
-// returns a *SecurityActionsRequestBuilder when successful
-func (m *SecurityRequestBuilder) SecurityActions()(*SecurityActionsRequestBuilder) {
-    return NewSecurityActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SecurityactionsSecurityActionsRequestBuilder when successful
+func (m *SecurityRequestBuilder) SecurityActions()(*SecurityactionsSecurityActionsRequestBuilder) {
+    return NewSecurityactionsSecurityActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
-// returns a *SubjectRightsRequestsRequestBuilder when successful
-func (m *SecurityRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {
-    return NewSubjectRightsRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SubjectrightsrequestsSubjectRightsRequestsRequestBuilder when successful
+func (m *SecurityRequestBuilder) SubjectRightsRequests()(*SubjectrightsrequestsSubjectRightsRequestsRequestBuilder) {
+    return NewSubjectrightsrequestsSubjectRightsRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ThreatIntelligence provides operations to manage the threatIntelligence property of the microsoft.graph.security entity.
-// returns a *ThreatIntelligenceRequestBuilder when successful
-func (m *SecurityRequestBuilder) ThreatIntelligence()(*ThreatIntelligenceRequestBuilder) {
-    return NewThreatIntelligenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ThreatintelligenceThreatIntelligenceRequestBuilder when successful
+func (m *SecurityRequestBuilder) ThreatIntelligence()(*ThreatintelligenceThreatIntelligenceRequestBuilder) {
+    return NewThreatintelligenceThreatIntelligenceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ThreatSubmission provides operations to manage the threatSubmission property of the microsoft.graph.security entity.
-// returns a *ThreatSubmissionRequestBuilder when successful
-func (m *SecurityRequestBuilder) ThreatSubmission()(*ThreatSubmissionRequestBuilder) {
-    return NewThreatSubmissionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ThreatsubmissionThreatSubmissionRequestBuilder when successful
+func (m *SecurityRequestBuilder) ThreatSubmission()(*ThreatsubmissionThreatSubmissionRequestBuilder) {
+    return NewThreatsubmissionThreatSubmissionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TiIndicators provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
-// returns a *TiIndicatorsRequestBuilder when successful
-func (m *SecurityRequestBuilder) TiIndicators()(*TiIndicatorsRequestBuilder) {
-    return NewTiIndicatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TiindicatorsTiIndicatorsRequestBuilder when successful
+func (m *SecurityRequestBuilder) TiIndicators()(*TiindicatorsTiIndicatorsRequestBuilder) {
+    return NewTiindicatorsTiIndicatorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get security
 // returns a *RequestInformation when successful
@@ -252,14 +252,14 @@ func (m *SecurityRequestBuilder) Triggers()(*TriggersRequestBuilder) {
     return NewTriggersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TriggerTypes provides operations to manage the triggerTypes property of the microsoft.graph.security entity.
-// returns a *TriggerTypesRequestBuilder when successful
-func (m *SecurityRequestBuilder) TriggerTypes()(*TriggerTypesRequestBuilder) {
-    return NewTriggerTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TriggertypesTriggerTypesRequestBuilder when successful
+func (m *SecurityRequestBuilder) TriggerTypes()(*TriggertypesTriggerTypesRequestBuilder) {
+    return NewTriggertypesTriggerTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserSecurityProfiles provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.
-// returns a *UserSecurityProfilesRequestBuilder when successful
-func (m *SecurityRequestBuilder) UserSecurityProfiles()(*UserSecurityProfilesRequestBuilder) {
-    return NewUserSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UsersecurityprofilesUserSecurityProfilesRequestBuilder when successful
+func (m *SecurityRequestBuilder) UserSecurityProfiles()(*UsersecurityprofilesUserSecurityProfilesRequestBuilder) {
+    return NewUsersecurityprofilesUserSecurityProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *SecurityRequestBuilder when successful

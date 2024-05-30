@@ -78,24 +78,24 @@ func (m *PolicyLabelsRequestBuilder) Count()(*PolicyLabelsCountRequestBuilder) {
     return NewPolicyLabelsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EvaluateApplication provides operations to call the evaluateApplication method.
-// returns a *PolicyLabelsEvaluateApplicationRequestBuilder when successful
-func (m *PolicyLabelsRequestBuilder) EvaluateApplication()(*PolicyLabelsEvaluateApplicationRequestBuilder) {
-    return NewPolicyLabelsEvaluateApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PolicyLabelsEvaluateapplicationEvaluateApplicationRequestBuilder when successful
+func (m *PolicyLabelsRequestBuilder) EvaluateApplication()(*PolicyLabelsEvaluateapplicationEvaluateApplicationRequestBuilder) {
+    return NewPolicyLabelsEvaluateapplicationEvaluateApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EvaluateClassificationResults provides operations to call the evaluateClassificationResults method.
-// returns a *PolicyLabelsEvaluateClassificationResultsRequestBuilder when successful
-func (m *PolicyLabelsRequestBuilder) EvaluateClassificationResults()(*PolicyLabelsEvaluateClassificationResultsRequestBuilder) {
-    return NewPolicyLabelsEvaluateClassificationResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PolicyLabelsEvaluateclassificationresultsEvaluateClassificationResultsRequestBuilder when successful
+func (m *PolicyLabelsRequestBuilder) EvaluateClassificationResults()(*PolicyLabelsEvaluateclassificationresultsEvaluateClassificationResultsRequestBuilder) {
+    return NewPolicyLabelsEvaluateclassificationresultsEvaluateClassificationResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EvaluateRemoval provides operations to call the evaluateRemoval method.
-// returns a *PolicyLabelsEvaluateRemovalRequestBuilder when successful
-func (m *PolicyLabelsRequestBuilder) EvaluateRemoval()(*PolicyLabelsEvaluateRemovalRequestBuilder) {
-    return NewPolicyLabelsEvaluateRemovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PolicyLabelsEvaluateremovalEvaluateRemovalRequestBuilder when successful
+func (m *PolicyLabelsRequestBuilder) EvaluateRemoval()(*PolicyLabelsEvaluateremovalEvaluateRemovalRequestBuilder) {
+    return NewPolicyLabelsEvaluateremovalEvaluateRemovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExtractLabel provides operations to call the extractLabel method.
-// returns a *PolicyLabelsExtractLabelRequestBuilder when successful
-func (m *PolicyLabelsRequestBuilder) ExtractLabel()(*PolicyLabelsExtractLabelRequestBuilder) {
-    return NewPolicyLabelsExtractLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PolicyLabelsExtractlabelExtractLabelRequestBuilder when successful
+func (m *PolicyLabelsRequestBuilder) ExtractLabel()(*PolicyLabelsExtractlabelExtractLabelRequestBuilder) {
+    return NewPolicyLabelsExtractlabelExtractLabelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get labels from informationProtection
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels

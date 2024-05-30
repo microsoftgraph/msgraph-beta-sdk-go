@@ -42,14 +42,14 @@ type ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration struct 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BusinessFlows provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.
-// returns a *ItemBusinessFlowsRequestBuilder when successful
-func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlows()(*ItemBusinessFlowsRequestBuilder) {
-    return NewItemBusinessFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBusinessflowsBusinessFlowsRequestBuilder when successful
+func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlows()(*ItemBusinessflowsBusinessFlowsRequestBuilder) {
+    return NewItemBusinessflowsBusinessFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BusinessFlowsWithRequestsAwaitingMyDecision provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
-// returns a *ItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder when successful
-func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecision()(*ItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) {
-    return NewItemBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBusinessflowswithrequestsawaitingmydecisionBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder when successful
+func (m *ApprovalWorkflowProviderItemRequestBuilder) BusinessFlowsWithRequestsAwaitingMyDecision()(*ItemBusinessflowswithrequestsawaitingmydecisionBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder) {
+    return NewItemBusinessflowswithrequestsawaitingmydecisionBusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewApprovalWorkflowProviderItemRequestBuilderInternal instantiates a new ApprovalWorkflowProviderItemRequestBuilder and sets the default values.
 func NewApprovalWorkflowProviderItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ApprovalWorkflowProviderItemRequestBuilder) {
@@ -121,9 +121,9 @@ func (m *ApprovalWorkflowProviderItemRequestBuilder) Patch(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ApprovalWorkflowProviderable), nil
 }
 // PolicyTemplates provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.
-// returns a *ItemPolicyTemplatesRequestBuilder when successful
-func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplates()(*ItemPolicyTemplatesRequestBuilder) {
-    return NewItemPolicyTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPolicytemplatesPolicyTemplatesRequestBuilder when successful
+func (m *ApprovalWorkflowProviderItemRequestBuilder) PolicyTemplates()(*ItemPolicytemplatesPolicyTemplatesRequestBuilder) {
+    return NewItemPolicytemplatesPolicyTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from approvalWorkflowProviders
 // returns a *RequestInformation when successful

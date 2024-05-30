@@ -101,9 +101,9 @@ func (m *ItemDevicesDeviceItemRequestBuilder) Get(ctx context.Context, requestCo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
 // MemberOf provides operations to manage the memberOf property of the microsoft.graph.device entity.
-// returns a *ItemDevicesItemMemberOfRequestBuilder when successful
-func (m *ItemDevicesDeviceItemRequestBuilder) MemberOf()(*ItemDevicesItemMemberOfRequestBuilder) {
-    return NewItemDevicesItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDevicesItemMemberofMemberOfRequestBuilder when successful
+func (m *ItemDevicesDeviceItemRequestBuilder) MemberOf()(*ItemDevicesItemMemberofMemberOfRequestBuilder) {
+    return NewItemDevicesItemMemberofMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property devices in users
 // returns a Deviceable when successful
@@ -126,14 +126,14 @@ func (m *ItemDevicesDeviceItemRequestBuilder) Patch(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
 // RegisteredOwners provides operations to manage the registeredOwners property of the microsoft.graph.device entity.
-// returns a *ItemDevicesItemRegisteredOwnersRequestBuilder when successful
-func (m *ItemDevicesDeviceItemRequestBuilder) RegisteredOwners()(*ItemDevicesItemRegisteredOwnersRequestBuilder) {
-    return NewItemDevicesItemRegisteredOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDevicesItemRegisteredownersRegisteredOwnersRequestBuilder when successful
+func (m *ItemDevicesDeviceItemRequestBuilder) RegisteredOwners()(*ItemDevicesItemRegisteredownersRegisteredOwnersRequestBuilder) {
+    return NewItemDevicesItemRegisteredownersRegisteredOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RegisteredUsers provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
-// returns a *ItemDevicesItemRegisteredUsersRequestBuilder when successful
-func (m *ItemDevicesDeviceItemRequestBuilder) RegisteredUsers()(*ItemDevicesItemRegisteredUsersRequestBuilder) {
-    return NewItemDevicesItemRegisteredUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDevicesItemRegisteredusersRegisteredUsersRequestBuilder when successful
+func (m *ItemDevicesDeviceItemRequestBuilder) RegisteredUsers()(*ItemDevicesItemRegisteredusersRegisteredUsersRequestBuilder) {
+    return NewItemDevicesItemRegisteredusersRegisteredUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property devices for users
 // returns a *RequestInformation when successful
@@ -176,14 +176,14 @@ func (m *ItemDevicesDeviceItemRequestBuilder) ToPatchRequestInformation(ctx cont
     return requestInfo, nil
 }
 // TransitiveMemberOf provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
-// returns a *ItemDevicesItemTransitiveMemberOfRequestBuilder when successful
-func (m *ItemDevicesDeviceItemRequestBuilder) TransitiveMemberOf()(*ItemDevicesItemTransitiveMemberOfRequestBuilder) {
-    return NewItemDevicesItemTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDevicesItemTransitivememberofTransitiveMemberOfRequestBuilder when successful
+func (m *ItemDevicesDeviceItemRequestBuilder) TransitiveMemberOf()(*ItemDevicesItemTransitivememberofTransitiveMemberOfRequestBuilder) {
+    return NewItemDevicesItemTransitivememberofTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UsageRights provides operations to manage the usageRights property of the microsoft.graph.device entity.
-// returns a *ItemDevicesItemUsageRightsRequestBuilder when successful
-func (m *ItemDevicesDeviceItemRequestBuilder) UsageRights()(*ItemDevicesItemUsageRightsRequestBuilder) {
-    return NewItemDevicesItemUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDevicesItemUsagerightsUsageRightsRequestBuilder when successful
+func (m *ItemDevicesDeviceItemRequestBuilder) UsageRights()(*ItemDevicesItemUsagerightsUsageRightsRequestBuilder) {
+    return NewItemDevicesItemUsagerightsUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemDevicesDeviceItemRequestBuilder when successful

@@ -335,7 +335,7 @@ func (m *Authentication) GetPlatformCredentialMethods()([]PlatformCredentialAuth
     }
     return nil
 }
-// GetSignInPreferences gets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
+// GetSignInPreferences gets the signInPreferences property value. The settings and preferences for the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
 // returns a SignInPreferencesable when successful
 func (m *Authentication) GetSignInPreferences()(SignInPreferencesable) {
     val, err := m.GetBackingStore().Get("signInPreferences")
@@ -347,7 +347,7 @@ func (m *Authentication) GetSignInPreferences()(SignInPreferencesable) {
     }
     return nil
 }
-// GetSoftwareOathMethods gets the softwareOathMethods property value. The softwareOathMethods property
+// GetSoftwareOathMethods gets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
 // returns a []SoftwareOathAuthenticationMethodable when successful
 func (m *Authentication) GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("softwareOathMethods")
@@ -604,14 +604,14 @@ func (m *Authentication) SetPlatformCredentialMethods(value []PlatformCredential
         panic(err)
     }
 }
-// SetSignInPreferences sets the signInPreferences property value. The settings and preferences for to the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
+// SetSignInPreferences sets the signInPreferences property value. The settings and preferences for the sign-in experience of a user. Use this property to configure the user's default multifactor authentication (MFA) method.
 func (m *Authentication) SetSignInPreferences(value SignInPreferencesable)() {
     err := m.GetBackingStore().Set("signInPreferences", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSoftwareOathMethods sets the softwareOathMethods property value. The softwareOathMethods property
+// SetSoftwareOathMethods sets the softwareOathMethods property value. The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
 func (m *Authentication) SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)() {
     err := m.GetBackingStore().Set("softwareOathMethods", value)
     if err != nil {

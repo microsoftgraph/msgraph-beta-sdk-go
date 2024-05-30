@@ -91,9 +91,9 @@ func (m *MobilityManagementPolicyItemRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable), nil
 }
 // IncludedGroups provides operations to manage the includedGroups property of the microsoft.graph.mobilityManagementPolicy entity.
-// returns a *ItemIncludedGroupsRequestBuilder when successful
-func (m *MobilityManagementPolicyItemRequestBuilder) IncludedGroups()(*ItemIncludedGroupsRequestBuilder) {
-    return NewItemIncludedGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemIncludedgroupsIncludedGroupsRequestBuilder when successful
+func (m *MobilityManagementPolicyItemRequestBuilder) IncludedGroups()(*ItemIncludedgroupsIncludedGroupsRequestBuilder) {
+    return NewItemIncludedgroupsIncludedGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in mobilityManagementPolicies
 // returns a MobilityManagementPolicyable when successful

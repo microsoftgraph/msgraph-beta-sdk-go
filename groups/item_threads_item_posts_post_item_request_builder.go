@@ -86,9 +86,9 @@ func (m *ItemThreadsItemPostsPostItemRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Postable), nil
 }
 // InReplyTo provides operations to manage the inReplyTo property of the microsoft.graph.post entity.
-// returns a *ItemThreadsItemPostsItemInReplyToRequestBuilder when successful
-func (m *ItemThreadsItemPostsPostItemRequestBuilder) InReplyTo()(*ItemThreadsItemPostsItemInReplyToRequestBuilder) {
-    return NewItemThreadsItemPostsItemInReplyToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemThreadsItemPostsItemInreplytoInReplyToRequestBuilder when successful
+func (m *ItemThreadsItemPostsPostItemRequestBuilder) InReplyTo()(*ItemThreadsItemPostsItemInreplytoInReplyToRequestBuilder) {
+    return NewItemThreadsItemPostsItemInreplytoInReplyToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Mentions provides operations to manage the mentions property of the microsoft.graph.post entity.
 // returns a *ItemThreadsItemPostsItemMentionsRequestBuilder when successful

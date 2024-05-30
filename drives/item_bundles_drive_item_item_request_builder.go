@@ -46,9 +46,9 @@ func (m *ItemBundlesDriveItemItemRequestBuilder) Content()(*ItemBundlesItemConte
     return NewItemBundlesItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ContentStream provides operations to manage the media for the drive entity.
-// returns a *ItemBundlesItemContentStreamRequestBuilder when successful
-func (m *ItemBundlesDriveItemItemRequestBuilder) ContentStream()(*ItemBundlesItemContentStreamRequestBuilder) {
-    return NewItemBundlesItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemBundlesItemContentstreamContentStreamRequestBuilder when successful
+func (m *ItemBundlesDriveItemItemRequestBuilder) ContentStream()(*ItemBundlesItemContentstreamContentStreamRequestBuilder) {
+    return NewItemBundlesItemContentstreamContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
 // returns a DriveItemable when successful

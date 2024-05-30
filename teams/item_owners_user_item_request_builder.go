@@ -61,14 +61,14 @@ func (m *ItemOwnersUserItemRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable), nil
 }
 // MailboxSettings the mailboxSettings property
-// returns a *ItemOwnersItemMailboxSettingsRequestBuilder when successful
-func (m *ItemOwnersUserItemRequestBuilder) MailboxSettings()(*ItemOwnersItemMailboxSettingsRequestBuilder) {
-    return NewItemOwnersItemMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOwnersItemMailboxsettingsMailboxSettingsRequestBuilder when successful
+func (m *ItemOwnersUserItemRequestBuilder) MailboxSettings()(*ItemOwnersItemMailboxsettingsMailboxSettingsRequestBuilder) {
+    return NewItemOwnersItemMailboxsettingsMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *ItemOwnersItemServiceProvisioningErrorsRequestBuilder when successful
-func (m *ItemOwnersUserItemRequestBuilder) ServiceProvisioningErrors()(*ItemOwnersItemServiceProvisioningErrorsRequestBuilder) {
-    return NewItemOwnersItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOwnersItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
+func (m *ItemOwnersUserItemRequestBuilder) ServiceProvisioningErrors()(*ItemOwnersItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
+    return NewItemOwnersItemServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
 // returns a *RequestInformation when successful

@@ -42,9 +42,9 @@ type OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AgentGroups provides operations to manage the agentGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
-// returns a *ItemAgentGroupsRequestBuilder when successful
-func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroups()(*ItemAgentGroupsRequestBuilder) {
-    return NewItemAgentGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAgentgroupsAgentGroupsRequestBuilder when successful
+func (m *OnPremisesPublishingProfileItemRequestBuilder) AgentGroups()(*ItemAgentgroupsAgentGroupsRequestBuilder) {
+    return NewItemAgentgroupsAgentGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Agents provides operations to manage the agents property of the microsoft.graph.onPremisesPublishingProfile entity.
 // returns a *ItemAgentsRequestBuilder when successful
@@ -52,14 +52,14 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) Agents()(*ItemAgentsRequ
     return NewItemAgentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ApplicationSegments provides operations to manage the applicationSegments property of the microsoft.graph.onPremisesPublishingProfile entity.
-// returns a *ItemApplicationSegmentsRequestBuilder when successful
-func (m *OnPremisesPublishingProfileItemRequestBuilder) ApplicationSegments()(*ItemApplicationSegmentsRequestBuilder) {
-    return NewItemApplicationSegmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemApplicationsegmentsApplicationSegmentsRequestBuilder when successful
+func (m *OnPremisesPublishingProfileItemRequestBuilder) ApplicationSegments()(*ItemApplicationsegmentsApplicationSegmentsRequestBuilder) {
+    return NewItemApplicationsegmentsApplicationSegmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConnectorGroups provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.
-// returns a *ItemConnectorGroupsRequestBuilder when successful
-func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroups()(*ItemConnectorGroupsRequestBuilder) {
-    return NewItemConnectorGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemConnectorgroupsConnectorGroupsRequestBuilder when successful
+func (m *OnPremisesPublishingProfileItemRequestBuilder) ConnectorGroups()(*ItemConnectorgroupsConnectorGroupsRequestBuilder) {
+    return NewItemConnectorgroupsConnectorGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Connectors provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.
 // returns a *ItemConnectorsRequestBuilder when successful
@@ -136,9 +136,9 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) Patch(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnPremisesPublishingProfileable), nil
 }
 // PublishedResources provides operations to manage the publishedResources property of the microsoft.graph.onPremisesPublishingProfile entity.
-// returns a *ItemPublishedResourcesRequestBuilder when successful
-func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResources()(*ItemPublishedResourcesRequestBuilder) {
-    return NewItemPublishedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPublishedresourcesPublishedResourcesRequestBuilder when successful
+func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResources()(*ItemPublishedresourcesPublishedResourcesRequestBuilder) {
+    return NewItemPublishedresourcesPublishedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from onPremisesPublishingProfiles
 // returns a *RequestInformation when successful

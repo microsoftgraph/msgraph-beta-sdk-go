@@ -42,14 +42,14 @@ type TasksPlannerTaskItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AssignedToTaskBoardFormat provides operations to manage the assignedToTaskBoardFormat property of the microsoft.graph.plannerTask entity.
-// returns a *TasksItemAssignedToTaskBoardFormatRequestBuilder when successful
-func (m *TasksPlannerTaskItemRequestBuilder) AssignedToTaskBoardFormat()(*TasksItemAssignedToTaskBoardFormatRequestBuilder) {
-    return NewTasksItemAssignedToTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TasksItemAssignedtotaskboardformatAssignedToTaskBoardFormatRequestBuilder when successful
+func (m *TasksPlannerTaskItemRequestBuilder) AssignedToTaskBoardFormat()(*TasksItemAssignedtotaskboardformatAssignedToTaskBoardFormatRequestBuilder) {
+    return NewTasksItemAssignedtotaskboardformatAssignedToTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BucketTaskBoardFormat provides operations to manage the bucketTaskBoardFormat property of the microsoft.graph.plannerTask entity.
-// returns a *TasksItemBucketTaskBoardFormatRequestBuilder when successful
-func (m *TasksPlannerTaskItemRequestBuilder) BucketTaskBoardFormat()(*TasksItemBucketTaskBoardFormatRequestBuilder) {
-    return NewTasksItemBucketTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TasksItemBuckettaskboardformatBucketTaskBoardFormatRequestBuilder when successful
+func (m *TasksPlannerTaskItemRequestBuilder) BucketTaskBoardFormat()(*TasksItemBuckettaskboardformatBucketTaskBoardFormatRequestBuilder) {
+    return NewTasksItemBuckettaskboardformatBucketTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewTasksPlannerTaskItemRequestBuilderInternal instantiates a new TasksPlannerTaskItemRequestBuilder and sets the default values.
 func NewTasksPlannerTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TasksPlannerTaskItemRequestBuilder) {
@@ -135,9 +135,9 @@ func (m *TasksPlannerTaskItemRequestBuilder) Patch(ctx context.Context, body ie2
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskable), nil
 }
 // ProgressTaskBoardFormat provides operations to manage the progressTaskBoardFormat property of the microsoft.graph.plannerTask entity.
-// returns a *TasksItemProgressTaskBoardFormatRequestBuilder when successful
-func (m *TasksPlannerTaskItemRequestBuilder) ProgressTaskBoardFormat()(*TasksItemProgressTaskBoardFormatRequestBuilder) {
-    return NewTasksItemProgressTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TasksItemProgresstaskboardformatProgressTaskBoardFormatRequestBuilder when successful
+func (m *TasksPlannerTaskItemRequestBuilder) ProgressTaskBoardFormat()(*TasksItemProgresstaskboardformatProgressTaskBoardFormatRequestBuilder) {
+    return NewTasksItemProgresstaskboardformatProgressTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a plannerTask object.
 // returns a *RequestInformation when successful

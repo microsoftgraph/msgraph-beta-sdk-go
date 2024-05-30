@@ -35,9 +35,9 @@ type AdminRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AppsAndServices provides operations to manage the appsAndServices property of the microsoft.graph.admin entity.
-// returns a *AppsAndServicesRequestBuilder when successful
-func (m *AdminRequestBuilder) AppsAndServices()(*AppsAndServicesRequestBuilder) {
-    return NewAppsAndServicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AppsandservicesAppsAndServicesRequestBuilder when successful
+func (m *AdminRequestBuilder) AppsAndServices()(*AppsandservicesAppsAndServicesRequestBuilder) {
+    return NewAppsandservicesAppsAndServicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewAdminRequestBuilderInternal instantiates a new AdminRequestBuilder and sets the default values.
 func NewAdminRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdminRequestBuilder) {
@@ -88,9 +88,9 @@ func (m *AdminRequestBuilder) Get(ctx context.Context, requestConfiguration *Adm
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Adminable), nil
 }
 // Microsoft365Apps provides operations to manage the microsoft365Apps property of the microsoft.graph.admin entity.
-// returns a *Microsoft365AppsRequestBuilder when successful
-func (m *AdminRequestBuilder) Microsoft365Apps()(*Microsoft365AppsRequestBuilder) {
-    return NewMicrosoft365AppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *Microsoft365appsMicrosoft365AppsRequestBuilder when successful
+func (m *AdminRequestBuilder) Microsoft365Apps()(*Microsoft365appsMicrosoft365AppsRequestBuilder) {
+    return NewMicrosoft365appsMicrosoft365AppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update admin
 // returns a Adminable when successful
@@ -118,14 +118,14 @@ func (m *AdminRequestBuilder) People()(*PeopleRequestBuilder) {
     return NewPeopleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ReportSettings provides operations to manage the reportSettings property of the microsoft.graph.admin entity.
-// returns a *ReportSettingsRequestBuilder when successful
-func (m *AdminRequestBuilder) ReportSettings()(*ReportSettingsRequestBuilder) {
-    return NewReportSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ReportsettingsReportSettingsRequestBuilder when successful
+func (m *AdminRequestBuilder) ReportSettings()(*ReportsettingsReportSettingsRequestBuilder) {
+    return NewReportsettingsReportSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceAnnouncement provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
-// returns a *ServiceAnnouncementRequestBuilder when successful
-func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceAnnouncementRequestBuilder) {
-    return NewServiceAnnouncementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ServiceannouncementServiceAnnouncementRequestBuilder when successful
+func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceannouncementServiceAnnouncementRequestBuilder) {
+    return NewServiceannouncementServiceAnnouncementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Sharepoint provides operations to manage the sharepoint property of the microsoft.graph.admin entity.
 // returns a *SharepointRequestBuilder when successful

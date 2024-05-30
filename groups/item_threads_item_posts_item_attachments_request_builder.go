@@ -75,9 +75,9 @@ func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) Count()(*ItemThreads
     return NewItemThreadsItemPostsItemAttachmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreateUploadSession provides operations to call the createUploadSession method.
-// returns a *ItemThreadsItemPostsItemAttachmentsCreateUploadSessionRequestBuilder when successful
-func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemThreadsItemPostsItemAttachmentsCreateUploadSessionRequestBuilder) {
-    return NewItemThreadsItemPostsItemAttachmentsCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemThreadsItemPostsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder when successful
+func (m *ItemThreadsItemPostsItemAttachmentsRequestBuilder) CreateUploadSession()(*ItemThreadsItemPostsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilder) {
+    return NewItemThreadsItemPostsItemAttachmentsCreateuploadsessionCreateUploadSessionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.
 // returns a AttachmentCollectionResponseable when successful

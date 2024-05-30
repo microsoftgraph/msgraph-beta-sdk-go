@@ -104,7 +104,7 @@ func (m *AccessPackageAssignment) GetAssignmentState()(*string) {
     }
     return nil
 }
-// GetAssignmentStatus gets the assignmentStatus property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+// GetAssignmentStatus gets the assignmentStatus property value. More information about the assignment lifecycle. Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered. Read-only.
 // returns a *string when successful
 func (m *AccessPackageAssignment) GetAssignmentStatus()(*string) {
     val, err := m.GetBackingStore().Get("assignmentStatus")
@@ -539,7 +539,7 @@ func (m *AccessPackageAssignment) SetAssignmentState(value *string)() {
         panic(err)
     }
 }
-// SetAssignmentStatus sets the assignmentStatus property value. More information about the assignment lifecycle.  Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered.  Read-only.
+// SetAssignmentStatus sets the assignmentStatus property value. More information about the assignment lifecycle. Possible values include Delivering, Delivered, NearExpiry1DayNotificationTriggered, or ExpiredNotificationTriggered. Read-only.
 func (m *AccessPackageAssignment) SetAssignmentStatus(value *string)() {
     err := m.GetBackingStore().Set("assignmentStatus", value)
     if err != nil {

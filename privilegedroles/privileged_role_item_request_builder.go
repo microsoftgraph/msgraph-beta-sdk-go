@@ -116,14 +116,14 @@ func (m *PrivilegedRoleItemRequestBuilder) Patch(ctx context.Context, body ie233
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleable), nil
 }
 // SelfActivate provides operations to call the selfActivate method.
-// returns a *ItemSelfActivateRequestBuilder when successful
-func (m *PrivilegedRoleItemRequestBuilder) SelfActivate()(*ItemSelfActivateRequestBuilder) {
-    return NewItemSelfActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSelfactivateSelfActivateRequestBuilder when successful
+func (m *PrivilegedRoleItemRequestBuilder) SelfActivate()(*ItemSelfactivateSelfActivateRequestBuilder) {
+    return NewItemSelfactivateSelfActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SelfDeactivate provides operations to call the selfDeactivate method.
-// returns a *ItemSelfDeactivateRequestBuilder when successful
-func (m *PrivilegedRoleItemRequestBuilder) SelfDeactivate()(*ItemSelfDeactivateRequestBuilder) {
-    return NewItemSelfDeactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSelfdeactivateSelfDeactivateRequestBuilder when successful
+func (m *PrivilegedRoleItemRequestBuilder) SelfDeactivate()(*ItemSelfdeactivateSelfDeactivateRequestBuilder) {
+    return NewItemSelfdeactivateSelfDeactivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Settings provides operations to manage the settings property of the microsoft.graph.privilegedRole entity.
 // returns a *ItemSettingsRequestBuilder when successful

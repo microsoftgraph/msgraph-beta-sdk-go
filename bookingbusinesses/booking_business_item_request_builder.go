@@ -47,9 +47,9 @@ func (m *BookingBusinessItemRequestBuilder) Appointments()(*ItemAppointmentsRequ
     return NewItemAppointmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CalendarView provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
-// returns a *ItemCalendarViewRequestBuilder when successful
-func (m *BookingBusinessItemRequestBuilder) CalendarView()(*ItemCalendarViewRequestBuilder) {
-    return NewItemCalendarViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarviewCalendarViewRequestBuilder when successful
+func (m *BookingBusinessItemRequestBuilder) CalendarView()(*ItemCalendarviewCalendarViewRequestBuilder) {
+    return NewItemCalendarviewCalendarViewRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewBookingBusinessItemRequestBuilderInternal instantiates a new BookingBusinessItemRequestBuilder and sets the default values.
 func NewBookingBusinessItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*BookingBusinessItemRequestBuilder) {
@@ -70,9 +70,9 @@ func (m *BookingBusinessItemRequestBuilder) Customers()(*ItemCustomersRequestBui
     return NewItemCustomersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CustomQuestions provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
-// returns a *ItemCustomQuestionsRequestBuilder when successful
-func (m *BookingBusinessItemRequestBuilder) CustomQuestions()(*ItemCustomQuestionsRequestBuilder) {
-    return NewItemCustomQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCustomquestionsCustomQuestionsRequestBuilder when successful
+func (m *BookingBusinessItemRequestBuilder) CustomQuestions()(*ItemCustomquestionsCustomQuestionsRequestBuilder) {
+    return NewItemCustomquestionsCustomQuestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete entity from bookingBusinesses
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -111,9 +111,9 @@ func (m *BookingBusinessItemRequestBuilder) Get(ctx context.Context, requestConf
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BookingBusinessable), nil
 }
 // GetStaffAvailability provides operations to call the getStaffAvailability method.
-// returns a *ItemGetStaffAvailabilityRequestBuilder when successful
-func (m *BookingBusinessItemRequestBuilder) GetStaffAvailability()(*ItemGetStaffAvailabilityRequestBuilder) {
-    return NewItemGetStaffAvailabilityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetstaffavailabilityGetStaffAvailabilityRequestBuilder when successful
+func (m *BookingBusinessItemRequestBuilder) GetStaffAvailability()(*ItemGetstaffavailabilityGetStaffAvailabilityRequestBuilder) {
+    return NewItemGetstaffavailabilityGetStaffAvailabilityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in bookingBusinesses
 // returns a BookingBusinessable when successful
@@ -146,9 +146,9 @@ func (m *BookingBusinessItemRequestBuilder) Services()(*ItemServicesRequestBuild
     return NewItemServicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // StaffMembers provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
-// returns a *ItemStaffMembersRequestBuilder when successful
-func (m *BookingBusinessItemRequestBuilder) StaffMembers()(*ItemStaffMembersRequestBuilder) {
-    return NewItemStaffMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemStaffmembersStaffMembersRequestBuilder when successful
+func (m *BookingBusinessItemRequestBuilder) StaffMembers()(*ItemStaffmembersStaffMembersRequestBuilder) {
+    return NewItemStaffmembersStaffMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from bookingBusinesses
 // returns a *RequestInformation when successful

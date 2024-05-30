@@ -71,9 +71,9 @@ func (m *UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequest
     return nil
 }
 // DependentResources provides operations to manage the dependentResources property of the microsoft.graph.educationAssignmentResource entity.
-// returns a *UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder when successful
-func (m *UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) DependentResources()(*UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder) {
-    return NewUsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UsersItemAssignmentsItemResourcesItemDependentresourcesDependentResourcesRequestBuilder when successful
+func (m *UsersItemAssignmentsItemResourcesEducationAssignmentResourceItemRequestBuilder) DependentResources()(*UsersItemAssignmentsItemResourcesItemDependentresourcesDependentResourcesRequestBuilder) {
+    return NewUsersItemAssignmentsItemResourcesItemDependentresourcesDependentResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
 // returns a EducationAssignmentResourceable when successful

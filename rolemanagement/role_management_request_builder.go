@@ -35,9 +35,9 @@ type RoleManagementRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CloudPC provides operations to manage the cloudPC property of the microsoft.graph.roleManagement entity.
-// returns a *CloudPCRequestBuilder when successful
-func (m *RoleManagementRequestBuilder) CloudPC()(*CloudPCRequestBuilder) {
-    return NewCloudPCRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CloudpcCloudPCRequestBuilder when successful
+func (m *RoleManagementRequestBuilder) CloudPC()(*CloudpcCloudPCRequestBuilder) {
+    return NewCloudpcCloudPCRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewRoleManagementRequestBuilderInternal instantiates a new RoleManagementRequestBuilder and sets the default values.
 func NewRoleManagementRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*RoleManagementRequestBuilder) {
@@ -53,9 +53,9 @@ func NewRoleManagementRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewRoleManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DeviceManagement provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.
-// returns a *DeviceManagementRequestBuilder when successful
-func (m *RoleManagementRequestBuilder) DeviceManagement()(*DeviceManagementRequestBuilder) {
-    return NewDeviceManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DevicemanagementDeviceManagementRequestBuilder when successful
+func (m *RoleManagementRequestBuilder) DeviceManagement()(*DevicemanagementDeviceManagementRequestBuilder) {
+    return NewDevicemanagementDeviceManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Directory provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
 // returns a *DirectoryRequestBuilder when successful
@@ -63,14 +63,14 @@ func (m *RoleManagementRequestBuilder) Directory()(*DirectoryRequestBuilder) {
     return NewDirectoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EnterpriseApps provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.
-// returns a *EnterpriseAppsRequestBuilder when successful
-func (m *RoleManagementRequestBuilder) EnterpriseApps()(*EnterpriseAppsRequestBuilder) {
-    return NewEnterpriseAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EnterpriseappsEnterpriseAppsRequestBuilder when successful
+func (m *RoleManagementRequestBuilder) EnterpriseApps()(*EnterpriseappsEnterpriseAppsRequestBuilder) {
+    return NewEnterpriseappsEnterpriseAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EntitlementManagement provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.
-// returns a *EntitlementManagementRequestBuilder when successful
-func (m *RoleManagementRequestBuilder) EntitlementManagement()(*EntitlementManagementRequestBuilder) {
-    return NewEntitlementManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EntitlementmanagementEntitlementManagementRequestBuilder when successful
+func (m *RoleManagementRequestBuilder) EntitlementManagement()(*EntitlementmanagementEntitlementManagementRequestBuilder) {
+    return NewEntitlementmanagementEntitlementManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Exchange provides operations to manage the exchange property of the microsoft.graph.roleManagement entity.
 // returns a *ExchangeRequestBuilder when successful

@@ -47,9 +47,9 @@ type TeamsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllMessages provides operations to call the allMessages method.
-// returns a *AllMessagesRequestBuilder when successful
-func (m *TeamsRequestBuilder) AllMessages()(*AllMessagesRequestBuilder) {
-    return NewAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AllmessagesAllMessagesRequestBuilder when successful
+func (m *TeamsRequestBuilder) AllMessages()(*AllmessagesAllMessagesRequestBuilder) {
+    return NewAllmessagesAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByTeamId provides operations to manage the collection of team entities.
 // returns a *TeamItemRequestBuilder when successful
@@ -105,24 +105,24 @@ func (m *TeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *Tea
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable), nil
 }
 // GetAllMessages provides operations to call the getAllMessages method.
-// returns a *GetAllMessagesRequestBuilder when successful
-func (m *TeamsRequestBuilder) GetAllMessages()(*GetAllMessagesRequestBuilder) {
-    return NewGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetallmessagesGetAllMessagesRequestBuilder when successful
+func (m *TeamsRequestBuilder) GetAllMessages()(*GetallmessagesGetAllMessagesRequestBuilder) {
+    return NewGetallmessagesGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetOpenShifts provides operations to call the getOpenShifts method.
-// returns a *GetOpenShiftsRequestBuilder when successful
-func (m *TeamsRequestBuilder) GetOpenShifts()(*GetOpenShiftsRequestBuilder) {
-    return NewGetOpenShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetopenshiftsGetOpenShiftsRequestBuilder when successful
+func (m *TeamsRequestBuilder) GetOpenShifts()(*GetopenshiftsGetOpenShiftsRequestBuilder) {
+    return NewGetopenshiftsGetOpenShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetShifts provides operations to call the getShifts method.
-// returns a *GetShiftsRequestBuilder when successful
-func (m *TeamsRequestBuilder) GetShifts()(*GetShiftsRequestBuilder) {
-    return NewGetShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetshiftsGetShiftsRequestBuilder when successful
+func (m *TeamsRequestBuilder) GetShifts()(*GetshiftsGetShiftsRequestBuilder) {
+    return NewGetshiftsGetShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetTimesOff provides operations to call the getTimesOff method.
-// returns a *GetTimesOffRequestBuilder when successful
-func (m *TeamsRequestBuilder) GetTimesOff()(*GetTimesOffRequestBuilder) {
-    return NewGetTimesOffRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GettimesoffGetTimesOffRequestBuilder when successful
+func (m *TeamsRequestBuilder) GetTimesOff()(*GettimesoffGetTimesOffRequestBuilder) {
+    return NewGettimesoffGetTimesOffRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new team.
 // returns a Teamable when successful

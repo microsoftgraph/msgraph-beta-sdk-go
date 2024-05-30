@@ -116,14 +116,14 @@ func (m *CallsItemParticipantsParticipantItemRequestBuilder) Patch(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Participantable), nil
 }
 // StartHoldMusic provides operations to call the startHoldMusic method.
-// returns a *CallsItemParticipantsItemStartHoldMusicRequestBuilder when successful
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) StartHoldMusic()(*CallsItemParticipantsItemStartHoldMusicRequestBuilder) {
-    return NewCallsItemParticipantsItemStartHoldMusicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemParticipantsItemStartholdmusicStartHoldMusicRequestBuilder when successful
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) StartHoldMusic()(*CallsItemParticipantsItemStartholdmusicStartHoldMusicRequestBuilder) {
+    return NewCallsItemParticipantsItemStartholdmusicStartHoldMusicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // StopHoldMusic provides operations to call the stopHoldMusic method.
-// returns a *CallsItemParticipantsItemStopHoldMusicRequestBuilder when successful
-func (m *CallsItemParticipantsParticipantItemRequestBuilder) StopHoldMusic()(*CallsItemParticipantsItemStopHoldMusicRequestBuilder) {
-    return NewCallsItemParticipantsItemStopHoldMusicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsItemParticipantsItemStopholdmusicStopHoldMusicRequestBuilder when successful
+func (m *CallsItemParticipantsParticipantItemRequestBuilder) StopHoldMusic()(*CallsItemParticipantsItemStopholdmusicStopHoldMusicRequestBuilder) {
+    return NewCallsItemParticipantsItemStopholdmusicStopHoldMusicRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property participants for app
 // returns a *RequestInformation when successful

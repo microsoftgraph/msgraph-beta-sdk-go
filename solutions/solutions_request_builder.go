@@ -35,24 +35,24 @@ type SolutionsRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BookingBusinesses provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
-// returns a *BookingBusinessesRequestBuilder when successful
-func (m *SolutionsRequestBuilder) BookingBusinesses()(*BookingBusinessesRequestBuilder) {
-    return NewBookingBusinessesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *BookingbusinessesBookingBusinessesRequestBuilder when successful
+func (m *SolutionsRequestBuilder) BookingBusinesses()(*BookingbusinessesBookingBusinessesRequestBuilder) {
+    return NewBookingbusinessesBookingBusinessesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BookingCurrencies provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
-// returns a *BookingCurrenciesRequestBuilder when successful
-func (m *SolutionsRequestBuilder) BookingCurrencies()(*BookingCurrenciesRequestBuilder) {
-    return NewBookingCurrenciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *BookingcurrenciesBookingCurrenciesRequestBuilder when successful
+func (m *SolutionsRequestBuilder) BookingCurrencies()(*BookingcurrenciesBookingCurrenciesRequestBuilder) {
+    return NewBookingcurrenciesBookingCurrenciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BusinessScenarios provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
-// returns a *BusinessScenariosRequestBuilder when successful
-func (m *SolutionsRequestBuilder) BusinessScenarios()(*BusinessScenariosRequestBuilder) {
-    return NewBusinessScenariosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *BusinessscenariosBusinessScenariosRequestBuilder when successful
+func (m *SolutionsRequestBuilder) BusinessScenarios()(*BusinessscenariosBusinessScenariosRequestBuilder) {
+    return NewBusinessscenariosBusinessScenariosRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // BusinessScenariosWithUniqueName provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
-// returns a *BusinessScenariosWithUniqueNameRequestBuilder when successful
-func (m *SolutionsRequestBuilder) BusinessScenariosWithUniqueName(uniqueName *string)(*BusinessScenariosWithUniqueNameRequestBuilder) {
-    return NewBusinessScenariosWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
+// returns a *BusinessscenarioswithuniquenameBusinessScenariosWithUniqueNameRequestBuilder when successful
+func (m *SolutionsRequestBuilder) BusinessScenariosWithUniqueName(uniqueName *string)(*BusinessscenarioswithuniquenameBusinessScenariosWithUniqueNameRequestBuilder) {
+    return NewBusinessscenarioswithuniquenameBusinessScenariosWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
 }
 // NewSolutionsRequestBuilderInternal instantiates a new SolutionsRequestBuilder and sets the default values.
 func NewSolutionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SolutionsRequestBuilder) {
@@ -137,9 +137,9 @@ func (m *SolutionsRequestBuilder) ToPatchRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // VirtualEvents provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.
-// returns a *VirtualEventsRequestBuilder when successful
-func (m *SolutionsRequestBuilder) VirtualEvents()(*VirtualEventsRequestBuilder) {
-    return NewVirtualEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *VirtualeventsVirtualEventsRequestBuilder when successful
+func (m *SolutionsRequestBuilder) VirtualEvents()(*VirtualeventsVirtualEventsRequestBuilder) {
+    return NewVirtualeventsVirtualEventsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *SolutionsRequestBuilder when successful

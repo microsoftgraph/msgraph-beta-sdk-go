@@ -97,9 +97,9 @@ func (m *TemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementTemplateCollectionResponseable), nil
 }
 // ImportOffice365DeviceConfigurationPolicies provides operations to call the importOffice365DeviceConfigurationPolicies method.
-// returns a *TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder when successful
-func (m *TemplatesRequestBuilder) ImportOffice365DeviceConfigurationPolicies()(*TemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilder) {
-    return NewTemplatesImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TemplatesImportoffice365deviceconfigurationpoliciesImportOffice365DeviceConfigurationPoliciesRequestBuilder when successful
+func (m *TemplatesRequestBuilder) ImportOffice365DeviceConfigurationPolicies()(*TemplatesImportoffice365deviceconfigurationpoliciesImportOffice365DeviceConfigurationPoliciesRequestBuilder) {
+    return NewTemplatesImportoffice365deviceconfigurationpoliciesImportOffice365DeviceConfigurationPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to templates for deviceManagement
 // returns a DeviceManagementTemplateable when successful

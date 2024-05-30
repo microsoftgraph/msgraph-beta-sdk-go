@@ -111,9 +111,9 @@ func (m *TeamTemplateDefinitionItemRequestBuilder) Patch(ctx context.Context, bo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateDefinitionable), nil
 }
 // TeamDefinition provides operations to manage the teamDefinition property of the microsoft.graph.teamTemplateDefinition entity.
-// returns a *ItemTeamDefinitionRequestBuilder when successful
-func (m *TeamTemplateDefinitionItemRequestBuilder) TeamDefinition()(*ItemTeamDefinitionRequestBuilder) {
-    return NewItemTeamDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamdefinitionTeamDefinitionRequestBuilder when successful
+func (m *TeamTemplateDefinitionItemRequestBuilder) TeamDefinition()(*ItemTeamdefinitionTeamDefinitionRequestBuilder) {
+    return NewItemTeamdefinitionTeamDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from teamTemplateDefinition
 // returns a *RequestInformation when successful

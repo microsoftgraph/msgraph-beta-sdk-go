@@ -96,14 +96,14 @@ func (m *ItemCalendarEventsEventItemRequestBuilder) Delete(ctx context.Context, 
     return nil
 }
 // DismissReminder provides operations to call the dismissReminder method.
-// returns a *ItemCalendarEventsItemDismissReminderRequestBuilder when successful
-func (m *ItemCalendarEventsEventItemRequestBuilder) DismissReminder()(*ItemCalendarEventsItemDismissReminderRequestBuilder) {
-    return NewItemCalendarEventsItemDismissReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemDismissreminderDismissReminderRequestBuilder when successful
+func (m *ItemCalendarEventsEventItemRequestBuilder) DismissReminder()(*ItemCalendarEventsItemDismissreminderDismissReminderRequestBuilder) {
+    return NewItemCalendarEventsItemDismissreminderDismissReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExceptionOccurrences provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
-// returns a *ItemCalendarEventsItemExceptionOccurrencesRequestBuilder when successful
-func (m *ItemCalendarEventsEventItemRequestBuilder) ExceptionOccurrences()(*ItemCalendarEventsItemExceptionOccurrencesRequestBuilder) {
-    return NewItemCalendarEventsItemExceptionOccurrencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemExceptionoccurrencesExceptionOccurrencesRequestBuilder when successful
+func (m *ItemCalendarEventsEventItemRequestBuilder) ExceptionOccurrences()(*ItemCalendarEventsItemExceptionoccurrencesExceptionOccurrencesRequestBuilder) {
+    return NewItemCalendarEventsItemExceptionoccurrencesExceptionOccurrencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 // returns a *ItemCalendarEventsItemExtensionsRequestBuilder when successful
@@ -161,14 +161,14 @@ func (m *ItemCalendarEventsEventItemRequestBuilder) Patch(ctx context.Context, b
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable), nil
 }
 // SnoozeReminder provides operations to call the snoozeReminder method.
-// returns a *ItemCalendarEventsItemSnoozeReminderRequestBuilder when successful
-func (m *ItemCalendarEventsEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarEventsItemSnoozeReminderRequestBuilder) {
-    return NewItemCalendarEventsItemSnoozeReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemSnoozereminderSnoozeReminderRequestBuilder when successful
+func (m *ItemCalendarEventsEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarEventsItemSnoozereminderSnoozeReminderRequestBuilder) {
+    return NewItemCalendarEventsItemSnoozereminderSnoozeReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TentativelyAccept provides operations to call the tentativelyAccept method.
-// returns a *ItemCalendarEventsItemTentativelyAcceptRequestBuilder when successful
-func (m *ItemCalendarEventsEventItemRequestBuilder) TentativelyAccept()(*ItemCalendarEventsItemTentativelyAcceptRequestBuilder) {
-    return NewItemCalendarEventsItemTentativelyAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemTentativelyacceptTentativelyAcceptRequestBuilder when successful
+func (m *ItemCalendarEventsEventItemRequestBuilder) TentativelyAccept()(*ItemCalendarEventsItemTentativelyacceptTentativelyAcceptRequestBuilder) {
+    return NewItemCalendarEventsItemTentativelyacceptTentativelyAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property events for groups
 // returns a *RequestInformation when successful

@@ -71,9 +71,9 @@ func (m *RulesRequestBuilder) Delete(ctx context.Context, requestConfiguration *
     return nil
 }
 // DetectionRules provides operations to manage the detectionRules property of the microsoft.graph.security.rulesRoot entity.
-// returns a *RulesDetectionRulesRequestBuilder when successful
-func (m *RulesRequestBuilder) DetectionRules()(*RulesDetectionRulesRequestBuilder) {
-    return NewRulesDetectionRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RulesDetectionrulesDetectionRulesRequestBuilder when successful
+func (m *RulesRequestBuilder) DetectionRules()(*RulesDetectionrulesDetectionRulesRequestBuilder) {
+    return NewRulesDetectionrulesDetectionRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get rules from security
 // returns a RulesRootable when successful

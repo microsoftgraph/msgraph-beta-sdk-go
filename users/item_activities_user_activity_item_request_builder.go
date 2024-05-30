@@ -91,9 +91,9 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable), nil
 }
 // HistoryItems provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
-// returns a *ItemActivitiesItemHistoryItemsRequestBuilder when successful
-func (m *ItemActivitiesUserActivityItemRequestBuilder) HistoryItems()(*ItemActivitiesItemHistoryItemsRequestBuilder) {
-    return NewItemActivitiesItemHistoryItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemActivitiesItemHistoryitemsHistoryItemsRequestBuilder when successful
+func (m *ItemActivitiesUserActivityItemRequestBuilder) HistoryItems()(*ItemActivitiesItemHistoryitemsHistoryItemsRequestBuilder) {
+    return NewItemActivitiesItemHistoryitemsHistoryItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property activities in users
 // returns a UserActivityable when successful

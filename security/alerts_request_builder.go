@@ -154,9 +154,9 @@ func (m *AlertsRequestBuilder) ToPostRequestInformation(ctx context.Context, bod
     return requestInfo, nil
 }
 // UpdateAlerts provides operations to call the updateAlerts method.
-// returns a *AlertsUpdateAlertsRequestBuilder when successful
-func (m *AlertsRequestBuilder) UpdateAlerts()(*AlertsUpdateAlertsRequestBuilder) {
-    return NewAlertsUpdateAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AlertsUpdatealertsUpdateAlertsRequestBuilder when successful
+func (m *AlertsRequestBuilder) UpdateAlerts()(*AlertsUpdatealertsUpdateAlertsRequestBuilder) {
+    return NewAlertsUpdatealertsUpdateAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation

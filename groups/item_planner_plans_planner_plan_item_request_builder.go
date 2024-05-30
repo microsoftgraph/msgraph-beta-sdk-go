@@ -106,9 +106,9 @@ func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) Get(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable), nil
 }
 // MoveToContainer provides operations to call the moveToContainer method.
-// returns a *ItemPlannerPlansItemMoveToContainerRequestBuilder when successful
-func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) MoveToContainer()(*ItemPlannerPlansItemMoveToContainerRequestBuilder) {
-    return NewItemPlannerPlansItemMoveToContainerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPlannerPlansItemMovetocontainerMoveToContainerRequestBuilder when successful
+func (m *ItemPlannerPlansPlannerPlanItemRequestBuilder) MoveToContainer()(*ItemPlannerPlansItemMovetocontainerMoveToContainerRequestBuilder) {
+    return NewItemPlannerPlansItemMovetocontainerMoveToContainerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property plans in groups
 // returns a PlannerPlanable when successful

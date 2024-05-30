@@ -71,14 +71,14 @@ func (m *ItemAuthenticationRequestBuilder) Delete(ctx context.Context, requestCo
     return nil
 }
 // EmailMethods provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationEmailMethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) EmailMethods()(*ItemAuthenticationEmailMethodsRequestBuilder) {
-    return NewItemAuthenticationEmailMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationEmailmethodsEmailMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) EmailMethods()(*ItemAuthenticationEmailmethodsEmailMethodsRequestBuilder) {
+    return NewItemAuthenticationEmailmethodsEmailMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Fido2Methods provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationFido2MethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) Fido2Methods()(*ItemAuthenticationFido2MethodsRequestBuilder) {
-    return NewItemAuthenticationFido2MethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationFido2methodsFido2MethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) Fido2Methods()(*ItemAuthenticationFido2methodsFido2MethodsRequestBuilder) {
+    return NewItemAuthenticationFido2methodsFido2MethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the authentication methods that are supported for the user.
 // returns a Authenticationable when successful
@@ -106,9 +106,9 @@ func (m *ItemAuthenticationRequestBuilder) Methods()(*ItemAuthenticationMethodsR
     return NewItemAuthenticationMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftAuthenticatorMethods provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) MicrosoftAuthenticatorMethods()(*ItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilder) {
-    return NewItemAuthenticationMicrosoftAuthenticatorMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationMicrosoftauthenticatormethodsMicrosoftAuthenticatorMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) MicrosoftAuthenticatorMethods()(*ItemAuthenticationMicrosoftauthenticatormethodsMicrosoftAuthenticatorMethodsRequestBuilder) {
+    return NewItemAuthenticationMicrosoftauthenticatormethodsMicrosoftAuthenticatorMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Operations provides operations to manage the operations property of the microsoft.graph.authentication entity.
 // returns a *ItemAuthenticationOperationsRequestBuilder when successful
@@ -116,14 +116,14 @@ func (m *ItemAuthenticationRequestBuilder) Operations()(*ItemAuthenticationOpera
     return NewItemAuthenticationOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PasswordlessMicrosoftAuthenticatorMethods provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) PasswordlessMicrosoftAuthenticatorMethods()(*ItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) {
-    return NewItemAuthenticationPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationPasswordlessmicrosoftauthenticatormethodsPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) PasswordlessMicrosoftAuthenticatorMethods()(*ItemAuthenticationPasswordlessmicrosoftauthenticatormethodsPasswordlessMicrosoftAuthenticatorMethodsRequestBuilder) {
+    return NewItemAuthenticationPasswordlessmicrosoftauthenticatormethodsPasswordlessMicrosoftAuthenticatorMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PasswordMethods provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationPasswordMethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) PasswordMethods()(*ItemAuthenticationPasswordMethodsRequestBuilder) {
-    return NewItemAuthenticationPasswordMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationPasswordmethodsPasswordMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) PasswordMethods()(*ItemAuthenticationPasswordmethodsPasswordMethodsRequestBuilder) {
+    return NewItemAuthenticationPasswordmethodsPasswordMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property authentication in users
 // returns a Authenticationable when successful
@@ -146,29 +146,29 @@ func (m *ItemAuthenticationRequestBuilder) Patch(ctx context.Context, body ie233
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Authenticationable), nil
 }
 // PhoneMethods provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationPhoneMethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) PhoneMethods()(*ItemAuthenticationPhoneMethodsRequestBuilder) {
-    return NewItemAuthenticationPhoneMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationPhonemethodsPhoneMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) PhoneMethods()(*ItemAuthenticationPhonemethodsPhoneMethodsRequestBuilder) {
+    return NewItemAuthenticationPhonemethodsPhoneMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PlatformCredentialMethods provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationPlatformCredentialMethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) PlatformCredentialMethods()(*ItemAuthenticationPlatformCredentialMethodsRequestBuilder) {
-    return NewItemAuthenticationPlatformCredentialMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationPlatformcredentialmethodsPlatformCredentialMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) PlatformCredentialMethods()(*ItemAuthenticationPlatformcredentialmethodsPlatformCredentialMethodsRequestBuilder) {
+    return NewItemAuthenticationPlatformcredentialmethodsPlatformCredentialMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SignInPreferences the signInPreferences property
-// returns a *ItemAuthenticationSignInPreferencesRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) SignInPreferences()(*ItemAuthenticationSignInPreferencesRequestBuilder) {
-    return NewItemAuthenticationSignInPreferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) SignInPreferences()(*ItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilder) {
+    return NewItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SoftwareOathMethods provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationSoftwareOathMethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) SoftwareOathMethods()(*ItemAuthenticationSoftwareOathMethodsRequestBuilder) {
-    return NewItemAuthenticationSoftwareOathMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationSoftwareoathmethodsSoftwareOathMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) SoftwareOathMethods()(*ItemAuthenticationSoftwareoathmethodsSoftwareOathMethodsRequestBuilder) {
+    return NewItemAuthenticationSoftwareoathmethodsSoftwareOathMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TemporaryAccessPassMethods provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) TemporaryAccessPassMethods()(*ItemAuthenticationTemporaryAccessPassMethodsRequestBuilder) {
-    return NewItemAuthenticationTemporaryAccessPassMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationTemporaryaccesspassmethodsTemporaryAccessPassMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) TemporaryAccessPassMethods()(*ItemAuthenticationTemporaryaccesspassmethodsTemporaryAccessPassMethodsRequestBuilder) {
+    return NewItemAuthenticationTemporaryaccesspassmethodsTemporaryAccessPassMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property authentication for users
 // returns a *RequestInformation when successful
@@ -211,9 +211,9 @@ func (m *ItemAuthenticationRequestBuilder) ToPatchRequestInformation(ctx context
     return requestInfo, nil
 }
 // WindowsHelloForBusinessMethods provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
-// returns a *ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder when successful
-func (m *ItemAuthenticationRequestBuilder) WindowsHelloForBusinessMethods()(*ItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilder) {
-    return NewItemAuthenticationWindowsHelloForBusinessMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAuthenticationWindowshelloforbusinessmethodsWindowsHelloForBusinessMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) WindowsHelloForBusinessMethods()(*ItemAuthenticationWindowshelloforbusinessmethodsWindowsHelloForBusinessMethodsRequestBuilder) {
+    return NewItemAuthenticationWindowshelloforbusinessmethodsWindowsHelloForBusinessMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemAuthenticationRequestBuilder when successful

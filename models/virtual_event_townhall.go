@@ -103,7 +103,7 @@ func (m *VirtualEventTownhall) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetInvitedAttendees gets the invitedAttendees property value. The attendees invited to the town hall. The supported identites are: communicationsUserIdentity and communicationsGuestIdentity.
+// GetInvitedAttendees gets the invitedAttendees property value. The attendees invited to the town hall. The supported identities are: communicationsUserIdentity and communicationsGuestIdentity.
 // returns a []Identityable when successful
 func (m *VirtualEventTownhall) GetInvitedAttendees()([]Identityable) {
     val, err := m.GetBackingStore().Get("invitedAttendees")
@@ -186,7 +186,7 @@ func (m *VirtualEventTownhall) SetCoOrganizers(value []CommunicationsUserIdentit
         panic(err)
     }
 }
-// SetInvitedAttendees sets the invitedAttendees property value. The attendees invited to the town hall. The supported identites are: communicationsUserIdentity and communicationsGuestIdentity.
+// SetInvitedAttendees sets the invitedAttendees property value. The attendees invited to the town hall. The supported identities are: communicationsUserIdentity and communicationsGuestIdentity.
 func (m *VirtualEventTownhall) SetInvitedAttendees(value []Identityable)() {
     err := m.GetBackingStore().Set("invitedAttendees", value)
     if err != nil {

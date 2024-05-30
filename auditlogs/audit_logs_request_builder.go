@@ -48,19 +48,19 @@ func NewAuditLogsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewAuditLogsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CustomSecurityAttributeAudits provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.
-// returns a *CustomSecurityAttributeAuditsRequestBuilder when successful
-func (m *AuditLogsRequestBuilder) CustomSecurityAttributeAudits()(*CustomSecurityAttributeAuditsRequestBuilder) {
-    return NewCustomSecurityAttributeAuditsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CustomsecurityattributeauditsCustomSecurityAttributeAuditsRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) CustomSecurityAttributeAudits()(*CustomsecurityattributeauditsCustomSecurityAttributeAuditsRequestBuilder) {
+    return NewCustomsecurityattributeauditsCustomSecurityAttributeAuditsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DirectoryAudits provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
-// returns a *DirectoryAuditsRequestBuilder when successful
-func (m *AuditLogsRequestBuilder) DirectoryAudits()(*DirectoryAuditsRequestBuilder) {
-    return NewDirectoryAuditsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryauditsDirectoryAuditsRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) DirectoryAudits()(*DirectoryauditsDirectoryAuditsRequestBuilder) {
+    return NewDirectoryauditsDirectoryAuditsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DirectoryProvisioning provides operations to manage the directoryProvisioning property of the microsoft.graph.auditLogRoot entity.
-// returns a *DirectoryProvisioningRequestBuilder when successful
-func (m *AuditLogsRequestBuilder) DirectoryProvisioning()(*DirectoryProvisioningRequestBuilder) {
-    return NewDirectoryProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DirectoryprovisioningDirectoryProvisioningRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) DirectoryProvisioning()(*DirectoryprovisioningDirectoryProvisioningRequestBuilder) {
+    return NewDirectoryprovisioningDirectoryProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get auditLogs
 // returns a AuditLogRootable when successful
@@ -108,9 +108,9 @@ func (m *AuditLogsRequestBuilder) Provisioning()(*ProvisioningRequestBuilder) {
     return NewProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SignIns provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
-// returns a *SignInsRequestBuilder when successful
-func (m *AuditLogsRequestBuilder) SignIns()(*SignInsRequestBuilder) {
-    return NewSignInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SigninsSignInsRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) SignIns()(*SigninsSignInsRequestBuilder) {
+    return NewSigninsSignInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get auditLogs
 // returns a *RequestInformation when successful

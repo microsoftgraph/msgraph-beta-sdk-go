@@ -62,6 +62,7 @@ import (
     i60392bb6eb86abe7a3079e3b2b1e202f7dcf3452adf026db62ec93e2fafe3957 "github.com/microsoftgraph/msgraph-beta-sdk-go/subscriptions"
     i613e9d4b5596faf0dba59087b1a65d06d17aab1ca9d69170b292a4e0d90063ab "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedapproval"
     i64fc24bb18135374ce200dde4281c7742414b6f0b008ed5c2eab2c2787c0619e "github.com/microsoftgraph/msgraph-beta-sdk-go/placeswithplaceid"
+    i65ec2d26e2745c20b2909e217069fc9c66fc5d6b449f4f50e1f705a550f3e781 "github.com/microsoftgraph/msgraph-beta-sdk-go/filteringpolicies"
     i65ed27543dee9887d3df7d7d883303dfead48cba6be4e357fa7d5c21332b4626 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin"
     i66f18ccab4e34309d26d1056f0e7dd8b563a5f8ee6f8d9c6e8e77c5fac50f8b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamstemplates"
     i6b96a96c52bbdff1731b8a5490cd5f342e33866e0931912944d323bc79f663e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus"
@@ -107,6 +108,7 @@ import (
     ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1 "github.com/microsoftgraph/msgraph-beta-sdk-go/places"
     icb4f253cb1cd35435f5752b611229032c618bbcfeb3be80ee4d6a06d404114fc "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork"
     icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a "github.com/microsoftgraph/msgraph-beta-sdk-go/users"
+    id14bafb4ee71e1257662cacab67dd479e54eba65ce10c6816ee4676804caf821 "github.com/microsoftgraph/msgraph-beta-sdk-go/storage"
     id53bdaa191b823f3e2f4009f4cc095b46d1c7a433bde3b6d09ef0bd8df3514c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/certificatebasedauthconfiguration"
     id5c2ef977a00dd1757d258dbbbfb4080031771e62e6c6b3b1339a0f03fc1c1f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships"
     id90d135edac1f1a3e952db4ad985001105d2e7c0133f8cc410765eb1af789cc0 "github.com/microsoftgraph/msgraph-beta-sdk-go/education"
@@ -397,6 +399,11 @@ func (m *GraphBaseServiceClient) EmployeeExperience()(*i4b923a0ffb143d5def24980f
 // returns a *ExternalRequestBuilder when successful
 func (m *GraphBaseServiceClient) External()(*i453454978d87486fd201df62ea4b775c5b4907e2a36395fb6fb1e9060fc3f1bb.ExternalRequestBuilder) {
     return i453454978d87486fd201df62ea4b775c5b4907e2a36395fb6fb1e9060fc3f1bb.NewExternalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// FilteringPolicies provides operations to manage the collection of filteringPolicy entities.
+// returns a *FilteringPoliciesRequestBuilder when successful
+func (m *GraphBaseServiceClient) FilteringPolicies()(*i65ec2d26e2745c20b2909e217069fc9c66fc5d6b449f4f50e1f705a550f3e781.FilteringPoliciesRequestBuilder) {
+    return i65ec2d26e2745c20b2909e217069fc9c66fc5d6b449f4f50e1f705a550f3e781.NewFilteringPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterOperators provides operations to manage the collection of filterOperatorSchema entities.
 // returns a *FilterOperatorsRequestBuilder when successful
@@ -692,6 +699,11 @@ func (m *GraphBaseServiceClient) Sites()(*i2817c6849b286be20c56215e039110b08a410
 // returns a *SolutionsRequestBuilder when successful
 func (m *GraphBaseServiceClient) Solutions()(*i7282246c788c7b44fcd028d8a1500ce1ffd32f655bee3b580b6a33d9ec10f610.SolutionsRequestBuilder) {
     return i7282246c788c7b44fcd028d8a1500ce1ffd32f655bee3b580b6a33d9ec10f610.NewSolutionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Storage provides operations to manage the storage singleton.
+// returns a *StorageRequestBuilder when successful
+func (m *GraphBaseServiceClient) Storage()(*id14bafb4ee71e1257662cacab67dd479e54eba65ce10c6816ee4676804caf821.StorageRequestBuilder) {
+    return id14bafb4ee71e1257662cacab67dd479e54eba65ce10c6816ee4676804caf821.NewStorageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SubscribedSkus provides operations to manage the collection of subscribedSku entities.
 // returns a *SubscribedSkusRequestBuilder when successful

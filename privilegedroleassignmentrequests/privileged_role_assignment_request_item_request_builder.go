@@ -116,9 +116,9 @@ func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) Patch(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentRequestable), nil
 }
 // RoleInfo provides operations to manage the roleInfo property of the microsoft.graph.privilegedRoleAssignmentRequest entity.
-// returns a *ItemRoleInfoRequestBuilder when successful
-func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) RoleInfo()(*ItemRoleInfoRequestBuilder) {
-    return NewItemRoleInfoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleinfoRoleInfoRequestBuilder when successful
+func (m *PrivilegedRoleAssignmentRequestItemRequestBuilder) RoleInfo()(*ItemRoleinfoRoleInfoRequestBuilder) {
+    return NewItemRoleinfoRoleInfoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from privilegedRoleAssignmentRequests
 // returns a *RequestInformation when successful
