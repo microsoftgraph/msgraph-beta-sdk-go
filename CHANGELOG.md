@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.104.1](https://github.com/microsoftgraph/msgraph-beta-sdk-go/compare/v0.104.0...v0.104.1) (2024-05-30)
+## [0.105.0](https://github.com/microsoftgraph/msgraph-beta-sdk-go/compare/v0.104.0...v0.104.1) (2024-05-30)
 
 
 ### Features
