@@ -535,6 +535,22 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["permissionGrantPreApprovalPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPreApprovalPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PermissionGrantPreApprovalPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PermissionGrantPreApprovalPolicyable)
+                }
+            }
+            m.SetPermissionGrantPreApprovalPolicies(res)
+        }
+        return nil
+    }
     res["roleManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUnifiedRoleManagementPolicyFromDiscriminatorValue)
         if err != nil {
@@ -674,6 +690,18 @@ func (m *PolicyRoot) GetPermissionGrantPolicies()([]PermissionGrantPolicyable) {
     }
     if val != nil {
         return val.([]PermissionGrantPolicyable)
+    }
+    return nil
+}
+// GetPermissionGrantPreApprovalPolicies gets the permissionGrantPreApprovalPolicies property value. Policies that specify the conditions under which consent can be granted to a specific application.
+// returns a []PermissionGrantPreApprovalPolicyable when successful
+func (m *PolicyRoot) GetPermissionGrantPreApprovalPolicies()([]PermissionGrantPreApprovalPolicyable) {
+    val, err := m.GetBackingStore().Get("permissionGrantPreApprovalPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PermissionGrantPreApprovalPolicyable)
     }
     return nil
 }
@@ -947,6 +975,18 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetPermissionGrantPreApprovalPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPreApprovalPolicies()))
+        for i, v := range m.GetPermissionGrantPreApprovalPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("permissionGrantPreApprovalPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRoleManagementPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleManagementPolicies()))
         for i, v := range m.GetRoleManagementPolicies() {
@@ -1170,6 +1210,13 @@ func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyabl
         panic(err)
     }
 }
+// SetPermissionGrantPreApprovalPolicies sets the permissionGrantPreApprovalPolicies property value. Policies that specify the conditions under which consent can be granted to a specific application.
+func (m *PolicyRoot) SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)() {
+    err := m.GetBackingStore().Set("permissionGrantPreApprovalPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoleManagementPolicies sets the roleManagementPolicies property value. Represents the role management policies.
 func (m *PolicyRoot) SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)() {
     err := m.GetBackingStore().Set("roleManagementPolicies", value)
@@ -1231,6 +1278,7 @@ type PolicyRootable interface {
     GetMobileAppManagementPolicies()([]MobilityManagementPolicyable)
     GetMobileDeviceManagementPolicies()([]MobilityManagementPolicyable)
     GetPermissionGrantPolicies()([]PermissionGrantPolicyable)
+    GetPermissionGrantPreApprovalPolicies()([]PermissionGrantPreApprovalPolicyable)
     GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable)
     GetRoleManagementPolicyAssignments()([]UnifiedRoleManagementPolicyAssignmentable)
     GetServicePrincipalCreationPolicies()([]ServicePrincipalCreationPolicyable)
@@ -1259,6 +1307,7 @@ type PolicyRootable interface {
     SetMobileAppManagementPolicies(value []MobilityManagementPolicyable)()
     SetMobileDeviceManagementPolicies(value []MobilityManagementPolicyable)()
     SetPermissionGrantPolicies(value []PermissionGrantPolicyable)()
+    SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)()
     SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)()
     SetRoleManagementPolicyAssignments(value []UnifiedRoleManagementPolicyAssignmentable)()
     SetServicePrincipalCreationPolicies(value []ServicePrincipalCreationPolicyable)()

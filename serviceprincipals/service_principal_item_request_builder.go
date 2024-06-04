@@ -239,6 +239,11 @@ func (m *ServicePrincipalItemRequestBuilder) Patch(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
+// PermissionGrantPreApprovalPolicies provides operations to manage the permissionGrantPreApprovalPolicies property of the microsoft.graph.servicePrincipal entity.
+// returns a *ItemPermissiongrantpreapprovalpoliciesPermissionGrantPreApprovalPoliciesRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) PermissionGrantPreApprovalPolicies()(*ItemPermissiongrantpreapprovalpoliciesPermissionGrantPreApprovalPoliciesRequestBuilder) {
+    return NewItemPermissiongrantpreapprovalpoliciesPermissionGrantPreApprovalPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RemoteDesktopSecurityConfiguration provides operations to manage the remoteDesktopSecurityConfiguration property of the microsoft.graph.servicePrincipal entity.
 // returns a *ItemRemotedesktopsecurityconfigurationRemoteDesktopSecurityConfigurationRequestBuilder when successful
 func (m *ServicePrincipalItemRequestBuilder) RemoteDesktopSecurityConfiguration()(*ItemRemotedesktopsecurityconfigurationRemoteDesktopSecurityConfigurationRequestBuilder) {

@@ -332,6 +332,11 @@ func (m *DeviceManagementRequestBuilder) EnableLegacyPcManagement()(*Enablelegac
 func (m *DeviceManagementRequestBuilder) EnableUnlicensedAdminstrators()(*EnableunlicensedadminstratorsEnableUnlicensedAdminstratorsRequestBuilder) {
     return NewEnableunlicensedadminstratorsEnableUnlicensedAdminstratorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// EndpointPrivilegeManagementProvisioningStatus provides operations to manage the endpointPrivilegeManagementProvisioningStatus property of the microsoft.graph.deviceManagement entity.
+// returns a *EndpointprivilegemanagementprovisioningstatusEndpointPrivilegeManagementProvisioningStatusRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) EndpointPrivilegeManagementProvisioningStatus()(*EndpointprivilegemanagementprovisioningstatusEndpointPrivilegeManagementProvisioningStatusRequestBuilder) {
+    return NewEndpointprivilegemanagementprovisioningstatusEndpointPrivilegeManagementProvisioningStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // EvaluateAssignmentFilter provides operations to call the evaluateAssignmentFilter method.
 // returns a *EvaluateassignmentfilterEvaluateAssignmentFilterRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) EvaluateAssignmentFilter()(*EvaluateassignmentfilterEvaluateAssignmentFilterRequestBuilder) {
@@ -456,6 +461,11 @@ func (m *DeviceManagementRequestBuilder) GroupPolicyUploadedDefinitionFiles()(*G
 // returns a *HardwareconfigurationsHardwareConfigurationsRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) HardwareConfigurations()(*HardwareconfigurationsHardwareConfigurationsRequestBuilder) {
     return NewHardwareconfigurationsHardwareConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// HardwarePasswordDetails provides operations to manage the hardwarePasswordDetails property of the microsoft.graph.deviceManagement entity.
+// returns a *HardwarepassworddetailsHardwarePasswordDetailsRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) HardwarePasswordDetails()(*HardwarepassworddetailsHardwarePasswordDetailsRequestBuilder) {
+    return NewHardwarepassworddetailsHardwarePasswordDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // HardwarePasswordInfo provides operations to manage the hardwarePasswordInfo property of the microsoft.graph.deviceManagement entity.
 // returns a *HardwarepasswordinfoHardwarePasswordInfoRequestBuilder when successful
@@ -1020,6 +1030,11 @@ func (m *DeviceManagementRequestBuilder) WindowsInformationProtectionNetworkLear
 // returns a *WindowsmalwareinformationWindowsMalwareInformationRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) WindowsMalwareInformation()(*WindowsmalwareinformationWindowsMalwareInformationRequestBuilder) {
     return NewWindowsmalwareinformationWindowsMalwareInformationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// WindowsQualityUpdatePolicies provides operations to manage the windowsQualityUpdatePolicies property of the microsoft.graph.deviceManagement entity.
+// returns a *WindowsqualityupdatepoliciesWindowsQualityUpdatePoliciesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) WindowsQualityUpdatePolicies()(*WindowsqualityupdatepoliciesWindowsQualityUpdatePoliciesRequestBuilder) {
+    return NewWindowsqualityupdatepoliciesWindowsQualityUpdatePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WindowsQualityUpdateProfiles provides operations to manage the windowsQualityUpdateProfiles property of the microsoft.graph.deviceManagement entity.
 // returns a *WindowsqualityupdateprofilesWindowsQualityUpdateProfilesRequestBuilder when successful

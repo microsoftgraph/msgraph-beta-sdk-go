@@ -33,6 +33,18 @@ func (m *MicrosoftTunnelServer) GetAgentImageDigest()(*string) {
     }
     return nil
 }
+// GetDeploymentMode gets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
+// returns a *MicrosoftTunnelDeploymentMode when successful
+func (m *MicrosoftTunnelServer) GetDeploymentMode()(*MicrosoftTunnelDeploymentMode) {
+    val, err := m.GetBackingStore().Get("deploymentMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MicrosoftTunnelDeploymentMode)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The display name for the server. This property is required when a server is created and cannot be cleared during updates.
 // returns a *string when successful
 func (m *MicrosoftTunnelServer) GetDisplayName()(*string) {
@@ -56,6 +68,16 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetAgentImageDigest(val)
+        }
+        return nil
+    }
+    res["deploymentMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMicrosoftTunnelDeploymentMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeploymentMode(val.(*MicrosoftTunnelDeploymentMode))
         }
         return nil
     }
@@ -149,6 +171,13 @@ func (m *MicrosoftTunnelServer) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetDeploymentMode() != nil {
+        cast := (*m.GetDeploymentMode()).String()
+        err = writer.WriteStringValue("deploymentMode", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
@@ -179,6 +208,13 @@ func (m *MicrosoftTunnelServer) Serialize(writer i878a80d2330e89d26896388a3f487e
 // SetAgentImageDigest sets the agentImageDigest property value. The digest of the current agent image running on this server
 func (m *MicrosoftTunnelServer) SetAgentImageDigest(value *string)() {
     err := m.GetBackingStore().Set("agentImageDigest", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeploymentMode sets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
+func (m *MicrosoftTunnelServer) SetDeploymentMode(value *MicrosoftTunnelDeploymentMode)() {
+    err := m.GetBackingStore().Set("deploymentMode", value)
     if err != nil {
         panic(err)
     }
@@ -215,11 +251,13 @@ type MicrosoftTunnelServerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAgentImageDigest()(*string)
+    GetDeploymentMode()(*MicrosoftTunnelDeploymentMode)
     GetDisplayName()(*string)
     GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetServerImageDigest()(*string)
     GetTunnelServerHealthStatus()(*MicrosoftTunnelServerHealthStatus)
     SetAgentImageDigest(value *string)()
+    SetDeploymentMode(value *MicrosoftTunnelDeploymentMode)()
     SetDisplayName(value *string)()
     SetLastCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetServerImageDigest(value *string)()

@@ -11,7 +11,7 @@ import (
 type B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilderGetQueryParameters collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
+// B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilderGetQueryParameters get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
 type B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewB2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilder(rawU
 func (m *B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilder) Count()(*B2cuserflowsItemLanguagesItemDefaultpagesCountRequestBuilder) {
     return NewB2cuserflowsItemLanguagesItemDefaultpagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
+// Get get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
 // returns a UserFlowLanguagePageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-beta
 func (m *B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguagePageCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilder) Po
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserFlowLanguagePageable), nil
 }
-// ToGetRequestInformation collection of pages with the default content to display in a user flow for a specified language. This collection doesn't allow any kind of modification.
+// ToGetRequestInformation get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
 // returns a *RequestInformation when successful
 func (m *B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cuserflowsItemLanguagesItemDefaultpagesDefaultPagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

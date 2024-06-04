@@ -11,7 +11,7 @@ import (
 type MobileappsItemGraphiosstoreappRelationshipsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileappsItemGraphiosstoreappRelationshipsRequestBuilderGetQueryParameters the set of direct relationships for this app.
+// MobileappsItemGraphiosstoreappRelationshipsRequestBuilderGetQueryParameters list of relationships for this mobile app.
 type MobileappsItemGraphiosstoreappRelationshipsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewMobileappsItemGraphiosstoreappRelationshipsRequestBuilder(rawUrl string,
 func (m *MobileappsItemGraphiosstoreappRelationshipsRequestBuilder) Count()(*MobileappsItemGraphiosstoreappRelationshipsCountRequestBuilder) {
     return NewMobileappsItemGraphiosstoreappRelationshipsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the set of direct relationships for this app.
+// Get list of relationships for this mobile app.
 // returns a MobileAppRelationshipCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileappsItemGraphiosstoreappRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileappsItemGraphiosstoreappRelationshipsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *MobileappsItemGraphiosstoreappRelationshipsRequestBuilder) Post(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable), nil
 }
-// ToGetRequestInformation the set of direct relationships for this app.
+// ToGetRequestInformation list of relationships for this mobile app.
 // returns a *RequestInformation when successful
 func (m *MobileappsItemGraphiosstoreappRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileappsItemGraphiosstoreappRelationshipsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

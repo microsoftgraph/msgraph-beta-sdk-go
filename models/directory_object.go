@@ -86,6 +86,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewPendingExternalUserProfile(), nil
                     case "#microsoft.graph.permissionGrantPolicy":
                         return NewPermissionGrantPolicy(), nil
+                    case "#microsoft.graph.permissionGrantPreApprovalPolicy":
+                        return NewPermissionGrantPreApprovalPolicy(), nil
                     case "#microsoft.graph.policyBase":
                         return NewPolicyBase(), nil
                     case "#microsoft.graph.resourceSpecificPermissionGrant":

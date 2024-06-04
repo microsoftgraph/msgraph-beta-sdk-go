@@ -1,0 +1,84 @@
+package domains
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// ItemRootdomainRootDomainRequestBuilder provides operations to manage the rootDomain property of the microsoft.graph.domain entity.
+type ItemRootdomainRootDomainRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// ItemRootdomainRootDomainRequestBuilderGetQueryParameters get the root domain of a subdomain.The API returns a single object which is the root domain of the specified subdomain.
+type ItemRootdomainRootDomainRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+}
+// ItemRootdomainRootDomainRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ItemRootdomainRootDomainRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ItemRootdomainRootDomainRequestBuilderGetQueryParameters
+}
+// NewItemRootdomainRootDomainRequestBuilderInternal instantiates a new ItemRootdomainRootDomainRequestBuilder and sets the default values.
+func NewItemRootdomainRootDomainRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRootdomainRootDomainRequestBuilder) {
+    m := &ItemRootdomainRootDomainRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/domains/{domain%2Did}/rootDomain{?%24expand,%24select}", pathParameters),
+    }
+    return m
+}
+// NewItemRootdomainRootDomainRequestBuilder instantiates a new ItemRootdomainRootDomainRequestBuilder and sets the default values.
+func NewItemRootdomainRootDomainRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemRootdomainRootDomainRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewItemRootdomainRootDomainRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Get get the root domain of a subdomain.The API returns a single object which is the root domain of the specified subdomain.
+// returns a Domainable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/domain-list-rootdomain?view=graph-rest-beta
+func (m *ItemRootdomainRootDomainRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRootdomainRootDomainRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDomainFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Domainable), nil
+}
+// ToGetRequestInformation get the root domain of a subdomain.The API returns a single object which is the root domain of the specified subdomain.
+// returns a *RequestInformation when successful
+func (m *ItemRootdomainRootDomainRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRootdomainRootDomainRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ItemRootdomainRootDomainRequestBuilder when successful
+func (m *ItemRootdomainRootDomainRequestBuilder) WithUrl(rawUrl string)(*ItemRootdomainRootDomainRequestBuilder) {
+    return NewItemRootdomainRootDomainRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

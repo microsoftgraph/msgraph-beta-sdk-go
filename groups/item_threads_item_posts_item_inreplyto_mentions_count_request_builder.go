@@ -14,6 +14,8 @@ type ItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilder struct {
 type ItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilderGetRequestConfi
 // NewItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilderInternal instantiates a new ItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilder and sets the default values.
 func NewItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilder) {
     m := &ItemThreadsItemPostsItemInreplytoMentionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/mentions/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/mentions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

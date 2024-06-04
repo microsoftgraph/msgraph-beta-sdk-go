@@ -11,7 +11,7 @@ import (
 type ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilderGetQueryParameters get gradingSchemes from education
+// ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilderGetQueryParameters read the properties and relationships of an educationGradingScheme object.
 type ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder(
 func (m *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder) Count()(*ClassesItemAssignmentsettingsGradingschemesCountRequestBuilder) {
     return NewClassesItemAssignmentsettingsGradingschemesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get gradingSchemes from education
+// Get read the properties and relationships of an educationGradingScheme object.
 // returns a EducationGradingSchemeCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeCollectionResponseable, error) {
@@ -96,9 +96,12 @@ func (m *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeCollectionResponseable), nil
 }
-// Post create new navigation property to gradingSchemes for education
+// Post create a new educationGradingScheme object.
 // returns a EducationGradingSchemeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationgradingscheme-post?view=graph-rest-beta
 func (m *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable, requestConfiguration *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable), nil
 }
-// ToGetRequestInformation get gradingSchemes from education
+// ToGetRequestInformation read the properties and relationships of an educationGradingScheme object.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +133,7 @@ func (m *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to gradingSchemes for education
+// ToPostRequestInformation create a new educationGradingScheme object.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable, requestConfiguration *ClassesItemAssignmentsettingsGradingschemesGradingSchemesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

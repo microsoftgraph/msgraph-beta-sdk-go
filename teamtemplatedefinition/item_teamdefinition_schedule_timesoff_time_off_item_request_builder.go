@@ -20,6 +20,8 @@ type ItemTeamdefinitionScheduleTimesoffTimeOffItemRequestBuilderDeleteRequestCon
 }
 // ItemTeamdefinitionScheduleTimesoffTimeOffItemRequestBuilderGetQueryParameters the instances of times off in the schedule.
 type ItemTeamdefinitionScheduleTimesoffTimeOffItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -42,7 +44,7 @@ type ItemTeamdefinitionScheduleTimesoffTimeOffItemRequestBuilderPatchRequestConf
 // NewItemTeamdefinitionScheduleTimesoffTimeOffItemRequestBuilderInternal instantiates a new ItemTeamdefinitionScheduleTimesoffTimeOffItemRequestBuilder and sets the default values.
 func NewItemTeamdefinitionScheduleTimesoffTimeOffItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamdefinitionScheduleTimesoffTimeOffItemRequestBuilder) {
     m := &ItemTeamdefinitionScheduleTimesoffTimeOffItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timesOff/{timeOff%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamTemplateDefinition/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timesOff/{timeOff%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

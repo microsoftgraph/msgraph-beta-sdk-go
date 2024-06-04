@@ -11,7 +11,7 @@ import (
 type CasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilderGetQueryParameters operation entity that represents the latest indexing for the custodian.
+// CasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilderGetQueryParameters get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
 type CasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,9 +40,12 @@ func NewCasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperati
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get operation entity that represents the latest indexing for the custodian.
+// Get get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
 // returns a EdiscoveryIndexOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-lastindexoperation?view=graph-rest-beta
 func (m *CasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryIndexOperationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,7 +63,7 @@ func (m *CasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperat
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryIndexOperationable), nil
 }
-// ToGetRequestInformation operation entity that represents the latest indexing for the custodian.
+// ToGetRequestInformation get a list of the ediscoveryIndexOperation associated with an ediscoveryCustodian.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemCustodiansItemLastindexoperationLastIndexOperationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

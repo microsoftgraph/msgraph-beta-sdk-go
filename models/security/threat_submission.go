@@ -75,7 +75,7 @@ func (m *ThreatSubmission) GetCategory()(*SubmissionCategory) {
     }
     return nil
 }
-// GetClientSource gets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
+// GetClientSource gets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft, other, and unkownFutureValue.
 // returns a *SubmissionClientSource when successful
 func (m *ThreatSubmission) GetClientSource()(*SubmissionClientSource) {
     val, err := m.GetBackingStore().Get("clientSource")
@@ -87,7 +87,7 @@ func (m *ThreatSubmission) GetClientSource()(*SubmissionClientSource) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
+// GetContentType gets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app, and unkownFutureValue.
 // returns a *SubmissionContentType when successful
 func (m *ThreatSubmission) GetContentType()(*SubmissionContentType) {
     val, err := m.GetBackingStore().Get("contentType")
@@ -241,7 +241,7 @@ func (m *ThreatSubmission) GetResult()(SubmissionResultable) {
     }
     return nil
 }
-// GetSource gets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
+// GetSource gets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user, and unkownFutureValue.
 // returns a *SubmissionSource when successful
 func (m *ThreatSubmission) GetSource()(*SubmissionSource) {
     val, err := m.GetBackingStore().Get("source")
@@ -253,7 +253,7 @@ func (m *ThreatSubmission) GetSource()(*SubmissionSource) {
     }
     return nil
 }
-// GetStatus gets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
+// GetStatus gets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped, and unkownFutureValue.
 // returns a *LongRunningOperationStatus when successful
 func (m *ThreatSubmission) GetStatus()(*LongRunningOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -364,14 +364,14 @@ func (m *ThreatSubmission) SetCategory(value *SubmissionCategory)() {
         panic(err)
     }
 }
-// SetClientSource sets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.
+// SetClientSource sets the clientSource property value. Specifies the source of the submission. The possible values are: microsoft, other, and unkownFutureValue.
 func (m *ThreatSubmission) SetClientSource(value *SubmissionClientSource)() {
     err := m.GetBackingStore().Set("clientSource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.
+// SetContentType sets the contentType property value. Specifies the type of content being submitted. The possible values are: email, url, file, app, and unkownFutureValue.
 func (m *ThreatSubmission) SetContentType(value *SubmissionContentType)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {
@@ -399,14 +399,14 @@ func (m *ThreatSubmission) SetResult(value SubmissionResultable)() {
         panic(err)
     }
 }
-// SetSource sets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user and unkownFutureValue.
+// SetSource sets the source property value. Specifies the role of the submitter. Supports $filter = source eq 'value'. The possible values are: administrator,  user, and unkownFutureValue.
 func (m *ThreatSubmission) SetSource(value *SubmissionSource)() {
     err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.
+// SetStatus sets the status property value. Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq 'value'. The possible values are: notStarted, running, succeeded, failed, skipped, and unkownFutureValue.
 func (m *ThreatSubmission) SetStatus(value *LongRunningOperationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

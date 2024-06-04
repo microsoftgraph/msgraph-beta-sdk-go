@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSourcesRequestBuilderGetQueryParameters custodian sources that are included in the sourceCollection.
+// EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSourcesRequestBuilderGetQueryParameters get the list of dataSource objects associated with a source collection.
 type EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,10 +70,13 @@ func NewEdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSources
 func (m *EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSourcesRequestBuilder) Count()(*EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get custodian sources that are included in the sourceCollection.
+// Get get the list of dataSource objects associated with a source collection.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a DataSourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-custodiansources?view=graph-rest-beta
 func (m *EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,7 +94,7 @@ func (m *EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSource
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceCollectionResponseable), nil
 }
-// ToGetRequestInformation custodian sources that are included in the sourceCollection.
+// ToGetRequestInformation get the list of dataSource objects associated with a source collection.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourcecollectionsItemCustodiansourcesCustodianSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

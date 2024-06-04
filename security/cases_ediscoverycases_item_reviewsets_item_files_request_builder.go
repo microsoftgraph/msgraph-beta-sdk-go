@@ -11,7 +11,7 @@ import (
 type CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilderGetQueryParameters represents files within the review set.
+// CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilderGetQueryParameters get a list of the ediscoveryFile objects and their properties.
 type CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewCasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilder(rawUrl string,
 func (m *CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilder) Count()(*CasesEdiscoverycasesItemReviewsetsItemFilesCountRequestBuilder) {
     return NewCasesEdiscoverycasesItemReviewsetsItemFilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represents files within the review set.
+// Get get a list of the ediscoveryFile objects and their properties.
 // returns a EdiscoveryFileCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoveryreviewset-list-files?view=graph-rest-beta
 func (m *CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryFileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilder) Post(ctx con
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryFileable), nil
 }
-// ToGetRequestInformation represents files within the review set.
+// ToGetRequestInformation get a list of the ediscoveryFile objects and their properties.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemReviewsetsItemFilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -30,10 +30,13 @@ func NewItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentials
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getPasswordSingleSignOnCredentials
+// Post get the list of password-based single sign-on credentials for a group. This API returns the encrypted passwords as null.
 // Deprecated: This method is obsolete. Use PostAsGetPasswordSingleSignOnCredentialsPostResponse instead.
 // returns a ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-getpasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,9 +54,12 @@ func (m *ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredential
     }
     return res.(ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsResponseable), nil
 }
-// PostAsGetPasswordSingleSignOnCredentialsPostResponse invoke action getPasswordSingleSignOnCredentials
+// PostAsGetPasswordSingleSignOnCredentialsPostResponse get the list of password-based single sign-on credentials for a group. This API returns the encrypted passwords as null.
 // returns a ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-getpasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilder) PostAsGetPasswordSingleSignOnCredentialsPostResponse(ctx context.Context, requestConfiguration *ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,7 +77,7 @@ func (m *ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredential
     }
     return res.(ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsPostResponseable), nil
 }
-// ToPostRequestInformation invoke action getPasswordSingleSignOnCredentials
+// ToPostRequestInformation get the list of password-based single sign-on credentials for a group. This API returns the encrypted passwords as null.
 // returns a *RequestInformation when successful
 func (m *ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -46,6 +46,10 @@ func CreateRelatedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewRelatedTenant(), nil
                     case "#microsoft.graph.networkaccess.relatedThreatIntelligence":
                         return NewRelatedThreatIntelligence(), nil
+                    case "#microsoft.graph.networkaccess.relatedToken":
+                        return NewRelatedToken(), nil
+                    case "#microsoft.graph.networkaccess.relatedUser":
+                        return NewRelatedUser(), nil
                     case "#microsoft.graph.networkaccess.relatedWebCategory":
                         return NewRelatedWebCategory(), nil
                 }

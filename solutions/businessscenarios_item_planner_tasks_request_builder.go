@@ -11,7 +11,7 @@ import (
 type BusinessscenariosItemPlannerTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// BusinessscenariosItemPlannerTasksRequestBuilderGetQueryParameters the Planner tasks for the scenario.
+// BusinessscenariosItemPlannerTasksRequestBuilderGetQueryParameters get a list of the businessScenarioTask objects and their properties.
 type BusinessscenariosItemPlannerTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewBusinessscenariosItemPlannerTasksRequestBuilder(rawUrl string, requestAd
 func (m *BusinessscenariosItemPlannerTasksRequestBuilder) Count()(*BusinessscenariosItemPlannerTasksCountRequestBuilder) {
     return NewBusinessscenariosItemPlannerTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the Planner tasks for the scenario.
+// Get get a list of the businessScenarioTask objects and their properties.
 // returns a BusinessScenarioTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-beta
 func (m *BusinessscenariosItemPlannerTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessscenariosItemPlannerTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *BusinessscenariosItemPlannerTasksRequestBuilder) Get(ctx context.Contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskCollectionResponseable), nil
 }
-// Post create new navigation property to tasks for solutions
+// Post create a new businessScenarioTask object.
 // returns a BusinessScenarioTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-beta
 func (m *BusinessscenariosItemPlannerTasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessscenariosItemPlannerTasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *BusinessscenariosItemPlannerTasksRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable), nil
 }
-// ToGetRequestInformation the Planner tasks for the scenario.
+// ToGetRequestInformation get a list of the businessScenarioTask objects and their properties.
 // returns a *RequestInformation when successful
 func (m *BusinessscenariosItemPlannerTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessscenariosItemPlannerTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *BusinessscenariosItemPlannerTasksRequestBuilder) ToGetRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to tasks for solutions
+// ToPostRequestInformation create a new businessScenarioTask object.
 // returns a *RequestInformation when successful
 func (m *BusinessscenariosItemPlannerTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessscenariosItemPlannerTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

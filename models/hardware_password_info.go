@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// HardwarePasswordInfo intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices.
+// HardwarePasswordInfo intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices. Starting from June, 2024 (Intune Release 2406), this type will no longer be supported and will be marked as deprecated
 type HardwarePasswordInfo struct {
     Entity
 }
@@ -103,18 +103,6 @@ func (m *HardwarePasswordInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
     err := m.Entity.Serialize(writer)
     if err != nil {
         return err
-    }
-    {
-        err = writer.WriteStringValue("currentPassword", m.GetCurrentPassword())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetPreviousPasswords() != nil {
-        err = writer.WriteCollectionOfStringValues("previousPasswords", m.GetPreviousPasswords())
-        if err != nil {
-            return err
-        }
     }
     {
         err = writer.WriteStringValue("serialNumber", m.GetSerialNumber())

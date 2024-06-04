@@ -2,12 +2,16 @@ package models
 type WindowsUserType int
 
 const (
+    // Indicates that the user has administrator privileges.
     ADMINISTRATOR_WINDOWSUSERTYPE WindowsUserType = iota
+    // Indicates that the user is a low-rights user without administrator privileges.
     STANDARD_WINDOWSUSERTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_WINDOWSUSERTYPE
 )
 
 func (i WindowsUserType) String() string {
-    return []string{"administrator", "standard"}[i]
+    return []string{"administrator", "standard", "unknownFutureValue"}[i]
 }
 func ParseWindowsUserType(v string) (any, error) {
     result := ADMINISTRATOR_WINDOWSUSERTYPE
@@ -16,6 +20,8 @@ func ParseWindowsUserType(v string) (any, error) {
             result = ADMINISTRATOR_WINDOWSUSERTYPE
         case "standard":
             result = STANDARD_WINDOWSUSERTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WINDOWSUSERTYPE
         default:
             return nil, nil
     }

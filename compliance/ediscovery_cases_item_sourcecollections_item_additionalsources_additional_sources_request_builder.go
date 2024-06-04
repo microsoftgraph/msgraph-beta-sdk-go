@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourcesRequestBuilderGetQueryParameters adds an additional source to the sourceCollection.
+// EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourcesRequestBuilderGetQueryParameters get a list of additional dataSource objects associated with a source collection.
 type EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,10 +77,13 @@ func NewEdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourc
 func (m *EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourcesRequestBuilder) Count()(*EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get adds an additional source to the sourceCollection.
+// Get get a list of additional dataSource objects associated with a source collection.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a DataSourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-additionalsources?view=graph-rest-beta
 func (m *EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSour
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.DataSourceable), nil
 }
-// ToGetRequestInformation adds an additional source to the sourceCollection.
+// ToGetRequestInformation get a list of additional dataSource objects associated with a source collection.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourcecollectionsItemAdditionalsourcesAdditionalSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -197,6 +197,16 @@ func (m *PermissionGrantConditionSet) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["scopeSensitivityLabels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateScopeSensitivityLabelsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScopeSensitivityLabels(val.(ScopeSensitivityLabelsable))
+        }
+        return nil
+    }
     return res
 }
 // GetPermissionClassification gets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
@@ -244,6 +254,18 @@ func (m *PermissionGrantConditionSet) GetResourceApplication()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetScopeSensitivityLabels gets the scopeSensitivityLabels property value. The scopeSensitivityLabels property
+// returns a ScopeSensitivityLabelsable when successful
+func (m *PermissionGrantConditionSet) GetScopeSensitivityLabels()(ScopeSensitivityLabelsable) {
+    val, err := m.GetBackingStore().Get("scopeSensitivityLabels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ScopeSensitivityLabelsable)
     }
     return nil
 }
@@ -304,6 +326,12 @@ func (m *PermissionGrantConditionSet) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err = writer.WriteStringValue("resourceApplication", m.GetResourceApplication())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("scopeSensitivityLabels", m.GetScopeSensitivityLabels())
         if err != nil {
             return err
         }
@@ -373,6 +401,13 @@ func (m *PermissionGrantConditionSet) SetResourceApplication(value *string)() {
         panic(err)
     }
 }
+// SetScopeSensitivityLabels sets the scopeSensitivityLabels property value. The scopeSensitivityLabels property
+func (m *PermissionGrantConditionSet) SetScopeSensitivityLabels(value ScopeSensitivityLabelsable)() {
+    err := m.GetBackingStore().Set("scopeSensitivityLabels", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type PermissionGrantConditionSetable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -385,6 +420,7 @@ type PermissionGrantConditionSetable interface {
     GetPermissions()([]string)
     GetPermissionType()(*PermissionType)
     GetResourceApplication()(*string)
+    GetScopeSensitivityLabels()(ScopeSensitivityLabelsable)
     SetCertifiedClientApplicationsOnly(value *bool)()
     SetClientApplicationIds(value []string)()
     SetClientApplicationPublisherIds(value []string)()
@@ -394,4 +430,5 @@ type PermissionGrantConditionSetable interface {
     SetPermissions(value []string)()
     SetPermissionType(value *PermissionType)()
     SetResourceApplication(value *string)()
+    SetScopeSensitivityLabels(value ScopeSensitivityLabelsable)()
 }

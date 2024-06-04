@@ -20,7 +20,7 @@ func NewCallTranscript()(*CallTranscript) {
 func CreateCallTranscriptFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallTranscript(), nil
 }
-// GetCallId gets the callId property value. The callId property
+// GetCallId gets the callId property value. The unique identifier for the call that is related to this transcript. Read-only.
 // returns a *string when successful
 func (m *CallTranscript) GetCallId()(*string) {
     val, err := m.GetBackingStore().Get("callId")
@@ -44,7 +44,7 @@ func (m *CallTranscript) GetContent()([]byte) {
     }
     return nil
 }
-// GetContentCorrelationId gets the contentCorrelationId property value. The contentCorrelationId property
+// GetContentCorrelationId gets the contentCorrelationId property value. The unique identifier that links the transcript with its corresponding recording. Read-only.
 // returns a *string when successful
 func (m *CallTranscript) GetContentCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("contentCorrelationId")
@@ -56,7 +56,7 @@ func (m *CallTranscript) GetContentCorrelationId()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// GetCreatedDateTime gets the createdDateTime property value. Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *CallTranscript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -68,7 +68,7 @@ func (m *CallTranscript) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *CallTranscript) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -234,7 +234,7 @@ func (m *CallTranscript) GetMetadataContent()([]byte) {
     }
     return nil
 }
-// GetTranscriptContentUrl gets the transcriptContentUrl property value. The URL which can be used to access the content of the transcript. Read-only.
+// GetTranscriptContentUrl gets the transcriptContentUrl property value. The URL that can be used to access the content of the transcript. Read-only.
 // returns a *string when successful
 func (m *CallTranscript) GetTranscriptContentUrl()(*string) {
     val, err := m.GetBackingStore().Get("transcriptContentUrl")
@@ -314,7 +314,7 @@ func (m *CallTranscript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetCallId sets the callId property value. The callId property
+// SetCallId sets the callId property value. The unique identifier for the call that is related to this transcript. Read-only.
 func (m *CallTranscript) SetCallId(value *string)() {
     err := m.GetBackingStore().Set("callId", value)
     if err != nil {
@@ -328,21 +328,21 @@ func (m *CallTranscript) SetContent(value []byte)() {
         panic(err)
     }
 }
-// SetContentCorrelationId sets the contentCorrelationId property value. The contentCorrelationId property
+// SetContentCorrelationId sets the contentCorrelationId property value. The unique identifier that links the transcript with its corresponding recording. Read-only.
 func (m *CallTranscript) SetContentCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("contentCorrelationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
+// SetCreatedDateTime sets the createdDateTime property value. Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *CallTranscript) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *CallTranscript) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
@@ -377,7 +377,7 @@ func (m *CallTranscript) SetMetadataContent(value []byte)() {
         panic(err)
     }
 }
-// SetTranscriptContentUrl sets the transcriptContentUrl property value. The URL which can be used to access the content of the transcript. Read-only.
+// SetTranscriptContentUrl sets the transcriptContentUrl property value. The URL that can be used to access the content of the transcript. Read-only.
 func (m *CallTranscript) SetTranscriptContentUrl(value *string)() {
     err := m.GetBackingStore().Set("transcriptContentUrl", value)
     if err != nil {

@@ -30,8 +30,11 @@ func NewItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCrede
     urlParams["request-raw-url"] = rawUrl
     return NewItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action deletePasswordSingleSignOnCredentials
+// Post delete the password-based single sign-on credentials for a given group to a given service principal.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-deletepasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, body ItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCred
     }
     return nil
 }
-// ToPostRequestInformation invoke action deletePasswordSingleSignOnCredentials
+// ToPostRequestInformation delete the password-based single sign-on credentials for a given group to a given service principal.
 // returns a *RequestInformation when successful
 func (m *ItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

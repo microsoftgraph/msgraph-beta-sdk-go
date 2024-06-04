@@ -110,7 +110,7 @@ func (m *AzureADJoinPolicy) GetIsAdminConfigurable()(*bool) {
     }
     return nil
 }
-// GetLocalAdmins gets the localAdmins property value. The localAdmins property
+// GetLocalAdmins gets the localAdmins property value. Determines who becomes a local administrator on joined devices.
 // returns a LocalAdminSettingsable when successful
 func (m *AzureADJoinPolicy) GetLocalAdmins()(LocalAdminSettingsable) {
     val, err := m.GetBackingStore().Get("localAdmins")
@@ -193,7 +193,7 @@ func (m *AzureADJoinPolicy) SetIsAdminConfigurable(value *bool)() {
         panic(err)
     }
 }
-// SetLocalAdmins sets the localAdmins property value. The localAdmins property
+// SetLocalAdmins sets the localAdmins property value. Determines who becomes a local administrator on joined devices.
 func (m *AzureADJoinPolicy) SetLocalAdmins(value LocalAdminSettingsable)() {
     err := m.GetBackingStore().Set("localAdmins", value)
     if err != nil {

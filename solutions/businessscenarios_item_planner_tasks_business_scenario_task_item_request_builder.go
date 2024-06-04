@@ -18,7 +18,7 @@ type BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderDele
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetQueryParameters the Planner tasks for the scenario.
+// BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetQueryParameters read the properties and relationships of a businessScenarioTask object.
 type BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -64,8 +64,11 @@ func NewBusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder(
     urlParams["request-raw-url"] = rawUrl
     return NewBusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property tasks for solutions
+// Delete delete a businessScenarioTask object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-beta
 func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,9 +88,12 @@ func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
 func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Details()(*BusinessscenariosItemPlannerTasksItemDetailsRequestBuilder) {
     return NewBusinessscenariosItemPlannerTasksItemDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the Planner tasks for the scenario.
+// Get read the properties and relationships of a businessScenarioTask object.
 // returns a BusinessScenarioTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-beta
 func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -105,9 +111,12 @@ func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable), nil
 }
-// Patch update the navigation property tasks in solutions
+// Patch update the properties of a businessScenarioTask object.
 // returns a BusinessScenarioTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-beta
 func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -130,7 +139,7 @@ func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
 func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ProgressTaskBoardFormat()(*BusinessscenariosItemPlannerTasksItemProgresstaskboardformatProgressTaskBoardFormatRequestBuilder) {
     return NewBusinessscenariosItemPlannerTasksItemProgresstaskboardformatProgressTaskBoardFormatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property tasks for solutions
+// ToDeleteRequestInformation delete a businessScenarioTask object.
 // returns a *RequestInformation when successful
 func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +150,7 @@ func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the Planner tasks for the scenario.
+// ToGetRequestInformation read the properties and relationships of a businessScenarioTask object.
 // returns a *RequestInformation when successful
 func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,7 +164,7 @@ func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property tasks in solutions
+// ToPatchRequestInformation update the properties of a businessScenarioTask object.
 // returns a *RequestInformation when successful
 func (m *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BusinessScenarioTaskable, requestConfiguration *BusinessscenariosItemPlannerTasksBusinessScenarioTaskItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

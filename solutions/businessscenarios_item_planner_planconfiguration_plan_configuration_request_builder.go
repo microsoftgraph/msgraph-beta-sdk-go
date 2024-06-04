@@ -18,7 +18,7 @@ type BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilderGetQueryParameters the configuration of Planner plans that will be created for the scenario.
+// BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilderGetQueryParameters read the properties and relationships of a plannerPlanConfiguration object.
 type BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBu
     }
     return nil
 }
-// Get the configuration of Planner plans that will be created for the scenario.
+// Get read the properties and relationships of a plannerPlanConfiguration object.
 // returns a PlannerPlanConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-beta
 func (m *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilder) Get(ctx context.Context, requestConfiguration *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,9 +98,12 @@ func (m *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBu
 func (m *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilder) Localizations()(*BusinessscenariosItemPlannerPlanconfigurationLocalizationsRequestBuilder) {
     return NewBusinessscenariosItemPlannerPlanconfigurationLocalizationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property planConfiguration in solutions
+// Patch update the properties of a plannerPlanConfiguration object for a businessScenario.
 // returns a PlannerPlanConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-beta
 func (m *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, requestConfiguration *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +132,7 @@ func (m *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBu
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the configuration of Planner plans that will be created for the scenario.
+// ToGetRequestInformation read the properties and relationships of a plannerPlanConfiguration object.
 // returns a *RequestInformation when successful
 func (m *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +146,7 @@ func (m *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBu
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property planConfiguration in solutions
+// ToPatchRequestInformation update the properties of a plannerPlanConfiguration object for a businessScenario.
 // returns a *RequestInformation when successful
 func (m *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanConfigurationable, requestConfiguration *BusinessscenariosItemPlannerPlanconfigurationPlanConfigurationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

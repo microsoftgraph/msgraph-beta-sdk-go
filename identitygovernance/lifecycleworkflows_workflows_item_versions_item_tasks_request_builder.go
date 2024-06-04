@@ -11,7 +11,7 @@ import (
 type LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilderGetQueryParameters the tasks in the workflow.
+// LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilderGetQueryParameters get a list of task objects in a workflowVersion.
 type LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewLifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilder(rawUrl st
 func (m *LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilder) Count()(*LifecycleworkflowsWorkflowsItemVersionsItemTasksCountRequestBuilder) {
     return NewLifecycleworkflowsWorkflowsItemVersionsItemTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the tasks in the workflow.
+// Get get a list of task objects in a workflowVersion.
 // returns a TaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/identitygovernance-workflowversion-list-tasks?view=graph-rest-beta
 func (m *LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilder) Post(ct
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.Taskable), nil
 }
-// ToGetRequestInformation the tasks in the workflow.
+// ToGetRequestInformation get a list of task objects in a workflowVersion.
 // returns a *RequestInformation when successful
 func (m *LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleworkflowsWorkflowsItemVersionsItemTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

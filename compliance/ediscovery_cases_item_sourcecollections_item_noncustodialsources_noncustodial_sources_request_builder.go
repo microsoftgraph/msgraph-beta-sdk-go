@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialSourcesRequestBuilderGetQueryParameters noncustodialDataSource sources that are included in the sourceCollection
+// EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialSourcesRequestBuilderGetQueryParameters get a list of noncustodialDataSource associated with a sourceCollection.
 type EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,10 +70,13 @@ func NewEdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialS
 func (m *EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialSourcesRequestBuilder) Count()(*EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesCountRequestBuilder) {
     return NewEdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get noncustodialDataSource sources that are included in the sourceCollection
+// Get get a list of noncustodialDataSource associated with a sourceCollection.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a NoncustodialDataSourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-noncustodialsources?view=graph-rest-beta
 func (m *EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialSourcesRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,7 +94,7 @@ func (m *EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodial
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.NoncustodialDataSourceCollectionResponseable), nil
 }
-// ToGetRequestInformation noncustodialDataSource sources that are included in the sourceCollection
+// ToGetRequestInformation get a list of noncustodialDataSource associated with a sourceCollection.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemSourcecollectionsItemNoncustodialsourcesNoncustodialSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

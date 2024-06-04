@@ -54,8 +54,11 @@ func NewItemOnlinemeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRe
     urlParams["request-raw-url"] = rawUrl
     return NewItemOnlinemeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property registrants for users
+// Delete cancel an onlineMeeting registration for a meetingRegistrant on behalf of the registrant. Only use this method when the allowedRegistrant property of the meetingRegistration object has a value of organization and the registrant's delegated permission was used to enroll. When the allowedRegistrant value is everyone, registrants can only use the link in the email they receive to cancel their registration.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/meetingregistrant-delete?view=graph-rest-beta
 func (m *ItemOnlinemeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlinemeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +113,7 @@ func (m *ItemOnlinemeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseable), nil
 }
-// ToDeleteRequestInformation delete navigation property registrants for users
+// ToDeleteRequestInformation cancel an onlineMeeting registration for a meetingRegistrant on behalf of the registrant. Only use this method when the allowedRegistrant property of the meetingRegistration object has a value of organization and the registrant's delegated permission was used to enroll. When the allowedRegistrant value is everyone, registrants can only use the link in the email they receive to cancel their registration.
 // returns a *RequestInformation when successful
 func (m *ItemOnlinemeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlinemeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

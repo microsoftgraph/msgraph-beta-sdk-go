@@ -2,14 +2,16 @@ package models
 type WindowsDeviceUsageType int
 
 const (
-    // Single User Device Type
+    // Default. Indicates that a device is a single-user device.
     SINGLEUSER_WINDOWSDEVICEUSAGETYPE WindowsDeviceUsageType = iota
-    // Shared Device Type
+    // Indicates that a device is a multi-user device.
     SHARED_WINDOWSDEVICEUSAGETYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_WINDOWSDEVICEUSAGETYPE
 )
 
 func (i WindowsDeviceUsageType) String() string {
-    return []string{"singleUser", "shared"}[i]
+    return []string{"singleUser", "shared", "unknownFutureValue"}[i]
 }
 func ParseWindowsDeviceUsageType(v string) (any, error) {
     result := SINGLEUSER_WINDOWSDEVICEUSAGETYPE
@@ -18,6 +20,8 @@ func ParseWindowsDeviceUsageType(v string) (any, error) {
             result = SINGLEUSER_WINDOWSDEVICEUSAGETYPE
         case "shared":
             result = SHARED_WINDOWSDEVICEUSAGETYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WINDOWSDEVICEUSAGETYPE
         default:
             return nil, nil
     }

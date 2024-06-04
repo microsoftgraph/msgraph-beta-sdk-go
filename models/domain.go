@@ -193,6 +193,16 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["rootDomain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDomainFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRootDomain(val.(Domainable))
+        }
+        return nil
+    }
     res["serviceConfigurationRecords"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDomainDnsRecordFromDiscriminatorValue)
         if err != nil {
@@ -269,7 +279,7 @@ func (m *Domain) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetIsAdminManaged gets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable
+// GetIsAdminManaged gets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable.
 // returns a *bool when successful
 func (m *Domain) GetIsAdminManaged()(*bool) {
     val, err := m.GetBackingStore().Get("isAdminManaged")
@@ -281,7 +291,7 @@ func (m *Domain) GetIsAdminManaged()(*bool) {
     }
     return nil
 }
-// GetIsDefault gets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable
+// GetIsDefault gets the isDefault property value. true for the default domain that is used for user creation. There's only one default domain per company. Not nullable.
 // returns a *bool when successful
 func (m *Domain) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
@@ -293,7 +303,7 @@ func (m *Domain) GetIsDefault()(*bool) {
     }
     return nil
 }
-// GetIsInitial gets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There's only one initial domain per company. Not nullable
+// GetIsInitial gets the isInitial property value. true for the initial domain created by Microsoft Online Services. For example, contoso.onmicrosoft.com. There's only one initial domain per company. Not nullable.
 // returns a *bool when successful
 func (m *Domain) GetIsInitial()(*bool) {
     val, err := m.GetBackingStore().Get("isInitial")
@@ -305,7 +315,7 @@ func (m *Domain) GetIsInitial()(*bool) {
     }
     return nil
 }
-// GetIsRoot gets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+// GetIsRoot gets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable.
 // returns a *bool when successful
 func (m *Domain) GetIsRoot()(*bool) {
     val, err := m.GetBackingStore().Get("isRoot")
@@ -317,7 +327,7 @@ func (m *Domain) GetIsRoot()(*bool) {
     }
     return nil
 }
-// GetIsVerified gets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
+// GetIsVerified gets the isVerified property value. true for verified domains. Not nullable.
 // returns a *bool when successful
 func (m *Domain) GetIsVerified()(*bool) {
     val, err := m.GetBackingStore().Get("isVerified")
@@ -329,7 +339,7 @@ func (m *Domain) GetIsVerified()(*bool) {
     }
     return nil
 }
-// GetPasswordNotificationWindowInDays gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property isn't set, a default value of 14 days is used.
+// GetPasswordNotificationWindowInDays gets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives a password expiry notification. 14 days by default.
 // returns a *int32 when successful
 func (m *Domain) GetPasswordNotificationWindowInDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordNotificationWindowInDays")
@@ -341,7 +351,7 @@ func (m *Domain) GetPasswordNotificationWindowInDays()(*int32) {
     }
     return nil
 }
-// GetPasswordValidityPeriodInDays gets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property isn't set, a default value of 90 days is used.
+// GetPasswordValidityPeriodInDays gets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. 90 days by default.
 // returns a *int32 when successful
 func (m *Domain) GetPasswordValidityPeriodInDays()(*int32) {
     val, err := m.GetBackingStore().Get("passwordValidityPeriodInDays")
@@ -350,6 +360,18 @@ func (m *Domain) GetPasswordValidityPeriodInDays()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetRootDomain gets the rootDomain property value. Root domain of a subdomain. Read-only, Nullable. Supports $expand.
+// returns a Domainable when successful
+func (m *Domain) GetRootDomain()(Domainable) {
+    val, err := m.GetBackingStore().Get("rootDomain")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Domainable)
     }
     return nil
 }
@@ -389,7 +411,7 @@ func (m *Domain) GetState()(DomainStateable) {
     }
     return nil
 }
-// GetSupportedServices gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values that you can add or remove using the API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+// GetSupportedServices gets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1, or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune, CustomUrlDomain. The values that you can add or remove using the API include: Email, OfficeCommunicationsOnline, Yammer, and CustomUrlDomain. Not nullable.  For more information about CustomUrlDomain, see Custom URL domains in external tenants.
 // returns a []string when successful
 func (m *Domain) GetSupportedServices()([]string) {
     val, err := m.GetBackingStore().Get("supportedServices")
@@ -497,6 +519,12 @@ func (m *Domain) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("rootDomain", m.GetRootDomain())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetServiceConfigurationRecords() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetServiceConfigurationRecords()))
         for i, v := range m.GetServiceConfigurationRecords() {
@@ -575,51 +603,58 @@ func (m *Domain) SetFederationConfiguration(value []InternalDomainFederationable
         panic(err)
     }
 }
-// SetIsAdminManaged sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable
+// SetIsAdminManaged sets the isAdminManaged property value. The value of the property is false if the DNS record management of the domain is delegated to Microsoft 365. Otherwise, the value is true. Not nullable.
 func (m *Domain) SetIsAdminManaged(value *bool)() {
     err := m.GetBackingStore().Set("isAdminManaged", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsDefault sets the isDefault property value. true if this is the default domain that is used for user creation. There's only one default domain per company. Not nullable
+// SetIsDefault sets the isDefault property value. true for the default domain that is used for user creation. There's only one default domain per company. Not nullable.
 func (m *Domain) SetIsDefault(value *bool)() {
     err := m.GetBackingStore().Set("isDefault", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsInitial sets the isInitial property value. true if this is the initial domain created by Microsoft Online Services (contoso.com). There's only one initial domain per company. Not nullable
+// SetIsInitial sets the isInitial property value. true for the initial domain created by Microsoft Online Services. For example, contoso.onmicrosoft.com. There's only one initial domain per company. Not nullable.
 func (m *Domain) SetIsInitial(value *bool)() {
     err := m.GetBackingStore().Set("isInitial", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRoot sets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable
+// SetIsRoot sets the isRoot property value. true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable.
 func (m *Domain) SetIsRoot(value *bool)() {
     err := m.GetBackingStore().Set("isRoot", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsVerified sets the isVerified property value. true if the domain has completed domain ownership verification. Not nullable
+// SetIsVerified sets the isVerified property value. true for verified domains. Not nullable.
 func (m *Domain) SetIsVerified(value *bool)() {
     err := m.GetBackingStore().Set("isVerified", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPasswordNotificationWindowInDays sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives notification that their password will expire. If the property isn't set, a default value of 14 days is used.
+// SetPasswordNotificationWindowInDays sets the passwordNotificationWindowInDays property value. Specifies the number of days before a user receives a password expiry notification. 14 days by default.
 func (m *Domain) SetPasswordNotificationWindowInDays(value *int32)() {
     err := m.GetBackingStore().Set("passwordNotificationWindowInDays", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPasswordValidityPeriodInDays sets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. If the property isn't set, a default value of 90 days is used.
+// SetPasswordValidityPeriodInDays sets the passwordValidityPeriodInDays property value. Specifies the length of time that a password is valid before it must be changed. 90 days by default.
 func (m *Domain) SetPasswordValidityPeriodInDays(value *int32)() {
     err := m.GetBackingStore().Set("passwordValidityPeriodInDays", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRootDomain sets the rootDomain property value. Root domain of a subdomain. Read-only, Nullable. Supports $expand.
+func (m *Domain) SetRootDomain(value Domainable)() {
+    err := m.GetBackingStore().Set("rootDomain", value)
     if err != nil {
         panic(err)
     }
@@ -645,7 +680,7 @@ func (m *Domain) SetState(value DomainStateable)() {
         panic(err)
     }
 }
-// SetSupportedServices sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1 or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune. The values that you can add or remove using the API include: Email, OfficeCommunicationsOnline, Yammer. Not nullable.
+// SetSupportedServices sets the supportedServices property value. The capabilities assigned to the domain. Can include 0, 1, or more of following values: Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline,SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune, CustomUrlDomain. The values that you can add or remove using the API include: Email, OfficeCommunicationsOnline, Yammer, and CustomUrlDomain. Not nullable.  For more information about CustomUrlDomain, see Custom URL domains in external tenants.
 func (m *Domain) SetSupportedServices(value []string)() {
     err := m.GetBackingStore().Set("supportedServices", value)
     if err != nil {
@@ -673,6 +708,7 @@ type Domainable interface {
     GetIsVerified()(*bool)
     GetPasswordNotificationWindowInDays()(*int32)
     GetPasswordValidityPeriodInDays()(*int32)
+    GetRootDomain()(Domainable)
     GetServiceConfigurationRecords()([]DomainDnsRecordable)
     GetSharedEmailDomainInvitations()([]SharedEmailDomainInvitationable)
     GetState()(DomainStateable)
@@ -689,6 +725,7 @@ type Domainable interface {
     SetIsVerified(value *bool)()
     SetPasswordNotificationWindowInDays(value *int32)()
     SetPasswordValidityPeriodInDays(value *int32)()
+    SetRootDomain(value Domainable)()
     SetServiceConfigurationRecords(value []DomainDnsRecordable)()
     SetSharedEmailDomainInvitations(value []SharedEmailDomainInvitationable)()
     SetState(value DomainStateable)()

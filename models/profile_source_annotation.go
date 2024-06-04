@@ -116,7 +116,7 @@ func (m *ProfileSourceAnnotation) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProperties gets the properties property value. The names of properties that have data from this source.
+// GetProperties gets the properties property value. Names of properties that have data from this source.
 // returns a []string when successful
 func (m *ProfileSourceAnnotation) GetProperties()([]string) {
     val, err := m.GetBackingStore().Get("properties")
@@ -199,7 +199,7 @@ func (m *ProfileSourceAnnotation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProperties sets the properties property value. The names of properties that have data from this source.
+// SetProperties sets the properties property value. Names of properties that have data from this source.
 func (m *ProfileSourceAnnotation) SetProperties(value []string)() {
     err := m.GetBackingStore().Set("properties", value)
     if err != nil {

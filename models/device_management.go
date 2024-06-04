@@ -742,6 +742,18 @@ func (m *DeviceManagement) GetEmbeddedSIMActivationCodePools()([]EmbeddedSIMActi
     }
     return nil
 }
+// GetEndpointPrivilegeManagementProvisioningStatus gets the endpointPrivilegeManagementProvisioningStatus property value. Endpoint privilege management (EPM) tenant provisioning status contains tenant level license and onboarding state information.
+// returns a EndpointPrivilegeManagementProvisioningStatusable when successful
+func (m *DeviceManagement) GetEndpointPrivilegeManagementProvisioningStatus()(EndpointPrivilegeManagementProvisioningStatusable) {
+    val, err := m.GetBackingStore().Get("endpointPrivilegeManagementProvisioningStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EndpointPrivilegeManagementProvisioningStatusable)
+    }
+    return nil
+}
 // GetExchangeConnectors gets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
 // returns a []DeviceManagementExchangeConnectorable when successful
 func (m *DeviceManagement) GetExchangeConnectors()([]DeviceManagementExchangeConnectorable) {
@@ -1664,6 +1676,16 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["endpointPrivilegeManagementProvisioningStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEndpointPrivilegeManagementProvisioningStatusFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEndpointPrivilegeManagementProvisioningStatus(val.(EndpointPrivilegeManagementProvisioningStatusable))
+        }
+        return nil
+    }
     res["exchangeConnectors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementExchangeConnectorFromDiscriminatorValue)
         if err != nil {
@@ -1831,6 +1853,22 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 }
             }
             m.SetHardwareConfigurations(res)
+        }
+        return nil
+    }
+    res["hardwarePasswordDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHardwarePasswordDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HardwarePasswordDetailable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HardwarePasswordDetailable)
+                }
+            }
+            m.SetHardwarePasswordDetails(res)
         }
         return nil
     }
@@ -3438,6 +3476,22 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["windowsQualityUpdatePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsQualityUpdatePolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WindowsQualityUpdatePolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(WindowsQualityUpdatePolicyable)
+                }
+            }
+            m.SetWindowsQualityUpdatePolicies(res)
+        }
+        return nil
+    }
     res["windowsQualityUpdateProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsQualityUpdateProfileFromDiscriminatorValue)
         if err != nil {
@@ -3607,6 +3661,18 @@ func (m *DeviceManagement) GetHardwareConfigurations()([]HardwareConfigurationab
     }
     if val != nil {
         return val.([]HardwareConfigurationable)
+    }
+    return nil
+}
+// GetHardwarePasswordDetails gets the hardwarePasswordDetails property value. Device BIOS password information for devices with managed BIOS and firmware configuration, which provides device serial number, list of previous passwords, and current password.
+// returns a []HardwarePasswordDetailable when successful
+func (m *DeviceManagement) GetHardwarePasswordDetails()([]HardwarePasswordDetailable) {
+    val, err := m.GetBackingStore().Get("hardwarePasswordDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HardwarePasswordDetailable)
     }
     return nil
 }
@@ -4930,6 +4996,18 @@ func (m *DeviceManagement) GetWindowsMalwareOverview()(WindowsMalwareOverviewabl
     }
     return nil
 }
+// GetWindowsQualityUpdatePolicies gets the windowsQualityUpdatePolicies property value. A collection of Windows quality update policies
+// returns a []WindowsQualityUpdatePolicyable when successful
+func (m *DeviceManagement) GetWindowsQualityUpdatePolicies()([]WindowsQualityUpdatePolicyable) {
+    val, err := m.GetBackingStore().Get("windowsQualityUpdatePolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsQualityUpdatePolicyable)
+    }
+    return nil
+}
 // GetWindowsQualityUpdateProfiles gets the windowsQualityUpdateProfiles property value. A collection of windows quality update profiles
 // returns a []WindowsQualityUpdateProfileable when successful
 func (m *DeviceManagement) GetWindowsQualityUpdateProfiles()([]WindowsQualityUpdateProfileable) {
@@ -5632,6 +5710,12 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("endpointPrivilegeManagementProvisioningStatus", m.GetEndpointPrivilegeManagementProvisioningStatus())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetExchangeConnectors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExchangeConnectors()))
         for i, v := range m.GetExchangeConnectors() {
@@ -5754,6 +5838,18 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             }
         }
         err = writer.WriteCollectionOfObjectValues("hardwareConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetHardwarePasswordDetails() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHardwarePasswordDetails()))
+        for i, v := range m.GetHardwarePasswordDetails() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("hardwarePasswordDetails", cast)
         if err != nil {
             return err
         }
@@ -6906,6 +7002,18 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetWindowsQualityUpdatePolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsQualityUpdatePolicies()))
+        for i, v := range m.GetWindowsQualityUpdatePolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("windowsQualityUpdatePolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetWindowsQualityUpdateProfiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWindowsQualityUpdateProfiles()))
         for i, v := range m.GetWindowsQualityUpdateProfiles() {
@@ -7382,6 +7490,13 @@ func (m *DeviceManagement) SetEmbeddedSIMActivationCodePools(value []EmbeddedSIM
         panic(err)
     }
 }
+// SetEndpointPrivilegeManagementProvisioningStatus sets the endpointPrivilegeManagementProvisioningStatus property value. Endpoint privilege management (EPM) tenant provisioning status contains tenant level license and onboarding state information.
+func (m *DeviceManagement) SetEndpointPrivilegeManagementProvisioningStatus(value EndpointPrivilegeManagementProvisioningStatusable)() {
+    err := m.GetBackingStore().Set("endpointPrivilegeManagementProvisioningStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExchangeConnectors sets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
 func (m *DeviceManagement) SetExchangeConnectors(value []DeviceManagementExchangeConnectorable)() {
     err := m.GetBackingStore().Set("exchangeConnectors", value)
@@ -7455,6 +7570,13 @@ func (m *DeviceManagement) SetGroupPolicyUploadedDefinitionFiles(value []GroupPo
 // SetHardwareConfigurations sets the hardwareConfigurations property value. The hardware configurations for this account.
 func (m *DeviceManagement) SetHardwareConfigurations(value []HardwareConfigurationable)() {
     err := m.GetBackingStore().Set("hardwareConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetHardwarePasswordDetails sets the hardwarePasswordDetails property value. Device BIOS password information for devices with managed BIOS and firmware configuration, which provides device serial number, list of previous passwords, and current password.
+func (m *DeviceManagement) SetHardwarePasswordDetails(value []HardwarePasswordDetailable)() {
+    err := m.GetBackingStore().Set("hardwarePasswordDetails", value)
     if err != nil {
         panic(err)
     }
@@ -8229,6 +8351,13 @@ func (m *DeviceManagement) SetWindowsMalwareOverview(value WindowsMalwareOvervie
         panic(err)
     }
 }
+// SetWindowsQualityUpdatePolicies sets the windowsQualityUpdatePolicies property value. A collection of Windows quality update policies
+func (m *DeviceManagement) SetWindowsQualityUpdatePolicies(value []WindowsQualityUpdatePolicyable)() {
+    err := m.GetBackingStore().Set("windowsQualityUpdatePolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindowsQualityUpdateProfiles sets the windowsQualityUpdateProfiles property value. A collection of windows quality update profiles
 func (m *DeviceManagement) SetWindowsQualityUpdateProfiles(value []WindowsQualityUpdateProfileable)() {
     err := m.GetBackingStore().Set("windowsQualityUpdateProfiles", value)
@@ -8327,6 +8456,7 @@ type DeviceManagementable interface {
     GetDomainJoinConnectors()([]DeviceManagementDomainJoinConnectorable)
     GetElevationRequests()([]PrivilegeManagementElevationRequestable)
     GetEmbeddedSIMActivationCodePools()([]EmbeddedSIMActivationCodePoolable)
+    GetEndpointPrivilegeManagementProvisioningStatus()(EndpointPrivilegeManagementProvisioningStatusable)
     GetExchangeConnectors()([]DeviceManagementExchangeConnectorable)
     GetExchangeOnPremisesPolicies()([]DeviceManagementExchangeOnPremisesPolicyable)
     GetExchangeOnPremisesPolicy()(DeviceManagementExchangeOnPremisesPolicyable)
@@ -8338,6 +8468,7 @@ type DeviceManagementable interface {
     GetGroupPolicyObjectFiles()([]GroupPolicyObjectFileable)
     GetGroupPolicyUploadedDefinitionFiles()([]GroupPolicyUploadedDefinitionFileable)
     GetHardwareConfigurations()([]HardwareConfigurationable)
+    GetHardwarePasswordDetails()([]HardwarePasswordDetailable)
     GetHardwarePasswordInfo()([]HardwarePasswordInfoable)
     GetImportedDeviceIdentities()([]ImportedDeviceIdentityable)
     GetImportedWindowsAutopilotDeviceIdentities()([]ImportedWindowsAutopilotDeviceIdentityable)
@@ -8448,6 +8579,7 @@ type DeviceManagementable interface {
     GetWindowsInformationProtectionNetworkLearningSummaries()([]WindowsInformationProtectionNetworkLearningSummaryable)
     GetWindowsMalwareInformation()([]WindowsMalwareInformationable)
     GetWindowsMalwareOverview()(WindowsMalwareOverviewable)
+    GetWindowsQualityUpdatePolicies()([]WindowsQualityUpdatePolicyable)
     GetWindowsQualityUpdateProfiles()([]WindowsQualityUpdateProfileable)
     GetWindowsUpdateCatalogItems()([]WindowsUpdateCatalogItemable)
     GetZebraFotaArtifacts()([]ZebraFotaArtifactable)
@@ -8513,6 +8645,7 @@ type DeviceManagementable interface {
     SetDomainJoinConnectors(value []DeviceManagementDomainJoinConnectorable)()
     SetElevationRequests(value []PrivilegeManagementElevationRequestable)()
     SetEmbeddedSIMActivationCodePools(value []EmbeddedSIMActivationCodePoolable)()
+    SetEndpointPrivilegeManagementProvisioningStatus(value EndpointPrivilegeManagementProvisioningStatusable)()
     SetExchangeConnectors(value []DeviceManagementExchangeConnectorable)()
     SetExchangeOnPremisesPolicies(value []DeviceManagementExchangeOnPremisesPolicyable)()
     SetExchangeOnPremisesPolicy(value DeviceManagementExchangeOnPremisesPolicyable)()
@@ -8524,6 +8657,7 @@ type DeviceManagementable interface {
     SetGroupPolicyObjectFiles(value []GroupPolicyObjectFileable)()
     SetGroupPolicyUploadedDefinitionFiles(value []GroupPolicyUploadedDefinitionFileable)()
     SetHardwareConfigurations(value []HardwareConfigurationable)()
+    SetHardwarePasswordDetails(value []HardwarePasswordDetailable)()
     SetHardwarePasswordInfo(value []HardwarePasswordInfoable)()
     SetImportedDeviceIdentities(value []ImportedDeviceIdentityable)()
     SetImportedWindowsAutopilotDeviceIdentities(value []ImportedWindowsAutopilotDeviceIdentityable)()
@@ -8634,6 +8768,7 @@ type DeviceManagementable interface {
     SetWindowsInformationProtectionNetworkLearningSummaries(value []WindowsInformationProtectionNetworkLearningSummaryable)()
     SetWindowsMalwareInformation(value []WindowsMalwareInformationable)()
     SetWindowsMalwareOverview(value WindowsMalwareOverviewable)()
+    SetWindowsQualityUpdatePolicies(value []WindowsQualityUpdatePolicyable)()
     SetWindowsQualityUpdateProfiles(value []WindowsQualityUpdateProfileable)()
     SetWindowsUpdateCatalogItems(value []WindowsUpdateCatalogItemable)()
     SetZebraFotaArtifacts(value []ZebraFotaArtifactable)()

@@ -150,6 +150,11 @@ func (m *FilestorageDeletedcontainersItemDriveListRequestBuilder) Patch(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable), nil
 }
+// Permissions provides operations to manage the permissions property of the microsoft.graph.list entity.
+// returns a *FilestorageDeletedcontainersItemDriveListPermissionsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveListRequestBuilder) Permissions()(*FilestorageDeletedcontainersItemDriveListPermissionsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveListPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.list entity.
 // returns a *FilestorageDeletedcontainersItemDriveListSubscriptionsRequestBuilder when successful
 func (m *FilestorageDeletedcontainersItemDriveListRequestBuilder) Subscriptions()(*FilestorageDeletedcontainersItemDriveListSubscriptionsRequestBuilder) {

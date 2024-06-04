@@ -18,7 +18,7 @@ type TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentRequestBuilderGetQueryParameters the contents of the app icon if the icon is hosted within the Teams infrastructure.
+// TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentRequestBuilderGetQueryParameters retrieve the hosted content in an app's icon.
 type TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,9 +75,12 @@ func (m *TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentReque
     }
     return nil
 }
-// Get the contents of the app icon if the icon is hosted within the Teams infrastructure.
+// Get retrieve the hosted content in an app's icon.
 // returns a TeamworkHostedContentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkhostedcontent-get?view=graph-rest-beta
 func (m *TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamworkHostedContentable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,7 +129,7 @@ func (m *TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the contents of the app icon if the icon is hosted within the Teams infrastructure.
+// ToGetRequestInformation retrieve the hosted content in an app's icon.
 // returns a *RequestInformation when successful
 func (m *TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsappsItemAppdefinitionsItemColoriconHostedcontentHostedContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

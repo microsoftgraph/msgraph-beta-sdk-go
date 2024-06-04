@@ -30,7 +30,7 @@ func NewVirtualendpointCloudpcsBulkresizeBulkResizeRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualendpointCloudpcsBulkresizeBulkResizeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices can't be resized, those devices indicate 'resize failed'. The remaining devices are provisioned for the resize process.
+// Post perform a bulk resize action to resize a group of cloudPCs that successfully pass validation. If any devices can't be resized, those devices indicate 'resize failed'. The remaining devices are provisioned for the resize process.
 // Deprecated: This method is obsolete. Use PostAsBulkResizePostResponse instead.
 // returns a VirtualendpointCloudpcsBulkresizeBulkResizeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -54,7 +54,7 @@ func (m *VirtualendpointCloudpcsBulkresizeBulkResizeRequestBuilder) Post(ctx con
     }
     return res.(VirtualendpointCloudpcsBulkresizeBulkResizeResponseable), nil
 }
-// PostAsBulkResizePostResponse perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices can't be resized, those devices indicate 'resize failed'. The remaining devices are provisioned for the resize process.
+// PostAsBulkResizePostResponse perform a bulk resize action to resize a group of cloudPCs that successfully pass validation. If any devices can't be resized, those devices indicate 'resize failed'. The remaining devices are provisioned for the resize process.
 // Deprecated: The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize
 // returns a VirtualendpointCloudpcsBulkresizeBulkResizePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -78,7 +78,7 @@ func (m *VirtualendpointCloudpcsBulkresizeBulkResizeRequestBuilder) PostAsBulkRe
     }
     return res.(VirtualendpointCloudpcsBulkresizeBulkResizePostResponseable), nil
 }
-// ToPostRequestInformation perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices can't be resized, those devices indicate 'resize failed'. The remaining devices are provisioned for the resize process.
+// ToPostRequestInformation perform a bulk resize action to resize a group of cloudPCs that successfully pass validation. If any devices can't be resized, those devices indicate 'resize failed'. The remaining devices are provisioned for the resize process.
 // Deprecated: The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize
 // returns a *RequestInformation when successful
 func (m *VirtualendpointCloudpcsBulkresizeBulkResizeRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualendpointCloudpcsBulkresizeBulkResizePostRequestBodyable, requestConfiguration *VirtualendpointCloudpcsBulkresizeBulkResizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

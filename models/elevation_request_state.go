@@ -17,10 +17,12 @@ const (
     UNKNOWNFUTUREVALUE_ELEVATIONREQUESTSTATE
     // Set to expire when Approved for is elapsed or ExpireDate is elapsed, whichever is sooner.
     REVOKED_ELEVATIONREQUESTSTATE
+    // Indicates an elevation request that was previously approved and expired has been completed.
+    COMPLETED_ELEVATIONREQUESTSTATE
 )
 
 func (i ElevationRequestState) String() string {
-    return []string{"none", "pending", "approved", "denied", "expired", "unknownFutureValue", "revoked"}[i]
+    return []string{"none", "pending", "approved", "denied", "expired", "unknownFutureValue", "revoked", "completed"}[i]
 }
 func ParseElevationRequestState(v string) (any, error) {
     result := NONE_ELEVATIONREQUESTSTATE
@@ -39,6 +41,8 @@ func ParseElevationRequestState(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_ELEVATIONREQUESTSTATE
         case "revoked":
             result = REVOKED_ELEVATIONREQUESTSTATE
+        case "completed":
+            result = COMPLETED_ELEVATIONREQUESTSTATE
         default:
             return nil, nil
     }

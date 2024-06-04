@@ -20,6 +20,8 @@ type TeamtemplatesItemDefinitionsItemTeamdefinitionScheduleTimeoffreasonsTimeOff
 }
 // TeamtemplatesItemDefinitionsItemTeamdefinitionScheduleTimeoffreasonsTimeOffReasonItemRequestBuilderGetQueryParameters the set of reasons for a time off in the schedule.
 type TeamtemplatesItemDefinitionsItemTeamdefinitionScheduleTimeoffreasonsTimeOffReasonItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -42,7 +44,7 @@ type TeamtemplatesItemDefinitionsItemTeamdefinitionScheduleTimeoffreasonsTimeOff
 // NewTeamtemplatesItemDefinitionsItemTeamdefinitionScheduleTimeoffreasonsTimeOffReasonItemRequestBuilderInternal instantiates a new TeamtemplatesItemDefinitionsItemTeamdefinitionScheduleTimeoffreasonsTimeOffReasonItemRequestBuilder and sets the default values.
 func NewTeamtemplatesItemDefinitionsItemTeamdefinitionScheduleTimeoffreasonsTimeOffReasonItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamtemplatesItemDefinitionsItemTeamdefinitionScheduleTimeoffreasonsTimeOffReasonItemRequestBuilder) {
     m := &TeamtemplatesItemDefinitionsItemTeamdefinitionScheduleTimeoffreasonsTimeOffReasonItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeOffReasons/{timeOffReason%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule/timeOffReasons/{timeOffReason%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

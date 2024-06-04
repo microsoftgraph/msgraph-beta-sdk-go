@@ -112,7 +112,7 @@ func (m *CustomClaimTransformation) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetInput gets the input property value. The input property
+// GetInput gets the input property value. The input attribute that provides the source for the transformation. This parameter is required if it's the first or only transformation in the list of transformations to be applied. Subsequent transformations use the output of the prior transformation as input.
 // returns a TransformationAttributeable when successful
 func (m *CustomClaimTransformation) GetInput()(TransformationAttributeable) {
     val, err := m.GetBackingStore().Get("input")
@@ -169,7 +169,7 @@ func (m *CustomClaimTransformation) SetAdditionalData(value map[string]any)() {
 func (m *CustomClaimTransformation) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetInput sets the input property value. The input property
+// SetInput sets the input property value. The input attribute that provides the source for the transformation. This parameter is required if it's the first or only transformation in the list of transformations to be applied. Subsequent transformations use the output of the prior transformation as input.
 func (m *CustomClaimTransformation) SetInput(value TransformationAttributeable)() {
     err := m.GetBackingStore().Set("input", value)
     if err != nil {

@@ -18,7 +18,7 @@ type ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilderGetQueryParameters preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+// ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilderGetQueryParameters preview of the last message sent in the chat. Null if no messages are sent in the chat. Currently, only the list chats operation supports this property.
 type ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilder) Delete
     }
     return nil
 }
-// Get preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+// Get preview of the last message sent in the chat. Null if no messages are sent in the chat. Currently, only the list chats operation supports this property.
 // returns a ChatMessageInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageInfoable, error) {
@@ -121,7 +121,7 @@ func (m *ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilder) ToDele
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
+// ToGetRequestInformation preview of the last message sent in the chat. Null if no messages are sent in the chat. Currently, only the list chats operation supports this property.
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemLastmessagepreviewLastMessagePreviewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
