@@ -44,8 +44,11 @@ func NewB2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewB2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete the unique identifier for an entity. Read-only.
+// Delete deletes the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguagepage-delete?view=graph-rest-beta
 func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,9 +63,12 @@ func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuild
     }
     return nil
 }
-// Get the unique identifier for an entity. Read-only.
+// Get get the userFlowLanguagePage resources from the overridesPages navigation property. These pages are used to customize the values shown to the user during a user journey in a user flow.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-overridespages?view=graph-rest-beta
 func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -80,9 +86,12 @@ func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuild
     }
     return res.([]byte), nil
 }
-// Put the unique identifier for an entity. Read-only.
+// Put update the values in an userFlowLanguagePage object. You may only update the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/userflowlanguagepage-put?view=graph-rest-beta
 func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -100,7 +109,7 @@ func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuild
     }
     return res.([]byte), nil
 }
-// ToDeleteRequestInformation the unique identifier for an entity. Read-only.
+// ToDeleteRequestInformation deletes the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
 // returns a *RequestInformation when successful
 func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -111,7 +120,7 @@ func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the unique identifier for an entity. Read-only.
+// ToGetRequestInformation get the userFlowLanguagePage resources from the overridesPages navigation property. These pages are used to customize the values shown to the user during a user journey in a user flow.
 // returns a *RequestInformation when successful
 func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,7 +131,7 @@ func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation the unique identifier for an entity. Read-only.
+// ToPutRequestInformation update the values in an userFlowLanguagePage object. You may only update the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
 // returns a *RequestInformation when successful
 func (m *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *B2cuserflowsItemLanguagesItemOverridespagesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

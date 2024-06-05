@@ -470,6 +470,11 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable), nil
 }
+// RetrieveAssignedApplicationsReport provides operations to call the retrieveAssignedApplicationsReport method.
+// returns a *ReportsRetrieveassignedapplicationsreportRetrieveAssignedApplicationsReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveAssignedApplicationsReport()(*ReportsRetrieveassignedapplicationsreportRetrieveAssignedApplicationsReportRequestBuilder) {
+    return NewReportsRetrieveassignedapplicationsreportRetrieveAssignedApplicationsReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property reports for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ReportsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

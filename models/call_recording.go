@@ -20,7 +20,7 @@ func NewCallRecording()(*CallRecording) {
 func CreateCallRecordingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallRecording(), nil
 }
-// GetCallId gets the callId property value. The callId property
+// GetCallId gets the callId property value. The unique identifier for the call that is related to this recording. Read-only.
 // returns a *string when successful
 func (m *CallRecording) GetCallId()(*string) {
     val, err := m.GetBackingStore().Get("callId")
@@ -44,7 +44,7 @@ func (m *CallRecording) GetContent()([]byte) {
     }
     return nil
 }
-// GetContentCorrelationId gets the contentCorrelationId property value. The contentCorrelationId property
+// GetContentCorrelationId gets the contentCorrelationId property value. The unique identifier that links the transcript with its corresponding recording. Read-only.
 // returns a *string when successful
 func (m *CallRecording) GetContentCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("contentCorrelationId")
@@ -68,7 +68,7 @@ func (m *CallRecording) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *CallRecording) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -212,7 +212,7 @@ func (m *CallRecording) GetMeetingOrganizerId()(*string) {
     }
     return nil
 }
-// GetRecordingContentUrl gets the recordingContentUrl property value. The URL which can be used to access the content of the recording. Read-only.
+// GetRecordingContentUrl gets the recordingContentUrl property value. The URL that can be used to access the content of the recording. Read-only.
 // returns a *string when successful
 func (m *CallRecording) GetRecordingContentUrl()(*string) {
     val, err := m.GetBackingStore().Get("recordingContentUrl")
@@ -286,7 +286,7 @@ func (m *CallRecording) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetCallId sets the callId property value. The callId property
+// SetCallId sets the callId property value. The unique identifier for the call that is related to this recording. Read-only.
 func (m *CallRecording) SetCallId(value *string)() {
     err := m.GetBackingStore().Set("callId", value)
     if err != nil {
@@ -300,7 +300,7 @@ func (m *CallRecording) SetContent(value []byte)() {
         panic(err)
     }
 }
-// SetContentCorrelationId sets the contentCorrelationId property value. The contentCorrelationId property
+// SetContentCorrelationId sets the contentCorrelationId property value. The unique identifier that links the transcript with its corresponding recording. Read-only.
 func (m *CallRecording) SetContentCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("contentCorrelationId", value)
     if err != nil {
@@ -314,7 +314,7 @@ func (m *CallRecording) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *CallRecording) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
@@ -342,7 +342,7 @@ func (m *CallRecording) SetMeetingOrganizerId(value *string)() {
         panic(err)
     }
 }
-// SetRecordingContentUrl sets the recordingContentUrl property value. The URL which can be used to access the content of the recording. Read-only.
+// SetRecordingContentUrl sets the recordingContentUrl property value. The URL that can be used to access the content of the recording. Read-only.
 func (m *CallRecording) SetRecordingContentUrl(value *string)() {
     err := m.GetBackingStore().Set("recordingContentUrl", value)
     if err != nil {

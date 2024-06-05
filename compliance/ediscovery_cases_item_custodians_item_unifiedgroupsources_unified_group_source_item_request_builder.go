@@ -18,7 +18,7 @@ type EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilderGetQueryParameters data source entity for groups associated with the custodian.
+// EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a unifiedGroupSource object.
 type EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,9 +54,12 @@ func NewEdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceIt
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property unifiedGroupSources for compliance
+// Delete delete a unifiedGroupSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-unifiedgroupsource-delete?view=graph-rest-beta
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,10 +74,13 @@ func (m *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceI
     }
     return nil
 }
-// Get data source entity for groups associated with the custodian.
+// Get read the properties and relationships of a unifiedGroupSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a UnifiedGroupSourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-unifiedgroupsource-get?view=graph-rest-beta
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +124,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceI
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.UnifiedGroupSourceable), nil
 }
-// ToDeleteRequestInformation delete navigation property unifiedGroupSources for compliance
+// ToDeleteRequestInformation delete a unifiedGroupSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -130,7 +136,7 @@ func (m *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation data source entity for groups associated with the custodian.
+// ToGetRequestInformation read the properties and relationships of a unifiedGroupSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemUnifiedgroupsourcesUnifiedGroupSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

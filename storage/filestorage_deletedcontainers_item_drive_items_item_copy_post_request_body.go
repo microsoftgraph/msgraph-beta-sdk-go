@@ -41,10 +41,32 @@ func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) GetA
 func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetChildrenOnly gets the childrenOnly property value. The childrenOnly property
+// returns a *bool when successful
+func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) GetChildrenOnly()(*bool) {
+    val, err := m.GetBackingStore().Get("childrenOnly")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["childrenOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetChildrenOnly(val)
+        }
+        return nil
+    }
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -94,6 +116,12 @@ func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) GetP
 // Serialize serializes information the current object
 func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteBoolValue("childrenOnly", m.GetChildrenOnly())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("name", m.GetName())
         if err != nil {
             return err
@@ -124,6 +152,13 @@ func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) SetA
 func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetChildrenOnly sets the childrenOnly property value. The childrenOnly property
+func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) SetChildrenOnly(value *bool)() {
+    err := m.GetBackingStore().Set("childrenOnly", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetName sets the name property value. The name property
 func (m *FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBody) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
@@ -143,9 +178,11 @@ type FilestorageDeletedcontainersItemDriveItemsItemCopyPostRequestBodyable inter
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetChildrenOnly()(*bool)
     GetName()(*string)
     GetParentReference()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemReferenceable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetChildrenOnly(value *bool)()
     SetName(value *string)()
     SetParentReference(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemReferenceable)()
 }

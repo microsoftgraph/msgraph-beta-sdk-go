@@ -18,7 +18,7 @@ type TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuilderGetQueryParameters collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
+// TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuilderGetQueryParameters get the properties of the team associated with a teamTemplateDefinition object.
 type TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -95,9 +95,12 @@ func (m *TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuil
     }
     return nil
 }
-// Get collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
+// Get get the properties of the team associated with a teamTemplateDefinition object.
 // returns a Teamable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamtemplatedefinition-get-teamdefinition?view=graph-rest-beta
 func (m *TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -216,7 +219,7 @@ func (m *TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
+// ToGetRequestInformation get the properties of the team associated with a teamTemplateDefinition object.
 // returns a *RequestInformation when successful
 func (m *TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamtemplatesItemDefinitionsItemTeamdefinitionTeamDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

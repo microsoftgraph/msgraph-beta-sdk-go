@@ -144,6 +144,11 @@ func (m *DomainItemRequestBuilder) Promote()(*ItemPromoteRequestBuilder) {
 func (m *DomainItemRequestBuilder) PromoteToInitial()(*ItemPromotetoinitialPromoteToInitialRequestBuilder) {
     return NewItemPromotetoinitialPromoteToInitialRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RootDomain provides operations to manage the rootDomain property of the microsoft.graph.domain entity.
+// returns a *ItemRootdomainRootDomainRequestBuilder when successful
+func (m *DomainItemRequestBuilder) RootDomain()(*ItemRootdomainRootDomainRequestBuilder) {
+    return NewItemRootdomainRootDomainRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ServiceConfigurationRecords provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
 // returns a *ItemServiceconfigurationrecordsServiceConfigurationRecordsRequestBuilder when successful
 func (m *DomainItemRequestBuilder) ServiceConfigurationRecords()(*ItemServiceconfigurationrecordsServiceConfigurationRecordsRequestBuilder) {

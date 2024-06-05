@@ -155,6 +155,11 @@ func (m *FilestorageDeletedcontainersItemDriveListItemsListItemItemRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ListItemable), nil
 }
+// Permissions provides operations to manage the permissions property of the microsoft.graph.listItem entity.
+// returns a *FilestorageDeletedcontainersItemDriveListItemsItemPermissionsRequestBuilder when successful
+func (m *FilestorageDeletedcontainersItemDriveListItemsListItemItemRequestBuilder) Permissions()(*FilestorageDeletedcontainersItemDriveListItemsItemPermissionsRequestBuilder) {
+    return NewFilestorageDeletedcontainersItemDriveListItemsItemPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property items for storage
 // returns a *RequestInformation when successful
 func (m *FilestorageDeletedcontainersItemDriveListItemsListItemItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FilestorageDeletedcontainersItemDriveListItemsListItemItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

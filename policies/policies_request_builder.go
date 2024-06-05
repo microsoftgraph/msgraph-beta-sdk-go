@@ -202,6 +202,11 @@ func (m *PoliciesRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
 func (m *PoliciesRequestBuilder) PermissionGrantPolicies()(*PermissiongrantpoliciesPermissionGrantPoliciesRequestBuilder) {
     return NewPermissiongrantpoliciesPermissionGrantPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PermissionGrantPreApprovalPolicies provides operations to manage the permissionGrantPreApprovalPolicies property of the microsoft.graph.policyRoot entity.
+// returns a *PermissiongrantpreapprovalpoliciesPermissionGrantPreApprovalPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) PermissionGrantPreApprovalPolicies()(*PermissiongrantpreapprovalpoliciesPermissionGrantPreApprovalPoliciesRequestBuilder) {
+    return NewPermissiongrantpreapprovalpoliciesPermissionGrantPreApprovalPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RoleManagementPolicies provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
 // returns a *RolemanagementpoliciesRoleManagementPoliciesRequestBuilder when successful
 func (m *PoliciesRequestBuilder) RoleManagementPolicies()(*RolemanagementpoliciesRoleManagementPoliciesRequestBuilder) {

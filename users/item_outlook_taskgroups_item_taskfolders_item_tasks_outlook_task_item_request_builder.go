@@ -20,6 +20,8 @@ type ItemOutlookTaskgroupsItemTaskfoldersItemTasksOutlookTaskItemRequestBuilderD
 }
 // ItemOutlookTaskgroupsItemTaskfoldersItemTasksOutlookTaskItemRequestBuilderGetQueryParameters the tasks in this task folder. Read-only. Nullable.
 type ItemOutlookTaskgroupsItemTaskfoldersItemTasksOutlookTaskItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -52,7 +54,7 @@ func (m *ItemOutlookTaskgroupsItemTaskfoldersItemTasksOutlookTaskItemRequestBuil
 // NewItemOutlookTaskgroupsItemTaskfoldersItemTasksOutlookTaskItemRequestBuilderInternal instantiates a new ItemOutlookTaskgroupsItemTaskfoldersItemTasksOutlookTaskItemRequestBuilder and sets the default values.
 func NewItemOutlookTaskgroupsItemTaskfoldersItemTasksOutlookTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTaskgroupsItemTaskfoldersItemTasksOutlookTaskItemRequestBuilder) {
     m := &ItemOutlookTaskgroupsItemTaskfoldersItemTasksOutlookTaskItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/taskGroups/{outlookTaskGroup%2Did}/taskFolders/{outlookTaskFolder%2Did}/tasks/{outlookTask%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/taskGroups/{outlookTaskGroup%2Did}/taskFolders/{outlookTaskFolder%2Did}/tasks/{outlookTask%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }

@@ -30,8 +30,11 @@ func NewItemCloudpcsItemCreatesnapshotCreateSnapshotRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudpcsItemCreatesnapshotCreateSnapshotRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action createSnapshot
+// Post create a snapshot for a specific Cloud PC device.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-createsnapshot?view=graph-rest-beta
 func (m *ItemCloudpcsItemCreatesnapshotCreateSnapshotRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCloudpcsItemCreatesnapshotCreateSnapshotRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemCloudpcsItemCreatesnapshotCreateSnapshotRequestBuilder) Post(ctx co
     }
     return nil
 }
-// ToPostRequestInformation invoke action createSnapshot
+// ToPostRequestInformation create a snapshot for a specific Cloud PC device.
 // returns a *RequestInformation when successful
 func (m *ItemCloudpcsItemCreatesnapshotCreateSnapshotRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCloudpcsItemCreatesnapshotCreateSnapshotRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

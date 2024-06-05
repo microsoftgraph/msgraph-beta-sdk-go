@@ -825,6 +825,22 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["permissionGrantPreApprovalPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPreApprovalPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PermissionGrantPreApprovalPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PermissionGrantPreApprovalPolicyable)
+                }
+            }
+            m.SetPermissionGrantPreApprovalPolicies(res)
+        }
+        return nil
+    }
     res["preferredSingleSignOnMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1236,6 +1252,18 @@ func (m *ServicePrincipal) GetPasswordSingleSignOnSettings()(PasswordSingleSignO
     }
     if val != nil {
         return val.(PasswordSingleSignOnSettingsable)
+    }
+    return nil
+}
+// GetPermissionGrantPreApprovalPolicies gets the permissionGrantPreApprovalPolicies property value. The permissionGrantPreApprovalPolicies property
+// returns a []PermissionGrantPreApprovalPolicyable when successful
+func (m *ServicePrincipal) GetPermissionGrantPreApprovalPolicies()([]PermissionGrantPreApprovalPolicyable) {
+    val, err := m.GetBackingStore().Get("permissionGrantPreApprovalPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PermissionGrantPreApprovalPolicyable)
     }
     return nil
 }
@@ -1815,6 +1843,18 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetPermissionGrantPreApprovalPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissionGrantPreApprovalPolicies()))
+        for i, v := range m.GetPermissionGrantPreApprovalPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("permissionGrantPreApprovalPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("preferredSingleSignOnMode", m.GetPreferredSingleSignOnMode())
         if err != nil {
@@ -2228,6 +2268,13 @@ func (m *ServicePrincipal) SetPasswordSingleSignOnSettings(value PasswordSingleS
         panic(err)
     }
 }
+// SetPermissionGrantPreApprovalPolicies sets the permissionGrantPreApprovalPolicies property value. The permissionGrantPreApprovalPolicies property
+func (m *ServicePrincipal) SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)() {
+    err := m.GetBackingStore().Set("permissionGrantPreApprovalPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPreferredSingleSignOnMode sets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
 func (m *ServicePrincipal) SetPreferredSingleSignOnMode(value *string)() {
     err := m.GetBackingStore().Set("preferredSingleSignOnMode", value)
@@ -2403,6 +2450,7 @@ type ServicePrincipalable interface {
     GetOwners()([]DirectoryObjectable)
     GetPasswordCredentials()([]PasswordCredentialable)
     GetPasswordSingleSignOnSettings()(PasswordSingleSignOnSettingsable)
+    GetPermissionGrantPreApprovalPolicies()([]PermissionGrantPreApprovalPolicyable)
     GetPreferredSingleSignOnMode()(*string)
     GetPreferredTokenSigningKeyEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPreferredTokenSigningKeyThumbprint()(*string)
@@ -2461,6 +2509,7 @@ type ServicePrincipalable interface {
     SetOwners(value []DirectoryObjectable)()
     SetPasswordCredentials(value []PasswordCredentialable)()
     SetPasswordSingleSignOnSettings(value PasswordSingleSignOnSettingsable)()
+    SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)()
     SetPreferredSingleSignOnMode(value *string)()
     SetPreferredTokenSigningKeyEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPreferredTokenSigningKeyThumbprint(value *string)()

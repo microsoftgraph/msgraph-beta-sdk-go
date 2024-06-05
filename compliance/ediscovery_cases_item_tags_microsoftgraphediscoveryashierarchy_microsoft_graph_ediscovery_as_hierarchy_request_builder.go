@@ -10,7 +10,7 @@ import (
 type EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderGetQueryParameters invoke function asHierarchy
+// EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderGetQueryParameters return a list of tag objects in hierarchial form
 type EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,7 +51,7 @@ func NewEdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraph
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function asHierarchy
+// Get return a list of tag objects in hierarchial form
 // Deprecated: This method is obsolete. Use GetAsAsHierarchyGetResponse instead.
 // returns a EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyAsHierarchyResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -72,7 +72,7 @@ func (m *EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGrap
     }
     return res.(EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyAsHierarchyResponseable), nil
 }
-// GetAsAsHierarchyGetResponse invoke function asHierarchy
+// GetAsAsHierarchyGetResponse return a list of tag objects in hierarchial form
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyAsHierarchyGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -93,7 +93,7 @@ func (m *EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGrap
     }
     return res.(EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyAsHierarchyGetResponseable), nil
 }
-// ToGetRequestInformation invoke function asHierarchy
+// ToGetRequestInformation return a list of tag objects in hierarchial form
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -11,7 +11,7 @@ import (
 type CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequestBuilderGetQueryParameters custodian sources that are included in the eDiscovery search.
+// CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequestBuilderGetQueryParameters get the list of custodial data sources associated with an eDiscovery search.
 type CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewCasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequ
 func (m *CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequestBuilder) Count()(*CasesEdiscoverycasesItemSearchesItemCustodiansourcesCountRequestBuilder) {
     return NewCasesEdiscoverycasesItemSearchesItemCustodiansourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get custodian sources that are included in the eDiscovery search.
+// Get get the list of custodial data sources associated with an eDiscovery search.
 // returns a DataSourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverysearch-list-custodiansources?view=graph-rest-beta
 func (m *CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesReq
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DataSourceCollectionResponseable), nil
 }
-// ToGetRequestInformation custodian sources that are included in the eDiscovery search.
+// ToGetRequestInformation get the list of custodial data sources associated with an eDiscovery search.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoverycasesItemSearchesItemCustodiansourcesCustodianSourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

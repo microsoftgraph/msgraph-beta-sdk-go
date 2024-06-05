@@ -14,6 +14,8 @@ type ItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttac
 type ItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttac
 // NewItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderInternal instantiates a new ItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilder and sets the default values.
 func NewItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilder) {
     m := &ItemCalendarsItemCalendarviewItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/exceptionOccurrences/{event%2Did1}/instances/{event%2Did2}/attachments/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/exceptionOccurrences/{event%2Did1}/instances/{event%2Did2}/attachments/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

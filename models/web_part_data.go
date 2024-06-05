@@ -127,12 +127,12 @@ func (m *WebPartData) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     res["properties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateJsonFromDiscriminatorValue)
+        val, err := n.GetObjectValue(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.CreateUntypedNodeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetProperties(val.(Jsonable))
+            m.SetProperties(val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable))
         }
         return nil
     }
@@ -171,14 +171,14 @@ func (m *WebPartData) GetOdataType()(*string) {
     return nil
 }
 // GetProperties gets the properties property value. Properties bag of the web part.
-// returns a Jsonable when successful
-func (m *WebPartData) GetProperties()(Jsonable) {
+// returns a UntypedNodeable when successful
+func (m *WebPartData) GetProperties()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("properties")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(Jsonable)
+        return val.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     }
     return nil
 }
@@ -298,7 +298,7 @@ func (m *WebPartData) SetOdataType(value *string)() {
     }
 }
 // SetProperties sets the properties property value. Properties bag of the web part.
-func (m *WebPartData) SetProperties(value Jsonable)() {
+func (m *WebPartData) SetProperties(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("properties", value)
     if err != nil {
         panic(err)
@@ -327,7 +327,7 @@ type WebPartDataable interface {
     GetDataVersion()(*string)
     GetDescription()(*string)
     GetOdataType()(*string)
-    GetProperties()(Jsonable)
+    GetProperties()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)
     GetServerProcessedContent()(ServerProcessedContentable)
     GetTitle()(*string)
     SetAudiences(value []string)()
@@ -335,7 +335,7 @@ type WebPartDataable interface {
     SetDataVersion(value *string)()
     SetDescription(value *string)()
     SetOdataType(value *string)()
-    SetProperties(value Jsonable)()
+    SetProperties(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)()
     SetServerProcessedContent(value ServerProcessedContentable)()
     SetTitle(value *string)()
 }

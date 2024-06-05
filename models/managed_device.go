@@ -447,6 +447,18 @@ func (m *ManagedDevice) GetEmailAddress()(*string) {
     }
     return nil
 }
+// GetEnrolledByUserPrincipalName gets the enrolledByUserPrincipalName property value. The Entra (Azure AD) User Principal Name (UPN) of the user responsible for the enrollment of the device. This property is read-only.
+// returns a *string when successful
+func (m *ManagedDevice) GetEnrolledByUserPrincipalName()(*string) {
+    val, err := m.GetBackingStore().Get("enrolledByUserPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetEnrolledDateTime gets the enrolledDateTime property value. Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
 // returns a *Time when successful
 func (m *ManagedDevice) GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -908,6 +920,16 @@ func (m *ManagedDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetEmailAddress(val)
+        }
+        return nil
+    }
+    res["enrolledByUserPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEnrolledByUserPrincipalName(val)
         }
         return nil
     }
@@ -2719,6 +2741,13 @@ func (m *ManagedDevice) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
+// SetEnrolledByUserPrincipalName sets the enrolledByUserPrincipalName property value. The Entra (Azure AD) User Principal Name (UPN) of the user responsible for the enrollment of the device. This property is read-only.
+func (m *ManagedDevice) SetEnrolledByUserPrincipalName(value *string)() {
+    err := m.GetBackingStore().Set("enrolledByUserPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEnrolledDateTime sets the enrolledDateTime property value. Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
 func (m *ManagedDevice) SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("enrolledDateTime", value)
@@ -3169,6 +3198,7 @@ type ManagedDeviceable interface {
     GetEasActivationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEasDeviceId()(*string)
     GetEmailAddress()(*string)
+    GetEnrolledByUserPrincipalName()(*string)
     GetEnrolledDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEnrollmentProfileName()(*string)
     GetEthernetMacAddress()(*string)
@@ -3262,6 +3292,7 @@ type ManagedDeviceable interface {
     SetEasActivationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEasDeviceId(value *string)()
     SetEmailAddress(value *string)()
+    SetEnrolledByUserPrincipalName(value *string)()
     SetEnrolledDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEnrollmentProfileName(value *string)()
     SetEthernetMacAddress(value *string)()

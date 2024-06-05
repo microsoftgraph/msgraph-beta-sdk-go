@@ -18,7 +18,7 @@ type EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilderDel
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilderGetQueryParameters data source entity for SharePoint sites associated with the custodian.
+// EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilderGetQueryParameters read the properties and relationships of a siteSource object.
 type EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,9 +54,12 @@ func NewEdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property siteSources for compliance
+// Delete delete a siteSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-sitesource-delete?view=graph-rest-beta
 func (m *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -71,10 +74,13 @@ func (m *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilde
     }
     return nil
 }
-// Get data source entity for SharePoint sites associated with the custodian.
+// Get read the properties and relationships of a siteSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a SiteSourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-sitesource-get?view=graph-rest-beta
 func (m *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.SiteSourceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +124,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilde
 func (m *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilder) Site()(*EdiscoveryCasesItemCustodiansItemSitesourcesItemSiteRequestBuilder) {
     return NewEdiscoveryCasesItemCustodiansItemSitesourcesItemSiteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property siteSources for compliance
+// ToDeleteRequestInformation delete a siteSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -130,7 +136,7 @@ func (m *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation data source entity for SharePoint sites associated with the custodian.
+// ToGetRequestInformation read the properties and relationships of a siteSource object.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemSitesourcesSiteSourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

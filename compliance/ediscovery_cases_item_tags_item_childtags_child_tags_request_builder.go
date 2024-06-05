@@ -11,7 +11,7 @@ import (
 type EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilderGetQueryParameters returns the tags that are a child of a tag.
+// EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilderGetQueryParameters get a list of child tag objects associated with a tag.
 type EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -70,10 +70,13 @@ func NewEdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilder(rawUrl strin
 func (m *EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilder) Count()(*EdiscoveryCasesItemTagsItemChildtagsCountRequestBuilder) {
     return NewEdiscoveryCasesItemTagsItemChildtagsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get returns the tags that are a child of a tag.
+// Get get a list of child tag objects associated with a tag.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a TagCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-tag-childtags?view=graph-rest-beta
 func (m *EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilder) Get(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilderGetRequestConfiguration)(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -91,7 +94,7 @@ func (m *EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilder) Get(ctx co
     }
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable), nil
 }
-// ToGetRequestInformation returns the tags that are a child of a tag.
+// ToGetRequestInformation get a list of child tag objects associated with a tag.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemTagsItemChildtagsChildTagsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

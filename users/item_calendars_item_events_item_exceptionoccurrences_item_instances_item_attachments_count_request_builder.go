@@ -14,6 +14,8 @@ type ItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachments
 type ItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachments
 // NewItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderInternal instantiates a new ItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilder and sets the default values.
 func NewItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilder) {
     m := &ItemCalendarsItemEventsItemExceptionoccurrencesItemInstancesItemAttachmentsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/instances/{event%2Did2}/attachments/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/instances/{event%2Did2}/attachments/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

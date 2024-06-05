@@ -53,6 +53,16 @@ func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["includeAllPreApprovedApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIncludeAllPreApprovedApplications(val)
+        }
+        return nil
+    }
     res["includes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantConditionSetFromDiscriminatorValue)
         if err != nil {
@@ -80,6 +90,18 @@ func (m *PermissionGrantPolicy) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
+}
+// GetIncludeAllPreApprovedApplications gets the includeAllPreApprovedApplications property value. Set to true to create all pre-approval policies in the tenant. Set to false to disable all pre-approval policies in the tenant. The default is false.
+// returns a *bool when successful
+func (m *PermissionGrantPolicy) GetIncludeAllPreApprovedApplications()(*bool) {
+    val, err := m.GetBackingStore().Get("includeAllPreApprovedApplications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIncludes gets the includes property value. Condition sets that are included in this permission grant policy. Automatically expanded on GET.
 // returns a []PermissionGrantConditionSetable when successful
@@ -123,6 +145,12 @@ func (m *PermissionGrantPolicy) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("includeAllPreApprovedApplications", m.GetIncludeAllPreApprovedApplications())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetIncludes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIncludes()))
         for i, v := range m.GetIncludes() {
@@ -151,6 +179,13 @@ func (m *PermissionGrantPolicy) SetExcludes(value []PermissionGrantConditionSeta
         panic(err)
     }
 }
+// SetIncludeAllPreApprovedApplications sets the includeAllPreApprovedApplications property value. Set to true to create all pre-approval policies in the tenant. Set to false to disable all pre-approval policies in the tenant. The default is false.
+func (m *PermissionGrantPolicy) SetIncludeAllPreApprovedApplications(value *bool)() {
+    err := m.GetBackingStore().Set("includeAllPreApprovedApplications", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIncludes sets the includes property value. Condition sets that are included in this permission grant policy. Automatically expanded on GET.
 func (m *PermissionGrantPolicy) SetIncludes(value []PermissionGrantConditionSetable)() {
     err := m.GetBackingStore().Set("includes", value)
@@ -169,9 +204,11 @@ type PermissionGrantPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyBaseable
     GetExcludes()([]PermissionGrantConditionSetable)
+    GetIncludeAllPreApprovedApplications()(*bool)
     GetIncludes()([]PermissionGrantConditionSetable)
     GetResourceScopeType()(*ResourceScopeType)
     SetExcludes(value []PermissionGrantConditionSetable)()
+    SetIncludeAllPreApprovedApplications(value *bool)()
     SetIncludes(value []PermissionGrantConditionSetable)()
     SetResourceScopeType(value *ResourceScopeType)()
 }

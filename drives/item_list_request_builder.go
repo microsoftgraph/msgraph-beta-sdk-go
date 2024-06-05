@@ -150,6 +150,11 @@ func (m *ItemListRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Listable), nil
 }
+// Permissions provides operations to manage the permissions property of the microsoft.graph.list entity.
+// returns a *ItemListPermissionsRequestBuilder when successful
+func (m *ItemListRequestBuilder) Permissions()(*ItemListPermissionsRequestBuilder) {
+    return NewItemListPermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Subscriptions provides operations to manage the subscriptions property of the microsoft.graph.list entity.
 // returns a *ItemListSubscriptionsRequestBuilder when successful
 func (m *ItemListRequestBuilder) Subscriptions()(*ItemListSubscriptionsRequestBuilder) {

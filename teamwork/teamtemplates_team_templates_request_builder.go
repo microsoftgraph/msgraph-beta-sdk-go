@@ -11,7 +11,7 @@ import (
 type TeamtemplatesTeamTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamtemplatesTeamTemplatesRequestBuilderGetQueryParameters get the list of teamTemplate objects that are available for a tenant. 
+// TeamtemplatesTeamTemplatesRequestBuilderGetQueryParameters list the teamTemplateDefinition objects associated with a teamTemplate. 
 type TeamtemplatesTeamTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,12 +76,12 @@ func NewTeamtemplatesTeamTemplatesRequestBuilder(rawUrl string, requestAdapter i
 func (m *TeamtemplatesTeamTemplatesRequestBuilder) Count()(*TeamtemplatesCountRequestBuilder) {
     return NewTeamtemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the list of teamTemplate objects that are available for a tenant. 
+// Get list the teamTemplateDefinition objects associated with a teamTemplate. 
 // returns a TeamTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-beta
 func (m *TeamtemplatesTeamTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamtemplatesTeamTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +119,7 @@ func (m *TeamtemplatesTeamTemplatesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateable), nil
 }
-// ToGetRequestInformation get the list of teamTemplate objects that are available for a tenant. 
+// ToGetRequestInformation list the teamTemplateDefinition objects associated with a teamTemplate. 
 // returns a *RequestInformation when successful
 func (m *TeamtemplatesTeamTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamtemplatesTeamTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

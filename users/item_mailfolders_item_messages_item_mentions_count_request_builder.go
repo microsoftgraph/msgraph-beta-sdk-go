@@ -14,6 +14,8 @@ type ItemMailfoldersItemMessagesItemMentionsCountRequestBuilder struct {
 type ItemMailfoldersItemMessagesItemMentionsCountRequestBuilderGetQueryParameters struct {
     // Filter items by property values
     Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
 }
 // ItemMailfoldersItemMessagesItemMentionsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemMailfoldersItemMessagesItemMentionsCountRequestBuilderGetRequestConfiguration struct {
@@ -27,7 +29,7 @@ type ItemMailfoldersItemMessagesItemMentionsCountRequestBuilderGetRequestConfigu
 // NewItemMailfoldersItemMessagesItemMentionsCountRequestBuilderInternal instantiates a new ItemMailfoldersItemMessagesItemMentionsCountRequestBuilder and sets the default values.
 func NewItemMailfoldersItemMessagesItemMentionsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemMailfoldersItemMessagesItemMentionsCountRequestBuilder) {
     m := &ItemMailfoldersItemMessagesItemMentionsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/mentions/$count{?%24filter}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/mentions/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

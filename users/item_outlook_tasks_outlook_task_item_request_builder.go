@@ -20,6 +20,8 @@ type ItemOutlookTasksOutlookTaskItemRequestBuilderDeleteRequestConfiguration str
 }
 // ItemOutlookTasksOutlookTaskItemRequestBuilderGetQueryParameters the user's Outlook tasks. Read-only. Nullable.
 type ItemOutlookTasksOutlookTaskItemRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
 }
@@ -52,7 +54,7 @@ func (m *ItemOutlookTasksOutlookTaskItemRequestBuilder) Complete()(*ItemOutlookT
 // NewItemOutlookTasksOutlookTaskItemRequestBuilderInternal instantiates a new ItemOutlookTasksOutlookTaskItemRequestBuilder and sets the default values.
 func NewItemOutlookTasksOutlookTaskItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemOutlookTasksOutlookTaskItemRequestBuilder) {
     m := &ItemOutlookTasksOutlookTaskItemRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/tasks/{outlookTask%2Did}{?%24select}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/tasks/{outlookTask%2Did}{?%24expand,%24select}", pathParameters),
     }
     return m
 }
