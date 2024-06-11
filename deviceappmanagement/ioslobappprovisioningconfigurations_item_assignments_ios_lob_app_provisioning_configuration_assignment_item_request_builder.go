@@ -18,7 +18,7 @@ type IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioningConf
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParameters the associated group assignments for IosLobAppProvisioningConfiguration.
+// IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParameters the associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
 type IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioning
     }
     return nil
 }
-// Get the associated group assignments for IosLobAppProvisioningConfiguration.
+// Get the associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
 // returns a IosLobAppProvisioningConfigurationAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IosLobAppProvisioningConfigurationAssignmentable, error) {
@@ -121,7 +121,7 @@ func (m *IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioning
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the associated group assignments for IosLobAppProvisioningConfiguration.
+// ToGetRequestInformation the associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
 // returns a *RequestInformation when successful
 func (m *IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IoslobappprovisioningconfigurationsItemAssignmentsIosLobAppProvisioningConfigurationAssignmentItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

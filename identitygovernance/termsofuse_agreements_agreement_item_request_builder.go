@@ -18,7 +18,7 @@ type TermsofuseAgreementsAgreementItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TermsofuseAgreementsAgreementItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an agreement object.
+// TermsofuseAgreementsAgreementItemRequestBuilderGetQueryParameters retrieve all files related to an agreement. This includes the default file and all localized files.
 type TermsofuseAgreementsAgreementItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -88,12 +88,12 @@ func (m *TermsofuseAgreementsAgreementItemRequestBuilder) File()(*TermsofuseAgre
 func (m *TermsofuseAgreementsAgreementItemRequestBuilder) Files()(*TermsofuseAgreementsItemFilesRequestBuilder) {
     return NewTermsofuseAgreementsItemFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of an agreement object.
+// Get retrieve all files related to an agreement. This includes the default file and all localized files.
 // returns a Agreementable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-beta
 func (m *TermsofuseAgreementsAgreementItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TermsofuseAgreementsAgreementItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Agreementable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -145,7 +145,7 @@ func (m *TermsofuseAgreementsAgreementItemRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an agreement object.
+// ToGetRequestInformation retrieve all files related to an agreement. This includes the default file and all localized files.
 // returns a *RequestInformation when successful
 func (m *TermsofuseAgreementsAgreementItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TermsofuseAgreementsAgreementItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

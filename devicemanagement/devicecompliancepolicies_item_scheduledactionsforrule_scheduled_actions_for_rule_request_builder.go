@@ -11,7 +11,7 @@ import (
 type DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilderGetQueryParameters the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilderGetQueryParameters the list of scheduled action for this rule
 type DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewDevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRu
 func (m *DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilder) Count()(*DevicecompliancepoliciesItemScheduledactionsforruleCountRequestBuilder) {
     return NewDevicecompliancepoliciesItemScheduledactionsforruleCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// Get the list of scheduled action for this rule
 // returns a DeviceComplianceScheduledActionForRuleCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilder) Get(ctx context.Context, requestConfiguration *DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceComplianceScheduledActionForRuleable), nil
 }
-// ToGetRequestInformation the list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// ToGetRequestInformation the list of scheduled action for this rule
 // returns a *RequestInformation when successful
 func (m *DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DevicecompliancepoliciesItemScheduledactionsforruleScheduledActionsForRuleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

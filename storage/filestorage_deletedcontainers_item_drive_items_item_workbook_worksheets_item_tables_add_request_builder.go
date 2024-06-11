@@ -31,12 +31,12 @@ func NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookWorksheetsItemTabl
     urlParams["request-raw-url"] = rawUrl
     return NewFilestorageDeletedcontainersItemDriveItemsItemWorkbookWorksheetsItemTablesAddRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post use this API to create a new Table.
+// Post create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (for example, because the address is invalid, or the table would overlap with another table), an error is thrown.
 // returns a WorkbookTableable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workbook-post-tables?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablecollection-add?view=graph-rest-beta
 func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookWorksheetsItemTablesAddRequestBuilder) Post(ctx context.Context, body FilestorageDeletedcontainersItemDriveItemsItemWorkbookWorksheetsItemTablesAddPostRequestBodyable, requestConfiguration *FilestorageDeletedcontainersItemDriveItemsItemWorkbookWorksheetsItemTablesAddRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -54,7 +54,7 @@ func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookWorksheetsItemTab
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableable), nil
 }
-// ToPostRequestInformation use this API to create a new Table.
+// ToPostRequestInformation create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (for example, because the address is invalid, or the table would overlap with another table), an error is thrown.
 // returns a *RequestInformation when successful
 func (m *FilestorageDeletedcontainersItemDriveItemsItemWorkbookWorksheetsItemTablesAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body FilestorageDeletedcontainersItemDriveItemsItemWorkbookWorksheetsItemTablesAddPostRequestBodyable, requestConfiguration *FilestorageDeletedcontainersItemDriveItemsItemWorkbookWorksheetsItemTablesAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

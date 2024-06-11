@@ -11,7 +11,7 @@ import (
 type ItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilderGetQueryParameters read the properties of a user's authentication method states. Use this API to retrieve the following information:
+// ItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilderGetQueryParameters read the properties of a user's authentication states. Use this API to retrieve the following information:
 type ItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -47,7 +47,7 @@ func NewItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get read the properties of a user's authentication method states. Use this API to retrieve the following information:
+// Get read the properties of a user's authentication states. Use this API to retrieve the following information:
 // returns a SignInPreferencesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -93,7 +93,7 @@ func (m *ItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilder) Pat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable), nil
 }
-// ToGetRequestInformation read the properties of a user's authentication method states. Use this API to retrieve the following information:
+// ToGetRequestInformation read the properties of a user's authentication states. Use this API to retrieve the following information:
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationSigninpreferencesSignInPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

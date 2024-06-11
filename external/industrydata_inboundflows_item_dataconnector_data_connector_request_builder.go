@@ -11,7 +11,7 @@ import (
 type IndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilderGetQueryParameters the data connector in the context of which this flow pulls in data from a source system.
+// IndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilderGetQueryParameters the data connector to the source system from where this flow gets its data.
 type IndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewIndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewIndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the data connector in the context of which this flow pulls in data from a source system.
+// Get the data connector to the source system from where this flow gets its data.
 // returns a IndustryDataConnectorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable, error) {
@@ -60,7 +60,7 @@ func (m *IndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilder) G
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.IndustryDataConnectorable), nil
 }
-// ToGetRequestInformation the data connector in the context of which this flow pulls in data from a source system.
+// ToGetRequestInformation the data connector to the source system from where this flow gets its data.
 // returns a *RequestInformation when successful
 func (m *IndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustrydataInboundflowsItemDataconnectorDataConnectorRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

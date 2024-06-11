@@ -52,7 +52,7 @@ func NewSchoolsItemAdministrativeunitAdministrativeUnitRequestBuilder(rawUrl str
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-get-administrativeUnit?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/educationschool-get-administrativeunit?view=graph-rest-beta
 func (m *SchoolsItemAdministrativeunitAdministrativeUnitRequestBuilder) Get(ctx context.Context, requestConfiguration *SchoolsItemAdministrativeunitAdministrativeUnitRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdministrativeUnitable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

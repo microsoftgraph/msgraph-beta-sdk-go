@@ -18,7 +18,7 @@ type IndustrydataInboundflowsInboundFlowItemRequestBuilderDeleteRequestConfigura
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IndustrydataInboundflowsInboundFlowItemRequestBuilderGetQueryParameters read the properties and relationships of an inboundFileFlow object.
+// IndustrydataInboundflowsInboundFlowItemRequestBuilderGetQueryParameters read the properties and relationships of an inboundFlow object.
 type IndustrydataInboundflowsInboundFlowItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,12 +78,12 @@ func (m *IndustrydataInboundflowsInboundFlowItemRequestBuilder) Delete(ctx conte
     }
     return nil
 }
-// Get read the properties and relationships of an inboundFileFlow object.
+// Get read the properties and relationships of an inboundFlow object.
 // returns a InboundFlowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-beta
 func (m *IndustrydataInboundflowsInboundFlowItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustrydataInboundflowsInboundFlowItemRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -101,12 +101,12 @@ func (m *IndustrydataInboundflowsInboundFlowItemRequestBuilder) Get(ctx context.
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable), nil
 }
-// Patch update the properties of an inboundFlow object.
+// Patch update the properties of an inboundFileFlow object.
 // returns a InboundFlowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta
 func (m *IndustrydataInboundflowsInboundFlowItemRequestBuilder) Patch(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustrydataInboundflowsInboundFlowItemRequestBuilderPatchRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -135,7 +135,7 @@ func (m *IndustrydataInboundflowsInboundFlowItemRequestBuilder) ToDeleteRequestI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of an inboundFileFlow object.
+// ToGetRequestInformation read the properties and relationships of an inboundFlow object.
 // returns a *RequestInformation when successful
 func (m *IndustrydataInboundflowsInboundFlowItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustrydataInboundflowsInboundFlowItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,7 +149,7 @@ func (m *IndustrydataInboundflowsInboundFlowItemRequestBuilder) ToGetRequestInfo
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an inboundFlow object.
+// ToPatchRequestInformation update the properties of an inboundFileFlow object.
 // returns a *RequestInformation when successful
 func (m *IndustrydataInboundflowsInboundFlowItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.InboundFlowable, requestConfiguration *IndustrydataInboundflowsInboundFlowItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

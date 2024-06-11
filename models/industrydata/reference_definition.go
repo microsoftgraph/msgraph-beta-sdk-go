@@ -45,6 +45,18 @@ func (m *ReferenceDefinition) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
+// GetDisplayName gets the displayName property value. A human-readable representation of the reference code value for display in a user interface.
+// returns a *string when successful
+func (m *ReferenceDefinition) GetDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ReferenceDefinition) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -66,6 +78,16 @@ func (m *ReferenceDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
         }
         return nil
     }
@@ -121,7 +143,7 @@ func (m *ReferenceDefinition) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIsDisabled gets the isDisabled property value. Indicates whether the definition has been disabled.
+// GetIsDisabled gets the isDisabled property value. Indicates whether the definition is disabled.
 // returns a *bool when successful
 func (m *ReferenceDefinition) GetIsDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDisabled")
@@ -157,7 +179,7 @@ func (m *ReferenceDefinition) GetReferenceType()(*string) {
     }
     return nil
 }
-// GetSortIndex gets the sortIndex property value. The ordering index to present the definitions within a type consistently in user interfaces.
+// GetSortIndex gets the sortIndex property value. The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.
 // returns a *int32 when successful
 func (m *ReferenceDefinition) GetSortIndex()(*int32) {
     val, err := m.GetBackingStore().Get("sortIndex")
@@ -189,6 +211,12 @@ func (m *ReferenceDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     {
         err = writer.WriteStringValue("code", m.GetCode())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
         }
@@ -227,7 +255,14 @@ func (m *ReferenceDefinition) SetCreatedDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetIsDisabled sets the isDisabled property value. Indicates whether the definition has been disabled.
+// SetDisplayName sets the displayName property value. A human-readable representation of the reference code value for display in a user interface.
+func (m *ReferenceDefinition) SetDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsDisabled sets the isDisabled property value. Indicates whether the definition is disabled.
 func (m *ReferenceDefinition) SetIsDisabled(value *bool)() {
     err := m.GetBackingStore().Set("isDisabled", value)
     if err != nil {
@@ -248,7 +283,7 @@ func (m *ReferenceDefinition) SetReferenceType(value *string)() {
         panic(err)
     }
 }
-// SetSortIndex sets the sortIndex property value. The ordering index to present the definitions within a type consistently in user interfaces.
+// SetSortIndex sets the sortIndex property value. The index that specifies the order in which to present the definition to the user. Must be unique within the referenceType.
 func (m *ReferenceDefinition) SetSortIndex(value *int32)() {
     err := m.GetBackingStore().Set("sortIndex", value)
     if err != nil {
@@ -267,6 +302,7 @@ type ReferenceDefinitionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCode()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetDisplayName()(*string)
     GetIsDisabled()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetReferenceType()(*string)
@@ -274,6 +310,7 @@ type ReferenceDefinitionable interface {
     GetSource()(*string)
     SetCode(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetDisplayName(value *string)()
     SetIsDisabled(value *bool)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetReferenceType(value *string)()

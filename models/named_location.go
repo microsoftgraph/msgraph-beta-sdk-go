@@ -30,6 +30,8 @@ func CreateNamedLocationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.compliantNetworkNamedLocation":
+                        return NewCompliantNetworkNamedLocation(), nil
                     case "#microsoft.graph.countryNamedLocation":
                         return NewCountryNamedLocation(), nil
                     case "#microsoft.graph.ipNamedLocation":
