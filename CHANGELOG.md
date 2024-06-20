@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.105.1](https://github.com/microsoftgraph/msgraph-beta-sdk-go/compare/v0.105.0...v0.105.1) (2024-06-20)
+
+
+### Features
+
+* **generation:** update request builders and models ([#420](https://github.com/microsoftgraph/msgraph-beta-sdk-go/issues/420)) ([d194ac7](https://github.com/microsoftgraph/msgraph-beta-sdk-go/commit/d194ac7ad655faabf75bdc1f0aca1338427c436d))
+* **generation:** update request builders and models ([#423](https://github.com/microsoftgraph/msgraph-beta-sdk-go/issues/423)) ([1f70078](https://github.com/microsoftgraph/msgraph-beta-sdk-go/commit/1f700788172d7d9f17daa107fb8edbf2e10bd34f))
+
+
+### Bug Fixes
+
+* adds release please configuration ([16cf385](https://github.com/microsoftgraph/msgraph-beta-sdk-go/commit/16cf3851f29490085dda11621f872e7605fab7be))
+* get adapter should not panic when not nil ([6992dd3](https://github.com/microsoftgraph/msgraph-beta-sdk-go/commit/6992dd322a58df864585ff6918cd0030990e68e5))
+* package name ([5b9be54](https://github.com/microsoftgraph/msgraph-beta-sdk-go/commit/5b9be54738295f909060f9b13b1dc53d15e36e03))
+
 ## [0.105.0](https://github.com/microsoftgraph/msgraph-beta-sdk-go/compare/v0.104.0...v0.104.1) (2024-05-30)
 
 
