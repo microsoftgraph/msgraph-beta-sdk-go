@@ -30,6 +30,8 @@ func CreateIndustryDataActivityFromDiscriminatorValue(parseNode i878a80d2330e89d
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.industryData.inboundApiFlow":
+                        return NewInboundApiFlow(), nil
                     case "#microsoft.graph.industryData.inboundFileFlow":
                         return NewInboundFileFlow(), nil
                     case "#microsoft.graph.industryData.inboundFlow":

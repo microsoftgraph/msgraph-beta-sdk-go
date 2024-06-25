@@ -31,12 +31,12 @@ func NewFilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemNamesItemRa
     urlParams["request-raw-url"] = rawUrl
     return NewFilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.
+// Get retrieve the properties and relationships of range object.
 // returns a WorkbookRangeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-range?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/range-get?view=graph-rest-beta
 func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilder) Get(ctx context.Context, requestConfiguration *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,7 +54,7 @@ func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemNamesItemR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookRangeable), nil
 }
-// ToGetRequestInformation returns the range object that is associated with the name. Throws an exception if the named item's type is not a range.
+// ToGetRequestInformation retrieve the properties and relationships of range object.
 // returns a *RequestInformation when successful
 func (m *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilestorageContainersItemDriveItemsItemWorkbookWorksheetsItemNamesItemRangeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

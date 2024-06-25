@@ -11,7 +11,7 @@ import (
 type IndustrydataInboundflowsItemYearRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IndustrydataInboundflowsItemYearRequestBuilderGetQueryParameters the year that the data brought in via this flow applies to.
+// IndustrydataInboundflowsItemYearRequestBuilderGetQueryParameters the year associated to the data that this flow brings in.
 type IndustrydataInboundflowsItemYearRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewIndustrydataInboundflowsItemYearRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewIndustrydataInboundflowsItemYearRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the year that the data brought in via this flow applies to.
+// Get the year associated to the data that this flow brings in.
 // returns a YearTimePeriodDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IndustrydataInboundflowsItemYearRequestBuilder) Get(ctx context.Context, requestConfiguration *IndustrydataInboundflowsItemYearRequestBuilderGetRequestConfiguration)(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable, error) {
@@ -60,7 +60,7 @@ func (m *IndustrydataInboundflowsItemYearRequestBuilder) Get(ctx context.Context
     }
     return res.(id2b46acaed365d10a0a4cc89e0aa6f2f76ad54e2147428aee709d25e554da66a.YearTimePeriodDefinitionable), nil
 }
-// ToGetRequestInformation the year that the data brought in via this flow applies to.
+// ToGetRequestInformation the year associated to the data that this flow brings in.
 // returns a *RequestInformation when successful
 func (m *IndustrydataInboundflowsItemYearRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustrydataInboundflowsItemYearRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

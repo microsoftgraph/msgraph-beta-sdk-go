@@ -32,6 +32,8 @@ func CreateReferenceValueFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.industryData.fileFormatReferenceValue":
+                        return NewFileFormatReferenceValue(), nil
                     case "#microsoft.graph.industryData.identifierTypeReferenceValue":
                         return NewIdentifierTypeReferenceValue(), nil
                     case "#microsoft.graph.industryData.roleReferenceValue":

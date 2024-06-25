@@ -37,8 +37,8 @@ func NewBackuprestoreServiceappsItemActivateRequestBuilder(rawUrl string, reques
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/serviceapp-activate?view=graph-rest-beta
-func (m *BackuprestoreServiceappsItemActivateRequestBuilder) Post(ctx context.Context, requestConfiguration *BackuprestoreServiceappsItemActivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceAppable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
+func (m *BackuprestoreServiceappsItemActivateRequestBuilder) Post(ctx context.Context, body BackuprestoreServiceappsItemActivatePostRequestBodyable, requestConfiguration *BackuprestoreServiceappsItemActivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceAppable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -56,13 +56,17 @@ func (m *BackuprestoreServiceappsItemActivateRequestBuilder) Post(ctx context.Co
 }
 // ToPostRequestInformation activate a serviceApp.
 // returns a *RequestInformation when successful
-func (m *BackuprestoreServiceappsItemActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *BackuprestoreServiceappsItemActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *BackuprestoreServiceappsItemActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, body BackuprestoreServiceappsItemActivatePostRequestBodyable, requestConfiguration *BackuprestoreServiceappsItemActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

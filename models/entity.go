@@ -680,6 +680,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCompanySubscription(), nil
                     case "#microsoft.graph.complianceManagementPartner":
                         return NewComplianceManagementPartner(), nil
+                    case "#microsoft.graph.compliantNetworkNamedLocation":
+                        return NewCompliantNetworkNamedLocation(), nil
                     case "#microsoft.graph.conditionalAccessPolicy":
                         return NewConditionalAccessPolicy(), nil
                     case "#microsoft.graph.conditionalAccessRoot":

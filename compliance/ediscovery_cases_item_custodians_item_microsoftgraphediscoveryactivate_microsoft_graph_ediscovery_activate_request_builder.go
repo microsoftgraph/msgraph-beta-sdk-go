@@ -30,7 +30,7 @@ func NewEdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryactivateMicroso
     urlParams["request-raw-url"] = rawUrl
     return NewEdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryactivateMicrosoftGraphEdiscoveryActivateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.
+// Post activate a custodian that was released from a case. This method makes the custodian part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -50,7 +50,7 @@ func (m *EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryactivateMicros
     }
     return nil
 }
-// ToPostRequestInformation activate a custodian that has been released from a case to make them part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.
+// ToPostRequestInformation activate a custodian that was released from a case. This method makes the custodian part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryactivateMicrosoftGraphEdiscoveryActivateRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemMicrosoftgraphediscoveryactivateMicrosoftGraphEdiscoveryActivateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

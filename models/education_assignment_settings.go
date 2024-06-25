@@ -113,7 +113,7 @@ func (m *EducationAssignmentSettings) GetGradingSchemes()([]EducationGradingSche
     }
     return nil
 }
-// GetSubmissionAnimationDisabled gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation won't be shown. The default value is false.
+// GetSubmissionAnimationDisabled gets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation is shown. If true, the animation doesn't show. The default value is false.
 // returns a *bool when successful
 func (m *EducationAssignmentSettings) GetSubmissionAnimationDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("submissionAnimationDisabled")
@@ -190,7 +190,7 @@ func (m *EducationAssignmentSettings) SetGradingSchemes(value []EducationGrading
         panic(err)
     }
 }
-// SetSubmissionAnimationDisabled sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. If true, the animation won't be shown. The default value is false.
+// SetSubmissionAnimationDisabled sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation is shown. If true, the animation doesn't show. The default value is false.
 func (m *EducationAssignmentSettings) SetSubmissionAnimationDisabled(value *bool)() {
     err := m.GetBackingStore().Set("submissionAnimationDisabled", value)
     if err != nil {

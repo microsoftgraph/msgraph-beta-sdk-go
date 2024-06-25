@@ -52,7 +52,7 @@ func (m *ItemReference) GetDriveId()(*string) {
     }
     return nil
 }
-// GetDriveType gets the driveType property value. Identifies the type of drive. Only returned if the item is located in a drive.  See drive resource for values.
+// GetDriveType gets the driveType property value. Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
 // returns a *string when successful
 func (m *ItemReference) GetDriveType()(*string) {
     val, err := m.GetBackingStore().Get("driveType")
@@ -196,7 +196,7 @@ func (m *ItemReference) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPath gets the path property value. Path that can be used to navigate to the item. Read-only.
+// GetPath gets the path property value. Percent-encoded path that can be used to navigate to the item. Read-only.
 // returns a *string when successful
 func (m *ItemReference) GetPath()(*string) {
     val, err := m.GetBackingStore().Get("path")
@@ -232,7 +232,7 @@ func (m *ItemReference) GetSharepointIds()(SharepointIdsable) {
     }
     return nil
 }
-// GetSiteId gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+// GetSiteId gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It's an opaque string that consists of three identifiers of the site. For OneDrive, this property isn't populated.
 // returns a *string when successful
 func (m *ItemReference) GetSiteId()(*string) {
     val, err := m.GetBackingStore().Get("siteId")
@@ -326,7 +326,7 @@ func (m *ItemReference) SetDriveId(value *string)() {
         panic(err)
     }
 }
-// SetDriveType sets the driveType property value. Identifies the type of drive. Only returned if the item is located in a drive.  See drive resource for values.
+// SetDriveType sets the driveType property value. Identifies the type of drive. Only returned if the item is located in a drive. See drive resource for values.
 func (m *ItemReference) SetDriveType(value *string)() {
     err := m.GetBackingStore().Set("driveType", value)
     if err != nil {
@@ -354,7 +354,7 @@ func (m *ItemReference) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPath sets the path property value. Path that can be used to navigate to the item. Read-only.
+// SetPath sets the path property value. Percent-encoded path that can be used to navigate to the item. Read-only.
 func (m *ItemReference) SetPath(value *string)() {
     err := m.GetBackingStore().Set("path", value)
     if err != nil {
@@ -375,7 +375,7 @@ func (m *ItemReference) SetSharepointIds(value SharepointIdsable)() {
         panic(err)
     }
 }
-// SetSiteId sets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+// SetSiteId sets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that site resource. It's an opaque string that consists of three identifiers of the site. For OneDrive, this property isn't populated.
 func (m *ItemReference) SetSiteId(value *string)() {
     err := m.GetBackingStore().Set("siteId", value)
     if err != nil {

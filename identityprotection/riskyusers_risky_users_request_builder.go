@@ -11,7 +11,7 @@ import (
 type RiskyusersRiskyUsersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RiskyusersRiskyUsersRequestBuilderGetQueryParameters retrieve the properties and relationships of a collection of riskyUser objects.
+// RiskyusersRiskyUsersRequestBuilderGetQueryParameters retrieve the properties and relationships of a riskyUser object.
 type RiskyusersRiskyUsersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -86,12 +86,12 @@ func (m *RiskyusersRiskyUsersRequestBuilder) Count()(*RiskyusersCountRequestBuil
 func (m *RiskyusersRiskyUsersRequestBuilder) Dismiss()(*RiskyusersDismissRequestBuilder) {
     return NewRiskyusersDismissRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the properties and relationships of a collection of riskyUser objects.
+// Get retrieve the properties and relationships of a riskyUser object.
 // returns a RiskyUserCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-beta
 func (m *RiskyusersRiskyUsersRequestBuilder) Get(ctx context.Context, requestConfiguration *RiskyusersRiskyUsersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +129,7 @@ func (m *RiskyusersRiskyUsersRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RiskyUserable), nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of a collection of riskyUser objects.
+// ToGetRequestInformation retrieve the properties and relationships of a riskyUser object.
 // returns a *RequestInformation when successful
 func (m *RiskyusersRiskyUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RiskyusersRiskyUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

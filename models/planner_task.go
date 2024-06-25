@@ -86,7 +86,7 @@ func (m *PlannerTask) GetAssignedToTaskBoardFormat()(PlannerAssignedToTaskBoardT
     }
     return nil
 }
-// GetAssigneePriority gets the assigneePriority property value. A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.
+// GetAssigneePriority gets the assigneePriority property value. A hint that is used to order items of this type in a list view. For more information, see Using order hints in planner.
 // returns a *string when successful
 func (m *PlannerTask) GetAssigneePriority()(*string) {
     val, err := m.GetBackingStore().Get("assigneePriority")
@@ -230,7 +230,7 @@ func (m *PlannerTask) GetDetails()(PlannerTaskDetailsable) {
     }
     return nil
 }
-// GetDueDateTime gets the dueDateTime property value. The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetDueDateTime gets the dueDateTime property value. The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 // returns a *Time when successful
 func (m *PlannerTask) GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dueDateTime")
@@ -592,7 +592,7 @@ func (m *PlannerTask) GetIsArchived()(*bool) {
     }
     return nil
 }
-// GetIsOnMyDay gets the isOnMyDay property value. A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.
+// GetIsOnMyDay gets the isOnMyDay property value. Indicates whether to show this task in the MyDay view. If true, it shows the task.
 // returns a *bool when successful
 func (m *PlannerTask) GetIsOnMyDay()(*bool) {
     val, err := m.GetBackingStore().Get("isOnMyDay")
@@ -616,7 +616,7 @@ func (m *PlannerTask) GetIsOnMyDayLastModifiedDate()(*i878a80d2330e89d26896388a3
     }
     return nil
 }
-// GetOrderHint gets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.
+// GetOrderHint gets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.
 // returns a *string when successful
 func (m *PlannerTask) GetOrderHint()(*string) {
     val, err := m.GetBackingStore().Get("orderHint")
@@ -664,7 +664,7 @@ func (m *PlannerTask) GetPreviewType()(*PlannerPreviewType) {
     }
     return nil
 }
-// GetPriority gets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+// GetPriority gets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
 // returns a *int32 when successful
 func (m *PlannerTask) GetPriority()(*int32) {
     val, err := m.GetBackingStore().Get("priority")
@@ -978,7 +978,7 @@ func (m *PlannerTask) SetAssignedToTaskBoardFormat(value PlannerAssignedToTaskBo
         panic(err)
     }
 }
-// SetAssigneePriority sets the assigneePriority property value. A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.
+// SetAssigneePriority sets the assigneePriority property value. A hint that is used to order items of this type in a list view. For more information, see Using order hints in planner.
 func (m *PlannerTask) SetAssigneePriority(value *string)() {
     err := m.GetBackingStore().Set("assigneePriority", value)
     if err != nil {
@@ -1062,7 +1062,7 @@ func (m *PlannerTask) SetDetails(value PlannerTaskDetailsable)() {
         panic(err)
     }
 }
-// SetDueDateTime sets the dueDateTime property value. The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetDueDateTime sets the dueDateTime property value. The date and time at which the task is due. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *PlannerTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("dueDateTime", value)
     if err != nil {
@@ -1083,7 +1083,7 @@ func (m *PlannerTask) SetIsArchived(value *bool)() {
         panic(err)
     }
 }
-// SetIsOnMyDay sets the isOnMyDay property value. A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.
+// SetIsOnMyDay sets the isOnMyDay property value. Indicates whether to show this task in the MyDay view. If true, it shows the task.
 func (m *PlannerTask) SetIsOnMyDay(value *bool)() {
     err := m.GetBackingStore().Set("isOnMyDay", value)
     if err != nil {
@@ -1097,7 +1097,7 @@ func (m *PlannerTask) SetIsOnMyDayLastModifiedDate(value *i878a80d2330e89d268963
         panic(err)
     }
 }
-// SetOrderHint sets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.
+// SetOrderHint sets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.
 func (m *PlannerTask) SetOrderHint(value *string)() {
     err := m.GetBackingStore().Set("orderHint", value)
     if err != nil {
@@ -1125,7 +1125,7 @@ func (m *PlannerTask) SetPreviewType(value *PlannerPreviewType)() {
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, Planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
+// SetPriority sets the priority property value. The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, planner interprets values 0 and 1 as 'urgent', 2 and 3 and 4 as 'important', 5, 6, and 7 as 'medium', and 8, 9, and 10 as 'low'. Currently, planner sets the value 1 for 'urgent', 3 for 'important', 5 for 'medium', and 9 for 'low'.
 func (m *PlannerTask) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {

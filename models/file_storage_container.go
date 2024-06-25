@@ -367,7 +367,7 @@ func (m *FileStorageContainer) GetItemMajorVersionLimit()(*int32) {
     }
     return nil
 }
-// GetLockState gets the lockState property value. The lockState property
+// GetLockState gets the lockState property value. Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.
 // returns a *SiteLockState when successful
 func (m *FileStorageContainer) GetLockState()(*SiteLockState) {
     val, err := m.GetBackingStore().Get("lockState")
@@ -439,7 +439,7 @@ func (m *FileStorageContainer) GetStatus()(*FileStorageContainerStatus) {
     }
     return nil
 }
-// GetStorageUsedInBytes gets the storageUsedInBytes property value. Storage used in the fileStorageContainer. In bytes. Read-only.
+// GetStorageUsedInBytes gets the storageUsedInBytes property value. Storage used in the fileStorageContainer, in bytes. Read-only.
 // returns a *int64 when successful
 func (m *FileStorageContainer) GetStorageUsedInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("storageUsedInBytes")
@@ -683,7 +683,7 @@ func (m *FileStorageContainer) SetItemMajorVersionLimit(value *int32)() {
         panic(err)
     }
 }
-// SetLockState sets the lockState property value. The lockState property
+// SetLockState sets the lockState property value. Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.
 func (m *FileStorageContainer) SetLockState(value *SiteLockState)() {
     err := m.GetBackingStore().Set("lockState", value)
     if err != nil {
@@ -725,7 +725,7 @@ func (m *FileStorageContainer) SetStatus(value *FileStorageContainerStatus)() {
         panic(err)
     }
 }
-// SetStorageUsedInBytes sets the storageUsedInBytes property value. Storage used in the fileStorageContainer. In bytes. Read-only.
+// SetStorageUsedInBytes sets the storageUsedInBytes property value. Storage used in the fileStorageContainer, in bytes. Read-only.
 func (m *FileStorageContainer) SetStorageUsedInBytes(value *int64)() {
     err := m.GetBackingStore().Set("storageUsedInBytes", value)
     if err != nil {
