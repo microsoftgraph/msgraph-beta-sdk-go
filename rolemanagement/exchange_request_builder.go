@@ -55,9 +55,9 @@ func NewExchangeRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewExchangeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CustomAppScopes provides operations to manage the customAppScopes property of the microsoft.graph.unifiedRbacApplication entity.
-// returns a *ExchangeCustomappscopesCustomAppScopesRequestBuilder when successful
-func (m *ExchangeRequestBuilder) CustomAppScopes()(*ExchangeCustomappscopesCustomAppScopesRequestBuilder) {
-    return NewExchangeCustomappscopesCustomAppScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ExchangeCustomAppScopesRequestBuilder when successful
+func (m *ExchangeRequestBuilder) CustomAppScopes()(*ExchangeCustomAppScopesRequestBuilder) {
+    return NewExchangeCustomAppScopesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property exchange for roleManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -116,19 +116,19 @@ func (m *ExchangeRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacApplicationable), nil
 }
 // ResourceNamespaces provides operations to manage the resourceNamespaces property of the microsoft.graph.unifiedRbacApplication entity.
-// returns a *ExchangeResourcenamespacesResourceNamespacesRequestBuilder when successful
-func (m *ExchangeRequestBuilder) ResourceNamespaces()(*ExchangeResourcenamespacesResourceNamespacesRequestBuilder) {
-    return NewExchangeResourcenamespacesResourceNamespacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ExchangeResourceNamespacesRequestBuilder when successful
+func (m *ExchangeRequestBuilder) ResourceNamespaces()(*ExchangeResourceNamespacesRequestBuilder) {
+    return NewExchangeResourceNamespacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
-// returns a *ExchangeRoleassignmentsRoleAssignmentsRequestBuilder when successful
-func (m *ExchangeRequestBuilder) RoleAssignments()(*ExchangeRoleassignmentsRoleAssignmentsRequestBuilder) {
-    return NewExchangeRoleassignmentsRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ExchangeRoleAssignmentsRequestBuilder when successful
+func (m *ExchangeRequestBuilder) RoleAssignments()(*ExchangeRoleAssignmentsRequestBuilder) {
+    return NewExchangeRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.unifiedRbacApplication entity.
-// returns a *ExchangeRoledefinitionsRoleDefinitionsRequestBuilder when successful
-func (m *ExchangeRequestBuilder) RoleDefinitions()(*ExchangeRoledefinitionsRoleDefinitionsRequestBuilder) {
-    return NewExchangeRoledefinitionsRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ExchangeRoleDefinitionsRequestBuilder when successful
+func (m *ExchangeRequestBuilder) RoleDefinitions()(*ExchangeRoleDefinitionsRequestBuilder) {
+    return NewExchangeRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property exchange for roleManagement
 // returns a *RequestInformation when successful
@@ -171,9 +171,9 @@ func (m *ExchangeRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // TransitiveRoleAssignments provides operations to manage the transitiveRoleAssignments property of the microsoft.graph.unifiedRbacApplication entity.
-// returns a *ExchangeTransitiveroleassignmentsTransitiveRoleAssignmentsRequestBuilder when successful
-func (m *ExchangeRequestBuilder) TransitiveRoleAssignments()(*ExchangeTransitiveroleassignmentsTransitiveRoleAssignmentsRequestBuilder) {
-    return NewExchangeTransitiveroleassignmentsTransitiveRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ExchangeTransitiveRoleAssignmentsRequestBuilder when successful
+func (m *ExchangeRequestBuilder) TransitiveRoleAssignments()(*ExchangeTransitiveRoleAssignmentsRequestBuilder) {
+    return NewExchangeTransitiveRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ExchangeRequestBuilder when successful

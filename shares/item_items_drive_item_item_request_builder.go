@@ -46,9 +46,9 @@ func (m *ItemItemsDriveItemItemRequestBuilder) Content()(*ItemItemsItemContentRe
     return NewItemItemsItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ContentStream provides operations to manage the media for the sharedDriveItem entity.
-// returns a *ItemItemsItemContentstreamContentStreamRequestBuilder when successful
-func (m *ItemItemsDriveItemItemRequestBuilder) ContentStream()(*ItemItemsItemContentstreamContentStreamRequestBuilder) {
-    return NewItemItemsItemContentstreamContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemContentStreamRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) ContentStream()(*ItemItemsItemContentStreamRequestBuilder) {
+    return NewItemItemsItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get all driveItems contained in the sharing root. This collection cannot be enumerated.
 // returns a DriveItemable when successful

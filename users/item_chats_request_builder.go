@@ -47,9 +47,9 @@ type ItemChatsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllMessages provides operations to call the allMessages method.
-// returns a *ItemChatsAllmessagesAllMessagesRequestBuilder when successful
-func (m *ItemChatsRequestBuilder) AllMessages()(*ItemChatsAllmessagesAllMessagesRequestBuilder) {
-    return NewItemChatsAllmessagesAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChatsAllMessagesRequestBuilder when successful
+func (m *ItemChatsRequestBuilder) AllMessages()(*ItemChatsAllMessagesRequestBuilder) {
+    return NewItemChatsAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByChatId provides operations to manage the chats property of the microsoft.graph.user entity.
 // returns a *ItemChatsChatItemRequestBuilder when successful
@@ -105,14 +105,14 @@ func (m *ItemChatsRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatCollectionResponseable), nil
 }
 // GetAllMessages provides operations to call the getAllMessages method.
-// returns a *ItemChatsGetallmessagesGetAllMessagesRequestBuilder when successful
-func (m *ItemChatsRequestBuilder) GetAllMessages()(*ItemChatsGetallmessagesGetAllMessagesRequestBuilder) {
-    return NewItemChatsGetallmessagesGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChatsGetAllMessagesRequestBuilder when successful
+func (m *ItemChatsRequestBuilder) GetAllMessages()(*ItemChatsGetAllMessagesRequestBuilder) {
+    return NewItemChatsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
-// returns a *ItemChatsGetallretainedmessagesGetAllRetainedMessagesRequestBuilder when successful
-func (m *ItemChatsRequestBuilder) GetAllRetainedMessages()(*ItemChatsGetallretainedmessagesGetAllRetainedMessagesRequestBuilder) {
-    return NewItemChatsGetallretainedmessagesGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemChatsGetAllRetainedMessagesRequestBuilder when successful
+func (m *ItemChatsRequestBuilder) GetAllRetainedMessages()(*ItemChatsGetAllRetainedMessagesRequestBuilder) {
+    return NewItemChatsGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to chats for users
 // returns a Chatable when successful

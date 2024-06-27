@@ -116,14 +116,14 @@ func (m *CompaniesItemCustomersCustomerItemRequestBuilder) Patch(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Customerable), nil
 }
 // PaymentMethod provides operations to manage the paymentMethod property of the microsoft.graph.customer entity.
-// returns a *CompaniesItemCustomersItemPaymentmethodPaymentMethodRequestBuilder when successful
-func (m *CompaniesItemCustomersCustomerItemRequestBuilder) PaymentMethod()(*CompaniesItemCustomersItemPaymentmethodPaymentMethodRequestBuilder) {
-    return NewCompaniesItemCustomersItemPaymentmethodPaymentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemCustomersItemPaymentMethodRequestBuilder when successful
+func (m *CompaniesItemCustomersCustomerItemRequestBuilder) PaymentMethod()(*CompaniesItemCustomersItemPaymentMethodRequestBuilder) {
+    return NewCompaniesItemCustomersItemPaymentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.customer entity.
-// returns a *CompaniesItemCustomersItemPaymenttermPaymentTermRequestBuilder when successful
-func (m *CompaniesItemCustomersCustomerItemRequestBuilder) PaymentTerm()(*CompaniesItemCustomersItemPaymenttermPaymentTermRequestBuilder) {
-    return NewCompaniesItemCustomersItemPaymenttermPaymentTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemCustomersItemPaymentTermRequestBuilder when successful
+func (m *CompaniesItemCustomersCustomerItemRequestBuilder) PaymentTerm()(*CompaniesItemCustomersItemPaymentTermRequestBuilder) {
+    return NewCompaniesItemCustomersItemPaymentTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.customer entity.
 // returns a *CompaniesItemCustomersItemPictureRequestBuilder when successful
@@ -131,9 +131,9 @@ func (m *CompaniesItemCustomersCustomerItemRequestBuilder) Picture()(*CompaniesI
     return NewCompaniesItemCustomersItemPictureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ShipmentMethod provides operations to manage the shipmentMethod property of the microsoft.graph.customer entity.
-// returns a *CompaniesItemCustomersItemShipmentmethodShipmentMethodRequestBuilder when successful
-func (m *CompaniesItemCustomersCustomerItemRequestBuilder) ShipmentMethod()(*CompaniesItemCustomersItemShipmentmethodShipmentMethodRequestBuilder) {
-    return NewCompaniesItemCustomersItemShipmentmethodShipmentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemCustomersItemShipmentMethodRequestBuilder when successful
+func (m *CompaniesItemCustomersCustomerItemRequestBuilder) ShipmentMethod()(*CompaniesItemCustomersItemShipmentMethodRequestBuilder) {
+    return NewCompaniesItemCustomersItemShipmentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property customers for financials
 // returns a *RequestInformation when successful

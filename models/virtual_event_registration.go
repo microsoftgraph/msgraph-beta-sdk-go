@@ -196,7 +196,7 @@ func (m *VirtualEventRegistration) GetLastName()(*string) {
     }
     return nil
 }
-// GetPreferredLanguage gets the preferredLanguage property value. The preferredLanguage property
+// GetPreferredLanguage gets the preferredLanguage property value. The registrant's preferred language.
 // returns a *string when successful
 func (m *VirtualEventRegistration) GetPreferredLanguage()(*string) {
     val, err := m.GetBackingStore().Get("preferredLanguage")
@@ -208,7 +208,7 @@ func (m *VirtualEventRegistration) GetPreferredLanguage()(*string) {
     }
     return nil
 }
-// GetPreferredTimezone gets the preferredTimezone property value. The preferredTimezone property
+// GetPreferredTimezone gets the preferredTimezone property value. The registrant's time zone details.
 // returns a *string when successful
 func (m *VirtualEventRegistration) GetPreferredTimezone()(*string) {
     val, err := m.GetBackingStore().Get("preferredTimezone")
@@ -395,14 +395,14 @@ func (m *VirtualEventRegistration) SetLastName(value *string)() {
         panic(err)
     }
 }
-// SetPreferredLanguage sets the preferredLanguage property value. The preferredLanguage property
+// SetPreferredLanguage sets the preferredLanguage property value. The registrant's preferred language.
 func (m *VirtualEventRegistration) SetPreferredLanguage(value *string)() {
     err := m.GetBackingStore().Set("preferredLanguage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPreferredTimezone sets the preferredTimezone property value. The preferredTimezone property
+// SetPreferredTimezone sets the preferredTimezone property value. The registrant's time zone details.
 func (m *VirtualEventRegistration) SetPreferredTimezone(value *string)() {
     err := m.GetBackingStore().Set("preferredTimezone", value)
     if err != nil {

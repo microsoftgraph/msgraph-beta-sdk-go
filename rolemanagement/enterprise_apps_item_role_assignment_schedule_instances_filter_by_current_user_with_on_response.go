@@ -1,0 +1,27 @@
+package rolemanagement
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnGetResponseable instead.
+type EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponse struct {
+    EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnGetResponse
+}
+// NewEnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponse instantiates a new EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponse and sets the default values.
+func NewEnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponse()(*EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponse) {
+    m := &EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponse{
+        EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnGetResponse: *NewEnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnGetResponse(),
+    }
+    return m
+}
+// CreateEnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateEnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewEnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponse(), nil
+}
+// Deprecated: This class is obsolete. Use EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnGetResponseable instead.
+type EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnResponseable interface {
+    EnterpriseAppsItemRoleAssignmentScheduleInstancesFilterByCurrentUserWithOnGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

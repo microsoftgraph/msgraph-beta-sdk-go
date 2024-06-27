@@ -694,7 +694,7 @@ func (m *EducationUser) GetOnPremisesInfo()(EducationOnPremisesInfoable) {
     }
     return nil
 }
-// GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for more details.
+// GetPasswordPolicies gets the passwordPolicies property value. Specifies password policies for the user. For more details, see the standard [user] resource.
 // returns a *string when successful
 func (m *EducationUser) GetPasswordPolicies()(*string) {
     val, err := m.GetBackingStore().Get("passwordPolicies")
@@ -706,7 +706,7 @@ func (m *EducationUser) GetPasswordPolicies()(*string) {
     }
     return nil
 }
-// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for more details.
+// GetPasswordProfile gets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. For more details, see the standard [user] resource.
 // returns a PasswordProfileable when successful
 func (m *EducationUser) GetPasswordProfile()(PasswordProfileable) {
     val, err := m.GetBackingStore().Get("passwordProfile")
@@ -862,7 +862,7 @@ func (m *EducationUser) GetTaughtClasses()([]EducationClassable) {
     }
     return nil
 }
-// GetTeacher gets the teacher property value. If the primary role is teacher, this block will contain teacher specific data.
+// GetTeacher gets the teacher property value. If the primary role is teacher, this block contains teacher specific data.
 // returns a EducationTeacherable when successful
 func (m *EducationUser) GetTeacher()(EducationTeacherable) {
     val, err := m.GetBackingStore().Get("teacher")
@@ -874,7 +874,7 @@ func (m *EducationUser) GetTeacher()(EducationTeacherable) {
     }
     return nil
 }
-// GetUsageLocation gets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.
+// GetUsageLocation gets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who are assigned licenses. Not nullable. Supports /$filter.
 // returns a *string when successful
 func (m *EducationUser) GetUsageLocation()(*string) {
     val, err := m.GetBackingStore().Get("usageLocation")
@@ -898,7 +898,7 @@ func (m *EducationUser) GetUser()(Userable) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
+// GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. For more details, see the standard [user] resource.
 // returns a *string when successful
 func (m *EducationUser) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
@@ -1347,14 +1347,14 @@ func (m *EducationUser) SetOnPremisesInfo(value EducationOnPremisesInfoable)() {
         panic(err)
     }
 }
-// SetPasswordPolicies sets the passwordPolicies property value. Specifies password policies for the user. See standard [user] resource for more details.
+// SetPasswordPolicies sets the passwordPolicies property value. Specifies password policies for the user. For more details, see the standard [user] resource.
 func (m *EducationUser) SetPasswordPolicies(value *string)() {
     err := m.GetBackingStore().Set("passwordPolicies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. See standard [user] resource for more details.
+// SetPasswordProfile sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. For more details, see the standard [user] resource.
 func (m *EducationUser) SetPasswordProfile(value PasswordProfileable)() {
     err := m.GetBackingStore().Set("passwordProfile", value)
     if err != nil {
@@ -1445,14 +1445,14 @@ func (m *EducationUser) SetTaughtClasses(value []EducationClassable)() {
         panic(err)
     }
 }
-// SetTeacher sets the teacher property value. If the primary role is teacher, this block will contain teacher specific data.
+// SetTeacher sets the teacher property value. If the primary role is teacher, this block contains teacher specific data.
 func (m *EducationUser) SetTeacher(value EducationTeacherable)() {
     err := m.GetBackingStore().Set("teacher", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsageLocation sets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who will be assigned licenses. Not nullable. Supports /$filter.
+// SetUsageLocation sets the usageLocation property value. A two-letter country code ([ISO 3166 Alpha-2]). Required for users who are assigned licenses. Not nullable. Supports /$filter.
 func (m *EducationUser) SetUsageLocation(value *string)() {
     err := m.GetBackingStore().Set("usageLocation", value)
     if err != nil {
@@ -1466,7 +1466,7 @@ func (m *EducationUser) SetUser(value Userable)() {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. See standard [user] resource for additional details.
+// SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) for the user. Supports $filter and $orderby. For more details, see the standard [user] resource.
 func (m *EducationUser) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

@@ -116,9 +116,9 @@ func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) Patch(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemVersionable), nil
 }
 // RestoreVersion provides operations to call the restoreVersion method.
-// returns a *ItemItemsItemVersionsItemRestoreversionRestoreVersionRequestBuilder when successful
-func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) RestoreVersion()(*ItemItemsItemVersionsItemRestoreversionRestoreVersionRequestBuilder) {
-    return NewItemItemsItemVersionsItemRestoreversionRestoreVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemVersionsItemRestoreVersionRequestBuilder when successful
+func (m *ItemItemsItemVersionsDriveItemVersionItemRequestBuilder) RestoreVersion()(*ItemItemsItemVersionsItemRestoreVersionRequestBuilder) {
+    return NewItemItemsItemVersionsItemRestoreVersionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property versions for drives
 // returns a *RequestInformation when successful

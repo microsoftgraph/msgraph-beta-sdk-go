@@ -1,0 +1,80 @@
+package dataclassification
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// ClassifyFileJobsCountRequestBuilder provides operations to count the resources in the collection.
+type ClassifyFileJobsCountRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// ClassifyFileJobsCountRequestBuilderGetQueryParameters get the number of the resource
+type ClassifyFileJobsCountRequestBuilderGetQueryParameters struct {
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+}
+// ClassifyFileJobsCountRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type ClassifyFileJobsCountRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *ClassifyFileJobsCountRequestBuilderGetQueryParameters
+}
+// NewClassifyFileJobsCountRequestBuilderInternal instantiates a new ClassifyFileJobsCountRequestBuilder and sets the default values.
+func NewClassifyFileJobsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassifyFileJobsCountRequestBuilder) {
+    m := &ClassifyFileJobsCountRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/dataClassification/classifyFileJobs/$count{?%24filter,%24search}", pathParameters),
+    }
+    return m
+}
+// NewClassifyFileJobsCountRequestBuilder instantiates a new ClassifyFileJobsCountRequestBuilder and sets the default values.
+func NewClassifyFileJobsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ClassifyFileJobsCountRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewClassifyFileJobsCountRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Get get the number of the resource
+// returns a *int32 when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *ClassifyFileJobsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassifyFileJobsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(*int32), nil
+}
+// ToGetRequestInformation get the number of the resource
+// returns a *RequestInformation when successful
+func (m *ClassifyFileJobsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassifyFileJobsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "text/plain;q=0.9")
+    return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *ClassifyFileJobsCountRequestBuilder when successful
+func (m *ClassifyFileJobsCountRequestBuilder) WithUrl(rawUrl string)(*ClassifyFileJobsCountRequestBuilder) {
+    return NewClassifyFileJobsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

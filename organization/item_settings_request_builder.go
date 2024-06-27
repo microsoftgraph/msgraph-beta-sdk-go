@@ -55,9 +55,9 @@ func NewItemSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewItemSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // ContactInsights provides operations to manage the contactInsights property of the microsoft.graph.organizationSettings entity.
-// returns a *ItemSettingsContactinsightsContactInsightsRequestBuilder when successful
-func (m *ItemSettingsRequestBuilder) ContactInsights()(*ItemSettingsContactinsightsContactInsightsRequestBuilder) {
-    return NewItemSettingsContactinsightsContactInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSettingsContactInsightsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) ContactInsights()(*ItemSettingsContactInsightsRequestBuilder) {
+    return NewItemSettingsContactInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property settings for organization
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -96,14 +96,14 @@ func (m *ItemSettingsRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationSettingsable), nil
 }
 // ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.organizationSettings entity.
-// returns a *ItemSettingsIteminsightsItemInsightsRequestBuilder when successful
-func (m *ItemSettingsRequestBuilder) ItemInsights()(*ItemSettingsIteminsightsItemInsightsRequestBuilder) {
-    return NewItemSettingsIteminsightsItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSettingsItemInsightsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) ItemInsights()(*ItemSettingsItemInsightsRequestBuilder) {
+    return NewItemSettingsItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftApplicationDataAccess provides operations to manage the microsoftApplicationDataAccess property of the microsoft.graph.organizationSettings entity.
-// returns a *ItemSettingsMicrosoftapplicationdataaccessMicrosoftApplicationDataAccessRequestBuilder when successful
-func (m *ItemSettingsRequestBuilder) MicrosoftApplicationDataAccess()(*ItemSettingsMicrosoftapplicationdataaccessMicrosoftApplicationDataAccessRequestBuilder) {
-    return NewItemSettingsMicrosoftapplicationdataaccessMicrosoftApplicationDataAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSettingsMicrosoftApplicationDataAccessRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) MicrosoftApplicationDataAccess()(*ItemSettingsMicrosoftApplicationDataAccessRequestBuilder) {
+    return NewItemSettingsMicrosoftApplicationDataAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property settings in organization
 // returns a OrganizationSettingsable when successful
@@ -126,9 +126,9 @@ func (m *ItemSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OrganizationSettingsable), nil
 }
 // PeopleInsights provides operations to manage the peopleInsights property of the microsoft.graph.organizationSettings entity.
-// returns a *ItemSettingsPeopleinsightsPeopleInsightsRequestBuilder when successful
-func (m *ItemSettingsRequestBuilder) PeopleInsights()(*ItemSettingsPeopleinsightsPeopleInsightsRequestBuilder) {
-    return NewItemSettingsPeopleinsightsPeopleInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSettingsPeopleInsightsRequestBuilder when successful
+func (m *ItemSettingsRequestBuilder) PeopleInsights()(*ItemSettingsPeopleInsightsRequestBuilder) {
+    return NewItemSettingsPeopleInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property settings for organization
 // returns a *RequestInformation when successful

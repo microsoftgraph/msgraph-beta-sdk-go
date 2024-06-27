@@ -61,14 +61,14 @@ func (m *UsersItemUserRequestBuilder) Get(ctx context.Context, requestConfigurat
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable), nil
 }
 // MailboxSettings the mailboxSettings property
-// returns a *UsersItemUserMailboxsettingsMailboxSettingsRequestBuilder when successful
-func (m *UsersItemUserRequestBuilder) MailboxSettings()(*UsersItemUserMailboxsettingsMailboxSettingsRequestBuilder) {
-    return NewUsersItemUserMailboxsettingsMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UsersItemUserMailboxSettingsRequestBuilder when successful
+func (m *UsersItemUserRequestBuilder) MailboxSettings()(*UsersItemUserMailboxSettingsRequestBuilder) {
+    return NewUsersItemUserMailboxSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *UsersItemUserServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
-func (m *UsersItemUserRequestBuilder) ServiceProvisioningErrors()(*UsersItemUserServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
-    return NewUsersItemUserServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UsersItemUserServiceProvisioningErrorsRequestBuilder when successful
+func (m *UsersItemUserRequestBuilder) ServiceProvisioningErrors()(*UsersItemUserServiceProvisioningErrorsRequestBuilder) {
+    return NewUsersItemUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get user from education
 // returns a *RequestInformation when successful

@@ -1,0 +1,27 @@
+package teamwork
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaGetResponseable instead.
+type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponse struct {
+    TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaGetResponse
+}
+// NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponse instantiates a new TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponse and sets the default values.
+func NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponse()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponse) {
+    m := &TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponse{
+        TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaGetResponse: *NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaGetResponse(),
+    }
+    return m
+}
+// CreateTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponse(), nil
+}
+// Deprecated: This class is obsolete. Use TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaGetResponseable instead.
+type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaResponseable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaGetResponseable
+}

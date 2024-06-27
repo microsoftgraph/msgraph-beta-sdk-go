@@ -1,0 +1,152 @@
+package deviceappmanagement
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// WindowsInformationProtectionWipeActionsRequestBuilder provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.
+type WindowsInformationProtectionWipeActionsRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// WindowsInformationProtectionWipeActionsRequestBuilderGetQueryParameters windows information protection wipe actions.
+type WindowsInformationProtectionWipeActionsRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Order items by property values
+    Orderby []string `uriparametername:"%24orderby"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
+}
+// WindowsInformationProtectionWipeActionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type WindowsInformationProtectionWipeActionsRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *WindowsInformationProtectionWipeActionsRequestBuilderGetQueryParameters
+}
+// WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ByWindowsInformationProtectionWipeActionId provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.
+// returns a *WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder when successful
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) ByWindowsInformationProtectionWipeActionId(windowsInformationProtectionWipeActionId string)(*WindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsInformationProtectionWipeActionId != "" {
+        urlTplParams["windowsInformationProtectionWipeAction%2Did"] = windowsInformationProtectionWipeActionId
+    }
+    return NewWindowsInformationProtectionWipeActionsWindowsInformationProtectionWipeActionItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
+// NewWindowsInformationProtectionWipeActionsRequestBuilderInternal instantiates a new WindowsInformationProtectionWipeActionsRequestBuilder and sets the default values.
+func NewWindowsInformationProtectionWipeActionsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsInformationProtectionWipeActionsRequestBuilder) {
+    m := &WindowsInformationProtectionWipeActionsRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceAppManagement/windowsInformationProtectionWipeActions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+    }
+    return m
+}
+// NewWindowsInformationProtectionWipeActionsRequestBuilder instantiates a new WindowsInformationProtectionWipeActionsRequestBuilder and sets the default values.
+func NewWindowsInformationProtectionWipeActionsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsInformationProtectionWipeActionsRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewWindowsInformationProtectionWipeActionsRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Count provides operations to count the resources in the collection.
+// returns a *WindowsInformationProtectionWipeActionsCountRequestBuilder when successful
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) Count()(*WindowsInformationProtectionWipeActionsCountRequestBuilder) {
+    return NewWindowsInformationProtectionWipeActionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get windows information protection wipe actions.
+// returns a WindowsInformationProtectionWipeActionCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsInformationProtectionWipeActionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionCollectionResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWindowsInformationProtectionWipeActionCollectionResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionCollectionResponseable), nil
+}
+// Post create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
+// returns a WindowsInformationProtectionWipeActionable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, requestConfiguration *WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWindowsInformationProtectionWipeActionFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable), nil
+}
+// ToGetRequestInformation windows information protection wipe actions.
+// returns a *RequestInformation when successful
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsInformationProtectionWipeActionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToPostRequestInformation create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
+// returns a *RequestInformation when successful
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionWipeActionable, requestConfiguration *WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsInformationProtectionWipeActionsRequestBuilder when successful
+func (m *WindowsInformationProtectionWipeActionsRequestBuilder) WithUrl(rawUrl string)(*WindowsInformationProtectionWipeActionsRequestBuilder) {
+    return NewWindowsInformationProtectionWipeActionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

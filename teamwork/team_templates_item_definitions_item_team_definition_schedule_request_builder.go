@@ -1,0 +1,222 @@
+package teamwork
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder provides operations to manage the schedule property of the microsoft.graph.team entity.
+type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderDeleteRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderGetQueryParameters the schedule of shifts for this team.
+type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderGetQueryParameters struct {
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+}
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderGetQueryParameters
+}
+// TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderPutRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderPutRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderInternal instantiates a new TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder and sets the default values.
+func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) {
+    m := &TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions/{teamTemplateDefinition%2Did}/teamDefinition/schedule{?%24expand,%24select}", pathParameters),
+    }
+    return m
+}
+// NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder instantiates a new TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder and sets the default values.
+func NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderInternal(urlParams, requestAdapter)
+}
+// DayNotes provides operations to manage the dayNotes property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) DayNotes()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleDayNotesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Delete delete navigation property schedule for teamwork
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) Delete(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderDeleteRequestConfiguration)(error) {
+    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
+    if err != nil {
+        return err
+    }
+    return nil
+}
+// Get the schedule of shifts for this team.
+// returns a Scheduleable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Scheduleable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateScheduleFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Scheduleable), nil
+}
+// OfferShiftRequests provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) OfferShiftRequests()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOfferShiftRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OpenShiftChangeRequests provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftChangeRequestsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) OpenShiftChangeRequests()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftChangeRequestsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftChangeRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OpenShifts provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) OpenShifts()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleOpenShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Put update the navigation property schedule in teamwork
+// returns a Scheduleable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) Put(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Scheduleable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Scheduleable, error) {
+    requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateScheduleFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Scheduleable), nil
+}
+// SchedulingGroups provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) SchedulingGroups()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSchedulingGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Share provides operations to call the share method.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) Share()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShareRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Shifts provides operations to manage the shifts property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) Shifts()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ShiftsRoleDefinitions provides operations to manage the shiftsRoleDefinitions property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) ShiftsRoleDefinitions()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SwapShiftsChangeRequests provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) SwapShiftsChangeRequests()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleSwapShiftsChangeRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TimeCards provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) TimeCards()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeCardsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TimeOffReasons provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) TimeOffReasons()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffReasonsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TimeOffRequests provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffRequestsRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) TimeOffRequests()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffRequestsRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimeOffRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TimesOff provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimesOffRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) TimesOff()(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimesOffRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleTimesOffRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ToDeleteRequestInformation delete navigation property schedule for teamwork
+// returns a *RequestInformation when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToGetRequestInformation the schedule of shifts for this team.
+// returns a *RequestInformation when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToPutRequestInformation update the navigation property schedule in teamwork
+// returns a *RequestInformation when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Scheduleable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionScheduleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

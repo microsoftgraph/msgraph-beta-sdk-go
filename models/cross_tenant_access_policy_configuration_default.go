@@ -211,7 +211,7 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) GetIsServiceDefault()(*boo
     }
     return nil
 }
-// GetTenantRestrictions gets the tenantRestrictions property value. Defines the default tenant restrictions configuration for your organization users accessing an external organization on your network or devices.
+// GetTenantRestrictions gets the tenantRestrictions property value. Defines the default tenant restrictions configuration for users in your organization who access an external organization on your network or devices.
 // returns a CrossTenantAccessPolicyTenantRestrictionsable when successful
 func (m *CrossTenantAccessPolicyConfigurationDefault) GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable) {
     val, err := m.GetBackingStore().Get("tenantRestrictions")
@@ -341,7 +341,7 @@ func (m *CrossTenantAccessPolicyConfigurationDefault) SetIsServiceDefault(value 
         panic(err)
     }
 }
-// SetTenantRestrictions sets the tenantRestrictions property value. Defines the default tenant restrictions configuration for your organization users accessing an external organization on your network or devices.
+// SetTenantRestrictions sets the tenantRestrictions property value. Defines the default tenant restrictions configuration for users in your organization who access an external organization on your network or devices.
 func (m *CrossTenantAccessPolicyConfigurationDefault) SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)() {
     err := m.GetBackingStore().Set("tenantRestrictions", value)
     if err != nil {

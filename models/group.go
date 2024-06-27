@@ -1596,7 +1596,7 @@ func (m *Group) GetOnPremisesSamAccountName()(*string) {
     }
     return nil
 }
-// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+// GetOnPremisesSecurityIdentifier gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.
 // returns a *string when successful
 func (m *Group) GetOnPremisesSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesSecurityIdentifier")
@@ -1788,7 +1788,7 @@ func (m *Group) GetSecurityEnabled()(*bool) {
     }
     return nil
 }
-// GetSecurityIdentifier gets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Returned by default.
+// GetSecurityIdentifier gets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Read-only. Returned by default.
 // returns a *string when successful
 func (m *Group) GetSecurityIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("securityIdentifier")
@@ -2950,7 +2950,7 @@ func (m *Group) SetOnPremisesSamAccountName(value *string)() {
         panic(err)
     }
 }
-// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+// SetOnPremisesSecurityIdentifier sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Read-only. Returned by default. Supports $filter (eq including on null values). Read-only.
 func (m *Group) SetOnPremisesSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("onPremisesSecurityIdentifier", value)
     if err != nil {
@@ -3062,7 +3062,7 @@ func (m *Group) SetSecurityEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetSecurityIdentifier sets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Returned by default.
+// SetSecurityIdentifier sets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Read-only. Returned by default.
 func (m *Group) SetSecurityIdentifier(value *string)() {
     err := m.GetBackingStore().Set("securityIdentifier", value)
     if err != nil {

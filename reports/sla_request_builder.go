@@ -42,9 +42,9 @@ type SlaRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AzureADAuthentication provides operations to manage the azureADAuthentication property of the microsoft.graph.serviceLevelAgreementRoot entity.
-// returns a *SlaAzureadauthenticationAzureADAuthenticationRequestBuilder when successful
-func (m *SlaRequestBuilder) AzureADAuthentication()(*SlaAzureadauthenticationAzureADAuthenticationRequestBuilder) {
-    return NewSlaAzureadauthenticationAzureADAuthenticationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SlaAzureADAuthenticationRequestBuilder when successful
+func (m *SlaRequestBuilder) AzureADAuthentication()(*SlaAzureADAuthenticationRequestBuilder) {
+    return NewSlaAzureADAuthenticationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSlaRequestBuilderInternal instantiates a new SlaRequestBuilder and sets the default values.
 func NewSlaRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SlaRequestBuilder) {

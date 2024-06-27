@@ -97,9 +97,9 @@ func (m *CallsRequestBuilder) Get(ctx context.Context, requestConfiguration *Cal
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallCollectionResponseable), nil
 }
 // LogTeleconferenceDeviceQuality provides operations to call the logTeleconferenceDeviceQuality method.
-// returns a *CallsLogteleconferencedevicequalityLogTeleconferenceDeviceQualityRequestBuilder when successful
-func (m *CallsRequestBuilder) LogTeleconferenceDeviceQuality()(*CallsLogteleconferencedevicequalityLogTeleconferenceDeviceQualityRequestBuilder) {
-    return NewCallsLogteleconferencedevicequalityLogTeleconferenceDeviceQualityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CallsLogTeleconferenceDeviceQualityRequestBuilder when successful
+func (m *CallsRequestBuilder) LogTeleconferenceDeviceQuality()(*CallsLogTeleconferenceDeviceQualityRequestBuilder) {
+    return NewCallsLogTeleconferenceDeviceQualityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to calls for app
 // returns a Callable when successful

@@ -42,14 +42,14 @@ type DirectorySettingTemplateItemRequestBuilderPatchRequestConfiguration struct 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
-// returns a *ItemCheckmembergroupsCheckMemberGroupsRequestBuilder when successful
-func (m *DirectorySettingTemplateItemRequestBuilder) CheckMemberGroups()(*ItemCheckmembergroupsCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckmembergroupsCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberGroupsRequestBuilder when successful
+func (m *DirectorySettingTemplateItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberObjects provides operations to call the checkMemberObjects method.
-// returns a *ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder when successful
-func (m *DirectorySettingTemplateItemRequestBuilder) CheckMemberObjects()(*ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckmemberobjectsCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberObjectsRequestBuilder when successful
+func (m *DirectorySettingTemplateItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewDirectorySettingTemplateItemRequestBuilderInternal instantiates a new DirectorySettingTemplateItemRequestBuilder and sets the default values.
 func NewDirectorySettingTemplateItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*DirectorySettingTemplateItemRequestBuilder) {
@@ -104,14 +104,14 @@ func (m *DirectorySettingTemplateItemRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectorySettingTemplateable), nil
 }
 // GetMemberGroups provides operations to call the getMemberGroups method.
-// returns a *ItemGetmembergroupsGetMemberGroupsRequestBuilder when successful
-func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberGroups()(*ItemGetmembergroupsGetMemberGroupsRequestBuilder) {
-    return NewItemGetmembergroupsGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberGroupsRequestBuilder when successful
+func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetMemberObjects provides operations to call the getMemberObjects method.
-// returns a *ItemGetmemberobjectsGetMemberObjectsRequestBuilder when successful
-func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberObjects()(*ItemGetmemberobjectsGetMemberObjectsRequestBuilder) {
-    return NewItemGetmemberobjectsGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberObjectsRequestBuilder when successful
+func (m *DirectorySettingTemplateItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in directorySettingTemplates
 // returns a DirectorySettingTemplateable when successful

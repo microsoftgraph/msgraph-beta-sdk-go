@@ -166,7 +166,7 @@ func (m *CloudPcBulkAction) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetScheduledDuringMaintenanceWindow gets the scheduledDuringMaintenanceWindow property value. Indicates whether the bulk actions can be initiated during maintenance window. When true, bulk action will use maintenance window to schedule action, When false means bulk action will not use the maintenance window. Default value is false.
+// GetScheduledDuringMaintenanceWindow gets the scheduledDuringMaintenanceWindow property value. Indicates whether the bulk action is scheduled according to the maintenance window. When true, the bulk action uses the maintenance window to schedule the action; false means that the bulk action doesn't use the maintenance window. The default value is false.
 // returns a *bool when successful
 func (m *CloudPcBulkAction) GetScheduledDuringMaintenanceWindow()(*bool) {
     val, err := m.GetBackingStore().Get("scheduledDuringMaintenanceWindow")
@@ -244,7 +244,7 @@ func (m *CloudPcBulkAction) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetScheduledDuringMaintenanceWindow sets the scheduledDuringMaintenanceWindow property value. Indicates whether the bulk actions can be initiated during maintenance window. When true, bulk action will use maintenance window to schedule action, When false means bulk action will not use the maintenance window. Default value is false.
+// SetScheduledDuringMaintenanceWindow sets the scheduledDuringMaintenanceWindow property value. Indicates whether the bulk action is scheduled according to the maintenance window. When true, the bulk action uses the maintenance window to schedule the action; false means that the bulk action doesn't use the maintenance window. The default value is false.
 func (m *CloudPcBulkAction) SetScheduledDuringMaintenanceWindow(value *bool)() {
     err := m.GetBackingStore().Set("scheduledDuringMaintenanceWindow", value)
     if err != nil {

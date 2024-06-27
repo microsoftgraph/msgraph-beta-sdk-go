@@ -235,7 +235,7 @@ func (m *ListItem) GetFields()(FieldValueSetable) {
     }
     return nil
 }
-// GetPermissions gets the permissions property value. The permissions property
+// GetPermissions gets the permissions property value. The set of permissions for the item. Read-only. Nullable.
 // returns a []Permissionable when successful
 func (m *ListItem) GetPermissions()([]Permissionable) {
     val, err := m.GetBackingStore().Get("permissions")
@@ -412,7 +412,7 @@ func (m *ListItem) SetFields(value FieldValueSetable)() {
         panic(err)
     }
 }
-// SetPermissions sets the permissions property value. The permissions property
+// SetPermissions sets the permissions property value. The set of permissions for the item. Read-only. Nullable.
 func (m *ListItem) SetPermissions(value []Permissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
     if err != nil {

@@ -76,7 +76,7 @@ func (m *DevicesFilter) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetMode gets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
+// GetMode gets the mode property value. Determines whether devices that satisfy the rule should be allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
 // returns a *CrossTenantAccessPolicyTargetConfigurationAccessType when successful
 func (m *DevicesFilter) GetMode()(*CrossTenantAccessPolicyTargetConfigurationAccessType) {
     val, err := m.GetBackingStore().Get("mode")
@@ -152,7 +152,7 @@ func (m *DevicesFilter) SetAdditionalData(value map[string]any)() {
 func (m *DevicesFilter) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMode sets the mode property value. Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
+// SetMode sets the mode property value. Determines whether devices that satisfy the rule should be allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
 func (m *DevicesFilter) SetMode(value *CrossTenantAccessPolicyTargetConfigurationAccessType)() {
     err := m.GetBackingStore().Set("mode", value)
     if err != nil {

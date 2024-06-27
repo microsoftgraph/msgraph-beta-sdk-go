@@ -74,19 +74,19 @@ func (m *DomainItemRequestBuilder) Delete(ctx context.Context, requestConfigurat
     return nil
 }
 // DomainNameReferences provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
-// returns a *ItemDomainnamereferencesDomainNameReferencesRequestBuilder when successful
-func (m *DomainItemRequestBuilder) DomainNameReferences()(*ItemDomainnamereferencesDomainNameReferencesRequestBuilder) {
-    return NewItemDomainnamereferencesDomainNameReferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDomainNameReferencesRequestBuilder when successful
+func (m *DomainItemRequestBuilder) DomainNameReferences()(*ItemDomainNameReferencesRequestBuilder) {
+    return NewItemDomainNameReferencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FederationConfiguration provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.
-// returns a *ItemFederationconfigurationFederationConfigurationRequestBuilder when successful
-func (m *DomainItemRequestBuilder) FederationConfiguration()(*ItemFederationconfigurationFederationConfigurationRequestBuilder) {
-    return NewItemFederationconfigurationFederationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemFederationConfigurationRequestBuilder when successful
+func (m *DomainItemRequestBuilder) FederationConfiguration()(*ItemFederationConfigurationRequestBuilder) {
+    return NewItemFederationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ForceDelete provides operations to call the forceDelete method.
-// returns a *ItemForcedeleteForceDeleteRequestBuilder when successful
-func (m *DomainItemRequestBuilder) ForceDelete()(*ItemForcedeleteForceDeleteRequestBuilder) {
-    return NewItemForcedeleteForceDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemForceDeleteRequestBuilder when successful
+func (m *DomainItemRequestBuilder) ForceDelete()(*ItemForceDeleteRequestBuilder) {
+    return NewItemForceDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the properties and relationships of domain object.
 // returns a Domainable when successful
@@ -140,24 +140,24 @@ func (m *DomainItemRequestBuilder) Promote()(*ItemPromoteRequestBuilder) {
     return NewItemPromoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PromoteToInitial provides operations to call the promoteToInitial method.
-// returns a *ItemPromotetoinitialPromoteToInitialRequestBuilder when successful
-func (m *DomainItemRequestBuilder) PromoteToInitial()(*ItemPromotetoinitialPromoteToInitialRequestBuilder) {
-    return NewItemPromotetoinitialPromoteToInitialRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPromoteToInitialRequestBuilder when successful
+func (m *DomainItemRequestBuilder) PromoteToInitial()(*ItemPromoteToInitialRequestBuilder) {
+    return NewItemPromoteToInitialRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RootDomain provides operations to manage the rootDomain property of the microsoft.graph.domain entity.
-// returns a *ItemRootdomainRootDomainRequestBuilder when successful
-func (m *DomainItemRequestBuilder) RootDomain()(*ItemRootdomainRootDomainRequestBuilder) {
-    return NewItemRootdomainRootDomainRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRootDomainRequestBuilder when successful
+func (m *DomainItemRequestBuilder) RootDomain()(*ItemRootDomainRequestBuilder) {
+    return NewItemRootDomainRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ServiceConfigurationRecords provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
-// returns a *ItemServiceconfigurationrecordsServiceConfigurationRecordsRequestBuilder when successful
-func (m *DomainItemRequestBuilder) ServiceConfigurationRecords()(*ItemServiceconfigurationrecordsServiceConfigurationRecordsRequestBuilder) {
-    return NewItemServiceconfigurationrecordsServiceConfigurationRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemServiceConfigurationRecordsRequestBuilder when successful
+func (m *DomainItemRequestBuilder) ServiceConfigurationRecords()(*ItemServiceConfigurationRecordsRequestBuilder) {
+    return NewItemServiceConfigurationRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SharedEmailDomainInvitations provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.
-// returns a *ItemSharedemaildomaininvitationsSharedEmailDomainInvitationsRequestBuilder when successful
-func (m *DomainItemRequestBuilder) SharedEmailDomainInvitations()(*ItemSharedemaildomaininvitationsSharedEmailDomainInvitationsRequestBuilder) {
-    return NewItemSharedemaildomaininvitationsSharedEmailDomainInvitationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSharedEmailDomainInvitationsRequestBuilder when successful
+func (m *DomainItemRequestBuilder) SharedEmailDomainInvitations()(*ItemSharedEmailDomainInvitationsRequestBuilder) {
+    return NewItemSharedEmailDomainInvitationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete a domain from a tenant.
 // returns a *RequestInformation when successful
@@ -200,9 +200,9 @@ func (m *DomainItemRequestBuilder) ToPatchRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // VerificationDnsRecords provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
-// returns a *ItemVerificationdnsrecordsVerificationDnsRecordsRequestBuilder when successful
-func (m *DomainItemRequestBuilder) VerificationDnsRecords()(*ItemVerificationdnsrecordsVerificationDnsRecordsRequestBuilder) {
-    return NewItemVerificationdnsrecordsVerificationDnsRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemVerificationDnsRecordsRequestBuilder when successful
+func (m *DomainItemRequestBuilder) VerificationDnsRecords()(*ItemVerificationDnsRecordsRequestBuilder) {
+    return NewItemVerificationDnsRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Verify provides operations to call the verify method.
 // returns a *ItemVerifyRequestBuilder when successful

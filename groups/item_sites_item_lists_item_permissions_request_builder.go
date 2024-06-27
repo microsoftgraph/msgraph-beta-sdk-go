@@ -11,7 +11,7 @@ import (
 type ItemSitesItemListsItemPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemListsItemPermissionsRequestBuilderGetQueryParameters get permissions from groups
+// ItemSitesItemListsItemPermissionsRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
 type ItemSitesItemListsItemPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemSitesItemListsItemPermissionsRequestBuilder(rawUrl string, requestAd
 func (m *ItemSitesItemListsItemPermissionsRequestBuilder) Count()(*ItemSitesItemListsItemPermissionsCountRequestBuilder) {
     return NewItemSitesItemListsItemPermissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get permissions from groups
+// Get the set of permissions for the item. Read-only. Nullable.
 // returns a PermissionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemListsItemPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemListsItemPermissionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemSitesItemListsItemPermissionsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// ToGetRequestInformation get permissions from groups
+// ToGetRequestInformation the set of permissions for the item. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemListsItemPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemListsItemPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

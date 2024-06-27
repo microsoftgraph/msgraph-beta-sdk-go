@@ -285,7 +285,7 @@ func (m *List) GetOperations()([]RichLongRunningOperationable) {
     }
     return nil
 }
-// GetPermissions gets the permissions property value. The permissions property
+// GetPermissions gets the permissions property value. The set of permissions for the item. Read-only. Nullable.
 // returns a []Permissionable when successful
 func (m *List) GetPermissions()([]Permissionable) {
     val, err := m.GetBackingStore().Get("permissions")
@@ -511,7 +511,7 @@ func (m *List) SetOperations(value []RichLongRunningOperationable)() {
         panic(err)
     }
 }
-// SetPermissions sets the permissions property value. The permissions property
+// SetPermissions sets the permissions property value. The set of permissions for the item. Read-only. Nullable.
 func (m *List) SetPermissions(value []Permissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
     if err != nil {

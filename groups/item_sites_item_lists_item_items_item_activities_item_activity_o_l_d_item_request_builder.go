@@ -71,9 +71,9 @@ func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuil
     return nil
 }
 // DriveItem provides operations to manage the driveItem property of the microsoft.graph.itemActivityOLD entity.
-// returns a *ItemSitesItemListsItemItemsItemActivitiesItemDriveitemDriveItemRequestBuilder when successful
-func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) DriveItem()(*ItemSitesItemListsItemItemsItemActivitiesItemDriveitemDriveItemRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemActivitiesItemDriveitemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder when successful
+func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) DriveItem()(*ItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilder) {
+    return NewItemSitesItemListsItemItemsItemActivitiesItemDriveItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of recent activities that took place on this item.
 // returns a ItemActivityOLDable when successful
@@ -96,9 +96,9 @@ func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuil
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemActivityOLDable), nil
 }
 // ListItem provides operations to manage the listItem property of the microsoft.graph.itemActivityOLD entity.
-// returns a *ItemSitesItemListsItemItemsItemActivitiesItemListitemListItemRequestBuilder when successful
-func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) ListItem()(*ItemSitesItemListsItemItemsItemActivitiesItemListitemListItemRequestBuilder) {
-    return NewItemSitesItemListsItemItemsItemActivitiesItemListitemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemListsItemItemsItemActivitiesItemListItemRequestBuilder when successful
+func (m *ItemSitesItemListsItemItemsItemActivitiesItemActivityOLDItemRequestBuilder) ListItem()(*ItemSitesItemListsItemItemsItemActivitiesItemListItemRequestBuilder) {
+    return NewItemSitesItemListsItemItemsItemActivitiesItemListItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property activities in groups
 // returns a ItemActivityOLDable when successful

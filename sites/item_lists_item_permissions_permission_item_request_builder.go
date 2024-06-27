@@ -18,7 +18,7 @@ type ItemListsItemPermissionsPermissionItemRequestBuilderDeleteRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemListsItemPermissionsPermissionItemRequestBuilderGetQueryParameters get permissions from sites
+// ItemListsItemPermissionsPermissionItemRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
 type ItemListsItemPermissionsPermissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemListsItemPermissionsPermissionItemRequestBuilder) Delete(ctx contex
     }
     return nil
 }
-// Get get permissions from sites
+// Get the set of permissions for the item. Read-only. Nullable.
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemPermissionsPermissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
@@ -116,9 +116,9 @@ func (m *ItemListsItemPermissionsPermissionItemRequestBuilder) Patch(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
 // RevokeGrants provides operations to call the revokeGrants method.
-// returns a *ItemListsItemPermissionsItemRevokegrantsRevokeGrantsRequestBuilder when successful
-func (m *ItemListsItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*ItemListsItemPermissionsItemRevokegrantsRevokeGrantsRequestBuilder) {
-    return NewItemListsItemPermissionsItemRevokegrantsRevokeGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemListsItemPermissionsItemRevokeGrantsRequestBuilder when successful
+func (m *ItemListsItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*ItemListsItemPermissionsItemRevokeGrantsRequestBuilder) {
+    return NewItemListsItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property permissions for sites
 // returns a *RequestInformation when successful
@@ -131,7 +131,7 @@ func (m *ItemListsItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestIn
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get permissions from sites
+// ToGetRequestInformation the set of permissions for the item. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemListsItemPermissionsPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
