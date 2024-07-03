@@ -71,9 +71,9 @@ func (m *SetsItemTermsItemRelationsRelationItemRequestBuilder) Delete(ctx contex
     return nil
 }
 // FromTerm provides operations to manage the fromTerm property of the microsoft.graph.termStore.relation entity.
-// returns a *SetsItemTermsItemRelationsItemFromtermFromTermRequestBuilder when successful
-func (m *SetsItemTermsItemRelationsRelationItemRequestBuilder) FromTerm()(*SetsItemTermsItemRelationsItemFromtermFromTermRequestBuilder) {
-    return NewSetsItemTermsItemRelationsItemFromtermFromTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SetsItemTermsItemRelationsItemFromTermRequestBuilder when successful
+func (m *SetsItemTermsItemRelationsRelationItemRequestBuilder) FromTerm()(*SetsItemTermsItemRelationsItemFromTermRequestBuilder) {
+    return NewSetsItemTermsItemRelationsItemFromTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get to indicate which terms are related to the current term as either pinned or reused.
 // returns a Relationable when successful
@@ -161,9 +161,9 @@ func (m *SetsItemTermsItemRelationsRelationItemRequestBuilder) ToPatchRequestInf
     return requestInfo, nil
 }
 // ToTerm provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.
-// returns a *SetsItemTermsItemRelationsItemTotermToTermRequestBuilder when successful
-func (m *SetsItemTermsItemRelationsRelationItemRequestBuilder) ToTerm()(*SetsItemTermsItemRelationsItemTotermToTermRequestBuilder) {
-    return NewSetsItemTermsItemRelationsItemTotermToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SetsItemTermsItemRelationsItemToTermRequestBuilder when successful
+func (m *SetsItemTermsItemRelationsRelationItemRequestBuilder) ToTerm()(*SetsItemTermsItemRelationsItemToTermRequestBuilder) {
+    return NewSetsItemTermsItemRelationsItemToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *SetsItemTermsItemRelationsRelationItemRequestBuilder when successful

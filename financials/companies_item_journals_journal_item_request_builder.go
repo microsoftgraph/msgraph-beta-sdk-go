@@ -96,9 +96,9 @@ func (m *CompaniesItemJournalsJournalItemRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Journalable), nil
 }
 // JournalLines provides operations to manage the journalLines property of the microsoft.graph.journal entity.
-// returns a *CompaniesItemJournalsItemJournallinesJournalLinesRequestBuilder when successful
-func (m *CompaniesItemJournalsJournalItemRequestBuilder) JournalLines()(*CompaniesItemJournalsItemJournallinesJournalLinesRequestBuilder) {
-    return NewCompaniesItemJournalsItemJournallinesJournalLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemJournalsItemJournalLinesRequestBuilder when successful
+func (m *CompaniesItemJournalsJournalItemRequestBuilder) JournalLines()(*CompaniesItemJournalsItemJournalLinesRequestBuilder) {
+    return NewCompaniesItemJournalsItemJournalLinesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property journals in financials
 // returns a Journalable when successful

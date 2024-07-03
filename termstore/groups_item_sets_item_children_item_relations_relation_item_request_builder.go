@@ -71,9 +71,9 @@ func (m *GroupsItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) Dele
     return nil
 }
 // FromTerm provides operations to manage the fromTerm property of the microsoft.graph.termStore.relation entity.
-// returns a *GroupsItemSetsItemChildrenItemRelationsItemFromtermFromTermRequestBuilder when successful
-func (m *GroupsItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) FromTerm()(*GroupsItemSetsItemChildrenItemRelationsItemFromtermFromTermRequestBuilder) {
-    return NewGroupsItemSetsItemChildrenItemRelationsItemFromtermFromTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GroupsItemSetsItemChildrenItemRelationsItemFromTermRequestBuilder when successful
+func (m *GroupsItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) FromTerm()(*GroupsItemSetsItemChildrenItemRelationsItemFromTermRequestBuilder) {
+    return NewGroupsItemSetsItemChildrenItemRelationsItemFromTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get to indicate which terms are related to the current term as either pinned or reused.
 // returns a Relationable when successful
@@ -161,9 +161,9 @@ func (m *GroupsItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) ToPa
     return requestInfo, nil
 }
 // ToTerm provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.
-// returns a *GroupsItemSetsItemChildrenItemRelationsItemTotermToTermRequestBuilder when successful
-func (m *GroupsItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) ToTerm()(*GroupsItemSetsItemChildrenItemRelationsItemTotermToTermRequestBuilder) {
-    return NewGroupsItemSetsItemChildrenItemRelationsItemTotermToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GroupsItemSetsItemChildrenItemRelationsItemToTermRequestBuilder when successful
+func (m *GroupsItemSetsItemChildrenItemRelationsRelationItemRequestBuilder) ToTerm()(*GroupsItemSetsItemChildrenItemRelationsItemToTermRequestBuilder) {
+    return NewGroupsItemSetsItemChildrenItemRelationsItemToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *GroupsItemSetsItemChildrenItemRelationsRelationItemRequestBuilder when successful

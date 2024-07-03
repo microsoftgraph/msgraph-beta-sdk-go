@@ -1,0 +1,27 @@
+package devicemanagement
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use TemplatesImportOffice365DeviceConfigurationPoliciesPostResponseable instead.
+type TemplatesImportOffice365DeviceConfigurationPoliciesResponse struct {
+    TemplatesImportOffice365DeviceConfigurationPoliciesPostResponse
+}
+// NewTemplatesImportOffice365DeviceConfigurationPoliciesResponse instantiates a new TemplatesImportOffice365DeviceConfigurationPoliciesResponse and sets the default values.
+func NewTemplatesImportOffice365DeviceConfigurationPoliciesResponse()(*TemplatesImportOffice365DeviceConfigurationPoliciesResponse) {
+    m := &TemplatesImportOffice365DeviceConfigurationPoliciesResponse{
+        TemplatesImportOffice365DeviceConfigurationPoliciesPostResponse: *NewTemplatesImportOffice365DeviceConfigurationPoliciesPostResponse(),
+    }
+    return m
+}
+// CreateTemplatesImportOffice365DeviceConfigurationPoliciesResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateTemplatesImportOffice365DeviceConfigurationPoliciesResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewTemplatesImportOffice365DeviceConfigurationPoliciesResponse(), nil
+}
+// Deprecated: This class is obsolete. Use TemplatesImportOffice365DeviceConfigurationPoliciesPostResponseable instead.
+type TemplatesImportOffice365DeviceConfigurationPoliciesResponseable interface {
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    TemplatesImportOffice365DeviceConfigurationPoliciesPostResponseable
+}

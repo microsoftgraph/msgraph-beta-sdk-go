@@ -99,9 +99,9 @@ func (m *EdiscoveryCasesItemOperationsRequestBuilder) Get(ctx context.Context, r
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CaseOperationCollectionResponseable), nil
 }
 // MicrosoftGraphEdiscoveryCaseExportOperation casts the previous resource to caseExportOperation.
-// returns a *EdiscoveryCasesItemOperationsMicrosoftgraphediscoverycaseexportoperationMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder when successful
-func (m *EdiscoveryCasesItemOperationsRequestBuilder) MicrosoftGraphEdiscoveryCaseExportOperation()(*EdiscoveryCasesItemOperationsMicrosoftgraphediscoverycaseexportoperationMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder) {
-    return NewEdiscoveryCasesItemOperationsMicrosoftgraphediscoverycaseexportoperationMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemOperationsMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder when successful
+func (m *EdiscoveryCasesItemOperationsRequestBuilder) MicrosoftGraphEdiscoveryCaseExportOperation()(*EdiscoveryCasesItemOperationsMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilder) {
+    return NewEdiscoveryCasesItemOperationsMicrosoftGraphEdiscoveryCaseExportOperationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to operations for compliance
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace

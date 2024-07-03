@@ -11,7 +11,7 @@ import (
 type ItemListPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListPermissionsRequestBuilderGetQueryParameters get permissions from shares
+// ItemListPermissionsRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
 type ItemListPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemListPermissionsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemListPermissionsRequestBuilder) Count()(*ItemListPermissionsCountRequestBuilder) {
     return NewItemListPermissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get permissions from shares
+// Get the set of permissions for the item. Read-only. Nullable.
 // returns a PermissionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListPermissionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemListPermissionsRequestBuilder) Post(ctx context.Context, body ie233
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// ToGetRequestInformation get permissions from shares
+// ToGetRequestInformation the set of permissions for the item. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemListPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

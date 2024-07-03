@@ -21,7 +21,7 @@ func NewMicrosoftTunnelServer()(*MicrosoftTunnelServer) {
 func CreateMicrosoftTunnelServerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMicrosoftTunnelServer(), nil
 }
-// GetAgentImageDigest gets the agentImageDigest property value. The digest of the current agent image running on this server
+// GetAgentImageDigest gets the agentImageDigest property value. The digest of the current agent image running on this server. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
 // returns a *string when successful
 func (m *MicrosoftTunnelServer) GetAgentImageDigest()(*string) {
     val, err := m.GetBackingStore().Get("agentImageDigest")
@@ -33,7 +33,7 @@ func (m *MicrosoftTunnelServer) GetAgentImageDigest()(*string) {
     }
     return nil
 }
-// GetDeploymentMode gets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
+// GetDeploymentMode gets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only. Possible values are: standaloneRootful, standaloneRootless, podRootful, podRootless, unknownFutureValue.
 // returns a *MicrosoftTunnelDeploymentMode when successful
 func (m *MicrosoftTunnelServer) GetDeploymentMode()(*MicrosoftTunnelDeploymentMode) {
     val, err := m.GetBackingStore().Get("deploymentMode")
@@ -45,7 +45,7 @@ func (m *MicrosoftTunnelServer) GetDeploymentMode()(*MicrosoftTunnelDeploymentMo
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name for the server. This property is required when a server is created and cannot be cleared during updates.
+// GetDisplayName gets the displayName property value. The display name of the server. It is the same as the host name during registration and can be changed later. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Max allowed length is 200 chars.
 // returns a *string when successful
 func (m *MicrosoftTunnelServer) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -123,7 +123,7 @@ func (m *MicrosoftTunnelServer) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetLastCheckinDateTime gets the lastCheckinDateTime property value. Indicates when the server last checked in
+// GetLastCheckinDateTime gets the lastCheckinDateTime property value. Indicates when the server last checked in. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported Read-only.
 // returns a *Time when successful
 func (m *MicrosoftTunnelServer) GetLastCheckinDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastCheckinDateTime")
@@ -135,7 +135,7 @@ func (m *MicrosoftTunnelServer) GetLastCheckinDateTime()(*i336074805fc853987abe6
     }
     return nil
 }
-// GetServerImageDigest gets the serverImageDigest property value. The digest of the current server image running on this server
+// GetServerImageDigest gets the serverImageDigest property value. The digest of the current server image running on this server. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
 // returns a *string when successful
 func (m *MicrosoftTunnelServer) GetServerImageDigest()(*string) {
     val, err := m.GetBackingStore().Get("serverImageDigest")
@@ -205,35 +205,35 @@ func (m *MicrosoftTunnelServer) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAgentImageDigest sets the agentImageDigest property value. The digest of the current agent image running on this server
+// SetAgentImageDigest sets the agentImageDigest property value. The digest of the current agent image running on this server. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
 func (m *MicrosoftTunnelServer) SetAgentImageDigest(value *string)() {
     err := m.GetBackingStore().Set("agentImageDigest", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeploymentMode sets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
+// SetDeploymentMode sets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only. Possible values are: standaloneRootful, standaloneRootless, podRootful, podRootless, unknownFutureValue.
 func (m *MicrosoftTunnelServer) SetDeploymentMode(value *MicrosoftTunnelDeploymentMode)() {
     err := m.GetBackingStore().Set("deploymentMode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name for the server. This property is required when a server is created and cannot be cleared during updates.
+// SetDisplayName sets the displayName property value. The display name of the server. It is the same as the host name during registration and can be changed later. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Max allowed length is 200 chars.
 func (m *MicrosoftTunnelServer) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastCheckinDateTime sets the lastCheckinDateTime property value. Indicates when the server last checked in
+// SetLastCheckinDateTime sets the lastCheckinDateTime property value. Indicates when the server last checked in. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported Read-only.
 func (m *MicrosoftTunnelServer) SetLastCheckinDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastCheckinDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServerImageDigest sets the serverImageDigest property value. The digest of the current server image running on this server
+// SetServerImageDigest sets the serverImageDigest property value. The digest of the current server image running on this server. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only.
 func (m *MicrosoftTunnelServer) SetServerImageDigest(value *string)() {
     err := m.GetBackingStore().Set("serverImageDigest", value)
     if err != nil {

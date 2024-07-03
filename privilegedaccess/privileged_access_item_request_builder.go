@@ -116,24 +116,24 @@ func (m *PrivilegedAccessItemRequestBuilder) Resources()(*ItemResourcesRequestBu
     return NewItemResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignmentRequests provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.
-// returns a *ItemRoleassignmentrequestsRoleAssignmentRequestsRequestBuilder when successful
-func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequests()(*ItemRoleassignmentrequestsRoleAssignmentRequestsRequestBuilder) {
-    return NewItemRoleassignmentrequestsRoleAssignmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleAssignmentRequestsRequestBuilder when successful
+func (m *PrivilegedAccessItemRequestBuilder) RoleAssignmentRequests()(*ItemRoleAssignmentRequestsRequestBuilder) {
+    return NewItemRoleAssignmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.privilegedAccess entity.
-// returns a *ItemRoleassignmentsRoleAssignmentsRequestBuilder when successful
-func (m *PrivilegedAccessItemRequestBuilder) RoleAssignments()(*ItemRoleassignmentsRoleAssignmentsRequestBuilder) {
-    return NewItemRoleassignmentsRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleAssignmentsRequestBuilder when successful
+func (m *PrivilegedAccessItemRequestBuilder) RoleAssignments()(*ItemRoleAssignmentsRequestBuilder) {
+    return NewItemRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.privilegedAccess entity.
-// returns a *ItemRoledefinitionsRoleDefinitionsRequestBuilder when successful
-func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitions()(*ItemRoledefinitionsRoleDefinitionsRequestBuilder) {
-    return NewItemRoledefinitionsRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleDefinitionsRequestBuilder when successful
+func (m *PrivilegedAccessItemRequestBuilder) RoleDefinitions()(*ItemRoleDefinitionsRequestBuilder) {
+    return NewItemRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleSettings provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.
-// returns a *ItemRolesettingsRoleSettingsRequestBuilder when successful
-func (m *PrivilegedAccessItemRequestBuilder) RoleSettings()(*ItemRolesettingsRoleSettingsRequestBuilder) {
-    return NewItemRolesettingsRoleSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleSettingsRequestBuilder when successful
+func (m *PrivilegedAccessItemRequestBuilder) RoleSettings()(*ItemRoleSettingsRequestBuilder) {
+    return NewItemRoleSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from privilegedAccess
 // returns a *RequestInformation when successful

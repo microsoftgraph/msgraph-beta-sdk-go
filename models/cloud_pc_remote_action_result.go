@@ -211,7 +211,7 @@ func (m *CloudPcRemoteActionResult) GetStartDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status.
+// GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
 // returns a CloudPcStatusDetailsable when successful
 func (m *CloudPcRemoteActionResult) GetStatusDetails()(CloudPcStatusDetailsable) {
     val, err := m.GetBackingStore().Get("statusDetails")
@@ -342,7 +342,7 @@ func (m *CloudPcRemoteActionResult) SetStartDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
-// SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status.
+// SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
 func (m *CloudPcRemoteActionResult) SetStatusDetails(value CloudPcStatusDetailsable)() {
     err := m.GetBackingStore().Set("statusDetails", value)
     if err != nil {

@@ -117,7 +117,7 @@ func (m *BookingAppointment) GetCustomerName()(*string) {
     }
     return nil
 }
-// GetCustomerNotes gets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
+// GetCustomerNotes gets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
 // returns a *string when successful
 func (m *BookingAppointment) GetCustomerNotes()(*string) {
     val, err := m.GetBackingStore().Get("customerNotes")
@@ -1231,7 +1231,7 @@ func (m *BookingAppointment) SetCustomerName(value *string)() {
         panic(err)
     }
 }
-// SetCustomerNotes sets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID.  You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by customerId.
+// SetCustomerNotes sets the customerNotes property value. Notes from the customer associated with this appointment. You can get the value only when you read this bookingAppointment by its ID. You can set this property only when you initially create an appointment with a new customer.
 func (m *BookingAppointment) SetCustomerNotes(value *string)() {
     err := m.GetBackingStore().Set("customerNotes", value)
     if err != nil {

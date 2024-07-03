@@ -32,7 +32,7 @@ func (m *EducationModule) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. Date time the module was created.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
+// GetCreatedDateTime gets the createdDateTime property value. Date time the module was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
 // returns a *Time when successful
 func (m *EducationModule) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -204,7 +204,7 @@ func (m *EducationModule) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date time the module was last modified.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Date time the module was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
 // returns a *Time when successful
 func (m *EducationModule) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -216,7 +216,7 @@ func (m *EducationModule) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetResources gets the resources property value. Learning objects that are associated with this module.  Only teachers can modify this list. Nullable.
+// GetResources gets the resources property value. Learning objects that are associated with this module. Only teachers can modify this list. Nullable.
 // returns a []EducationModuleResourceable when successful
 func (m *EducationModule) GetResources()([]EducationModuleResourceable) {
     val, err := m.GetBackingStore().Get("resources")
@@ -240,7 +240,7 @@ func (m *EducationModule) GetResourcesFolderUrl()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the module.  You can't use a PATCH operation to update this value. Possible values are: draft and published.
+// GetStatus gets the status property value. Status of the module. You can't use a PATCH operation to update this value. Possible values are: draft and published.
 // returns a *EducationModuleStatus when successful
 func (m *EducationModule) GetStatus()(*EducationModuleStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -297,7 +297,7 @@ func (m *EducationModule) SetCreatedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. Date time the module was created.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
+// SetCreatedDateTime sets the createdDateTime property value. Date time the module was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
 func (m *EducationModule) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -332,14 +332,14 @@ func (m *EducationModule) SetLastModifiedBy(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date time the module was last modified.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Date time the module was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z
 func (m *EducationModule) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResources sets the resources property value. Learning objects that are associated with this module.  Only teachers can modify this list. Nullable.
+// SetResources sets the resources property value. Learning objects that are associated with this module. Only teachers can modify this list. Nullable.
 func (m *EducationModule) SetResources(value []EducationModuleResourceable)() {
     err := m.GetBackingStore().Set("resources", value)
     if err != nil {
@@ -353,7 +353,7 @@ func (m *EducationModule) SetResourcesFolderUrl(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the module.  You can't use a PATCH operation to update this value. Possible values are: draft and published.
+// SetStatus sets the status property value. Status of the module. You can't use a PATCH operation to update this value. Possible values are: draft and published.
 func (m *EducationModule) SetStatus(value *EducationModuleStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

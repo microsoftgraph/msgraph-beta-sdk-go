@@ -73,14 +73,14 @@ func (m *AppRequestBuilder) Get(ctx context.Context, requestConfiguration *AppRe
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CommsApplicationable), nil
 }
 // OnlineMeetings provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
-// returns a *OnlinemeetingsOnlineMeetingsRequestBuilder when successful
-func (m *AppRequestBuilder) OnlineMeetings()(*OnlinemeetingsOnlineMeetingsRequestBuilder) {
-    return NewOnlinemeetingsOnlineMeetingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *OnlineMeetingsRequestBuilder when successful
+func (m *AppRequestBuilder) OnlineMeetings()(*OnlineMeetingsRequestBuilder) {
+    return NewOnlineMeetingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OnlineMeetingsWithJoinWebUrl provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
-// returns a *OnlinemeetingswithjoinweburlOnlineMeetingsWithJoinWebUrlRequestBuilder when successful
-func (m *AppRequestBuilder) OnlineMeetingsWithJoinWebUrl(joinWebUrl *string)(*OnlinemeetingswithjoinweburlOnlineMeetingsWithJoinWebUrlRequestBuilder) {
-    return NewOnlinemeetingswithjoinweburlOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
+// returns a *OnlineMeetingsWithJoinWebUrlRequestBuilder when successful
+func (m *AppRequestBuilder) OnlineMeetingsWithJoinWebUrl(joinWebUrl *string)(*OnlineMeetingsWithJoinWebUrlRequestBuilder) {
+    return NewOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
 }
 // Patch update app
 // returns a CommsApplicationable when successful

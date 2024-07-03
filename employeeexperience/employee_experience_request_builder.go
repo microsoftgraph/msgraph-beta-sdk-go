@@ -51,9 +51,9 @@ func NewEmployeeExperienceRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewEmployeeExperienceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // EngagementAsyncOperations provides operations to manage the engagementAsyncOperations property of the microsoft.graph.employeeExperience entity.
-// returns a *EngagementasyncoperationsEngagementAsyncOperationsRequestBuilder when successful
-func (m *EmployeeExperienceRequestBuilder) EngagementAsyncOperations()(*EngagementasyncoperationsEngagementAsyncOperationsRequestBuilder) {
-    return NewEngagementasyncoperationsEngagementAsyncOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EngagementAsyncOperationsRequestBuilder when successful
+func (m *EmployeeExperienceRequestBuilder) EngagementAsyncOperations()(*EngagementAsyncOperationsRequestBuilder) {
+    return NewEngagementAsyncOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get employeeExperience
 // returns a EmployeeExperienceable when successful
@@ -81,19 +81,19 @@ func (m *EmployeeExperienceRequestBuilder) Goals()(*GoalsRequestBuilder) {
     return NewGoalsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LearningCourseActivities provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperience entity.
-// returns a *LearningcourseactivitiesLearningCourseActivitiesRequestBuilder when successful
-func (m *EmployeeExperienceRequestBuilder) LearningCourseActivities()(*LearningcourseactivitiesLearningCourseActivitiesRequestBuilder) {
-    return NewLearningcourseactivitiesLearningCourseActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *LearningCourseActivitiesRequestBuilder when successful
+func (m *EmployeeExperienceRequestBuilder) LearningCourseActivities()(*LearningCourseActivitiesRequestBuilder) {
+    return NewLearningCourseActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LearningCourseActivitiesWithExternalcourseActivityId provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperience entity.
-// returns a *LearningcourseactivitieswithexternalcourseactivityidLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder when successful
-func (m *EmployeeExperienceRequestBuilder) LearningCourseActivitiesWithExternalcourseActivityId(externalcourseActivityId *string)(*LearningcourseactivitieswithexternalcourseactivityidLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) {
-    return NewLearningcourseactivitieswithexternalcourseactivityidLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, externalcourseActivityId)
+// returns a *LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder when successful
+func (m *EmployeeExperienceRequestBuilder) LearningCourseActivitiesWithExternalcourseActivityId(externalcourseActivityId *string)(*LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder) {
+    return NewLearningCourseActivitiesWithExternalcourseActivityIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, externalcourseActivityId)
 }
 // LearningProviders provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
-// returns a *LearningprovidersLearningProvidersRequestBuilder when successful
-func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*LearningprovidersLearningProvidersRequestBuilder) {
-    return NewLearningprovidersLearningProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *LearningProvidersRequestBuilder when successful
+func (m *EmployeeExperienceRequestBuilder) LearningProviders()(*LearningProvidersRequestBuilder) {
+    return NewLearningProvidersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update employeeExperience
 // returns a EmployeeExperienceable when successful

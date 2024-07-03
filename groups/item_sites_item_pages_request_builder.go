@@ -97,9 +97,9 @@ func (m *ItemSitesItemPagesRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageCollectionResponseable), nil
 }
 // GraphSitePage casts the previous resource to sitePage.
-// returns a *ItemSitesItemPagesGraphsitepageGraphSitePageRequestBuilder when successful
-func (m *ItemSitesItemPagesRequestBuilder) GraphSitePage()(*ItemSitesItemPagesGraphsitepageGraphSitePageRequestBuilder) {
-    return NewItemSitesItemPagesGraphsitepageGraphSitePageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSitesItemPagesGraphSitePageRequestBuilder when successful
+func (m *ItemSitesItemPagesRequestBuilder) GraphSitePage()(*ItemSitesItemPagesGraphSitePageRequestBuilder) {
+    return NewItemSitesItemPagesGraphSitePageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to pages for groups
 // returns a BaseSitePageable when successful

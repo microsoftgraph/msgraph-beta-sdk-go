@@ -74,9 +74,9 @@ func (m *ClassesItemAssignmentsItemSubmissionsItemResourcesEducationSubmissionRe
     return nil
 }
 // DependentResources provides operations to manage the dependentResources property of the microsoft.graph.educationSubmissionResource entity.
-// returns a *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentresourcesDependentResourcesRequestBuilder when successful
-func (m *ClassesItemAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilder) DependentResources()(*ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentresourcesDependentResourcesRequestBuilder) {
-    return NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentresourcesDependentResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesRequestBuilder when successful
+func (m *ClassesItemAssignmentsItemSubmissionsItemResourcesEducationSubmissionResourceItemRequestBuilder) DependentResources()(*ClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesRequestBuilder) {
+    return NewClassesItemAssignmentsItemSubmissionsItemResourcesItemDependentResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the properties of a specific resource associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. This resource is in the 'working' resource list and should be considered work in process by a student. This resource is wrapped with a possible pointer back to the assignment resource if it was copied from the assignment.
 // returns a EducationSubmissionResourceable when successful

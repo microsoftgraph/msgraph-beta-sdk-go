@@ -41,7 +41,7 @@ func (m *CloudPcConnectivityResult) GetAdditionalData()(map[string]any) {
 func (m *CloudPcConnectivityResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetFailedHealthCheckItems gets the failedHealthCheckItems property value. A list of failed health check items. If the status property is available, this property will be empty.
+// GetFailedHealthCheckItems gets the failedHealthCheckItems property value. A list of failed health check items. If the status property is available, this property is empty.
 // returns a []CloudPcHealthCheckItemable when successful
 func (m *CloudPcConnectivityResult) GetFailedHealthCheckItems()([]CloudPcHealthCheckItemable) {
     val, err := m.GetBackingStore().Get("failedHealthCheckItems")
@@ -129,7 +129,7 @@ func (m *CloudPcConnectivityResult) GetStatus()(*CloudPcConnectivityStatus) {
     }
     return nil
 }
-// GetUpdatedDateTime gets the updatedDateTime property value. Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+// GetUpdatedDateTime gets the updatedDateTime property value. Datetime when the status was updated. This property is deprecated and will no longer be supported effective August 31, 2024. Use lastModifiedDateTime instead. Read-Only.
 // returns a *Time when successful
 func (m *CloudPcConnectivityResult) GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("updatedDateTime")
@@ -193,7 +193,7 @@ func (m *CloudPcConnectivityResult) SetAdditionalData(value map[string]any)() {
 func (m *CloudPcConnectivityResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFailedHealthCheckItems sets the failedHealthCheckItems property value. A list of failed health check items. If the status property is available, this property will be empty.
+// SetFailedHealthCheckItems sets the failedHealthCheckItems property value. A list of failed health check items. If the status property is available, this property is empty.
 func (m *CloudPcConnectivityResult) SetFailedHealthCheckItems(value []CloudPcHealthCheckItemable)() {
     err := m.GetBackingStore().Set("failedHealthCheckItems", value)
     if err != nil {
@@ -214,7 +214,7 @@ func (m *CloudPcConnectivityResult) SetStatus(value *CloudPcConnectivityStatus)(
         panic(err)
     }
 }
-// SetUpdatedDateTime sets the updatedDateTime property value. Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
+// SetUpdatedDateTime sets the updatedDateTime property value. Datetime when the status was updated. This property is deprecated and will no longer be supported effective August 31, 2024. Use lastModifiedDateTime instead. Read-Only.
 func (m *CloudPcConnectivityResult) SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("updatedDateTime", value)
     if err != nil {

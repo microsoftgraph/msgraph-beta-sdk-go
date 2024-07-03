@@ -96,9 +96,9 @@ func (m *ItemProfileRequestBuilder) Delete(ctx context.Context, requestConfigura
     return nil
 }
 // EducationalActivities provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.
-// returns a *ItemProfileEducationalactivitiesEducationalActivitiesRequestBuilder when successful
-func (m *ItemProfileRequestBuilder) EducationalActivities()(*ItemProfileEducationalactivitiesEducationalActivitiesRequestBuilder) {
-    return NewItemProfileEducationalactivitiesEducationalActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemProfileEducationalActivitiesRequestBuilder when successful
+func (m *ItemProfileRequestBuilder) EducationalActivities()(*ItemProfileEducationalActivitiesRequestBuilder) {
+    return NewItemProfileEducationalActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Emails provides operations to manage the emails property of the microsoft.graph.profile entity.
 // returns a *ItemProfileEmailsRequestBuilder when successful
@@ -236,9 +236,9 @@ func (m *ItemProfileRequestBuilder) ToPatchRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // WebAccounts provides operations to manage the webAccounts property of the microsoft.graph.profile entity.
-// returns a *ItemProfileWebaccountsWebAccountsRequestBuilder when successful
-func (m *ItemProfileRequestBuilder) WebAccounts()(*ItemProfileWebaccountsWebAccountsRequestBuilder) {
-    return NewItemProfileWebaccountsWebAccountsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemProfileWebAccountsRequestBuilder when successful
+func (m *ItemProfileRequestBuilder) WebAccounts()(*ItemProfileWebAccountsRequestBuilder) {
+    return NewItemProfileWebAccountsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Websites provides operations to manage the websites property of the microsoft.graph.profile entity.
 // returns a *ItemProfileWebsitesRequestBuilder when successful

@@ -20,7 +20,7 @@ func NewHardwarePasswordInfo()(*HardwarePasswordInfo) {
 func CreateHardwarePasswordInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHardwarePasswordInfo(), nil
 }
-// GetCurrentPassword gets the currentPassword property value. Current device password
+// GetCurrentPassword gets the currentPassword property value. Current device password. This property is read-only.
 // returns a *string when successful
 func (m *HardwarePasswordInfo) GetCurrentPassword()(*string) {
     val, err := m.GetBackingStore().Get("currentPassword")
@@ -74,7 +74,7 @@ func (m *HardwarePasswordInfo) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetPreviousPasswords gets the previousPasswords property value. List of previous device passwords
+// GetPreviousPasswords gets the previousPasswords property value. List of previous device passwords. This property is read-only.
 // returns a []string when successful
 func (m *HardwarePasswordInfo) GetPreviousPasswords()([]string) {
     val, err := m.GetBackingStore().Get("previousPasswords")
@@ -86,7 +86,7 @@ func (m *HardwarePasswordInfo) GetPreviousPasswords()([]string) {
     }
     return nil
 }
-// GetSerialNumber gets the serialNumber property value. Device serial number
+// GetSerialNumber gets the serialNumber property value. Associated device's serial number . This property is read-only.
 // returns a *string when successful
 func (m *HardwarePasswordInfo) GetSerialNumber()(*string) {
     val, err := m.GetBackingStore().Get("serialNumber")
@@ -112,21 +112,21 @@ func (m *HardwarePasswordInfo) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetCurrentPassword sets the currentPassword property value. Current device password
+// SetCurrentPassword sets the currentPassword property value. Current device password. This property is read-only.
 func (m *HardwarePasswordInfo) SetCurrentPassword(value *string)() {
     err := m.GetBackingStore().Set("currentPassword", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPreviousPasswords sets the previousPasswords property value. List of previous device passwords
+// SetPreviousPasswords sets the previousPasswords property value. List of previous device passwords. This property is read-only.
 func (m *HardwarePasswordInfo) SetPreviousPasswords(value []string)() {
     err := m.GetBackingStore().Set("previousPasswords", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSerialNumber sets the serialNumber property value. Device serial number
+// SetSerialNumber sets the serialNumber property value. Associated device's serial number . This property is read-only.
 func (m *HardwarePasswordInfo) SetSerialNumber(value *string)() {
     err := m.GetBackingStore().Set("serialNumber", value)
     if err != nil {

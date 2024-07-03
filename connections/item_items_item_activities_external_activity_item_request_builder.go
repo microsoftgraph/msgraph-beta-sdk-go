@@ -111,9 +111,9 @@ func (m *ItemItemsItemActivitiesExternalActivityItemRequestBuilder) Patch(ctx co
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.ExternalActivityable), nil
 }
 // PerformedBy provides operations to manage the performedBy property of the microsoft.graph.externalConnectors.externalActivity entity.
-// returns a *ItemItemsItemActivitiesItemPerformedbyPerformedByRequestBuilder when successful
-func (m *ItemItemsItemActivitiesExternalActivityItemRequestBuilder) PerformedBy()(*ItemItemsItemActivitiesItemPerformedbyPerformedByRequestBuilder) {
-    return NewItemItemsItemActivitiesItemPerformedbyPerformedByRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemActivitiesItemPerformedByRequestBuilder when successful
+func (m *ItemItemsItemActivitiesExternalActivityItemRequestBuilder) PerformedBy()(*ItemItemsItemActivitiesItemPerformedByRequestBuilder) {
+    return NewItemItemsItemActivitiesItemPerformedByRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property activities for connections
 // returns a *RequestInformation when successful

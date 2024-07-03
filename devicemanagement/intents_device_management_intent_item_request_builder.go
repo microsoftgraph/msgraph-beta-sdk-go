@@ -57,9 +57,9 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) Categories()(*IntentsI
     return NewIntentsItemCategoriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CompareWithTemplateId provides operations to call the compare method.
-// returns a *IntentsItemComparewithtemplateidCompareWithTemplateIdRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) CompareWithTemplateId(templateId *string)(*IntentsItemComparewithtemplateidCompareWithTemplateIdRequestBuilder) {
-    return NewIntentsItemComparewithtemplateidCompareWithTemplateIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, templateId)
+// returns a *IntentsItemCompareWithTemplateIdRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) CompareWithTemplateId(templateId *string)(*IntentsItemCompareWithTemplateIdRequestBuilder) {
+    return NewIntentsItemCompareWithTemplateIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, templateId)
 }
 // NewIntentsDeviceManagementIntentItemRequestBuilderInternal instantiates a new IntentsDeviceManagementIntentItemRequestBuilder and sets the default values.
 func NewIntentsDeviceManagementIntentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IntentsDeviceManagementIntentItemRequestBuilder) {
@@ -75,9 +75,9 @@ func NewIntentsDeviceManagementIntentItemRequestBuilder(rawUrl string, requestAd
     return NewIntentsDeviceManagementIntentItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreateCopy provides operations to call the createCopy method.
-// returns a *IntentsItemCreatecopyCreateCopyRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) CreateCopy()(*IntentsItemCreatecopyCreateCopyRequestBuilder) {
-    return NewIntentsItemCreatecopyCreateCopyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IntentsItemCreateCopyRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) CreateCopy()(*IntentsItemCreateCopyRequestBuilder) {
+    return NewIntentsItemCreateCopyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property intents for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -96,19 +96,19 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) Delete(ctx context.Con
     return nil
 }
 // DeviceSettingStateSummaries provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceManagementIntent entity.
-// returns a *IntentsItemDevicesettingstatesummariesDeviceSettingStateSummariesRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceSettingStateSummaries()(*IntentsItemDevicesettingstatesummariesDeviceSettingStateSummariesRequestBuilder) {
-    return NewIntentsItemDevicesettingstatesummariesDeviceSettingStateSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IntentsItemDeviceSettingStateSummariesRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceSettingStateSummaries()(*IntentsItemDeviceSettingStateSummariesRequestBuilder) {
+    return NewIntentsItemDeviceSettingStateSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceStates provides operations to manage the deviceStates property of the microsoft.graph.deviceManagementIntent entity.
-// returns a *IntentsItemDevicestatesDeviceStatesRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceStates()(*IntentsItemDevicestatesDeviceStatesRequestBuilder) {
-    return NewIntentsItemDevicestatesDeviceStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IntentsItemDeviceStatesRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceStates()(*IntentsItemDeviceStatesRequestBuilder) {
+    return NewIntentsItemDeviceStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceStateSummary provides operations to manage the deviceStateSummary property of the microsoft.graph.deviceManagementIntent entity.
-// returns a *IntentsItemDevicestatesummaryDeviceStateSummaryRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceStateSummary()(*IntentsItemDevicestatesummaryDeviceStateSummaryRequestBuilder) {
-    return NewIntentsItemDevicestatesummaryDeviceStateSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IntentsItemDeviceStateSummaryRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) DeviceStateSummary()(*IntentsItemDeviceStateSummaryRequestBuilder) {
+    return NewIntentsItemDeviceStateSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the device management intents
 // returns a DeviceManagementIntentable when successful
@@ -131,14 +131,14 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementIntentable), nil
 }
 // GetCustomizedSettings provides operations to call the getCustomizedSettings method.
-// returns a *IntentsItemGetcustomizedsettingsGetCustomizedSettingsRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) GetCustomizedSettings()(*IntentsItemGetcustomizedsettingsGetCustomizedSettingsRequestBuilder) {
-    return NewIntentsItemGetcustomizedsettingsGetCustomizedSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IntentsItemGetCustomizedSettingsRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) GetCustomizedSettings()(*IntentsItemGetCustomizedSettingsRequestBuilder) {
+    return NewIntentsItemGetCustomizedSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MigrateToTemplate provides operations to call the migrateToTemplate method.
-// returns a *IntentsItemMigratetotemplateMigrateToTemplateRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) MigrateToTemplate()(*IntentsItemMigratetotemplateMigrateToTemplateRequestBuilder) {
-    return NewIntentsItemMigratetotemplateMigrateToTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IntentsItemMigrateToTemplateRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) MigrateToTemplate()(*IntentsItemMigrateToTemplateRequestBuilder) {
+    return NewIntentsItemMigrateToTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property intents in deviceManagement
 // returns a DeviceManagementIntentable when successful
@@ -206,19 +206,19 @@ func (m *IntentsDeviceManagementIntentItemRequestBuilder) ToPatchRequestInformat
     return requestInfo, nil
 }
 // UpdateSettings provides operations to call the updateSettings method.
-// returns a *IntentsItemUpdatesettingsUpdateSettingsRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) UpdateSettings()(*IntentsItemUpdatesettingsUpdateSettingsRequestBuilder) {
-    return NewIntentsItemUpdatesettingsUpdateSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IntentsItemUpdateSettingsRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) UpdateSettings()(*IntentsItemUpdateSettingsRequestBuilder) {
+    return NewIntentsItemUpdateSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserStates provides operations to manage the userStates property of the microsoft.graph.deviceManagementIntent entity.
-// returns a *IntentsItemUserstatesUserStatesRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) UserStates()(*IntentsItemUserstatesUserStatesRequestBuilder) {
-    return NewIntentsItemUserstatesUserStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IntentsItemUserStatesRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) UserStates()(*IntentsItemUserStatesRequestBuilder) {
+    return NewIntentsItemUserStatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserStateSummary provides operations to manage the userStateSummary property of the microsoft.graph.deviceManagementIntent entity.
-// returns a *IntentsItemUserstatesummaryUserStateSummaryRequestBuilder when successful
-func (m *IntentsDeviceManagementIntentItemRequestBuilder) UserStateSummary()(*IntentsItemUserstatesummaryUserStateSummaryRequestBuilder) {
-    return NewIntentsItemUserstatesummaryUserStateSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IntentsItemUserStateSummaryRequestBuilder when successful
+func (m *IntentsDeviceManagementIntentItemRequestBuilder) UserStateSummary()(*IntentsItemUserStateSummaryRequestBuilder) {
+    return NewIntentsItemUserStateSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *IntentsDeviceManagementIntentItemRequestBuilder when successful

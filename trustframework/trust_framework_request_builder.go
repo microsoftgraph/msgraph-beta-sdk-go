@@ -68,9 +68,9 @@ func (m *TrustFrameworkRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkable), nil
 }
 // KeySets provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.
-// returns a *KeysetsKeySetsRequestBuilder when successful
-func (m *TrustFrameworkRequestBuilder) KeySets()(*KeysetsKeySetsRequestBuilder) {
-    return NewKeysetsKeySetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *KeySetsRequestBuilder when successful
+func (m *TrustFrameworkRequestBuilder) KeySets()(*KeySetsRequestBuilder) {
+    return NewKeySetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update trustFramework
 // returns a TrustFrameworkable when successful

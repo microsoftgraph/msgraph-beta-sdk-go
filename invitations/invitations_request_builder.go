@@ -46,18 +46,6 @@ type InvitationsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByInvitationId provides operations to manage the collection of invitation entities.
-// returns a *InvitationItemRequestBuilder when successful
-func (m *InvitationsRequestBuilder) ByInvitationId(invitationId string)(*InvitationItemRequestBuilder) {
-    urlTplParams := make(map[string]string)
-    for idx, item := range m.BaseRequestBuilder.PathParameters {
-        urlTplParams[idx] = item
-    }
-    if invitationId != "" {
-        urlTplParams["invitation%2Did"] = invitationId
-    }
-    return NewInvitationItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewInvitationsRequestBuilderInternal instantiates a new InvitationsRequestBuilder and sets the default values.
 func NewInvitationsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*InvitationsRequestBuilder) {
     m := &InvitationsRequestBuilder{
@@ -96,7 +84,17 @@ func (m *InvitationsRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InvitationCollectionResponseable), nil
 }
-// Post create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
+// InvitedUser provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
+// returns a *InvitedUserRequestBuilder when successful
+func (m *InvitationsRequestBuilder) InvitedUser()(*InvitedUserRequestBuilder) {
+    return NewInvitedUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// InvitedUserSponsors provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.
+// returns a *InvitedUserSponsorsRequestBuilder when successful
+func (m *InvitationsRequestBuilder) InvitedUserSponsors()(*InvitedUserSponsorsRequestBuilder) {
+    return NewInvitedUserSponsorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Post create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
 // returns a Invitationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -133,7 +131,7 @@ func (m *InvitationsRequestBuilder) ToGetRequestInformation(ctx context.Context,
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
+// ToPostRequestInformation create a new invitation or reset the redemption status for a guest user who already redeemed their invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
 // returns a *RequestInformation when successful
 func (m *InvitationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Invitationable, requestConfiguration *InvitationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

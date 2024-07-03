@@ -53,19 +53,19 @@ func NewInformationProtectionRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewInformationProtectionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DataLossPreventionPolicies provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
-// returns a *DatalosspreventionpoliciesDataLossPreventionPoliciesRequestBuilder when successful
-func (m *InformationProtectionRequestBuilder) DataLossPreventionPolicies()(*DatalosspreventionpoliciesDataLossPreventionPoliciesRequestBuilder) {
-    return NewDatalosspreventionpoliciesDataLossPreventionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DataLossPreventionPoliciesRequestBuilder when successful
+func (m *InformationProtectionRequestBuilder) DataLossPreventionPolicies()(*DataLossPreventionPoliciesRequestBuilder) {
+    return NewDataLossPreventionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DecryptBuffer provides operations to call the decryptBuffer method.
-// returns a *DecryptbufferDecryptBufferRequestBuilder when successful
-func (m *InformationProtectionRequestBuilder) DecryptBuffer()(*DecryptbufferDecryptBufferRequestBuilder) {
-    return NewDecryptbufferDecryptBufferRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DecryptBufferRequestBuilder when successful
+func (m *InformationProtectionRequestBuilder) DecryptBuffer()(*DecryptBufferRequestBuilder) {
+    return NewDecryptBufferRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EncryptBuffer provides operations to call the encryptBuffer method.
-// returns a *EncryptbufferEncryptBufferRequestBuilder when successful
-func (m *InformationProtectionRequestBuilder) EncryptBuffer()(*EncryptbufferEncryptBufferRequestBuilder) {
-    return NewEncryptbufferEncryptBufferRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EncryptBufferRequestBuilder when successful
+func (m *InformationProtectionRequestBuilder) EncryptBuffer()(*EncryptBufferRequestBuilder) {
+    return NewEncryptBufferRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get informationProtection
 // returns a InformationProtectionable when successful
@@ -113,24 +113,24 @@ func (m *InformationProtectionRequestBuilder) Policy()(*PolicyRequestBuilder) {
     return NewPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SensitivityLabels provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.
-// returns a *SensitivitylabelsSensitivityLabelsRequestBuilder when successful
-func (m *InformationProtectionRequestBuilder) SensitivityLabels()(*SensitivitylabelsSensitivityLabelsRequestBuilder) {
-    return NewSensitivitylabelsSensitivityLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SensitivityLabelsRequestBuilder when successful
+func (m *InformationProtectionRequestBuilder) SensitivityLabels()(*SensitivityLabelsRequestBuilder) {
+    return NewSensitivityLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SensitivityPolicySettings provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.
-// returns a *SensitivitypolicysettingsSensitivityPolicySettingsRequestBuilder when successful
-func (m *InformationProtectionRequestBuilder) SensitivityPolicySettings()(*SensitivitypolicysettingsSensitivityPolicySettingsRequestBuilder) {
-    return NewSensitivitypolicysettingsSensitivityPolicySettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SensitivityPolicySettingsRequestBuilder when successful
+func (m *InformationProtectionRequestBuilder) SensitivityPolicySettings()(*SensitivityPolicySettingsRequestBuilder) {
+    return NewSensitivityPolicySettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SignDigest provides operations to call the signDigest method.
-// returns a *SigndigestSignDigestRequestBuilder when successful
-func (m *InformationProtectionRequestBuilder) SignDigest()(*SigndigestSignDigestRequestBuilder) {
-    return NewSigndigestSignDigestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SignDigestRequestBuilder when successful
+func (m *InformationProtectionRequestBuilder) SignDigest()(*SignDigestRequestBuilder) {
+    return NewSignDigestRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ThreatAssessmentRequests provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
-// returns a *ThreatassessmentrequestsThreatAssessmentRequestsRequestBuilder when successful
-func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*ThreatassessmentrequestsThreatAssessmentRequestsRequestBuilder) {
-    return NewThreatassessmentrequestsThreatAssessmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ThreatAssessmentRequestsRequestBuilder when successful
+func (m *InformationProtectionRequestBuilder) ThreatAssessmentRequests()(*ThreatAssessmentRequestsRequestBuilder) {
+    return NewThreatAssessmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get informationProtection
 // returns a *RequestInformation when successful
@@ -162,9 +162,9 @@ func (m *InformationProtectionRequestBuilder) ToPatchRequestInformation(ctx cont
     return requestInfo, nil
 }
 // VerifySignature provides operations to call the verifySignature method.
-// returns a *VerifysignatureVerifySignatureRequestBuilder when successful
-func (m *InformationProtectionRequestBuilder) VerifySignature()(*VerifysignatureVerifySignatureRequestBuilder) {
-    return NewVerifysignatureVerifySignatureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *VerifySignatureRequestBuilder when successful
+func (m *InformationProtectionRequestBuilder) VerifySignature()(*VerifySignatureRequestBuilder) {
+    return NewVerifySignatureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *InformationProtectionRequestBuilder when successful

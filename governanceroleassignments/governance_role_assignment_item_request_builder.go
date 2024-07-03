@@ -91,9 +91,9 @@ func (m *GovernanceRoleAssignmentItemRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceRoleAssignmentable), nil
 }
 // LinkedEligibleRoleAssignment provides operations to manage the linkedEligibleRoleAssignment property of the microsoft.graph.governanceRoleAssignment entity.
-// returns a *ItemLinkedeligibleroleassignmentLinkedEligibleRoleAssignmentRequestBuilder when successful
-func (m *GovernanceRoleAssignmentItemRequestBuilder) LinkedEligibleRoleAssignment()(*ItemLinkedeligibleroleassignmentLinkedEligibleRoleAssignmentRequestBuilder) {
-    return NewItemLinkedeligibleroleassignmentLinkedEligibleRoleAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemLinkedEligibleRoleAssignmentRequestBuilder when successful
+func (m *GovernanceRoleAssignmentItemRequestBuilder) LinkedEligibleRoleAssignment()(*ItemLinkedEligibleRoleAssignmentRequestBuilder) {
+    return NewItemLinkedEligibleRoleAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in governanceRoleAssignments
 // returns a GovernanceRoleAssignmentable when successful
@@ -121,9 +121,9 @@ func (m *GovernanceRoleAssignmentItemRequestBuilder) Resource()(*ItemResourceReq
     return NewItemResourceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleAssignment entity.
-// returns a *ItemRoledefinitionRoleDefinitionRequestBuilder when successful
-func (m *GovernanceRoleAssignmentItemRequestBuilder) RoleDefinition()(*ItemRoledefinitionRoleDefinitionRequestBuilder) {
-    return NewItemRoledefinitionRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleDefinitionRequestBuilder when successful
+func (m *GovernanceRoleAssignmentItemRequestBuilder) RoleDefinition()(*ItemRoleDefinitionRequestBuilder) {
+    return NewItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Subject provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignment entity.
 // returns a *ItemSubjectRequestBuilder when successful

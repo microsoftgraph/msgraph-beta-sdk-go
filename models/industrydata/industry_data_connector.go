@@ -30,10 +30,14 @@ func CreateIndustryDataConnectorFromDiscriminatorValue(parseNode i878a80d2330e89
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.industryData.apiDataConnector":
+                        return NewApiDataConnector(), nil
                     case "#microsoft.graph.industryData.azureDataLakeConnector":
                         return NewAzureDataLakeConnector(), nil
                     case "#microsoft.graph.industryData.fileDataConnector":
                         return NewFileDataConnector(), nil
+                    case "#microsoft.graph.industryData.oneRosterApiDataConnector":
+                        return NewOneRosterApiDataConnector(), nil
                 }
             }
         }
