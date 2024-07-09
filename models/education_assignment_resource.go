@@ -85,7 +85,7 @@ func (m *EducationAssignmentResource) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetResource gets the resource property value. Resource object that has been associated with this assignment.
+// GetResource gets the resource property value. Resource object that is associated with this assignment.
 // returns a EducationResourceable when successful
 func (m *EducationAssignmentResource) GetResource()(EducationResourceable) {
     val, err := m.GetBackingStore().Get("resource")
@@ -143,7 +143,7 @@ func (m *EducationAssignmentResource) SetDistributeForStudentWork(value *bool)()
         panic(err)
     }
 }
-// SetResource sets the resource property value. Resource object that has been associated with this assignment.
+// SetResource sets the resource property value. Resource object that is associated with this assignment.
 func (m *EducationAssignmentResource) SetResource(value EducationResourceable)() {
     err := m.GetBackingStore().Set("resource", value)
     if err != nil {

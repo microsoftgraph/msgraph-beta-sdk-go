@@ -61,9 +61,9 @@ func (m *CommunitiesItemGroupRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *CommunitiesItemGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
-func (m *CommunitiesItemGroupRequestBuilder) ServiceProvisioningErrors()(*CommunitiesItemGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
-    return NewCommunitiesItemGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CommunitiesItemGroupServiceProvisioningErrorsRequestBuilder when successful
+func (m *CommunitiesItemGroupRequestBuilder) ServiceProvisioningErrors()(*CommunitiesItemGroupServiceProvisioningErrorsRequestBuilder) {
+    return NewCommunitiesItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the Microsoft 365 group that manages the membership of this community.
 // returns a *RequestInformation when successful

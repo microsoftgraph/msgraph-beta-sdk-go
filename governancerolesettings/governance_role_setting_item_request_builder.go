@@ -116,9 +116,9 @@ func (m *GovernanceRoleSettingItemRequestBuilder) Resource()(*ItemResourceReques
     return NewItemResourceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinition provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleSetting entity.
-// returns a *ItemRoledefinitionRoleDefinitionRequestBuilder when successful
-func (m *GovernanceRoleSettingItemRequestBuilder) RoleDefinition()(*ItemRoledefinitionRoleDefinitionRequestBuilder) {
-    return NewItemRoledefinitionRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleDefinitionRequestBuilder when successful
+func (m *GovernanceRoleSettingItemRequestBuilder) RoleDefinition()(*ItemRoleDefinitionRequestBuilder) {
+    return NewItemRoleDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from governanceRoleSettings
 // returns a *RequestInformation when successful

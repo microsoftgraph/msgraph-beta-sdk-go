@@ -40,7 +40,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetAdditionalData()(map[string]
 func (m *VirtualEventRegistrationQuestionAnswer) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBooleanValue gets the booleanValue property value. Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+// GetBooleanValue gets the booleanValue property value. Boolean answer to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is boolean.
 // returns a *bool when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetBooleanValue()(*bool) {
     val, err := m.GetBackingStore().Get("booleanValue")
@@ -136,7 +136,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetMultiChoiceValues gets the multiChoiceValues property value. Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+// GetMultiChoiceValues gets the multiChoiceValues property value. A collection of text answers to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is multiChoice.
 // returns a []string when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetMultiChoiceValues()([]string) {
     val, err := m.GetBackingStore().Get("multiChoiceValues")
@@ -160,7 +160,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetOdataType()(*string) {
     }
     return nil
 }
-// GetQuestionId gets the questionId property value. id of the virtualEventRegistrationQuestion.
+// GetQuestionId gets the questionId property value. The identifier of either a virtualEventRegistrationCustomQuestion or a virtualEventRegistrationPredefinedQuestion.
 // returns a *string when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetQuestionId()(*string) {
     val, err := m.GetBackingStore().Get("questionId")
@@ -172,7 +172,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) GetQuestionId()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+// GetValue gets the value property value. Text answer to the virtualEventRegistrationCustomQuestion or the virtualEventRegistrationPredefinedQuestion. Appears when answerInputType is text, multilineText or singleChoice.
 // returns a *string when successful
 func (m *VirtualEventRegistrationQuestionAnswer) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -241,7 +241,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) SetAdditionalData(value map[str
 func (m *VirtualEventRegistrationQuestionAnswer) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBooleanValue sets the booleanValue property value. Boolean answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is boolean.
+// SetBooleanValue sets the booleanValue property value. Boolean answer to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is boolean.
 func (m *VirtualEventRegistrationQuestionAnswer) SetBooleanValue(value *bool)() {
     err := m.GetBackingStore().Set("booleanValue", value)
     if err != nil {
@@ -255,7 +255,7 @@ func (m *VirtualEventRegistrationQuestionAnswer) SetDisplayName(value *string)()
         panic(err)
     }
 }
-// SetMultiChoiceValues sets the multiChoiceValues property value. Collection of text answer of the virtualEventRegistrationQuestion. Only appears when answerInputType is multiChoice.
+// SetMultiChoiceValues sets the multiChoiceValues property value. A collection of text answers to the virtualEventRegistrationCustomQuestion. Only appears when answerInputType is multiChoice.
 func (m *VirtualEventRegistrationQuestionAnswer) SetMultiChoiceValues(value []string)() {
     err := m.GetBackingStore().Set("multiChoiceValues", value)
     if err != nil {
@@ -269,14 +269,14 @@ func (m *VirtualEventRegistrationQuestionAnswer) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetQuestionId sets the questionId property value. id of the virtualEventRegistrationQuestion.
+// SetQuestionId sets the questionId property value. The identifier of either a virtualEventRegistrationCustomQuestion or a virtualEventRegistrationPredefinedQuestion.
 func (m *VirtualEventRegistrationQuestionAnswer) SetQuestionId(value *string)() {
     err := m.GetBackingStore().Set("questionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValue sets the value property value. Text answer of the virtualEventRegistrationQuestion. Appears when answerInputType is text, multilineText or singleChoice.
+// SetValue sets the value property value. Text answer to the virtualEventRegistrationCustomQuestion or the virtualEventRegistrationPredefinedQuestion. Appears when answerInputType is text, multilineText or singleChoice.
 func (m *VirtualEventRegistrationQuestionAnswer) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

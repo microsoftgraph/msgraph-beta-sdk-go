@@ -33,7 +33,7 @@ func (m *BookingCustomer) GetAddresses()([]PhysicalAddressable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date, time and timezone when the customer was created.
+// GetCreatedDateTime gets the createdDateTime property value. The date, time, and timezone when the customer was created.
 // returns a *Time when successful
 func (m *BookingCustomer) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -103,7 +103,7 @@ func (m *BookingCustomer) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time and timezone when the customer was last updated.
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The date, time, and timezone when the customer was last updated.
 // returns a *Time when successful
 func (m *BookingCustomer) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -178,14 +178,14 @@ func (m *BookingCustomer) SetAddresses(value []PhysicalAddressable)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date, time and timezone when the customer was created.
+// SetCreatedDateTime sets the createdDateTime property value. The date, time, and timezone when the customer was created.
 func (m *BookingCustomer) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time and timezone when the customer was last updated.
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The date, time, and timezone when the customer was last updated.
 func (m *BookingCustomer) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {

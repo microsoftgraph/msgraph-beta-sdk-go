@@ -35,9 +35,9 @@ type ExternalRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AuthorizationSystems provides operations to manage the authorizationSystems property of the microsoft.graph.externalConnectors.external entity.
-// returns a *AuthorizationsystemsAuthorizationSystemsRequestBuilder when successful
-func (m *ExternalRequestBuilder) AuthorizationSystems()(*AuthorizationsystemsAuthorizationSystemsRequestBuilder) {
-    return NewAuthorizationsystemsAuthorizationSystemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *AuthorizationSystemsRequestBuilder when successful
+func (m *ExternalRequestBuilder) AuthorizationSystems()(*AuthorizationSystemsRequestBuilder) {
+    return NewAuthorizationSystemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Connections provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
 // returns a *ConnectionsRequestBuilder when successful
@@ -78,9 +78,9 @@ func (m *ExternalRequestBuilder) Get(ctx context.Context, requestConfiguration *
     return res.(ie98116770ca9f5eee835504331ccb9976e822c2f776cca356ee95c843b4cce86.Externalable), nil
 }
 // IndustryData provides operations to manage the industryData property of the microsoft.graph.externalConnectors.external entity.
-// returns a *IndustrydataIndustryDataRequestBuilder when successful
-func (m *ExternalRequestBuilder) IndustryData()(*IndustrydataIndustryDataRequestBuilder) {
-    return NewIndustrydataIndustryDataRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IndustryDataRequestBuilder when successful
+func (m *ExternalRequestBuilder) IndustryData()(*IndustryDataRequestBuilder) {
+    return NewIndustryDataRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update external
 // returns a Externalable when successful

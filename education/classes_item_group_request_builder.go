@@ -64,9 +64,9 @@ func (m *ClassesItemGroupRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
 // ServiceProvisioningErrors the serviceProvisioningErrors property
-// returns a *ClassesItemGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder when successful
-func (m *ClassesItemGroupRequestBuilder) ServiceProvisioningErrors()(*ClassesItemGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilder) {
-    return NewClassesItemGroupServiceprovisioningerrorsServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemGroupServiceProvisioningErrorsRequestBuilder when successful
+func (m *ClassesItemGroupRequestBuilder) ServiceProvisioningErrors()(*ClassesItemGroupServiceProvisioningErrorsRequestBuilder) {
+    return NewClassesItemGroupServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation retrieve the Microsoft 365 group that corresponds to this educationClass.
 // returns a *RequestInformation when successful

@@ -11,7 +11,7 @@ import (
 type ItemListsItemPermissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemListsItemPermissionsRequestBuilderGetQueryParameters get permissions from sites
+// ItemListsItemPermissionsRequestBuilderGetQueryParameters the set of permissions for the item. Read-only. Nullable.
 type ItemListsItemPermissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemListsItemPermissionsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *ItemListsItemPermissionsRequestBuilder) Count()(*ItemListsItemPermissionsCountRequestBuilder) {
     return NewItemListsItemPermissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get permissions from sites
+// Get the set of permissions for the item. Read-only. Nullable.
 // returns a PermissionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemListsItemPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemListsItemPermissionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PermissionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemListsItemPermissionsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
-// ToGetRequestInformation get permissions from sites
+// ToGetRequestInformation the set of permissions for the item. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemListsItemPermissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemListsItemPermissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

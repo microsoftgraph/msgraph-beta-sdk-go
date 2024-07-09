@@ -102,9 +102,9 @@ func (m *EdiscoveryCasesItemTagsRequestBuilder) Get(ctx context.Context, request
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.TagCollectionResponseable), nil
 }
 // MicrosoftGraphEdiscoveryAsHierarchy provides operations to call the asHierarchy method.
-// returns a *EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder when successful
-func (m *EdiscoveryCasesItemTagsRequestBuilder) MicrosoftGraphEdiscoveryAsHierarchy()(*EdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder) {
-    return NewEdiscoveryCasesItemTagsMicrosoftgraphediscoveryashierarchyMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder when successful
+func (m *EdiscoveryCasesItemTagsRequestBuilder) MicrosoftGraphEdiscoveryAsHierarchy()(*EdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilder) {
+    return NewEdiscoveryCasesItemTagsMicrosoftGraphEdiscoveryAsHierarchyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new tag for the specified case.  The tags are used in review sets while reviewing content.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace

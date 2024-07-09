@@ -116,9 +116,9 @@ func (m *ConnectivityRequestBuilder) Patch(ctx context.Context, body i43e723cc77
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Connectivityable), nil
 }
 // RemoteNetworks provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.connectivity entity.
-// returns a *ConnectivityRemotenetworksRemoteNetworksRequestBuilder when successful
-func (m *ConnectivityRequestBuilder) RemoteNetworks()(*ConnectivityRemotenetworksRemoteNetworksRequestBuilder) {
-    return NewConnectivityRemotenetworksRemoteNetworksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ConnectivityRemoteNetworksRequestBuilder when successful
+func (m *ConnectivityRequestBuilder) RemoteNetworks()(*ConnectivityRemoteNetworksRequestBuilder) {
+    return NewConnectivityRemoteNetworksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property connectivity for networkAccess
 // returns a *RequestInformation when successful

@@ -116,9 +116,9 @@ func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) Patch(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable), nil
 }
 // RevokeGrants provides operations to call the revokeGrants method.
-// returns a *ItemItemsItemPermissionsItemRevokegrantsRevokeGrantsRequestBuilder when successful
-func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*ItemItemsItemPermissionsItemRevokegrantsRevokeGrantsRequestBuilder) {
-    return NewItemItemsItemPermissionsItemRevokegrantsRevokeGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder when successful
+func (m *ItemItemsItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*ItemItemsItemPermissionsItemRevokeGrantsRequestBuilder) {
+    return NewItemItemsItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property permissions for drives
 // returns a *RequestInformation when successful

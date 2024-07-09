@@ -116,24 +116,24 @@ func (m *GovernanceResourceItemRequestBuilder) Patch(ctx context.Context, body i
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
 }
 // RoleAssignmentRequests provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.
-// returns a *ItemRoleassignmentrequestsRoleAssignmentRequestsRequestBuilder when successful
-func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentRequests()(*ItemRoleassignmentrequestsRoleAssignmentRequestsRequestBuilder) {
-    return NewItemRoleassignmentrequestsRoleAssignmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleAssignmentRequestsRequestBuilder when successful
+func (m *GovernanceResourceItemRequestBuilder) RoleAssignmentRequests()(*ItemRoleAssignmentRequestsRequestBuilder) {
+    return NewItemRoleAssignmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleAssignments provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
-// returns a *ItemRoleassignmentsRoleAssignmentsRequestBuilder when successful
-func (m *GovernanceResourceItemRequestBuilder) RoleAssignments()(*ItemRoleassignmentsRoleAssignmentsRequestBuilder) {
-    return NewItemRoleassignmentsRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleAssignmentsRequestBuilder when successful
+func (m *GovernanceResourceItemRequestBuilder) RoleAssignments()(*ItemRoleAssignmentsRequestBuilder) {
+    return NewItemRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleDefinitions provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.
-// returns a *ItemRoledefinitionsRoleDefinitionsRequestBuilder when successful
-func (m *GovernanceResourceItemRequestBuilder) RoleDefinitions()(*ItemRoledefinitionsRoleDefinitionsRequestBuilder) {
-    return NewItemRoledefinitionsRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleDefinitionsRequestBuilder when successful
+func (m *GovernanceResourceItemRequestBuilder) RoleDefinitions()(*ItemRoleDefinitionsRequestBuilder) {
+    return NewItemRoleDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RoleSettings provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.
-// returns a *ItemRolesettingsRoleSettingsRequestBuilder when successful
-func (m *GovernanceResourceItemRequestBuilder) RoleSettings()(*ItemRolesettingsRoleSettingsRequestBuilder) {
-    return NewItemRolesettingsRoleSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleSettingsRequestBuilder when successful
+func (m *GovernanceResourceItemRequestBuilder) RoleSettings()(*ItemRoleSettingsRequestBuilder) {
+    return NewItemRoleSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from governanceResources
 // returns a *RequestInformation when successful

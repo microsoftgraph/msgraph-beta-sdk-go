@@ -117,7 +117,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrollmentTokenType()(*AndroidD
     }
     return nil
 }
-// GetEnrollmentTokenUsageCount gets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token.
+// GetEnrollmentTokenUsageCount gets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token. Valid values 0 to 20000
 // returns a *int32 when successful
 func (m *AndroidDeviceOwnerEnrollmentProfile) GetEnrollmentTokenUsageCount()(*int32) {
     val, err := m.GetBackingStore().Get("enrollmentTokenUsageCount")
@@ -688,7 +688,7 @@ func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrollmentTokenType(value *Andr
         panic(err)
     }
 }
-// SetEnrollmentTokenUsageCount sets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token.
+// SetEnrollmentTokenUsageCount sets the enrollmentTokenUsageCount property value. Total number of AOSP devices that have enrolled using the current token. Valid values 0 to 20000
 func (m *AndroidDeviceOwnerEnrollmentProfile) SetEnrollmentTokenUsageCount(value *int32)() {
     err := m.GetBackingStore().Set("enrollmentTokenUsageCount", value)
     if err != nil {

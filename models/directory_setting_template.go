@@ -87,7 +87,7 @@ func (m *DirectorySettingTemplate) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetValues gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
+// GetValues gets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults, and types that make up this template. Read-only.
 // returns a []SettingTemplateValueable when successful
 func (m *DirectorySettingTemplate) GetValues()([]SettingTemplateValueable) {
     val, err := m.GetBackingStore().Get("values")
@@ -145,7 +145,7 @@ func (m *DirectorySettingTemplate) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetValues sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults and types that make up this template.  Read-only.
+// SetValues sets the values property value. Collection of settingTemplateValues that list the set of available settings, defaults, and types that make up this template. Read-only.
 func (m *DirectorySettingTemplate) SetValues(value []SettingTemplateValueable)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {

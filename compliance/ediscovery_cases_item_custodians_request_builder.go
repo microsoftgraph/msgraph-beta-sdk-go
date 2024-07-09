@@ -102,14 +102,14 @@ func (m *EdiscoveryCasesItemCustodiansRequestBuilder) Get(ctx context.Context, r
     return res.(ic154d683aa4025ee28853b9c1a3c35cd1f093a1c4542feba4c07682e2752db13.CustodianCollectionResponseable), nil
 }
 // MicrosoftGraphEdiscoveryApplyHold provides operations to call the applyHold method.
-// returns a *EdiscoveryCasesItemCustodiansMicrosoftgraphediscoveryapplyholdMicrosoftGraphEdiscoveryApplyHoldRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansMicrosoftgraphediscoveryapplyholdMicrosoftGraphEdiscoveryApplyHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansMicrosoftgraphediscoveryapplyholdMicrosoftGraphEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryApplyHoldRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryApplyHold()(*EdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryApplyHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryApplyHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphEdiscoveryRemoveHold provides operations to call the removeHold method.
-// returns a *EdiscoveryCasesItemCustodiansMicrosoftgraphediscoveryremoveholdMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder when successful
-func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansMicrosoftgraphediscoveryremoveholdMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
-    return NewEdiscoveryCasesItemCustodiansMicrosoftgraphediscoveryremoveholdMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder when successful
+func (m *EdiscoveryCasesItemCustodiansRequestBuilder) MicrosoftGraphEdiscoveryRemoveHold()(*EdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryRemoveHoldRequestBuilder) {
+    return NewEdiscoveryCasesItemCustodiansMicrosoftGraphEdiscoveryRemoveHoldRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new custodian object. After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace

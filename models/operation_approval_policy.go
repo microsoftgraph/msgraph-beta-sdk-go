@@ -21,7 +21,7 @@ func NewOperationApprovalPolicy()(*OperationApprovalPolicy) {
 func CreateOperationApprovalPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOperationApprovalPolicy(), nil
 }
-// GetApproverGroupIds gets the approverGroupIds property value. The Microsoft Entra ID (Azure AD) security group IDs for the approvers for the policy. This property is required when the policy is created, and is defined by the user to define the possible approvers for the policy.
+// GetApproverGroupIds gets the approverGroupIds property value. The Microsoft Entra ID (Azure AD) security group IDs for the approvers for the policy. This property is required when the policy is created, and is defined by the IT Admins to define the possible approvers for the policy.
 // returns a []string when successful
 func (m *OperationApprovalPolicy) GetApproverGroupIds()([]string) {
     val, err := m.GetBackingStore().Get("approverGroupIds")
@@ -33,7 +33,7 @@ func (m *OperationApprovalPolicy) GetApproverGroupIds()([]string) {
     }
     return nil
 }
-// GetDescription gets the description property value. Indicates the description of the policy. Maximum length of the description is 1024 characters. This property is not required, but can be used by the user to describe the policy.
+// GetDescription gets the description property value. Indicates the description of the policy. Maximum length of the description is 1024 characters. This property is not required, but can be used by the IT Admin to describe the policy.
 // returns a *string when successful
 func (m *OperationApprovalPolicy) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -45,7 +45,7 @@ func (m *OperationApprovalPolicy) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Indicates the display name of the policy. Maximum length of the display name is 128 characters. This property is required when the policy is created, and is defined by the user to identify the policy.
+// GetDisplayName gets the displayName property value. Indicates the display name of the policy. Maximum length of the display name is 128 characters. This property is required when the policy is created, and is defined by the IT Admins to identify the policy.
 // returns a *string when successful
 func (m *OperationApprovalPolicy) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -163,7 +163,7 @@ func (m *OperationApprovalPolicy) GetPolicyPlatform()(*OperationApprovalPolicyPl
     }
     return nil
 }
-// GetPolicySet gets the policySet property value. Indicates areas of the Intune UX that could support MAA UX for the current logged in user. This property is required, and is defined by the user in order to correctly show the expected experience.
+// GetPolicySet gets the policySet property value. Indicates areas of the Intune UX that could support MAA UX for the current logged in IT Admin. This property is required, and is defined by the IT Admins in order to correctly show the expected experience.
 // returns a OperationApprovalPolicySetable when successful
 func (m *OperationApprovalPolicy) GetPolicySet()(OperationApprovalPolicySetable) {
     val, err := m.GetBackingStore().Get("policySet")
@@ -233,21 +233,21 @@ func (m *OperationApprovalPolicy) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetApproverGroupIds sets the approverGroupIds property value. The Microsoft Entra ID (Azure AD) security group IDs for the approvers for the policy. This property is required when the policy is created, and is defined by the user to define the possible approvers for the policy.
+// SetApproverGroupIds sets the approverGroupIds property value. The Microsoft Entra ID (Azure AD) security group IDs for the approvers for the policy. This property is required when the policy is created, and is defined by the IT Admins to define the possible approvers for the policy.
 func (m *OperationApprovalPolicy) SetApproverGroupIds(value []string)() {
     err := m.GetBackingStore().Set("approverGroupIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. Indicates the description of the policy. Maximum length of the description is 1024 characters. This property is not required, but can be used by the user to describe the policy.
+// SetDescription sets the description property value. Indicates the description of the policy. Maximum length of the description is 1024 characters. This property is not required, but can be used by the IT Admin to describe the policy.
 func (m *OperationApprovalPolicy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Indicates the display name of the policy. Maximum length of the display name is 128 characters. This property is required when the policy is created, and is defined by the user to identify the policy.
+// SetDisplayName sets the displayName property value. Indicates the display name of the policy. Maximum length of the display name is 128 characters. This property is required when the policy is created, and is defined by the IT Admins to identify the policy.
 func (m *OperationApprovalPolicy) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -268,7 +268,7 @@ func (m *OperationApprovalPolicy) SetPolicyPlatform(value *OperationApprovalPoli
         panic(err)
     }
 }
-// SetPolicySet sets the policySet property value. Indicates areas of the Intune UX that could support MAA UX for the current logged in user. This property is required, and is defined by the user in order to correctly show the expected experience.
+// SetPolicySet sets the policySet property value. Indicates areas of the Intune UX that could support MAA UX for the current logged in IT Admin. This property is required, and is defined by the IT Admins in order to correctly show the expected experience.
 func (m *OperationApprovalPolicy) SetPolicySet(value OperationApprovalPolicySetable)() {
     err := m.GetBackingStore().Set("policySet", value)
     if err != nil {

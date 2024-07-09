@@ -48,19 +48,19 @@ func NewThreatSubmissionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     return NewThreatSubmissionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // EmailThreats provides operations to manage the emailThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
-// returns a *EmailthreatsEmailThreatsRequestBuilder when successful
-func (m *ThreatSubmissionRequestBuilder) EmailThreats()(*EmailthreatsEmailThreatsRequestBuilder) {
-    return NewEmailthreatsEmailThreatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EmailThreatsRequestBuilder when successful
+func (m *ThreatSubmissionRequestBuilder) EmailThreats()(*EmailThreatsRequestBuilder) {
+    return NewEmailThreatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // EmailThreatSubmissionPolicies provides operations to manage the emailThreatSubmissionPolicies property of the microsoft.graph.security.threatSubmissionRoot entity.
-// returns a *EmailthreatsubmissionpoliciesEmailThreatSubmissionPoliciesRequestBuilder when successful
-func (m *ThreatSubmissionRequestBuilder) EmailThreatSubmissionPolicies()(*EmailthreatsubmissionpoliciesEmailThreatSubmissionPoliciesRequestBuilder) {
-    return NewEmailthreatsubmissionpoliciesEmailThreatSubmissionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *EmailThreatSubmissionPoliciesRequestBuilder when successful
+func (m *ThreatSubmissionRequestBuilder) EmailThreatSubmissionPolicies()(*EmailThreatSubmissionPoliciesRequestBuilder) {
+    return NewEmailThreatSubmissionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FileThreats provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
-// returns a *FilethreatsFileThreatsRequestBuilder when successful
-func (m *ThreatSubmissionRequestBuilder) FileThreats()(*FilethreatsFileThreatsRequestBuilder) {
-    return NewFilethreatsFileThreatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *FileThreatsRequestBuilder when successful
+func (m *ThreatSubmissionRequestBuilder) FileThreats()(*FileThreatsRequestBuilder) {
+    return NewFileThreatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get threatSubmission
 // returns a ThreatSubmissionRootable when successful
@@ -132,9 +132,9 @@ func (m *ThreatSubmissionRequestBuilder) ToPatchRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // UrlThreats provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.
-// returns a *UrlthreatsUrlThreatsRequestBuilder when successful
-func (m *ThreatSubmissionRequestBuilder) UrlThreats()(*UrlthreatsUrlThreatsRequestBuilder) {
-    return NewUrlthreatsUrlThreatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *UrlThreatsRequestBuilder when successful
+func (m *ThreatSubmissionRequestBuilder) UrlThreats()(*UrlThreatsRequestBuilder) {
+    return NewUrlThreatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ThreatSubmissionRequestBuilder when successful

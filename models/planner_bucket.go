@@ -19,7 +19,7 @@ func NewPlannerBucket()(*PlannerBucket) {
 func CreatePlannerBucketFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerBucket(), nil
 }
-// GetArchivalInfo gets the archivalInfo property value. The archivalInfo property
+// GetArchivalInfo gets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the bucket and why.
 // returns a PlannerArchivalInfoable when successful
 func (m *PlannerBucket) GetArchivalInfo()(PlannerArchivalInfoable) {
     val, err := m.GetBackingStore().Get("archivalInfo")
@@ -125,7 +125,7 @@ func (m *PlannerBucket) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetIsArchived gets the isArchived property value. The isArchived property
+// GetIsArchived gets the isArchived property value. Read-only. If set totrue, the bucket is archived. An archived bucket is read-only.
 // returns a *bool when successful
 func (m *PlannerBucket) GetIsArchived()(*bool) {
     val, err := m.GetBackingStore().Get("isArchived")
@@ -241,7 +241,7 @@ func (m *PlannerBucket) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetArchivalInfo sets the archivalInfo property value. The archivalInfo property
+// SetArchivalInfo sets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the bucket and why.
 func (m *PlannerBucket) SetArchivalInfo(value PlannerArchivalInfoable)() {
     err := m.GetBackingStore().Set("archivalInfo", value)
     if err != nil {
@@ -255,7 +255,7 @@ func (m *PlannerBucket) SetCreationSource(value PlannerBucketCreationable)() {
         panic(err)
     }
 }
-// SetIsArchived sets the isArchived property value. The isArchived property
+// SetIsArchived sets the isArchived property value. Read-only. If set totrue, the bucket is archived. An archived bucket is read-only.
 func (m *PlannerBucket) SetIsArchived(value *bool)() {
     err := m.GetBackingStore().Set("isArchived", value)
     if err != nil {

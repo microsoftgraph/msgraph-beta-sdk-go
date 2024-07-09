@@ -20,7 +20,7 @@ func NewPlannerPlan()(*PlannerPlan) {
 func CreatePlannerPlanFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlannerPlan(), nil
 }
-// GetArchivalInfo gets the archivalInfo property value. The archivalInfo property
+// GetArchivalInfo gets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the plan and why.
 // returns a PlannerArchivalInfoable when successful
 func (m *PlannerPlan) GetArchivalInfo()(PlannerArchivalInfoable) {
     val, err := m.GetBackingStore().Get("archivalInfo")
@@ -270,7 +270,7 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIsArchived gets the isArchived property value. The isArchived property
+// GetIsArchived gets the isArchived property value. Read-only. If set to true, the plan is archived. An archived plan is read-only.
 // returns a *bool when successful
 func (m *PlannerPlan) GetIsArchived()(*bool) {
     val, err := m.GetBackingStore().Get("isArchived")
@@ -434,7 +434,7 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetArchivalInfo sets the archivalInfo property value. The archivalInfo property
+// SetArchivalInfo sets the archivalInfo property value. Read-only. Nullable. Contains information about who archived or unarchived the plan and why.
 func (m *PlannerPlan) SetArchivalInfo(value PlannerArchivalInfoable)() {
     err := m.GetBackingStore().Set("archivalInfo", value)
     if err != nil {
@@ -490,7 +490,7 @@ func (m *PlannerPlan) SetDetails(value PlannerPlanDetailsable)() {
         panic(err)
     }
 }
-// SetIsArchived sets the isArchived property value. The isArchived property
+// SetIsArchived sets the isArchived property value. Read-only. If set to true, the plan is archived. An archived plan is read-only.
 func (m *PlannerPlan) SetIsArchived(value *bool)() {
     err := m.GetBackingStore().Set("isArchived", value)
     if err != nil {

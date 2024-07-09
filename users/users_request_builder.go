@@ -103,19 +103,19 @@ func (m *UsersRequestBuilder) Get(ctx context.Context, requestConfiguration *Use
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable), nil
 }
 // GetByIds provides operations to call the getByIds method.
-// returns a *GetbyidsGetByIdsRequestBuilder when successful
-func (m *UsersRequestBuilder) GetByIds()(*GetbyidsGetByIdsRequestBuilder) {
-    return NewGetbyidsGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetByIdsRequestBuilder when successful
+func (m *UsersRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetManagedAppBlockedUsers provides operations to call the getManagedAppBlockedUsers method.
-// returns a *GetmanagedappblockedusersGetManagedAppBlockedUsersRequestBuilder when successful
-func (m *UsersRequestBuilder) GetManagedAppBlockedUsers()(*GetmanagedappblockedusersGetManagedAppBlockedUsersRequestBuilder) {
-    return NewGetmanagedappblockedusersGetManagedAppBlockedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetManagedAppBlockedUsersRequestBuilder when successful
+func (m *UsersRequestBuilder) GetManagedAppBlockedUsers()(*GetManagedAppBlockedUsersRequestBuilder) {
+    return NewGetManagedAppBlockedUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
-// returns a *GetuserownedobjectsGetUserOwnedObjectsRequestBuilder when successful
-func (m *UsersRequestBuilder) GetUserOwnedObjects()(*GetuserownedobjectsGetUserOwnedObjectsRequestBuilder) {
-    return NewGetuserownedobjectsGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *GetUserOwnedObjectsRequestBuilder when successful
+func (m *UsersRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestBuilder) {
+    return NewGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new user.The request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
 // returns a Userable when successful
@@ -170,14 +170,14 @@ func (m *UsersRequestBuilder) ToPostRequestInformation(ctx context.Context, body
     return requestInfo, nil
 }
 // ValidatePassword provides operations to call the validatePassword method.
-// returns a *ValidatepasswordValidatePasswordRequestBuilder when successful
-func (m *UsersRequestBuilder) ValidatePassword()(*ValidatepasswordValidatePasswordRequestBuilder) {
-    return NewValidatepasswordValidatePasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ValidatePasswordRequestBuilder when successful
+func (m *UsersRequestBuilder) ValidatePassword()(*ValidatePasswordRequestBuilder) {
+    return NewValidatePasswordRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ValidateProperties provides operations to call the validateProperties method.
-// returns a *ValidatepropertiesValidatePropertiesRequestBuilder when successful
-func (m *UsersRequestBuilder) ValidateProperties()(*ValidatepropertiesValidatePropertiesRequestBuilder) {
-    return NewValidatepropertiesValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ValidatePropertiesRequestBuilder when successful
+func (m *UsersRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *UsersRequestBuilder when successful

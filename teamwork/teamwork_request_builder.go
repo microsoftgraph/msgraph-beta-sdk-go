@@ -48,14 +48,14 @@ func NewTeamworkRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewTeamworkRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DeletedChats provides operations to manage the deletedChats property of the microsoft.graph.teamwork entity.
-// returns a *DeletedchatsDeletedChatsRequestBuilder when successful
-func (m *TeamworkRequestBuilder) DeletedChats()(*DeletedchatsDeletedChatsRequestBuilder) {
-    return NewDeletedchatsDeletedChatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DeletedChatsRequestBuilder when successful
+func (m *TeamworkRequestBuilder) DeletedChats()(*DeletedChatsRequestBuilder) {
+    return NewDeletedChatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeletedTeams provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
-// returns a *DeletedteamsDeletedTeamsRequestBuilder when successful
-func (m *TeamworkRequestBuilder) DeletedTeams()(*DeletedteamsDeletedTeamsRequestBuilder) {
-    return NewDeletedteamsDeletedTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DeletedTeamsRequestBuilder when successful
+func (m *TeamworkRequestBuilder) DeletedTeams()(*DeletedTeamsRequestBuilder) {
+    return NewDeletedTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Devices provides operations to manage the devices property of the microsoft.graph.teamwork entity.
 // returns a *DevicesRequestBuilder when successful
@@ -106,19 +106,19 @@ func (m *TeamworkRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Teamworkable), nil
 }
 // SendActivityNotificationToRecipients provides operations to call the sendActivityNotificationToRecipients method.
-// returns a *SendactivitynotificationtorecipientsSendActivityNotificationToRecipientsRequestBuilder when successful
-func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*SendactivitynotificationtorecipientsSendActivityNotificationToRecipientsRequestBuilder) {
-    return NewSendactivitynotificationtorecipientsSendActivityNotificationToRecipientsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SendActivityNotificationToRecipientsRequestBuilder when successful
+func (m *TeamworkRequestBuilder) SendActivityNotificationToRecipients()(*SendActivityNotificationToRecipientsRequestBuilder) {
+    return NewSendActivityNotificationToRecipientsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TeamsAppSettings provides operations to manage the teamsAppSettings property of the microsoft.graph.teamwork entity.
-// returns a *TeamsappsettingsTeamsAppSettingsRequestBuilder when successful
-func (m *TeamworkRequestBuilder) TeamsAppSettings()(*TeamsappsettingsTeamsAppSettingsRequestBuilder) {
-    return NewTeamsappsettingsTeamsAppSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TeamsAppSettingsRequestBuilder when successful
+func (m *TeamworkRequestBuilder) TeamsAppSettings()(*TeamsAppSettingsRequestBuilder) {
+    return NewTeamsAppSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TeamTemplates provides operations to manage the teamTemplates property of the microsoft.graph.teamwork entity.
-// returns a *TeamtemplatesTeamTemplatesRequestBuilder when successful
-func (m *TeamworkRequestBuilder) TeamTemplates()(*TeamtemplatesTeamTemplatesRequestBuilder) {
-    return NewTeamtemplatesTeamTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *TeamTemplatesRequestBuilder when successful
+func (m *TeamworkRequestBuilder) TeamTemplates()(*TeamTemplatesRequestBuilder) {
+    return NewTeamTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
 // returns a *RequestInformation when successful
@@ -155,7 +155,7 @@ func (m *TeamworkRequestBuilder) WithUrl(rawUrl string)(*TeamworkRequestBuilder)
     return NewTeamworkRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
 }
 // WorkforceIntegrations provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
-// returns a *WorkforceintegrationsWorkforceIntegrationsRequestBuilder when successful
-func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*WorkforceintegrationsWorkforceIntegrationsRequestBuilder) {
-    return NewWorkforceintegrationsWorkforceIntegrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WorkforceIntegrationsRequestBuilder when successful
+func (m *TeamworkRequestBuilder) WorkforceIntegrations()(*WorkforceIntegrationsRequestBuilder) {
+    return NewWorkforceIntegrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }

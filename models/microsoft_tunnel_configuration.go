@@ -321,7 +321,7 @@ func (m *MicrosoftTunnelConfiguration) GetListenPort()(*int32) {
     }
     return nil
 }
-// GetNetwork gets the network property value. The subnet that will be used to allocate virtual address for the clients
+// GetNetwork gets the network property value. The IPv4 subnet that will be used to allocate virtual address for the clients
 // returns a *string when successful
 func (m *MicrosoftTunnelConfiguration) GetNetwork()(*string) {
     val, err := m.GetBackingStore().Get("network")
@@ -565,7 +565,7 @@ func (m *MicrosoftTunnelConfiguration) SetListenPort(value *int32)() {
         panic(err)
     }
 }
-// SetNetwork sets the network property value. The subnet that will be used to allocate virtual address for the clients
+// SetNetwork sets the network property value. The IPv4 subnet that will be used to allocate virtual address for the clients
 func (m *MicrosoftTunnelConfiguration) SetNetwork(value *string)() {
     err := m.GetBackingStore().Set("network", value)
     if err != nil {

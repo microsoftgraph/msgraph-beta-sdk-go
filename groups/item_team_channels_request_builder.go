@@ -47,9 +47,9 @@ type ItemTeamChannelsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AllMessages provides operations to call the allMessages method.
-// returns a *ItemTeamChannelsAllmessagesAllMessagesRequestBuilder when successful
-func (m *ItemTeamChannelsRequestBuilder) AllMessages()(*ItemTeamChannelsAllmessagesAllMessagesRequestBuilder) {
-    return NewItemTeamChannelsAllmessagesAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamChannelsAllMessagesRequestBuilder when successful
+func (m *ItemTeamChannelsRequestBuilder) AllMessages()(*ItemTeamChannelsAllMessagesRequestBuilder) {
+    return NewItemTeamChannelsAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByChannelId provides operations to manage the channels property of the microsoft.graph.team entity.
 // returns a *ItemTeamChannelsChannelItemRequestBuilder when successful
@@ -102,14 +102,14 @@ func (m *ItemTeamChannelsRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChannelCollectionResponseable), nil
 }
 // GetAllMessages provides operations to call the getAllMessages method.
-// returns a *ItemTeamChannelsGetallmessagesGetAllMessagesRequestBuilder when successful
-func (m *ItemTeamChannelsRequestBuilder) GetAllMessages()(*ItemTeamChannelsGetallmessagesGetAllMessagesRequestBuilder) {
-    return NewItemTeamChannelsGetallmessagesGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamChannelsGetAllMessagesRequestBuilder when successful
+func (m *ItemTeamChannelsRequestBuilder) GetAllMessages()(*ItemTeamChannelsGetAllMessagesRequestBuilder) {
+    return NewItemTeamChannelsGetAllMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetAllRetainedMessages provides operations to call the getAllRetainedMessages method.
-// returns a *ItemTeamChannelsGetallretainedmessagesGetAllRetainedMessagesRequestBuilder when successful
-func (m *ItemTeamChannelsRequestBuilder) GetAllRetainedMessages()(*ItemTeamChannelsGetallretainedmessagesGetAllRetainedMessagesRequestBuilder) {
-    return NewItemTeamChannelsGetallretainedmessagesGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTeamChannelsGetAllRetainedMessagesRequestBuilder when successful
+func (m *ItemTeamChannelsRequestBuilder) GetAllRetainedMessages()(*ItemTeamChannelsGetAllRetainedMessagesRequestBuilder) {
+    return NewItemTeamChannelsGetAllRetainedMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to channels for groups
 // returns a Channelable when successful

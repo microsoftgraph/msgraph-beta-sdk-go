@@ -91,14 +91,14 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
 }
 // MakeEligible provides operations to call the makeEligible method.
-// returns a *ItemMakeeligibleMakeEligibleRequestBuilder when successful
-func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakeEligible()(*ItemMakeeligibleMakeEligibleRequestBuilder) {
-    return NewItemMakeeligibleMakeEligibleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMakeEligibleRequestBuilder when successful
+func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakeEligible()(*ItemMakeEligibleRequestBuilder) {
+    return NewItemMakeEligibleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MakePermanent provides operations to call the makePermanent method.
-// returns a *ItemMakepermanentMakePermanentRequestBuilder when successful
-func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakePermanent()(*ItemMakepermanentMakePermanentRequestBuilder) {
-    return NewItemMakepermanentMakePermanentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMakePermanentRequestBuilder when successful
+func (m *PrivilegedRoleAssignmentItemRequestBuilder) MakePermanent()(*ItemMakePermanentRequestBuilder) {
+    return NewItemMakePermanentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update entity in privilegedRoleAssignments
 // returns a PrivilegedRoleAssignmentable when successful
@@ -121,9 +121,9 @@ func (m *PrivilegedRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedRoleAssignmentable), nil
 }
 // RoleInfo provides operations to manage the roleInfo property of the microsoft.graph.privilegedRoleAssignment entity.
-// returns a *ItemRoleinfoRoleInfoRequestBuilder when successful
-func (m *PrivilegedRoleAssignmentItemRequestBuilder) RoleInfo()(*ItemRoleinfoRoleInfoRequestBuilder) {
-    return NewItemRoleinfoRoleInfoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRoleInfoRequestBuilder when successful
+func (m *PrivilegedRoleAssignmentItemRequestBuilder) RoleInfo()(*ItemRoleInfoRequestBuilder) {
+    return NewItemRoleInfoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from privilegedRoleAssignments
 // returns a *RequestInformation when successful

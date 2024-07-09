@@ -111,9 +111,9 @@ func (m *PartnerRequestBuilder) Patch(ctx context.Context, body if063350b43a6e62
     return res.(if063350b43a6e623648b394d8f6b8221a26a9ae46bc715ec386eaf438133b186.PartnerSecurityable), nil
 }
 // SecurityAlerts provides operations to manage the securityAlerts property of the microsoft.graph.partner.security.partnerSecurity entity.
-// returns a *PartnerSecurityalertsSecurityAlertsRequestBuilder when successful
-func (m *PartnerRequestBuilder) SecurityAlerts()(*PartnerSecurityalertsSecurityAlertsRequestBuilder) {
-    return NewPartnerSecurityalertsSecurityAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PartnerSecurityAlertsRequestBuilder when successful
+func (m *PartnerRequestBuilder) SecurityAlerts()(*PartnerSecurityAlertsRequestBuilder) {
+    return NewPartnerSecurityAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property partner for security
 // returns a *RequestInformation when successful

@@ -147,7 +147,7 @@ func (m *ElevationRequestApplicationDetail) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetFileDescription gets the fileDescription property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
+// GetFileDescription gets the fileDescription property value. The path of the file in the request for elevation, for example, %programfiles%/git/cmd
 // returns a *string when successful
 func (m *ElevationRequestApplicationDetail) GetFileDescription()(*string) {
     val, err := m.GetBackingStore().Get("fileDescription")
@@ -183,7 +183,7 @@ func (m *ElevationRequestApplicationDetail) GetFileName()(*string) {
     }
     return nil
 }
-// GetFilePath gets the filePath property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
+// GetFilePath gets the filePath property value. The path of the file in the request for elevation, for example, %programfiles%/git/cmd
 // returns a *string when successful
 func (m *ElevationRequestApplicationDetail) GetFilePath()(*string) {
     val, err := m.GetBackingStore().Get("filePath")
@@ -243,7 +243,7 @@ func (m *ElevationRequestApplicationDetail) GetProductVersion()(*string) {
     }
     return nil
 }
-// GetPublisherCert gets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encoded_leaf_cert1, encoded_leaf_cert2....]
+// GetPublisherCert gets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encodedleafcert1, encodedleafcert2....]
 // returns a *string when successful
 func (m *ElevationRequestApplicationDetail) GetPublisherCert()(*string) {
     val, err := m.GetBackingStore().Get("publisherCert")
@@ -348,7 +348,7 @@ func (m *ElevationRequestApplicationDetail) SetAdditionalData(value map[string]a
 func (m *ElevationRequestApplicationDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFileDescription sets the fileDescription property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
+// SetFileDescription sets the fileDescription property value. The path of the file in the request for elevation, for example, %programfiles%/git/cmd
 func (m *ElevationRequestApplicationDetail) SetFileDescription(value *string)() {
     err := m.GetBackingStore().Set("fileDescription", value)
     if err != nil {
@@ -369,7 +369,7 @@ func (m *ElevationRequestApplicationDetail) SetFileName(value *string)() {
         panic(err)
     }
 }
-// SetFilePath sets the filePath property value. The path of the file in the request for elevation, for example, %programfiles%\git\cmd
+// SetFilePath sets the filePath property value. The path of the file in the request for elevation, for example, %programfiles%/git/cmd
 func (m *ElevationRequestApplicationDetail) SetFilePath(value *string)() {
     err := m.GetBackingStore().Set("filePath", value)
     if err != nil {
@@ -404,7 +404,7 @@ func (m *ElevationRequestApplicationDetail) SetProductVersion(value *string)() {
         panic(err)
     }
 }
-// SetPublisherCert sets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encoded_leaf_cert1, encoded_leaf_cert2....]
+// SetPublisherCert sets the publisherCert property value. The list of base64 encoded certificate for each signer, for example, string[encodedleafcert1, encodedleafcert2....]
 func (m *ElevationRequestApplicationDetail) SetPublisherCert(value *string)() {
     err := m.GetBackingStore().Set("publisherCert", value)
     if err != nil {

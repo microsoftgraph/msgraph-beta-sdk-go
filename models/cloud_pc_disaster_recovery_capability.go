@@ -40,7 +40,7 @@ func (m *CloudPcDisasterRecoveryCapability) GetAdditionalData()(map[string]any) 
 func (m *CloudPcDisasterRecoveryCapability) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCapabilityType gets the capabilityType property value. The capabilityType property
+// GetCapabilityType gets the capabilityType property value. The disaster recovery action that can be performed for the Cloud PC. The possible values are: none, failover, failback, unknownFutureValue.
 // returns a *CloudPcDisasterRecoveryCapabilityType when successful
 func (m *CloudPcDisasterRecoveryCapability) GetCapabilityType()(*CloudPcDisasterRecoveryCapabilityType) {
     val, err := m.GetBackingStore().Get("capabilityType")
@@ -110,7 +110,7 @@ func (m *CloudPcDisasterRecoveryCapability) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPrimaryRegion gets the primaryRegion property value. The primaryRegion property
+// GetPrimaryRegion gets the primaryRegion property value. The primary and mainly used region where the Cloud PC is located.
 // returns a *string when successful
 func (m *CloudPcDisasterRecoveryCapability) GetPrimaryRegion()(*string) {
     val, err := m.GetBackingStore().Get("primaryRegion")
@@ -122,7 +122,7 @@ func (m *CloudPcDisasterRecoveryCapability) GetPrimaryRegion()(*string) {
     }
     return nil
 }
-// GetSecondaryRegion gets the secondaryRegion property value. The secondaryRegion property
+// GetSecondaryRegion gets the secondaryRegion property value. The secondary region to which the Cloud PC can be failed over during a regional outage.
 // returns a *string when successful
 func (m *CloudPcDisasterRecoveryCapability) GetSecondaryRegion()(*string) {
     val, err := m.GetBackingStore().Get("secondaryRegion")
@@ -180,7 +180,7 @@ func (m *CloudPcDisasterRecoveryCapability) SetAdditionalData(value map[string]a
 func (m *CloudPcDisasterRecoveryCapability) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCapabilityType sets the capabilityType property value. The capabilityType property
+// SetCapabilityType sets the capabilityType property value. The disaster recovery action that can be performed for the Cloud PC. The possible values are: none, failover, failback, unknownFutureValue.
 func (m *CloudPcDisasterRecoveryCapability) SetCapabilityType(value *CloudPcDisasterRecoveryCapabilityType)() {
     err := m.GetBackingStore().Set("capabilityType", value)
     if err != nil {
@@ -194,14 +194,14 @@ func (m *CloudPcDisasterRecoveryCapability) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPrimaryRegion sets the primaryRegion property value. The primaryRegion property
+// SetPrimaryRegion sets the primaryRegion property value. The primary and mainly used region where the Cloud PC is located.
 func (m *CloudPcDisasterRecoveryCapability) SetPrimaryRegion(value *string)() {
     err := m.GetBackingStore().Set("primaryRegion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecondaryRegion sets the secondaryRegion property value. The secondaryRegion property
+// SetSecondaryRegion sets the secondaryRegion property value. The secondary region to which the Cloud PC can be failed over during a regional outage.
 func (m *CloudPcDisasterRecoveryCapability) SetSecondaryRegion(value *string)() {
     err := m.GetBackingStore().Set("secondaryRegion", value)
     if err != nil {

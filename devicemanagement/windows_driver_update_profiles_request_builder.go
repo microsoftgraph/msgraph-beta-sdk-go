@@ -1,0 +1,152 @@
+package devicemanagement
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// WindowsDriverUpdateProfilesRequestBuilder provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
+type WindowsDriverUpdateProfilesRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// WindowsDriverUpdateProfilesRequestBuilderGetQueryParameters a collection of windows driver update profiles
+type WindowsDriverUpdateProfilesRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Order items by property values
+    Orderby []string `uriparametername:"%24orderby"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
+}
+// WindowsDriverUpdateProfilesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type WindowsDriverUpdateProfilesRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *WindowsDriverUpdateProfilesRequestBuilderGetQueryParameters
+}
+// WindowsDriverUpdateProfilesRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type WindowsDriverUpdateProfilesRequestBuilderPostRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ByWindowsDriverUpdateProfileId provides operations to manage the windowsDriverUpdateProfiles property of the microsoft.graph.deviceManagement entity.
+// returns a *WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder when successful
+func (m *WindowsDriverUpdateProfilesRequestBuilder) ByWindowsDriverUpdateProfileId(windowsDriverUpdateProfileId string)(*WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if windowsDriverUpdateProfileId != "" {
+        urlTplParams["windowsDriverUpdateProfile%2Did"] = windowsDriverUpdateProfileId
+    }
+    return NewWindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
+// NewWindowsDriverUpdateProfilesRequestBuilderInternal instantiates a new WindowsDriverUpdateProfilesRequestBuilder and sets the default values.
+func NewWindowsDriverUpdateProfilesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsDriverUpdateProfilesRequestBuilder) {
+    m := &WindowsDriverUpdateProfilesRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/windowsDriverUpdateProfiles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+    }
+    return m
+}
+// NewWindowsDriverUpdateProfilesRequestBuilder instantiates a new WindowsDriverUpdateProfilesRequestBuilder and sets the default values.
+func NewWindowsDriverUpdateProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsDriverUpdateProfilesRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewWindowsDriverUpdateProfilesRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Count provides operations to count the resources in the collection.
+// returns a *WindowsDriverUpdateProfilesCountRequestBuilder when successful
+func (m *WindowsDriverUpdateProfilesRequestBuilder) Count()(*WindowsDriverUpdateProfilesCountRequestBuilder) {
+    return NewWindowsDriverUpdateProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get a collection of windows driver update profiles
+// returns a WindowsDriverUpdateProfileCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *WindowsDriverUpdateProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsDriverUpdateProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateProfileCollectionResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWindowsDriverUpdateProfileCollectionResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateProfileCollectionResponseable), nil
+}
+// Post create new navigation property to windowsDriverUpdateProfiles for deviceManagement
+// returns a WindowsDriverUpdateProfileable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *WindowsDriverUpdateProfilesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateProfileable, requestConfiguration *WindowsDriverUpdateProfilesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateProfileable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWindowsDriverUpdateProfileFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateProfileable), nil
+}
+// ToGetRequestInformation a collection of windows driver update profiles
+// returns a *RequestInformation when successful
+func (m *WindowsDriverUpdateProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsDriverUpdateProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToPostRequestInformation create new navigation property to windowsDriverUpdateProfiles for deviceManagement
+// returns a *RequestInformation when successful
+func (m *WindowsDriverUpdateProfilesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsDriverUpdateProfileable, requestConfiguration *WindowsDriverUpdateProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *WindowsDriverUpdateProfilesRequestBuilder when successful
+func (m *WindowsDriverUpdateProfilesRequestBuilder) WithUrl(rawUrl string)(*WindowsDriverUpdateProfilesRequestBuilder) {
+    return NewWindowsDriverUpdateProfilesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

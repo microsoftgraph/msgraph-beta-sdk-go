@@ -116,14 +116,14 @@ func (m *CompaniesItemVendorsVendorItemRequestBuilder) Patch(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VendorEscapedable), nil
 }
 // PaymentMethod provides operations to manage the paymentMethod property of the microsoft.graph.vendor entity.
-// returns a *CompaniesItemVendorsItemPaymentmethodPaymentMethodRequestBuilder when successful
-func (m *CompaniesItemVendorsVendorItemRequestBuilder) PaymentMethod()(*CompaniesItemVendorsItemPaymentmethodPaymentMethodRequestBuilder) {
-    return NewCompaniesItemVendorsItemPaymentmethodPaymentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemVendorsItemPaymentMethodRequestBuilder when successful
+func (m *CompaniesItemVendorsVendorItemRequestBuilder) PaymentMethod()(*CompaniesItemVendorsItemPaymentMethodRequestBuilder) {
+    return NewCompaniesItemVendorsItemPaymentMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // PaymentTerm provides operations to manage the paymentTerm property of the microsoft.graph.vendor entity.
-// returns a *CompaniesItemVendorsItemPaymenttermPaymentTermRequestBuilder when successful
-func (m *CompaniesItemVendorsVendorItemRequestBuilder) PaymentTerm()(*CompaniesItemVendorsItemPaymenttermPaymentTermRequestBuilder) {
-    return NewCompaniesItemVendorsItemPaymenttermPaymentTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemVendorsItemPaymentTermRequestBuilder when successful
+func (m *CompaniesItemVendorsVendorItemRequestBuilder) PaymentTerm()(*CompaniesItemVendorsItemPaymentTermRequestBuilder) {
+    return NewCompaniesItemVendorsItemPaymentTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Picture provides operations to manage the picture property of the microsoft.graph.vendor entity.
 // returns a *CompaniesItemVendorsItemPictureRequestBuilder when successful

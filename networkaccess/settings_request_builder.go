@@ -42,9 +42,9 @@ type SettingsRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ConditionalAccess provides operations to manage the conditionalAccess property of the microsoft.graph.networkaccess.settings entity.
-// returns a *SettingsConditionalaccessConditionalAccessRequestBuilder when successful
-func (m *SettingsRequestBuilder) ConditionalAccess()(*SettingsConditionalaccessConditionalAccessRequestBuilder) {
-    return NewSettingsConditionalaccessConditionalAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SettingsConditionalAccessRequestBuilder when successful
+func (m *SettingsRequestBuilder) ConditionalAccess()(*SettingsConditionalAccessRequestBuilder) {
+    return NewSettingsConditionalAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewSettingsRequestBuilderInternal instantiates a new SettingsRequestBuilder and sets the default values.
 func NewSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SettingsRequestBuilder) {
@@ -60,9 +60,9 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     return NewSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CrossTenantAccess provides operations to manage the crossTenantAccess property of the microsoft.graph.networkaccess.settings entity.
-// returns a *SettingsCrosstenantaccessCrossTenantAccessRequestBuilder when successful
-func (m *SettingsRequestBuilder) CrossTenantAccess()(*SettingsCrosstenantaccessCrossTenantAccessRequestBuilder) {
-    return NewSettingsCrosstenantaccessCrossTenantAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SettingsCrossTenantAccessRequestBuilder when successful
+func (m *SettingsRequestBuilder) CrossTenantAccess()(*SettingsCrossTenantAccessRequestBuilder) {
+    return NewSettingsCrossTenantAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property settings for networkAccess
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -81,14 +81,14 @@ func (m *SettingsRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     return nil
 }
 // EnrichedAuditLogs provides operations to manage the enrichedAuditLogs property of the microsoft.graph.networkaccess.settings entity.
-// returns a *SettingsEnrichedauditlogsEnrichedAuditLogsRequestBuilder when successful
-func (m *SettingsRequestBuilder) EnrichedAuditLogs()(*SettingsEnrichedauditlogsEnrichedAuditLogsRequestBuilder) {
-    return NewSettingsEnrichedauditlogsEnrichedAuditLogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SettingsEnrichedAuditLogsRequestBuilder when successful
+func (m *SettingsRequestBuilder) EnrichedAuditLogs()(*SettingsEnrichedAuditLogsRequestBuilder) {
+    return NewSettingsEnrichedAuditLogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ForwardingOptions provides operations to manage the forwardingOptions property of the microsoft.graph.networkaccess.settings entity.
-// returns a *SettingsForwardingoptionsForwardingOptionsRequestBuilder when successful
-func (m *SettingsRequestBuilder) ForwardingOptions()(*SettingsForwardingoptionsForwardingOptionsRequestBuilder) {
-    return NewSettingsForwardingoptionsForwardingOptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SettingsForwardingOptionsRequestBuilder when successful
+func (m *SettingsRequestBuilder) ForwardingOptions()(*SettingsForwardingOptionsRequestBuilder) {
+    return NewSettingsForwardingOptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get global Secure Access settings.
 // returns a Settingsable when successful

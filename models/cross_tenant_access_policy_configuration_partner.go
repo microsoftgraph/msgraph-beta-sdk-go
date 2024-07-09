@@ -298,7 +298,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantId()(*string) {
     }
     return nil
 }
-// GetTenantRestrictions gets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied identities on your network or devices.
+// GetTenantRestrictions gets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for users in your organization who access a partner organization using partner supplied identities on your network or devices.
 // returns a CrossTenantAccessPolicyTenantRestrictionsable when successful
 func (m *CrossTenantAccessPolicyConfigurationPartner) GetTenantRestrictions()(CrossTenantAccessPolicyTenantRestrictionsable) {
     val, err := m.GetBackingStore().Get("tenantRestrictions")
@@ -480,7 +480,7 @@ func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantId(value *string)
         panic(err)
     }
 }
-// SetTenantRestrictions sets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied identities on your network or devices.
+// SetTenantRestrictions sets the tenantRestrictions property value. Defines the partner-specific tenant restrictions configuration for users in your organization who access a partner organization using partner supplied identities on your network or devices.
 func (m *CrossTenantAccessPolicyConfigurationPartner) SetTenantRestrictions(value CrossTenantAccessPolicyTenantRestrictionsable)() {
     err := m.GetBackingStore().Set("tenantRestrictions", value)
     if err != nil {

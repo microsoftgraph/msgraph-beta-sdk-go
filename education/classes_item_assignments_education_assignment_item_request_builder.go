@@ -112,14 +112,14 @@ func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentable), nil
 }
 // GradingCategory provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.
-// returns a *ClassesItemAssignmentsItemGradingcategoryGradingCategoryRequestBuilder when successful
-func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) GradingCategory()(*ClassesItemAssignmentsItemGradingcategoryGradingCategoryRequestBuilder) {
-    return NewClassesItemAssignmentsItemGradingcategoryGradingCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentsItemGradingCategoryRequestBuilder when successful
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) GradingCategory()(*ClassesItemAssignmentsItemGradingCategoryRequestBuilder) {
+    return NewClassesItemAssignmentsItemGradingCategoryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GradingScheme provides operations to manage the gradingScheme property of the microsoft.graph.educationAssignment entity.
-// returns a *ClassesItemAssignmentsItemGradingschemeGradingSchemeRequestBuilder when successful
-func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) GradingScheme()(*ClassesItemAssignmentsItemGradingschemeGradingSchemeRequestBuilder) {
-    return NewClassesItemAssignmentsItemGradingschemeGradingSchemeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentsItemGradingSchemeRequestBuilder when successful
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) GradingScheme()(*ClassesItemAssignmentsItemGradingSchemeRequestBuilder) {
+    return NewClassesItemAssignmentsItemGradingSchemeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update an educationAssignment object.  Only teachers in the class can do this. You can't use a PATCH request to change the status of an assignment. Use the publish action to change the assignment status.
 // returns a EducationAssignmentable when successful
@@ -160,14 +160,14 @@ func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) Rubric()(*
     return NewClassesItemAssignmentsItemRubricRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetUpFeedbackResourcesFolder provides operations to call the setUpFeedbackResourcesFolder method.
-// returns a *ClassesItemAssignmentsItemSetupfeedbackresourcesfolderSetUpFeedbackResourcesFolderRequestBuilder when successful
-func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpFeedbackResourcesFolder()(*ClassesItemAssignmentsItemSetupfeedbackresourcesfolderSetUpFeedbackResourcesFolderRequestBuilder) {
-    return NewClassesItemAssignmentsItemSetupfeedbackresourcesfolderSetUpFeedbackResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilder when successful
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpFeedbackResourcesFolder()(*ClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilder) {
+    return NewClassesItemAssignmentsItemSetUpFeedbackResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SetUpResourcesFolder provides operations to call the setUpResourcesFolder method.
-// returns a *ClassesItemAssignmentsItemSetupresourcesfolderSetUpResourcesFolderRequestBuilder when successful
-func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpResourcesFolder()(*ClassesItemAssignmentsItemSetupresourcesfolderSetUpResourcesFolderRequestBuilder) {
-    return NewClassesItemAssignmentsItemSetupresourcesfolderSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilder when successful
+func (m *ClassesItemAssignmentsEducationAssignmentItemRequestBuilder) SetUpResourcesFolder()(*ClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilder) {
+    return NewClassesItemAssignmentsItemSetUpResourcesFolderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Submissions provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
 // returns a *ClassesItemAssignmentsItemSubmissionsRequestBuilder when successful

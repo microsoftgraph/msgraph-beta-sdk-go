@@ -111,9 +111,9 @@ func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) Patch(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementSettingCategoryable), nil
 }
 // SettingDefinitions provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
-// returns a *CategoriesItemSettingdefinitionsSettingDefinitionsRequestBuilder when successful
-func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDefinitions()(*CategoriesItemSettingdefinitionsSettingDefinitionsRequestBuilder) {
-    return NewCategoriesItemSettingdefinitionsSettingDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CategoriesItemSettingDefinitionsRequestBuilder when successful
+func (m *CategoriesDeviceManagementSettingCategoryItemRequestBuilder) SettingDefinitions()(*CategoriesItemSettingDefinitionsRequestBuilder) {
+    return NewCategoriesItemSettingDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property categories for deviceManagement
 // returns a *RequestInformation when successful

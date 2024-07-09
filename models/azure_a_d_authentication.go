@@ -19,7 +19,7 @@ func NewAzureADAuthentication()(*AzureADAuthentication) {
 func CreateAzureADAuthenticationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureADAuthentication(), nil
 }
-// GetAttainments gets the attainments property value. A list of monthly serviceLevelAgreementAttainment objects.
+// GetAttainments gets the attainments property value. SLA data for a Microsoft Entra tenant for a calendar month.
 // returns a []ServiceLevelAgreementAttainmentable when successful
 func (m *AzureADAuthentication) GetAttainments()([]ServiceLevelAgreementAttainmentable) {
     val, err := m.GetBackingStore().Get("attainments")
@@ -73,7 +73,7 @@ func (m *AzureADAuthentication) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAttainments sets the attainments property value. A list of monthly serviceLevelAgreementAttainment objects.
+// SetAttainments sets the attainments property value. SLA data for a Microsoft Entra tenant for a calendar month.
 func (m *AzureADAuthentication) SetAttainments(value []ServiceLevelAgreementAttainmentable)() {
     err := m.GetBackingStore().Set("attainments", value)
     if err != nil {

@@ -42,9 +42,9 @@ type ItemAnalyticsRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ActivityStatistics provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
-// returns a *ItemAnalyticsActivitystatisticsActivityStatisticsRequestBuilder when successful
-func (m *ItemAnalyticsRequestBuilder) ActivityStatistics()(*ItemAnalyticsActivitystatisticsActivityStatisticsRequestBuilder) {
-    return NewItemAnalyticsActivitystatisticsActivityStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAnalyticsActivityStatisticsRequestBuilder when successful
+func (m *ItemAnalyticsRequestBuilder) ActivityStatistics()(*ItemAnalyticsActivityStatisticsRequestBuilder) {
+    return NewItemAnalyticsActivityStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemAnalyticsRequestBuilderInternal instantiates a new ItemAnalyticsRequestBuilder and sets the default values.
 func NewItemAnalyticsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemAnalyticsRequestBuilder) {
