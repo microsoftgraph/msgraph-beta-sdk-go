@@ -91,9 +91,9 @@ func (m *IdentitiesRequestBuilder) Get(ctx context.Context, requestConfiguration
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IdentityContainerable), nil
 }
 // HealthIssues provides operations to manage the healthIssues property of the microsoft.graph.security.identityContainer entity.
-// returns a *IdentitiesHealthissuesHealthIssuesRequestBuilder when successful
-func (m *IdentitiesRequestBuilder) HealthIssues()(*IdentitiesHealthissuesHealthIssuesRequestBuilder) {
-    return NewIdentitiesHealthissuesHealthIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IdentitiesHealthIssuesRequestBuilder when successful
+func (m *IdentitiesRequestBuilder) HealthIssues()(*IdentitiesHealthIssuesRequestBuilder) {
+    return NewIdentitiesHealthIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property identities in security
 // returns a IdentityContainerable when successful

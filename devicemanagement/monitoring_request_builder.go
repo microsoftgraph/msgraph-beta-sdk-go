@@ -42,14 +42,14 @@ type MonitoringRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AlertRecords provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.
-// returns a *MonitoringAlertrecordsAlertRecordsRequestBuilder when successful
-func (m *MonitoringRequestBuilder) AlertRecords()(*MonitoringAlertrecordsAlertRecordsRequestBuilder) {
-    return NewMonitoringAlertrecordsAlertRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MonitoringAlertRecordsRequestBuilder when successful
+func (m *MonitoringRequestBuilder) AlertRecords()(*MonitoringAlertRecordsRequestBuilder) {
+    return NewMonitoringAlertRecordsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AlertRules provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.
-// returns a *MonitoringAlertrulesAlertRulesRequestBuilder when successful
-func (m *MonitoringRequestBuilder) AlertRules()(*MonitoringAlertrulesAlertRulesRequestBuilder) {
-    return NewMonitoringAlertrulesAlertRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MonitoringAlertRulesRequestBuilder when successful
+func (m *MonitoringRequestBuilder) AlertRules()(*MonitoringAlertRulesRequestBuilder) {
+    return NewMonitoringAlertRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewMonitoringRequestBuilderInternal instantiates a new MonitoringRequestBuilder and sets the default values.
 func NewMonitoringRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MonitoringRequestBuilder) {

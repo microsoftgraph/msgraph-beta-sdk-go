@@ -111,9 +111,9 @@ func (m *FilteringPolicyItemRequestBuilder) Patch(ctx context.Context, body i43e
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable), nil
 }
 // PolicyRules provides operations to manage the policyRules property of the microsoft.graph.networkaccess.policy entity.
-// returns a *ItemPolicyrulesPolicyRulesRequestBuilder when successful
-func (m *FilteringPolicyItemRequestBuilder) PolicyRules()(*ItemPolicyrulesPolicyRulesRequestBuilder) {
-    return NewItemPolicyrulesPolicyRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPolicyRulesRequestBuilder when successful
+func (m *FilteringPolicyItemRequestBuilder) PolicyRules()(*ItemPolicyRulesRequestBuilder) {
+    return NewItemPolicyRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from filteringPolicies
 // returns a *RequestInformation when successful

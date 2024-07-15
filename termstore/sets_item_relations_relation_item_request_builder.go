@@ -71,9 +71,9 @@ func (m *SetsItemRelationsRelationItemRequestBuilder) Delete(ctx context.Context
     return nil
 }
 // FromTerm provides operations to manage the fromTerm property of the microsoft.graph.termStore.relation entity.
-// returns a *SetsItemRelationsItemFromtermFromTermRequestBuilder when successful
-func (m *SetsItemRelationsRelationItemRequestBuilder) FromTerm()(*SetsItemRelationsItemFromtermFromTermRequestBuilder) {
-    return NewSetsItemRelationsItemFromtermFromTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SetsItemRelationsItemFromTermRequestBuilder when successful
+func (m *SetsItemRelationsRelationItemRequestBuilder) FromTerm()(*SetsItemRelationsItemFromTermRequestBuilder) {
+    return NewSetsItemRelationsItemFromTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get indicates which terms have been pinned or reused directly under the set.
 // returns a Relationable when successful
@@ -161,9 +161,9 @@ func (m *SetsItemRelationsRelationItemRequestBuilder) ToPatchRequestInformation(
     return requestInfo, nil
 }
 // ToTerm provides operations to manage the toTerm property of the microsoft.graph.termStore.relation entity.
-// returns a *SetsItemRelationsItemTotermToTermRequestBuilder when successful
-func (m *SetsItemRelationsRelationItemRequestBuilder) ToTerm()(*SetsItemRelationsItemTotermToTermRequestBuilder) {
-    return NewSetsItemRelationsItemTotermToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SetsItemRelationsItemToTermRequestBuilder when successful
+func (m *SetsItemRelationsRelationItemRequestBuilder) ToTerm()(*SetsItemRelationsItemToTermRequestBuilder) {
+    return NewSetsItemRelationsItemToTermRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *SetsItemRelationsRelationItemRequestBuilder when successful

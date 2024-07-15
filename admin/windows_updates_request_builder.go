@@ -76,9 +76,9 @@ func (m *WindowsUpdatesRequestBuilder) Delete(ctx context.Context, requestConfig
     return nil
 }
 // DeploymentAudiences provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.
-// returns a *WindowsUpdatesDeploymentaudiencesDeploymentAudiencesRequestBuilder when successful
-func (m *WindowsUpdatesRequestBuilder) DeploymentAudiences()(*WindowsUpdatesDeploymentaudiencesDeploymentAudiencesRequestBuilder) {
-    return NewWindowsUpdatesDeploymentaudiencesDeploymentAudiencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsUpdatesDeploymentAudiencesRequestBuilder when successful
+func (m *WindowsUpdatesRequestBuilder) DeploymentAudiences()(*WindowsUpdatesDeploymentAudiencesRequestBuilder) {
+    return NewWindowsUpdatesDeploymentAudiencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Deployments provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.
 // returns a *WindowsUpdatesDeploymentsRequestBuilder when successful
@@ -131,9 +131,9 @@ func (m *WindowsUpdatesRequestBuilder) Products()(*WindowsUpdatesProductsRequest
     return NewWindowsUpdatesProductsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ResourceConnections provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.
-// returns a *WindowsUpdatesResourceconnectionsResourceConnectionsRequestBuilder when successful
-func (m *WindowsUpdatesRequestBuilder) ResourceConnections()(*WindowsUpdatesResourceconnectionsResourceConnectionsRequestBuilder) {
-    return NewWindowsUpdatesResourceconnectionsResourceConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsUpdatesResourceConnectionsRequestBuilder when successful
+func (m *WindowsUpdatesRequestBuilder) ResourceConnections()(*WindowsUpdatesResourceConnectionsRequestBuilder) {
+    return NewWindowsUpdatesResourceConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property updates for admin
 // returns a *RequestInformation when successful
@@ -176,14 +176,14 @@ func (m *WindowsUpdatesRequestBuilder) ToPatchRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // UpdatableAssets provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.
-// returns a *WindowsUpdatesUpdatableassetsUpdatableAssetsRequestBuilder when successful
-func (m *WindowsUpdatesRequestBuilder) UpdatableAssets()(*WindowsUpdatesUpdatableassetsUpdatableAssetsRequestBuilder) {
-    return NewWindowsUpdatesUpdatableassetsUpdatableAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsUpdatesUpdatableAssetsRequestBuilder when successful
+func (m *WindowsUpdatesRequestBuilder) UpdatableAssets()(*WindowsUpdatesUpdatableAssetsRequestBuilder) {
+    return NewWindowsUpdatesUpdatableAssetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UpdatePolicies provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.
-// returns a *WindowsUpdatesUpdatepoliciesUpdatePoliciesRequestBuilder when successful
-func (m *WindowsUpdatesRequestBuilder) UpdatePolicies()(*WindowsUpdatesUpdatepoliciesUpdatePoliciesRequestBuilder) {
-    return NewWindowsUpdatesUpdatepoliciesUpdatePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *WindowsUpdatesUpdatePoliciesRequestBuilder when successful
+func (m *WindowsUpdatesRequestBuilder) UpdatePolicies()(*WindowsUpdatesUpdatePoliciesRequestBuilder) {
+    return NewWindowsUpdatesUpdatePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *WindowsUpdatesRequestBuilder when successful

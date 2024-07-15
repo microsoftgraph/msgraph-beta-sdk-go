@@ -87,7 +87,7 @@ func (m *PlannerArchivalInfo) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetJustification gets the justification property value. The justification property
+// GetJustification gets the justification property value. Read-only. Reason why the entity was archived or unarchived.
 // returns a *string when successful
 func (m *PlannerArchivalInfo) GetJustification()(*string) {
     val, err := m.GetBackingStore().Get("justification")
@@ -111,7 +111,7 @@ func (m *PlannerArchivalInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStatusChangedBy gets the statusChangedBy property value. The statusChangedBy property
+// GetStatusChangedBy gets the statusChangedBy property value. Read-only. Identity of the user who archived or unarchived the entity
 // returns a IdentitySetable when successful
 func (m *PlannerArchivalInfo) GetStatusChangedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("statusChangedBy")
@@ -123,7 +123,7 @@ func (m *PlannerArchivalInfo) GetStatusChangedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetStatusChangedDateTime gets the statusChangedDateTime property value. The statusChangedDateTime property
+// GetStatusChangedDateTime gets the statusChangedDateTime property value. Read-only. Date and time at which the entity's archive status changed.
 // returns a *Time when successful
 func (m *PlannerArchivalInfo) GetStatusChangedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("statusChangedDateTime")
@@ -180,7 +180,7 @@ func (m *PlannerArchivalInfo) SetAdditionalData(value map[string]any)() {
 func (m *PlannerArchivalInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetJustification sets the justification property value. The justification property
+// SetJustification sets the justification property value. Read-only. Reason why the entity was archived or unarchived.
 func (m *PlannerArchivalInfo) SetJustification(value *string)() {
     err := m.GetBackingStore().Set("justification", value)
     if err != nil {
@@ -194,14 +194,14 @@ func (m *PlannerArchivalInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStatusChangedBy sets the statusChangedBy property value. The statusChangedBy property
+// SetStatusChangedBy sets the statusChangedBy property value. Read-only. Identity of the user who archived or unarchived the entity
 func (m *PlannerArchivalInfo) SetStatusChangedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("statusChangedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatusChangedDateTime sets the statusChangedDateTime property value. The statusChangedDateTime property
+// SetStatusChangedDateTime sets the statusChangedDateTime property value. Read-only. Date and time at which the entity's archive status changed.
 func (m *PlannerArchivalInfo) SetStatusChangedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("statusChangedDateTime", value)
     if err != nil {

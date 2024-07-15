@@ -41,9 +41,9 @@ func NewCompaniesItemDimensionsDimensionItemRequestBuilder(rawUrl string, reques
     return NewCompaniesItemDimensionsDimensionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // DimensionValues provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.
-// returns a *CompaniesItemDimensionsItemDimensionvaluesDimensionValuesRequestBuilder when successful
-func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValues()(*CompaniesItemDimensionsItemDimensionvaluesDimensionValuesRequestBuilder) {
-    return NewCompaniesItemDimensionsItemDimensionvaluesDimensionValuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemDimensionsItemDimensionValuesRequestBuilder when successful
+func (m *CompaniesItemDimensionsDimensionItemRequestBuilder) DimensionValues()(*CompaniesItemDimensionsItemDimensionValuesRequestBuilder) {
+    return NewCompaniesItemDimensionsItemDimensionValuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get dimensions from financials
 // returns a Dimensionable when successful

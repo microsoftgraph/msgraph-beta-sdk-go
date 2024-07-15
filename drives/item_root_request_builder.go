@@ -46,9 +46,9 @@ func (m *ItemRootRequestBuilder) Content()(*ItemRootContentRequestBuilder) {
     return NewItemRootContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ContentStream provides operations to manage the media for the drive entity.
-// returns a *ItemRootContentstreamContentStreamRequestBuilder when successful
-func (m *ItemRootRequestBuilder) ContentStream()(*ItemRootContentstreamContentStreamRequestBuilder) {
-    return NewItemRootContentstreamContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRootContentStreamRequestBuilder when successful
+func (m *ItemRootRequestBuilder) ContentStream()(*ItemRootContentStreamRequestBuilder) {
+    return NewItemRootContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the root folder of the drive. Read-only.
 // returns a DriveItemable when successful

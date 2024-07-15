@@ -42,44 +42,44 @@ type ServicePrincipalItemRequestBuilderPatchRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AddTokenSigningCertificate provides operations to call the addTokenSigningCertificate method.
-// returns a *ItemAddtokensigningcertificateAddTokenSigningCertificateRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) AddTokenSigningCertificate()(*ItemAddtokensigningcertificateAddTokenSigningCertificateRequestBuilder) {
-    return NewItemAddtokensigningcertificateAddTokenSigningCertificateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAddTokenSigningCertificateRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) AddTokenSigningCertificate()(*ItemAddTokenSigningCertificateRequestBuilder) {
+    return NewItemAddTokenSigningCertificateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AppManagementPolicies provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemAppmanagementpoliciesAppManagementPoliciesRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) AppManagementPolicies()(*ItemAppmanagementpoliciesAppManagementPoliciesRequestBuilder) {
-    return NewItemAppmanagementpoliciesAppManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAppManagementPoliciesRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) AppManagementPolicies()(*ItemAppManagementPoliciesRequestBuilder) {
+    return NewItemAppManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AppRoleAssignedTo provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemApproleassignedtoAppRoleAssignedToRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignedTo()(*ItemApproleassignedtoAppRoleAssignedToRequestBuilder) {
-    return NewItemApproleassignedtoAppRoleAssignedToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAppRoleAssignedToRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignedTo()(*ItemAppRoleAssignedToRequestBuilder) {
+    return NewItemAppRoleAssignedToRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AppRoleAssignments provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemApproleassignmentsAppRoleAssignmentsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignments()(*ItemApproleassignmentsAppRoleAssignmentsRequestBuilder) {
-    return NewItemApproleassignmentsAppRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemAppRoleAssignmentsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) AppRoleAssignments()(*ItemAppRoleAssignmentsRequestBuilder) {
+    return NewItemAppRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberGroups provides operations to call the checkMemberGroups method.
-// returns a *ItemCheckmembergroupsCheckMemberGroupsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) CheckMemberGroups()(*ItemCheckmembergroupsCheckMemberGroupsRequestBuilder) {
-    return NewItemCheckmembergroupsCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberGroupsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CheckMemberObjects provides operations to call the checkMemberObjects method.
-// returns a *ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) CheckMemberObjects()(*ItemCheckmemberobjectsCheckMemberObjectsRequestBuilder) {
-    return NewItemCheckmemberobjectsCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCheckMemberObjectsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ClaimsMappingPolicies provides operations to manage the claimsMappingPolicies property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemClaimsmappingpoliciesClaimsMappingPoliciesRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) ClaimsMappingPolicies()(*ItemClaimsmappingpoliciesClaimsMappingPoliciesRequestBuilder) {
-    return NewItemClaimsmappingpoliciesClaimsMappingPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemClaimsMappingPoliciesRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) ClaimsMappingPolicies()(*ItemClaimsMappingPoliciesRequestBuilder) {
+    return NewItemClaimsMappingPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ClaimsPolicy provides operations to manage the claimsPolicy property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemClaimspolicyClaimsPolicyRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) ClaimsPolicy()(*ItemClaimspolicyClaimsPolicyRequestBuilder) {
-    return NewItemClaimspolicyClaimsPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemClaimsPolicyRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) ClaimsPolicy()(*ItemClaimsPolicyRequestBuilder) {
+    return NewItemClaimsPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewServicePrincipalItemRequestBuilderInternal instantiates a new ServicePrincipalItemRequestBuilder and sets the default values.
 func NewServicePrincipalItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ServicePrincipalItemRequestBuilder) {
@@ -95,19 +95,19 @@ func NewServicePrincipalItemRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewServicePrincipalItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // CreatedObjects provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemCreatedobjectsCreatedObjectsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) CreatedObjects()(*ItemCreatedobjectsCreatedObjectsRequestBuilder) {
-    return NewItemCreatedobjectsCreatedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCreatedObjectsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) CreatedObjects()(*ItemCreatedObjectsRequestBuilder) {
+    return NewItemCreatedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CreatePasswordSingleSignOnCredentials provides operations to call the createPasswordSingleSignOnCredentials method.
-// returns a *ItemCreatepasswordsinglesignoncredentialsCreatePasswordSingleSignOnCredentialsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) CreatePasswordSingleSignOnCredentials()(*ItemCreatepasswordsinglesignoncredentialsCreatePasswordSingleSignOnCredentialsRequestBuilder) {
-    return NewItemCreatepasswordsinglesignoncredentialsCreatePasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCreatePasswordSingleSignOnCredentialsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) CreatePasswordSingleSignOnCredentials()(*ItemCreatePasswordSingleSignOnCredentialsRequestBuilder) {
+    return NewItemCreatePasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DelegatedPermissionClassifications provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemDelegatedpermissionclassificationsDelegatedPermissionClassificationsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) DelegatedPermissionClassifications()(*ItemDelegatedpermissionclassificationsDelegatedPermissionClassificationsRequestBuilder) {
-    return NewItemDelegatedpermissionclassificationsDelegatedPermissionClassificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDelegatedPermissionClassificationsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) DelegatedPermissionClassifications()(*ItemDelegatedPermissionClassificationsRequestBuilder) {
+    return NewItemDelegatedPermissionClassificationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete a servicePrincipal object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -129,9 +129,9 @@ func (m *ServicePrincipalItemRequestBuilder) Delete(ctx context.Context, request
     return nil
 }
 // DeletePasswordSingleSignOnCredentials provides operations to call the deletePasswordSingleSignOnCredentials method.
-// returns a *ItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) DeletePasswordSingleSignOnCredentials()(*ItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsRequestBuilder) {
-    return NewItemDeletepasswordsinglesignoncredentialsDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) DeletePasswordSingleSignOnCredentials()(*ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) {
+    return NewItemDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Endpoints provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.
 // returns a *ItemEndpointsRequestBuilder when successful
@@ -139,14 +139,14 @@ func (m *ServicePrincipalItemRequestBuilder) Endpoints()(*ItemEndpointsRequestBu
     return NewItemEndpointsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FederatedIdentityCredentials provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemFederatedidentitycredentialsFederatedIdentityCredentialsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentials()(*ItemFederatedidentitycredentialsFederatedIdentityCredentialsRequestBuilder) {
-    return NewItemFederatedidentitycredentialsFederatedIdentityCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemFederatedIdentityCredentialsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentials()(*ItemFederatedIdentityCredentialsRequestBuilder) {
+    return NewItemFederatedIdentityCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FederatedIdentityCredentialsWithName provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemFederatedidentitycredentialswithnameFederatedIdentityCredentialsWithNameRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentialsWithName(name *string)(*ItemFederatedidentitycredentialswithnameFederatedIdentityCredentialsWithNameRequestBuilder) {
-    return NewItemFederatedidentitycredentialswithnameFederatedIdentityCredentialsWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name)
+// returns a *ItemFederatedIdentityCredentialsWithNameRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) FederatedIdentityCredentialsWithName(name *string)(*ItemFederatedIdentityCredentialsWithNameRequestBuilder) {
+    return NewItemFederatedIdentityCredentialsWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name)
 }
 // Get retrieve the properties and relationships of a servicePrincipal object.
 // returns a ServicePrincipalable when successful
@@ -172,44 +172,44 @@ func (m *ServicePrincipalItemRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
 // GetMemberGroups provides operations to call the getMemberGroups method.
-// returns a *ItemGetmembergroupsGetMemberGroupsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) GetMemberGroups()(*ItemGetmembergroupsGetMemberGroupsRequestBuilder) {
-    return NewItemGetmembergroupsGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberGroupsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetMemberObjects provides operations to call the getMemberObjects method.
-// returns a *ItemGetmemberobjectsGetMemberObjectsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) GetMemberObjects()(*ItemGetmemberobjectsGetMemberObjectsRequestBuilder) {
-    return NewItemGetmemberobjectsGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetMemberObjectsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // GetPasswordSingleSignOnCredentials provides operations to call the getPasswordSingleSignOnCredentials method.
-// returns a *ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) GetPasswordSingleSignOnCredentials()(*ItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilder) {
-    return NewItemGetpasswordsinglesignoncredentialsGetPasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemGetPasswordSingleSignOnCredentialsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) GetPasswordSingleSignOnCredentials()(*ItemGetPasswordSingleSignOnCredentialsRequestBuilder) {
+    return NewItemGetPasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // HomeRealmDiscoveryPolicies provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemHomerealmdiscoverypoliciesHomeRealmDiscoveryPoliciesRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) HomeRealmDiscoveryPolicies()(*ItemHomerealmdiscoverypoliciesHomeRealmDiscoveryPoliciesRequestBuilder) {
-    return NewItemHomerealmdiscoverypoliciesHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemHomeRealmDiscoveryPoliciesRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) HomeRealmDiscoveryPolicies()(*ItemHomeRealmDiscoveryPoliciesRequestBuilder) {
+    return NewItemHomeRealmDiscoveryPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // LicenseDetails provides operations to manage the licenseDetails property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemLicensedetailsLicenseDetailsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) LicenseDetails()(*ItemLicensedetailsLicenseDetailsRequestBuilder) {
-    return NewItemLicensedetailsLicenseDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemLicenseDetailsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) LicenseDetails()(*ItemLicenseDetailsRequestBuilder) {
+    return NewItemLicenseDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MemberOf provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemMemberofMemberOfRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) MemberOf()(*ItemMemberofMemberOfRequestBuilder) {
-    return NewItemMemberofMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemMemberOfRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) MemberOf()(*ItemMemberOfRequestBuilder) {
+    return NewItemMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Oauth2PermissionGrants provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemOauth2permissiongrantsOauth2PermissionGrantsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) Oauth2PermissionGrants()(*ItemOauth2permissiongrantsOauth2PermissionGrantsRequestBuilder) {
-    return NewItemOauth2permissiongrantsOauth2PermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOauth2PermissionGrantsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) Oauth2PermissionGrants()(*ItemOauth2PermissionGrantsRequestBuilder) {
+    return NewItemOauth2PermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OwnedObjects provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemOwnedobjectsOwnedObjectsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) OwnedObjects()(*ItemOwnedobjectsOwnedObjectsRequestBuilder) {
-    return NewItemOwnedobjectsOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemOwnedObjectsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) OwnedObjects()(*ItemOwnedObjectsRequestBuilder) {
+    return NewItemOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Owners provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.
 // returns a *ItemOwnersRequestBuilder when successful
@@ -240,14 +240,14 @@ func (m *ServicePrincipalItemRequestBuilder) Patch(ctx context.Context, body ie2
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
 // PermissionGrantPreApprovalPolicies provides operations to manage the permissionGrantPreApprovalPolicies property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemPermissiongrantpreapprovalpoliciesPermissionGrantPreApprovalPoliciesRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) PermissionGrantPreApprovalPolicies()(*ItemPermissiongrantpreapprovalpoliciesPermissionGrantPreApprovalPoliciesRequestBuilder) {
-    return NewItemPermissiongrantpreapprovalpoliciesPermissionGrantPreApprovalPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemPermissionGrantPreApprovalPoliciesRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) PermissionGrantPreApprovalPolicies()(*ItemPermissionGrantPreApprovalPoliciesRequestBuilder) {
+    return NewItemPermissionGrantPreApprovalPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RemoteDesktopSecurityConfiguration provides operations to manage the remoteDesktopSecurityConfiguration property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemRemotedesktopsecurityconfigurationRemoteDesktopSecurityConfigurationRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) RemoteDesktopSecurityConfiguration()(*ItemRemotedesktopsecurityconfigurationRemoteDesktopSecurityConfigurationRequestBuilder) {
-    return NewItemRemotedesktopsecurityconfigurationRemoteDesktopSecurityConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRemoteDesktopSecurityConfigurationRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) RemoteDesktopSecurityConfiguration()(*ItemRemoteDesktopSecurityConfigurationRequestBuilder) {
+    return NewItemRemoteDesktopSecurityConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Restore provides operations to call the restore method.
 // returns a *ItemRestoreRequestBuilder when successful
@@ -285,14 +285,14 @@ func (m *ServicePrincipalItemRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // TokenIssuancePolicies provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemTokenissuancepoliciesTokenIssuancePoliciesRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) TokenIssuancePolicies()(*ItemTokenissuancepoliciesTokenIssuancePoliciesRequestBuilder) {
-    return NewItemTokenissuancepoliciesTokenIssuancePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTokenIssuancePoliciesRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) TokenIssuancePolicies()(*ItemTokenIssuancePoliciesRequestBuilder) {
+    return NewItemTokenIssuancePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TokenLifetimePolicies provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemTokenlifetimepoliciesTokenLifetimePoliciesRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) TokenLifetimePolicies()(*ItemTokenlifetimepoliciesTokenLifetimePoliciesRequestBuilder) {
-    return NewItemTokenlifetimepoliciesTokenLifetimePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTokenLifetimePoliciesRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) TokenLifetimePolicies()(*ItemTokenLifetimePoliciesRequestBuilder) {
+    return NewItemTokenLifetimePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToPatchRequestInformation create a new servicePrincipal object if it doesn't exist, or update the properties of an existing servicePrincipal object.
 // returns a *RequestInformation when successful
@@ -310,14 +310,14 @@ func (m *ServicePrincipalItemRequestBuilder) ToPatchRequestInformation(ctx conte
     return requestInfo, nil
 }
 // TransitiveMemberOf provides operations to manage the transitiveMemberOf property of the microsoft.graph.servicePrincipal entity.
-// returns a *ItemTransitivememberofTransitiveMemberOfRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) TransitiveMemberOf()(*ItemTransitivememberofTransitiveMemberOfRequestBuilder) {
-    return NewItemTransitivememberofTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemTransitiveMemberOfRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) TransitiveMemberOf()(*ItemTransitiveMemberOfRequestBuilder) {
+    return NewItemTransitiveMemberOfRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UpdatePasswordSingleSignOnCredentials provides operations to call the updatePasswordSingleSignOnCredentials method.
-// returns a *ItemUpdatepasswordsinglesignoncredentialsUpdatePasswordSingleSignOnCredentialsRequestBuilder when successful
-func (m *ServicePrincipalItemRequestBuilder) UpdatePasswordSingleSignOnCredentials()(*ItemUpdatepasswordsinglesignoncredentialsUpdatePasswordSingleSignOnCredentialsRequestBuilder) {
-    return NewItemUpdatepasswordsinglesignoncredentialsUpdatePasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemUpdatePasswordSingleSignOnCredentialsRequestBuilder when successful
+func (m *ServicePrincipalItemRequestBuilder) UpdatePasswordSingleSignOnCredentials()(*ItemUpdatePasswordSingleSignOnCredentialsRequestBuilder) {
+    return NewItemUpdatePasswordSingleSignOnCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ServicePrincipalItemRequestBuilder when successful

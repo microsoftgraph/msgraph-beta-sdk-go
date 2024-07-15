@@ -46,9 +46,9 @@ func (m *ItemItemsItemChildrenDriveItemItemRequestBuilder) Content()(*ItemItemsI
     return NewItemItemsItemChildrenItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ContentStream provides operations to manage the media for the drive entity.
-// returns a *ItemItemsItemChildrenItemContentstreamContentStreamRequestBuilder when successful
-func (m *ItemItemsItemChildrenDriveItemItemRequestBuilder) ContentStream()(*ItemItemsItemChildrenItemContentstreamContentStreamRequestBuilder) {
-    return NewItemItemsItemChildrenItemContentstreamContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemItemsItemChildrenItemContentStreamRequestBuilder when successful
+func (m *ItemItemsItemChildrenDriveItemItemRequestBuilder) ContentStream()(*ItemItemsItemChildrenItemContentStreamRequestBuilder) {
+    return NewItemItemsItemChildrenItemContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
 // returns a DriveItemable when successful

@@ -70,14 +70,14 @@ func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Decline()(*Item
     return NewItemCalendarEventsItemInstancesItemDeclineRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DismissReminder provides operations to call the dismissReminder method.
-// returns a *ItemCalendarEventsItemInstancesItemDismissreminderDismissReminderRequestBuilder when successful
-func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) DismissReminder()(*ItemCalendarEventsItemInstancesItemDismissreminderDismissReminderRequestBuilder) {
-    return NewItemCalendarEventsItemInstancesItemDismissreminderDismissReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemInstancesItemDismissReminderRequestBuilder when successful
+func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) DismissReminder()(*ItemCalendarEventsItemInstancesItemDismissReminderRequestBuilder) {
+    return NewItemCalendarEventsItemInstancesItemDismissReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ExceptionOccurrences provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
-// returns a *ItemCalendarEventsItemInstancesItemExceptionoccurrencesExceptionOccurrencesRequestBuilder when successful
-func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) ExceptionOccurrences()(*ItemCalendarEventsItemInstancesItemExceptionoccurrencesExceptionOccurrencesRequestBuilder) {
-    return NewItemCalendarEventsItemInstancesItemExceptionoccurrencesExceptionOccurrencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilder when successful
+func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) ExceptionOccurrences()(*ItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilder) {
+    return NewItemCalendarEventsItemInstancesItemExceptionOccurrencesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Extensions provides operations to manage the extensions property of the microsoft.graph.event entity.
 // returns a *ItemCalendarEventsItemInstancesItemExtensionsRequestBuilder when successful
@@ -110,14 +110,14 @@ func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) Get(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable), nil
 }
 // SnoozeReminder provides operations to call the snoozeReminder method.
-// returns a *ItemCalendarEventsItemInstancesItemSnoozereminderSnoozeReminderRequestBuilder when successful
-func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarEventsItemInstancesItemSnoozereminderSnoozeReminderRequestBuilder) {
-    return NewItemCalendarEventsItemInstancesItemSnoozereminderSnoozeReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder when successful
+func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder) {
+    return NewItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TentativelyAccept provides operations to call the tentativelyAccept method.
-// returns a *ItemCalendarEventsItemInstancesItemTentativelyacceptTentativelyAcceptRequestBuilder when successful
-func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) TentativelyAccept()(*ItemCalendarEventsItemInstancesItemTentativelyacceptTentativelyAcceptRequestBuilder) {
-    return NewItemCalendarEventsItemInstancesItemTentativelyacceptTentativelyAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemCalendarEventsItemInstancesItemTentativelyAcceptRequestBuilder when successful
+func (m *ItemCalendarEventsItemInstancesEventItemRequestBuilder) TentativelyAccept()(*ItemCalendarEventsItemInstancesItemTentativelyAcceptRequestBuilder) {
+    return NewItemCalendarEventsItemInstancesItemTentativelyAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
 // returns a *RequestInformation when successful

@@ -88,7 +88,7 @@ func (m *AppliedConditionalAccessPolicy) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEnforcedGrantControls gets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
+// GetEnforcedGrantControls gets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multifactor authentication').
 // returns a []string when successful
 func (m *AppliedConditionalAccessPolicy) GetEnforcedGrantControls()([]string) {
     val, err := m.GetBackingStore().Get("enforcedGrantControls")
@@ -476,7 +476,7 @@ func (m *AppliedConditionalAccessPolicy) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetEnforcedGrantControls sets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
+// SetEnforcedGrantControls sets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multifactor authentication').
 func (m *AppliedConditionalAccessPolicy) SetEnforcedGrantControls(value []string)() {
     err := m.GetBackingStore().Set("enforcedGrantControls", value)
     if err != nil {

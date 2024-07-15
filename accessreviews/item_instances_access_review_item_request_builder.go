@@ -42,9 +42,9 @@ type ItemInstancesAccessReviewItemRequestBuilderPatchRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ApplyDecisions provides operations to call the applyDecisions method.
-// returns a *ItemInstancesItemApplydecisionsApplyDecisionsRequestBuilder when successful
-func (m *ItemInstancesAccessReviewItemRequestBuilder) ApplyDecisions()(*ItemInstancesItemApplydecisionsApplyDecisionsRequestBuilder) {
-    return NewItemInstancesItemApplydecisionsApplyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemInstancesItemApplyDecisionsRequestBuilder when successful
+func (m *ItemInstancesAccessReviewItemRequestBuilder) ApplyDecisions()(*ItemInstancesItemApplyDecisionsRequestBuilder) {
+    return NewItemInstancesItemApplyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewItemInstancesAccessReviewItemRequestBuilderInternal instantiates a new ItemInstancesAccessReviewItemRequestBuilder and sets the default values.
 func NewItemInstancesAccessReviewItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemInstancesAccessReviewItemRequestBuilder) {
@@ -101,9 +101,9 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) Get(ctx context.Context, r
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable), nil
 }
 // MyDecisions provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.
-// returns a *ItemInstancesItemMydecisionsMyDecisionsRequestBuilder when successful
-func (m *ItemInstancesAccessReviewItemRequestBuilder) MyDecisions()(*ItemInstancesItemMydecisionsMyDecisionsRequestBuilder) {
-    return NewItemInstancesItemMydecisionsMyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemInstancesItemMyDecisionsRequestBuilder when successful
+func (m *ItemInstancesAccessReviewItemRequestBuilder) MyDecisions()(*ItemInstancesItemMyDecisionsRequestBuilder) {
+    return NewItemInstancesItemMyDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property instances in accessReviews
 // returns a AccessReviewable when successful
@@ -126,9 +126,9 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) Patch(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewable), nil
 }
 // ResetDecisions provides operations to call the resetDecisions method.
-// returns a *ItemInstancesItemResetdecisionsResetDecisionsRequestBuilder when successful
-func (m *ItemInstancesAccessReviewItemRequestBuilder) ResetDecisions()(*ItemInstancesItemResetdecisionsResetDecisionsRequestBuilder) {
-    return NewItemInstancesItemResetdecisionsResetDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemInstancesItemResetDecisionsRequestBuilder when successful
+func (m *ItemInstancesAccessReviewItemRequestBuilder) ResetDecisions()(*ItemInstancesItemResetDecisionsRequestBuilder) {
+    return NewItemInstancesItemResetDecisionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Reviewers provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.
 // returns a *ItemInstancesItemReviewersRequestBuilder when successful
@@ -136,9 +136,9 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) Reviewers()(*ItemInstances
     return NewItemInstancesItemReviewersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SendReminder provides operations to call the sendReminder method.
-// returns a *ItemInstancesItemSendreminderSendReminderRequestBuilder when successful
-func (m *ItemInstancesAccessReviewItemRequestBuilder) SendReminder()(*ItemInstancesItemSendreminderSendReminderRequestBuilder) {
-    return NewItemInstancesItemSendreminderSendReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemInstancesItemSendReminderRequestBuilder when successful
+func (m *ItemInstancesAccessReviewItemRequestBuilder) SendReminder()(*ItemInstancesItemSendReminderRequestBuilder) {
+    return NewItemInstancesItemSendReminderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Stop provides operations to call the stop method.
 // returns a *ItemInstancesItemStopRequestBuilder when successful

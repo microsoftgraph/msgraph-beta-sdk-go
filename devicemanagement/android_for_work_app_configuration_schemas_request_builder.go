@@ -1,0 +1,152 @@
+package devicemanagement
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// AndroidForWorkAppConfigurationSchemasRequestBuilder provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
+type AndroidForWorkAppConfigurationSchemasRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// AndroidForWorkAppConfigurationSchemasRequestBuilderGetQueryParameters android for Work app configuration schema entities.
+type AndroidForWorkAppConfigurationSchemasRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Order items by property values
+    Orderby []string `uriparametername:"%24orderby"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
+}
+// AndroidForWorkAppConfigurationSchemasRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type AndroidForWorkAppConfigurationSchemasRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *AndroidForWorkAppConfigurationSchemasRequestBuilderGetQueryParameters
+}
+// AndroidForWorkAppConfigurationSchemasRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type AndroidForWorkAppConfigurationSchemasRequestBuilderPostRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ByAndroidForWorkAppConfigurationSchemaId provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.
+// returns a *AndroidForWorkAppConfigurationSchemasAndroidForWorkAppConfigurationSchemaItemRequestBuilder when successful
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) ByAndroidForWorkAppConfigurationSchemaId(androidForWorkAppConfigurationSchemaId string)(*AndroidForWorkAppConfigurationSchemasAndroidForWorkAppConfigurationSchemaItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if androidForWorkAppConfigurationSchemaId != "" {
+        urlTplParams["androidForWorkAppConfigurationSchema%2Did"] = androidForWorkAppConfigurationSchemaId
+    }
+    return NewAndroidForWorkAppConfigurationSchemasAndroidForWorkAppConfigurationSchemaItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
+// NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal instantiates a new AndroidForWorkAppConfigurationSchemasRequestBuilder and sets the default values.
+func NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkAppConfigurationSchemasRequestBuilder) {
+    m := &AndroidForWorkAppConfigurationSchemasRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/deviceManagement/androidForWorkAppConfigurationSchemas{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+    }
+    return m
+}
+// NewAndroidForWorkAppConfigurationSchemasRequestBuilder instantiates a new AndroidForWorkAppConfigurationSchemasRequestBuilder and sets the default values.
+func NewAndroidForWorkAppConfigurationSchemasRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AndroidForWorkAppConfigurationSchemasRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewAndroidForWorkAppConfigurationSchemasRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Count provides operations to count the resources in the collection.
+// returns a *AndroidForWorkAppConfigurationSchemasCountRequestBuilder when successful
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) Count()(*AndroidForWorkAppConfigurationSchemasCountRequestBuilder) {
+    return NewAndroidForWorkAppConfigurationSchemasCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get android for Work app configuration schema entities.
+// returns a AndroidForWorkAppConfigurationSchemaCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) Get(ctx context.Context, requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaCollectionResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAndroidForWorkAppConfigurationSchemaCollectionResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaCollectionResponseable), nil
+}
+// Post create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
+// returns a AndroidForWorkAppConfigurationSchemaable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateAndroidForWorkAppConfigurationSchemaFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable), nil
+}
+// ToGetRequestInformation android for Work app configuration schema entities.
+// returns a *RequestInformation when successful
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToPostRequestInformation create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
+// returns a *RequestInformation when successful
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AndroidForWorkAppConfigurationSchemaable, requestConfiguration *AndroidForWorkAppConfigurationSchemasRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *AndroidForWorkAppConfigurationSchemasRequestBuilder when successful
+func (m *AndroidForWorkAppConfigurationSchemasRequestBuilder) WithUrl(rawUrl string)(*AndroidForWorkAppConfigurationSchemasRequestBuilder) {
+    return NewAndroidForWorkAppConfigurationSchemasRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

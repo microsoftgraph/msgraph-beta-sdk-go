@@ -46,9 +46,9 @@ func (m *ItemRootRequestBuilder) Content()(*ItemRootContentRequestBuilder) {
     return NewItemRootContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ContentStream provides operations to manage the media for the sharedDriveItem entity.
-// returns a *ItemRootContentstreamContentStreamRequestBuilder when successful
-func (m *ItemRootRequestBuilder) ContentStream()(*ItemRootContentstreamContentStreamRequestBuilder) {
-    return NewItemRootContentstreamContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemRootContentStreamRequestBuilder when successful
+func (m *ItemRootRequestBuilder) ContentStream()(*ItemRootContentStreamRequestBuilder) {
+    return NewItemRootContentStreamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get root from shares
 // returns a DriveItemable when successful

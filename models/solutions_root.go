@@ -52,7 +52,7 @@ func (m *SolutionsRoot) GetBackupRestore()(BackupRestoreRootable) {
     }
     return nil
 }
-// GetBookingBusinesses gets the bookingBusinesses property value. The bookingBusinesses property
+// GetBookingBusinesses gets the bookingBusinesses property value. A collection of businesses in Microsoft Bookings. Read-only. Nullable.
 // returns a []BookingBusinessable when successful
 func (m *SolutionsRoot) GetBookingBusinesses()([]BookingBusinessable) {
     val, err := m.GetBackingStore().Get("bookingBusinesses")
@@ -64,7 +64,7 @@ func (m *SolutionsRoot) GetBookingBusinesses()([]BookingBusinessable) {
     }
     return nil
 }
-// GetBookingCurrencies gets the bookingCurrencies property value. The bookingCurrencies property
+// GetBookingCurrencies gets the bookingCurrencies property value. A collection of monetary currencies supported by a bookingBusiness. Read-only. Nullable.
 // returns a []BookingCurrencyable when successful
 func (m *SolutionsRoot) GetBookingCurrencies()([]BookingCurrencyable) {
     val, err := m.GetBackingStore().Get("bookingCurrencies")
@@ -76,7 +76,7 @@ func (m *SolutionsRoot) GetBookingCurrencies()([]BookingCurrencyable) {
     }
     return nil
 }
-// GetBusinessScenarios gets the businessScenarios property value. The businessScenarios property
+// GetBusinessScenarios gets the businessScenarios property value. A collection of scenarios that contain relevant data and configuration information for a specific problem domain.
 // returns a []BusinessScenarioable when successful
 func (m *SolutionsRoot) GetBusinessScenarios()([]BusinessScenarioable) {
     val, err := m.GetBackingStore().Get("businessScenarios")
@@ -184,7 +184,7 @@ func (m *SolutionsRoot) GetOdataType()(*string) {
     }
     return nil
 }
-// GetVirtualEvents gets the virtualEvents property value. The virtualEvents property
+// GetVirtualEvents gets the virtualEvents property value. A collection of virtual events.
 // returns a VirtualEventsRootable when successful
 func (m *SolutionsRoot) GetVirtualEvents()(VirtualEventsRootable) {
     val, err := m.GetBackingStore().Get("virtualEvents")
@@ -278,21 +278,21 @@ func (m *SolutionsRoot) SetBackupRestore(value BackupRestoreRootable)() {
         panic(err)
     }
 }
-// SetBookingBusinesses sets the bookingBusinesses property value. The bookingBusinesses property
+// SetBookingBusinesses sets the bookingBusinesses property value. A collection of businesses in Microsoft Bookings. Read-only. Nullable.
 func (m *SolutionsRoot) SetBookingBusinesses(value []BookingBusinessable)() {
     err := m.GetBackingStore().Set("bookingBusinesses", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBookingCurrencies sets the bookingCurrencies property value. The bookingCurrencies property
+// SetBookingCurrencies sets the bookingCurrencies property value. A collection of monetary currencies supported by a bookingBusiness. Read-only. Nullable.
 func (m *SolutionsRoot) SetBookingCurrencies(value []BookingCurrencyable)() {
     err := m.GetBackingStore().Set("bookingCurrencies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBusinessScenarios sets the businessScenarios property value. The businessScenarios property
+// SetBusinessScenarios sets the businessScenarios property value. A collection of scenarios that contain relevant data and configuration information for a specific problem domain.
 func (m *SolutionsRoot) SetBusinessScenarios(value []BusinessScenarioable)() {
     err := m.GetBackingStore().Set("businessScenarios", value)
     if err != nil {
@@ -306,7 +306,7 @@ func (m *SolutionsRoot) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetVirtualEvents sets the virtualEvents property value. The virtualEvents property
+// SetVirtualEvents sets the virtualEvents property value. A collection of virtual events.
 func (m *SolutionsRoot) SetVirtualEvents(value VirtualEventsRootable)() {
     err := m.GetBackingStore().Set("virtualEvents", value)
     if err != nil {

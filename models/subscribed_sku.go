@@ -56,7 +56,7 @@ func (m *SubscribedSku) GetAppliesTo()(*string) {
     }
     return nil
 }
-// GetCapabilityStatus gets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
+// GetCapabilityStatus gets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer canceled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
 // returns a *string when successful
 func (m *SubscribedSku) GetCapabilityStatus()(*string) {
     val, err := m.GetBackingStore().Get("capabilityStatus")
@@ -353,7 +353,7 @@ func (m *SubscribedSku) SetAppliesTo(value *string)() {
         panic(err)
     }
 }
-// SetCapabilityStatus sets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
+// SetCapabilityStatus sets the capabilityStatus property value. Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer canceled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
 func (m *SubscribedSku) SetCapabilityStatus(value *string)() {
     err := m.GetBackingStore().Set("capabilityStatus", value)
     if err != nil {

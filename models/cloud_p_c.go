@@ -68,7 +68,7 @@ func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     }
     return nil
 }
-// GetDisasterRecoveryCapability gets the disasterRecoveryCapability property value. The disasterRecoveryCapability property
+// GetDisasterRecoveryCapability gets the disasterRecoveryCapability property value. The disaster recovery status of the Cloud PC, including the primary region, secondary region, and capability type. The default value is null that indicates that the disaster recovery setting is disabled. To receive a response with the disasterRecoveryCapability property, $select and $filter it by disasterRecoveryCapability/{subProperty} in the request URL. For more details, see Example 4: List Cloud PCs filtered by disaster recovery capability type. Read-only.
 // returns a CloudPcDisasterRecoveryCapabilityable when successful
 func (m *CloudPC) GetDisasterRecoveryCapability()(CloudPcDisasterRecoveryCapabilityable) {
     val, err := m.GetBackingStore().Get("disasterRecoveryCapability")
@@ -568,7 +568,7 @@ func (m *CloudPC) GetProvisioningPolicyName()(*string) {
     }
     return nil
 }
-// GetProvisioningType gets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue,sharedByUser, sharedByUser. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The default value is dedicated. CAUTION: The shared member is deprecated and will stop returning on April 30, 2027； in the future, use the sharedByUser member.
+// GetProvisioningType gets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue,sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The default value is dedicated. CAUTION: The shared member is deprecated and will stop returning on April 30, 2027； in the future, use the sharedByUser member.
 // returns a *CloudPcProvisioningType when successful
 func (m *CloudPC) GetProvisioningType()(*CloudPcProvisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
@@ -640,7 +640,7 @@ func (m *CloudPC) GetStatus()(*CloudPcStatus) {
     }
     return nil
 }
-// GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status.
+// GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status. For example, { 'code': 'internalServerError', 'message': 'There was an error during the Cloud PC upgrade. Please contact support.', 'additionalInformation': null }. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
 // returns a CloudPcStatusDetailsable when successful
 func (m *CloudPC) GetStatusDetails()(CloudPcStatusDetailsable) {
     val, err := m.GetBackingStore().Get("statusDetails")
@@ -899,7 +899,7 @@ func (m *CloudPC) SetConnectivityResult(value CloudPcConnectivityResultable)() {
         panic(err)
     }
 }
-// SetDisasterRecoveryCapability sets the disasterRecoveryCapability property value. The disasterRecoveryCapability property
+// SetDisasterRecoveryCapability sets the disasterRecoveryCapability property value. The disaster recovery status of the Cloud PC, including the primary region, secondary region, and capability type. The default value is null that indicates that the disaster recovery setting is disabled. To receive a response with the disasterRecoveryCapability property, $select and $filter it by disasterRecoveryCapability/{subProperty} in the request URL. For more details, see Example 4: List Cloud PCs filtered by disaster recovery capability type. Read-only.
 func (m *CloudPC) SetDisasterRecoveryCapability(value CloudPcDisasterRecoveryCapabilityable)() {
     err := m.GetBackingStore().Set("disasterRecoveryCapability", value)
     if err != nil {
@@ -1011,7 +1011,7 @@ func (m *CloudPC) SetProvisioningPolicyName(value *string)() {
         panic(err)
     }
 }
-// SetProvisioningType sets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue,sharedByUser, sharedByUser. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The default value is dedicated. CAUTION: The shared member is deprecated and will stop returning on April 30, 2027； in the future, use the sharedByUser member.
+// SetProvisioningType sets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue,sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The default value is dedicated. CAUTION: The shared member is deprecated and will stop returning on April 30, 2027； in the future, use the sharedByUser member.
 func (m *CloudPC) SetProvisioningType(value *CloudPcProvisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {
@@ -1053,7 +1053,7 @@ func (m *CloudPC) SetStatus(value *CloudPcStatus)() {
         panic(err)
     }
 }
-// SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status.
+// SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status. For example, { 'code': 'internalServerError', 'message': 'There was an error during the Cloud PC upgrade. Please contact support.', 'additionalInformation': null }. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
 func (m *CloudPC) SetStatusDetails(value CloudPcStatusDetailsable)() {
     err := m.GetBackingStore().Set("statusDetails", value)
     if err != nil {

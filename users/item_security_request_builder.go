@@ -91,9 +91,9 @@ func (m *ItemSecurityRequestBuilder) Get(ctx context.Context, requestConfigurati
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Securityable), nil
 }
 // InformationProtection provides operations to manage the informationProtection property of the microsoft.graph.security.security entity.
-// returns a *ItemSecurityInformationprotectionInformationProtectionRequestBuilder when successful
-func (m *ItemSecurityRequestBuilder) InformationProtection()(*ItemSecurityInformationprotectionInformationProtectionRequestBuilder) {
-    return NewItemSecurityInformationprotectionInformationProtectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *ItemSecurityInformationProtectionRequestBuilder when successful
+func (m *ItemSecurityRequestBuilder) InformationProtection()(*ItemSecurityInformationProtectionRequestBuilder) {
+    return NewItemSecurityInformationProtectionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property security in users
 // returns a Securityable when successful

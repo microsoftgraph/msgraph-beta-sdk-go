@@ -1,0 +1,27 @@
+package storage
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedGetResponseable instead.
+type FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponse struct {
+    FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedGetResponse
+}
+// NewFileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponse instantiates a new FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponse and sets the default values.
+func NewFileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponse()(*FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponse) {
+    m := &FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponse{
+        FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedGetResponse: *NewFileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedGetResponse(),
+    }
+    return m
+}
+// CreateFileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateFileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewFileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponse(), nil
+}
+// Deprecated: This class is obsolete. Use FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedGetResponseable instead.
+type FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedResponseable interface {
+    FileStorageDeletedContainersItemDriveListContentTypesItemIsPublishedGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

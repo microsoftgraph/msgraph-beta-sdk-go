@@ -30,8 +30,11 @@ func NewItemPlannerPlansItemUnarchiveRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemPlannerPlansItemUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action unarchive
+// Post unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-unarchive?view=graph-rest-beta
 func (m *ItemPlannerPlansItemUnarchiveRequestBuilder) Post(ctx context.Context, body ItemPlannerPlansItemUnarchivePostRequestBodyable, requestConfiguration *ItemPlannerPlansItemUnarchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemPlannerPlansItemUnarchiveRequestBuilder) Post(ctx context.Context, 
     }
     return nil
 }
-// ToPostRequestInformation invoke action unarchive
+// ToPostRequestInformation unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemUnarchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPlannerPlansItemUnarchivePostRequestBodyable, requestConfiguration *ItemPlannerPlansItemUnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

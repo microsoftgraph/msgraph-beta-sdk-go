@@ -123,9 +123,9 @@ func (m *GroupLifecyclePoliciesRequestBuilder) Post(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GroupLifecyclePolicyable), nil
 }
 // RenewGroup provides operations to call the renewGroup method.
-// returns a *RenewgroupRenewGroupRequestBuilder when successful
-func (m *GroupLifecyclePoliciesRequestBuilder) RenewGroup()(*RenewgroupRenewGroupRequestBuilder) {
-    return NewRenewgroupRenewGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RenewGroupRequestBuilder when successful
+func (m *GroupLifecyclePoliciesRequestBuilder) RenewGroup()(*RenewGroupRequestBuilder) {
+    return NewRenewGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list all the groupLifecyclePolicies.
 // returns a *RequestInformation when successful

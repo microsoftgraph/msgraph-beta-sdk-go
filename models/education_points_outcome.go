@@ -47,7 +47,7 @@ func (m *EducationPointsOutcome) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetPoints gets the points property value. The numeric grade the teacher has given the student for this assignment.
+// GetPoints gets the points property value. The numeric grade that the teacher gave the student for this assignment.
 // returns a EducationAssignmentPointsGradeable when successful
 func (m *EducationPointsOutcome) GetPoints()(EducationAssignmentPointsGradeable) {
     val, err := m.GetBackingStore().Get("points")
@@ -91,7 +91,7 @@ func (m *EducationPointsOutcome) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetPoints sets the points property value. The numeric grade the teacher has given the student for this assignment.
+// SetPoints sets the points property value. The numeric grade that the teacher gave the student for this assignment.
 func (m *EducationPointsOutcome) SetPoints(value EducationAssignmentPointsGradeable)() {
     err := m.GetBackingStore().Set("points", value)
     if err != nil {

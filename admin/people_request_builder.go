@@ -94,9 +94,9 @@ func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *Pe
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable), nil
 }
 // ItemInsights provides operations to manage the itemInsights property of the microsoft.graph.peopleAdminSettings entity.
-// returns a *PeopleIteminsightsItemInsightsRequestBuilder when successful
-func (m *PeopleRequestBuilder) ItemInsights()(*PeopleIteminsightsItemInsightsRequestBuilder) {
-    return NewPeopleIteminsightsItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PeopleItemInsightsRequestBuilder when successful
+func (m *PeopleRequestBuilder) ItemInsights()(*PeopleItemInsightsRequestBuilder) {
+    return NewPeopleItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property people in admin
 // returns a PeopleAdminSettingsable when successful
@@ -119,9 +119,9 @@ func (m *PeopleRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable), nil
 }
 // ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
-// returns a *PeopleProfilecardpropertiesProfileCardPropertiesRequestBuilder when successful
-func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfilecardpropertiesProfileCardPropertiesRequestBuilder) {
-    return NewPeopleProfilecardpropertiesProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PeopleProfileCardPropertiesRequestBuilder when successful
+func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropertiesRequestBuilder) {
+    return NewPeopleProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Pronouns provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.
 // returns a *PeoplePronounsRequestBuilder when successful

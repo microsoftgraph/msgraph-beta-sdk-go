@@ -97,9 +97,9 @@ func (m *PrivilegedApprovalRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedApprovalCollectionResponseable), nil
 }
 // MyRequests provides operations to call the myRequests method.
-// returns a *MyrequestsMyRequestsRequestBuilder when successful
-func (m *PrivilegedApprovalRequestBuilder) MyRequests()(*MyrequestsMyRequestsRequestBuilder) {
-    return NewMyrequestsMyRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *MyRequestsRequestBuilder when successful
+func (m *PrivilegedApprovalRequestBuilder) MyRequests()(*MyRequestsRequestBuilder) {
+    return NewMyRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post add new entity to privilegedApproval
 // returns a PrivilegedApprovalable when successful

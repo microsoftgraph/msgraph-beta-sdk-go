@@ -91,9 +91,9 @@ func (m *IdentitiesSensorsSensorItemRequestBuilder) Get(ctx context.Context, req
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Sensorable), nil
 }
 // HealthIssues provides operations to manage the healthIssues property of the microsoft.graph.security.sensor entity.
-// returns a *IdentitiesSensorsItemHealthissuesHealthIssuesRequestBuilder when successful
-func (m *IdentitiesSensorsSensorItemRequestBuilder) HealthIssues()(*IdentitiesSensorsItemHealthissuesHealthIssuesRequestBuilder) {
-    return NewIdentitiesSensorsItemHealthissuesHealthIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *IdentitiesSensorsItemHealthIssuesRequestBuilder when successful
+func (m *IdentitiesSensorsSensorItemRequestBuilder) HealthIssues()(*IdentitiesSensorsItemHealthIssuesRequestBuilder) {
+    return NewIdentitiesSensorsItemHealthIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property sensors in security
 // returns a Sensorable when successful

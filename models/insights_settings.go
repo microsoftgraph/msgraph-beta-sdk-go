@@ -19,7 +19,7 @@ func NewInsightsSettings()(*InsightsSettings) {
 func CreateInsightsSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInsightsSettings(), nil
 }
-// GetDisabledForGroup gets the disabledForGroup property value. The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+// GetDisabledForGroup gets the disabledForGroup property value. The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. The default value is null. Optional.
 // returns a *string when successful
 func (m *InsightsSettings) GetDisabledForGroup()(*string) {
     val, err := m.GetBackingStore().Get("disabledForGroup")
@@ -57,7 +57,7 @@ func (m *InsightsSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.
+// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. The default value is true. Optional.
 // returns a *bool when successful
 func (m *InsightsSettings) GetIsEnabledInOrganization()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabledInOrganization")
@@ -89,14 +89,14 @@ func (m *InsightsSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetDisabledForGroup sets the disabledForGroup property value. The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.
+// SetDisabledForGroup sets the disabledForGroup property value. The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. The default value is null. Optional.
 func (m *InsightsSettings) SetDisabledForGroup(value *string)() {
     err := m.GetBackingStore().Set("disabledForGroup", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEnabledInOrganization sets the isEnabledInOrganization property value. true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.
+// SetIsEnabledInOrganization sets the isEnabledInOrganization property value. true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. The default value is true. Optional.
 func (m *InsightsSettings) SetIsEnabledInOrganization(value *bool)() {
     err := m.GetBackingStore().Set("isEnabledInOrganization", value)
     if err != nil {

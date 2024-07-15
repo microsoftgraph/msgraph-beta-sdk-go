@@ -52,9 +52,9 @@ func (m *PrintersItemJobsPrintJobItemRequestBuilder) Cancel()(*PrintersItemJobsI
     return NewPrintersItemJobsItemCancelRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CancelPrintJob provides operations to call the cancelPrintJob method.
-// returns a *PrintersItemJobsItemCancelprintjobCancelPrintJobRequestBuilder when successful
-func (m *PrintersItemJobsPrintJobItemRequestBuilder) CancelPrintJob()(*PrintersItemJobsItemCancelprintjobCancelPrintJobRequestBuilder) {
-    return NewPrintersItemJobsItemCancelprintjobCancelPrintJobRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PrintersItemJobsItemCancelPrintJobRequestBuilder when successful
+func (m *PrintersItemJobsPrintJobItemRequestBuilder) CancelPrintJob()(*PrintersItemJobsItemCancelPrintJobRequestBuilder) {
+    return NewPrintersItemJobsItemCancelPrintJobRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewPrintersItemJobsPrintJobItemRequestBuilderInternal instantiates a new PrintersItemJobsPrintJobItemRequestBuilder and sets the default values.
 func NewPrintersItemJobsPrintJobItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*PrintersItemJobsPrintJobItemRequestBuilder) {
@@ -147,9 +147,9 @@ func (m *PrintersItemJobsPrintJobItemRequestBuilder) Start()(*PrintersItemJobsIt
     return NewPrintersItemJobsItemStartRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // StartPrintJob provides operations to call the startPrintJob method.
-// returns a *PrintersItemJobsItemStartprintjobStartPrintJobRequestBuilder when successful
-func (m *PrintersItemJobsPrintJobItemRequestBuilder) StartPrintJob()(*PrintersItemJobsItemStartprintjobStartPrintJobRequestBuilder) {
-    return NewPrintersItemJobsItemStartprintjobStartPrintJobRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *PrintersItemJobsItemStartPrintJobRequestBuilder when successful
+func (m *PrintersItemJobsPrintJobItemRequestBuilder) StartPrintJob()(*PrintersItemJobsItemStartPrintJobRequestBuilder) {
+    return NewPrintersItemJobsItemStartPrintJobRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Tasks provides operations to manage the tasks property of the microsoft.graph.printJob entity.
 // returns a *PrintersItemJobsItemTasksRequestBuilder when successful

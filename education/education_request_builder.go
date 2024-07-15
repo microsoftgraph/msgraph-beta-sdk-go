@@ -103,9 +103,9 @@ func (m *EducationRequestBuilder) Schools()(*SchoolsRequestBuilder) {
     return NewSchoolsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SynchronizationProfiles provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.
-// returns a *SynchronizationprofilesSynchronizationProfilesRequestBuilder when successful
-func (m *EducationRequestBuilder) SynchronizationProfiles()(*SynchronizationprofilesSynchronizationProfilesRequestBuilder) {
-    return NewSynchronizationprofilesSynchronizationProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *SynchronizationProfilesRequestBuilder when successful
+func (m *EducationRequestBuilder) SynchronizationProfiles()(*SynchronizationProfilesRequestBuilder) {
+    return NewSynchronizationProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get education
 // returns a *RequestInformation when successful

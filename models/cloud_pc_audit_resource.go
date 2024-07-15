@@ -172,7 +172,7 @@ func (m *CloudPcAuditResource) GetResourceType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of the audit resource. The type property is deprecated and will stop returning data on May 8, 2024. Going forward, use the resourceType property.
+// GetTypeEscaped gets the type property value. The type property
 // returns a *string when successful
 func (m *CloudPcAuditResource) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -282,7 +282,7 @@ func (m *CloudPcAuditResource) SetResourceType(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of the audit resource. The type property is deprecated and will stop returning data on May 8, 2024. Going forward, use the resourceType property.
+// SetTypeEscaped sets the type property value. The type property
 func (m *CloudPcAuditResource) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

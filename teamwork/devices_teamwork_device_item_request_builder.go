@@ -139,9 +139,9 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) Restart()(*DevicesItemRestartR
     return NewDevicesItemRestartRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RunDiagnostics provides operations to call the runDiagnostics method.
-// returns a *DevicesItemRundiagnosticsRunDiagnosticsRequestBuilder when successful
-func (m *DevicesTeamworkDeviceItemRequestBuilder) RunDiagnostics()(*DevicesItemRundiagnosticsRunDiagnosticsRequestBuilder) {
-    return NewDevicesItemRundiagnosticsRunDiagnosticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DevicesItemRunDiagnosticsRequestBuilder when successful
+func (m *DevicesTeamworkDeviceItemRequestBuilder) RunDiagnostics()(*DevicesItemRunDiagnosticsRequestBuilder) {
+    return NewDevicesItemRunDiagnosticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property devices for teamwork
 // returns a *RequestInformation when successful
@@ -184,9 +184,9 @@ func (m *DevicesTeamworkDeviceItemRequestBuilder) ToPatchRequestInformation(ctx 
     return requestInfo, nil
 }
 // UpdateSoftware provides operations to call the updateSoftware method.
-// returns a *DevicesItemUpdatesoftwareUpdateSoftwareRequestBuilder when successful
-func (m *DevicesTeamworkDeviceItemRequestBuilder) UpdateSoftware()(*DevicesItemUpdatesoftwareUpdateSoftwareRequestBuilder) {
-    return NewDevicesItemUpdatesoftwareUpdateSoftwareRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *DevicesItemUpdateSoftwareRequestBuilder when successful
+func (m *DevicesTeamworkDeviceItemRequestBuilder) UpdateSoftware()(*DevicesItemUpdateSoftwareRequestBuilder) {
+    return NewDevicesItemUpdateSoftwareRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *DevicesTeamworkDeviceItemRequestBuilder when successful

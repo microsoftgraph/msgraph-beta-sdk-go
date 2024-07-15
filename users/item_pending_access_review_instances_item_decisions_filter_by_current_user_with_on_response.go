@@ -1,0 +1,27 @@
+package users
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnGetResponseable instead.
+type ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponse struct {
+    ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnGetResponse
+}
+// NewItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponse instantiates a new ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponse and sets the default values.
+func NewItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponse()(*ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponse) {
+    m := &ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponse{
+        ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnGetResponse: *NewItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnGetResponse(),
+    }
+    return m
+}
+// CreateItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponse(), nil
+}
+// Deprecated: This class is obsolete. Use ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnGetResponseable instead.
+type ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnResponseable interface {
+    ItemPendingAccessReviewInstancesItemDecisionsFilterByCurrentUserWithOnGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

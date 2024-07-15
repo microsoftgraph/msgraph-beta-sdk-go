@@ -67,7 +67,7 @@ func (m *WorkbookRange) GetColumnCount()(*int32) {
     }
     return nil
 }
-// GetColumnHidden gets the columnHidden property value. Represents if all columns of the current range are hidden.
+// GetColumnHidden gets the columnHidden property value. Indicates whether all columns of the current range are hidden.
 // returns a *bool when successful
 func (m *WorkbookRange) GetColumnHidden()(*bool) {
     val, err := m.GetBackingStore().Get("columnHidden")
@@ -381,7 +381,7 @@ func (m *WorkbookRange) GetRowCount()(*int32) {
     }
     return nil
 }
-// GetRowHidden gets the rowHidden property value. Represents if all rows of the current range are hidden.
+// GetRowHidden gets the rowHidden property value. Indicates whether all rows of the current range are hidden.
 // returns a *bool when successful
 func (m *WorkbookRange) GetRowHidden()(*bool) {
     val, err := m.GetBackingStore().Get("rowHidden")
@@ -417,7 +417,7 @@ func (m *WorkbookRange) GetSort()(WorkbookRangeSortable) {
     }
     return nil
 }
-// GetText gets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
+// GetText gets the text property value. Text values of the specified range. The text value doesn't depend on the cell width. The # sign substitution that happens in Excel UI doesn't affect the text value returned by the API. Read-only.
 // returns a UntypedNodeable when successful
 func (m *WorkbookRange) GetText()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("text")
@@ -621,7 +621,7 @@ func (m *WorkbookRange) SetColumnCount(value *int32)() {
         panic(err)
     }
 }
-// SetColumnHidden sets the columnHidden property value. Represents if all columns of the current range are hidden.
+// SetColumnHidden sets the columnHidden property value. Indicates whether all columns of the current range are hidden.
 func (m *WorkbookRange) SetColumnHidden(value *bool)() {
     err := m.GetBackingStore().Set("columnHidden", value)
     if err != nil {
@@ -684,7 +684,7 @@ func (m *WorkbookRange) SetRowCount(value *int32)() {
         panic(err)
     }
 }
-// SetRowHidden sets the rowHidden property value. Represents if all rows of the current range are hidden.
+// SetRowHidden sets the rowHidden property value. Indicates whether all rows of the current range are hidden.
 func (m *WorkbookRange) SetRowHidden(value *bool)() {
     err := m.GetBackingStore().Set("rowHidden", value)
     if err != nil {
@@ -705,7 +705,7 @@ func (m *WorkbookRange) SetSort(value WorkbookRangeSortable)() {
         panic(err)
     }
 }
-// SetText sets the text property value. Text values of the specified range. The Text value won't depend on the cell width. The # sign substitution that happens in Excel UI won't affect the text value returned by the API. Read-only.
+// SetText sets the text property value. Text values of the specified range. The text value doesn't depend on the cell width. The # sign substitution that happens in Excel UI doesn't affect the text value returned by the API. Read-only.
 func (m *WorkbookRange) SetText(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {

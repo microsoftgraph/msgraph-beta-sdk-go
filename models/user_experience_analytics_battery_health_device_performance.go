@@ -288,7 +288,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetHealthStatus(
     }
     return nil
 }
-// GetManufacturer gets the manufacturer property value. The manufacturer name of the device.
+// GetManufacturer gets the manufacturer property value. The manufacturer name of the device. Deprecated in favor of DeviceManufacturerName.
 // returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
@@ -312,7 +312,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetMaxCapacityPe
     }
     return nil
 }
-// GetModel gets the model property value. The model name of the device.
+// GetModel gets the model property value. The model name of the device. Deprecated in favor of DeviceModelName.
 // returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
@@ -487,7 +487,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetHealthStatus(
         panic(err)
     }
 }
-// SetManufacturer sets the manufacturer property value. The manufacturer name of the device.
+// SetManufacturer sets the manufacturer property value. The manufacturer name of the device. Deprecated in favor of DeviceManufacturerName.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
     if err != nil {
@@ -501,7 +501,7 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetMaxCapacityPe
         panic(err)
     }
 }
-// SetModel sets the model property value. The model name of the device.
+// SetModel sets the model property value. The model name of the device. Deprecated in favor of DeviceModelName.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
     if err != nil {

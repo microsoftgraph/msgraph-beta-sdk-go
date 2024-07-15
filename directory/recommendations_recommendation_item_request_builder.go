@@ -104,9 +104,9 @@ func (m *RecommendationsRecommendationItemRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable), nil
 }
 // ImpactedResources provides operations to manage the impactedResources property of the microsoft.graph.recommendationBase entity.
-// returns a *RecommendationsItemImpactedresourcesImpactedResourcesRequestBuilder when successful
-func (m *RecommendationsRecommendationItemRequestBuilder) ImpactedResources()(*RecommendationsItemImpactedresourcesImpactedResourcesRequestBuilder) {
-    return NewRecommendationsItemImpactedresourcesImpactedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *RecommendationsItemImpactedResourcesRequestBuilder when successful
+func (m *RecommendationsRecommendationItemRequestBuilder) ImpactedResources()(*RecommendationsItemImpactedResourcesRequestBuilder) {
+    return NewRecommendationsItemImpactedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property recommendations in directory
 // returns a Recommendationable when successful

@@ -401,7 +401,7 @@ func (m *Incident) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetRecommendedActions gets the recommendedActions property value. A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
+// GetRecommendedActions gets the recommendedActions property value. A rich text string that represents the actions that are reccomnded to take in order to resolve the incident.
 // returns a *string when successful
 func (m *Incident) GetRecommendedActions()(*string) {
     val, err := m.GetBackingStore().Get("recommendedActions")
@@ -413,7 +413,7 @@ func (m *Incident) GetRecommendedActions()(*string) {
     }
     return nil
 }
-// GetRecommendedHuntingQueries gets the recommendedHuntingQueries property value. List of hunting Kusto Query Language (KQL) queries related to the incident
+// GetRecommendedHuntingQueries gets the recommendedHuntingQueries property value. List of hunting Kusto Query Language (KQL) queries related to the incident.
 // returns a []RecommendedHuntingQueryable when successful
 func (m *Incident) GetRecommendedHuntingQueries()([]RecommendedHuntingQueryable) {
     val, err := m.GetBackingStore().Get("recommendedHuntingQueries")
@@ -731,14 +731,14 @@ func (m *Incident) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a
         panic(err)
     }
 }
-// SetRecommendedActions sets the recommendedActions property value. A rich text string that represents the actions that are reccomnded to take in order to resolve the incident
+// SetRecommendedActions sets the recommendedActions property value. A rich text string that represents the actions that are reccomnded to take in order to resolve the incident.
 func (m *Incident) SetRecommendedActions(value *string)() {
     err := m.GetBackingStore().Set("recommendedActions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecommendedHuntingQueries sets the recommendedHuntingQueries property value. List of hunting Kusto Query Language (KQL) queries related to the incident
+// SetRecommendedHuntingQueries sets the recommendedHuntingQueries property value. List of hunting Kusto Query Language (KQL) queries related to the incident.
 func (m *Incident) SetRecommendedHuntingQueries(value []RecommendedHuntingQueryable)() {
     err := m.GetBackingStore().Set("recommendedHuntingQueries", value)
     if err != nil {

@@ -3652,7 +3652,7 @@ func (m *DeviceManagement) GetGroupPolicyUploadedDefinitionFiles()([]GroupPolicy
     }
     return nil
 }
-// GetHardwareConfigurations gets the hardwareConfigurations property value. The hardware configurations for this account.
+// GetHardwareConfigurations gets the hardwareConfigurations property value. BIOS configuration and other settings provides customers the ability to configure hardware/bios settings on the enrolled Windows 10/11 Entra ID joined devices by uploading a configuration file generated with their OEM tool (e.g. Dell Command tool). A BIOS configuration policy can be assigned to multiple devices, allowing admins to remotely control a device's hardware properties (e.g. enable Secure Boot) from the Intune Portal. Supported for Dell only at this time.
 // returns a []HardwareConfigurationable when successful
 func (m *DeviceManagement) GetHardwareConfigurations()([]HardwareConfigurationable) {
     val, err := m.GetBackingStore().Get("hardwareConfigurations")
@@ -3676,7 +3676,7 @@ func (m *DeviceManagement) GetHardwarePasswordDetails()([]HardwarePasswordDetail
     }
     return nil
 }
-// GetHardwarePasswordInfo gets the hardwarePasswordInfo property value. The hardware password info for this account.
+// GetHardwarePasswordInfo gets the hardwarePasswordInfo property value. Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices. Starting from June, 2024 (Intune Release 2406), this type will no longer be supported and will be marked as deprecated
 // returns a []HardwarePasswordInfoable when successful
 func (m *DeviceManagement) GetHardwarePasswordInfo()([]HardwarePasswordInfoable) {
     val, err := m.GetBackingStore().Get("hardwarePasswordInfo")
@@ -3724,7 +3724,7 @@ func (m *DeviceManagement) GetIntents()([]DeviceManagementIntentable) {
     }
     return nil
 }
-// GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
+// GetIntuneAccountId gets the intuneAccountId property value. Intune Account ID for given tenant
 // returns a *UUID when successful
 func (m *DeviceManagement) GetIntuneAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("intuneAccountId")
@@ -3868,7 +3868,7 @@ func (m *DeviceManagement) GetManagedDevices()([]ManagedDeviceable) {
     }
     return nil
 }
-// GetMaximumDepTokens gets the maximumDepTokens property value. Maximum number of dep tokens allowed per-tenant.
+// GetMaximumDepTokens gets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
 // returns a *int32 when successful
 func (m *DeviceManagement) GetMaximumDepTokens()(*int32) {
     val, err := m.GetBackingStore().Get("maximumDepTokens")
@@ -7567,7 +7567,7 @@ func (m *DeviceManagement) SetGroupPolicyUploadedDefinitionFiles(value []GroupPo
         panic(err)
     }
 }
-// SetHardwareConfigurations sets the hardwareConfigurations property value. The hardware configurations for this account.
+// SetHardwareConfigurations sets the hardwareConfigurations property value. BIOS configuration and other settings provides customers the ability to configure hardware/bios settings on the enrolled Windows 10/11 Entra ID joined devices by uploading a configuration file generated with their OEM tool (e.g. Dell Command tool). A BIOS configuration policy can be assigned to multiple devices, allowing admins to remotely control a device's hardware properties (e.g. enable Secure Boot) from the Intune Portal. Supported for Dell only at this time.
 func (m *DeviceManagement) SetHardwareConfigurations(value []HardwareConfigurationable)() {
     err := m.GetBackingStore().Set("hardwareConfigurations", value)
     if err != nil {
@@ -7581,7 +7581,7 @@ func (m *DeviceManagement) SetHardwarePasswordDetails(value []HardwarePasswordDe
         panic(err)
     }
 }
-// SetHardwarePasswordInfo sets the hardwarePasswordInfo property value. The hardware password info for this account.
+// SetHardwarePasswordInfo sets the hardwarePasswordInfo property value. Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices. Starting from June, 2024 (Intune Release 2406), this type will no longer be supported and will be marked as deprecated
 func (m *DeviceManagement) SetHardwarePasswordInfo(value []HardwarePasswordInfoable)() {
     err := m.GetBackingStore().Set("hardwarePasswordInfo", value)
     if err != nil {
@@ -7609,7 +7609,7 @@ func (m *DeviceManagement) SetIntents(value []DeviceManagementIntentable)() {
         panic(err)
     }
 }
-// SetIntuneAccountId sets the intuneAccountId property value. Intune Account Id for given tenant
+// SetIntuneAccountId sets the intuneAccountId property value. Intune Account ID for given tenant
 func (m *DeviceManagement) SetIntuneAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("intuneAccountId", value)
     if err != nil {
@@ -7693,7 +7693,7 @@ func (m *DeviceManagement) SetManagedDevices(value []ManagedDeviceable)() {
         panic(err)
     }
 }
-// SetMaximumDepTokens sets the maximumDepTokens property value. Maximum number of dep tokens allowed per-tenant.
+// SetMaximumDepTokens sets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
 func (m *DeviceManagement) SetMaximumDepTokens(value *int32)() {
     err := m.GetBackingStore().Set("maximumDepTokens", value)
     if err != nil {

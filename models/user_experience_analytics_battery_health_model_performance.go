@@ -194,7 +194,7 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetFieldDeseriali
     }
     return res
 }
-// GetManufacturer gets the manufacturer property value. Name of the device manufacturer.
+// GetManufacturer gets the manufacturer property value. Name of the device manufacturer. Deprecated in favor of DeviceManufacturerName.
 // returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
@@ -254,7 +254,7 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetMedianMaxCapac
     }
     return nil
 }
-// GetModel gets the model property value. The model name of the device.
+// GetModel gets the model property value. The model name of the device. Deprecated in favor of DeviceModelName.
 // returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
@@ -399,7 +399,7 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetAverageMaxCapa
         panic(err)
     }
 }
-// SetManufacturer sets the manufacturer property value. Name of the device manufacturer.
+// SetManufacturer sets the manufacturer property value. Name of the device manufacturer. Deprecated in favor of DeviceManufacturerName.
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
     if err != nil {
@@ -434,7 +434,7 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetMedianMaxCapac
         panic(err)
     }
 }
-// SetModel sets the model property value. The model name of the device.
+// SetModel sets the model property value. The model name of the device. Deprecated in favor of DeviceModelName.
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
     if err != nil {

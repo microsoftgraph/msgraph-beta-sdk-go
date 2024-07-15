@@ -31,7 +31,7 @@ func NewItemItemsItemCopyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name.
+// Post asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name. After the request is acknowledged, it enters a queue. The actual copying, including any subitems, occurs at an undetermined time. Progress is reported until the operation is completed by monitoring the progress.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,7 +54,7 @@ func (m *ItemItemsItemCopyRequestBuilder) Post(ctx context.Context, body ItemIte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable), nil
 }
-// ToPostRequestInformation asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name.
+// ToPostRequestInformation asynchronously create a copy of a driveItem (including any children) under a new parent item or with a new name. After the request is acknowledged, it enters a queue. The actual copying, including any subitems, occurs at an undetermined time. Progress is reported until the operation is completed by monitoring the progress.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemItemsItemCopyPostRequestBodyable, requestConfiguration *ItemItemsItemCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
