@@ -77,7 +77,7 @@ func (m *CloudPcTenantEncryptionSetting) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetLastSyncDateTime gets the lastSyncDateTime property value. The lastSyncDateTime property
+// GetLastSyncDateTime gets the lastSyncDateTime property value. Indicates the date and time when last sync tenant encryption setting.
 // returns a *Time when successful
 func (m *CloudPcTenantEncryptionSetting) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
@@ -101,7 +101,7 @@ func (m *CloudPcTenantEncryptionSetting) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantDiskEncryptionType gets the tenantDiskEncryptionType property value. The tenantDiskEncryptionType property
+// GetTenantDiskEncryptionType gets the tenantDiskEncryptionType property value. Indicates the Cloud PC disk encryption type for a tenant. It is a tenant-level setting that applies globally to all Cloud PCs in the tenant. Possible values are: platformManagedKey, customerManagedKey, unknownFutureValue. Read-only.
 // returns a *CloudPcDiskEncryptionType when successful
 func (m *CloudPcTenantEncryptionSetting) GetTenantDiskEncryptionType()(*CloudPcDiskEncryptionType) {
     val, err := m.GetBackingStore().Get("tenantDiskEncryptionType")
@@ -153,7 +153,7 @@ func (m *CloudPcTenantEncryptionSetting) SetAdditionalData(value map[string]any)
 func (m *CloudPcTenantEncryptionSetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetLastSyncDateTime sets the lastSyncDateTime property value. The lastSyncDateTime property
+// SetLastSyncDateTime sets the lastSyncDateTime property value. Indicates the date and time when last sync tenant encryption setting.
 func (m *CloudPcTenantEncryptionSetting) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSyncDateTime", value)
     if err != nil {
@@ -167,7 +167,7 @@ func (m *CloudPcTenantEncryptionSetting) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantDiskEncryptionType sets the tenantDiskEncryptionType property value. The tenantDiskEncryptionType property
+// SetTenantDiskEncryptionType sets the tenantDiskEncryptionType property value. Indicates the Cloud PC disk encryption type for a tenant. It is a tenant-level setting that applies globally to all Cloud PCs in the tenant. Possible values are: platformManagedKey, customerManagedKey, unknownFutureValue. Read-only.
 func (m *CloudPcTenantEncryptionSetting) SetTenantDiskEncryptionType(value *CloudPcDiskEncryptionType)() {
     err := m.GetBackingStore().Set("tenantDiskEncryptionType", value)
     if err != nil {

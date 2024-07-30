@@ -34,6 +34,18 @@ func (m *MacOSWiredNetworkConfiguration) GetAuthenticationMethod()(*WiFiAuthenti
     }
     return nil
 }
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// returns a *AppleDeploymentChannel when successful
+func (m *MacOSWiredNetworkConfiguration) GetDeploymentChannel()(*AppleDeploymentChannel) {
+    val, err := m.GetBackingStore().Get("deploymentChannel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeploymentChannel)
+    }
+    return nil
+}
 // GetEapFastConfiguration gets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
 // returns a *EapFastConfiguration when successful
 func (m *MacOSWiredNetworkConfiguration) GetEapFastConfiguration()(*EapFastConfiguration) {
@@ -81,6 +93,16 @@ func (m *MacOSWiredNetworkConfiguration) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetAuthenticationMethod(val.(*WiFiAuthenticationMethod))
+        }
+        return nil
+    }
+    res["deploymentChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeploymentChannel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeploymentChannel(val.(*AppleDeploymentChannel))
         }
         return nil
     }
@@ -267,6 +289,13 @@ func (m *MacOSWiredNetworkConfiguration) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    if m.GetDeploymentChannel() != nil {
+        cast := (*m.GetDeploymentChannel()).String()
+        err = writer.WriteStringValue("deploymentChannel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetEapFastConfiguration() != nil {
         cast := (*m.GetEapFastConfiguration()).String()
         err = writer.WriteStringValue("eapFastConfiguration", &cast)
@@ -330,6 +359,13 @@ func (m *MacOSWiredNetworkConfiguration) Serialize(writer i878a80d2330e89d268963
 // SetAuthenticationMethod sets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
 func (m *MacOSWiredNetworkConfiguration) SetAuthenticationMethod(value *WiFiAuthenticationMethod)() {
     err := m.GetBackingStore().Set("authenticationMethod", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+func (m *MacOSWiredNetworkConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {
+    err := m.GetBackingStore().Set("deploymentChannel", value)
     if err != nil {
         panic(err)
     }
@@ -401,6 +437,7 @@ type MacOSWiredNetworkConfigurationable interface {
     DeviceConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationMethod()(*WiFiAuthenticationMethod)
+    GetDeploymentChannel()(*AppleDeploymentChannel)
     GetEapFastConfiguration()(*EapFastConfiguration)
     GetEapType()(*EapType)
     GetEnableOuterIdentityPrivacy()(*string)
@@ -411,6 +448,7 @@ type MacOSWiredNetworkConfigurationable interface {
     GetRootCertificateForServerValidation()(MacOSTrustedRootCertificateable)
     GetTrustedServerCertificateNames()([]string)
     SetAuthenticationMethod(value *WiFiAuthenticationMethod)()
+    SetDeploymentChannel(value *AppleDeploymentChannel)()
     SetEapFastConfiguration(value *EapFastConfiguration)()
     SetEapType(value *EapType)()
     SetEnableOuterIdentityPrivacy(value *string)()

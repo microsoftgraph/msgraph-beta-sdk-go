@@ -89,7 +89,7 @@ func (m *ArchivedPrintJob) GetColorPageCount()(*int32) {
     }
     return nil
 }
-// GetCompletionDateTime gets the completionDateTime property value. The dateTimeOffset when the job was completed, canceled or aborted. Read-only.
+// GetCompletionDateTime gets the completionDateTime property value. The dateTimeOffset when the job was completed, canceled, or aborted. Read-only.
 // returns a *Time when successful
 func (m *ArchivedPrintJob) GetCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("completionDateTime")
@@ -545,7 +545,7 @@ func (m *ArchivedPrintJob) SetColorPageCount(value *int32)() {
         panic(err)
     }
 }
-// SetCompletionDateTime sets the completionDateTime property value. The dateTimeOffset when the job was completed, canceled or aborted. Read-only.
+// SetCompletionDateTime sets the completionDateTime property value. The dateTimeOffset when the job was completed, canceled, or aborted. Read-only.
 func (m *ArchivedPrintJob) SetCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("completionDateTime", value)
     if err != nil {

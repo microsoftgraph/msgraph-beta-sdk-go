@@ -73,6 +73,16 @@ func (m *CloudPcConnectivityResult) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -104,6 +114,18 @@ func (m *CloudPcConnectivityResult) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The last modified time for connectivity status of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z.
+// returns a *Time when successful
+func (m *CloudPcConnectivityResult) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
@@ -156,6 +178,12 @@ func (m *CloudPcConnectivityResult) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err := writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
@@ -200,6 +228,13 @@ func (m *CloudPcConnectivityResult) SetFailedHealthCheckItems(value []CloudPcHea
         panic(err)
     }
 }
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The last modified time for connectivity status of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: 2014-01-01T00:00:00Z.
+func (m *CloudPcConnectivityResult) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcConnectivityResult) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -227,11 +262,13 @@ type CloudPcConnectivityResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetFailedHealthCheckItems()([]CloudPcHealthCheckItemable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
     GetStatus()(*CloudPcConnectivityStatus)
     GetUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFailedHealthCheckItems(value []CloudPcHealthCheckItemable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
     SetStatus(value *CloudPcConnectivityStatus)()
     SetUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

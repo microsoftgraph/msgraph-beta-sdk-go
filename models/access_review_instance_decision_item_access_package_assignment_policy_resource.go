@@ -21,7 +21,7 @@ func NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource()(
 func CreateAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(), nil
 }
-// GetAccessPackageDisplayName gets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
+// GetAccessPackageDisplayName gets the accessPackageDisplayName property value. Display name of the access package to which access is granted.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetAccessPackageDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("accessPackageDisplayName")
@@ -33,7 +33,7 @@ func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) 
     }
     return nil
 }
-// GetAccessPackageId gets the accessPackageId property value. Identifier of the access package to which access has been granted.
+// GetAccessPackageId gets the accessPackageId property value. Identifier of the access package to which access is granted.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) GetAccessPackageId()(*string) {
     val, err := m.GetBackingStore().Get("accessPackageId")
@@ -91,14 +91,14 @@ func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) 
     }
     return nil
 }
-// SetAccessPackageDisplayName sets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
+// SetAccessPackageDisplayName sets the accessPackageDisplayName property value. Display name of the access package to which access is granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) SetAccessPackageDisplayName(value *string)() {
     err := m.GetBackingStore().Set("accessPackageDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAccessPackageId sets the accessPackageId property value. Identifier of the access package to which access has been granted.
+// SetAccessPackageId sets the accessPackageId property value. Identifier of the access package to which access is granted.
 func (m *AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource) SetAccessPackageId(value *string)() {
     err := m.GetBackingStore().Set("accessPackageId", value)
     if err != nil {

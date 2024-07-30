@@ -21,7 +21,7 @@ func NewAccessReviewInstanceDecisionItemServicePrincipalResource()(*AccessReview
 func CreateAccessReviewInstanceDecisionItemServicePrincipalResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccessReviewInstanceDecisionItemServicePrincipalResource(), nil
 }
-// GetAppId gets the appId property value. The globally unique identifier of the application to which access has been granted.
+// GetAppId gets the appId property value. The globally unique identifier of the application to which access is granted.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
@@ -63,7 +63,7 @@ func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) Serialize(wri
     }
     return nil
 }
-// SetAppId sets the appId property value. The globally unique identifier of the application to which access has been granted.
+// SetAppId sets the appId property value. The globally unique identifier of the application to which access is granted.
 func (m *AccessReviewInstanceDecisionItemServicePrincipalResource) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {

@@ -190,11 +190,6 @@ func (m *VirtualEndpointRequestBuilder) RetrieveTenantEncryptionSetting()(*Virtu
 func (m *VirtualEndpointRequestBuilder) ServicePlans()(*VirtualEndpointServicePlansRequestBuilder) {
     return NewVirtualEndpointServicePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SharedUseServicePlans provides operations to manage the sharedUseServicePlans property of the microsoft.graph.virtualEndpoint entity.
-// returns a *VirtualEndpointSharedUseServicePlansRequestBuilder when successful
-func (m *VirtualEndpointRequestBuilder) SharedUseServicePlans()(*VirtualEndpointSharedUseServicePlansRequestBuilder) {
-    return NewVirtualEndpointSharedUseServicePlansRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Snapshots provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointSnapshotsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) Snapshots()(*VirtualEndpointSnapshotsRequestBuilder) {

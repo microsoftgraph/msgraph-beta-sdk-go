@@ -22,10 +22,32 @@ func NewMacOSImportedPFXCertificateProfile()(*MacOSImportedPFXCertificateProfile
 func CreateMacOSImportedPFXCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSImportedPFXCertificateProfile(), nil
 }
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// returns a *AppleDeploymentChannel when successful
+func (m *MacOSImportedPFXCertificateProfile) GetDeploymentChannel()(*AppleDeploymentChannel) {
+    val, err := m.GetBackingStore().Get("deploymentChannel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeploymentChannel)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSImportedPFXCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MacOSCertificateProfileBase.GetFieldDeserializers()
+    res["deploymentChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeploymentChannel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeploymentChannel(val.(*AppleDeploymentChannel))
+        }
+        return nil
+    }
     res["intendedPurpose"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseIntendedPurpose)
         if err != nil {
@@ -84,6 +106,13 @@ func (m *MacOSImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d26
     if err != nil {
         return err
     }
+    if m.GetDeploymentChannel() != nil {
+        cast := (*m.GetDeploymentChannel()).String()
+        err = writer.WriteStringValue("deploymentChannel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetIntendedPurpose() != nil {
         cast := (*m.GetIntendedPurpose()).String()
         err = writer.WriteStringValue("intendedPurpose", &cast)
@@ -105,6 +134,13 @@ func (m *MacOSImportedPFXCertificateProfile) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+func (m *MacOSImportedPFXCertificateProfile) SetDeploymentChannel(value *AppleDeploymentChannel)() {
+    err := m.GetBackingStore().Set("deploymentChannel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIntendedPurpose sets the intendedPurpose property value. PFX Import Options.
 func (m *MacOSImportedPFXCertificateProfile) SetIntendedPurpose(value *IntendedPurpose)() {
     err := m.GetBackingStore().Set("intendedPurpose", value)
@@ -122,8 +158,10 @@ func (m *MacOSImportedPFXCertificateProfile) SetManagedDeviceCertificateStates(v
 type MacOSImportedPFXCertificateProfileable interface {
     MacOSCertificateProfileBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeploymentChannel()(*AppleDeploymentChannel)
     GetIntendedPurpose()(*IntendedPurpose)
     GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
+    SetDeploymentChannel(value *AppleDeploymentChannel)()
     SetIntendedPurpose(value *IntendedPurpose)()
     SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
 }

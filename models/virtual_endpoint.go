@@ -285,22 +285,6 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
-    res["sharedUseServicePlans"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateCloudPcSharedUseServicePlanFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]CloudPcSharedUseServicePlanable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(CloudPcSharedUseServicePlanable)
-                }
-            }
-            m.SetSharedUseServicePlans(res)
-        }
-        return nil
-    }
     res["snapshots"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcSnapshotFromDiscriminatorValue)
         if err != nil {
@@ -432,18 +416,6 @@ func (m *VirtualEndpoint) GetServicePlans()([]CloudPcServicePlanable) {
     }
     if val != nil {
         return val.([]CloudPcServicePlanable)
-    }
-    return nil
-}
-// GetSharedUseServicePlans gets the sharedUseServicePlans property value. Cloud PC shared-use service plans. The sharedUseServicePlans relationship is deprecated and stopped returning data on October 8, 2023. Going forward, use the frontLineServicePlans relationship.
-// returns a []CloudPcSharedUseServicePlanable when successful
-func (m *VirtualEndpoint) GetSharedUseServicePlans()([]CloudPcSharedUseServicePlanable) {
-    val, err := m.GetBackingStore().Get("sharedUseServicePlans")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]CloudPcSharedUseServicePlanable)
     }
     return nil
 }
@@ -627,18 +599,6 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
-    if m.GetSharedUseServicePlans() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedUseServicePlans()))
-        for i, v := range m.GetSharedUseServicePlans() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("sharedUseServicePlans", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetSnapshots() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSnapshots()))
         for i, v := range m.GetSnapshots() {
@@ -768,13 +728,6 @@ func (m *VirtualEndpoint) SetServicePlans(value []CloudPcServicePlanable)() {
         panic(err)
     }
 }
-// SetSharedUseServicePlans sets the sharedUseServicePlans property value. Cloud PC shared-use service plans. The sharedUseServicePlans relationship is deprecated and stopped returning data on October 8, 2023. Going forward, use the frontLineServicePlans relationship.
-func (m *VirtualEndpoint) SetSharedUseServicePlans(value []CloudPcSharedUseServicePlanable)() {
-    err := m.GetBackingStore().Set("sharedUseServicePlans", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSnapshots sets the snapshots property value. Cloud PC snapshots.
 func (m *VirtualEndpoint) SetSnapshots(value []CloudPcSnapshotable)() {
     err := m.GetBackingStore().Set("snapshots", value)
@@ -812,7 +765,6 @@ type VirtualEndpointable interface {
     GetProvisioningPolicies()([]CloudPcProvisioningPolicyable)
     GetReports()(CloudPcReportsable)
     GetServicePlans()([]CloudPcServicePlanable)
-    GetSharedUseServicePlans()([]CloudPcSharedUseServicePlanable)
     GetSnapshots()([]CloudPcSnapshotable)
     GetSupportedRegions()([]CloudPcSupportedRegionable)
     GetUserSettings()([]CloudPcUserSettingable)
@@ -829,7 +781,6 @@ type VirtualEndpointable interface {
     SetProvisioningPolicies(value []CloudPcProvisioningPolicyable)()
     SetReports(value CloudPcReportsable)()
     SetServicePlans(value []CloudPcServicePlanable)()
-    SetSharedUseServicePlans(value []CloudPcSharedUseServicePlanable)()
     SetSnapshots(value []CloudPcSnapshotable)()
     SetSupportedRegions(value []CloudPcSupportedRegionable)()
     SetUserSettings(value []CloudPcUserSettingable)()

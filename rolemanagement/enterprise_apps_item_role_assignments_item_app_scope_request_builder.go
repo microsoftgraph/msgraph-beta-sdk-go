@@ -18,7 +18,7 @@ type EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilderGetQueryParameters details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
+// EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilderGetQueryParameters read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
 type EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
+// Get read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
 // returns a AppScopeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilder) Get(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable, error) {
@@ -121,7 +121,7 @@ func (m *EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
+// ToGetRequestInformation read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
 // returns a *RequestInformation when successful
 func (m *EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleAssignmentsItemAppScopeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

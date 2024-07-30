@@ -44,6 +44,11 @@ func NewItemGetByPathWithPathRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewItemGetByPathWithPathRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
+// ContentModels provides operations to manage the contentModels property of the microsoft.graph.site entity.
+// returns a *ItemGetByPathWithPathContentModelsRequestBuilder when successful
+func (m *ItemGetByPathWithPathRequestBuilder) ContentModels()(*ItemGetByPathWithPathContentModelsRequestBuilder) {
+    return NewItemGetByPathWithPathContentModelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.site entity.
 // returns a *ItemGetByPathWithPathContentTypesRequestBuilder when successful
 func (m *ItemGetByPathWithPathRequestBuilder) ContentTypes()(*ItemGetByPathWithPathContentTypesRequestBuilder) {
@@ -53,6 +58,11 @@ func (m *ItemGetByPathWithPathRequestBuilder) ContentTypes()(*ItemGetByPathWithP
 // returns a *ItemGetByPathWithPathCreatedByUserRequestBuilder when successful
 func (m *ItemGetByPathWithPathRequestBuilder) CreatedByUser()(*ItemGetByPathWithPathCreatedByUserRequestBuilder) {
     return NewItemGetByPathWithPathCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DocumentProcessingJobs provides operations to manage the documentProcessingJobs property of the microsoft.graph.site entity.
+// returns a *ItemGetByPathWithPathDocumentProcessingJobsRequestBuilder when successful
+func (m *ItemGetByPathWithPathRequestBuilder) DocumentProcessingJobs()(*ItemGetByPathWithPathDocumentProcessingJobsRequestBuilder) {
+    return NewItemGetByPathWithPathDocumentProcessingJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Drive provides operations to manage the drive property of the microsoft.graph.site entity.
 // returns a *ItemGetByPathWithPathDriveRequestBuilder when successful
@@ -98,11 +108,6 @@ func (m *ItemGetByPathWithPathRequestBuilder) GetActivitiesByIntervalWithStartDa
 // returns a *ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder when successful
 func (m *ItemGetByPathWithPathRequestBuilder) GetApplicableContentTypesForListWithListId(listId *string)(*ItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilder) {
     return NewItemGetByPathWithPathGetApplicableContentTypesForListWithListIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, listId)
-}
-// GetByPathWithPath1 provides operations to call the getByPath method.
-// returns a *ItemGetByPathWithPathGetByPathWithPath1RequestBuilder when successful
-func (m *ItemGetByPathWithPathRequestBuilder) GetByPathWithPath1(path1 *string)(*ItemGetByPathWithPathGetByPathWithPath1RequestBuilder) {
-    return NewItemGetByPathWithPathGetByPathWithPath1RequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, path1)
 }
 // InformationProtection provides operations to manage the informationProtection property of the microsoft.graph.site entity.
 // returns a *ItemGetByPathWithPathInformationProtectionRequestBuilder when successful

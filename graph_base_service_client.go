@@ -105,6 +105,7 @@ import (
     ibd3e65bb14e91a8a05d902c54fadec2c1b6931676c97f76da4969c975770aab2 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals"
     ibf9394d7c54feda53ca523241dde659e8725041c25384ede68e72731d68d5abe "github.com/microsoftgraph/msgraph-beta-sdk-go/bookingbusinesses"
     ibfdc6364c06d072aa2aefd5744c668e9033d90ef2a5b4075da3081bc413ea379 "github.com/microsoftgraph/msgraph-beta-sdk-go/networkaccess"
+    ic095b493ce132d5d76dd2e98bfcff99e08f7de07490051885070d98614035110 "github.com/microsoftgraph/msgraph-beta-sdk-go/network"
     ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1 "github.com/microsoftgraph/msgraph-beta-sdk-go/places"
     icb4f253cb1cd35435f5752b611229032c618bbcfeb3be80ee4d6a06d404114fc "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork"
     icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a "github.com/microsoftgraph/msgraph-beta-sdk-go/users"
@@ -519,6 +520,11 @@ func (m *GraphBaseServiceClient) MobilityManagementPolicies()(*i05bd1def68419ff4
 // returns a *MonitoringRequestBuilder when successful
 func (m *GraphBaseServiceClient) Monitoring()(*i3c2d5b7a05b0c58ca1d3b72343c5f03221f2bd894e75f89f62ccf8020a48250b.MonitoringRequestBuilder) {
     return i3c2d5b7a05b0c58ca1d3b72343c5f03221f2bd894e75f89f62ccf8020a48250b.NewMonitoringRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Network provides operations to manage the network singleton.
+// returns a *NetworkRequestBuilder when successful
+func (m *GraphBaseServiceClient) Network()(*ic095b493ce132d5d76dd2e98bfcff99e08f7de07490051885070d98614035110.NetworkRequestBuilder) {
+    return ic095b493ce132d5d76dd2e98bfcff99e08f7de07490051885070d98614035110.NewNetworkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // NetworkAccess provides operations to manage the networkAccessRoot singleton.
 // returns a *NetworkAccessRequestBuilder when successful

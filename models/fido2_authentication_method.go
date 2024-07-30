@@ -1,7 +1,6 @@
 package models
 
 import (
-    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -22,7 +21,7 @@ func NewFido2AuthenticationMethod()(*Fido2AuthenticationMethod) {
 func CreateFido2AuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFido2AuthenticationMethod(), nil
 }
-// GetAaGuid gets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
+// GetAaGuid gets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.
 // returns a *string when successful
 func (m *Fido2AuthenticationMethod) GetAaGuid()(*string) {
     val, err := m.GetBackingStore().Get("aaGuid")
@@ -34,7 +33,7 @@ func (m *Fido2AuthenticationMethod) GetAaGuid()(*string) {
     }
     return nil
 }
-// GetAttestationCertificates gets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
+// GetAttestationCertificates gets the attestationCertificates property value. The attestation certificate or certificates attached to this security key.
 // returns a []string when successful
 func (m *Fido2AuthenticationMethod) GetAttestationCertificates()([]string) {
     val, err := m.GetBackingStore().Get("attestationCertificates")
@@ -55,18 +54,6 @@ func (m *Fido2AuthenticationMethod) GetAttestationLevel()(*AttestationLevel) {
     }
     if val != nil {
         return val.(*AttestationLevel)
-    }
-    return nil
-}
-// GetCreatedDateTime gets the createdDateTime property value. The timestamp when this key was registered to the user.
-// returns a *Time when successful
-func (m *Fido2AuthenticationMethod) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
-    val, err := m.GetBackingStore().Get("createdDateTime")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -122,16 +109,6 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
-    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetTimeValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetCreatedDateTime(val)
-        }
-        return nil
-    }
     res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -152,6 +129,16 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["publicKeyCredential"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWebauthnPublicKeyCredentialFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPublicKeyCredential(val.(WebauthnPublicKeyCredentialable))
+        }
+        return nil
+    }
     return res
 }
 // GetModel gets the model property value. The manufacturer-assigned model of the FIDO2 security key.
@@ -163,6 +150,18 @@ func (m *Fido2AuthenticationMethod) GetModel()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPublicKeyCredential gets the publicKeyCredential property value. Contains the WebAuthn public key credential information being registered. Only used for write requests. This property isn't returned on read operations.
+// returns a WebauthnPublicKeyCredentialable when successful
+func (m *Fido2AuthenticationMethod) GetPublicKeyCredential()(WebauthnPublicKeyCredentialable) {
+    val, err := m.GetBackingStore().Get("publicKeyCredential")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WebauthnPublicKeyCredentialable)
     }
     return nil
 }
@@ -192,12 +191,6 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
-        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -209,16 +202,22 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("publicKeyCredential", m.GetPublicKeyCredential())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
-// SetAaGuid sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
+// SetAaGuid sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.
 func (m *Fido2AuthenticationMethod) SetAaGuid(value *string)() {
     err := m.GetBackingStore().Set("aaGuid", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAttestationCertificates sets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
+// SetAttestationCertificates sets the attestationCertificates property value. The attestation certificate or certificates attached to this security key.
 func (m *Fido2AuthenticationMethod) SetAttestationCertificates(value []string)() {
     err := m.GetBackingStore().Set("attestationCertificates", value)
     if err != nil {
@@ -228,13 +227,6 @@ func (m *Fido2AuthenticationMethod) SetAttestationCertificates(value []string)()
 // SetAttestationLevel sets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, notAttested, unknownFutureValue.
 func (m *Fido2AuthenticationMethod) SetAttestationLevel(value *AttestationLevel)() {
     err := m.GetBackingStore().Set("attestationLevel", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetCreatedDateTime sets the createdDateTime property value. The timestamp when this key was registered to the user.
-func (m *Fido2AuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
-    err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -253,19 +245,26 @@ func (m *Fido2AuthenticationMethod) SetModel(value *string)() {
         panic(err)
     }
 }
+// SetPublicKeyCredential sets the publicKeyCredential property value. Contains the WebAuthn public key credential information being registered. Only used for write requests. This property isn't returned on read operations.
+func (m *Fido2AuthenticationMethod) SetPublicKeyCredential(value WebauthnPublicKeyCredentialable)() {
+    err := m.GetBackingStore().Set("publicKeyCredential", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Fido2AuthenticationMethodable interface {
     AuthenticationMethodable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAaGuid()(*string)
     GetAttestationCertificates()([]string)
     GetAttestationLevel()(*AttestationLevel)
-    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDisplayName()(*string)
     GetModel()(*string)
+    GetPublicKeyCredential()(WebauthnPublicKeyCredentialable)
     SetAaGuid(value *string)()
     SetAttestationCertificates(value []string)()
     SetAttestationLevel(value *AttestationLevel)()
-    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDisplayName(value *string)()
     SetModel(value *string)()
+    SetPublicKeyCredential(value WebauthnPublicKeyCredentialable)()
 }

@@ -11,7 +11,7 @@ import (
 type EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+// EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters the roleDefinition the assignment is for. Supports $expand.
 type EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewEntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+// Get the roleDefinition the assignment is for. Supports $expand.
 // returns a UnifiedRoleDefinitionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable, error) {
@@ -60,7 +60,7 @@ func (m *EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilder) G
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleDefinitionable), nil
 }
-// ToGetRequestInformation the roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+// ToGetRequestInformation the roleDefinition the assignment is for. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentsItemRoleDefinitionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -127,7 +127,7 @@ func (m *AttendanceRecord) GetIdentity()(Identityable) {
     }
     return nil
 }
-// GetRegistrantId gets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+// GetRegistrantId gets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
 // returns a *string when successful
 func (m *AttendanceRecord) GetRegistrantId()(*string) {
     val, err := m.GetBackingStore().Get("registrantId")
@@ -234,7 +234,7 @@ func (m *AttendanceRecord) SetIdentity(value Identityable)() {
         panic(err)
     }
 }
-// SetRegistrantId sets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.
+// SetRegistrantId sets the registrantId property value. Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting. (deprecated)
 func (m *AttendanceRecord) SetRegistrantId(value *string)() {
     err := m.GetBackingStore().Set("registrantId", value)
     if err != nil {

@@ -45,6 +45,18 @@ func (m *RemoteActionAudit) GetActionState()(*ActionState) {
     }
     return nil
 }
+// GetBulkDeviceActionId gets the bulkDeviceActionId property value. BulkAction ID
+// returns a *string when successful
+func (m *RemoteActionAudit) GetBulkDeviceActionId()(*string) {
+    val, err := m.GetBackingStore().Get("bulkDeviceActionId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDeviceDisplayName gets the deviceDisplayName property value. Intune device name.
 // returns a *string when successful
 func (m *RemoteActionAudit) GetDeviceDisplayName()(*string) {
@@ -102,6 +114,16 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetActionState(val.(*ActionState))
+        }
+        return nil
+    }
+    res["bulkDeviceActionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBulkDeviceActionId(val)
         }
         return nil
     }
@@ -246,6 +268,12 @@ func (m *RemoteActionAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("bulkDeviceActionId", m.GetBulkDeviceActionId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("deviceDisplayName", m.GetDeviceDisplayName())
         if err != nil {
             return err
@@ -299,6 +327,13 @@ func (m *RemoteActionAudit) SetAction(value *RemoteAction)() {
 // SetActionState sets the actionState property value. The actionState property
 func (m *RemoteActionAudit) SetActionState(value *ActionState)() {
     err := m.GetBackingStore().Set("actionState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBulkDeviceActionId sets the bulkDeviceActionId property value. BulkAction ID
+func (m *RemoteActionAudit) SetBulkDeviceActionId(value *string)() {
+    err := m.GetBackingStore().Set("bulkDeviceActionId", value)
     if err != nil {
         panic(err)
     }
@@ -357,6 +392,7 @@ type RemoteActionAuditable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAction()(*RemoteAction)
     GetActionState()(*ActionState)
+    GetBulkDeviceActionId()(*string)
     GetDeviceDisplayName()(*string)
     GetDeviceIMEI()(*string)
     GetDeviceOwnerUserPrincipalName()(*string)
@@ -366,6 +402,7 @@ type RemoteActionAuditable interface {
     GetUserName()(*string)
     SetAction(value *RemoteAction)()
     SetActionState(value *ActionState)()
+    SetBulkDeviceActionId(value *string)()
     SetDeviceDisplayName(value *string)()
     SetDeviceIMEI(value *string)()
     SetDeviceOwnerUserPrincipalName(value *string)()

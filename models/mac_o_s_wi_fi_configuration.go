@@ -64,6 +64,18 @@ func (m *MacOSWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     }
     return nil
 }
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// returns a *AppleDeploymentChannel when successful
+func (m *MacOSWiFiConfiguration) GetDeploymentChannel()(*AppleDeploymentChannel) {
+    val, err := m.GetBackingStore().Get("deploymentChannel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeploymentChannel)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,6 +97,16 @@ func (m *MacOSWiFiConfiguration) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetConnectWhenNetworkNameIsHidden(val)
+        }
+        return nil
+    }
+    res["deploymentChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeploymentChannel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeploymentChannel(val.(*AppleDeploymentChannel))
         }
         return nil
     }
@@ -284,6 +306,13 @@ func (m *MacOSWiFiConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    if m.GetDeploymentChannel() != nil {
+        cast := (*m.GetDeploymentChannel()).String()
+        err = writer.WriteStringValue("deploymentChannel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("networkName", m.GetNetworkName())
         if err != nil {
@@ -350,6 +379,13 @@ func (m *MacOSWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)(
         panic(err)
     }
 }
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+func (m *MacOSWiFiConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {
+    err := m.GetBackingStore().Set("deploymentChannel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNetworkName sets the networkName property value. Network Name
 func (m *MacOSWiFiConfiguration) SetNetworkName(value *string)() {
     err := m.GetBackingStore().Set("networkName", value)
@@ -411,6 +447,7 @@ type MacOSWiFiConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetConnectAutomatically()(*bool)
     GetConnectWhenNetworkNameIsHidden()(*bool)
+    GetDeploymentChannel()(*AppleDeploymentChannel)
     GetNetworkName()(*string)
     GetPreSharedKey()(*string)
     GetProxyAutomaticConfigurationUrl()(*string)
@@ -421,6 +458,7 @@ type MacOSWiFiConfigurationable interface {
     GetWiFiSecurityType()(*WiFiSecurityType)
     SetConnectAutomatically(value *bool)()
     SetConnectWhenNetworkNameIsHidden(value *bool)()
+    SetDeploymentChannel(value *AppleDeploymentChannel)()
     SetNetworkName(value *string)()
     SetPreSharedKey(value *string)()
     SetProxyAutomaticConfigurationUrl(value *string)()

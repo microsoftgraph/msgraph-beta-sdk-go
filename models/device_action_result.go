@@ -36,6 +36,8 @@ func CreateDeviceActionResultFromDiscriminatorValue(parseNode i878a80d2330e89d26
                 switch *mappingValue {
                     case "#microsoft.graph.activateDeviceEsimActionResult":
                         return NewActivateDeviceEsimActionResult(), nil
+                    case "#microsoft.graph.changeAssignmentsActionResult":
+                        return NewChangeAssignmentsActionResult(), nil
                     case "#microsoft.graph.configurationManagerActionResult":
                         return NewConfigurationManagerActionResult(), nil
                     case "#microsoft.graph.deleteUserFromSharedAppleDeviceActionResult":

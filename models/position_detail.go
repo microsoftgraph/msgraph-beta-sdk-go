@@ -160,6 +160,26 @@ func (m *PositionDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["secondaryJobTitle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecondaryJobTitle(val)
+        }
+        return nil
+    }
+    res["secondaryRole"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecondaryRole(val)
+        }
+        return nil
+    }
     res["startMonthYear"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetDateOnlyValue()
         if err != nil {
@@ -242,6 +262,30 @@ func (m *PositionDetail) GetRole()(*string) {
     }
     return nil
 }
+// GetSecondaryJobTitle gets the secondaryJobTitle property value. The secondaryJobTitle property
+// returns a *string when successful
+func (m *PositionDetail) GetSecondaryJobTitle()(*string) {
+    val, err := m.GetBackingStore().Get("secondaryJobTitle")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSecondaryRole gets the secondaryRole property value. The secondaryRole property
+// returns a *string when successful
+func (m *PositionDetail) GetSecondaryRole()(*string) {
+    val, err := m.GetBackingStore().Get("secondaryRole")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetStartMonthYear gets the startMonthYear property value. The start month and year of the position.
 // returns a *DateOnly when successful
 func (m *PositionDetail) GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
@@ -312,6 +356,18 @@ func (m *PositionDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("role", m.GetRole())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("secondaryJobTitle", m.GetSecondaryJobTitle())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("secondaryRole", m.GetSecondaryRole())
         if err != nil {
             return err
         }
@@ -403,6 +459,20 @@ func (m *PositionDetail) SetRole(value *string)() {
         panic(err)
     }
 }
+// SetSecondaryJobTitle sets the secondaryJobTitle property value. The secondaryJobTitle property
+func (m *PositionDetail) SetSecondaryJobTitle(value *string)() {
+    err := m.GetBackingStore().Set("secondaryJobTitle", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSecondaryRole sets the secondaryRole property value. The secondaryRole property
+func (m *PositionDetail) SetSecondaryRole(value *string)() {
+    err := m.GetBackingStore().Set("secondaryRole", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStartMonthYear sets the startMonthYear property value. The start month and year of the position.
 func (m *PositionDetail) SetStartMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("startMonthYear", value)
@@ -430,6 +500,8 @@ type PositionDetailable interface {
     GetLevel()(*string)
     GetOdataType()(*string)
     GetRole()(*string)
+    GetSecondaryJobTitle()(*string)
+    GetSecondaryRole()(*string)
     GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetSummary()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -441,6 +513,8 @@ type PositionDetailable interface {
     SetLevel(value *string)()
     SetOdataType(value *string)()
     SetRole(value *string)()
+    SetSecondaryJobTitle(value *string)()
+    SetSecondaryRole(value *string)()
     SetStartMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetSummary(value *string)()
 }

@@ -57,6 +57,11 @@ func NewItemSitesSiteItemRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewItemSitesSiteItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// ContentModels provides operations to manage the contentModels property of the microsoft.graph.site entity.
+// returns a *ItemSitesItemContentModelsRequestBuilder when successful
+func (m *ItemSitesSiteItemRequestBuilder) ContentModels()(*ItemSitesItemContentModelsRequestBuilder) {
+    return NewItemSitesItemContentModelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ContentTypes provides operations to manage the contentTypes property of the microsoft.graph.site entity.
 // returns a *ItemSitesItemContentTypesRequestBuilder when successful
 func (m *ItemSitesSiteItemRequestBuilder) ContentTypes()(*ItemSitesItemContentTypesRequestBuilder) {
@@ -66,6 +71,11 @@ func (m *ItemSitesSiteItemRequestBuilder) ContentTypes()(*ItemSitesItemContentTy
 // returns a *ItemSitesItemCreatedByUserRequestBuilder when successful
 func (m *ItemSitesSiteItemRequestBuilder) CreatedByUser()(*ItemSitesItemCreatedByUserRequestBuilder) {
     return NewItemSitesItemCreatedByUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DocumentProcessingJobs provides operations to manage the documentProcessingJobs property of the microsoft.graph.site entity.
+// returns a *ItemSitesItemDocumentProcessingJobsRequestBuilder when successful
+func (m *ItemSitesSiteItemRequestBuilder) DocumentProcessingJobs()(*ItemSitesItemDocumentProcessingJobsRequestBuilder) {
+    return NewItemSitesItemDocumentProcessingJobsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Drive provides operations to manage the drive property of the microsoft.graph.site entity.
 // returns a *ItemSitesItemDriveRequestBuilder when successful

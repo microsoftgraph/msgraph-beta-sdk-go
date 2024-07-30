@@ -22,10 +22,32 @@ func NewMacOSVpnConfiguration()(*MacOSVpnConfiguration) {
 func CreateMacOSVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSVpnConfiguration(), nil
 }
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// returns a *AppleDeploymentChannel when successful
+func (m *MacOSVpnConfiguration) GetDeploymentChannel()(*AppleDeploymentChannel) {
+    val, err := m.GetBackingStore().Get("deploymentChannel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeploymentChannel)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSVpnConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.AppleVpnConfiguration.GetFieldDeserializers()
+    res["deploymentChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeploymentChannel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeploymentChannel(val.(*AppleDeploymentChannel))
+        }
+        return nil
+    }
     res["identityCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateMacOSCertificateProfileBaseFromDiscriminatorValue)
         if err != nil {
@@ -56,6 +78,13 @@ func (m *MacOSVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     if err != nil {
         return err
     }
+    if m.GetDeploymentChannel() != nil {
+        cast := (*m.GetDeploymentChannel()).String()
+        err = writer.WriteStringValue("deploymentChannel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("identityCertificate", m.GetIdentityCertificate())
         if err != nil {
@@ -63,6 +92,13 @@ func (m *MacOSVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     return nil
+}
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+func (m *MacOSVpnConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {
+    err := m.GetBackingStore().Set("deploymentChannel", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetIdentityCertificate sets the identityCertificate property value. Identity certificate for client authentication when authentication method is certificate.
 func (m *MacOSVpnConfiguration) SetIdentityCertificate(value MacOSCertificateProfileBaseable)() {
@@ -74,6 +110,8 @@ func (m *MacOSVpnConfiguration) SetIdentityCertificate(value MacOSCertificatePro
 type MacOSVpnConfigurationable interface {
     AppleVpnConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeploymentChannel()(*AppleDeploymentChannel)
     GetIdentityCertificate()(MacOSCertificateProfileBaseable)
+    SetDeploymentChannel(value *AppleDeploymentChannel)()
     SetIdentityCertificate(value MacOSCertificateProfileBaseable)()
 }

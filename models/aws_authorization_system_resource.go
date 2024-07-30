@@ -37,7 +37,7 @@ func (m *AwsAuthorizationSystemResource) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetService gets the service property value. The service associated with the resource in an AWS authorization system. This is auto-expanded.
+// GetService gets the service property value. The service associated with the resource in an AWS authorization system. This is autoexpanded.
 // returns a AuthorizationSystemTypeServiceable when successful
 func (m *AwsAuthorizationSystemResource) GetService()(AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("service")
@@ -63,7 +63,7 @@ func (m *AwsAuthorizationSystemResource) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetService sets the service property value. The service associated with the resource in an AWS authorization system. This is auto-expanded.
+// SetService sets the service property value. The service associated with the resource in an AWS authorization system. This is autoexpanded.
 func (m *AwsAuthorizationSystemResource) SetService(value AuthorizationSystemTypeServiceable)() {
     err := m.GetBackingStore().Set("service", value)
     if err != nil {

@@ -94,6 +94,18 @@ func (m *MacOSPkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]Custo
     }
     return nil
 }
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// returns a *AppleDeploymentChannel when successful
+func (m *MacOSPkcsCertificateProfile) GetDeploymentChannel()(*AppleDeploymentChannel) {
+    val, err := m.GetBackingStore().Get("deploymentChannel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeploymentChannel)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MacOSPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -161,6 +173,16 @@ func (m *MacOSPkcsCertificateProfile) GetFieldDeserializers()(map[string]func(i8
                 }
             }
             m.SetCustomSubjectAlternativeNames(res)
+        }
+        return nil
+    }
+    res["deploymentChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeploymentChannel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeploymentChannel(val.(*AppleDeploymentChannel))
         }
         return nil
     }
@@ -287,6 +309,13 @@ func (m *MacOSPkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetDeploymentChannel() != nil {
+        cast := (*m.GetDeploymentChannel()).String()
+        err = writer.WriteStringValue("deploymentChannel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetManagedDeviceCertificateStates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceCertificateStates()))
         for i, v := range m.GetManagedDeviceCertificateStates() {
@@ -355,6 +384,13 @@ func (m *MacOSPkcsCertificateProfile) SetCustomSubjectAlternativeNames(value []C
         panic(err)
     }
 }
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+func (m *MacOSPkcsCertificateProfile) SetDeploymentChannel(value *AppleDeploymentChannel)() {
+    err := m.GetBackingStore().Set("deploymentChannel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManagedDeviceCertificateStates sets the managedDeviceCertificateStates property value. Certificate state for devices. This collection can contain a maximum of 2147483647 elements.
 func (m *MacOSPkcsCertificateProfile) SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)() {
     err := m.GetBackingStore().Set("managedDeviceCertificateStates", value)
@@ -385,6 +421,7 @@ type MacOSPkcsCertificateProfileable interface {
     GetCertificationAuthority()(*string)
     GetCertificationAuthorityName()(*string)
     GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
+    GetDeploymentChannel()(*AppleDeploymentChannel)
     GetManagedDeviceCertificateStates()([]ManagedDeviceCertificateStateable)
     GetSubjectAlternativeNameFormatString()(*string)
     GetSubjectNameFormatString()(*string)
@@ -394,6 +431,7 @@ type MacOSPkcsCertificateProfileable interface {
     SetCertificationAuthority(value *string)()
     SetCertificationAuthorityName(value *string)()
     SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
+    SetDeploymentChannel(value *AppleDeploymentChannel)()
     SetManagedDeviceCertificateStates(value []ManagedDeviceCertificateStateable)()
     SetSubjectAlternativeNameFormatString(value *string)()
     SetSubjectNameFormatString(value *string)()
