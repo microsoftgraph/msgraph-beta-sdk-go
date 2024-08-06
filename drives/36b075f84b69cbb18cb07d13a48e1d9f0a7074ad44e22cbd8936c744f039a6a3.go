@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentReplyItemRequestBuilderGetQueryParameters get replies from drives
+// ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentReplyItemRequestBuilderGetQueryParameters the list of replies to the comment. Read-only. Nullable.
 type ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentReplyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookComme
     }
     return nil
 }
-// Get get replies from drives
+// Get the list of replies to the comment. Read-only. Nullable.
 // returns a WorkbookCommentReplyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentReplyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentReplyItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookCommentReplyable, error) {
@@ -126,7 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookComme
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get replies from drives
+// ToGetRequestInformation the list of replies to the comment. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentReplyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookCommentReplyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
