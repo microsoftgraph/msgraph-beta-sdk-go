@@ -154,16 +154,6 @@ func (m *CallTranscript) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
-    res["meetingOrganizerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMeetingOrganizerId(val)
-        }
-        return nil
-    }
     res["metadataContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -207,18 +197,6 @@ func (m *CallTranscript) GetMeetingOrganizer()(IdentitySetable) {
     }
     if val != nil {
         return val.(IdentitySetable)
-    }
-    return nil
-}
-// GetMeetingOrganizerId gets the meetingOrganizerId property value. The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
-// returns a *string when successful
-func (m *CallTranscript) GetMeetingOrganizerId()(*string) {
-    val, err := m.GetBackingStore().Get("meetingOrganizerId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -295,12 +273,6 @@ func (m *CallTranscript) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
-        err = writer.WriteStringValue("meetingOrganizerId", m.GetMeetingOrganizerId())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteByteArrayValue("metadataContent", m.GetMetadataContent())
         if err != nil {
             return err
@@ -363,13 +335,6 @@ func (m *CallTranscript) SetMeetingOrganizer(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetMeetingOrganizerId sets the meetingOrganizerId property value. The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
-func (m *CallTranscript) SetMeetingOrganizerId(value *string)() {
-    err := m.GetBackingStore().Set("meetingOrganizerId", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetMetadataContent sets the metadataContent property value. The time-aligned metadata of the utterances in the transcript. Read-only.
 func (m *CallTranscript) SetMetadataContent(value []byte)() {
     err := m.GetBackingStore().Set("metadataContent", value)
@@ -394,7 +359,6 @@ type CallTranscriptable interface {
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMeetingId()(*string)
     GetMeetingOrganizer()(IdentitySetable)
-    GetMeetingOrganizerId()(*string)
     GetMetadataContent()([]byte)
     GetTranscriptContentUrl()(*string)
     SetCallId(value *string)()
@@ -404,7 +368,6 @@ type CallTranscriptable interface {
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMeetingId(value *string)()
     SetMeetingOrganizer(value IdentitySetable)()
-    SetMeetingOrganizerId(value *string)()
     SetMetadataContent(value []byte)()
     SetTranscriptContentUrl(value *string)()
 }

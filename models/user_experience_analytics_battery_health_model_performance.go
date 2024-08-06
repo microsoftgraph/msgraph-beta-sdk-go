@@ -68,6 +68,30 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetAverageMaxCapa
     }
     return nil
 }
+// GetDeviceManufacturerName gets the deviceManufacturerName property value. The manufacturer name of the device.
+// returns a *string when successful
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetDeviceManufacturerName()(*string) {
+    val, err := m.GetBackingStore().Get("deviceManufacturerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetDeviceModelName gets the deviceModelName property value. The model name of the device.
+// returns a *string when successful
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetDeviceModelName()(*string) {
+    val, err := m.GetBackingStore().Get("deviceModelName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -109,6 +133,26 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) GetFieldDeseriali
         }
         if val != nil {
             m.SetAverageMaxCapacityPercentage(val)
+        }
+        return nil
+    }
+    res["deviceManufacturerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceManufacturerName(val)
+        }
+        return nil
+    }
+    res["deviceModelName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceModelName(val)
         }
         return nil
     }
@@ -321,6 +365,18 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) Serialize(writer 
         }
     }
     {
+        err = writer.WriteStringValue("deviceManufacturerName", m.GetDeviceManufacturerName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("deviceModelName", m.GetDeviceModelName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("manufacturer", m.GetManufacturer())
         if err != nil {
             return err
@@ -399,6 +455,20 @@ func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetAverageMaxCapa
         panic(err)
     }
 }
+// SetDeviceManufacturerName sets the deviceManufacturerName property value. The manufacturer name of the device.
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetDeviceManufacturerName(value *string)() {
+    err := m.GetBackingStore().Set("deviceManufacturerName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeviceModelName sets the deviceModelName property value. The model name of the device.
+func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetDeviceModelName(value *string)() {
+    err := m.GetBackingStore().Set("deviceModelName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManufacturer sets the manufacturer property value. Name of the device manufacturer. Deprecated in favor of DeviceManufacturerName.
 func (m *UserExperienceAnalyticsBatteryHealthModelPerformance) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
@@ -462,6 +532,8 @@ type UserExperienceAnalyticsBatteryHealthModelPerformanceable interface {
     GetAverageBatteryAgeInDays()(*int32)
     GetAverageEstimatedRuntimeInMinutes()(*int32)
     GetAverageMaxCapacityPercentage()(*int32)
+    GetDeviceManufacturerName()(*string)
+    GetDeviceModelName()(*string)
     GetManufacturer()(*string)
     GetMeanFullBatteryDrainCount()(*int32)
     GetMedianEstimatedRuntimeInMinutes()(*int32)
@@ -474,6 +546,8 @@ type UserExperienceAnalyticsBatteryHealthModelPerformanceable interface {
     SetAverageBatteryAgeInDays(value *int32)()
     SetAverageEstimatedRuntimeInMinutes(value *int32)()
     SetAverageMaxCapacityPercentage(value *int32)()
+    SetDeviceManufacturerName(value *string)()
+    SetDeviceModelName(value *string)()
     SetManufacturer(value *string)()
     SetMeanFullBatteryDrainCount(value *int32)()
     SetMedianEstimatedRuntimeInMinutes(value *int32)()

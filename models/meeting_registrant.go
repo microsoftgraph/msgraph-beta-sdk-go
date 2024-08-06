@@ -130,7 +130,7 @@ func (m *MeetingRegistrant) GetFirstName()(*string) {
     }
     return nil
 }
-// GetLastName gets the lastName property value. The last name of the registrant.
+// GetLastName gets the lastName property value. The family name of the registrant.
 // returns a *string when successful
 func (m *MeetingRegistrant) GetLastName()(*string) {
     val, err := m.GetBackingStore().Get("lastName")
@@ -238,7 +238,7 @@ func (m *MeetingRegistrant) SetFirstName(value *string)() {
         panic(err)
     }
 }
-// SetLastName sets the lastName property value. The last name of the registrant.
+// SetLastName sets the lastName property value. The family name of the registrant.
 func (m *MeetingRegistrant) SetLastName(value *string)() {
     err := m.GetBackingStore().Set("lastName", value)
     if err != nil {

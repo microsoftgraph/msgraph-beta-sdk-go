@@ -13,6 +13,7 @@ const (
     FRONTLINELICENSEUSAGEREALTIMEREPORT_CLOUDPCREPORTNAME
     REMOTECONNECTIONQUALITYREPORTS_CLOUDPCREPORTNAME
     INACCESSIBLECLOUDPCREPORTS_CLOUDPCREPORTNAME
+    ACTIONSTATUSREPORT_CLOUDPCREPORTNAME
     RAWREMOTECONNECTIONREPORTS_CLOUDPCREPORTNAME
     CLOUDPCUSAGECATEGORYREPORTS_CLOUDPCREPORTNAME
     CROSSREGIONDISASTERRECOVERYREPORT_CLOUDPCREPORTNAME
@@ -21,7 +22,7 @@ const (
 )
 
 func (i CloudPcReportName) String() string {
-    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport"}[i]
+    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "actionStatusReport", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport"}[i]
 }
 func ParseCloudPcReportName(v string) (any, error) {
     result := REMOTECONNECTIONHISTORICALREPORTS_CLOUDPCREPORTNAME
@@ -48,6 +49,8 @@ func ParseCloudPcReportName(v string) (any, error) {
             result = REMOTECONNECTIONQUALITYREPORTS_CLOUDPCREPORTNAME
         case "inaccessibleCloudPcReports":
             result = INACCESSIBLECLOUDPCREPORTS_CLOUDPCREPORTNAME
+        case "actionStatusReport":
+            result = ACTIONSTATUSREPORT_CLOUDPCREPORTNAME
         case "rawRemoteConnectionReports":
             result = RAWREMOTECONNECTIONREPORTS_CLOUDPCREPORTNAME
         case "cloudPcUsageCategoryReports":

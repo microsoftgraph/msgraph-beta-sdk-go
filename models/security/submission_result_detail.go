@@ -56,10 +56,27 @@ const (
     BADRECLASSIFIEDASBAD_SUBMISSIONRESULTDETAIL
     BADRECLASSIFIEDASCANNOTMAKEDECISION_SUBMISSIONRESULTDETAIL
     UNKNOWNFUTUREVALUE_SUBMISSIONRESULTDETAIL
+    WILLNOTIFYONCEDONE_SUBMISSIONRESULTDETAIL
+    CHECKUSERREPORTEDSETTINGS_SUBMISSIONRESULTDETAIL
+    PARTOFEDUCATIONCAMPAIGN_SUBMISSIONRESULTDETAIL
+    ALLOWEDBYADVANCEDDELIVERY_SUBMISSIONRESULTDETAIL
+    ALLOWEDBYENHANCEDFILTERING_SUBMISSIONRESULTDETAIL
+    ITEMDELETED_SUBMISSIONRESULTDETAIL
+    ITEMFOUNDCLEAN_SUBMISSIONRESULTDETAIL
+    ITEMFOUNDMALICIOUS_SUBMISSIONRESULTDETAIL
+    UNABLETOMAKEDECISION_SUBMISSIONRESULTDETAIL
+    DOMAINRESEMBLEDYOURORGANIZATION_SUBMISSIONRESULTDETAIL
+    ENDUSERBEINGIMPERSONATED_SUBMISSIONRESULTDETAIL
+    ASSOCIATEDWITHBRAND_SUBMISSIONRESULTDETAIL
+    SENDERFAILEDAUTHENTICATION_SUBMISSIONRESULTDETAIL
+    ENDUSERBEINGSPOOFED_SUBMISSIONRESULTDETAIL
+    ITEMFOUNDBULK_SUBMISSIONRESULTDETAIL
+    ITEMNOTRECEIVEDBYSERVICE_SUBMISSIONRESULTDETAIL
+    ITEMFOUNDSPAM_SUBMISSIONRESULTDETAIL
 )
 
 func (i SubmissionResultDetail) String() string {
-    return []string{"none", "underInvestigation", "simulatedThreat", "allowedBySecOps", "allowedByThirdPartyFilters", "messageNotFound", "urlFileShouldNotBeBlocked", "urlFileShouldBeBlocked", "urlFileCannotMakeDecision", "domainImpersonation", "userImpersonation", "brandImpersonation", "outboundShouldNotBeBlocked", "outboundShouldBeBlocked", "outboundBulk", "outboundCannotMakeDecision", "outboundNotRescanned", "zeroHourAutoPurgeAllowed", "zeroHourAutoPurgeBlocked", "zeroHourAutoPurgeQuarantineReleased", "onPremisesSkip", "allowedByTenantAllowBlockList", "blockedByTenantAllowBlockList", "allowedUrlByTenantAllowBlockList", "allowedFileByTenantAllowBlockList", "allowedSenderByTenantAllowBlockList", "allowedRecipientByTenantAllowBlockList", "blockedUrlByTenantAllowBlockList", "blockedFileByTenantAllowBlockList", "blockedSenderByTenantAllowBlockList", "blockedRecipientByTenantAllowBlockList", "allowedByConnection", "blockedByConnection", "allowedByExchangeTransportRule", "blockedByExchangeTransportRule", "quarantineReleased", "quarantineReleasedThenBlocked", "junkMailRuleDisabled", "allowedByUserSetting", "blockedByUserSetting", "allowedByTenant", "blockedByTenant", "invalidFalsePositive", "invalidFalseNegative", "spoofBlocked", "goodReclassifiedAsBad", "goodReclassifiedAsBulk", "goodReclassifiedAsGood", "goodReclassifiedAsCannotMakeDecision", "badReclassifiedAsGood", "badReclassifiedAsBulk", "badReclassifiedAsBad", "badReclassifiedAsCannotMakeDecision", "unknownFutureValue"}[i]
+    return []string{"none", "underInvestigation", "simulatedThreat", "allowedBySecOps", "allowedByThirdPartyFilters", "messageNotFound", "urlFileShouldNotBeBlocked", "urlFileShouldBeBlocked", "urlFileCannotMakeDecision", "domainImpersonation", "userImpersonation", "brandImpersonation", "outboundShouldNotBeBlocked", "outboundShouldBeBlocked", "outboundBulk", "outboundCannotMakeDecision", "outboundNotRescanned", "zeroHourAutoPurgeAllowed", "zeroHourAutoPurgeBlocked", "zeroHourAutoPurgeQuarantineReleased", "onPremisesSkip", "allowedByTenantAllowBlockList", "blockedByTenantAllowBlockList", "allowedUrlByTenantAllowBlockList", "allowedFileByTenantAllowBlockList", "allowedSenderByTenantAllowBlockList", "allowedRecipientByTenantAllowBlockList", "blockedUrlByTenantAllowBlockList", "blockedFileByTenantAllowBlockList", "blockedSenderByTenantAllowBlockList", "blockedRecipientByTenantAllowBlockList", "allowedByConnection", "blockedByConnection", "allowedByExchangeTransportRule", "blockedByExchangeTransportRule", "quarantineReleased", "quarantineReleasedThenBlocked", "junkMailRuleDisabled", "allowedByUserSetting", "blockedByUserSetting", "allowedByTenant", "blockedByTenant", "invalidFalsePositive", "invalidFalseNegative", "spoofBlocked", "goodReclassifiedAsBad", "goodReclassifiedAsBulk", "goodReclassifiedAsGood", "goodReclassifiedAsCannotMakeDecision", "badReclassifiedAsGood", "badReclassifiedAsBulk", "badReclassifiedAsBad", "badReclassifiedAsCannotMakeDecision", "unknownFutureValue", "willNotifyOnceDone", "checkUserReportedSettings", "partOfEducationCampaign", "allowedByAdvancedDelivery", "allowedByEnhancedFiltering", "itemDeleted", "itemFoundClean", "itemFoundMalicious", "unableToMakeDecision", "domainResembledYourOrganization", "endUserBeingImpersonated", "associatedWithBrand", "senderFailedAuthentication", "endUserBeingSpoofed", "itemFoundBulk", "itemNotReceivedByService", "itemFoundSpam"}[i]
 }
 func ParseSubmissionResultDetail(v string) (any, error) {
     result := NONE_SUBMISSIONRESULTDETAIL
@@ -172,6 +189,40 @@ func ParseSubmissionResultDetail(v string) (any, error) {
             result = BADRECLASSIFIEDASCANNOTMAKEDECISION_SUBMISSIONRESULTDETAIL
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_SUBMISSIONRESULTDETAIL
+        case "willNotifyOnceDone":
+            result = WILLNOTIFYONCEDONE_SUBMISSIONRESULTDETAIL
+        case "checkUserReportedSettings":
+            result = CHECKUSERREPORTEDSETTINGS_SUBMISSIONRESULTDETAIL
+        case "partOfEducationCampaign":
+            result = PARTOFEDUCATIONCAMPAIGN_SUBMISSIONRESULTDETAIL
+        case "allowedByAdvancedDelivery":
+            result = ALLOWEDBYADVANCEDDELIVERY_SUBMISSIONRESULTDETAIL
+        case "allowedByEnhancedFiltering":
+            result = ALLOWEDBYENHANCEDFILTERING_SUBMISSIONRESULTDETAIL
+        case "itemDeleted":
+            result = ITEMDELETED_SUBMISSIONRESULTDETAIL
+        case "itemFoundClean":
+            result = ITEMFOUNDCLEAN_SUBMISSIONRESULTDETAIL
+        case "itemFoundMalicious":
+            result = ITEMFOUNDMALICIOUS_SUBMISSIONRESULTDETAIL
+        case "unableToMakeDecision":
+            result = UNABLETOMAKEDECISION_SUBMISSIONRESULTDETAIL
+        case "domainResembledYourOrganization":
+            result = DOMAINRESEMBLEDYOURORGANIZATION_SUBMISSIONRESULTDETAIL
+        case "endUserBeingImpersonated":
+            result = ENDUSERBEINGIMPERSONATED_SUBMISSIONRESULTDETAIL
+        case "associatedWithBrand":
+            result = ASSOCIATEDWITHBRAND_SUBMISSIONRESULTDETAIL
+        case "senderFailedAuthentication":
+            result = SENDERFAILEDAUTHENTICATION_SUBMISSIONRESULTDETAIL
+        case "endUserBeingSpoofed":
+            result = ENDUSERBEINGSPOOFED_SUBMISSIONRESULTDETAIL
+        case "itemFoundBulk":
+            result = ITEMFOUNDBULK_SUBMISSIONRESULTDETAIL
+        case "itemNotReceivedByService":
+            result = ITEMNOTRECEIVEDBYSERVICE_SUBMISSIONRESULTDETAIL
+        case "itemFoundSpam":
+            result = ITEMFOUNDSPAM_SUBMISSIONRESULTDETAIL
         default:
             return nil, nil
     }

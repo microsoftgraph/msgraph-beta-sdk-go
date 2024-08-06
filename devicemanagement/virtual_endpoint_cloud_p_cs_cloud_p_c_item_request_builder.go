@@ -123,11 +123,6 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetCloudPcLaunchInfo(
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetFrontlineCloudPcAccessState()(*VirtualEndpointCloudPCsItemGetFrontlineCloudPcAccessStateRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemGetFrontlineCloudPcAccessStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
-// returns a *VirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder when successful
-func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetShiftWorkCloudPcAccessState()(*VirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) {
-    return NewVirtualEndpointCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // GetSupportedCloudPcRemoteActions provides operations to call the getSupportedCloudPcRemoteActions method.
 // returns a *VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) GetSupportedCloudPcRemoteActions()(*VirtualEndpointCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) {
@@ -187,6 +182,11 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Resize()(*VirtualEndp
 // returns a *VirtualEndpointCloudPCsItemRestoreRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Restore()(*VirtualEndpointCloudPCsItemRestoreRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveCloudPCRemoteActionResults provides operations to call the retrieveCloudPCRemoteActionResults method.
+// returns a *VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPCRemoteActionResults()(*VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveReviewStatus provides operations to call the retrieveReviewStatus method.
 // returns a *VirtualEndpointCloudPCsItemRetrieveReviewStatusRequestBuilder when successful

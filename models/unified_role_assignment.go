@@ -19,7 +19,7 @@ func NewUnifiedRoleAssignment()(*UnifiedRoleAssignment) {
 func CreateUnifiedRoleAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUnifiedRoleAssignment(), nil
 }
-// GetAppScope gets the appScope property value. Details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
+// GetAppScope gets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
 // returns a AppScopeable when successful
 func (m *UnifiedRoleAssignment) GetAppScope()(AppScopeable) {
     val, err := m.GetBackingStore().Get("appScope")
@@ -55,7 +55,7 @@ func (m *UnifiedRoleAssignment) GetCondition()(*string) {
     }
     return nil
 }
-// GetDirectoryScope gets the directoryScope property value. The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+// GetDirectoryScope gets the directoryScope property value. The directory object that is the scope of the assignment. Read-only. Supports $expand for the directory provider.
 // returns a DirectoryObjectable when successful
 func (m *UnifiedRoleAssignment) GetDirectoryScope()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("directoryScope")
@@ -195,7 +195,7 @@ func (m *UnifiedRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetPrincipal gets the principal property value. The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+// GetPrincipal gets the principal property value. Referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
 // returns a DirectoryObjectable when successful
 func (m *UnifiedRoleAssignment) GetPrincipal()(DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("principal")
@@ -243,7 +243,7 @@ func (m *UnifiedRoleAssignment) GetResourceScope()(*string) {
     }
     return nil
 }
-// GetRoleDefinition gets the roleDefinition property value. The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+// GetRoleDefinition gets the roleDefinition property value. The roleDefinition the assignment is for. Supports $expand.
 // returns a UnifiedRoleDefinitionable when successful
 func (m *UnifiedRoleAssignment) GetRoleDefinition()(UnifiedRoleDefinitionable) {
     val, err := m.GetBackingStore().Get("roleDefinition")
@@ -341,7 +341,7 @@ func (m *UnifiedRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAppScope sets the appScope property value. Details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
+// SetAppScope sets the appScope property value. Read-only property with details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.
 func (m *UnifiedRoleAssignment) SetAppScope(value AppScopeable)() {
     err := m.GetBackingStore().Set("appScope", value)
     if err != nil {
@@ -362,7 +362,7 @@ func (m *UnifiedRoleAssignment) SetCondition(value *string)() {
         panic(err)
     }
 }
-// SetDirectoryScope sets the directoryScope property value. The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+// SetDirectoryScope sets the directoryScope property value. The directory object that is the scope of the assignment. Read-only. Supports $expand for the directory provider.
 func (m *UnifiedRoleAssignment) SetDirectoryScope(value DirectoryObjectable)() {
     err := m.GetBackingStore().Set("directoryScope", value)
     if err != nil {
@@ -376,7 +376,7 @@ func (m *UnifiedRoleAssignment) SetDirectoryScopeId(value *string)() {
         panic(err)
     }
 }
-// SetPrincipal sets the principal property value. The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+// SetPrincipal sets the principal property value. Referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
 func (m *UnifiedRoleAssignment) SetPrincipal(value DirectoryObjectable)() {
     err := m.GetBackingStore().Set("principal", value)
     if err != nil {
@@ -404,7 +404,7 @@ func (m *UnifiedRoleAssignment) SetResourceScope(value *string)() {
         panic(err)
     }
 }
-// SetRoleDefinition sets the roleDefinition property value. The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.
+// SetRoleDefinition sets the roleDefinition property value. The roleDefinition the assignment is for. Supports $expand.
 func (m *UnifiedRoleAssignment) SetRoleDefinition(value UnifiedRoleDefinitionable)() {
     err := m.GetBackingStore().Set("roleDefinition", value)
     if err != nil {

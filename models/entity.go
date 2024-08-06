@@ -654,8 +654,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcReports(), nil
                     case "#microsoft.graph.cloudPcServicePlan":
                         return NewCloudPcServicePlan(), nil
-                    case "#microsoft.graph.cloudPcSharedUseServicePlan":
-                        return NewCloudPcSharedUseServicePlan(), nil
                     case "#microsoft.graph.cloudPcSnapshot":
                         return NewCloudPcSnapshot(), nil
                     case "#microsoft.graph.cloudPcSupportedRegion":
@@ -706,6 +704,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewContactFolder(), nil
                     case "#microsoft.graph.contactMergeSuggestions":
                         return NewContactMergeSuggestions(), nil
+                    case "#microsoft.graph.contentModel":
+                        return NewContentModel(), nil
                     case "#microsoft.graph.contentSharingSession":
                         return NewContentSharingSession(), nil
                     case "#microsoft.graph.contentType":
@@ -1074,6 +1074,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDocumentComment(), nil
                     case "#microsoft.graph.documentCommentReply":
                         return NewDocumentCommentReply(), nil
+                    case "#microsoft.graph.documentProcessingJob":
+                        return NewDocumentProcessingJob(), nil
                     case "#microsoft.graph.documentSetVersion":
                         return NewDocumentSetVersion(), nil
                     case "#microsoft.graph.domain":
@@ -1778,6 +1780,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewManagedDeviceMobileAppConfigurationUserSummary(), nil
                     case "#microsoft.graph.managedDeviceOverview":
                         return NewManagedDeviceOverview(), nil
+                    case "#microsoft.graph.managedDeviceWindowsOperatingSystemImage":
+                        return NewManagedDeviceWindowsOperatingSystemImage(), nil
                     case "#microsoft.graph.managedEBook":
                         return NewManagedEBook(), nil
                     case "#microsoft.graph.managedEBookAssignment":
@@ -2036,6 +2040,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOrganizationalBrandingLocalization(), nil
                     case "#microsoft.graph.organizationalBrandingProperties":
                         return NewOrganizationalBrandingProperties(), nil
+                    case "#microsoft.graph.organizationalBrandingTheme":
+                        return NewOrganizationalBrandingTheme(), nil
                     case "#microsoft.graph.organizationSettings":
                         return NewOrganizationSettings(), nil
                     case "#microsoft.graph.orgContact":
@@ -2962,6 +2968,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserSignInInsight(), nil
                     case "#microsoft.graph.userSignUpMetric":
                         return NewUserSignUpMetric(), nil
+                    case "#microsoft.graph.userSolutionRoot":
+                        return NewUserSolutionRoot(), nil
                     case "#microsoft.graph.userStorage":
                         return NewUserStorage(), nil
                     case "#microsoft.graph.userTeamwork":
@@ -3336,6 +3344,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWorkbookWorksheetProtection(), nil
                     case "#microsoft.graph.workforceIntegration":
                         return NewWorkforceIntegration(), nil
+                    case "#microsoft.graph.workingTimeSchedule":
+                        return NewWorkingTimeSchedule(), nil
                     case "#microsoft.graph.workplaceSensorDevice":
                         return NewWorkplaceSensorDevice(), nil
                     case "#microsoft.graph.workPosition":

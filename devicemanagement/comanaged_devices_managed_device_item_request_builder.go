@@ -56,6 +56,11 @@ func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) AssignmentFilterEvalua
 func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) BypassActivationLock()(*ComanagedDevicesItemBypassActivationLockRequestBuilder) {
     return NewComanagedDevicesItemBypassActivationLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ChangeAssignments provides operations to call the changeAssignments method.
+// returns a *ComanagedDevicesItemChangeAssignmentsRequestBuilder when successful
+func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) ChangeAssignments()(*ComanagedDevicesItemChangeAssignmentsRequestBuilder) {
+    return NewComanagedDevicesItemChangeAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CleanWindowsDevice provides operations to call the cleanWindowsDevice method.
 // returns a *ComanagedDevicesItemCleanWindowsDeviceRequestBuilder when successful
 func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) CleanWindowsDevice()(*ComanagedDevicesItemCleanWindowsDeviceRequestBuilder) {

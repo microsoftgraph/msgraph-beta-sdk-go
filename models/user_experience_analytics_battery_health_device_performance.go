@@ -92,6 +92,30 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceId()(*s
     }
     return nil
 }
+// GetDeviceManufacturerName gets the deviceManufacturerName property value. The manufacturer name of the device.
+// returns a *string when successful
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceManufacturerName()(*string) {
+    val, err := m.GetBackingStore().Get("deviceManufacturerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetDeviceModelName gets the deviceModelName property value. The model name of the device.
+// returns a *string when successful
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceModelName()(*string) {
+    val, err := m.GetBackingStore().Get("deviceModelName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDeviceName gets the deviceName property value. Device friendly name.
 // returns a *string when successful
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetDeviceName()(*string) {
@@ -189,6 +213,26 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) GetFieldDeserial
         }
         if val != nil {
             m.SetDeviceId(val)
+        }
+        return nil
+    }
+    res["deviceManufacturerName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceManufacturerName(val)
+        }
+        return nil
+    }
+    res["deviceModelName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceModelName(val)
         }
         return nil
     }
@@ -373,6 +417,18 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) Serialize(writer
         }
     }
     {
+        err = writer.WriteStringValue("deviceManufacturerName", m.GetDeviceManufacturerName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("deviceModelName", m.GetDeviceModelName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("deviceName", m.GetDeviceName())
         if err != nil {
             return err
@@ -459,6 +515,20 @@ func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceId(valu
         panic(err)
     }
 }
+// SetDeviceManufacturerName sets the deviceManufacturerName property value. The manufacturer name of the device.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceManufacturerName(value *string)() {
+    err := m.GetBackingStore().Set("deviceManufacturerName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeviceModelName sets the deviceModelName property value. The model name of the device.
+func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceModelName(value *string)() {
+    err := m.GetBackingStore().Set("deviceModelName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceName sets the deviceName property value. Device friendly name.
 func (m *UserExperienceAnalyticsBatteryHealthDevicePerformance) SetDeviceName(value *string)() {
     err := m.GetBackingStore().Set("deviceName", value)
@@ -517,6 +587,8 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     GetDeviceBatteryHealthScore()(*int32)
     GetDeviceBatteryTags()([]string)
     GetDeviceId()(*string)
+    GetDeviceManufacturerName()(*string)
+    GetDeviceModelName()(*string)
     GetDeviceName()(*string)
     GetEstimatedRuntimeInMinutes()(*int32)
     GetFullBatteryDrainCount()(*int32)
@@ -530,6 +602,8 @@ type UserExperienceAnalyticsBatteryHealthDevicePerformanceable interface {
     SetDeviceBatteryHealthScore(value *int32)()
     SetDeviceBatteryTags(value []string)()
     SetDeviceId(value *string)()
+    SetDeviceManufacturerName(value *string)()
+    SetDeviceModelName(value *string)()
     SetDeviceName(value *string)()
     SetEstimatedRuntimeInMinutes(value *int32)()
     SetFullBatteryDrainCount(value *int32)()

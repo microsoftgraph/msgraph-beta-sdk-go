@@ -151,6 +151,16 @@ func (m *CloudPcRemoteActionResult) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["statusDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcStatusDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStatusDetail(val.(CloudPcStatusDetailable))
+        }
+        return nil
+    }
     res["statusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcStatusDetailsFromDiscriminatorValue)
         if err != nil {
@@ -211,6 +221,18 @@ func (m *CloudPcRemoteActionResult) GetStartDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
+// GetStatusDetail gets the statusDetail property value. The extended details of the action status, including error code, error message, and additional information. For example, 'statusDetail': {'code': 'internalServerError','message': 'There was an internal server error. Please contact support xxx.','additionalInformation': [ { '@odata.type':'microsoft.graph.keyValuePair','name': 'correlationId','value': '52367774-cfb7-4e9c-ab51-1b864c31f2d1'} ]}
+// returns a CloudPcStatusDetailable when successful
+func (m *CloudPcRemoteActionResult) GetStatusDetail()(CloudPcStatusDetailable) {
+    val, err := m.GetBackingStore().Get("statusDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcStatusDetailable)
+    }
+    return nil
+}
 // GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
 // returns a CloudPcStatusDetailsable when successful
 func (m *CloudPcRemoteActionResult) GetStatusDetails()(CloudPcStatusDetailsable) {
@@ -264,6 +286,12 @@ func (m *CloudPcRemoteActionResult) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err := writer.WriteTimeValue("startDateTime", m.GetStartDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("statusDetail", m.GetStatusDetail())
         if err != nil {
             return err
         }
@@ -342,6 +370,13 @@ func (m *CloudPcRemoteActionResult) SetStartDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
+// SetStatusDetail sets the statusDetail property value. The extended details of the action status, including error code, error message, and additional information. For example, 'statusDetail': {'code': 'internalServerError','message': 'There was an internal server error. Please contact support xxx.','additionalInformation': [ { '@odata.type':'microsoft.graph.keyValuePair','name': 'correlationId','value': '52367774-cfb7-4e9c-ab51-1b864c31f2d1'} ]}
+func (m *CloudPcRemoteActionResult) SetStatusDetail(value CloudPcStatusDetailable)() {
+    err := m.GetBackingStore().Set("statusDetail", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
 func (m *CloudPcRemoteActionResult) SetStatusDetails(value CloudPcStatusDetailsable)() {
     err := m.GetBackingStore().Set("statusDetails", value)
@@ -361,6 +396,7 @@ type CloudPcRemoteActionResultable interface {
     GetManagedDeviceId()(*string)
     GetOdataType()(*string)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetStatusDetail()(CloudPcStatusDetailable)
     GetStatusDetails()(CloudPcStatusDetailsable)
     SetActionName(value *string)()
     SetActionState(value *ActionState)()
@@ -370,5 +406,6 @@ type CloudPcRemoteActionResultable interface {
     SetManagedDeviceId(value *string)()
     SetOdataType(value *string)()
     SetStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetStatusDetail(value CloudPcStatusDetailable)()
     SetStatusDetails(value CloudPcStatusDetailsable)()
 }

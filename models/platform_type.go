@@ -3,24 +3,26 @@ package models
 type PlatformType int
 
 const (
-    // None Platform Type
+    // None
     NONE_PLATFORMTYPE PlatformType = iota
-    // Android Platform Type
+    // Android
     ANDROID_PLATFORMTYPE
-    // Android Enterprise Platform Type
-    ANDROIDENTERPRISE_PLATFORMTYPE
-    // iOS Platform Type
+    // iOS
     IOS_PLATFORMTYPE
-    // MacOS Platform Type
+    // MacOS
     MACOS_PLATFORMTYPE
     // Windows 10X Platform Type
     WINDOWS10X_PLATFORMTYPE
-    // Windows 10 Platform Type
+    // Windows 10
     WINDOWS10_PLATFORMTYPE
+    // Linux
+    LINUX_PLATFORMTYPE
+    // UnknownFutureValue
+    UNKNOWNFUTUREVALUE_PLATFORMTYPE
 )
 
 func (i PlatformType) String() string {
-    return []string{"none", "android", "androidEnterprise", "iOS", "macOS", "windows10X", "windows10"}[i]
+    return []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue"}[i]
 }
 func ParsePlatformType(v string) (any, error) {
     result := NONE_PLATFORMTYPE
@@ -29,8 +31,6 @@ func ParsePlatformType(v string) (any, error) {
             result = NONE_PLATFORMTYPE
         case "android":
             result = ANDROID_PLATFORMTYPE
-        case "androidEnterprise":
-            result = ANDROIDENTERPRISE_PLATFORMTYPE
         case "iOS":
             result = IOS_PLATFORMTYPE
         case "macOS":
@@ -39,6 +39,10 @@ func ParsePlatformType(v string) (any, error) {
             result = WINDOWS10X_PLATFORMTYPE
         case "windows10":
             result = WINDOWS10_PLATFORMTYPE
+        case "linux":
+            result = LINUX_PLATFORMTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_PLATFORMTYPE
         default:
             return nil, nil
     }

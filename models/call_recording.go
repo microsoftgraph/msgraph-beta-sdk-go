@@ -154,16 +154,6 @@ func (m *CallRecording) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["meetingOrganizerId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetMeetingOrganizerId(val)
-        }
-        return nil
-    }
     res["recordingContentUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -197,18 +187,6 @@ func (m *CallRecording) GetMeetingOrganizer()(IdentitySetable) {
     }
     if val != nil {
         return val.(IdentitySetable)
-    }
-    return nil
-}
-// GetMeetingOrganizerId gets the meetingOrganizerId property value. The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
-// returns a *string when successful
-func (m *CallRecording) GetMeetingOrganizerId()(*string) {
-    val, err := m.GetBackingStore().Get("meetingOrganizerId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
     }
     return nil
 }
@@ -273,12 +251,6 @@ func (m *CallRecording) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteStringValue("meetingOrganizerId", m.GetMeetingOrganizerId())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteStringValue("recordingContentUrl", m.GetRecordingContentUrl())
         if err != nil {
             return err
@@ -335,13 +307,6 @@ func (m *CallRecording) SetMeetingOrganizer(value IdentitySetable)() {
         panic(err)
     }
 }
-// SetMeetingOrganizerId sets the meetingOrganizerId property value. The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.
-func (m *CallRecording) SetMeetingOrganizerId(value *string)() {
-    err := m.GetBackingStore().Set("meetingOrganizerId", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRecordingContentUrl sets the recordingContentUrl property value. The URL that can be used to access the content of the recording. Read-only.
 func (m *CallRecording) SetRecordingContentUrl(value *string)() {
     err := m.GetBackingStore().Set("recordingContentUrl", value)
@@ -359,7 +324,6 @@ type CallRecordingable interface {
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMeetingId()(*string)
     GetMeetingOrganizer()(IdentitySetable)
-    GetMeetingOrganizerId()(*string)
     GetRecordingContentUrl()(*string)
     SetCallId(value *string)()
     SetContent(value []byte)()
@@ -368,6 +332,5 @@ type CallRecordingable interface {
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMeetingId(value *string)()
     SetMeetingOrganizer(value IdentitySetable)()
-    SetMeetingOrganizerId(value *string)()
     SetRecordingContentUrl(value *string)()
 }

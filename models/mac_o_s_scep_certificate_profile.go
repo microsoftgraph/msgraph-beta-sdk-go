@@ -58,6 +58,18 @@ func (m *MacOSScepCertificateProfile) GetCustomSubjectAlternativeNames()([]Custo
     }
     return nil
 }
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// returns a *AppleDeploymentChannel when successful
+func (m *MacOSScepCertificateProfile) GetDeploymentChannel()(*AppleDeploymentChannel) {
+    val, err := m.GetBackingStore().Get("deploymentChannel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeploymentChannel)
+    }
+    return nil
+}
 // GetExtendedKeyUsages gets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 // returns a []ExtendedKeyUsageable when successful
 func (m *MacOSScepCertificateProfile) GetExtendedKeyUsages()([]ExtendedKeyUsageable) {
@@ -107,6 +119,16 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
                 }
             }
             m.SetCustomSubjectAlternativeNames(res)
+        }
+        return nil
+    }
+    res["deploymentChannel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeploymentChannel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeploymentChannel(val.(*AppleDeploymentChannel))
         }
         return nil
     }
@@ -347,6 +369,13 @@ func (m *MacOSScepCertificateProfile) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetDeploymentChannel() != nil {
+        cast := (*m.GetDeploymentChannel()).String()
+        err = writer.WriteStringValue("deploymentChannel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetExtendedKeyUsages() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtendedKeyUsages()))
         for i, v := range m.GetExtendedKeyUsages() {
@@ -439,6 +468,13 @@ func (m *MacOSScepCertificateProfile) SetCustomSubjectAlternativeNames(value []C
         panic(err)
     }
 }
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+func (m *MacOSScepCertificateProfile) SetDeploymentChannel(value *AppleDeploymentChannel)() {
+    err := m.GetBackingStore().Set("deploymentChannel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExtendedKeyUsages sets the extendedKeyUsages property value. Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.
 func (m *MacOSScepCertificateProfile) SetExtendedKeyUsages(value []ExtendedKeyUsageable)() {
     err := m.GetBackingStore().Set("extendedKeyUsages", value)
@@ -508,6 +544,7 @@ type MacOSScepCertificateProfileable interface {
     GetAllowAllAppsAccess()(*bool)
     GetCertificateStore()(*CertificateStore)
     GetCustomSubjectAlternativeNames()([]CustomSubjectAlternativeNameable)
+    GetDeploymentChannel()(*AppleDeploymentChannel)
     GetExtendedKeyUsages()([]ExtendedKeyUsageable)
     GetHashAlgorithm()(*HashAlgorithms)
     GetKeySize()(*KeySize)
@@ -520,6 +557,7 @@ type MacOSScepCertificateProfileable interface {
     SetAllowAllAppsAccess(value *bool)()
     SetCertificateStore(value *CertificateStore)()
     SetCustomSubjectAlternativeNames(value []CustomSubjectAlternativeNameable)()
+    SetDeploymentChannel(value *AppleDeploymentChannel)()
     SetExtendedKeyUsages(value []ExtendedKeyUsageable)()
     SetHashAlgorithm(value *HashAlgorithms)()
     SetKeySize(value *KeySize)()

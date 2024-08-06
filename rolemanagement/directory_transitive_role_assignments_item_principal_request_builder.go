@@ -11,7 +11,7 @@ import (
 type DirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilderGetQueryParameters the assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+// DirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilderGetQueryParameters referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
 type DirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewDirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewDirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+// Get referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
 // returns a DirectoryObjectable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -60,7 +60,7 @@ func (m *DirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ToGetRequestInformation the assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.
+// ToGetRequestInformation referencing the assigned principal. Read-only. Supports $expand except for the Exchange provider.
 // returns a *RequestInformation when successful
 func (m *DirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryTransitiveRoleAssignmentsItemPrincipalRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

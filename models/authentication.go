@@ -191,6 +191,16 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["requirements"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateStrongAuthenticationRequirementsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRequirements(val.(StrongAuthenticationRequirementsable))
+        }
+        return nil
+    }
     res["signInPreferences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSignInPreferencesFromDiscriminatorValue)
         if err != nil {
@@ -275,7 +285,7 @@ func (m *Authentication) GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthentic
     }
     return nil
 }
-// GetOperations gets the operations property value. The operations property
+// GetOperations gets the operations property value. Represents the status of a long-running operation, such as a password reset operation.
 // returns a []LongRunningOperationable when successful
 func (m *Authentication) GetOperations()([]LongRunningOperationable) {
     val, err := m.GetBackingStore().Get("operations")
@@ -332,6 +342,18 @@ func (m *Authentication) GetPlatformCredentialMethods()([]PlatformCredentialAuth
     }
     if val != nil {
         return val.([]PlatformCredentialAuthenticationMethodable)
+    }
+    return nil
+}
+// GetRequirements gets the requirements property value. The settings and preferences for per-user Microsoft Entra multifactor authentication.
+// returns a StrongAuthenticationRequirementsable when successful
+func (m *Authentication) GetRequirements()(StrongAuthenticationRequirementsable) {
+    val, err := m.GetBackingStore().Get("requirements")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(StrongAuthenticationRequirementsable)
     }
     return nil
 }
@@ -498,6 +520,12 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteObjectValue("requirements", m.GetRequirements())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("signInPreferences", m.GetSignInPreferences())
         if err != nil {
             return err
@@ -569,7 +597,7 @@ func (m *Authentication) SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthe
         panic(err)
     }
 }
-// SetOperations sets the operations property value. The operations property
+// SetOperations sets the operations property value. Represents the status of a long-running operation, such as a password reset operation.
 func (m *Authentication) SetOperations(value []LongRunningOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
     if err != nil {
@@ -600,6 +628,13 @@ func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethodable)(
 // SetPlatformCredentialMethods sets the platformCredentialMethods property value. The platformCredentialMethods property
 func (m *Authentication) SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)() {
     err := m.GetBackingStore().Set("platformCredentialMethods", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRequirements sets the requirements property value. The settings and preferences for per-user Microsoft Entra multifactor authentication.
+func (m *Authentication) SetRequirements(value StrongAuthenticationRequirementsable)() {
+    err := m.GetBackingStore().Set("requirements", value)
     if err != nil {
         panic(err)
     }
@@ -644,6 +679,7 @@ type Authenticationable interface {
     GetPasswordMethods()([]PasswordAuthenticationMethodable)
     GetPhoneMethods()([]PhoneAuthenticationMethodable)
     GetPlatformCredentialMethods()([]PlatformCredentialAuthenticationMethodable)
+    GetRequirements()(StrongAuthenticationRequirementsable)
     GetSignInPreferences()(SignInPreferencesable)
     GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable)
     GetTemporaryAccessPassMethods()([]TemporaryAccessPassAuthenticationMethodable)
@@ -657,6 +693,7 @@ type Authenticationable interface {
     SetPasswordMethods(value []PasswordAuthenticationMethodable)()
     SetPhoneMethods(value []PhoneAuthenticationMethodable)()
     SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)()
+    SetRequirements(value StrongAuthenticationRequirementsable)()
     SetSignInPreferences(value SignInPreferencesable)()
     SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)()
     SetTemporaryAccessPassMethods(value []TemporaryAccessPassAuthenticationMethodable)()

@@ -169,6 +169,16 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["ipv6Network"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIpv6Network(val)
+        }
+        return nil
+    }
     res["lastUpdateDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -296,6 +306,18 @@ func (m *MicrosoftTunnelConfiguration) GetFieldDeserializers()(map[string]func(i
         return nil
     }
     return res
+}
+// GetIpv6Network gets the ipv6Network property value. The IPv6 subnet that will be used to allocate virtual address for the clients
+// returns a *string when successful
+func (m *MicrosoftTunnelConfiguration) GetIpv6Network()(*string) {
+    val, err := m.GetBackingStore().Get("ipv6Network")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLastUpdateDateTime gets the lastUpdateDateTime property value. When the configuration was last updated
 // returns a *Time when successful
@@ -454,6 +476,12 @@ func (m *MicrosoftTunnelConfiguration) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteStringValue("ipv6Network", m.GetIpv6Network())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteTimeValue("lastUpdateDateTime", m.GetLastUpdateDateTime())
         if err != nil {
             return err
@@ -551,6 +579,13 @@ func (m *MicrosoftTunnelConfiguration) SetDnsServers(value []string)() {
         panic(err)
     }
 }
+// SetIpv6Network sets the ipv6Network property value. The IPv6 subnet that will be used to allocate virtual address for the clients
+func (m *MicrosoftTunnelConfiguration) SetIpv6Network(value *string)() {
+    err := m.GetBackingStore().Set("ipv6Network", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastUpdateDateTime sets the lastUpdateDateTime property value. When the configuration was last updated
 func (m *MicrosoftTunnelConfiguration) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdateDateTime", value)
@@ -623,6 +658,7 @@ type MicrosoftTunnelConfigurationable interface {
     GetDisableUdpConnections()(*bool)
     GetDisplayName()(*string)
     GetDnsServers()([]string)
+    GetIpv6Network()(*string)
     GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetListenPort()(*int32)
     GetNetwork()(*string)
@@ -638,6 +674,7 @@ type MicrosoftTunnelConfigurationable interface {
     SetDisableUdpConnections(value *bool)()
     SetDisplayName(value *string)()
     SetDnsServers(value []string)()
+    SetIpv6Network(value *string)()
     SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetListenPort(value *int32)()
     SetNetwork(value *string)()

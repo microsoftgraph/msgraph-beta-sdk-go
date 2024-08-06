@@ -522,6 +522,11 @@ func (m *DeviceManagementRequestBuilder) ManagedDeviceOverview()(*ManagedDeviceO
 func (m *DeviceManagementRequestBuilder) ManagedDevices()(*ManagedDevicesRequestBuilder) {
     return NewManagedDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ManagedDeviceWindowsOSImages provides operations to manage the managedDeviceWindowsOSImages property of the microsoft.graph.deviceManagement entity.
+// returns a *ManagedDeviceWindowsOSImagesRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) ManagedDeviceWindowsOSImages()(*ManagedDeviceWindowsOSImagesRequestBuilder) {
+    return NewManagedDeviceWindowsOSImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MicrosoftTunnelConfigurations provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
 // returns a *MicrosoftTunnelConfigurationsRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) MicrosoftTunnelConfigurations()(*MicrosoftTunnelConfigurationsRequestBuilder) {

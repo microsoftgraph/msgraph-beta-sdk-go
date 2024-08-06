@@ -163,6 +163,16 @@ func (m *VirtualEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateVirtualEventSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(VirtualEventSettingsable))
+        }
+        return nil
+    }
     res["startDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDateTimeTimeZoneFromDiscriminatorValue)
         if err != nil {
@@ -206,6 +216,18 @@ func (m *VirtualEvent) GetSessions()([]VirtualEventSessionable) {
     }
     if val != nil {
         return val.([]VirtualEventSessionable)
+    }
+    return nil
+}
+// GetSettings gets the settings property value. The virtual event settings.
+// returns a VirtualEventSettingsable when successful
+func (m *VirtualEvent) GetSettings()(VirtualEventSettingsable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(VirtualEventSettingsable)
     }
     return nil
 }
@@ -288,6 +310,12 @@ func (m *VirtualEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
         }
     }
     {
+        err = writer.WriteObjectValue("settings", m.GetSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("startDateTime", m.GetStartDateTime())
         if err != nil {
             return err
@@ -344,6 +372,13 @@ func (m *VirtualEvent) SetSessions(value []VirtualEventSessionable)() {
         panic(err)
     }
 }
+// SetSettings sets the settings property value. The virtual event settings.
+func (m *VirtualEvent) SetSettings(value VirtualEventSettingsable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStartDateTime sets the startDateTime property value. Start time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.
 func (m *VirtualEvent) SetStartDateTime(value DateTimeTimeZoneable)() {
     err := m.GetBackingStore().Set("startDateTime", value)
@@ -367,6 +402,7 @@ type VirtualEventable interface {
     GetEndDateTime()(DateTimeTimeZoneable)
     GetPresenters()([]VirtualEventPresenterable)
     GetSessions()([]VirtualEventSessionable)
+    GetSettings()(VirtualEventSettingsable)
     GetStartDateTime()(DateTimeTimeZoneable)
     GetStatus()(*VirtualEventStatus)
     SetCreatedBy(value CommunicationsIdentitySetable)()
@@ -375,6 +411,7 @@ type VirtualEventable interface {
     SetEndDateTime(value DateTimeTimeZoneable)()
     SetPresenters(value []VirtualEventPresenterable)()
     SetSessions(value []VirtualEventSessionable)()
+    SetSettings(value VirtualEventSettingsable)()
     SetStartDateTime(value DateTimeTimeZoneable)()
     SetStatus(value *VirtualEventStatus)()
 }

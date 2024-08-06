@@ -7,10 +7,12 @@ const (
     DEVICECHANNEL_APPLEDEPLOYMENTCHANNEL AppleDeploymentChannel = iota
     // Send payload down over User Channel.
     USERCHANNEL_APPLEDEPLOYMENTCHANNEL
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_APPLEDEPLOYMENTCHANNEL
 )
 
 func (i AppleDeploymentChannel) String() string {
-    return []string{"deviceChannel", "userChannel"}[i]
+    return []string{"deviceChannel", "userChannel", "unknownFutureValue"}[i]
 }
 func ParseAppleDeploymentChannel(v string) (any, error) {
     result := DEVICECHANNEL_APPLEDEPLOYMENTCHANNEL
@@ -19,6 +21,8 @@ func ParseAppleDeploymentChannel(v string) (any, error) {
             result = DEVICECHANNEL_APPLEDEPLOYMENTCHANNEL
         case "userChannel":
             result = USERCHANNEL_APPLEDEPLOYMENTCHANNEL
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_APPLEDEPLOYMENTCHANNEL
         default:
             return nil, nil
     }

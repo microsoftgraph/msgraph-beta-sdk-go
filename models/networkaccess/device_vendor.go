@@ -17,11 +17,12 @@ const (
     VMWARESDWAN_DEVICEVENDOR
     VERSA_DEVICEVENDOR
     OTHER_DEVICEVENDOR
+    CISCOCATALYST_DEVICEVENDOR
     UNKNOWNFUTUREVALUE_DEVICEVENDOR
 )
 
 func (i DeviceVendor) String() string {
-    return []string{"barracudaNetworks", "checkPoint", "ciscoMeraki", "citrix", "fortinet", "hpeAruba", "netFoundry", "nuage", "openSystems", "paloAltoNetworks", "riverbedTechnology", "silverPeak", "vmWareSdWan", "versa", "other", "unknownFutureValue"}[i]
+    return []string{"barracudaNetworks", "checkPoint", "ciscoMeraki", "citrix", "fortinet", "hpeAruba", "netFoundry", "nuage", "openSystems", "paloAltoNetworks", "riverbedTechnology", "silverPeak", "vmWareSdWan", "versa", "other", "ciscoCatalyst", "unknownFutureValue"}[i]
 }
 func ParseDeviceVendor(v string) (any, error) {
     result := BARRACUDANETWORKS_DEVICEVENDOR
@@ -56,6 +57,8 @@ func ParseDeviceVendor(v string) (any, error) {
             result = VERSA_DEVICEVENDOR
         case "other":
             result = OTHER_DEVICEVENDOR
+        case "ciscoCatalyst":
+            result = CISCOCATALYST_DEVICEVENDOR
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DEVICEVENDOR
         default:

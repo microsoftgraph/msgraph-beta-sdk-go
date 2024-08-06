@@ -145,6 +145,11 @@ func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuil
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) RetrieveLatestUpgradeDefaultBaselinePolicy()(*ConfigurationPoliciesItemRetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder) {
     return NewConfigurationPoliciesItemRetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SetEnrollmentTimeDeviceMembershipTarget provides operations to call the setEnrollmentTimeDeviceMembershipTarget method.
+// returns a *ConfigurationPoliciesItemSetEnrollmentTimeDeviceMembershipTargetRequestBuilder when successful
+func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) SetEnrollmentTimeDeviceMembershipTarget()(*ConfigurationPoliciesItemSetEnrollmentTimeDeviceMembershipTargetRequestBuilder) {
+    return NewConfigurationPoliciesItemSetEnrollmentTimeDeviceMembershipTargetRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Settings provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.
 // returns a *ConfigurationPoliciesItemSettingsRequestBuilder when successful
 func (m *ConfigurationPoliciesDeviceManagementConfigurationPolicyItemRequestBuilder) Settings()(*ConfigurationPoliciesItemSettingsRequestBuilder) {

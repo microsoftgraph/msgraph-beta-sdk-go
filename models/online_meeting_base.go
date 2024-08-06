@@ -88,14 +88,14 @@ func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     return nil
 }
 // GetAllowLiveShare gets the allowLiveShare property value. The allowLiveShare property
-// returns a *bool when successful
-func (m *OnlineMeetingBase) GetAllowLiveShare()(*bool) {
+// returns a *MeetingLiveShareOptions when successful
+func (m *OnlineMeetingBase) GetAllowLiveShare()(*MeetingLiveShareOptions) {
     val, err := m.GetBackingStore().Get("allowLiveShare")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*bool)
+        return val.(*MeetingLiveShareOptions)
     }
     return nil
 }
@@ -288,12 +288,12 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["allowLiveShare"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
+        val, err := n.GetEnumValue(ParseMeetingLiveShareOptions)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAllowLiveShare(val)
+            m.SetAllowLiveShare(val.(*MeetingLiveShareOptions))
         }
         return nil
     }
@@ -704,8 +704,9 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    {
-        err = writer.WriteBoolValue("allowLiveShare", m.GetAllowLiveShare())
+    if m.GetAllowLiveShare() != nil {
+        cast := (*m.GetAllowLiveShare()).String()
+        err = writer.WriteStringValue("allowLiveShare", &cast)
         if err != nil {
             return err
         }
@@ -887,7 +888,7 @@ func (m *OnlineMeetingBase) SetAllowedPresenters(value *OnlineMeetingPresenters)
     }
 }
 // SetAllowLiveShare sets the allowLiveShare property value. The allowLiveShare property
-func (m *OnlineMeetingBase) SetAllowLiveShare(value *bool)() {
+func (m *OnlineMeetingBase) SetAllowLiveShare(value *MeetingLiveShareOptions)() {
     err := m.GetBackingStore().Set("allowLiveShare", value)
     if err != nil {
         panic(err)
@@ -1061,7 +1062,7 @@ type OnlineMeetingBaseable interface {
     GetAllowAttendeeToEnableMic()(*bool)
     GetAllowBreakoutRooms()(*bool)
     GetAllowedPresenters()(*OnlineMeetingPresenters)
-    GetAllowLiveShare()(*bool)
+    GetAllowLiveShare()(*MeetingLiveShareOptions)
     GetAllowMeetingChat()(*MeetingChatMode)
     GetAllowParticipantsToChangeName()(*bool)
     GetAllowPowerPointSharing()(*bool)
@@ -1089,7 +1090,7 @@ type OnlineMeetingBaseable interface {
     SetAllowAttendeeToEnableMic(value *bool)()
     SetAllowBreakoutRooms(value *bool)()
     SetAllowedPresenters(value *OnlineMeetingPresenters)()
-    SetAllowLiveShare(value *bool)()
+    SetAllowLiveShare(value *MeetingLiveShareOptions)()
     SetAllowMeetingChat(value *MeetingChatMode)()
     SetAllowParticipantsToChangeName(value *bool)()
     SetAllowPowerPointSharing(value *bool)()

@@ -54,8 +54,11 @@ func NewCommunitiesCommunityItemRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewCommunitiesCommunityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property communities for employeeExperience
+// Delete delete a Viva Engage community along with all associated Microsoft 365 content, including the connected Microsoft 365 group, OneNote notebook, and Planner plans. For more information, see What happens if I delete a Viva Engage community connected to Microsoft 365 groups.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/community-delete?view=graph-rest-beta
 func (m *CommunitiesCommunityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CommunitiesCommunityItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -103,9 +106,12 @@ func (m *CommunitiesCommunityItemRequestBuilder) Group()(*CommunitiesItemGroupRe
 func (m *CommunitiesCommunityItemRequestBuilder) Owners()(*CommunitiesItemOwnersRequestBuilder) {
     return NewCommunitiesItemOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property communities in employeeExperience
+// Patch update the properties of an existing Viva Engage community.
 // returns a Communityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/community-update?view=graph-rest-beta
 func (m *CommunitiesCommunityItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Communityable, requestConfiguration *CommunitiesCommunityItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Communityable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -123,7 +129,7 @@ func (m *CommunitiesCommunityItemRequestBuilder) Patch(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Communityable), nil
 }
-// ToDeleteRequestInformation delete navigation property communities for employeeExperience
+// ToDeleteRequestInformation delete a Viva Engage community along with all associated Microsoft 365 content, including the connected Microsoft 365 group, OneNote notebook, and Planner plans. For more information, see What happens if I delete a Viva Engage community connected to Microsoft 365 groups.
 // returns a *RequestInformation when successful
 func (m *CommunitiesCommunityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CommunitiesCommunityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -148,7 +154,7 @@ func (m *CommunitiesCommunityItemRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property communities in employeeExperience
+// ToPatchRequestInformation update the properties of an existing Viva Engage community.
 // returns a *RequestInformation when successful
 func (m *CommunitiesCommunityItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Communityable, requestConfiguration *CommunitiesCommunityItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

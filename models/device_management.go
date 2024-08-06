@@ -2092,6 +2092,22 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["managedDeviceWindowsOSImages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateManagedDeviceWindowsOperatingSystemImageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ManagedDeviceWindowsOperatingSystemImageable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ManagedDeviceWindowsOperatingSystemImageable)
+                }
+            }
+            m.SetManagedDeviceWindowsOSImages(res)
+        }
+        return nil
+    }
     res["maximumDepTokens"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -3865,6 +3881,18 @@ func (m *DeviceManagement) GetManagedDevices()([]ManagedDeviceable) {
     }
     if val != nil {
         return val.([]ManagedDeviceable)
+    }
+    return nil
+}
+// GetManagedDeviceWindowsOSImages gets the managedDeviceWindowsOSImages property value. A list of ManagedDeviceWindowsOperatingSystemImages
+// returns a []ManagedDeviceWindowsOperatingSystemImageable when successful
+func (m *DeviceManagement) GetManagedDeviceWindowsOSImages()([]ManagedDeviceWindowsOperatingSystemImageable) {
+    val, err := m.GetBackingStore().Get("managedDeviceWindowsOSImages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ManagedDeviceWindowsOperatingSystemImageable)
     }
     return nil
 }
@@ -5998,6 +6026,18 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetManagedDeviceWindowsOSImages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedDeviceWindowsOSImages()))
+        for i, v := range m.GetManagedDeviceWindowsOSImages() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("managedDeviceWindowsOSImages", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteInt32Value("maximumDepTokens", m.GetMaximumDepTokens())
         if err != nil {
@@ -7693,6 +7733,13 @@ func (m *DeviceManagement) SetManagedDevices(value []ManagedDeviceable)() {
         panic(err)
     }
 }
+// SetManagedDeviceWindowsOSImages sets the managedDeviceWindowsOSImages property value. A list of ManagedDeviceWindowsOperatingSystemImages
+func (m *DeviceManagement) SetManagedDeviceWindowsOSImages(value []ManagedDeviceWindowsOperatingSystemImageable)() {
+    err := m.GetBackingStore().Set("managedDeviceWindowsOSImages", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMaximumDepTokens sets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
 func (m *DeviceManagement) SetMaximumDepTokens(value *int32)() {
     err := m.GetBackingStore().Set("maximumDepTokens", value)
@@ -8485,6 +8532,7 @@ type DeviceManagementable interface {
     GetManagedDeviceEncryptionStates()([]ManagedDeviceEncryptionStateable)
     GetManagedDeviceOverview()(ManagedDeviceOverviewable)
     GetManagedDevices()([]ManagedDeviceable)
+    GetManagedDeviceWindowsOSImages()([]ManagedDeviceWindowsOperatingSystemImageable)
     GetMaximumDepTokens()(*int32)
     GetMicrosoftTunnelConfigurations()([]MicrosoftTunnelConfigurationable)
     GetMicrosoftTunnelHealthThresholds()([]MicrosoftTunnelHealthThresholdable)
@@ -8674,6 +8722,7 @@ type DeviceManagementable interface {
     SetManagedDeviceEncryptionStates(value []ManagedDeviceEncryptionStateable)()
     SetManagedDeviceOverview(value ManagedDeviceOverviewable)()
     SetManagedDevices(value []ManagedDeviceable)()
+    SetManagedDeviceWindowsOSImages(value []ManagedDeviceWindowsOperatingSystemImageable)()
     SetMaximumDepTokens(value *int32)()
     SetMicrosoftTunnelConfigurations(value []MicrosoftTunnelConfigurationable)()
     SetMicrosoftTunnelHealthThresholds(value []MicrosoftTunnelHealthThresholdable)()

@@ -16,10 +16,11 @@ const (
     MOVINGREGION_CLOUDPCSTATUS
     RESIZEPENDINGLICENSE_CLOUDPCSTATUS
     UPDATINGSINGLESIGNON_CLOUDPCSTATUS
+    MODIFYINGSINGLESIGNON_CLOUDPCSTATUS
 )
 
 func (i CloudPcStatus) String() string {
-    return []string{"notProvisioned", "provisioning", "provisioned", "inGracePeriod", "deprovisioning", "failed", "provisionedWithWarnings", "resizing", "restoring", "pendingProvision", "unknownFutureValue", "movingRegion", "resizePendingLicense", "updatingSingleSignOn"}[i]
+    return []string{"notProvisioned", "provisioning", "provisioned", "inGracePeriod", "deprovisioning", "failed", "provisionedWithWarnings", "resizing", "restoring", "pendingProvision", "unknownFutureValue", "movingRegion", "resizePendingLicense", "updatingSingleSignOn", "modifyingSingleSignOn"}[i]
 }
 func ParseCloudPcStatus(v string) (any, error) {
     result := NOTPROVISIONED_CLOUDPCSTATUS
@@ -52,6 +53,8 @@ func ParseCloudPcStatus(v string) (any, error) {
             result = RESIZEPENDINGLICENSE_CLOUDPCSTATUS
         case "updatingSingleSignOn":
             result = UPDATINGSINGLESIGNON_CLOUDPCSTATUS
+        case "modifyingSingleSignOn":
+            result = MODIFYINGSINGLESIGNON_CLOUDPCSTATUS
         default:
             return nil, nil
     }

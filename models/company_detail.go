@@ -52,6 +52,18 @@ func (m *CompanyDetail) GetAddress()(PhysicalAddressable) {
 func (m *CompanyDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetCompanyCode gets the companyCode property value. Legal entity number of the company or its subdivision. For information on how to set the value for the companyCode, see profileSourceAnnotation.
+// returns a *string when successful
+func (m *CompanyDetail) GetCompanyCode()(*string) {
+    val, err := m.GetBackingStore().Get("companyCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDepartment gets the department property value. Department Name within a company.
 // returns a *string when successful
 func (m *CompanyDetail) GetDepartment()(*string) {
@@ -87,6 +99,16 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetAddress(val.(PhysicalAddressable))
+        }
+        return nil
+    }
+    res["companyCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCompanyCode(val)
         }
         return nil
     }
@@ -140,6 +162,16 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["secondaryDepartment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecondaryDepartment(val)
+        }
+        return nil
+    }
     res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -188,6 +220,18 @@ func (m *CompanyDetail) GetPronunciation()(*string) {
     }
     return nil
 }
+// GetSecondaryDepartment gets the secondaryDepartment property value. The secondaryDepartment property
+// returns a *string when successful
+func (m *CompanyDetail) GetSecondaryDepartment()(*string) {
+    val, err := m.GetBackingStore().Get("secondaryDepartment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetWebUrl gets the webUrl property value. Link to the company home page.
 // returns a *string when successful
 func (m *CompanyDetail) GetWebUrl()(*string) {
@@ -204,6 +248,12 @@ func (m *CompanyDetail) GetWebUrl()(*string) {
 func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("address", m.GetAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("companyCode", m.GetCompanyCode())
         if err != nil {
             return err
         }
@@ -234,6 +284,12 @@ func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("pronunciation", m.GetPronunciation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("secondaryDepartment", m.GetSecondaryDepartment())
         if err != nil {
             return err
         }
@@ -270,6 +326,13 @@ func (m *CompanyDetail) SetAddress(value PhysicalAddressable)() {
 func (m *CompanyDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetCompanyCode sets the companyCode property value. Legal entity number of the company or its subdivision. For information on how to set the value for the companyCode, see profileSourceAnnotation.
+func (m *CompanyDetail) SetCompanyCode(value *string)() {
+    err := m.GetBackingStore().Set("companyCode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDepartment sets the department property value. Department Name within a company.
 func (m *CompanyDetail) SetDepartment(value *string)() {
     err := m.GetBackingStore().Set("department", value)
@@ -305,6 +368,13 @@ func (m *CompanyDetail) SetPronunciation(value *string)() {
         panic(err)
     }
 }
+// SetSecondaryDepartment sets the secondaryDepartment property value. The secondaryDepartment property
+func (m *CompanyDetail) SetSecondaryDepartment(value *string)() {
+    err := m.GetBackingStore().Set("secondaryDepartment", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWebUrl sets the webUrl property value. Link to the company home page.
 func (m *CompanyDetail) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
@@ -318,18 +388,22 @@ type CompanyDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddress()(PhysicalAddressable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCompanyCode()(*string)
     GetDepartment()(*string)
     GetDisplayName()(*string)
     GetOdataType()(*string)
     GetOfficeLocation()(*string)
     GetPronunciation()(*string)
+    GetSecondaryDepartment()(*string)
     GetWebUrl()(*string)
     SetAddress(value PhysicalAddressable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCompanyCode(value *string)()
     SetDepartment(value *string)()
     SetDisplayName(value *string)()
     SetOdataType(value *string)()
     SetOfficeLocation(value *string)()
     SetPronunciation(value *string)()
+    SetSecondaryDepartment(value *string)()
     SetWebUrl(value *string)()
 }

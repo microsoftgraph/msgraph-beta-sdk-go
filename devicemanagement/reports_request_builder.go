@@ -475,6 +475,11 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
 func (m *ReportsRequestBuilder) RetrieveAssignedApplicationsReport()(*ReportsRetrieveAssignedApplicationsReportRequestBuilder) {
     return NewReportsRetrieveAssignedApplicationsReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveWin32CatalogAppsUpdateReport provides operations to call the retrieveWin32CatalogAppsUpdateReport method.
+// returns a *ReportsRetrieveWin32CatalogAppsUpdateReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveWin32CatalogAppsUpdateReport()(*ReportsRetrieveWin32CatalogAppsUpdateReportRequestBuilder) {
+    return NewReportsRetrieveWin32CatalogAppsUpdateReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property reports for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ReportsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

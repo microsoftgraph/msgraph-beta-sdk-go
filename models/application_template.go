@@ -31,6 +31,18 @@ func (m *ApplicationTemplate) GetCategories()([]string) {
     }
     return nil
 }
+// GetConfigurationUris gets the configurationUris property value. The URIs required for the single sign-on configuration of a preintegrated application.
+// returns a []ConfigurationUriable when successful
+func (m *ApplicationTemplate) GetConfigurationUris()([]ConfigurationUriable) {
+    val, err := m.GetBackingStore().Get("configurationUris")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConfigurationUriable)
+    }
+    return nil
+}
 // GetDescription gets the description property value. A description of the application.
 // returns a *string when successful
 func (m *ApplicationTemplate) GetDescription()(*string) {
@@ -72,6 +84,22 @@ func (m *ApplicationTemplate) GetFieldDeserializers()(map[string]func(i878a80d23
                 }
             }
             m.SetCategories(res)
+        }
+        return nil
+    }
+    res["configurationUris"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConfigurationUriFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConfigurationUriable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ConfigurationUriable)
+                }
+            }
+            m.SetConfigurationUris(res)
         }
         return nil
     }
@@ -275,6 +303,18 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetConfigurationUris() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConfigurationUris()))
+        for i, v := range m.GetConfigurationUris() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("configurationUris", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -334,6 +374,13 @@ func (m *ApplicationTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef
 // SetCategories sets the categories property value. The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
 func (m *ApplicationTemplate) SetCategories(value []string)() {
     err := m.GetBackingStore().Set("categories", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetConfigurationUris sets the configurationUris property value. The URIs required for the single sign-on configuration of a preintegrated application.
+func (m *ApplicationTemplate) SetConfigurationUris(value []ConfigurationUriable)() {
+    err := m.GetBackingStore().Set("configurationUris", value)
     if err != nil {
         panic(err)
     }
@@ -405,6 +452,7 @@ type ApplicationTemplateable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCategories()([]string)
+    GetConfigurationUris()([]ConfigurationUriable)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetHomePageUrl()(*string)
@@ -415,6 +463,7 @@ type ApplicationTemplateable interface {
     GetSupportedProvisioningTypes()([]string)
     GetSupportedSingleSignOnModes()([]string)
     SetCategories(value []string)()
+    SetConfigurationUris(value []ConfigurationUriable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetHomePageUrl(value *string)()

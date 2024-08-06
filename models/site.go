@@ -45,6 +45,18 @@ func (m *Site) GetColumns()([]ColumnDefinitionable) {
     }
     return nil
 }
+// GetContentModels gets the contentModels property value. The collection of content models applied to this site.
+// returns a []ContentModelable when successful
+func (m *Site) GetContentModels()([]ContentModelable) {
+    val, err := m.GetBackingStore().Get("contentModels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ContentModelable)
+    }
+    return nil
+}
 // GetContentTypes gets the contentTypes property value. The collection of content types defined for this site.
 // returns a []ContentTypeable when successful
 func (m *Site) GetContentTypes()([]ContentTypeable) {
@@ -78,6 +90,18 @@ func (m *Site) GetDisplayName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetDocumentProcessingJobs gets the documentProcessingJobs property value. The document processing jobs running on this site.
+// returns a []DocumentProcessingJobable when successful
+func (m *Site) GetDocumentProcessingJobs()([]DocumentProcessingJobable) {
+    val, err := m.GetBackingStore().Get("documentProcessingJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DocumentProcessingJobable)
     }
     return nil
 }
@@ -147,6 +171,22 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["contentModels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateContentModelFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ContentModelable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ContentModelable)
+                }
+            }
+            m.SetContentModels(res)
+        }
+        return nil
+    }
     res["contentTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateContentTypeFromDiscriminatorValue)
         if err != nil {
@@ -180,6 +220,22 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["documentProcessingJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDocumentProcessingJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DocumentProcessingJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DocumentProcessingJobable)
+                }
+            }
+            m.SetDocumentProcessingJobs(res)
         }
         return nil
     }
@@ -595,6 +651,18 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetContentModels() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentModels()))
+        for i, v := range m.GetContentModels() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("contentModels", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetContentTypes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetContentTypes()))
         for i, v := range m.GetContentTypes() {
@@ -615,6 +683,18 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDocumentProcessingJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDocumentProcessingJobs()))
+        for i, v := range m.GetDocumentProcessingJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("documentProcessingJobs", cast)
         if err != nil {
             return err
         }
@@ -785,6 +865,13 @@ func (m *Site) SetColumns(value []ColumnDefinitionable)() {
         panic(err)
     }
 }
+// SetContentModels sets the contentModels property value. The collection of content models applied to this site.
+func (m *Site) SetContentModels(value []ContentModelable)() {
+    err := m.GetBackingStore().Set("contentModels", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetContentTypes sets the contentTypes property value. The collection of content types defined for this site.
 func (m *Site) SetContentTypes(value []ContentTypeable)() {
     err := m.GetBackingStore().Set("contentTypes", value)
@@ -802,6 +889,13 @@ func (m *Site) SetDeleted(value Deletedable)() {
 // SetDisplayName sets the displayName property value. The full title for the site. Read-only.
 func (m *Site) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDocumentProcessingJobs sets the documentProcessingJobs property value. The document processing jobs running on this site.
+func (m *Site) SetDocumentProcessingJobs(value []DocumentProcessingJobable)() {
+    err := m.GetBackingStore().Set("documentProcessingJobs", value)
     if err != nil {
         panic(err)
     }
@@ -930,9 +1024,11 @@ type Siteable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAnalytics()(ItemAnalyticsable)
     GetColumns()([]ColumnDefinitionable)
+    GetContentModels()([]ContentModelable)
     GetContentTypes()([]ContentTypeable)
     GetDeleted()(Deletedable)
     GetDisplayName()(*string)
+    GetDocumentProcessingJobs()([]DocumentProcessingJobable)
     GetDrive()(Driveable)
     GetDrives()([]Driveable)
     GetExternalColumns()([]ColumnDefinitionable)
@@ -952,9 +1048,11 @@ type Siteable interface {
     GetSites()([]Siteable)
     SetAnalytics(value ItemAnalyticsable)()
     SetColumns(value []ColumnDefinitionable)()
+    SetContentModels(value []ContentModelable)()
     SetContentTypes(value []ContentTypeable)()
     SetDeleted(value Deletedable)()
     SetDisplayName(value *string)()
+    SetDocumentProcessingJobs(value []DocumentProcessingJobable)()
     SetDrive(value Driveable)()
     SetDrives(value []Driveable)()
     SetExternalColumns(value []ColumnDefinitionable)()

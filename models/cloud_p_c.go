@@ -44,6 +44,18 @@ func (m *CloudPC) GetAllotmentDisplayName()(*string) {
     }
     return nil
 }
+// GetConnectionSetting gets the connectionSetting property value. The connection setting of the Cloud PC. Possible values: enableSingleSignOn. Read Only.
+// returns a CloudPcConnectionSettingable when successful
+func (m *CloudPC) GetConnectionSetting()(CloudPcConnectionSettingable) {
+    val, err := m.GetBackingStore().Get("connectionSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcConnectionSettingable)
+    }
+    return nil
+}
 // GetConnectionSettings gets the connectionSettings property value. The connectionSettings property
 // returns a CloudPcConnectionSettingsable when successful
 func (m *CloudPC) GetConnectionSettings()(CloudPcConnectionSettingsable) {
@@ -65,6 +77,18 @@ func (m *CloudPC) GetConnectivityResult()(CloudPcConnectivityResultable) {
     }
     if val != nil {
         return val.(CloudPcConnectivityResultable)
+    }
+    return nil
+}
+// GetDeviceRegionName gets the deviceRegionName property value. The name of the geographical region where the Cloud PC is currently provisioned. For example, westus3, eastus2, and southeastasia. Read-only.
+// returns a *string when successful
+func (m *CloudPC) GetDeviceRegionName()(*string) {
+    val, err := m.GetBackingStore().Get("deviceRegionName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -128,6 +152,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["connectionSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcConnectionSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConnectionSetting(val.(CloudPcConnectionSettingable))
+        }
+        return nil
+    }
     res["connectionSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcConnectionSettingsFromDiscriminatorValue)
         if err != nil {
@@ -145,6 +179,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetConnectivityResult(val.(CloudPcConnectivityResultable))
+        }
+        return nil
+    }
+    res["deviceRegionName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceRegionName(val)
         }
         return nil
     }
@@ -377,6 +421,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetStatus(val.(*CloudPcStatus))
+        }
+        return nil
+    }
+    res["statusDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcStatusDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStatusDetail(val.(CloudPcStatusDetailable))
         }
         return nil
     }
@@ -640,6 +694,18 @@ func (m *CloudPC) GetStatus()(*CloudPcStatus) {
     }
     return nil
 }
+// GetStatusDetail gets the statusDetail property value. Indicates the detailed status associated with Cloud PC, including error/warning code, error/warning message, additionalInformation. For example, { 'code': 'internalServerError', 'message': 'There was an error during the Cloud PC upgrade. Please contact support.', 'additionalInformation': null }.
+// returns a CloudPcStatusDetailable when successful
+func (m *CloudPC) GetStatusDetail()(CloudPcStatusDetailable) {
+    val, err := m.GetBackingStore().Get("statusDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcStatusDetailable)
+    }
+    return nil
+}
 // GetStatusDetails gets the statusDetails property value. The details of the Cloud PC status. For example, { 'code': 'internalServerError', 'message': 'There was an error during the Cloud PC upgrade. Please contact support.', 'additionalInformation': null }. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
 // returns a CloudPcStatusDetailsable when successful
 func (m *CloudPC) GetStatusDetails()(CloudPcStatusDetailsable) {
@@ -695,6 +761,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteObjectValue("connectionSetting", m.GetConnectionSetting())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("connectionSettings", m.GetConnectionSettings())
         if err != nil {
             return err
@@ -702,6 +774,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err = writer.WriteObjectValue("connectivityResult", m.GetConnectivityResult())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("deviceRegionName", m.GetDeviceRegionName())
         if err != nil {
             return err
         }
@@ -851,6 +929,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteObjectValue("statusDetail", m.GetStatusDetail())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("statusDetails", m.GetStatusDetails())
         if err != nil {
             return err
@@ -885,6 +969,13 @@ func (m *CloudPC) SetAllotmentDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetConnectionSetting sets the connectionSetting property value. The connection setting of the Cloud PC. Possible values: enableSingleSignOn. Read Only.
+func (m *CloudPC) SetConnectionSetting(value CloudPcConnectionSettingable)() {
+    err := m.GetBackingStore().Set("connectionSetting", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetConnectionSettings sets the connectionSettings property value. The connectionSettings property
 func (m *CloudPC) SetConnectionSettings(value CloudPcConnectionSettingsable)() {
     err := m.GetBackingStore().Set("connectionSettings", value)
@@ -895,6 +986,13 @@ func (m *CloudPC) SetConnectionSettings(value CloudPcConnectionSettingsable)() {
 // SetConnectivityResult sets the connectivityResult property value. The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.
 func (m *CloudPC) SetConnectivityResult(value CloudPcConnectivityResultable)() {
     err := m.GetBackingStore().Set("connectivityResult", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeviceRegionName sets the deviceRegionName property value. The name of the geographical region where the Cloud PC is currently provisioned. For example, westus3, eastus2, and southeastasia. Read-only.
+func (m *CloudPC) SetDeviceRegionName(value *string)() {
+    err := m.GetBackingStore().Set("deviceRegionName", value)
     if err != nil {
         panic(err)
     }
@@ -1053,6 +1151,13 @@ func (m *CloudPC) SetStatus(value *CloudPcStatus)() {
         panic(err)
     }
 }
+// SetStatusDetail sets the statusDetail property value. Indicates the detailed status associated with Cloud PC, including error/warning code, error/warning message, additionalInformation. For example, { 'code': 'internalServerError', 'message': 'There was an error during the Cloud PC upgrade. Please contact support.', 'additionalInformation': null }.
+func (m *CloudPC) SetStatusDetail(value CloudPcStatusDetailable)() {
+    err := m.GetBackingStore().Set("statusDetail", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatusDetails sets the statusDetails property value. The details of the Cloud PC status. For example, { 'code': 'internalServerError', 'message': 'There was an error during the Cloud PC upgrade. Please contact support.', 'additionalInformation': null }. This property is deprecated and will no longer be supported effective August 31, 2024. Use statusDetail instead.
 func (m *CloudPC) SetStatusDetails(value CloudPcStatusDetailsable)() {
     err := m.GetBackingStore().Set("statusDetails", value)
@@ -1079,8 +1184,10 @@ type CloudPCable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAadDeviceId()(*string)
     GetAllotmentDisplayName()(*string)
+    GetConnectionSetting()(CloudPcConnectionSettingable)
     GetConnectionSettings()(CloudPcConnectionSettingsable)
     GetConnectivityResult()(CloudPcConnectivityResultable)
+    GetDeviceRegionName()(*string)
     GetDisasterRecoveryCapability()(CloudPcDisasterRecoveryCapabilityable)
     GetDiskEncryptionState()(*CloudPcDiskEncryptionState)
     GetDisplayName()(*string)
@@ -1103,13 +1210,16 @@ type CloudPCable interface {
     GetServicePlanName()(*string)
     GetServicePlanType()(*CloudPcServicePlanType)
     GetStatus()(*CloudPcStatus)
+    GetStatusDetail()(CloudPcStatusDetailable)
     GetStatusDetails()(CloudPcStatusDetailsable)
     GetUserAccountType()(*CloudPcUserAccountType)
     GetUserPrincipalName()(*string)
     SetAadDeviceId(value *string)()
     SetAllotmentDisplayName(value *string)()
+    SetConnectionSetting(value CloudPcConnectionSettingable)()
     SetConnectionSettings(value CloudPcConnectionSettingsable)()
     SetConnectivityResult(value CloudPcConnectivityResultable)()
+    SetDeviceRegionName(value *string)()
     SetDisasterRecoveryCapability(value CloudPcDisasterRecoveryCapabilityable)()
     SetDiskEncryptionState(value *CloudPcDiskEncryptionState)()
     SetDisplayName(value *string)()
@@ -1132,6 +1242,7 @@ type CloudPCable interface {
     SetServicePlanName(value *string)()
     SetServicePlanType(value *CloudPcServicePlanType)()
     SetStatus(value *CloudPcStatus)()
+    SetStatusDetail(value CloudPcStatusDetailable)()
     SetStatusDetails(value CloudPcStatusDetailsable)()
     SetUserAccountType(value *CloudPcUserAccountType)()
     SetUserPrincipalName(value *string)()

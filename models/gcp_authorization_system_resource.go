@@ -37,7 +37,7 @@ func (m *GcpAuthorizationSystemResource) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetService gets the service property value. The service associated with the resource in an GCP authorization system. This object is auto-expanded.
+// GetService gets the service property value. The service associated with the resource in a GCP authorization system. This object is autoexpanded.
 // returns a AuthorizationSystemTypeServiceable when successful
 func (m *GcpAuthorizationSystemResource) GetService()(AuthorizationSystemTypeServiceable) {
     val, err := m.GetBackingStore().Get("service")
@@ -63,7 +63,7 @@ func (m *GcpAuthorizationSystemResource) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetService sets the service property value. The service associated with the resource in an GCP authorization system. This object is auto-expanded.
+// SetService sets the service property value. The service associated with the resource in a GCP authorization system. This object is autoexpanded.
 func (m *GcpAuthorizationSystemResource) SetService(value AuthorizationSystemTypeServiceable)() {
     err := m.GetBackingStore().Set("service", value)
     if err != nil {

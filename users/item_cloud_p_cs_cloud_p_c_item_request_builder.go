@@ -120,11 +120,6 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetCloudPcLaunchInfo()(*ItemClou
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetFrontlineCloudPcAccessState()(*ItemCloudPCsItemGetFrontlineCloudPcAccessStateRequestBuilder) {
     return NewItemCloudPCsItemGetFrontlineCloudPcAccessStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GetShiftWorkCloudPcAccessState provides operations to call the getShiftWorkCloudPcAccessState method.
-// returns a *ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder when successful
-func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetShiftWorkCloudPcAccessState()(*ItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilder) {
-    return NewItemCloudPCsItemGetShiftWorkCloudPcAccessStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // GetSupportedCloudPcRemoteActions provides operations to call the getSupportedCloudPcRemoteActions method.
 // returns a *ItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) GetSupportedCloudPcRemoteActions()(*ItemCloudPCsItemGetSupportedCloudPcRemoteActionsRequestBuilder) {
@@ -184,6 +179,11 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Resize()(*ItemCloudPCsItemResize
 // returns a *ItemCloudPCsItemRestoreRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Restore()(*ItemCloudPCsItemRestoreRequestBuilder) {
     return NewItemCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveCloudPCRemoteActionResults provides operations to call the retrieveCloudPCRemoteActionResults method.
+// returns a *ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPCRemoteActionResults()(*ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) {
+    return NewItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveReviewStatus provides operations to call the retrieveReviewStatus method.
 // returns a *ItemCloudPCsItemRetrieveReviewStatusRequestBuilder when successful

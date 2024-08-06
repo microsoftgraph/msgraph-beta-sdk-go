@@ -37,7 +37,7 @@ func CreateIdentityProviderFromDiscriminatorValue(parseNode i878a80d2330e89d2689
     }
     return NewIdentityProvider(), nil
 }
-// GetClientId gets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
+// GetClientId gets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field. Required. Not nullable.
 // returns a *string when successful
 func (m *IdentityProvider) GetClientId()(*string) {
     val, err := m.GetBackingStore().Get("clientId")
@@ -49,7 +49,7 @@ func (m *IdentityProvider) GetClientId()(*string) {
     }
     return nil
 }
-// GetClientSecret gets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return . This is a required field. Required. Not nullable.
+// GetClientSecret gets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation returns . This is a required field. Required. Not nullable.
 // returns a *string when successful
 func (m *IdentityProvider) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
@@ -163,14 +163,14 @@ func (m *IdentityProvider) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetClientId sets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.
+// SetClientId sets the clientId property value. The client ID for the application obtained when registering the application with the identity provider. This is a required field. Required. Not nullable.
 func (m *IdentityProvider) SetClientId(value *string)() {
     err := m.GetBackingStore().Set("clientId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClientSecret sets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation will return . This is a required field. Required. Not nullable.
+// SetClientSecret sets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. This is write-only. A read operation returns . This is a required field. Required. Not nullable.
 func (m *IdentityProvider) SetClientSecret(value *string)() {
     err := m.GetBackingStore().Set("clientSecret", value)
     if err != nil {
