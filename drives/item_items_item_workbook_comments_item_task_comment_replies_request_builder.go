@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilderGetQueryParameters get replies from drives
+// ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilderGetQueryParameters the list of replies to the comment. Read-only. Nullable.
 type ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilder(rawUrl
 func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilder) Count()(*ItemItemsItemWorkbookCommentsItemTaskCommentRepliesCountRequestBuilder) {
     return NewItemItemsItemWorkbookCommentsItemTaskCommentRepliesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get replies from drives
+// Get the list of replies to the comment. Read-only. Nullable.
 // returns a WorkbookCommentReplyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookCommentReplyCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilder) Post
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookCommentReplyable), nil
 }
-// ToGetRequestInformation get replies from drives
+// ToGetRequestInformation the list of replies to the comment. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsItemTaskCommentRepliesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

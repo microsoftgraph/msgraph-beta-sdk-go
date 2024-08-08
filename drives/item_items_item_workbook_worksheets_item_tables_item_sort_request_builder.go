@@ -18,7 +18,7 @@ type ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderGetQueryParameters represents the sorting for the table. Read-only.
+// ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderGetQueryParameters the sorting for the table. Read-only.
 type ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -80,7 +80,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) Delete
     }
     return nil
 }
-// Get represents the sorting for the table. Read-only.
+// Get the sorting for the table. Read-only.
 // returns a WorkbookTableSortable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableSortable, error) {
@@ -136,7 +136,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) ToDele
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents the sorting for the table. Read-only.
+// ToGetRequestInformation the sorting for the table. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemSortRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -52,7 +52,7 @@ func (m *SecurityGroupCreationOptions) GetCreateBasedOnOrgPlusRoleGroup()(*bool)
     }
     return nil
 }
-// GetCreateBasedOnRoleGroup gets the createBasedOnRoleGroup property value. A boolean choice indicating whether the security group should be created based on the role group
+// GetCreateBasedOnRoleGroup gets the createBasedOnRoleGroup property value. A Boolean choice indicating whether the security group should be created based on the role group
 // returns a *bool when successful
 func (m *SecurityGroupCreationOptions) GetCreateBasedOnRoleGroup()(*bool) {
     val, err := m.GetBackingStore().Get("createBasedOnRoleGroup")
@@ -158,7 +158,7 @@ func (m *SecurityGroupCreationOptions) SetCreateBasedOnOrgPlusRoleGroup(value *b
         panic(err)
     }
 }
-// SetCreateBasedOnRoleGroup sets the createBasedOnRoleGroup property value. A boolean choice indicating whether the security group should be created based on the role group
+// SetCreateBasedOnRoleGroup sets the createBasedOnRoleGroup property value. A Boolean choice indicating whether the security group should be created based on the role group
 func (m *SecurityGroupCreationOptions) SetCreateBasedOnRoleGroup(value *bool)() {
     err := m.GetBackingStore().Set("createBasedOnRoleGroup", value)
     if err != nil {

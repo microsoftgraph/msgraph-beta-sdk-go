@@ -31,7 +31,7 @@ func (m *WorkbookComment) GetContent()(*string) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. Indicates the type for the comment.
+// GetContentType gets the contentType property value. The content type of the comment.
 // returns a *string when successful
 func (m *WorkbookComment) GetContentType()(*string) {
     val, err := m.GetBackingStore().Get("contentType")
@@ -95,7 +95,7 @@ func (m *WorkbookComment) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetReplies gets the replies property value. The replies property
+// GetReplies gets the replies property value. The list of replies to the comment. Read-only. Nullable.
 // returns a []WorkbookCommentReplyable when successful
 func (m *WorkbookComment) GetReplies()([]WorkbookCommentReplyable) {
     val, err := m.GetBackingStore().Get("replies")
@@ -164,14 +164,14 @@ func (m *WorkbookComment) SetContent(value *string)() {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. Indicates the type for the comment.
+// SetContentType sets the contentType property value. The content type of the comment.
 func (m *WorkbookComment) SetContentType(value *string)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReplies sets the replies property value. The replies property
+// SetReplies sets the replies property value. The list of replies to the comment. Read-only. Nullable.
 func (m *WorkbookComment) SetReplies(value []WorkbookCommentReplyable)() {
     err := m.GetBackingStore().Set("replies", value)
     if err != nil {

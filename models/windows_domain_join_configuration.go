@@ -120,7 +120,7 @@ func (m *WindowsDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetNetworkAccessConfigurations gets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.
+// GetNetworkAccessConfigurations gets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity
 // returns a []DeviceConfigurationable when successful
 func (m *WindowsDomainJoinConfiguration) GetNetworkAccessConfigurations()([]DeviceConfigurationable) {
     val, err := m.GetBackingStore().Get("networkAccessConfigurations")
@@ -209,7 +209,7 @@ func (m *WindowsDomainJoinConfiguration) SetComputerNameSuffixRandomCharCount(va
         panic(err)
     }
 }
-// SetNetworkAccessConfigurations sets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.
+// SetNetworkAccessConfigurations sets the networkAccessConfigurations property value. Reference to device configurations required for network connectivity
 func (m *WindowsDomainJoinConfiguration) SetNetworkAccessConfigurations(value []DeviceConfigurationable)() {
     err := m.GetBackingStore().Set("networkAccessConfigurations", value)
     if err != nil {

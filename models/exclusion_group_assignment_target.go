@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// ExclusionGroupAssignmentTarget represents a group that should be excluded from an assignment.
+// ExclusionGroupAssignmentTarget the AAD Group we are deploying firmware updates to
 type ExclusionGroupAssignmentTarget struct {
     GroupAssignmentTarget
 }

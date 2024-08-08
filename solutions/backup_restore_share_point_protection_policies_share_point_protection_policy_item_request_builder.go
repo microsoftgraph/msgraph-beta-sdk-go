@@ -90,7 +90,7 @@ func (m *BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItem
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointProtectionPolicyable), nil
 }
-// Patch update a SharePoint protection policy. This method adds a sharepointprotectionunit to or removes it from the protection policy.
+// Patch update a SharePoint protection policy. This method adds a siteprotectionunit to or removes it from the protection policy.
 // returns a SharePointProtectionPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -148,7 +148,7 @@ func (m *BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItem
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a SharePoint protection policy. This method adds a sharepointprotectionunit to or removes it from the protection policy.
+// ToPatchRequestInformation update a SharePoint protection policy. This method adds a siteprotectionunit to or removes it from the protection policy.
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointProtectionPolicyable, requestConfiguration *BackupRestoreSharePointProtectionPoliciesSharePointProtectionPolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

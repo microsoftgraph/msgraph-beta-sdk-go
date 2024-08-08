@@ -21,7 +21,7 @@ func NewUserProvisioningFlow()(*UserProvisioningFlow) {
 func CreateUserProvisioningFlowFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserProvisioningFlow(), nil
 }
-// GetCreateUnmatchedUsers gets the createUnmatchedUsers property value. A boolean choice indicating whether unmatched users should be created or ignored.
+// GetCreateUnmatchedUsers gets the createUnmatchedUsers property value. A Boolean choice indicating whether unmatched users should be created or ignored.
 // returns a *bool when successful
 func (m *UserProvisioningFlow) GetCreateUnmatchedUsers()(*bool) {
     val, err := m.GetBackingStore().Get("createUnmatchedUsers")
@@ -119,7 +119,7 @@ func (m *UserProvisioningFlow) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetCreateUnmatchedUsers sets the createUnmatchedUsers property value. A boolean choice indicating whether unmatched users should be created or ignored.
+// SetCreateUnmatchedUsers sets the createUnmatchedUsers property value. A Boolean choice indicating whether unmatched users should be created or ignored.
 func (m *UserProvisioningFlow) SetCreateUnmatchedUsers(value *bool)() {
     err := m.GetBackingStore().Set("createUnmatchedUsers", value)
     if err != nil {
