@@ -40,6 +40,7 @@ func NewCommunitiesItemOwnersCountRequestBuilder(rawUrl string, requestAdapter i
     return NewCommunitiesItemOwnersCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CommunitiesItemOwnersCountRequestBuilder) Get(ctx context.Context, requestConfiguration *CommunitiesItemOwnersCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -60,6 +61,7 @@ func (m *CommunitiesItemOwnersCountRequestBuilder) Get(ctx context.Context, requ
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *CommunitiesItemOwnersCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CommunitiesItemOwnersCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -74,6 +76,7 @@ func (m *CommunitiesItemOwnersCountRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *CommunitiesItemOwnersCountRequestBuilder when successful
 func (m *CommunitiesItemOwnersCountRequestBuilder) WithUrl(rawUrl string)(*CommunitiesItemOwnersCountRequestBuilder) {
     return NewCommunitiesItemOwnersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

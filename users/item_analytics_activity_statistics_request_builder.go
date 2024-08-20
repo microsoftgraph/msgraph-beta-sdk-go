@@ -47,6 +47,7 @@ type ItemAnalyticsActivityStatisticsRequestBuilderPostRequestConfiguration struc
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByActivityStatisticsId provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder when successful
 func (m *ItemAnalyticsActivityStatisticsRequestBuilder) ByActivityStatisticsId(activityStatisticsId string)(*ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemAnalyticsActivityStatisticsRequestBuilder) Count()(*ItemAnalyticsAc
     return NewItemAnalyticsActivityStatisticsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ActivityStatisticsCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAnalyticsActivityStatisticsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAnalyticsActivityStatisticsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemAnalyticsActivityStatisticsRequestBuilder) Get(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsCollectionResponseable), nil
 }
 // Post create new navigation property to activityStatistics for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ActivityStatisticsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAnalyticsActivityStatisticsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, requestConfiguration *ItemAnalyticsActivityStatisticsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, error) {
@@ -117,6 +120,7 @@ func (m *ItemAnalyticsActivityStatisticsRequestBuilder) Post(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable), nil
 }
 // ToGetRequestInformation the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAnalyticsActivityStatisticsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAnalyticsActivityStatisticsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemAnalyticsActivityStatisticsRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to activityStatistics for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAnalyticsActivityStatisticsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, requestConfiguration *ItemAnalyticsActivityStatisticsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemAnalyticsActivityStatisticsRequestBuilder) ToPostRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAnalyticsActivityStatisticsRequestBuilder when successful
 func (m *ItemAnalyticsActivityStatisticsRequestBuilder) WithUrl(rawUrl string)(*ItemAnalyticsActivityStatisticsRequestBuilder) {
     return NewItemAnalyticsActivityStatisticsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

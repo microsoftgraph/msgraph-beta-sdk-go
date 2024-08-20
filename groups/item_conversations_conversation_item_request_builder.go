@@ -47,11 +47,11 @@ func NewItemConversationsConversationItemRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemConversationsConversationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete conversation.
+// Delete delete a group's conversation object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-beta
 func (m *ItemConversationsConversationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,7 +94,7 @@ func (m *ItemConversationsConversationItemRequestBuilder) Get(ctx context.Contex
 func (m *ItemConversationsConversationItemRequestBuilder) Threads()(*ItemConversationsItemThreadsRequestBuilder) {
     return NewItemConversationsItemThreadsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete conversation.
+// ToDeleteRequestInformation delete a group's conversation object.
 // returns a *RequestInformation when successful
 func (m *ItemConversationsConversationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemConversationsConversationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

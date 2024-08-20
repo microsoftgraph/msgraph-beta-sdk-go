@@ -31,6 +31,7 @@ func NewItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder(rawUrl st
     return NewItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post issues a wipe operation on an app registration with specified aad device Id.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) Post(ctx context.Context, body ItemWipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBodyable, requestConfiguration *ItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -47,6 +48,7 @@ func (m *ItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) Post(ct
     return nil
 }
 // ToPostRequestInformation issues a wipe operation on an app registration with specified aad device Id.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemWipeManagedAppRegistrationsByAzureAdDeviceIdPostRequestBodyable, requestConfiguration *ItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -62,6 +64,7 @@ func (m *ItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) ToPostR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder when successful
 func (m *ItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) WithUrl(rawUrl string)(*ItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder) {
     return NewItemWipeManagedAppRegistrationsByAzureAdDeviceIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

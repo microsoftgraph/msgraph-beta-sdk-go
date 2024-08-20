@@ -40,6 +40,7 @@ func NewItemProfileNamesCountRequestBuilder(rawUrl string, requestAdapter i2ae41
     return NewItemProfileNamesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileNamesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileNamesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -60,6 +61,7 @@ func (m *ItemProfileNamesCountRequestBuilder) Get(ctx context.Context, requestCo
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileNamesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNamesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -74,6 +76,7 @@ func (m *ItemProfileNamesCountRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfileNamesCountRequestBuilder when successful
 func (m *ItemProfileNamesCountRequestBuilder) WithUrl(rawUrl string)(*ItemProfileNamesCountRequestBuilder) {
     return NewItemProfileNamesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

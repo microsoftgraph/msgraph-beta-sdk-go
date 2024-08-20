@@ -45,6 +45,7 @@ func NewItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilde
     return NewItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -61,6 +62,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
     return nil
 }
 // Get the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -81,6 +83,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
     return res.([]byte), nil
 }
 // Put the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -101,6 +104,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
     return res.([]byte), nil
 }
 // ToDeleteRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -112,6 +116,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
     return requestInfo, nil
 }
 // ToGetRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -123,6 +128,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
     return requestInfo, nil
 }
 // ToPutRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,6 +141,7 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder when successful
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMessagesItemValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

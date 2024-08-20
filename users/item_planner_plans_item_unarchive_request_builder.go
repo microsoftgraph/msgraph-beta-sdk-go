@@ -31,6 +31,7 @@ func NewItemPlannerPlansItemUnarchiveRequestBuilder(rawUrl string, requestAdapte
     return NewItemPlannerPlansItemUnarchiveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemPlannerPlansItemUnarchiveRequestBuilder) Post(ctx context.Context, 
     return nil
 }
 // ToPostRequestInformation unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemUnarchiveRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPlannerPlansItemUnarchivePostRequestBodyable, requestConfiguration *ItemPlannerPlansItemUnarchiveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemPlannerPlansItemUnarchiveRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerPlansItemUnarchiveRequestBuilder when successful
 func (m *ItemPlannerPlansItemUnarchiveRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerPlansItemUnarchiveRequestBuilder) {
     return NewItemPlannerPlansItemUnarchiveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

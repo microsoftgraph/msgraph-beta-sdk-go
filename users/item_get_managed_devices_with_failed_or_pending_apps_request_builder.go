@@ -67,6 +67,7 @@ func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) Get(ctx con
     return res.(ItemGetManagedDevicesWithFailedOrPendingAppsResponseable), nil
 }
 // GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponse retrieves the list of devices with failed or pending apps
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemGetManagedDevicesWithFailedOrPendingAppsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(ItemGetManagedDevicesWithFailedOrPendingAppsGetResponseable, error) {
@@ -87,6 +88,7 @@ func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) GetAsGetMan
     return res.(ItemGetManagedDevicesWithFailedOrPendingAppsGetResponseable), nil
 }
 // ToGetRequestInformation retrieves the list of devices with failed or pending apps
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -101,6 +103,7 @@ func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder when successful
 func (m *ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) WithUrl(rawUrl string)(*ItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder) {
     return NewItemGetManagedDevicesWithFailedOrPendingAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

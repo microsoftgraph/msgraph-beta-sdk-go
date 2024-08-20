@@ -41,6 +41,7 @@ func NewItemMemberOfItemGraphGroupRequestBuilder(rawUrl string, requestAdapter i
     return NewItemMemberOfItemGraphGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get groups, directory roles, and administrative units that the user is a direct member of. This operation isn't transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -64,6 +65,7 @@ func (m *ItemMemberOfItemGraphGroupRequestBuilder) Get(ctx context.Context, requ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
 // ToGetRequestInformation get groups, directory roles, and administrative units that the user is a direct member of. This operation isn't transitive. To retrieve groups, directory roles, and administrative units that the user is a member through transitive membership, use the List user transitive memberOf API.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMemberOfItemGraphGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMemberOfItemGraphGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *ItemMemberOfItemGraphGroupRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMemberOfItemGraphGroupRequestBuilder when successful
 func (m *ItemMemberOfItemGraphGroupRequestBuilder) WithUrl(rawUrl string)(*ItemMemberOfItemGraphGroupRequestBuilder) {
     return NewItemMemberOfItemGraphGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

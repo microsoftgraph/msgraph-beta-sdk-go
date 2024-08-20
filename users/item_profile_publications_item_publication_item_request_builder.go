@@ -55,6 +55,7 @@ func NewItemProfilePublicationsItemPublicationItemRequestBuilder(rawUrl string, 
     return NewItemProfilePublicationsItemPublicationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property publications for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Delete(ctx co
     return nil
 }
 // Get represents details of any publications a user has added to their profile.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemPublicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, error) {
@@ -91,6 +93,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Get(ctx conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable), nil
 }
 // Patch update the properties of an itemPublication object in a user's profile.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemPublicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -114,6 +117,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) Patch(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable), nil
 }
 // ToDeleteRequestInformation delete navigation property publications for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToDeleteReque
     return requestInfo, nil
 }
 // ToGetRequestInformation represents details of any publications a user has added to their profile.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of an itemPublication object in a user's profile.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPublicationable, requestConfiguration *ItemProfilePublicationsItemPublicationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) ToPatchReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfilePublicationsItemPublicationItemRequestBuilder when successful
 func (m *ItemProfilePublicationsItemPublicationItemRequestBuilder) WithUrl(rawUrl string)(*ItemProfilePublicationsItemPublicationItemRequestBuilder) {
     return NewItemProfilePublicationsItemPublicationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

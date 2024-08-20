@@ -31,6 +31,7 @@ func NewItemCalendarViewItemSnoozeReminderRequestBuilder(rawUrl string, requestA
     return NewItemCalendarViewItemSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post postpone a reminder for an event in a user calendar until a new time.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToPostRequestInformation postpone a reminder for an event in a user calendar until a new time.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarViewItemSnoozeReminderPostRequestBodyable, requestConfiguration *ItemCalendarViewItemSnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarViewItemSnoozeReminderRequestBuilder when successful
 func (m *ItemCalendarViewItemSnoozeReminderRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarViewItemSnoozeReminderRequestBuilder) {
     return NewItemCalendarViewItemSnoozeReminderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

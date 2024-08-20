@@ -53,7 +53,7 @@ func (m *ServiceStatus) GetBackupServiceConsumer()(*BackupServiceConsumer) {
     }
     return nil
 }
-// GetDisableReason gets the disableReason property value. The reason the service is disabled. The possible values are: none, invalidBillingProfile, userRequested, unknownFutureValue.
+// GetDisableReason gets the disableReason property value. The reason the service is disabled. The possible values are: none, controllerServiceAppDeleted, invalidBillingProfile, userRequested, unknownFutureValue.
 // returns a *DisableReason when successful
 func (m *ServiceStatus) GetDisableReason()(*DisableReason) {
     val, err := m.GetBackingStore().Get("disableReason")
@@ -302,7 +302,7 @@ func (m *ServiceStatus) SetBackupServiceConsumer(value *BackupServiceConsumer)()
         panic(err)
     }
 }
-// SetDisableReason sets the disableReason property value. The reason the service is disabled. The possible values are: none, invalidBillingProfile, userRequested, unknownFutureValue.
+// SetDisableReason sets the disableReason property value. The reason the service is disabled. The possible values are: none, controllerServiceAppDeleted, invalidBillingProfile, userRequested, unknownFutureValue.
 func (m *ServiceStatus) SetDisableReason(value *DisableReason)() {
     err := m.GetBackingStore().Set("disableReason", value)
     if err != nil {

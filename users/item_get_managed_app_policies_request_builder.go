@@ -73,6 +73,7 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) Get(ctx context.Context, reque
     return res.(ItemGetManagedAppPoliciesResponseable), nil
 }
 // GetAsGetManagedAppPoliciesGetResponse gets app restrictions for a given user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemGetManagedAppPoliciesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedAppPoliciesRequestBuilder) GetAsGetManagedAppPoliciesGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppPoliciesGetResponseable, error) {
@@ -93,6 +94,7 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) GetAsGetManagedAppPoliciesGetR
     return res.(ItemGetManagedAppPoliciesGetResponseable), nil
 }
 // ToGetRequestInformation gets app restrictions for a given user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemGetManagedAppPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetManagedAppPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +109,7 @@ func (m *ItemGetManagedAppPoliciesRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemGetManagedAppPoliciesRequestBuilder when successful
 func (m *ItemGetManagedAppPoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemGetManagedAppPoliciesRequestBuilder) {
     return NewItemGetManagedAppPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

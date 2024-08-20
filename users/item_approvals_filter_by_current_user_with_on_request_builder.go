@@ -79,6 +79,7 @@ func (m *ItemApprovalsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.C
     return res.(ItemApprovalsFilterByCurrentUserWithOnResponseable), nil
 }
 // GetAsFilterByCurrentUserWithOnGetResponse in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemApprovalsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,6 +103,7 @@ func (m *ItemApprovalsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurr
     return res.(ItemApprovalsFilterByCurrentUserWithOnGetResponseable), nil
 }
 // ToGetRequestInformation in Microsoft Entra entitlement management, return a collection of access package assignment approvals. The objects returned are those that are in scope for approval by the calling user. In PIM for groups, return a collection of assignment approvals. The objects returned are those that are in scope for approval by the calling user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemApprovalsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemApprovalsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -116,6 +118,7 @@ func (m *ItemApprovalsFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemApprovalsFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *ItemApprovalsFilterByCurrentUserWithOnRequestBuilder) WithUrl(rawUrl string)(*ItemApprovalsFilterByCurrentUserWithOnRequestBuilder) {
     return NewItemApprovalsFilterByCurrentUserWithOnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

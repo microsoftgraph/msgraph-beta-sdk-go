@@ -55,6 +55,7 @@ func NewItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestB
     return NewItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property services for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequest
     return nil
 }
 // Get the breakdown of services contributing to the user's quota usage.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ServiceStorageQuotaBreakdownable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable, error) {
@@ -91,6 +93,7 @@ func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequest
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable), nil
 }
 // Patch update the navigation property services in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ServiceStorageQuotaBreakdownable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable, requestConfiguration *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable, error) {
@@ -111,6 +114,7 @@ func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequest
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable), nil
 }
 // ToDeleteRequestInformation delete navigation property services for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequest
     return requestInfo, nil
 }
 // ToGetRequestInformation the breakdown of services contributing to the user's quota usage.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property services in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable, requestConfiguration *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder when successful
 func (m *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) {
     return NewItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

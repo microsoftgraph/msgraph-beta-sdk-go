@@ -65,6 +65,18 @@ func (m *WorkplaceSensorDeviceTelemetry) GetDeviceId()(*string) {
     }
     return nil
 }
+// GetEventValue gets the eventValue property value. The extra values associated with badge signals.
+// returns a WorkplaceSensorEventValueable when successful
+func (m *WorkplaceSensorDeviceTelemetry) GetEventValue()(WorkplaceSensorEventValueable) {
+    val, err := m.GetBackingStore().Get("eventValue")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WorkplaceSensorEventValueable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WorkplaceSensorDeviceTelemetry) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -89,6 +101,16 @@ func (m *WorkplaceSensorDeviceTelemetry) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["eventValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWorkplaceSensorEventValueFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEventValue(val.(WorkplaceSensorEventValueable))
+        }
+        return nil
+    }
     res["intValue"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -96,6 +118,16 @@ func (m *WorkplaceSensorDeviceTelemetry) GetFieldDeserializers()(map[string]func
         }
         if val != nil {
             m.SetIntValue(val)
+        }
+        return nil
+    }
+    res["locationHint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLocationHint(val)
         }
         return nil
     }
@@ -150,6 +182,18 @@ func (m *WorkplaceSensorDeviceTelemetry) GetIntValue()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetLocationHint gets the locationHint property value. The additional information to indicate the location of the device.
+// returns a *string when successful
+func (m *WorkplaceSensorDeviceTelemetry) GetLocationHint()(*string) {
+    val, err := m.GetBackingStore().Get("locationHint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -216,7 +260,19 @@ func (m *WorkplaceSensorDeviceTelemetry) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err := writer.WriteObjectValue("eventValue", m.GetEventValue())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteInt32Value("intValue", m.GetIntValue())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("locationHint", m.GetLocationHint())
         if err != nil {
             return err
         }
@@ -279,9 +335,23 @@ func (m *WorkplaceSensorDeviceTelemetry) SetDeviceId(value *string)() {
         panic(err)
     }
 }
+// SetEventValue sets the eventValue property value. The extra values associated with badge signals.
+func (m *WorkplaceSensorDeviceTelemetry) SetEventValue(value WorkplaceSensorEventValueable)() {
+    err := m.GetBackingStore().Set("eventValue", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIntValue sets the intValue property value. The value of the sensor as an integer. Use it for sensors that report numerical values, such as people count.
 func (m *WorkplaceSensorDeviceTelemetry) SetIntValue(value *int32)() {
     err := m.GetBackingStore().Set("intValue", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLocationHint sets the locationHint property value. The additional information to indicate the location of the device.
+func (m *WorkplaceSensorDeviceTelemetry) SetLocationHint(value *string)() {
+    err := m.GetBackingStore().Set("locationHint", value)
     if err != nil {
         panic(err)
     }
@@ -321,7 +391,9 @@ type WorkplaceSensorDeviceTelemetryable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBoolValue()(*bool)
     GetDeviceId()(*string)
+    GetEventValue()(WorkplaceSensorEventValueable)
     GetIntValue()(*int32)
+    GetLocationHint()(*string)
     GetOdataType()(*string)
     GetSensorId()(*string)
     GetSensorType()(*WorkplaceSensorType)
@@ -329,7 +401,9 @@ type WorkplaceSensorDeviceTelemetryable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBoolValue(value *bool)()
     SetDeviceId(value *string)()
+    SetEventValue(value WorkplaceSensorEventValueable)()
     SetIntValue(value *int32)()
+    SetLocationHint(value *string)()
     SetOdataType(value *string)()
     SetSensorId(value *string)()
     SetSensorType(value *WorkplaceSensorType)()

@@ -55,6 +55,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) Post(ctx 
     return res.(ItemCalendarGroupsItemCalendarsItemGetScheduleResponseable), nil
 }
 // PostAsGetSchedulePostResponse get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemCalendarGroupsItemCalendarsItemGetSchedulePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,6 +79,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) PostAsGet
     return res.(ItemCalendarGroupsItemCalendarsItemGetSchedulePostResponseable), nil
 }
 // ToPostRequestInformation get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarGroupsItemCalendarsItemGetSchedulePostRequestBodyable, requestConfiguration *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -93,6 +95,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemGetScheduleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

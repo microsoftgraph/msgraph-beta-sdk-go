@@ -41,6 +41,7 @@ func NewItemOwnedObjectsItemGraphGroupRequestBuilder(rawUrl string, requestAdapt
     return NewItemOwnedObjectsItemGraphGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOwnedObjectsItemGraphGroupRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOwnedObjectsItemGraphGroupRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable, error) {
@@ -61,6 +62,7 @@ func (m *ItemOwnedObjectsItemGraphGroupRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.directoryObject as microsoft.graph.group
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOwnedObjectsItemGraphGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOwnedObjectsItemGraphGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -75,6 +77,7 @@ func (m *ItemOwnedObjectsItemGraphGroupRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOwnedObjectsItemGraphGroupRequestBuilder when successful
 func (m *ItemOwnedObjectsItemGraphGroupRequestBuilder) WithUrl(rawUrl string)(*ItemOwnedObjectsItemGraphGroupRequestBuilder) {
     return NewItemOwnedObjectsItemGraphGroupRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

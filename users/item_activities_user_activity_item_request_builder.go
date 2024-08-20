@@ -55,6 +55,7 @@ func NewItemActivitiesUserActivityItemRequestBuilder(rawUrl string, requestAdapt
     return NewItemActivitiesUserActivityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property activities for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemActivitiesUserActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) Delete(ctx context.Contex
     return nil
 }
 // Get the user's activities across devices. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserActivityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemActivitiesUserActivityItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, error) {
@@ -96,6 +98,7 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) HistoryItems()(*ItemActiv
     return NewItemActivitiesItemHistoryItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property activities in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserActivityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemActivitiesUserActivityItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, error) {
@@ -116,6 +119,7 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) Patch(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable), nil
 }
 // ToDeleteRequestInformation delete navigation property activities for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemActivitiesUserActivityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,6 +131,7 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) ToDeleteRequestInformatio
     return requestInfo, nil
 }
 // ToGetRequestInformation the user's activities across devices. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemActivitiesUserActivityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +146,7 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property activities in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemActivitiesUserActivityItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, requestConfiguration *ItemActivitiesUserActivityItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +162,7 @@ func (m *ItemActivitiesUserActivityItemRequestBuilder) ToPatchRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemActivitiesUserActivityItemRequestBuilder when successful
 func (m *ItemActivitiesUserActivityItemRequestBuilder) WithUrl(rawUrl string)(*ItemActivitiesUserActivityItemRequestBuilder) {
     return NewItemActivitiesUserActivityItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

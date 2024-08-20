@@ -31,6 +31,7 @@ func NewItemTeamworkSendActivityNotificationRequestBuilder(rawUrl string, reques
     return NewItemTeamworkSendActivityNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post send an activity feed notification to a user. For more information, see sending Teams activity notifications.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemTeamworkSendActivityNotificationRequestBuilder) Post(ctx context.Co
     return nil
 }
 // ToPostRequestInformation send an activity feed notification to a user. For more information, see sending Teams activity notifications.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkSendActivityNotificationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamworkSendActivityNotificationPostRequestBodyable, requestConfiguration *ItemTeamworkSendActivityNotificationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemTeamworkSendActivityNotificationRequestBuilder) ToPostRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTeamworkSendActivityNotificationRequestBuilder when successful
 func (m *ItemTeamworkSendActivityNotificationRequestBuilder) WithUrl(rawUrl string)(*ItemTeamworkSendActivityNotificationRequestBuilder) {
     return NewItemTeamworkSendActivityNotificationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

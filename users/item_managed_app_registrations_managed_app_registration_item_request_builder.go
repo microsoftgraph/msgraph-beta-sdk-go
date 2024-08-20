@@ -41,6 +41,7 @@ func NewItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder(rawU
     return NewItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get zero or more managed app registrations that belong to the user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ManagedAppRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable, error) {
@@ -61,6 +62,7 @@ func (m *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationable), nil
 }
 // ToGetRequestInformation zero or more managed app registrations that belong to the user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -75,6 +77,7 @@ func (m *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder when successful
 func (m *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) WithUrl(rawUrl string)(*ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     return NewItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

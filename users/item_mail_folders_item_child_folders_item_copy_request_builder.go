@@ -32,6 +32,7 @@ func NewItemMailFoldersItemChildFoldersItemCopyRequestBuilder(rawUrl string, req
     return NewItemMailFoldersItemChildFoldersItemCopyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post copy a mail folder and its contents to another mail folder.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MailFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -55,6 +56,7 @@ func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) Post(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable), nil
 }
 // ToPostRequestInformation copy a mail folder and its contents to another mail folder.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemChildFoldersItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemChildFoldersItemCopyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -70,6 +72,7 @@ func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder when successful
 func (m *ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemChildFoldersItemCopyRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemCopyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
