@@ -31,6 +31,7 @@ func NewItemCloudPCsItemTroubleshootRequestBuilder(rawUrl string, requestAdapter
     return NewItemCloudPCsItemTroubleshootRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemCloudPCsItemTroubleshootRequestBuilder) Post(ctx context.Context, r
     return nil
 }
 // ToPostRequestInformation troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemTroubleshootRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemTroubleshootRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -61,6 +63,7 @@ func (m *ItemCloudPCsItemTroubleshootRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudPCsItemTroubleshootRequestBuilder when successful
 func (m *ItemCloudPCsItemTroubleshootRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemTroubleshootRequestBuilder) {
     return NewItemCloudPCsItemTroubleshootRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

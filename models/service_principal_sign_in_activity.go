@@ -19,7 +19,7 @@ func NewServicePrincipalSignInActivity()(*ServicePrincipalSignInActivity) {
 func CreateServicePrincipalSignInActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalSignInActivity(), nil
 }
-// GetAppId gets the appId property value. The application ID of the resource.
+// GetAppId gets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credentialed resource application.
 // returns a *string when successful
 func (m *ServicePrincipalSignInActivity) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
@@ -201,7 +201,7 @@ func (m *ServicePrincipalSignInActivity) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetAppId sets the appId property value. The application ID of the resource.
+// SetAppId sets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credentialed resource application.
 func (m *ServicePrincipalSignInActivity) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {

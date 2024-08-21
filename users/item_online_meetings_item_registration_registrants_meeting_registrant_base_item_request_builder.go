@@ -55,6 +55,7 @@ func NewItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRe
     return NewItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete cancel an onlineMeeting registration for a meetingRegistrant on behalf of the registrant. Only use this method when the allowedRegistrant property of the meetingRegistration object has a value of organization and the registrant's delegated permission was used to enroll. When the allowedRegistrant value is everyone, registrants can only use the link in the email they receive to cancel their registration.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -74,6 +75,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemR
     return nil
 }
 // Get registrants of the online meeting.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MeetingRegistrantBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseable, error) {
@@ -94,6 +96,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemR
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseable), nil
 }
 // Patch update the navigation property registrants in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MeetingRegistrantBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseable, requestConfiguration *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseable, error) {
@@ -114,6 +117,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemR
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseable), nil
 }
 // ToDeleteRequestInformation cancel an onlineMeeting registration for a meetingRegistrant on behalf of the registrant. Only use this method when the allowedRegistrant property of the meetingRegistration object has a value of organization and the registrant's delegated permission was used to enroll. When the allowedRegistrant value is everyone, registrants can only use the link in the email they receive to cancel their registration.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemR
     return requestInfo, nil
 }
 // ToGetRequestInformation registrants of the online meeting.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemR
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property registrants in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseable, requestConfiguration *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) {
     return NewItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

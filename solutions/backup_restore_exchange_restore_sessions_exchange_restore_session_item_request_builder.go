@@ -90,6 +90,11 @@ func (m *BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeRestoreSessionable), nil
 }
+// GranularMailboxRestoreArtifacts provides operations to manage the granularMailboxRestoreArtifacts property of the microsoft.graph.exchangeRestoreSession entity.
+// returns a *BackupRestoreExchangeRestoreSessionsItemGranularMailboxRestoreArtifactsRequestBuilder when successful
+func (m *BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBuilder) GranularMailboxRestoreArtifacts()(*BackupRestoreExchangeRestoreSessionsItemGranularMailboxRestoreArtifactsRequestBuilder) {
+    return NewBackupRestoreExchangeRestoreSessionsItemGranularMailboxRestoreArtifactsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MailboxRestoreArtifacts provides operations to manage the mailboxRestoreArtifacts property of the microsoft.graph.exchangeRestoreSession entity.
 // returns a *BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsRequestBuilder when successful
 func (m *BackupRestoreExchangeRestoreSessionsExchangeRestoreSessionItemRequestBuilder) MailboxRestoreArtifacts()(*BackupRestoreExchangeRestoreSessionsItemMailboxRestoreArtifactsRequestBuilder) {

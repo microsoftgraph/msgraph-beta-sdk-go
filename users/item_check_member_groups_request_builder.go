@@ -55,6 +55,7 @@ func (m *ItemCheckMemberGroupsRequestBuilder) Post(ctx context.Context, body Ite
     return res.(ItemCheckMemberGroupsResponseable), nil
 }
 // PostAsCheckMemberGroupsPostResponse check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemCheckMemberGroupsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,6 +79,7 @@ func (m *ItemCheckMemberGroupsRequestBuilder) PostAsCheckMemberGroupsPostRespons
     return res.(ItemCheckMemberGroupsPostResponseable), nil
 }
 // ToPostRequestInformation check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCheckMemberGroupsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCheckMemberGroupsPostRequestBodyable, requestConfiguration *ItemCheckMemberGroupsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -93,6 +95,7 @@ func (m *ItemCheckMemberGroupsRequestBuilder) ToPostRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCheckMemberGroupsRequestBuilder when successful
 func (m *ItemCheckMemberGroupsRequestBuilder) WithUrl(rawUrl string)(*ItemCheckMemberGroupsRequestBuilder) {
     return NewItemCheckMemberGroupsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

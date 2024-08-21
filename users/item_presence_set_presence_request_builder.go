@@ -31,6 +31,7 @@ func NewItemPresenceSetPresenceRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewItemPresenceSetPresenceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post set the availability and activity status in a presence session of an application for a user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemPresenceSetPresenceRequestBuilder) Post(ctx context.Context, body I
     return nil
 }
 // ToPostRequestInformation set the availability and activity status in a presence session of an application for a user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPresenceSetPresenceRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPresenceSetPresencePostRequestBodyable, requestConfiguration *ItemPresenceSetPresenceRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemPresenceSetPresenceRequestBuilder) ToPostRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPresenceSetPresenceRequestBuilder when successful
 func (m *ItemPresenceSetPresenceRequestBuilder) WithUrl(rawUrl string)(*ItemPresenceSetPresenceRequestBuilder) {
     return NewItemPresenceSetPresenceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

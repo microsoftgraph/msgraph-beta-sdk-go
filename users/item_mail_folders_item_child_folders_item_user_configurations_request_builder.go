@@ -40,6 +40,7 @@ type ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetReque
     QueryParameters *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetQueryParameters
 }
 // ByUserConfigurationId provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMailFoldersItemChildFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder when successful
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) ByUserConfigurationId(userConfigurationId string)(*ItemMailFoldersItemChildFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) Co
     return NewItemMailFoldersItemChildFoldersItemUserConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get userConfigurations from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserConfigurationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable, error) {
@@ -90,6 +92,7 @@ func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable), nil
 }
 // ToGetRequestInformation get userConfigurations from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +107,7 @@ func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder when successful
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -31,6 +31,7 @@ func NewItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder(rawUrl stri
     return NewItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post initiates a manual rotation for the local admin password on the device
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -47,6 +48,7 @@ func (m *ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder) Post(ctx 
     return nil
 }
 // ToPostRequestInformation initiates a manual rotation for the local admin password on the device
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -58,6 +60,7 @@ func (m *ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder when successful
 func (m *ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder) {
     return NewItemManagedDevicesItemRotateLocalAdminPasswordRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

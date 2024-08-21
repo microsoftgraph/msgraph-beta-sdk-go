@@ -47,6 +47,7 @@ type ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderPostRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySensitivityLabelId1 provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder when successful
 func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) BySensitivityLabelId1(sensitivityLabelId1 string)(*ItemInformationProtectionSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -82,6 +83,7 @@ func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) 
     return NewItemInformationProtectionSensitivityLabelsItemSublabelsEvaluateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get sublabels from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a SensitivityLabelCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelCollectionResponseable, error) {
@@ -102,6 +104,7 @@ func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelCollectionResponseable), nil
 }
 // Post create new navigation property to sublabels for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a SensitivityLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable, requestConfiguration *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable, error) {
@@ -122,6 +125,7 @@ func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable), nil
 }
 // ToGetRequestInformation get sublabels from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +140,7 @@ func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) 
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to sublabels for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable, requestConfiguration *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +156,7 @@ func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder when successful
 func (m *ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder) {
     return NewItemInformationProtectionSensitivityLabelsItemSublabelsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

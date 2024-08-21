@@ -10,12 +10,14 @@ const (
     INFERREDOCCUPANCY_WORKPLACESENSORTYPE
     // The heartbeat sensor type.
     HEARTBEAT_WORKPLACESENSORTYPE
+    // The badge swipe sensor type.
+    BADGE_WORKPLACESENSORTYPE
     // The unknown feature value.
     UNKNOWNFUTUREVALUE_WORKPLACESENSORTYPE
 )
 
 func (i WorkplaceSensorType) String() string {
-    return []string{"occupancy", "peopleCount", "inferredOccupancy", "heartbeat", "unknownFutureValue"}[i]
+    return []string{"occupancy", "peopleCount", "inferredOccupancy", "heartbeat", "badge", "unknownFutureValue"}[i]
 }
 func ParseWorkplaceSensorType(v string) (any, error) {
     result := OCCUPANCY_WORKPLACESENSORTYPE
@@ -28,6 +30,8 @@ func ParseWorkplaceSensorType(v string) (any, error) {
             result = INFERREDOCCUPANCY_WORKPLACESENSORTYPE
         case "heartbeat":
             result = HEARTBEAT_WORKPLACESENSORTYPE
+        case "badge":
+            result = BADGE_WORKPLACESENSORTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_WORKPLACESENSORTYPE
         default:

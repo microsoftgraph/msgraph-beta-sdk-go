@@ -32,6 +32,8 @@ func CreateRestoreArtifactBaseFromDiscriminatorValue(parseNode i878a80d2330e89d2
                 switch *mappingValue {
                     case "#microsoft.graph.driveRestoreArtifact":
                         return NewDriveRestoreArtifact(), nil
+                    case "#microsoft.graph.granularMailboxRestoreArtifact":
+                        return NewGranularMailboxRestoreArtifact(), nil
                     case "#microsoft.graph.mailboxRestoreArtifact":
                         return NewMailboxRestoreArtifact(), nil
                     case "#microsoft.graph.siteRestoreArtifact":

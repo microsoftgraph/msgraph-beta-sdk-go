@@ -40,6 +40,7 @@ func NewItemAuthenticationSoftwareOathMethodsCountRequestBuilder(rawUrl string, 
     return NewItemAuthenticationSoftwareOathMethodsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationSoftwareOathMethodsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationSoftwareOathMethodsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -60,6 +61,7 @@ func (m *ItemAuthenticationSoftwareOathMethodsCountRequestBuilder) Get(ctx conte
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationSoftwareOathMethodsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationSoftwareOathMethodsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -74,6 +76,7 @@ func (m *ItemAuthenticationSoftwareOathMethodsCountRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationSoftwareOathMethodsCountRequestBuilder when successful
 func (m *ItemAuthenticationSoftwareOathMethodsCountRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationSoftwareOathMethodsCountRequestBuilder) {
     return NewItemAuthenticationSoftwareOathMethodsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

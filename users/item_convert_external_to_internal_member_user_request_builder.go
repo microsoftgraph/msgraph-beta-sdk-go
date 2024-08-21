@@ -32,6 +32,7 @@ func NewItemConvertExternalToInternalMemberUserRequestBuilder(rawUrl string, req
     return NewItemConvertExternalToInternalMemberUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post convert an externally authenticated user into an internal user. The user is able to sign into the host tenant as an internal user and access resources as a member. For more information about this conversion, see Convert external users to internal users.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ConversionUserDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -55,6 +56,7 @@ func (m *ItemConvertExternalToInternalMemberUserRequestBuilder) Post(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversionUserDetailsable), nil
 }
 // ToPostRequestInformation convert an externally authenticated user into an internal user. The user is able to sign into the host tenant as an internal user and access resources as a member. For more information about this conversion, see Convert external users to internal users.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemConvertExternalToInternalMemberUserRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemConvertExternalToInternalMemberUserPostRequestBodyable, requestConfiguration *ItemConvertExternalToInternalMemberUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -70,6 +72,7 @@ func (m *ItemConvertExternalToInternalMemberUserRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemConvertExternalToInternalMemberUserRequestBuilder when successful
 func (m *ItemConvertExternalToInternalMemberUserRequestBuilder) WithUrl(rawUrl string)(*ItemConvertExternalToInternalMemberUserRequestBuilder) {
     return NewItemConvertExternalToInternalMemberUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

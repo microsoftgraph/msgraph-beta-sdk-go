@@ -46,6 +46,7 @@ func (m *ItemPhotosProfilePhotoItemRequestBuilder) Content()(*ItemPhotosItemValu
     return NewItemPhotosItemValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the collection of the user's profile photos in different sizes. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ProfilePhotoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPhotosProfilePhotoItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPhotosProfilePhotoItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, error) {
@@ -66,6 +67,7 @@ func (m *ItemPhotosProfilePhotoItemRequestBuilder) Get(ctx context.Context, requ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable), nil
 }
 // ToGetRequestInformation the collection of the user's profile photos in different sizes. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPhotosProfilePhotoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPhotosProfilePhotoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -80,6 +82,7 @@ func (m *ItemPhotosProfilePhotoItemRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPhotosProfilePhotoItemRequestBuilder when successful
 func (m *ItemPhotosProfilePhotoItemRequestBuilder) WithUrl(rawUrl string)(*ItemPhotosProfilePhotoItemRequestBuilder) {
     return NewItemPhotosProfilePhotoItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

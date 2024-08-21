@@ -336,6 +336,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAppRoleAssignment(), nil
                     case "#microsoft.graph.approval":
                         return NewApproval(), nil
+                    case "#microsoft.graph.approvalItem":
+                        return NewApprovalItem(), nil
+                    case "#microsoft.graph.approvalItemRequest":
+                        return NewApprovalItemRequest(), nil
+                    case "#microsoft.graph.approvalItemResponse":
+                        return NewApprovalItemResponse(), nil
+                    case "#microsoft.graph.approvalOperation":
+                        return NewApprovalOperation(), nil
+                    case "#microsoft.graph.approvalSolution":
+                        return NewApprovalSolution(), nil
                     case "#microsoft.graph.approvalStep":
                         return NewApprovalStep(), nil
                     case "#microsoft.graph.approvalWorkflowProvider":
@@ -1210,6 +1220,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEntitlementManagement(), nil
                     case "#microsoft.graph.entitlementManagementSettings":
                         return NewEntitlementManagementSettings(), nil
+                    case "#microsoft.graph.entra":
+                        return NewEntra(), nil
                     case "#microsoft.graph.evaluateLabelJobResponse":
                         return NewEvaluateLabelJobResponse(), nil
                     case "#microsoft.graph.event":
@@ -1342,6 +1354,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewGovernanceRoleSetting(), nil
                     case "#microsoft.graph.governanceSubject":
                         return NewGovernanceSubject(), nil
+                    case "#microsoft.graph.granularMailboxRestoreArtifact":
+                        return NewGranularMailboxRestoreArtifact(), nil
                     case "#microsoft.graph.group":
                         return NewGroup(), nil
                     case "#microsoft.graph.groupLifecyclePolicy":
@@ -2976,6 +2990,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserTeamwork(), nil
                     case "#microsoft.graph.userVirtualEventsRoot":
                         return NewUserVirtualEventsRoot(), nil
+                    case "#microsoft.graph.uxSetting":
+                        return NewUxSetting(), nil
                     case "#microsoft.graph.verticalSection":
                         return NewVerticalSection(), nil
                     case "#microsoft.graph.videoNewsLinkPage":

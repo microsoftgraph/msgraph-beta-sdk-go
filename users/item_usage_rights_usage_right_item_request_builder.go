@@ -55,6 +55,7 @@ func NewItemUsageRightsUsageRightItemRequestBuilder(rawUrl string, requestAdapte
     return NewItemUsageRightsUsageRightItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property usageRights for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemUsageRightsUsageRightItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemUsageRightsUsageRightItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemUsageRightsUsageRightItemRequestBuilder) Delete(ctx context.Context
     return nil
 }
 // Get represents the usage rights a user has been granted.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UsageRightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemUsageRightsUsageRightItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemUsageRightsUsageRightItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightable, error) {
@@ -91,6 +93,7 @@ func (m *ItemUsageRightsUsageRightItemRequestBuilder) Get(ctx context.Context, r
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightable), nil
 }
 // Patch update the navigation property usageRights in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UsageRightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemUsageRightsUsageRightItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightable, requestConfiguration *ItemUsageRightsUsageRightItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightable, error) {
@@ -111,6 +114,7 @@ func (m *ItemUsageRightsUsageRightItemRequestBuilder) Patch(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightable), nil
 }
 // ToDeleteRequestInformation delete navigation property usageRights for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemUsageRightsUsageRightItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemUsageRightsUsageRightItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemUsageRightsUsageRightItemRequestBuilder) ToDeleteRequestInformation
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the usage rights a user has been granted.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemUsageRightsUsageRightItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemUsageRightsUsageRightItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemUsageRightsUsageRightItemRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property usageRights in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemUsageRightsUsageRightItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UsageRightable, requestConfiguration *ItemUsageRightsUsageRightItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemUsageRightsUsageRightItemRequestBuilder) ToPatchRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemUsageRightsUsageRightItemRequestBuilder when successful
 func (m *ItemUsageRightsUsageRightItemRequestBuilder) WithUrl(rawUrl string)(*ItemUsageRightsUsageRightItemRequestBuilder) {
     return NewItemUsageRightsUsageRightItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

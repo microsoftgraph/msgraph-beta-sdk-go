@@ -32,6 +32,7 @@ func NewItemCloudPCsItemRetrieveReviewStatusRequestBuilder(rawUrl string, reques
     return NewItemCloudPCsItemRetrieveReviewStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get invoke function retrieveReviewStatus
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CloudPcReviewStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPCsItemRetrieveReviewStatusRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveReviewStatusRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReviewStatusable, error) {
@@ -52,6 +53,7 @@ func (m *ItemCloudPCsItemRetrieveReviewStatusRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReviewStatusable), nil
 }
 // ToGetRequestInformation invoke function retrieveReviewStatus
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemRetrieveReviewStatusRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveReviewStatusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -63,6 +65,7 @@ func (m *ItemCloudPCsItemRetrieveReviewStatusRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudPCsItemRetrieveReviewStatusRequestBuilder when successful
 func (m *ItemCloudPCsItemRetrieveReviewStatusRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemRetrieveReviewStatusRequestBuilder) {
     return NewItemCloudPCsItemRetrieveReviewStatusRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

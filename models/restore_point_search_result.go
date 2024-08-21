@@ -35,6 +35,18 @@ func (m *RestorePointSearchResult) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetArtifactHitCount gets the artifactHitCount property value. Total number of artifacts restored.
+// returns a *int32 when successful
+func (m *RestorePointSearchResult) GetArtifactHitCount()(*int32) {
+    val, err := m.GetBackingStore().Get("artifactHitCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *RestorePointSearchResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -44,6 +56,16 @@ func (m *RestorePointSearchResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ec
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RestorePointSearchResult) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["artifactHitCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArtifactHitCount(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -93,6 +115,12 @@ func (m *RestorePointSearchResult) GetRestorePoint()(RestorePointable) {
 // Serialize serializes information the current object
 func (m *RestorePointSearchResult) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteInt32Value("artifactHitCount", m.GetArtifactHitCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
             return err
@@ -119,6 +147,13 @@ func (m *RestorePointSearchResult) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
+// SetArtifactHitCount sets the artifactHitCount property value. Total number of artifacts restored.
+func (m *RestorePointSearchResult) SetArtifactHitCount(value *int32)() {
+    err := m.GetBackingStore().Set("artifactHitCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *RestorePointSearchResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -141,9 +176,11 @@ type RestorePointSearchResultable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetArtifactHitCount()(*int32)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetRestorePoint()(RestorePointable)
+    SetArtifactHitCount(value *int32)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetRestorePoint(value RestorePointable)()

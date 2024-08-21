@@ -41,6 +41,7 @@ func NewItemDriveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
     return NewItemDriveRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the user's OneDrive. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Driveable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDriveRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDriveRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable, error) {
@@ -61,6 +62,7 @@ func (m *ItemDriveRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Driveable), nil
 }
 // ToGetRequestInformation the user's OneDrive. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDriveRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDriveRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -75,6 +77,7 @@ func (m *ItemDriveRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDriveRequestBuilder when successful
 func (m *ItemDriveRequestBuilder) WithUrl(rawUrl string)(*ItemDriveRequestBuilder) {
     return NewItemDriveRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
