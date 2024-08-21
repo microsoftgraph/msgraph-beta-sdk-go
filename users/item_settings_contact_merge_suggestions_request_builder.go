@@ -55,6 +55,7 @@ func NewItemSettingsContactMergeSuggestionsRequestBuilder(rawUrl string, request
     return NewItemSettingsContactMergeSuggestionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property contactMergeSuggestions for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Delete(ctx context.C
     return nil
 }
 // Get the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ContactMergeSuggestionsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, error) {
@@ -91,6 +93,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Get(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable), nil
 }
 // Patch update the navigation property contactMergeSuggestions in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ContactMergeSuggestionsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, error) {
@@ -111,6 +114,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) Patch(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable), nil
 }
 // ToDeleteRequestInformation delete navigation property contactMergeSuggestions for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToDeleteRequestInfor
     return requestInfo, nil
 }
 // ToGetRequestInformation the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property contactMergeSuggestions in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactMergeSuggestionsable, requestConfiguration *ItemSettingsContactMergeSuggestionsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToPatchRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsContactMergeSuggestionsRequestBuilder when successful
 func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsContactMergeSuggestionsRequestBuilder) {
     return NewItemSettingsContactMergeSuggestionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -31,6 +31,7 @@ func NewItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder(rawUrl 
     return NewItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder) Post(
     return nil
 }
 // ToPostRequestInformation resets decisions of all accessReviewInstanceDecisionItem objects on an accessReviewInstance to notReviewed.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -61,6 +63,7 @@ func (m *ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder) ToPos
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemResetDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

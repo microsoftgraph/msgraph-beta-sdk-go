@@ -55,6 +55,7 @@ func NewItemManagedDevicesItemDeviceCategoryRequestBuilder(rawUrl string, reques
     return NewItemManagedDevicesItemDeviceCategoryRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property deviceCategory for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDeviceCategoryRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Delete(ctx context.
     return nil
 }
 // Get device category
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DeviceCategoryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDeviceCategoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCategoryable, error) {
@@ -91,6 +93,7 @@ func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCategoryable), nil
 }
 // Patch update the navigation property deviceCategory in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DeviceCategoryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCategoryable, requestConfiguration *ItemManagedDevicesItemDeviceCategoryRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCategoryable, error) {
@@ -111,6 +114,7 @@ func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Patch(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCategoryable), nil
 }
 // ToDeleteRequestInformation delete navigation property deviceCategory for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDeviceCategoryRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) ToDeleteRequestInfo
     return requestInfo, nil
 }
 // ToGetRequestInformation device category
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDeviceCategoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property deviceCategory in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCategoryable, requestConfiguration *ItemManagedDevicesItemDeviceCategoryRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) ToPatchRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemDeviceCategoryRequestBuilder when successful
 func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemDeviceCategoryRequestBuilder) {
     return NewItemManagedDevicesItemDeviceCategoryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

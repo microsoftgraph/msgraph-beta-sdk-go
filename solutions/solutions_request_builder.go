@@ -34,6 +34,11 @@ type SolutionsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Approval provides operations to manage the approval property of the microsoft.graph.solutionsRoot entity.
+// returns a *ApprovalRequestBuilder when successful
+func (m *SolutionsRequestBuilder) Approval()(*ApprovalRequestBuilder) {
+    return NewApprovalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // BackupRestore provides operations to manage the backupRestore property of the microsoft.graph.solutionsRoot entity.
 // returns a *BackupRestoreRequestBuilder when successful
 func (m *SolutionsRequestBuilder) BackupRestore()(*BackupRestoreRequestBuilder) {

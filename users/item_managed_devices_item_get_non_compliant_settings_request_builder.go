@@ -67,6 +67,7 @@ func (m *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) Get(ctx co
     return res.(ItemManagedDevicesItemGetNonCompliantSettingsResponseable), nil
 }
 // GetAsGetNonCompliantSettingsGetResponse invoke function getNonCompliantSettings
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemManagedDevicesItemGetNonCompliantSettingsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) GetAsGetNonCompliantSettingsGetResponse(ctx context.Context, requestConfiguration *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilderGetRequestConfiguration)(ItemManagedDevicesItemGetNonCompliantSettingsGetResponseable, error) {
@@ -87,6 +88,7 @@ func (m *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) GetAsGetNo
     return res.(ItemManagedDevicesItemGetNonCompliantSettingsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getNonCompliantSettings
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -101,6 +103,7 @@ func (m *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder when successful
 func (m *ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder) {
     return NewItemManagedDevicesItemGetNonCompliantSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -11,7 +11,7 @@ import (
 type ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderGetQueryParameters represents a collection of all the rows in the table. Read-only.
+// ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderGetQueryParameters the list of all the rows in the table. Read-only.
 type ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -59,7 +59,7 @@ func NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder(rawUrl stri
     urlParams["request-raw-url"] = rawUrl
     return NewItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get represents a collection of all the rows in the table. Read-only.
+// Get the list of all the rows in the table. Read-only.
 // returns a WorkbookTableRowCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableRowCollectionResponseable, error) {
@@ -99,7 +99,7 @@ func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) Post(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableRowable), nil
 }
-// ToGetRequestInformation represents a collection of all the rows in the table. Read-only.
+// ToGetRequestInformation the list of all the rows in the table. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookTablesItemAtWithIndexRowsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

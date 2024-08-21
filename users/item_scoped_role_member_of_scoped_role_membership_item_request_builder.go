@@ -55,6 +55,7 @@ func NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder(rawUrl stri
     return NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property scopedRoleMemberOf for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) Delete(ct
     return nil
 }
 // Get the scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ScopedRoleMembershipable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipable, error) {
@@ -91,6 +93,7 @@ func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) Get(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipable), nil
 }
 // Patch update the navigation property scopedRoleMemberOf in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ScopedRoleMembershipable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipable, requestConfiguration *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipable, error) {
@@ -111,6 +114,7 @@ func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) Patch(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipable), nil
 }
 // ToDeleteRequestInformation delete navigation property scopedRoleMemberOf for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) ToDeleteR
     return requestInfo, nil
 }
 // ToGetRequestInformation the scoped-role administrative unit memberships for this user. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property scopedRoleMemberOf in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ScopedRoleMembershipable, requestConfiguration *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) ToPatchRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder when successful
 func (m *ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) WithUrl(rawUrl string)(*ItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder) {
     return NewItemScopedRoleMemberOfScopedRoleMembershipItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

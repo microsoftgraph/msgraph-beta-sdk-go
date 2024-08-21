@@ -31,6 +31,7 @@ func NewItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder(rawUrl s
     return NewItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post postpone a reminder for an event in a user calendar until a new time.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder) Post(c
     return nil
 }
 // ToPostRequestInformation postpone a reminder for an event in a user calendar until a new time.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarEventsItemInstancesItemSnoozeReminderPostRequestBodyable, requestConfiguration *ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder) {
     return NewItemCalendarEventsItemInstancesItemSnoozeReminderRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -73,6 +73,7 @@ func (m *ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) Get(ctx c
     return res.(ItemGetEffectiveDeviceEnrollmentConfigurationsResponseable), nil
 }
 // GetAsGetEffectiveDeviceEnrollmentConfigurationsGetResponse invoke function getEffectiveDeviceEnrollmentConfigurations
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemGetEffectiveDeviceEnrollmentConfigurationsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) GetAsGetEffectiveDeviceEnrollmentConfigurationsGetResponse(ctx context.Context, requestConfiguration *ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration)(ItemGetEffectiveDeviceEnrollmentConfigurationsGetResponseable, error) {
@@ -93,6 +94,7 @@ func (m *ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) GetAsGetE
     return res.(ItemGetEffectiveDeviceEnrollmentConfigurationsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getEffectiveDeviceEnrollmentConfigurations
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +109,7 @@ func (m *ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder when successful
 func (m *ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) WithUrl(rawUrl string)(*ItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder) {
     return NewItemGetEffectiveDeviceEnrollmentConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

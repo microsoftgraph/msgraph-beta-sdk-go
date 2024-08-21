@@ -35,6 +35,18 @@ func (m *SolutionsRoot) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetApproval gets the approval property value. The approval property
+// returns a ApprovalSolutionable when successful
+func (m *SolutionsRoot) GetApproval()(ApprovalSolutionable) {
+    val, err := m.GetBackingStore().Get("approval")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ApprovalSolutionable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *SolutionsRoot) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -92,6 +104,16 @@ func (m *SolutionsRoot) GetBusinessScenarios()([]BusinessScenarioable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SolutionsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["approval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateApprovalSolutionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApproval(val.(ApprovalSolutionable))
+        }
+        return nil
+    }
     res["backupRestore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateBackupRestoreRootFromDiscriminatorValue)
         if err != nil {
@@ -199,6 +221,12 @@ func (m *SolutionsRoot) GetVirtualEvents()(VirtualEventsRootable) {
 // Serialize serializes information the current object
 func (m *SolutionsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("approval", m.GetApproval())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("backupRestore", m.GetBackupRestore())
         if err != nil {
             return err
@@ -267,6 +295,13 @@ func (m *SolutionsRoot) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
+// SetApproval sets the approval property value. The approval property
+func (m *SolutionsRoot) SetApproval(value ApprovalSolutionable)() {
+    err := m.GetBackingStore().Set("approval", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *SolutionsRoot) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -317,6 +352,7 @@ type SolutionsRootable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApproval()(ApprovalSolutionable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBackupRestore()(BackupRestoreRootable)
     GetBookingBusinesses()([]BookingBusinessable)
@@ -324,6 +360,7 @@ type SolutionsRootable interface {
     GetBusinessScenarios()([]BusinessScenarioable)
     GetOdataType()(*string)
     GetVirtualEvents()(VirtualEventsRootable)
+    SetApproval(value ApprovalSolutionable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBackupRestore(value BackupRestoreRootable)()
     SetBookingBusinesses(value []BookingBusinessable)()
