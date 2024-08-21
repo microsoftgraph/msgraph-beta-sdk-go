@@ -55,6 +55,7 @@ func NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder(rawUrl s
     return NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property associatedTeams for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) Delete
     return nil
 }
 // Get the list of associatedTeamInfo objects that a user is associated with.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a AssociatedTeamInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, error) {
@@ -91,6 +93,7 @@ func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) Get(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable), nil
 }
 // Patch update the navigation property associatedTeams in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a AssociatedTeamInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, requestConfiguration *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, error) {
@@ -116,6 +119,7 @@ func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) Team()
     return NewItemTeamworkAssociatedTeamsItemTeamRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property associatedTeams for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,6 +131,7 @@ func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) ToDele
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of associatedTeamInfo objects that a user is associated with.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +146,7 @@ func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property associatedTeams in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssociatedTeamInfoable, requestConfiguration *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +162,7 @@ func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) ToPatc
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder when successful
 func (m *ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) WithUrl(rawUrl string)(*ItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder) {
     return NewItemTeamworkAssociatedTeamsAssociatedTeamInfoItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

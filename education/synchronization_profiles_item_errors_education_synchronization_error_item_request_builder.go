@@ -55,6 +55,7 @@ func NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReques
     return NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property errors for education
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReque
     return nil
 }
 // Get all errors associated with this synchronization profile.
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a EducationSynchronizationErrorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorable, error) {
@@ -91,6 +93,7 @@ func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorable), nil
 }
 // Patch update the navigation property errors in education
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a EducationSynchronizationErrorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorable, requestConfiguration *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorable, error) {
@@ -111,6 +114,7 @@ func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorable), nil
 }
 // ToDeleteRequestInformation delete navigation property errors for education
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReque
     return requestInfo, nil
 }
 // ToGetRequestInformation all errors associated with this synchronization profile.
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReque
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property errors in education
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorable, requestConfiguration *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder when successful
 func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) WithUrl(rawUrl string)(*SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) {
     return NewSynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

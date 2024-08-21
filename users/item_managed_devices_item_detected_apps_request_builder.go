@@ -40,6 +40,7 @@ type ItemManagedDevicesItemDetectedAppsRequestBuilderGetRequestConfiguration str
     QueryParameters *ItemManagedDevicesItemDetectedAppsRequestBuilderGetQueryParameters
 }
 // ByDetectedAppId provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder when successful
 func (m *ItemManagedDevicesItemDetectedAppsRequestBuilder) ByDetectedAppId(detectedAppId string)(*ItemManagedDevicesItemDetectedAppsDetectedAppItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *ItemManagedDevicesItemDetectedAppsRequestBuilder) Count()(*ItemManagedD
     return NewItemManagedDevicesItemDetectedAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get all applications currently installed on the device
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DetectedAppCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemDetectedAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDetectedAppsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppCollectionResponseable, error) {
@@ -90,6 +92,7 @@ func (m *ItemManagedDevicesItemDetectedAppsRequestBuilder) Get(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DetectedAppCollectionResponseable), nil
 }
 // ToGetRequestInformation all applications currently installed on the device
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemDetectedAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDetectedAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +107,7 @@ func (m *ItemManagedDevicesItemDetectedAppsRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemDetectedAppsRequestBuilder when successful
 func (m *ItemManagedDevicesItemDetectedAppsRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemDetectedAppsRequestBuilder) {
     return NewItemManagedDevicesItemDetectedAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

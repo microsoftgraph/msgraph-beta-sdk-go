@@ -67,6 +67,7 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) Get(ctx context.Context, reque
     return res.(GetManagedAppBlockedUsersResponseable), nil
 }
 // GetAsGetManagedAppBlockedUsersGetResponse invoke function getManagedAppBlockedUsers
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a GetManagedAppBlockedUsersGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *GetManagedAppBlockedUsersRequestBuilder) GetAsGetManagedAppBlockedUsersGetResponse(ctx context.Context, requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(GetManagedAppBlockedUsersGetResponseable, error) {
@@ -87,6 +88,7 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) GetAsGetManagedAppBlockedUsers
     return res.(GetManagedAppBlockedUsersGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getManagedAppBlockedUsers
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *GetManagedAppBlockedUsersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -101,6 +103,7 @@ func (m *GetManagedAppBlockedUsersRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *GetManagedAppBlockedUsersRequestBuilder when successful
 func (m *GetManagedAppBlockedUsersRequestBuilder) WithUrl(rawUrl string)(*GetManagedAppBlockedUsersRequestBuilder) {
     return NewGetManagedAppBlockedUsersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

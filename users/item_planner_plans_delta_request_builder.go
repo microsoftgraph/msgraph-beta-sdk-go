@@ -76,6 +76,7 @@ func (m *ItemPlannerPlansDeltaRequestBuilder) Get(ctx context.Context, requestCo
     return res.(ItemPlannerPlansDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse get newly created, updated, or deleted Planner plans in either a group or a Planner roster without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemPlannerPlansDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -99,6 +100,7 @@ func (m *ItemPlannerPlansDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.
     return res.(ItemPlannerPlansDeltaGetResponseable), nil
 }
 // ToGetRequestInformation get newly created, updated, or deleted Planner plans in either a group or a Planner roster without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -113,6 +115,7 @@ func (m *ItemPlannerPlansDeltaRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerPlansDeltaRequestBuilder when successful
 func (m *ItemPlannerPlansDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerPlansDeltaRequestBuilder) {
     return NewItemPlannerPlansDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

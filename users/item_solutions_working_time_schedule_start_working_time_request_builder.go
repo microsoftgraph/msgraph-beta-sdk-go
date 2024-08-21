@@ -30,8 +30,12 @@ func NewItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post triggers the policies associated with the end of working hours.
+// Post trigger the policies associated with the start of working hours for a specific user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/workingtimeschedule-startworkingtime?view=graph-rest-beta
 func (m *ItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +50,8 @@ func (m *ItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilder) Post(ct
     }
     return nil
 }
-// ToPostRequestInformation triggers the policies associated with the end of working hours.
+// ToPostRequestInformation trigger the policies associated with the start of working hours for a specific user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -58,6 +63,7 @@ func (m *ItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilder) ToPostR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilder when successful
 func (m *ItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilder) WithUrl(rawUrl string)(*ItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilder) {
     return NewItemSolutionsWorkingTimeScheduleStartWorkingTimeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -40,6 +40,7 @@ type ItemManagedAppRegistrationsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemManagedAppRegistrationsRequestBuilderGetQueryParameters
 }
 // ByManagedAppRegistrationId provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder when successful
 func (m *ItemManagedAppRegistrationsRequestBuilder) ByManagedAppRegistrationId(managedAppRegistrationId string)(*ItemManagedAppRegistrationsManagedAppRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *ItemManagedAppRegistrationsRequestBuilder) Count()(*ItemManagedAppRegis
     return NewItemManagedAppRegistrationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get zero or more managed app registrations that belong to the user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ManagedAppRegistrationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedAppRegistrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedAppRegistrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationCollectionResponseable, error) {
@@ -90,6 +92,7 @@ func (m *ItemManagedAppRegistrationsRequestBuilder) Get(ctx context.Context, req
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedAppRegistrationCollectionResponseable), nil
 }
 // ToGetRequestInformation zero or more managed app registrations that belong to the user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedAppRegistrationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedAppRegistrationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +107,7 @@ func (m *ItemManagedAppRegistrationsRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedAppRegistrationsRequestBuilder when successful
 func (m *ItemManagedAppRegistrationsRequestBuilder) WithUrl(rawUrl string)(*ItemManagedAppRegistrationsRequestBuilder) {
     return NewItemManagedAppRegistrationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

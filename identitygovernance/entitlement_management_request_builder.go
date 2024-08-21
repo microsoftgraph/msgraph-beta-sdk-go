@@ -71,6 +71,12 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageAssignments()(*Entitl
 func (m *EntitlementManagementRequestBuilder) AccessPackageCatalogs()(*EntitlementManagementAccessPackageCatalogsRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AccessPackageCatalogsWithUniqueName provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.
+// Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
+// returns a *EntitlementManagementAccessPackageCatalogsWithUniqueNameRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) AccessPackageCatalogsWithUniqueName(uniqueName *string)(*EntitlementManagementAccessPackageCatalogsWithUniqueNameRequestBuilder) {
+    return NewEntitlementManagementAccessPackageCatalogsWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
+}
 // AccessPackageResourceEnvironments provides operations to manage the accessPackageResourceEnvironments property of the microsoft.graph.entitlementManagement entity.
 // returns a *EntitlementManagementAccessPackageResourceEnvironmentsRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) AccessPackageResourceEnvironments()(*EntitlementManagementAccessPackageResourceEnvironmentsRequestBuilder) {
@@ -95,6 +101,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResources()(*Entitlem
 // returns a *EntitlementManagementAccessPackagesRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) AccessPackages()(*EntitlementManagementAccessPackagesRequestBuilder) {
     return NewEntitlementManagementAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AccessPackagesWithUniqueName provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) AccessPackagesWithUniqueName(uniqueName *string)(*EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder) {
+    return NewEntitlementManagementAccessPackagesWithUniqueNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, uniqueName)
 }
 // AssignmentRequests provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
 // returns a *EntitlementManagementAssignmentRequestsRequestBuilder when successful

@@ -19,7 +19,7 @@ func NewCommunity()(*Community) {
 func CreateCommunityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCommunity(), nil
 }
-// GetDescription gets the description property value. The description of the community. The maximum length is 1024 characters.
+// GetDescription gets the description property value. The description of the community. The maximum length is 1,024 characters.
 // returns a *string when successful
 func (m *Community) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -214,7 +214,7 @@ func (m *Community) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetDescription sets the description property value. The description of the community. The maximum length is 1024 characters.
+// SetDescription sets the description property value. The description of the community. The maximum length is 1,024 characters.
 func (m *Community) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
