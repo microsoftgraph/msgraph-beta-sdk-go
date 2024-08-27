@@ -41,6 +41,7 @@ func NewItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilder(rawUrl string
     return NewItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DirectoryRoleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleable, error) {
@@ -61,6 +62,7 @@ func (m *ItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilder) Get(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleable), nil
 }
 // ToGetRequestInformation get the item of type microsoft.graph.directoryObject as microsoft.graph.directoryRole
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -75,6 +77,7 @@ func (m *ItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilder when successful
 func (m *ItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilder) WithUrl(rawUrl string)(*ItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilder) {
     return NewItemTransitiveMemberOfItemGraphDirectoryRoleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

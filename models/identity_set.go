@@ -32,6 +32,8 @@ func CreateIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.approvalIdentitySet":
+                        return NewApprovalIdentitySet(), nil
                     case "#microsoft.graph.chatMessageFromIdentitySet":
                         return NewChatMessageFromIdentitySet(), nil
                     case "#microsoft.graph.chatMessageMentionedIdentitySet":

@@ -31,6 +31,7 @@ func NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder(rawUrl str
     return NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action setReaction
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) Post(ctx context.Context, body ItemChatsItemMessagesItemRepliesItemSetReactionPostRequestBodyable, requestConfiguration *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -47,6 +48,7 @@ func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) Post(ctx
     return nil
 }
 // ToPostRequestInformation invoke action setReaction
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChatsItemMessagesItemRepliesItemSetReactionPostRequestBodyable, requestConfiguration *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -62,6 +64,7 @@ func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) ToPostRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder when successful
 func (m *ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder) {
     return NewItemChatsItemMessagesItemRepliesItemSetReactionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

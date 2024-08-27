@@ -55,6 +55,7 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) Post(ctx context.Context, body 
     return res.(ItemTranslateExchangeIdsResponseable), nil
 }
 // PostAsTranslateExchangeIdsPostResponse translate identifiers of Outlook-related resources between formats.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemTranslateExchangeIdsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,6 +79,7 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) PostAsTranslateExchangeIdsPostR
     return res.(ItemTranslateExchangeIdsPostResponseable), nil
 }
 // ToPostRequestInformation translate identifiers of Outlook-related resources between formats.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTranslateExchangeIdsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTranslateExchangeIdsPostRequestBodyable, requestConfiguration *ItemTranslateExchangeIdsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -93,6 +95,7 @@ func (m *ItemTranslateExchangeIdsRequestBuilder) ToPostRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTranslateExchangeIdsRequestBuilder when successful
 func (m *ItemTranslateExchangeIdsRequestBuilder) WithUrl(rawUrl string)(*ItemTranslateExchangeIdsRequestBuilder) {
     return NewItemTranslateExchangeIdsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

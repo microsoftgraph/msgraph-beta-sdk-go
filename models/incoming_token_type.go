@@ -12,12 +12,13 @@ const (
     SAML20_INCOMINGTOKENTYPE = 8
     UNKNOWNFUTUREVALUE_INCOMINGTOKENTYPE = 16
     REMOTEDESKTOPTOKEN_INCOMINGTOKENTYPE = 32
+    REFRESHTOKEN_INCOMINGTOKENTYPE = 64
 )
 
 func (i IncomingTokenType) String() string {
     var values []string
-    options := []string{"none", "primaryRefreshToken", "saml11", "saml20", "unknownFutureValue", "remoteDesktopToken"}
-    for p := 0; p < 6; p++ {
+    options := []string{"none", "primaryRefreshToken", "saml11", "saml20", "unknownFutureValue", "remoteDesktopToken", "refreshToken"}
+    for p := 0; p < 7; p++ {
         mantis := IncomingTokenType(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -42,6 +43,8 @@ func ParseIncomingTokenType(v string) (any, error) {
                 result |= UNKNOWNFUTUREVALUE_INCOMINGTOKENTYPE
             case "remoteDesktopToken":
                 result |= REMOTEDESKTOPTOKEN_INCOMINGTOKENTYPE
+            case "refreshToken":
+                result |= REFRESHTOKEN_INCOMINGTOKENTYPE
             default:
                 return nil, nil
         }

@@ -40,7 +40,7 @@ func (m *PositionDetail) GetAdditionalData()(map[string]any) {
 func (m *PositionDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCompany gets the company property value. Detail about the company or employer.
+// GetCompany gets the company property value. Information about the company or employer.
 // returns a CompanyDetailable when successful
 func (m *PositionDetail) GetCompany()(CompanyDetailable) {
     val, err := m.GetBackingStore().Get("company")
@@ -52,7 +52,7 @@ func (m *PositionDetail) GetCompany()(CompanyDetailable) {
     }
     return nil
 }
-// GetDescription gets the description property value. Description of the position in question.
+// GetDescription gets the description property value. A description for the position in question.
 // returns a *string when successful
 func (m *PositionDetail) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -64,7 +64,7 @@ func (m *PositionDetail) GetDescription()(*string) {
     }
     return nil
 }
-// GetEndMonthYear gets the endMonthYear property value. When the position ended.
+// GetEndMonthYear gets the endMonthYear property value. The date when the position ended.
 // returns a *DateOnly when successful
 func (m *PositionDetail) GetEndMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("endMonthYear")
@@ -202,7 +202,7 @@ func (m *PositionDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetJobTitle gets the jobTitle property value. The title held when in that position.
+// GetJobTitle gets the jobTitle property value. The title of the position.
 // returns a *string when successful
 func (m *PositionDetail) GetJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("jobTitle")
@@ -262,7 +262,7 @@ func (m *PositionDetail) GetRole()(*string) {
     }
     return nil
 }
-// GetSecondaryJobTitle gets the secondaryJobTitle property value. The secondaryJobTitle property
+// GetSecondaryJobTitle gets the secondaryJobTitle property value. An optional job title for the position.
 // returns a *string when successful
 func (m *PositionDetail) GetSecondaryJobTitle()(*string) {
     val, err := m.GetBackingStore().Get("secondaryJobTitle")
@@ -274,7 +274,7 @@ func (m *PositionDetail) GetSecondaryJobTitle()(*string) {
     }
     return nil
 }
-// GetSecondaryRole gets the secondaryRole property value. The secondaryRole property
+// GetSecondaryRole gets the secondaryRole property value. An optional role for the position entailed.
 // returns a *string when successful
 func (m *PositionDetail) GetSecondaryRole()(*string) {
     val, err := m.GetBackingStore().Get("secondaryRole")
@@ -286,7 +286,7 @@ func (m *PositionDetail) GetSecondaryRole()(*string) {
     }
     return nil
 }
-// GetStartMonthYear gets the startMonthYear property value. The start month and year of the position.
+// GetStartMonthYear gets the startMonthYear property value. The start date of the position.
 // returns a *DateOnly when successful
 func (m *PositionDetail) GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("startMonthYear")
@@ -298,7 +298,7 @@ func (m *PositionDetail) GetStartMonthYear()(*i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// GetSummary gets the summary property value. summary of the position.
+// GetSummary gets the summary property value. The summary of the position.
 // returns a *string when successful
 func (m *PositionDetail) GetSummary()(*string) {
     val, err := m.GetBackingStore().Get("summary")
@@ -403,28 +403,28 @@ func (m *PositionDetail) SetAdditionalData(value map[string]any)() {
 func (m *PositionDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCompany sets the company property value. Detail about the company or employer.
+// SetCompany sets the company property value. Information about the company or employer.
 func (m *PositionDetail) SetCompany(value CompanyDetailable)() {
     err := m.GetBackingStore().Set("company", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. Description of the position in question.
+// SetDescription sets the description property value. A description for the position in question.
 func (m *PositionDetail) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndMonthYear sets the endMonthYear property value. When the position ended.
+// SetEndMonthYear sets the endMonthYear property value. The date when the position ended.
 func (m *PositionDetail) SetEndMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("endMonthYear", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJobTitle sets the jobTitle property value. The title held when in that position.
+// SetJobTitle sets the jobTitle property value. The title of the position.
 func (m *PositionDetail) SetJobTitle(value *string)() {
     err := m.GetBackingStore().Set("jobTitle", value)
     if err != nil {
@@ -459,28 +459,28 @@ func (m *PositionDetail) SetRole(value *string)() {
         panic(err)
     }
 }
-// SetSecondaryJobTitle sets the secondaryJobTitle property value. The secondaryJobTitle property
+// SetSecondaryJobTitle sets the secondaryJobTitle property value. An optional job title for the position.
 func (m *PositionDetail) SetSecondaryJobTitle(value *string)() {
     err := m.GetBackingStore().Set("secondaryJobTitle", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecondaryRole sets the secondaryRole property value. The secondaryRole property
+// SetSecondaryRole sets the secondaryRole property value. An optional role for the position entailed.
 func (m *PositionDetail) SetSecondaryRole(value *string)() {
     err := m.GetBackingStore().Set("secondaryRole", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStartMonthYear sets the startMonthYear property value. The start month and year of the position.
+// SetStartMonthYear sets the startMonthYear property value. The start date of the position.
 func (m *PositionDetail) SetStartMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("startMonthYear", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSummary sets the summary property value. summary of the position.
+// SetSummary sets the summary property value. The summary of the position.
 func (m *PositionDetail) SetSummary(value *string)() {
     err := m.GetBackingStore().Set("summary", value)
     if err != nil {

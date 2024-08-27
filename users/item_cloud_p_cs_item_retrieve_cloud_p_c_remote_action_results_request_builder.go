@@ -70,6 +70,7 @@ func (m *ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) Get(c
     return res.(ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsResponseable), nil
 }
 // GetAsRetrieveCloudPCRemoteActionResultsGetResponse retrieve remote action results and check the status of a specific remote action performed on the associated Cloud PC device.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -93,6 +94,7 @@ func (m *ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) GetAs
     return res.(ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsGetResponseable), nil
 }
 // ToGetRequestInformation retrieve remote action results and check the status of a specific remote action performed on the associated Cloud PC device.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +109,7 @@ func (m *ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) ToGet
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder when successful
 func (m *ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) {
     return NewItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

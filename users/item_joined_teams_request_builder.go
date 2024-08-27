@@ -40,6 +40,7 @@ type ItemJoinedTeamsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemJoinedTeamsRequestBuilderGetQueryParameters
 }
 // ByTeamId provides operations to manage the joinedTeams property of the microsoft.graph.user entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemJoinedTeamsTeamItemRequestBuilder when successful
 func (m *ItemJoinedTeamsRequestBuilder) ByTeamId(teamId string)(*ItemJoinedTeamsTeamItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *ItemJoinedTeamsRequestBuilder) Count()(*ItemJoinedTeamsCountRequestBuil
     return NewItemJoinedTeamsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the Microsoft Teams teams the user is a member of. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a TeamCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemJoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemJoinedTeamsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable, error) {
@@ -90,6 +92,7 @@ func (m *ItemJoinedTeamsRequestBuilder) Get(ctx context.Context, requestConfigur
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamCollectionResponseable), nil
 }
 // ToGetRequestInformation the Microsoft Teams teams the user is a member of. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemJoinedTeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemJoinedTeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +107,7 @@ func (m *ItemJoinedTeamsRequestBuilder) ToGetRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemJoinedTeamsRequestBuilder when successful
 func (m *ItemJoinedTeamsRequestBuilder) WithUrl(rawUrl string)(*ItemJoinedTeamsRequestBuilder) {
     return NewItemJoinedTeamsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

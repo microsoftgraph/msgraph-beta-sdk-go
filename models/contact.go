@@ -82,7 +82,7 @@ func (m *Contact) GetDepartment()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
+// GetDisplayName gets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Later updates to other properties might cause an automatically generated value to overwrite the displayName value you specified. To preserve a pre-existing value, always include it as displayName in an update operation.
 // returns a *string when successful
 func (m *Contact) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -1203,7 +1203,7 @@ func (m *Contact) SetDepartment(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
+// SetDisplayName sets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Later updates to other properties might cause an automatically generated value to overwrite the displayName value you specified. To preserve a pre-existing value, always include it as displayName in an update operation.
 func (m *Contact) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

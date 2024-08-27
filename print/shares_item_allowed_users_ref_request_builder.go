@@ -70,6 +70,7 @@ func NewSharesItemAllowedUsersRefRequestBuilder(rawUrl string, requestAdapter i2
     return NewSharesItemAllowedUsersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete ref of navigation property allowedUsers for print
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharesItemAllowedUsersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *SharesItemAllowedUsersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -86,6 +87,7 @@ func (m *SharesItemAllowedUsersRefRequestBuilder) Delete(ctx context.Context, re
     return nil
 }
 // Get retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -109,6 +111,7 @@ func (m *SharesItemAllowedUsersRefRequestBuilder) Get(ctx context.Context, reque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
 // Post grant the specified user access to submit print jobs to the associated printerShare.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -128,6 +131,7 @@ func (m *SharesItemAllowedUsersRefRequestBuilder) Post(ctx context.Context, body
     return nil
 }
 // ToDeleteRequestInformation delete ref of navigation property allowedUsers for print
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *SharesItemAllowedUsersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedUsersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -142,6 +146,7 @@ func (m *SharesItemAllowedUsersRefRequestBuilder) ToDeleteRequestInformation(ctx
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *SharesItemAllowedUsersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesItemAllowedUsersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -156,6 +161,7 @@ func (m *SharesItemAllowedUsersRefRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // ToPostRequestInformation grant the specified user access to submit print jobs to the associated printerShare.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *SharesItemAllowedUsersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *SharesItemAllowedUsersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers/$ref", m.BaseRequestBuilder.PathParameters)
@@ -171,6 +177,7 @@ func (m *SharesItemAllowedUsersRefRequestBuilder) ToPostRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *SharesItemAllowedUsersRefRequestBuilder when successful
 func (m *SharesItemAllowedUsersRefRequestBuilder) WithUrl(rawUrl string)(*SharesItemAllowedUsersRefRequestBuilder) {
     return NewSharesItemAllowedUsersRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

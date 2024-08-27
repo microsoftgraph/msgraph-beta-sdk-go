@@ -76,6 +76,18 @@ func (m *Admin) GetEdge()(Edgeable) {
     }
     return nil
 }
+// GetEntra gets the entra property value. The entra property
+// returns a Entraable when successful
+func (m *Admin) GetEntra()(Entraable) {
+    val, err := m.GetBackingStore().Get("entra")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Entraable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -107,6 +119,16 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetEdge(val.(Edgeable))
+        }
+        return nil
+    }
+    res["entra"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEntraFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEntra(val.(Entraable))
         }
         return nil
     }
@@ -331,6 +353,12 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err := writer.WriteObjectValue("entra", m.GetEntra())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("forms", m.GetForms())
         if err != nil {
             return err
@@ -424,6 +452,13 @@ func (m *Admin) SetEdge(value Edgeable)() {
         panic(err)
     }
 }
+// SetEntra sets the entra property value. The entra property
+func (m *Admin) SetEntra(value Entraable)() {
+    err := m.GetBackingStore().Set("entra", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetForms sets the forms property value. The forms property
 func (m *Admin) SetForms(value AdminFormsable)() {
     err := m.GetBackingStore().Set("forms", value)
@@ -495,6 +530,7 @@ type Adminable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDynamics()(AdminDynamicsable)
     GetEdge()(Edgeable)
+    GetEntra()(Entraable)
     GetForms()(AdminFormsable)
     GetMicrosoft365Apps()(AdminMicrosoft365Appsable)
     GetOdataType()(*string)
@@ -508,6 +544,7 @@ type Adminable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDynamics(value AdminDynamicsable)()
     SetEdge(value Edgeable)()
+    SetEntra(value Entraable)()
     SetForms(value AdminFormsable)()
     SetMicrosoft365Apps(value AdminMicrosoft365Appsable)()
     SetOdataType(value *string)()

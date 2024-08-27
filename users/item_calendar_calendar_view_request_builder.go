@@ -44,6 +44,7 @@ type ItemCalendarCalendarViewRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemCalendarCalendarViewRequestBuilderGetQueryParameters
 }
 // ByEventId provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarCalendarViewEventItemRequestBuilder when successful
 func (m *ItemCalendarCalendarViewRequestBuilder) ByEventId(eventId string)(*ItemCalendarCalendarViewEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -79,6 +80,7 @@ func (m *ItemCalendarCalendarViewRequestBuilder) Delta()(*ItemCalendarCalendarVi
     return NewItemCalendarCalendarViewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the calendar view for the calendar. Navigation property. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a EventCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarCalendarViewRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarCalendarViewRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {
@@ -99,6 +101,7 @@ func (m *ItemCalendarCalendarViewRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
 }
 // ToGetRequestInformation the calendar view for the calendar. Navigation property. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarCalendarViewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarCalendarViewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -113,6 +116,7 @@ func (m *ItemCalendarCalendarViewRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarCalendarViewRequestBuilder when successful
 func (m *ItemCalendarCalendarViewRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarCalendarViewRequestBuilder) {
     return NewItemCalendarCalendarViewRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

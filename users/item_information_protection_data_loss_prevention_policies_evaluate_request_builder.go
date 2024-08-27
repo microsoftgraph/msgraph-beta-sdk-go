@@ -32,6 +32,7 @@ func NewItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilde
     return NewItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action evaluate
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DlpEvaluatePoliciesJobResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilder) Post(ctx context.Context, body ItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBodyable, requestConfiguration *ItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluatePoliciesJobResponseable, error) {
@@ -52,6 +53,7 @@ func (m *ItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DlpEvaluatePoliciesJobResponseable), nil
 }
 // ToPostRequestInformation invoke action evaluate
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemInformationProtectionDataLossPreventionPoliciesEvaluatePostRequestBodyable, requestConfiguration *ItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,6 +69,7 @@ func (m *ItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilder when successful
 func (m *ItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilder) {
     return NewItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
