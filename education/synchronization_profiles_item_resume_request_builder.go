@@ -31,6 +31,7 @@ func NewSynchronizationProfilesItemResumeRequestBuilder(rawUrl string, requestAd
     return NewSynchronizationProfilesItemResumeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post resume the sync of a specific school data synchronization profile in the tenant.
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *SynchronizationProfilesItemResumeRequestBuilder) Post(ctx context.Conte
     return nil
 }
 // ToPostRequestInformation resume the sync of a specific school data synchronization profile in the tenant.
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemResumeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemResumeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -61,6 +63,7 @@ func (m *SynchronizationProfilesItemResumeRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *SynchronizationProfilesItemResumeRequestBuilder when successful
 func (m *SynchronizationProfilesItemResumeRequestBuilder) WithUrl(rawUrl string)(*SynchronizationProfilesItemResumeRequestBuilder) {
     return NewSynchronizationProfilesItemResumeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

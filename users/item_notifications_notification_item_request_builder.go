@@ -55,7 +55,7 @@ func NewItemNotificationsNotificationItemRequestBuilder(rawUrl string, requestAd
     return NewItemNotificationsNotificationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property notifications for users
-// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemNotificationsNotificationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemNotificationsNotificationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +72,7 @@ func (m *ItemNotificationsNotificationItemRequestBuilder) Delete(ctx context.Con
     return nil
 }
 // Get get notifications from users
-// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Notificationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemNotificationsNotificationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemNotificationsNotificationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notificationable, error) {
@@ -93,7 +93,7 @@ func (m *ItemNotificationsNotificationItemRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notificationable), nil
 }
 // Patch update the navigation property notifications in users
-// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Notificationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemNotificationsNotificationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notificationable, requestConfiguration *ItemNotificationsNotificationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notificationable, error) {
@@ -114,7 +114,7 @@ func (m *ItemNotificationsNotificationItemRequestBuilder) Patch(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notificationable), nil
 }
 // ToDeleteRequestInformation delete navigation property notifications for users
-// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemNotificationsNotificationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemNotificationsNotificationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +126,7 @@ func (m *ItemNotificationsNotificationItemRequestBuilder) ToDeleteRequestInforma
     return requestInfo, nil
 }
 // ToGetRequestInformation get notifications from users
-// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemNotificationsNotificationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemNotificationsNotificationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +141,7 @@ func (m *ItemNotificationsNotificationItemRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property notifications in users
-// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemNotificationsNotificationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notificationable, requestConfiguration *ItemNotificationsNotificationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +157,7 @@ func (m *ItemNotificationsNotificationItemRequestBuilder) ToPatchRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemNotificationsNotificationItemRequestBuilder when successful
 func (m *ItemNotificationsNotificationItemRequestBuilder) WithUrl(rawUrl string)(*ItemNotificationsNotificationItemRequestBuilder) {
     return NewItemNotificationsNotificationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

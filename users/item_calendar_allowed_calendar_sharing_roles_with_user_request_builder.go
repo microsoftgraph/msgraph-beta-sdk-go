@@ -70,6 +70,7 @@ func (m *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder) Get(ctx 
     return res.(ItemCalendarAllowedCalendarSharingRolesWithUserResponseable), nil
 }
 // GetAsAllowedCalendarSharingRolesWithUserGetResponse invoke function allowedCalendarSharingRoles
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemCalendarAllowedCalendarSharingRolesWithUserGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder) GetAsAllowedCalendarSharingRolesWithUserGetResponse(ctx context.Context, requestConfiguration *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration)(ItemCalendarAllowedCalendarSharingRolesWithUserGetResponseable, error) {
@@ -90,6 +91,7 @@ func (m *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder) GetAsAll
     return res.(ItemCalendarAllowedCalendarSharingRolesWithUserGetResponseable), nil
 }
 // ToGetRequestInformation invoke function allowedCalendarSharingRoles
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +106,7 @@ func (m *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder) ToGetReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder when successful
 func (m *ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder) {
     return NewItemCalendarAllowedCalendarSharingRolesWithUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

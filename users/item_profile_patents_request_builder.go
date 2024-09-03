@@ -47,6 +47,7 @@ type ItemProfilePatentsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByItemPatentId provides operations to manage the patents property of the microsoft.graph.profile entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfilePatentsItemPatentItemRequestBuilder when successful
 func (m *ItemProfilePatentsRequestBuilder) ByItemPatentId(itemPatentId string)(*ItemProfilePatentsItemPatentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemProfilePatentsRequestBuilder) Count()(*ItemProfilePatentsCountReque
     return NewItemProfilePatentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents patents that a user has added to their profile.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemPatentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfilePatentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePatentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemProfilePatentsRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentCollectionResponseable), nil
 }
 // Post create new navigation property to patents for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemPatentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfilePatentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *ItemProfilePatentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, error) {
@@ -117,6 +120,7 @@ func (m *ItemProfilePatentsRequestBuilder) Post(ctx context.Context, body ie233e
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable), nil
 }
 // ToGetRequestInformation represents patents that a user has added to their profile.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfilePatentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePatentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemProfilePatentsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to patents for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfilePatentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPatentable, requestConfiguration *ItemProfilePatentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemProfilePatentsRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfilePatentsRequestBuilder when successful
 func (m *ItemProfilePatentsRequestBuilder) WithUrl(rawUrl string)(*ItemProfilePatentsRequestBuilder) {
     return NewItemProfilePatentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

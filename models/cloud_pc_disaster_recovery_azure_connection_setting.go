@@ -37,7 +37,7 @@ func (m *CloudPcDisasterRecoveryAzureConnectionSetting) GetFieldDeserializers()(
     }
     return res
 }
-// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. The onPremisesConnectionId property
+// GetOnPremisesConnectionId gets the onPremisesConnectionId property value. Indicates the unique ID of the virtual network that the new Cloud PC joins.
 // returns a *string when successful
 func (m *CloudPcDisasterRecoveryAzureConnectionSetting) GetOnPremisesConnectionId()(*string) {
     val, err := m.GetBackingStore().Get("onPremisesConnectionId")
@@ -63,7 +63,7 @@ func (m *CloudPcDisasterRecoveryAzureConnectionSetting) Serialize(writer i878a80
     }
     return nil
 }
-// SetOnPremisesConnectionId sets the onPremisesConnectionId property value. The onPremisesConnectionId property
+// SetOnPremisesConnectionId sets the onPremisesConnectionId property value. Indicates the unique ID of the virtual network that the new Cloud PC joins.
 func (m *CloudPcDisasterRecoveryAzureConnectionSetting) SetOnPremisesConnectionId(value *string)() {
     err := m.GetBackingStore().Set("onPremisesConnectionId", value)
     if err != nil {

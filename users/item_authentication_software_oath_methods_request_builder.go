@@ -40,6 +40,7 @@ type ItemAuthenticationSoftwareOathMethodsRequestBuilderGetRequestConfiguration 
     QueryParameters *ItemAuthenticationSoftwareOathMethodsRequestBuilderGetQueryParameters
 }
 // BySoftwareOathAuthenticationMethodId provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilder when successful
 func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) BySoftwareOathAuthenticationMethodId(softwareOathAuthenticationMethodId string)(*ItemAuthenticationSoftwareOathMethodsSoftwareOathAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) Count()(*ItemAuthe
     return NewItemAuthenticationSoftwareOathMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a SoftwareOathAuthenticationMethodCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationSoftwareOathMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodCollectionResponseable, error) {
@@ -90,6 +92,7 @@ func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) Get(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SoftwareOathAuthenticationMethodCollectionResponseable), nil
 }
 // ToGetRequestInformation the software OATH time-based one-time password (TOTP) applications registered to a user for authentication.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationSoftwareOathMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +107,7 @@ func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationSoftwareOathMethodsRequestBuilder when successful
 func (m *ItemAuthenticationSoftwareOathMethodsRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationSoftwareOathMethodsRequestBuilder) {
     return NewItemAuthenticationSoftwareOathMethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

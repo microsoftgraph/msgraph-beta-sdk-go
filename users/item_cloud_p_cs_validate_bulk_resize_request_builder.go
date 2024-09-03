@@ -55,6 +55,7 @@ func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) Post(ctx context.Context,
     return res.(ItemCloudPCsValidateBulkResizeResponseable), nil
 }
 // PostAsValidateBulkResizePostResponse validate that a set of cloudPC devices meet the requirements to be bulk resized.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemCloudPCsValidateBulkResizePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,6 +79,7 @@ func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) PostAsValidateBulkResizeP
     return res.(ItemCloudPCsValidateBulkResizePostResponseable), nil
 }
 // ToPostRequestInformation validate that a set of cloudPC devices meet the requirements to be bulk resized.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCloudPCsValidateBulkResizePostRequestBodyable, requestConfiguration *ItemCloudPCsValidateBulkResizeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -93,6 +95,7 @@ func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudPCsValidateBulkResizeRequestBuilder when successful
 func (m *ItemCloudPCsValidateBulkResizeRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsValidateBulkResizeRequestBuilder) {
     return NewItemCloudPCsValidateBulkResizeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

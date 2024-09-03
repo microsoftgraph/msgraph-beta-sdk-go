@@ -55,6 +55,7 @@ func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.
     return res.(ItemGetPasswordSingleSignOnCredentialsResponseable), nil
 }
 // PostAsGetPasswordSingleSignOnCredentialsPostResponse get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemGetPasswordSingleSignOnCredentialsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,6 +79,7 @@ func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) PostAsGetPassword
     return res.(ItemGetPasswordSingleSignOnCredentialsPostResponseable), nil
 }
 // ToPostRequestInformation get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -89,6 +91,7 @@ func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemGetPasswordSingleSignOnCredentialsRequestBuilder when successful
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) WithUrl(rawUrl string)(*ItemGetPasswordSingleSignOnCredentialsRequestBuilder) {
     return NewItemGetPasswordSingleSignOnCredentialsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

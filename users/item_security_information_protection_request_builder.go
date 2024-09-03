@@ -55,6 +55,7 @@ func NewItemSecurityInformationProtectionRequestBuilder(rawUrl string, requestAd
     return NewItemSecurityInformationProtectionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property informationProtection for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSecurityInformationProtectionRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSecurityInformationProtectionRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) Delete(ctx context.Con
     return nil
 }
 // Get get informationProtection from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a InformationProtectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSecurityInformationProtectionRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSecurityInformationProtectionRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable, error) {
@@ -96,6 +98,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) LabelPolicySettings()(
     return NewItemSecurityInformationProtectionLabelPolicySettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property informationProtection in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a InformationProtectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSecurityInformationProtectionRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable, requestConfiguration *ItemSecurityInformationProtectionRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable, error) {
@@ -121,6 +124,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) SensitivityLabels()(*I
     return NewItemSecurityInformationProtectionSensitivityLabelsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property informationProtection for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSecurityInformationProtectionRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSecurityInformationProtectionRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,6 +136,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) ToDeleteRequestInforma
     return requestInfo, nil
 }
 // ToGetRequestInformation get informationProtection from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSecurityInformationProtectionRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSecurityInformationProtectionRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property informationProtection in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSecurityInformationProtectionRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.InformationProtectionable, requestConfiguration *ItemSecurityInformationProtectionRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -161,6 +167,7 @@ func (m *ItemSecurityInformationProtectionRequestBuilder) ToPatchRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSecurityInformationProtectionRequestBuilder when successful
 func (m *ItemSecurityInformationProtectionRequestBuilder) WithUrl(rawUrl string)(*ItemSecurityInformationProtectionRequestBuilder) {
     return NewItemSecurityInformationProtectionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

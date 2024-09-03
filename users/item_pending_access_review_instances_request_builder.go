@@ -47,6 +47,7 @@ type ItemPendingAccessReviewInstancesRequestBuilderPostRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByAccessReviewInstanceId provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesRequestBuilder) ByAccessReviewInstanceId(accessReviewInstanceId string)(*ItemPendingAccessReviewInstancesAccessReviewInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,11 +78,13 @@ func (m *ItemPendingAccessReviewInstancesRequestBuilder) Count()(*ItemPendingAcc
     return NewItemPendingAccessReviewInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // FilterByCurrentUserWithOn provides operations to call the filterByCurrentUser method.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPendingAccessReviewInstancesFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesRequestBuilder) FilterByCurrentUserWithOn(on *string)(*ItemPendingAccessReviewInstancesFilterByCurrentUserWithOnRequestBuilder) {
     return NewItemPendingAccessReviewInstancesFilterByCurrentUserWithOnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, on)
 }
 // Get navigation property to get a list of access reviews pending approval by the reviewer.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a AccessReviewInstanceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPendingAccessReviewInstancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceCollectionResponseable, error) {
@@ -102,6 +105,7 @@ func (m *ItemPendingAccessReviewInstancesRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceCollectionResponseable), nil
 }
 // Post create new navigation property to pendingAccessReviewInstances for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a AccessReviewInstanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPendingAccessReviewInstancesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, requestConfiguration *ItemPendingAccessReviewInstancesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, error) {
@@ -122,6 +126,7 @@ func (m *ItemPendingAccessReviewInstancesRequestBuilder) Post(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable), nil
 }
 // ToGetRequestInformation navigation property to get a list of access reviews pending approval by the reviewer.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPendingAccessReviewInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemPendingAccessReviewInstancesRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to pendingAccessReviewInstances for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPendingAccessReviewInstancesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessReviewInstanceable, requestConfiguration *ItemPendingAccessReviewInstancesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemPendingAccessReviewInstancesRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPendingAccessReviewInstancesRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesRequestBuilder) {
     return NewItemPendingAccessReviewInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

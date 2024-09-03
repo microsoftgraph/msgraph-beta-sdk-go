@@ -40,7 +40,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetAdditionalData()(map[stri
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCrossRegionDisasterRecoveryEnabled gets the crossRegionDisasterRecoveryEnabled property value. The crossRegionDisasterRecoveryEnabled property
+// GetCrossRegionDisasterRecoveryEnabled gets the crossRegionDisasterRecoveryEnabled property value. True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false.
 // returns a *bool when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetCrossRegionDisasterRecoveryEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("crossRegionDisasterRecoveryEnabled")
@@ -52,7 +52,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetCrossRegionDisasterRecove
     }
     return nil
 }
-// GetDisasterRecoveryNetworkSetting gets the disasterRecoveryNetworkSetting property value. The disasterRecoveryNetworkSetting property
+// GetDisasterRecoveryNetworkSetting gets the disasterRecoveryNetworkSetting property value. Indicates the network settings of the Cloud PC during a cross-region disaster recovery operation.
 // returns a CloudPcDisasterRecoveryNetworkSettingable when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetDisasterRecoveryNetworkSetting()(CloudPcDisasterRecoveryNetworkSettingable) {
     val, err := m.GetBackingStore().Get("disasterRecoveryNetworkSetting")
@@ -110,7 +110,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetFieldDeserializers()(map[
     }
     return res
 }
-// GetMaintainCrossRegionRestorePointEnabled gets the maintainCrossRegionRestorePointEnabled property value. The maintainCrossRegionRestorePointEnabled property
+// GetMaintainCrossRegionRestorePointEnabled gets the maintainCrossRegionRestorePointEnabled property value. Indicates whether Windows 365 maintain the cross-region disaster recovery function generated restore points. If true, the Windows 365 stored restore points; false indicates that Windows 365 doesn't generate or keep the restore point from the original Cloud PC. If a disaster occurs, the new Cloud PC can only be provisioned using the initial image. This limitation can result in the loss of some user data on the original Cloud PC. The default value is false.
 // returns a *bool when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetMaintainCrossRegionRestorePointEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("maintainCrossRegionRestorePointEnabled")
@@ -179,21 +179,21 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) SetAdditionalData(value map[
 func (m *CloudPcCrossRegionDisasterRecoverySetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCrossRegionDisasterRecoveryEnabled sets the crossRegionDisasterRecoveryEnabled property value. The crossRegionDisasterRecoveryEnabled property
+// SetCrossRegionDisasterRecoveryEnabled sets the crossRegionDisasterRecoveryEnabled property value. True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false.
 func (m *CloudPcCrossRegionDisasterRecoverySetting) SetCrossRegionDisasterRecoveryEnabled(value *bool)() {
     err := m.GetBackingStore().Set("crossRegionDisasterRecoveryEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisasterRecoveryNetworkSetting sets the disasterRecoveryNetworkSetting property value. The disasterRecoveryNetworkSetting property
+// SetDisasterRecoveryNetworkSetting sets the disasterRecoveryNetworkSetting property value. Indicates the network settings of the Cloud PC during a cross-region disaster recovery operation.
 func (m *CloudPcCrossRegionDisasterRecoverySetting) SetDisasterRecoveryNetworkSetting(value CloudPcDisasterRecoveryNetworkSettingable)() {
     err := m.GetBackingStore().Set("disasterRecoveryNetworkSetting", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMaintainCrossRegionRestorePointEnabled sets the maintainCrossRegionRestorePointEnabled property value. The maintainCrossRegionRestorePointEnabled property
+// SetMaintainCrossRegionRestorePointEnabled sets the maintainCrossRegionRestorePointEnabled property value. Indicates whether Windows 365 maintain the cross-region disaster recovery function generated restore points. If true, the Windows 365 stored restore points; false indicates that Windows 365 doesn't generate or keep the restore point from the original Cloud PC. If a disaster occurs, the new Cloud PC can only be provisioned using the initial image. This limitation can result in the loss of some user data on the original Cloud PC. The default value is false.
 func (m *CloudPcCrossRegionDisasterRecoverySetting) SetMaintainCrossRegionRestorePointEnabled(value *bool)() {
     err := m.GetBackingStore().Set("maintainCrossRegionRestorePointEnabled", value)
     if err != nil {

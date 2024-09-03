@@ -47,6 +47,7 @@ type ItemSettingsStorageQuotaServicesRequestBuilderPostRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByServiceStorageQuotaBreakdownId provides operations to manage the services property of the microsoft.graph.unifiedStorageQuota entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder when successful
 func (m *ItemSettingsStorageQuotaServicesRequestBuilder) ByServiceStorageQuotaBreakdownId(serviceStorageQuotaBreakdownId string)(*ItemSettingsStorageQuotaServicesServiceStorageQuotaBreakdownItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemSettingsStorageQuotaServicesRequestBuilder) Count()(*ItemSettingsSt
     return NewItemSettingsStorageQuotaServicesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the breakdown of services contributing to the user's quota usage.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ServiceStorageQuotaBreakdownCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsStorageQuotaServicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsStorageQuotaServicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemSettingsStorageQuotaServicesRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownCollectionResponseable), nil
 }
 // Post create new navigation property to services for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ServiceStorageQuotaBreakdownable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsStorageQuotaServicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable, requestConfiguration *ItemSettingsStorageQuotaServicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable, error) {
@@ -117,6 +120,7 @@ func (m *ItemSettingsStorageQuotaServicesRequestBuilder) Post(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable), nil
 }
 // ToGetRequestInformation the breakdown of services contributing to the user's quota usage.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsStorageQuotaServicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsStorageQuotaServicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemSettingsStorageQuotaServicesRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to services for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsStorageQuotaServicesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStorageQuotaBreakdownable, requestConfiguration *ItemSettingsStorageQuotaServicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemSettingsStorageQuotaServicesRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsStorageQuotaServicesRequestBuilder when successful
 func (m *ItemSettingsStorageQuotaServicesRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsStorageQuotaServicesRequestBuilder) {
     return NewItemSettingsStorageQuotaServicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

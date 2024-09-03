@@ -55,6 +55,7 @@ func NewItemProfileNamesPersonNameItemRequestBuilder(rawUrl string, requestAdapt
     return NewItemProfileNamesPersonNameItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property names for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) Delete(ctx context.Contex
     return nil
 }
 // Get represents the names a user has added to their profile.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PersonNameable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, error) {
@@ -91,6 +93,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable), nil
 }
 // Patch update the navigation property names in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PersonNameable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, error) {
@@ -111,6 +114,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) Patch(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable), nil
 }
 // ToDeleteRequestInformation delete navigation property names for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToDeleteRequestInformatio
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the names a user has added to their profile.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property names in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonNameable, requestConfiguration *ItemProfileNamesPersonNameItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemProfileNamesPersonNameItemRequestBuilder) ToPatchRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfileNamesPersonNameItemRequestBuilder when successful
 func (m *ItemProfileNamesPersonNameItemRequestBuilder) WithUrl(rawUrl string)(*ItemProfileNamesPersonNameItemRequestBuilder) {
     return NewItemProfileNamesPersonNameItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

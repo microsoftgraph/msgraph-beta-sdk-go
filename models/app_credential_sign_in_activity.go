@@ -20,7 +20,7 @@ func NewAppCredentialSignInActivity()(*AppCredentialSignInActivity) {
 func CreateAppCredentialSignInActivityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAppCredentialSignInActivity(), nil
 }
-// GetAppId gets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
+// GetAppId gets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credentialed application.
 // returns a *string when successful
 func (m *AppCredentialSignInActivity) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
@@ -345,7 +345,7 @@ func (m *AppCredentialSignInActivity) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAppId sets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.
+// SetAppId sets the appId property value. The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credentialed application.
 func (m *AppCredentialSignInActivity) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {

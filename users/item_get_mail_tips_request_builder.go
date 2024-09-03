@@ -55,6 +55,7 @@ func (m *ItemGetMailTipsRequestBuilder) Post(ctx context.Context, body ItemGetMa
     return res.(ItemGetMailTipsResponseable), nil
 }
 // PostAsGetMailTipsPostResponse get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemGetMailTipsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,6 +79,7 @@ func (m *ItemGetMailTipsRequestBuilder) PostAsGetMailTipsPostResponse(ctx contex
     return res.(ItemGetMailTipsPostResponseable), nil
 }
 // ToPostRequestInformation get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemGetMailTipsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemGetMailTipsPostRequestBodyable, requestConfiguration *ItemGetMailTipsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -93,6 +95,7 @@ func (m *ItemGetMailTipsRequestBuilder) ToPostRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemGetMailTipsRequestBuilder when successful
 func (m *ItemGetMailTipsRequestBuilder) WithUrl(rawUrl string)(*ItemGetMailTipsRequestBuilder) {
     return NewItemGetMailTipsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

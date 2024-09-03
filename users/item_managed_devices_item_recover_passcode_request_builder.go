@@ -31,6 +31,7 @@ func NewItemManagedDevicesItemRecoverPasscodeRequestBuilder(rawUrl string, reque
     return NewItemManagedDevicesItemRecoverPasscodeRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post recover passcode
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemRecoverPasscodeRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRecoverPasscodeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -47,6 +48,7 @@ func (m *ItemManagedDevicesItemRecoverPasscodeRequestBuilder) Post(ctx context.C
     return nil
 }
 // ToPostRequestInformation recover passcode
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemRecoverPasscodeRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRecoverPasscodeRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -58,6 +60,7 @@ func (m *ItemManagedDevicesItemRecoverPasscodeRequestBuilder) ToPostRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemRecoverPasscodeRequestBuilder when successful
 func (m *ItemManagedDevicesItemRecoverPasscodeRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemRecoverPasscodeRequestBuilder) {
     return NewItemManagedDevicesItemRecoverPasscodeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

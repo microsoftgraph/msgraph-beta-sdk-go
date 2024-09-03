@@ -33,7 +33,7 @@ func (m *OutlookTask) GetAssignedTo()(*string) {
     }
     return nil
 }
-// GetAttachments gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// GetAttachments gets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task. Read-only. Nullable.
 // returns a []Attachmentable when successful
 func (m *OutlookTask) GetAttachments()([]Attachmentable) {
     val, err := m.GetBackingStore().Get("attachments")
@@ -45,7 +45,7 @@ func (m *OutlookTask) GetAttachments()([]Attachmentable) {
     }
     return nil
 }
-// GetBody gets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
+// GetBody gets the body property value. The task body that typically contains information about the task. Only the HTML type is supported.
 // returns a ItemBodyable when successful
 func (m *OutlookTask) GetBody()(ItemBodyable) {
     val, err := m.GetBackingStore().Get("body")
@@ -585,14 +585,14 @@ func (m *OutlookTask) SetAssignedTo(value *string)() {
         panic(err)
     }
 }
-// SetAttachments sets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
+// SetAttachments sets the attachments property value. The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task. Read-only. Nullable.
 func (m *OutlookTask) SetAttachments(value []Attachmentable)() {
     err := m.GetBackingStore().Set("attachments", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBody sets the body property value. The task body that typically contains information about the task. Note that only HTML type is supported.
+// SetBody sets the body property value. The task body that typically contains information about the task. Only the HTML type is supported.
 func (m *OutlookTask) SetBody(value ItemBodyable)() {
     err := m.GetBackingStore().Set("body", value)
     if err != nil {

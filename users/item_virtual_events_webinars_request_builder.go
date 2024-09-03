@@ -40,6 +40,7 @@ type ItemVirtualEventsWebinarsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemVirtualEventsWebinarsRequestBuilderGetQueryParameters
 }
 // ByVirtualEventWebinarId provides operations to manage the webinars property of the microsoft.graph.userVirtualEventsRoot entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemVirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder when successful
 func (m *ItemVirtualEventsWebinarsRequestBuilder) ByVirtualEventWebinarId(virtualEventWebinarId string)(*ItemVirtualEventsWebinarsVirtualEventWebinarItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *ItemVirtualEventsWebinarsRequestBuilder) Count()(*ItemVirtualEventsWebi
     return NewItemVirtualEventsWebinarsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get webinars from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a VirtualEventWebinarCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemVirtualEventsWebinarsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemVirtualEventsWebinarsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventWebinarCollectionResponseable, error) {
@@ -90,6 +92,7 @@ func (m *ItemVirtualEventsWebinarsRequestBuilder) Get(ctx context.Context, reque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.VirtualEventWebinarCollectionResponseable), nil
 }
 // ToGetRequestInformation get webinars from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemVirtualEventsWebinarsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemVirtualEventsWebinarsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +107,7 @@ func (m *ItemVirtualEventsWebinarsRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemVirtualEventsWebinarsRequestBuilder when successful
 func (m *ItemVirtualEventsWebinarsRequestBuilder) WithUrl(rawUrl string)(*ItemVirtualEventsWebinarsRequestBuilder) {
     return NewItemVirtualEventsWebinarsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

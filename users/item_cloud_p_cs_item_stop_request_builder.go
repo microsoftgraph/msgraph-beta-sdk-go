@@ -31,6 +31,7 @@ func NewItemCloudPCsItemStopRequestBuilder(rawUrl string, requestAdapter i2ae418
     return NewItemCloudPCsItemStopRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemCloudPCsItemStopRequestBuilder) Post(ctx context.Context, requestCo
     return nil
 }
 // ToPostRequestInformation stop a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemStopRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemStopRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -61,6 +63,7 @@ func (m *ItemCloudPCsItemStopRequestBuilder) ToPostRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudPCsItemStopRequestBuilder when successful
 func (m *ItemCloudPCsItemStopRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemStopRequestBuilder) {
     return NewItemCloudPCsItemStopRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

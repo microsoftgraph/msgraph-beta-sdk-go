@@ -55,6 +55,7 @@ func NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder(rawU
     return NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property activityStatistics for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) De
     return nil
 }
 // Get the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ActivityStatisticsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, error) {
@@ -91,6 +93,7 @@ func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) Ge
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable), nil
 }
 // Patch update the navigation property activityStatistics in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ActivityStatisticsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, requestConfiguration *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, error) {
@@ -111,6 +114,7 @@ func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) Pa
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable), nil
 }
 // ToDeleteRequestInformation delete navigation property activityStatistics for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) To
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) To
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property activityStatistics in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityStatisticsable, requestConfiguration *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder when successful
 func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) WithUrl(rawUrl string)(*ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) {
     return NewItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

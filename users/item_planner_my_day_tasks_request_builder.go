@@ -40,6 +40,7 @@ type ItemPlannerMyDayTasksRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemPlannerMyDayTasksRequestBuilderGetQueryParameters
 }
 // ByPlannerTaskId provides operations to manage the myDayTasks property of the microsoft.graph.plannerUser entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerMyDayTasksPlannerTaskItemRequestBuilder when successful
 func (m *ItemPlannerMyDayTasksRequestBuilder) ByPlannerTaskId(plannerTaskId string)(*ItemPlannerMyDayTasksPlannerTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *ItemPlannerMyDayTasksRequestBuilder) Count()(*ItemPlannerMyDayTasksCoun
     return NewItemPlannerMyDayTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PlannerTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerMyDayTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerMyDayTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskCollectionResponseable, error) {
@@ -90,6 +92,7 @@ func (m *ItemPlannerMyDayTasksRequestBuilder) Get(ctx context.Context, requestCo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerTaskCollectionResponseable), nil
 }
 // ToGetRequestInformation read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerMyDayTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerMyDayTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +107,7 @@ func (m *ItemPlannerMyDayTasksRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerMyDayTasksRequestBuilder when successful
 func (m *ItemPlannerMyDayTasksRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerMyDayTasksRequestBuilder) {
     return NewItemPlannerMyDayTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

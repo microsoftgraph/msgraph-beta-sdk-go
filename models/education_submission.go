@@ -20,7 +20,7 @@ func NewEducationSubmission()(*EducationSubmission) {
 func CreateEducationSubmissionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSubmission(), nil
 }
-// GetExcusedBy gets the excusedBy property value. The excusedBy property
+// GetExcusedBy gets the excusedBy property value. The user that marked the submission as excused.
 // returns a IdentitySetable when successful
 func (m *EducationSubmission) GetExcusedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("excusedBy")
@@ -32,7 +32,7 @@ func (m *EducationSubmission) GetExcusedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetExcusedDateTime gets the excusedDateTime property value. The excusedDateTime property
+// GetExcusedDateTime gets the excusedDateTime property value. Moment in time when the submission was moved to the excused state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *EducationSubmission) GetExcusedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("excusedDateTime")
@@ -65,6 +65,26 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         if val != nil {
             m.SetExcusedDateTime(val)
+        }
+        return nil
+    }
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedBy(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
         }
         return nil
     }
@@ -237,6 +257,30 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// returns a IdentitySetable when successful
+func (m *EducationSubmission) GetLastModifiedBy()(IdentitySetable) {
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
+func (m *EducationSubmission) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetOutcomes gets the outcomes property value. The outcomes property
 // returns a []EducationOutcomeable when successful
@@ -468,16 +512,30 @@ func (m *EducationSubmission) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetExcusedBy sets the excusedBy property value. The excusedBy property
+// SetExcusedBy sets the excusedBy property value. The user that marked the submission as excused.
 func (m *EducationSubmission) SetExcusedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("excusedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcusedDateTime sets the excusedDateTime property value. The excusedDateTime property
+// SetExcusedDateTime sets the excusedDateTime property value. Moment in time when the submission was moved to the excused state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *EducationSubmission) SetExcusedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("excusedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+func (m *EducationSubmission) SetLastModifiedBy(value IdentitySetable)() {
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+func (m *EducationSubmission) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -592,6 +650,8 @@ type EducationSubmissionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetExcusedBy()(IdentitySetable)
     GetExcusedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastModifiedBy()(IdentitySetable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOutcomes()([]EducationOutcomeable)
     GetReassignedBy()(IdentitySetable)
     GetReassignedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -609,6 +669,8 @@ type EducationSubmissionable interface {
     GetWebUrl()(*string)
     SetExcusedBy(value IdentitySetable)()
     SetExcusedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastModifiedBy(value IdentitySetable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOutcomes(value []EducationOutcomeable)()
     SetReassignedBy(value IdentitySetable)()
     SetReassignedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

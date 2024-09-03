@@ -710,7 +710,7 @@ func (m *Event) GetImportance()(*Importance) {
     }
     return nil
 }
-// GetInstances gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// GetInstances gets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
 // returns a []Eventable when successful
 func (m *Event) GetInstances()([]Eventable) {
     val, err := m.GetBackingStore().Get("instances")
@@ -758,7 +758,7 @@ func (m *Event) GetIsDraft()(*bool) {
     }
     return nil
 }
-// GetIsOnlineMeeting gets the isOnlineMeeting property value. True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.
+// GetIsOnlineMeeting gets the isOnlineMeeting property value. True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Outlook then ignores any further changes to isOnlineMeeting, and the meeting remains available online.
 // returns a *bool when successful
 func (m *Event) GetIsOnlineMeeting()(*bool) {
     val, err := m.GetBackingStore().Get("isOnlineMeeting")
@@ -842,7 +842,7 @@ func (m *Event) GetOccurrenceId()(*string) {
     }
     return nil
 }
-// GetOnlineMeeting gets the onlineMeeting property value. Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you cannot change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.
+// GetOnlineMeeting gets the onlineMeeting property value. Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you can't change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.
 // returns a OnlineMeetingInfoable when successful
 func (m *Event) GetOnlineMeeting()(OnlineMeetingInfoable) {
     val, err := m.GetBackingStore().Get("onlineMeeting")
@@ -854,7 +854,7 @@ func (m *Event) GetOnlineMeeting()(OnlineMeetingInfoable) {
     }
     return nil
 }
-// GetOnlineMeetingProvider gets the onlineMeetingProvider property value. Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you cannot change onlineMeetingProvider again, and the meeting remains available online.
+// GetOnlineMeetingProvider gets the onlineMeetingProvider property value. Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you can't change onlineMeetingProvider again, and the meeting remains available online.
 // returns a *OnlineMeetingProviderType when successful
 func (m *Event) GetOnlineMeetingProvider()(*OnlineMeetingProviderType) {
     val, err := m.GetBackingStore().Get("onlineMeetingProvider")
@@ -902,7 +902,7 @@ func (m *Event) GetOriginalEndTimeZone()(*string) {
     }
     return nil
 }
-// GetOriginalStart gets the originalStart property value. Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property isn't returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// GetOriginalStart gets the originalStart property value. Represents the start time of an event when it's initially created as an occurrence or exception in a recurring series. This property isn't returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 // returns a *Time when successful
 func (m *Event) GetOriginalStart()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("originalStart")
@@ -1046,7 +1046,7 @@ func (m *Event) GetSubject()(*string) {
     }
     return nil
 }
-// GetTransactionId gets the transactionId property value. A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client's prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.
+// GetTransactionId gets the transactionId property value. A custom identifier specified by a client app for the server to avoid redundant POST operations if the client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client's prior create-event request. After you set transactionId when creating an event, you can't change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.
 // returns a *string when successful
 func (m *Event) GetTransactionId()(*string) {
     val, err := m.GetBackingStore().Get("transactionId")
@@ -1082,7 +1082,7 @@ func (m *Event) GetUid()(*string) {
     }
     return nil
 }
-// GetWebLink gets the webLink property value. The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.
+// GetWebLink gets the webLink property value. The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you're signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can't be accessed from within an iFrame.
 // returns a *string when successful
 func (m *Event) GetWebLink()(*string) {
     val, err := m.GetBackingStore().Get("webLink")
@@ -1529,7 +1529,7 @@ func (m *Event) SetImportance(value *Importance)() {
         panic(err)
     }
 }
-// SetInstances sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// SetInstances sets the instances property value. The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
 func (m *Event) SetInstances(value []Eventable)() {
     err := m.GetBackingStore().Set("instances", value)
     if err != nil {
@@ -1557,7 +1557,7 @@ func (m *Event) SetIsDraft(value *bool)() {
         panic(err)
     }
 }
-// SetIsOnlineMeeting sets the isOnlineMeeting property value. True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.
+// SetIsOnlineMeeting sets the isOnlineMeeting property value. True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Outlook then ignores any further changes to isOnlineMeeting, and the meeting remains available online.
 func (m *Event) SetIsOnlineMeeting(value *bool)() {
     err := m.GetBackingStore().Set("isOnlineMeeting", value)
     if err != nil {
@@ -1606,14 +1606,14 @@ func (m *Event) SetOccurrenceId(value *string)() {
         panic(err)
     }
 }
-// SetOnlineMeeting sets the onlineMeeting property value. Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you cannot change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.
+// SetOnlineMeeting sets the onlineMeeting property value. Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you can't change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.
 func (m *Event) SetOnlineMeeting(value OnlineMeetingInfoable)() {
     err := m.GetBackingStore().Set("onlineMeeting", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnlineMeetingProvider sets the onlineMeetingProvider property value. Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you cannot change onlineMeetingProvider again, and the meeting remains available online.
+// SetOnlineMeetingProvider sets the onlineMeetingProvider property value. Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you can't change onlineMeetingProvider again, and the meeting remains available online.
 func (m *Event) SetOnlineMeetingProvider(value *OnlineMeetingProviderType)() {
     err := m.GetBackingStore().Set("onlineMeetingProvider", value)
     if err != nil {
@@ -1641,7 +1641,7 @@ func (m *Event) SetOriginalEndTimeZone(value *string)() {
         panic(err)
     }
 }
-// SetOriginalStart sets the originalStart property value. Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property isn't returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+// SetOriginalStart sets the originalStart property value. Represents the start time of an event when it's initially created as an occurrence or exception in a recurring series. This property isn't returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
 func (m *Event) SetOriginalStart(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("originalStart", value)
     if err != nil {
@@ -1725,7 +1725,7 @@ func (m *Event) SetSubject(value *string)() {
         panic(err)
     }
 }
-// SetTransactionId sets the transactionId property value. A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client's prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.
+// SetTransactionId sets the transactionId property value. A custom identifier specified by a client app for the server to avoid redundant POST operations if the client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client's prior create-event request. After you set transactionId when creating an event, you can't change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.
 func (m *Event) SetTransactionId(value *string)() {
     err := m.GetBackingStore().Set("transactionId", value)
     if err != nil {
@@ -1746,7 +1746,7 @@ func (m *Event) SetUid(value *string)() {
         panic(err)
     }
 }
-// SetWebLink sets the webLink property value. The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.
+// SetWebLink sets the webLink property value. The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you're signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can't be accessed from within an iFrame.
 func (m *Event) SetWebLink(value *string)() {
     err := m.GetBackingStore().Set("webLink", value)
     if err != nil {

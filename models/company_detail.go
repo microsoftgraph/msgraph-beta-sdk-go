@@ -220,7 +220,7 @@ func (m *CompanyDetail) GetPronunciation()(*string) {
     }
     return nil
 }
-// GetSecondaryDepartment gets the secondaryDepartment property value. The secondaryDepartment property
+// GetSecondaryDepartment gets the secondaryDepartment property value. Secondary Department Name within a company.
 // returns a *string when successful
 func (m *CompanyDetail) GetSecondaryDepartment()(*string) {
     val, err := m.GetBackingStore().Get("secondaryDepartment")
@@ -368,7 +368,7 @@ func (m *CompanyDetail) SetPronunciation(value *string)() {
         panic(err)
     }
 }
-// SetSecondaryDepartment sets the secondaryDepartment property value. The secondaryDepartment property
+// SetSecondaryDepartment sets the secondaryDepartment property value. Secondary Department Name within a company.
 func (m *CompanyDetail) SetSecondaryDepartment(value *string)() {
     err := m.GetBackingStore().Set("secondaryDepartment", value)
     if err != nil {

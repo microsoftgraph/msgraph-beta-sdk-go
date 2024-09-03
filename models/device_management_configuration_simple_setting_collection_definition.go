@@ -45,7 +45,7 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) GetFiel
     }
     return res
 }
-// GetMaximumCount gets the maximumCount property value. Maximum number of simple settings in the collection. Valid values 1 to 100
+// GetMaximumCount gets the maximumCount property value. Maximum number of simple settings in the collection
 // returns a *int32 when successful
 func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) GetMaximumCount()(*int32) {
     val, err := m.GetBackingStore().Get("maximumCount")
@@ -57,7 +57,7 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) GetMaxi
     }
     return nil
 }
-// GetMinimumCount gets the minimumCount property value. Minimum number of simple settings in the collection. Valid values 1 to 100
+// GetMinimumCount gets the minimumCount property value. Minimum number of simple settings in the collection
 // returns a *int32 when successful
 func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) GetMinimumCount()(*int32) {
     val, err := m.GetBackingStore().Get("minimumCount")
@@ -89,14 +89,14 @@ func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) Seriali
     }
     return nil
 }
-// SetMaximumCount sets the maximumCount property value. Maximum number of simple settings in the collection. Valid values 1 to 100
+// SetMaximumCount sets the maximumCount property value. Maximum number of simple settings in the collection
 func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) SetMaximumCount(value *int32)() {
     err := m.GetBackingStore().Set("maximumCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumCount sets the minimumCount property value. Minimum number of simple settings in the collection. Valid values 1 to 100
+// SetMinimumCount sets the minimumCount property value. Minimum number of simple settings in the collection
 func (m *DeviceManagementConfigurationSimpleSettingCollectionDefinition) SetMinimumCount(value *int32)() {
     err := m.GetBackingStore().Set("minimumCount", value)
     if err != nil {

@@ -56,6 +56,18 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackageId()(*string) {
     }
     return nil
 }
+// GetAccessPackageNotificationSettings gets the accessPackageNotificationSettings property value. The accessPackageNotificationSettings property
+// returns a AccessPackageNotificationSettingsable when successful
+func (m *AccessPackageAssignmentPolicy) GetAccessPackageNotificationSettings()(AccessPackageNotificationSettingsable) {
+    val, err := m.GetBackingStore().Get("accessPackageNotificationSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessPackageNotificationSettingsable)
+    }
+    return nil
+}
 // GetAccessReviewSettings gets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews aren't required.
 // returns a AssignmentReviewSettingsable when successful
 func (m *AccessPackageAssignmentPolicy) GetAccessReviewSettings()(AssignmentReviewSettingsable) {
@@ -207,6 +219,16 @@ func (m *AccessPackageAssignmentPolicy) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetAccessPackageId(val)
+        }
+        return nil
+    }
+    res["accessPackageNotificationSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAccessPackageNotificationSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAccessPackageNotificationSettings(val.(AccessPackageNotificationSettingsable))
         }
         return nil
     }
@@ -487,6 +509,12 @@ func (m *AccessPackageAssignmentPolicy) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err = writer.WriteObjectValue("accessPackageNotificationSettings", m.GetAccessPackageNotificationSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("accessReviewSettings", m.GetAccessReviewSettings())
         if err != nil {
             return err
@@ -623,6 +651,13 @@ func (m *AccessPackageAssignmentPolicy) SetAccessPackageId(value *string)() {
         panic(err)
     }
 }
+// SetAccessPackageNotificationSettings sets the accessPackageNotificationSettings property value. The accessPackageNotificationSettings property
+func (m *AccessPackageAssignmentPolicy) SetAccessPackageNotificationSettings(value AccessPackageNotificationSettingsable)() {
+    err := m.GetBackingStore().Set("accessPackageNotificationSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAccessReviewSettings sets the accessReviewSettings property value. Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews aren't required.
 func (m *AccessPackageAssignmentPolicy) SetAccessReviewSettings(value AssignmentReviewSettingsable)() {
     err := m.GetBackingStore().Set("accessReviewSettings", value)
@@ -741,6 +776,7 @@ type AccessPackageAssignmentPolicyable interface {
     GetAccessPackage()(AccessPackageable)
     GetAccessPackageCatalog()(AccessPackageCatalogable)
     GetAccessPackageId()(*string)
+    GetAccessPackageNotificationSettings()(AccessPackageNotificationSettingsable)
     GetAccessReviewSettings()(AssignmentReviewSettingsable)
     GetCanExtend()(*bool)
     GetCreatedBy()(*string)
@@ -760,6 +796,7 @@ type AccessPackageAssignmentPolicyable interface {
     SetAccessPackage(value AccessPackageable)()
     SetAccessPackageCatalog(value AccessPackageCatalogable)()
     SetAccessPackageId(value *string)()
+    SetAccessPackageNotificationSettings(value AccessPackageNotificationSettingsable)()
     SetAccessReviewSettings(value AssignmentReviewSettingsable)()
     SetCanExtend(value *bool)()
     SetCreatedBy(value *string)()
