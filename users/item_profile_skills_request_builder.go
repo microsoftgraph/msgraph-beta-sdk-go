@@ -47,6 +47,7 @@ type ItemProfileSkillsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // BySkillProficiencyId provides operations to manage the skills property of the microsoft.graph.profile entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfileSkillsSkillProficiencyItemRequestBuilder when successful
 func (m *ItemProfileSkillsRequestBuilder) BySkillProficiencyId(skillProficiencyId string)(*ItemProfileSkillsSkillProficiencyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemProfileSkillsRequestBuilder) Count()(*ItemProfileSkillsCountRequest
     return NewItemProfileSkillsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents detailed information about skills associated with a user in various services.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a SkillProficiencyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileSkillsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileSkillsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemProfileSkillsRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyCollectionResponseable), nil
 }
 // Post create new navigation property to skills for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a SkillProficiencyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileSkillsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *ItemProfileSkillsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, error) {
@@ -117,6 +120,7 @@ func (m *ItemProfileSkillsRequestBuilder) Post(ctx context.Context, body ie233ee
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable), nil
 }
 // ToGetRequestInformation represents detailed information about skills associated with a user in various services.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileSkillsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileSkillsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemProfileSkillsRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to skills for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileSkillsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SkillProficiencyable, requestConfiguration *ItemProfileSkillsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemProfileSkillsRequestBuilder) ToPostRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfileSkillsRequestBuilder when successful
 func (m *ItemProfileSkillsRequestBuilder) WithUrl(rawUrl string)(*ItemProfileSkillsRequestBuilder) {
     return NewItemProfileSkillsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -55,6 +55,7 @@ func NewItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssess
     return NewItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property results for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAsses
     return nil
 }
 // Get a collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ThreatAssessmentResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable, error) {
@@ -91,6 +93,7 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAsses
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable), nil
 }
 // Patch update the navigation property results in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ThreatAssessmentResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable, error) {
@@ -111,6 +114,7 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAsses
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable), nil
 }
 // ToDeleteRequestInformation delete navigation property results for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAsses
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAsses
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property results in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ThreatAssessmentResultable, requestConfiguration *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAsses
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder when successful
 func (m *ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder) {
     return NewItemInformationProtectionThreatAssessmentRequestsItemResultsThreatAssessmentResultItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

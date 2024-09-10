@@ -140,7 +140,7 @@ func (m *SignIn) GetAuthenticationMethodsUsed()([]string) {
     }
     return nil
 }
-// GetAuthenticationProcessingDetails gets the authenticationProcessingDetails property value. More authentication processing details, such as the agent name for  PTA and PHS, or a server or farm name for federated authentication.
+// GetAuthenticationProcessingDetails gets the authenticationProcessingDetails property value. More authentication processing details, such as the agent name for PTA and PHS, or a server or farm name for federated authentication.
 // returns a []KeyValueable when successful
 func (m *SignIn) GetAuthenticationProcessingDetails()([]KeyValueable) {
     val, err := m.GetBackingStore().Get("authenticationProcessingDetails")
@@ -236,7 +236,7 @@ func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
     }
     return nil
 }
-// GetConditionalAccessAudiences gets the conditionalAccessAudiences property value. A list that indicates the audience that was evaluated by Conditional Access during a sign-in event.  Supports $filter (eq).
+// GetConditionalAccessAudiences gets the conditionalAccessAudiences property value. A list that indicates the audience that Conditional Access evaluated during a sign-in event.  Supports $filter (eq).
 // returns a []ConditionalAccessAudienceable when successful
 func (m *SignIn) GetConditionalAccessAudiences()([]ConditionalAccessAudienceable) {
     val, err := m.GetBackingStore().Get("conditionalAccessAudiences")
@@ -260,7 +260,7 @@ func (m *SignIn) GetConditionalAccessStatus()(*ConditionalAccessStatus) {
     }
     return nil
 }
-// GetCorrelationId gets the correlationId property value. The identifier the client sends when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
+// GetCorrelationId gets the correlationId property value. The identifier the client sends when sign-in is initiated. This property is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
 // returns a *string when successful
 func (m *SignIn) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -1140,7 +1140,7 @@ func (m *SignIn) GetHomeTenantId()(*string) {
     }
     return nil
 }
-// GetHomeTenantName gets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
+// GetHomeTenantName gets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant provides affirmative consent to Microsoft Entra ID to show the tenant content.
 // returns a *string when successful
 func (m *SignIn) GetHomeTenantName()(*string) {
     val, err := m.GetBackingStore().Get("homeTenantName")
@@ -1152,7 +1152,7 @@ func (m *SignIn) GetHomeTenantName()(*string) {
     }
     return nil
 }
-// GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID might have also used token types not listed in this enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, you must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: remoteDesktopToken.
+// GetIncomingTokenType gets the incomingTokenType property value. Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken, refreshToken.  NOTE Microsoft Entra ID might have also used token types not listed in this enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, you must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: remoteDesktopToken, refreshToken.
 // returns a *IncomingTokenType when successful
 func (m *SignIn) GetIncomingTokenType()(*IncomingTokenType) {
     val, err := m.GetBackingStore().Get("incomingTokenType")
@@ -2217,7 +2217,7 @@ func (m *SignIn) SetAuthenticationMethodsUsed(value []string)() {
         panic(err)
     }
 }
-// SetAuthenticationProcessingDetails sets the authenticationProcessingDetails property value. More authentication processing details, such as the agent name for  PTA and PHS, or a server or farm name for federated authentication.
+// SetAuthenticationProcessingDetails sets the authenticationProcessingDetails property value. More authentication processing details, such as the agent name for PTA and PHS, or a server or farm name for federated authentication.
 func (m *SignIn) SetAuthenticationProcessingDetails(value []KeyValueable)() {
     err := m.GetBackingStore().Set("authenticationProcessingDetails", value)
     if err != nil {
@@ -2273,7 +2273,7 @@ func (m *SignIn) SetClientCredentialType(value *ClientCredentialType)() {
         panic(err)
     }
 }
-// SetConditionalAccessAudiences sets the conditionalAccessAudiences property value. A list that indicates the audience that was evaluated by Conditional Access during a sign-in event.  Supports $filter (eq).
+// SetConditionalAccessAudiences sets the conditionalAccessAudiences property value. A list that indicates the audience that Conditional Access evaluated during a sign-in event.  Supports $filter (eq).
 func (m *SignIn) SetConditionalAccessAudiences(value []ConditionalAccessAudienceable)() {
     err := m.GetBackingStore().Set("conditionalAccessAudiences", value)
     if err != nil {
@@ -2287,7 +2287,7 @@ func (m *SignIn) SetConditionalAccessStatus(value *ConditionalAccessStatus)() {
         panic(err)
     }
 }
-// SetCorrelationId sets the correlationId property value. The identifier the client sends when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
+// SetCorrelationId sets the correlationId property value. The identifier the client sends when sign-in is initiated. This property is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
 func (m *SignIn) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {
@@ -2343,14 +2343,14 @@ func (m *SignIn) SetHomeTenantId(value *string)() {
         panic(err)
     }
 }
-// SetHomeTenantName sets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.
+// SetHomeTenantName sets the homeTenantName property value. For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant provides affirmative consent to Microsoft Entra ID to show the tenant content.
 func (m *SignIn) SetHomeTenantName(value *string)() {
     err := m.GetBackingStore().Set("homeTenantName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID might have also used token types not listed in this enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, you must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: remoteDesktopToken.
+// SetIncomingTokenType sets the incomingTokenType property value. Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken, refreshToken.  NOTE Microsoft Entra ID might have also used token types not listed in this enum type to authenticate the actor. Don't infer the lack of a token if it isn't one of the types listed. Also, you must use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: remoteDesktopToken, refreshToken.
 func (m *SignIn) SetIncomingTokenType(value *IncomingTokenType)() {
     err := m.GetBackingStore().Set("incomingTokenType", value)
     if err != nil {

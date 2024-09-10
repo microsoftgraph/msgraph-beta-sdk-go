@@ -47,6 +47,7 @@ type ItemCloudClipboardItemsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByCloudClipboardItemId provides operations to manage the items property of the microsoft.graph.cloudClipboardRoot entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilder when successful
 func (m *ItemCloudClipboardItemsRequestBuilder) ByCloudClipboardItemId(cloudClipboardItemId string)(*ItemCloudClipboardItemsCloudClipboardItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemCloudClipboardItemsRequestBuilder) Count()(*ItemCloudClipboardItems
     return NewItemCloudClipboardItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents a collection of Cloud Clipboard items.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CloudClipboardItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudClipboardItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudClipboardItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardItemCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemCloudClipboardItemsRequestBuilder) Get(ctx context.Context, request
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardItemCollectionResponseable), nil
 }
 // Post create new navigation property to items for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CloudClipboardItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudClipboardItemsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardItemable, requestConfiguration *ItemCloudClipboardItemsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardItemable, error) {
@@ -117,6 +120,7 @@ func (m *ItemCloudClipboardItemsRequestBuilder) Post(ctx context.Context, body i
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardItemable), nil
 }
 // ToGetRequestInformation represents a collection of Cloud Clipboard items.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudClipboardItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudClipboardItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemCloudClipboardItemsRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to items for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudClipboardItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardItemable, requestConfiguration *ItemCloudClipboardItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemCloudClipboardItemsRequestBuilder) ToPostRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudClipboardItemsRequestBuilder when successful
 func (m *ItemCloudClipboardItemsRequestBuilder) WithUrl(rawUrl string)(*ItemCloudClipboardItemsRequestBuilder) {
     return NewItemCloudClipboardItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

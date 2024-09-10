@@ -47,6 +47,7 @@ type ItemCalendarsItemCalendarViewItemExtensionsRequestBuilderPostRequestConfigu
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByExtensionId provides operations to manage the extensions property of the microsoft.graph.event entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarsItemCalendarViewItemExtensionsExtensionItemRequestBuilder when successful
 func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) ByExtensionId(extensionId string)(*ItemCalendarsItemCalendarViewItemExtensionsExtensionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) Count()(*Ite
     return NewItemCalendarsItemCalendarViewItemExtensionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the collection of open extensions defined for the event. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ExtensionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExtensionCollectionResponseable), nil
 }
 // Post create new navigation property to extensions for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Extensionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable, requestConfiguration *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable, error) {
@@ -117,6 +120,7 @@ func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) Post(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable), nil
 }
 // ToGetRequestInformation the collection of open extensions defined for the event. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to extensions for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable, requestConfiguration *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) ToPostReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder when successful
 func (m *ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarsItemCalendarViewItemExtensionsRequestBuilder) {
     return NewItemCalendarsItemCalendarViewItemExtensionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

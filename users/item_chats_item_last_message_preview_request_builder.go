@@ -55,6 +55,7 @@ func NewItemChatsItemLastMessagePreviewRequestBuilder(rawUrl string, requestAdap
     return NewItemChatsItemLastMessagePreviewRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property lastMessagePreview for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemLastMessagePreviewRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemChatsItemLastMessagePreviewRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemChatsItemLastMessagePreviewRequestBuilder) Delete(ctx context.Conte
     return nil
 }
 // Get preview of the last message sent in the chat. Null if no messages are sent in the chat. Currently, only the list chats operation supports this property.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ChatMessageInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemLastMessagePreviewRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemLastMessagePreviewRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageInfoable, error) {
@@ -91,6 +93,7 @@ func (m *ItemChatsItemLastMessagePreviewRequestBuilder) Get(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageInfoable), nil
 }
 // Patch update the navigation property lastMessagePreview in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ChatMessageInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemLastMessagePreviewRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageInfoable, requestConfiguration *ItemChatsItemLastMessagePreviewRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageInfoable, error) {
@@ -111,6 +114,7 @@ func (m *ItemChatsItemLastMessagePreviewRequestBuilder) Patch(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageInfoable), nil
 }
 // ToDeleteRequestInformation delete navigation property lastMessagePreview for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemLastMessagePreviewRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemLastMessagePreviewRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemChatsItemLastMessagePreviewRequestBuilder) ToDeleteRequestInformati
     return requestInfo, nil
 }
 // ToGetRequestInformation preview of the last message sent in the chat. Null if no messages are sent in the chat. Currently, only the list chats operation supports this property.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemLastMessagePreviewRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemLastMessagePreviewRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemChatsItemLastMessagePreviewRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property lastMessagePreview in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemLastMessagePreviewRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageInfoable, requestConfiguration *ItemChatsItemLastMessagePreviewRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemChatsItemLastMessagePreviewRequestBuilder) ToPatchRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemLastMessagePreviewRequestBuilder when successful
 func (m *ItemChatsItemLastMessagePreviewRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemLastMessagePreviewRequestBuilder) {
     return NewItemChatsItemLastMessagePreviewRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

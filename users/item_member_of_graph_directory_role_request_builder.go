@@ -58,6 +58,7 @@ func (m *ItemMemberOfGraphDirectoryRoleRequestBuilder) Count()(*ItemMemberOfGrap
     return NewItemMemberOfGraphDirectoryRoleCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DirectoryRoleCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMemberOfGraphDirectoryRoleRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMemberOfGraphDirectoryRoleRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleCollectionResponseable, error) {
@@ -78,6 +79,7 @@ func (m *ItemMemberOfGraphDirectoryRoleRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryRoleCollectionResponseable), nil
 }
 // ToGetRequestInformation get the items of type microsoft.graph.directoryRole in the microsoft.graph.directoryObject collection
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMemberOfGraphDirectoryRoleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMemberOfGraphDirectoryRoleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -92,6 +94,7 @@ func (m *ItemMemberOfGraphDirectoryRoleRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMemberOfGraphDirectoryRoleRequestBuilder when successful
 func (m *ItemMemberOfGraphDirectoryRoleRequestBuilder) WithUrl(rawUrl string)(*ItemMemberOfGraphDirectoryRoleRequestBuilder) {
     return NewItemMemberOfGraphDirectoryRoleRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

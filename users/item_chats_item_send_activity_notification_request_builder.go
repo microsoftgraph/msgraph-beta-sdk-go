@@ -31,6 +31,7 @@ func NewItemChatsItemSendActivityNotificationRequestBuilder(rawUrl string, reque
     return NewItemChatsItemSendActivityNotificationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post send an activity feed notification in the scope of a chat. For more information, see sending Teams activity notifications.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemChatsItemSendActivityNotificationRequestBuilder) Post(ctx context.C
     return nil
 }
 // ToPostRequestInformation send an activity feed notification in the scope of a chat. For more information, see sending Teams activity notifications.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemSendActivityNotificationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChatsItemSendActivityNotificationPostRequestBodyable, requestConfiguration *ItemChatsItemSendActivityNotificationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemChatsItemSendActivityNotificationRequestBuilder) ToPostRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemSendActivityNotificationRequestBuilder when successful
 func (m *ItemChatsItemSendActivityNotificationRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemSendActivityNotificationRequestBuilder) {
     return NewItemChatsItemSendActivityNotificationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

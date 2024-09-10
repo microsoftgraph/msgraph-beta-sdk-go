@@ -47,6 +47,7 @@ type ItemInformationProtectionDataLossPreventionPoliciesRequestBuilderPostReques
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDataLossPreventionPolicyId provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder when successful
 func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) ByDataLossPreventionPolicyId(dataLossPreventionPolicyId string)(*ItemInformationProtectionDataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -82,6 +83,7 @@ func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) Eval
     return NewItemInformationProtectionDataLossPreventionPoliciesEvaluateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get dataLossPreventionPolicies from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DataLossPreventionPolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable, error) {
@@ -102,6 +104,7 @@ func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) Get(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyCollectionResponseable), nil
 }
 // Post create new navigation property to dataLossPreventionPolicies for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DataLossPreventionPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, requestConfiguration *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, error) {
@@ -122,6 +125,7 @@ func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) Post
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable), nil
 }
 // ToGetRequestInformation get dataLossPreventionPolicies from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +140,7 @@ func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) ToGe
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to dataLossPreventionPolicies for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DataLossPreventionPolicyable, requestConfiguration *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +156,7 @@ func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) ToPo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder when successful
 func (m *ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionDataLossPreventionPoliciesRequestBuilder) {
     return NewItemInformationProtectionDataLossPreventionPoliciesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

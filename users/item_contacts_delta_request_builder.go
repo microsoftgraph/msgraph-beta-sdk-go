@@ -76,6 +76,7 @@ func (m *ItemContactsDeltaRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(ItemContactsDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemContactsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -99,6 +100,7 @@ func (m *ItemContactsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Cont
     return res.(ItemContactsDeltaGetResponseable), nil
 }
 // ToGetRequestInformation get a set of contacts that have been added, deleted, or updated in a specified folder. A delta function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user's contacts without having to fetch the entire set of contacts from the server every time.  
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -113,6 +115,7 @@ func (m *ItemContactsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemContactsDeltaRequestBuilder when successful
 func (m *ItemContactsDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemContactsDeltaRequestBuilder) {
     return NewItemContactsDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

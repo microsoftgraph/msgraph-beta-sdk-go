@@ -41,7 +41,7 @@ func NewSubjectRightsRequestsItemApproversUserItemRequestBuilder(rawUrl string, 
     return NewSubjectRightsRequestsItemApproversUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get approvers from privacy
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversUserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
@@ -72,7 +72,7 @@ func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) ServiceProvis
     return NewSubjectRightsRequestsItemApproversItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get approvers from privacy
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SubjectRightsRequestsItemApproversUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -87,7 +87,7 @@ func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *SubjectRightsRequestsItemApproversUserItemRequestBuilder when successful
 func (m *SubjectRightsRequestsItemApproversUserItemRequestBuilder) WithUrl(rawUrl string)(*SubjectRightsRequestsItemApproversUserItemRequestBuilder) {
     return NewSubjectRightsRequestsItemApproversUserItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

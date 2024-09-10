@@ -47,6 +47,7 @@ type ItemContactFoldersItemChildFoldersItemContactsRequestBuilderPostRequestConf
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByContactId provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ByContactId(contactId string)(*ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -82,6 +83,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Delta()(*
     return NewItemContactFoldersItemChildFoldersItemContactsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the contacts in the folder. Navigation property. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ContactCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactCollectionResponseable, error) {
@@ -102,6 +104,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Get(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContactCollectionResponseable), nil
 }
 // Post create new navigation property to contacts for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Contactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, error) {
@@ -122,6 +125,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) Post(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable), nil
 }
 // ToGetRequestInformation the contacts in the folder. Navigation property. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +140,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToGetRequ
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to contacts for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +156,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersItemChildFoldersItemContactsRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

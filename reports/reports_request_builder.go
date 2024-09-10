@@ -279,6 +279,21 @@ func (m *ReportsRequestBuilder) GetMailboxUsageQuotaStatusMailboxCountsWithPerio
 func (m *ReportsRequestBuilder) GetMailboxUsageStorageWithPeriod(period *string)(*GetMailboxUsageStorageWithPeriodRequestBuilder) {
     return NewGetMailboxUsageStorageWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
+// GetMicrosoft365CopilotUsageUserDetailWithPeriod provides operations to call the getMicrosoft365CopilotUsageUserDetail method.
+// returns a *GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUsageUserDetailWithPeriod(period *string)(*GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder) {
+    return NewGetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
+// GetMicrosoft365CopilotUserCountSummaryWithPeriod provides operations to call the getMicrosoft365CopilotUserCountSummary method.
+// returns a *GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountSummaryWithPeriod(period *string)(*GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder) {
+    return NewGetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
+// GetMicrosoft365CopilotUserCountTrendWithPeriod provides operations to call the getMicrosoft365CopilotUserCountTrend method.
+// returns a *GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetMicrosoft365CopilotUserCountTrendWithPeriod(period *string)(*GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder) {
+    return NewGetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
 // GetOffice365ActivationCounts provides operations to call the getOffice365ActivationCounts method.
 // returns a *GetOffice365ActivationCountsRequestBuilder when successful
 func (m *ReportsRequestBuilder) GetOffice365ActivationCounts()(*GetOffice365ActivationCountsRequestBuilder) {

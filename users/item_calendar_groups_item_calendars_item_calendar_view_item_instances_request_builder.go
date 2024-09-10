@@ -11,7 +11,7 @@ import (
 type ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
 type ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -44,6 +44,7 @@ type ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilderG
     QueryParameters *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilderGetQueryParameters
 }
 // ByEventId1 provides operations to manage the instances property of the microsoft.graph.event entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesEventItemRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder) ByEventId1(eventId1 string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +79,8 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuil
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder) Delta()(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesDeltaRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a EventCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable, error) {
@@ -98,7 +100,8 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EventCollectionResponseable), nil
 }
-// ToGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// ToGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -113,6 +116,7 @@ func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuil
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemCalendarViewItemInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

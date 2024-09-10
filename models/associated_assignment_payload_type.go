@@ -27,10 +27,12 @@ const (
     WIN32APP_ASSOCIATEDASSIGNMENTPAYLOADTYPE
     // Indicates that this filter is associated with a configuration or compliance policy on Device Configuration v2 Infrastructure payload type
     DEVICEMANAGMENTCONFIGURATIONANDCOMPLIANCEPOLICY_ASSOCIATEDASSIGNMENTPAYLOADTYPE
+    // Indicates that this filter is associated with Bios Configurations And Other Settings payload type
+    HARDWARECONFIGURATION_ASSOCIATEDASSIGNMENTPAYLOADTYPE
 )
 
 func (i AssociatedAssignmentPayloadType) String() string {
-    return []string{"unknown", "deviceConfigurationAndCompliance", "application", "androidEnterpriseApp", "enrollmentConfiguration", "groupPolicyConfiguration", "zeroTouchDeploymentDeviceConfigProfile", "androidEnterpriseConfiguration", "deviceFirmwareConfigurationInterfacePolicy", "resourceAccessPolicy", "win32app", "deviceManagmentConfigurationAndCompliancePolicy"}[i]
+    return []string{"unknown", "deviceConfigurationAndCompliance", "application", "androidEnterpriseApp", "enrollmentConfiguration", "groupPolicyConfiguration", "zeroTouchDeploymentDeviceConfigProfile", "androidEnterpriseConfiguration", "deviceFirmwareConfigurationInterfacePolicy", "resourceAccessPolicy", "win32app", "deviceManagmentConfigurationAndCompliancePolicy", "hardwareConfiguration"}[i]
 }
 func ParseAssociatedAssignmentPayloadType(v string) (any, error) {
     result := UNKNOWN_ASSOCIATEDASSIGNMENTPAYLOADTYPE
@@ -59,6 +61,8 @@ func ParseAssociatedAssignmentPayloadType(v string) (any, error) {
             result = WIN32APP_ASSOCIATEDASSIGNMENTPAYLOADTYPE
         case "deviceManagmentConfigurationAndCompliancePolicy":
             result = DEVICEMANAGMENTCONFIGURATIONANDCOMPLIANCEPOLICY_ASSOCIATEDASSIGNMENTPAYLOADTYPE
+        case "hardwareConfiguration":
+            result = HARDWARECONFIGURATION_ASSOCIATEDASSIGNMENTPAYLOADTYPE
         default:
             return nil, nil
     }

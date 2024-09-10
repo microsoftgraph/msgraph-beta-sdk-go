@@ -11,7 +11,7 @@ import (
 type AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRequestBuilderGetQueryParameters list the applications linked to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that's defined by the user flow is enabled.
+// AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRequestBuilderGetQueryParameters list the applications linked to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that's defined by the user flow is enabled. To find the user flow that's linked to an application, see Example 4: List user flow associated with specific application ID.
 type AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRe
 func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRequestBuilder) Count()(*AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilder) {
     return NewAuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the applications linked to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that's defined by the user flow is enabled.
+// Get list the applications linked to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that's defined by the user flow is enabled. To find the user flow that's linked to an application, see Example 4: List user flow associated with specific application ID.
 // returns a AuthenticationConditionApplicationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -99,7 +99,7 @@ func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationConditionApplicationCollectionResponseable), nil
 }
-// Post add or link an application to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. This enables the authentication experience that's defined by the user flow to be enabled for the application. An application can only be linked to one user flow.
+// Post add or link an application to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. This enables the authentication experience that's defined by the user flow to be enabled for the application. An application can only be linked to one user flow. The app must have an associated service principal in the tenant.
 // returns a AuthenticationConditionApplicationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -122,7 +122,7 @@ func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsR
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationConditionApplicationable), nil
 }
-// ToGetRequestInformation list the applications linked to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that's defined by the user flow is enabled.
+// ToGetRequestInformation list the applications linked to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that's defined by the user flow is enabled. To find the user flow that's linked to an application, see Example 4: List user flow associated with specific application ID.
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,7 +136,7 @@ func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation add or link an application to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. This enables the authentication experience that's defined by the user flow to be enabled for the application. An application can only be linked to one user flow.
+// ToPostRequestInformation add or link an application to an external identities self-service sign up user flow that's represented by an externalUsersSelfServiceSignupEventsFlow object. This enables the authentication experience that's defined by the user flow to be enabled for the application. An application can only be linked to one user flow. The app must have an associated service principal in the tenant.
 // returns a *RequestInformation when successful
 func (m *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationConditionApplicationable, requestConfiguration *AuthenticationEventsFlowsItemConditionsApplicationsIncludeApplicationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

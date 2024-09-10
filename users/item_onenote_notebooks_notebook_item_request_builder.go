@@ -60,6 +60,7 @@ func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) CopyNotebook()(*ItemOne
     return NewItemOnenoteNotebooksItemCopyNotebookRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property notebooks for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksNotebookItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -76,6 +77,7 @@ func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) Delete(ctx context.Cont
     return nil
 }
 // Get the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Notebookable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksNotebookItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, error) {
@@ -96,6 +98,7 @@ func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable), nil
 }
 // Patch update the navigation property notebooks in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Notebookable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, requestConfiguration *ItemOnenoteNotebooksNotebookItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, error) {
@@ -126,6 +129,7 @@ func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) Sections()(*ItemOnenote
     return NewItemOnenoteNotebooksItemSectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property notebooks for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksNotebookItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) ToDeleteRequestInformat
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteNotebooksNotebookItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +156,7 @@ func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property notebooks in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Notebookable, requestConfiguration *ItemOnenoteNotebooksNotebookItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -166,6 +172,7 @@ func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) ToPatchRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnenoteNotebooksNotebookItemRequestBuilder when successful
 func (m *ItemOnenoteNotebooksNotebookItemRequestBuilder) WithUrl(rawUrl string)(*ItemOnenoteNotebooksNotebookItemRequestBuilder) {
     return NewItemOnenoteNotebooksNotebookItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

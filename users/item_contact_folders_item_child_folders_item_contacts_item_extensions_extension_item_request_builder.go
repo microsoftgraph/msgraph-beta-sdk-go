@@ -55,6 +55,7 @@ func NewItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionIte
     return NewItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property extensions for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionIt
     return nil
 }
 // Get the collection of open extensions defined for the contact. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Extensionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable, error) {
@@ -91,6 +93,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionIt
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable), nil
 }
 // Patch update the navigation property extensions in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Extensionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable, error) {
@@ -111,6 +114,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionIt
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable), nil
 }
 // ToDeleteRequestInformation delete navigation property extensions for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionIt
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of open extensions defined for the contact. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionIt
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property extensions in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Extensionable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionIt
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsItemExtensionsExtensionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

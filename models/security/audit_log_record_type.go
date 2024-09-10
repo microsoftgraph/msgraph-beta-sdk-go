@@ -254,11 +254,46 @@ const (
     VFAMDELETEPOLICY_AUDITLOGRECORDTYPE
     M365DAAD_AUDITLOGRECORDTYPE
     CDPCOLDCRAWLSTATUS_AUDITLOGRECORDTYPE
+    POWERPLATFORMADMINISTRATORACTIVITY_AUDITLOGRECORDTYPE
+    WINDOWS365CUSTOMERLOCKBOX_AUDITLOGRECORDTYPE
+    CDPRESOURCESCOPECHANGEEVENT_AUDITLOGRECORDTYPE
+    COMPLIANCECCEXCHANGEEXECUTIONRESULT_AUDITLOGRECORDTYPE
+    CDPOCRCOSTESTIMATORRECORD_AUDITLOGRECORDTYPE
+    COPILOTINTERACTION_AUDITLOGRECORDTYPE
+    CDPOCRBILLINGRECORD_AUDITLOGRECORDTYPE
+    COMPLIANCEDLPAPPLICATIONS_AUDITLOGRECORDTYPE
+    UAMOPERATION_AUDITLOGRECORDTYPE
+    VIVALEARNING_AUDITLOGRECORDTYPE
+    VIVALEARNINGADMIN_AUDITLOGRECORDTYPE
+    PURVIEWPOLICYOPERATION_AUDITLOGRECORDTYPE
+    PURVIEWMETADATAPOLICYOPERATION_AUDITLOGRECORDTYPE
+    PEOPLEADMINSETTINGS_AUDITLOGRECORDTYPE
+    CDPCOMPLIANCEDLPEXCHANGECLASSIFICATION_AUDITLOGRECORDTYPE
+    CDPCOMPLIANCEDLPSHAREPOINTCLASSIFICATION_AUDITLOGRECORDTYPE
+    FILTERINGBULKSENDERINSIGHTDATA_AUDITLOGRECORDTYPE
+    FILTERINGBULKTHRESHOLDINSIGHTDATA_AUDITLOGRECORDTYPE
+    PRIVACYOPENACCESS_AUDITLOGRECORDTYPE
+    OWAAUTH_AUDITLOGRECORDTYPE
+    COMPLIANCEDLPAPPLICATIONSCLASSIFICATION_AUDITLOGRECORDTYPE
+    SHAREPOINTESIGNATURE_AUDITLOGRECORDTYPE
+    DYNAMICS365BUSINESSCENTRAL_AUDITLOGRECORDTYPE
+    MESHWORLDS_AUDITLOGRECORDTYPE
+    VIVAPULSERESPONSE_AUDITLOGRECORDTYPE
+    VIVAPULSEORGANIZER_AUDITLOGRECORDTYPE
+    VIVAPULSEADMIN_AUDITLOGRECORDTYPE
+    VIVAPULSEREPORT_AUDITLOGRECORDTYPE
+    AIAPPINTERACTION_AUDITLOGRECORDTYPE
+    COMPLIANCEDLMEXCHANGE_AUDITLOGRECORDTYPE
+    COMPLIANCEDLMSHAREPOINT_AUDITLOGRECORDTYPE
+    PROJECTFORTHEWEBASSIGNEDTOMESETTINGS_AUDITLOGRECORDTYPE
+    CPSOPERATION_AUDITLOGRECORDTYPE
+    COMPLIANCEDLPEXCHANGEDISCOVERY_AUDITLOGRECORDTYPE
+    PURVIEWMCRECOMMENDATION_AUDITLOGRECORDTYPE
     UNKNOWNFUTUREVALUE_AUDITLOGRECORDTYPE
 )
 
 func (i AuditLogRecordType) String() string {
-    return []string{"ExchangeAdmin", "ExchangeItem", "ExchangeItemGroup", "SharePoint", "SyntheticProbe", "SharePointFileOperation", "OneDrive", "AzureActiveDirectory", "AzureActiveDirectoryAccountLogon", "DataCenterSecurityCmdlet", "ComplianceDLPSharePoint", "Sway", "ComplianceDLPExchange", "SharePointSharingOperation", "AzureActiveDirectoryStsLogon", "SkypeForBusinessPSTNUsage", "SkypeForBusinessUsersBlocked", "SecurityComplianceCenterEOPCmdlet", "ExchangeAggregatedOperation", "PowerBIAudit", "CRM", "Yammer", "SkypeForBusinessCmdlets", "Discovery", "MicrosoftTeams", "ThreatIntelligence", "MailSubmission", "MicrosoftFlow", "AeD", "MicrosoftStream", "ComplianceDLPSharePointClassification", "ThreatFinder", "Project", "SharePointListOperation", "SharePointCommentOperation", "DataGovernance", "Kaizala", "SecurityComplianceAlerts", "ThreatIntelligenceUrl", "SecurityComplianceInsights", "MIPLabel", "WorkplaceAnalytics", "PowerAppsApp", "PowerAppsPlan", "ThreatIntelligenceAtpContent", "LabelContentExplorer", "TeamsHealthcare", "ExchangeItemAggregated", "HygieneEvent", "DataInsightsRestApiAudit", "InformationBarrierPolicyApplication", "SharePointListItemOperation", "SharePointContentTypeOperation", "SharePointFieldOperation", "MicrosoftTeamsAdmin", "HRSignal", "MicrosoftTeamsDevice", "MicrosoftTeamsAnalytics", "InformationWorkerProtection", "Campaign", "DLPEndpoint", "AirInvestigation", "Quarantine", "MicrosoftForms", "ApplicationAudit", "ComplianceSupervisionExchange", "CustomerKeyServiceEncryption", "OfficeNative", "MipAutoLabelSharePointItem", "MipAutoLabelSharePointPolicyLocation", "MicrosoftTeamsShifts", "SecureScore", "MipAutoLabelExchangeItem", "CortanaBriefing", "Search", "WDATPAlerts", "PowerPlatformAdminDlp", "PowerPlatformAdminEnvironment", "MDATPAudit", "SensitivityLabelPolicyMatch", "SensitivityLabelAction", "SensitivityLabeledFileAction", "AttackSim", "AirManualInvestigation", "SecurityComplianceRBAC", "UserTraining", "AirAdminActionInvestigation", "MSTIC", "PhysicalBadgingSignal", "TeamsEasyApprovals", "AipDiscover", "AipSensitivityLabelAction", "AipProtectionAction", "AipFileDeleted", "AipHeartBeat", "MCASAlerts", "OnPremisesFileShareScannerDlp", "OnPremisesSharePointScannerDlp", "ExchangeSearch", "SharePointSearch", "PrivacyDataMinimization", "LabelAnalyticsAggregate", "MyAnalyticsSettings", "SecurityComplianceUserChange", "ComplianceDLPExchangeClassification", "ComplianceDLPEndpoint", "MipExactDataMatch", "MSDEResponseActions", "MSDEGeneralSettings", "MSDEIndicatorsSettings", "MS365DCustomDetection", "MSDERolesSettings", "MAPGAlerts", "MAPGPolicy", "MAPGRemediation", "PrivacyRemediationAction", "PrivacyDigestEmail", "MipAutoLabelSimulationProgress", "MipAutoLabelSimulationCompletion", "MipAutoLabelProgressFeedback", "DlpSensitiveInformationType", "MipAutoLabelSimulationStatistics", "LargeContentMetadata", "Microsoft365Group", "CDPMlInferencingResult", "FilteringMailMetadata", "CDPClassificationMailItem", "CDPClassificationDocument", "OfficeScriptsRunAction", "FilteringPostMailDeliveryAction", "CDPUnifiedFeedback", "TenantAllowBlockList", "ConsumptionResource", "HealthcareSignal", "DlpImportResult", "CDPCompliancePolicyExecution", "MultiStageDisposition", "PrivacyDataMatch", "FilteringDocMetadata", "FilteringEmailFeatures", "PowerBIDlp", "FilteringUrlInfo", "FilteringAttachmentInfo", "CoreReportingSettings", "ComplianceConnector", "PowerPlatformLockboxResourceAccessRequest", "PowerPlatformLockboxResourceCommand", "CDPPredictiveCodingLabel", "CDPCompliancePolicyUserFeedback", "WebpageActivityEndpoint", "OMEPortal", "CMImprovementActionChange", "FilteringUrlClick", "MipLabelAnalyticsAuditRecord", "FilteringEntityEvent", "FilteringRuleHits", "FilteringMailSubmission", "LabelExplorer", "MicrosoftManagedServicePlatform", "PowerPlatformServiceActivity", "ScorePlatformGenericAuditRecord", "FilteringTimeTravelDocMetadata", "Alert", "AlertStatus", "AlertIncident", "IncidentStatus", "Case", "CaseInvestigation", "RecordsManagement", "PrivacyRemediation", "DataShareOperation", "CdpDlpSensitive", "EHRConnector", "FilteringMailGradingResult", "PublicFolder", "PrivacyTenantAuditHistoryRecord", "AipScannerDiscoverEvent", "EduDataLakeDownloadOperation", "M365ComplianceConnector", "MicrosoftGraphDataConnectOperation", "MicrosoftPurview", "FilteringEmailContentFeatures", "PowerPagesSite", "PowerAppsResource", "PlannerPlan", "PlannerCopyPlan", "PlannerTask", "PlannerRoster", "PlannerPlanList", "PlannerTaskList", "PlannerTenantSettings", "ProjectForTheWebProject", "ProjectForTheWebTask", "ProjectForTheWebRoadmap", "ProjectForTheWebRoadmapItem", "ProjectForTheWebProjectSettings", "ProjectForTheWebRoadmapSettings", "QuarantineMetadata", "MicrosoftTodoAudit", "TimeTravelFilteringDocMetadata", "TeamsQuarantineMetadata", "SharePointAppPermissionOperation", "MicrosoftTeamsSensitivityLabelAction", "FilteringTeamsMetadata", "FilteringTeamsUrlInfo", "FilteringTeamsPostDeliveryAction", "MDCAssessments", "MDCRegulatoryComplianceStandards", "MDCRegulatoryComplianceControls", "MDCRegulatoryComplianceAssessments", "MDCSecurityConnectors", "MDADataSecuritySignal", "VivaGoals", "FilteringRuntimeInfo", "AttackSimAdmin", "MicrosoftGraphDataConnectConsent", "FilteringAtpDetonationInfo", "PrivacyPortal", "ManagedTenants", "UnifiedSimulationMatchedItem", "UnifiedSimulationSummary", "UpdateQuarantineMetadata", "MS365DSuppressionRule", "PurviewDataMapOperation", "FilteringUrlPostClickAction", "IrmUserDefinedDetectionSignal", "TeamsUpdates", "PlannerRosterSensitivityLabel", "MS365DIncident", "FilteringDelistingMetadata", "ComplianceDLPSharePointClassificationExtended", "MicrosoftDefenderForIdentityAudit", "SupervisoryReviewDayXInsight", "DefenderExpertsforXDRAdmin", "CDPEdgeBlockedMessage", "HostedRpa", "CdpContentExplorerAggregateRecord", "CDPHygieneAttachmentInfo", "CDPHygieneSummary", "CDPPostMailDeliveryAction", "CDPEmailFeatures", "CDPHygieneUrlInfo", "CDPUrlClick", "CDPPackageManagerHygieneEvent", "FilteringDocScan", "TimeTravelFilteringDocScan", "MAPGOnboard", "VfamCreatePolicy", "VfamUpdatePolicy", "VfamDeletePolicy", "M365DAAD", "CdpColdCrawlStatus", "unknownFutureValue"}[i]
+    return []string{"ExchangeAdmin", "ExchangeItem", "ExchangeItemGroup", "SharePoint", "SyntheticProbe", "SharePointFileOperation", "OneDrive", "AzureActiveDirectory", "AzureActiveDirectoryAccountLogon", "DataCenterSecurityCmdlet", "ComplianceDLPSharePoint", "Sway", "ComplianceDLPExchange", "SharePointSharingOperation", "AzureActiveDirectoryStsLogon", "SkypeForBusinessPSTNUsage", "SkypeForBusinessUsersBlocked", "SecurityComplianceCenterEOPCmdlet", "ExchangeAggregatedOperation", "PowerBIAudit", "CRM", "Yammer", "SkypeForBusinessCmdlets", "Discovery", "MicrosoftTeams", "ThreatIntelligence", "MailSubmission", "MicrosoftFlow", "AeD", "MicrosoftStream", "ComplianceDLPSharePointClassification", "ThreatFinder", "Project", "SharePointListOperation", "SharePointCommentOperation", "DataGovernance", "Kaizala", "SecurityComplianceAlerts", "ThreatIntelligenceUrl", "SecurityComplianceInsights", "MIPLabel", "WorkplaceAnalytics", "PowerAppsApp", "PowerAppsPlan", "ThreatIntelligenceAtpContent", "LabelContentExplorer", "TeamsHealthcare", "ExchangeItemAggregated", "HygieneEvent", "DataInsightsRestApiAudit", "InformationBarrierPolicyApplication", "SharePointListItemOperation", "SharePointContentTypeOperation", "SharePointFieldOperation", "MicrosoftTeamsAdmin", "HRSignal", "MicrosoftTeamsDevice", "MicrosoftTeamsAnalytics", "InformationWorkerProtection", "Campaign", "DLPEndpoint", "AirInvestigation", "Quarantine", "MicrosoftForms", "ApplicationAudit", "ComplianceSupervisionExchange", "CustomerKeyServiceEncryption", "OfficeNative", "MipAutoLabelSharePointItem", "MipAutoLabelSharePointPolicyLocation", "MicrosoftTeamsShifts", "SecureScore", "MipAutoLabelExchangeItem", "CortanaBriefing", "Search", "WDATPAlerts", "PowerPlatformAdminDlp", "PowerPlatformAdminEnvironment", "MDATPAudit", "SensitivityLabelPolicyMatch", "SensitivityLabelAction", "SensitivityLabeledFileAction", "AttackSim", "AirManualInvestigation", "SecurityComplianceRBAC", "UserTraining", "AirAdminActionInvestigation", "MSTIC", "PhysicalBadgingSignal", "TeamsEasyApprovals", "AipDiscover", "AipSensitivityLabelAction", "AipProtectionAction", "AipFileDeleted", "AipHeartBeat", "MCASAlerts", "OnPremisesFileShareScannerDlp", "OnPremisesSharePointScannerDlp", "ExchangeSearch", "SharePointSearch", "PrivacyDataMinimization", "LabelAnalyticsAggregate", "MyAnalyticsSettings", "SecurityComplianceUserChange", "ComplianceDLPExchangeClassification", "ComplianceDLPEndpoint", "MipExactDataMatch", "MSDEResponseActions", "MSDEGeneralSettings", "MSDEIndicatorsSettings", "MS365DCustomDetection", "MSDERolesSettings", "MAPGAlerts", "MAPGPolicy", "MAPGRemediation", "PrivacyRemediationAction", "PrivacyDigestEmail", "MipAutoLabelSimulationProgress", "MipAutoLabelSimulationCompletion", "MipAutoLabelProgressFeedback", "DlpSensitiveInformationType", "MipAutoLabelSimulationStatistics", "LargeContentMetadata", "Microsoft365Group", "CDPMlInferencingResult", "FilteringMailMetadata", "CDPClassificationMailItem", "CDPClassificationDocument", "OfficeScriptsRunAction", "FilteringPostMailDeliveryAction", "CDPUnifiedFeedback", "TenantAllowBlockList", "ConsumptionResource", "HealthcareSignal", "DlpImportResult", "CDPCompliancePolicyExecution", "MultiStageDisposition", "PrivacyDataMatch", "FilteringDocMetadata", "FilteringEmailFeatures", "PowerBIDlp", "FilteringUrlInfo", "FilteringAttachmentInfo", "CoreReportingSettings", "ComplianceConnector", "PowerPlatformLockboxResourceAccessRequest", "PowerPlatformLockboxResourceCommand", "CDPPredictiveCodingLabel", "CDPCompliancePolicyUserFeedback", "WebpageActivityEndpoint", "OMEPortal", "CMImprovementActionChange", "FilteringUrlClick", "MipLabelAnalyticsAuditRecord", "FilteringEntityEvent", "FilteringRuleHits", "FilteringMailSubmission", "LabelExplorer", "MicrosoftManagedServicePlatform", "PowerPlatformServiceActivity", "ScorePlatformGenericAuditRecord", "FilteringTimeTravelDocMetadata", "Alert", "AlertStatus", "AlertIncident", "IncidentStatus", "Case", "CaseInvestigation", "RecordsManagement", "PrivacyRemediation", "DataShareOperation", "CdpDlpSensitive", "EHRConnector", "FilteringMailGradingResult", "PublicFolder", "PrivacyTenantAuditHistoryRecord", "AipScannerDiscoverEvent", "EduDataLakeDownloadOperation", "M365ComplianceConnector", "MicrosoftGraphDataConnectOperation", "MicrosoftPurview", "FilteringEmailContentFeatures", "PowerPagesSite", "PowerAppsResource", "PlannerPlan", "PlannerCopyPlan", "PlannerTask", "PlannerRoster", "PlannerPlanList", "PlannerTaskList", "PlannerTenantSettings", "ProjectForTheWebProject", "ProjectForTheWebTask", "ProjectForTheWebRoadmap", "ProjectForTheWebRoadmapItem", "ProjectForTheWebProjectSettings", "ProjectForTheWebRoadmapSettings", "QuarantineMetadata", "MicrosoftTodoAudit", "TimeTravelFilteringDocMetadata", "TeamsQuarantineMetadata", "SharePointAppPermissionOperation", "MicrosoftTeamsSensitivityLabelAction", "FilteringTeamsMetadata", "FilteringTeamsUrlInfo", "FilteringTeamsPostDeliveryAction", "MDCAssessments", "MDCRegulatoryComplianceStandards", "MDCRegulatoryComplianceControls", "MDCRegulatoryComplianceAssessments", "MDCSecurityConnectors", "MDADataSecuritySignal", "VivaGoals", "FilteringRuntimeInfo", "AttackSimAdmin", "MicrosoftGraphDataConnectConsent", "FilteringAtpDetonationInfo", "PrivacyPortal", "ManagedTenants", "UnifiedSimulationMatchedItem", "UnifiedSimulationSummary", "UpdateQuarantineMetadata", "MS365DSuppressionRule", "PurviewDataMapOperation", "FilteringUrlPostClickAction", "IrmUserDefinedDetectionSignal", "TeamsUpdates", "PlannerRosterSensitivityLabel", "MS365DIncident", "FilteringDelistingMetadata", "ComplianceDLPSharePointClassificationExtended", "MicrosoftDefenderForIdentityAudit", "SupervisoryReviewDayXInsight", "DefenderExpertsforXDRAdmin", "CDPEdgeBlockedMessage", "HostedRpa", "CdpContentExplorerAggregateRecord", "CDPHygieneAttachmentInfo", "CDPHygieneSummary", "CDPPostMailDeliveryAction", "CDPEmailFeatures", "CDPHygieneUrlInfo", "CDPUrlClick", "CDPPackageManagerHygieneEvent", "FilteringDocScan", "TimeTravelFilteringDocScan", "MAPGOnboard", "VfamCreatePolicy", "VfamUpdatePolicy", "VfamDeletePolicy", "M365DAAD", "CdpColdCrawlStatus", "PowerPlatformAdministratorActivity", "Windows365CustomerLockbox", "CdpResourceScopeChangeEvent", "ComplianceCCExchangeExecutionResult", "CdpOcrCostEstimatorRecord", "CopilotInteraction", "CdpOcrBillingRecord", "ComplianceDLPApplications", "UAMOperation", "VivaLearning", "VivaLearningAdmin", "PurviewPolicyOperation", "PurviewMetadataPolicyOperation", "PeopleAdminSettings", "CdpComplianceDLPExchangeClassification", "CdpComplianceDLPSharePointClassification", "FilteringBulkSenderInsightData", "FilteringBulkThresholdInsightData", "PrivacyOpenAccess", "OWAAuth", "ComplianceDLPApplicationsClassification", "SharePointESignature", "Dynamics365BusinessCentral", "MeshWorlds", "VivaPulseResponse", "VivaPulseOrganizer", "VivaPulseAdmin", "VivaPulseReport", "AIAppInteraction", "ComplianceDLMExchange", "ComplianceDLMSharePoint", "ProjectForTheWebAssignedToMeSettings", "CPSOperation", "ComplianceDLPExchangeDiscovery", "PurviewMCRecommendation", "unknownFutureValue"}[i]
 }
 func ParseAuditLogRecordType(v string) (any, error) {
     result := EXCHANGEADMIN_AUDITLOGRECORDTYPE
@@ -767,6 +802,76 @@ func ParseAuditLogRecordType(v string) (any, error) {
             result = M365DAAD_AUDITLOGRECORDTYPE
         case "CdpColdCrawlStatus":
             result = CDPCOLDCRAWLSTATUS_AUDITLOGRECORDTYPE
+        case "PowerPlatformAdministratorActivity":
+            result = POWERPLATFORMADMINISTRATORACTIVITY_AUDITLOGRECORDTYPE
+        case "Windows365CustomerLockbox":
+            result = WINDOWS365CUSTOMERLOCKBOX_AUDITLOGRECORDTYPE
+        case "CdpResourceScopeChangeEvent":
+            result = CDPRESOURCESCOPECHANGEEVENT_AUDITLOGRECORDTYPE
+        case "ComplianceCCExchangeExecutionResult":
+            result = COMPLIANCECCEXCHANGEEXECUTIONRESULT_AUDITLOGRECORDTYPE
+        case "CdpOcrCostEstimatorRecord":
+            result = CDPOCRCOSTESTIMATORRECORD_AUDITLOGRECORDTYPE
+        case "CopilotInteraction":
+            result = COPILOTINTERACTION_AUDITLOGRECORDTYPE
+        case "CdpOcrBillingRecord":
+            result = CDPOCRBILLINGRECORD_AUDITLOGRECORDTYPE
+        case "ComplianceDLPApplications":
+            result = COMPLIANCEDLPAPPLICATIONS_AUDITLOGRECORDTYPE
+        case "UAMOperation":
+            result = UAMOPERATION_AUDITLOGRECORDTYPE
+        case "VivaLearning":
+            result = VIVALEARNING_AUDITLOGRECORDTYPE
+        case "VivaLearningAdmin":
+            result = VIVALEARNINGADMIN_AUDITLOGRECORDTYPE
+        case "PurviewPolicyOperation":
+            result = PURVIEWPOLICYOPERATION_AUDITLOGRECORDTYPE
+        case "PurviewMetadataPolicyOperation":
+            result = PURVIEWMETADATAPOLICYOPERATION_AUDITLOGRECORDTYPE
+        case "PeopleAdminSettings":
+            result = PEOPLEADMINSETTINGS_AUDITLOGRECORDTYPE
+        case "CdpComplianceDLPExchangeClassification":
+            result = CDPCOMPLIANCEDLPEXCHANGECLASSIFICATION_AUDITLOGRECORDTYPE
+        case "CdpComplianceDLPSharePointClassification":
+            result = CDPCOMPLIANCEDLPSHAREPOINTCLASSIFICATION_AUDITLOGRECORDTYPE
+        case "FilteringBulkSenderInsightData":
+            result = FILTERINGBULKSENDERINSIGHTDATA_AUDITLOGRECORDTYPE
+        case "FilteringBulkThresholdInsightData":
+            result = FILTERINGBULKTHRESHOLDINSIGHTDATA_AUDITLOGRECORDTYPE
+        case "PrivacyOpenAccess":
+            result = PRIVACYOPENACCESS_AUDITLOGRECORDTYPE
+        case "OWAAuth":
+            result = OWAAUTH_AUDITLOGRECORDTYPE
+        case "ComplianceDLPApplicationsClassification":
+            result = COMPLIANCEDLPAPPLICATIONSCLASSIFICATION_AUDITLOGRECORDTYPE
+        case "SharePointESignature":
+            result = SHAREPOINTESIGNATURE_AUDITLOGRECORDTYPE
+        case "Dynamics365BusinessCentral":
+            result = DYNAMICS365BUSINESSCENTRAL_AUDITLOGRECORDTYPE
+        case "MeshWorlds":
+            result = MESHWORLDS_AUDITLOGRECORDTYPE
+        case "VivaPulseResponse":
+            result = VIVAPULSERESPONSE_AUDITLOGRECORDTYPE
+        case "VivaPulseOrganizer":
+            result = VIVAPULSEORGANIZER_AUDITLOGRECORDTYPE
+        case "VivaPulseAdmin":
+            result = VIVAPULSEADMIN_AUDITLOGRECORDTYPE
+        case "VivaPulseReport":
+            result = VIVAPULSEREPORT_AUDITLOGRECORDTYPE
+        case "AIAppInteraction":
+            result = AIAPPINTERACTION_AUDITLOGRECORDTYPE
+        case "ComplianceDLMExchange":
+            result = COMPLIANCEDLMEXCHANGE_AUDITLOGRECORDTYPE
+        case "ComplianceDLMSharePoint":
+            result = COMPLIANCEDLMSHAREPOINT_AUDITLOGRECORDTYPE
+        case "ProjectForTheWebAssignedToMeSettings":
+            result = PROJECTFORTHEWEBASSIGNEDTOMESETTINGS_AUDITLOGRECORDTYPE
+        case "CPSOperation":
+            result = CPSOPERATION_AUDITLOGRECORDTYPE
+        case "ComplianceDLPExchangeDiscovery":
+            result = COMPLIANCEDLPEXCHANGEDISCOVERY_AUDITLOGRECORDTYPE
+        case "PurviewMCRecommendation":
+            result = PURVIEWMCRECOMMENDATION_AUDITLOGRECORDTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AUDITLOGRECORDTYPE
         default:

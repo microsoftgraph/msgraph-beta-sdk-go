@@ -60,6 +60,7 @@ func NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReques
     return NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property attendanceReports for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -76,6 +77,7 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReque
     return nil
 }
 // Get the attendance reports of an online meeting. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MeetingAttendanceReportable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, error) {
@@ -96,6 +98,7 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable), nil
 }
 // Patch update the navigation property attendanceReports in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MeetingAttendanceReportable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, requestConfiguration *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, error) {
@@ -116,6 +119,7 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable), nil
 }
 // ToDeleteRequestInformation delete navigation property attendanceReports for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,6 +131,7 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReque
     return requestInfo, nil
 }
 // ToGetRequestInformation the attendance reports of an online meeting. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +146,7 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReque
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property attendanceReports in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingAttendanceReportable, requestConfiguration *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +162,7 @@ func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder) {
     return NewItemOnlineMeetingsItemAttendanceReportsMeetingAttendanceReportItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

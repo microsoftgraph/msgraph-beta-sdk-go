@@ -7,10 +7,12 @@ const (
     DETECT_MOBILEAPPDEPENDENCYTYPE MobileAppDependencyType = iota
     // Indicates that the child app should be installed before installing the parent app.
     AUTOINSTALL_MOBILEAPPDEPENDENCYTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_MOBILEAPPDEPENDENCYTYPE
 )
 
 func (i MobileAppDependencyType) String() string {
-    return []string{"detect", "autoInstall"}[i]
+    return []string{"detect", "autoInstall", "unknownFutureValue"}[i]
 }
 func ParseMobileAppDependencyType(v string) (any, error) {
     result := DETECT_MOBILEAPPDEPENDENCYTYPE
@@ -19,6 +21,8 @@ func ParseMobileAppDependencyType(v string) (any, error) {
             result = DETECT_MOBILEAPPDEPENDENCYTYPE
         case "autoInstall":
             result = AUTOINSTALL_MOBILEAPPDEPENDENCYTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MOBILEAPPDEPENDENCYTYPE
         default:
             return nil, nil
     }

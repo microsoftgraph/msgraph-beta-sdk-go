@@ -39,6 +39,7 @@ func NewItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinut
     return NewItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. Self-service operations aren't supported.  
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WebauthnCredentialCreationOptionsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -62,6 +63,7 @@ func (m *ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinu
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WebauthnCredentialCreationOptionsable), nil
 }
 // ToGetRequestInformation retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. Self-service operations aren't supported.  
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,6 +78,7 @@ func (m *ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilder when successful
 func (m *ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilder) {
     return NewItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

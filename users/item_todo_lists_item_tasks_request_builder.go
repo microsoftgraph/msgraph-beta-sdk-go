@@ -47,6 +47,7 @@ type ItemTodoListsItemTasksRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByTodoTaskId provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTodoListsItemTasksTodoTaskItemRequestBuilder when successful
 func (m *ItemTodoListsItemTasksRequestBuilder) ByTodoTaskId(todoTaskId string)(*ItemTodoListsItemTasksTodoTaskItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -82,6 +83,7 @@ func (m *ItemTodoListsItemTasksRequestBuilder) Delta()(*ItemTodoListsItemTasksDe
     return NewItemTodoListsItemTasksDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the tasks in this task list. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a TodoTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskCollectionResponseable, error) {
@@ -102,6 +104,7 @@ func (m *ItemTodoListsItemTasksRequestBuilder) Get(ctx context.Context, requestC
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskCollectionResponseable), nil
 }
 // Post create new navigation property to tasks for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a TodoTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskable, requestConfiguration *ItemTodoListsItemTasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskable, error) {
@@ -122,6 +125,7 @@ func (m *ItemTodoListsItemTasksRequestBuilder) Post(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskable), nil
 }
 // ToGetRequestInformation the tasks in this task list. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +140,7 @@ func (m *ItemTodoListsItemTasksRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to tasks for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TodoTaskable, requestConfiguration *ItemTodoListsItemTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +156,7 @@ func (m *ItemTodoListsItemTasksRequestBuilder) ToPostRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTodoListsItemTasksRequestBuilder when successful
 func (m *ItemTodoListsItemTasksRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksRequestBuilder) {
     return NewItemTodoListsItemTasksRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -58,6 +58,7 @@ func (m *ItemDevicesItemRegisteredOwnersGraphUserRequestBuilder) Count()(*ItemDe
     return NewItemDevicesItemRegisteredOwnersGraphUserCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesItemRegisteredOwnersGraphUserRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredOwnersGraphUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
@@ -78,6 +79,7 @@ func (m *ItemDevicesItemRegisteredOwnersGraphUserRequestBuilder) Get(ctx context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable), nil
 }
 // ToGetRequestInformation get the items of type microsoft.graph.user in the microsoft.graph.directoryObject collection
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesItemRegisteredOwnersGraphUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredOwnersGraphUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -92,6 +94,7 @@ func (m *ItemDevicesItemRegisteredOwnersGraphUserRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDevicesItemRegisteredOwnersGraphUserRequestBuilder when successful
 func (m *ItemDevicesItemRegisteredOwnersGraphUserRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesItemRegisteredOwnersGraphUserRequestBuilder) {
     return NewItemDevicesItemRegisteredOwnersGraphUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

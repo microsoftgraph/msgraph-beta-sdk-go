@@ -58,7 +58,7 @@ func (m *PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilde
     return NewPrinterSharesItemAllowedUsersItemServiceProvisioningErrorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ServiceProvisioningErrorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceProvisioningErrorCollectionResponseable, error) {
@@ -79,7 +79,7 @@ func (m *PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceProvisioningErrorCollectionResponseable), nil
 }
 // ToGetRequestInformation errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -94,7 +94,7 @@ func (m *PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilder when successful
 func (m *PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilder) WithUrl(rawUrl string)(*PrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilder) {
     return NewPrinterSharesItemAllowedUsersItemServiceProvisioningErrorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

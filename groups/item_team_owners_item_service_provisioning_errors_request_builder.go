@@ -58,6 +58,7 @@ func (m *ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilder) Count()(*Ite
     return NewItemTeamOwnersItemServiceProvisioningErrorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ServiceProvisioningErrorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceProvisioningErrorCollectionResponseable, error) {
@@ -78,6 +79,7 @@ func (m *ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceProvisioningErrorCollectionResponseable), nil
 }
 // ToGetRequestInformation errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -92,6 +94,7 @@ func (m *ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilder when successful
 func (m *ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamOwnersItemServiceProvisioningErrorsRequestBuilder) {
     return NewItemTeamOwnersItemServiceProvisioningErrorsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

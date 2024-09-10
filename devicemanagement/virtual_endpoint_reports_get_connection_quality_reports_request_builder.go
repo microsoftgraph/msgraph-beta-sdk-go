@@ -31,6 +31,7 @@ func NewVirtualEndpointReportsGetConnectionQualityReportsRequestBuilder(rawUrl s
     return NewVirtualEndpointReportsGetConnectionQualityReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage. Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.
+// Deprecated: Starting from December 31, 2024, this API (&apos;getConnectionQualityReports&apos;) will be deprecated and no longer supported. Please use the retrieveConnectionQualityReports API. as of 2024-09/getConnectionQualityReports
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,6 +55,7 @@ func (m *VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder) Post(c
     return res.([]byte), nil
 }
 // ToPostRequestInformation get the overall connection quality reports for all devices within a current tenant during a given time period, including metrics like the average round trip time (P50), average available bandwidth, and UDP connection percentage. Get also other real-time metrics such as last connection round trip time, last connection client IP, last connection gateway, and last connection protocol.
+// Deprecated: Starting from December 31, 2024, this API (&apos;getConnectionQualityReports&apos;) will be deprecated and no longer supported. Please use the retrieveConnectionQualityReports API. as of 2024-09/getConnectionQualityReports
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetConnectionQualityReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetConnectionQualityReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -69,6 +71,7 @@ func (m *VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Starting from December 31, 2024, this API (&apos;getConnectionQualityReports&apos;) will be deprecated and no longer supported. Please use the retrieveConnectionQualityReports API. as of 2024-09/getConnectionQualityReports
 // returns a *VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointReportsGetConnectionQualityReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetConnectionQualityReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

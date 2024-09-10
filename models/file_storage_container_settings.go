@@ -66,7 +66,7 @@ func (m *FileStorageContainerSettings) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetIsOcrEnabled gets the isOcrEnabled property value. The isOcrEnabled property
+// GetIsOcrEnabled gets the isOcrEnabled property value. Indicates whether OCR is enabled for a given container. If OCR is enabled on a container, OCR extraction is performed for recently added or updated documents (of supported document types) and the extracted fields are added to the metadata of the document. This enables end-user search and search-driven solutions.
 // returns a *bool when successful
 func (m *FileStorageContainerSettings) GetIsOcrEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isOcrEnabled")
@@ -123,7 +123,7 @@ func (m *FileStorageContainerSettings) SetAdditionalData(value map[string]any)()
 func (m *FileStorageContainerSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsOcrEnabled sets the isOcrEnabled property value. The isOcrEnabled property
+// SetIsOcrEnabled sets the isOcrEnabled property value. Indicates whether OCR is enabled for a given container. If OCR is enabled on a container, OCR extraction is performed for recently added or updated documents (of supported document types) and the extracted fields are added to the metadata of the document. This enables end-user search and search-driven solutions.
 func (m *FileStorageContainerSettings) SetIsOcrEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isOcrEnabled", value)
     if err != nil {

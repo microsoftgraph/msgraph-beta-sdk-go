@@ -70,6 +70,7 @@ func (m *ItemFindRoomsWithRoomListRequestBuilder) Get(ctx context.Context, reque
     return res.(ItemFindRoomsWithRoomListResponseable), nil
 }
 // GetAsFindRoomsWithRoomListGetResponse invoke function findRooms
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemFindRoomsWithRoomListGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemFindRoomsWithRoomListRequestBuilder) GetAsFindRoomsWithRoomListGetResponse(ctx context.Context, requestConfiguration *ItemFindRoomsWithRoomListRequestBuilderGetRequestConfiguration)(ItemFindRoomsWithRoomListGetResponseable, error) {
@@ -90,6 +91,7 @@ func (m *ItemFindRoomsWithRoomListRequestBuilder) GetAsFindRoomsWithRoomListGetR
     return res.(ItemFindRoomsWithRoomListGetResponseable), nil
 }
 // ToGetRequestInformation invoke function findRooms
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemFindRoomsWithRoomListRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFindRoomsWithRoomListRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +106,7 @@ func (m *ItemFindRoomsWithRoomListRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemFindRoomsWithRoomListRequestBuilder when successful
 func (m *ItemFindRoomsWithRoomListRequestBuilder) WithUrl(rawUrl string)(*ItemFindRoomsWithRoomListRequestBuilder) {
     return NewItemFindRoomsWithRoomListRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

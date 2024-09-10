@@ -47,6 +47,7 @@ type ItemAuthenticationPhoneMethodsRequestBuilderPostRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPhoneAuthenticationMethodId provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder when successful
 func (m *ItemAuthenticationPhoneMethodsRequestBuilder) ByPhoneAuthenticationMethodId(phoneAuthenticationMethodId string)(*ItemAuthenticationPhoneMethodsPhoneAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemAuthenticationPhoneMethodsRequestBuilder) Count()(*ItemAuthenticati
     return NewItemAuthenticationPhoneMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents the phone registered to a user for authentication.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PhoneAuthenticationMethodCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationPhoneMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemAuthenticationPhoneMethodsRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodCollectionResponseable), nil
 }
 // Post add a new phone authentication method. A user may only have one phone of each type, captured in the phoneType property. This means, for example, adding a mobile phone to a user with a preexisting mobile phone will fail. Additionally, a user must always have a mobile phone before adding an alternateMobile phone. Adding a phone number makes it available for use in both Azure multifactor authentication (MFA) and self-service password reset (SSPR), if enabled. Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PhoneAuthenticationMethodable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,6 +123,7 @@ func (m *ItemAuthenticationPhoneMethodsRequestBuilder) Post(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable), nil
 }
 // ToGetRequestInformation represents the phone registered to a user for authentication.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationPhoneMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPhoneMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *ItemAuthenticationPhoneMethodsRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // ToPostRequestInformation add a new phone authentication method. A user may only have one phone of each type, captured in the phoneType property. This means, for example, adding a mobile phone to a user with a preexisting mobile phone will fail. Additionally, a user must always have a mobile phone before adding an alternateMobile phone. Adding a phone number makes it available for use in both Azure multifactor authentication (MFA) and self-service password reset (SSPR), if enabled. Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationPhoneMethodsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PhoneAuthenticationMethodable, requestConfiguration *ItemAuthenticationPhoneMethodsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *ItemAuthenticationPhoneMethodsRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationPhoneMethodsRequestBuilder when successful
 func (m *ItemAuthenticationPhoneMethodsRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationPhoneMethodsRequestBuilder) {
     return NewItemAuthenticationPhoneMethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

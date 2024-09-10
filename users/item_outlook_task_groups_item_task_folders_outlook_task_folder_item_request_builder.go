@@ -55,7 +55,7 @@ func NewItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder(
     return NewItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property taskFolders for users
-// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +72,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder
     return nil
 }
 // Get the collection of task folders in the task group. Read-only. Nullable.
-// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a OutlookTaskFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
@@ -93,7 +93,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
 // Patch update the navigation property taskFolders in users
-// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a OutlookTaskFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, error) {
@@ -113,13 +113,18 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemOutlookTaskGroupsItemTaskFoldersItemPermanentDeleteRequestBuilder when successful
+func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) PermanentDelete()(*ItemOutlookTaskGroupsItemTaskFoldersItemPermanentDeleteRequestBuilder) {
+    return NewItemOutlookTaskGroupsItemTaskFoldersItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Tasks provides operations to manage the tasks property of the microsoft.graph.outlookTaskFolder entity.
 // returns a *ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder when successful
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) Tasks()(*ItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilder) {
     return NewItemOutlookTaskGroupsItemTaskFoldersItemTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property taskFolders for users
-// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,7 +136,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of task folders in the task group. Read-only. Nullable.
-// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,7 +151,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property taskFolders in users
-// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OutlookTaskFolderable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,7 +167,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder when successful
 func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder) {
     return NewItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

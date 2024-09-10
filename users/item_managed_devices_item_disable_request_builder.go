@@ -31,6 +31,7 @@ func NewItemManagedDevicesItemDisableRequestBuilder(rawUrl string, requestAdapte
     return NewItemManagedDevicesItemDisableRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action disable
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemDisableRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDisableRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -47,6 +48,7 @@ func (m *ItemManagedDevicesItemDisableRequestBuilder) Post(ctx context.Context, 
     return nil
 }
 // ToPostRequestInformation invoke action disable
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemDisableRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemDisableRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -58,6 +60,7 @@ func (m *ItemManagedDevicesItemDisableRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemDisableRequestBuilder when successful
 func (m *ItemManagedDevicesItemDisableRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemDisableRequestBuilder) {
     return NewItemManagedDevicesItemDisableRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

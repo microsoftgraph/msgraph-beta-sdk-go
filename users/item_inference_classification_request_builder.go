@@ -48,6 +48,7 @@ func NewItemInferenceClassificationRequestBuilder(rawUrl string, requestAdapter 
     return NewItemInferenceClassificationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a InferenceClassificationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInferenceClassificationRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInferenceClassificationRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable, error) {
@@ -73,6 +74,7 @@ func (m *ItemInferenceClassificationRequestBuilder) Overrides()(*ItemInferenceCl
     return NewItemInferenceClassificationOverridesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property inferenceClassification in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a InferenceClassificationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInferenceClassificationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable, requestConfiguration *ItemInferenceClassificationRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable, error) {
@@ -93,6 +95,7 @@ func (m *ItemInferenceClassificationRequestBuilder) Patch(ctx context.Context, b
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable), nil
 }
 // ToGetRequestInformation relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInferenceClassificationRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInferenceClassificationRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +110,7 @@ func (m *ItemInferenceClassificationRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property inferenceClassification in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInferenceClassificationRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InferenceClassificationable, requestConfiguration *ItemInferenceClassificationRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemInferenceClassificationRequestBuilder) ToPatchRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemInferenceClassificationRequestBuilder when successful
 func (m *ItemInferenceClassificationRequestBuilder) WithUrl(rawUrl string)(*ItemInferenceClassificationRequestBuilder) {
     return NewItemInferenceClassificationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

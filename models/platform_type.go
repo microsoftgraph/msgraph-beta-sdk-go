@@ -19,10 +19,14 @@ const (
     LINUX_PLATFORMTYPE
     // UnknownFutureValue
     UNKNOWNFUTUREVALUE_PLATFORMTYPE
+    // AndroidEnterprise
+    ANDROIDENTERPRISE_PLATFORMTYPE
+    // Android Open Source Project
+    AOSP_PLATFORMTYPE
 )
 
 func (i PlatformType) String() string {
-    return []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue"}[i]
+    return []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue", "androidEnterprise", "aosp"}[i]
 }
 func ParsePlatformType(v string) (any, error) {
     result := NONE_PLATFORMTYPE
@@ -43,6 +47,10 @@ func ParsePlatformType(v string) (any, error) {
             result = LINUX_PLATFORMTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_PLATFORMTYPE
+        case "androidEnterprise":
+            result = ANDROIDENTERPRISE_PLATFORMTYPE
+        case "aosp":
+            result = AOSP_PLATFORMTYPE
         default:
             return nil, nil
     }

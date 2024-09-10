@@ -36,6 +36,18 @@ func (m *BackupRestoreRestorePointsSearchPostRequestBody) GetAdditionalData()(ma
     }
     return val.(map[string]any)
 }
+// GetArtifactQuery gets the artifactQuery property value. The artifactQuery property
+// returns a ArtifactQueryable when successful
+func (m *BackupRestoreRestorePointsSearchPostRequestBody) GetArtifactQuery()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArtifactQueryable) {
+    val, err := m.GetBackingStore().Get("artifactQuery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArtifactQueryable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *BackupRestoreRestorePointsSearchPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -45,6 +57,16 @@ func (m *BackupRestoreRestorePointsSearchPostRequestBody) GetBackingStore()(ie86
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *BackupRestoreRestorePointsSearchPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["artifactQuery"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateArtifactQueryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArtifactQuery(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArtifactQueryable))
+        }
+        return nil
+    }
     res["protectionTimePeriod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateTimePeriodFromDiscriminatorValue)
         if err != nil {
@@ -144,6 +166,12 @@ func (m *BackupRestoreRestorePointsSearchPostRequestBody) GetTags()(*ie233ee762e
 // Serialize serializes information the current object
 func (m *BackupRestoreRestorePointsSearchPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("artifactQuery", m.GetArtifactQuery())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("protectionTimePeriod", m.GetProtectionTimePeriod())
         if err != nil {
             return err
@@ -184,6 +212,13 @@ func (m *BackupRestoreRestorePointsSearchPostRequestBody) SetAdditionalData(valu
         panic(err)
     }
 }
+// SetArtifactQuery sets the artifactQuery property value. The artifactQuery property
+func (m *BackupRestoreRestorePointsSearchPostRequestBody) SetArtifactQuery(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArtifactQueryable)() {
+    err := m.GetBackingStore().Set("artifactQuery", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *BackupRestoreRestorePointsSearchPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -220,11 +255,13 @@ type BackupRestoreRestorePointsSearchPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetArtifactQuery()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArtifactQueryable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetProtectionTimePeriod()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimePeriodable)
     GetProtectionUnitIds()([]string)
     GetRestorePointPreference()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointPreference)
     GetTags()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointTags)
+    SetArtifactQuery(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ArtifactQueryable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetProtectionTimePeriod(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TimePeriodable)()
     SetProtectionUnitIds(value []string)()

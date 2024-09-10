@@ -47,6 +47,7 @@ type ItemInsightsTrendingRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByTrendingId provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemInsightsTrendingTrendingItemRequestBuilder when successful
 func (m *ItemInsightsTrendingRequestBuilder) ByTrendingId(trendingId string)(*ItemInsightsTrendingTrendingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemInsightsTrendingRequestBuilder) Count()(*ItemInsightsTrendingCountR
     return NewItemInsightsTrendingCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get access this property from the derived type itemInsights.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a TrendingCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInsightsTrendingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemInsightsTrendingRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrendingCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemInsightsTrendingRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrendingCollectionResponseable), nil
 }
 // Post create new navigation property to trending for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Trendingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInsightsTrendingRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Trendingable, requestConfiguration *ItemInsightsTrendingRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Trendingable, error) {
@@ -117,6 +120,7 @@ func (m *ItemInsightsTrendingRequestBuilder) Post(ctx context.Context, body ie23
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Trendingable), nil
 }
 // ToGetRequestInformation access this property from the derived type itemInsights.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInsightsTrendingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemInsightsTrendingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemInsightsTrendingRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to trending for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemInsightsTrendingRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Trendingable, requestConfiguration *ItemInsightsTrendingRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemInsightsTrendingRequestBuilder) ToPostRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemInsightsTrendingRequestBuilder when successful
 func (m *ItemInsightsTrendingRequestBuilder) WithUrl(rawUrl string)(*ItemInsightsTrendingRequestBuilder) {
     return NewItemInsightsTrendingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

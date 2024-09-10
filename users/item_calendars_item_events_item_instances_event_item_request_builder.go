@@ -11,7 +11,7 @@ import (
 type ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCalendarsItemEventsItemInstancesEventItemRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// ItemCalendarsItemEventsItemInstancesEventItemRequestBuilderGetQueryParameters the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
 type ItemCalendarsItemEventsItemInstancesEventItemRequestBuilderGetQueryParameters struct {
     // The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
     EndDateTime *string `uriparametername:"endDateTime"`
@@ -89,7 +89,8 @@ func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) Extensions
 func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) Forward()(*ItemCalendarsItemEventsItemInstancesItemForwardRequestBuilder) {
     return NewItemCalendarsItemEventsItemInstancesItemForwardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// Get the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Eventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, error) {
@@ -109,6 +110,11 @@ func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemCalendarsItemEventsItemInstancesItemPermanentDeleteRequestBuilder when successful
+func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) PermanentDelete()(*ItemCalendarsItemEventsItemInstancesItemPermanentDeleteRequestBuilder) {
+    return NewItemCalendarsItemEventsItemInstancesItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SnoozeReminder provides operations to call the snoozeReminder method.
 // returns a *ItemCalendarsItemEventsItemInstancesItemSnoozeReminderRequestBuilder when successful
 func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarsItemEventsItemInstancesItemSnoozeReminderRequestBuilder) {
@@ -119,7 +125,8 @@ func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) SnoozeRemi
 func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) TentativelyAccept()(*ItemCalendarsItemEventsItemInstancesItemTentativelyAcceptRequestBuilder) {
     return NewItemCalendarsItemEventsItemInstancesItemTentativelyAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// ToGetRequestInformation the occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern and exceptions that have been modified. It doesn't include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +141,7 @@ func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder when successful
 func (m *ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarsItemEventsItemInstancesEventItemRequestBuilder) {
     return NewItemCalendarsItemEventsItemInstancesEventItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

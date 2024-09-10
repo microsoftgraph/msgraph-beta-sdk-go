@@ -57,6 +57,18 @@ func (m *RemoteActionAudit) GetBulkDeviceActionId()(*string) {
     }
     return nil
 }
+// GetDeviceActionCategory gets the deviceActionCategory property value. Enum type used for DeviceActionCategory
+// returns a *DeviceActionCategory when successful
+func (m *RemoteActionAudit) GetDeviceActionCategory()(*DeviceActionCategory) {
+    val, err := m.GetBackingStore().Get("deviceActionCategory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceActionCategory)
+    }
+    return nil
+}
 // GetDeviceDisplayName gets the deviceDisplayName property value. Intune device name.
 // returns a *string when successful
 func (m *RemoteActionAudit) GetDeviceDisplayName()(*string) {
@@ -124,6 +136,16 @@ func (m *RemoteActionAudit) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetBulkDeviceActionId(val)
+        }
+        return nil
+    }
+    res["deviceActionCategory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDeviceActionCategory)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceActionCategory(val.(*DeviceActionCategory))
         }
         return nil
     }
@@ -273,6 +295,13 @@ func (m *RemoteActionAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetDeviceActionCategory() != nil {
+        cast := (*m.GetDeviceActionCategory()).String()
+        err = writer.WriteStringValue("deviceActionCategory", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("deviceDisplayName", m.GetDeviceDisplayName())
         if err != nil {
@@ -338,6 +367,13 @@ func (m *RemoteActionAudit) SetBulkDeviceActionId(value *string)() {
         panic(err)
     }
 }
+// SetDeviceActionCategory sets the deviceActionCategory property value. Enum type used for DeviceActionCategory
+func (m *RemoteActionAudit) SetDeviceActionCategory(value *DeviceActionCategory)() {
+    err := m.GetBackingStore().Set("deviceActionCategory", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceDisplayName sets the deviceDisplayName property value. Intune device name.
 func (m *RemoteActionAudit) SetDeviceDisplayName(value *string)() {
     err := m.GetBackingStore().Set("deviceDisplayName", value)
@@ -393,6 +429,7 @@ type RemoteActionAuditable interface {
     GetAction()(*RemoteAction)
     GetActionState()(*ActionState)
     GetBulkDeviceActionId()(*string)
+    GetDeviceActionCategory()(*DeviceActionCategory)
     GetDeviceDisplayName()(*string)
     GetDeviceIMEI()(*string)
     GetDeviceOwnerUserPrincipalName()(*string)
@@ -403,6 +440,7 @@ type RemoteActionAuditable interface {
     SetAction(value *RemoteAction)()
     SetActionState(value *ActionState)()
     SetBulkDeviceActionId(value *string)()
+    SetDeviceActionCategory(value *DeviceActionCategory)()
     SetDeviceDisplayName(value *string)()
     SetDeviceIMEI(value *string)()
     SetDeviceOwnerUserPrincipalName(value *string)()

@@ -44,7 +44,7 @@ func (m *CloudPcUserSetting) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     }
     return nil
 }
-// GetCrossRegionDisasterRecoverySetting gets the crossRegionDisasterRecoverySetting property value. The crossRegionDisasterRecoverySetting property
+// GetCrossRegionDisasterRecoverySetting gets the crossRegionDisasterRecoverySetting property value. Defines whether the user's Cloud PC enables cross-region disaster recovery and specifies the network for the disaster recovery.
 // returns a CloudPcCrossRegionDisasterRecoverySettingable when successful
 func (m *CloudPcUserSetting) GetCrossRegionDisasterRecoverySetting()(CloudPcCrossRegionDisasterRecoverySettingable) {
     val, err := m.GetBackingStore().Get("crossRegionDisasterRecoverySetting")
@@ -138,6 +138,16 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["notificationSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcNotificationSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNotificationSetting(val.(CloudPcNotificationSettingable))
+        }
+        return nil
+    }
     res["resetEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -194,7 +204,19 @@ func (m *CloudPcUserSetting) GetLocalAdminEnabled()(*bool) {
     }
     return nil
 }
-// GetResetEnabled gets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.
+// GetNotificationSetting gets the notificationSetting property value. The notificationSetting property
+// returns a CloudPcNotificationSettingable when successful
+func (m *CloudPcUserSetting) GetNotificationSetting()(CloudPcNotificationSettingable) {
+    val, err := m.GetBackingStore().Get("notificationSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcNotificationSettingable)
+    }
+    return nil
+}
+// GetResetEnabled gets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset isn't allowed. The default value is false.
 // returns a *bool when successful
 func (m *CloudPcUserSetting) GetResetEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("resetEnabled")
@@ -279,6 +301,12 @@ func (m *CloudPcUserSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteObjectValue("notificationSetting", m.GetNotificationSetting())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("resetEnabled", m.GetResetEnabled())
         if err != nil {
             return err
@@ -312,7 +340,7 @@ func (m *CloudPcUserSetting) SetCreatedDateTime(value *i336074805fc853987abe6f7f
         panic(err)
     }
 }
-// SetCrossRegionDisasterRecoverySetting sets the crossRegionDisasterRecoverySetting property value. The crossRegionDisasterRecoverySetting property
+// SetCrossRegionDisasterRecoverySetting sets the crossRegionDisasterRecoverySetting property value. Defines whether the user's Cloud PC enables cross-region disaster recovery and specifies the network for the disaster recovery.
 func (m *CloudPcUserSetting) SetCrossRegionDisasterRecoverySetting(value CloudPcCrossRegionDisasterRecoverySettingable)() {
     err := m.GetBackingStore().Set("crossRegionDisasterRecoverySetting", value)
     if err != nil {
@@ -340,7 +368,14 @@ func (m *CloudPcUserSetting) SetLocalAdminEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetResetEnabled sets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.
+// SetNotificationSetting sets the notificationSetting property value. The notificationSetting property
+func (m *CloudPcUserSetting) SetNotificationSetting(value CloudPcNotificationSettingable)() {
+    err := m.GetBackingStore().Set("notificationSetting", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetResetEnabled sets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset isn't allowed. The default value is false.
 func (m *CloudPcUserSetting) SetResetEnabled(value *bool)() {
     err := m.GetBackingStore().Set("resetEnabled", value)
     if err != nil {
@@ -370,6 +405,7 @@ type CloudPcUserSettingable interface {
     GetDisplayName()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocalAdminEnabled()(*bool)
+    GetNotificationSetting()(CloudPcNotificationSettingable)
     GetResetEnabled()(*bool)
     GetRestorePointSetting()(CloudPcRestorePointSettingable)
     GetSelfServiceEnabled()(*bool)
@@ -379,6 +415,7 @@ type CloudPcUserSettingable interface {
     SetDisplayName(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocalAdminEnabled(value *bool)()
+    SetNotificationSetting(value CloudPcNotificationSettingable)()
     SetResetEnabled(value *bool)()
     SetRestorePointSetting(value CloudPcRestorePointSettingable)()
     SetSelfServiceEnabled(value *bool)()

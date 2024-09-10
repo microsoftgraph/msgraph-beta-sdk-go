@@ -119,6 +119,16 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["osVersionNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOsVersionNumber(val)
+        }
+        return nil
+    }
     res["publisher"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -239,6 +249,18 @@ func (m *CloudPcGalleryImage) GetOfferDisplayName()(*string) {
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetOfferName()(*string) {
     val, err := m.GetBackingStore().Get("offerName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetOsVersionNumber gets the osVersionNumber property value. The osVersionNumber property
+// returns a *string when successful
+func (m *CloudPcGalleryImage) GetOsVersionNumber()(*string) {
+    val, err := m.GetBackingStore().Get("osVersionNumber")
     if err != nil {
         panic(err)
     }
@@ -398,6 +420,12 @@ func (m *CloudPcGalleryImage) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
+        err = writer.WriteStringValue("osVersionNumber", m.GetOsVersionNumber())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("publisher", m.GetPublisher())
         if err != nil {
             return err
@@ -496,6 +524,13 @@ func (m *CloudPcGalleryImage) SetOfferName(value *string)() {
         panic(err)
     }
 }
+// SetOsVersionNumber sets the osVersionNumber property value. The osVersionNumber property
+func (m *CloudPcGalleryImage) SetOsVersionNumber(value *string)() {
+    err := m.GetBackingStore().Set("osVersionNumber", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublisher sets the publisher property value. The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only. The publisher property is deprecated and will stop returning data on January 31, 2024. Going forward, use the publisherName property.
 func (m *CloudPcGalleryImage) SetPublisher(value *string)() {
     err := m.GetBackingStore().Set("publisher", value)
@@ -568,6 +603,7 @@ type CloudPcGalleryImageable interface {
     GetOffer()(*string)
     GetOfferDisplayName()(*string)
     GetOfferName()(*string)
+    GetOsVersionNumber()(*string)
     GetPublisher()(*string)
     GetPublisherName()(*string)
     GetRecommendedSku()(*string)
@@ -583,6 +619,7 @@ type CloudPcGalleryImageable interface {
     SetOffer(value *string)()
     SetOfferDisplayName(value *string)()
     SetOfferName(value *string)()
+    SetOsVersionNumber(value *string)()
     SetPublisher(value *string)()
     SetPublisherName(value *string)()
     SetRecommendedSku(value *string)()

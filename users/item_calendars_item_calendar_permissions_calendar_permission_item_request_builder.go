@@ -55,6 +55,7 @@ func NewItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder
     return NewItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property calendarPermissions for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     return nil
 }
 // Get the permissions of the users with whom the calendar is shared.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CalendarPermissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable, error) {
@@ -91,6 +93,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable), nil
 }
 // Patch update the navigation property calendarPermissions in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CalendarPermissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable, error) {
@@ -111,6 +114,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable), nil
 }
 // ToDeleteRequestInformation delete navigation property calendarPermissions for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     return requestInfo, nil
 }
 // ToGetRequestInformation the permissions of the users with whom the calendar is shared.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property calendarPermissions in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CalendarPermissionable, requestConfiguration *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder when successful
 func (m *ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder) {
     return NewItemCalendarsItemCalendarPermissionsCalendarPermissionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

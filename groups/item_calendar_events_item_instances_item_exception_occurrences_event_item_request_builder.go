@@ -100,6 +100,11 @@ func (m *ItemCalendarEventsItemInstancesItemExceptionOccurrencesEventItemRequest
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemCalendarEventsItemInstancesItemExceptionOccurrencesItemPermanentDeleteRequestBuilder when successful
+func (m *ItemCalendarEventsItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) PermanentDelete()(*ItemCalendarEventsItemInstancesItemExceptionOccurrencesItemPermanentDeleteRequestBuilder) {
+    return NewItemCalendarEventsItemInstancesItemExceptionOccurrencesItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SnoozeReminder provides operations to call the snoozeReminder method.
 // returns a *ItemCalendarEventsItemInstancesItemExceptionOccurrencesItemSnoozeReminderRequestBuilder when successful
 func (m *ItemCalendarEventsItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarEventsItemInstancesItemExceptionOccurrencesItemSnoozeReminderRequestBuilder) {

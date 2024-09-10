@@ -32,6 +32,7 @@ func NewItemMailFoldersItemMessagesItemCreateForwardRequestBuilder(rawUrl string
     return NewItemMailFoldersItemMessagesItemCreateForwardRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.- Update the draft later to add content to the body or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Messageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -55,6 +56,7 @@ func (m *ItemMailFoldersItemMessagesItemCreateForwardRequestBuilder) Post(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable), nil
 }
 // ToPostRequestInformation create a draft to forward an existing message, in either JSON or MIME format. When using JSON format, you can:- Specify either a comment or the body property of the message parameter. Specifying both will return an HTTP 400 Bad Request error.- Specify either the toRecipients parameter or the toRecipients property of the message parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error.- Update the draft later to add content to the body or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in base64 format in the request body.- Add any attachments and S/MIME properties to the MIME content. Send the draft message in a subsequent operation. Alternatively, forward a message in a single operation.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemMessagesItemCreateForwardRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemMessagesItemCreateForwardPostRequestBodyable, requestConfiguration *ItemMailFoldersItemMessagesItemCreateForwardRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -70,6 +72,7 @@ func (m *ItemMailFoldersItemMessagesItemCreateForwardRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMailFoldersItemMessagesItemCreateForwardRequestBuilder when successful
 func (m *ItemMailFoldersItemMessagesItemCreateForwardRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemMessagesItemCreateForwardRequestBuilder) {
     return NewItemMailFoldersItemMessagesItemCreateForwardRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

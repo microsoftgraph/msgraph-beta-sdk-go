@@ -322,6 +322,11 @@ func (m *DeviceManagementRequestBuilder) EmbeddedSIMActivationCodePools()(*Embed
 func (m *DeviceManagementRequestBuilder) EnableAndroidDeviceAdministratorEnrollment()(*EnableAndroidDeviceAdministratorEnrollmentRequestBuilder) {
     return NewEnableAndroidDeviceAdministratorEnrollmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// EnableEndpointPrivilegeManagement provides operations to call the enableEndpointPrivilegeManagement method.
+// returns a *EnableEndpointPrivilegeManagementRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) EnableEndpointPrivilegeManagement()(*EnableEndpointPrivilegeManagementRequestBuilder) {
+    return NewEnableEndpointPrivilegeManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // EnableLegacyPcManagement provides operations to call the enableLegacyPcManagement method.
 // returns a *EnableLegacyPcManagementRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) EnableLegacyPcManagement()(*EnableLegacyPcManagementRequestBuilder) {

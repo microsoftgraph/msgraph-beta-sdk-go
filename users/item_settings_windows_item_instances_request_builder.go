@@ -47,6 +47,7 @@ type ItemSettingsWindowsItemInstancesRequestBuilderPostRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByWindowsSettingInstanceId provides operations to manage the instances property of the microsoft.graph.windowsSetting entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder when successful
 func (m *ItemSettingsWindowsItemInstancesRequestBuilder) ByWindowsSettingInstanceId(windowsSettingInstanceId string)(*ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemSettingsWindowsItemInstancesRequestBuilder) Count()(*ItemSettingsWi
     return NewItemSettingsWindowsItemInstancesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a collection of setting values for a given windowsSetting.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WindowsSettingInstanceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsItemInstancesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemSettingsWindowsItemInstancesRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceCollectionResponseable), nil
 }
 // Post create new navigation property to instances for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WindowsSettingInstanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsItemInstancesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable, requestConfiguration *ItemSettingsWindowsItemInstancesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable, error) {
@@ -117,6 +120,7 @@ func (m *ItemSettingsWindowsItemInstancesRequestBuilder) Post(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable), nil
 }
 // ToGetRequestInformation a collection of setting values for a given windowsSetting.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsItemInstancesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemSettingsWindowsItemInstancesRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to instances for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsItemInstancesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable, requestConfiguration *ItemSettingsWindowsItemInstancesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemSettingsWindowsItemInstancesRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsWindowsItemInstancesRequestBuilder when successful
 func (m *ItemSettingsWindowsItemInstancesRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsWindowsItemInstancesRequestBuilder) {
     return NewItemSettingsWindowsItemInstancesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

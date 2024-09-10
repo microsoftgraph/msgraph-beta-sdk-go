@@ -130,6 +130,16 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["osVersionNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOsVersionNumber(val)
+        }
+        return nil
+    }
     res["scopeIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -233,6 +243,18 @@ func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
     }
     if val != nil {
         return val.(*CloudPcDeviceImageOsStatus)
+    }
+    return nil
+}
+// GetOsVersionNumber gets the osVersionNumber property value. The osVersionNumber property
+// returns a *string when successful
+func (m *CloudPcDeviceImage) GetOsVersionNumber()(*string) {
+    val, err := m.GetBackingStore().Get("osVersionNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -346,6 +368,12 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("osVersionNumber", m.GetOsVersionNumber())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetScopeIds() != nil {
         err = writer.WriteCollectionOfStringValues("scopeIds", m.GetScopeIds())
         if err != nil {
@@ -429,6 +457,13 @@ func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImageOsStatus)() {
         panic(err)
     }
 }
+// SetOsVersionNumber sets the osVersionNumber property value. The osVersionNumber property
+func (m *CloudPcDeviceImage) SetOsVersionNumber(value *string)() {
+    err := m.GetBackingStore().Set("osVersionNumber", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetScopeIds sets the scopeIds property value. The scopeIds property
 func (m *CloudPcDeviceImage) SetScopeIds(value []string)() {
     err := m.GetBackingStore().Set("scopeIds", value)
@@ -474,6 +509,7 @@ type CloudPcDeviceImageable interface {
     GetOperatingSystem()(*string)
     GetOsBuildNumber()(*string)
     GetOsStatus()(*CloudPcDeviceImageOsStatus)
+    GetOsVersionNumber()(*string)
     GetScopeIds()([]string)
     GetSourceImageResourceId()(*string)
     GetStatus()(*CloudPcDeviceImageStatus)
@@ -486,6 +522,7 @@ type CloudPcDeviceImageable interface {
     SetOperatingSystem(value *string)()
     SetOsBuildNumber(value *string)()
     SetOsStatus(value *CloudPcDeviceImageOsStatus)()
+    SetOsVersionNumber(value *string)()
     SetScopeIds(value []string)()
     SetSourceImageResourceId(value *string)()
     SetStatus(value *CloudPcDeviceImageStatus)()

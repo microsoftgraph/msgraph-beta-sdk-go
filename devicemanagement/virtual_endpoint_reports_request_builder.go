@@ -180,6 +180,11 @@ func (m *VirtualEndpointReportsRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable), nil
 }
+// RetrieveConnectionQualityReports provides operations to call the retrieveConnectionQualityReports method.
+// returns a *VirtualEndpointReportsRetrieveConnectionQualityReportsRequestBuilder when successful
+func (m *VirtualEndpointReportsRequestBuilder) RetrieveConnectionQualityReports()(*VirtualEndpointReportsRetrieveConnectionQualityReportsRequestBuilder) {
+    return NewVirtualEndpointReportsRetrieveConnectionQualityReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveCrossRegionDisasterRecoveryReport provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.
 // returns a *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) RetrieveCrossRegionDisasterRecoveryReport()(*VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilder) {

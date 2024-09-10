@@ -167,7 +167,7 @@ func (m *DeviceManagementExportJob) GetFilter()(*string) {
     }
     return nil
 }
-// GetFormat gets the format property value. Possible values for the file format of a report.
+// GetFormat gets the format property value. Possible values for the file format of a report to be exported.
 // returns a *DeviceManagementReportFileFormat when successful
 func (m *DeviceManagementExportJob) GetFormat()(*DeviceManagementReportFileFormat) {
     val, err := m.GetBackingStore().Get("format")
@@ -366,7 +366,7 @@ func (m *DeviceManagementExportJob) SetFilter(value *string)() {
         panic(err)
     }
 }
-// SetFormat sets the format property value. Possible values for the file format of a report.
+// SetFormat sets the format property value. Possible values for the file format of a report to be exported.
 func (m *DeviceManagementExportJob) SetFormat(value *DeviceManagementReportFileFormat)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {

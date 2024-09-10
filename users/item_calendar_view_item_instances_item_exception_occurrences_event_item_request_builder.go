@@ -81,6 +81,7 @@ func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBu
     return NewItemCalendarViewItemInstancesItemExceptionOccurrencesItemForwardRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get exceptionOccurrences from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Eventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable, error) {
@@ -100,6 +101,11 @@ func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Eventable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemCalendarViewItemInstancesItemExceptionOccurrencesItemPermanentDeleteRequestBuilder when successful
+func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) PermanentDelete()(*ItemCalendarViewItemInstancesItemExceptionOccurrencesItemPermanentDeleteRequestBuilder) {
+    return NewItemCalendarViewItemInstancesItemExceptionOccurrencesItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SnoozeReminder provides operations to call the snoozeReminder method.
 // returns a *ItemCalendarViewItemInstancesItemExceptionOccurrencesItemSnoozeReminderRequestBuilder when successful
 func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) SnoozeReminder()(*ItemCalendarViewItemInstancesItemExceptionOccurrencesItemSnoozeReminderRequestBuilder) {
@@ -111,6 +117,7 @@ func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBu
     return NewItemCalendarViewItemInstancesItemExceptionOccurrencesItemTentativelyAcceptRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get exceptionOccurrences from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +132,7 @@ func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBu
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder when successful
 func (m *ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder) {
     return NewItemCalendarViewItemInstancesItemExceptionOccurrencesEventItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

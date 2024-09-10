@@ -7,10 +7,12 @@ const (
     CHILD_MOBILEAPPRELATIONSHIPTYPE MobileAppRelationshipType = iota
     // Indicates that the target of a relationship is the parent in the relationship.
     PARENT_MOBILEAPPRELATIONSHIPTYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_MOBILEAPPRELATIONSHIPTYPE
 )
 
 func (i MobileAppRelationshipType) String() string {
-    return []string{"child", "parent"}[i]
+    return []string{"child", "parent", "unknownFutureValue"}[i]
 }
 func ParseMobileAppRelationshipType(v string) (any, error) {
     result := CHILD_MOBILEAPPRELATIONSHIPTYPE
@@ -19,6 +21,8 @@ func ParseMobileAppRelationshipType(v string) (any, error) {
             result = CHILD_MOBILEAPPRELATIONSHIPTYPE
         case "parent":
             result = PARENT_MOBILEAPPRELATIONSHIPTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MOBILEAPPRELATIONSHIPTYPE
         default:
             return nil, nil
     }

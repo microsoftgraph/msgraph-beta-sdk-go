@@ -31,6 +31,7 @@ func NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDecis
     return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDecisionsRecordAllDecisionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post as a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified. If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDeci
     return nil
 }
 // ToPostRequestInformation as a reviewer of an access review, record a decision for an accessReviewInstanceDecisionItem that is assigned to you and that matches the principal or resource IDs specified. If no IDs are specified, the decisions will apply to every accessReviewInstanceDecisionItem for which you are the reviewer.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDecisionsRecordAllDecisionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDecisionsRecordAllDecisionsPostRequestBodyable, requestConfiguration *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDecisionsRecordAllDecisionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDeci
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDecisionsRecordAllDecisionsRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDecisionsRecordAllDecisionsRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDecisionsRecordAllDecisionsRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesItemDecisionsRecordAllDecisionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

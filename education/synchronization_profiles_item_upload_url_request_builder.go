@@ -55,6 +55,7 @@ func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) Get(ctx context.Con
     return res.(SynchronizationProfilesItemUploadUrlResponseable), nil
 }
 // GetAsUploadUrlGetResponse retrieve a shared access signature (SAS) for uploading source files to Azure blob storage for a specific school data synchronization profile in the tenant. The SAS token has a validity of one hour. The upload URL is provided only for the CSV data provider.
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a SynchronizationProfilesItemUploadUrlGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -78,6 +79,7 @@ func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) GetAsUploadUrlGetRe
     return res.(SynchronizationProfilesItemUploadUrlGetResponseable), nil
 }
 // ToGetRequestInformation retrieve a shared access signature (SAS) for uploading source files to Azure blob storage for a specific school data synchronization profile in the tenant. The SAS token has a validity of one hour. The upload URL is provided only for the CSV data provider.
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemUploadUrlRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -89,6 +91,7 @@ func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *SynchronizationProfilesItemUploadUrlRequestBuilder when successful
 func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) WithUrl(rawUrl string)(*SynchronizationProfilesItemUploadUrlRequestBuilder) {
     return NewSynchronizationProfilesItemUploadUrlRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

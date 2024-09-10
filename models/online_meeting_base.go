@@ -63,7 +63,7 @@ func (m *OnlineMeetingBase) GetAllowAttendeeToEnableMic()(*bool) {
     }
     return nil
 }
-// GetAllowBreakoutRooms gets the allowBreakoutRooms property value. The allowBreakoutRooms property
+// GetAllowBreakoutRooms gets the allowBreakoutRooms property value. Indicates whether breakout rooms are enabled for the meeting.
 // returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowBreakoutRooms()(*bool) {
     val, err := m.GetBackingStore().Get("allowBreakoutRooms")
@@ -75,7 +75,7 @@ func (m *OnlineMeetingBase) GetAllowBreakoutRooms()(*bool) {
     }
     return nil
 }
-// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
+// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.
 // returns a *OnlineMeetingPresenters when successful
 func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     val, err := m.GetBackingStore().Get("allowedPresenters")
@@ -87,7 +87,7 @@ func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     }
     return nil
 }
-// GetAllowLiveShare gets the allowLiveShare property value. The allowLiveShare property
+// GetAllowLiveShare gets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.
 // returns a *MeetingLiveShareOptions when successful
 func (m *OnlineMeetingBase) GetAllowLiveShare()(*MeetingLiveShareOptions) {
     val, err := m.GetBackingStore().Get("allowLiveShare")
@@ -99,7 +99,7 @@ func (m *OnlineMeetingBase) GetAllowLiveShare()(*MeetingLiveShareOptions) {
     }
     return nil
 }
-// GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat.
+// GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat. Possible values are: enabled, disabled, limited, unknownFutureValue.
 // returns a *MeetingChatMode when successful
 func (m *OnlineMeetingBase) GetAllowMeetingChat()(*MeetingChatMode) {
     val, err := m.GetBackingStore().Get("allowMeetingChat")
@@ -123,7 +123,7 @@ func (m *OnlineMeetingBase) GetAllowParticipantsToChangeName()(*bool) {
     }
     return nil
 }
-// GetAllowPowerPointSharing gets the allowPowerPointSharing property value. The allowPowerPointSharing property
+// GetAllowPowerPointSharing gets the allowPowerPointSharing property value. Indicates whether PowerPoint live is enabled for the meeting.
 // returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowPowerPointSharing()(*bool) {
     val, err := m.GetBackingStore().Get("allowPowerPointSharing")
@@ -171,7 +171,7 @@ func (m *OnlineMeetingBase) GetAllowTranscription()(*bool) {
     }
     return nil
 }
-// GetAllowWhiteboard gets the allowWhiteboard property value. The allowWhiteboard property
+// GetAllowWhiteboard gets the allowWhiteboard property value. Indicates whether whiteboard is enabled for the meeting.
 // returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowWhiteboard()(*bool) {
     val, err := m.GetBackingStore().Get("allowWhiteboard")
@@ -873,28 +873,28 @@ func (m *OnlineMeetingBase) SetAllowAttendeeToEnableMic(value *bool)() {
         panic(err)
     }
 }
-// SetAllowBreakoutRooms sets the allowBreakoutRooms property value. The allowBreakoutRooms property
+// SetAllowBreakoutRooms sets the allowBreakoutRooms property value. Indicates whether breakout rooms are enabled for the meeting.
 func (m *OnlineMeetingBase) SetAllowBreakoutRooms(value *bool)() {
     err := m.GetBackingStore().Set("allowBreakoutRooms", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting.
+// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
     err := m.GetBackingStore().Set("allowedPresenters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowLiveShare sets the allowLiveShare property value. The allowLiveShare property
+// SetAllowLiveShare sets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowLiveShare(value *MeetingLiveShareOptions)() {
     err := m.GetBackingStore().Set("allowLiveShare", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowMeetingChat sets the allowMeetingChat property value. Specifies the mode of meeting chat.
+// SetAllowMeetingChat sets the allowMeetingChat property value. Specifies the mode of meeting chat. Possible values are: enabled, disabled, limited, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowMeetingChat(value *MeetingChatMode)() {
     err := m.GetBackingStore().Set("allowMeetingChat", value)
     if err != nil {
@@ -908,7 +908,7 @@ func (m *OnlineMeetingBase) SetAllowParticipantsToChangeName(value *bool)() {
         panic(err)
     }
 }
-// SetAllowPowerPointSharing sets the allowPowerPointSharing property value. The allowPowerPointSharing property
+// SetAllowPowerPointSharing sets the allowPowerPointSharing property value. Indicates whether PowerPoint live is enabled for the meeting.
 func (m *OnlineMeetingBase) SetAllowPowerPointSharing(value *bool)() {
     err := m.GetBackingStore().Set("allowPowerPointSharing", value)
     if err != nil {
@@ -936,7 +936,7 @@ func (m *OnlineMeetingBase) SetAllowTranscription(value *bool)() {
         panic(err)
     }
 }
-// SetAllowWhiteboard sets the allowWhiteboard property value. The allowWhiteboard property
+// SetAllowWhiteboard sets the allowWhiteboard property value. Indicates whether whiteboard is enabled for the meeting.
 func (m *OnlineMeetingBase) SetAllowWhiteboard(value *bool)() {
     err := m.GetBackingStore().Set("allowWhiteboard", value)
     if err != nil {

@@ -19,10 +19,13 @@ const (
     CROSSREGIONDISASTERRECOVERYREPORT_CLOUDPCREPORTNAME
     PERFORMANCETRENDREPORT_CLOUDPCREPORTNAME
     INACCESSIBLECLOUDPCTRENDREPORT_CLOUDPCREPORTNAME
+    REGIONALCONNECTIONQUALITYTRENDREPORT_CLOUDPCREPORTNAME
+    REGIONALCONNECTIONQUALITYINSIGHTSREPORT_CLOUDPCREPORTNAME
+    REMOTECONNECTIONQUALITYREPORT_CLOUDPCREPORTNAME
 )
 
 func (i CloudPcReportName) String() string {
-    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "actionStatusReport", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport"}[i]
+    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "actionStatusReport", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport", "regionalConnectionQualityTrendReport", "regionalConnectionQualityInsightsReport", "remoteConnectionQualityReport"}[i]
 }
 func ParseCloudPcReportName(v string) (any, error) {
     result := REMOTECONNECTIONHISTORICALREPORTS_CLOUDPCREPORTNAME
@@ -61,6 +64,12 @@ func ParseCloudPcReportName(v string) (any, error) {
             result = PERFORMANCETRENDREPORT_CLOUDPCREPORTNAME
         case "inaccessibleCloudPcTrendReport":
             result = INACCESSIBLECLOUDPCTRENDREPORT_CLOUDPCREPORTNAME
+        case "regionalConnectionQualityTrendReport":
+            result = REGIONALCONNECTIONQUALITYTRENDREPORT_CLOUDPCREPORTNAME
+        case "regionalConnectionQualityInsightsReport":
+            result = REGIONALCONNECTIONQUALITYINSIGHTSREPORT_CLOUDPCREPORTNAME
+        case "remoteConnectionQualityReport":
+            result = REMOTECONNECTIONQUALITYREPORT_CLOUDPCREPORTNAME
         default:
             return nil, nil
     }

@@ -31,6 +31,7 @@ func NewItemDeletePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, r
     return NewItemDeletePasswordSingleSignOnCredentialsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post delete the password-based single sign-on credentials for a given user to a given service principal.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx conte
     return nil
 }
 // ToPostRequestInformation delete the password-based single sign-on credentials for a given user to a given service principal.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemDeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemDeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder when successful
 func (m *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) WithUrl(rawUrl string)(*ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) {
     return NewItemDeletePasswordSingleSignOnCredentialsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

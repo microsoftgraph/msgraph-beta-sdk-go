@@ -31,6 +31,7 @@ func NewItemManagedDevicesItemDeprovisionRequestBuilder(rawUrl string, requestAd
     return NewItemManagedDevicesItemDeprovisionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action deprovision
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemDeprovisionRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesItemDeprovisionPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemDeprovisionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -47,6 +48,7 @@ func (m *ItemManagedDevicesItemDeprovisionRequestBuilder) Post(ctx context.Conte
     return nil
 }
 // ToPostRequestInformation invoke action deprovision
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemDeprovisionRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesItemDeprovisionPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemDeprovisionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -62,6 +64,7 @@ func (m *ItemManagedDevicesItemDeprovisionRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemDeprovisionRequestBuilder when successful
 func (m *ItemManagedDevicesItemDeprovisionRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemDeprovisionRequestBuilder) {
     return NewItemManagedDevicesItemDeprovisionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

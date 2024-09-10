@@ -19,7 +19,7 @@ func NewAdminReportSettings()(*AdminReportSettings) {
 func CreateAdminReportSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdminReportSettings(), nil
 }
-// GetDisplayConcealedNames gets the displayConcealedNames property value. If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
+// GetDisplayConcealedNames gets the displayConcealedNames property value. If set to true, all reports conceal user information such as usernames, groups, and sites. If false, all reports show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
 // returns a *bool when successful
 func (m *AdminReportSettings) GetDisplayConcealedNames()(*bool) {
     val, err := m.GetBackingStore().Get("displayConcealedNames")
@@ -61,7 +61,7 @@ func (m *AdminReportSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetDisplayConcealedNames sets the displayConcealedNames property value. If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
+// SetDisplayConcealedNames sets the displayConcealedNames property value. If set to true, all reports conceal user information such as usernames, groups, and sites. If false, all reports show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.
 func (m *AdminReportSettings) SetDisplayConcealedNames(value *bool)() {
     err := m.GetBackingStore().Set("displayConcealedNames", value)
     if err != nil {

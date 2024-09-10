@@ -40,7 +40,7 @@ func NewPrinterSharesItemAllowedUsersCountRequestBuilder(rawUrl string, requestA
     return NewPrinterSharesItemAllowedUsersCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrinterSharesItemAllowedUsersCountRequestBuilder) Get(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -61,7 +61,7 @@ func (m *PrinterSharesItemAllowedUsersCountRequestBuilder) Get(ctx context.Conte
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemAllowedUsersCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemAllowedUsersCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,7 +76,7 @@ func (m *PrinterSharesItemAllowedUsersCountRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *PrinterSharesItemAllowedUsersCountRequestBuilder when successful
 func (m *PrinterSharesItemAllowedUsersCountRequestBuilder) WithUrl(rawUrl string)(*PrinterSharesItemAllowedUsersCountRequestBuilder) {
     return NewPrinterSharesItemAllowedUsersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

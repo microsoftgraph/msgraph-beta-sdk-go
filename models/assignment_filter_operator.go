@@ -27,7 +27,7 @@ const (
     NOTENDSWITH_ASSIGNMENTFILTEROPERATOR
     // Indicates the devices whose property value is greater than the configured input in Assignment Filters.
     GREATERTHAN_ASSIGNMENTFILTEROPERATOR
-    // Indicates the devices whose property value is greater than or equal to the configured input in Assignment Filters.
+    // `Indicates the devices whose property value is greater than or equal to the configured input in Assignment Filters.
     GREATERTHANOREQUALS_ASSIGNMENTFILTEROPERATOR
     // Indicates the devices whose property value is less than the configured input in Assignment Filters.
     LESSTHAN_ASSIGNMENTFILTEROPERATOR

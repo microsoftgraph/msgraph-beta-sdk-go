@@ -3692,7 +3692,7 @@ func (m *DeviceManagement) GetHardwarePasswordDetails()([]HardwarePasswordDetail
     }
     return nil
 }
-// GetHardwarePasswordInfo gets the hardwarePasswordInfo property value. Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices. Starting from June, 2024 (Intune Release 2406), this type will no longer be supported and will be marked as deprecated
+// GetHardwarePasswordInfo gets the hardwarePasswordInfo property value. Intune will provide customer the ability to configure BIOS configuration settings on the enrolled Windows 10 and Windows 11 Microsoft Entra joined devices. Starting from June, 2024, customers should start using hardwarePasswordDetail resource type - Microsoft Graph beta | Microsoft Learn. HardwarePasswordInfo will be marked as deprecated with Intune Release 2409
 // returns a []HardwarePasswordInfoable when successful
 func (m *DeviceManagement) GetHardwarePasswordInfo()([]HardwarePasswordInfoable) {
     val, err := m.GetBackingStore().Get("hardwarePasswordInfo")
@@ -7621,7 +7621,7 @@ func (m *DeviceManagement) SetHardwarePasswordDetails(value []HardwarePasswordDe
         panic(err)
     }
 }
-// SetHardwarePasswordInfo sets the hardwarePasswordInfo property value. Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices. Starting from June, 2024 (Intune Release 2406), this type will no longer be supported and will be marked as deprecated
+// SetHardwarePasswordInfo sets the hardwarePasswordInfo property value. Intune will provide customer the ability to configure BIOS configuration settings on the enrolled Windows 10 and Windows 11 Microsoft Entra joined devices. Starting from June, 2024, customers should start using hardwarePasswordDetail resource type - Microsoft Graph beta | Microsoft Learn. HardwarePasswordInfo will be marked as deprecated with Intune Release 2409
 func (m *DeviceManagement) SetHardwarePasswordInfo(value []HardwarePasswordInfoable)() {
     err := m.GetBackingStore().Set("hardwarePasswordInfo", value)
     if err != nil {

@@ -6,10 +6,11 @@ const (
     INVALIDBILLINGPROFILE_DISABLEREASON
     USERREQUESTED_DISABLEREASON
     UNKNOWNFUTUREVALUE_DISABLEREASON
+    CONTROLLERSERVICEAPPDELETED_DISABLEREASON
 )
 
 func (i DisableReason) String() string {
-    return []string{"none", "invalidBillingProfile", "userRequested", "unknownFutureValue"}[i]
+    return []string{"none", "invalidBillingProfile", "userRequested", "unknownFutureValue", "controllerServiceAppDeleted"}[i]
 }
 func ParseDisableReason(v string) (any, error) {
     result := NONE_DISABLEREASON
@@ -22,6 +23,8 @@ func ParseDisableReason(v string) (any, error) {
             result = USERREQUESTED_DISABLEREASON
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_DISABLEREASON
+        case "controllerServiceAppDeleted":
+            result = CONTROLLERSERVICEAPPDELETED_DISABLEREASON
         default:
             return nil, nil
     }
