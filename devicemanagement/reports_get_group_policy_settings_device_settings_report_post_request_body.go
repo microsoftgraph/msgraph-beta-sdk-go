@@ -142,6 +142,16 @@ func (m *ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBody) GetFi
         }
         return nil
     }
+    res["skiptoken"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSkiptoken(val)
+        }
+        return nil
+    }
     res["top"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -250,6 +260,18 @@ func (m *ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBody) GetSk
     }
     return nil
 }
+// GetSkiptoken gets the skiptoken property value. The skiptoken property
+// returns a *string when successful
+func (m *ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBody) GetSkiptoken()(*string) {
+    val, err := m.GetBackingStore().Get("skiptoken")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetTop gets the top property value. The top property
 // returns a *int32 when successful
 func (m *ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBody) GetTop()(*int32) {
@@ -308,6 +330,12 @@ func (m *ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBody) Seria
     }
     {
         err := writer.WriteInt32Value("skip", m.GetSkip())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("skiptoken", m.GetSkiptoken())
         if err != nil {
             return err
         }
@@ -393,6 +421,13 @@ func (m *ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBody) SetSk
         panic(err)
     }
 }
+// SetSkiptoken sets the skiptoken property value. The skiptoken property
+func (m *ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBody) SetSkiptoken(value *string)() {
+    err := m.GetBackingStore().Set("skiptoken", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTop sets the top property value. The top property
 func (m *ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBody) SetTop(value *int32)() {
     err := m.GetBackingStore().Set("top", value)
@@ -413,6 +448,7 @@ type ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBodyable interf
     GetSelectEscaped()([]string)
     GetSessionId()(*string)
     GetSkip()(*int32)
+    GetSkiptoken()(*string)
     GetTop()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFilter(value *string)()
@@ -423,5 +459,6 @@ type ReportsGetGroupPolicySettingsDeviceSettingsReportPostRequestBodyable interf
     SetSelectEscaped(value []string)()
     SetSessionId(value *string)()
     SetSkip(value *int32)()
+    SetSkiptoken(value *string)()
     SetTop(value *int32)()
 }

@@ -40,7 +40,7 @@ func (m *AuthenticationBehaviors) GetAdditionalData()(map[string]any) {
 func (m *AuthenticationBehaviors) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBlockAzureADGraphAccess gets the blockAzureADGraphAccess property value. The blockAzureADGraphAccess property
+// GetBlockAzureADGraphAccess gets the blockAzureADGraphAccess property value. If false, allows the app to have extended access to Azure AD Graph until June 30, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
 // returns a *bool when successful
 func (m *AuthenticationBehaviors) GetBlockAzureADGraphAccess()(*bool) {
     val, err := m.GetBackingStore().Get("blockAzureADGraphAccess")
@@ -110,7 +110,7 @@ func (m *AuthenticationBehaviors) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRemoveUnverifiedEmailClaim gets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
+// GetRemoveUnverifiedEmailClaim gets the removeUnverifiedEmailClaim property value. If true, removes the email claim from tokens sent to an application when the email address's domain can't be verified.
 // returns a *bool when successful
 func (m *AuthenticationBehaviors) GetRemoveUnverifiedEmailClaim()(*bool) {
     val, err := m.GetBackingStore().Get("removeUnverifiedEmailClaim")
@@ -122,7 +122,7 @@ func (m *AuthenticationBehaviors) GetRemoveUnverifiedEmailClaim()(*bool) {
     }
     return nil
 }
-// GetRequireClientServicePrincipal gets the requireClientServicePrincipal property value. Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
+// GetRequireClientServicePrincipal gets the requireClientServicePrincipal property value. If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multitenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
 // returns a *bool when successful
 func (m *AuthenticationBehaviors) GetRequireClientServicePrincipal()(*bool) {
     val, err := m.GetBackingStore().Get("requireClientServicePrincipal")
@@ -179,7 +179,7 @@ func (m *AuthenticationBehaviors) SetAdditionalData(value map[string]any)() {
 func (m *AuthenticationBehaviors) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBlockAzureADGraphAccess sets the blockAzureADGraphAccess property value. The blockAzureADGraphAccess property
+// SetBlockAzureADGraphAccess sets the blockAzureADGraphAccess property value. If false, allows the app to have extended access to Azure AD Graph until June 30, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
 func (m *AuthenticationBehaviors) SetBlockAzureADGraphAccess(value *bool)() {
     err := m.GetBackingStore().Set("blockAzureADGraphAccess", value)
     if err != nil {
@@ -193,14 +193,14 @@ func (m *AuthenticationBehaviors) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRemoveUnverifiedEmailClaim sets the removeUnverifiedEmailClaim property value. Removes the email claim from tokens sent to an application when the email address's domain can't be verified.
+// SetRemoveUnverifiedEmailClaim sets the removeUnverifiedEmailClaim property value. If true, removes the email claim from tokens sent to an application when the email address's domain can't be verified.
 func (m *AuthenticationBehaviors) SetRemoveUnverifiedEmailClaim(value *bool)() {
     err := m.GetBackingStore().Set("removeUnverifiedEmailClaim", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRequireClientServicePrincipal sets the requireClientServicePrincipal property value. Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
+// SetRequireClientServicePrincipal sets the requireClientServicePrincipal property value. If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they're granted access tokens. This property is only modifiable for multitenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.
 func (m *AuthenticationBehaviors) SetRequireClientServicePrincipal(value *bool)() {
     err := m.GetBackingStore().Set("requireClientServicePrincipal", value)
     if err != nil {

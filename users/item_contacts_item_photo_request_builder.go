@@ -53,6 +53,7 @@ func (m *ItemContactsItemPhotoRequestBuilder) Content()(*ItemContactsItemPhotoVa
     return NewItemContactsItemPhotoValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get optional contact picture. You can get or set a photo for a contact.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ProfilePhotoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactsItemPhotoRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactsItemPhotoRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, error) {
@@ -73,6 +74,7 @@ func (m *ItemContactsItemPhotoRequestBuilder) Get(ctx context.Context, requestCo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable), nil
 }
 // Patch update the navigation property photo in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ProfilePhotoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactsItemPhotoRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, requestConfiguration *ItemContactsItemPhotoRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, error) {
@@ -93,6 +95,7 @@ func (m *ItemContactsItemPhotoRequestBuilder) Patch(ctx context.Context, body ie
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable), nil
 }
 // ToGetRequestInformation optional contact picture. You can get or set a photo for a contact.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactsItemPhotoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactsItemPhotoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,6 +110,7 @@ func (m *ItemContactsItemPhotoRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property photo in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactsItemPhotoRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, requestConfiguration *ItemContactsItemPhotoRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemContactsItemPhotoRequestBuilder) ToPatchRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemContactsItemPhotoRequestBuilder when successful
 func (m *ItemContactsItemPhotoRequestBuilder) WithUrl(rawUrl string)(*ItemContactsItemPhotoRequestBuilder) {
     return NewItemContactsItemPhotoRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

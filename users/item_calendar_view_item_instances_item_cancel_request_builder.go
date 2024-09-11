@@ -31,6 +31,7 @@ func NewItemCalendarViewItemInstancesItemCancelRequestBuilder(rawUrl string, req
     return NewItemCalendarViewItemInstancesItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post this action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting by providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the followingerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and letsthe organizer send a custom message to the attendees about the cancellation.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -50,6 +51,7 @@ func (m *ItemCalendarViewItemInstancesItemCancelRequestBuilder) Post(ctx context
     return nil
 }
 // ToPostRequestInformation this action allows the organizer of a meeting to send a cancellation message and cancel the event.  The action moves the event to the Deleted Items folder. The organizer can also cancel an occurrence of a recurring meeting by providing the occurrence event ID. An attendee calling this action gets an error (HTTP 400 Bad Request), with the followingerror message: 'Your request can't be completed. You need to be an organizer to cancel a meeting.' This action differs from Delete in that Cancel is available to only the organizer, and letsthe organizer send a custom message to the attendees about the cancellation.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarViewItemInstancesItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCalendarViewItemInstancesItemCancelPostRequestBodyable, requestConfiguration *ItemCalendarViewItemInstancesItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,6 +67,7 @@ func (m *ItemCalendarViewItemInstancesItemCancelRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarViewItemInstancesItemCancelRequestBuilder when successful
 func (m *ItemCalendarViewItemInstancesItemCancelRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarViewItemInstancesItemCancelRequestBuilder) {
     return NewItemCalendarViewItemInstancesItemCancelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

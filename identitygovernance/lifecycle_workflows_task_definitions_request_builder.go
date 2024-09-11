@@ -11,7 +11,7 @@ import (
 type LifecycleWorkflowsTaskDefinitionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsTaskDefinitionsRequestBuilderGetQueryParameters get a list of the taskDefinition objects and their properties.
+// LifecycleWorkflowsTaskDefinitionsRequestBuilderGetQueryParameters get a list of built-in workflow tasks in Lifecycle Workflows. A task is represented by the taskDefinition object.
 type LifecycleWorkflowsTaskDefinitionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewLifecycleWorkflowsTaskDefinitionsRequestBuilder(rawUrl string, requestAd
 func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) Count()(*LifecycleWorkflowsTaskDefinitionsCountRequestBuilder) {
     return NewLifecycleWorkflowsTaskDefinitionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of the taskDefinition objects and their properties.
+// Get get a list of built-in workflow tasks in Lifecycle Workflows. A task is represented by the taskDefinition object.
 // returns a TaskDefinitionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -92,7 +92,7 @@ func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) Get(ctx context.Contex
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.TaskDefinitionCollectionResponseable), nil
 }
-// ToGetRequestInformation get a list of the taskDefinition objects and their properties.
+// ToGetRequestInformation get a list of built-in workflow tasks in Lifecycle Workflows. A task is represented by the taskDefinition object.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsTaskDefinitionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsTaskDefinitionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

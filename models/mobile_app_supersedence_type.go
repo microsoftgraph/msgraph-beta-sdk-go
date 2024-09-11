@@ -7,10 +7,12 @@ const (
     UPDATE_MOBILEAPPSUPERSEDENCETYPE MobileAppSupersedenceType = iota
     // Indicates that the child app should be uninstalled before installing the parent app.
     REPLACE_MOBILEAPPSUPERSEDENCETYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_MOBILEAPPSUPERSEDENCETYPE
 )
 
 func (i MobileAppSupersedenceType) String() string {
-    return []string{"update", "replace"}[i]
+    return []string{"update", "replace", "unknownFutureValue"}[i]
 }
 func ParseMobileAppSupersedenceType(v string) (any, error) {
     result := UPDATE_MOBILEAPPSUPERSEDENCETYPE
@@ -19,6 +21,8 @@ func ParseMobileAppSupersedenceType(v string) (any, error) {
             result = UPDATE_MOBILEAPPSUPERSEDENCETYPE
         case "replace":
             result = REPLACE_MOBILEAPPSUPERSEDENCETYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MOBILEAPPSUPERSEDENCETYPE
         default:
             return nil, nil
     }

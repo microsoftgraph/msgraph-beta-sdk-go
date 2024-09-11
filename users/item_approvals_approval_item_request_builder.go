@@ -55,6 +55,7 @@ func NewItemApprovalsApprovalItemRequestBuilder(rawUrl string, requestAdapter i2
     return NewItemApprovalsApprovalItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property approvals for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemApprovalsApprovalItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemApprovalsApprovalItemRequestBuilder) Delete(ctx context.Context, re
     return nil
 }
 // Get get approvals from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Approvalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemApprovalsApprovalItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemApprovalsApprovalItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, error) {
@@ -91,6 +93,7 @@ func (m *ItemApprovalsApprovalItemRequestBuilder) Get(ctx context.Context, reque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable), nil
 }
 // Patch update the navigation property approvals in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Approvalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemApprovalsApprovalItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, requestConfiguration *ItemApprovalsApprovalItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, error) {
@@ -116,6 +119,7 @@ func (m *ItemApprovalsApprovalItemRequestBuilder) Steps()(*ItemApprovalsItemStep
     return NewItemApprovalsItemStepsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property approvals for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemApprovalsApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemApprovalsApprovalItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,6 +131,7 @@ func (m *ItemApprovalsApprovalItemRequestBuilder) ToDeleteRequestInformation(ctx
     return requestInfo, nil
 }
 // ToGetRequestInformation get approvals from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemApprovalsApprovalItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemApprovalsApprovalItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +146,7 @@ func (m *ItemApprovalsApprovalItemRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property approvals in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemApprovalsApprovalItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Approvalable, requestConfiguration *ItemApprovalsApprovalItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +162,7 @@ func (m *ItemApprovalsApprovalItemRequestBuilder) ToPatchRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemApprovalsApprovalItemRequestBuilder when successful
 func (m *ItemApprovalsApprovalItemRequestBuilder) WithUrl(rawUrl string)(*ItemApprovalsApprovalItemRequestBuilder) {
     return NewItemApprovalsApprovalItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -5,10 +5,12 @@ const (
     BLOCK_FILTERINGPOLICYACTION FilteringPolicyAction = iota
     ALLOW_FILTERINGPOLICYACTION
     UNKNOWNFUTUREVALUE_FILTERINGPOLICYACTION
+    BYPASS_FILTERINGPOLICYACTION
+    ALERT_FILTERINGPOLICYACTION
 )
 
 func (i FilteringPolicyAction) String() string {
-    return []string{"block", "allow", "unknownFutureValue"}[i]
+    return []string{"block", "allow", "unknownFutureValue", "bypass", "alert"}[i]
 }
 func ParseFilteringPolicyAction(v string) (any, error) {
     result := BLOCK_FILTERINGPOLICYACTION
@@ -19,6 +21,10 @@ func ParseFilteringPolicyAction(v string) (any, error) {
             result = ALLOW_FILTERINGPOLICYACTION
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_FILTERINGPOLICYACTION
+        case "bypass":
+            result = BYPASS_FILTERINGPOLICYACTION
+        case "alert":
+            result = ALERT_FILTERINGPOLICYACTION
         default:
             return nil, nil
     }

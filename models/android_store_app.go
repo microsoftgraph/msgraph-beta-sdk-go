@@ -22,18 +22,6 @@ func NewAndroidStoreApp()(*AndroidStoreApp) {
 func CreateAndroidStoreAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidStoreApp(), nil
 }
-// GetAppIdentifier gets the appIdentifier property value. The Identity Name. This property is read-only.
-// returns a *string when successful
-func (m *AndroidStoreApp) GetAppIdentifier()(*string) {
-    val, err := m.GetBackingStore().Get("appIdentifier")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetAppStoreUrl gets the appStoreUrl property value. The Android app store URL.
 // returns a *string when successful
 func (m *AndroidStoreApp) GetAppStoreUrl()(*string) {
@@ -50,16 +38,6 @@ func (m *AndroidStoreApp) GetAppStoreUrl()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AndroidStoreApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileApp.GetFieldDeserializers()
-    res["appIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAppIdentifier(val)
-        }
-        return nil
-    }
     res["appStoreUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -136,13 +114,6 @@ func (m *AndroidStoreApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetAppIdentifier sets the appIdentifier property value. The Identity Name. This property is read-only.
-func (m *AndroidStoreApp) SetAppIdentifier(value *string)() {
-    err := m.GetBackingStore().Set("appIdentifier", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetAppStoreUrl sets the appStoreUrl property value. The Android app store URL.
 func (m *AndroidStoreApp) SetAppStoreUrl(value *string)() {
     err := m.GetBackingStore().Set("appStoreUrl", value)
@@ -167,11 +138,9 @@ func (m *AndroidStoreApp) SetPackageId(value *string)() {
 type AndroidStoreAppable interface {
     MobileAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAppIdentifier()(*string)
     GetAppStoreUrl()(*string)
     GetMinimumSupportedOperatingSystem()(AndroidMinimumOperatingSystemable)
     GetPackageId()(*string)
-    SetAppIdentifier(value *string)()
     SetAppStoreUrl(value *string)()
     SetMinimumSupportedOperatingSystem(value AndroidMinimumOperatingSystemable)()
     SetPackageId(value *string)()

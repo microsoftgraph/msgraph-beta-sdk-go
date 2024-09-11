@@ -142,6 +142,11 @@ func (m *DeviceAppManagementRequestBuilder) MobileAppCategories()(*MobileAppCate
 func (m *DeviceAppManagementRequestBuilder) MobileAppConfigurations()(*MobileAppConfigurationsRequestBuilder) {
     return NewMobileAppConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MobileAppRelationships provides operations to manage the mobileAppRelationships property of the microsoft.graph.deviceAppManagement entity.
+// returns a *MobileAppRelationshipsRequestBuilder when successful
+func (m *DeviceAppManagementRequestBuilder) MobileAppRelationships()(*MobileAppRelationshipsRequestBuilder) {
+    return NewMobileAppRelationshipsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MobileApps provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
 // returns a *MobileAppsRequestBuilder when successful
 func (m *DeviceAppManagementRequestBuilder) MobileApps()(*MobileAppsRequestBuilder) {

@@ -40,9 +40,19 @@ func (m *PartnerSecurity) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["securityScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePartnerSecurityScoreFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurityScore(val.(PartnerSecurityScoreable))
+        }
+        return nil
+    }
     return res
 }
-// GetSecurityAlerts gets the securityAlerts property value. The security alerts or a vulnerability of a CSP partner's customer that the partner must be made aware of for further action.
+// GetSecurityAlerts gets the securityAlerts property value. The security alerts or a vulnerability of a Cloud Solution Provider (CSP) partner's customer that the partner must be made aware of for further action.
 // returns a []PartnerSecurityAlertable when successful
 func (m *PartnerSecurity) GetSecurityAlerts()([]PartnerSecurityAlertable) {
     val, err := m.GetBackingStore().Get("securityAlerts")
@@ -51,6 +61,18 @@ func (m *PartnerSecurity) GetSecurityAlerts()([]PartnerSecurityAlertable) {
     }
     if val != nil {
         return val.([]PartnerSecurityAlertable)
+    }
+    return nil
+}
+// GetSecurityScore gets the securityScore property value. The security score calculated for the CSP partner and their customers.
+// returns a PartnerSecurityScoreable when successful
+func (m *PartnerSecurity) GetSecurityScore()(PartnerSecurityScoreable) {
+    val, err := m.GetBackingStore().Get("securityScore")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PartnerSecurityScoreable)
     }
     return nil
 }
@@ -72,11 +94,24 @@ func (m *PartnerSecurity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("securityScore", m.GetSecurityScore())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
-// SetSecurityAlerts sets the securityAlerts property value. The security alerts or a vulnerability of a CSP partner's customer that the partner must be made aware of for further action.
+// SetSecurityAlerts sets the securityAlerts property value. The security alerts or a vulnerability of a Cloud Solution Provider (CSP) partner's customer that the partner must be made aware of for further action.
 func (m *PartnerSecurity) SetSecurityAlerts(value []PartnerSecurityAlertable)() {
     err := m.GetBackingStore().Set("securityAlerts", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSecurityScore sets the securityScore property value. The security score calculated for the CSP partner and their customers.
+func (m *PartnerSecurity) SetSecurityScore(value PartnerSecurityScoreable)() {
+    err := m.GetBackingStore().Set("securityScore", value)
     if err != nil {
         panic(err)
     }
@@ -85,5 +120,7 @@ type PartnerSecurityable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetSecurityAlerts()([]PartnerSecurityAlertable)
+    GetSecurityScore()(PartnerSecurityScoreable)
     SetSecurityAlerts(value []PartnerSecurityAlertable)()
+    SetSecurityScore(value PartnerSecurityScoreable)()
 }

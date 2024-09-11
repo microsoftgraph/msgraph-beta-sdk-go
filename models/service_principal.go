@@ -1267,7 +1267,7 @@ func (m *ServicePrincipal) GetPermissionGrantPreApprovalPolicies()([]PermissionG
     }
     return nil
 }
-// GetPreferredSingleSignOnMode gets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
+// GetPreferredSingleSignOnMode gets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc. Note: This field might be null for older SAML apps and for OIDC applications where it isn't set automatically.
 // returns a *string when successful
 func (m *ServicePrincipal) GetPreferredSingleSignOnMode()(*string) {
     val, err := m.GetBackingStore().Get("preferredSingleSignOnMode")
@@ -2275,7 +2275,7 @@ func (m *ServicePrincipal) SetPermissionGrantPreApprovalPolicies(value []Permiss
         panic(err)
     }
 }
-// SetPreferredSingleSignOnMode sets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc.
+// SetPreferredSingleSignOnMode sets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Microsoft Entra ID uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Microsoft Entra My Apps. The supported values are password, saml, notSupported, and oidc. Note: This field might be null for older SAML apps and for OIDC applications where it isn't set automatically.
 func (m *ServicePrincipal) SetPreferredSingleSignOnMode(value *string)() {
     err := m.GetBackingStore().Set("preferredSingleSignOnMode", value)
     if err != nil {

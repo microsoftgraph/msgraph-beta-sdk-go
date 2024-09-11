@@ -55,6 +55,7 @@ func NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder(
     return NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property contacts for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -76,6 +77,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     return NewItemContactFoldersItemChildFoldersItemContactsItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the contacts in the folder. Navigation property. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Contactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, error) {
@@ -96,6 +98,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable), nil
 }
 // Patch update the navigation property contacts in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Contactable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, error) {
@@ -115,12 +118,18 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable), nil
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemContactFoldersItemChildFoldersItemContactsItemPermanentDeleteRequestBuilder when successful
+func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) PermanentDelete()(*ItemContactFoldersItemChildFoldersItemContactsItemPermanentDeleteRequestBuilder) {
+    return NewItemContactFoldersItemChildFoldersItemContactsItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Photo provides operations to manage the photo property of the microsoft.graph.contact entity.
 // returns a *ItemContactFoldersItemChildFoldersItemContactsItemPhotoRequestBuilder when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) Photo()(*ItemContactFoldersItemChildFoldersItemContactsItemPhotoRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsItemPhotoRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property contacts for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,6 +141,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     return requestInfo, nil
 }
 // ToGetRequestInformation the contacts in the folder. Navigation property. Read-only. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +156,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property contacts in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Contactable, requestConfiguration *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -161,6 +172,7 @@ func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder when successful
 func (m *ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemContactsContactItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

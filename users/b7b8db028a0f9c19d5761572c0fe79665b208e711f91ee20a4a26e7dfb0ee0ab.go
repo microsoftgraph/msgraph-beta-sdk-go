@@ -60,6 +60,7 @@ func NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentReque
     return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property userConsentRequests for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -76,6 +77,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     return nil
 }
 // Get a list of pending user consent requests. Supports $filter (eq).
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserConsentRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, error) {
@@ -96,6 +98,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable), nil
 }
 // Patch update the navigation property userConsentRequests in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserConsentRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, error) {
@@ -116,6 +119,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable), nil
 }
 // ToDeleteRequestInformation delete navigation property userConsentRequests for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,6 +131,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation a list of pending user consent requests. Supports $filter (eq).
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +146,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property userConsentRequests in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConsentRequestable, requestConfiguration *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +162,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder when successful
 func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) WithUrl(rawUrl string)(*ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder) {
     return NewItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequestItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

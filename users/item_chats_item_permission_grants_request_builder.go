@@ -47,6 +47,7 @@ type ItemChatsItemPermissionGrantsRequestBuilderPostRequestConfiguration struct 
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByResourceSpecificPermissionGrantId provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder when successful
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) ByResourceSpecificPermissionGrantId(resourceSpecificPermissionGrantId string)(*ItemChatsItemPermissionGrantsResourceSpecificPermissionGrantItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) Count()(*ItemChatsItemPerm
     return NewItemChatsItemPermissionGrantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a collection of permissions granted to apps for the chat.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ResourceSpecificPermissionGrantCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemPermissionGrantsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) Get(ctx context.Context, r
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantCollectionResponseable), nil
 }
 // Post create new navigation property to permissionGrants for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ResourceSpecificPermissionGrantable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, requestConfiguration *ItemChatsItemPermissionGrantsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, error) {
@@ -117,6 +120,7 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) Post(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable), nil
 }
 // ToGetRequestInformation a collection of permissions granted to apps for the chat.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemPermissionGrantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to permissionGrants for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ResourceSpecificPermissionGrantable, requestConfiguration *ItemChatsItemPermissionGrantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemChatsItemPermissionGrantsRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemPermissionGrantsRequestBuilder when successful
 func (m *ItemChatsItemPermissionGrantsRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemPermissionGrantsRequestBuilder) {
     return NewItemChatsItemPermissionGrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

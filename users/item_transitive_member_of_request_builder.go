@@ -40,6 +40,7 @@ type ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemTransitiveMemberOfRequestBuilderGetQueryParameters
 }
 // ByDirectoryObjectId provides operations to manage the transitiveMemberOf property of the microsoft.graph.user entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder when successful
 func (m *ItemTransitiveMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *ItemTransitiveMemberOfRequestBuilder) Count()(*ItemTransitiveMemberOfCo
     return NewItemTransitiveMemberOfCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -108,6 +110,7 @@ func (m *ItemTransitiveMemberOfRequestBuilder) GraphGroup()(*ItemTransitiveMembe
     return NewItemTransitiveMemberOfGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTransitiveMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +125,7 @@ func (m *ItemTransitiveMemberOfRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTransitiveMemberOfRequestBuilder when successful
 func (m *ItemTransitiveMemberOfRequestBuilder) WithUrl(rawUrl string)(*ItemTransitiveMemberOfRequestBuilder) {
     return NewItemTransitiveMemberOfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

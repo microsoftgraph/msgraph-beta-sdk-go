@@ -47,6 +47,7 @@ type ItemChatsItemPinnedMessagesRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPinnedChatMessageInfoId provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder when successful
 func (m *ItemChatsItemPinnedMessagesRequestBuilder) ByPinnedChatMessageInfoId(pinnedChatMessageInfoId string)(*ItemChatsItemPinnedMessagesPinnedChatMessageInfoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemChatsItemPinnedMessagesRequestBuilder) Count()(*ItemChatsItemPinned
     return NewItemChatsItemPinnedMessagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get a collection of all the pinned messages in the chat. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PinnedChatMessageInfoCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemPinnedMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChatsItemPinnedMessagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemChatsItemPinnedMessagesRequestBuilder) Get(ctx context.Context, req
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoCollectionResponseable), nil
 }
 // Post create new navigation property to pinnedMessages for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PinnedChatMessageInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemPinnedMessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoable, requestConfiguration *ItemChatsItemPinnedMessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoable, error) {
@@ -117,6 +120,7 @@ func (m *ItemChatsItemPinnedMessagesRequestBuilder) Post(ctx context.Context, bo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoable), nil
 }
 // ToGetRequestInformation a collection of all the pinned messages in the chat. Nullable.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemPinnedMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemPinnedMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,6 +135,7 @@ func (m *ItemChatsItemPinnedMessagesRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to pinnedMessages for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemPinnedMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PinnedChatMessageInfoable, requestConfiguration *ItemChatsItemPinnedMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,6 +151,7 @@ func (m *ItemChatsItemPinnedMessagesRequestBuilder) ToPostRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemPinnedMessagesRequestBuilder when successful
 func (m *ItemChatsItemPinnedMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemPinnedMessagesRequestBuilder) {
     return NewItemChatsItemPinnedMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

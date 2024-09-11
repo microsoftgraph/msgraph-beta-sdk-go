@@ -40,6 +40,7 @@ type ItemDevicesItemTransitiveMemberOfRequestBuilderGetRequestConfiguration stru
     QueryParameters *ItemDevicesItemTransitiveMemberOfRequestBuilderGetQueryParameters
 }
 // ByDirectoryObjectId provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDevicesItemTransitiveMemberOfDirectoryObjectItemRequestBuilder when successful
 func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemDevicesItemTransitiveMemberOfDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -70,6 +71,7 @@ func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) Count()(*ItemDevicesIt
     return NewItemDevicesItemTransitiveMemberOfCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) GraphGroup()(*ItemDevi
     return NewItemDevicesItemTransitiveMemberOfGraphGroupRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemTransitiveMemberOfRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -114,6 +117,7 @@ func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDevicesItemTransitiveMemberOfRequestBuilder when successful
 func (m *ItemDevicesItemTransitiveMemberOfRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesItemTransitiveMemberOfRequestBuilder) {
     return NewItemDevicesItemTransitiveMemberOfRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

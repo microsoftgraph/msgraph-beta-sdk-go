@@ -55,6 +55,7 @@ func NewItemDevicesItemCommandsCommandItemRequestBuilder(rawUrl string, requestA
     return NewItemDevicesItemCommandsCommandItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property commands for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDevicesItemCommandsCommandItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) Delete(ctx context.Co
     return nil
 }
 // Get set of commands sent to this device.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Commandable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesItemCommandsCommandItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable, error) {
@@ -91,6 +93,7 @@ func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) Get(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable), nil
 }
 // Patch update the navigation property commands in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Commandable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable, requestConfiguration *ItemDevicesItemCommandsCommandItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable, error) {
@@ -116,6 +119,7 @@ func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) Responsepayload()(*It
     return NewItemDevicesItemCommandsItemResponsepayloadRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property commands for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemCommandsCommandItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,6 +131,7 @@ func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) ToDeleteRequestInform
     return requestInfo, nil
 }
 // ToGetRequestInformation set of commands sent to this device.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemCommandsCommandItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +146,7 @@ func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property commands in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Commandable, requestConfiguration *ItemDevicesItemCommandsCommandItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +162,7 @@ func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) ToPatchRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDevicesItemCommandsCommandItemRequestBuilder when successful
 func (m *ItemDevicesItemCommandsCommandItemRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesItemCommandsCommandItemRequestBuilder) {
     return NewItemDevicesItemCommandsCommandItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

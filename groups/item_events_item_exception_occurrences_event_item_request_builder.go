@@ -105,6 +105,11 @@ func (m *ItemEventsItemExceptionOccurrencesEventItemRequestBuilder) Get(ctx cont
 func (m *ItemEventsItemExceptionOccurrencesEventItemRequestBuilder) Instances()(*ItemEventsItemExceptionOccurrencesItemInstancesRequestBuilder) {
     return NewItemEventsItemExceptionOccurrencesItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PermanentDelete provides operations to call the permanentDelete method.
+// returns a *ItemEventsItemExceptionOccurrencesItemPermanentDeleteRequestBuilder when successful
+func (m *ItemEventsItemExceptionOccurrencesEventItemRequestBuilder) PermanentDelete()(*ItemEventsItemExceptionOccurrencesItemPermanentDeleteRequestBuilder) {
+    return NewItemEventsItemExceptionOccurrencesItemPermanentDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SnoozeReminder provides operations to call the snoozeReminder method.
 // returns a *ItemEventsItemExceptionOccurrencesItemSnoozeReminderRequestBuilder when successful
 func (m *ItemEventsItemExceptionOccurrencesEventItemRequestBuilder) SnoozeReminder()(*ItemEventsItemExceptionOccurrencesItemSnoozeReminderRequestBuilder) {

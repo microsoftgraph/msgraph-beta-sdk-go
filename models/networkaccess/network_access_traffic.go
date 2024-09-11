@@ -3,6 +3,7 @@ package networkaccess
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -173,6 +174,18 @@ func (m *NetworkAccessTraffic) GetDestinationWebCategory()(WebCategoryable) {
     }
     return nil
 }
+// GetDevice gets the device property value. The device property
+// returns a Deviceable when successful
+func (m *NetworkAccessTraffic) GetDevice()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable) {
+    val, err := m.GetBackingStore().Get("device")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable)
+    }
+    return nil
+}
 // GetDeviceCategory gets the deviceCategory property value. Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.
 // returns a *DeviceCategory when successful
 func (m *NetworkAccessTraffic) GetDeviceCategory()(*DeviceCategory) {
@@ -332,6 +345,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetDestinationWebCategory(val.(WebCategoryable))
+        }
+        return nil
+    }
+    res["device"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateDeviceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDevice(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable))
         }
         return nil
     }
@@ -592,6 +615,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetTransportProtocol(val.(*NetworkingProtocol))
+        }
+        return nil
+    }
+    res["user"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUser(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable))
         }
         return nil
     }
@@ -897,6 +930,18 @@ func (m *NetworkAccessTraffic) GetTransportProtocol()(*NetworkingProtocol) {
     }
     return nil
 }
+// GetUser gets the user property value. The user property
+// returns a Userable when successful
+func (m *NetworkAccessTraffic) GetUser()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable) {
+    val, err := m.GetBackingStore().Get("user")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
+    }
+    return nil
+}
 // GetUserId gets the userId property value. Represents a unique identifier assigned to a user. Supports $filter (eq) and $orderby.
 // returns a *string when successful
 func (m *NetworkAccessTraffic) GetUserId()(*string) {
@@ -998,6 +1043,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteObjectValue("destinationWebCategory", m.GetDestinationWebCategory())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("device", m.GetDevice())
         if err != nil {
             return err
         }
@@ -1163,6 +1214,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteObjectValue("user", m.GetUser())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
@@ -1272,6 +1329,13 @@ func (m *NetworkAccessTraffic) SetDestinationUrl(value *string)() {
 // SetDestinationWebCategory sets the destinationWebCategory property value. The destinationWebCategory property
 func (m *NetworkAccessTraffic) SetDestinationWebCategory(value WebCategoryable)() {
     err := m.GetBackingStore().Set("destinationWebCategory", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDevice sets the device property value. The device property
+func (m *NetworkAccessTraffic) SetDevice(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable)() {
+    err := m.GetBackingStore().Set("device", value)
     if err != nil {
         panic(err)
     }
@@ -1458,6 +1522,13 @@ func (m *NetworkAccessTraffic) SetTransportProtocol(value *NetworkingProtocol)()
         panic(err)
     }
 }
+// SetUser sets the user property value. The user property
+func (m *NetworkAccessTraffic) SetUser(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)() {
+    err := m.GetBackingStore().Set("user", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserId sets the userId property value. Represents a unique identifier assigned to a user. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
@@ -1495,6 +1566,7 @@ type NetworkAccessTrafficable interface {
     GetDestinationPort()(*int32)
     GetDestinationUrl()(*string)
     GetDestinationWebCategory()(WebCategoryable)
+    GetDevice()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable)
     GetDeviceCategory()(*DeviceCategory)
     GetDeviceId()(*string)
     GetDeviceOperatingSystem()(*string)
@@ -1521,6 +1593,7 @@ type NetworkAccessTrafficable interface {
     GetTrafficType()(*TrafficType)
     GetTransactionId()(*string)
     GetTransportProtocol()(*NetworkingProtocol)
+    GetUser()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)
     GetUserId()(*string)
     GetUserPrincipalName()(*string)
     GetVendorNames()([]string)
@@ -1536,6 +1609,7 @@ type NetworkAccessTrafficable interface {
     SetDestinationPort(value *int32)()
     SetDestinationUrl(value *string)()
     SetDestinationWebCategory(value WebCategoryable)()
+    SetDevice(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable)()
     SetDeviceCategory(value *DeviceCategory)()
     SetDeviceId(value *string)()
     SetDeviceOperatingSystem(value *string)()
@@ -1562,6 +1636,7 @@ type NetworkAccessTrafficable interface {
     SetTrafficType(value *TrafficType)()
     SetTransactionId(value *string)()
     SetTransportProtocol(value *NetworkingProtocol)()
+    SetUser(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable)()
     SetUserId(value *string)()
     SetUserPrincipalName(value *string)()
     SetVendorNames(value []string)()

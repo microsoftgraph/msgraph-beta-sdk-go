@@ -75,6 +75,36 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["v12_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetV120(val)
+        }
+        return nil
+    }
+    res["v13_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetV130(val)
+        }
+        return nil
+    }
+    res["v14_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetV140(val)
+        }
+        return nil
+    }
     res["v4_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -245,6 +275,42 @@ func (m *AndroidMinimumOperatingSystem) GetV100()(*bool) {
 // returns a *bool when successful
 func (m *AndroidMinimumOperatingSystem) GetV110()(*bool) {
     val, err := m.GetBackingStore().Get("v11_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetV120 gets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
+func (m *AndroidMinimumOperatingSystem) GetV120()(*bool) {
+    val, err := m.GetBackingStore().Get("v12_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetV130 gets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
+func (m *AndroidMinimumOperatingSystem) GetV130()(*bool) {
+    val, err := m.GetBackingStore().Get("v13_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetV140 gets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
+func (m *AndroidMinimumOperatingSystem) GetV140()(*bool) {
+    val, err := m.GetBackingStore().Get("v14_0")
     if err != nil {
         panic(err)
     }
@@ -442,6 +508,24 @@ func (m *AndroidMinimumOperatingSystem) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err := writer.WriteBoolValue("v12_0", m.GetV120())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("v13_0", m.GetV130())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("v14_0", m.GetV140())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("v4_0", m.GetV40())
         if err != nil {
             return err
@@ -565,6 +649,27 @@ func (m *AndroidMinimumOperatingSystem) SetV110(value *bool)() {
         panic(err)
     }
 }
+// SetV120 sets the v12_0 property value. When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV120(value *bool)() {
+    err := m.GetBackingStore().Set("v12_0", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetV130 sets the v13_0 property value. When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV130(value *bool)() {
+    err := m.GetBackingStore().Set("v13_0", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetV140 sets the v14_0 property value. When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV140(value *bool)() {
+    err := m.GetBackingStore().Set("v14_0", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetV40 sets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV40(value *bool)() {
     err := m.GetBackingStore().Set("v4_0", value)
@@ -671,6 +776,9 @@ type AndroidMinimumOperatingSystemable interface {
     GetOdataType()(*string)
     GetV100()(*bool)
     GetV110()(*bool)
+    GetV120()(*bool)
+    GetV130()(*bool)
+    GetV140()(*bool)
     GetV40()(*bool)
     GetV403()(*bool)
     GetV41()(*bool)
@@ -689,6 +797,9 @@ type AndroidMinimumOperatingSystemable interface {
     SetOdataType(value *string)()
     SetV100(value *bool)()
     SetV110(value *bool)()
+    SetV120(value *bool)()
+    SetV130(value *bool)()
+    SetV140(value *bool)()
     SetV40(value *bool)()
     SetV403(value *bool)()
     SetV41(value *bool)()

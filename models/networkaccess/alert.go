@@ -190,12 +190,12 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         return nil
     }
     res["severity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseThreatSeverity)
+        val, err := n.GetEnumValue(ParseAlertSeverity)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSeverity(val.(*ThreatSeverity))
+            m.SetSeverity(val.(*AlertSeverity))
         }
         return nil
     }
@@ -236,14 +236,14 @@ func (m *Alert) GetRelatedResources()([]RelatedResourceable) {
     return nil
 }
 // GetSeverity gets the severity property value. The severity property
-// returns a *ThreatSeverity when successful
-func (m *Alert) GetSeverity()(*ThreatSeverity) {
+// returns a *AlertSeverity when successful
+func (m *Alert) GetSeverity()(*AlertSeverity) {
     val, err := m.GetBackingStore().Get("severity")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*ThreatSeverity)
+        return val.(*AlertSeverity)
     }
     return nil
 }
@@ -398,7 +398,7 @@ func (m *Alert) SetRelatedResources(value []RelatedResourceable)() {
     }
 }
 // SetSeverity sets the severity property value. The severity property
-func (m *Alert) SetSeverity(value *ThreatSeverity)() {
+func (m *Alert) SetSeverity(value *AlertSeverity)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {
         panic(err)
@@ -422,7 +422,7 @@ type Alertable interface {
     GetDisplayName()(*string)
     GetPolicy()(FilteringPolicyable)
     GetRelatedResources()([]RelatedResourceable)
-    GetSeverity()(*ThreatSeverity)
+    GetSeverity()(*AlertSeverity)
     GetVendorName()(*string)
     SetActions(value []AlertActionable)()
     SetAlertType(value *AlertType)()
@@ -432,6 +432,6 @@ type Alertable interface {
     SetDisplayName(value *string)()
     SetPolicy(value FilteringPolicyable)()
     SetRelatedResources(value []RelatedResourceable)()
-    SetSeverity(value *ThreatSeverity)()
+    SetSeverity(value *AlertSeverity)()
     SetVendorName(value *string)()
 }

@@ -55,6 +55,7 @@ func NewItemCloudClipboardRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewItemCloudClipboardRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property cloudClipboard for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudClipboardRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemCloudClipboardRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemCloudClipboardRequestBuilder) Delete(ctx context.Context, requestCo
     return nil
 }
 // Get get cloudClipboard from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CloudClipboardRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudClipboardRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudClipboardRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardRootable, error) {
@@ -96,6 +98,7 @@ func (m *ItemCloudClipboardRequestBuilder) Items()(*ItemCloudClipboardItemsReque
     return NewItemCloudClipboardItemsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property cloudClipboard in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CloudClipboardRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudClipboardRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardRootable, requestConfiguration *ItemCloudClipboardRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardRootable, error) {
@@ -116,6 +119,7 @@ func (m *ItemCloudClipboardRequestBuilder) Patch(ctx context.Context, body ie233
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardRootable), nil
 }
 // ToDeleteRequestInformation delete navigation property cloudClipboard for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudClipboardRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemCloudClipboardRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,6 +131,7 @@ func (m *ItemCloudClipboardRequestBuilder) ToDeleteRequestInformation(ctx contex
     return requestInfo, nil
 }
 // ToGetRequestInformation get cloudClipboard from users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudClipboardRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudClipboardRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +146,7 @@ func (m *ItemCloudClipboardRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property cloudClipboard in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudClipboardRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudClipboardRootable, requestConfiguration *ItemCloudClipboardRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +162,7 @@ func (m *ItemCloudClipboardRequestBuilder) ToPatchRequestInformation(ctx context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudClipboardRequestBuilder when successful
 func (m *ItemCloudClipboardRequestBuilder) WithUrl(rawUrl string)(*ItemCloudClipboardRequestBuilder) {
     return NewItemCloudClipboardRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

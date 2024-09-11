@@ -47,6 +47,18 @@ func (m *PrivateAccessDetails) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetAppSegmentId gets the appSegmentId property value. The appSegmentId property
+// returns a *string when successful
+func (m *PrivateAccessDetails) GetAppSegmentId()(*string) {
+    val, err := m.GetBackingStore().Get("appSegmentId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *PrivateAccessDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -111,6 +123,16 @@ func (m *PrivateAccessDetails) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetAccessType(val.(*AccessType))
+        }
+        return nil
+    }
+    res["appSegmentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppSegmentId(val)
         }
         return nil
     }
@@ -231,6 +253,12 @@ func (m *PrivateAccessDetails) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err := writer.WriteStringValue("appSegmentId", m.GetAppSegmentId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetConnectionStatus() != nil {
         cast := (*m.GetConnectionStatus()).String()
         err := writer.WriteStringValue("connectionStatus", &cast)
@@ -296,6 +324,13 @@ func (m *PrivateAccessDetails) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
+// SetAppSegmentId sets the appSegmentId property value. The appSegmentId property
+func (m *PrivateAccessDetails) SetAppSegmentId(value *string)() {
+    err := m.GetBackingStore().Set("appSegmentId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *PrivateAccessDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -354,6 +389,7 @@ type PrivateAccessDetailsable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccessType()(*AccessType)
+    GetAppSegmentId()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetConnectionStatus()(*ConnectionStatus)
     GetConnectorId()(*string)
@@ -363,6 +399,7 @@ type PrivateAccessDetailsable interface {
     GetProcessingRegion()(*string)
     GetThirdPartyTokenDetails()(ThirdPartyTokenDetailsable)
     SetAccessType(value *AccessType)()
+    SetAppSegmentId(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetConnectionStatus(value *ConnectionStatus)()
     SetConnectorId(value *string)()

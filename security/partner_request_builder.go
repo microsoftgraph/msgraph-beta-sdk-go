@@ -115,6 +115,11 @@ func (m *PartnerRequestBuilder) Patch(ctx context.Context, body if063350b43a6e62
 func (m *PartnerRequestBuilder) SecurityAlerts()(*PartnerSecurityAlertsRequestBuilder) {
     return NewPartnerSecurityAlertsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SecurityScore provides operations to manage the securityScore property of the microsoft.graph.partner.security.partnerSecurity entity.
+// returns a *PartnerSecurityScoreRequestBuilder when successful
+func (m *PartnerRequestBuilder) SecurityScore()(*PartnerSecurityScoreRequestBuilder) {
+    return NewPartnerSecurityScoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property partner for security
 // returns a *RequestInformation when successful
 func (m *PartnerRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PartnerRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

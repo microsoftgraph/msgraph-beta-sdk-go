@@ -45,6 +45,7 @@ func NewItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder(rawU
     return NewItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -61,6 +62,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) De
     return nil
 }
 // Get the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -81,6 +83,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) Ge
     return res.([]byte), nil
 }
 // Put the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -101,6 +104,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) Pu
     return res.([]byte), nil
 }
 // ToDeleteRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -112,6 +116,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) To
     return requestInfo, nil
 }
 // ToGetRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -123,6 +128,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) To
     return requestInfo, nil
 }
 // ToPutRequestInformation the unique identifier for an entity. Read-only.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,6 +141,7 @@ func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder when successful
 func (m *ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentsItemValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

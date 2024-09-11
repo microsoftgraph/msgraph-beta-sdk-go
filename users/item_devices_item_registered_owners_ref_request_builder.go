@@ -70,6 +70,7 @@ func NewItemDevicesItemRegisteredOwnersRefRequestBuilder(rawUrl string, requestA
     return NewItemDevicesItemRegisteredOwnersRefRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete ref of navigation property registeredOwners for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -86,6 +87,7 @@ func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) Delete(ctx context.Co
     return nil
 }
 // Get the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a StringCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredOwnersRefRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable, error) {
@@ -106,6 +108,7 @@ func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) Get(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.StringCollectionResponseable), nil
 }
 // Post create new navigation property ref to registeredOwners for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemDevicesItemRegisteredOwnersRefRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -122,6 +125,7 @@ func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) Post(ctx context.Cont
     return nil
 }
 // ToDeleteRequestInformation delete ref of navigation property registeredOwners for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredOwnersRefRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredOwners/$ref?@id={%40id}", m.BaseRequestBuilder.PathParameters)
@@ -136,6 +140,7 @@ func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) ToDeleteRequestInform
     return requestInfo, nil
 }
 // ToGetRequestInformation the user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesItemRegisteredOwnersRefRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredOwners/$ref{?%24count,%24filter,%24orderby,%24search,%24skip,%24top}", m.BaseRequestBuilder.PathParameters)
@@ -150,6 +155,7 @@ func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property ref to registeredOwners for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReferenceCreateable, requestConfiguration *ItemDevicesItemRegisteredOwnersRefRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/registeredOwners/$ref", m.BaseRequestBuilder.PathParameters)
@@ -165,6 +171,7 @@ func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDevicesItemRegisteredOwnersRefRequestBuilder when successful
 func (m *ItemDevicesItemRegisteredOwnersRefRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesItemRegisteredOwnersRefRequestBuilder) {
     return NewItemDevicesItemRegisteredOwnersRefRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

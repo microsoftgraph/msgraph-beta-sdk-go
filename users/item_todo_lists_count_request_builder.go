@@ -40,6 +40,7 @@ func NewItemTodoListsCountRequestBuilder(rawUrl string, requestAdapter i2ae4187f
     return NewItemTodoListsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -60,6 +61,7 @@ func (m *ItemTodoListsCountRequestBuilder) Get(ctx context.Context, requestConfi
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -74,6 +76,7 @@ func (m *ItemTodoListsCountRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTodoListsCountRequestBuilder when successful
 func (m *ItemTodoListsCountRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsCountRequestBuilder) {
     return NewItemTodoListsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

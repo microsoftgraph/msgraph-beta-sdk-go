@@ -55,6 +55,7 @@ func NewItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilde
     return NewItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes a user's email Authentication Method object.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -74,6 +75,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     return nil
 }
 // Get represents the email addresses registered to a user for authentication.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a EmailAuthenticationMethodable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable, error) {
@@ -94,6 +96,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable), nil
 }
 // Patch update a user's email address associated with an email Authentication Method object.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a EmailAuthenticationMethodable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -117,6 +120,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable), nil
 }
 // ToDeleteRequestInformation deletes a user's email Authentication Method object.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,6 +132,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the email addresses registered to a user for authentication.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -142,6 +147,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     return requestInfo, nil
 }
 // ToPatchRequestInformation update a user's email address associated with an email Authentication Method object.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EmailAuthenticationMethodable, requestConfiguration *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,6 +163,7 @@ func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder when successful
 func (m *ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder) {
     return NewItemAuthenticationEmailMethodsEmailAuthenticationMethodItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

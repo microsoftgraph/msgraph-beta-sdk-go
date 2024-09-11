@@ -59,7 +59,7 @@ func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) GetRegionGroup()(
     }
     return nil
 }
-// GetRegionName gets the regionName property value. The regionName property
+// GetRegionName gets the regionName property value. Indicates the Azure region that the new Cloud PC is assigned to. The Windows 365 service creates and manages the underlying virtual network.
 // returns a *string when successful
 func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) GetRegionName()(*string) {
     val, err := m.GetBackingStore().Get("regionName")
@@ -99,7 +99,7 @@ func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) SetRegionGroup(va
         panic(err)
     }
 }
-// SetRegionName sets the regionName property value. The regionName property
+// SetRegionName sets the regionName property value. Indicates the Azure region that the new Cloud PC is assigned to. The Windows 365 service creates and manages the underlying virtual network.
 func (m *CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting) SetRegionName(value *string)() {
     err := m.GetBackingStore().Set("regionName", value)
     if err != nil {

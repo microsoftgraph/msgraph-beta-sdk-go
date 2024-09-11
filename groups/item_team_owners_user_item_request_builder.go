@@ -41,6 +41,7 @@ func NewItemTeamOwnersUserItemRequestBuilder(rawUrl string, requestAdapter i2ae4
     return NewItemTeamOwnersUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamOwnersUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamOwnersUserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
@@ -71,6 +72,7 @@ func (m *ItemTeamOwnersUserItemRequestBuilder) ServiceProvisioningErrors()(*Item
     return NewItemTeamOwnersItemServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTeamOwnersUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamOwnersUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -85,6 +87,7 @@ func (m *ItemTeamOwnersUserItemRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTeamOwnersUserItemRequestBuilder when successful
 func (m *ItemTeamOwnersUserItemRequestBuilder) WithUrl(rawUrl string)(*ItemTeamOwnersUserItemRequestBuilder) {
     return NewItemTeamOwnersUserItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

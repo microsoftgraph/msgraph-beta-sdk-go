@@ -71,7 +71,7 @@ func (m *Application) GetAppRoles()([]AppRoleable) {
     }
     return nil
 }
-// GetAuthenticationBehaviors gets the authenticationBehaviors property value. The collection of authentication behaviors set for the application. Authentication behaviors are unset by default and must be explicitly enabled (or disabled). Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
+// GetAuthenticationBehaviors gets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
 // returns a AuthenticationBehaviorsable when successful
 func (m *Application) GetAuthenticationBehaviors()(AuthenticationBehaviorsable) {
     val, err := m.GetBackingStore().Get("authenticationBehaviors")
@@ -1554,7 +1554,7 @@ func (m *Application) SetAppRoles(value []AppRoleable)() {
         panic(err)
     }
 }
-// SetAuthenticationBehaviors sets the authenticationBehaviors property value. The collection of authentication behaviors set for the application. Authentication behaviors are unset by default and must be explicitly enabled (or disabled). Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
+// SetAuthenticationBehaviors sets the authenticationBehaviors property value. The collection of breaking change behaviors related to token issuance that are configured for the application. Authentication behaviors are unset by default (null) and must be explicitly enabled or disabled. Nullable. Returned only on $select.  For more information about authentication behaviors, see Manage application authenticationBehaviors to avoid unverified use of email claims for user identification or authorization.
 func (m *Application) SetAuthenticationBehaviors(value AuthenticationBehaviorsable)() {
     err := m.GetBackingStore().Set("authenticationBehaviors", value)
     if err != nil {

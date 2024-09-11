@@ -47,6 +47,7 @@ type ItemDeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration st
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByDeviceEnrollmentConfigurationId provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder when successful
 func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) ByDeviceEnrollmentConfigurationId(deviceEnrollmentConfigurationId string)(*ItemDeviceEnrollmentConfigurationsDeviceEnrollmentConfigurationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -82,6 +83,7 @@ func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) CreateEnrollmentNotif
     return NewItemDeviceEnrollmentConfigurationsCreateEnrollmentNotificationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get enrollment configurations targeted to the user
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DeviceEnrollmentConfigurationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationCollectionResponseable, error) {
@@ -107,6 +109,7 @@ func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) HasPayloadLinks()(*It
     return NewItemDeviceEnrollmentConfigurationsHasPayloadLinksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to deviceEnrollmentConfigurations for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DeviceEnrollmentConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *ItemDeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, error) {
@@ -127,6 +130,7 @@ func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) Post(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable), nil
 }
 // ToGetRequestInformation get enrollment configurations targeted to the user
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +145,7 @@ func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to deviceEnrollmentConfigurations for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceEnrollmentConfigurationable, requestConfiguration *ItemDeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +161,7 @@ func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDeviceEnrollmentConfigurationsRequestBuilder when successful
 func (m *ItemDeviceEnrollmentConfigurationsRequestBuilder) WithUrl(rawUrl string)(*ItemDeviceEnrollmentConfigurationsRequestBuilder) {
     return NewItemDeviceEnrollmentConfigurationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

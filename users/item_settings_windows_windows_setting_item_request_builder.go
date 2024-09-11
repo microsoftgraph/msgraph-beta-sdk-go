@@ -55,6 +55,7 @@ func NewItemSettingsWindowsWindowsSettingItemRequestBuilder(rawUrl string, reque
     return NewItemSettingsWindowsWindowsSettingItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property windows for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsWindowsWindowsSettingItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) Delete(ctx context
     return nil
 }
 // Get the Windows settings of the user stored in the cloud.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WindowsSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsWindowsWindowsSettingItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingable, error) {
@@ -96,6 +98,7 @@ func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) Instances()(*ItemS
     return NewItemSettingsWindowsItemInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property windows in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WindowsSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingable, requestConfiguration *ItemSettingsWindowsWindowsSettingItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingable, error) {
@@ -116,6 +119,7 @@ func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) Patch(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingable), nil
 }
 // ToDeleteRequestInformation delete navigation property windows for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWindowsWindowsSettingItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,6 +131,7 @@ func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) ToDeleteRequestInf
     return requestInfo, nil
 }
 // ToGetRequestInformation the Windows settings of the user stored in the cloud.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWindowsWindowsSettingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,6 +146,7 @@ func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property windows in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingable, requestConfiguration *ItemSettingsWindowsWindowsSettingItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,6 +162,7 @@ func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) ToPatchRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsWindowsWindowsSettingItemRequestBuilder when successful
 func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsWindowsWindowsSettingItemRequestBuilder) {
     return NewItemSettingsWindowsWindowsSettingItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -70,6 +70,11 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Delete(ct
     }
     return nil
 }
+// Device provides operations to manage the device property of the microsoft.graph.networkaccess.networkAccessTraffic entity.
+// returns a *LogsTrafficItemDeviceRequestBuilder when successful
+func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) Device()(*LogsTrafficItemDeviceRequestBuilder) {
+    return NewLogsTrafficItemDeviceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get a network access traffic log entry that contains comprehensive information about network traffic events.
 // returns a NetworkAccessTrafficable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -149,6 +154,11 @@ func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) ToPatchRe
         return nil, err
     }
     return requestInfo, nil
+}
+// User provides operations to manage the user property of the microsoft.graph.networkaccess.networkAccessTraffic entity.
+// returns a *LogsTrafficItemUserRequestBuilder when successful
+func (m *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder) User()(*LogsTrafficItemUserRequestBuilder) {
+    return NewLogsTrafficItemUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *LogsTrafficNetworkAccessTrafficTransactionItemRequestBuilder when successful

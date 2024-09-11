@@ -55,6 +55,7 @@ func NewItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder(raw
     return NewItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property assignedToTaskBoardFormat for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -71,6 +72,7 @@ func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) D
     return nil
 }
 // Get read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PlannerAssignedToTaskBoardTaskFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerAssignedToTaskBoardTaskFormatable, error) {
@@ -91,6 +93,7 @@ func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) G
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerAssignedToTaskBoardTaskFormatable), nil
 }
 // Patch update the navigation property assignedToTaskBoardFormat in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PlannerAssignedToTaskBoardTaskFormatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerAssignedToTaskBoardTaskFormatable, requestConfiguration *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerAssignedToTaskBoardTaskFormatable, error) {
@@ -111,6 +114,7 @@ func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) P
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerAssignedToTaskBoardTaskFormatable), nil
 }
 // ToDeleteRequestInformation delete navigation property assignedToTaskBoardFormat for users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -122,6 +126,7 @@ func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) T
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only. Nullable. Used to render the task correctly in the task board view when grouped by assignedTo.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -136,6 +141,7 @@ func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) T
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property assignedToTaskBoardFormat in users
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerAssignedToTaskBoardTaskFormatable, requestConfiguration *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +157,7 @@ func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder when successful
 func (m *ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder) {
     return NewItemPlannerPlansItemTasksItemAssignedToTaskBoardFormatRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
