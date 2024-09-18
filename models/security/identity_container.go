@@ -58,7 +58,7 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetHealthIssues gets the healthIssues property value. Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+// GetHealthIssues gets the healthIssues property value. Represents potential issues identified by Microsoft Defender for Identity within a customer's Microsoft Defender for Identity configuration.
 // returns a []HealthIssueable when successful
 func (m *IdentityContainer) GetHealthIssues()([]HealthIssueable) {
     val, err := m.GetBackingStore().Get("healthIssues")
@@ -114,7 +114,7 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetHealthIssues sets the healthIssues property value. Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+// SetHealthIssues sets the healthIssues property value. Represents potential issues identified by Microsoft Defender for Identity within a customer's Microsoft Defender for Identity configuration.
 func (m *IdentityContainer) SetHealthIssues(value []HealthIssueable)() {
     err := m.GetBackingStore().Set("healthIssues", value)
     if err != nil {

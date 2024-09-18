@@ -41,7 +41,7 @@ func (m *IdentifierUriRestriction) GetAdditionalData()(map[string]any) {
 func (m *IdentifierUriRestriction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExcludeAppsReceivingV2Tokens gets the excludeAppsReceivingV2Tokens property value. The excludeAppsReceivingV2Tokens property
+// GetExcludeAppsReceivingV2Tokens gets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn't enforced for those applications.
 // returns a *bool when successful
 func (m *IdentifierUriRestriction) GetExcludeAppsReceivingV2Tokens()(*bool) {
     val, err := m.GetBackingStore().Get("excludeAppsReceivingV2Tokens")
@@ -53,7 +53,7 @@ func (m *IdentifierUriRestriction) GetExcludeAppsReceivingV2Tokens()(*bool) {
     }
     return nil
 }
-// GetExcludeSaml gets the excludeSaml property value. The excludeSaml property
+// GetExcludeSaml gets the excludeSaml property value. If true, the restriction isn't enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.
 // returns a *bool when successful
 func (m *IdentifierUriRestriction) GetExcludeSaml()(*bool) {
     val, err := m.GetBackingStore().Get("excludeSaml")
@@ -133,7 +133,7 @@ func (m *IdentifierUriRestriction) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// GetRestrictForAppsCreatedAfterDateTime gets the restrictForAppsCreatedAfterDateTime property value. Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.
 // returns a *Time when successful
 func (m *IdentifierUriRestriction) GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("restrictForAppsCreatedAfterDateTime")
@@ -209,14 +209,14 @@ func (m *IdentifierUriRestriction) SetAdditionalData(value map[string]any)() {
 func (m *IdentifierUriRestriction) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExcludeAppsReceivingV2Tokens sets the excludeAppsReceivingV2Tokens property value. The excludeAppsReceivingV2Tokens property
+// SetExcludeAppsReceivingV2Tokens sets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn't enforced for those applications.
 func (m *IdentifierUriRestriction) SetExcludeAppsReceivingV2Tokens(value *bool)() {
     err := m.GetBackingStore().Set("excludeAppsReceivingV2Tokens", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcludeSaml sets the excludeSaml property value. The excludeSaml property
+// SetExcludeSaml sets the excludeSaml property value. If true, the restriction isn't enforced for SAML applications in Microsoft Entra ID; else, the restriction is enforced for those applications.
 func (m *IdentifierUriRestriction) SetExcludeSaml(value *bool)() {
     err := m.GetBackingStore().Set("excludeSaml", value)
     if err != nil {
@@ -230,7 +230,7 @@ func (m *IdentifierUriRestriction) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+// SetRestrictForAppsCreatedAfterDateTime sets the restrictForAppsCreatedAfterDateTime property value. Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.
 func (m *IdentifierUriRestriction) SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("restrictForAppsCreatedAfterDateTime", value)
     if err != nil {

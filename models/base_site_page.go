@@ -33,6 +33,8 @@ func CreateBaseSitePageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388
                 switch *mappingValue {
                     case "#microsoft.graph.newsLinkPage":
                         return NewNewsLinkPage(), nil
+                    case "#microsoft.graph.pageTemplate":
+                        return NewPageTemplate(), nil
                     case "#microsoft.graph.sitePage":
                         return NewSitePage(), nil
                     case "#microsoft.graph.videoNewsLinkPage":

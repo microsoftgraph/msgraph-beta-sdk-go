@@ -162,6 +162,11 @@ func (m *ItemSitesSiteItemRequestBuilder) Operations()(*ItemSitesItemOperationsR
 func (m *ItemSitesSiteItemRequestBuilder) Pages()(*ItemSitesItemPagesRequestBuilder) {
     return NewItemSitesItemPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PageTemplates provides operations to manage the pageTemplates property of the microsoft.graph.site entity.
+// returns a *ItemSitesItemPageTemplatesRequestBuilder when successful
+func (m *ItemSitesSiteItemRequestBuilder) PageTemplates()(*ItemSitesItemPageTemplatesRequestBuilder) {
+    return NewItemSitesItemPageTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property sites in groups
 // returns a Siteable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
