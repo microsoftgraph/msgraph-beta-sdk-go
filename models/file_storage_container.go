@@ -401,7 +401,7 @@ func (m *FileStorageContainer) GetOwners()([]UserIdentityable) {
     }
     return nil
 }
-// GetOwnershipType gets the ownershipType property value. Ownership type of the fileStorageContainer.The possible values are: tenantOwned. Read-only.
+// GetOwnershipType gets the ownershipType property value. Ownership type of the fileStorageContainer. The possible values are: tenantOwned. Read-only.
 // returns a *FileStorageContainerOwnershipType when successful
 func (m *FileStorageContainer) GetOwnershipType()(*FileStorageContainerOwnershipType) {
     val, err := m.GetBackingStore().Get("ownershipType")
@@ -413,7 +413,7 @@ func (m *FileStorageContainer) GetOwnershipType()(*FileStorageContainerOwnership
     }
     return nil
 }
-// GetPermissions gets the permissions property value. The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are 'reader', 'writer', 'manager', and 'owner'. Read-write.
+// GetPermissions gets the permissions property value. The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.
 // returns a []Permissionable when successful
 func (m *FileStorageContainer) GetPermissions()([]Permissionable) {
     val, err := m.GetBackingStore().Get("permissions")
@@ -725,14 +725,14 @@ func (m *FileStorageContainer) SetOwners(value []UserIdentityable)() {
         panic(err)
     }
 }
-// SetOwnershipType sets the ownershipType property value. Ownership type of the fileStorageContainer.The possible values are: tenantOwned. Read-only.
+// SetOwnershipType sets the ownershipType property value. Ownership type of the fileStorageContainer. The possible values are: tenantOwned. Read-only.
 func (m *FileStorageContainer) SetOwnershipType(value *FileStorageContainerOwnershipType)() {
     err := m.GetBackingStore().Set("ownershipType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPermissions sets the permissions property value. The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are 'reader', 'writer', 'manager', and 'owner'. Read-write.
+// SetPermissions sets the permissions property value. The set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.
 func (m *FileStorageContainer) SetPermissions(value []Permissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
     if err != nil {

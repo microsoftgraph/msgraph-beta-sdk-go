@@ -41,7 +41,7 @@ func (m *ManagedDeviceSummarizedAppState) GetAdditionalData()(map[string]any) {
 func (m *ManagedDeviceSummarizedAppState) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceId gets the deviceId property value. DeviceId of device represented by this object
+// GetDeviceId gets the deviceId property value. The unique identifier (DeviceId) associated with the device.
 // returns a *string when successful
 func (m *ManagedDeviceSummarizedAppState) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -153,7 +153,7 @@ func (m *ManagedDeviceSummarizedAppState) SetAdditionalData(value map[string]any
 func (m *ManagedDeviceSummarizedAppState) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceId sets the deviceId property value. DeviceId of device represented by this object
+// SetDeviceId sets the deviceId property value. The unique identifier (DeviceId) associated with the device.
 func (m *ManagedDeviceSummarizedAppState) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {

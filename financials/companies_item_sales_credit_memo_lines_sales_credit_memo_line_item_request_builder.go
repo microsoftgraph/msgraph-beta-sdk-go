@@ -73,9 +73,9 @@ func (m *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesCreditMemoLineable), nil
 }
 // Item provides operations to manage the item property of the microsoft.graph.salesCreditMemoLine entity.
-// returns a *CompaniesItemSalesCreditMemoLinesItemItemRequestBuilder when successful
-func (m *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) Item()(*CompaniesItemSalesCreditMemoLinesItemItemRequestBuilder) {
-    return NewCompaniesItemSalesCreditMemoLinesItemItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesCreditMemoLinesItemItem_EscapedRequestBuilder when successful
+func (m *CompaniesItemSalesCreditMemoLinesSalesCreditMemoLineItemRequestBuilder) Item()(*CompaniesItemSalesCreditMemoLinesItemItem_EscapedRequestBuilder) {
+    return NewCompaniesItemSalesCreditMemoLinesItemItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property salesCreditMemoLines in financials
 // returns a SalesCreditMemoLineable when successful

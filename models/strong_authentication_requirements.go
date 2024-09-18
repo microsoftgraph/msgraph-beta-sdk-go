@@ -78,7 +78,7 @@ func (m *StrongAuthenticationRequirements) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPerUserMfaState gets the perUserMfaState property value. Sets the per-user MFA state for the user. The possible values are: disabled, enforced, enabled, unknownFutureValue.
+// GetPerUserMfaState gets the perUserMfaState property value. Sets the per-user MFA state for the user. The possible values are: disabled, enforced, enabled, unknownFutureValue. When you update a user's MFA state to enabled and the user has already registered an MFA method, their state changes automatically to enforced.
 // returns a *PerUserMfaState when successful
 func (m *StrongAuthenticationRequirements) GetPerUserMfaState()(*PerUserMfaState) {
     val, err := m.GetBackingStore().Get("perUserMfaState")
@@ -131,7 +131,7 @@ func (m *StrongAuthenticationRequirements) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPerUserMfaState sets the perUserMfaState property value. Sets the per-user MFA state for the user. The possible values are: disabled, enforced, enabled, unknownFutureValue.
+// SetPerUserMfaState sets the perUserMfaState property value. Sets the per-user MFA state for the user. The possible values are: disabled, enforced, enabled, unknownFutureValue. When you update a user's MFA state to enabled and the user has already registered an MFA method, their state changes automatically to enforced.
 func (m *StrongAuthenticationRequirements) SetPerUserMfaState(value *PerUserMfaState)() {
     err := m.GetBackingStore().Set("perUserMfaState", value)
     if err != nil {

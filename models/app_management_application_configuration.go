@@ -37,7 +37,7 @@ func (m *AppManagementApplicationConfiguration) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetIdentifierUris gets the identifierUris property value. The identifierUris property
+// GetIdentifierUris gets the identifierUris property value. Configuration object for restrictions on identifierUris property for an application
 // returns a IdentifierUriConfigurationable when successful
 func (m *AppManagementApplicationConfiguration) GetIdentifierUris()(IdentifierUriConfigurationable) {
     val, err := m.GetBackingStore().Get("identifierUris")
@@ -63,7 +63,7 @@ func (m *AppManagementApplicationConfiguration) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetIdentifierUris sets the identifierUris property value. The identifierUris property
+// SetIdentifierUris sets the identifierUris property value. Configuration object for restrictions on identifierUris property for an application
 func (m *AppManagementApplicationConfiguration) SetIdentifierUris(value IdentifierUriConfigurationable)() {
     err := m.GetBackingStore().Set("identifierUris", value)
     if err != nil {

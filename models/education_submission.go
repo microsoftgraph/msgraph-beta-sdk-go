@@ -258,7 +258,7 @@ func (m *EducationSubmission) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. The identities of those who modified the submission.
 // returns a IdentitySetable when successful
 func (m *EducationSubmission) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -270,7 +270,7 @@ func (m *EducationSubmission) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time the submission was modified.
 // returns a *Time when successful
 func (m *EducationSubmission) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -378,7 +378,7 @@ func (m *EducationSubmission) GetReturnedDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetStatus gets the status property value. Read-only. Possible values are: working, submitted, returned, unknownFutureValue, reassigned, and excused. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reassigned, and excused.
+// GetStatus gets the status property value. Read-only. Possible values are: working, submitted, returned, unknownFutureValue, reassigned, and excused. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reassigned, and excused.
 // returns a *EducationSubmissionStatus when successful
 func (m *EducationSubmission) GetStatus()(*EducationSubmissionStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -526,14 +526,14 @@ func (m *EducationSubmission) SetExcusedDateTime(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. The identities of those who modified the submission.
 func (m *EducationSubmission) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time the submission was modified.
 func (m *EducationSubmission) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
@@ -596,7 +596,7 @@ func (m *EducationSubmission) SetReturnedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetStatus sets the status property value. Read-only. Possible values are: working, submitted, returned, unknownFutureValue, reassigned, and excused. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reassigned, and excused.
+// SetStatus sets the status property value. Read-only. Possible values are: working, submitted, returned, unknownFutureValue, reassigned, and excused. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: reassigned, and excused.
 func (m *EducationSubmission) SetStatus(value *EducationSubmissionStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

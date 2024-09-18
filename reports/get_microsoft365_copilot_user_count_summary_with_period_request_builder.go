@@ -33,9 +33,12 @@ func NewGetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewGetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getMicrosoft365CopilotUserCountSummary
+// Get get the aggregated number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercountsummary?view=graph-rest-beta
 func (m *GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -53,7 +56,7 @@ func (m *GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder) Get(ctx
     }
     return res.([]byte), nil
 }
-// ToGetRequestInformation invoke function getMicrosoft365CopilotUserCountSummary
+// ToGetRequestInformation get the aggregated number of active and enabled users of Copilot for Microsoft 365 for a specified time period.
 // returns a *RequestInformation when successful
 func (m *GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetMicrosoft365CopilotUserCountSummaryWithPeriodRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

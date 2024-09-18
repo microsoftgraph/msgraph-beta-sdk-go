@@ -52,6 +52,18 @@ func (m *RoleManagement) GetCloudPC()(RbacApplicationMultipleable) {
     }
     return nil
 }
+// GetDefender gets the defender property value. The defender property
+// returns a RbacApplicationMultipleable when successful
+func (m *RoleManagement) GetDefender()(RbacApplicationMultipleable) {
+    val, err := m.GetBackingStore().Get("defender")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RbacApplicationMultipleable)
+    }
+    return nil
+}
 // GetDeviceManagement gets the deviceManagement property value. The RbacApplication for Device Management
 // returns a RbacApplicationMultipleable when successful
 func (m *RoleManagement) GetDeviceManagement()(RbacApplicationMultipleable) {
@@ -123,6 +135,16 @@ func (m *RoleManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetCloudPC(val.(RbacApplicationMultipleable))
+        }
+        return nil
+    }
+    res["defender"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRbacApplicationMultipleFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefender(val.(RbacApplicationMultipleable))
         }
         return nil
     }
@@ -215,6 +237,12 @@ func (m *RoleManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err := writer.WriteObjectValue("defender", m.GetDefender())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("deviceManagement", m.GetDeviceManagement())
         if err != nil {
             return err
@@ -282,6 +310,13 @@ func (m *RoleManagement) SetCloudPC(value RbacApplicationMultipleable)() {
         panic(err)
     }
 }
+// SetDefender sets the defender property value. The defender property
+func (m *RoleManagement) SetDefender(value RbacApplicationMultipleable)() {
+    err := m.GetBackingStore().Set("defender", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDeviceManagement sets the deviceManagement property value. The RbacApplication for Device Management
 func (m *RoleManagement) SetDeviceManagement(value RbacApplicationMultipleable)() {
     err := m.GetBackingStore().Set("deviceManagement", value)
@@ -330,6 +365,7 @@ type RoleManagementable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCloudPC()(RbacApplicationMultipleable)
+    GetDefender()(RbacApplicationMultipleable)
     GetDeviceManagement()(RbacApplicationMultipleable)
     GetDirectory()(RbacApplicationable)
     GetEnterpriseApps()([]RbacApplicationable)
@@ -338,6 +374,7 @@ type RoleManagementable interface {
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCloudPC(value RbacApplicationMultipleable)()
+    SetDefender(value RbacApplicationMultipleable)()
     SetDeviceManagement(value RbacApplicationMultipleable)()
     SetDirectory(value RbacApplicationable)()
     SetEnterpriseApps(value []RbacApplicationable)()

@@ -61,7 +61,7 @@ func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetItemInsights gets the itemInsights property value. Represents administrator settings that manage the support for item insights in an organization.
+// GetItemInsights gets the itemInsights property value. Administrator settings that manage the support for item insights in an organization.
 // returns a InsightsSettingsable when successful
 func (m *PeopleAdminSettings) GetItemInsights()(InsightsSettingsable) {
     val, err := m.GetBackingStore().Get("itemInsights")
@@ -73,7 +73,7 @@ func (m *PeopleAdminSettings) GetItemInsights()(InsightsSettingsable) {
     }
     return nil
 }
-// GetProfileCardProperties gets the profileCardProperties property value. Contains a collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
+// GetProfileCardProperties gets the profileCardProperties property value. A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
 // returns a []ProfileCardPropertyable when successful
 func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
     val, err := m.GetBackingStore().Get("profileCardProperties")
@@ -85,7 +85,7 @@ func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyab
     }
     return nil
 }
-// GetPronouns gets the pronouns property value. Represents administrator settings that manage the support of pronouns in an organization.
+// GetPronouns gets the pronouns property value. Administrator settings that manage the support of pronouns in an organization.
 // returns a PronounsSettingsable when successful
 func (m *PeopleAdminSettings) GetPronouns()(PronounsSettingsable) {
     val, err := m.GetBackingStore().Get("pronouns")
@@ -129,21 +129,21 @@ func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetItemInsights sets the itemInsights property value. Represents administrator settings that manage the support for item insights in an organization.
+// SetItemInsights sets the itemInsights property value. Administrator settings that manage the support for item insights in an organization.
 func (m *PeopleAdminSettings) SetItemInsights(value InsightsSettingsable)() {
     err := m.GetBackingStore().Set("itemInsights", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProfileCardProperties sets the profileCardProperties property value. Contains a collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
+// SetProfileCardProperties sets the profileCardProperties property value. A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
 func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
     err := m.GetBackingStore().Set("profileCardProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPronouns sets the pronouns property value. Represents administrator settings that manage the support of pronouns in an organization.
+// SetPronouns sets the pronouns property value. Administrator settings that manage the support of pronouns in an organization.
 func (m *PeopleAdminSettings) SetPronouns(value PronounsSettingsable)() {
     err := m.GetBackingStore().Set("pronouns", value)
     if err != nil {

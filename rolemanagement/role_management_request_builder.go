@@ -52,6 +52,11 @@ func NewRoleManagementRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewRoleManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
+// Defender provides operations to manage the defender property of the microsoft.graph.roleManagement entity.
+// returns a *DefenderRequestBuilder when successful
+func (m *RoleManagementRequestBuilder) Defender()(*DefenderRequestBuilder) {
+    return NewDefenderRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // DeviceManagement provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.
 // returns a *DeviceManagementRequestBuilder when successful
 func (m *RoleManagementRequestBuilder) DeviceManagement()(*DeviceManagementRequestBuilder) {
