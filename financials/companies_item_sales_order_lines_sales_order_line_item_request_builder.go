@@ -73,9 +73,9 @@ func (m *CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) Get(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesOrderLineable), nil
 }
 // Item provides operations to manage the item property of the microsoft.graph.salesOrderLine entity.
-// returns a *CompaniesItemSalesOrderLinesItemItemRequestBuilder when successful
-func (m *CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) Item()(*CompaniesItemSalesOrderLinesItemItemRequestBuilder) {
-    return NewCompaniesItemSalesOrderLinesItemItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesOrderLinesItemItem_EscapedRequestBuilder when successful
+func (m *CompaniesItemSalesOrderLinesSalesOrderLineItemRequestBuilder) Item()(*CompaniesItemSalesOrderLinesItemItem_EscapedRequestBuilder) {
+    return NewCompaniesItemSalesOrderLinesItemItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property salesOrderLines in financials
 // returns a SalesOrderLineable when successful

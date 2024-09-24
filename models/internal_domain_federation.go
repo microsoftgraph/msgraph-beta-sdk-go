@@ -155,7 +155,7 @@ func (m *InternalDomainFederation) GetNextSigningCertificate()(*string) {
     }
     return nil
 }
-// GetPasswordResetUri gets the passwordResetUri property value. The passwordResetUri property
+// GetPasswordResetUri gets the passwordResetUri property value. URI that clients are redirected to for resetting their password.
 // returns a *string when successful
 func (m *InternalDomainFederation) GetPasswordResetUri()(*string) {
     val, err := m.GetBackingStore().Get("passwordResetUri")
@@ -289,7 +289,7 @@ func (m *InternalDomainFederation) SetNextSigningCertificate(value *string)() {
         panic(err)
     }
 }
-// SetPasswordResetUri sets the passwordResetUri property value. The passwordResetUri property
+// SetPasswordResetUri sets the passwordResetUri property value. URI that clients are redirected to for resetting their password.
 func (m *InternalDomainFederation) SetPasswordResetUri(value *string)() {
     err := m.GetBackingStore().Set("passwordResetUri", value)
     if err != nil {

@@ -96,7 +96,7 @@ func (m *MobileAppRelationship) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetTargetDisplayName gets the targetDisplayName property value. The target mobile app's display name. This property is read-only.
+// GetTargetDisplayName gets the targetDisplayName property value. The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("targetDisplayName")
@@ -108,7 +108,7 @@ func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
     }
     return nil
 }
-// GetTargetDisplayVersion gets the targetDisplayVersion property value. The target mobile app's display version. This property is read-only.
+// GetTargetDisplayVersion gets the targetDisplayVersion property value. The display version of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
     val, err := m.GetBackingStore().Get("targetDisplayVersion")
@@ -120,7 +120,7 @@ func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
     }
     return nil
 }
-// GetTargetId gets the targetId property value. The target mobile app's app id.
+// GetTargetId gets the targetId property value. App ID of the app that is the target of the mobile app relationship entity. Read-Only
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetId()(*string) {
     val, err := m.GetBackingStore().Get("targetId")
@@ -132,7 +132,7 @@ func (m *MobileAppRelationship) GetTargetId()(*string) {
     }
     return nil
 }
-// GetTargetPublisher gets the targetPublisher property value. The target mobile app's publisher. This property is read-only.
+// GetTargetPublisher gets the targetPublisher property value. The publisher of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("targetPublisher")
@@ -177,28 +177,28 @@ func (m *MobileAppRelationship) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetTargetDisplayName sets the targetDisplayName property value. The target mobile app's display name. This property is read-only.
+// SetTargetDisplayName sets the targetDisplayName property value. The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
 func (m *MobileAppRelationship) SetTargetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("targetDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetDisplayVersion sets the targetDisplayVersion property value. The target mobile app's display version. This property is read-only.
+// SetTargetDisplayVersion sets the targetDisplayVersion property value. The display version of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
 func (m *MobileAppRelationship) SetTargetDisplayVersion(value *string)() {
     err := m.GetBackingStore().Set("targetDisplayVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetId sets the targetId property value. The target mobile app's app id.
+// SetTargetId sets the targetId property value. App ID of the app that is the target of the mobile app relationship entity. Read-Only
 func (m *MobileAppRelationship) SetTargetId(value *string)() {
     err := m.GetBackingStore().Set("targetId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetPublisher sets the targetPublisher property value. The target mobile app's publisher. This property is read-only.
+// SetTargetPublisher sets the targetPublisher property value. The publisher of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
 func (m *MobileAppRelationship) SetTargetPublisher(value *string)() {
     err := m.GetBackingStore().Set("targetPublisher", value)
     if err != nil {

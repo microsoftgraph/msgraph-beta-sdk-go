@@ -21,7 +21,7 @@ func NewSensor()(*Sensor) {
 func CreateSensorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSensor(), nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the sensor was generated.
 // returns a *Time when successful
 func (m *Sensor) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -45,7 +45,7 @@ func (m *Sensor) GetDeploymentStatus()(*DeploymentStatus) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the sensor.
 // returns a *string when successful
 func (m *Sensor) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -57,7 +57,7 @@ func (m *Sensor) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDomainName gets the domainName property value. The domainName property
+// GetDomainName gets the domainName property value. The fully qualified domain name of the sensor.
 // returns a *string when successful
 func (m *Sensor) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
@@ -181,7 +181,7 @@ func (m *Sensor) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetHealthIssues gets the healthIssues property value. The healthIssues property
+// GetHealthIssues gets the healthIssues property value. Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
 // returns a []HealthIssueable when successful
 func (m *Sensor) GetHealthIssues()([]HealthIssueable) {
     val, err := m.GetBackingStore().Get("healthIssues")
@@ -205,7 +205,7 @@ func (m *Sensor) GetHealthStatus()(*SensorHealthStatus) {
     }
     return nil
 }
-// GetOpenHealthIssuesCount gets the openHealthIssuesCount property value. The openHealthIssuesCount property
+// GetOpenHealthIssuesCount gets the openHealthIssuesCount property value. This field displays the count of health issues related to this sensor.
 // returns a *int64 when successful
 func (m *Sensor) GetOpenHealthIssuesCount()(*int64) {
     val, err := m.GetBackingStore().Get("openHealthIssuesCount")
@@ -241,7 +241,7 @@ func (m *Sensor) GetSettings()(SensorSettingsable) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The version of the sensor.
 // returns a *string when successful
 func (m *Sensor) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
@@ -330,7 +330,7 @@ func (m *Sensor) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the sensor was generated.
 func (m *Sensor) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -344,21 +344,21 @@ func (m *Sensor) SetDeploymentStatus(value *DeploymentStatus)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the sensor.
 func (m *Sensor) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainName sets the domainName property value. The domainName property
+// SetDomainName sets the domainName property value. The fully qualified domain name of the sensor.
 func (m *Sensor) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHealthIssues sets the healthIssues property value. The healthIssues property
+// SetHealthIssues sets the healthIssues property value. Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
 func (m *Sensor) SetHealthIssues(value []HealthIssueable)() {
     err := m.GetBackingStore().Set("healthIssues", value)
     if err != nil {
@@ -372,7 +372,7 @@ func (m *Sensor) SetHealthStatus(value *SensorHealthStatus)() {
         panic(err)
     }
 }
-// SetOpenHealthIssuesCount sets the openHealthIssuesCount property value. The openHealthIssuesCount property
+// SetOpenHealthIssuesCount sets the openHealthIssuesCount property value. This field displays the count of health issues related to this sensor.
 func (m *Sensor) SetOpenHealthIssuesCount(value *int64)() {
     err := m.GetBackingStore().Set("openHealthIssuesCount", value)
     if err != nil {
@@ -393,7 +393,7 @@ func (m *Sensor) SetSettings(value SensorSettingsable)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The version of the sensor.
 func (m *Sensor) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

@@ -18,7 +18,7 @@ type IdentitiesSensorsSensorItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentitiesSensorsSensorItemRequestBuilderGetQueryParameters get sensors from security
+// IdentitiesSensorsSensorItemRequestBuilderGetQueryParameters read the properties and relationships of a sensor object.
 type IdentitiesSensorsSensorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewIdentitiesSensorsSensorItemRequestBuilder(rawUrl string, requestAdapter 
     urlParams["request-raw-url"] = rawUrl
     return NewIdentitiesSensorsSensorItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property sensors for security
+// Delete delete a sensor object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-identitycontainer-delete-sensors?view=graph-rest-beta
 func (m *IdentitiesSensorsSensorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IdentitiesSensorsSensorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *IdentitiesSensorsSensorItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get get sensors from security
+// Get read the properties and relationships of a sensor object.
 // returns a Sensorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sensor-get?view=graph-rest-beta
 func (m *IdentitiesSensorsSensorItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorsSensorItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Sensorable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,9 +101,12 @@ func (m *IdentitiesSensorsSensorItemRequestBuilder) Get(ctx context.Context, req
 func (m *IdentitiesSensorsSensorItemRequestBuilder) HealthIssues()(*IdentitiesSensorsItemHealthIssuesRequestBuilder) {
     return NewIdentitiesSensorsItemHealthIssuesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update the navigation property sensors in security
+// Patch update the properties of a sensor object.
 // returns a Sensorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sensor-update?view=graph-rest-beta
 func (m *IdentitiesSensorsSensorItemRequestBuilder) Patch(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Sensorable, requestConfiguration *IdentitiesSensorsSensorItemRequestBuilderPatchRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Sensorable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -115,7 +124,7 @@ func (m *IdentitiesSensorsSensorItemRequestBuilder) Patch(ctx context.Context, b
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Sensorable), nil
 }
-// ToDeleteRequestInformation delete navigation property sensors for security
+// ToDeleteRequestInformation delete a sensor object.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorsSensorItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorsSensorItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +135,7 @@ func (m *IdentitiesSensorsSensorItemRequestBuilder) ToDeleteRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get sensors from security
+// ToGetRequestInformation read the properties and relationships of a sensor object.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorsSensorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorsSensorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +149,7 @@ func (m *IdentitiesSensorsSensorItemRequestBuilder) ToGetRequestInformation(ctx 
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property sensors in security
+// ToPatchRequestInformation update the properties of a sensor object.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorsSensorItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Sensorable, requestConfiguration *IdentitiesSensorsSensorItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

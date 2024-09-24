@@ -116,6 +116,11 @@ func (m *ClassesEducationClassItemRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationClassable), nil
 }
+// GetRecentlyModifiedSubmissions provides operations to call the getRecentlyModifiedSubmissions method.
+// returns a *ClassesItemGetRecentlyModifiedSubmissionsRequestBuilder when successful
+func (m *ClassesEducationClassItemRequestBuilder) GetRecentlyModifiedSubmissions()(*ClassesItemGetRecentlyModifiedSubmissionsRequestBuilder) {
+    return NewClassesItemGetRecentlyModifiedSubmissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Group provides operations to manage the group property of the microsoft.graph.educationClass entity.
 // returns a *ClassesItemGroupRequestBuilder when successful
 func (m *ClassesEducationClassItemRequestBuilder) Group()(*ClassesItemGroupRequestBuilder) {

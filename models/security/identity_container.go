@@ -70,7 +70,7 @@ func (m *IdentityContainer) GetHealthIssues()([]HealthIssueable) {
     }
     return nil
 }
-// GetSensors gets the sensors property value. The sensors property
+// GetSensors gets the sensors property value. Represents a customer's Microsoft Defender for Identity sensors.
 // returns a []Sensorable when successful
 func (m *IdentityContainer) GetSensors()([]Sensorable) {
     val, err := m.GetBackingStore().Get("sensors")
@@ -121,7 +121,7 @@ func (m *IdentityContainer) SetHealthIssues(value []HealthIssueable)() {
         panic(err)
     }
 }
-// SetSensors sets the sensors property value. The sensors property
+// SetSensors sets the sensors property value. Represents a customer's Microsoft Defender for Identity sensors.
 func (m *IdentityContainer) SetSensors(value []Sensorable)() {
     err := m.GetBackingStore().Set("sensors", value)
     if err != nil {

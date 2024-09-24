@@ -22,6 +22,18 @@ func NewOnlineMeeting()(*OnlineMeeting) {
 func CreateOnlineMeetingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnlineMeeting(), nil
 }
+// GetAiInsights gets the aiInsights property value. The aiInsights property
+// returns a []CallAiInsightable when successful
+func (m *OnlineMeeting) GetAiInsights()([]CallAiInsightable) {
+    val, err := m.GetBackingStore().Get("aiInsights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CallAiInsightable)
+    }
+    return nil
+}
 // GetAlternativeRecording gets the alternativeRecording property value. The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 // returns a []byte when successful
 func (m *OnlineMeeting) GetAlternativeRecording()([]byte) {
@@ -122,6 +134,22 @@ func (m *OnlineMeeting) GetExternalId()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.OnlineMeetingBase.GetFieldDeserializers()
+    res["aiInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCallAiInsightFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CallAiInsightable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CallAiInsightable)
+                }
+            }
+            m.SetAiInsights(res)
+        }
+        return nil
+    }
     res["alternativeRecording"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetByteArrayValue()
         if err != nil {
@@ -448,6 +476,18 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if err != nil {
         return err
     }
+    if m.GetAiInsights() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAiInsights()))
+        for i, v := range m.GetAiInsights() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("aiInsights", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteByteArrayValue("alternativeRecording", m.GetAlternativeRecording())
         if err != nil {
@@ -569,6 +609,13 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     return nil
+}
+// SetAiInsights sets the aiInsights property value. The aiInsights property
+func (m *OnlineMeeting) SetAiInsights(value []CallAiInsightable)() {
+    err := m.GetBackingStore().Set("aiInsights", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAlternativeRecording sets the alternativeRecording property value. The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
 func (m *OnlineMeeting) SetAlternativeRecording(value []byte)() {
@@ -699,6 +746,7 @@ func (m *OnlineMeeting) SetTranscripts(value []CallTranscriptable)() {
 type OnlineMeetingable interface {
     OnlineMeetingBaseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAiInsights()([]CallAiInsightable)
     GetAlternativeRecording()([]byte)
     GetAttendeeReport()([]byte)
     GetBroadcastRecording()([]byte)
@@ -717,6 +765,7 @@ type OnlineMeetingable interface {
     GetRegistration()(MeetingRegistrationable)
     GetStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTranscripts()([]CallTranscriptable)
+    SetAiInsights(value []CallAiInsightable)()
     SetAlternativeRecording(value []byte)()
     SetAttendeeReport(value []byte)()
     SetBroadcastRecording(value []byte)()

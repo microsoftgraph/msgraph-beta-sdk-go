@@ -21,7 +21,7 @@ func NewAzureADDevice()(*AzureADDevice) {
 func CreateAzureADDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureADDevice(), nil
 }
-// GetEnrollments gets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
+// GetEnrollments gets the enrollments property value. Specifies areas in which the device is enrolled. Read-only. Returned by default.
 // returns a []UpdatableAssetEnrollmentable when successful
 func (m *AzureADDevice) GetEnrollments()([]UpdatableAssetEnrollmentable) {
     val, err := m.GetBackingStore().Get("enrollments")
@@ -115,7 +115,7 @@ func (m *AzureADDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetEnrollments sets the enrollments property value. Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.
+// SetEnrollments sets the enrollments property value. Specifies areas in which the device is enrolled. Read-only. Returned by default.
 func (m *AzureADDevice) SetEnrollments(value []UpdatableAssetEnrollmentable)() {
     err := m.GetBackingStore().Set("enrollments", value)
     if err != nil {

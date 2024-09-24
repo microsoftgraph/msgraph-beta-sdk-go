@@ -11,13 +11,6 @@ import (
 type ItemClaimsPolicyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemClaimsPolicyRequestBuilderDeleteRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
-type ItemClaimsPolicyRequestBuilderDeleteRequestConfiguration struct {
-    // Request headers
-    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
-    // Request options
-    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
-}
 // ItemClaimsPolicyRequestBuilderGetQueryParameters get the properties and relationships of a customClaimsPolicy object.
 type ItemClaimsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
@@ -61,22 +54,6 @@ func NewItemClaimsPolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewItemClaimsPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property claimsPolicy for servicePrincipals
-// returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *ItemClaimsPolicyRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemClaimsPolicyRequestBuilderDeleteRequestConfiguration)(error) {
-    requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
-    if err != nil {
-        return err
-    }
-    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
-        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
-    }
-    err = m.BaseRequestBuilder.RequestAdapter.SendNoContent(ctx, requestInfo, errorMapping)
-    if err != nil {
-        return err
-    }
-    return nil
-}
 // Get get the properties and relationships of a customClaimsPolicy object.
 // returns a CustomClaimsPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -100,12 +77,12 @@ func (m *ItemClaimsPolicyRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable), nil
 }
-// Patch update a customClaimsPolicy object.
+// Patch create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
 // returns a CustomClaimsPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta
 func (m *ItemClaimsPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, requestConfiguration *ItemClaimsPolicyRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -123,12 +100,12 @@ func (m *ItemClaimsPolicyRequestBuilder) Patch(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable), nil
 }
-// Put update a customClaimsPolicy object.
+// Put create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
 // returns a CustomClaimsPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-put-claimspolicy?view=graph-rest-beta
 func (m *ItemClaimsPolicyRequestBuilder) Put(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, requestConfiguration *ItemClaimsPolicyRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -146,17 +123,6 @@ func (m *ItemClaimsPolicyRequestBuilder) Put(ctx context.Context, body ie233ee76
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable), nil
 }
-// ToDeleteRequestInformation delete navigation property claimsPolicy for servicePrincipals
-// returns a *RequestInformation when successful
-func (m *ItemClaimsPolicyRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemClaimsPolicyRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
-    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
-    if requestConfiguration != nil {
-        requestInfo.Headers.AddAll(requestConfiguration.Headers)
-        requestInfo.AddRequestOptions(requestConfiguration.Options)
-    }
-    requestInfo.Headers.TryAdd("Accept", "application/json")
-    return requestInfo, nil
-}
 // ToGetRequestInformation get the properties and relationships of a customClaimsPolicy object.
 // returns a *RequestInformation when successful
 func (m *ItemClaimsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemClaimsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -171,7 +137,7 @@ func (m *ItemClaimsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update a customClaimsPolicy object.
+// ToPatchRequestInformation create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
 // returns a *RequestInformation when successful
 func (m *ItemClaimsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, requestConfiguration *ItemClaimsPolicyRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -186,7 +152,7 @@ func (m *ItemClaimsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.C
     }
     return requestInfo, nil
 }
-// ToPutRequestInformation update a customClaimsPolicy object.
+// ToPutRequestInformation create a new customClaimsPolicy object if it doesn't exist, or replace an existing one.
 // returns a *RequestInformation when successful
 func (m *ItemClaimsPolicyRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomClaimsPolicyable, requestConfiguration *ItemClaimsPolicyRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

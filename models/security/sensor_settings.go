@@ -40,7 +40,7 @@ func (m *SensorSettings) GetAdditionalData()(map[string]any) {
 func (m *SensorSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the sensor.
 // returns a *string when successful
 func (m *SensorSettings) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -52,7 +52,7 @@ func (m *SensorSettings) GetDescription()(*string) {
     }
     return nil
 }
-// GetDomainControllerDnsNames gets the domainControllerDnsNames property value. The domainControllerDnsNames property
+// GetDomainControllerDnsNames gets the domainControllerDnsNames property value. DNS names for the domain controller
 // returns a []string when successful
 func (m *SensorSettings) GetDomainControllerDnsNames()([]string) {
     val, err := m.GetBackingStore().Get("domainControllerDnsNames")
@@ -132,7 +132,7 @@ func (m *SensorSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetIsDelayedDeploymentEnabled gets the isDelayedDeploymentEnabled property value. The isDelayedDeploymentEnabled property
+// GetIsDelayedDeploymentEnabled gets the isDelayedDeploymentEnabled property value. Indicates whether to delay updates for the sensor.
 // returns a *bool when successful
 func (m *SensorSettings) GetIsDelayedDeploymentEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDelayedDeploymentEnabled")
@@ -225,21 +225,21 @@ func (m *SensorSettings) SetAdditionalData(value map[string]any)() {
 func (m *SensorSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the sensor.
 func (m *SensorSettings) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainControllerDnsNames sets the domainControllerDnsNames property value. The domainControllerDnsNames property
+// SetDomainControllerDnsNames sets the domainControllerDnsNames property value. DNS names for the domain controller
 func (m *SensorSettings) SetDomainControllerDnsNames(value []string)() {
     err := m.GetBackingStore().Set("domainControllerDnsNames", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsDelayedDeploymentEnabled sets the isDelayedDeploymentEnabled property value. The isDelayedDeploymentEnabled property
+// SetIsDelayedDeploymentEnabled sets the isDelayedDeploymentEnabled property value. Indicates whether to delay updates for the sensor.
 func (m *SensorSettings) SetIsDelayedDeploymentEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isDelayedDeploymentEnabled", value)
     if err != nil {

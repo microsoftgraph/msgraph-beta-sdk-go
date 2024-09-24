@@ -42,6 +42,8 @@ func CreateBaseItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
                         return NewListItem(), nil
                     case "#microsoft.graph.newsLinkPage":
                         return NewNewsLinkPage(), nil
+                    case "#microsoft.graph.pageTemplate":
+                        return NewPageTemplate(), nil
                     case "#microsoft.graph.recycleBin":
                         return NewRecycleBin(), nil
                     case "#microsoft.graph.recycleBinItem":

@@ -33,7 +33,7 @@ func (m *HealthIssue) GetAdditionalInformation()([]string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The date and time of when the health issue was generated.
+// GetCreatedDateTime gets the createdDateTime property value. The date and time when the health issue was generated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *HealthIssue) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -271,7 +271,7 @@ func (m *HealthIssue) GetIssueTypeId()(*string) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time of when the health issue was last updated.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the health issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *HealthIssue) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -283,7 +283,7 @@ func (m *HealthIssue) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetRecommendations gets the recommendations property value. This field contains a list of recommended actions that can be taken to resolve the issue effectively and efficiently. These actions might include how to investigate the issue further. Not limited to prewritten responses.
+// GetRecommendations gets the recommendations property value. A list of recommended actions that can be taken to resolve the issue effectively and efficiently. These actions might include instructions for further investigation and aren't limited to prewritten responses.
 // returns a []string when successful
 func (m *HealthIssue) GetRecommendations()([]string) {
     val, err := m.GetBackingStore().Get("recommendations")
@@ -295,7 +295,7 @@ func (m *HealthIssue) GetRecommendations()([]string) {
     }
     return nil
 }
-// GetRecommendedActionCommands gets the recommendedActionCommands property value. Contains a list of commands from the product's PowerShell module that can be used to resolve the issue, if available. If there aren't any commands that can be used to solve the issue, this field is empty. The commands, if present, provide a quick and efficient way to address the issue. The commands run in order for the single recommended fix.
+// GetRecommendedActionCommands gets the recommendedActionCommands property value. A list of commands from the PowerShell module for the product that can be used to resolve the issue, if available. If no commands can be used to solve the issue, this property is empty. The commands, if present, provide a quick and efficient way to address the issue. These commands run in sequence for the single recommended fix.
 // returns a []string when successful
 func (m *HealthIssue) GetRecommendedActionCommands()([]string) {
     val, err := m.GetBackingStore().Get("recommendedActionCommands")
@@ -307,7 +307,7 @@ func (m *HealthIssue) GetRecommendedActionCommands()([]string) {
     }
     return nil
 }
-// GetSensorDNSNames gets the sensorDNSNames property value. A list of the dns names of the sensors the health issue is related to.
+// GetSensorDNSNames gets the sensorDNSNames property value. A list of the DNS names of the sensors the health issue is related to.
 // returns a []string when successful
 func (m *HealthIssue) GetSensorDNSNames()([]string) {
     val, err := m.GetBackingStore().Get("sensorDNSNames")
@@ -439,7 +439,7 @@ func (m *HealthIssue) SetAdditionalInformation(value []string)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The date and time of when the health issue was generated.
+// SetCreatedDateTime sets the createdDateTime property value. The date and time when the health issue was generated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *HealthIssue) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
@@ -481,28 +481,28 @@ func (m *HealthIssue) SetIssueTypeId(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time of when the health issue was last updated.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the health issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *HealthIssue) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecommendations sets the recommendations property value. This field contains a list of recommended actions that can be taken to resolve the issue effectively and efficiently. These actions might include how to investigate the issue further. Not limited to prewritten responses.
+// SetRecommendations sets the recommendations property value. A list of recommended actions that can be taken to resolve the issue effectively and efficiently. These actions might include instructions for further investigation and aren't limited to prewritten responses.
 func (m *HealthIssue) SetRecommendations(value []string)() {
     err := m.GetBackingStore().Set("recommendations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecommendedActionCommands sets the recommendedActionCommands property value. Contains a list of commands from the product's PowerShell module that can be used to resolve the issue, if available. If there aren't any commands that can be used to solve the issue, this field is empty. The commands, if present, provide a quick and efficient way to address the issue. The commands run in order for the single recommended fix.
+// SetRecommendedActionCommands sets the recommendedActionCommands property value. A list of commands from the PowerShell module for the product that can be used to resolve the issue, if available. If no commands can be used to solve the issue, this property is empty. The commands, if present, provide a quick and efficient way to address the issue. These commands run in sequence for the single recommended fix.
 func (m *HealthIssue) SetRecommendedActionCommands(value []string)() {
     err := m.GetBackingStore().Set("recommendedActionCommands", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSensorDNSNames sets the sensorDNSNames property value. A list of the dns names of the sensors the health issue is related to.
+// SetSensorDNSNames sets the sensorDNSNames property value. A list of the DNS names of the sensors the health issue is related to.
 func (m *HealthIssue) SetSensorDNSNames(value []string)() {
     err := m.GetBackingStore().Set("sensorDNSNames", value)
     if err != nil {

@@ -40,7 +40,7 @@ func (m *SensorDeploymentPackage) GetAdditionalData()(map[string]any) {
 func (m *SensorDeploymentPackage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDownloadUrl gets the downloadUrl property value. The downloadUrl property
+// GetDownloadUrl gets the downloadUrl property value. URL to download the sensor deployment package.
 // returns a *string when successful
 func (m *SensorDeploymentPackage) GetDownloadUrl()(*string) {
     val, err := m.GetBackingStore().Get("downloadUrl")
@@ -100,7 +100,7 @@ func (m *SensorDeploymentPackage) GetOdataType()(*string) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. Version of the sensor.
 // returns a *string when successful
 func (m *SensorDeploymentPackage) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
@@ -151,7 +151,7 @@ func (m *SensorDeploymentPackage) SetAdditionalData(value map[string]any)() {
 func (m *SensorDeploymentPackage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDownloadUrl sets the downloadUrl property value. The downloadUrl property
+// SetDownloadUrl sets the downloadUrl property value. URL to download the sensor deployment package.
 func (m *SensorDeploymentPackage) SetDownloadUrl(value *string)() {
     err := m.GetBackingStore().Set("downloadUrl", value)
     if err != nil {
@@ -165,7 +165,7 @@ func (m *SensorDeploymentPackage) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. Version of the sensor.
 func (m *SensorDeploymentPackage) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {
