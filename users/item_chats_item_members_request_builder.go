@@ -124,6 +124,11 @@ func (m *ItemChatsItemMembersRequestBuilder) Post(ctx context.Context, body ie23
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
+// Remove provides operations to call the remove method.
+// returns a *ItemChatsItemMembersRemoveRequestBuilder when successful
+func (m *ItemChatsItemMembersRequestBuilder) Remove()(*ItemChatsItemMembersRemoveRequestBuilder) {
+    return NewItemChatsItemMembersRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation a collection of all the members in the chat. Nullable.
 // Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful

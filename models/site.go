@@ -375,6 +375,22 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["pageTemplates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePageTemplateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PageTemplateable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PageTemplateable)
+                }
+            }
+            m.SetPageTemplates(res)
+        }
+        return nil
+    }
     res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionFromDiscriminatorValue)
         if err != nil {
@@ -540,6 +556,18 @@ func (m *Site) GetPages()([]BaseSitePageable) {
     }
     if val != nil {
         return val.([]BaseSitePageable)
+    }
+    return nil
+}
+// GetPageTemplates gets the pageTemplates property value. The collection of page templates on this site.
+// returns a []PageTemplateable when successful
+func (m *Site) GetPageTemplates()([]PageTemplateable) {
+    val, err := m.GetBackingStore().Get("pageTemplates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PageTemplateable)
     }
     return nil
 }
@@ -795,6 +823,18 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetPageTemplates() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPageTemplates()))
+        for i, v := range m.GetPageTemplates() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("pageTemplates", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPermissions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPermissions()))
         for i, v := range m.GetPermissions() {
@@ -970,6 +1010,13 @@ func (m *Site) SetPages(value []BaseSitePageable)() {
         panic(err)
     }
 }
+// SetPageTemplates sets the pageTemplates property value. The collection of page templates on this site.
+func (m *Site) SetPageTemplates(value []PageTemplateable)() {
+    err := m.GetBackingStore().Set("pageTemplates", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissions sets the permissions property value. The permissions associated with the site. Nullable.
 func (m *Site) SetPermissions(value []Permissionable)() {
     err := m.GetBackingStore().Set("permissions", value)
@@ -1039,6 +1086,7 @@ type Siteable interface {
     GetOnenote()(Onenoteable)
     GetOperations()([]RichLongRunningOperationable)
     GetPages()([]BaseSitePageable)
+    GetPageTemplates()([]PageTemplateable)
     GetPermissions()([]Permissionable)
     GetRecycleBin()(RecycleBinable)
     GetRoot()(Rootable)
@@ -1063,6 +1111,7 @@ type Siteable interface {
     SetOnenote(value Onenoteable)()
     SetOperations(value []RichLongRunningOperationable)()
     SetPages(value []BaseSitePageable)()
+    SetPageTemplates(value []PageTemplateable)()
     SetPermissions(value []Permissionable)()
     SetRecycleBin(value RecycleBinable)()
     SetRoot(value Rootable)()

@@ -35,7 +35,7 @@ func (m *CloudPcAutopilotConfiguration) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApplicationTimeoutInMinutes gets the applicationTimeoutInMinutes property value. The applicationTimeoutInMinutes property
+// GetApplicationTimeoutInMinutes gets the applicationTimeoutInMinutes property value. Indicates the number of minutes allowed for the Autopilot application to apply the device preparation profile (DPP) configurations to the device. If the Autopilot application doesn't finish within the specified time (applicationTimeoutInMinutes), the application error is added to the statusDetail property of the cloudPC object. The supported value is an integer between 10 and 360. Required.
 // returns a *int32 when successful
 func (m *CloudPcAutopilotConfiguration) GetApplicationTimeoutInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("applicationTimeoutInMinutes")
@@ -52,7 +52,7 @@ func (m *CloudPcAutopilotConfiguration) GetApplicationTimeoutInMinutes()(*int32)
 func (m *CloudPcAutopilotConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDevicePreparationProfileId gets the devicePreparationProfileId property value. The devicePreparationProfileId property
+// GetDevicePreparationProfileId gets the devicePreparationProfileId property value. The unique identifier (ID) of the Autopilot device preparation profile (DPP) that links a Windows Autopilot device preparation policy to ensure that devices are ready for users after provisioning. Required.
 // returns a *string when successful
 func (m *CloudPcAutopilotConfiguration) GetDevicePreparationProfileId()(*string) {
     val, err := m.GetBackingStore().Get("devicePreparationProfileId")
@@ -122,7 +122,7 @@ func (m *CloudPcAutopilotConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOnFailureDeviceAccessDenied gets the onFailureDeviceAccessDenied property value. The onFailureDeviceAccessDenied property
+// GetOnFailureDeviceAccessDenied gets the onFailureDeviceAccessDenied property value. Indicates whether the access to the device is allowed when the application of Autopilot device preparation profile (DPP) configurations fails or times out. If true, the status of the device is failed and the device is unable to access; otherwise, the status of the device is provisionedWithWarnings and the device is allowed to access. The default value is false. Required.
 // returns a *bool when successful
 func (m *CloudPcAutopilotConfiguration) GetOnFailureDeviceAccessDenied()(*bool) {
     val, err := m.GetBackingStore().Get("onFailureDeviceAccessDenied")
@@ -175,7 +175,7 @@ func (m *CloudPcAutopilotConfiguration) SetAdditionalData(value map[string]any)(
         panic(err)
     }
 }
-// SetApplicationTimeoutInMinutes sets the applicationTimeoutInMinutes property value. The applicationTimeoutInMinutes property
+// SetApplicationTimeoutInMinutes sets the applicationTimeoutInMinutes property value. Indicates the number of minutes allowed for the Autopilot application to apply the device preparation profile (DPP) configurations to the device. If the Autopilot application doesn't finish within the specified time (applicationTimeoutInMinutes), the application error is added to the statusDetail property of the cloudPC object. The supported value is an integer between 10 and 360. Required.
 func (m *CloudPcAutopilotConfiguration) SetApplicationTimeoutInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("applicationTimeoutInMinutes", value)
     if err != nil {
@@ -186,7 +186,7 @@ func (m *CloudPcAutopilotConfiguration) SetApplicationTimeoutInMinutes(value *in
 func (m *CloudPcAutopilotConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDevicePreparationProfileId sets the devicePreparationProfileId property value. The devicePreparationProfileId property
+// SetDevicePreparationProfileId sets the devicePreparationProfileId property value. The unique identifier (ID) of the Autopilot device preparation profile (DPP) that links a Windows Autopilot device preparation policy to ensure that devices are ready for users after provisioning. Required.
 func (m *CloudPcAutopilotConfiguration) SetDevicePreparationProfileId(value *string)() {
     err := m.GetBackingStore().Set("devicePreparationProfileId", value)
     if err != nil {
@@ -200,7 +200,7 @@ func (m *CloudPcAutopilotConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOnFailureDeviceAccessDenied sets the onFailureDeviceAccessDenied property value. The onFailureDeviceAccessDenied property
+// SetOnFailureDeviceAccessDenied sets the onFailureDeviceAccessDenied property value. Indicates whether the access to the device is allowed when the application of Autopilot device preparation profile (DPP) configurations fails or times out. If true, the status of the device is failed and the device is unable to access; otherwise, the status of the device is provisionedWithWarnings and the device is allowed to access. The default value is false. Required.
 func (m *CloudPcAutopilotConfiguration) SetOnFailureDeviceAccessDenied(value *bool)() {
     err := m.GetBackingStore().Set("onFailureDeviceAccessDenied", value)
     if err != nil {

@@ -41,6 +41,11 @@ type OnlineMeetingsOnlineMeetingItemRequestBuilderPatchRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AiInsights provides operations to manage the aiInsights property of the microsoft.graph.onlineMeeting entity.
+// returns a *OnlineMeetingsItemAiInsightsRequestBuilder when successful
+func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AiInsights()(*OnlineMeetingsItemAiInsightsRequestBuilder) {
+    return NewOnlineMeetingsItemAiInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // AlternativeRecording provides operations to manage the media for the commsApplication entity.
 // returns a *OnlineMeetingsItemAlternativeRecordingRequestBuilder when successful
 func (m *OnlineMeetingsOnlineMeetingItemRequestBuilder) AlternativeRecording()(*OnlineMeetingsItemAlternativeRecordingRequestBuilder) {

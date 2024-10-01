@@ -396,6 +396,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthenticationEventsFlow(), nil
                     case "#microsoft.graph.authenticationEventsPolicy":
                         return NewAuthenticationEventsPolicy(), nil
+                    case "#microsoft.graph.authenticationFailure":
+                        return NewAuthenticationFailure(), nil
                     case "#microsoft.graph.authenticationFlowsPolicy":
                         return NewAuthenticationFlowsPolicy(), nil
                     case "#microsoft.graph.authenticationListener":
@@ -562,6 +564,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCall(), nil
                     case "#microsoft.graph.callActivityStatistics":
                         return NewCallActivityStatistics(), nil
+                    case "#microsoft.graph.callAiInsight":
+                        return NewCallAiInsight(), nil
                     case "#microsoft.graph.callEvent":
                         return NewCallEvent(), nil
                     case "#microsoft.graph.callRecording":
@@ -618,6 +622,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcAuditEvent(), nil
                     case "#microsoft.graph.cloudPcBulkAction":
                         return NewCloudPcBulkAction(), nil
+                    case "#microsoft.graph.cloudPcBulkCreateSnapshot":
+                        return NewCloudPcBulkCreateSnapshot(), nil
                     case "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback":
                         return NewCloudPcBulkDisasterRecoveryFailback(), nil
                     case "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover":
@@ -636,6 +642,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcBulkRestart(), nil
                     case "#microsoft.graph.cloudPcBulkRestore":
                         return NewCloudPcBulkRestore(), nil
+                    case "#microsoft.graph.cloudPcBulkSetReviewStatus":
+                        return NewCloudPcBulkSetReviewStatus(), nil
                     case "#microsoft.graph.cloudPcBulkTroubleshoot":
                         return NewCloudPcBulkTroubleshoot(), nil
                     case "#microsoft.graph.cloudPCConnectivityIssue":
@@ -1188,6 +1196,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEmbeddedSIMActivationCodePoolAssignment(), nil
                     case "#microsoft.graph.embeddedSIMDeviceState":
                         return NewEmbeddedSIMDeviceState(), nil
+                    case "#microsoft.graph.emergencyCallEvent":
+                        return NewEmergencyCallEvent(), nil
                     case "#microsoft.graph.employeeExperienceUser":
                         return NewEmployeeExperienceUser(), nil
                     case "#microsoft.graph.encryptedAwsStorageBucketFinding":
@@ -2084,6 +2094,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOverprovisionedServerlessFunctionFinding(), nil
                     case "#microsoft.graph.overprovisionedUserFinding":
                         return NewOverprovisionedUserFinding(), nil
+                    case "#microsoft.graph.pageTemplate":
+                        return NewPageTemplate(), nil
                     case "#microsoft.graph.participant":
                         return NewParticipant(), nil
                     case "#microsoft.graph.participantJoiningNotification":

@@ -73,9 +73,9 @@ func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLin
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PurchaseInvoiceLineable), nil
 }
 // Item provides operations to manage the item property of the microsoft.graph.purchaseInvoiceLine entity.
-// returns a *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilder when successful
-func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) Item()(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilder) {
-    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilder when successful
+func (m *CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesPurchaseInvoiceLineItemRequestBuilder) Item()(*CompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilder) {
+    return NewCompaniesItemPurchaseInvoicesItemPurchaseInvoiceLinesItemItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property purchaseInvoiceLines in financials
 // returns a PurchaseInvoiceLineable when successful

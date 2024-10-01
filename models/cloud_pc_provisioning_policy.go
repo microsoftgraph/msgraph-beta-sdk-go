@@ -55,7 +55,7 @@ func (m *CloudPcProvisioningPolicy) GetAutopatch()(CloudPcProvisioningPolicyAuto
     }
     return nil
 }
-// GetAutopilotConfiguration gets the autopilotConfiguration property value. The autopilotConfiguration property
+// GetAutopilotConfiguration gets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. Supports $select.
 // returns a CloudPcAutopilotConfigurationable when successful
 func (m *CloudPcProvisioningPolicy) GetAutopilotConfiguration()(CloudPcAutopilotConfigurationable) {
     val, err := m.GetBackingStore().Get("autopilotConfiguration")
@@ -675,7 +675,7 @@ func (m *CloudPcProvisioningPolicy) SetAutopatch(value CloudPcProvisioningPolicy
         panic(err)
     }
 }
-// SetAutopilotConfiguration sets the autopilotConfiguration property value. The autopilotConfiguration property
+// SetAutopilotConfiguration sets the autopilotConfiguration property value. The specific settings for Windows Autopilot that enable Windows 365 customers to experience it on Cloud PC. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetAutopilotConfiguration(value CloudPcAutopilotConfigurationable)() {
     err := m.GetBackingStore().Set("autopilotConfiguration", value)
     if err != nil {

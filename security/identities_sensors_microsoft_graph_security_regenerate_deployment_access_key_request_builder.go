@@ -31,9 +31,12 @@ func NewIdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyRequ
     urlParams["request-raw-url"] = rawUrl
     return NewIdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action regenerateDeploymentAccessKey
+// Post generate a new deployment access key that can be used to install a sensor associated with the workspace.
 // returns a DeploymentAccessKeyTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sensor-regeneratedeploymentaccesskey?view=graph-rest-beta
 func (m *IdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyRequestBuilder) Post(ctx context.Context, requestConfiguration *IdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DeploymentAccessKeyTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *IdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyReq
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DeploymentAccessKeyTypeable), nil
 }
-// ToPostRequestInformation invoke action regenerateDeploymentAccessKey
+// ToPostRequestInformation generate a new deployment access key that can be used to install a sensor associated with the workspace.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

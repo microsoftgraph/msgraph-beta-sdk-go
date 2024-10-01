@@ -246,7 +246,7 @@ func (m *CloudPcDeviceImage) GetOsStatus()(*CloudPcDeviceImageOsStatus) {
     }
     return nil
 }
-// GetOsVersionNumber gets the osVersionNumber property value. The osVersionNumber property
+// GetOsVersionNumber gets the osVersionNumber property value. The operating system version of this image. For example, 10.0.22000.296. Read-only.
 // returns a *string when successful
 func (m *CloudPcDeviceImage) GetOsVersionNumber()(*string) {
     val, err := m.GetBackingStore().Get("osVersionNumber")
@@ -457,7 +457,7 @@ func (m *CloudPcDeviceImage) SetOsStatus(value *CloudPcDeviceImageOsStatus)() {
         panic(err)
     }
 }
-// SetOsVersionNumber sets the osVersionNumber property value. The osVersionNumber property
+// SetOsVersionNumber sets the osVersionNumber property value. The operating system version of this image. For example, 10.0.22000.296. Read-only.
 func (m *CloudPcDeviceImage) SetOsVersionNumber(value *string)() {
     err := m.GetBackingStore().Set("osVersionNumber", value)
     if err != nil {

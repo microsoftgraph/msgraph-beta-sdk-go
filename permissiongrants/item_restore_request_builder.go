@@ -37,8 +37,8 @@ func NewItemRestoreRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-beta
-func (m *ItemRestoreRequestBuilder) Post(ctx context.Context, body ItemRestorePostRequestBodyable, requestConfiguration *ItemRestoreRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
-    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+func (m *ItemRestoreRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemRestoreRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
@@ -56,17 +56,13 @@ func (m *ItemRestoreRequestBuilder) Post(ctx context.Context, body ItemRestorePo
 }
 // ToPostRequestInformation restore a recently deleted application, externalUserProfile, group, pendingExternalUserProfile, servicePrincipal, administrative unit, or user object from deleted items. If an item was accidentally deleted, you can fully restore the item. This isn't applicable to security groups, which are deleted permanently. Also, restoring an application doesn't restore the associated service principal automatically. You must call this API to explicitly restore the deleted service principal. A recently deleted item remains available for up to 30 days. After 30 days, the item is permanently deleted.
 // returns a *RequestInformation when successful
-func (m *ItemRestoreRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemRestorePostRequestBodyable, requestConfiguration *ItemRestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ItemRestoreRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemRestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
     requestInfo.Headers.TryAdd("Accept", "application/json")
-    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
-    if err != nil {
-        return nil, err
-    }
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.

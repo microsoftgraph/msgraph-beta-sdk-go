@@ -163,7 +163,7 @@ func (m *EducationClass) GetExternalSource()(*EducationExternalSource) {
     }
     return nil
 }
-// GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source this resources was generated from.
+// GetExternalSourceDetail gets the externalSourceDetail property value. The name of the external source from which this resource was generated.
 // returns a *string when successful
 func (m *EducationClass) GetExternalSourceDetail()(*string) {
     val, err := m.GetBackingStore().Get("externalSourceDetail")
@@ -778,7 +778,7 @@ func (m *EducationClass) SetExternalSource(value *EducationExternalSource)() {
         panic(err)
     }
 }
-// SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source this resources was generated from.
+// SetExternalSourceDetail sets the externalSourceDetail property value. The name of the external source from which this resource was generated.
 func (m *EducationClass) SetExternalSourceDetail(value *string)() {
     err := m.GetBackingStore().Set("externalSourceDetail", value)
     if err != nil {

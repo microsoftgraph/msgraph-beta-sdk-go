@@ -518,6 +518,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["remoteNetworkId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRemoteNetworkId(val)
+        }
+        return nil
+    }
     res["resourceTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -807,6 +817,18 @@ func (m *NetworkAccessTraffic) GetReceivedBytes()(*int64) {
     }
     if val != nil {
         return val.(*int64)
+    }
+    return nil
+}
+// GetRemoteNetworkId gets the remoteNetworkId property value. The remoteNetworkId property
+// returns a *string when successful
+func (m *NetworkAccessTraffic) GetRemoteNetworkId()(*string) {
+    val, err := m.GetBackingStore().Get("remoteNetworkId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -1152,6 +1174,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteStringValue("remoteNetworkId", m.GetRemoteNetworkId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("resourceTenantId", m.GetResourceTenantId())
         if err != nil {
             return err
@@ -1452,6 +1480,13 @@ func (m *NetworkAccessTraffic) SetReceivedBytes(value *int64)() {
         panic(err)
     }
 }
+// SetRemoteNetworkId sets the remoteNetworkId property value. The remoteNetworkId property
+func (m *NetworkAccessTraffic) SetRemoteNetworkId(value *string)() {
+    err := m.GetBackingStore().Set("remoteNetworkId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResourceTenantId sets the resourceTenantId property value. The resourceTenantId property
 func (m *NetworkAccessTraffic) SetResourceTenantId(value *string)() {
     err := m.GetBackingStore().Set("resourceTenantId", value)
@@ -1583,6 +1618,7 @@ type NetworkAccessTrafficable interface {
     GetPolicyRuleName()(*string)
     GetPrivateAccessDetails()(PrivateAccessDetailsable)
     GetReceivedBytes()(*int64)
+    GetRemoteNetworkId()(*string)
     GetResourceTenantId()(*string)
     GetSentBytes()(*int64)
     GetSessionId()(*string)
@@ -1626,6 +1662,7 @@ type NetworkAccessTrafficable interface {
     SetPolicyRuleName(value *string)()
     SetPrivateAccessDetails(value PrivateAccessDetailsable)()
     SetReceivedBytes(value *int64)()
+    SetRemoteNetworkId(value *string)()
     SetResourceTenantId(value *string)()
     SetSentBytes(value *int64)()
     SetSessionId(value *string)()

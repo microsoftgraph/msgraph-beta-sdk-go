@@ -719,6 +719,11 @@ func (m *ReportsRequestBuilder) GetYammerGroupsActivityDetailWithPeriod(period *
 func (m *ReportsRequestBuilder) GetYammerGroupsActivityGroupCountsWithPeriod(period *string)(*GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder) {
     return NewGetYammerGroupsActivityGroupCountsWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
+// HealthMonitoring provides operations to manage the healthMonitoring property of the microsoft.graph.reportRoot entity.
+// returns a *HealthMonitoringRequestBuilder when successful
+func (m *ReportsRequestBuilder) HealthMonitoring()(*HealthMonitoringRequestBuilder) {
+    return NewHealthMonitoringRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken provides operations to call the managedDeviceEnrollmentAbandonmentDetails method.
 // returns a *ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder when successful
 func (m *ReportsRequestBuilder) ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipToken(filter *string, skip *int32, skipToken *string, top *int32)(*ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder) {

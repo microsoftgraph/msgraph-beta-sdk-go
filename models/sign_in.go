@@ -1042,6 +1042,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["tokenProtectionStatusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTokenProtectionStatusDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTokenProtectionStatusDetails(val.(TokenProtectionStatusDetailsable))
+        }
+        return nil
+    }
     res["uniqueTokenIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -1569,6 +1579,18 @@ func (m *SignIn) GetTokenIssuerType()(*TokenIssuerType) {
     }
     if val != nil {
         return val.(*TokenIssuerType)
+    }
+    return nil
+}
+// GetTokenProtectionStatusDetails gets the tokenProtectionStatusDetails property value. The tokenProtectionStatusDetails property
+// returns a TokenProtectionStatusDetailsable when successful
+func (m *SignIn) GetTokenProtectionStatusDetails()(TokenProtectionStatusDetailsable) {
+    val, err := m.GetBackingStore().Get("tokenProtectionStatusDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TokenProtectionStatusDetailsable)
     }
     return nil
 }
@@ -2109,6 +2131,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteObjectValue("tokenProtectionStatusDetails", m.GetTokenProtectionStatusDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("uniqueTokenIdentifier", m.GetUniqueTokenIdentifier())
         if err != nil {
             return err
@@ -2595,6 +2623,13 @@ func (m *SignIn) SetTokenIssuerType(value *TokenIssuerType)() {
         panic(err)
     }
 }
+// SetTokenProtectionStatusDetails sets the tokenProtectionStatusDetails property value. The tokenProtectionStatusDetails property
+func (m *SignIn) SetTokenProtectionStatusDetails(value TokenProtectionStatusDetailsable)() {
+    err := m.GetBackingStore().Set("tokenProtectionStatusDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
 func (m *SignIn) SetUniqueTokenIdentifier(value *string)() {
     err := m.GetBackingStore().Set("uniqueTokenIdentifier", value)
@@ -2704,6 +2739,7 @@ type SignInable interface {
     GetStatus()(SignInStatusable)
     GetTokenIssuerName()(*string)
     GetTokenIssuerType()(*TokenIssuerType)
+    GetTokenProtectionStatusDetails()(TokenProtectionStatusDetailsable)
     GetUniqueTokenIdentifier()(*string)
     GetUserAgent()(*string)
     GetUserDisplayName()(*string)
@@ -2774,6 +2810,7 @@ type SignInable interface {
     SetStatus(value SignInStatusable)()
     SetTokenIssuerName(value *string)()
     SetTokenIssuerType(value *TokenIssuerType)()
+    SetTokenProtectionStatusDetails(value TokenProtectionStatusDetailsable)()
     SetUniqueTokenIdentifier(value *string)()
     SetUserAgent(value *string)()
     SetUserDisplayName(value *string)()

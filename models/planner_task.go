@@ -456,6 +456,26 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedBy(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
+        }
+        return nil
+    }
     res["orderHint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -613,6 +633,30 @@ func (m *PlannerTask) GetIsOnMyDayLastModifiedDate()(*i878a80d2330e89d26896388a3
     }
     if val != nil {
         return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// returns a IdentitySetable when successful
+func (m *PlannerTask) GetLastModifiedBy()(IdentitySetable) {
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
+func (m *PlannerTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -881,6 +925,18 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("lastModifiedBy", m.GetLastModifiedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("orderHint", m.GetOrderHint())
         if err != nil {
             return err
@@ -1097,6 +1153,20 @@ func (m *PlannerTask) SetIsOnMyDayLastModifiedDate(value *i878a80d2330e89d268963
         panic(err)
     }
 }
+// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+func (m *PlannerTask) SetLastModifiedBy(value IdentitySetable)() {
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+func (m *PlannerTask) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOrderHint sets the orderHint property value. The hint used to order items of this type in a list view. For more information, see Using order hints in plannern.
 func (m *PlannerTask) SetOrderHint(value *string)() {
     err := m.GetBackingStore().Set("orderHint", value)
@@ -1198,6 +1268,8 @@ type PlannerTaskable interface {
     GetIsArchived()(*bool)
     GetIsOnMyDay()(*bool)
     GetIsOnMyDayLastModifiedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetLastModifiedBy()(IdentitySetable)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOrderHint()(*string)
     GetPercentComplete()(*int32)
     GetPlanId()(*string)
@@ -1230,6 +1302,8 @@ type PlannerTaskable interface {
     SetIsArchived(value *bool)()
     SetIsOnMyDay(value *bool)()
     SetIsOnMyDayLastModifiedDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetLastModifiedBy(value IdentitySetable)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOrderHint(value *string)()
     SetPercentComplete(value *int32)()
     SetPlanId(value *string)()

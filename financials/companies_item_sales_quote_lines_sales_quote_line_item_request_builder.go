@@ -73,9 +73,9 @@ func (m *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) Get(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesQuoteLineable), nil
 }
 // Item provides operations to manage the item property of the microsoft.graph.salesQuoteLine entity.
-// returns a *CompaniesItemSalesQuoteLinesItemItemRequestBuilder when successful
-func (m *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) Item()(*CompaniesItemSalesQuoteLinesItemItemRequestBuilder) {
-    return NewCompaniesItemSalesQuoteLinesItemItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilder when successful
+func (m *CompaniesItemSalesQuoteLinesSalesQuoteLineItemRequestBuilder) Item()(*CompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilder) {
+    return NewCompaniesItemSalesQuoteLinesItemItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property salesQuoteLines in financials
 // returns a SalesQuoteLineable when successful

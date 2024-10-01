@@ -11,7 +11,7 @@ import (
 type IdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilderGetQueryParameters get healthIssues from security
+// IdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilderGetQueryParameters represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
 type IdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewIdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewIdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get healthIssues from security
+// Get represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
 // returns a HealthIssueable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueable, error) {
@@ -60,7 +60,7 @@ func (m *IdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilder) Get(ctx
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueable), nil
 }
-// ToGetRequestInformation get healthIssues from security
+// ToGetRequestInformation represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorsItemHealthIssuesHealthIssueItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

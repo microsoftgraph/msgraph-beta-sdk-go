@@ -67,6 +67,16 @@ func (m *ItemItemsItemCopyPostRequestBody) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["includeAllVersionHistory"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIncludeAllVersionHistory(val)
+        }
+        return nil
+    }
     res["name"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -88,6 +98,18 @@ func (m *ItemItemsItemCopyPostRequestBody) GetFieldDeserializers()(map[string]fu
         return nil
     }
     return res
+}
+// GetIncludeAllVersionHistory gets the includeAllVersionHistory property value. The includeAllVersionHistory property
+// returns a *bool when successful
+func (m *ItemItemsItemCopyPostRequestBody) GetIncludeAllVersionHistory()(*bool) {
+    val, err := m.GetBackingStore().Get("includeAllVersionHistory")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetName gets the name property value. The name property
 // returns a *string when successful
@@ -117,6 +139,12 @@ func (m *ItemItemsItemCopyPostRequestBody) GetParentReference()(ie233ee762e29b4b
 func (m *ItemItemsItemCopyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("childrenOnly", m.GetChildrenOnly())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("includeAllVersionHistory", m.GetIncludeAllVersionHistory())
         if err != nil {
             return err
         }
@@ -159,6 +187,13 @@ func (m *ItemItemsItemCopyPostRequestBody) SetChildrenOnly(value *bool)() {
         panic(err)
     }
 }
+// SetIncludeAllVersionHistory sets the includeAllVersionHistory property value. The includeAllVersionHistory property
+func (m *ItemItemsItemCopyPostRequestBody) SetIncludeAllVersionHistory(value *bool)() {
+    err := m.GetBackingStore().Set("includeAllVersionHistory", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetName sets the name property value. The name property
 func (m *ItemItemsItemCopyPostRequestBody) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
@@ -179,10 +214,12 @@ type ItemItemsItemCopyPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetChildrenOnly()(*bool)
+    GetIncludeAllVersionHistory()(*bool)
     GetName()(*string)
     GetParentReference()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemReferenceable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetChildrenOnly(value *bool)()
+    SetIncludeAllVersionHistory(value *bool)()
     SetName(value *string)()
     SetParentReference(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemReferenceable)()
 }

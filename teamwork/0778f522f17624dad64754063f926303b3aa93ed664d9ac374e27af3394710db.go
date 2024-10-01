@@ -10,7 +10,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesRequestBuilderGetQueryParameters get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesRequestBuilderGetQueryParameters get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,7 +51,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMess
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+// Get get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // Deprecated: This method is obsolete. Use GetAsGetAllRetainedMessagesGetResponse instead.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -75,7 +75,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMes
     }
     return res.(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesResponseable), nil
 }
-// GetAsGetAllRetainedMessagesGetResponse get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+// GetAsGetAllRetainedMessagesGetResponse get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -98,7 +98,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMes
     }
     return res.(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesGetResponseable), nil
 }
-// ToGetRequestInformation get retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+// ToGetRequestInformation get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsGetAllRetainedMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

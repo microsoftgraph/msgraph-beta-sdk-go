@@ -193,6 +193,11 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPCRemote
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveReviewStatus()(*VirtualEndpointCloudPCsItemRetrieveReviewStatusRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRetrieveReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveSnapshots provides operations to call the retrieveSnapshots method.
+// returns a *VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveSnapshots()(*VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
 // returns a *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {

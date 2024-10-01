@@ -18,7 +18,7 @@ type FileStorageContainersItemPermissionsPermissionItemRequestBuilderDeleteReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetQueryParameters the set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are 'reader', 'writer', 'manager', and 'owner'. Read-write.
+// FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetQueryParameters the set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.
 type FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,11 +54,8 @@ func NewFileStorageContainersItemPermissionsPermissionItemRequestBuilder(rawUrl 
     urlParams["request-raw-url"] = rawUrl
     return NewFileStorageContainersItemPermissionsPermissionItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete permissions from a fileStorageContainer object.
+// Delete delete navigation property permissions for storage
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/filestoragecontainer-delete-permissions?view=graph-rest-beta
 func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FileStorageContainersItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +70,7 @@ func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) Delet
     }
     return nil
 }
-// Get the set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are 'reader', 'writer', 'manager', and 'owner'. Read-write.
+// Get the set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
@@ -98,12 +95,9 @@ func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) Get(c
 func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) Grant()(*FileStorageContainersItemPermissionsItemGrantRequestBuilder) {
     return NewFileStorageContainersItemPermissionsItemGrantRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Patch update an existing permission on a fileStorageContainer by making a PATCH request on the permission resource. Only the roles property can be updated.  One role per user is supported. A new ID is generated for the updated permissions object.
+// Patch update the navigation property permissions in storage
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/filestoragecontainer-update-permissions?view=graph-rest-beta
 func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *FileStorageContainersItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -126,7 +120,7 @@ func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) Patch
 func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) RevokeGrants()(*FileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilder) {
     return NewFileStorageContainersItemPermissionsItemRevokeGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete permissions from a fileStorageContainer object.
+// ToDeleteRequestInformation delete navigation property permissions for storage
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainersItemPermissionsPermissionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,7 +131,7 @@ func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) ToDel
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are 'reader', 'writer', 'manager', and 'owner'. Read-write.
+// ToGetRequestInformation the set of permissions for users in the fileStorageContainer. The permission for each user is set by the roles property. The possible values are reader, writer, manager, and owner. Read-write.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainersItemPermissionsPermissionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +145,7 @@ func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) ToGet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update an existing permission on a fileStorageContainer by making a PATCH request on the permission resource. Only the roles property can be updated.  One role per user is supported. A new ID is generated for the updated permissions object.
+// ToPatchRequestInformation update the navigation property permissions in storage
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersItemPermissionsPermissionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, requestConfiguration *FileStorageContainersItemPermissionsPermissionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

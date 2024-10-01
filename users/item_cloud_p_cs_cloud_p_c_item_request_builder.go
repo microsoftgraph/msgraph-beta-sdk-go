@@ -193,6 +193,11 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPCRemoteActionResul
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveReviewStatus()(*ItemCloudPCsItemRetrieveReviewStatusRequestBuilder) {
     return NewItemCloudPCsItemRetrieveReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveSnapshots provides operations to call the retrieveSnapshots method.
+// returns a *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveSnapshots()(*ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) {
+    return NewItemCloudPCsItemRetrieveSnapshotsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetryPartnerAgentInstallation provides operations to call the retryPartnerAgentInstallation method.
 // returns a *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetryPartnerAgentInstallation()(*ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {

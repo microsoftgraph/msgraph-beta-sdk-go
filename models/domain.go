@@ -43,7 +43,7 @@ func (m *Domain) GetAvailabilityStatus()(*string) {
     }
     return nil
 }
-// GetDomainNameReferences gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+// GetDomainNameReferences gets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Does not support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 // returns a []DirectoryObjectable when successful
 func (m *Domain) GetDomainNameReferences()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("domainNameReferences")
@@ -55,7 +55,7 @@ func (m *Domain) GetDomainNameReferences()([]DirectoryObjectable) {
     }
     return nil
 }
-// GetFederationConfiguration gets the federationConfiguration property value. Domain settings configured by customer when federated with Microsoft Entra ID. Supports $expand.
+// GetFederationConfiguration gets the federationConfiguration property value. Domain settings configured by customer when federated with Microsoft Entra ID. Does not support $expand.
 // returns a []InternalDomainFederationable when successful
 func (m *Domain) GetFederationConfiguration()([]InternalDomainFederationable) {
     val, err := m.GetBackingStore().Get("federationConfiguration")
@@ -375,7 +375,7 @@ func (m *Domain) GetRootDomain()(Domainable) {
     }
     return nil
 }
-// GetServiceConfigurationRecords gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
+// GetServiceConfigurationRecords gets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Does not support $expand.
 // returns a []DomainDnsRecordable when successful
 func (m *Domain) GetServiceConfigurationRecords()([]DomainDnsRecordable) {
     val, err := m.GetBackingStore().Get("serviceConfigurationRecords")
@@ -423,7 +423,7 @@ func (m *Domain) GetSupportedServices()([]string) {
     }
     return nil
 }
-// GetVerificationDnsRecords gets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.
+// GetVerificationDnsRecords gets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Does not support $expand.
 // returns a []DomainDnsRecordable when successful
 func (m *Domain) GetVerificationDnsRecords()([]DomainDnsRecordable) {
     val, err := m.GetBackingStore().Get("verificationDnsRecords")
@@ -589,14 +589,14 @@ func (m *Domain) SetAvailabilityStatus(value *string)() {
         panic(err)
     }
 }
-// SetDomainNameReferences sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
+// SetDomainNameReferences sets the domainNameReferences property value. The objects such as users and groups that reference the domain ID. Read-only, Nullable. Does not support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
 func (m *Domain) SetDomainNameReferences(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("domainNameReferences", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFederationConfiguration sets the federationConfiguration property value. Domain settings configured by customer when federated with Microsoft Entra ID. Supports $expand.
+// SetFederationConfiguration sets the federationConfiguration property value. Domain settings configured by customer when federated with Microsoft Entra ID. Does not support $expand.
 func (m *Domain) SetFederationConfiguration(value []InternalDomainFederationable)() {
     err := m.GetBackingStore().Set("federationConfiguration", value)
     if err != nil {
@@ -659,7 +659,7 @@ func (m *Domain) SetRootDomain(value Domainable)() {
         panic(err)
     }
 }
-// SetServiceConfigurationRecords sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
+// SetServiceConfigurationRecords sets the serviceConfigurationRecords property value. DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Does not support $expand.
 func (m *Domain) SetServiceConfigurationRecords(value []DomainDnsRecordable)() {
     err := m.GetBackingStore().Set("serviceConfigurationRecords", value)
     if err != nil {
@@ -687,7 +687,7 @@ func (m *Domain) SetSupportedServices(value []string)() {
         panic(err)
     }
 }
-// SetVerificationDnsRecords sets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.
+// SetVerificationDnsRecords sets the verificationDnsRecords property value. DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Does not support $expand.
 func (m *Domain) SetVerificationDnsRecords(value []DomainDnsRecordable)() {
     err := m.GetBackingStore().Set("verificationDnsRecords", value)
     if err != nil {

@@ -31,9 +31,12 @@ func NewIdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBui
     urlParams["request-raw-url"] = rawUrl
     return NewIdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getDeploymentPackageUri
+// Get get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
 // returns a SensorDeploymentPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentpackageuri?view=graph-rest-beta
 func (m *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensorDeploymentPackageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBu
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensorDeploymentPackageable), nil
 }
-// ToGetRequestInformation invoke function getDeploymentPackageUri
+// ToGetRequestInformation get the sensor deployment package URL and version. You can use this URL to download the installer to install the sensor on a server.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentPackageUriRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

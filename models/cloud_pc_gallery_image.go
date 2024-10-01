@@ -257,7 +257,7 @@ func (m *CloudPcGalleryImage) GetOfferName()(*string) {
     }
     return nil
 }
-// GetOsVersionNumber gets the osVersionNumber property value. The osVersionNumber property
+// GetOsVersionNumber gets the osVersionNumber property value. The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.
 // returns a *string when successful
 func (m *CloudPcGalleryImage) GetOsVersionNumber()(*string) {
     val, err := m.GetBackingStore().Get("osVersionNumber")
@@ -524,7 +524,7 @@ func (m *CloudPcGalleryImage) SetOfferName(value *string)() {
         panic(err)
     }
 }
-// SetOsVersionNumber sets the osVersionNumber property value. The osVersionNumber property
+// SetOsVersionNumber sets the osVersionNumber property value. The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.
 func (m *CloudPcGalleryImage) SetOsVersionNumber(value *string)() {
     err := m.GetBackingStore().Set("osVersionNumber", value)
     if err != nil {
