@@ -43,6 +43,30 @@ func (m *AuthenticationsMetric) GetAttemptsCount()(*int64) {
     }
     return nil
 }
+// GetAuthFlow gets the authFlow property value. The authFlow property
+// returns a *string when successful
+func (m *AuthenticationsMetric) GetAuthFlow()(*string) {
+    val, err := m.GetBackingStore().Get("authFlow")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetBrowser gets the browser property value. The browser property
+// returns a *string when successful
+func (m *AuthenticationsMetric) GetBrowser()(*string) {
+    val, err := m.GetBackingStore().Get("browser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetCountry gets the country property value. The location where the customers authenticated from. Supports $filter (eq).
 // returns a *string when successful
 func (m *AuthenticationsMetric) GetCountry()(*string) {
@@ -64,6 +88,18 @@ func (m *AuthenticationsMetric) GetFactDate()(*i878a80d2330e89d26896388a3f487eef
     }
     if val != nil {
         return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    }
+    return nil
+}
+// GetFailures gets the failures property value. The failures property
+// returns a []AuthenticationFailureable when successful
+func (m *AuthenticationsMetric) GetFailures()([]AuthenticationFailureable) {
+    val, err := m.GetBackingStore().Get("failures")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AuthenticationFailureable)
     }
     return nil
 }
@@ -91,6 +127,26 @@ func (m *AuthenticationsMetric) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["authFlow"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthFlow(val)
+        }
+        return nil
+    }
+    res["browser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBrowser(val)
+        }
+        return nil
+    }
     res["country"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -108,6 +164,22 @@ func (m *AuthenticationsMetric) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetFactDate(val)
+        }
+        return nil
+    }
+    res["failures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAuthenticationFailureFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AuthenticationFailureable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AuthenticationFailureable)
+                }
+            }
+            m.SetFailures(res)
         }
         return nil
     }
@@ -220,6 +292,18 @@ func (m *AuthenticationsMetric) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteStringValue("authFlow", m.GetAuthFlow())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("browser", m.GetBrowser())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("country", m.GetCountry())
         if err != nil {
             return err
@@ -227,6 +311,18 @@ func (m *AuthenticationsMetric) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err = writer.WriteDateOnlyValue("factDate", m.GetFactDate())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetFailures() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFailures()))
+        for i, v := range m.GetFailures() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("failures", cast)
         if err != nil {
             return err
         }
@@ -271,6 +367,20 @@ func (m *AuthenticationsMetric) SetAttemptsCount(value *int64)() {
         panic(err)
     }
 }
+// SetAuthFlow sets the authFlow property value. The authFlow property
+func (m *AuthenticationsMetric) SetAuthFlow(value *string)() {
+    err := m.GetBackingStore().Set("authFlow", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBrowser sets the browser property value. The browser property
+func (m *AuthenticationsMetric) SetBrowser(value *string)() {
+    err := m.GetBackingStore().Set("browser", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCountry sets the country property value. The location where the customers authenticated from. Supports $filter (eq).
 func (m *AuthenticationsMetric) SetCountry(value *string)() {
     err := m.GetBackingStore().Set("country", value)
@@ -281,6 +391,13 @@ func (m *AuthenticationsMetric) SetCountry(value *string)() {
 // SetFactDate sets the factDate property value. The date of the user insight.
 func (m *AuthenticationsMetric) SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("factDate", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFailures sets the failures property value. The failures property
+func (m *AuthenticationsMetric) SetFailures(value []AuthenticationFailureable)() {
+    err := m.GetBackingStore().Set("failures", value)
     if err != nil {
         panic(err)
     }
@@ -318,16 +435,22 @@ type AuthenticationsMetricable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppid()(*string)
     GetAttemptsCount()(*int64)
+    GetAuthFlow()(*string)
+    GetBrowser()(*string)
     GetCountry()(*string)
     GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
+    GetFailures()([]AuthenticationFailureable)
     GetIdentityProvider()(*string)
     GetLanguage()(*string)
     GetOs()(*string)
     GetSuccessCount()(*int64)
     SetAppid(value *string)()
     SetAttemptsCount(value *int64)()
+    SetAuthFlow(value *string)()
+    SetBrowser(value *string)()
     SetCountry(value *string)()
     SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
+    SetFailures(value []AuthenticationFailureable)()
     SetIdentityProvider(value *string)()
     SetLanguage(value *string)()
     SetOs(value *string)()

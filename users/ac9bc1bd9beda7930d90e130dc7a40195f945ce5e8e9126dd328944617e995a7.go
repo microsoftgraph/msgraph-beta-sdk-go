@@ -18,7 +18,7 @@ type ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollect
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilderGetQueryParameters indicates collection of App Log Upload Request.
+// ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilderGetQueryParameters the collection property of AppLogUploadRequest.
 type ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -76,7 +76,7 @@ func (m *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCol
     }
     return nil
 }
-// Get indicates collection of App Log Upload Request.
+// Get the collection property of AppLogUploadRequest.
 // Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a AppLogCollectionRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -130,7 +130,7 @@ func (m *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCol
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation indicates collection of App Log Upload Request.
+// ToGetRequestInformation the collection property of AppLogUploadRequest.
 // Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsAppLogCollectionRequestItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

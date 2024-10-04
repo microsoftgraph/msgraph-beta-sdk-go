@@ -34,7 +34,7 @@ func (m *MobileAppDependency) GetDependencyType()(*MobileAppDependencyType) {
     }
     return nil
 }
-// GetDependentAppCount gets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app. This property is read-only.
+// GetDependentAppCount gets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app. Read-Only. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileAppDependency) GetDependentAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("dependentAppCount")
@@ -46,7 +46,7 @@ func (m *MobileAppDependency) GetDependentAppCount()(*int32) {
     }
     return nil
 }
-// GetDependsOnAppCount gets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on. This property is read-only.
+// GetDependsOnAppCount gets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on. Read-Only. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileAppDependency) GetDependsOnAppCount()(*int32) {
     val, err := m.GetBackingStore().Get("dependsOnAppCount")
@@ -116,14 +116,14 @@ func (m *MobileAppDependency) SetDependencyType(value *MobileAppDependencyType)(
         panic(err)
     }
 }
-// SetDependentAppCount sets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app. This property is read-only.
+// SetDependentAppCount sets the dependentAppCount property value. The total number of apps that directly or indirectly depend on the parent app. Read-Only. This property is read-only.
 func (m *MobileAppDependency) SetDependentAppCount(value *int32)() {
     err := m.GetBackingStore().Set("dependentAppCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDependsOnAppCount sets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on. This property is read-only.
+// SetDependsOnAppCount sets the dependsOnAppCount property value. The total number of apps the child app directly or indirectly depends on. Read-Only. This property is read-only.
 func (m *MobileAppDependency) SetDependsOnAppCount(value *int32)() {
     err := m.GetBackingStore().Set("dependsOnAppCount", value)
     if err != nil {

@@ -121,6 +121,11 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) Po
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
+// Remove provides operations to call the remove method.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRemoveRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) Remove()(*TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRemoveRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionMembersRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation members and owners of the team.
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

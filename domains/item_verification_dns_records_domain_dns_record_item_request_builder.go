@@ -18,7 +18,7 @@ type ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderGetQueryParameters dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.
+// ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderGetQueryParameters dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Does not support $expand.
 type ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.
+// Get dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Does not support $expand.
 // returns a DomainDnsRecordable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DomainDnsRecordable, error) {
@@ -121,7 +121,7 @@ func (m *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.
+// ToGetRequestInformation dNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Does not support $expand.
 // returns a *RequestInformation when successful
 func (m *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemVerificationDnsRecordsDomainDnsRecordItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

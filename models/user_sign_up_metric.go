@@ -31,6 +31,18 @@ func (m *UserSignUpMetric) GetAppId()(*string) {
     }
     return nil
 }
+// GetBrowser gets the browser property value. The browser property
+// returns a *string when successful
+func (m *UserSignUpMetric) GetBrowser()(*string) {
+    val, err := m.GetBackingStore().Get("browser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetCount gets the count property value. The total number of users who signed up in the specified period. Supports $filter (eq).
 // returns a *int64 when successful
 func (m *UserSignUpMetric) GetCount()(*int64) {
@@ -78,6 +90,16 @@ func (m *UserSignUpMetric) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetAppId(val)
+        }
+        return nil
+    }
+    res["browser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBrowser(val)
         }
         return nil
     }
@@ -192,6 +214,12 @@ func (m *UserSignUpMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("browser", m.GetBrowser())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt64Value("count", m.GetCount())
         if err != nil {
             return err
@@ -232,6 +260,13 @@ func (m *UserSignUpMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 // SetAppId sets the appId property value. The appId property
 func (m *UserSignUpMetric) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBrowser sets the browser property value. The browser property
+func (m *UserSignUpMetric) SetBrowser(value *string)() {
+    err := m.GetBackingStore().Set("browser", value)
     if err != nil {
         panic(err)
     }
@@ -282,6 +317,7 @@ type UserSignUpMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppId()(*string)
+    GetBrowser()(*string)
     GetCount()(*int64)
     GetCountry()(*string)
     GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -289,6 +325,7 @@ type UserSignUpMetricable interface {
     GetLanguage()(*string)
     GetOs()(*string)
     SetAppId(value *string)()
+    SetBrowser(value *string)()
     SetCount(value *int64)()
     SetCountry(value *string)()
     SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

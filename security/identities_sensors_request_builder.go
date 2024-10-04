@@ -11,7 +11,7 @@ import (
 type IdentitiesSensorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IdentitiesSensorsRequestBuilderGetQueryParameters get sensors from security
+// IdentitiesSensorsRequestBuilderGetQueryParameters get a list of sensor objects and their properties.
 type IdentitiesSensorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewIdentitiesSensorsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *IdentitiesSensorsRequestBuilder) Count()(*IdentitiesSensorsCountRequestBuilder) {
     return NewIdentitiesSensorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get sensors from security
+// Get get a list of sensor objects and their properties.
 // returns a SensorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-identitycontainer-list-sensors?view=graph-rest-beta
 func (m *IdentitiesSensorsRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -131,7 +134,7 @@ func (m *IdentitiesSensorsRequestBuilder) Post(ctx context.Context, body i084fa7
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Sensorable), nil
 }
-// ToGetRequestInformation get sensors from security
+// ToGetRequestInformation get a list of sensor objects and their properties.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

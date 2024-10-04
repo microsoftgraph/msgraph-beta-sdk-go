@@ -31,9 +31,12 @@ func NewIdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuil
     urlParams["request-raw-url"] = rawUrl
     return NewIdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function getDeploymentAccessKey
+// Get get the deployment access key associated with a Microsoft Defender for Identity, needed to install sensors associated with the workspace.
 // returns a DeploymentAccessKeyTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sensor-getdeploymentaccesskey?view=graph-rest-beta
 func (m *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DeploymentAccessKeyTypeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBui
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DeploymentAccessKeyTypeable), nil
 }
-// ToGetRequestInformation invoke function getDeploymentAccessKey
+// ToGetRequestInformation get the deployment access key associated with a Microsoft Defender for Identity, needed to install sensors associated with the workspace.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorsMicrosoftGraphSecurityGetDeploymentAccessKeyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

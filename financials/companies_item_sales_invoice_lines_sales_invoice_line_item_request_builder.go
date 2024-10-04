@@ -73,9 +73,9 @@ func (m *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) Get(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SalesInvoiceLineable), nil
 }
 // Item provides operations to manage the item property of the microsoft.graph.salesInvoiceLine entity.
-// returns a *CompaniesItemSalesInvoiceLinesItemItemRequestBuilder when successful
-func (m *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) Item()(*CompaniesItemSalesInvoiceLinesItemItemRequestBuilder) {
-    return NewCompaniesItemSalesInvoiceLinesItemItemRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// returns a *CompaniesItemSalesInvoiceLinesItemItem_EscapedRequestBuilder when successful
+func (m *CompaniesItemSalesInvoiceLinesSalesInvoiceLineItemRequestBuilder) Item()(*CompaniesItemSalesInvoiceLinesItemItem_EscapedRequestBuilder) {
+    return NewCompaniesItemSalesInvoiceLinesItemItem_EscapedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property salesInvoiceLines in financials
 // returns a SalesInvoiceLineable when successful

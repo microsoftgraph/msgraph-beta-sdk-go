@@ -11,7 +11,7 @@ import (
 type IdentitiesSensorsItemHealthIssuesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IdentitiesSensorsItemHealthIssuesRequestBuilderGetQueryParameters get healthIssues from security
+// IdentitiesSensorsItemHealthIssuesRequestBuilderGetQueryParameters represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
 type IdentitiesSensorsItemHealthIssuesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewIdentitiesSensorsItemHealthIssuesRequestBuilder(rawUrl string, requestAd
 func (m *IdentitiesSensorsItemHealthIssuesRequestBuilder) Count()(*IdentitiesSensorsItemHealthIssuesCountRequestBuilder) {
     return NewIdentitiesSensorsItemHealthIssuesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get healthIssues from security
+// Get represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
 // returns a HealthIssueCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IdentitiesSensorsItemHealthIssuesRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorsItemHealthIssuesRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueCollectionResponseable, error) {
@@ -89,7 +89,7 @@ func (m *IdentitiesSensorsItemHealthIssuesRequestBuilder) Get(ctx context.Contex
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.HealthIssueCollectionResponseable), nil
 }
-// ToGetRequestInformation get healthIssues from security
+// ToGetRequestInformation represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified related to the sensor.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorsItemHealthIssuesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorsItemHealthIssuesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

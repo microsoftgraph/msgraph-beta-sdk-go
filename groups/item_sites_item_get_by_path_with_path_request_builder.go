@@ -144,6 +144,11 @@ func (m *ItemSitesItemGetByPathWithPathRequestBuilder) Operations()(*ItemSitesIt
 func (m *ItemSitesItemGetByPathWithPathRequestBuilder) Pages()(*ItemSitesItemGetByPathWithPathPagesRequestBuilder) {
     return NewItemSitesItemGetByPathWithPathPagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PageTemplates provides operations to manage the pageTemplates property of the microsoft.graph.site entity.
+// returns a *ItemSitesItemGetByPathWithPathPageTemplatesRequestBuilder when successful
+func (m *ItemSitesItemGetByPathWithPathRequestBuilder) PageTemplates()(*ItemSitesItemGetByPathWithPathPageTemplatesRequestBuilder) {
+    return NewItemSitesItemGetByPathWithPathPageTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Permissions provides operations to manage the permissions property of the microsoft.graph.site entity.
 // returns a *ItemSitesItemGetByPathWithPathPermissionsRequestBuilder when successful
 func (m *ItemSitesItemGetByPathWithPathRequestBuilder) Permissions()(*ItemSitesItemGetByPathWithPathPermissionsRequestBuilder) {

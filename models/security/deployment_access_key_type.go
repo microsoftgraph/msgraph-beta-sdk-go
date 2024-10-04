@@ -40,7 +40,7 @@ func (m *DeploymentAccessKeyType) GetAdditionalData()(map[string]any) {
 func (m *DeploymentAccessKeyType) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeploymentAccessKey gets the deploymentAccessKey property value. The deploymentAccessKey property
+// GetDeploymentAccessKey gets the deploymentAccessKey property value. The deployment access key.
 // returns a *string when successful
 func (m *DeploymentAccessKeyType) GetDeploymentAccessKey()(*string) {
     val, err := m.GetBackingStore().Get("deploymentAccessKey")
@@ -123,7 +123,7 @@ func (m *DeploymentAccessKeyType) SetAdditionalData(value map[string]any)() {
 func (m *DeploymentAccessKeyType) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeploymentAccessKey sets the deploymentAccessKey property value. The deploymentAccessKey property
+// SetDeploymentAccessKey sets the deploymentAccessKey property value. The deployment access key.
 func (m *DeploymentAccessKeyType) SetDeploymentAccessKey(value *string)() {
     err := m.GetBackingStore().Set("deploymentAccessKey", value)
     if err != nil {

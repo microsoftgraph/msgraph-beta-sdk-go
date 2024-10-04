@@ -30,8 +30,11 @@ func NewFileStorageContainersItemPermanentDeleteRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewFileStorageContainersItemPermanentDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action permanentDelete
+// Post permanently delete a fileStorageContainer object. Deleting a file storage container with this method permanently removes it. It isn't sent to the deleted container collection. Therefore, it can't be restored later.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestoragecontainer-permanentdelete?view=graph-rest-beta
 func (m *FileStorageContainersItemPermanentDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *FileStorageContainersItemPermanentDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *FileStorageContainersItemPermanentDeleteRequestBuilder) Post(ctx contex
     }
     return nil
 }
-// ToPostRequestInformation invoke action permanentDelete
+// ToPostRequestInformation permanently delete a fileStorageContainer object. Deleting a file storage container with this method permanently removes it. It isn't sent to the deleted container collection. Therefore, it can't be restored later.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersItemPermanentDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainersItemPermanentDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

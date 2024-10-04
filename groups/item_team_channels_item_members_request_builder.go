@@ -121,6 +121,11 @@ func (m *ItemTeamChannelsItemMembersRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
+// Remove provides operations to call the remove method.
+// returns a *ItemTeamChannelsItemMembersRemoveRequestBuilder when successful
+func (m *ItemTeamChannelsItemMembersRequestBuilder) Remove()(*ItemTeamChannelsItemMembersRemoveRequestBuilder) {
+    return NewItemTeamChannelsItemMembersRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation a collection of membership records associated with the channel.
 // returns a *RequestInformation when successful
 func (m *ItemTeamChannelsItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

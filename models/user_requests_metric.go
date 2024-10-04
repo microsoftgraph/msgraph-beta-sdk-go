@@ -31,6 +31,18 @@ func (m *UserRequestsMetric) GetAppId()(*string) {
     }
     return nil
 }
+// GetBrowser gets the browser property value. The browser property
+// returns a *string when successful
+func (m *UserRequestsMetric) GetBrowser()(*string) {
+    val, err := m.GetBackingStore().Get("browser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetCountry gets the country property value. The country property
 // returns a *string when successful
 func (m *UserRequestsMetric) GetCountry()(*string) {
@@ -66,6 +78,16 @@ func (m *UserRequestsMetric) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         if val != nil {
             m.SetAppId(val)
+        }
+        return nil
+    }
+    res["browser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetBrowser(val)
         }
         return nil
     }
@@ -170,6 +192,12 @@ func (m *UserRequestsMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteStringValue("browser", m.GetBrowser())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("country", m.GetCountry())
         if err != nil {
             return err
@@ -204,6 +232,13 @@ func (m *UserRequestsMetric) Serialize(writer i878a80d2330e89d26896388a3f487eef2
 // SetAppId sets the appId property value. The appId property
 func (m *UserRequestsMetric) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetBrowser sets the browser property value. The browser property
+func (m *UserRequestsMetric) SetBrowser(value *string)() {
+    err := m.GetBackingStore().Set("browser", value)
     if err != nil {
         panic(err)
     }
@@ -247,12 +282,14 @@ type UserRequestsMetricable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppId()(*string)
+    GetBrowser()(*string)
     GetCountry()(*string)
     GetFactDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetIdentityProvider()(*string)
     GetLanguage()(*string)
     GetRequestCount()(*int64)
     SetAppId(value *string)()
+    SetBrowser(value *string)()
     SetCountry(value *string)()
     SetFactDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetIdentityProvider(value *string)()

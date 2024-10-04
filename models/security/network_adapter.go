@@ -46,7 +46,7 @@ func (m *NetworkAdapter) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether the network adapter is selected for capturing and analyzing network traffic.
 // returns a *bool when successful
 func (m *NetworkAdapter) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -58,7 +58,7 @@ func (m *NetworkAdapter) GetIsEnabled()(*bool) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the network adapter.
 // returns a *string when successful
 func (m *NetworkAdapter) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -90,14 +90,14 @@ func (m *NetworkAdapter) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether the network adapter is selected for capturing and analyzing network traffic.
 func (m *NetworkAdapter) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the network adapter.
 func (m *NetworkAdapter) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

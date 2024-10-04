@@ -18,7 +18,7 @@ type WindowsUpdatesCatalogRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// WindowsUpdatesCatalogRequestBuilderGetQueryParameters catalog of content that can be approved for deployment by the deployment service. Read-only.
+// WindowsUpdatesCatalogRequestBuilderGetQueryParameters catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
 type WindowsUpdatesCatalogRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *WindowsUpdatesCatalogRequestBuilder) Delete(ctx context.Context, reques
 func (m *WindowsUpdatesCatalogRequestBuilder) Entries()(*WindowsUpdatesCatalogEntriesRequestBuilder) {
     return NewWindowsUpdatesCatalogEntriesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get catalog of content that can be approved for deployment by the deployment service. Read-only.
+// Get catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
 // returns a Catalogable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *WindowsUpdatesCatalogRequestBuilder) Get(ctx context.Context, requestConfiguration *WindowsUpdatesCatalogRequestBuilderGetRequestConfiguration)(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.Catalogable, error) {
@@ -126,7 +126,7 @@ func (m *WindowsUpdatesCatalogRequestBuilder) ToDeleteRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation catalog of content that can be approved for deployment by the deployment service. Read-only.
+// ToGetRequestInformation catalog of content that can be approved for deployment by Windows Autopatch. Read-only.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesCatalogRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesCatalogRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

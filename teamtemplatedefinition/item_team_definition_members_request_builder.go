@@ -121,6 +121,11 @@ func (m *ItemTeamDefinitionMembersRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable), nil
 }
+// Remove provides operations to call the remove method.
+// returns a *ItemTeamDefinitionMembersRemoveRequestBuilder when successful
+func (m *ItemTeamDefinitionMembersRequestBuilder) Remove()(*ItemTeamDefinitionMembersRemoveRequestBuilder) {
+    return NewItemTeamDefinitionMembersRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation members and owners of the team.
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
