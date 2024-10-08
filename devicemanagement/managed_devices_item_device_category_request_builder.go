@@ -110,6 +110,11 @@ func (m *ManagedDevicesItemDeviceCategoryRequestBuilder) Patch(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCategoryable), nil
 }
+// Ref provides operations to manage the collection of deviceManagement entities.
+// returns a *ManagedDevicesItemDeviceCategoryRefRequestBuilder when successful
+func (m *ManagedDevicesItemDeviceCategoryRequestBuilder) Ref()(*ManagedDevicesItemDeviceCategoryRefRequestBuilder) {
+    return NewManagedDevicesItemDeviceCategoryRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property deviceCategory for deviceManagement
 // returns a *RequestInformation when successful
 func (m *ManagedDevicesItemDeviceCategoryRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ManagedDevicesItemDeviceCategoryRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
