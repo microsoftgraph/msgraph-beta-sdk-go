@@ -10,6 +10,163 @@ type HardwareInformation struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
+// HardwareInformation_HardwareInformation_batteryLevelPercentage composed type wrapper for classes float64, ReferenceNumeric, string
+type HardwareInformation_HardwareInformation_batteryLevelPercentage struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewHardwareInformation_HardwareInformation_batteryLevelPercentage instantiates a new HardwareInformation_HardwareInformation_batteryLevelPercentage and sets the default values.
+func NewHardwareInformation_HardwareInformation_batteryLevelPercentage()(*HardwareInformation_HardwareInformation_batteryLevelPercentage) {
+    m := &HardwareInformation_HardwareInformation_batteryLevelPercentage{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateHardwareInformation_HardwareInformation_batteryLevelPercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateHardwareInformation_HardwareInformation_batteryLevelPercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewHardwareInformation_HardwareInformation_batteryLevelPercentage()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *HardwareInformation_HardwareInformation_batteryLevelPercentage) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type HardwareInformation_HardwareInformation_batteryLevelPercentageable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
 // NewHardwareInformation instantiates a new HardwareInformation and sets the default values.
 func NewHardwareInformation()(*HardwareInformation) {
     m := &HardwareInformation{
@@ -66,14 +223,14 @@ func (m *HardwareInformation) GetBatteryHealthPercentage()(*int32) {
     return nil
 }
 // GetBatteryLevelPercentage gets the batteryLevelPercentage property value. The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100
-// returns a *float64 when successful
-func (m *HardwareInformation) GetBatteryLevelPercentage()(*float64) {
+// returns a HardwareInformation_HardwareInformation_batteryLevelPercentageable when successful
+func (m *HardwareInformation) GetBatteryLevelPercentage()(HardwareInformation_HardwareInformation_batteryLevelPercentageable) {
     val, err := m.GetBackingStore().Get("batteryLevelPercentage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(HardwareInformation_HardwareInformation_batteryLevelPercentageable)
     }
     return nil
 }
@@ -222,12 +379,12 @@ func (m *HardwareInformation) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     res["batteryLevelPercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateHardwareInformation_HardwareInformation_batteryLevelPercentageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetBatteryLevelPercentage(val)
+            m.SetBatteryLevelPercentage(val.(*HardwareInformation_HardwareInformation_batteryLevelPercentage))
         }
         return nil
     }
@@ -976,7 +1133,7 @@ func (m *HardwareInformation) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     {
-        err := writer.WriteFloat64Value("batteryLevelPercentage", m.GetBatteryLevelPercentage())
+        err := writer.WriteObjectValue("batteryLevelPercentage", m.GetBatteryLevelPercentage())
         if err != nil {
             return err
         }
@@ -1253,7 +1410,7 @@ func (m *HardwareInformation) SetBatteryHealthPercentage(value *int32)() {
     }
 }
 // SetBatteryLevelPercentage sets the batteryLevelPercentage property value. The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100
-func (m *HardwareInformation) SetBatteryLevelPercentage(value *float64)() {
+func (m *HardwareInformation) SetBatteryLevelPercentage(value HardwareInformation_HardwareInformation_batteryLevelPercentageable)() {
     err := m.GetBackingStore().Set("batteryLevelPercentage", value)
     if err != nil {
         panic(err)
@@ -1532,7 +1689,7 @@ type HardwareInformationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetBatteryChargeCycles()(*int32)
     GetBatteryHealthPercentage()(*int32)
-    GetBatteryLevelPercentage()(*float64)
+    GetBatteryLevelPercentage()(HardwareInformation_HardwareInformation_batteryLevelPercentageable)
     GetBatterySerialNumber()(*string)
     GetCellularTechnology()(*string)
     GetDeviceFullQualifiedDomainName()(*string)
@@ -1574,7 +1731,7 @@ type HardwareInformationable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetBatteryChargeCycles(value *int32)()
     SetBatteryHealthPercentage(value *int32)()
-    SetBatteryLevelPercentage(value *float64)()
+    SetBatteryLevelPercentage(value HardwareInformation_HardwareInformation_batteryLevelPercentageable)()
     SetBatterySerialNumber(value *string)()
     SetCellularTechnology(value *string)()
     SetDeviceFullQualifiedDomainName(value *string)()

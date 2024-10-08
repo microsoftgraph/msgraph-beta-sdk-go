@@ -3,10 +3,325 @@ package models
 import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type RecommendationBase struct {
     Entity
+}
+// RecommendationBase_RecommendationBase_currentScore composed type wrapper for classes float64, ReferenceNumeric, string
+type RecommendationBase_RecommendationBase_currentScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewRecommendationBase_RecommendationBase_currentScore instantiates a new RecommendationBase_RecommendationBase_currentScore and sets the default values.
+func NewRecommendationBase_RecommendationBase_currentScore()(*RecommendationBase_RecommendationBase_currentScore) {
+    m := &RecommendationBase_RecommendationBase_currentScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateRecommendationBase_RecommendationBase_currentScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateRecommendationBase_RecommendationBase_currentScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewRecommendationBase_RecommendationBase_currentScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *RecommendationBase_RecommendationBase_currentScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *RecommendationBase_RecommendationBase_currentScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *RecommendationBase_RecommendationBase_currentScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *RecommendationBase_RecommendationBase_currentScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *RecommendationBase_RecommendationBase_currentScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *RecommendationBase_RecommendationBase_currentScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *RecommendationBase_RecommendationBase_currentScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *RecommendationBase_RecommendationBase_currentScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *RecommendationBase_RecommendationBase_currentScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *RecommendationBase_RecommendationBase_currentScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *RecommendationBase_RecommendationBase_currentScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// RecommendationBase_RecommendationBase_maxScore composed type wrapper for classes float64, ReferenceNumeric, string
+type RecommendationBase_RecommendationBase_maxScore struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewRecommendationBase_RecommendationBase_maxScore instantiates a new RecommendationBase_RecommendationBase_maxScore and sets the default values.
+func NewRecommendationBase_RecommendationBase_maxScore()(*RecommendationBase_RecommendationBase_maxScore) {
+    m := &RecommendationBase_RecommendationBase_maxScore{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateRecommendationBase_RecommendationBase_maxScoreFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateRecommendationBase_RecommendationBase_maxScoreFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewRecommendationBase_RecommendationBase_maxScore()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *RecommendationBase_RecommendationBase_maxScore) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *RecommendationBase_RecommendationBase_maxScore) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *RecommendationBase_RecommendationBase_maxScore) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *RecommendationBase_RecommendationBase_maxScore) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *RecommendationBase_RecommendationBase_maxScore) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *RecommendationBase_RecommendationBase_maxScore) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *RecommendationBase_RecommendationBase_maxScore) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *RecommendationBase_RecommendationBase_maxScore) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *RecommendationBase_RecommendationBase_maxScore) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *RecommendationBase_RecommendationBase_maxScore) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *RecommendationBase_RecommendationBase_maxScore) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type RecommendationBase_RecommendationBase_currentScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type RecommendationBase_RecommendationBase_maxScoreable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
 }
 // NewRecommendationBase instantiates a new RecommendationBase and sets the default values.
 func NewRecommendationBase()(*RecommendationBase) {
@@ -87,14 +402,14 @@ func (m *RecommendationBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad
     return nil
 }
 // GetCurrentScore gets the currentScore property value. The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
-// returns a *float64 when successful
-func (m *RecommendationBase) GetCurrentScore()(*float64) {
+// returns a RecommendationBase_RecommendationBase_currentScoreable when successful
+func (m *RecommendationBase) GetCurrentScore()(RecommendationBase_RecommendationBase_currentScoreable) {
     val, err := m.GetBackingStore().Get("currentScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(RecommendationBase_RecommendationBase_currentScoreable)
     }
     return nil
 }
@@ -173,12 +488,12 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["currentScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateRecommendationBase_RecommendationBase_currentScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCurrentScore(val)
+            m.SetCurrentScore(val.(*RecommendationBase_RecommendationBase_currentScore))
         }
         return nil
     }
@@ -285,12 +600,12 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["maxScore"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateRecommendationBase_RecommendationBase_maxScoreFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetMaxScore(val)
+            m.SetMaxScore(val.(*RecommendationBase_RecommendationBase_maxScore))
         }
         return nil
     }
@@ -451,14 +766,14 @@ func (m *RecommendationBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     return nil
 }
 // GetMaxScore gets the maxScore property value. The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.
-// returns a *float64 when successful
-func (m *RecommendationBase) GetMaxScore()(*float64) {
+// returns a RecommendationBase_RecommendationBase_maxScoreable when successful
+func (m *RecommendationBase) GetMaxScore()(RecommendationBase_RecommendationBase_maxScoreable) {
     val, err := m.GetBackingStore().Get("maxScore")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(RecommendationBase_RecommendationBase_maxScoreable)
     }
     return nil
 }
@@ -584,7 +899,7 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err = writer.WriteFloat64Value("currentScore", m.GetCurrentScore())
+        err = writer.WriteObjectValue("currentScore", m.GetCurrentScore())
         if err != nil {
             return err
         }
@@ -650,7 +965,7 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
-        err = writer.WriteFloat64Value("maxScore", m.GetMaxScore())
+        err = writer.WriteObjectValue("maxScore", m.GetMaxScore())
         if err != nil {
             return err
         }
@@ -732,7 +1047,7 @@ func (m *RecommendationBase) SetCreatedDateTime(value *i336074805fc853987abe6f7f
     }
 }
 // SetCurrentScore sets the currentScore property value. The number of points the tenant has attained. Only applies to recommendations with category set to identitySecureScore.
-func (m *RecommendationBase) SetCurrentScore(value *float64)() {
+func (m *RecommendationBase) SetCurrentScore(value RecommendationBase_RecommendationBase_currentScoreable)() {
     err := m.GetBackingStore().Set("currentScore", value)
     if err != nil {
         panic(err)
@@ -802,7 +1117,7 @@ func (m *RecommendationBase) SetLastModifiedDateTime(value *i336074805fc853987ab
     }
 }
 // SetMaxScore sets the maxScore property value. The maximum number of points attainable. Only applies to recommendations with category set to identitySecureScore.
-func (m *RecommendationBase) SetMaxScore(value *float64)() {
+func (m *RecommendationBase) SetMaxScore(value RecommendationBase_RecommendationBase_maxScoreable)() {
     err := m.GetBackingStore().Set("maxScore", value)
     if err != nil {
         panic(err)
@@ -864,7 +1179,7 @@ type RecommendationBaseable interface {
     GetBenefits()(*string)
     GetCategory()(*RecommendationCategory)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetCurrentScore()(*float64)
+    GetCurrentScore()(RecommendationBase_RecommendationBase_currentScoreable)
     GetDisplayName()(*string)
     GetFeatureAreas()([]RecommendationFeatureAreas)
     GetImpactedResources()([]ImpactedResourceable)
@@ -874,7 +1189,7 @@ type RecommendationBaseable interface {
     GetLastCheckedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastModifiedBy()(*string)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetMaxScore()(*float64)
+    GetMaxScore()(RecommendationBase_RecommendationBase_maxScoreable)
     GetPostponeUntilDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPriority()(*RecommendationPriority)
     GetRecommendationType()(*RecommendationType)
@@ -886,7 +1201,7 @@ type RecommendationBaseable interface {
     SetBenefits(value *string)()
     SetCategory(value *RecommendationCategory)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetCurrentScore(value *float64)()
+    SetCurrentScore(value RecommendationBase_RecommendationBase_currentScoreable)()
     SetDisplayName(value *string)()
     SetFeatureAreas(value []RecommendationFeatureAreas)()
     SetImpactedResources(value []ImpactedResourceable)()
@@ -896,7 +1211,7 @@ type RecommendationBaseable interface {
     SetLastCheckedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastModifiedBy(value *string)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetMaxScore(value *float64)()
+    SetMaxScore(value RecommendationBase_RecommendationBase_maxScoreable)()
     SetPostponeUntilDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPriority(value *RecommendationPriority)()
     SetRecommendationType(value *RecommendationType)()

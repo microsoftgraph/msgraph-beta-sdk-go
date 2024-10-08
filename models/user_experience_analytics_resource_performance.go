@@ -2,11 +2,954 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // UserExperienceAnalyticsResourcePerformance the user experience analytics resource performance entity.
 type UserExperienceAnalyticsResourcePerformance struct {
     Entity
+}
+// UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz instantiates a new UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz and sets the default values.
+func NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz()(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) {
+    m := &UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage instantiates a new UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage and sets the default values.
+func NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage()(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) {
+    m := &UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold instantiates a new UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold and sets the default values.
+func NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold()(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) {
+    m := &UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage instantiates a new UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage and sets the default values.
+func NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage()(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) {
+    m := &UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold instantiates a new UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold and sets the default values.
+func NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold()(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) {
+    m := &UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB composed type wrapper for classes float64, ReferenceNumeric, string
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB instantiates a new UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB and sets the default values.
+func NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB()(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) {
+    m := &UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
 }
 // NewUserExperienceAnalyticsResourcePerformance instantiates a new UserExperienceAnalyticsResourcePerformance and sets the default values.
 func NewUserExperienceAnalyticsResourcePerformance()(*UserExperienceAnalyticsResourcePerformance) {
@@ -33,14 +976,14 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetAverageSpikeTimeScore()(
     return nil
 }
 // GetCpuClockSpeedInMHz gets the cpuClockSpeedInMHz property value. The clock speed of the processor, in MHz. Valid values 0 to 1000000
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsResourcePerformance) GetCpuClockSpeedInMHz()(*float64) {
+// returns a UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzable when successful
+func (m *UserExperienceAnalyticsResourcePerformance) GetCpuClockSpeedInMHz()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzable) {
     val, err := m.GetBackingStore().Get("cpuClockSpeedInMHz")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzable)
     }
     return nil
 }
@@ -57,26 +1000,26 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetCpuDisplayName()(*string
     return nil
 }
 // GetCpuSpikeTimePercentage gets the cpuSpikeTimePercentage property value. CPU spike time in percentage. Valid values 0 to 100
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentage()(*float64) {
+// returns a UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageable when successful
+func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentage()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageable) {
     val, err := m.GetBackingStore().Get("cpuSpikeTimePercentage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageable)
     }
     return nil
 }
 // GetCpuSpikeTimePercentageThreshold gets the cpuSpikeTimePercentageThreshold property value. Threshold of cpuSpikeTimeScore. Valid values 0 to 100
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentageThreshold()(*float64) {
+// returns a UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdable when successful
+func (m *UserExperienceAnalyticsResourcePerformance) GetCpuSpikeTimePercentageThreshold()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdable) {
     val, err := m.GetBackingStore().Get("cpuSpikeTimePercentageThreshold")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdable)
     }
     return nil
 }
@@ -167,12 +1110,12 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         return nil
     }
     res["cpuClockSpeedInMHz"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCpuClockSpeedInMHz(val)
+            m.SetCpuClockSpeedInMHz(val.(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHz))
         }
         return nil
     }
@@ -187,22 +1130,22 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         return nil
     }
     res["cpuSpikeTimePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCpuSpikeTimePercentage(val)
+            m.SetCpuSpikeTimePercentage(val.(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentage))
         }
         return nil
     }
     res["cpuSpikeTimePercentageThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCpuSpikeTimePercentageThreshold(val)
+            m.SetCpuSpikeTimePercentageThreshold(val.(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThreshold))
         }
         return nil
     }
@@ -307,22 +1250,22 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         return nil
     }
     res["ramSpikeTimePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRamSpikeTimePercentage(val)
+            m.SetRamSpikeTimePercentage(val.(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentage))
         }
         return nil
     }
     res["ramSpikeTimePercentageThreshold"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetRamSpikeTimePercentageThreshold(val)
+            m.SetRamSpikeTimePercentageThreshold(val.(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThreshold))
         }
         return nil
     }
@@ -347,12 +1290,12 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetFieldDeserializers()(map
         return nil
     }
     res["totalRamInMB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateUserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetTotalRamInMB(val)
+            m.SetTotalRamInMB(val.(*UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMB))
         }
         return nil
     }
@@ -407,26 +1350,26 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetModel()(*string) {
     return nil
 }
 // GetRamSpikeTimePercentage gets the ramSpikeTimePercentage property value. RAM spike time in percentage. Valid values 0 to 100
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentage()(*float64) {
+// returns a UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageable when successful
+func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentage()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageable) {
     val, err := m.GetBackingStore().Get("ramSpikeTimePercentage")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageable)
     }
     return nil
 }
 // GetRamSpikeTimePercentageThreshold gets the ramSpikeTimePercentageThreshold property value. Threshold of ramSpikeTimeScore. Valid values 0 to 100
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentageThreshold()(*float64) {
+// returns a UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdable when successful
+func (m *UserExperienceAnalyticsResourcePerformance) GetRamSpikeTimePercentageThreshold()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdable) {
     val, err := m.GetBackingStore().Get("ramSpikeTimePercentageThreshold")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdable)
     }
     return nil
 }
@@ -455,14 +1398,14 @@ func (m *UserExperienceAnalyticsResourcePerformance) GetTotalProcessorCoreCount(
     return nil
 }
 // GetTotalRamInMB gets the totalRamInMB property value. The total RAM of the device, in MB. Valid values 0 to 1000000
-// returns a *float64 when successful
-func (m *UserExperienceAnalyticsResourcePerformance) GetTotalRamInMB()(*float64) {
+// returns a UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBable when successful
+func (m *UserExperienceAnalyticsResourcePerformance) GetTotalRamInMB()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBable) {
     val, err := m.GetBackingStore().Get("totalRamInMB")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBable)
     }
     return nil
 }
@@ -479,7 +1422,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i878a80d23
         }
     }
     {
-        err = writer.WriteFloat64Value("cpuClockSpeedInMHz", m.GetCpuClockSpeedInMHz())
+        err = writer.WriteObjectValue("cpuClockSpeedInMHz", m.GetCpuClockSpeedInMHz())
         if err != nil {
             return err
         }
@@ -491,13 +1434,13 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i878a80d23
         }
     }
     {
-        err = writer.WriteFloat64Value("cpuSpikeTimePercentage", m.GetCpuSpikeTimePercentage())
+        err = writer.WriteObjectValue("cpuSpikeTimePercentage", m.GetCpuSpikeTimePercentage())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("cpuSpikeTimePercentageThreshold", m.GetCpuSpikeTimePercentageThreshold())
+        err = writer.WriteObjectValue("cpuSpikeTimePercentageThreshold", m.GetCpuSpikeTimePercentageThreshold())
         if err != nil {
             return err
         }
@@ -566,13 +1509,13 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i878a80d23
         }
     }
     {
-        err = writer.WriteFloat64Value("ramSpikeTimePercentage", m.GetRamSpikeTimePercentage())
+        err = writer.WriteObjectValue("ramSpikeTimePercentage", m.GetRamSpikeTimePercentage())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("ramSpikeTimePercentageThreshold", m.GetRamSpikeTimePercentageThreshold())
+        err = writer.WriteObjectValue("ramSpikeTimePercentageThreshold", m.GetRamSpikeTimePercentageThreshold())
         if err != nil {
             return err
         }
@@ -590,7 +1533,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) Serialize(writer i878a80d23
         }
     }
     {
-        err = writer.WriteFloat64Value("totalRamInMB", m.GetTotalRamInMB())
+        err = writer.WriteObjectValue("totalRamInMB", m.GetTotalRamInMB())
         if err != nil {
             return err
         }
@@ -605,7 +1548,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) SetAverageSpikeTimeScore(va
     }
 }
 // SetCpuClockSpeedInMHz sets the cpuClockSpeedInMHz property value. The clock speed of the processor, in MHz. Valid values 0 to 1000000
-func (m *UserExperienceAnalyticsResourcePerformance) SetCpuClockSpeedInMHz(value *float64)() {
+func (m *UserExperienceAnalyticsResourcePerformance) SetCpuClockSpeedInMHz(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzable)() {
     err := m.GetBackingStore().Set("cpuClockSpeedInMHz", value)
     if err != nil {
         panic(err)
@@ -619,14 +1562,14 @@ func (m *UserExperienceAnalyticsResourcePerformance) SetCpuDisplayName(value *st
     }
 }
 // SetCpuSpikeTimePercentage sets the cpuSpikeTimePercentage property value. CPU spike time in percentage. Valid values 0 to 100
-func (m *UserExperienceAnalyticsResourcePerformance) SetCpuSpikeTimePercentage(value *float64)() {
+func (m *UserExperienceAnalyticsResourcePerformance) SetCpuSpikeTimePercentage(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageable)() {
     err := m.GetBackingStore().Set("cpuSpikeTimePercentage", value)
     if err != nil {
         panic(err)
     }
 }
 // SetCpuSpikeTimePercentageThreshold sets the cpuSpikeTimePercentageThreshold property value. Threshold of cpuSpikeTimeScore. Valid values 0 to 100
-func (m *UserExperienceAnalyticsResourcePerformance) SetCpuSpikeTimePercentageThreshold(value *float64)() {
+func (m *UserExperienceAnalyticsResourcePerformance) SetCpuSpikeTimePercentageThreshold(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdable)() {
     err := m.GetBackingStore().Set("cpuSpikeTimePercentageThreshold", value)
     if err != nil {
         panic(err)
@@ -703,14 +1646,14 @@ func (m *UserExperienceAnalyticsResourcePerformance) SetModel(value *string)() {
     }
 }
 // SetRamSpikeTimePercentage sets the ramSpikeTimePercentage property value. RAM spike time in percentage. Valid values 0 to 100
-func (m *UserExperienceAnalyticsResourcePerformance) SetRamSpikeTimePercentage(value *float64)() {
+func (m *UserExperienceAnalyticsResourcePerformance) SetRamSpikeTimePercentage(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageable)() {
     err := m.GetBackingStore().Set("ramSpikeTimePercentage", value)
     if err != nil {
         panic(err)
     }
 }
 // SetRamSpikeTimePercentageThreshold sets the ramSpikeTimePercentageThreshold property value. Threshold of ramSpikeTimeScore. Valid values 0 to 100
-func (m *UserExperienceAnalyticsResourcePerformance) SetRamSpikeTimePercentageThreshold(value *float64)() {
+func (m *UserExperienceAnalyticsResourcePerformance) SetRamSpikeTimePercentageThreshold(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdable)() {
     err := m.GetBackingStore().Set("ramSpikeTimePercentageThreshold", value)
     if err != nil {
         panic(err)
@@ -731,7 +1674,7 @@ func (m *UserExperienceAnalyticsResourcePerformance) SetTotalProcessorCoreCount(
     }
 }
 // SetTotalRamInMB sets the totalRamInMB property value. The total RAM of the device, in MB. Valid values 0 to 1000000
-func (m *UserExperienceAnalyticsResourcePerformance) SetTotalRamInMB(value *float64)() {
+func (m *UserExperienceAnalyticsResourcePerformance) SetTotalRamInMB(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBable)() {
     err := m.GetBackingStore().Set("totalRamInMB", value)
     if err != nil {
         panic(err)
@@ -741,10 +1684,10 @@ type UserExperienceAnalyticsResourcePerformanceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAverageSpikeTimeScore()(*int32)
-    GetCpuClockSpeedInMHz()(*float64)
+    GetCpuClockSpeedInMHz()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzable)
     GetCpuDisplayName()(*string)
-    GetCpuSpikeTimePercentage()(*float64)
-    GetCpuSpikeTimePercentageThreshold()(*float64)
+    GetCpuSpikeTimePercentage()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageable)
+    GetCpuSpikeTimePercentageThreshold()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdable)
     GetCpuSpikeTimeScore()(*int32)
     GetDeviceCount()(*int64)
     GetDeviceId()(*string)
@@ -755,16 +1698,16 @@ type UserExperienceAnalyticsResourcePerformanceable interface {
     GetMachineType()(*UserExperienceAnalyticsMachineType)
     GetManufacturer()(*string)
     GetModel()(*string)
-    GetRamSpikeTimePercentage()(*float64)
-    GetRamSpikeTimePercentageThreshold()(*float64)
+    GetRamSpikeTimePercentage()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageable)
+    GetRamSpikeTimePercentageThreshold()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdable)
     GetRamSpikeTimeScore()(*int32)
     GetTotalProcessorCoreCount()(*int32)
-    GetTotalRamInMB()(*float64)
+    GetTotalRamInMB()(UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBable)
     SetAverageSpikeTimeScore(value *int32)()
-    SetCpuClockSpeedInMHz(value *float64)()
+    SetCpuClockSpeedInMHz(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuClockSpeedInMHzable)()
     SetCpuDisplayName(value *string)()
-    SetCpuSpikeTimePercentage(value *float64)()
-    SetCpuSpikeTimePercentageThreshold(value *float64)()
+    SetCpuSpikeTimePercentage(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageable)()
+    SetCpuSpikeTimePercentageThreshold(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_cpuSpikeTimePercentageThresholdable)()
     SetCpuSpikeTimeScore(value *int32)()
     SetDeviceCount(value *int64)()
     SetDeviceId(value *string)()
@@ -775,9 +1718,9 @@ type UserExperienceAnalyticsResourcePerformanceable interface {
     SetMachineType(value *UserExperienceAnalyticsMachineType)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
-    SetRamSpikeTimePercentage(value *float64)()
-    SetRamSpikeTimePercentageThreshold(value *float64)()
+    SetRamSpikeTimePercentage(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageable)()
+    SetRamSpikeTimePercentageThreshold(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_ramSpikeTimePercentageThresholdable)()
     SetRamSpikeTimeScore(value *int32)()
     SetTotalProcessorCoreCount(value *int32)()
-    SetTotalRamInMB(value *float64)()
+    SetTotalRamInMB(value UserExperienceAnalyticsResourcePerformance_UserExperienceAnalyticsResourcePerformance_totalRamInMBable)()
 }

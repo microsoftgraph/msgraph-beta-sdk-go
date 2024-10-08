@@ -4,11 +4,326 @@ import (
     i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 // DeviceLogCollectionResponse windows Log Collection request entity.
 type DeviceLogCollectionResponse struct {
     Entity
+}
+// DeviceLogCollectionResponse_DeviceLogCollectionResponse_size composed type wrapper for classes float64, ReferenceNumeric, string
+type DeviceLogCollectionResponse_DeviceLogCollectionResponse_size struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewDeviceLogCollectionResponse_DeviceLogCollectionResponse_size instantiates a new DeviceLogCollectionResponse_DeviceLogCollectionResponse_size and sets the default values.
+func NewDeviceLogCollectionResponse_DeviceLogCollectionResponse_size()(*DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) {
+    m := &DeviceLogCollectionResponse_DeviceLogCollectionResponse_size{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateDeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateDeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewDeviceLogCollectionResponse_DeviceLogCollectionResponse_size()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_size) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB composed type wrapper for classes float64, ReferenceNumeric, string
+type DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB struct {
+    // Stores model information.
+    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+}
+// NewDeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB instantiates a new DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB and sets the default values.
+func NewDeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB()(*DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) {
+    m := &DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB{
+    }
+    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
+    return m
+}
+// CreateDeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateDeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    result := NewDeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB()
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+            }
+        }
+    }
+    if val, err := parseNode.GetEnumValue(ParseReferenceNumeric); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetReferenceNumeric(val)
+    } else if val, err := parseNode.GetFloat64Value(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetDouble(val)
+    } else if val, err := parseNode.GetStringValue(); val != nil {
+        if err != nil {
+            return nil, err
+        }
+        result.SetString(val)
+    }
+    return result, nil
+}
+// GetBackingStore gets the BackingStore property value. Stores model information.
+// returns a BackingStore when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+    return m.backingStore
+}
+// GetDouble gets the double property value. Composed type representation for type float64
+// returns a *float64 when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) GetDouble()(*float64) {
+    val, err := m.GetBackingStore().Get("double")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*float64)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    return make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+}
+// GetIsComposedType determines if the current object is a wrapper around a composed type
+// returns a bool when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) GetIsComposedType()(bool) {
+    return true
+}
+// GetReferenceNumeric gets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+// returns a *ReferenceNumeric when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) GetReferenceNumeric()(*ReferenceNumeric) {
+    val, err := m.GetBackingStore().Get("referenceNumeric")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ReferenceNumeric)
+    }
+    return nil
+}
+// GetString gets the string property value. Composed type representation for type string
+// returns a *string when successful
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) GetString()(*string) {
+    val, err := m.GetBackingStore().Get("string")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetReferenceNumeric() != nil {
+        cast := (*m.GetReferenceNumeric()).String()
+        err := writer.WriteStringValue("", &cast)
+        if err != nil {
+            return err
+        }
+    } else if m.GetDouble() != nil {
+        err := writer.WriteFloat64Value("", m.GetDouble())
+        if err != nil {
+            return err
+        }
+    } else if m.GetString() != nil {
+        err := writer.WriteStringValue("", m.GetString())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetBackingStore sets the BackingStore property value. Stores model information.
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+    m.backingStore = value
+}
+// SetDouble sets the double property value. Composed type representation for type float64
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) SetDouble(value *float64)() {
+    err := m.GetBackingStore().Set("double", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReferenceNumeric sets the ReferenceNumeric property value. Composed type representation for type ReferenceNumeric
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) SetReferenceNumeric(value *ReferenceNumeric)() {
+    err := m.GetBackingStore().Set("referenceNumeric", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetString sets the string property value. Composed type representation for type string
+func (m *DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB) SetString(value *string)() {
+    err := m.GetBackingStore().Set("string", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
+}
+type DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBable interface {
+    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetDouble()(*float64)
+    GetReferenceNumeric()(*ReferenceNumeric)
+    GetString()(*string)
+    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetDouble(value *float64)()
+    SetReferenceNumeric(value *ReferenceNumeric)()
+    SetString(value *string)()
 }
 // NewDeviceLogCollectionResponse instantiates a new DeviceLogCollectionResponse and sets the default values.
 func NewDeviceLogCollectionResponse()(*DeviceLogCollectionResponse) {
@@ -133,22 +448,22 @@ func (m *DeviceLogCollectionResponse) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     res["size"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateDeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSize(val)
+            m.SetSize(val.(*DeviceLogCollectionResponse_DeviceLogCollectionResponse_size))
         }
         return nil
     }
     res["sizeInKB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetFloat64Value()
+        val, err := n.GetObjectValue(CreateDeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSizeInKB(val)
+            m.SetSizeInKB(val.(*DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKB))
         }
         return nil
     }
@@ -213,26 +528,26 @@ func (m *DeviceLogCollectionResponse) GetRequestedDateTimeUTC()(*i336074805fc853
     return nil
 }
 // GetSize gets the size property value. The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// returns a *float64 when successful
-func (m *DeviceLogCollectionResponse) GetSize()(*float64) {
+// returns a DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeable when successful
+func (m *DeviceLogCollectionResponse) GetSize()(DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeable) {
     val, err := m.GetBackingStore().Get("size")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeable)
     }
     return nil
 }
 // GetSizeInKB gets the sizeInKB property value. The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-// returns a *float64 when successful
-func (m *DeviceLogCollectionResponse) GetSizeInKB()(*float64) {
+// returns a DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBable when successful
+func (m *DeviceLogCollectionResponse) GetSizeInKB()(DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBable) {
     val, err := m.GetBackingStore().Get("sizeInKB")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*float64)
+        return val.(DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBable)
     }
     return nil
 }
@@ -297,13 +612,13 @@ func (m *DeviceLogCollectionResponse) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
-        err = writer.WriteFloat64Value("size", m.GetSize())
+        err = writer.WriteObjectValue("size", m.GetSize())
         if err != nil {
             return err
         }
     }
     {
-        err = writer.WriteFloat64Value("sizeInKB", m.GetSizeInKB())
+        err = writer.WriteObjectValue("sizeInKB", m.GetSizeInKB())
         if err != nil {
             return err
         }
@@ -367,14 +682,14 @@ func (m *DeviceLogCollectionResponse) SetRequestedDateTimeUTC(value *i336074805f
     }
 }
 // SetSize sets the size property value. The size of the logs. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *DeviceLogCollectionResponse) SetSize(value *float64)() {
+func (m *DeviceLogCollectionResponse) SetSize(value DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeable)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
         panic(err)
     }
 }
 // SetSizeInKB sets the sizeInKB property value. The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-func (m *DeviceLogCollectionResponse) SetSizeInKB(value *float64)() {
+func (m *DeviceLogCollectionResponse) SetSizeInKB(value DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBable)() {
     err := m.GetBackingStore().Set("sizeInKB", value)
     if err != nil {
         panic(err)
@@ -397,8 +712,8 @@ type DeviceLogCollectionResponseable interface {
     GetManagedDeviceId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetReceivedDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRequestedDateTimeUTC()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetSize()(*float64)
-    GetSizeInKB()(*float64)
+    GetSize()(DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeable)
+    GetSizeInKB()(DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBable)
     GetStatus()(*AppLogUploadState)
     SetEnrolledByUser(value *string)()
     SetErrorCode(value *int64)()
@@ -407,7 +722,7 @@ type DeviceLogCollectionResponseable interface {
     SetManagedDeviceId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetReceivedDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRequestedDateTimeUTC(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetSize(value *float64)()
-    SetSizeInKB(value *float64)()
+    SetSize(value DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeable)()
+    SetSizeInKB(value DeviceLogCollectionResponse_DeviceLogCollectionResponse_sizeInKBable)()
     SetStatus(value *AppLogUploadState)()
 }
