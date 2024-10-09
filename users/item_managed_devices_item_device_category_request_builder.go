@@ -113,6 +113,11 @@ func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Patch(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceCategoryable), nil
 }
+// Ref provides operations to manage the collection of user entities.
+// returns a *ItemManagedDevicesItemDeviceCategoryRefRequestBuilder when successful
+func (m *ItemManagedDevicesItemDeviceCategoryRequestBuilder) Ref()(*ItemManagedDevicesItemDeviceCategoryRefRequestBuilder) {
+    return NewItemManagedDevicesItemDeviceCategoryRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property deviceCategory for users
 // Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
