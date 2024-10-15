@@ -18,7 +18,7 @@ type SlaRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SlaRequestBuilderGetQueryParameters reports that relate to tenant-level Microsoft Entra SLA attainment.
+// SlaRequestBuilderGetQueryParameters reports that relate to tenant-level Microsoft Entra Health SLA attainment.
 type SlaRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *SlaRequestBuilder) Delete(ctx context.Context, requestConfiguration *Sl
     }
     return nil
 }
-// Get reports that relate to tenant-level Microsoft Entra SLA attainment.
+// Get reports that relate to tenant-level Microsoft Entra Health SLA attainment.
 // returns a ServiceLevelAgreementRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SlaRequestBuilder) Get(ctx context.Context, requestConfiguration *SlaRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceLevelAgreementRootable, error) {
@@ -126,7 +126,7 @@ func (m *SlaRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation reports that relate to tenant-level Microsoft Entra SLA attainment.
+// ToGetRequestInformation reports that relate to tenant-level Microsoft Entra Health SLA attainment.
 // returns a *RequestInformation when successful
 func (m *SlaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SlaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

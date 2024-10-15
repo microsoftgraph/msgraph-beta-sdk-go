@@ -309,7 +309,7 @@ func (m *Drive) GetSpecial()([]DriveItemable) {
     }
     return nil
 }
-// GetSystem gets the system property value. If present, indicates that this is a system-managed drive. Read-only.
+// GetSystem gets the system property value. If present, indicates that it's a system-managed drive. Read-only.
 // returns a SystemFacetable when successful
 func (m *Drive) GetSystem()(SystemFacetable) {
     val, err := m.GetBackingStore().Get("system")
@@ -508,7 +508,7 @@ func (m *Drive) SetSpecial(value []DriveItemable)() {
         panic(err)
     }
 }
-// SetSystem sets the system property value. If present, indicates that this is a system-managed drive. Read-only.
+// SetSystem sets the system property value. If present, indicates that it's a system-managed drive. Read-only.
 func (m *Drive) SetSystem(value SystemFacetable)() {
     err := m.GetBackingStore().Set("system", value)
     if err != nil {

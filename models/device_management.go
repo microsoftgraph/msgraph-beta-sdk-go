@@ -4628,7 +4628,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsCategories()([]UserExperien
     }
     return nil
 }
-// GetUserExperienceAnalyticsDeviceMetricHistory gets the userExperienceAnalyticsDeviceMetricHistory property value. User experience analytics device metric history
+// GetUserExperienceAnalyticsDeviceMetricHistory gets the userExperienceAnalyticsDeviceMetricHistory property value. User experience analytics device metric history. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
 // returns a []UserExperienceAnalyticsMetricHistoryable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsDeviceMetricHistory()([]UserExperienceAnalyticsMetricHistoryable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsDeviceMetricHistory")
@@ -4808,7 +4808,7 @@ func (m *DeviceManagement) GetUserExperienceAnalyticsOverview()(UserExperienceAn
     }
     return nil
 }
-// GetUserExperienceAnalyticsRemoteConnection gets the userExperienceAnalyticsRemoteConnection property value. User experience analytics remote connection
+// GetUserExperienceAnalyticsRemoteConnection gets the userExperienceAnalyticsRemoteConnection property value. User experience analytics remote connection. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
 // returns a []UserExperienceAnalyticsRemoteConnectionable when successful
 func (m *DeviceManagement) GetUserExperienceAnalyticsRemoteConnection()([]UserExperienceAnalyticsRemoteConnectionable) {
     val, err := m.GetBackingStore().Get("userExperienceAnalyticsRemoteConnection")
@@ -8167,7 +8167,7 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsCategories(value []UserExpe
         panic(err)
     }
 }
-// SetUserExperienceAnalyticsDeviceMetricHistory sets the userExperienceAnalyticsDeviceMetricHistory property value. User experience analytics device metric history
+// SetUserExperienceAnalyticsDeviceMetricHistory sets the userExperienceAnalyticsDeviceMetricHistory property value. User experience analytics device metric history. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
 func (m *DeviceManagement) SetUserExperienceAnalyticsDeviceMetricHistory(value []UserExperienceAnalyticsMetricHistoryable)() {
     err := m.GetBackingStore().Set("userExperienceAnalyticsDeviceMetricHistory", value)
     if err != nil {
@@ -8272,7 +8272,7 @@ func (m *DeviceManagement) SetUserExperienceAnalyticsOverview(value UserExperien
         panic(err)
     }
 }
-// SetUserExperienceAnalyticsRemoteConnection sets the userExperienceAnalyticsRemoteConnection property value. User experience analytics remote connection
+// SetUserExperienceAnalyticsRemoteConnection sets the userExperienceAnalyticsRemoteConnection property value. User experience analytics remote connection. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
 func (m *DeviceManagement) SetUserExperienceAnalyticsRemoteConnection(value []UserExperienceAnalyticsRemoteConnectionable)() {
     err := m.GetBackingStore().Set("userExperienceAnalyticsRemoteConnection", value)
     if err != nil {

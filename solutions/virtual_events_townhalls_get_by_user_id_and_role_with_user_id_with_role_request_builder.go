@@ -10,7 +10,7 @@ import (
 type VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters invoke function getByUserIdAndRole
+// VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
 type VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,10 +57,13 @@ func NewVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get invoke function getByUserIdAndRole
+// Get get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
 // Deprecated: This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.
 // returns a VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuseridandrole?view=graph-rest-beta
 func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,9 +81,12 @@ func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilde
     }
     return res.(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleResponseable), nil
 }
-// GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse invoke function getByUserIdAndRole
+// GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
 // returns a VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuseridandrole?view=graph-rest-beta
 func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse(ctx context.Context, requestConfiguration *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,7 +104,7 @@ func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilde
     }
     return res.(VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getByUserIdAndRole
+// ToGetRequestInformation get a list of virtualEventTownhall objects where the specified user is either the organizer or a coorganizer.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsGetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

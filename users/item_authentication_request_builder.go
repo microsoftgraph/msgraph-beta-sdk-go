@@ -158,6 +158,11 @@ func (m *ItemAuthenticationRequestBuilder) PhoneMethods()(*ItemAuthenticationPho
 func (m *ItemAuthenticationRequestBuilder) PlatformCredentialMethods()(*ItemAuthenticationPlatformCredentialMethodsRequestBuilder) {
     return NewItemAuthenticationPlatformCredentialMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Requirements the requirements property
+// returns a *ItemAuthenticationRequirementsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) Requirements()(*ItemAuthenticationRequirementsRequestBuilder) {
+    return NewItemAuthenticationRequirementsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SignInPreferences the signInPreferences property
 // returns a *ItemAuthenticationSignInPreferencesRequestBuilder when successful
 func (m *ItemAuthenticationRequestBuilder) SignInPreferences()(*ItemAuthenticationSignInPreferencesRequestBuilder) {

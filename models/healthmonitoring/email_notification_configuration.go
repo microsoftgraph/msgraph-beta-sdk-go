@@ -76,7 +76,7 @@ func (m *EmailNotificationConfiguration) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetGroupId gets the groupId property value. The groupId property
+// GetGroupId gets the groupId property value. The identifier of the group to send an email to. All group types with configured email addresses are supported.
 // returns a *string when successful
 func (m *EmailNotificationConfiguration) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
@@ -88,7 +88,7 @@ func (m *EmailNotificationConfiguration) GetGroupId()(*string) {
     }
     return nil
 }
-// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// GetIsEnabled gets the isEnabled property value. Indicates whether email notifications are enabled on the alert type.
 // returns a *bool when successful
 func (m *EmailNotificationConfiguration) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -151,14 +151,14 @@ func (m *EmailNotificationConfiguration) SetAdditionalData(value map[string]any)
 func (m *EmailNotificationConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetGroupId sets the groupId property value. The groupId property
+// SetGroupId sets the groupId property value. The identifier of the group to send an email to. All group types with configured email addresses are supported.
 func (m *EmailNotificationConfiguration) SetGroupId(value *string)() {
     err := m.GetBackingStore().Set("groupId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. The isEnabled property
+// SetIsEnabled sets the isEnabled property value. Indicates whether email notifications are enabled on the alert type.
 func (m *EmailNotificationConfiguration) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
