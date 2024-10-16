@@ -31,7 +31,6 @@ func NewItemChatsItemRemoveAllAccessForUserRequestBuilder(rawUrl string, request
     return NewItemChatsItemRemoveAllAccessForUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post remove access to a chat for a user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -51,7 +50,6 @@ func (m *ItemChatsItemRemoveAllAccessForUserRequestBuilder) Post(ctx context.Con
     return nil
 }
 // ToPostRequestInformation remove access to a chat for a user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemRemoveAllAccessForUserRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChatsItemRemoveAllAccessForUserPostRequestBodyable, requestConfiguration *ItemChatsItemRemoveAllAccessForUserRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,7 +65,6 @@ func (m *ItemChatsItemRemoveAllAccessForUserRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemRemoveAllAccessForUserRequestBuilder when successful
 func (m *ItemChatsItemRemoveAllAccessForUserRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemRemoveAllAccessForUserRequestBuilder) {
     return NewItemChatsItemRemoveAllAccessForUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

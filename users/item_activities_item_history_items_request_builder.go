@@ -47,7 +47,6 @@ type ItemActivitiesItemHistoryItemsRequestBuilderPostRequestConfiguration struct
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByActivityHistoryItemId provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder when successful
 func (m *ItemActivitiesItemHistoryItemsRequestBuilder) ByActivityHistoryItemId(activityHistoryItemId string)(*ItemActivitiesItemHistoryItemsActivityHistoryItemItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +77,6 @@ func (m *ItemActivitiesItemHistoryItemsRequestBuilder) Count()(*ItemActivitiesIt
     return NewItemActivitiesItemHistoryItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ActivityHistoryItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemActivitiesItemHistoryItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemCollectionResponseable, error) {
@@ -99,7 +97,6 @@ func (m *ItemActivitiesItemHistoryItemsRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemCollectionResponseable), nil
 }
 // Post create new navigation property to historyItems for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ActivityHistoryItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemActivitiesItemHistoryItemsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemable, requestConfiguration *ItemActivitiesItemHistoryItemsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemable, error) {
@@ -120,7 +117,6 @@ func (m *ItemActivitiesItemHistoryItemsRequestBuilder) Post(ctx context.Context,
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemable), nil
 }
 // ToGetRequestInformation optional. NavigationProperty/Containment; navigation property to the activity's activityHistoryItems.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemActivitiesItemHistoryItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +131,6 @@ func (m *ItemActivitiesItemHistoryItemsRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to historyItems for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemActivitiesItemHistoryItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ActivityHistoryItemable, requestConfiguration *ItemActivitiesItemHistoryItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +146,6 @@ func (m *ItemActivitiesItemHistoryItemsRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemActivitiesItemHistoryItemsRequestBuilder when successful
 func (m *ItemActivitiesItemHistoryItemsRequestBuilder) WithUrl(rawUrl string)(*ItemActivitiesItemHistoryItemsRequestBuilder) {
     return NewItemActivitiesItemHistoryItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -40,7 +40,6 @@ type ItemTransitiveReportsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemTransitiveReportsRequestBuilderGetQueryParameters
 }
 // ByDirectoryObjectId provides operations to manage the transitiveReports property of the microsoft.graph.user entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTransitiveReportsDirectoryObjectItemRequestBuilder when successful
 func (m *ItemTransitiveReportsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemTransitiveReportsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +70,6 @@ func (m *ItemTransitiveReportsRequestBuilder) Count()(*ItemTransitiveReportsCoun
     return NewItemTransitiveReportsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve a count of transitive reports for a user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -95,7 +93,6 @@ func (m *ItemTransitiveReportsRequestBuilder) Get(ctx context.Context, requestCo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
 // ToGetRequestInformation retrieve a count of transitive reports for a user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTransitiveReportsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTransitiveReportsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -110,7 +107,6 @@ func (m *ItemTransitiveReportsRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTransitiveReportsRequestBuilder when successful
 func (m *ItemTransitiveReportsRequestBuilder) WithUrl(rawUrl string)(*ItemTransitiveReportsRequestBuilder) {
     return NewItemTransitiveReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -110,11 +110,6 @@ func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) Patch(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementAutopilotEventable), nil
 }
-// PolicyStatusDetails provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.
-// returns a *AutopilotEventsItemPolicyStatusDetailsRequestBuilder when successful
-func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) PolicyStatusDetails()(*AutopilotEventsItemPolicyStatusDetailsRequestBuilder) {
-    return NewAutopilotEventsItemPolicyStatusDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToDeleteRequestInformation delete navigation property autopilotEvents for deviceManagement
 // returns a *RequestInformation when successful
 func (m *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *AutopilotEventsDeviceManagementAutopilotEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

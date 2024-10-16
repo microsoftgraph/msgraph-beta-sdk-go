@@ -117,18 +117,6 @@ func (m *DeviceManagementAutopilotEvent) GetDeviceId()(*string) {
     }
     return nil
 }
-// GetDevicePreparationDuration gets the devicePreparationDuration property value. Time spent in device enrollment.
-// returns a *ISODuration when successful
-func (m *DeviceManagementAutopilotEvent) GetDevicePreparationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration) {
-    val, err := m.GetBackingStore().Get("devicePreparationDuration")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
-    }
-    return nil
-}
 // GetDeviceRegisteredDateTime gets the deviceRegisteredDateTime property value. Device registration date.
 // returns a *Time when successful
 func (m *DeviceManagementAutopilotEvent) GetDeviceRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -321,16 +309,6 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["devicePreparationDuration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetISODurationValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDevicePreparationDuration(val)
-        }
-        return nil
-    }
     res["deviceRegisteredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -441,39 +419,13 @@ func (m *DeviceManagementAutopilotEvent) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
-    res["policyStatusDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementAutopilotPolicyStatusDetailFromDiscriminatorValue)
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]DeviceManagementAutopilotPolicyStatusDetailable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(DeviceManagementAutopilotPolicyStatusDetailable)
-                }
-            }
-            m.SetPolicyStatusDetails(res)
-        }
-        return nil
-    }
-    res["targetedAppCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTargetedAppCount(val)
-        }
-        return nil
-    }
-    res["targetedPolicyCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetTargetedPolicyCount(val)
+            m.SetUserId(val)
         }
         return nil
     }
@@ -543,39 +495,15 @@ func (m *DeviceManagementAutopilotEvent) GetOsVersion()(*string) {
     }
     return nil
 }
-// GetPolicyStatusDetails gets the policyStatusDetails property value. Policy and application status details for this device.
-// returns a []DeviceManagementAutopilotPolicyStatusDetailable when successful
-func (m *DeviceManagementAutopilotEvent) GetPolicyStatusDetails()([]DeviceManagementAutopilotPolicyStatusDetailable) {
-    val, err := m.GetBackingStore().Get("policyStatusDetails")
+// GetUserId gets the userId property value. UserId id associated with the object
+// returns a *string when successful
+func (m *DeviceManagementAutopilotEvent) GetUserId()(*string) {
+    val, err := m.GetBackingStore().Get("userId")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]DeviceManagementAutopilotPolicyStatusDetailable)
-    }
-    return nil
-}
-// GetTargetedAppCount gets the targetedAppCount property value. Count of applications targeted.
-// returns a *int32 when successful
-func (m *DeviceManagementAutopilotEvent) GetTargetedAppCount()(*int32) {
-    val, err := m.GetBackingStore().Get("targetedAppCount")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
-}
-// GetTargetedPolicyCount gets the targetedPolicyCount property value. Count of policies targeted.
-// returns a *int32 when successful
-func (m *DeviceManagementAutopilotEvent) GetTargetedPolicyCount()(*int32) {
-    val, err := m.GetBackingStore().Get("targetedPolicyCount")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
+        return val.(*string)
     }
     return nil
 }
@@ -684,12 +612,6 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
-        err = writer.WriteISODurationValue("devicePreparationDuration", m.GetDevicePreparationDuration())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteTimeValue("deviceRegisteredDateTime", m.GetDeviceRegisteredDateTime())
         if err != nil {
             return err
@@ -758,26 +680,8 @@ func (m *DeviceManagementAutopilotEvent) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
-    if m.GetPolicyStatusDetails() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicyStatusDetails()))
-        for i, v := range m.GetPolicyStatusDetails() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("policyStatusDetails", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
-        err = writer.WriteInt32Value("targetedAppCount", m.GetTargetedAppCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("targetedPolicyCount", m.GetTargetedPolicyCount())
+        err = writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
         }
@@ -864,13 +768,6 @@ func (m *DeviceManagementAutopilotEvent) SetDeviceId(value *string)() {
         panic(err)
     }
 }
-// SetDevicePreparationDuration sets the devicePreparationDuration property value. Time spent in device enrollment.
-func (m *DeviceManagementAutopilotEvent) SetDevicePreparationDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
-    err := m.GetBackingStore().Set("devicePreparationDuration", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetDeviceRegisteredDateTime sets the deviceRegisteredDateTime property value. Device registration date.
 func (m *DeviceManagementAutopilotEvent) SetDeviceRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("deviceRegisteredDateTime", value)
@@ -948,23 +845,9 @@ func (m *DeviceManagementAutopilotEvent) SetOsVersion(value *string)() {
         panic(err)
     }
 }
-// SetPolicyStatusDetails sets the policyStatusDetails property value. Policy and application status details for this device.
-func (m *DeviceManagementAutopilotEvent) SetPolicyStatusDetails(value []DeviceManagementAutopilotPolicyStatusDetailable)() {
-    err := m.GetBackingStore().Set("policyStatusDetails", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetTargetedAppCount sets the targetedAppCount property value. Count of applications targeted.
-func (m *DeviceManagementAutopilotEvent) SetTargetedAppCount(value *int32)() {
-    err := m.GetBackingStore().Set("targetedAppCount", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetTargetedPolicyCount sets the targetedPolicyCount property value. Count of policies targeted.
-func (m *DeviceManagementAutopilotEvent) SetTargetedPolicyCount(value *int32)() {
-    err := m.GetBackingStore().Set("targetedPolicyCount", value)
+// SetUserId sets the userId property value. UserId id associated with the object
+func (m *DeviceManagementAutopilotEvent) SetUserId(value *string)() {
+    err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
@@ -1008,7 +891,6 @@ type DeviceManagementAutopilotEventable interface {
     GetDeploymentState()(*WindowsAutopilotDeploymentState)
     GetDeploymentTotalDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetDeviceId()(*string)
-    GetDevicePreparationDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetDeviceRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDeviceSerialNumber()(*string)
     GetDeviceSetupDuration()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
@@ -1020,9 +902,7 @@ type DeviceManagementAutopilotEventable interface {
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManagedDeviceName()(*string)
     GetOsVersion()(*string)
-    GetPolicyStatusDetails()([]DeviceManagementAutopilotPolicyStatusDetailable)
-    GetTargetedAppCount()(*int32)
-    GetTargetedPolicyCount()(*int32)
+    GetUserId()(*string)
     GetUserPrincipalName()(*string)
     GetWindows10EnrollmentCompletionPageConfigurationDisplayName()(*string)
     GetWindows10EnrollmentCompletionPageConfigurationId()(*string)
@@ -1035,7 +915,6 @@ type DeviceManagementAutopilotEventable interface {
     SetDeploymentState(value *WindowsAutopilotDeploymentState)()
     SetDeploymentTotalDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetDeviceId(value *string)()
-    SetDevicePreparationDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetDeviceRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDeviceSerialNumber(value *string)()
     SetDeviceSetupDuration(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
@@ -1047,9 +926,7 @@ type DeviceManagementAutopilotEventable interface {
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManagedDeviceName(value *string)()
     SetOsVersion(value *string)()
-    SetPolicyStatusDetails(value []DeviceManagementAutopilotPolicyStatusDetailable)()
-    SetTargetedAppCount(value *int32)()
-    SetTargetedPolicyCount(value *int32)()
+    SetUserId(value *string)()
     SetUserPrincipalName(value *string)()
     SetWindows10EnrollmentCompletionPageConfigurationDisplayName(value *string)()
     SetWindows10EnrollmentCompletionPageConfigurationId(value *string)()

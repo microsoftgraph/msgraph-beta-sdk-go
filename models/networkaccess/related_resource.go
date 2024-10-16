@@ -36,6 +36,10 @@ func CreateRelatedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewRelatedDestination(), nil
                     case "#microsoft.graph.networkaccess.relatedDevice":
                         return NewRelatedDevice(), nil
+                    case "#microsoft.graph.networkaccess.relatedFile":
+                        return NewRelatedFile(), nil
+                    case "#microsoft.graph.networkaccess.relatedFileHash":
+                        return NewRelatedFileHash(), nil
                     case "#microsoft.graph.networkaccess.relatedMalware":
                         return NewRelatedMalware(), nil
                     case "#microsoft.graph.networkaccess.relatedProcess":
@@ -48,6 +52,10 @@ func CreateRelatedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewRelatedThreatIntelligence(), nil
                     case "#microsoft.graph.networkaccess.relatedToken":
                         return NewRelatedToken(), nil
+                    case "#microsoft.graph.networkaccess.relatedTransaction":
+                        return NewRelatedTransaction(), nil
+                    case "#microsoft.graph.networkaccess.relatedUrl":
+                        return NewRelatedUrl(), nil
                     case "#microsoft.graph.networkaccess.relatedUser":
                         return NewRelatedUser(), nil
                     case "#microsoft.graph.networkaccess.relatedWebCategory":

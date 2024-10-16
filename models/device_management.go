@@ -238,6 +238,30 @@ func (m *DeviceManagement) GetChromeOSOnboardingSettings()([]ChromeOSOnboardingS
     }
     return nil
 }
+// GetCloudCertificationAuthority gets the cloudCertificationAuthority property value. Collection of CloudCertificationAuthority records associated with account.
+// returns a []CloudCertificationAuthorityable when successful
+func (m *DeviceManagement) GetCloudCertificationAuthority()([]CloudCertificationAuthorityable) {
+    val, err := m.GetBackingStore().Get("cloudCertificationAuthority")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudCertificationAuthorityable)
+    }
+    return nil
+}
+// GetCloudCertificationAuthorityLeafCertificate gets the cloudCertificationAuthorityLeafCertificate property value. Collection of CloudCertificationAuthorityLeafCertificate records associated with account.
+// returns a []CloudCertificationAuthorityLeafCertificateable when successful
+func (m *DeviceManagement) GetCloudCertificationAuthorityLeafCertificate()([]CloudCertificationAuthorityLeafCertificateable) {
+    val, err := m.GetBackingStore().Get("cloudCertificationAuthorityLeafCertificate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudCertificationAuthorityLeafCertificateable)
+    }
+    return nil
+}
 // GetCloudPCConnectivityIssues gets the cloudPCConnectivityIssues property value. The list of CloudPC Connectivity Issue.
 // returns a []CloudPCConnectivityIssueable when successful
 func (m *DeviceManagement) GetCloudPCConnectivityIssues()([]CloudPCConnectivityIssueable) {
@@ -559,18 +583,6 @@ func (m *DeviceManagement) GetDeviceConfigurationDeviceStateSummaries()(DeviceCo
     }
     if val != nil {
         return val.(DeviceConfigurationDeviceStateSummaryable)
-    }
-    return nil
-}
-// GetDeviceConfigurationProfiles gets the deviceConfigurationProfiles property value. Profile Id of the object.
-// returns a []DeviceConfigurationProfileable when successful
-func (m *DeviceManagement) GetDeviceConfigurationProfiles()([]DeviceConfigurationProfileable) {
-    val, err := m.GetBackingStore().Get("deviceConfigurationProfiles")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]DeviceConfigurationProfileable)
     }
     return nil
 }
@@ -1046,6 +1058,38 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["cloudCertificationAuthority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudCertificationAuthorityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudCertificationAuthorityable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudCertificationAuthorityable)
+                }
+            }
+            m.SetCloudCertificationAuthority(res)
+        }
+        return nil
+    }
+    res["cloudCertificationAuthorityLeafCertificate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudCertificationAuthorityLeafCertificateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudCertificationAuthorityLeafCertificateable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudCertificationAuthorityLeafCertificateable)
+                }
+            }
+            m.SetCloudCertificationAuthorityLeafCertificate(res)
+        }
+        return nil
+    }
     res["cloudPCConnectivityIssues"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPCConnectivityIssueFromDiscriminatorValue)
         if err != nil {
@@ -1445,22 +1489,6 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetDeviceConfigurationDeviceStateSummaries(val.(DeviceConfigurationDeviceStateSummaryable))
-        }
-        return nil
-    }
-    res["deviceConfigurationProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateDeviceConfigurationProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]DeviceConfigurationProfileable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(DeviceConfigurationProfileable)
-                }
-            }
-            m.SetDeviceConfigurationProfiles(res)
         }
         return nil
     }
@@ -5282,6 +5310,30 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    if m.GetCloudCertificationAuthority() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudCertificationAuthority()))
+        for i, v := range m.GetCloudCertificationAuthority() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("cloudCertificationAuthority", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetCloudCertificationAuthorityLeafCertificate() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudCertificationAuthorityLeafCertificate()))
+        for i, v := range m.GetCloudCertificationAuthorityLeafCertificate() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("cloudCertificationAuthorityLeafCertificate", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCloudPCConnectivityIssues() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPCConnectivityIssues()))
         for i, v := range m.GetCloudPCConnectivityIssues() {
@@ -5566,18 +5618,6 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteObjectValue("deviceConfigurationDeviceStateSummaries", m.GetDeviceConfigurationDeviceStateSummaries())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetDeviceConfigurationProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceConfigurationProfiles()))
-        for i, v := range m.GetDeviceConfigurationProfiles() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("deviceConfigurationProfiles", cast)
         if err != nil {
             return err
         }
@@ -7236,6 +7276,20 @@ func (m *DeviceManagement) SetChromeOSOnboardingSettings(value []ChromeOSOnboard
         panic(err)
     }
 }
+// SetCloudCertificationAuthority sets the cloudCertificationAuthority property value. Collection of CloudCertificationAuthority records associated with account.
+func (m *DeviceManagement) SetCloudCertificationAuthority(value []CloudCertificationAuthorityable)() {
+    err := m.GetBackingStore().Set("cloudCertificationAuthority", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCloudCertificationAuthorityLeafCertificate sets the cloudCertificationAuthorityLeafCertificate property value. Collection of CloudCertificationAuthorityLeafCertificate records associated with account.
+func (m *DeviceManagement) SetCloudCertificationAuthorityLeafCertificate(value []CloudCertificationAuthorityLeafCertificateable)() {
+    err := m.GetBackingStore().Set("cloudCertificationAuthorityLeafCertificate", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCloudPCConnectivityIssues sets the cloudPCConnectivityIssues property value. The list of CloudPC Connectivity Issue.
 func (m *DeviceManagement) SetCloudPCConnectivityIssues(value []CloudPCConnectivityIssueable)() {
     err := m.GetBackingStore().Set("cloudPCConnectivityIssues", value)
@@ -7421,13 +7475,6 @@ func (m *DeviceManagement) SetDeviceConfigurationConflictSummary(value []DeviceC
 // SetDeviceConfigurationDeviceStateSummaries sets the deviceConfigurationDeviceStateSummaries property value. The device configuration device state summary for this account.
 func (m *DeviceManagement) SetDeviceConfigurationDeviceStateSummaries(value DeviceConfigurationDeviceStateSummaryable)() {
     err := m.GetBackingStore().Set("deviceConfigurationDeviceStateSummaries", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetDeviceConfigurationProfiles sets the deviceConfigurationProfiles property value. Profile Id of the object.
-func (m *DeviceManagement) SetDeviceConfigurationProfiles(value []DeviceConfigurationProfileable)() {
-    err := m.GetBackingStore().Set("deviceConfigurationProfiles", value)
     if err != nil {
         panic(err)
     }
@@ -8461,6 +8508,8 @@ type DeviceManagementable interface {
     GetCategories()([]DeviceManagementSettingCategoryable)
     GetCertificateConnectorDetails()([]CertificateConnectorDetailsable)
     GetChromeOSOnboardingSettings()([]ChromeOSOnboardingSettingsable)
+    GetCloudCertificationAuthority()([]CloudCertificationAuthorityable)
+    GetCloudCertificationAuthorityLeafCertificate()([]CloudCertificationAuthorityLeafCertificateable)
     GetCloudPCConnectivityIssues()([]CloudPCConnectivityIssueable)
     GetComanagedDevices()([]ManagedDeviceable)
     GetComanagementEligibleDevices()([]ComanagementEligibleDeviceable)
@@ -8488,7 +8537,6 @@ type DeviceManagementable interface {
     GetDeviceComplianceScripts()([]DeviceComplianceScriptable)
     GetDeviceConfigurationConflictSummary()([]DeviceConfigurationConflictSummaryable)
     GetDeviceConfigurationDeviceStateSummaries()(DeviceConfigurationDeviceStateSummaryable)
-    GetDeviceConfigurationProfiles()([]DeviceConfigurationProfileable)
     GetDeviceConfigurationRestrictedAppsViolations()([]RestrictedAppsViolationable)
     GetDeviceConfigurations()([]DeviceConfigurationable)
     GetDeviceConfigurationsAllManagedDeviceCertificateStates()([]ManagedAllDeviceCertificateStateable)
@@ -8651,6 +8699,8 @@ type DeviceManagementable interface {
     SetCategories(value []DeviceManagementSettingCategoryable)()
     SetCertificateConnectorDetails(value []CertificateConnectorDetailsable)()
     SetChromeOSOnboardingSettings(value []ChromeOSOnboardingSettingsable)()
+    SetCloudCertificationAuthority(value []CloudCertificationAuthorityable)()
+    SetCloudCertificationAuthorityLeafCertificate(value []CloudCertificationAuthorityLeafCertificateable)()
     SetCloudPCConnectivityIssues(value []CloudPCConnectivityIssueable)()
     SetComanagedDevices(value []ManagedDeviceable)()
     SetComanagementEligibleDevices(value []ComanagementEligibleDeviceable)()
@@ -8678,7 +8728,6 @@ type DeviceManagementable interface {
     SetDeviceComplianceScripts(value []DeviceComplianceScriptable)()
     SetDeviceConfigurationConflictSummary(value []DeviceConfigurationConflictSummaryable)()
     SetDeviceConfigurationDeviceStateSummaries(value DeviceConfigurationDeviceStateSummaryable)()
-    SetDeviceConfigurationProfiles(value []DeviceConfigurationProfileable)()
     SetDeviceConfigurationRestrictedAppsViolations(value []RestrictedAppsViolationable)()
     SetDeviceConfigurations(value []DeviceConfigurationable)()
     SetDeviceConfigurationsAllManagedDeviceCertificateStates(value []ManagedAllDeviceCertificateStateable)()

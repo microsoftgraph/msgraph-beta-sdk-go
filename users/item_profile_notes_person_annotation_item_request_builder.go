@@ -55,7 +55,6 @@ func NewItemProfileNotesPersonAnnotationItemRequestBuilder(rawUrl string, reques
     return NewItemProfileNotesPersonAnnotationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes a personAnnotation object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -75,7 +74,6 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Delete(ctx context.
     return nil
 }
 // Get represents notes that a user has added to their profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PersonAnnotationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, error) {
@@ -96,7 +94,6 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable), nil
 }
 // Patch update the properties of a personAnnotation object in a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PersonAnnotationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,7 +117,6 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) Patch(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable), nil
 }
 // ToDeleteRequestInformation deletes a personAnnotation object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +128,6 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToDeleteRequestInfo
     return requestInfo, nil
 }
 // ToGetRequestInformation represents notes that a user has added to their profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +142,6 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a personAnnotation object in a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAnnotationable, requestConfiguration *ItemProfileNotesPersonAnnotationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -163,7 +157,6 @@ func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) ToPatchRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfileNotesPersonAnnotationItemRequestBuilder when successful
 func (m *ItemProfileNotesPersonAnnotationItemRequestBuilder) WithUrl(rawUrl string)(*ItemProfileNotesPersonAnnotationItemRequestBuilder) {
     return NewItemProfileNotesPersonAnnotationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

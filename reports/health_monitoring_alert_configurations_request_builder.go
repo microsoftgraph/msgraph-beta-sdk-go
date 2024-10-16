@@ -11,7 +11,7 @@ import (
 type HealthMonitoringAlertConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// HealthMonitoringAlertConfigurationsRequestBuilderGetQueryParameters get alertConfigurations from reports
+// HealthMonitoringAlertConfigurationsRequestBuilderGetQueryParameters get a list of the Microsoft Entra health monitoring alertConfiguration objects and their properties.
 type HealthMonitoringAlertConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewHealthMonitoringAlertConfigurationsRequestBuilder(rawUrl string, request
 func (m *HealthMonitoringAlertConfigurationsRequestBuilder) Count()(*HealthMonitoringAlertConfigurationsCountRequestBuilder) {
     return NewHealthMonitoringAlertConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get alertConfigurations from reports
+// Get get a list of the Microsoft Entra health monitoring alertConfiguration objects and their properties.
 // returns a AlertConfigurationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/healthmonitoring-healthmonitoringroot-list-alertconfigurations?view=graph-rest-beta
 func (m *HealthMonitoringAlertConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *HealthMonitoringAlertConfigurationsRequestBuilderGetRequestConfiguration)(ib1b876b25b5a2e04c31b7cc3c9de83e8af19c080f01f39f172f92708d7dc7450.AlertConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *HealthMonitoringAlertConfigurationsRequestBuilder) Post(ctx context.Con
     }
     return res.(ib1b876b25b5a2e04c31b7cc3c9de83e8af19c080f01f39f172f92708d7dc7450.AlertConfigurationable), nil
 }
-// ToGetRequestInformation get alertConfigurations from reports
+// ToGetRequestInformation get a list of the Microsoft Entra health monitoring alertConfiguration objects and their properties.
 // returns a *RequestInformation when successful
 func (m *HealthMonitoringAlertConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HealthMonitoringAlertConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

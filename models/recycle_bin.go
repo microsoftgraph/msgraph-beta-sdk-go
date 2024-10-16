@@ -41,6 +41,16 @@ func (m *RecycleBin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRecycleBinSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(RecycleBinSettingsable))
+        }
+        return nil
+    }
     return res
 }
 // GetItems gets the items property value. List of the recycleBinItems deleted by a user.
@@ -52,6 +62,18 @@ func (m *RecycleBin) GetItems()([]RecycleBinItemable) {
     }
     if val != nil {
         return val.([]RecycleBinItemable)
+    }
+    return nil
+}
+// GetSettings gets the settings property value. Settings of the recycleBin.
+// returns a RecycleBinSettingsable when successful
+func (m *RecycleBin) GetSettings()(RecycleBinSettingsable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RecycleBinSettingsable)
     }
     return nil
 }
@@ -73,6 +95,12 @@ func (m *RecycleBin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("settings", m.GetSettings())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetItems sets the items property value. List of the recycleBinItems deleted by a user.
@@ -82,9 +110,18 @@ func (m *RecycleBin) SetItems(value []RecycleBinItemable)() {
         panic(err)
     }
 }
+// SetSettings sets the settings property value. Settings of the recycleBin.
+func (m *RecycleBin) SetSettings(value RecycleBinSettingsable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type RecycleBinable interface {
     BaseItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItems()([]RecycleBinItemable)
+    GetSettings()(RecycleBinSettingsable)
     SetItems(value []RecycleBinItemable)()
+    SetSettings(value RecycleBinSettingsable)()
 }

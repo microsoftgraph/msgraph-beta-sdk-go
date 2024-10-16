@@ -5,7 +5,7 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ManagedDeviceSummarizedAppState event representing a user's devices with failed or pending apps.
+// ManagedDeviceSummarizedAppState the summarized information associated with managed device app installation status.
 type ManagedDeviceSummarizedAppState struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -78,12 +78,12 @@ func (m *ManagedDeviceSummarizedAppState) GetFieldDeserializers()(map[string]fun
         return nil
     }
     res["summarizedAppState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseRunState)
+        val, err := n.GetEnumValue(ParseDeviceManagementScriptRunState)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetSummarizedAppState(val.(*RunState))
+            m.SetSummarizedAppState(val.(*DeviceManagementScriptRunState))
         }
         return nil
     }
@@ -101,15 +101,15 @@ func (m *ManagedDeviceSummarizedAppState) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSummarizedAppState gets the summarizedAppState property value. Indicates the type of execution status of the device management script.
-// returns a *RunState when successful
-func (m *ManagedDeviceSummarizedAppState) GetSummarizedAppState()(*RunState) {
+// GetSummarizedAppState gets the summarizedAppState property value. Indicates the type of execution status of the device management script. This status provides insights into whether the script has been successfully executed, encountered errors, or is pending execution.
+// returns a *DeviceManagementScriptRunState when successful
+func (m *ManagedDeviceSummarizedAppState) GetSummarizedAppState()(*DeviceManagementScriptRunState) {
     val, err := m.GetBackingStore().Get("summarizedAppState")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*RunState)
+        return val.(*DeviceManagementScriptRunState)
     }
     return nil
 }
@@ -167,8 +167,8 @@ func (m *ManagedDeviceSummarizedAppState) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSummarizedAppState sets the summarizedAppState property value. Indicates the type of execution status of the device management script.
-func (m *ManagedDeviceSummarizedAppState) SetSummarizedAppState(value *RunState)() {
+// SetSummarizedAppState sets the summarizedAppState property value. Indicates the type of execution status of the device management script. This status provides insights into whether the script has been successfully executed, encountered errors, or is pending execution.
+func (m *ManagedDeviceSummarizedAppState) SetSummarizedAppState(value *DeviceManagementScriptRunState)() {
     err := m.GetBackingStore().Set("summarizedAppState", value)
     if err != nil {
         panic(err)
@@ -181,9 +181,9 @@ type ManagedDeviceSummarizedAppStateable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDeviceId()(*string)
     GetOdataType()(*string)
-    GetSummarizedAppState()(*RunState)
+    GetSummarizedAppState()(*DeviceManagementScriptRunState)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDeviceId(value *string)()
     SetOdataType(value *string)()
-    SetSummarizedAppState(value *RunState)()
+    SetSummarizedAppState(value *DeviceManagementScriptRunState)()
 }

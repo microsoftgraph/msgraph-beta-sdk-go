@@ -55,7 +55,6 @@ func NewItemSettingsRegionalAndLanguageSettingsRequestBuilder(rawUrl string, req
     return NewItemSettingsRegionalAndLanguageSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property regionalAndLanguageSettings for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Delete(ctx conte
     return nil
 }
 // Get the user's preferences for languages, regional locale and date/time formatting.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a RegionalAndLanguageSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, error) {
@@ -93,7 +91,6 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Get(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable), nil
 }
 // Patch update the navigation property regionalAndLanguageSettings in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a RegionalAndLanguageSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, error) {
@@ -114,7 +111,6 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) Patch(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable), nil
 }
 // ToDeleteRequestInformation delete navigation property regionalAndLanguageSettings for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +122,6 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToDeleteRequestI
     return requestInfo, nil
 }
 // ToGetRequestInformation the user's preferences for languages, regional locale and date/time formatting.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +136,6 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property regionalAndLanguageSettings in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RegionalAndLanguageSettingsable, requestConfiguration *ItemSettingsRegionalAndLanguageSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +151,6 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToPatchRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsRegionalAndLanguageSettingsRequestBuilder when successful
 func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsRegionalAndLanguageSettingsRequestBuilder) {
     return NewItemSettingsRegionalAndLanguageSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

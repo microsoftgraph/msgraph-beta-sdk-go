@@ -40,7 +40,6 @@ type ItemCreatedObjectsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemCreatedObjectsRequestBuilderGetQueryParameters
 }
 // ByDirectoryObjectId provides operations to manage the createdObjects property of the microsoft.graph.user entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCreatedObjectsDirectoryObjectItemRequestBuilder when successful
 func (m *ItemCreatedObjectsRequestBuilder) ByDirectoryObjectId(directoryObjectId string)(*ItemCreatedObjectsDirectoryObjectItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +70,6 @@ func (m *ItemCreatedObjectsRequestBuilder) Count()(*ItemCreatedObjectsCountReque
     return NewItemCreatedObjectsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get directory objects that the user created. Read-only. Nullable.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCreatedObjectsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCreatedObjectsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
@@ -97,7 +95,6 @@ func (m *ItemCreatedObjectsRequestBuilder) GraphServicePrincipal()(*ItemCreatedO
     return NewItemCreatedObjectsGraphServicePrincipalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation directory objects that the user created. Read-only. Nullable.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCreatedObjectsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCreatedObjectsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -112,7 +109,6 @@ func (m *ItemCreatedObjectsRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCreatedObjectsRequestBuilder when successful
 func (m *ItemCreatedObjectsRequestBuilder) WithUrl(rawUrl string)(*ItemCreatedObjectsRequestBuilder) {
     return NewItemCreatedObjectsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

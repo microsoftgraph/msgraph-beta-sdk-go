@@ -31,7 +31,6 @@ func NewItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder(rawUrl string
     return NewItemAuthenticationMethodsItemEnableSmsSignInRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action enableSmsSignIn
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -48,7 +47,6 @@ func (m *ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) Post(ctx co
     return nil
 }
 // ToPostRequestInformation invoke action enableSmsSignIn
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -60,7 +58,6 @@ func (m *ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder when successful
 func (m *ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder) {
     return NewItemAuthenticationMethodsItemEnableSmsSignInRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

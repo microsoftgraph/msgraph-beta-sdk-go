@@ -40,7 +40,6 @@ type ItemPlannerRosterPlansRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemPlannerRosterPlansRequestBuilderGetQueryParameters
 }
 // ByPlannerPlanId provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerRosterPlansPlannerPlanItemRequestBuilder when successful
 func (m *ItemPlannerRosterPlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*ItemPlannerRosterPlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +70,6 @@ func (m *ItemPlannerRosterPlansRequestBuilder) Count()(*ItemPlannerRosterPlansCo
     return NewItemPlannerRosterPlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PlannerPlanCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -95,7 +93,6 @@ func (m *ItemPlannerRosterPlansRequestBuilder) Get(ctx context.Context, requestC
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable), nil
 }
 // ToGetRequestInformation get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerRosterPlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerRosterPlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -110,7 +107,6 @@ func (m *ItemPlannerRosterPlansRequestBuilder) ToGetRequestInformation(ctx conte
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerRosterPlansRequestBuilder when successful
 func (m *ItemPlannerRosterPlansRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerRosterPlansRequestBuilder) {
     return NewItemPlannerRosterPlansRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

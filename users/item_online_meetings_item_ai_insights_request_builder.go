@@ -47,7 +47,6 @@ type ItemOnlineMeetingsItemAiInsightsRequestBuilderPostRequestConfiguration stru
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByCallAiInsightId provides operations to manage the aiInsights property of the microsoft.graph.onlineMeeting entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) ByCallAiInsightId(callAiInsightId string)(*ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +77,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) Count()(*ItemOnlineMeet
     return NewItemOnlineMeetingsItemAiInsightsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get aiInsights from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CallAiInsightCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAiInsightsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightCollectionResponseable, error) {
@@ -99,7 +97,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightCollectionResponseable), nil
 }
 // Post create new navigation property to aiInsights for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CallAiInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable, requestConfiguration *ItemOnlineMeetingsItemAiInsightsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable, error) {
@@ -120,7 +117,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) Post(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable), nil
 }
 // ToGetRequestInformation get aiInsights from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAiInsightsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +131,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to aiInsights for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable, requestConfiguration *ItemOnlineMeetingsItemAiInsightsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +146,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnlineMeetingsItemAiInsightsRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemAiInsightsRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemAiInsightsRequestBuilder) {
     return NewItemOnlineMeetingsItemAiInsightsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

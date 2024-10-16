@@ -40,7 +40,6 @@ type ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequest
     QueryParameters *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters
 }
 // ByWindowsInformationProtectionDeviceRegistrationId provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilder when successful
 func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) ByWindowsInformationProtectionDeviceRegistrationId(windowsInformationProtectionDeviceRegistrationId string)(*ItemWindowsInformationProtectionDeviceRegistrationsWindowsInformationProtectionDeviceRegistrationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +70,6 @@ func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) Coun
     return NewItemWindowsInformationProtectionDeviceRegistrationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get zero or more WIP device registrations that belong to the user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WindowsInformationProtectionDeviceRegistrationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationCollectionResponseable, error) {
@@ -92,7 +90,6 @@ func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) Get(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsInformationProtectionDeviceRegistrationCollectionResponseable), nil
 }
 // ToGetRequestInformation zero or more WIP device registrations that belong to the user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,7 +104,6 @@ func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) ToGe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder when successful
 func (m *ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) WithUrl(rawUrl string)(*ItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder) {
     return NewItemWindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -76,7 +76,6 @@ func (m *ItemPlannerAllDeltaRequestBuilder) Get(ctx context.Context, requestConf
     return res.(ItemPlannerAllDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse retrieves changes to objects that the user is subscribed to. This method allows your application to track changes to objects that the user can access from within Planner over time. The return value of this method might contain heterogeneous types of objects from Planner. For more information about tracking changes in Microsoft Graph data, see Use delta query to track changes in Microsoft Graph data.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemPlannerAllDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -100,7 +99,6 @@ func (m *ItemPlannerAllDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Co
     return res.(ItemPlannerAllDeltaGetResponseable), nil
 }
 // ToGetRequestInformation retrieves changes to objects that the user is subscribed to. This method allows your application to track changes to objects that the user can access from within Planner over time. The return value of this method might contain heterogeneous types of objects from Planner. For more information about tracking changes in Microsoft Graph data, see Use delta query to track changes in Microsoft Graph data.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerAllDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerAllDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -115,7 +113,6 @@ func (m *ItemPlannerAllDeltaRequestBuilder) ToGetRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerAllDeltaRequestBuilder when successful
 func (m *ItemPlannerAllDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerAllDeltaRequestBuilder) {
     return NewItemPlannerAllDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

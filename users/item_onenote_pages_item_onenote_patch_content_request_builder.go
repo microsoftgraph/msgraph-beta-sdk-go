@@ -31,7 +31,6 @@ func NewItemOnenotePagesItemOnenotePatchContentRequestBuilder(rawUrl string, req
     return NewItemOnenotePagesItemOnenotePatchContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action onenotePatchContent
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenotePagesItemOnenotePatchContentRequestBuilder) Post(ctx context.Context, body ItemOnenotePagesItemOnenotePatchContentPostRequestBodyable, requestConfiguration *ItemOnenotePagesItemOnenotePatchContentRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -48,7 +47,6 @@ func (m *ItemOnenotePagesItemOnenotePatchContentRequestBuilder) Post(ctx context
     return nil
 }
 // ToPostRequestInformation invoke action onenotePatchContent
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnenotePagesItemOnenotePatchContentRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemOnenotePagesItemOnenotePatchContentPostRequestBodyable, requestConfiguration *ItemOnenotePagesItemOnenotePatchContentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -64,7 +62,6 @@ func (m *ItemOnenotePagesItemOnenotePatchContentRequestBuilder) ToPostRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnenotePagesItemOnenotePatchContentRequestBuilder when successful
 func (m *ItemOnenotePagesItemOnenotePatchContentRequestBuilder) WithUrl(rawUrl string)(*ItemOnenotePagesItemOnenotePatchContentRequestBuilder) {
     return NewItemOnenotePagesItemOnenotePatchContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

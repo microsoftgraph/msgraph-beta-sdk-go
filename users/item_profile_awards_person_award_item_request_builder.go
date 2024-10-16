@@ -55,7 +55,6 @@ func NewItemProfileAwardsPersonAwardItemRequestBuilder(rawUrl string, requestAda
     return NewItemProfileAwardsPersonAwardItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes a personAward object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -75,7 +74,6 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Delete(ctx context.Cont
     return nil
 }
 // Get represents the details of awards or honors associated with a person.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PersonAwardable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, error) {
@@ -96,7 +94,6 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable), nil
 }
 // Patch update the properties of a personAward object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PersonAwardable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,7 +117,6 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) Patch(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable), nil
 }
 // ToDeleteRequestInformation deletes a personAward object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +128,6 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToDeleteRequestInformat
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the details of awards or honors associated with a person.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +142,6 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a personAward object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonAwardable, requestConfiguration *ItemProfileAwardsPersonAwardItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -163,7 +157,6 @@ func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) ToPatchRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfileAwardsPersonAwardItemRequestBuilder when successful
 func (m *ItemProfileAwardsPersonAwardItemRequestBuilder) WithUrl(rawUrl string)(*ItemProfileAwardsPersonAwardItemRequestBuilder) {
     return NewItemProfileAwardsPersonAwardItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

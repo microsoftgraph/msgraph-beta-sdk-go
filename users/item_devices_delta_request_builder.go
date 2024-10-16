@@ -76,7 +76,6 @@ func (m *ItemDevicesDeltaRequestBuilder) Get(ctx context.Context, requestConfigu
     return res.(ItemDevicesDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemDevicesDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -100,7 +99,6 @@ func (m *ItemDevicesDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Conte
     return res.(ItemDevicesDeltaGetResponseable), nil
 }
 // ToGetRequestInformation get newly created, updated, or deleted devices without performing a full read of the entire resource collection. For more information, see Using delta query.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -115,7 +113,6 @@ func (m *ItemDevicesDeltaRequestBuilder) ToGetRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDevicesDeltaRequestBuilder when successful
 func (m *ItemDevicesDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesDeltaRequestBuilder) {
     return NewItemDevicesDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -55,7 +55,6 @@ func NewItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder(ra
     return NewItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property educationalActivities for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     return nil
 }
 // Get represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a EducationalActivityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, error) {
@@ -93,7 +91,6 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable), nil
 }
 // Patch update the navigation property educationalActivities in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a EducationalActivityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, error) {
@@ -114,7 +111,6 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable), nil
 }
 // ToDeleteRequestInformation delete navigation property educationalActivities for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +122,6 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToGetRequestInformation represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +136,6 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property educationalActivities in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationalActivityable, requestConfiguration *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +151,6 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder when successful
 func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) WithUrl(rawUrl string)(*ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) {
     return NewItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

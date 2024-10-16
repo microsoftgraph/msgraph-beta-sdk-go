@@ -41,7 +41,6 @@ func NewInvitedUserRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
     return NewInvitedUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the user created as part of the invitation creation. Read-Only. The id property is required in the request body to reset a redemption status.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *InvitedUserRequestBuilder) Get(ctx context.Context, requestConfiguration *InvitedUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
@@ -72,7 +71,6 @@ func (m *InvitedUserRequestBuilder) ServiceProvisioningErrors()(*InvitedUserServ
     return NewInvitedUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the user created as part of the invitation creation. Read-Only. The id property is required in the request body to reset a redemption status.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *InvitedUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InvitedUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -87,7 +85,6 @@ func (m *InvitedUserRequestBuilder) ToGetRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *InvitedUserRequestBuilder when successful
 func (m *InvitedUserRequestBuilder) WithUrl(rawUrl string)(*InvitedUserRequestBuilder) {
     return NewInvitedUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

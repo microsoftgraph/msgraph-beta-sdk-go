@@ -73,7 +73,6 @@ func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) Get(ctx context.Contex
     return res.(ItemCloudPCsItemRetrieveSnapshotsResponseable), nil
 }
 // GetAsRetrieveSnapshotsGetResponse invoke function retrieveSnapshots
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemCloudPCsItemRetrieveSnapshotsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) GetAsRetrieveSnapshotsGetResponse(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(ItemCloudPCsItemRetrieveSnapshotsGetResponseable, error) {
@@ -94,7 +93,6 @@ func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) GetAsRetrieveSnapshots
     return res.(ItemCloudPCsItemRetrieveSnapshotsGetResponseable), nil
 }
 // ToGetRequestInformation invoke function retrieveSnapshots
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -109,7 +107,6 @@ func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder when successful
 func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) {
     return NewItemCloudPCsItemRetrieveSnapshotsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

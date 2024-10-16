@@ -114,6 +114,16 @@ func (m *DeviceManagementRequestBuilder) CertificateConnectorDetails()(*Certific
 func (m *DeviceManagementRequestBuilder) ChromeOSOnboardingSettings()(*ChromeOSOnboardingSettingsRequestBuilder) {
     return NewChromeOSOnboardingSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CloudCertificationAuthority provides operations to manage the cloudCertificationAuthority property of the microsoft.graph.deviceManagement entity.
+// returns a *CloudCertificationAuthorityRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) CloudCertificationAuthority()(*CloudCertificationAuthorityRequestBuilder) {
+    return NewCloudCertificationAuthorityRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CloudCertificationAuthorityLeafCertificate provides operations to manage the cloudCertificationAuthorityLeafCertificate property of the microsoft.graph.deviceManagement entity.
+// returns a *CloudCertificationAuthorityLeafCertificateRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) CloudCertificationAuthorityLeafCertificate()(*CloudCertificationAuthorityLeafCertificateRequestBuilder) {
+    return NewCloudCertificationAuthorityLeafCertificateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CloudPCConnectivityIssues provides operations to manage the cloudPCConnectivityIssues property of the microsoft.graph.deviceManagement entity.
 // returns a *CloudPCConnectivityIssuesRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) CloudPCConnectivityIssues()(*CloudPCConnectivityIssuesRequestBuilder) {
@@ -246,11 +256,6 @@ func (m *DeviceManagementRequestBuilder) DeviceConfigurationConflictSummary()(*D
 // returns a *DeviceConfigurationDeviceStateSummariesRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) DeviceConfigurationDeviceStateSummaries()(*DeviceConfigurationDeviceStateSummariesRequestBuilder) {
     return NewDeviceConfigurationDeviceStateSummariesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DeviceConfigurationProfiles provides operations to manage the deviceConfigurationProfiles property of the microsoft.graph.deviceManagement entity.
-// returns a *DeviceConfigurationProfilesRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) DeviceConfigurationProfiles()(*DeviceConfigurationProfilesRequestBuilder) {
-    return NewDeviceConfigurationProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceConfigurationRestrictedAppsViolations provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.
 // returns a *DeviceConfigurationRestrictedAppsViolationsRequestBuilder when successful

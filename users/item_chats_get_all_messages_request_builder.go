@@ -78,7 +78,6 @@ func (m *ItemChatsGetAllMessagesRequestBuilder) Get(ctx context.Context, request
     return res.(ItemChatsGetAllMessagesResponseable), nil
 }
 // GetAsGetAllMessagesGetResponse get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemChatsGetAllMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,7 +101,6 @@ func (m *ItemChatsGetAllMessagesRequestBuilder) GetAsGetAllMessagesGetResponse(c
     return res.(ItemChatsGetAllMessagesGetResponseable), nil
 }
 // ToGetRequestInformation get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsGetAllMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsGetAllMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -117,7 +115,6 @@ func (m *ItemChatsGetAllMessagesRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsGetAllMessagesRequestBuilder when successful
 func (m *ItemChatsGetAllMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemChatsGetAllMessagesRequestBuilder) {
     return NewItemChatsGetAllMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

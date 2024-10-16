@@ -55,7 +55,6 @@ func NewItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder(rawUrl s
     return NewItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property aiInsights for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) Delete
     return nil
 }
 // Get get aiInsights from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CallAiInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable, error) {
@@ -93,7 +91,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) Get(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable), nil
 }
 // Patch update the navigation property aiInsights in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a CallAiInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable, requestConfiguration *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable, error) {
@@ -114,7 +111,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) Patch(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable), nil
 }
 // ToDeleteRequestInformation delete navigation property aiInsights for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +122,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) ToDele
     return requestInfo, nil
 }
 // ToGetRequestInformation get aiInsights from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +136,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property aiInsights in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable, requestConfiguration *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +151,6 @@ func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) ToPatc
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) {
     return NewItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

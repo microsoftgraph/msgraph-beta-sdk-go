@@ -41,10 +41,14 @@ const (
     ANDROIDAOSPUSEROWNEDDEVICEENROLLMENT_DEVICEENROLLMENTTYPE
     // Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.
     ANDROIDAOSPUSERLESSDEVICEENROLLMENT_DEVICEENROLLMENTTYPE
+    // Indicates the device is enrolled via Apple Account Driven User Enrollment, a form of enrollment where the user enrolls via iOS Settings without using the iOS Company Portal. It results in an enrollment with a new partition for managed apps and data and which supports a limited set of management capabilities.
+    APPLEACCOUNTDRIVENUSERENROLLMENT_DEVICEENROLLMENTTYPE
+    // Evolvable enum member
+    UNKNOWNFUTUREVALUE_DEVICEENROLLMENTTYPE
 )
 
 func (i DeviceEnrollmentType) String() string {
-    return []string{"unknown", "userEnrollment", "deviceEnrollmentManager", "appleBulkWithUser", "appleBulkWithoutUser", "windowsAzureADJoin", "windowsBulkUserless", "windowsAutoEnrollment", "windowsBulkAzureDomainJoin", "windowsCoManagement", "windowsAzureADJoinUsingDeviceAuth", "appleUserEnrollment", "appleUserEnrollmentWithServiceAccount", "azureAdJoinUsingAzureVmExtension", "androidEnterpriseDedicatedDevice", "androidEnterpriseFullyManaged", "androidEnterpriseCorporateWorkProfile", "androidAOSPUserOwnedDeviceEnrollment", "androidAOSPUserlessDeviceEnrollment"}[i]
+    return []string{"unknown", "userEnrollment", "deviceEnrollmentManager", "appleBulkWithUser", "appleBulkWithoutUser", "windowsAzureADJoin", "windowsBulkUserless", "windowsAutoEnrollment", "windowsBulkAzureDomainJoin", "windowsCoManagement", "windowsAzureADJoinUsingDeviceAuth", "appleUserEnrollment", "appleUserEnrollmentWithServiceAccount", "azureAdJoinUsingAzureVmExtension", "androidEnterpriseDedicatedDevice", "androidEnterpriseFullyManaged", "androidEnterpriseCorporateWorkProfile", "androidAOSPUserOwnedDeviceEnrollment", "androidAOSPUserlessDeviceEnrollment", "appleAccountDrivenUserEnrollment", "unknownFutureValue"}[i]
 }
 func ParseDeviceEnrollmentType(v string) (any, error) {
     result := UNKNOWN_DEVICEENROLLMENTTYPE
@@ -87,6 +91,10 @@ func ParseDeviceEnrollmentType(v string) (any, error) {
             result = ANDROIDAOSPUSEROWNEDDEVICEENROLLMENT_DEVICEENROLLMENTTYPE
         case "androidAOSPUserlessDeviceEnrollment":
             result = ANDROIDAOSPUSERLESSDEVICEENROLLMENT_DEVICEENROLLMENTTYPE
+        case "appleAccountDrivenUserEnrollment":
+            result = APPLEACCOUNTDRIVENUSERENROLLMENT_DEVICEENROLLMENTTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_DEVICEENROLLMENTTYPE
         default:
             return nil, nil
     }

@@ -92,7 +92,7 @@ func (m *Enrichment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetImpacts gets the impacts property value. The impacts property
+// GetImpacts gets the impacts property value. A collection of resource impact summaries that gives a high level view of the kind of resources that were impacted and to what degree.
 // returns a []ResourceImpactSummaryable when successful
 func (m *Enrichment) GetImpacts()([]ResourceImpactSummaryable) {
     val, err := m.GetBackingStore().Get("impacts")
@@ -128,7 +128,7 @@ func (m *Enrichment) GetState()(*EnrichmentState) {
     }
     return nil
 }
-// GetSupportingData gets the supportingData property value. The supportingData property
+// GetSupportingData gets the supportingData property value. A collection of supportingData locations that can be queried for debugging the alert.
 // returns a SupportingDataable when successful
 func (m *Enrichment) GetSupportingData()(SupportingDataable) {
     val, err := m.GetBackingStore().Get("supportingData")
@@ -192,7 +192,7 @@ func (m *Enrichment) SetAdditionalData(value map[string]any)() {
 func (m *Enrichment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetImpacts sets the impacts property value. The impacts property
+// SetImpacts sets the impacts property value. A collection of resource impact summaries that gives a high level view of the kind of resources that were impacted and to what degree.
 func (m *Enrichment) SetImpacts(value []ResourceImpactSummaryable)() {
     err := m.GetBackingStore().Set("impacts", value)
     if err != nil {
@@ -213,7 +213,7 @@ func (m *Enrichment) SetState(value *EnrichmentState)() {
         panic(err)
     }
 }
-// SetSupportingData sets the supportingData property value. The supportingData property
+// SetSupportingData sets the supportingData property value. A collection of supportingData locations that can be queried for debugging the alert.
 func (m *Enrichment) SetSupportingData(value SupportingDataable)() {
     err := m.GetBackingStore().Set("supportingData", value)
     if err != nil {

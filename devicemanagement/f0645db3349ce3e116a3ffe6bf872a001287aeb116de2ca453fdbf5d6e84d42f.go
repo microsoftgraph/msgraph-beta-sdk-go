@@ -10,7 +10,7 @@ import (
 type UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetQueryParameters the report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
+// UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetQueryParameters invoke function summarizeDeviceRemoteConnection
 type UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,7 +54,7 @@ func NewUserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWi
     urlParams["request-raw-url"] = rawUrl
     return NewUserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get the report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
+// Get invoke function summarizeDeviceRemoteConnection
 // Deprecated: This method is obsolete. Use GetAsSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse instead.
 // returns a UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -75,7 +75,7 @@ func (m *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionW
     }
     return res.(UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByResponseable), nil
 }
-// GetAsSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse the report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
+// GetAsSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse invoke function summarizeDeviceRemoteConnection
 // returns a UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) GetAsSummarizeDeviceRemoteConnectionWithSummarizeByGetResponse(ctx context.Context, requestConfiguration *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetRequestConfiguration)(UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByGetResponseable, error) {
@@ -95,7 +95,7 @@ func (m *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionW
     }
     return res.(UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByGetResponseable), nil
 }
-// ToGetRequestInformation the report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://go.microsoft.com/fwlink/?linkid=2283835.
+// ToGetRequestInformation invoke function summarizeDeviceRemoteConnection
 // returns a *RequestInformation when successful
 func (m *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsRemoteConnectionSummarizeDeviceRemoteConnectionWithSummarizeByRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

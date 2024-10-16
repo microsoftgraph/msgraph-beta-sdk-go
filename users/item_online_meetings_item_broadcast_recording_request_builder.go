@@ -45,7 +45,6 @@ func NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilder(rawUrl string, re
     return NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete broadcastRecording for the navigation property onlineMeetings in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -62,7 +61,6 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Delete(ctx cont
     return nil
 }
 // Get get broadcastRecording for the navigation property onlineMeetings from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -83,7 +81,6 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Get(ctx context
     return res.([]byte), nil
 }
 // Put update broadcastRecording for the navigation property onlineMeetings in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -104,7 +101,6 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) Put(ctx context
     return res.([]byte), nil
 }
 // ToDeleteRequestInformation delete broadcastRecording for the navigation property onlineMeetings in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -116,7 +112,6 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToDeleteRequest
     return requestInfo, nil
 }
 // ToGetRequestInformation get broadcastRecording for the navigation property onlineMeetings from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,7 +123,6 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // ToPutRequestInformation update broadcastRecording for the navigation property onlineMeetings in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,6 @@ func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) ToPutRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemBroadcastRecordingRequestBuilder) {
     return NewItemOnlineMeetingsItemBroadcastRecordingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

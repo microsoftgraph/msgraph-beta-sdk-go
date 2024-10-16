@@ -40,7 +40,6 @@ type ItemPlannerFavoritePlansRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemPlannerFavoritePlansRequestBuilderGetQueryParameters
 }
 // ByPlannerPlanId provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder when successful
 func (m *ItemPlannerFavoritePlansRequestBuilder) ByPlannerPlanId(plannerPlanId string)(*ItemPlannerFavoritePlansPlannerPlanItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +70,6 @@ func (m *ItemPlannerFavoritePlansRequestBuilder) Count()(*ItemPlannerFavoritePla
     return NewItemPlannerFavoritePlansCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PlannerPlanCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerFavoritePlansRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerFavoritePlansRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable, error) {
@@ -92,7 +90,6 @@ func (m *ItemPlannerFavoritePlansRequestBuilder) Get(ctx context.Context, reques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanCollectionResponseable), nil
 }
 // ToGetRequestInformation read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerFavoritePlansRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerFavoritePlansRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,7 +104,6 @@ func (m *ItemPlannerFavoritePlansRequestBuilder) ToGetRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerFavoritePlansRequestBuilder when successful
 func (m *ItemPlannerFavoritePlansRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerFavoritePlansRequestBuilder) {
     return NewItemPlannerFavoritePlansRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

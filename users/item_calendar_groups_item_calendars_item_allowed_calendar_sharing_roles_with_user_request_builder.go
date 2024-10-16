@@ -70,7 +70,6 @@ func (m *ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserR
     return res.(ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserResponseable), nil
 }
 // GetAsAllowedCalendarSharingRolesWithUserGetResponse invoke function allowedCalendarSharingRoles
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) GetAsAllowedCalendarSharingRolesWithUserGetResponse(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration)(ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserGetResponseable, error) {
@@ -91,7 +90,6 @@ func (m *ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserR
     return res.(ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserGetResponseable), nil
 }
 // ToGetRequestInformation invoke function allowedCalendarSharingRoles
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -106,7 +104,6 @@ func (m *ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder when successful
 func (m *ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) WithUrl(rawUrl string)(*ItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder) {
     return NewItemCalendarGroupsItemCalendarsItemAllowedCalendarSharingRolesWithUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

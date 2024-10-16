@@ -11,7 +11,7 @@ import (
 type HealthMonitoringAlertsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// HealthMonitoringAlertsRequestBuilderGetQueryParameters get alerts from reports
+// HealthMonitoringAlertsRequestBuilderGetQueryParameters get the list of the Microsoft Entra health monitoring alert objects and their properties from the past 30 days.
 type HealthMonitoringAlertsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewHealthMonitoringAlertsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *HealthMonitoringAlertsRequestBuilder) Count()(*HealthMonitoringAlertsCountRequestBuilder) {
     return NewHealthMonitoringAlertsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get alerts from reports
+// Get get the list of the Microsoft Entra health monitoring alert objects and their properties from the past 30 days.
 // returns a AlertCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/healthmonitoring-healthmonitoringroot-list-alerts?view=graph-rest-beta
 func (m *HealthMonitoringAlertsRequestBuilder) Get(ctx context.Context, requestConfiguration *HealthMonitoringAlertsRequestBuilderGetRequestConfiguration)(ib1b876b25b5a2e04c31b7cc3c9de83e8af19c080f01f39f172f92708d7dc7450.AlertCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -116,7 +119,7 @@ func (m *HealthMonitoringAlertsRequestBuilder) Post(ctx context.Context, body ib
     }
     return res.(ib1b876b25b5a2e04c31b7cc3c9de83e8af19c080f01f39f172f92708d7dc7450.Alertable), nil
 }
-// ToGetRequestInformation get alerts from reports
+// ToGetRequestInformation get the list of the Microsoft Entra health monitoring alert objects and their properties from the past 30 days.
 // returns a *RequestInformation when successful
 func (m *HealthMonitoringAlertsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HealthMonitoringAlertsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

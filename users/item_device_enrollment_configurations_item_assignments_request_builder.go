@@ -47,7 +47,6 @@ type ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderPostRequestC
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByEnrollmentConfigurationAssignmentId provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder when successful
 func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ByEnrollmentConfigurationAssignmentId(enrollmentConfigurationAssignmentId string)(*ItemDeviceEnrollmentConfigurationsItemAssignmentsEnrollmentConfigurationAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +77,6 @@ func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Count(
     return NewItemDeviceEnrollmentConfigurationsItemAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of group assignments for the device configuration profile
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a EnrollmentConfigurationAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentConfigurationAssignmentCollectionResponseable, error) {
@@ -99,7 +97,6 @@ func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Get(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentConfigurationAssignmentCollectionResponseable), nil
 }
 // Post create new navigation property to assignments for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a EnrollmentConfigurationAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentConfigurationAssignmentable, requestConfiguration *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentConfigurationAssignmentable, error) {
@@ -120,7 +117,6 @@ func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) Post(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentConfigurationAssignmentable), nil
 }
 // ToGetRequestInformation the list of group assignments for the device configuration profile
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +131,6 @@ func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to assignments for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EnrollmentConfigurationAssignmentable, requestConfiguration *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +146,6 @@ func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder when successful
 func (m *ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) WithUrl(rawUrl string)(*ItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder) {
     return NewItemDeviceEnrollmentConfigurationsItemAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -55,7 +55,6 @@ func NewItemSettingsShiftPreferencesRequestBuilder(rawUrl string, requestAdapter
     return NewItemSettingsShiftPreferencesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property shiftPreferences for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsShiftPreferencesRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Delete(ctx context.Context,
     return nil
 }
 // Get retrieve the properties and relationships of a shiftPreferences object by ID.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ShiftPreferencesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -96,7 +94,6 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Get(ctx context.Context, re
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable), nil
 }
 // Patch update the properties and relationships of a shiftPreferences object.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ShiftPreferencesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,7 +117,6 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) Patch(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable), nil
 }
 // ToDeleteRequestInformation delete navigation property shiftPreferences for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +128,6 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) ToDeleteRequestInformation(
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the properties and relationships of a shiftPreferences object by ID.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +142,6 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties and relationships of a shiftPreferences object.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsShiftPreferencesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ShiftPreferencesable, requestConfiguration *ItemSettingsShiftPreferencesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -163,7 +157,6 @@ func (m *ItemSettingsShiftPreferencesRequestBuilder) ToPatchRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsShiftPreferencesRequestBuilder when successful
 func (m *ItemSettingsShiftPreferencesRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsShiftPreferencesRequestBuilder) {
     return NewItemSettingsShiftPreferencesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
