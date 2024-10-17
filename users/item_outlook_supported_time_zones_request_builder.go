@@ -67,7 +67,6 @@ func (m *ItemOutlookSupportedTimeZonesRequestBuilder) Get(ctx context.Context, r
     return res.(ItemOutlookSupportedTimeZonesResponseable), nil
 }
 // GetAsSupportedTimeZonesGetResponse invoke function supportedTimeZones
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemOutlookSupportedTimeZonesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookSupportedTimeZonesRequestBuilder) GetAsSupportedTimeZonesGetResponse(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesRequestBuilderGetRequestConfiguration)(ItemOutlookSupportedTimeZonesGetResponseable, error) {
@@ -88,7 +87,6 @@ func (m *ItemOutlookSupportedTimeZonesRequestBuilder) GetAsSupportedTimeZonesGet
     return res.(ItemOutlookSupportedTimeZonesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function supportedTimeZones
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOutlookSupportedTimeZonesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookSupportedTimeZonesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -103,7 +101,6 @@ func (m *ItemOutlookSupportedTimeZonesRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOutlookSupportedTimeZonesRequestBuilder when successful
 func (m *ItemOutlookSupportedTimeZonesRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookSupportedTimeZonesRequestBuilder) {
     return NewItemOutlookSupportedTimeZonesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

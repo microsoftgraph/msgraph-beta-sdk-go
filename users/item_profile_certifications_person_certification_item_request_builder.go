@@ -55,7 +55,6 @@ func NewItemProfileCertificationsPersonCertificationItemRequestBuilder(rawUrl st
     return NewItemProfileCertificationsPersonCertificationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete deletes a personCertification object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -75,7 +74,6 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Delete(
     return nil
 }
 // Get represents the details of certifications associated with a person.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PersonCertificationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, error) {
@@ -96,7 +94,6 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Get(ctx
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable), nil
 }
 // Patch update the properties of a personCertification object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PersonCertificationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,7 +117,6 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) Patch(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable), nil
 }
 // ToDeleteRequestInformation deletes a personCertification object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +128,6 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToDelet
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the details of certifications associated with a person.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +142,6 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a personCertification object from a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PersonCertificationable, requestConfiguration *ItemProfileCertificationsPersonCertificationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -163,7 +157,6 @@ func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) ToPatch
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfileCertificationsPersonCertificationItemRequestBuilder when successful
 func (m *ItemProfileCertificationsPersonCertificationItemRequestBuilder) WithUrl(rawUrl string)(*ItemProfileCertificationsPersonCertificationItemRequestBuilder) {
     return NewItemProfileCertificationsPersonCertificationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

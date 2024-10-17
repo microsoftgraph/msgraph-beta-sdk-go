@@ -40,7 +40,6 @@ func NewItemAuthenticationPlatformCredentialMethodsCountRequestBuilder(rawUrl st
     return NewItemAuthenticationPlatformCredentialMethodsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationPlatformCredentialMethodsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -61,7 +60,6 @@ func (m *ItemAuthenticationPlatformCredentialMethodsCountRequestBuilder) Get(ctx
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationPlatformCredentialMethodsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,7 +74,6 @@ func (m *ItemAuthenticationPlatformCredentialMethodsCountRequestBuilder) ToGetRe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationPlatformCredentialMethodsCountRequestBuilder when successful
 func (m *ItemAuthenticationPlatformCredentialMethodsCountRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationPlatformCredentialMethodsCountRequestBuilder) {
     return NewItemAuthenticationPlatformCredentialMethodsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

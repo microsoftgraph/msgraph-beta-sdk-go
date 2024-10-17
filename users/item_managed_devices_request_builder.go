@@ -47,7 +47,6 @@ type ItemManagedDevicesRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // AppDiagnosticsWithUpn provides operations to call the appDiagnostics method.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesAppDiagnosticsWithUpnRequestBuilder when successful
 func (m *ItemManagedDevicesRequestBuilder) AppDiagnosticsWithUpn(upn *string)(*ItemManagedDevicesAppDiagnosticsWithUpnRequestBuilder) {
     return NewItemManagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, upn)
@@ -68,7 +67,6 @@ func (m *ItemManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ItemMan
     return NewItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ByManagedDeviceId provides operations to manage the managedDevices property of the microsoft.graph.user entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesManagedDeviceItemRequestBuilder when successful
 func (m *ItemManagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*ItemManagedDevicesManagedDeviceItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -103,13 +101,17 @@ func (m *ItemManagedDevicesRequestBuilder) Count()(*ItemManagedDevicesCountReque
 func (m *ItemManagedDevicesRequestBuilder) DownloadAppDiagnostics()(*ItemManagedDevicesDownloadAppDiagnosticsRequestBuilder) {
     return NewItemManagedDevicesDownloadAppDiagnosticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DownloadPowerliftAppDiagnostic provides operations to call the downloadPowerliftAppDiagnostic method.
+// returns a *ItemManagedDevicesDownloadPowerliftAppDiagnosticRequestBuilder when successful
+func (m *ItemManagedDevicesRequestBuilder) DownloadPowerliftAppDiagnostic()(*ItemManagedDevicesDownloadPowerliftAppDiagnosticRequestBuilder) {
+    return NewItemManagedDevicesDownloadPowerliftAppDiagnosticRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ExecuteAction provides operations to call the executeAction method.
 // returns a *ItemManagedDevicesExecuteActionRequestBuilder when successful
 func (m *ItemManagedDevicesRequestBuilder) ExecuteAction()(*ItemManagedDevicesExecuteActionRequestBuilder) {
     return NewItemManagedDevicesExecuteActionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the managed devices associated with the user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ManagedDeviceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemManagedDevicesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceCollectionResponseable, error) {
@@ -135,7 +137,6 @@ func (m *ItemManagedDevicesRequestBuilder) MoveDevicesToOU()(*ItemManagedDevices
     return NewItemManagedDevicesMoveDevicesToOURequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create new navigation property to managedDevices for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ManagedDeviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ItemManagedDevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, error) {
@@ -155,8 +156,12 @@ func (m *ItemManagedDevicesRequestBuilder) Post(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable), nil
 }
+// RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName provides operations to call the retrievePowerliftAppDiagnosticsDetails method.
+// returns a *ItemManagedDevicesRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder when successful
+func (m *ItemManagedDevicesRequestBuilder) RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName(userPrincipalName *string)(*ItemManagedDevicesRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder) {
+    return NewItemManagedDevicesRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
+}
 // ToGetRequestInformation the managed devices associated with the user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -171,7 +176,6 @@ func (m *ItemManagedDevicesRequestBuilder) ToGetRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to managedDevices for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable, requestConfiguration *ItemManagedDevicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -187,7 +191,6 @@ func (m *ItemManagedDevicesRequestBuilder) ToPostRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesRequestBuilder when successful
 func (m *ItemManagedDevicesRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesRequestBuilder) {
     return NewItemManagedDevicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

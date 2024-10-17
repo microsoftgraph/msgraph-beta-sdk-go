@@ -19,7 +19,7 @@ func NewServiceLevelAgreementRoot()(*ServiceLevelAgreementRoot) {
 func CreateServiceLevelAgreementRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServiceLevelAgreementRoot(), nil
 }
-// GetAzureADAuthentication gets the azureADAuthentication property value. Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
+// GetAzureADAuthentication gets the azureADAuthentication property value. Collects the monthly Microsoft Entra Health SLA attainment metrics for a Microsoft Entra tenant.
 // returns a AzureADAuthenticationable when successful
 func (m *ServiceLevelAgreementRoot) GetAzureADAuthentication()(AzureADAuthenticationable) {
     val, err := m.GetBackingStore().Get("azureADAuthentication")
@@ -61,7 +61,7 @@ func (m *ServiceLevelAgreementRoot) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAzureADAuthentication sets the azureADAuthentication property value. Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
+// SetAzureADAuthentication sets the azureADAuthentication property value. Collects the monthly Microsoft Entra Health SLA attainment metrics for a Microsoft Entra tenant.
 func (m *ServiceLevelAgreementRoot) SetAzureADAuthentication(value AzureADAuthenticationable)() {
     err := m.GetBackingStore().Set("azureADAuthentication", value)
     if err != nil {

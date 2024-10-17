@@ -23,12 +23,16 @@ const (
     LINUX_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 64
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 128
+    // Indicates that the settings contained in associated configuration applies to the android operating system corporate owned devices.
+    ANDROIDENTERPRISE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 256
+    // Indicates that the settings contained in associated configuration applies to the android open source operating system.
+    AOSP_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 512
 )
 
 func (i DeviceManagementConfigurationPlatforms) String() string {
     var values []string
-    options := []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue"}
-    for p := 0; p < 8; p++ {
+    options := []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue", "androidEnterprise", "aosp"}
+    for p := 0; p < 10; p++ {
         mantis := DeviceManagementConfigurationPlatforms(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -57,6 +61,10 @@ func ParseDeviceManagementConfigurationPlatforms(v string) (any, error) {
                 result |= LINUX_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+            case "androidEnterprise":
+                result |= ANDROIDENTERPRISE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+            case "aosp":
+                result |= AOSP_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
             default:
                 return nil, nil
         }

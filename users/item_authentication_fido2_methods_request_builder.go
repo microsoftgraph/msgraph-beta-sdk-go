@@ -40,7 +40,6 @@ type ItemAuthenticationFido2MethodsRequestBuilderGetRequestConfiguration struct 
     QueryParameters *ItemAuthenticationFido2MethodsRequestBuilderGetQueryParameters
 }
 // ByFido2AuthenticationMethodId provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder when successful
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) ByFido2AuthenticationMethodId(fido2AuthenticationMethodId string)(*ItemAuthenticationFido2MethodsFido2AuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -76,7 +75,6 @@ func (m *ItemAuthenticationFido2MethodsRequestBuilder) CreationOptionsWithChalle
     return NewItemAuthenticationFido2MethodsCreationOptionsWithChallengeTimeoutInMinutesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents the FIDO2 security keys registered to a user for authentication.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Fido2AuthenticationMethodCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Fido2AuthenticationMethodCollectionResponseable, error) {
@@ -97,7 +95,6 @@ func (m *ItemAuthenticationFido2MethodsRequestBuilder) Get(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Fido2AuthenticationMethodCollectionResponseable), nil
 }
 // ToGetRequestInformation represents the FIDO2 security keys registered to a user for authentication.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationFido2MethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -112,7 +109,6 @@ func (m *ItemAuthenticationFido2MethodsRequestBuilder) ToGetRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationFido2MethodsRequestBuilder when successful
 func (m *ItemAuthenticationFido2MethodsRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationFido2MethodsRequestBuilder) {
     return NewItemAuthenticationFido2MethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

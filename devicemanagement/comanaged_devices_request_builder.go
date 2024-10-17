@@ -101,6 +101,11 @@ func (m *ComanagedDevicesRequestBuilder) Count()(*ComanagedDevicesCountRequestBu
 func (m *ComanagedDevicesRequestBuilder) DownloadAppDiagnostics()(*ComanagedDevicesDownloadAppDiagnosticsRequestBuilder) {
     return NewComanagedDevicesDownloadAppDiagnosticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DownloadPowerliftAppDiagnostic provides operations to call the downloadPowerliftAppDiagnostic method.
+// returns a *ComanagedDevicesDownloadPowerliftAppDiagnosticRequestBuilder when successful
+func (m *ComanagedDevicesRequestBuilder) DownloadPowerliftAppDiagnostic()(*ComanagedDevicesDownloadPowerliftAppDiagnosticRequestBuilder) {
+    return NewComanagedDevicesDownloadPowerliftAppDiagnosticRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ExecuteAction provides operations to call the executeAction method.
 // returns a *ComanagedDevicesExecuteActionRequestBuilder when successful
 func (m *ComanagedDevicesRequestBuilder) ExecuteAction()(*ComanagedDevicesExecuteActionRequestBuilder) {
@@ -150,6 +155,11 @@ func (m *ComanagedDevicesRequestBuilder) Post(ctx context.Context, body ie233ee7
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable), nil
+}
+// RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName provides operations to call the retrievePowerliftAppDiagnosticsDetails method.
+// returns a *ComanagedDevicesRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder when successful
+func (m *ComanagedDevicesRequestBuilder) RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName(userPrincipalName *string)(*ComanagedDevicesRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder) {
+    return NewComanagedDevicesRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
 }
 // ToGetRequestInformation the list of co-managed devices report
 // returns a *RequestInformation when successful

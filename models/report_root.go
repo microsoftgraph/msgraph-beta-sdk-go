@@ -514,7 +514,7 @@ func (m *ReportRoot) GetServicePrincipalSignInActivities()([]ServicePrincipalSig
     }
     return nil
 }
-// GetSla gets the sla property value. Reports that relate to tenant-level Microsoft Entra SLA attainment.
+// GetSla gets the sla property value. Reports that relate to tenant-level Microsoft Entra Health SLA attainment.
 // returns a ServiceLevelAgreementRootable when successful
 func (m *ReportRoot) GetSla()(ServiceLevelAgreementRootable) {
     val, err := m.GetBackingStore().Get("sla")
@@ -881,7 +881,7 @@ func (m *ReportRoot) SetServicePrincipalSignInActivities(value []ServicePrincipa
         panic(err)
     }
 }
-// SetSla sets the sla property value. Reports that relate to tenant-level Microsoft Entra SLA attainment.
+// SetSla sets the sla property value. Reports that relate to tenant-level Microsoft Entra Health SLA attainment.
 func (m *ReportRoot) SetSla(value ServiceLevelAgreementRootable)() {
     err := m.GetBackingStore().Set("sla", value)
     if err != nil {

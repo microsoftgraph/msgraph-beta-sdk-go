@@ -30,12 +30,9 @@ func NewItemManagedDevicesItemRestoreCloudPcRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemRestoreCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore a Cloud PC device to a previous state with an Intune managed device ID.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Post invoke action restoreCloudPc
+// Deprecated: The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-restorecloudpc?view=graph-rest-beta
 func (m *ItemManagedDevicesItemRestoreCloudPcRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesItemRestoreCloudPcPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemRestoreCloudPcRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,8 +47,8 @@ func (m *ItemManagedDevicesItemRestoreCloudPcRequestBuilder) Post(ctx context.Co
     }
     return nil
 }
-// ToPostRequestInformation restore a Cloud PC device to a previous state with an Intune managed device ID.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// ToPostRequestInformation invoke action restoreCloudPc
+// Deprecated: The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemRestoreCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesItemRestoreCloudPcPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemRestoreCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,7 +64,7 @@ func (m *ItemManagedDevicesItemRestoreCloudPcRequestBuilder) ToPostRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Deprecated: The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc
 // returns a *ItemManagedDevicesItemRestoreCloudPcRequestBuilder when successful
 func (m *ItemManagedDevicesItemRestoreCloudPcRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemRestoreCloudPcRequestBuilder) {
     return NewItemManagedDevicesItemRestoreCloudPcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

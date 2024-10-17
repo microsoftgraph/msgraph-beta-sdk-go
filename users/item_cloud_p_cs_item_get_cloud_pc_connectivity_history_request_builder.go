@@ -70,7 +70,6 @@ func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) Get(ctx co
     return res.(ItemCloudPCsItemGetCloudPcConnectivityHistoryResponseable), nil
 }
 // GetAsGetCloudPcConnectivityHistoryGetResponse get the connectivity history of a specific Cloud PC.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemCloudPCsItemGetCloudPcConnectivityHistoryGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -94,7 +93,6 @@ func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) GetAsGetCl
     return res.(ItemCloudPCsItemGetCloudPcConnectivityHistoryGetResponseable), nil
 }
 // ToGetRequestInformation get the connectivity history of a specific Cloud PC.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -109,7 +107,6 @@ func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder when successful
 func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) {
     return NewItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

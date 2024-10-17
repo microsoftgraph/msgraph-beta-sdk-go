@@ -68,7 +68,7 @@ func (m *Team) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16
     }
     return nil
 }
-// GetDescription gets the description property value. An optional description for the team. Maximum length: 1024 characters.
+// GetDescription gets the description property value. An optional description for the team. Maximum length: 1,024 characters.
 // returns a *string when successful
 func (m *Team) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -772,7 +772,7 @@ func (m *Team) GetVisibility()(*TeamVisibilityType) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+// GetWebUrl gets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. It's the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
 // returns a *string when successful
 func (m *Team) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -1068,7 +1068,7 @@ func (m *Team) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f307
         panic(err)
     }
 }
-// SetDescription sets the description property value. An optional description for the team. Maximum length: 1024 characters.
+// SetDescription sets the description property value. An optional description for the team. Maximum length: 1,024 characters.
 func (m *Team) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -1257,7 +1257,7 @@ func (m *Team) SetVisibility(value *TeamVisibilityType)() {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
+// SetWebUrl sets the webUrl property value. A hyperlink that goes to the team in the Microsoft Teams client. It's the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
 func (m *Team) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

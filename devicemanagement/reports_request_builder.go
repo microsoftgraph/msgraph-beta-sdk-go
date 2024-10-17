@@ -470,10 +470,10 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable), nil
 }
-// RetrieveAssignedApplicationsReport provides operations to call the retrieveAssignedApplicationsReport method.
-// returns a *ReportsRetrieveAssignedApplicationsReportRequestBuilder when successful
-func (m *ReportsRequestBuilder) RetrieveAssignedApplicationsReport()(*ReportsRetrieveAssignedApplicationsReportRequestBuilder) {
-    return NewReportsRetrieveAssignedApplicationsReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+// RetrieveSecurityTaskAppsReport provides operations to call the retrieveSecurityTaskAppsReport method.
+// returns a *ReportsRetrieveSecurityTaskAppsReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveSecurityTaskAppsReport()(*ReportsRetrieveSecurityTaskAppsReportRequestBuilder) {
+    return NewReportsRetrieveSecurityTaskAppsReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveWin32CatalogAppsUpdateReport provides operations to call the retrieveWin32CatalogAppsUpdateReport method.
 // returns a *ReportsRetrieveWin32CatalogAppsUpdateReportRequestBuilder when successful

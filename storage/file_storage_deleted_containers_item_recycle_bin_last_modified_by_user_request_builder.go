@@ -41,7 +41,6 @@ func NewFileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuild
     return NewFileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get lastModifiedByUser from storage
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
@@ -72,7 +71,6 @@ func (m *FileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuil
     return NewFileStorageDeletedContainersItemRecycleBinLastModifiedByUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get lastModifiedByUser from storage
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *FileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -87,7 +85,6 @@ func (m *FileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuil
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *FileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuilder when successful
 func (m *FileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuilder) WithUrl(rawUrl string)(*FileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuilder) {
     return NewFileStorageDeletedContainersItemRecycleBinLastModifiedByUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

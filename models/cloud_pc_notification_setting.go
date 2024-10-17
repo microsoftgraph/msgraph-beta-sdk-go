@@ -78,7 +78,7 @@ func (m *CloudPcNotificationSetting) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRestartPromptsDisabled gets the restartPromptsDisabled property value. The restartPromptsDisabled property
+// GetRestartPromptsDisabled gets the restartPromptsDisabled property value. If true, doesn't prompt the user to restart the Cloud PC. If false, prompts the user to restart Cloud PC. The default value is false.
 // returns a *bool when successful
 func (m *CloudPcNotificationSetting) GetRestartPromptsDisabled()(*bool) {
     val, err := m.GetBackingStore().Get("restartPromptsDisabled")
@@ -130,7 +130,7 @@ func (m *CloudPcNotificationSetting) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRestartPromptsDisabled sets the restartPromptsDisabled property value. The restartPromptsDisabled property
+// SetRestartPromptsDisabled sets the restartPromptsDisabled property value. If true, doesn't prompt the user to restart the Cloud PC. If false, prompts the user to restart Cloud PC. The default value is false.
 func (m *CloudPcNotificationSetting) SetRestartPromptsDisabled(value *bool)() {
     err := m.GetBackingStore().Set("restartPromptsDisabled", value)
     if err != nil {

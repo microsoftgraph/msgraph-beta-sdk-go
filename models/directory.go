@@ -349,6 +349,16 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["publicKeyInfrastructure"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePublicKeyInfrastructureRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPublicKeyInfrastructure(val.(PublicKeyInfrastructureRootable))
+        }
+        return nil
+    }
     res["recommendations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecommendationFromDiscriminatorValue)
         if err != nil {
@@ -456,6 +466,18 @@ func (m *Directory) GetPendingExternalUserProfiles()([]PendingExternalUserProfil
     }
     if val != nil {
         return val.([]PendingExternalUserProfileable)
+    }
+    return nil
+}
+// GetPublicKeyInfrastructure gets the publicKeyInfrastructure property value. The publicKeyInfrastructure property
+// returns a PublicKeyInfrastructureRootable when successful
+func (m *Directory) GetPublicKeyInfrastructure()(PublicKeyInfrastructureRootable) {
+    val, err := m.GetBackingStore().Get("publicKeyInfrastructure")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PublicKeyInfrastructureRootable)
     }
     return nil
 }
@@ -663,6 +685,12 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("publicKeyInfrastructure", m.GetPublicKeyInfrastructure())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRecommendations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecommendations()))
         for i, v := range m.GetRecommendations() {
@@ -799,6 +827,13 @@ func (m *Directory) SetPendingExternalUserProfiles(value []PendingExternalUserPr
         panic(err)
     }
 }
+// SetPublicKeyInfrastructure sets the publicKeyInfrastructure property value. The publicKeyInfrastructure property
+func (m *Directory) SetPublicKeyInfrastructure(value PublicKeyInfrastructureRootable)() {
+    err := m.GetBackingStore().Set("publicKeyInfrastructure", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecommendations sets the recommendations property value. List of recommended improvements to improve tenant posture.
 func (m *Directory) SetRecommendations(value []Recommendationable)() {
     err := m.GetBackingStore().Set("recommendations", value)
@@ -837,6 +872,7 @@ type Directoryable interface {
     GetOnPremisesSynchronization()([]OnPremisesDirectorySynchronizationable)
     GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable)
     GetPendingExternalUserProfiles()([]PendingExternalUserProfileable)
+    GetPublicKeyInfrastructure()(PublicKeyInfrastructureRootable)
     GetRecommendations()([]Recommendationable)
     GetSharedEmailDomains()([]SharedEmailDomainable)
     GetSubscriptions()([]CompanySubscriptionable)
@@ -854,6 +890,7 @@ type Directoryable interface {
     SetOnPremisesSynchronization(value []OnPremisesDirectorySynchronizationable)()
     SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)()
     SetPendingExternalUserProfiles(value []PendingExternalUserProfileable)()
+    SetPublicKeyInfrastructure(value PublicKeyInfrastructureRootable)()
     SetRecommendations(value []Recommendationable)()
     SetSharedEmailDomains(value []SharedEmailDomainable)()
     SetSubscriptions(value []CompanySubscriptionable)()

@@ -428,6 +428,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["httpMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseHttpMethod)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHttpMethod(val.(*HttpMethod))
+        }
+        return nil
+    }
     res["initiatingProcessName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -535,6 +545,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetResourceTenantId(val)
+        }
+        return nil
+    }
+    res["responseCode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResponseCode(val)
         }
         return nil
     }
@@ -712,6 +732,18 @@ func (m *NetworkAccessTraffic) GetHeaders()(Headersable) {
     }
     return nil
 }
+// GetHttpMethod gets the httpMethod property value. The httpMethod property
+// returns a *HttpMethod when successful
+func (m *NetworkAccessTraffic) GetHttpMethod()(*HttpMethod) {
+    val, err := m.GetBackingStore().Get("httpMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*HttpMethod)
+    }
+    return nil
+}
 // GetInitiatingProcessName gets the initiatingProcessName property value. The initiatingProcessName property
 // returns a *string when successful
 func (m *NetworkAccessTraffic) GetInitiatingProcessName()(*string) {
@@ -841,6 +873,18 @@ func (m *NetworkAccessTraffic) GetResourceTenantId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetResponseCode gets the responseCode property value. The responseCode property
+// returns a *int32 when successful
+func (m *NetworkAccessTraffic) GetResponseCode()(*int32) {
+    val, err := m.GetBackingStore().Get("responseCode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
     }
     return nil
 }
@@ -1118,6 +1162,13 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetHttpMethod() != nil {
+        cast := (*m.GetHttpMethod()).String()
+        err := writer.WriteStringValue("httpMethod", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("initiatingProcessName", m.GetInitiatingProcessName())
         if err != nil {
@@ -1181,6 +1232,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("resourceTenantId", m.GetResourceTenantId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("responseCode", m.GetResponseCode())
         if err != nil {
             return err
         }
@@ -1417,6 +1474,13 @@ func (m *NetworkAccessTraffic) SetHeaders(value Headersable)() {
         panic(err)
     }
 }
+// SetHttpMethod sets the httpMethod property value. The httpMethod property
+func (m *NetworkAccessTraffic) SetHttpMethod(value *HttpMethod)() {
+    err := m.GetBackingStore().Set("httpMethod", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetInitiatingProcessName sets the initiatingProcessName property value. The initiatingProcessName property
 func (m *NetworkAccessTraffic) SetInitiatingProcessName(value *string)() {
     err := m.GetBackingStore().Set("initiatingProcessName", value)
@@ -1490,6 +1554,13 @@ func (m *NetworkAccessTraffic) SetRemoteNetworkId(value *string)() {
 // SetResourceTenantId sets the resourceTenantId property value. The resourceTenantId property
 func (m *NetworkAccessTraffic) SetResourceTenantId(value *string)() {
     err := m.GetBackingStore().Set("resourceTenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetResponseCode sets the responseCode property value. The responseCode property
+func (m *NetworkAccessTraffic) SetResponseCode(value *int32)() {
+    err := m.GetBackingStore().Set("responseCode", value)
     if err != nil {
         panic(err)
     }
@@ -1609,6 +1680,7 @@ type NetworkAccessTrafficable interface {
     GetFilteringProfileId()(*string)
     GetFilteringProfileName()(*string)
     GetHeaders()(Headersable)
+    GetHttpMethod()(*HttpMethod)
     GetInitiatingProcessName()(*string)
     GetNetworkProtocol()(*NetworkingProtocol)
     GetOdataType()(*string)
@@ -1620,6 +1692,7 @@ type NetworkAccessTrafficable interface {
     GetReceivedBytes()(*int64)
     GetRemoteNetworkId()(*string)
     GetResourceTenantId()(*string)
+    GetResponseCode()(*int32)
     GetSentBytes()(*int64)
     GetSessionId()(*string)
     GetSourceIp()(*string)
@@ -1653,6 +1726,7 @@ type NetworkAccessTrafficable interface {
     SetFilteringProfileId(value *string)()
     SetFilteringProfileName(value *string)()
     SetHeaders(value Headersable)()
+    SetHttpMethod(value *HttpMethod)()
     SetInitiatingProcessName(value *string)()
     SetNetworkProtocol(value *NetworkingProtocol)()
     SetOdataType(value *string)()
@@ -1664,6 +1738,7 @@ type NetworkAccessTrafficable interface {
     SetReceivedBytes(value *int64)()
     SetRemoteNetworkId(value *string)()
     SetResourceTenantId(value *string)()
+    SetResponseCode(value *int32)()
     SetSentBytes(value *int64)()
     SetSessionId(value *string)()
     SetSourceIp(value *string)()

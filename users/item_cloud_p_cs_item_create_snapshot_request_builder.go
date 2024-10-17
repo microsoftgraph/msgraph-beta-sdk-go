@@ -31,7 +31,6 @@ func NewItemCloudPCsItemCreateSnapshotRequestBuilder(rawUrl string, requestAdapt
     return NewItemCloudPCsItemCreateSnapshotRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post create a snapshot for a specific Cloud PC device.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -51,7 +50,6 @@ func (m *ItemCloudPCsItemCreateSnapshotRequestBuilder) Post(ctx context.Context,
     return nil
 }
 // ToPostRequestInformation create a snapshot for a specific Cloud PC device.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemCreateSnapshotRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemCreateSnapshotRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -63,7 +61,6 @@ func (m *ItemCloudPCsItemCreateSnapshotRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudPCsItemCreateSnapshotRequestBuilder when successful
 func (m *ItemCloudPCsItemCreateSnapshotRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemCreateSnapshotRequestBuilder) {
     return NewItemCloudPCsItemCreateSnapshotRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -101,6 +101,11 @@ func (m *ManagedDevicesRequestBuilder) Count()(*ManagedDevicesCountRequestBuilde
 func (m *ManagedDevicesRequestBuilder) DownloadAppDiagnostics()(*ManagedDevicesDownloadAppDiagnosticsRequestBuilder) {
     return NewManagedDevicesDownloadAppDiagnosticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DownloadPowerliftAppDiagnostic provides operations to call the downloadPowerliftAppDiagnostic method.
+// returns a *ManagedDevicesDownloadPowerliftAppDiagnosticRequestBuilder when successful
+func (m *ManagedDevicesRequestBuilder) DownloadPowerliftAppDiagnostic()(*ManagedDevicesDownloadPowerliftAppDiagnosticRequestBuilder) {
+    return NewManagedDevicesDownloadPowerliftAppDiagnosticRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ExecuteAction provides operations to call the executeAction method.
 // returns a *ManagedDevicesExecuteActionRequestBuilder when successful
 func (m *ManagedDevicesRequestBuilder) ExecuteAction()(*ManagedDevicesExecuteActionRequestBuilder) {
@@ -150,6 +155,11 @@ func (m *ManagedDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable), nil
+}
+// RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName provides operations to call the retrievePowerliftAppDiagnosticsDetails method.
+// returns a *ManagedDevicesRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder when successful
+func (m *ManagedDevicesRequestBuilder) RetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalName(userPrincipalName *string)(*ManagedDevicesRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilder) {
+    return NewManagedDevicesRetrievePowerliftAppDiagnosticsDetailsWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
 }
 // ToGetRequestInformation the list of managed devices.
 // returns a *RequestInformation when successful

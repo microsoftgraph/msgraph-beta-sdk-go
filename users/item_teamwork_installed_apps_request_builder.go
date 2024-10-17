@@ -47,7 +47,6 @@ type ItemTeamworkInstalledAppsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUserScopeTeamsAppInstallationId provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder when successful
 func (m *ItemTeamworkInstalledAppsRequestBuilder) ByUserScopeTeamsAppInstallationId(userScopeTeamsAppInstallationId string)(*ItemTeamworkInstalledAppsUserScopeTeamsAppInstallationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +77,6 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) Count()(*ItemTeamworkInstalled
     return NewItemTeamworkInstalledAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get retrieve the list of apps installed in the personal scope of the specified user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserScopeTeamsAppInstallationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,7 +100,6 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) Get(ctx context.Context, reque
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserScopeTeamsAppInstallationCollectionResponseable), nil
 }
 // Post install an app in the personal scope of the specified user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserScopeTeamsAppInstallationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,7 +123,6 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) Post(ctx context.Context, body
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserScopeTeamsAppInstallationable), nil
 }
 // ToGetRequestInformation retrieve the list of apps installed in the personal scope of the specified user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkInstalledAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +137,6 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) ToGetRequestInformation(ctx co
     return requestInfo, nil
 }
 // ToPostRequestInformation install an app in the personal scope of the specified user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkInstalledAppsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserScopeTeamsAppInstallationable, requestConfiguration *ItemTeamworkInstalledAppsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +152,6 @@ func (m *ItemTeamworkInstalledAppsRequestBuilder) ToPostRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTeamworkInstalledAppsRequestBuilder when successful
 func (m *ItemTeamworkInstalledAppsRequestBuilder) WithUrl(rawUrl string)(*ItemTeamworkInstalledAppsRequestBuilder) {
     return NewItemTeamworkInstalledAppsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

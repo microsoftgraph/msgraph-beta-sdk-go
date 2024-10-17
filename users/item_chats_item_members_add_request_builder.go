@@ -55,7 +55,6 @@ func (m *ItemChatsItemMembersAddRequestBuilder) Post(ctx context.Context, body I
     return res.(ItemChatsItemMembersAddResponseable), nil
 }
 // PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemChatsItemMembersAddPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -79,7 +78,6 @@ func (m *ItemChatsItemMembersAddRequestBuilder) PostAsAddPostResponse(ctx contex
     return res.(ItemChatsItemMembersAddPostResponseable), nil
 }
 // ToPostRequestInformation add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemMembersAddRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemChatsItemMembersAddPostRequestBodyable, requestConfiguration *ItemChatsItemMembersAddRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -95,7 +93,6 @@ func (m *ItemChatsItemMembersAddRequestBuilder) ToPostRequestInformation(ctx con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemMembersAddRequestBuilder when successful
 func (m *ItemChatsItemMembersAddRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemMembersAddRequestBuilder) {
     return NewItemChatsItemMembersAddRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

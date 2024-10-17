@@ -18,7 +18,7 @@ type HealthMonitoringAlertsAlertItemRequestBuilderDeleteRequestConfiguration str
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// HealthMonitoringAlertsAlertItemRequestBuilderGetQueryParameters get alerts from reports
+// HealthMonitoringAlertsAlertItemRequestBuilderGetQueryParameters read the properties and relationships of a Microsoft Entra health monitoring alert object. The returned alert object contains information about the state, type, date, and impact of each alert that fired within your tenant.
 type HealthMonitoringAlertsAlertItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *HealthMonitoringAlertsAlertItemRequestBuilder) Delete(ctx context.Conte
     }
     return nil
 }
-// Get get alerts from reports
+// Get read the properties and relationships of a Microsoft Entra health monitoring alert object. The returned alert object contains information about the state, type, date, and impact of each alert that fired within your tenant.
 // returns a Alertable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/healthmonitoring-alert-get?view=graph-rest-beta
 func (m *HealthMonitoringAlertsAlertItemRequestBuilder) Get(ctx context.Context, requestConfiguration *HealthMonitoringAlertsAlertItemRequestBuilderGetRequestConfiguration)(ib1b876b25b5a2e04c31b7cc3c9de83e8af19c080f01f39f172f92708d7dc7450.Alertable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *HealthMonitoringAlertsAlertItemRequestBuilder) Get(ctx context.Context,
     }
     return res.(ib1b876b25b5a2e04c31b7cc3c9de83e8af19c080f01f39f172f92708d7dc7450.Alertable), nil
 }
-// Patch update the navigation property alerts in reports
+// Patch update the properties of a Microsoft Entra health monitoring alert object. For example, change an alert's state from active to resolved.
 // returns a Alertable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/healthmonitoring-alert-update?view=graph-rest-beta
 func (m *HealthMonitoringAlertsAlertItemRequestBuilder) Patch(ctx context.Context, body ib1b876b25b5a2e04c31b7cc3c9de83e8af19c080f01f39f172f92708d7dc7450.Alertable, requestConfiguration *HealthMonitoringAlertsAlertItemRequestBuilderPatchRequestConfiguration)(ib1b876b25b5a2e04c31b7cc3c9de83e8af19c080f01f39f172f92708d7dc7450.Alertable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *HealthMonitoringAlertsAlertItemRequestBuilder) ToDeleteRequestInformati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get alerts from reports
+// ToGetRequestInformation read the properties and relationships of a Microsoft Entra health monitoring alert object. The returned alert object contains information about the state, type, date, and impact of each alert that fired within your tenant.
 // returns a *RequestInformation when successful
 func (m *HealthMonitoringAlertsAlertItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *HealthMonitoringAlertsAlertItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *HealthMonitoringAlertsAlertItemRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property alerts in reports
+// ToPatchRequestInformation update the properties of a Microsoft Entra health monitoring alert object. For example, change an alert's state from active to resolved.
 // returns a *RequestInformation when successful
 func (m *HealthMonitoringAlertsAlertItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ib1b876b25b5a2e04c31b7cc3c9de83e8af19c080f01f39f172f92708d7dc7450.Alertable, requestConfiguration *HealthMonitoringAlertsAlertItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

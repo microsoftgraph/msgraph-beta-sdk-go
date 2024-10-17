@@ -69,7 +69,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) GetAdditionalData()(map[string]
 func (m *DeviceAndAppManagementAssignmentTarget) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceAndAppManagementAssignmentFilterId gets the deviceAndAppManagementAssignmentFilterId property value. The Id of the filter for the target assignment.
+// GetDeviceAndAppManagementAssignmentFilterId gets the deviceAndAppManagementAssignmentFilterId property value. The ID of the filter for the target assignment.
 // returns a *string when successful
 func (m *DeviceAndAppManagementAssignmentTarget) GetDeviceAndAppManagementAssignmentFilterId()(*string) {
     val, err := m.GetBackingStore().Get("deviceAndAppManagementAssignmentFilterId")
@@ -181,7 +181,7 @@ func (m *DeviceAndAppManagementAssignmentTarget) SetAdditionalData(value map[str
 func (m *DeviceAndAppManagementAssignmentTarget) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceAndAppManagementAssignmentFilterId sets the deviceAndAppManagementAssignmentFilterId property value. The Id of the filter for the target assignment.
+// SetDeviceAndAppManagementAssignmentFilterId sets the deviceAndAppManagementAssignmentFilterId property value. The ID of the filter for the target assignment.
 func (m *DeviceAndAppManagementAssignmentTarget) SetDeviceAndAppManagementAssignmentFilterId(value *string)() {
     err := m.GetBackingStore().Set("deviceAndAppManagementAssignmentFilterId", value)
     if err != nil {

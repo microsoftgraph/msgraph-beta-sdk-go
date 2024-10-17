@@ -41,7 +41,6 @@ func NewItemActivitiesItemHistoryItemsItemActivityRequestBuilder(rawUrl string, 
     return NewItemActivitiesItemHistoryItemsItemActivityRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get optional. NavigationProperty/Containment; navigation property to the associated activity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserActivityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable, error) {
@@ -62,7 +61,6 @@ func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) Get(ctx conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserActivityable), nil
 }
 // ToGetRequestInformation optional. NavigationProperty/Containment; navigation property to the associated activity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemActivitiesItemHistoryItemsItemActivityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,7 +75,6 @@ func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) ToGetRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder when successful
 func (m *ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) WithUrl(rawUrl string)(*ItemActivitiesItemHistoryItemsItemActivityRequestBuilder) {
     return NewItemActivitiesItemHistoryItemsItemActivityRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

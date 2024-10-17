@@ -73,7 +73,6 @@ func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) Get(ctx context.Co
     return res.(ItemOnlineMeetingsItemRecordingsDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse invoke function delta
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemOnlineMeetingsItemRecordingsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilderGetRequestConfiguration)(ItemOnlineMeetingsItemRecordingsDeltaGetResponseable, error) {
@@ -94,7 +93,6 @@ func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) GetAsDeltaGetRespo
     return res.(ItemOnlineMeetingsItemRecordingsDeltaGetResponseable), nil
 }
 // ToGetRequestInformation invoke function delta
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -109,7 +107,6 @@ func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemRecordingsDeltaRequestBuilder) {
     return NewItemOnlineMeetingsItemRecordingsDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

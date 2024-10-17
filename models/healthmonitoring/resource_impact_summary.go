@@ -114,7 +114,7 @@ func (m *ResourceImpactSummary) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetImpactedCount gets the impactedCount property value. The impactedCount property
+// GetImpactedCount gets the impactedCount property value. The number of resources impacted. The number could be an exhaustive count or a sampling count.
 // returns a *string when successful
 func (m *ResourceImpactSummary) GetImpactedCount()(*string) {
     val, err := m.GetBackingStore().Get("impactedCount")
@@ -126,7 +126,7 @@ func (m *ResourceImpactSummary) GetImpactedCount()(*string) {
     }
     return nil
 }
-// GetImpactedCountLimitExceeded gets the impactedCountLimitExceeded property value. The impactedCountLimitExceeded property
+// GetImpactedCountLimitExceeded gets the impactedCountLimitExceeded property value. Indicates whether impactedCount is exhaustive or a sampling. When this value is true, the limit was exceeded and impactedCount represents a sampling; otherwise, impactedCount represents the true number of impacts.
 // returns a *bool when successful
 func (m *ResourceImpactSummary) GetImpactedCountLimitExceeded()(*bool) {
     val, err := m.GetBackingStore().Get("impactedCountLimitExceeded")
@@ -150,7 +150,7 @@ func (m *ResourceImpactSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. The resourceType property
+// GetResourceType gets the resourceType property value. The type of resource that was impacted. Examples include user, group, application, servicePrincipal, device.
 // returns a *string when successful
 func (m *ResourceImpactSummary) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
@@ -207,14 +207,14 @@ func (m *ResourceImpactSummary) SetAdditionalData(value map[string]any)() {
 func (m *ResourceImpactSummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetImpactedCount sets the impactedCount property value. The impactedCount property
+// SetImpactedCount sets the impactedCount property value. The number of resources impacted. The number could be an exhaustive count or a sampling count.
 func (m *ResourceImpactSummary) SetImpactedCount(value *string)() {
     err := m.GetBackingStore().Set("impactedCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetImpactedCountLimitExceeded sets the impactedCountLimitExceeded property value. The impactedCountLimitExceeded property
+// SetImpactedCountLimitExceeded sets the impactedCountLimitExceeded property value. Indicates whether impactedCount is exhaustive or a sampling. When this value is true, the limit was exceeded and impactedCount represents a sampling; otherwise, impactedCount represents the true number of impacts.
 func (m *ResourceImpactSummary) SetImpactedCountLimitExceeded(value *bool)() {
     err := m.GetBackingStore().Set("impactedCountLimitExceeded", value)
     if err != nil {
@@ -228,7 +228,7 @@ func (m *ResourceImpactSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. The resourceType property
+// SetResourceType sets the resourceType property value. The type of resource that was impacted. Examples include user, group, application, servicePrincipal, device.
 func (m *ResourceImpactSummary) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {

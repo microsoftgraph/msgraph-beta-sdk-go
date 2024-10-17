@@ -99,7 +99,6 @@ import (
     iabd30d9ba6ae302fd2d3145e0da70036496a2167b9e0cbc049bab96d9d9a29b3 "github.com/microsoftgraph/msgraph-beta-sdk-go/directorysettingtemplates"
     iac77c9b5b86109e8ad626e30830db719efb3cc77c7babab332b409d84ae324a6 "github.com/microsoftgraph/msgraph-beta-sdk-go/riskyusers"
     iaec68a3d2c3ba0a78ebb66cd93fd1c5d2a6e0450b97a0cf19d94cb58956bec1d "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryobjects"
-    iafb3b7ae1114ae421f1fe37eecf3d6ea996bddc1f4ed4b4af35d75ee91334efa "github.com/microsoftgraph/msgraph-beta-sdk-go/devicelocalcredentials"
     ib71e32ed3a7f0f8a512aa55c1428492116ff2d1bae5015a9b89f910ecbc7c6bd "github.com/microsoftgraph/msgraph-beta-sdk-go/governancerolesettings"
     ib85b32f0384596c14f04b8d0f3dc8737da4b97428d7af145db2f1b06d7d9444e "github.com/microsoftgraph/msgraph-beta-sdk-go/programs"
     ibd3e65bb14e91a8a05d902c54fadec2c1b6931676c97f76da4969c975770aab2 "github.com/microsoftgraph/msgraph-beta-sdk-go/serviceprincipals"
@@ -320,11 +319,6 @@ func (m *GraphBaseServiceClient) DataPolicyOperations()(*i0f747ff1f24810ff511606
 // returns a *DeviceAppManagementRequestBuilder when successful
 func (m *GraphBaseServiceClient) DeviceAppManagement()(*idc4afe653def183ef95500aa004f556fdf3c3747771f17c8472ca3cad61cebf4.DeviceAppManagementRequestBuilder) {
     return idc4afe653def183ef95500aa004f556fdf3c3747771f17c8472ca3cad61cebf4.NewDeviceAppManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// DeviceLocalCredentials provides operations to manage the collection of deviceLocalCredentialInfo entities.
-// returns a *DeviceLocalCredentialsRequestBuilder when successful
-func (m *GraphBaseServiceClient) DeviceLocalCredentials()(*iafb3b7ae1114ae421f1fe37eecf3d6ea996bddc1f4ed4b4af35d75ee91334efa.DeviceLocalCredentialsRequestBuilder) {
-    return iafb3b7ae1114ae421f1fe37eecf3d6ea996bddc1f4ed4b4af35d75ee91334efa.NewDeviceLocalCredentialsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // DeviceManagement provides operations to manage the deviceManagement singleton.
 // returns a *DeviceManagementRequestBuilder when successful

@@ -55,7 +55,6 @@ func NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder(ra
     return NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property mobileAppIntentAndStates for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) 
     return nil
 }
 // Get the list of troubleshooting events for this user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MobileAppIntentAndStateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, error) {
@@ -93,7 +91,6 @@ func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable), nil
 }
 // Patch update the navigation property mobileAppIntentAndStates in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MobileAppIntentAndStateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, requestConfiguration *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, error) {
@@ -114,7 +111,6 @@ func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable), nil
 }
 // ToDeleteRequestInformation delete navigation property mobileAppIntentAndStates for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +122,6 @@ func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of troubleshooting events for this user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +136,6 @@ func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) 
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property mobileAppIntentAndStates in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppIntentAndStateable, requestConfiguration *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +151,6 @@ func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder when successful
 func (m *ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) WithUrl(rawUrl string)(*ItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder) {
     return NewItemMobileAppIntentAndStatesMobileAppIntentAndStateItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

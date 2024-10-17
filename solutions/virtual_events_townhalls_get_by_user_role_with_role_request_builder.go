@@ -10,7 +10,7 @@ import (
 type VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilderGetQueryParameters invoke function getByUserRole
+// VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilderGetQueryParameters get a list of virtualEventTownhall objects where the signed-in user is either the organizer or a coorganizer.
 type VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewVirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getByUserRole
+// Get get a list of virtualEventTownhall objects where the signed-in user is either the organizer or a coorganizer.
 // Deprecated: This method is obsolete. Use GetAsGetByUserRoleWithRoleGetResponse instead.
 // returns a VirtualEventsTownhallsGetByUserRoleWithRoleResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuserrole?view=graph-rest-beta
 func (m *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsTownhallsGetByUserRoleWithRoleResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder) Get(ctx cont
     }
     return res.(VirtualEventsTownhallsGetByUserRoleWithRoleResponseable), nil
 }
-// GetAsGetByUserRoleWithRoleGetResponse invoke function getByUserRole
+// GetAsGetByUserRoleWithRoleGetResponse get a list of virtualEventTownhall objects where the signed-in user is either the organizer or a coorganizer.
 // returns a VirtualEventsTownhallsGetByUserRoleWithRoleGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualeventtownhall-getbyuserrole?view=graph-rest-beta
 func (m *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder) GetAsGetByUserRoleWithRoleGetResponse(ctx context.Context, requestConfiguration *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration)(VirtualEventsTownhallsGetByUserRoleWithRoleGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder) GetAsGetByUs
     }
     return res.(VirtualEventsTownhallsGetByUserRoleWithRoleGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getByUserRole
+// ToGetRequestInformation get a list of virtualEventTownhall objects where the signed-in user is either the organizer or a coorganizer.
 // returns a *RequestInformation when successful
 func (m *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEventsTownhallsGetByUserRoleWithRoleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

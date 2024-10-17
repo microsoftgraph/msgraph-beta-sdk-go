@@ -20,7 +20,7 @@ func NewAlertConfiguration()(*AlertConfiguration) {
 func CreateAlertConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAlertConfiguration(), nil
 }
-// GetEmailNotificationConfigurations gets the emailNotificationConfigurations property value. The emailNotificationConfigurations property
+// GetEmailNotificationConfigurations gets the emailNotificationConfigurations property value. Defines the recipients of email notifications for an alert type. Currently, only one email notification configuration is supported for an alert configuration, meaning only one group can receive notifications for an alert type.
 // returns a []EmailNotificationConfigurationable when successful
 func (m *AlertConfiguration) GetEmailNotificationConfigurations()([]EmailNotificationConfigurationable) {
     val, err := m.GetBackingStore().Get("emailNotificationConfigurations")
@@ -74,7 +74,7 @@ func (m *AlertConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetEmailNotificationConfigurations sets the emailNotificationConfigurations property value. The emailNotificationConfigurations property
+// SetEmailNotificationConfigurations sets the emailNotificationConfigurations property value. Defines the recipients of email notifications for an alert type. Currently, only one email notification configuration is supported for an alert configuration, meaning only one group can receive notifications for an alert type.
 func (m *AlertConfiguration) SetEmailNotificationConfigurations(value []EmailNotificationConfigurationable)() {
     err := m.GetBackingStore().Set("emailNotificationConfigurations", value)
     if err != nil {
