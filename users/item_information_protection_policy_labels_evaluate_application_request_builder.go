@@ -55,7 +55,7 @@ func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder)
     return res.(ItemInformationProtectionPolicyLabelsEvaluateApplicationResponseable), nil
 }
 // PostAsEvaluateApplicationPostResponse compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 // returns a ItemInformationProtectionPolicyLabelsEvaluateApplicationPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -79,7 +79,7 @@ func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder)
     return res.(ItemInformationProtectionPolicyLabelsEvaluateApplicationPostResponseable), nil
 }
 // ToPostRequestInformation compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents.  Given contentInfo, which includes existing content metadata key/value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemInformationProtectionPolicyLabelsEvaluateApplicationPostRequestBodyable, requestConfiguration *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -95,7 +95,7 @@ func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
 // returns a *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder when successful
 func (m *ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder) {
     return NewItemInformationProtectionPolicyLabelsEvaluateApplicationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

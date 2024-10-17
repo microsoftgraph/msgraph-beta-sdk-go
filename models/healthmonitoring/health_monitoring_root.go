@@ -20,7 +20,7 @@ func NewHealthMonitoringRoot()(*HealthMonitoringRoot) {
 func CreateHealthMonitoringRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHealthMonitoringRoot(), nil
 }
-// GetAlertConfigurations gets the alertConfigurations property value. The alertConfigurations property
+// GetAlertConfigurations gets the alertConfigurations property value. The configuration of an alert type, which defines behavior that occurs when an alert is created.
 // returns a []AlertConfigurationable when successful
 func (m *HealthMonitoringRoot) GetAlertConfigurations()([]AlertConfigurationable) {
     val, err := m.GetBackingStore().Get("alertConfigurations")
@@ -32,7 +32,7 @@ func (m *HealthMonitoringRoot) GetAlertConfigurations()([]AlertConfigurationable
     }
     return nil
 }
-// GetAlerts gets the alerts property value. The alerts property
+// GetAlerts gets the alerts property value. The collection of health monitoring system detected alerts for anomalous usage patterns found in a Microsoft Entra tenant.
 // returns a []Alertable when successful
 func (m *HealthMonitoringRoot) GetAlerts()([]Alertable) {
     val, err := m.GetBackingStore().Get("alerts")
@@ -114,14 +114,14 @@ func (m *HealthMonitoringRoot) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAlertConfigurations sets the alertConfigurations property value. The alertConfigurations property
+// SetAlertConfigurations sets the alertConfigurations property value. The configuration of an alert type, which defines behavior that occurs when an alert is created.
 func (m *HealthMonitoringRoot) SetAlertConfigurations(value []AlertConfigurationable)() {
     err := m.GetBackingStore().Set("alertConfigurations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAlerts sets the alerts property value. The alerts property
+// SetAlerts sets the alerts property value. The collection of health monitoring system detected alerts for anomalous usage patterns found in a Microsoft Entra tenant.
 func (m *HealthMonitoringRoot) SetAlerts(value []Alertable)() {
     err := m.GetBackingStore().Set("alerts", value)
     if err != nil {

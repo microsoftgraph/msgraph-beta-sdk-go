@@ -30,12 +30,9 @@ func NewItemManagedDevicesItemReprovisionCloudPcRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemReprovisionCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reprovision a Cloud PC with an Intune managed device ID.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Post invoke action reprovisionCloudPc
+// Deprecated: The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead as of 2023-07/reprovisionCloudPc
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-beta
 func (m *ItemManagedDevicesItemReprovisionCloudPcRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemReprovisionCloudPcRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,8 +47,8 @@ func (m *ItemManagedDevicesItemReprovisionCloudPcRequestBuilder) Post(ctx contex
     }
     return nil
 }
-// ToPostRequestInformation reprovision a Cloud PC with an Intune managed device ID.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// ToPostRequestInformation invoke action reprovisionCloudPc
+// Deprecated: The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead as of 2023-07/reprovisionCloudPc
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemReprovisionCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemReprovisionCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -63,7 +60,7 @@ func (m *ItemManagedDevicesItemReprovisionCloudPcRequestBuilder) ToPostRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Deprecated: The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead as of 2023-07/reprovisionCloudPc
 // returns a *ItemManagedDevicesItemReprovisionCloudPcRequestBuilder when successful
 func (m *ItemManagedDevicesItemReprovisionCloudPcRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemReprovisionCloudPcRequestBuilder) {
     return NewItemManagedDevicesItemReprovisionCloudPcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

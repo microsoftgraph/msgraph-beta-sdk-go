@@ -41,7 +41,6 @@ func NewLogsTrafficItemUserRequestBuilder(rawUrl string, requestAdapter i2ae4187
     return NewLogsTrafficItemUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get user from networkAccess
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LogsTrafficItemUserRequestBuilder) Get(ctx context.Context, requestConfiguration *LogsTrafficItemUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
@@ -72,7 +71,6 @@ func (m *LogsTrafficItemUserRequestBuilder) ServiceProvisioningErrors()(*LogsTra
     return NewLogsTrafficItemUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get user from networkAccess
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *LogsTrafficItemUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LogsTrafficItemUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -87,7 +85,6 @@ func (m *LogsTrafficItemUserRequestBuilder) ToGetRequestInformation(ctx context.
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *LogsTrafficItemUserRequestBuilder when successful
 func (m *LogsTrafficItemUserRequestBuilder) WithUrl(rawUrl string)(*LogsTrafficItemUserRequestBuilder) {
     return NewLogsTrafficItemUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

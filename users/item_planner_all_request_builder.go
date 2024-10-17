@@ -47,7 +47,6 @@ type ItemPlannerAllRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPlannerDeltaId provides operations to manage the all property of the microsoft.graph.plannerUser entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerAllPlannerDeltaItemRequestBuilder when successful
 func (m *ItemPlannerAllRequestBuilder) ByPlannerDeltaId(plannerDeltaId string)(*ItemPlannerAllPlannerDeltaItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -83,7 +82,6 @@ func (m *ItemPlannerAllRequestBuilder) Delta()(*ItemPlannerAllDeltaRequestBuilde
     return NewItemPlannerAllDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get all from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PlannerDeltaCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerAllRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerAllRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaCollectionResponseable, error) {
@@ -104,7 +102,6 @@ func (m *ItemPlannerAllRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaCollectionResponseable), nil
 }
 // Post create new navigation property to all for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PlannerDeltaable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPlannerAllRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaable, requestConfiguration *ItemPlannerAllRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaable, error) {
@@ -125,7 +122,6 @@ func (m *ItemPlannerAllRequestBuilder) Post(ctx context.Context, body ie233ee762
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaable), nil
 }
 // ToGetRequestInformation get all from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerAllRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPlannerAllRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,7 +136,6 @@ func (m *ItemPlannerAllRequestBuilder) ToGetRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to all for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerAllRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerDeltaable, requestConfiguration *ItemPlannerAllRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -156,7 +151,6 @@ func (m *ItemPlannerAllRequestBuilder) ToPostRequestInformation(ctx context.Cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerAllRequestBuilder when successful
 func (m *ItemPlannerAllRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerAllRequestBuilder) {
     return NewItemPlannerAllRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

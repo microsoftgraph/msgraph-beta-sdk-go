@@ -31,7 +31,6 @@ func NewItemEventsItemInstancesItemAcceptRequestBuilder(rawUrl string, requestAd
     return NewItemEventsItemInstancesItemAcceptRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post accept the specified event in a user calendar.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -51,7 +50,6 @@ func (m *ItemEventsItemInstancesItemAcceptRequestBuilder) Post(ctx context.Conte
     return nil
 }
 // ToPostRequestInformation accept the specified event in a user calendar.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemEventsItemInstancesItemAcceptRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemEventsItemInstancesItemAcceptPostRequestBodyable, requestConfiguration *ItemEventsItemInstancesItemAcceptRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,7 +65,6 @@ func (m *ItemEventsItemInstancesItemAcceptRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemEventsItemInstancesItemAcceptRequestBuilder when successful
 func (m *ItemEventsItemInstancesItemAcceptRequestBuilder) WithUrl(rawUrl string)(*ItemEventsItemInstancesItemAcceptRequestBuilder) {
     return NewItemEventsItemInstancesItemAcceptRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -32,7 +32,6 @@ func NewItemPlannerPlansItemMoveToContainerRequestBuilder(rawUrl string, request
     return NewItemPlannerPlansItemMoveToContainerRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PlannerPlanable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -56,7 +55,6 @@ func (m *ItemPlannerPlansItemMoveToContainerRequestBuilder) Post(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable), nil
 }
 // ToPostRequestInformation move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPlannerPlansItemMoveToContainerRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPlannerPlansItemMoveToContainerPostRequestBodyable, requestConfiguration *ItemPlannerPlansItemMoveToContainerRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -72,7 +70,6 @@ func (m *ItemPlannerPlansItemMoveToContainerRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPlannerPlansItemMoveToContainerRequestBuilder when successful
 func (m *ItemPlannerPlansItemMoveToContainerRequestBuilder) WithUrl(rawUrl string)(*ItemPlannerPlansItemMoveToContainerRequestBuilder) {
     return NewItemPlannerPlansItemMoveToContainerRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -31,7 +31,6 @@ func NewItemManagedDevicesItemRebootNowRequestBuilder(rawUrl string, requestAdap
     return NewItemManagedDevicesItemRebootNowRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post reboot device
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemRebootNowRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRebootNowRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -48,7 +47,6 @@ func (m *ItemManagedDevicesItemRebootNowRequestBuilder) Post(ctx context.Context
     return nil
 }
 // ToPostRequestInformation reboot device
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemRebootNowRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRebootNowRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -60,7 +58,6 @@ func (m *ItemManagedDevicesItemRebootNowRequestBuilder) ToPostRequestInformation
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemRebootNowRequestBuilder when successful
 func (m *ItemManagedDevicesItemRebootNowRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemRebootNowRequestBuilder) {
     return NewItemManagedDevicesItemRebootNowRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -41,7 +41,6 @@ func NewItemPageTemplatesItemLastModifiedByUserRequestBuilder(rawUrl string, req
     return NewItemPageTemplatesItemLastModifiedByUserRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get lastModifiedByUser from sites
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPageTemplatesItemLastModifiedByUserRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPageTemplatesItemLastModifiedByUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
@@ -72,7 +71,6 @@ func (m *ItemPageTemplatesItemLastModifiedByUserRequestBuilder) ServiceProvision
     return NewItemPageTemplatesItemLastModifiedByUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get lastModifiedByUser from sites
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPageTemplatesItemLastModifiedByUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPageTemplatesItemLastModifiedByUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -87,7 +85,6 @@ func (m *ItemPageTemplatesItemLastModifiedByUserRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPageTemplatesItemLastModifiedByUserRequestBuilder when successful
 func (m *ItemPageTemplatesItemLastModifiedByUserRequestBuilder) WithUrl(rawUrl string)(*ItemPageTemplatesItemLastModifiedByUserRequestBuilder) {
     return NewItemPageTemplatesItemLastModifiedByUserRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

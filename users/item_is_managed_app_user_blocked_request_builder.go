@@ -52,7 +52,6 @@ func (m *ItemIsManagedAppUserBlockedRequestBuilder) Get(ctx context.Context, req
     return res.(ItemIsManagedAppUserBlockedResponseable), nil
 }
 // GetAsIsManagedAppUserBlockedGetResponse gets the blocked state of a managed app user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemIsManagedAppUserBlockedGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemIsManagedAppUserBlockedRequestBuilder) GetAsIsManagedAppUserBlockedGetResponse(ctx context.Context, requestConfiguration *ItemIsManagedAppUserBlockedRequestBuilderGetRequestConfiguration)(ItemIsManagedAppUserBlockedGetResponseable, error) {
@@ -73,7 +72,6 @@ func (m *ItemIsManagedAppUserBlockedRequestBuilder) GetAsIsManagedAppUserBlocked
     return res.(ItemIsManagedAppUserBlockedGetResponseable), nil
 }
 // ToGetRequestInformation gets the blocked state of a managed app user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemIsManagedAppUserBlockedRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemIsManagedAppUserBlockedRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -85,7 +83,6 @@ func (m *ItemIsManagedAppUserBlockedRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemIsManagedAppUserBlockedRequestBuilder when successful
 func (m *ItemIsManagedAppUserBlockedRequestBuilder) WithUrl(rawUrl string)(*ItemIsManagedAppUserBlockedRequestBuilder) {
     return NewItemIsManagedAppUserBlockedRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

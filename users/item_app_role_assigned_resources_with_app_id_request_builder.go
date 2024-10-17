@@ -44,7 +44,6 @@ func NewItemAppRoleAssignedResourcesWithAppIdRequestBuilder(rawUrl string, reque
     return NewItemAppRoleAssignedResourcesWithAppIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Get get appRoleAssignedResources from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ServicePrincipalable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAppRoleAssignedResourcesWithAppIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAppRoleAssignedResourcesWithAppIdRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable, error) {
@@ -65,7 +64,6 @@ func (m *ItemAppRoleAssignedResourcesWithAppIdRequestBuilder) Get(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable), nil
 }
 // ToGetRequestInformation get appRoleAssignedResources from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAppRoleAssignedResourcesWithAppIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAppRoleAssignedResourcesWithAppIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -80,7 +78,6 @@ func (m *ItemAppRoleAssignedResourcesWithAppIdRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAppRoleAssignedResourcesWithAppIdRequestBuilder when successful
 func (m *ItemAppRoleAssignedResourcesWithAppIdRequestBuilder) WithUrl(rawUrl string)(*ItemAppRoleAssignedResourcesWithAppIdRequestBuilder) {
     return NewItemAppRoleAssignedResourcesWithAppIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

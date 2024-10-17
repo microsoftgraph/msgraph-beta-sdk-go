@@ -47,7 +47,6 @@ type ItemProfilePhonesRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByItemPhoneId provides operations to manage the phones property of the microsoft.graph.profile entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfilePhonesItemPhoneItemRequestBuilder when successful
 func (m *ItemProfilePhonesRequestBuilder) ByItemPhoneId(itemPhoneId string)(*ItemProfilePhonesItemPhoneItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +77,6 @@ func (m *ItemProfilePhonesRequestBuilder) Count()(*ItemProfilePhonesCountRequest
     return NewItemProfilePhonesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents detailed information about phone numbers associated with a user in various services.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemPhoneCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfilePhonesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePhonesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneCollectionResponseable, error) {
@@ -99,7 +97,6 @@ func (m *ItemProfilePhonesRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneCollectionResponseable), nil
 }
 // Post create new navigation property to phones for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemPhoneable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfilePhonesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, requestConfiguration *ItemProfilePhonesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, error) {
@@ -120,7 +117,6 @@ func (m *ItemProfilePhonesRequestBuilder) Post(ctx context.Context, body ie233ee
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable), nil
 }
 // ToGetRequestInformation represents detailed information about phone numbers associated with a user in various services.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfilePhonesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePhonesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +131,6 @@ func (m *ItemProfilePhonesRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to phones for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfilePhonesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemPhoneable, requestConfiguration *ItemProfilePhonesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +146,6 @@ func (m *ItemProfilePhonesRequestBuilder) ToPostRequestInformation(ctx context.C
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfilePhonesRequestBuilder when successful
 func (m *ItemProfilePhonesRequestBuilder) WithUrl(rawUrl string)(*ItemProfilePhonesRequestBuilder) {
     return NewItemProfilePhonesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

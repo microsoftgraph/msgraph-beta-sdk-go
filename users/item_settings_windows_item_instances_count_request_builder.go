@@ -40,7 +40,6 @@ func NewItemSettingsWindowsItemInstancesCountRequestBuilder(rawUrl string, reque
     return NewItemSettingsWindowsItemInstancesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsItemInstancesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -61,7 +60,6 @@ func (m *ItemSettingsWindowsItemInstancesCountRequestBuilder) Get(ctx context.Co
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsItemInstancesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,7 +74,6 @@ func (m *ItemSettingsWindowsItemInstancesCountRequestBuilder) ToGetRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsWindowsItemInstancesCountRequestBuilder when successful
 func (m *ItemSettingsWindowsItemInstancesCountRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsWindowsItemInstancesCountRequestBuilder) {
     return NewItemSettingsWindowsItemInstancesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

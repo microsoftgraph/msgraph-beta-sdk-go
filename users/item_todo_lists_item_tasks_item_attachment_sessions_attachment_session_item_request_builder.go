@@ -60,7 +60,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemReques
     return NewItemTodoListsItemTasksItemAttachmentSessionsItemContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property attachmentSessions for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -77,7 +76,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemReques
     return nil
 }
 // Get get attachmentSessions from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a AttachmentSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionable, error) {
@@ -98,7 +96,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemReques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionable), nil
 }
 // Patch update the navigation property attachmentSessions in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a AttachmentSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionable, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionable, error) {
@@ -119,7 +116,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemReques
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionable), nil
 }
 // ToDeleteRequestInformation delete navigation property attachmentSessions for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,7 +127,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemReques
     return requestInfo, nil
 }
 // ToGetRequestInformation get attachmentSessions from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,7 +141,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemReques
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property attachmentSessions in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionable, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,7 +156,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

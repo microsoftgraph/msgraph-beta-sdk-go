@@ -30,12 +30,9 @@ func NewItemManagedDevicesItemResizeCloudPcRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewItemManagedDevicesItemResizeCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Post invoke action resizeCloudPc
+// Deprecated: The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-beta
 func (m *ItemManagedDevicesItemResizeCloudPcRequestBuilder) Post(ctx context.Context, body ItemManagedDevicesItemResizeCloudPcPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemResizeCloudPcRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,8 +47,8 @@ func (m *ItemManagedDevicesItemResizeCloudPcRequestBuilder) Post(ctx context.Con
     }
     return nil
 }
-// ToPostRequestInformation upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// ToPostRequestInformation invoke action resizeCloudPc
+// Deprecated: The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemResizeCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemManagedDevicesItemResizeCloudPcPostRequestBodyable, requestConfiguration *ItemManagedDevicesItemResizeCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,7 +64,7 @@ func (m *ItemManagedDevicesItemResizeCloudPcRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Deprecated: The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc
 // returns a *ItemManagedDevicesItemResizeCloudPcRequestBuilder when successful
 func (m *ItemManagedDevicesItemResizeCloudPcRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemResizeCloudPcRequestBuilder) {
     return NewItemManagedDevicesItemResizeCloudPcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -73,7 +73,6 @@ func (m *ItemGetLoggedOnManagedDevicesRequestBuilder) Get(ctx context.Context, r
     return res.(ItemGetLoggedOnManagedDevicesResponseable), nil
 }
 // GetAsGetLoggedOnManagedDevicesGetResponse invoke function getLoggedOnManagedDevices
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemGetLoggedOnManagedDevicesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetLoggedOnManagedDevicesRequestBuilder) GetAsGetLoggedOnManagedDevicesGetResponse(ctx context.Context, requestConfiguration *ItemGetLoggedOnManagedDevicesRequestBuilderGetRequestConfiguration)(ItemGetLoggedOnManagedDevicesGetResponseable, error) {
@@ -94,7 +93,6 @@ func (m *ItemGetLoggedOnManagedDevicesRequestBuilder) GetAsGetLoggedOnManagedDev
     return res.(ItemGetLoggedOnManagedDevicesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getLoggedOnManagedDevices
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemGetLoggedOnManagedDevicesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetLoggedOnManagedDevicesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -109,7 +107,6 @@ func (m *ItemGetLoggedOnManagedDevicesRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemGetLoggedOnManagedDevicesRequestBuilder when successful
 func (m *ItemGetLoggedOnManagedDevicesRequestBuilder) WithUrl(rawUrl string)(*ItemGetLoggedOnManagedDevicesRequestBuilder) {
     return NewItemGetLoggedOnManagedDevicesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -40,7 +40,6 @@ type CommunitiesItemOwnersRequestBuilderGetRequestConfiguration struct {
     QueryParameters *CommunitiesItemOwnersRequestBuilderGetQueryParameters
 }
 // ByUserId provides operations to manage the owners property of the microsoft.graph.community entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *CommunitiesItemOwnersUserItemRequestBuilder when successful
 func (m *CommunitiesItemOwnersRequestBuilder) ByUserId(userId string)(*CommunitiesItemOwnersUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +70,6 @@ func (m *CommunitiesItemOwnersRequestBuilder) Count()(*CommunitiesItemOwnersCoun
     return NewCommunitiesItemOwnersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the admins of the community. Limited to 100 users. If this property isn't specified when you create the community, the calling user is automatically assigned as the community owner.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CommunitiesItemOwnersRequestBuilder) Get(ctx context.Context, requestConfiguration *CommunitiesItemOwnersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
@@ -92,7 +90,6 @@ func (m *CommunitiesItemOwnersRequestBuilder) Get(ctx context.Context, requestCo
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable), nil
 }
 // ToGetRequestInformation the admins of the community. Limited to 100 users. If this property isn't specified when you create the community, the calling user is automatically assigned as the community owner.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *CommunitiesItemOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CommunitiesItemOwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,7 +104,6 @@ func (m *CommunitiesItemOwnersRequestBuilder) ToGetRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *CommunitiesItemOwnersRequestBuilder when successful
 func (m *CommunitiesItemOwnersRequestBuilder) WithUrl(rawUrl string)(*CommunitiesItemOwnersRequestBuilder) {
     return NewCommunitiesItemOwnersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

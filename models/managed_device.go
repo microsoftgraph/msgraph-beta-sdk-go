@@ -363,7 +363,7 @@ func (m *ManagedDevice) GetDeviceHealthScriptStates()([]DeviceHealthScriptPolicy
     }
     return nil
 }
-// GetDeviceName gets the deviceName property value. Name of the device. This property is read-only.
+// GetDeviceName gets the deviceName property value. Name of the device. Supports $filter operator 'eq' and 'contains'. This property is read-only.
 // returns a *string when successful
 func (m *ManagedDevice) GetDeviceName()(*string) {
     val, err := m.GetBackingStore().Get("deviceName")
@@ -2692,7 +2692,7 @@ func (m *ManagedDevice) SetDeviceHealthScriptStates(value []DeviceHealthScriptPo
         panic(err)
     }
 }
-// SetDeviceName sets the deviceName property value. Name of the device. This property is read-only.
+// SetDeviceName sets the deviceName property value. Name of the device. Supports $filter operator 'eq' and 'contains'. This property is read-only.
 func (m *ManagedDevice) SetDeviceName(value *string)() {
     err := m.GetBackingStore().Set("deviceName", value)
     if err != nil {

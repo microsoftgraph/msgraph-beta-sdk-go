@@ -55,7 +55,6 @@ func NewItemVirtualEventsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewItemVirtualEventsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property virtualEvents for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemVirtualEventsRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemVirtualEventsRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *ItemVirtualEventsRequestBuilder) Delete(ctx context.Context, requestCon
     return nil
 }
 // Get get virtualEvents from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserVirtualEventsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemVirtualEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemVirtualEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable, error) {
@@ -93,7 +91,6 @@ func (m *ItemVirtualEventsRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable), nil
 }
 // Patch update the navigation property virtualEvents in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserVirtualEventsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemVirtualEventsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable, requestConfiguration *ItemVirtualEventsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable, error) {
@@ -114,7 +111,6 @@ func (m *ItemVirtualEventsRequestBuilder) Patch(ctx context.Context, body ie233e
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable), nil
 }
 // ToDeleteRequestInformation delete navigation property virtualEvents for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemVirtualEventsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemVirtualEventsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +122,6 @@ func (m *ItemVirtualEventsRequestBuilder) ToDeleteRequestInformation(ctx context
     return requestInfo, nil
 }
 // ToGetRequestInformation get virtualEvents from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemVirtualEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemVirtualEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +136,6 @@ func (m *ItemVirtualEventsRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property virtualEvents in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemVirtualEventsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserVirtualEventsRootable, requestConfiguration *ItemVirtualEventsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,7 +156,6 @@ func (m *ItemVirtualEventsRequestBuilder) Webinars()(*ItemVirtualEventsWebinarsR
     return NewItemVirtualEventsWebinarsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemVirtualEventsRequestBuilder when successful
 func (m *ItemVirtualEventsRequestBuilder) WithUrl(rawUrl string)(*ItemVirtualEventsRequestBuilder) {
     return NewItemVirtualEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

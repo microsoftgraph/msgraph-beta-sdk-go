@@ -79,7 +79,6 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterBy
     return res.(ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnResponseable), nil
 }
 // GetAsFilterByCurrentUserWithOnGetResponse return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,7 +102,6 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterBy
     return res.(ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnGetResponseable), nil
 }
 // ToGetRequestInformation return all accessReviewStage objects on a given accessReviewInstance where the calling user is a reviewer on one or more accessReviewInstanceDecisionItem objects.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -118,7 +116,6 @@ func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterBy
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnRequestBuilder) WithUrl(rawUrl string)(*ItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnRequestBuilder) {
     return NewItemPendingAccessReviewInstancesItemDecisionsItemInstanceStagesFilterByCurrentUserWithOnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -40,7 +40,7 @@ func NewItemOutlookTaskFoldersCountRequestBuilder(rawUrl string, requestAdapter 
     return NewItemOutlookTaskFoldersCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOutlookTaskFoldersCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -61,7 +61,7 @@ func (m *ItemOutlookTaskFoldersCountRequestBuilder) Get(ctx context.Context, req
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a *RequestInformation when successful
 func (m *ItemOutlookTaskFoldersCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOutlookTaskFoldersCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,7 +76,7 @@ func (m *ItemOutlookTaskFoldersCountRequestBuilder) ToGetRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
+// Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks
 // returns a *ItemOutlookTaskFoldersCountRequestBuilder when successful
 func (m *ItemOutlookTaskFoldersCountRequestBuilder) WithUrl(rawUrl string)(*ItemOutlookTaskFoldersCountRequestBuilder) {
     return NewItemOutlookTaskFoldersCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

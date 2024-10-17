@@ -31,7 +31,6 @@ func NewItemSendMailRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
     return NewItemSendMailRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post send the message specified in the request body using either JSON or MIME format. When using JSON format, you can include an attachment and use a mention to call out another user in the new message. When using MIME format: This method saves the message in the Sent Items folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -51,7 +50,6 @@ func (m *ItemSendMailRequestBuilder) Post(ctx context.Context, body ItemSendMail
     return nil
 }
 // ToPostRequestInformation send the message specified in the request body using either JSON or MIME format. When using JSON format, you can include an attachment and use a mention to call out another user in the new message. When using MIME format: This method saves the message in the Sent Items folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSendMailRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemSendMailPostRequestBodyable, requestConfiguration *ItemSendMailRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,7 +65,6 @@ func (m *ItemSendMailRequestBuilder) ToPostRequestInformation(ctx context.Contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSendMailRequestBuilder when successful
 func (m *ItemSendMailRequestBuilder) WithUrl(rawUrl string)(*ItemSendMailRequestBuilder) {
     return NewItemSendMailRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

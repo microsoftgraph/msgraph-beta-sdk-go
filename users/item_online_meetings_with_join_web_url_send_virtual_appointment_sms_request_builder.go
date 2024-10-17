@@ -31,7 +31,6 @@ func NewItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder(
     return NewItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -51,7 +50,6 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder
     return nil
 }
 // ToPostRequestInformation send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsPostRequestBodyable, requestConfiguration *ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -67,7 +65,6 @@ func (m *ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder when successful
 func (m *ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder) {
     return NewItemOnlineMeetingsWithJoinWebUrlSendVirtualAppointmentSmsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

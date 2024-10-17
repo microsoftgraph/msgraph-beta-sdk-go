@@ -31,7 +31,6 @@ func NewItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder(rawUrl strin
     return NewItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post retry installation for the partner agents that failed to install on the Cloud PC. Service side checks which agent installation failed firstly and retry.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -51,7 +50,6 @@ func (m *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) Post(ctx c
     return nil
 }
 // ToPostRequestInformation retry installation for the partner agents that failed to install on the Cloud PC. Service side checks which agent installation failed firstly and retry.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -63,7 +61,6 @@ func (m *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder when successful
 func (m *ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) {
     return NewItemCloudPCsItemRetryPartnerAgentInstallationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -40,7 +40,6 @@ type ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetRequestConfigu
     QueryParameters *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetQueryParameters
 }
 // ByAttachmentSessionId provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) ByAttachmentSessionId(attachmentSessionId string)(*ItemTodoListsItemTasksItemAttachmentSessionsAttachmentSessionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +70,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) Count()(*It
     return NewItemTodoListsItemTasksItemAttachmentSessionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get attachmentSessions from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a AttachmentSessionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionCollectionResponseable, error) {
@@ -92,7 +90,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) Get(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AttachmentSessionCollectionResponseable), nil
 }
 // ToGetRequestInformation get attachmentSessions from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,7 +104,6 @@ func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder when successful
 func (m *ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) WithUrl(rawUrl string)(*ItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder) {
     return NewItemTodoListsItemTasksItemAttachmentSessionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

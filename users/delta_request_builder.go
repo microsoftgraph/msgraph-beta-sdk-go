@@ -76,7 +76,6 @@ func (m *DeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *Del
     return res.(DeltaResponseable), nil
 }
 // GetAsDeltaGetResponse get newly created, updated, or deleted users without having to perform a full read of the entire user collection. See change tracking for details.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a DeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -100,7 +99,6 @@ func (m *DeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, request
     return res.(DeltaGetResponseable), nil
 }
 // ToGetRequestInformation get newly created, updated, or deleted users without having to perform a full read of the entire user collection. See change tracking for details.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *DeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -115,7 +113,6 @@ func (m *DeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *DeltaRequestBuilder when successful
 func (m *DeltaRequestBuilder) WithUrl(rawUrl string)(*DeltaRequestBuilder) {
     return NewDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

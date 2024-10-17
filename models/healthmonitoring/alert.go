@@ -45,7 +45,7 @@ func (m *Alert) GetCategory()(*Category) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The time when Microsoft Entra Health monitoring generated the alert. Supports $orderby.
 // returns a *Time when successful
 func (m *Alert) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -57,7 +57,7 @@ func (m *Alert) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     }
     return nil
 }
-// GetDocumentation gets the documentation property value. The documentation property
+// GetDocumentation gets the documentation property value. A key-value pair that contains the name of and link to the documentation to aid in investigation of the alert.
 // returns a Documentationable when successful
 func (m *Alert) GetDocumentation()(Documentationable) {
     val, err := m.GetBackingStore().Get("documentation")
@@ -69,7 +69,7 @@ func (m *Alert) GetDocumentation()(Documentationable) {
     }
     return nil
 }
-// GetEnrichment gets the enrichment property value. The enrichment property
+// GetEnrichment gets the enrichment property value. Investigative information on the alert. This information typically includes counts of impacted objects, which include directory objects such as users, groups, and devices, and a pointer to supporting data.
 // returns a Enrichmentable when successful
 func (m *Alert) GetEnrichment()(Enrichmentable) {
     val, err := m.GetBackingStore().Get("enrichment")
@@ -179,7 +179,7 @@ func (m *Alert) GetScenario()(*Scenario) {
     }
     return nil
 }
-// GetSignals gets the signals property value. The signals property
+// GetSignals gets the signals property value. The collection of signals that were used in the generation of the alert. These signals are sourced from serviceActivity APIs and are added to the alert as key-value pairs.
 // returns a Signalsable when successful
 func (m *Alert) GetSignals()(Signalsable) {
     val, err := m.GetBackingStore().Get("signals")
@@ -277,21 +277,21 @@ func (m *Alert) SetCategory(value *Category)() {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The time when Microsoft Entra Health monitoring generated the alert. Supports $orderby.
 func (m *Alert) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDocumentation sets the documentation property value. The documentation property
+// SetDocumentation sets the documentation property value. A key-value pair that contains the name of and link to the documentation to aid in investigation of the alert.
 func (m *Alert) SetDocumentation(value Documentationable)() {
     err := m.GetBackingStore().Set("documentation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnrichment sets the enrichment property value. The enrichment property
+// SetEnrichment sets the enrichment property value. Investigative information on the alert. This information typically includes counts of impacted objects, which include directory objects such as users, groups, and devices, and a pointer to supporting data.
 func (m *Alert) SetEnrichment(value Enrichmentable)() {
     err := m.GetBackingStore().Set("enrichment", value)
     if err != nil {
@@ -305,7 +305,7 @@ func (m *Alert) SetScenario(value *Scenario)() {
         panic(err)
     }
 }
-// SetSignals sets the signals property value. The signals property
+// SetSignals sets the signals property value. The collection of signals that were used in the generation of the alert. These signals are sourced from serviceActivity APIs and are added to the alert as key-value pairs.
 func (m *Alert) SetSignals(value Signalsable)() {
     err := m.GetBackingStore().Set("signals", value)
     if err != nil {

@@ -218,6 +218,22 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["history"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateRequestActivityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]RequestActivityable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(RequestActivityable)
+                }
+            }
+            m.SetHistory(res)
+        }
+        return nil
+    }
     res["isValidationOnly"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -305,6 +321,18 @@ func (m *AccessPackageAssignmentRequest) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetHistory gets the history property value. The history property
+// returns a []RequestActivityable when successful
+func (m *AccessPackageAssignmentRequest) GetHistory()([]RequestActivityable) {
+    val, err := m.GetBackingStore().Get("history")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]RequestActivityable)
+    }
+    return nil
 }
 // GetIsValidationOnly gets the isValidationOnly property value. True if the request isn't to be processed for assignment.
 // returns a *bool when successful
@@ -474,6 +502,18 @@ func (m *AccessPackageAssignmentRequest) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    if m.GetHistory() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHistory()))
+        for i, v := range m.GetHistory() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("history", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("isValidationOnly", m.GetIsValidationOnly())
         if err != nil {
@@ -586,6 +626,13 @@ func (m *AccessPackageAssignmentRequest) SetExpirationDateTime(value *i336074805
         panic(err)
     }
 }
+// SetHistory sets the history property value. The history property
+func (m *AccessPackageAssignmentRequest) SetHistory(value []RequestActivityable)() {
+    err := m.GetBackingStore().Set("history", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsValidationOnly sets the isValidationOnly property value. True if the request isn't to be processed for assignment.
 func (m *AccessPackageAssignmentRequest) SetIsValidationOnly(value *bool)() {
     err := m.GetBackingStore().Set("isValidationOnly", value)
@@ -653,6 +700,7 @@ type AccessPackageAssignmentRequestable interface {
     GetCustomExtensionCalloutInstances()([]CustomExtensionCalloutInstanceable)
     GetCustomExtensionHandlerInstances()([]CustomExtensionHandlerInstanceable)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetHistory()([]RequestActivityable)
     GetIsValidationOnly()(*bool)
     GetJustification()(*string)
     GetRequestor()(AccessPackageSubjectable)
@@ -669,6 +717,7 @@ type AccessPackageAssignmentRequestable interface {
     SetCustomExtensionCalloutInstances(value []CustomExtensionCalloutInstanceable)()
     SetCustomExtensionHandlerInstances(value []CustomExtensionHandlerInstanceable)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetHistory(value []RequestActivityable)()
     SetIsValidationOnly(value *bool)()
     SetJustification(value *string)()
     SetRequestor(value AccessPackageSubjectable)()

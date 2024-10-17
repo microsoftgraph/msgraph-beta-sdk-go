@@ -47,7 +47,6 @@ type ItemProfilePositionsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByWorkPositionId provides operations to manage the positions property of the microsoft.graph.profile entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfilePositionsWorkPositionItemRequestBuilder when successful
 func (m *ItemProfilePositionsRequestBuilder) ByWorkPositionId(workPositionId string)(*ItemProfilePositionsWorkPositionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +77,6 @@ func (m *ItemProfilePositionsRequestBuilder) Count()(*ItemProfilePositionsCountR
     return NewItemProfilePositionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get represents detailed information about work positions associated with a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WorkPositionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfilePositionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfilePositionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionCollectionResponseable, error) {
@@ -99,7 +97,6 @@ func (m *ItemProfilePositionsRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionCollectionResponseable), nil
 }
 // Post create new navigation property to positions for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WorkPositionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfilePositionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable, requestConfiguration *ItemProfilePositionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable, error) {
@@ -120,7 +117,6 @@ func (m *ItemProfilePositionsRequestBuilder) Post(ctx context.Context, body ie23
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable), nil
 }
 // ToGetRequestInformation represents detailed information about work positions associated with a user's profile.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfilePositionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfilePositionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +131,6 @@ func (m *ItemProfilePositionsRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to positions for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfilePositionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkPositionable, requestConfiguration *ItemProfilePositionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +146,6 @@ func (m *ItemProfilePositionsRequestBuilder) ToPostRequestInformation(ctx contex
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfilePositionsRequestBuilder when successful
 func (m *ItemProfilePositionsRequestBuilder) WithUrl(rawUrl string)(*ItemProfilePositionsRequestBuilder) {
     return NewItemProfilePositionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

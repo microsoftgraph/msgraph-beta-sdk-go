@@ -31,7 +31,6 @@ func NewItemManagedDevicesItemRetireRequestBuilder(rawUrl string, requestAdapter
     return NewItemManagedDevicesItemRetireRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post retire a device
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemRetireRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRetireRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -48,7 +47,6 @@ func (m *ItemManagedDevicesItemRetireRequestBuilder) Post(ctx context.Context, r
     return nil
 }
 // ToPostRequestInformation retire a device
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemRetireRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRetireRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -60,7 +58,6 @@ func (m *ItemManagedDevicesItemRetireRequestBuilder) ToPostRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemRetireRequestBuilder when successful
 func (m *ItemManagedDevicesItemRetireRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemRetireRequestBuilder) {
     return NewItemManagedDevicesItemRetireRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -40,7 +40,6 @@ func NewItemEventsItemInstancesCountRequestBuilder(rawUrl string, requestAdapter
     return NewItemEventsItemInstancesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemEventsItemInstancesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEventsItemInstancesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -61,7 +60,6 @@ func (m *ItemEventsItemInstancesCountRequestBuilder) Get(ctx context.Context, re
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemEventsItemInstancesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEventsItemInstancesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,7 +74,6 @@ func (m *ItemEventsItemInstancesCountRequestBuilder) ToGetRequestInformation(ctx
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemEventsItemInstancesCountRequestBuilder when successful
 func (m *ItemEventsItemInstancesCountRequestBuilder) WithUrl(rawUrl string)(*ItemEventsItemInstancesCountRequestBuilder) {
     return NewItemEventsItemInstancesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

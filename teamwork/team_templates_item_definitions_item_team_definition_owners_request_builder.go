@@ -40,7 +40,6 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilderGetReques
     QueryParameters *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilderGetQueryParameters
 }
 // ByUserId provides operations to manage the owners property of the microsoft.graph.team entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersUserItemRequestBuilder when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) ByUserId(userId string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersUserItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +70,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) Cou
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionOwnersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a UserCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable, error) {
@@ -92,7 +90,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) Get
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCollectionResponseable), nil
 }
 // ToGetRequestInformation the list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,7 +104,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) ToG
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) WithUrl(rawUrl string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

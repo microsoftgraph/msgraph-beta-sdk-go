@@ -41,7 +41,6 @@ func NewItemTeamworkInstalledAppsItemChatRequestBuilder(rawUrl string, requestAd
     return NewItemTeamworkInstalledAppsItemChatRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get retrieve the chat of the specified user and Teams app.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Chatable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -65,7 +64,6 @@ func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Chatable), nil
 }
 // ToGetRequestInformation retrieve the chat of the specified user and Teams app.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamworkInstalledAppsItemChatRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -80,7 +78,6 @@ func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemTeamworkInstalledAppsItemChatRequestBuilder when successful
 func (m *ItemTeamworkInstalledAppsItemChatRequestBuilder) WithUrl(rawUrl string)(*ItemTeamworkInstalledAppsItemChatRequestBuilder) {
     return NewItemTeamworkInstalledAppsItemChatRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

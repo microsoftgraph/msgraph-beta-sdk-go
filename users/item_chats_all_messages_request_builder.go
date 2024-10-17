@@ -73,7 +73,6 @@ func (m *ItemChatsAllMessagesRequestBuilder) Get(ctx context.Context, requestCon
     return res.(ItemChatsAllMessagesResponseable), nil
 }
 // GetAsAllMessagesGetResponse invoke function allMessages
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemChatsAllMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsAllMessagesRequestBuilder) GetAsAllMessagesGetResponse(ctx context.Context, requestConfiguration *ItemChatsAllMessagesRequestBuilderGetRequestConfiguration)(ItemChatsAllMessagesGetResponseable, error) {
@@ -94,7 +93,6 @@ func (m *ItemChatsAllMessagesRequestBuilder) GetAsAllMessagesGetResponse(ctx con
     return res.(ItemChatsAllMessagesGetResponseable), nil
 }
 // ToGetRequestInformation invoke function allMessages
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsAllMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChatsAllMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -109,7 +107,6 @@ func (m *ItemChatsAllMessagesRequestBuilder) ToGetRequestInformation(ctx context
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsAllMessagesRequestBuilder when successful
 func (m *ItemChatsAllMessagesRequestBuilder) WithUrl(rawUrl string)(*ItemChatsAllMessagesRequestBuilder) {
     return NewItemChatsAllMessagesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

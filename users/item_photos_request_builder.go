@@ -40,7 +40,6 @@ type ItemPhotosRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemPhotosRequestBuilderGetQueryParameters
 }
 // ByProfilePhotoId provides operations to manage the photos property of the microsoft.graph.user entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPhotosProfilePhotoItemRequestBuilder when successful
 func (m *ItemPhotosRequestBuilder) ByProfilePhotoId(profilePhotoId string)(*ItemPhotosProfilePhotoItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -66,7 +65,6 @@ func NewItemPhotosRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewItemPhotosRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get the collection of the user's profile photos in different sizes. Read-only.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ProfilePhotoCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPhotosRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPhotosRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoCollectionResponseable, error) {
@@ -87,7 +85,6 @@ func (m *ItemPhotosRequestBuilder) Get(ctx context.Context, requestConfiguration
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoCollectionResponseable), nil
 }
 // ToGetRequestInformation the collection of the user's profile photos in different sizes. Read-only.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPhotosRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPhotosRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -102,7 +99,6 @@ func (m *ItemPhotosRequestBuilder) ToGetRequestInformation(ctx context.Context, 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPhotosRequestBuilder when successful
 func (m *ItemPhotosRequestBuilder) WithUrl(rawUrl string)(*ItemPhotosRequestBuilder) {
     return NewItemPhotosRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

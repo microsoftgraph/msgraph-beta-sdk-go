@@ -157,6 +157,11 @@ func (m *DirectoryRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
 func (m *DirectoryRequestBuilder) PendingExternalUserProfiles()(*PendingExternalUserProfilesRequestBuilder) {
     return NewPendingExternalUserProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// PublicKeyInfrastructure provides operations to manage the publicKeyInfrastructure property of the microsoft.graph.directory entity.
+// returns a *PublicKeyInfrastructureRequestBuilder when successful
+func (m *DirectoryRequestBuilder) PublicKeyInfrastructure()(*PublicKeyInfrastructureRequestBuilder) {
+    return NewPublicKeyInfrastructureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Recommendations provides operations to manage the recommendations property of the microsoft.graph.directory entity.
 // returns a *RecommendationsRequestBuilder when successful
 func (m *DirectoryRequestBuilder) Recommendations()(*RecommendationsRequestBuilder) {

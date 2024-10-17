@@ -45,7 +45,6 @@ func NewItemContactsItemPhotoValueContentRequestBuilder(rawUrl string, requestAd
     return NewItemContactsItemPhotoValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete optional contact picture. You can get or set a photo for a contact.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactsItemPhotoValueContentRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemContactsItemPhotoValueContentRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -62,7 +61,6 @@ func (m *ItemContactsItemPhotoValueContentRequestBuilder) Delete(ctx context.Con
     return nil
 }
 // Get optional contact picture. You can get or set a photo for a contact.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactsItemPhotoValueContentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration)([]byte, error) {
@@ -83,7 +81,6 @@ func (m *ItemContactsItemPhotoValueContentRequestBuilder) Get(ctx context.Contex
     return res.([]byte), nil
 }
 // Put optional contact picture. You can get or set a photo for a contact.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemContactsItemPhotoValueContentRequestBuilder) Put(ctx context.Context, body []byte, requestConfiguration *ItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration)([]byte, error) {
@@ -104,7 +101,6 @@ func (m *ItemContactsItemPhotoValueContentRequestBuilder) Put(ctx context.Contex
     return res.([]byte), nil
 }
 // ToDeleteRequestInformation optional contact picture. You can get or set a photo for a contact.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactsItemPhotoValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemContactsItemPhotoValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -116,7 +112,6 @@ func (m *ItemContactsItemPhotoValueContentRequestBuilder) ToDeleteRequestInforma
     return requestInfo, nil
 }
 // ToGetRequestInformation optional contact picture. You can get or set a photo for a contact.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactsItemPhotoValueContentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemContactsItemPhotoValueContentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -128,7 +123,6 @@ func (m *ItemContactsItemPhotoValueContentRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // ToPutRequestInformation optional contact picture. You can get or set a photo for a contact.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactsItemPhotoValueContentRequestBuilder) ToPutRequestInformation(ctx context.Context, body []byte, requestConfiguration *ItemContactsItemPhotoValueContentRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +135,6 @@ func (m *ItemContactsItemPhotoValueContentRequestBuilder) ToPutRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemContactsItemPhotoValueContentRequestBuilder when successful
 func (m *ItemContactsItemPhotoValueContentRequestBuilder) WithUrl(rawUrl string)(*ItemContactsItemPhotoValueContentRequestBuilder) {
     return NewItemContactsItemPhotoValueContentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

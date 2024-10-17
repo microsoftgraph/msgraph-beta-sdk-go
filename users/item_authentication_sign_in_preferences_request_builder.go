@@ -48,7 +48,6 @@ func NewItemAuthenticationSignInPreferencesRequestBuilder(rawUrl string, request
     return NewItemAuthenticationSignInPreferencesRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get read the properties of a user's authentication states. Use this API to retrieve the following information:
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a SignInPreferencesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -72,7 +71,6 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Get(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable), nil
 }
 // Patch update the properties of a user's authentication method states. Use this API to update the following information:
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a SignInPreferencesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -96,7 +94,6 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) Patch(ctx context.Co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable), nil
 }
 // ToGetRequestInformation read the properties of a user's authentication states. Use this API to retrieve the following information:
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -111,7 +108,6 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a user's authentication method states. Use this API to update the following information:
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInPreferencesable, requestConfiguration *ItemAuthenticationSignInPreferencesRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -127,7 +123,6 @@ func (m *ItemAuthenticationSignInPreferencesRequestBuilder) ToPatchRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationSignInPreferencesRequestBuilder when successful
 func (m *ItemAuthenticationSignInPreferencesRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationSignInPreferencesRequestBuilder) {
     return NewItemAuthenticationSignInPreferencesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

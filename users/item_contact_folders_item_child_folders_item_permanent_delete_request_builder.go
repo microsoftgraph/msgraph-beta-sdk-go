@@ -31,7 +31,6 @@ func NewItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder(rawU
     return NewItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post permanently delete a contact folder and remove its items from the user's mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -51,7 +50,6 @@ func (m *ItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder) Po
     return nil
 }
 // ToPostRequestInformation permanently delete a contact folder and remove its items from the user's mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -63,7 +61,6 @@ func (m *ItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder when successful
 func (m *ItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder) WithUrl(rawUrl string)(*ItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder) {
     return NewItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

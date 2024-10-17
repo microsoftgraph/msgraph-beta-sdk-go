@@ -60,7 +60,6 @@ func (m *ItemPhotoRequestBuilder) Content()(*ItemPhotoValueContentRequestBuilder
     return NewItemPhotoValueContentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property photo for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPhotoRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemPhotoRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -77,7 +76,6 @@ func (m *ItemPhotoRequestBuilder) Delete(ctx context.Context, requestConfigurati
     return nil
 }
 // Get the user's profile photo. Read-only.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ProfilePhotoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPhotoRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPhotoRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, error) {
@@ -98,7 +96,6 @@ func (m *ItemPhotoRequestBuilder) Get(ctx context.Context, requestConfiguration 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable), nil
 }
 // Patch update the navigation property photo in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ProfilePhotoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPhotoRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, requestConfiguration *ItemPhotoRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, error) {
@@ -119,7 +116,6 @@ func (m *ItemPhotoRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable), nil
 }
 // ToDeleteRequestInformation delete navigation property photo for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPhotoRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemPhotoRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,7 +127,6 @@ func (m *ItemPhotoRequestBuilder) ToDeleteRequestInformation(ctx context.Context
     return requestInfo, nil
 }
 // ToGetRequestInformation the user's profile photo. Read-only.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPhotoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPhotoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,7 +141,6 @@ func (m *ItemPhotoRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property photo in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPhotoRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProfilePhotoable, requestConfiguration *ItemPhotoRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,7 +156,6 @@ func (m *ItemPhotoRequestBuilder) ToPatchRequestInformation(ctx context.Context,
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPhotoRequestBuilder when successful
 func (m *ItemPhotoRequestBuilder) WithUrl(rawUrl string)(*ItemPhotoRequestBuilder) {
     return NewItemPhotoRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

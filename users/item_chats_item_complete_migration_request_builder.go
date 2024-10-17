@@ -31,7 +31,6 @@ func NewItemChatsItemCompleteMigrationRequestBuilder(rawUrl string, requestAdapt
     return NewItemChatsItemCompleteMigrationRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action completeMigration
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemChatsItemCompleteMigrationRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemChatsItemCompleteMigrationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -48,7 +47,6 @@ func (m *ItemChatsItemCompleteMigrationRequestBuilder) Post(ctx context.Context,
     return nil
 }
 // ToPostRequestInformation invoke action completeMigration
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemChatsItemCompleteMigrationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemChatsItemCompleteMigrationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -60,7 +58,6 @@ func (m *ItemChatsItemCompleteMigrationRequestBuilder) ToPostRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemChatsItemCompleteMigrationRequestBuilder when successful
 func (m *ItemChatsItemCompleteMigrationRequestBuilder) WithUrl(rawUrl string)(*ItemChatsItemCompleteMigrationRequestBuilder) {
     return NewItemChatsItemCompleteMigrationRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

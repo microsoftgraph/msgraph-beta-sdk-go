@@ -55,7 +55,6 @@ func NewItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder
     return NewItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property instances for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilde
     return nil
 }
 // Get a collection of setting values for a given windowsSetting.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WindowsSettingInstanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable, error) {
@@ -93,7 +91,6 @@ func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable), nil
 }
 // Patch update the navigation property instances in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a WindowsSettingInstanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable, requestConfiguration *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable, error) {
@@ -114,7 +111,6 @@ func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilde
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable), nil
 }
 // ToDeleteRequestInformation delete navigation property instances for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +122,6 @@ func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilde
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of setting values for a given windowsSetting.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +136,6 @@ func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilde
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property instances in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsSettingInstanceable, requestConfiguration *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +151,6 @@ func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder when successful
 func (m *ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder) WithUrl(rawUrl string)(*ItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder) {
     return NewItemSettingsWindowsItemInstancesWindowsSettingInstanceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

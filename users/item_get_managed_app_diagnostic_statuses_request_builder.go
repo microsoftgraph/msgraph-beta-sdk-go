@@ -67,7 +67,6 @@ func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) Get(ctx context.Cont
     return res.(ItemGetManagedAppDiagnosticStatusesResponseable), nil
 }
 // GetAsGetManagedAppDiagnosticStatusesGetResponse gets diagnostics validation status for a given user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ItemGetManagedAppDiagnosticStatusesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) GetAsGetManagedAppDiagnosticStatusesGetResponse(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(ItemGetManagedAppDiagnosticStatusesGetResponseable, error) {
@@ -88,7 +87,6 @@ func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) GetAsGetManagedAppDi
     return res.(ItemGetManagedAppDiagnosticStatusesGetResponseable), nil
 }
 // ToGetRequestInformation gets diagnostics validation status for a given user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -103,7 +101,6 @@ func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemGetManagedAppDiagnosticStatusesRequestBuilder when successful
 func (m *ItemGetManagedAppDiagnosticStatusesRequestBuilder) WithUrl(rawUrl string)(*ItemGetManagedAppDiagnosticStatusesRequestBuilder) {
     return NewItemGetManagedAppDiagnosticStatusesRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

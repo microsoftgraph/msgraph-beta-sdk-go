@@ -47,7 +47,6 @@ type ItemMobileAppTroubleshootingEventsRequestBuilderPostRequestConfiguration st
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByMobileAppTroubleshootingEventId provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.user entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder when successful
 func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) ByMobileAppTroubleshootingEventId(mobileAppTroubleshootingEventId string)(*ItemMobileAppTroubleshootingEventsMobileAppTroubleshootingEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +77,6 @@ func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) Count()(*ItemMobileAp
     return NewItemMobileAppTroubleshootingEventsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get the list of mobile app troubleshooting events for this user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MobileAppTroubleshootingEventCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMobileAppTroubleshootingEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventCollectionResponseable, error) {
@@ -99,7 +97,6 @@ func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) Get(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventCollectionResponseable), nil
 }
 // Post create new navigation property to mobileAppTroubleshootingEvents for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MobileAppTroubleshootingEventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, requestConfiguration *ItemMobileAppTroubleshootingEventsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, error) {
@@ -120,7 +117,6 @@ func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) Post(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable), nil
 }
 // ToGetRequestInformation the list of mobile app troubleshooting events for this user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMobileAppTroubleshootingEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +131,6 @@ func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to mobileAppTroubleshootingEvents for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppTroubleshootingEventable, requestConfiguration *ItemMobileAppTroubleshootingEventsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +146,6 @@ func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMobileAppTroubleshootingEventsRequestBuilder when successful
 func (m *ItemMobileAppTroubleshootingEventsRequestBuilder) WithUrl(rawUrl string)(*ItemMobileAppTroubleshootingEventsRequestBuilder) {
     return NewItemMobileAppTroubleshootingEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

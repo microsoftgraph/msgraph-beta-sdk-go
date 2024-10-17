@@ -40,7 +40,6 @@ type ItemAuthenticationPlatformCredentialMethodsRequestBuilderGetRequestConfigur
     QueryParameters *ItemAuthenticationPlatformCredentialMethodsRequestBuilderGetQueryParameters
 }
 // ByPlatformCredentialAuthenticationMethodId provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder when successful
 func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) ByPlatformCredentialAuthenticationMethodId(platformCredentialAuthenticationMethodId string)(*ItemAuthenticationPlatformCredentialMethodsPlatformCredentialAuthenticationMethodItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +70,6 @@ func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) Count()(*Ite
     return NewItemAuthenticationPlatformCredentialMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get platformCredentialMethods from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a PlatformCredentialAuthenticationMethodCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlatformCredentialAuthenticationMethodCollectionResponseable, error) {
@@ -92,7 +90,6 @@ func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlatformCredentialAuthenticationMethodCollectionResponseable), nil
 }
 // ToGetRequestInformation get platformCredentialMethods from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,7 +104,6 @@ func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemAuthenticationPlatformCredentialMethodsRequestBuilder when successful
 func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) WithUrl(rawUrl string)(*ItemAuthenticationPlatformCredentialMethodsRequestBuilder) {
     return NewItemAuthenticationPlatformCredentialMethodsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

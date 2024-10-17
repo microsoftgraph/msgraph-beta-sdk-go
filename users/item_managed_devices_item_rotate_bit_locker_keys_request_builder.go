@@ -31,7 +31,6 @@ func NewItemManagedDevicesItemRotateBitLockerKeysRequestBuilder(rawUrl string, r
     return NewItemManagedDevicesItemRotateBitLockerKeysRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post rotate BitLockerKeys
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemManagedDevicesItemRotateBitLockerKeysRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRotateBitLockerKeysRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -48,7 +47,6 @@ func (m *ItemManagedDevicesItemRotateBitLockerKeysRequestBuilder) Post(ctx conte
     return nil
 }
 // ToPostRequestInformation rotate BitLockerKeys
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemRotateBitLockerKeysRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemRotateBitLockerKeysRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -60,7 +58,6 @@ func (m *ItemManagedDevicesItemRotateBitLockerKeysRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemManagedDevicesItemRotateBitLockerKeysRequestBuilder when successful
 func (m *ItemManagedDevicesItemRotateBitLockerKeysRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemRotateBitLockerKeysRequestBuilder) {
     return NewItemManagedDevicesItemRotateBitLockerKeysRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

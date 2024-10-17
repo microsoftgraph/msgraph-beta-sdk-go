@@ -32,7 +32,6 @@ func NewItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilder(
     return NewItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Messageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -56,7 +55,6 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilder
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable), nil
 }
 // ToPostRequestInformation mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkPostRequestBodyable, requestConfiguration *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -72,7 +70,6 @@ func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilder
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilder when successful
 func (m *ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMessagesItemMarkAsJunkRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -58,7 +58,6 @@ func NewItemDevicesWithDeviceIdRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewItemDevicesWithDeviceIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
 // Delete delete navigation property devices for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -75,7 +74,6 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) Delete(ctx context.Context, requ
     return nil
 }
 // Get get devices from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Deviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -96,7 +94,6 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) Get(ctx context.Context, request
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
 // Patch update the navigation property devices in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a Deviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDevicesWithDeviceIdRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -117,7 +114,6 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) Patch(ctx context.Context, body 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
 // ToDeleteRequestInformation delete navigation property devices for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesWithDeviceIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +125,6 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) ToDeleteRequestInformation(ctx c
     return requestInfo, nil
 }
 // ToGetRequestInformation get devices from users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesWithDeviceIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -144,7 +139,6 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property devices in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemDevicesWithDeviceIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, requestConfiguration *ItemDevicesWithDeviceIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -160,7 +154,6 @@ func (m *ItemDevicesWithDeviceIdRequestBuilder) ToPatchRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemDevicesWithDeviceIdRequestBuilder when successful
 func (m *ItemDevicesWithDeviceIdRequestBuilder) WithUrl(rawUrl string)(*ItemDevicesWithDeviceIdRequestBuilder) {
     return NewItemDevicesWithDeviceIdRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

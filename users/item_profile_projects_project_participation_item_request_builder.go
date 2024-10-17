@@ -55,7 +55,6 @@ func NewItemProfileProjectsProjectParticipationItemRequestBuilder(rawUrl string,
     return NewItemProfileProjectsProjectParticipationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property projects for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Delete(ctx c
     return nil
 }
 // Get represents detailed information about projects associated with a user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ProjectParticipationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, error) {
@@ -93,7 +91,6 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable), nil
 }
 // Patch update the navigation property projects in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a ProjectParticipationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, error) {
@@ -114,7 +111,6 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) Patch(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable), nil
 }
 // ToDeleteRequestInformation delete navigation property projects for users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +122,6 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToDeleteRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation represents detailed information about projects associated with a user.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +136,6 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property projects in users
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProjectParticipationable, requestConfiguration *ItemProfileProjectsProjectParticipationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +151,6 @@ func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) ToPatchReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemProfileProjectsProjectParticipationItemRequestBuilder when successful
 func (m *ItemProfileProjectsProjectParticipationItemRequestBuilder) WithUrl(rawUrl string)(*ItemProfileProjectsProjectParticipationItemRequestBuilder) {
     return NewItemProfileProjectsProjectParticipationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

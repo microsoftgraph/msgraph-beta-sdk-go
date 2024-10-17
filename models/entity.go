@@ -580,12 +580,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCartToClassAssociation(), nil
                     case "#microsoft.graph.certificateAuthorityAsEntity":
                         return NewCertificateAuthorityAsEntity(), nil
+                    case "#microsoft.graph.certificateAuthorityDetail":
+                        return NewCertificateAuthorityDetail(), nil
                     case "#microsoft.graph.certificateAuthorityPath":
                         return NewCertificateAuthorityPath(), nil
                     case "#microsoft.graph.certificateBasedApplicationConfiguration":
                         return NewCertificateBasedApplicationConfiguration(), nil
                     case "#microsoft.graph.certificateBasedAuthConfiguration":
                         return NewCertificateBasedAuthConfiguration(), nil
+                    case "#microsoft.graph.certificateBasedAuthPki":
+                        return NewCertificateBasedAuthPki(), nil
                     case "#microsoft.graph.certificateConnectorDetails":
                         return NewCertificateConnectorDetails(), nil
                     case "#microsoft.graph.changeTrackedEntity":
@@ -612,6 +616,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewClassificationJobResponse(), nil
                     case "#microsoft.graph.cloudAppSecurityProfile":
                         return NewCloudAppSecurityProfile(), nil
+                    case "#microsoft.graph.cloudCertificationAuthority":
+                        return NewCloudCertificationAuthority(), nil
+                    case "#microsoft.graph.cloudCertificationAuthorityLeafCertificate":
+                        return NewCloudCertificationAuthorityLeafCertificate(), nil
                     case "#microsoft.graph.cloudClipboardItem":
                         return NewCloudClipboardItem(), nil
                     case "#microsoft.graph.cloudClipboardRoot":
@@ -894,8 +902,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDeviceConfigurationGroupAssignment(), nil
                     case "#microsoft.graph.deviceConfigurationPolicySetItem":
                         return NewDeviceConfigurationPolicySetItem(), nil
-                    case "#microsoft.graph.deviceConfigurationProfile":
-                        return NewDeviceConfigurationProfile(), nil
                     case "#microsoft.graph.deviceConfigurationState":
                         return NewDeviceConfigurationState(), nil
                     case "#microsoft.graph.deviceConfigurationUserOverview":
@@ -1122,6 +1128,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDriveProtectionRule(), nil
                     case "#microsoft.graph.driveProtectionUnit":
                         return NewDriveProtectionUnit(), nil
+                    case "#microsoft.graph.driveProtectionUnitsBulkAdditionJob":
+                        return NewDriveProtectionUnitsBulkAdditionJob(), nil
                     case "#microsoft.graph.driveRestoreArtifact":
                         return NewDriveRestoreArtifact(), nil
                     case "#microsoft.graph.easEmailProfileConfigurationBase":
@@ -1742,6 +1750,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMailboxProtectionRule(), nil
                     case "#microsoft.graph.mailboxProtectionUnit":
                         return NewMailboxProtectionUnit(), nil
+                    case "#microsoft.graph.mailboxProtectionUnitsBulkAdditionJob":
+                        return NewMailboxProtectionUnitsBulkAdditionJob(), nil
                     case "#microsoft.graph.mailboxRestoreArtifact":
                         return NewMailboxRestoreArtifact(), nil
                     case "#microsoft.graph.mailFolder":
@@ -2338,10 +2348,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewProtectionRuleBase(), nil
                     case "#microsoft.graph.protectionUnitBase":
                         return NewProtectionUnitBase(), nil
+                    case "#microsoft.graph.protectionUnitsBulkJobBase":
+                        return NewProtectionUnitsBulkJobBase(), nil
                     case "#microsoft.graph.providerTenantSetting":
                         return NewProviderTenantSetting(), nil
                     case "#microsoft.graph.provisioningObjectSummary":
                         return NewProvisioningObjectSummary(), nil
+                    case "#microsoft.graph.publicKeyInfrastructureRoot":
+                        return NewPublicKeyInfrastructureRoot(), nil
                     case "#microsoft.graph.publishedResource":
                         return NewPublishedResource(), nil
                     case "#microsoft.graph.purchaseInvoiceLine":
@@ -2584,6 +2598,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSiteProtectionRule(), nil
                     case "#microsoft.graph.siteProtectionUnit":
                         return NewSiteProtectionUnit(), nil
+                    case "#microsoft.graph.siteProtectionUnitsBulkAdditionJob":
+                        return NewSiteProtectionUnitsBulkAdditionJob(), nil
                     case "#microsoft.graph.siteRestoreArtifact":
                         return NewSiteRestoreArtifact(), nil
                     case "#microsoft.graph.skillProficiency":

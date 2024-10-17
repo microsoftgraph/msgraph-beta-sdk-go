@@ -48,7 +48,6 @@ func NewItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder(raw
     return NewItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MailboxSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable, error) {
@@ -69,7 +68,6 @@ func (m *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) G
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable), nil
 }
 // Patch update property mailboxSettings value.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a MailboxSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable, requestConfiguration *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable, error) {
@@ -90,7 +88,6 @@ func (m *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) P
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable), nil
 }
 // ToGetRequestInformation settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -105,7 +102,6 @@ func (m *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) T
     return requestInfo, nil
 }
 // ToPatchRequestInformation update property mailboxSettings value.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *RequestInformation when successful
 func (m *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxSettingsable, requestConfiguration *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +117,6 @@ func (m *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) T
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-07/PrivatePreview:copilotExportAPI
 // returns a *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder when successful
 func (m *ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) WithUrl(rawUrl string)(*ItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder) {
     return NewItemPagesItemGraphSitePageCreatedByUserMailboxSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
