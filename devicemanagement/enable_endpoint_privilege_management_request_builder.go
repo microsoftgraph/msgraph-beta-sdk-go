@@ -30,7 +30,7 @@ func NewEnableEndpointPrivilegeManagementRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewEnableEndpointPrivilegeManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C).
+// Post dEPRECATED - DO NOT USE. (Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C)).
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnableEndpointPrivilegeManagementRequestBuilder) Post(ctx context.Context, requestConfiguration *EnableEndpointPrivilegeManagementRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
@@ -46,7 +46,7 @@ func (m *EnableEndpointPrivilegeManagementRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToPostRequestInformation triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C).
+// ToPostRequestInformation dEPRECATED - DO NOT USE. (Triggers onboarding of tenant to Microsoft Managed Platform - Cloud (MMP-C)).
 // returns a *RequestInformation when successful
 func (m *EnableEndpointPrivilegeManagementRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EnableEndpointPrivilegeManagementRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

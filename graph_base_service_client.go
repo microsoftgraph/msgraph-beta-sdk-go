@@ -14,6 +14,7 @@ import (
     i0b9d70018d3c267f9f34a818ce43cc889d06d87749a70e1ad1d45eead0c735e0 "github.com/microsoftgraph/msgraph-beta-sdk-go/filteroperators"
     i0d38f6e6ea6126fff7bb7a5c3c2d82fe471d00233209e2b6b2ce6ccb21ce50f5 "github.com/microsoftgraph/msgraph-beta-sdk-go/onpremisespublishingprofiles"
     i0f747ff1f24810ff51160697ed4229c9ca192f7b84644311b88fa3b475cc340d "github.com/microsoftgraph/msgraph-beta-sdk-go/datapolicyoperations"
+    i1023cbca7c33593eb89029807515c95a274e415f0e30bc9c444da511195c613e "github.com/microsoftgraph/msgraph-beta-sdk-go/userswithuserprincipalname"
     i14752cfec59ab915e7c63922270765abf65744437d9135c191cef3986f08c3bb "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceroleassignments"
     i15e329825c659329448e12b30278e3a09efd68996edb65e6eb37bbba528b21d7 "github.com/microsoftgraph/msgraph-beta-sdk-go/agreementacceptances"
     i164b4c6703708dd1b0670a17a07a4dd64e49cb0c1cb66e50a3146217db57a57a "github.com/microsoftgraph/msgraph-beta-sdk-go/workplace"
@@ -759,6 +760,11 @@ func (m *GraphBaseServiceClient) TrustFramework()(*i312c0a09d8ded5436957205a14ad
 // returns a *UsersRequestBuilder when successful
 func (m *GraphBaseServiceClient) Users()(*icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a.UsersRequestBuilder) {
     return icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a.NewUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// UsersWithUserPrincipalName provides operations to manage the collection of user entities.
+// returns a *UsersWithUserPrincipalNameRequestBuilder when successful
+func (m *GraphBaseServiceClient) UsersWithUserPrincipalName(userPrincipalName *string)(*i1023cbca7c33593eb89029807515c95a274e415f0e30bc9c444da511195c613e.UsersWithUserPrincipalNameRequestBuilder) {
+    return i1023cbca7c33593eb89029807515c95a274e415f0e30bc9c444da511195c613e.NewUsersWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
 }
 // Workplace provides operations to manage the workplace singleton.
 // returns a *WorkplaceRequestBuilder when successful

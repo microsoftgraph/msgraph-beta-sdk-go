@@ -3,16 +3,18 @@ package models
 type ManagedAppRemediationAction int
 
 const (
-    // app and the corresponding company data to be blocked
+    // Indicates the user will be blocked from accessing the app and corporate data
     BLOCK_MANAGEDAPPREMEDIATIONACTION ManagedAppRemediationAction = iota
-    // app and the corresponding company data to be wiped
+    // Indicates the corporate data will be removed from the app
     WIPE_MANAGEDAPPREMEDIATIONACTION
-    // app and the corresponding user to be warned
+    // Indicates user will be warned the when accessing the app
     WARN_MANAGEDAPPREMEDIATIONACTION
+    // Indicates user will be blocked from accessing the app and corporate data if devices supports this setting
+    BLOCKWHENSETTINGISSUPPORTED_MANAGEDAPPREMEDIATIONACTION
 )
 
 func (i ManagedAppRemediationAction) String() string {
-    return []string{"block", "wipe", "warn"}[i]
+    return []string{"block", "wipe", "warn", "blockWhenSettingIsSupported"}[i]
 }
 func ParseManagedAppRemediationAction(v string) (any, error) {
     result := BLOCK_MANAGEDAPPREMEDIATIONACTION
@@ -23,6 +25,8 @@ func ParseManagedAppRemediationAction(v string) (any, error) {
             result = WIPE_MANAGEDAPPREMEDIATIONACTION
         case "warn":
             result = WARN_MANAGEDAPPREMEDIATIONACTION
+        case "blockWhenSettingIsSupported":
+            result = BLOCKWHENSETTINGISSUPPORTED_MANAGEDAPPREMEDIATIONACTION
         default:
             return nil, nil
     }

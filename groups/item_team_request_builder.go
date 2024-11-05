@@ -145,6 +145,11 @@ func (m *ItemTeamRequestBuilder) Operations()(*ItemTeamOperationsRequestBuilder)
 func (m *ItemTeamRequestBuilder) Owners()(*ItemTeamOwnersRequestBuilder) {
     return NewItemTeamOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OwnersWithUserPrincipalName provides operations to manage the owners property of the microsoft.graph.team entity.
+// returns a *ItemTeamOwnersWithUserPrincipalNameRequestBuilder when successful
+func (m *ItemTeamRequestBuilder) OwnersWithUserPrincipalName(userPrincipalName *string)(*ItemTeamOwnersWithUserPrincipalNameRequestBuilder) {
+    return NewItemTeamOwnersWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
+}
 // PermissionGrants provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
 // returns a *ItemTeamPermissionGrantsRequestBuilder when successful
 func (m *ItemTeamRequestBuilder) PermissionGrants()(*ItemTeamPermissionGrantsRequestBuilder) {

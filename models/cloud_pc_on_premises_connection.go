@@ -155,6 +155,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["healthCheckPaused"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHealthCheckPaused(val)
+        }
+        return nil
+    }
     res["healthCheckStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcOnPremisesConnectionStatus)
         if err != nil {
@@ -192,6 +202,16 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetInUse(val)
+        }
+        return nil
+    }
+    res["inUseByCloudPc"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInUseByCloudPc(val)
         }
         return nil
     }
@@ -303,6 +323,18 @@ func (m *CloudPcOnPremisesConnection) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
+// GetHealthCheckPaused gets the healthCheckPaused property value. false if the regular health checks on the network/domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for 4 weeks. If you retry a health check on network/domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past 4 weeks, healthCheckPaused is set to false. Read-only. Default is false.
+// returns a *bool when successful
+func (m *CloudPcOnPremisesConnection) GetHealthCheckPaused()(*bool) {
+    val, err := m.GetBackingStore().Get("healthCheckPaused")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetHealthCheckStatus gets the healthCheckStatus property value. The healthCheckStatus property
 // returns a *CloudPcOnPremisesConnectionStatus when successful
 func (m *CloudPcOnPremisesConnection) GetHealthCheckStatus()(*CloudPcOnPremisesConnectionStatus) {
@@ -351,6 +383,18 @@ func (m *CloudPcOnPremisesConnection) GetInUse()(*bool) {
     }
     return nil
 }
+// GetInUseByCloudPc gets the inUseByCloudPc property value. Indicates whether a Cloud PC is using this on-premises network connection. true if at least one Cloud PC is using it. Otherwise, false. Read-only. Default is false.
+// returns a *bool when successful
+func (m *CloudPcOnPremisesConnection) GetInUseByCloudPc()(*bool) {
+    val, err := m.GetBackingStore().Get("inUseByCloudPc")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetManagedBy gets the managedBy property value. The managedBy property
 // returns a *CloudPcManagementService when successful
 func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) {
@@ -363,7 +407,7 @@ func (m *CloudPcOnPremisesConnection) GetManagedBy()(*CloudPcManagementService) 
     }
     return nil
 }
-// GetOrganizationalUnit gets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
+// GetOrganizationalUnit gets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
 // returns a *string when successful
 func (m *CloudPcOnPremisesConnection) GetOrganizationalUnit()(*string) {
     val, err := m.GetBackingStore().Get("organizationalUnit")
@@ -435,7 +479,7 @@ func (m *CloudPcOnPremisesConnection) GetSubscriptionName()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the connectionType property.
+// GetTypeEscaped gets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Going forward, use the connectionType property.
 // returns a *CloudPcOnPremisesConnectionType when successful
 func (m *CloudPcOnPremisesConnection) GetTypeEscaped()(*CloudPcOnPremisesConnectionType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -514,6 +558,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("healthCheckPaused", m.GetHealthCheckPaused())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetHealthCheckStatus() != nil {
         cast := (*m.GetHealthCheckStatus()).String()
         err = writer.WriteStringValue("healthCheckStatus", &cast)
@@ -535,6 +585,12 @@ func (m *CloudPcOnPremisesConnection) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err = writer.WriteBoolValue("inUse", m.GetInUse())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("inUseByCloudPc", m.GetInUseByCloudPc())
         if err != nil {
             return err
         }
@@ -645,6 +701,13 @@ func (m *CloudPcOnPremisesConnection) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetHealthCheckPaused sets the healthCheckPaused property value. false if the regular health checks on the network/domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for 4 weeks. If you retry a health check on network/domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past 4 weeks, healthCheckPaused is set to false. Read-only. Default is false.
+func (m *CloudPcOnPremisesConnection) SetHealthCheckPaused(value *bool)() {
+    err := m.GetBackingStore().Set("healthCheckPaused", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetHealthCheckStatus sets the healthCheckStatus property value. The healthCheckStatus property
 func (m *CloudPcOnPremisesConnection) SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)() {
     err := m.GetBackingStore().Set("healthCheckStatus", value)
@@ -673,6 +736,13 @@ func (m *CloudPcOnPremisesConnection) SetInUse(value *bool)() {
         panic(err)
     }
 }
+// SetInUseByCloudPc sets the inUseByCloudPc property value. Indicates whether a Cloud PC is using this on-premises network connection. true if at least one Cloud PC is using it. Otherwise, false. Read-only. Default is false.
+func (m *CloudPcOnPremisesConnection) SetInUseByCloudPc(value *bool)() {
+    err := m.GetBackingStore().Set("inUseByCloudPc", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManagedBy sets the managedBy property value. The managedBy property
 func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementService)() {
     err := m.GetBackingStore().Set("managedBy", value)
@@ -680,7 +750,7 @@ func (m *CloudPcOnPremisesConnection) SetManagedBy(value *CloudPcManagementServi
         panic(err)
     }
 }
-// SetOrganizationalUnit sets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU that’s configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
+// SetOrganizationalUnit sets the organizationalUnit property value. The organizational unit (OU) in which the computer account is created. If left null, the OU configured as the default (a well-known computer object container) in your Active Directory domain (OU) is used. Optional.
 func (m *CloudPcOnPremisesConnection) SetOrganizationalUnit(value *string)() {
     err := m.GetBackingStore().Set("organizationalUnit", value)
     if err != nil {
@@ -722,7 +792,7 @@ func (m *CloudPcOnPremisesConnection) SetSubscriptionName(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the connectionType property.
+// SetTypeEscaped sets the type property value. Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue. The type property is deprecated and stopped returning data on January 31, 2024. Going forward, use the connectionType property.
 func (m *CloudPcOnPremisesConnection) SetTypeEscaped(value *CloudPcOnPremisesConnectionType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
@@ -752,10 +822,12 @@ type CloudPcOnPremisesConnectionable interface {
     GetAlternateResourceUrl()(*string)
     GetConnectionType()(*CloudPcOnPremisesConnectionType)
     GetDisplayName()(*string)
+    GetHealthCheckPaused()(*bool)
     GetHealthCheckStatus()(*CloudPcOnPremisesConnectionStatus)
     GetHealthCheckStatusDetail()(CloudPcOnPremisesConnectionStatusDetailable)
     GetHealthCheckStatusDetails()(CloudPcOnPremisesConnectionStatusDetailsable)
     GetInUse()(*bool)
+    GetInUseByCloudPc()(*bool)
     GetManagedBy()(*CloudPcManagementService)
     GetOrganizationalUnit()(*string)
     GetResourceGroupId()(*string)
@@ -772,10 +844,12 @@ type CloudPcOnPremisesConnectionable interface {
     SetAlternateResourceUrl(value *string)()
     SetConnectionType(value *CloudPcOnPremisesConnectionType)()
     SetDisplayName(value *string)()
+    SetHealthCheckPaused(value *bool)()
     SetHealthCheckStatus(value *CloudPcOnPremisesConnectionStatus)()
     SetHealthCheckStatusDetail(value CloudPcOnPremisesConnectionStatusDetailable)()
     SetHealthCheckStatusDetails(value CloudPcOnPremisesConnectionStatusDetailsable)()
     SetInUse(value *bool)()
+    SetInUseByCloudPc(value *bool)()
     SetManagedBy(value *CloudPcManagementService)()
     SetOrganizationalUnit(value *string)()
     SetResourceGroupId(value *string)()

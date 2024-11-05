@@ -30,10 +30,13 @@ func NewDeletedTeamsItemChannelsItemMembersRemoveRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedTeamsItemChannelsItemMembersRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action remove
+// Post remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
 // Deprecated: This method is obsolete. Use PostAsRemovePostResponse instead.
 // returns a DeletedTeamsItemChannelsItemMembersRemoveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-beta
 func (m *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilder) Post(ctx context.Context, body DeletedTeamsItemChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(DeletedTeamsItemChannelsItemMembersRemoveResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -51,9 +54,12 @@ func (m *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilder) Post(ctx conte
     }
     return res.(DeletedTeamsItemChannelsItemMembersRemoveResponseable), nil
 }
-// PostAsRemovePostResponse invoke action remove
+// PostAsRemovePostResponse remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
 // returns a DeletedTeamsItemChannelsItemMembersRemovePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-beta
 func (m *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilder) PostAsRemovePostResponse(ctx context.Context, body DeletedTeamsItemChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(DeletedTeamsItemChannelsItemMembersRemovePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -71,7 +77,7 @@ func (m *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilder) PostAsRemovePo
     }
     return res.(DeletedTeamsItemChannelsItemMembersRemovePostResponseable), nil
 }
-// ToPostRequestInformation invoke action remove
+// ToPostRequestInformation remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
 // returns a *RequestInformation when successful
 func (m *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilder) ToPostRequestInformation(ctx context.Context, body DeletedTeamsItemChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *DeletedTeamsItemChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

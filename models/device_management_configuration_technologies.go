@@ -15,30 +15,38 @@ const (
     WINDOWS10XMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 4
     // Setting can be deployed through the ConfigManager channel.
     CONFIGMANAGER_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 8
+    // Setting can be deployed through the IntuneManagementExtension channel.
+    INTUNEMANAGEMENTEXTENSION_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 16
+    // Setting can be deployed through a ThirdParty channel.
+    THIRDPARTY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 32
+    // Setting can be deployed through Document Gateway Service.
+    DOCUMENTGATEWAY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 64
     // Setting can be deployed through the AppleRemoteManagement channel.
-    APPLEREMOTEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 16
+    APPLEREMOTEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 128
     // Setting can be deployed through the SENSE agent channel.
-    MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 32
+    MICROSOFTSENSE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 256
     // Setting can be deployed through the Exchange Online agent channel.
-    EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 64
+    EXCHANGEONLINE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 512
     // Setting can be deployed through the Mobile Application Management (MAM) channel
-    MOBILEAPPLICATIONMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 128
+    MOBILEAPPLICATIONMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 1024
     // Setting can be deployed through the Linux Mdm channel.
-    LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 256
+    LINUXMDM_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 2048
     // Setting can be deployed through device enrollment.
-    ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 512
+    ENROLLMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 4096
     // Setting can be deployed using the Endpoint privilege management channel
-    ENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 1024
+    ENDPOINTPRIVILEGEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 8192
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 2048
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 16384
     // Setting can be deployed using the Operating System Recovery channel
-    WINDOWSOSRECOVERY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 4096
+    WINDOWSOSRECOVERY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 32768
+    // Indicates the settings that can be deployed through the Android channel.
+    ANDROID_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES = 65536
 )
 
 func (i DeviceManagementConfigurationTechnologies) String() string {
     var values []string
-    options := []string{"none", "mdm", "windows10XManagement", "configManager", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "mobileApplicationManagement", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue", "windowsOsRecovery"}
-    for p := 0; p < 13; p++ {
+    options := []string{"none", "mdm", "windows10XManagement", "configManager", "intuneManagementExtension", "thirdParty", "documentGateway", "appleRemoteManagement", "microsoftSense", "exchangeOnline", "mobileApplicationManagement", "linuxMdm", "enrollment", "endpointPrivilegeManagement", "unknownFutureValue", "windowsOsRecovery", "android"}
+    for p := 0; p < 17; p++ {
         mantis := DeviceManagementConfigurationTechnologies(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -59,6 +67,12 @@ func ParseDeviceManagementConfigurationTechnologies(v string) (any, error) {
                 result |= WINDOWS10XMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             case "configManager":
                 result |= CONFIGMANAGER_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "intuneManagementExtension":
+                result |= INTUNEMANAGEMENTEXTENSION_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "thirdParty":
+                result |= THIRDPARTY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "documentGateway":
+                result |= DOCUMENTGATEWAY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             case "appleRemoteManagement":
                 result |= APPLEREMOTEMANAGEMENT_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             case "microsoftSense":
@@ -77,6 +91,8 @@ func ParseDeviceManagementConfigurationTechnologies(v string) (any, error) {
                 result |= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             case "windowsOsRecovery":
                 result |= WINDOWSOSRECOVERY_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
+            case "android":
+                result |= ANDROID_DEVICEMANAGEMENTCONFIGURATIONTECHNOLOGIES
             default:
                 return nil, nil
         }

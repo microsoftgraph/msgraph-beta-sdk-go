@@ -76,7 +76,7 @@ func (m *Admin) GetEdge()(Edgeable) {
     }
     return nil
 }
-// GetEntra gets the entra property value. The entra property
+// GetEntra gets the entra property value. A container for Microsoft Entra resources. Read-only.
 // returns a Entraable when successful
 func (m *Admin) GetEntra()(Entraable) {
     val, err := m.GetBackingStore().Get("entra")
@@ -452,7 +452,7 @@ func (m *Admin) SetEdge(value Edgeable)() {
         panic(err)
     }
 }
-// SetEntra sets the entra property value. The entra property
+// SetEntra sets the entra property value. A container for Microsoft Entra resources. Read-only.
 func (m *Admin) SetEntra(value Entraable)() {
     err := m.GetBackingStore().Set("entra", value)
     if err != nil {

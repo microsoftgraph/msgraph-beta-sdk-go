@@ -64,6 +64,18 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetDisasterRecoveryNetworkSe
     }
     return nil
 }
+// GetDisasterRecoveryType gets the disasterRecoveryType property value. The disasterRecoveryType property
+// returns a *CloudPcDisasterRecoveryType when successful
+func (m *CloudPcCrossRegionDisasterRecoverySetting) GetDisasterRecoveryType()(*CloudPcDisasterRecoveryType) {
+    val, err := m.GetBackingStore().Get("disasterRecoveryType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcDisasterRecoveryType)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -85,6 +97,16 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetFieldDeserializers()(map[
         }
         if val != nil {
             m.SetDisasterRecoveryNetworkSetting(val.(CloudPcDisasterRecoveryNetworkSettingable))
+        }
+        return nil
+    }
+    res["disasterRecoveryType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcDisasterRecoveryType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisasterRecoveryType(val.(*CloudPcDisasterRecoveryType))
         }
         return nil
     }
@@ -148,6 +170,13 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) Serialize(writer i878a80d233
             return err
         }
     }
+    if m.GetDisasterRecoveryType() != nil {
+        cast := (*m.GetDisasterRecoveryType()).String()
+        err := writer.WriteStringValue("disasterRecoveryType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteBoolValue("maintainCrossRegionRestorePointEnabled", m.GetMaintainCrossRegionRestorePointEnabled())
         if err != nil {
@@ -193,6 +222,13 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) SetDisasterRecoveryNetworkSe
         panic(err)
     }
 }
+// SetDisasterRecoveryType sets the disasterRecoveryType property value. The disasterRecoveryType property
+func (m *CloudPcCrossRegionDisasterRecoverySetting) SetDisasterRecoveryType(value *CloudPcDisasterRecoveryType)() {
+    err := m.GetBackingStore().Set("disasterRecoveryType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMaintainCrossRegionRestorePointEnabled sets the maintainCrossRegionRestorePointEnabled property value. Indicates whether Windows 365 maintain the cross-region disaster recovery function generated restore points. If true, the Windows 365 stored restore points; false indicates that Windows 365 doesn't generate or keep the restore point from the original Cloud PC. If a disaster occurs, the new Cloud PC can only be provisioned using the initial image. This limitation can result in the loss of some user data on the original Cloud PC. The default value is false.
 func (m *CloudPcCrossRegionDisasterRecoverySetting) SetMaintainCrossRegionRestorePointEnabled(value *bool)() {
     err := m.GetBackingStore().Set("maintainCrossRegionRestorePointEnabled", value)
@@ -214,11 +250,13 @@ type CloudPcCrossRegionDisasterRecoverySettingable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCrossRegionDisasterRecoveryEnabled()(*bool)
     GetDisasterRecoveryNetworkSetting()(CloudPcDisasterRecoveryNetworkSettingable)
+    GetDisasterRecoveryType()(*CloudPcDisasterRecoveryType)
     GetMaintainCrossRegionRestorePointEnabled()(*bool)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCrossRegionDisasterRecoveryEnabled(value *bool)()
     SetDisasterRecoveryNetworkSetting(value CloudPcDisasterRecoveryNetworkSettingable)()
+    SetDisasterRecoveryType(value *CloudPcDisasterRecoveryType)()
     SetMaintainCrossRegionRestorePointEnabled(value *bool)()
     SetOdataType(value *string)()
 }

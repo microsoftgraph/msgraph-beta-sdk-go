@@ -110,26 +110,6 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetFieldDeserializers()(
         }
         return nil
     }
-    res["proxyAutomaticConfigurationUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProxyAutomaticConfigurationUrl(val)
-        }
-        return nil
-    }
-    res["proxySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWiFiProxySetting)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetProxySettings(val.(*WiFiProxySetting))
-        }
-        return nil
-    }
     res["rootCertificateForServerValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAndroidWorkProfileTrustedRootCertificateFromDiscriminatorValue)
         if err != nil {
@@ -206,30 +186,6 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetOuterIdentityPrivacyT
     }
     return nil
 }
-// GetProxyAutomaticConfigurationUrl gets the proxyAutomaticConfigurationUrl property value. URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
-// returns a *string when successful
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetProxyAutomaticConfigurationUrl()(*string) {
-    val, err := m.GetBackingStore().Get("proxyAutomaticConfigurationUrl")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetProxySettings gets the proxySettings property value. Wi-Fi Proxy Settings.
-// returns a *WiFiProxySetting when successful
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetProxySettings()(*WiFiProxySetting) {
-    val, err := m.GetBackingStore().Get("proxySettings")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*WiFiProxySetting)
-    }
-    return nil
-}
 // GetRootCertificateForServerValidation gets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
 // returns a AndroidWorkProfileTrustedRootCertificateable when successful
 func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) GetRootCertificateForServerValidation()(AndroidWorkProfileTrustedRootCertificateable) {
@@ -301,19 +257,6 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) Serialize(writer i878a80
         }
     }
     {
-        err = writer.WriteStringValue("proxyAutomaticConfigurationUrl", m.GetProxyAutomaticConfigurationUrl())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetProxySettings() != nil {
-        cast := (*m.GetProxySettings()).String()
-        err = writer.WriteStringValue("proxySettings", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("rootCertificateForServerValidation", m.GetRootCertificateForServerValidation())
         if err != nil {
             return err
@@ -369,20 +312,6 @@ func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetOuterIdentityPrivacyT
         panic(err)
     }
 }
-// SetProxyAutomaticConfigurationUrl sets the proxyAutomaticConfigurationUrl property value. URL of the proxy server automatic configuration script when automatic configuration is selected. This URL is typically the location of PAC (Proxy Auto Configuration) file.
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetProxyAutomaticConfigurationUrl(value *string)() {
-    err := m.GetBackingStore().Set("proxyAutomaticConfigurationUrl", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetProxySettings sets the proxySettings property value. Wi-Fi Proxy Settings.
-func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetProxySettings(value *WiFiProxySetting)() {
-    err := m.GetBackingStore().Set("proxySettings", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetRootCertificateForServerValidation sets the rootCertificateForServerValidation property value. Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt.
 func (m *AndroidWorkProfileEnterpriseWiFiConfiguration) SetRootCertificateForServerValidation(value AndroidWorkProfileTrustedRootCertificateable)() {
     err := m.GetBackingStore().Set("rootCertificateForServerValidation", value)
@@ -406,8 +335,6 @@ type AndroidWorkProfileEnterpriseWiFiConfigurationable interface {
     GetInnerAuthenticationProtocolForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType)
     GetInnerAuthenticationProtocolForPeap()(*NonEapAuthenticationMethodForPeap)
     GetOuterIdentityPrivacyTemporaryValue()(*string)
-    GetProxyAutomaticConfigurationUrl()(*string)
-    GetProxySettings()(*WiFiProxySetting)
     GetRootCertificateForServerValidation()(AndroidWorkProfileTrustedRootCertificateable)
     GetTrustedServerCertificateNames()([]string)
     SetAuthenticationMethod(value *WiFiAuthenticationMethod)()
@@ -416,8 +343,6 @@ type AndroidWorkProfileEnterpriseWiFiConfigurationable interface {
     SetInnerAuthenticationProtocolForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)()
     SetInnerAuthenticationProtocolForPeap(value *NonEapAuthenticationMethodForPeap)()
     SetOuterIdentityPrivacyTemporaryValue(value *string)()
-    SetProxyAutomaticConfigurationUrl(value *string)()
-    SetProxySettings(value *WiFiProxySetting)()
     SetRootCertificateForServerValidation(value AndroidWorkProfileTrustedRootCertificateable)()
     SetTrustedServerCertificateNames(value []string)()
 }

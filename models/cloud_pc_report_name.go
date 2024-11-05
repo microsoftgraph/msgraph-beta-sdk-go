@@ -22,10 +22,13 @@ const (
     REGIONALCONNECTIONQUALITYTRENDREPORT_CLOUDPCREPORTNAME
     REGIONALCONNECTIONQUALITYINSIGHTSREPORT_CLOUDPCREPORTNAME
     REMOTECONNECTIONQUALITYREPORT_CLOUDPCREPORTNAME
+    FRONTLINELICENSEHOURLYUSAGEREPORT_CLOUDPCREPORTNAME
+    FRONTLINEREALTIMEUSERCONNECTIONSREPORT_CLOUDPCREPORTNAME
+    BULKACTIONSTATUSREPORT_CLOUDPCREPORTNAME
 )
 
 func (i CloudPcReportName) String() string {
-    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "actionStatusReport", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport", "regionalConnectionQualityTrendReport", "regionalConnectionQualityInsightsReport", "remoteConnectionQualityReport"}[i]
+    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "actionStatusReport", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport", "regionalConnectionQualityTrendReport", "regionalConnectionQualityInsightsReport", "remoteConnectionQualityReport", "frontlineLicenseHourlyUsageReport", "frontlineRealtimeUserConnectionsReport", "bulkActionStatusReport"}[i]
 }
 func ParseCloudPcReportName(v string) (any, error) {
     result := REMOTECONNECTIONHISTORICALREPORTS_CLOUDPCREPORTNAME
@@ -70,6 +73,12 @@ func ParseCloudPcReportName(v string) (any, error) {
             result = REGIONALCONNECTIONQUALITYINSIGHTSREPORT_CLOUDPCREPORTNAME
         case "remoteConnectionQualityReport":
             result = REMOTECONNECTIONQUALITYREPORT_CLOUDPCREPORTNAME
+        case "frontlineLicenseHourlyUsageReport":
+            result = FRONTLINELICENSEHOURLYUSAGEREPORT_CLOUDPCREPORTNAME
+        case "frontlineRealtimeUserConnectionsReport":
+            result = FRONTLINEREALTIMEUSERCONNECTIONSREPORT_CLOUDPCREPORTNAME
+        case "bulkActionStatusReport":
+            result = BULKACTIONSTATUSREPORT_CLOUDPCREPORTNAME
         default:
             return nil, nil
     }

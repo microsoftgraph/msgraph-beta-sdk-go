@@ -20,7 +20,7 @@ func NewServicePrincipalRiskDetection()(*ServicePrincipalRiskDetection) {
 func CreateServicePrincipalRiskDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewServicePrincipalRiskDetection(), nil
 }
-// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
+// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are: signin, servicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipal.
 // returns a *ActivityType when successful
 func (m *ServicePrincipalRiskDetection) GetActivity()(*ActivityType) {
     val, err := m.GetBackingStore().Get("activity")
@@ -68,7 +68,7 @@ func (m *ServicePrincipalRiskDetection) GetAppId()(*string) {
     }
     return nil
 }
-// GetCorrelationId gets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.
+// GetCorrelationId gets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity.
 // returns a *string when successful
 func (m *ServicePrincipalRiskDetection) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -92,7 +92,7 @@ func (m *ServicePrincipalRiskDetection) GetDetectedDateTime()(*i336074805fc85398
     }
     return nil
 }
-// GetDetectionTimingType gets the detectionTimingType property value. Timing of the detected risk , whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+// GetDetectionTimingType gets the detectionTimingType property value. Timing of the detected risk, whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
 // returns a *RiskDetectionTimingType when successful
 func (m *ServicePrincipalRiskDetection) GetDetectionTimingType()(*RiskDetectionTimingType) {
     val, err := m.GetBackingStore().Get("detectionTimingType")
@@ -386,7 +386,7 @@ func (m *ServicePrincipalRiskDetection) GetMitreTechniqueId()(*string) {
     }
     return nil
 }
-// GetRequestId gets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
+// GetRequestId gets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity. Supports $filter (eq).
 // returns a *string when successful
 func (m *ServicePrincipalRiskDetection) GetRequestId()(*string) {
     val, err := m.GetBackingStore().Get("requestId")
@@ -398,7 +398,7 @@ func (m *ServicePrincipalRiskDetection) GetRequestId()(*string) {
     }
     return nil
 }
-// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+// GetRiskDetail gets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
 // returns a *RiskDetail when successful
 func (m *ServicePrincipalRiskDetection) GetRiskDetail()(*RiskDetail) {
     val, err := m.GetBackingStore().Get("riskDetail")
@@ -410,7 +410,7 @@ func (m *ServicePrincipalRiskDetection) GetRiskDetail()(*RiskDetail) {
     }
     return nil
 }
-// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
+// GetRiskEventType gets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication, suspiciousAPITraffic.
 // returns a *string when successful
 func (m *ServicePrincipalRiskDetection) GetRiskEventType()(*string) {
     val, err := m.GetBackingStore().Get("riskEventType")
@@ -422,7 +422,7 @@ func (m *ServicePrincipalRiskDetection) GetRiskEventType()(*string) {
     }
     return nil
 }
-// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
+// GetRiskLevel gets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: low, medium, high, hidden, none.
 // returns a *RiskLevel when successful
 func (m *ServicePrincipalRiskDetection) GetRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("riskLevel")
@@ -634,7 +634,7 @@ func (m *ServicePrincipalRiskDetection) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
+// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are: signin, servicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipal.
 func (m *ServicePrincipalRiskDetection) SetActivity(value *ActivityType)() {
     err := m.GetBackingStore().Set("activity", value)
     if err != nil {
@@ -662,7 +662,7 @@ func (m *ServicePrincipalRiskDetection) SetAppId(value *string)() {
         panic(err)
     }
 }
-// SetCorrelationId sets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity.
+// SetCorrelationId sets the correlationId property value. Correlation ID of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity.
 func (m *ServicePrincipalRiskDetection) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {
@@ -676,7 +676,7 @@ func (m *ServicePrincipalRiskDetection) SetDetectedDateTime(value *i336074805fc8
         panic(err)
     }
 }
-// SetDetectionTimingType sets the detectionTimingType property value. Timing of the detected risk , whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
+// SetDetectionTimingType sets the detectionTimingType property value. Timing of the detected risk, whether real-time or offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
 func (m *ServicePrincipalRiskDetection) SetDetectionTimingType(value *RiskDetectionTimingType)() {
     err := m.GetBackingStore().Set("detectionTimingType", value)
     if err != nil {
@@ -718,28 +718,28 @@ func (m *ServicePrincipalRiskDetection) SetMitreTechniqueId(value *string)() {
         panic(err)
     }
 }
-// SetRequestId sets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).
+// SetRequestId sets the requestId property value. Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection isn't associated with a sign-in activity. Supports $filter (eq).
 func (m *ServicePrincipalRiskDetection) SetRequestId(value *string)() {
     err := m.GetBackingStore().Set("requestId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskDetail sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+// SetRiskDetail sets the riskDetail property value. Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
 func (m *ServicePrincipalRiskDetection) SetRiskDetail(value *RiskDetail)() {
     err := m.GetBackingStore().Set("riskDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
+// SetRiskEventType sets the riskEventType property value. The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication, suspiciousAPITraffic.
 func (m *ServicePrincipalRiskDetection) SetRiskEventType(value *string)() {
     err := m.GetBackingStore().Set("riskEventType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRiskLevel sets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
+// SetRiskLevel sets the riskLevel property value. Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license are returned hidden. The possible values are: low, medium, high, hidden, none.
 func (m *ServicePrincipalRiskDetection) SetRiskLevel(value *RiskLevel)() {
     err := m.GetBackingStore().Set("riskLevel", value)
     if err != nil {

@@ -105,6 +105,16 @@ func (m *AndroidMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["v15_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetV150(val)
+        }
+        return nil
+    }
     res["v4_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -311,6 +321,18 @@ func (m *AndroidMinimumOperatingSystem) GetV130()(*bool) {
 // returns a *bool when successful
 func (m *AndroidMinimumOperatingSystem) GetV140()(*bool) {
     val, err := m.GetBackingStore().Get("v14_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetV150 gets the v15_0 property value. When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
+func (m *AndroidMinimumOperatingSystem) GetV150()(*bool) {
+    val, err := m.GetBackingStore().Get("v15_0")
     if err != nil {
         panic(err)
     }
@@ -526,6 +548,12 @@ func (m *AndroidMinimumOperatingSystem) Serialize(writer i878a80d2330e89d2689638
         }
     }
     {
+        err := writer.WriteBoolValue("v15_0", m.GetV150())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("v4_0", m.GetV40())
         if err != nil {
             return err
@@ -670,6 +698,13 @@ func (m *AndroidMinimumOperatingSystem) SetV140(value *bool)() {
         panic(err)
     }
 }
+// SetV150 sets the v15_0 property value. When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *AndroidMinimumOperatingSystem) SetV150(value *bool)() {
+    err := m.GetBackingStore().Set("v15_0", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetV40 sets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
 func (m *AndroidMinimumOperatingSystem) SetV40(value *bool)() {
     err := m.GetBackingStore().Set("v4_0", value)
@@ -779,6 +814,7 @@ type AndroidMinimumOperatingSystemable interface {
     GetV120()(*bool)
     GetV130()(*bool)
     GetV140()(*bool)
+    GetV150()(*bool)
     GetV40()(*bool)
     GetV403()(*bool)
     GetV41()(*bool)
@@ -800,6 +836,7 @@ type AndroidMinimumOperatingSystemable interface {
     SetV120(value *bool)()
     SetV130(value *bool)()
     SetV140(value *bool)()
+    SetV150(value *bool)()
     SetV40(value *bool)()
     SetV403(value *bool)()
     SetV41(value *bool)()

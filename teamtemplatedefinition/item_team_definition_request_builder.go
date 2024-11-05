@@ -145,6 +145,11 @@ func (m *ItemTeamDefinitionRequestBuilder) Operations()(*ItemTeamDefinitionOpera
 func (m *ItemTeamDefinitionRequestBuilder) Owners()(*ItemTeamDefinitionOwnersRequestBuilder) {
     return NewItemTeamDefinitionOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OwnersWithUserPrincipalName provides operations to manage the owners property of the microsoft.graph.team entity.
+// returns a *ItemTeamDefinitionOwnersWithUserPrincipalNameRequestBuilder when successful
+func (m *ItemTeamDefinitionRequestBuilder) OwnersWithUserPrincipalName(userPrincipalName *string)(*ItemTeamDefinitionOwnersWithUserPrincipalNameRequestBuilder) {
+    return NewItemTeamDefinitionOwnersWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
+}
 // Patch update the navigation property teamDefinition in teamTemplateDefinition
 // returns a Teamable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -470,6 +470,11 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable), nil
 }
+// RetrieveDeviceAppInstallationStatusReport provides operations to call the retrieveDeviceAppInstallationStatusReport method.
+// returns a *ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveDeviceAppInstallationStatusReport()(*ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder) {
+    return NewReportsRetrieveDeviceAppInstallationStatusReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveSecurityTaskAppsReport provides operations to call the retrieveSecurityTaskAppsReport method.
 // returns a *ReportsRetrieveSecurityTaskAppsReportRequestBuilder when successful
 func (m *ReportsRequestBuilder) RetrieveSecurityTaskAppsReport()(*ReportsRetrieveSecurityTaskAppsReportRequestBuilder) {

@@ -175,7 +175,7 @@ func (m *PolicyRoot) GetDefaultAppManagementPolicy()(TenantAppManagementPolicyab
     }
     return nil
 }
-// GetDeviceRegistrationPolicy gets the deviceRegistrationPolicy property value. The deviceRegistrationPolicy property
+// GetDeviceRegistrationPolicy gets the deviceRegistrationPolicy property value. Represents the policy scope that controls quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 // returns a DeviceRegistrationPolicyable when successful
 func (m *PolicyRoot) GetDeviceRegistrationPolicy()(DeviceRegistrationPolicyable) {
     val, err := m.GetBackingStore().Get("deviceRegistrationPolicy")
@@ -1140,7 +1140,7 @@ func (m *PolicyRoot) SetDefaultAppManagementPolicy(value TenantAppManagementPoli
         panic(err)
     }
 }
-// SetDeviceRegistrationPolicy sets the deviceRegistrationPolicy property value. The deviceRegistrationPolicy property
+// SetDeviceRegistrationPolicy sets the deviceRegistrationPolicy property value. Represents the policy scope that controls quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
 func (m *PolicyRoot) SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)() {
     err := m.GetBackingStore().Set("deviceRegistrationPolicy", value)
     if err != nil {

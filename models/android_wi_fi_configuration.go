@@ -144,7 +144,7 @@ func (m *AndroidWiFiConfiguration) GetSsid()(*string) {
     }
     return nil
 }
-// GetWiFiSecurityType gets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
+// GetWiFiSecurityType gets the wiFiSecurityType property value. The possible security types for Android Wi-Fi profiles. Default value 'Open', indicates no authentication required for the network. The security protocols supported are WEP, WPA and WPA2. 'WpaEnterprise' and 'Wpa2Enterprise' options are available for Enterprise Wi-Fi profiles. 'Wep' and 'WpaPersonal' (supports WPA and WPA2) options are available for Basic Wi-Fi profiles.
 // returns a *AndroidWiFiSecurityType when successful
 func (m *AndroidWiFiConfiguration) GetWiFiSecurityType()(*AndroidWiFiSecurityType) {
     val, err := m.GetBackingStore().Get("wiFiSecurityType")
@@ -223,7 +223,7 @@ func (m *AndroidWiFiConfiguration) SetSsid(value *string)() {
         panic(err)
     }
 }
-// SetWiFiSecurityType sets the wiFiSecurityType property value. Wi-Fi Security Types for Android.
+// SetWiFiSecurityType sets the wiFiSecurityType property value. The possible security types for Android Wi-Fi profiles. Default value 'Open', indicates no authentication required for the network. The security protocols supported are WEP, WPA and WPA2. 'WpaEnterprise' and 'Wpa2Enterprise' options are available for Enterprise Wi-Fi profiles. 'Wep' and 'WpaPersonal' (supports WPA and WPA2) options are available for Basic Wi-Fi profiles.
 func (m *AndroidWiFiConfiguration) SetWiFiSecurityType(value *AndroidWiFiSecurityType)() {
     err := m.GetBackingStore().Set("wiFiSecurityType", value)
     if err != nil {

@@ -35,7 +35,7 @@ func (m *Entra) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
     }
     return res
 }
-// GetUxSetting gets the uxSetting property value. The uxSetting property
+// GetUxSetting gets the uxSetting property value. Represents settings related to access to the Microsoft Entra admin center.
 // returns a UxSettingable when successful
 func (m *Entra) GetUxSetting()(UxSettingable) {
     val, err := m.GetBackingStore().Get("uxSetting")
@@ -61,7 +61,7 @@ func (m *Entra) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
     }
     return nil
 }
-// SetUxSetting sets the uxSetting property value. The uxSetting property
+// SetUxSetting sets the uxSetting property value. Represents settings related to access to the Microsoft Entra admin center.
 func (m *Entra) SetUxSetting(value UxSettingable)() {
     err := m.GetBackingStore().Set("uxSetting", value)
     if err != nil {

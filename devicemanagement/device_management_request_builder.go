@@ -647,6 +647,11 @@ func (m *DeviceManagementRequestBuilder) ResourceAccessProfiles()(*ResourceAcces
 func (m *DeviceManagementRequestBuilder) ResourceOperations()(*ResourceOperationsRequestBuilder) {
     return NewResourceOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveUserRoleDetailWithUserid provides operations to call the retrieveUserRoleDetail method.
+// returns a *RetrieveUserRoleDetailWithUseridRequestBuilder when successful
+func (m *DeviceManagementRequestBuilder) RetrieveUserRoleDetailWithUserid(userid *string)(*RetrieveUserRoleDetailWithUseridRequestBuilder) {
+    return NewRetrieveUserRoleDetailWithUseridRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userid)
+}
 // ReusablePolicySettings provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.
 // returns a *ReusablePolicySettingsRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) ReusablePolicySettings()(*ReusablePolicySettingsRequestBuilder) {

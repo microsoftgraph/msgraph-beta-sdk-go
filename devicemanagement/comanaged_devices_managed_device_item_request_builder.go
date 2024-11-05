@@ -290,11 +290,6 @@ func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) RemoteLock()(*Comanage
 func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) RemoveDeviceFirmwareConfigurationInterfaceManagement()(*ComanagedDevicesItemRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder) {
     return NewComanagedDevicesItemRemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ReprovisionCloudPc provides operations to call the reprovisionCloudPc method.
-// returns a *ComanagedDevicesItemReprovisionCloudPcRequestBuilder when successful
-func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) ReprovisionCloudPc()(*ComanagedDevicesItemReprovisionCloudPcRequestBuilder) {
-    return NewComanagedDevicesItemReprovisionCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // RequestRemoteAssistance provides operations to call the requestRemoteAssistance method.
 // returns a *ComanagedDevicesItemRequestRemoteAssistanceRequestBuilder when successful
 func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) RequestRemoteAssistance()(*ComanagedDevicesItemRequestRemoteAssistanceRequestBuilder) {
@@ -304,16 +299,6 @@ func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) RequestRemoteAssistanc
 // returns a *ComanagedDevicesItemResetPasscodeRequestBuilder when successful
 func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) ResetPasscode()(*ComanagedDevicesItemResetPasscodeRequestBuilder) {
     return NewComanagedDevicesItemResetPasscodeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// ResizeCloudPc provides operations to call the resizeCloudPc method.
-// returns a *ComanagedDevicesItemResizeCloudPcRequestBuilder when successful
-func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) ResizeCloudPc()(*ComanagedDevicesItemResizeCloudPcRequestBuilder) {
-    return NewComanagedDevicesItemResizeCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// RestoreCloudPc provides operations to call the restoreCloudPc method.
-// returns a *ComanagedDevicesItemRestoreCloudPcRequestBuilder when successful
-func (m *ComanagedDevicesManagedDeviceItemRequestBuilder) RestoreCloudPc()(*ComanagedDevicesItemRestoreCloudPcRequestBuilder) {
-    return NewComanagedDevicesItemRestoreCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Retire provides operations to call the retire method.
 // returns a *ComanagedDevicesItemRetireRequestBuilder when successful

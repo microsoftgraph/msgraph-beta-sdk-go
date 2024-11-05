@@ -950,6 +950,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["sessionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSessionId(val)
+        }
+        return nil
+    }
     res["sessionLifetimePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSessionLifetimePolicyFromDiscriminatorValue)
         if err != nil {
@@ -1478,6 +1488,18 @@ func (m *SignIn) GetServicePrincipalId()(*string) {
 // returns a *string when successful
 func (m *SignIn) GetServicePrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSessionId gets the sessionId property value. The sessionId property
+// returns a *string when successful
+func (m *SignIn) GetSessionId()(*string) {
+    val, err := m.GetBackingStore().Get("sessionId")
     if err != nil {
         panic(err)
     }
@@ -2073,6 +2095,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("sessionId", m.GetSessionId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSessionLifetimePolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSessionLifetimePolicies()))
         for i, v := range m.GetSessionLifetimePolicies() {
@@ -2567,6 +2595,13 @@ func (m *SignIn) SetServicePrincipalName(value *string)() {
         panic(err)
     }
 }
+// SetSessionId sets the sessionId property value. The sessionId property
+func (m *SignIn) SetSessionId(value *string)() {
+    err := m.GetBackingStore().Set("sessionId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSessionLifetimePolicies sets the sessionLifetimePolicies property value. Any conditional access session management policies that were applied during the sign-in event.
 func (m *SignIn) SetSessionLifetimePolicies(value []SessionLifetimePolicyable)() {
     err := m.GetBackingStore().Set("sessionLifetimePolicies", value)
@@ -2731,6 +2766,7 @@ type SignInable interface {
     GetServicePrincipalCredentialThumbprint()(*string)
     GetServicePrincipalId()(*string)
     GetServicePrincipalName()(*string)
+    GetSessionId()(*string)
     GetSessionLifetimePolicies()([]SessionLifetimePolicyable)
     GetSignInEventTypes()([]string)
     GetSignInIdentifier()(*string)
@@ -2802,6 +2838,7 @@ type SignInable interface {
     SetServicePrincipalCredentialThumbprint(value *string)()
     SetServicePrincipalId(value *string)()
     SetServicePrincipalName(value *string)()
+    SetSessionId(value *string)()
     SetSessionLifetimePolicies(value []SessionLifetimePolicyable)()
     SetSignInEventTypes(value []string)()
     SetSignInIdentifier(value *string)()
