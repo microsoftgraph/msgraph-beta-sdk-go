@@ -38,6 +38,8 @@ func CreateCloudPcBulkActionFromDiscriminatorValue(parseNode i878a80d2330e89d268
                         return NewCloudPcBulkDisasterRecoveryFailover(), nil
                     case "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType":
                         return NewCloudPcBulkModifyDiskEncryptionType(), nil
+                    case "#microsoft.graph.cloudPcBulkMove":
+                        return NewCloudPcBulkMove(), nil
                     case "#microsoft.graph.cloudPcBulkPowerOff":
                         return NewCloudPcBulkPowerOff(), nil
                     case "#microsoft.graph.cloudPcBulkPowerOn":

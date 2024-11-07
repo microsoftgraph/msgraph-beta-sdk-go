@@ -31,7 +31,7 @@ func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOpti
     }
     return nil
 }
-// GetDescription gets the description property value. The name of export provided by the user.
+// GetDescription gets the description property value. The description of the export by the user.
 // returns a *string when successful
 func (m *EdiscoverySearchExportOperation) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -43,7 +43,7 @@ func (m *EdiscoverySearchExportOperation) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The description of the export by the user.
+// GetDisplayName gets the displayName property value. The name of export provided by the user.
 // returns a *string when successful
 func (m *EdiscoverySearchExportOperation) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -308,14 +308,14 @@ func (m *EdiscoverySearchExportOperation) SetAdditionalOptions(value *Additional
         panic(err)
     }
 }
-// SetDescription sets the description property value. The name of export provided by the user.
+// SetDescription sets the description property value. The description of the export by the user.
 func (m *EdiscoverySearchExportOperation) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The description of the export by the user.
+// SetDisplayName sets the displayName property value. The name of export provided by the user.
 func (m *EdiscoverySearchExportOperation) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

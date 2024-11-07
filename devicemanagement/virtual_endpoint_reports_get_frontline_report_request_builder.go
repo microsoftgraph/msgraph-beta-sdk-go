@@ -31,6 +31,7 @@ func NewVirtualEndpointReportsGetFrontlineReportRequestBuilder(rawUrl string, re
     return NewVirtualEndpointReportsGetFrontlineReportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the Windows 365 Frontline reports, such as real-time or historical data reports.
+// Deprecated: Starting from December 31, 2024, this API (&apos;getFrontlineReport&apos;) will be deprecated and no longer supported. Please use the retrieveFrontlineReports API. as of 2024-09/getFrontlineReport
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,6 +55,7 @@ func (m *VirtualEndpointReportsGetFrontlineReportRequestBuilder) Post(ctx contex
     return res.([]byte), nil
 }
 // ToPostRequestInformation get the Windows 365 Frontline reports, such as real-time or historical data reports.
+// Deprecated: Starting from December 31, 2024, this API (&apos;getFrontlineReport&apos;) will be deprecated and no longer supported. Please use the retrieveFrontlineReports API. as of 2024-09/getFrontlineReport
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsGetFrontlineReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetFrontlineReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetFrontlineReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -69,6 +71,7 @@ func (m *VirtualEndpointReportsGetFrontlineReportRequestBuilder) ToPostRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Starting from December 31, 2024, this API (&apos;getFrontlineReport&apos;) will be deprecated and no longer supported. Please use the retrieveFrontlineReports API. as of 2024-09/getFrontlineReport
 // returns a *VirtualEndpointReportsGetFrontlineReportRequestBuilder when successful
 func (m *VirtualEndpointReportsGetFrontlineReportRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointReportsGetFrontlineReportRequestBuilder) {
     return NewVirtualEndpointReportsGetFrontlineReportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

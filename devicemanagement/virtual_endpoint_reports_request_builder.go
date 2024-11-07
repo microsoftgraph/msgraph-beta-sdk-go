@@ -180,6 +180,11 @@ func (m *VirtualEndpointReportsRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportsable), nil
 }
+// RetrieveBulkActionStatusReport provides operations to call the retrieveBulkActionStatusReport method.
+// returns a *VirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilder when successful
+func (m *VirtualEndpointReportsRequestBuilder) RetrieveBulkActionStatusReport()(*VirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilder) {
+    return NewVirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveConnectionQualityReports provides operations to call the retrieveConnectionQualityReports method.
 // returns a *VirtualEndpointReportsRetrieveConnectionQualityReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) RetrieveConnectionQualityReports()(*VirtualEndpointReportsRetrieveConnectionQualityReportsRequestBuilder) {
@@ -189,6 +194,11 @@ func (m *VirtualEndpointReportsRequestBuilder) RetrieveConnectionQualityReports(
 // returns a *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) RetrieveCrossRegionDisasterRecoveryReport()(*VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilder) {
     return NewVirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveFrontlineReports provides operations to call the retrieveFrontlineReports method.
+// returns a *VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder when successful
+func (m *VirtualEndpointReportsRequestBuilder) RetrieveFrontlineReports()(*VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder) {
+    return NewVirtualEndpointReportsRetrieveFrontlineReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property reports for deviceManagement
 // returns a *RequestInformation when successful

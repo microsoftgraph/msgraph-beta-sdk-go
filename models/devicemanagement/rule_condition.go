@@ -154,7 +154,7 @@ func (m *RuleCondition) GetOperator()(*OperatorType) {
     }
     return nil
 }
-// GetRelationshipType gets the relationshipType property value. The relationship type.  Possible values are: and, or.
+// GetRelationshipType gets the relationshipType property value. The relationship type. Possible values are: and, or.
 // returns a *RelationshipType when successful
 func (m *RuleCondition) GetRelationshipType()(*RelationshipType) {
     val, err := m.GetBackingStore().Get("relationshipType")
@@ -267,7 +267,7 @@ func (m *RuleCondition) SetOperator(value *OperatorType)() {
         panic(err)
     }
 }
-// SetRelationshipType sets the relationshipType property value. The relationship type.  Possible values are: and, or.
+// SetRelationshipType sets the relationshipType property value. The relationship type. Possible values are: and, or.
 func (m *RuleCondition) SetRelationshipType(value *RelationshipType)() {
     err := m.GetBackingStore().Set("relationshipType", value)
     if err != nil {

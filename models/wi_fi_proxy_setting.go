@@ -3,13 +3,13 @@ package models
 type WiFiProxySetting int
 
 const (
-    // No Proxy.
+    // Default. Indicates Wi-Fi Proxy is not set.
     NONE_WIFIPROXYSETTING WiFiProxySetting = iota
-    // Manual Proxy Settings via Address and Port.
+    // Indicates Wi-Fi Proxy is set by manually specifying an address and port as well as an optional list of hostnames that are exculded. This value is not supported for AndroidWorkProfileWiFiConfigurations.
     MANUAL_WIFIPROXYSETTING
-    // Automatic Proxy Settings via URL.
+    // Indicates Wi-Fi Proxy is set automatically by providing the URL to a PAC (Proxy Auto Configuration) file which contains a list of proxy servers to use.
     AUTOMATIC_WIFIPROXYSETTING
-    // Unknown future value for evolvable enum patterns.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_WIFIPROXYSETTING
 )
 

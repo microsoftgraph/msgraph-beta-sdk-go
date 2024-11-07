@@ -47,6 +47,7 @@ type ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilderPostRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByMeetingRegistrantBaseId provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
 // returns a *ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) ByMeetingRegistrantBaseId(meetingRegistrantBaseId string)(*ItemOnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -77,6 +78,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) Count()(*I
     return NewItemOnlineMeetingsItemRegistrationRegistrantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get registrants of the online meeting.
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
 // returns a MeetingRegistrantBaseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseCollectionResponseable, error) {
@@ -97,6 +99,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseCollectionResponseable), nil
 }
 // Post enroll a meeting registrant in an online meeting that has meeting registration enabled on behalf of the registrant. This operation has two scenarios: In either scenario, the registrant will receive an email notification that contains their registration information.
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
 // returns a MeetingRegistrantBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,6 +123,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) Post(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseable), nil
 }
 // ToGetRequestInformation registrants of the online meeting.
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // ToPostRequestInformation enroll a meeting registrant in an online meeting that has meeting registration enabled on behalf of the registrant. This operation has two scenarios: In either scenario, the registrant will receive an email notification that contains their registration information.
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrantBaseable, requestConfiguration *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
 // returns a *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder when successful
 func (m *ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) WithUrl(rawUrl string)(*ItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder) {
     return NewItemOnlineMeetingsItemRegistrationRegistrantsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

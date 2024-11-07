@@ -58,7 +58,7 @@ func NewIdentitiesSensorsSensorItemRequestBuilder(rawUrl string, requestAdapter 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-identitycontainer-delete-sensors?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sensor-delete?view=graph-rest-beta
 func (m *IdentitiesSensorsSensorItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *IdentitiesSensorsSensorItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {

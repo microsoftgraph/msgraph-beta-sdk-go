@@ -97,6 +97,11 @@ func (m *EducationRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationRootable), nil
 }
+// Reports provides operations to manage the reports property of the microsoft.graph.educationRoot entity.
+// returns a *ReportsRequestBuilder when successful
+func (m *EducationRequestBuilder) Reports()(*ReportsRequestBuilder) {
+    return NewReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Schools provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
 // returns a *SchoolsRequestBuilder when successful
 func (m *EducationRequestBuilder) Schools()(*SchoolsRequestBuilder) {

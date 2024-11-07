@@ -55,6 +55,16 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) GetFieldDe
         }
         return nil
     }
+    res["reservePercentage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReservePercentage(val)
+        }
+        return nil
+    }
     return res
 }
 // GetPolicySettings gets the policySettings property value. The policySettings property
@@ -69,11 +79,29 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) GetPolicyS
     }
     return nil
 }
+// GetReservePercentage gets the reservePercentage property value. The reservePercentage property
+// returns a *int32 when successful
+func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) GetReservePercentage()(*int32) {
+    val, err := m.GetBackingStore().Get("reservePercentage")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetPolicySettings() != nil {
         cast := (*m.GetPolicySettings()).String()
         err := writer.WriteStringValue("policySettings", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteInt32Value("reservePercentage", m.GetReservePercentage())
         if err != nil {
             return err
         }
@@ -104,12 +132,21 @@ func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) SetPolicyS
         panic(err)
     }
 }
+// SetReservePercentage sets the reservePercentage property value. The reservePercentage property
+func (m *VirtualEndpointProvisioningPoliciesItemApplyPostRequestBody) SetReservePercentage(value *int32)() {
+    err := m.GetBackingStore().Set("reservePercentage", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type VirtualEndpointProvisioningPoliciesItemApplyPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetPolicySettings()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType)
+    GetReservePercentage()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetPolicySettings(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicySettingType)()
+    SetReservePercentage(value *int32)()
 }

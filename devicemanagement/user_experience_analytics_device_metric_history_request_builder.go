@@ -11,7 +11,7 @@ import (
 type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetQueryParameters user experience analytics device metric history
+// UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetQueryParameters user experience analytics device metric history. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://learn.microsoft.com/windows-365/enterprise/report-cloud-pc-connection-quality.
 type UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewUserExperienceAnalyticsDeviceMetricHistoryRequestBuilder(rawUrl string, 
 func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) Count()(*UserExperienceAnalyticsDeviceMetricHistoryCountRequestBuilder) {
     return NewUserExperienceAnalyticsDeviceMetricHistoryCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get user experience analytics device metric history
+// Get user experience analytics device metric history. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://learn.microsoft.com/windows-365/enterprise/report-cloud-pc-connection-quality.
 // returns a UserExperienceAnalyticsMetricHistoryCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) Post(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserExperienceAnalyticsMetricHistoryable), nil
 }
-// ToGetRequestInformation user experience analytics device metric history
+// ToGetRequestInformation user experience analytics device metric history. The report will be retired on December 31, 2024. You can start using the Cloud PC connection quality report now via https://learn.microsoft.com/windows-365/enterprise/report-cloud-pc-connection-quality.
 // returns a *RequestInformation when successful
 func (m *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserExperienceAnalyticsDeviceMetricHistoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

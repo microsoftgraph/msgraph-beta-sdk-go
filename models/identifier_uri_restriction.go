@@ -41,6 +41,18 @@ func (m *IdentifierUriRestriction) GetAdditionalData()(map[string]any) {
 func (m *IdentifierUriRestriction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetExcludeActors gets the excludeActors property value. The excludeActors property
+// returns a AppManagementPolicyActorExemptionsable when successful
+func (m *IdentifierUriRestriction) GetExcludeActors()(AppManagementPolicyActorExemptionsable) {
+    val, err := m.GetBackingStore().Get("excludeActors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AppManagementPolicyActorExemptionsable)
+    }
+    return nil
+}
 // GetExcludeAppsReceivingV2Tokens gets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn't enforced for those applications.
 // returns a *bool when successful
 func (m *IdentifierUriRestriction) GetExcludeAppsReceivingV2Tokens()(*bool) {
@@ -69,6 +81,16 @@ func (m *IdentifierUriRestriction) GetExcludeSaml()(*bool) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IdentifierUriRestriction) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["excludeActors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAppManagementPolicyActorExemptionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExcludeActors(val.(AppManagementPolicyActorExemptionsable))
+        }
+        return nil
+    }
     res["excludeAppsReceivingV2Tokens"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -160,6 +182,12 @@ func (m *IdentifierUriRestriction) GetState()(*AppManagementRestrictionState) {
 // Serialize serializes information the current object
 func (m *IdentifierUriRestriction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("excludeActors", m.GetExcludeActors())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("excludeAppsReceivingV2Tokens", m.GetExcludeAppsReceivingV2Tokens())
         if err != nil {
             return err
@@ -209,6 +237,13 @@ func (m *IdentifierUriRestriction) SetAdditionalData(value map[string]any)() {
 func (m *IdentifierUriRestriction) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetExcludeActors sets the excludeActors property value. The excludeActors property
+func (m *IdentifierUriRestriction) SetExcludeActors(value AppManagementPolicyActorExemptionsable)() {
+    err := m.GetBackingStore().Set("excludeActors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExcludeAppsReceivingV2Tokens sets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn't enforced for those applications.
 func (m *IdentifierUriRestriction) SetExcludeAppsReceivingV2Tokens(value *bool)() {
     err := m.GetBackingStore().Set("excludeAppsReceivingV2Tokens", value)
@@ -249,12 +284,14 @@ type IdentifierUriRestrictionable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetExcludeActors()(AppManagementPolicyActorExemptionsable)
     GetExcludeAppsReceivingV2Tokens()(*bool)
     GetExcludeSaml()(*bool)
     GetOdataType()(*string)
     GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetState()(*AppManagementRestrictionState)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetExcludeActors(value AppManagementPolicyActorExemptionsable)()
     SetExcludeAppsReceivingV2Tokens(value *bool)()
     SetExcludeSaml(value *bool)()
     SetOdataType(value *string)()

@@ -30,10 +30,13 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveR
     urlParams["request-raw-url"] = rawUrl
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action remove
+// Post remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
 // Deprecated: This method is obsolete. Use PostAsRemovePostResponse instead.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilder) Post(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -51,9 +54,12 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemove
     }
     return res.(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveResponseable), nil
 }
-// PostAsRemovePostResponse invoke action remove
+// PostAsRemovePostResponse remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilder) PostAsRemovePostResponse(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -71,7 +77,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemove
     }
     return res.(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostResponseable), nil
 }
-// ToPostRequestInformation invoke action remove
+// ToPostRequestInformation remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilder) ToPostRequestInformation(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

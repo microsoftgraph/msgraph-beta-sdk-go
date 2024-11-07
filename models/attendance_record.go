@@ -93,6 +93,16 @@ func (m *AttendanceRecord) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["registrationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegistrationId(val)
+        }
+        return nil
+    }
     res["role"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -131,6 +141,18 @@ func (m *AttendanceRecord) GetIdentity()(Identityable) {
 // returns a *string when successful
 func (m *AttendanceRecord) GetRegistrantId()(*string) {
     val, err := m.GetBackingStore().Get("registrantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetRegistrationId gets the registrationId property value. Unique identifier of a virtualEventRegistration. Presents for all participant who has registered for the virtualEventWebinar.
+// returns a *string when successful
+func (m *AttendanceRecord) GetRegistrationId()(*string) {
+    val, err := m.GetBackingStore().Get("registrationId")
     if err != nil {
         panic(err)
     }
@@ -200,6 +222,12 @@ func (m *AttendanceRecord) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("registrationId", m.GetRegistrationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("role", m.GetRole())
         if err != nil {
             return err
@@ -241,6 +269,13 @@ func (m *AttendanceRecord) SetRegistrantId(value *string)() {
         panic(err)
     }
 }
+// SetRegistrationId sets the registrationId property value. Unique identifier of a virtualEventRegistration. Presents for all participant who has registered for the virtualEventWebinar.
+func (m *AttendanceRecord) SetRegistrationId(value *string)() {
+    err := m.GetBackingStore().Set("registrationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRole sets the role property value. Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
 func (m *AttendanceRecord) SetRole(value *string)() {
     err := m.GetBackingStore().Set("role", value)
@@ -262,12 +297,14 @@ type AttendanceRecordable interface {
     GetEmailAddress()(*string)
     GetIdentity()(Identityable)
     GetRegistrantId()(*string)
+    GetRegistrationId()(*string)
     GetRole()(*string)
     GetTotalAttendanceInSeconds()(*int32)
     SetAttendanceIntervals(value []AttendanceIntervalable)()
     SetEmailAddress(value *string)()
     SetIdentity(value Identityable)()
     SetRegistrantId(value *string)()
+    SetRegistrationId(value *string)()
     SetRole(value *string)()
     SetTotalAttendanceInSeconds(value *int32)()
 }

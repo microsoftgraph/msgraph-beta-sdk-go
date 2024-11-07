@@ -536,6 +536,22 @@ func (m *Windows10CompliancePolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["wslDistributions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWslDistributionConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WslDistributionConfigurationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(WslDistributionConfigurationable)
+                }
+            }
+            m.SetWslDistributions(res)
+        }
+        return nil
+    }
     return res
 }
 // GetFirmwareProtectionEnabled gets the firmwareProtectionEnabled property value. When TRUE, indicates that Firmware protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Firmware protection is not required to be reported as healthy. Devices that support either Dynamic Root of Trust for Measurement (DRTM) or Firmware Attack Surface Reduction (FASR) will report compliant for this setting. Default value is FALSE.
@@ -826,6 +842,18 @@ func (m *Windows10CompliancePolicy) GetVirtualizationBasedSecurityEnabled()(*boo
     }
     return nil
 }
+// GetWslDistributions gets the wslDistributions property value. The wslDistributions property
+// returns a []WslDistributionConfigurationable when successful
+func (m *Windows10CompliancePolicy) GetWslDistributions()([]WslDistributionConfigurationable) {
+    val, err := m.GetBackingStore().Get("wslDistributions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WslDistributionConfigurationable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *Windows10CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.DeviceCompliancePolicy.Serialize(writer)
@@ -1052,6 +1080,18 @@ func (m *Windows10CompliancePolicy) Serialize(writer i878a80d2330e89d26896388a3f
     }
     {
         err = writer.WriteBoolValue("virtualizationBasedSecurityEnabled", m.GetVirtualizationBasedSecurityEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetWslDistributions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWslDistributions()))
+        for i, v := range m.GetWslDistributions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("wslDistributions", cast)
         if err != nil {
             return err
         }
@@ -1310,6 +1350,13 @@ func (m *Windows10CompliancePolicy) SetVirtualizationBasedSecurityEnabled(value 
         panic(err)
     }
 }
+// SetWslDistributions sets the wslDistributions property value. The wslDistributions property
+func (m *Windows10CompliancePolicy) SetWslDistributions(value []WslDistributionConfigurationable)() {
+    err := m.GetBackingStore().Set("wslDistributions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Windows10CompliancePolicyable interface {
     DeviceCompliancePolicyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -1349,6 +1396,7 @@ type Windows10CompliancePolicyable interface {
     GetTpmRequired()(*bool)
     GetValidOperatingSystemBuildRanges()([]OperatingSystemVersionRangeable)
     GetVirtualizationBasedSecurityEnabled()(*bool)
+    GetWslDistributions()([]WslDistributionConfigurationable)
     SetActiveFirewallRequired(value *bool)()
     SetAntiSpywareRequired(value *bool)()
     SetAntivirusRequired(value *bool)()
@@ -1385,4 +1433,5 @@ type Windows10CompliancePolicyable interface {
     SetTpmRequired(value *bool)()
     SetValidOperatingSystemBuildRanges(value []OperatingSystemVersionRangeable)()
     SetVirtualizationBasedSecurityEnabled(value *bool)()
+    SetWslDistributions(value []WslDistributionConfigurationable)()
 }

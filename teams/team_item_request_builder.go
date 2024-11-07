@@ -148,6 +148,11 @@ func (m *TeamItemRequestBuilder) Operations()(*ItemOperationsRequestBuilder) {
 func (m *TeamItemRequestBuilder) Owners()(*ItemOwnersRequestBuilder) {
     return NewItemOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OwnersWithUserPrincipalName provides operations to manage the owners property of the microsoft.graph.team entity.
+// returns a *ItemOwnersWithUserPrincipalNameRequestBuilder when successful
+func (m *TeamItemRequestBuilder) OwnersWithUserPrincipalName(userPrincipalName *string)(*ItemOwnersWithUserPrincipalNameRequestBuilder) {
+    return NewItemOwnersWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
+}
 // Patch update the properties of the specified team.
 // returns a Teamable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

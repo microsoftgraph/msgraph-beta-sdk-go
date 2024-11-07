@@ -148,6 +148,11 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Operation
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) Owners()(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionOwnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// OwnersWithUserPrincipalName provides operations to manage the owners property of the microsoft.graph.team entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersWithUserPrincipalNameRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) OwnersWithUserPrincipalName(userPrincipalName *string)(*TeamTemplatesItemDefinitionsItemTeamDefinitionOwnersWithUserPrincipalNameRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionOwnersWithUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, userPrincipalName)
+}
 // Patch update the navigation property teamDefinition in teamwork
 // returns a Teamable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

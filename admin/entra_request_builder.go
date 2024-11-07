@@ -18,7 +18,7 @@ type EntraRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntraRequestBuilderGetQueryParameters get entra from admin
+// EntraRequestBuilderGetQueryParameters a container for Microsoft Entra resources. Read-only.
 type EntraRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,7 +71,7 @@ func (m *EntraRequestBuilder) Delete(ctx context.Context, requestConfiguration *
     }
     return nil
 }
-// Get get entra from admin
+// Get a container for Microsoft Entra resources. Read-only.
 // Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a Entraable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -125,7 +125,7 @@ func (m *EntraRequestBuilder) ToDeleteRequestInformation(ctx context.Context, re
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get entra from admin
+// ToGetRequestInformation a container for Microsoft Entra resources. Read-only.
 // Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a *RequestInformation when successful
 func (m *EntraRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntraRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -468,6 +468,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["operationStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseNetworkTrafficOperationStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOperationStatus(val.(*NetworkTrafficOperationStatus))
+        }
+        return nil
+    }
     res["policyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -505,6 +515,16 @@ func (m *NetworkAccessTraffic) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetPolicyRuleName(val)
+        }
+        return nil
+    }
+    res["popProcessingRegion"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPopProcessingRegion(val)
         }
         return nil
     }
@@ -780,6 +800,18 @@ func (m *NetworkAccessTraffic) GetOdataType()(*string) {
     }
     return nil
 }
+// GetOperationStatus gets the operationStatus property value. The operationStatus property
+// returns a *NetworkTrafficOperationStatus when successful
+func (m *NetworkAccessTraffic) GetOperationStatus()(*NetworkTrafficOperationStatus) {
+    val, err := m.GetBackingStore().Get("operationStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*NetworkTrafficOperationStatus)
+    }
+    return nil
+}
 // GetPolicyId gets the policyId property value. Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.
 // returns a *string when successful
 func (m *NetworkAccessTraffic) GetPolicyId()(*string) {
@@ -820,6 +852,18 @@ func (m *NetworkAccessTraffic) GetPolicyRuleId()(*string) {
 // returns a *string when successful
 func (m *NetworkAccessTraffic) GetPolicyRuleName()(*string) {
     val, err := m.GetBackingStore().Get("policyRuleName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPopProcessingRegion gets the popProcessingRegion property value. The popProcessingRegion property
+// returns a *string when successful
+func (m *NetworkAccessTraffic) GetPopProcessingRegion()(*string) {
+    val, err := m.GetBackingStore().Get("popProcessingRegion")
     if err != nil {
         panic(err)
     }
@@ -1188,6 +1232,13 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetOperationStatus() != nil {
+        cast := (*m.GetOperationStatus()).String()
+        err := writer.WriteStringValue("operationStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("policyId", m.GetPolicyId())
         if err != nil {
@@ -1208,6 +1259,12 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteStringValue("policyRuleName", m.GetPolicyRuleName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("popProcessingRegion", m.GetPopProcessingRegion())
         if err != nil {
             return err
         }
@@ -1502,6 +1559,13 @@ func (m *NetworkAccessTraffic) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetOperationStatus sets the operationStatus property value. The operationStatus property
+func (m *NetworkAccessTraffic) SetOperationStatus(value *NetworkTrafficOperationStatus)() {
+    err := m.GetBackingStore().Set("operationStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyId sets the policyId property value. Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.
 func (m *NetworkAccessTraffic) SetPolicyId(value *string)() {
     err := m.GetBackingStore().Set("policyId", value)
@@ -1526,6 +1590,13 @@ func (m *NetworkAccessTraffic) SetPolicyRuleId(value *string)() {
 // SetPolicyRuleName sets the policyRuleName property value. The policyRuleName property
 func (m *NetworkAccessTraffic) SetPolicyRuleName(value *string)() {
     err := m.GetBackingStore().Set("policyRuleName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPopProcessingRegion sets the popProcessingRegion property value. The popProcessingRegion property
+func (m *NetworkAccessTraffic) SetPopProcessingRegion(value *string)() {
+    err := m.GetBackingStore().Set("popProcessingRegion", value)
     if err != nil {
         panic(err)
     }
@@ -1684,10 +1755,12 @@ type NetworkAccessTrafficable interface {
     GetInitiatingProcessName()(*string)
     GetNetworkProtocol()(*NetworkingProtocol)
     GetOdataType()(*string)
+    GetOperationStatus()(*NetworkTrafficOperationStatus)
     GetPolicyId()(*string)
     GetPolicyName()(*string)
     GetPolicyRuleId()(*string)
     GetPolicyRuleName()(*string)
+    GetPopProcessingRegion()(*string)
     GetPrivateAccessDetails()(PrivateAccessDetailsable)
     GetReceivedBytes()(*int64)
     GetRemoteNetworkId()(*string)
@@ -1730,10 +1803,12 @@ type NetworkAccessTrafficable interface {
     SetInitiatingProcessName(value *string)()
     SetNetworkProtocol(value *NetworkingProtocol)()
     SetOdataType(value *string)()
+    SetOperationStatus(value *NetworkTrafficOperationStatus)()
     SetPolicyId(value *string)()
     SetPolicyName(value *string)()
     SetPolicyRuleId(value *string)()
     SetPolicyRuleName(value *string)()
+    SetPopProcessingRegion(value *string)()
     SetPrivateAccessDetails(value PrivateAccessDetailsable)()
     SetReceivedBytes(value *int64)()
     SetRemoteNetworkId(value *string)()

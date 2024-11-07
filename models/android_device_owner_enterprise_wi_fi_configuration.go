@@ -142,6 +142,22 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetFieldDeserializers()(
         }
         return nil
     }
+    res["rootCertificatesForServerValidation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAndroidDeviceOwnerTrustedRootCertificateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AndroidDeviceOwnerTrustedRootCertificateable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AndroidDeviceOwnerTrustedRootCertificateable)
+                }
+            }
+            m.SetRootCertificatesForServerValidation(res)
+        }
+        return nil
+    }
     res["trustedServerCertificateNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -220,6 +236,18 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetRootCertificateForSer
     }
     return nil
 }
+// GetRootCertificatesForServerValidation gets the rootCertificatesForServerValidation property value. Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt. This collection can contain a maximum of 500 elements.
+// returns a []AndroidDeviceOwnerTrustedRootCertificateable when successful
+func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetRootCertificatesForServerValidation()([]AndroidDeviceOwnerTrustedRootCertificateable) {
+    val, err := m.GetBackingStore().Get("rootCertificatesForServerValidation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerTrustedRootCertificateable)
+    }
+    return nil
+}
 // GetTrustedServerCertificateNames gets the trustedServerCertificateNames property value. Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
 // returns a []string when successful
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) GetTrustedServerCertificateNames()([]string) {
@@ -290,6 +318,18 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) Serialize(writer i878a80
             return err
         }
     }
+    if m.GetRootCertificatesForServerValidation() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRootCertificatesForServerValidation()))
+        for i, v := range m.GetRootCertificatesForServerValidation() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("rootCertificatesForServerValidation", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTrustedServerCertificateNames() != nil {
         err = writer.WriteCollectionOfStringValues("trustedServerCertificateNames", m.GetTrustedServerCertificateNames())
         if err != nil {
@@ -354,6 +394,13 @@ func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) SetRootCertificateForSer
         panic(err)
     }
 }
+// SetRootCertificatesForServerValidation sets the rootCertificatesForServerValidation property value. Trusted Root Certificates for Server Validation when EAP Type is configured to EAP-TLS, EAP-TTLS or PEAP. This is the certificate presented by the Wi-Fi endpoint when the device attempts to connect to Wi-Fi endpoint. The device (or user) must accept this certificate to continue the connection attempt. This collection can contain a maximum of 500 elements.
+func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) SetRootCertificatesForServerValidation(value []AndroidDeviceOwnerTrustedRootCertificateable)() {
+    err := m.GetBackingStore().Set("rootCertificatesForServerValidation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTrustedServerCertificateNames sets the trustedServerCertificateNames property value. Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users' devices when they connect to this Wi-Fi network.
 func (m *AndroidDeviceOwnerEnterpriseWiFiConfiguration) SetTrustedServerCertificateNames(value []string)() {
     err := m.GetBackingStore().Set("trustedServerCertificateNames", value)
@@ -372,6 +419,7 @@ type AndroidDeviceOwnerEnterpriseWiFiConfigurationable interface {
     GetInnerAuthenticationProtocolForPeap()(*NonEapAuthenticationMethodForPeap)
     GetOuterIdentityPrivacyTemporaryValue()(*string)
     GetRootCertificateForServerValidation()(AndroidDeviceOwnerTrustedRootCertificateable)
+    GetRootCertificatesForServerValidation()([]AndroidDeviceOwnerTrustedRootCertificateable)
     GetTrustedServerCertificateNames()([]string)
     SetAuthenticationMethod(value *WiFiAuthenticationMethod)()
     SetDerivedCredentialSettings(value DeviceManagementDerivedCredentialSettingsable)()
@@ -381,5 +429,6 @@ type AndroidDeviceOwnerEnterpriseWiFiConfigurationable interface {
     SetInnerAuthenticationProtocolForPeap(value *NonEapAuthenticationMethodForPeap)()
     SetOuterIdentityPrivacyTemporaryValue(value *string)()
     SetRootCertificateForServerValidation(value AndroidDeviceOwnerTrustedRootCertificateable)()
+    SetRootCertificatesForServerValidation(value []AndroidDeviceOwnerTrustedRootCertificateable)()
     SetTrustedServerCertificateNames(value []string)()
 }
