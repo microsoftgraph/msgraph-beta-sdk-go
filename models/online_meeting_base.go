@@ -75,7 +75,7 @@ func (m *OnlineMeetingBase) GetAllowBreakoutRooms()(*bool) {
     }
     return nil
 }
-// GetAllowedLobbyAdmitters gets the allowedLobbyAdmitters property value. The allowedLobbyAdmitters property
+// GetAllowedLobbyAdmitters gets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
 // returns a *AllowedLobbyAdmitterRoles when successful
 func (m *OnlineMeetingBase) GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRoles) {
     val, err := m.GetBackingStore().Get("allowedLobbyAdmitters")
@@ -909,7 +909,7 @@ func (m *OnlineMeetingBase) SetAllowBreakoutRooms(value *bool)() {
         panic(err)
     }
 }
-// SetAllowedLobbyAdmitters sets the allowedLobbyAdmitters property value. The allowedLobbyAdmitters property
+// SetAllowedLobbyAdmitters sets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowedLobbyAdmitters(value *AllowedLobbyAdmitterRoles)() {
     err := m.GetBackingStore().Set("allowedLobbyAdmitters", value)
     if err != nil {

@@ -40,7 +40,7 @@ func CreateAndroidWorkProfileWiFiConfigurationFromDiscriminatorValue(parseNode i
     }
     return NewAndroidWorkProfileWiFiConfiguration(), nil
 }
-// GetConnectAutomatically gets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
+// GetConnectAutomatically gets the connectAutomatically property value. When set to true, device will connect automatically to the Wi-Fi network when in range, skipping the user prompt. When false, user will need to connect manually through Settings on the Android device. Default value is false.
 // returns a *bool when successful
 func (m *AndroidWorkProfileWiFiConfiguration) GetConnectAutomatically()(*bool) {
     val, err := m.GetBackingStore().Get("connectAutomatically")
@@ -52,7 +52,7 @@ func (m *AndroidWorkProfileWiFiConfiguration) GetConnectAutomatically()(*bool) {
     }
     return nil
 }
-// GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
+// GetConnectWhenNetworkNameIsHidden gets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices. When false, device will not automatically connect to hidden networks. Default value is false.
 // returns a *bool when successful
 func (m *AndroidWorkProfileWiFiConfiguration) GetConnectWhenNetworkNameIsHidden()(*bool) {
     val, err := m.GetBackingStore().Get("connectWhenNetworkNameIsHidden")
@@ -160,7 +160,7 @@ func (m *AndroidWorkProfileWiFiConfiguration) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetNetworkName gets the networkName property value. Network Name
+// GetNetworkName gets the networkName property value. The name of the Wi-Fi network.
 // returns a *string when successful
 func (m *AndroidWorkProfileWiFiConfiguration) GetNetworkName()(*string) {
     val, err := m.GetBackingStore().Get("networkName")
@@ -308,21 +308,21 @@ func (m *AndroidWorkProfileWiFiConfiguration) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetConnectAutomatically sets the connectAutomatically property value. Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.
+// SetConnectAutomatically sets the connectAutomatically property value. When set to true, device will connect automatically to the Wi-Fi network when in range, skipping the user prompt. When false, user will need to connect manually through Settings on the Android device. Default value is false.
 func (m *AndroidWorkProfileWiFiConfiguration) SetConnectAutomatically(value *bool)() {
     err := m.GetBackingStore().Set("connectAutomatically", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices.
+// SetConnectWhenNetworkNameIsHidden sets the connectWhenNetworkNameIsHidden property value. When set to true, this profile forces the device to connect to a network that doesn't broadcast its SSID to all devices. When false, device will not automatically connect to hidden networks. Default value is false.
 func (m *AndroidWorkProfileWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(value *bool)() {
     err := m.GetBackingStore().Set("connectWhenNetworkNameIsHidden", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNetworkName sets the networkName property value. Network Name
+// SetNetworkName sets the networkName property value. The name of the Wi-Fi network.
 func (m *AndroidWorkProfileWiFiConfiguration) SetNetworkName(value *string)() {
     err := m.GetBackingStore().Set("networkName", value)
     if err != nil {

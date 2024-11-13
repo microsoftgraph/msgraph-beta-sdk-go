@@ -46,7 +46,7 @@ func (m *IosManagedAppProtection) GetAllowWidgetContentSync()(*bool) {
     }
     return nil
 }
-// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
+// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn, blockWhenSettingIsSupported.
 // returns a *ManagedAppRemediationAction when successful
 func (m *IosManagedAppProtection) GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfAccountIsClockedOut")
@@ -705,7 +705,7 @@ func (m *IosManagedAppProtection) SetAllowWidgetContentSync(value *bool)() {
         panic(err)
     }
 }
-// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
+// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn, blockWhenSettingIsSupported.
 func (m *IosManagedAppProtection) SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfAccountIsClockedOut", value)
     if err != nil {
