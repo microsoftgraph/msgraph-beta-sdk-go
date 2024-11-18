@@ -106,7 +106,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFileTypes
     }
     return nil
 }
-// GetFormat gets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.
+// GetFormat gets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
 // returns a *DeviceManagementConfigurationStringFormat when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetFormat()(*DeviceManagementConfigurationStringFormat) {
     val, err := m.GetBackingStore().Get("format")
@@ -142,7 +142,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetIsSecret(
     }
     return nil
 }
-// GetMaximumLength gets the maximumLength property value. Maximum length of string
+// GetMaximumLength gets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 // returns a *int64 when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLength()(*int64) {
     val, err := m.GetBackingStore().Get("maximumLength")
@@ -154,7 +154,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMaximumLe
     }
     return nil
 }
-// GetMinimumLength gets the minimumLength property value. Minimum length of string
+// GetMinimumLength gets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 // returns a *int64 when successful
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) GetMinimumLength()(*int64) {
     val, err := m.GetBackingStore().Get("minimumLength")
@@ -218,7 +218,7 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFileTypes
         panic(err)
     }
 }
-// SetFormat sets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.
+// SetFormat sets the format property value. Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetFormat(value *DeviceManagementConfigurationStringFormat)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {
@@ -239,14 +239,14 @@ func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetIsSecret(
         panic(err)
     }
 }
-// SetMaximumLength sets the maximumLength property value. Maximum length of string
+// SetMaximumLength sets the maximumLength property value. Maximum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMaximumLength(value *int64)() {
     err := m.GetBackingStore().Set("maximumLength", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumLength sets the minimumLength property value. Minimum length of string
+// SetMinimumLength sets the minimumLength property value. Minimum length of string. Valid values 0 to 87516
 func (m *DeviceManagementConfigurationStringSettingValueDefinition) SetMinimumLength(value *int64)() {
     err := m.GetBackingStore().Set("minimumLength", value)
     if err != nil {

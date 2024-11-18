@@ -78,7 +78,7 @@ func (m *RecycleBinSettings) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRetentionPeriodOverrideDays gets the retentionPeriodOverrideDays property value. Recycle bin retention period override in days for deleted content. The default value is 93; the value range is 93 to 180. The setting applies to newly deleted content only. Setting this property to null reverts to its default value. Read-write.
+// GetRetentionPeriodOverrideDays gets the retentionPeriodOverrideDays property value. Recycle bin retention period override in days for deleted content. The default value is 93; the value range is 7 to 180 inclusively. The setting applies to newly deleted content only. Setting this property to null reverts to its default value. Read-write.
 // returns a *int32 when successful
 func (m *RecycleBinSettings) GetRetentionPeriodOverrideDays()(*int32) {
     val, err := m.GetBackingStore().Get("retentionPeriodOverrideDays")
@@ -130,7 +130,7 @@ func (m *RecycleBinSettings) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRetentionPeriodOverrideDays sets the retentionPeriodOverrideDays property value. Recycle bin retention period override in days for deleted content. The default value is 93; the value range is 93 to 180. The setting applies to newly deleted content only. Setting this property to null reverts to its default value. Read-write.
+// SetRetentionPeriodOverrideDays sets the retentionPeriodOverrideDays property value. Recycle bin retention period override in days for deleted content. The default value is 93; the value range is 7 to 180 inclusively. The setting applies to newly deleted content only. Setting this property to null reverts to its default value. Read-write.
 func (m *RecycleBinSettings) SetRetentionPeriodOverrideDays(value *int32)() {
     err := m.GetBackingStore().Set("retentionPeriodOverrideDays", value)
     if err != nil {
