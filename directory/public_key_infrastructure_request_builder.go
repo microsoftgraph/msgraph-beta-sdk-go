@@ -18,7 +18,7 @@ type PublicKeyInfrastructureRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PublicKeyInfrastructureRequestBuilderGetQueryParameters get publicKeyInfrastructure from directory
+// PublicKeyInfrastructureRequestBuilderGetQueryParameters the collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
 type PublicKeyInfrastructureRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *PublicKeyInfrastructureRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get get publicKeyInfrastructure from directory
+// Get the collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
 // returns a PublicKeyInfrastructureRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PublicKeyInfrastructureRequestBuilder) Get(ctx context.Context, requestConfiguration *PublicKeyInfrastructureRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PublicKeyInfrastructureRootable, error) {
@@ -126,7 +126,7 @@ func (m *PublicKeyInfrastructureRequestBuilder) ToDeleteRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get publicKeyInfrastructure from directory
+// ToGetRequestInformation the collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
 // returns a *RequestInformation when successful
 func (m *PublicKeyInfrastructureRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PublicKeyInfrastructureRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

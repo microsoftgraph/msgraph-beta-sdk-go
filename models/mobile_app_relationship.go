@@ -194,7 +194,7 @@ func (m *MobileAppRelationship) GetSourcePublisherDisplayName()(*string) {
     }
     return nil
 }
-// GetTargetDisplayName gets the targetDisplayName property value. The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
+// GetTargetDisplayName gets the targetDisplayName property value. The display name of the app that is the target of the mobile app relationship entity. For example: Firefox Setup 52.0.2 32bit.intunewin. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("targetDisplayName")
@@ -206,7 +206,7 @@ func (m *MobileAppRelationship) GetTargetDisplayName()(*string) {
     }
     return nil
 }
-// GetTargetDisplayVersion gets the targetDisplayVersion property value. The display version of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
+// GetTargetDisplayVersion gets the targetDisplayVersion property value. The display version of the app that is the target of the mobile app relationship entity. For example 1.0 or 1.2203.156. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
     val, err := m.GetBackingStore().Get("targetDisplayVersion")
@@ -218,7 +218,7 @@ func (m *MobileAppRelationship) GetTargetDisplayVersion()(*string) {
     }
     return nil
 }
-// GetTargetId gets the targetId property value. App ID of the app that is the target of the mobile app relationship entity. Read-Only
+// GetTargetId gets the targetId property value. The unique app identifier of the target of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetId()(*string) {
     val, err := m.GetBackingStore().Get("targetId")
@@ -230,7 +230,7 @@ func (m *MobileAppRelationship) GetTargetId()(*string) {
     }
     return nil
 }
-// GetTargetPublisher gets the targetPublisher property value. The publisher of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
+// GetTargetPublisher gets the targetPublisher property value. The publisher of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.
 // returns a *string when successful
 func (m *MobileAppRelationship) GetTargetPublisher()(*string) {
     val, err := m.GetBackingStore().Get("targetPublisher")
@@ -315,28 +315,28 @@ func (m *MobileAppRelationship) SetSourcePublisherDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetTargetDisplayName sets the targetDisplayName property value. The display name of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
+// SetTargetDisplayName sets the targetDisplayName property value. The display name of the app that is the target of the mobile app relationship entity. For example: Firefox Setup 52.0.2 32bit.intunewin. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.
 func (m *MobileAppRelationship) SetTargetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("targetDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetDisplayVersion sets the targetDisplayVersion property value. The display version of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
+// SetTargetDisplayVersion sets the targetDisplayVersion property value. The display version of the app that is the target of the mobile app relationship entity. For example 1.0 or 1.2203.156. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.
 func (m *MobileAppRelationship) SetTargetDisplayVersion(value *string)() {
     err := m.GetBackingStore().Set("targetDisplayVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetId sets the targetId property value. App ID of the app that is the target of the mobile app relationship entity. Read-Only
+// SetTargetId sets the targetId property value. The unique app identifier of the target of the mobile app relationship entity. For example: 2dbc75b9-e993-4e4d-a071-91ac5a218672. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy.
 func (m *MobileAppRelationship) SetTargetId(value *string)() {
     err := m.GetBackingStore().Set("targetId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetPublisher sets the targetPublisher property value. The publisher of the app that is the target of the mobile app relationship entity. Read-Only. This property is read-only.
+// SetTargetPublisher sets the targetPublisher property value. The publisher of the app that is the target of the mobile app relationship entity. For example: Fabrikam. Maximum length is 500 characters. Read-Only. Returned by default. Supports: $select. Does not support $search, $filter, $orderBy. This property is read-only.
 func (m *MobileAppRelationship) SetTargetPublisher(value *string)() {
     err := m.GetBackingStore().Set("targetPublisher", value)
     if err != nil {

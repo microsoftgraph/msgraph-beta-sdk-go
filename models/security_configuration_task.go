@@ -170,7 +170,7 @@ func (m *SecurityConfigurationTask) GetIntendedSettings()([]KeyValuePairable) {
     }
     return nil
 }
-// GetManagedDeviceCount gets the managedDeviceCount property value. The number of vulnerable devices. Valid values 0 to 65536
+// GetManagedDeviceCount gets the managedDeviceCount property value. The number of vulnerable devices.
 // returns a *int32 when successful
 func (m *SecurityConfigurationTask) GetManagedDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("managedDeviceCount")
@@ -294,7 +294,7 @@ func (m *SecurityConfigurationTask) SetIntendedSettings(value []KeyValuePairable
         panic(err)
     }
 }
-// SetManagedDeviceCount sets the managedDeviceCount property value. The number of vulnerable devices. Valid values 0 to 65536
+// SetManagedDeviceCount sets the managedDeviceCount property value. The number of vulnerable devices.
 func (m *SecurityConfigurationTask) SetManagedDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("managedDeviceCount", value)
     if err != nil {

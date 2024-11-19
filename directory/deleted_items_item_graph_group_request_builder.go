@@ -11,7 +11,7 @@ import (
 type DeletedItemsItemGraphGroupRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeletedItemsItemGraphGroupRequestBuilderGetQueryParameters retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, externalUserProfile, group, administrative unit, pendingExternalUserProfile, and user resources.
+// DeletedItemsItemGraphGroupRequestBuilderGetQueryParameters retrieve a list of recently deleted directory objects from deleted items. The following types are supported:- administrativeUnit- application- certificateBasedAuthPki- [certificateAuthorityDetail](../resources/certificateauthoritydetail.md- externalUserProfile- group- pendingExternalUserProfile- servicePrincipal- user
 type DeletedItemsItemGraphGroupRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewDeletedItemsItemGraphGroupRequestBuilder(rawUrl string, requestAdapter i
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsItemGraphGroupRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, externalUserProfile, group, administrative unit, pendingExternalUserProfile, and user resources.
+// Get retrieve a list of recently deleted directory objects from deleted items. The following types are supported:- administrativeUnit- application- certificateBasedAuthPki- [certificateAuthorityDetail](../resources/certificateauthoritydetail.md- externalUserProfile- group- pendingExternalUserProfile- servicePrincipal- user
 // returns a Groupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -63,7 +63,7 @@ func (m *DeletedItemsItemGraphGroupRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Groupable), nil
 }
-// ToGetRequestInformation retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, externalUserProfile, group, administrative unit, pendingExternalUserProfile, and user resources.
+// ToGetRequestInformation retrieve a list of recently deleted directory objects from deleted items. The following types are supported:- administrativeUnit- application- certificateBasedAuthPki- [certificateAuthorityDetail](../resources/certificateauthoritydetail.md- externalUserProfile- group- pendingExternalUserProfile- servicePrincipal- user
 // returns a *RequestInformation when successful
 func (m *DeletedItemsItemGraphGroupRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsItemGraphGroupRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

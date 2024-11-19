@@ -18,7 +18,7 @@ type PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAut
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderGetQueryParameters get certificateAuthorities from directory
+// PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderGetQueryParameters read the properties and relationships of a certificateAuthorityDetail object.
 type PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewPublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificate
     urlParams["request-raw-url"] = rawUrl
     return NewPublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property certificateAuthorities for directory
+// Delete delete a certificateAuthorityDetail object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedauthpki-delete-certificateauthorities?view=graph-rest-beta
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,9 +73,12 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificat
     }
     return nil
 }
-// Get get certificateAuthorities from directory
+// Get read the properties and relationships of a certificateAuthorityDetail object.
 // returns a CertificateAuthorityDetailable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificateauthoritydetail-get?view=graph-rest-beta
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +96,12 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable), nil
 }
-// Patch update the navigation property certificateAuthorities in directory
+// Patch update the properties of a certificateAuthorityDetail object.
 // returns a CertificateAuthorityDetailable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificateauthoritydetail-update?view=graph-rest-beta
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -110,7 +119,7 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable), nil
 }
-// ToDeleteRequestInformation delete navigation property certificateAuthorities for directory
+// ToDeleteRequestInformation delete a certificateAuthorityDetail object.
 // returns a *RequestInformation when successful
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +130,7 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get certificateAuthorities from directory
+// ToGetRequestInformation read the properties and relationships of a certificateAuthorityDetail object.
 // returns a *RequestInformation when successful
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +144,7 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property certificateAuthorities in directory
+// ToPatchRequestInformation update the properties of a certificateAuthorityDetail object.
 // returns a *RequestInformation when successful
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCertificateAuthorityDetailItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -21,7 +21,7 @@ func NewQualityUpdateFilter()(*QualityUpdateFilter) {
 func CreateQualityUpdateFilterFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewQualityUpdateFilter(), nil
 }
-// GetCadence gets the cadence property value. The cadence property
+// GetCadence gets the cadence property value. Specifies the cadence for publishing quality updates of the filter. The possible values are: monthly, outOfBand, unknownFutureValue.
 // returns a *QualityUpdateCadence when successful
 func (m *QualityUpdateFilter) GetCadence()(*QualityUpdateCadence) {
     val, err := m.GetBackingStore().Get("cadence")
@@ -33,7 +33,7 @@ func (m *QualityUpdateFilter) GetCadence()(*QualityUpdateCadence) {
     }
     return nil
 }
-// GetClassification gets the classification property value. The classification property
+// GetClassification gets the classification property value. Specifies the quality update classification of the filter. The possible values are: all, security, nonSecurity, unknownFutureValue.
 // returns a *QualityUpdateClassification when successful
 func (m *QualityUpdateFilter) GetClassification()(*QualityUpdateClassification) {
     val, err := m.GetBackingStore().Get("classification")
@@ -93,14 +93,14 @@ func (m *QualityUpdateFilter) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCadence sets the cadence property value. The cadence property
+// SetCadence sets the cadence property value. Specifies the cadence for publishing quality updates of the filter. The possible values are: monthly, outOfBand, unknownFutureValue.
 func (m *QualityUpdateFilter) SetCadence(value *QualityUpdateCadence)() {
     err := m.GetBackingStore().Set("cadence", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClassification sets the classification property value. The classification property
+// SetClassification sets the classification property value. Specifies the quality update classification of the filter. The possible values are: all, security, nonSecurity, unknownFutureValue.
 func (m *QualityUpdateFilter) SetClassification(value *QualityUpdateClassification)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
