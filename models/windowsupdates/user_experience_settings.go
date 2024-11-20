@@ -98,7 +98,7 @@ func (m *UserExperienceSettings) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIsHotpatchEnabled gets the isHotpatchEnabled property value. The isHotpatchEnabled property
+// GetIsHotpatchEnabled gets the isHotpatchEnabled property value. Specifies whether the update is offered as a hotpatch. It can only be set to true on automatic policies that target monthly security updates.
 // returns a *bool when successful
 func (m *UserExperienceSettings) GetIsHotpatchEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isHotpatchEnabled")
@@ -186,7 +186,7 @@ func (m *UserExperienceSettings) SetDaysUntilForcedReboot(value *int32)() {
         panic(err)
     }
 }
-// SetIsHotpatchEnabled sets the isHotpatchEnabled property value. The isHotpatchEnabled property
+// SetIsHotpatchEnabled sets the isHotpatchEnabled property value. Specifies whether the update is offered as a hotpatch. It can only be set to true on automatic policies that target monthly security updates.
 func (m *UserExperienceSettings) SetIsHotpatchEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isHotpatchEnabled", value)
     if err != nil {

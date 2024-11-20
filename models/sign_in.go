@@ -44,7 +44,7 @@ func (m *SignIn) GetAppId()(*string) {
     }
     return nil
 }
-// GetAppliedConditionalAccessPolicies gets the appliedConditionalAccessPolicies property value. A list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
+// GetAppliedConditionalAccessPolicies gets the appliedConditionalAccessPolicies property value. A list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Permissions for viewing applied conditional access (CA) policies in sign-ins.
 // returns a []AppliedConditionalAccessPolicyable when successful
 func (m *SignIn) GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable) {
     val, err := m.GetBackingStore().Get("appliedConditionalAccessPolicies")
@@ -1496,7 +1496,7 @@ func (m *SignIn) GetServicePrincipalName()(*string) {
     }
     return nil
 }
-// GetSessionId gets the sessionId property value. The sessionId property
+// GetSessionId gets the sessionId property value. Identifier of the session that was generated during the sign-in.
 // returns a *string when successful
 func (m *SignIn) GetSessionId()(*string) {
     val, err := m.GetBackingStore().Get("sessionId")
@@ -2217,7 +2217,7 @@ func (m *SignIn) SetAppId(value *string)() {
         panic(err)
     }
 }
-// SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. A list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Viewing applied conditional access (CA) policies in sign-ins.
+// SetAppliedConditionalAccessPolicies sets the appliedConditionalAccessPolicies property value. A list of conditional access policies that the corresponding sign-in activity triggers. Apps need more Conditional Access-related privileges to read the details of this property. For more information, see Permissions for viewing applied conditional access (CA) policies in sign-ins.
 func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)() {
     err := m.GetBackingStore().Set("appliedConditionalAccessPolicies", value)
     if err != nil {
@@ -2595,7 +2595,7 @@ func (m *SignIn) SetServicePrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetSessionId sets the sessionId property value. The sessionId property
+// SetSessionId sets the sessionId property value. Identifier of the session that was generated during the sign-in.
 func (m *SignIn) SetSessionId(value *string)() {
     err := m.GetBackingStore().Set("sessionId", value)
     if err != nil {

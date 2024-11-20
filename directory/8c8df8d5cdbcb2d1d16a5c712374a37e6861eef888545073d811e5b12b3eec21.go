@@ -11,7 +11,7 @@ import (
 type PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilderGetQueryParameters get certificateAuthorities from directory
+// PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilderGetQueryParameters get a list of the certificateAuthorityDetail objects and their properties.
 type PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewPublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificate
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilder) Count()(*PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCountRequestBuilder) {
     return NewPublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get certificateAuthorities from directory
+// Get get a list of the certificateAuthorityDetail objects and their properties.
 // returns a CertificateAuthorityDetailCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedauthpki-list-certificateauthorities?view=graph-rest-beta
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilder) Get(ctx context.Context, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailCollectionResponseable), nil
 }
-// Post create new navigation property to certificateAuthorities for directory
+// Post create a new certificateAuthorityDetail object.
 // returns a CertificateAuthorityDetailable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificatebasedauthpki-post-certificateauthorities?view=graph-rest-beta
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificat
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable), nil
 }
-// ToGetRequestInformation get certificateAuthorities from directory
+// ToGetRequestInformation get a list of the certificateAuthorityDetail objects and their properties.
 // returns a *RequestInformation when successful
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificat
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to certificateAuthorities for directory
+// ToPostRequestInformation create a new certificateAuthorityDetail object.
 // returns a *RequestInformation when successful
 func (m *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityDetailable, requestConfiguration *PublicKeyInfrastructureCertificateBasedAuthConfigurationsItemCertificateAuthoritiesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
