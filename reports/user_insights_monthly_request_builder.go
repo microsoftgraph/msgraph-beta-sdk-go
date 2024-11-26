@@ -115,6 +115,11 @@ func (m *UserInsightsMonthlyRequestBuilder) InactiveUsersByApplication()(*UserIn
 func (m *UserInsightsMonthlyRequestBuilder) MfaCompletions()(*UserInsightsMonthlyMfaCompletionsRequestBuilder) {
     return NewUserInsightsMonthlyMfaCompletionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MfaRegisteredUsers provides operations to manage the mfaRegisteredUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
+// returns a *UserInsightsMonthlyMfaRegisteredUsersRequestBuilder when successful
+func (m *UserInsightsMonthlyRequestBuilder) MfaRegisteredUsers()(*UserInsightsMonthlyMfaRegisteredUsersRequestBuilder) {
+    return NewUserInsightsMonthlyMfaRegisteredUsersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property monthly in reports
 // returns a MonthlyUserInsightMetricsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

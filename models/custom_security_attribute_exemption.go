@@ -53,7 +53,7 @@ func (m *CustomSecurityAttributeExemption) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetOperator gets the operator property value. The operator property
+// GetOperator gets the operator property value. The possible values are: equals, unknownFutureValue. If equals, the customSecurityAttributeExemption value is compared to match the custom security attribute value for the exemption to be applied. The comparison is case sensitive.
 // returns a *CustomSecurityAttributeComparisonOperator when successful
 func (m *CustomSecurityAttributeExemption) GetOperator()(*CustomSecurityAttributeComparisonOperator) {
     val, err := m.GetBackingStore().Get("operator")
@@ -80,7 +80,7 @@ func (m *CustomSecurityAttributeExemption) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetOperator sets the operator property value. The operator property
+// SetOperator sets the operator property value. The possible values are: equals, unknownFutureValue. If equals, the customSecurityAttributeExemption value is compared to match the custom security attribute value for the exemption to be applied. The comparison is case sensitive.
 func (m *CustomSecurityAttributeExemption) SetOperator(value *CustomSecurityAttributeComparisonOperator)() {
     err := m.GetBackingStore().Set("operator", value)
     if err != nil {

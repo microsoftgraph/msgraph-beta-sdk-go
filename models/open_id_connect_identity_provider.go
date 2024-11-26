@@ -45,7 +45,7 @@ func (m *OpenIdConnectIdentityProvider) GetClientId()(*string) {
     }
     return nil
 }
-// GetClientSecret gets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is idtoken the secret is not required because there is no code exchange. The idtoken is returned directly from the authorization response. This is write-only. A read operation returns .
+// GetClientSecret gets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is idtoken, the secret isn't required because there's no code exchange. The idtoken is returned directly from the authorization response. This is write-only. A read operation returns .
 // returns a *string when successful
 func (m *OpenIdConnectIdentityProvider) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
@@ -57,7 +57,7 @@ func (m *OpenIdConnectIdentityProvider) GetClientSecret()(*string) {
     }
     return nil
 }
-// GetDomainHint gets the domainHint property value. The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.
+// GetDomainHint gets the domainHint property value. The domain hint can be used to skip directly to the sign-in page of the specified identity provider instead of having the user make a selection among the list of available identity providers.
 // returns a *string when successful
 func (m *OpenIdConnectIdentityProvider) GetDomainHint()(*string) {
     val, err := m.GetBackingStore().Get("domainHint")
@@ -191,7 +191,7 @@ func (m *OpenIdConnectIdentityProvider) GetResponseType()(*OpenIdConnectResponse
     }
     return nil
 }
-// GetScope gets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.
+// GetScope gets the scope property value. Scope defines the information and permissions you're looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users aren't able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more information about the scope limitations, see RFC6749 Section 3.3. Required.
 // returns a *string when successful
 func (m *OpenIdConnectIdentityProvider) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
@@ -275,14 +275,14 @@ func (m *OpenIdConnectIdentityProvider) SetClientId(value *string)() {
         panic(err)
     }
 }
-// SetClientSecret sets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is idtoken the secret is not required because there is no code exchange. The idtoken is returned directly from the authorization response. This is write-only. A read operation returns .
+// SetClientSecret sets the clientSecret property value. The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is idtoken, the secret isn't required because there's no code exchange. The idtoken is returned directly from the authorization response. This is write-only. A read operation returns .
 func (m *OpenIdConnectIdentityProvider) SetClientSecret(value *string)() {
     err := m.GetBackingStore().Set("clientSecret", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainHint sets the domainHint property value. The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.
+// SetDomainHint sets the domainHint property value. The domain hint can be used to skip directly to the sign-in page of the specified identity provider instead of having the user make a selection among the list of available identity providers.
 func (m *OpenIdConnectIdentityProvider) SetDomainHint(value *string)() {
     err := m.GetBackingStore().Set("domainHint", value)
     if err != nil {
@@ -310,7 +310,7 @@ func (m *OpenIdConnectIdentityProvider) SetResponseType(value *OpenIdConnectResp
         panic(err)
     }
 }
-// SetScope sets the scope property value. Scope defines the information and permissions you are looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users are not able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more details about the scope limitations, see RFC6749 Section 3.3. Required.
+// SetScope sets the scope property value. Scope defines the information and permissions you're looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users aren't able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended, separated by a space. For more information about the scope limitations, see RFC6749 Section 3.3. Required.
 func (m *OpenIdConnectIdentityProvider) SetScope(value *string)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {

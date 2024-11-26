@@ -113,6 +113,11 @@ func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentSharingSessionable), nil
 }
+// PngOfCurrentSlide provides operations to manage the media for the cloudCommunications entity.
+// returns a *CallsItemContentSharingSessionsItemPngOfCurrentSlideRequestBuilder when successful
+func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) PngOfCurrentSlide()(*CallsItemContentSharingSessionsItemPngOfCurrentSlideRequestBuilder) {
+    return NewCallsItemContentSharingSessionsItemPngOfCurrentSlideRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property contentSharingSessions for communications
 // returns a *RequestInformation when successful
 func (m *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CallsItemContentSharingSessionsContentSharingSessionItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

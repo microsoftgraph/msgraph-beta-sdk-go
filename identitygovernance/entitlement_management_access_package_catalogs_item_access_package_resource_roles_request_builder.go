@@ -11,7 +11,7 @@ import (
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesRequestBuilderGetQueryParameters retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.
+// EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesRequestBuilderGetQueryParameters retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when later creating an accessPackageResourceRoleScope.
 type EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,7 +77,7 @@ func NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRoles
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesRequestBuilder) Count()(*EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesCountRequestBuilder) {
     return NewEntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.
+// Get retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when later creating an accessPackageResourceRoleScope.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
 // returns a AccessPackageResourceRoleCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -122,7 +122,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRole
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageResourceRoleable), nil
 }
-// ToGetRequestInformation retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when subsequently creating an accessPackageResourceRoleScope.
+// ToGetRequestInformation retrieve a list of accessPackageResourceRole objects of an accessPackageResource in an accessPackageCatalog. The resource should have been added to the catalog by creating an accessPackageResourceRequest. This list of roles can then be used by the caller to select a role, which is needed when later creating an accessPackageResourceRoleScope.
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRolesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

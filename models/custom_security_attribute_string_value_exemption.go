@@ -37,7 +37,7 @@ func (m *CustomSecurityAttributeStringValueExemption) GetFieldDeserializers()(ma
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Value representing custom security attribute value to compare against while evaluating the exemption.
 // returns a *string when successful
 func (m *CustomSecurityAttributeStringValueExemption) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -63,7 +63,7 @@ func (m *CustomSecurityAttributeStringValueExemption) Serialize(writer i878a80d2
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Value representing custom security attribute value to compare against while evaluating the exemption.
 func (m *CustomSecurityAttributeStringValueExemption) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

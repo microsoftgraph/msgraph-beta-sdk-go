@@ -21,6 +21,18 @@ func NewAdministrativeUnit()(*AdministrativeUnit) {
 func CreateAdministrativeUnitFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAdministrativeUnit(), nil
 }
+// GetDeletedMembers gets the deletedMembers property value. The deletedMembers property
+// returns a []DirectoryObjectable when successful
+func (m *AdministrativeUnit) GetDeletedMembers()([]DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("deletedMembers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The description property
 // returns a *string when successful
 func (m *AdministrativeUnit) GetDescription()(*string) {
@@ -61,6 +73,22 @@ func (m *AdministrativeUnit) GetExtensions()([]Extensionable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AdministrativeUnit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DirectoryObject.GetFieldDeserializers()
+    res["deletedMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObjectable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
+            }
+            m.SetDeletedMembers(res)
+        }
+        return nil
+    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -271,6 +299,18 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     if err != nil {
         return err
     }
+    if m.GetDeletedMembers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeletedMembers()))
+        for i, v := range m.GetDeletedMembers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("deletedMembers", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
@@ -351,6 +391,13 @@ func (m *AdministrativeUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
+// SetDeletedMembers sets the deletedMembers property value. The deletedMembers property
+func (m *AdministrativeUnit) SetDeletedMembers(value []DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("deletedMembers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. The description property
 func (m *AdministrativeUnit) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -424,6 +471,7 @@ func (m *AdministrativeUnit) SetVisibility(value *string)() {
 type AdministrativeUnitable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeletedMembers()([]DirectoryObjectable)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetExtensions()([]Extensionable)
@@ -434,6 +482,7 @@ type AdministrativeUnitable interface {
     GetMembershipType()(*string)
     GetScopedRoleMembers()([]ScopedRoleMembershipable)
     GetVisibility()(*string)
+    SetDeletedMembers(value []DirectoryObjectable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetExtensions(value []Extensionable)()

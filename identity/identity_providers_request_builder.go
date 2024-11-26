@@ -11,7 +11,7 @@ import (
 type IdentityProvidersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IdentityProvidersRequestBuilderGetQueryParameters get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For a Microsoft Entra tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, openIdConnectIdentityProvider, or appleManagedIdentityProvider objects.
+// IdentityProvidersRequestBuilderGetQueryParameters get a collection of identity provider resources that are configured for a tenant. Among the types of providers derived from identityProviderBase, in Microsoft Entra External ID, this operation can get a socialIdentityProvider, appleManagedIdentityProvider, builtinIdentityProvider, or an oidcIdentityProvider resource. In Azure AD B2C, this operation can get a socialIdentityProvider, appleManagedIdentityProvider, builtinIdentityProvider, or an openIdConnectIdentityProvider resource.
 type IdentityProvidersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,7 +81,7 @@ func NewIdentityProvidersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 func (m *IdentityProvidersRequestBuilder) Count()(*IdentityProvidersCountRequestBuilder) {
     return NewIdentityProvidersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For a Microsoft Entra tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, openIdConnectIdentityProvider, or appleManagedIdentityProvider objects.
+// Get get a collection of identity provider resources that are configured for a tenant. Among the types of providers derived from identityProviderBase, in Microsoft Entra External ID, this operation can get a socialIdentityProvider, appleManagedIdentityProvider, builtinIdentityProvider, or an oidcIdentityProvider resource. In Azure AD B2C, this operation can get a socialIdentityProvider, appleManagedIdentityProvider, builtinIdentityProvider, or an openIdConnectIdentityProvider resource.
 // returns a IdentityProviderBaseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -104,7 +104,7 @@ func (m *IdentityProvidersRequestBuilder) Get(ctx context.Context, requestConfig
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseCollectionResponseable), nil
 }
-// Post create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
+// Post create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, in Microsoft Entra, this operation can create a socialIdentityProvider, appleManagedIdentityProvider (external tenant only), or an oidcIdentityProvider (external tenant only) resource. In Azure AD B2C, this operation can create a socialIdentityProvider, appleManagedIdentityProvider, builtinIdentityProvider, or an openIdConnectIdentityProvider resource.
 // returns a IdentityProviderBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -127,7 +127,7 @@ func (m *IdentityProvidersRequestBuilder) Post(ctx context.Context, body ie233ee
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseable), nil
 }
-// ToGetRequestInformation get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For a Microsoft Entra tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, openIdConnectIdentityProvider, or appleManagedIdentityProvider objects.
+// ToGetRequestInformation get a collection of identity provider resources that are configured for a tenant. Among the types of providers derived from identityProviderBase, in Microsoft Entra External ID, this operation can get a socialIdentityProvider, appleManagedIdentityProvider, builtinIdentityProvider, or an oidcIdentityProvider resource. In Azure AD B2C, this operation can get a socialIdentityProvider, appleManagedIdentityProvider, builtinIdentityProvider, or an openIdConnectIdentityProvider resource.
 // returns a *RequestInformation when successful
 func (m *IdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityProvidersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +141,7 @@ func (m *IdentityProvidersRequestBuilder) ToGetRequestInformation(ctx context.Co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Microsoft Entra ID. In Azure AD B2C, this operation can currently create a socialIdentityProvider, openIdConnectIdentityProvider, or an appleManagedIdentityProvider resource.
+// ToPostRequestInformation create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, in Microsoft Entra, this operation can create a socialIdentityProvider, appleManagedIdentityProvider (external tenant only), or an oidcIdentityProvider (external tenant only) resource. In Azure AD B2C, this operation can create a socialIdentityProvider, appleManagedIdentityProvider, builtinIdentityProvider, or an openIdConnectIdentityProvider resource.
 // returns a *RequestInformation when successful
 func (m *IdentityProvidersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityProviderBaseable, requestConfiguration *IdentityProvidersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

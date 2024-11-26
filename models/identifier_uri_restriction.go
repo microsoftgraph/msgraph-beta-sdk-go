@@ -41,7 +41,7 @@ func (m *IdentifierUriRestriction) GetAdditionalData()(map[string]any) {
 func (m *IdentifierUriRestriction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExcludeActors gets the excludeActors property value. The excludeActors property
+// GetExcludeActors gets the excludeActors property value. Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute, they're exempted from the restriction.
 // returns a AppManagementPolicyActorExemptionsable when successful
 func (m *IdentifierUriRestriction) GetExcludeActors()(AppManagementPolicyActorExemptionsable) {
     val, err := m.GetBackingStore().Get("excludeActors")
@@ -53,7 +53,7 @@ func (m *IdentifierUriRestriction) GetExcludeActors()(AppManagementPolicyActorEx
     }
     return nil
 }
-// GetExcludeAppsReceivingV2Tokens gets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn't enforced for those applications.
+// GetExcludeAppsReceivingV2Tokens gets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction isn't enforced for those applications.
 // returns a *bool when successful
 func (m *IdentifierUriRestriction) GetExcludeAppsReceivingV2Tokens()(*bool) {
     val, err := m.GetBackingStore().Get("excludeAppsReceivingV2Tokens")
@@ -237,14 +237,14 @@ func (m *IdentifierUriRestriction) SetAdditionalData(value map[string]any)() {
 func (m *IdentifierUriRestriction) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExcludeActors sets the excludeActors property value. The excludeActors property
+// SetExcludeActors sets the excludeActors property value. Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute, they're exempted from the restriction.
 func (m *IdentifierUriRestriction) SetExcludeActors(value AppManagementPolicyActorExemptionsable)() {
     err := m.GetBackingStore().Set("excludeActors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExcludeAppsReceivingV2Tokens sets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Entra ID; else, the restriction isn't enforced for those applications.
+// SetExcludeAppsReceivingV2Tokens sets the excludeAppsReceivingV2Tokens property value. If true, the restriction isn't enforced for applications that are configured to receive V2 tokens in Microsoft Entra ID; else, the restriction isn't enforced for those applications.
 func (m *IdentifierUriRestriction) SetExcludeAppsReceivingV2Tokens(value *bool)() {
     err := m.GetBackingStore().Set("excludeAppsReceivingV2Tokens", value)
     if err != nil {
