@@ -748,6 +748,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewConversationMember(), nil
                     case "#microsoft.graph.conversationThread":
                         return NewConversationThread(), nil
+                    case "#microsoft.graph.copilotAdmin":
+                        return NewCopilotAdmin(), nil
+                    case "#microsoft.graph.copilotAdminLimitedMode":
+                        return NewCopilotAdminLimitedMode(), nil
+                    case "#microsoft.graph.copilotAdminSetting":
+                        return NewCopilotAdminSetting(), nil
                     case "#microsoft.graph.corsConfiguration_v2":
                         return NewCorsConfiguration_v2(), nil
                     case "#microsoft.graph.countryNamedLocation":
@@ -1876,6 +1882,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMfaCompletionMetric(), nil
                     case "#microsoft.graph.mfaFailure":
                         return NewMfaFailure(), nil
+                    case "#microsoft.graph.mfaTelecomFraudMetric":
+                        return NewMfaTelecomFraudMetric(), nil
+                    case "#microsoft.graph.mfaUserCountMetric":
+                        return NewMfaUserCountMetric(), nil
                     case "#microsoft.graph.microsoftAccountUserConversationMember":
                         return NewMicrosoftAccountUserConversationMember(), nil
                     case "#microsoft.graph.microsoftApplicationDataAccessSettings":

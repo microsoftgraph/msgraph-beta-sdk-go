@@ -81,7 +81,7 @@ func (m *SocialIdentityProvider) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIdentityProviderType gets the identityProviderType property value. For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
+// GetIdentityProviderType gets the identityProviderType property value. For external and workforce tenants, possible values: Facebook, Google  For Azure AD B2C tenants, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat.
 // returns a *string when successful
 func (m *SocialIdentityProvider) GetIdentityProviderType()(*string) {
     val, err := m.GetBackingStore().Get("identityProviderType")
@@ -133,7 +133,7 @@ func (m *SocialIdentityProvider) SetClientSecret(value *string)() {
         panic(err)
     }
 }
-// SetIdentityProviderType sets the identityProviderType property value. For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
+// SetIdentityProviderType sets the identityProviderType property value. For external and workforce tenants, possible values: Facebook, Google  For Azure AD B2C tenants, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat.
 func (m *SocialIdentityProvider) SetIdentityProviderType(value *string)() {
     err := m.GetBackingStore().Set("identityProviderType", value)
     if err != nil {

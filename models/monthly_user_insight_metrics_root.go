@@ -127,6 +127,22 @@ func (m *MonthlyUserInsightMetricsRoot) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["mfaRegisteredUsers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMfaUserCountMetricFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MfaUserCountMetricable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MfaUserCountMetricable)
+                }
+            }
+            m.SetMfaRegisteredUsers(res)
+        }
+        return nil
+    }
     res["requests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserRequestsMetricFromDiscriminatorValue)
         if err != nil {
@@ -210,6 +226,18 @@ func (m *MonthlyUserInsightMetricsRoot) GetMfaCompletions()([]MfaCompletionMetri
     }
     if val != nil {
         return val.([]MfaCompletionMetricable)
+    }
+    return nil
+}
+// GetMfaRegisteredUsers gets the mfaRegisteredUsers property value. The mfaRegisteredUsers property
+// returns a []MfaUserCountMetricable when successful
+func (m *MonthlyUserInsightMetricsRoot) GetMfaRegisteredUsers()([]MfaUserCountMetricable) {
+    val, err := m.GetBackingStore().Get("mfaRegisteredUsers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MfaUserCountMetricable)
     }
     return nil
 }
@@ -315,6 +343,18 @@ func (m *MonthlyUserInsightMetricsRoot) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    if m.GetMfaRegisteredUsers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMfaRegisteredUsers()))
+        for i, v := range m.GetMfaRegisteredUsers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mfaRegisteredUsers", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRequests()))
         for i, v := range m.GetRequests() {
@@ -388,6 +428,13 @@ func (m *MonthlyUserInsightMetricsRoot) SetMfaCompletions(value []MfaCompletionM
         panic(err)
     }
 }
+// SetMfaRegisteredUsers sets the mfaRegisteredUsers property value. The mfaRegisteredUsers property
+func (m *MonthlyUserInsightMetricsRoot) SetMfaRegisteredUsers(value []MfaUserCountMetricable)() {
+    err := m.GetBackingStore().Set("mfaRegisteredUsers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRequests sets the requests property value. Insights for all user requests on apps registered in the tenant for a specified period.
 func (m *MonthlyUserInsightMetricsRoot) SetRequests(value []UserRequestsMetricable)() {
     err := m.GetBackingStore().Set("requests", value)
@@ -417,6 +464,7 @@ type MonthlyUserInsightMetricsRootable interface {
     GetInactiveUsers()([]MonthlyInactiveUsersMetricable)
     GetInactiveUsersByApplication()([]MonthlyInactiveUsersByApplicationMetricable)
     GetMfaCompletions()([]MfaCompletionMetricable)
+    GetMfaRegisteredUsers()([]MfaUserCountMetricable)
     GetRequests()([]UserRequestsMetricable)
     GetSignUps()([]UserSignUpMetricable)
     GetSummary()([]InsightSummaryable)
@@ -425,6 +473,7 @@ type MonthlyUserInsightMetricsRootable interface {
     SetInactiveUsers(value []MonthlyInactiveUsersMetricable)()
     SetInactiveUsersByApplication(value []MonthlyInactiveUsersByApplicationMetricable)()
     SetMfaCompletions(value []MfaCompletionMetricable)()
+    SetMfaRegisteredUsers(value []MfaUserCountMetricable)()
     SetRequests(value []UserRequestsMetricable)()
     SetSignUps(value []UserSignUpMetricable)()
     SetSummary(value []InsightSummaryable)()

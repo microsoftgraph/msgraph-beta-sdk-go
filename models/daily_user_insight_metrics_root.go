@@ -127,6 +127,22 @@ func (m *DailyUserInsightMetricsRoot) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["mfaTelecomFraud"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMfaTelecomFraudMetricFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MfaTelecomFraudMetricable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MfaTelecomFraudMetricable)
+                }
+            }
+            m.SetMfaTelecomFraud(res)
+        }
+        return nil
+    }
     res["signUps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserSignUpMetricFromDiscriminatorValue)
         if err != nil {
@@ -210,6 +226,18 @@ func (m *DailyUserInsightMetricsRoot) GetMfaCompletions()([]MfaCompletionMetrica
     }
     if val != nil {
         return val.([]MfaCompletionMetricable)
+    }
+    return nil
+}
+// GetMfaTelecomFraud gets the mfaTelecomFraud property value. The mfaTelecomFraud property
+// returns a []MfaTelecomFraudMetricable when successful
+func (m *DailyUserInsightMetricsRoot) GetMfaTelecomFraud()([]MfaTelecomFraudMetricable) {
+    val, err := m.GetBackingStore().Get("mfaTelecomFraud")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MfaTelecomFraudMetricable)
     }
     return nil
 }
@@ -315,6 +343,18 @@ func (m *DailyUserInsightMetricsRoot) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetMfaTelecomFraud() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMfaTelecomFraud()))
+        for i, v := range m.GetMfaTelecomFraud() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mfaTelecomFraud", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSignUps() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignUps()))
         for i, v := range m.GetSignUps() {
@@ -388,6 +428,13 @@ func (m *DailyUserInsightMetricsRoot) SetMfaCompletions(value []MfaCompletionMet
         panic(err)
     }
 }
+// SetMfaTelecomFraud sets the mfaTelecomFraud property value. The mfaTelecomFraud property
+func (m *DailyUserInsightMetricsRoot) SetMfaTelecomFraud(value []MfaTelecomFraudMetricable)() {
+    err := m.GetBackingStore().Set("mfaTelecomFraud", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSignUps sets the signUps property value. Total sign-ups on apps registered in the tenant for a specified period.
 func (m *DailyUserInsightMetricsRoot) SetSignUps(value []UserSignUpMetricable)() {
     err := m.GetBackingStore().Set("signUps", value)
@@ -417,6 +464,7 @@ type DailyUserInsightMetricsRootable interface {
     GetInactiveUsers()([]DailyInactiveUsersMetricable)
     GetInactiveUsersByApplication()([]DailyInactiveUsersByApplicationMetricable)
     GetMfaCompletions()([]MfaCompletionMetricable)
+    GetMfaTelecomFraud()([]MfaTelecomFraudMetricable)
     GetSignUps()([]UserSignUpMetricable)
     GetSummary()([]InsightSummaryable)
     GetUserCount()([]UserCountMetricable)
@@ -425,6 +473,7 @@ type DailyUserInsightMetricsRootable interface {
     SetInactiveUsers(value []DailyInactiveUsersMetricable)()
     SetInactiveUsersByApplication(value []DailyInactiveUsersByApplicationMetricable)()
     SetMfaCompletions(value []MfaCompletionMetricable)()
+    SetMfaTelecomFraud(value []MfaTelecomFraudMetricable)()
     SetSignUps(value []UserSignUpMetricable)()
     SetSummary(value []InsightSummaryable)()
     SetUserCount(value []UserCountMetricable)()

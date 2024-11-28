@@ -83,6 +83,11 @@ func (m *AdministrativeUnitItemRequestBuilder) Delete(ctx context.Context, reque
     }
     return nil
 }
+// DeletedMembers provides operations to manage the deletedMembers property of the microsoft.graph.administrativeUnit entity.
+// returns a *ItemDeletedMembersRequestBuilder when successful
+func (m *AdministrativeUnitItemRequestBuilder) DeletedMembers()(*ItemDeletedMembersRequestBuilder) {
+    return NewItemDeletedMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Extensions provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.
 // returns a *ItemExtensionsRequestBuilder when successful
 func (m *AdministrativeUnitItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {

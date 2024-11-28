@@ -69,6 +69,16 @@ func (m *ProductRevision) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["isHotpatchUpdate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsHotpatchUpdate(val)
+        }
+        return nil
+    }
     res["knowledgeBaseArticle"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateKnowledgeBaseArticleFromDiscriminatorValue)
         if err != nil {
@@ -120,6 +130,18 @@ func (m *ProductRevision) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetIsHotpatchUpdate gets the isHotpatchUpdate property value. True indicates that the content is hotpatchable; otherwise, false. For more information, see Deploy a hotpatch quality update using Windows Autopatch. Read-only.
+// returns a *bool when successful
+func (m *ProductRevision) GetIsHotpatchUpdate()(*bool) {
+    val, err := m.GetBackingStore().Get("isHotpatchUpdate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetKnowledgeBaseArticle gets the knowledgeBaseArticle property value. The knowledge base article associated with the product revision.
 // returns a KnowledgeBaseArticleable when successful
@@ -200,6 +222,12 @@ func (m *ProductRevision) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     {
+        err = writer.WriteBoolValue("isHotpatchUpdate", m.GetIsHotpatchUpdate())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("knowledgeBaseArticle", m.GetKnowledgeBaseArticle())
         if err != nil {
             return err
@@ -245,6 +273,13 @@ func (m *ProductRevision) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetIsHotpatchUpdate sets the isHotpatchUpdate property value. True indicates that the content is hotpatchable; otherwise, false. For more information, see Deploy a hotpatch quality update using Windows Autopatch. Read-only.
+func (m *ProductRevision) SetIsHotpatchUpdate(value *bool)() {
+    err := m.GetBackingStore().Set("isHotpatchUpdate", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetKnowledgeBaseArticle sets the knowledgeBaseArticle property value. The knowledge base article associated with the product revision.
 func (m *ProductRevision) SetKnowledgeBaseArticle(value KnowledgeBaseArticleable)() {
     err := m.GetBackingStore().Set("knowledgeBaseArticle", value)
@@ -285,6 +320,7 @@ type ProductRevisionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCatalogEntry()(CatalogEntryable)
     GetDisplayName()(*string)
+    GetIsHotpatchUpdate()(*bool)
     GetKnowledgeBaseArticle()(KnowledgeBaseArticleable)
     GetOsBuild()(BuildVersionDetailsable)
     GetProduct()(*string)
@@ -292,6 +328,7 @@ type ProductRevisionable interface {
     GetVersion()(*string)
     SetCatalogEntry(value CatalogEntryable)()
     SetDisplayName(value *string)()
+    SetIsHotpatchUpdate(value *bool)()
     SetKnowledgeBaseArticle(value KnowledgeBaseArticleable)()
     SetOsBuild(value BuildVersionDetailsable)()
     SetProduct(value *string)()

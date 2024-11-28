@@ -23,6 +23,18 @@ func NewCloudPcReviewStatus()(*CloudPcReviewStatus) {
 func CreateCloudPcReviewStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcReviewStatus(), nil
 }
+// GetAccessTier gets the accessTier property value. The accessTier property
+// returns a *CloudPcBlobAccessTier when successful
+func (m *CloudPcReviewStatus) GetAccessTier()(*CloudPcBlobAccessTier) {
+    val, err := m.GetBackingStore().Get("accessTier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcBlobAccessTier)
+    }
+    return nil
+}
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
 func (m *CloudPcReviewStatus) GetAdditionalData()(map[string]any) {
@@ -81,6 +93,16 @@ func (m *CloudPcReviewStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcReviewStatus) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["accessTier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcBlobAccessTier)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAccessTier(val.(*CloudPcBlobAccessTier))
+        }
+        return nil
+    }
     res["azureStorageAccountId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -269,6 +291,13 @@ func (m *CloudPcReviewStatus) GetUserAccessLevel()(*CloudPcUserAccessLevel) {
 }
 // Serialize serializes information the current object
 func (m *CloudPcReviewStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAccessTier() != nil {
+        cast := (*m.GetAccessTier()).String()
+        err := writer.WriteStringValue("accessTier", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("azureStorageAccountId", m.GetAzureStorageAccountId())
         if err != nil {
@@ -337,6 +366,13 @@ func (m *CloudPcReviewStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef
         }
     }
     return nil
+}
+// SetAccessTier sets the accessTier property value. The accessTier property
+func (m *CloudPcReviewStatus) SetAccessTier(value *CloudPcBlobAccessTier)() {
+    err := m.GetBackingStore().Set("accessTier", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcReviewStatus) SetAdditionalData(value map[string]any)() {
@@ -423,6 +459,7 @@ type CloudPcReviewStatusable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAccessTier()(*CloudPcBlobAccessTier)
     GetAzureStorageAccountId()(*string)
     GetAzureStorageAccountName()(*string)
     GetAzureStorageContainerName()(*string)
@@ -434,6 +471,7 @@ type CloudPcReviewStatusable interface {
     GetSubscriptionId()(*string)
     GetSubscriptionName()(*string)
     GetUserAccessLevel()(*CloudPcUserAccessLevel)
+    SetAccessTier(value *CloudPcBlobAccessTier)()
     SetAzureStorageAccountId(value *string)()
     SetAzureStorageAccountName(value *string)()
     SetAzureStorageContainerName(value *string)()

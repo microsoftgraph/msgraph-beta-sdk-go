@@ -115,6 +115,11 @@ func (m *UserInsightsDailyRequestBuilder) InactiveUsersByApplication()(*UserInsi
 func (m *UserInsightsDailyRequestBuilder) MfaCompletions()(*UserInsightsDailyMfaCompletionsRequestBuilder) {
     return NewUserInsightsDailyMfaCompletionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MfaTelecomFraud provides operations to manage the mfaTelecomFraud property of the microsoft.graph.dailyUserInsightMetricsRoot entity.
+// returns a *UserInsightsDailyMfaTelecomFraudRequestBuilder when successful
+func (m *UserInsightsDailyRequestBuilder) MfaTelecomFraud()(*UserInsightsDailyMfaTelecomFraudRequestBuilder) {
+    return NewUserInsightsDailyMfaTelecomFraudRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property daily in reports
 // returns a DailyUserInsightMetricsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
