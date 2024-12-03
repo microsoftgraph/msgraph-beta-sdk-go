@@ -121,7 +121,7 @@ func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetPrincipalDisplayName gets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+// GetPrincipalDisplayName gets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).
 // returns a *string when successful
 func (m *AppRoleAssignment) GetPrincipalDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("principalDisplayName")
@@ -157,7 +157,7 @@ func (m *AppRoleAssignment) GetPrincipalType()(*string) {
     }
     return nil
 }
-// GetResourceDisplayName gets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made.
+// GetResourceDisplayName gets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
 // returns a *string when successful
 func (m *AppRoleAssignment) GetResourceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("resourceDisplayName")
@@ -245,7 +245,7 @@ func (m *AppRoleAssignment) SetCreationTimestamp(value *i336074805fc853987abe6f7
         panic(err)
     }
 }
-// SetPrincipalDisplayName sets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
+// SetPrincipalDisplayName sets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).
 func (m *AppRoleAssignment) SetPrincipalDisplayName(value *string)() {
     err := m.GetBackingStore().Set("principalDisplayName", value)
     if err != nil {
@@ -266,7 +266,7 @@ func (m *AppRoleAssignment) SetPrincipalType(value *string)() {
         panic(err)
     }
 }
-// SetResourceDisplayName sets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made.
+// SetResourceDisplayName sets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made. Maximum length is 256 characters.
 func (m *AppRoleAssignment) SetResourceDisplayName(value *string)() {
     err := m.GetBackingStore().Set("resourceDisplayName", value)
     if err != nil {

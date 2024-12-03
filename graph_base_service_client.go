@@ -66,6 +66,7 @@ import (
     i65ec2d26e2745c20b2909e217069fc9c66fc5d6b449f4f50e1f705a550f3e781 "github.com/microsoftgraph/msgraph-beta-sdk-go/filteringpolicies"
     i65ed27543dee9887d3df7d7d883303dfead48cba6be4e357fa7d5c21332b4626 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin"
     i66f18ccab4e34309d26d1056f0e7dd8b563a5f8ee6f8d9c6e8e77c5fac50f8b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamstemplates"
+    i6878457452f8bce5904d31522016d9cbd75b82042526e5ae91637c530b8658e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/authenticationmethoddevices"
     i6b96a96c52bbdff1731b8a5490cd5f342e33866e0931912944d323bc79f663e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus"
     i6c3f8c4b4b571cf0fbb7c7c8791ae736e28cc3f4bb62262698b6291c13e127b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/auditlogs"
     i6e398703c86ec3814400d80161079e7253c4e25f4ba1adb0c8d31da236f7bcd7 "github.com/microsoftgraph/msgraph-beta-sdk-go/directory"
@@ -226,6 +227,11 @@ func (m *GraphBaseServiceClient) AuditLogs()(*i6c3f8c4b4b571cf0fbb7c7c8791ae736e
 // returns a *AuthenticationMethodConfigurationsRequestBuilder when successful
 func (m *GraphBaseServiceClient) AuthenticationMethodConfigurations()(*i8e667c6208be96da3103b8806ff97028502c18052414fe99a224c1565834ca0f.AuthenticationMethodConfigurationsRequestBuilder) {
     return i8e667c6208be96da3103b8806ff97028502c18052414fe99a224c1565834ca0f.NewAuthenticationMethodConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AuthenticationMethodDevices provides operations to manage the collection of authenticationMethodDevice entities.
+// returns a *AuthenticationMethodDevicesRequestBuilder when successful
+func (m *GraphBaseServiceClient) AuthenticationMethodDevices()(*i6878457452f8bce5904d31522016d9cbd75b82042526e5ae91637c530b8658e8.AuthenticationMethodDevicesRequestBuilder) {
+    return i6878457452f8bce5904d31522016d9cbd75b82042526e5ae91637c530b8658e8.NewAuthenticationMethodDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AuthenticationMethodsPolicy provides operations to manage the authenticationMethodsPolicy singleton.
 // returns a *AuthenticationMethodsPolicyRequestBuilder when successful

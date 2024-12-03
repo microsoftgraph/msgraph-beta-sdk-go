@@ -122,6 +122,22 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["getAllMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConversationMemberable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ConversationMemberable)
+                }
+            }
+            m.SetGetAllMembers(res)
+        }
+        return nil
+    }
     res["isArchived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -267,6 +283,18 @@ func (m *Channel) GetFilesFolder()(DriveItemable) {
     }
     if val != nil {
         return val.(DriveItemable)
+    }
+    return nil
+}
+// GetGetAllMembers gets the getAllMembers property value. The getAllMembers property
+// returns a []ConversationMemberable when successful
+func (m *Channel) GetGetAllMembers()([]ConversationMemberable) {
+    val, err := m.GetBackingStore().Get("getAllMembers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConversationMemberable)
     }
     return nil
 }
@@ -438,6 +466,18 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetGetAllMembers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGetAllMembers()))
+        for i, v := range m.GetGetAllMembers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("getAllMembers", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("isArchived", m.GetIsArchived())
         if err != nil {
@@ -566,6 +606,13 @@ func (m *Channel) SetFilesFolder(value DriveItemable)() {
         panic(err)
     }
 }
+// SetGetAllMembers sets the getAllMembers property value. The getAllMembers property
+func (m *Channel) SetGetAllMembers(value []ConversationMemberable)() {
+    err := m.GetBackingStore().Set("getAllMembers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsArchived sets the isArchived property value. Indicates whether the channel is archived. Read-only.
 func (m *Channel) SetIsArchived(value *bool)() {
     err := m.GetBackingStore().Set("isArchived", value)
@@ -651,6 +698,7 @@ type Channelable interface {
     GetDisplayName()(*string)
     GetEmail()(*string)
     GetFilesFolder()(DriveItemable)
+    GetGetAllMembers()([]ConversationMemberable)
     GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
     GetMembers()([]ConversationMemberable)
@@ -667,6 +715,7 @@ type Channelable interface {
     SetDisplayName(value *string)()
     SetEmail(value *string)()
     SetFilesFolder(value DriveItemable)()
+    SetGetAllMembers(value []ConversationMemberable)()
     SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()
     SetMembers(value []ConversationMemberable)()

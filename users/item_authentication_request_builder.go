@@ -100,6 +100,11 @@ func (m *ItemAuthenticationRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Authenticationable), nil
 }
+// HardwareOathMethods provides operations to manage the hardwareOathMethods property of the microsoft.graph.authentication entity.
+// returns a *ItemAuthenticationHardwareOathMethodsRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) HardwareOathMethods()(*ItemAuthenticationHardwareOathMethodsRequestBuilder) {
+    return NewItemAuthenticationHardwareOathMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Methods provides operations to manage the methods property of the microsoft.graph.authentication entity.
 // returns a *ItemAuthenticationMethodsRequestBuilder when successful
 func (m *ItemAuthenticationRequestBuilder) Methods()(*ItemAuthenticationMethodsRequestBuilder) {

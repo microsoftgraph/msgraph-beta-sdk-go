@@ -44,6 +44,11 @@ func (m *DirectoryRequestBuilder) AdministrativeUnits()(*AdministrativeUnitsRequ
 func (m *DirectoryRequestBuilder) AttributeSets()(*AttributeSetsRequestBuilder) {
     return NewAttributeSetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AuthenticationMethodDevices provides operations to manage the authenticationMethodDevices property of the microsoft.graph.directory entity.
+// returns a *AuthenticationMethodDevicesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) AuthenticationMethodDevices()(*AuthenticationMethodDevicesRequestBuilder) {
+    return NewAuthenticationMethodDevicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CertificateAuthorities provides operations to manage the certificateAuthorities property of the microsoft.graph.directory entity.
 // returns a *CertificateAuthoritiesRequestBuilder when successful
 func (m *DirectoryRequestBuilder) CertificateAuthorities()(*CertificateAuthoritiesRequestBuilder) {
