@@ -110,6 +110,11 @@ func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) Get(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
 }
+// GetAllMembers provides operations to manage the getAllMembers property of the microsoft.graph.channel entity.
+// returns a *ItemTeamDefinitionPrimaryChannelGetAllMembersRequestBuilder when successful
+func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) GetAllMembers()(*ItemTeamDefinitionPrimaryChannelGetAllMembersRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelGetAllMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Members provides operations to manage the members property of the microsoft.graph.channel entity.
 // returns a *ItemTeamDefinitionPrimaryChannelMembersRequestBuilder when successful
 func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) Members()(*ItemTeamDefinitionPrimaryChannelMembersRequestBuilder) {

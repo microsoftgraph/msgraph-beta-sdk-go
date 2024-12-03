@@ -39,7 +39,7 @@ func CreatePrinterBaseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
     }
     return NewPrinterBase(), nil
 }
-// GetCapabilities gets the capabilities property value. The capabilities property
+// GetCapabilities gets the capabilities property value. The capabilities of the printer/printerShare.
 // returns a PrinterCapabilitiesable when successful
 func (m *PrinterBase) GetCapabilities()(PrinterCapabilitiesable) {
     val, err := m.GetBackingStore().Get("capabilities")
@@ -51,7 +51,7 @@ func (m *PrinterBase) GetCapabilities()(PrinterCapabilitiesable) {
     }
     return nil
 }
-// GetDefaults gets the defaults property value. The defaults property
+// GetDefaults gets the defaults property value. The default print settings of printer/printerShare.
 // returns a PrinterDefaultsable when successful
 func (m *PrinterBase) GetDefaults()(PrinterDefaultsable) {
     val, err := m.GetBackingStore().Get("defaults")
@@ -63,7 +63,7 @@ func (m *PrinterBase) GetDefaults()(PrinterDefaultsable) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The name of the printer/printerShare.
 // returns a *string when successful
 func (m *PrinterBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -187,7 +187,7 @@ func (m *PrinterBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetIsAcceptingJobs gets the isAcceptingJobs property value. The isAcceptingJobs property
+// GetIsAcceptingJobs gets the isAcceptingJobs property value. Specifies whether the printer/printerShare is currently accepting new print jobs.
 // returns a *bool when successful
 func (m *PrinterBase) GetIsAcceptingJobs()(*bool) {
     val, err := m.GetBackingStore().Get("isAcceptingJobs")
@@ -199,7 +199,7 @@ func (m *PrinterBase) GetIsAcceptingJobs()(*bool) {
     }
     return nil
 }
-// GetJobs gets the jobs property value. The jobs property
+// GetJobs gets the jobs property value. The list of jobs that are queued for printing by the printer/printerShare.
 // returns a []PrintJobable when successful
 func (m *PrinterBase) GetJobs()([]PrintJobable) {
     val, err := m.GetBackingStore().Get("jobs")
@@ -211,7 +211,7 @@ func (m *PrinterBase) GetJobs()([]PrintJobable) {
     }
     return nil
 }
-// GetLocation gets the location property value. The location property
+// GetLocation gets the location property value. The physical and/or organizational location of the printer/printerShare.
 // returns a PrinterLocationable when successful
 func (m *PrinterBase) GetLocation()(PrinterLocationable) {
     val, err := m.GetBackingStore().Get("location")
@@ -223,7 +223,7 @@ func (m *PrinterBase) GetLocation()(PrinterLocationable) {
     }
     return nil
 }
-// GetManufacturer gets the manufacturer property value. The manufacturer property
+// GetManufacturer gets the manufacturer property value. The manufacturer of the printer/printerShare.
 // returns a *string when successful
 func (m *PrinterBase) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
@@ -235,7 +235,7 @@ func (m *PrinterBase) GetManufacturer()(*string) {
     }
     return nil
 }
-// GetModel gets the model property value. The model property
+// GetModel gets the model property value. The model name of the printer/printerShare.
 // returns a *string when successful
 func (m *PrinterBase) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
@@ -345,56 +345,56 @@ func (m *PrinterBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetCapabilities sets the capabilities property value. The capabilities property
+// SetCapabilities sets the capabilities property value. The capabilities of the printer/printerShare.
 func (m *PrinterBase) SetCapabilities(value PrinterCapabilitiesable)() {
     err := m.GetBackingStore().Set("capabilities", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDefaults sets the defaults property value. The defaults property
+// SetDefaults sets the defaults property value. The default print settings of printer/printerShare.
 func (m *PrinterBase) SetDefaults(value PrinterDefaultsable)() {
     err := m.GetBackingStore().Set("defaults", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The name of the printer/printerShare.
 func (m *PrinterBase) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsAcceptingJobs sets the isAcceptingJobs property value. The isAcceptingJobs property
+// SetIsAcceptingJobs sets the isAcceptingJobs property value. Specifies whether the printer/printerShare is currently accepting new print jobs.
 func (m *PrinterBase) SetIsAcceptingJobs(value *bool)() {
     err := m.GetBackingStore().Set("isAcceptingJobs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetJobs sets the jobs property value. The jobs property
+// SetJobs sets the jobs property value. The list of jobs that are queued for printing by the printer/printerShare.
 func (m *PrinterBase) SetJobs(value []PrintJobable)() {
     err := m.GetBackingStore().Set("jobs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLocation sets the location property value. The location property
+// SetLocation sets the location property value. The physical and/or organizational location of the printer/printerShare.
 func (m *PrinterBase) SetLocation(value PrinterLocationable)() {
     err := m.GetBackingStore().Set("location", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManufacturer sets the manufacturer property value. The manufacturer property
+// SetManufacturer sets the manufacturer property value. The manufacturer of the printer/printerShare.
 func (m *PrinterBase) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModel sets the model property value. The model property
+// SetModel sets the model property value. The model name of the printer/printerShare.
 func (m *PrinterBase) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
     if err != nil {

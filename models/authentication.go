@@ -79,6 +79,22 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["hardwareOathMethods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateHardwareOathAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]HardwareOathAuthenticationMethodable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(HardwareOathAuthenticationMethodable)
+                }
+            }
+            m.SetHardwareOathMethods(res)
+        }
+        return nil
+    }
     res["methods"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAuthenticationMethodFromDiscriminatorValue)
         if err != nil {
@@ -261,6 +277,18 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
+// GetHardwareOathMethods gets the hardwareOathMethods property value. The hardwareOathMethods property
+// returns a []HardwareOathAuthenticationMethodable when successful
+func (m *Authentication) GetHardwareOathMethods()([]HardwareOathAuthenticationMethodable) {
+    val, err := m.GetBackingStore().Get("hardwareOathMethods")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]HardwareOathAuthenticationMethodable)
+    }
+    return nil
+}
 // GetMethods gets the methods property value. Represents all authentication methods registered to a user.
 // returns a []AuthenticationMethodable when successful
 func (m *Authentication) GetMethods()([]AuthenticationMethodable) {
@@ -435,6 +463,18 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetHardwareOathMethods() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetHardwareOathMethods()))
+        for i, v := range m.GetHardwareOathMethods() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("hardwareOathMethods", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMethods() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMethods()))
         for i, v := range m.GetMethods() {
@@ -583,6 +623,13 @@ func (m *Authentication) SetFido2Methods(value []Fido2AuthenticationMethodable)(
         panic(err)
     }
 }
+// SetHardwareOathMethods sets the hardwareOathMethods property value. The hardwareOathMethods property
+func (m *Authentication) SetHardwareOathMethods(value []HardwareOathAuthenticationMethodable)() {
+    err := m.GetBackingStore().Set("hardwareOathMethods", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMethods sets the methods property value. Represents all authentication methods registered to a user.
 func (m *Authentication) SetMethods(value []AuthenticationMethodable)() {
     err := m.GetBackingStore().Set("methods", value)
@@ -672,6 +719,7 @@ type Authenticationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetEmailMethods()([]EmailAuthenticationMethodable)
     GetFido2Methods()([]Fido2AuthenticationMethodable)
+    GetHardwareOathMethods()([]HardwareOathAuthenticationMethodable)
     GetMethods()([]AuthenticationMethodable)
     GetMicrosoftAuthenticatorMethods()([]MicrosoftAuthenticatorAuthenticationMethodable)
     GetOperations()([]LongRunningOperationable)
@@ -686,6 +734,7 @@ type Authenticationable interface {
     GetWindowsHelloForBusinessMethods()([]WindowsHelloForBusinessAuthenticationMethodable)
     SetEmailMethods(value []EmailAuthenticationMethodable)()
     SetFido2Methods(value []Fido2AuthenticationMethodable)()
+    SetHardwareOathMethods(value []HardwareOathAuthenticationMethodable)()
     SetMethods(value []AuthenticationMethodable)()
     SetMicrosoftAuthenticatorMethods(value []MicrosoftAuthenticatorAuthenticationMethodable)()
     SetOperations(value []LongRunningOperationable)()

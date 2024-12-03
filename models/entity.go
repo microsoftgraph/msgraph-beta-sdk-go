@@ -406,6 +406,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAuthenticationMethod(), nil
                     case "#microsoft.graph.authenticationMethodConfiguration":
                         return NewAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.authenticationMethodDevice":
+                        return NewAuthenticationMethodDevice(), nil
                     case "#microsoft.graph.authenticationMethodModeDetail":
                         return NewAuthenticationMethodModeDetail(), nil
                     case "#microsoft.graph.authenticationMethodsPolicy":
@@ -1460,8 +1462,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewHardwareConfigurationRunSummary(), nil
                     case "#microsoft.graph.hardwareConfigurationUserState":
                         return NewHardwareConfigurationUserState(), nil
+                    case "#microsoft.graph.hardwareOathAuthenticationMethod":
+                        return NewHardwareOathAuthenticationMethod(), nil
                     case "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration":
                         return NewHardwareOathAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.hardwareOathTokenAuthenticationMethodDevice":
+                        return NewHardwareOathTokenAuthenticationMethodDevice(), nil
                     case "#microsoft.graph.hardwarePasswordDetail":
                         return NewHardwarePasswordDetail(), nil
                     case "#microsoft.graph.hardwarePasswordInfo":
@@ -2658,8 +2664,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewStandardWebPart(), nil
                     case "#microsoft.graph.startHoldMusicOperation":
                         return NewStartHoldMusicOperation(), nil
+                    case "#microsoft.graph.startRecordingOperation":
+                        return NewStartRecordingOperation(), nil
+                    case "#microsoft.graph.startTranscriptionOperation":
+                        return NewStartTranscriptionOperation(), nil
                     case "#microsoft.graph.stopHoldMusicOperation":
                         return NewStopHoldMusicOperation(), nil
+                    case "#microsoft.graph.stopRecordingOperation":
+                        return NewStopRecordingOperation(), nil
+                    case "#microsoft.graph.stopTranscriptionOperation":
+                        return NewStopTranscriptionOperation(), nil
                     case "#microsoft.graph.storageQuotaBreakdown":
                         return NewStorageQuotaBreakdown(), nil
                     case "#microsoft.graph.storageSettings":

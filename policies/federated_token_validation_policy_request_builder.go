@@ -18,7 +18,7 @@ type FederatedTokenValidationPolicyRequestBuilderDeleteRequestConfiguration stru
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FederatedTokenValidationPolicyRequestBuilderGetQueryParameters read the properties and relationships of a federatedTokenValidationPolicy object.
+// FederatedTokenValidationPolicyRequestBuilderGetQueryParameters get a list of the federatedTokenValidationPolicy objects and their properties.
 type FederatedTokenValidationPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,12 +70,12 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) Delete(ctx context.Contex
     }
     return nil
 }
-// Get read the properties and relationships of a federatedTokenValidationPolicy object.
+// Get get a list of the federatedTokenValidationPolicy objects and their properties.
 // returns a FederatedTokenValidationPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/policyroot-list-federatedtokenvalidationpolicy?view=graph-rest-beta
 func (m *FederatedTokenValidationPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedTokenValidationPolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *FederatedTokenValidationPolicyRequestBuilder) ToDeleteRequestInformatio
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a federatedTokenValidationPolicy object.
+// ToGetRequestInformation get a list of the federatedTokenValidationPolicy objects and their properties.
 // returns a *RequestInformation when successful
 func (m *FederatedTokenValidationPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

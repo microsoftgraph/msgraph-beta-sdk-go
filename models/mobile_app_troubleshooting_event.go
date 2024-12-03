@@ -32,7 +32,7 @@ func (m *MobileAppTroubleshootingEvent) GetApplicationId()(*string) {
     }
     return nil
 }
-// GetAppLogCollectionRequests gets the appLogCollectionRequests property value. Indicates collection of App Log Upload Request.
+// GetAppLogCollectionRequests gets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
 // returns a []AppLogCollectionRequestable when successful
 func (m *MobileAppTroubleshootingEvent) GetAppLogCollectionRequests()([]AppLogCollectionRequestable) {
     val, err := m.GetBackingStore().Get("appLogCollectionRequests")
@@ -233,7 +233,7 @@ func (m *MobileAppTroubleshootingEvent) SetApplicationId(value *string)() {
         panic(err)
     }
 }
-// SetAppLogCollectionRequests sets the appLogCollectionRequests property value. Indicates collection of App Log Upload Request.
+// SetAppLogCollectionRequests sets the appLogCollectionRequests property value. The collection property of AppLogUploadRequest.
 func (m *MobileAppTroubleshootingEvent) SetAppLogCollectionRequests(value []AppLogCollectionRequestable)() {
     err := m.GetBackingStore().Set("appLogCollectionRequests", value)
     if err != nil {

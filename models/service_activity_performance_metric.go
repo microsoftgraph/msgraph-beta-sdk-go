@@ -77,7 +77,7 @@ func (m *ServiceActivityPerformanceMetric) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetIntervalStartDateTime gets the intervalStartDateTime property value. The intervalStartDateTime property
+// GetIntervalStartDateTime gets the intervalStartDateTime property value. The start date and time (UTC) of the interval. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ServiceActivityPerformanceMetric) GetIntervalStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("intervalStartDateTime")
@@ -101,7 +101,7 @@ func (m *ServiceActivityPerformanceMetric) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPercentage gets the percentage property value. The percentage property
+// GetPercentage gets the percentage property value. The aggregated performance over the given aggregation interval that starts from the intervalStartDateTime. The performance is calculated at the minute level. The performance at the starting minute of the intervalStartDateTime is included. The performance at the last minute of the given interval is excluded. For example, if intervalStartDateTime is 2023-09-20T18:00:00Z and the aggregation interval is 5 minutes, then performance is aggregated from 2023-09-20T18:00:00Z (inclusive) to 2023-09-20T18:05:00Z (exclusive).
 // returns a *float64 when successful
 func (m *ServiceActivityPerformanceMetric) GetPercentage()(*float64) {
     val, err := m.GetBackingStore().Get("percentage")
@@ -152,7 +152,7 @@ func (m *ServiceActivityPerformanceMetric) SetAdditionalData(value map[string]an
 func (m *ServiceActivityPerformanceMetric) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIntervalStartDateTime sets the intervalStartDateTime property value. The intervalStartDateTime property
+// SetIntervalStartDateTime sets the intervalStartDateTime property value. The start date and time (UTC) of the interval. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ServiceActivityPerformanceMetric) SetIntervalStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("intervalStartDateTime", value)
     if err != nil {
@@ -166,7 +166,7 @@ func (m *ServiceActivityPerformanceMetric) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPercentage sets the percentage property value. The percentage property
+// SetPercentage sets the percentage property value. The aggregated performance over the given aggregation interval that starts from the intervalStartDateTime. The performance is calculated at the minute level. The performance at the starting minute of the intervalStartDateTime is included. The performance at the last minute of the given interval is excluded. For example, if intervalStartDateTime is 2023-09-20T18:00:00Z and the aggregation interval is 5 minutes, then performance is aggregated from 2023-09-20T18:00:00Z (inclusive) to 2023-09-20T18:05:00Z (exclusive).
 func (m *ServiceActivityPerformanceMetric) SetPercentage(value *float64)() {
     err := m.GetBackingStore().Set("percentage", value)
     if err != nil {

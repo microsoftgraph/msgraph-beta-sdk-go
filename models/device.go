@@ -142,7 +142,7 @@ func (m *Device) GetDeviceVersion()(*int32) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// GetDisplayName gets the displayName property value. The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
 // returns a *string when successful
 func (m *Device) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -1452,7 +1452,7 @@ func (m *Device) SetDeviceVersion(value *int32)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
+// SetDisplayName sets the displayName property value. The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
 func (m *Device) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
