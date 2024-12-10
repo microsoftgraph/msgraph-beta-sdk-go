@@ -10,7 +10,7 @@ import (
 type ItemCloudPCsItemRetrieveSnapshotsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetQueryParameters invoke function retrieveSnapshots
+// ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetQueryParameters list all cloudPcSnapshot resources for a Cloud PC.
 type ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewItemCloudPCsItemRetrieveSnapshotsRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsItemRetrieveSnapshotsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function retrieveSnapshots
+// Get list all cloudPcSnapshot resources for a Cloud PC.
 // Deprecated: This method is obsolete. Use GetAsRetrieveSnapshotsGetResponse instead.
 // returns a ItemCloudPCsItemRetrieveSnapshotsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-retrievesnapshots?view=graph-rest-beta
 func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(ItemCloudPCsItemRetrieveSnapshotsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) Get(ctx context.Contex
     }
     return res.(ItemCloudPCsItemRetrieveSnapshotsResponseable), nil
 }
-// GetAsRetrieveSnapshotsGetResponse invoke function retrieveSnapshots
+// GetAsRetrieveSnapshotsGetResponse list all cloudPcSnapshot resources for a Cloud PC.
 // returns a ItemCloudPCsItemRetrieveSnapshotsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-retrievesnapshots?view=graph-rest-beta
 func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) GetAsRetrieveSnapshotsGetResponse(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(ItemCloudPCsItemRetrieveSnapshotsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) GetAsRetrieveSnapshots
     }
     return res.(ItemCloudPCsItemRetrieveSnapshotsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function retrieveSnapshots
+// ToGetRequestInformation list all cloudPcSnapshot resources for a Cloud PC.
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

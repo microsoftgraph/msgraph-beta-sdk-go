@@ -11,7 +11,7 @@ import (
 type ItemSitesItemOnenotePagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemOnenotePagesRequestBuilderGetQueryParameters the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// ItemSitesItemOnenotePagesRequestBuilderGetQueryParameters the pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 type ItemSitesItemOnenotePagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemSitesItemOnenotePagesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *ItemSitesItemOnenotePagesRequestBuilder) Count()(*ItemSitesItemOnenotePagesCountRequestBuilder) {
     return NewItemSitesItemOnenotePagesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// Get the pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a OnenotePageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemOnenotePagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenotePagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemSitesItemOnenotePagesRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenotePageable), nil
 }
-// ToGetRequestInformation the pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// ToGetRequestInformation the pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemOnenotePagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenotePagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

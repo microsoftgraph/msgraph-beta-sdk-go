@@ -21,7 +21,7 @@ func NewOneDriveForBusinessProtectionPolicy()(*OneDriveForBusinessProtectionPoli
 func CreateOneDriveForBusinessProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOneDriveForBusinessProtectionPolicy(), nil
 }
-// GetDriveInclusionRules gets the driveInclusionRules property value. Contains the details of the Onedrive for Business protection rule.
+// GetDriveInclusionRules gets the driveInclusionRules property value. Contains the details of the OneDrive for Work or School protection rule.
 // returns a []DriveProtectionRuleable when successful
 func (m *OneDriveForBusinessProtectionPolicy) GetDriveInclusionRules()([]DriveProtectionRuleable) {
     val, err := m.GetBackingStore().Get("driveInclusionRules")
@@ -33,7 +33,7 @@ func (m *OneDriveForBusinessProtectionPolicy) GetDriveInclusionRules()([]DrivePr
     }
     return nil
 }
-// GetDriveProtectionUnits gets the driveProtectionUnits property value. Contains the protection units associated with a  OneDrive for Business protection policy.
+// GetDriveProtectionUnits gets the driveProtectionUnits property value. Contains the protection units associated with a  OneDrive for Work or School protection policy.
 // returns a []DriveProtectionUnitable when successful
 func (m *OneDriveForBusinessProtectionPolicy) GetDriveProtectionUnits()([]DriveProtectionUnitable) {
     val, err := m.GetBackingStore().Get("driveProtectionUnits")
@@ -155,14 +155,14 @@ func (m *OneDriveForBusinessProtectionPolicy) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetDriveInclusionRules sets the driveInclusionRules property value. Contains the details of the Onedrive for Business protection rule.
+// SetDriveInclusionRules sets the driveInclusionRules property value. Contains the details of the OneDrive for Work or School protection rule.
 func (m *OneDriveForBusinessProtectionPolicy) SetDriveInclusionRules(value []DriveProtectionRuleable)() {
     err := m.GetBackingStore().Set("driveInclusionRules", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDriveProtectionUnits sets the driveProtectionUnits property value. Contains the protection units associated with a  OneDrive for Business protection policy.
+// SetDriveProtectionUnits sets the driveProtectionUnits property value. Contains the protection units associated with a  OneDrive for Work or School protection policy.
 func (m *OneDriveForBusinessProtectionPolicy) SetDriveProtectionUnits(value []DriveProtectionUnitable)() {
     err := m.GetBackingStore().Set("driveProtectionUnits", value)
     if err != nil {

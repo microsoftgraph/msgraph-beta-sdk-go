@@ -88,7 +88,7 @@ func (m *EducationalActivityDetail) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Long-form name of the program that the user has provided.
+// GetDisplayName gets the displayName property value. Long-form name of the program that the user provided.
 // returns a *string when successful
 func (m *EducationalActivityDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -236,7 +236,7 @@ func (m *EducationalActivityDetail) GetFieldsOfStudy()([]string) {
     }
     return nil
 }
-// GetGrade gets the grade property value. The final grade, class, GPA or score.
+// GetGrade gets the grade property value. The final grade, class, GPA, or score.
 // returns a *string when successful
 func (m *EducationalActivityDetail) GetGrade()(*string) {
     val, err := m.GetBackingStore().Get("grade")
@@ -248,7 +248,7 @@ func (m *EducationalActivityDetail) GetGrade()(*string) {
     }
     return nil
 }
-// GetNotes gets the notes property value. Additional notes the user has provided.
+// GetNotes gets the notes property value. More notes the user provided.
 // returns a *string when successful
 func (m *EducationalActivityDetail) GetNotes()(*string) {
     val, err := m.GetBackingStore().Get("notes")
@@ -393,7 +393,7 @@ func (m *EducationalActivityDetail) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Long-form name of the program that the user has provided.
+// SetDisplayName sets the displayName property value. Long-form name of the program that the user provided.
 func (m *EducationalActivityDetail) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
@@ -407,14 +407,14 @@ func (m *EducationalActivityDetail) SetFieldsOfStudy(value []string)() {
         panic(err)
     }
 }
-// SetGrade sets the grade property value. The final grade, class, GPA or score.
+// SetGrade sets the grade property value. The final grade, class, GPA, or score.
 func (m *EducationalActivityDetail) SetGrade(value *string)() {
     err := m.GetBackingStore().Set("grade", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNotes sets the notes property value. Additional notes the user has provided.
+// SetNotes sets the notes property value. More notes the user provided.
 func (m *EducationalActivityDetail) SetNotes(value *string)() {
     err := m.GetBackingStore().Set("notes", value)
     if err != nil {

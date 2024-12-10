@@ -73,7 +73,7 @@ func (m *MailboxRestoreArtifact) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetRestoredFolderId gets the restoredFolderId property value. The new restored folder identifier for the user.
+// GetRestoredFolderId gets the restoredFolderId property value. The newly restored folder identifier for the user.
 // returns a *string when successful
 func (m *MailboxRestoreArtifact) GetRestoredFolderId()(*string) {
     val, err := m.GetBackingStore().Get("restoredFolderId")
@@ -97,7 +97,7 @@ func (m *MailboxRestoreArtifact) GetRestoredFolderName()(*string) {
     }
     return nil
 }
-// GetRestoredItemCount gets the restoredItemCount property value. The restoredItemCount property
+// GetRestoredItemCount gets the restoredItemCount property value. The number of items that are being restored in the folder.
 // returns a *int32 when successful
 func (m *MailboxRestoreArtifact) GetRestoredItemCount()(*int32) {
     val, err := m.GetBackingStore().Get("restoredItemCount")
@@ -129,7 +129,7 @@ func (m *MailboxRestoreArtifact) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetRestoredFolderId sets the restoredFolderId property value. The new restored folder identifier for the user.
+// SetRestoredFolderId sets the restoredFolderId property value. The newly restored folder identifier for the user.
 func (m *MailboxRestoreArtifact) SetRestoredFolderId(value *string)() {
     err := m.GetBackingStore().Set("restoredFolderId", value)
     if err != nil {
@@ -143,7 +143,7 @@ func (m *MailboxRestoreArtifact) SetRestoredFolderName(value *string)() {
         panic(err)
     }
 }
-// SetRestoredItemCount sets the restoredItemCount property value. The restoredItemCount property
+// SetRestoredItemCount sets the restoredItemCount property value. The number of items that are being restored in the folder.
 func (m *MailboxRestoreArtifact) SetRestoredItemCount(value *int32)() {
     err := m.GetBackingStore().Set("restoredItemCount", value)
     if err != nil {

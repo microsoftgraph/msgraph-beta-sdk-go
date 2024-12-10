@@ -10,7 +10,7 @@ import (
 type VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilderGetQueryParameters invoke function retrieveSnapshots
+// VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilderGetQueryParameters list all cloudPcSnapshot resources for a Cloud PC.
 type VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -51,10 +51,13 @@ func NewVirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilder(rawUrl string
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function retrieveSnapshots
+// Get list all cloudPcSnapshot resources for a Cloud PC.
 // Deprecated: This method is obsolete. Use GetAsRetrieveSnapshotsGetResponse instead.
 // returns a VirtualEndpointCloudPCsItemRetrieveSnapshotsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-retrievesnapshots?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemRetrieveSnapshotsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,9 +75,12 @@ func (m *VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilder) Get(ctx con
     }
     return res.(VirtualEndpointCloudPCsItemRetrieveSnapshotsResponseable), nil
 }
-// GetAsRetrieveSnapshotsGetResponse invoke function retrieveSnapshots
+// GetAsRetrieveSnapshotsGetResponse list all cloudPcSnapshot resources for a Cloud PC.
 // returns a VirtualEndpointCloudPCsItemRetrieveSnapshotsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-retrievesnapshots?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilder) GetAsRetrieveSnapshotsGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemRetrieveSnapshotsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -92,7 +98,7 @@ func (m *VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilder) GetAsRetrie
     }
     return res.(VirtualEndpointCloudPCsItemRetrieveSnapshotsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function retrieveSnapshots
+// ToGetRequestInformation list all cloudPcSnapshot resources for a Cloud PC.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

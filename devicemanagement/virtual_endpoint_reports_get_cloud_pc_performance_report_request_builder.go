@@ -30,9 +30,12 @@ func NewVirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action getCloudPcPerformanceReport
+// Post get a report related to the performance of Cloud PCs.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getcloudpcperformancereport?view=graph-rest-beta
 func (m *VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetCloudPcPerformanceReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -50,7 +53,7 @@ func (m *VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder) Post(c
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation invoke action getCloudPcPerformanceReport
+// ToPostRequestInformation get a report related to the performance of Cloud PCs.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetCloudPcPerformanceReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

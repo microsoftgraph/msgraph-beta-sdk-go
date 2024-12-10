@@ -55,7 +55,6 @@ func NewEntraUxSettingRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     return NewEntraUxSettingRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property uxSetting for admin
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntraUxSettingRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntraUxSettingRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *EntraUxSettingRequestBuilder) Delete(ctx context.Context, requestConfig
     return nil
 }
 // Get get the properties and relationships of a uxSetting object.
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a UxSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -96,7 +94,6 @@ func (m *EntraUxSettingRequestBuilder) Get(ctx context.Context, requestConfigura
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UxSettingable), nil
 }
 // Patch update the properties of a uxSetting object.
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a UxSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -120,7 +117,6 @@ func (m *EntraUxSettingRequestBuilder) Patch(ctx context.Context, body ie233ee76
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UxSettingable), nil
 }
 // ToDeleteRequestInformation delete navigation property uxSetting for admin
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a *RequestInformation when successful
 func (m *EntraUxSettingRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntraUxSettingRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +128,6 @@ func (m *EntraUxSettingRequestBuilder) ToDeleteRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties and relationships of a uxSetting object.
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a *RequestInformation when successful
 func (m *EntraUxSettingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntraUxSettingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +142,6 @@ func (m *EntraUxSettingRequestBuilder) ToGetRequestInformation(ctx context.Conte
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the properties of a uxSetting object.
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a *RequestInformation when successful
 func (m *EntraUxSettingRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UxSettingable, requestConfiguration *EntraUxSettingRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -163,7 +157,6 @@ func (m *EntraUxSettingRequestBuilder) ToPatchRequestInformation(ctx context.Con
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a *EntraUxSettingRequestBuilder when successful
 func (m *EntraUxSettingRequestBuilder) WithUrl(rawUrl string)(*EntraUxSettingRequestBuilder) {
     return NewEntraUxSettingRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

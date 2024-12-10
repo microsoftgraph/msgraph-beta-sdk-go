@@ -19,7 +19,7 @@ func NewNewsLinkPage()(*NewsLinkPage) {
 func CreateNewsLinkPageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNewsLinkPage(), nil
 }
-// GetBannerImageWebUrl gets the bannerImageWebUrl property value. The bannerImageWebUrl property
+// GetBannerImageWebUrl gets the bannerImageWebUrl property value. A link to the banner image for the newsLinkPage.
 // returns a *string when successful
 func (m *NewsLinkPage) GetBannerImageWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("bannerImageWebUrl")
@@ -67,7 +67,7 @@ func (m *NewsLinkPage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetNewsSharepointIds gets the newsSharepointIds property value. The newsSharepointIds property
+// GetNewsSharepointIds gets the newsSharepointIds property value. The SharePoint IDs of the referenced news article if it's recognized as a SharePoint resource. Read-only.
 // returns a SharepointIdsable when successful
 func (m *NewsLinkPage) GetNewsSharepointIds()(SharepointIdsable) {
     val, err := m.GetBackingStore().Get("newsSharepointIds")
@@ -79,7 +79,7 @@ func (m *NewsLinkPage) GetNewsSharepointIds()(SharepointIdsable) {
     }
     return nil
 }
-// GetNewsWebUrl gets the newsWebUrl property value. The newsWebUrl property
+// GetNewsWebUrl gets the newsWebUrl property value. The URL of the news article referenced by the newsLinkPage. It can be an external link.
 // returns a *string when successful
 func (m *NewsLinkPage) GetNewsWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("newsWebUrl")
@@ -117,21 +117,21 @@ func (m *NewsLinkPage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetBannerImageWebUrl sets the bannerImageWebUrl property value. The bannerImageWebUrl property
+// SetBannerImageWebUrl sets the bannerImageWebUrl property value. A link to the banner image for the newsLinkPage.
 func (m *NewsLinkPage) SetBannerImageWebUrl(value *string)() {
     err := m.GetBackingStore().Set("bannerImageWebUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNewsSharepointIds sets the newsSharepointIds property value. The newsSharepointIds property
+// SetNewsSharepointIds sets the newsSharepointIds property value. The SharePoint IDs of the referenced news article if it's recognized as a SharePoint resource. Read-only.
 func (m *NewsLinkPage) SetNewsSharepointIds(value SharepointIdsable)() {
     err := m.GetBackingStore().Set("newsSharepointIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNewsWebUrl sets the newsWebUrl property value. The newsWebUrl property
+// SetNewsWebUrl sets the newsWebUrl property value. The URL of the news article referenced by the newsLinkPage. It can be an external link.
 func (m *NewsLinkPage) SetNewsWebUrl(value *string)() {
     err := m.GetBackingStore().Set("newsWebUrl", value)
     if err != nil {

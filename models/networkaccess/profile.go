@@ -125,7 +125,7 @@ func (m *Profile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Profile last modified time.
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the profile was last modified.
 // returns a *Time when successful
 func (m *Profile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -137,7 +137,7 @@ func (m *Profile) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
     return nil
 }
-// GetName gets the name property value. Profile name.
+// GetName gets the name property value. The name of the profile.
 // returns a *string when successful
 func (m *Profile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -149,7 +149,7 @@ func (m *Profile) GetName()(*string) {
     }
     return nil
 }
-// GetPolicies gets the policies property value. Traffic forwarding policies associated with this profile.
+// GetPolicies gets the policies property value. The traffic forwarding policies associated with this profile.
 // returns a []PolicyLinkable when successful
 func (m *Profile) GetPolicies()([]PolicyLinkable) {
     val, err := m.GetBackingStore().Get("policies")
@@ -243,21 +243,21 @@ func (m *Profile) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Profile last modified time.
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the profile was last modified.
 func (m *Profile) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. Profile name.
+// SetName sets the name property value. The name of the profile.
 func (m *Profile) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicies sets the policies property value. Traffic forwarding policies associated with this profile.
+// SetPolicies sets the policies property value. The traffic forwarding policies associated with this profile.
 func (m *Profile) SetPolicies(value []PolicyLinkable)() {
     err := m.GetBackingStore().Set("policies", value)
     if err != nil {

@@ -18,7 +18,7 @@ type AuthorizationSystemsAuthorizationSystemItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetQueryParameters represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+// AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetQueryParameters represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
 type AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *AuthorizationSystemsAuthorizationSystemItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+// Get represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
 // returns a AuthorizationSystemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AuthorizationSystemsAuthorizationSystemItemRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationSystemable, error) {
@@ -126,7 +126,7 @@ func (m *AuthorizationSystemsAuthorizationSystemItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+// ToGetRequestInformation represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
 // returns a *RequestInformation when successful
 func (m *AuthorizationSystemsAuthorizationSystemItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuthorizationSystemsAuthorizationSystemItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

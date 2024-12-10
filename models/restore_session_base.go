@@ -210,7 +210,7 @@ func (m *RestoreSessionBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetRestoreJobType gets the restoreJobType property value. The restoreJobType property
+// GetRestoreJobType gets the restoreJobType property value. Indicates whether the restore session was created normally or by a bulk job.
 // returns a *RestoreJobType when successful
 func (m *RestoreSessionBase) GetRestoreJobType()(*RestoreJobType) {
     val, err := m.GetBackingStore().Get("restoreJobType")
@@ -222,7 +222,7 @@ func (m *RestoreSessionBase) GetRestoreJobType()(*RestoreJobType) {
     }
     return nil
 }
-// GetRestoreSessionArtifactCount gets the restoreSessionArtifactCount property value. The restoreSessionArtifactCount property
+// GetRestoreSessionArtifactCount gets the restoreSessionArtifactCount property value. The number of metadata artifacts that belong to this restore session.
 // returns a RestoreSessionArtifactCountable when successful
 func (m *RestoreSessionBase) GetRestoreSessionArtifactCount()(RestoreSessionArtifactCountable) {
     val, err := m.GetBackingStore().Get("restoreSessionArtifactCount")
@@ -352,14 +352,14 @@ func (m *RestoreSessionBase) SetLastModifiedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
-// SetRestoreJobType sets the restoreJobType property value. The restoreJobType property
+// SetRestoreJobType sets the restoreJobType property value. Indicates whether the restore session was created normally or by a bulk job.
 func (m *RestoreSessionBase) SetRestoreJobType(value *RestoreJobType)() {
     err := m.GetBackingStore().Set("restoreJobType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestoreSessionArtifactCount sets the restoreSessionArtifactCount property value. The restoreSessionArtifactCount property
+// SetRestoreSessionArtifactCount sets the restoreSessionArtifactCount property value. The number of metadata artifacts that belong to this restore session.
 func (m *RestoreSessionBase) SetRestoreSessionArtifactCount(value RestoreSessionArtifactCountable)() {
     err := m.GetBackingStore().Set("restoreSessionArtifactCount", value)
     if err != nil {

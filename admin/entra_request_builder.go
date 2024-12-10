@@ -55,7 +55,6 @@ func NewEntraRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     return NewEntraRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property entra for admin
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntraRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntraRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +71,6 @@ func (m *EntraRequestBuilder) Delete(ctx context.Context, requestConfiguration *
     return nil
 }
 // Get a container for Microsoft Entra resources. Read-only.
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a Entraable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntraRequestBuilder) Get(ctx context.Context, requestConfiguration *EntraRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entraable, error) {
@@ -93,7 +91,6 @@ func (m *EntraRequestBuilder) Get(ctx context.Context, requestConfiguration *Ent
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entraable), nil
 }
 // Patch update the navigation property entra in admin
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a Entraable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntraRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entraable, requestConfiguration *EntraRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entraable, error) {
@@ -114,7 +111,6 @@ func (m *EntraRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entraable), nil
 }
 // ToDeleteRequestInformation delete navigation property entra for admin
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a *RequestInformation when successful
 func (m *EntraRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *EntraRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +122,6 @@ func (m *EntraRequestBuilder) ToDeleteRequestInformation(ctx context.Context, re
     return requestInfo, nil
 }
 // ToGetRequestInformation a container for Microsoft Entra resources. Read-only.
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a *RequestInformation when successful
 func (m *EntraRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntraRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +136,6 @@ func (m *EntraRequestBuilder) ToGetRequestInformation(ctx context.Context, reque
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property entra in admin
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a *RequestInformation when successful
 func (m *EntraRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entraable, requestConfiguration *EntraRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,7 +156,6 @@ func (m *EntraRequestBuilder) UxSetting()(*EntraUxSettingRequestBuilder) {
     return NewEntraUxSettingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2023-11/PrivatePreview:BulkJobs
 // returns a *EntraRequestBuilder when successful
 func (m *EntraRequestBuilder) WithUrl(rawUrl string)(*EntraRequestBuilder) {
     return NewEntraRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

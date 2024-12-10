@@ -18,7 +18,7 @@ type ItemOnenoteSectionGroupsSectionGroupItemRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetQueryParameters the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// ItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetQueryParameters the section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 type ItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// Get the section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a SectionGroupable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SectionGroupable, error) {
@@ -141,7 +141,7 @@ func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) ToDeleteRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// ToGetRequestInformation the section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnenoteSectionGroupsSectionGroupItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

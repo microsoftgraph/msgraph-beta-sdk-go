@@ -18,7 +18,7 @@ type ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters traffic forwarding policies associated with this profile.
+// ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters the traffic forwarding policies associated with this profile.
 type ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkI
     }
     return nil
 }
-// Get traffic forwarding policies associated with this profile.
+// Get the traffic forwarding policies associated with this profile.
 // returns a PolicyLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, error) {
@@ -126,7 +126,7 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkI
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation traffic forwarding policies associated with this profile.
+// ToGetRequestInformation the traffic forwarding policies associated with this profile.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

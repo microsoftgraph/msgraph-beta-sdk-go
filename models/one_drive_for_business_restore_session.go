@@ -21,7 +21,7 @@ func NewOneDriveForBusinessRestoreSession()(*OneDriveForBusinessRestoreSession) 
 func CreateOneDriveForBusinessRestoreSessionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOneDriveForBusinessRestoreSession(), nil
 }
-// GetDriveRestoreArtifacts gets the driveRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+// GetDriveRestoreArtifacts gets the driveRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore a OneDrive for Work or School drive.
 // returns a []DriveRestoreArtifactable when successful
 func (m *OneDriveForBusinessRestoreSession) GetDriveRestoreArtifacts()([]DriveRestoreArtifactable) {
     val, err := m.GetBackingStore().Get("driveRestoreArtifacts")
@@ -115,7 +115,7 @@ func (m *OneDriveForBusinessRestoreSession) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetDriveRestoreArtifacts sets the driveRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.
+// SetDriveRestoreArtifacts sets the driveRestoreArtifacts property value. A collection of restore points and destination details that can be used to restore a OneDrive for Work or School drive.
 func (m *OneDriveForBusinessRestoreSession) SetDriveRestoreArtifacts(value []DriveRestoreArtifactable)() {
     err := m.GetBackingStore().Set("driveRestoreArtifacts", value)
     if err != nil {

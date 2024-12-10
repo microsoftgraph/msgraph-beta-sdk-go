@@ -80,7 +80,7 @@ func (m *Payload) GetDescription()(*string) {
     }
     return nil
 }
-// GetDetail gets the detail property value. Additional details about the payload.
+// GetDetail gets the detail property value. More details about the payload.
 // returns a PayloadDetailable when successful
 func (m *Payload) GetDetail()(PayloadDetailable) {
     val, err := m.GetBackingStore().Get("detail")
@@ -492,7 +492,7 @@ func (m *Payload) GetStatus()(*SimulationContentStatus) {
     }
     return nil
 }
-// GetTechnique gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
+// GetTechnique gets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant, phishTraining. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant, phishTraining. For more information on the types of social engineering attack techniques, see simulations.
 // returns a *SimulationAttackTechnique when successful
 func (m *Payload) GetTechnique()(*SimulationAttackTechnique) {
     val, err := m.GetBackingStore().Get("technique")
@@ -700,7 +700,7 @@ func (m *Payload) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDetail sets the detail property value. Additional details about the payload.
+// SetDetail sets the detail property value. More details about the payload.
 func (m *Payload) SetDetail(value PayloadDetailable)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {
@@ -805,7 +805,7 @@ func (m *Payload) SetStatus(value *SimulationContentStatus)() {
         panic(err)
     }
 }
-// SetTechnique sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.
+// SetTechnique sets the technique property value. The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant, phishTraining. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant, phishTraining. For more information on the types of social engineering attack techniques, see simulations.
 func (m *Payload) SetTechnique(value *SimulationAttackTechnique)() {
     err := m.GetBackingStore().Set("technique", value)
     if err != nil {

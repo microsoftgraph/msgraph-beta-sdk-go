@@ -18,7 +18,7 @@ type ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters traffic forwarding policies associated with this profile.
+// ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters the traffic forwarding policies associated with this profile.
 type ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,7 +71,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemReq
     }
     return nil
 }
-// Get traffic forwarding policies associated with this profile.
+// Get the traffic forwarding policies associated with this profile.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a PolicyLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -130,7 +130,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation traffic forwarding policies associated with this profile.
+// ToGetRequestInformation the traffic forwarding policies associated with this profile.
 // Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
