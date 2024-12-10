@@ -43,6 +43,18 @@ func (m *Directory) GetAttributeSets()([]AttributeSetable) {
     }
     return nil
 }
+// GetAuthenticationMethodDevices gets the authenticationMethodDevices property value. Exposes the hardware OATH method in the directory.
+// returns a AuthenticationMethodDeviceable when successful
+func (m *Directory) GetAuthenticationMethodDevices()(AuthenticationMethodDeviceable) {
+    val, err := m.GetBackingStore().Get("authenticationMethodDevices")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuthenticationMethodDeviceable)
+    }
+    return nil
+}
 // GetCertificateAuthorities gets the certificateAuthorities property value. The certificateAuthorities property
 // returns a CertificateAuthorityPathable when successful
 func (m *Directory) GetCertificateAuthorities()(CertificateAuthorityPathable) {
@@ -160,6 +172,16 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
                 }
             }
             m.SetAttributeSets(res)
+        }
+        return nil
+    }
+    res["authenticationMethodDevices"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAuthenticationMethodDeviceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAuthenticationMethodDevices(val.(AuthenticationMethodDeviceable))
         }
         return nil
     }
@@ -548,6 +570,12 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteObjectValue("authenticationMethodDevices", m.GetAuthenticationMethodDevices())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("certificateAuthorities", m.GetCertificateAuthorities())
         if err != nil {
             return err
@@ -743,6 +771,13 @@ func (m *Directory) SetAttributeSets(value []AttributeSetable)() {
         panic(err)
     }
 }
+// SetAuthenticationMethodDevices sets the authenticationMethodDevices property value. Exposes the hardware OATH method in the directory.
+func (m *Directory) SetAuthenticationMethodDevices(value AuthenticationMethodDeviceable)() {
+    err := m.GetBackingStore().Set("authenticationMethodDevices", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCertificateAuthorities sets the certificateAuthorities property value. The certificateAuthorities property
 func (m *Directory) SetCertificateAuthorities(value CertificateAuthorityPathable)() {
     err := m.GetBackingStore().Set("certificateAuthorities", value)
@@ -860,6 +895,7 @@ type Directoryable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAdministrativeUnits()([]AdministrativeUnitable)
     GetAttributeSets()([]AttributeSetable)
+    GetAuthenticationMethodDevices()(AuthenticationMethodDeviceable)
     GetCertificateAuthorities()(CertificateAuthorityPathable)
     GetCustomSecurityAttributeDefinitions()([]CustomSecurityAttributeDefinitionable)
     GetDeletedItems()([]DirectoryObjectable)
@@ -878,6 +914,7 @@ type Directoryable interface {
     GetSubscriptions()([]CompanySubscriptionable)
     SetAdministrativeUnits(value []AdministrativeUnitable)()
     SetAttributeSets(value []AttributeSetable)()
+    SetAuthenticationMethodDevices(value AuthenticationMethodDeviceable)()
     SetCertificateAuthorities(value CertificateAuthorityPathable)()
     SetCustomSecurityAttributeDefinitions(value []CustomSecurityAttributeDefinitionable)()
     SetDeletedItems(value []DirectoryObjectable)()

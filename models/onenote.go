@@ -121,7 +121,7 @@ func (m *Onenote) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetNotebooks gets the notebooks property value. The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// GetNotebooks gets the notebooks property value. The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a []Notebookable when successful
 func (m *Onenote) GetNotebooks()([]Notebookable) {
     val, err := m.GetBackingStore().Get("notebooks")
@@ -145,7 +145,7 @@ func (m *Onenote) GetOperations()([]OnenoteOperationable) {
     }
     return nil
 }
-// GetPages gets the pages property value. The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// GetPages gets the pages property value. The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a []OnenotePageable when successful
 func (m *Onenote) GetPages()([]OnenotePageable) {
     val, err := m.GetBackingStore().Get("pages")
@@ -169,7 +169,7 @@ func (m *Onenote) GetResources()([]OnenoteResourceable) {
     }
     return nil
 }
-// GetSectionGroups gets the sectionGroups property value. The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// GetSectionGroups gets the sectionGroups property value. The section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a []SectionGroupable when successful
 func (m *Onenote) GetSectionGroups()([]SectionGroupable) {
     val, err := m.GetBackingStore().Get("sectionGroups")
@@ -181,7 +181,7 @@ func (m *Onenote) GetSectionGroups()([]SectionGroupable) {
     }
     return nil
 }
-// GetSections gets the sections property value. The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// GetSections gets the sections property value. The sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a []OnenoteSectionable when successful
 func (m *Onenote) GetSections()([]OnenoteSectionable) {
     val, err := m.GetBackingStore().Get("sections")
@@ -273,7 +273,7 @@ func (m *Onenote) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetNotebooks sets the notebooks property value. The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+// SetNotebooks sets the notebooks property value. The collection of OneNote notebooks that the user or group owns. Read-only. Nullable.
 func (m *Onenote) SetNotebooks(value []Notebookable)() {
     err := m.GetBackingStore().Set("notebooks", value)
     if err != nil {
@@ -287,7 +287,7 @@ func (m *Onenote) SetOperations(value []OnenoteOperationable)() {
         panic(err)
     }
 }
-// SetPages sets the pages property value. The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// SetPages sets the pages property value. The pages in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 func (m *Onenote) SetPages(value []OnenotePageable)() {
     err := m.GetBackingStore().Set("pages", value)
     if err != nil {
@@ -301,14 +301,14 @@ func (m *Onenote) SetResources(value []OnenoteResourceable)() {
         panic(err)
     }
 }
-// SetSectionGroups sets the sectionGroups property value. The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// SetSectionGroups sets the sectionGroups property value. The section groups in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 func (m *Onenote) SetSectionGroups(value []SectionGroupable)() {
     err := m.GetBackingStore().Set("sectionGroups", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSections sets the sections property value. The sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// SetSections sets the sections property value. The sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 func (m *Onenote) SetSections(value []OnenoteSectionable)() {
     err := m.GetBackingStore().Set("sections", value)
     if err != nil {

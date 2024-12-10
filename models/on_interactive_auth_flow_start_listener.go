@@ -37,7 +37,7 @@ func (m *OnInteractiveAuthFlowStartListener) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+// GetHandler gets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. You can use this handler to define potential handler configurations for specific events.
 // returns a OnInteractiveAuthFlowStartHandlerable when successful
 func (m *OnInteractiveAuthFlowStartListener) GetHandler()(OnInteractiveAuthFlowStartHandlerable) {
     val, err := m.GetBackingStore().Get("handler")
@@ -63,7 +63,7 @@ func (m *OnInteractiveAuthFlowStartListener) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetHandler sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.
+// SetHandler sets the handler property value. Required. Configuration for what to invoke if the event resolves to this listener. You can use this handler to define potential handler configurations for specific events.
 func (m *OnInteractiveAuthFlowStartListener) SetHandler(value OnInteractiveAuthFlowStartHandlerable)() {
     err := m.GetBackingStore().Set("handler", value)
     if err != nil {

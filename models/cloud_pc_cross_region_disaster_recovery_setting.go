@@ -40,7 +40,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetAdditionalData()(map[stri
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCrossRegionDisasterRecoveryEnabled gets the crossRegionDisasterRecoveryEnabled property value. True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false.
+// GetCrossRegionDisasterRecoveryEnabled gets the crossRegionDisasterRecoveryEnabled property value. True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false. This property is deprecated and will no longer be supported effective February 11, 2025. For scenarios where crossRegionDisasterRecoveryEnabled is true, set disasterRecoveryType to crossRegion. For scenarios where crossRegionDisasterRecoveryEnabled is false,  set disasterRecoveryType to notconfigured.
 // returns a *bool when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetCrossRegionDisasterRecoveryEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("crossRegionDisasterRecoveryEnabled")
@@ -64,7 +64,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetDisasterRecoveryNetworkSe
     }
     return nil
 }
-// GetDisasterRecoveryType gets the disasterRecoveryType property value. The disasterRecoveryType property
+// GetDisasterRecoveryType gets the disasterRecoveryType property value. Indicates the type of disaster recovery to perform when a disaster occurs on the user's Cloud PC. The possible values are: notConfigured, crossRegion, premium, unknownFutureValue. The default value is notConfigured.
 // returns a *CloudPcDisasterRecoveryType when successful
 func (m *CloudPcCrossRegionDisasterRecoverySetting) GetDisasterRecoveryType()(*CloudPcDisasterRecoveryType) {
     val, err := m.GetBackingStore().Get("disasterRecoveryType")
@@ -208,7 +208,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) SetAdditionalData(value map[
 func (m *CloudPcCrossRegionDisasterRecoverySetting) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCrossRegionDisasterRecoveryEnabled sets the crossRegionDisasterRecoveryEnabled property value. True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false.
+// SetCrossRegionDisasterRecoveryEnabled sets the crossRegionDisasterRecoveryEnabled property value. True if an end user is allowed to set up cross-region disaster recovery for Cloud PC; otherwise, false. The default value is false. This property is deprecated and will no longer be supported effective February 11, 2025. For scenarios where crossRegionDisasterRecoveryEnabled is true, set disasterRecoveryType to crossRegion. For scenarios where crossRegionDisasterRecoveryEnabled is false,  set disasterRecoveryType to notconfigured.
 func (m *CloudPcCrossRegionDisasterRecoverySetting) SetCrossRegionDisasterRecoveryEnabled(value *bool)() {
     err := m.GetBackingStore().Set("crossRegionDisasterRecoveryEnabled", value)
     if err != nil {
@@ -222,7 +222,7 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) SetDisasterRecoveryNetworkSe
         panic(err)
     }
 }
-// SetDisasterRecoveryType sets the disasterRecoveryType property value. The disasterRecoveryType property
+// SetDisasterRecoveryType sets the disasterRecoveryType property value. Indicates the type of disaster recovery to perform when a disaster occurs on the user's Cloud PC. The possible values are: notConfigured, crossRegion, premium, unknownFutureValue. The default value is notConfigured.
 func (m *CloudPcCrossRegionDisasterRecoverySetting) SetDisasterRecoveryType(value *CloudPcDisasterRecoveryType)() {
     err := m.GetBackingStore().Set("disasterRecoveryType", value)
     if err != nil {

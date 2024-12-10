@@ -35,7 +35,7 @@ func (m *MailTips) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAutomaticReplies gets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
+// GetAutomaticReplies gets the automaticReplies property value. Mailtips for an automatic reply if set up by the recipient.
 // returns a AutomaticRepliesMailTipsable when successful
 func (m *MailTips) GetAutomaticReplies()(AutomaticRepliesMailTipsable) {
     val, err := m.GetBackingStore().Get("automaticReplies")
@@ -64,7 +64,7 @@ func (m *MailTips) GetCustomMailTip()(*string) {
     }
     return nil
 }
-// GetDeliveryRestricted gets the deliveryRestricted property value. Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
+// GetDeliveryRestricted gets the deliveryRestricted property value. Whether the recipient's mailbox is restricted. For example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
 // returns a *bool when successful
 func (m *MailTips) GetDeliveryRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("deliveryRestricted")
@@ -254,7 +254,7 @@ func (m *MailTips) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetIsModerated gets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
+// GetIsModerated gets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator is set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
 // returns a *bool when successful
 func (m *MailTips) GetIsModerated()(*bool) {
     val, err := m.GetBackingStore().Get("isModerated")
@@ -278,7 +278,7 @@ func (m *MailTips) GetMailboxFull()(*bool) {
     }
     return nil
 }
-// GetMaxMessageSize gets the maxMessageSize property value. The maximum message size that has been configured for the recipient's organization or mailbox.
+// GetMaxMessageSize gets the maxMessageSize property value. The maximum message size configured for the recipient's organization or mailbox.
 // returns a *int32 when successful
 func (m *MailTips) GetMaxMessageSize()(*int32) {
     val, err := m.GetBackingStore().Get("maxMessageSize")
@@ -302,7 +302,7 @@ func (m *MailTips) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRecipientScope gets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
+// GetRecipientScope gets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone, and content.
 // returns a *RecipientScopeType when successful
 func (m *MailTips) GetRecipientScope()(*RecipientScopeType) {
     val, err := m.GetBackingStore().Get("recipientScope")
@@ -440,7 +440,7 @@ func (m *MailTips) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAutomaticReplies sets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
+// SetAutomaticReplies sets the automaticReplies property value. Mailtips for an automatic reply if set up by the recipient.
 func (m *MailTips) SetAutomaticReplies(value AutomaticRepliesMailTipsable)() {
     err := m.GetBackingStore().Set("automaticReplies", value)
     if err != nil {
@@ -458,7 +458,7 @@ func (m *MailTips) SetCustomMailTip(value *string)() {
         panic(err)
     }
 }
-// SetDeliveryRestricted sets the deliveryRestricted property value. Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
+// SetDeliveryRestricted sets the deliveryRestricted property value. Whether the recipient's mailbox is restricted. For example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
 func (m *MailTips) SetDeliveryRestricted(value *bool)() {
     err := m.GetBackingStore().Set("deliveryRestricted", value)
     if err != nil {
@@ -486,7 +486,7 @@ func (m *MailTips) SetExternalMemberCount(value *int32)() {
         panic(err)
     }
 }
-// SetIsModerated sets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
+// SetIsModerated sets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator is set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
 func (m *MailTips) SetIsModerated(value *bool)() {
     err := m.GetBackingStore().Set("isModerated", value)
     if err != nil {
@@ -500,7 +500,7 @@ func (m *MailTips) SetMailboxFull(value *bool)() {
         panic(err)
     }
 }
-// SetMaxMessageSize sets the maxMessageSize property value. The maximum message size that has been configured for the recipient's organization or mailbox.
+// SetMaxMessageSize sets the maxMessageSize property value. The maximum message size configured for the recipient's organization or mailbox.
 func (m *MailTips) SetMaxMessageSize(value *int32)() {
     err := m.GetBackingStore().Set("maxMessageSize", value)
     if err != nil {
@@ -514,7 +514,7 @@ func (m *MailTips) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRecipientScope sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
+// SetRecipientScope sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone, and content.
 func (m *MailTips) SetRecipientScope(value *RecipientScopeType)() {
     err := m.GetBackingStore().Set("recipientScope", value)
     if err != nil {

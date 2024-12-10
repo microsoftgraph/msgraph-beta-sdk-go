@@ -11,7 +11,7 @@ import (
 type ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderGetQueryParameters traffic forwarding policies associated with this profile.
+// ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderGetQueryParameters the traffic forwarding policies associated with this profile.
 type ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuild
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder) Count()(*ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesCountRequestBuilder) {
     return NewConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get traffic forwarding policies associated with this profile.
+// Get the traffic forwarding policies associated with this profile.
 // returns a PolicyLinkCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuil
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable), nil
 }
-// ToGetRequestInformation traffic forwarding policies associated with this profile.
+// ToGetRequestInformation the traffic forwarding policies associated with this profile.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksItemForwardingProfilesItemPoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
