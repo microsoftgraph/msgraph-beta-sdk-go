@@ -31,7 +31,7 @@ func NewManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyRequ
     urlParams["request-raw-url"] = rawUrl
     return NewManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multifactor authentication for admins management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
+// Post applies a management action against a specific managed tenant. Performing this operation makes the appropriate configurations and creates the appropriate policies. For example, when applying the required multifactor authentication for admins, management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that are assigned an administrative directory role.
 // returns a ManagementActionDeploymentStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -54,7 +54,7 @@ func (m *ManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyReq
     }
     return res.(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable), nil
 }
-// ToPostRequestInformation applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multifactor authentication for admins management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
+// ToPostRequestInformation applies a management action against a specific managed tenant. Performing this operation makes the appropriate configurations and creates the appropriate policies. For example, when applying the required multifactor authentication for admins, management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that are assigned an administrative directory role.
 // returns a *RequestInformation when successful
 func (m *ManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyRequestBuilder) ToPostRequestInformation(ctx context.Context, body ManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyApplyPostRequestBodyable, requestConfiguration *ManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

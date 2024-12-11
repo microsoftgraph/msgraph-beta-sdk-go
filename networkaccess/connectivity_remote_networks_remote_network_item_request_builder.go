@@ -18,7 +18,7 @@ type ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetQueryParameters represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+// ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetQueryParameters the locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
 type ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,7 +85,7 @@ func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) DeviceLinks(
 func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) ForwardingProfiles()(*ConnectivityRemoteNetworksItemForwardingProfilesRequestBuilder) {
     return NewConnectivityRemoteNetworksItemForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+// Get the locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
 // returns a RemoteNetworkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.RemoteNetworkable, error) {
@@ -136,7 +136,7 @@ func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
+// ToGetRequestInformation the locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
 // returns a *RequestInformation when successful
 func (m *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityRemoteNetworksRemoteNetworkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

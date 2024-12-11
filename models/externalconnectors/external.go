@@ -37,7 +37,7 @@ func (m *External) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthorizationSystems gets the authorizationSystems property value. Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+// GetAuthorizationSystems gets the authorizationSystems property value. Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
 // returns a []AuthorizationSystemable when successful
 func (m *External) GetAuthorizationSystems()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationSystemable) {
     val, err := m.GetBackingStore().Get("authorizationSystems")
@@ -201,7 +201,7 @@ func (m *External) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthorizationSystems sets the authorizationSystems property value. Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+// SetAuthorizationSystems sets the authorizationSystems property value. Represents an onboarded Amazon Web Services (AWS) account, Azure subscription, or Google Cloud Platform (GCP) project that Microsoft Entra Permissions Management collects and analyzes permissions and actions on.
 func (m *External) SetAuthorizationSystems(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthorizationSystemable)() {
     err := m.GetBackingStore().Set("authorizationSystems", value)
     if err != nil {

@@ -11,7 +11,7 @@ import (
 type ItemSitesItemOnenoteSectionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemSitesItemOnenoteSectionsRequestBuilderGetQueryParameters the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// ItemSitesItemOnenoteSectionsRequestBuilderGetQueryParameters the sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 type ItemSitesItemOnenoteSectionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewItemSitesItemOnenoteSectionsRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemSitesItemOnenoteSectionsRequestBuilder) Count()(*ItemSitesItemOnenoteSectionsCountRequestBuilder) {
     return NewItemSitesItemOnenoteSectionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// Get the sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a OnenoteSectionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemOnenoteSectionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *ItemSitesItemOnenoteSectionsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnenoteSectionable), nil
 }
-// ToGetRequestInformation the sections in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+// ToGetRequestInformation the sections in all OneNote notebooks that the user or group owns. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemOnenoteSectionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemOnenoteSectionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

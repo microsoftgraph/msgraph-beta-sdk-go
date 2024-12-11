@@ -30,8 +30,11 @@ func NewItemCloudPCsItemSetReviewStatusRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewItemCloudPCsItemSetReviewStatusRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action setReviewStatus
+// Post set the review status of a specific Cloud PC device using the Cloud PC ID. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-setreviewstatus?view=graph-rest-beta
 func (m *ItemCloudPCsItemSetReviewStatusRequestBuilder) Post(ctx context.Context, body ItemCloudPCsItemSetReviewStatusPostRequestBodyable, requestConfiguration *ItemCloudPCsItemSetReviewStatusRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -46,7 +49,7 @@ func (m *ItemCloudPCsItemSetReviewStatusRequestBuilder) Post(ctx context.Context
     }
     return nil
 }
-// ToPostRequestInformation invoke action setReviewStatus
+// ToPostRequestInformation set the review status of a specific Cloud PC device using the Cloud PC ID. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemSetReviewStatusRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemCloudPCsItemSetReviewStatusPostRequestBodyable, requestConfiguration *ItemCloudPCsItemSetReviewStatusRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

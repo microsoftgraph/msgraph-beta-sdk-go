@@ -18,7 +18,7 @@ type SharesItemJobsPrintJobItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SharesItemJobsPrintJobItemRequestBuilderGetQueryParameters get jobs from print
+// SharesItemJobsPrintJobItemRequestBuilderGetQueryParameters the list of jobs that are queued for printing by the printer/printerShare.
 type SharesItemJobsPrintJobItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -90,7 +90,7 @@ func (m *SharesItemJobsPrintJobItemRequestBuilder) Delete(ctx context.Context, r
 func (m *SharesItemJobsPrintJobItemRequestBuilder) Documents()(*SharesItemJobsItemDocumentsRequestBuilder) {
     return NewSharesItemJobsItemDocumentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get jobs from print
+// Get the list of jobs that are queued for printing by the printer/printerShare.
 // returns a PrintJobable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharesItemJobsPrintJobItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SharesItemJobsPrintJobItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobable, error) {
@@ -161,7 +161,7 @@ func (m *SharesItemJobsPrintJobItemRequestBuilder) ToDeleteRequestInformation(ct
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get jobs from print
+// ToGetRequestInformation the list of jobs that are queued for printing by the printer/printerShare.
 // returns a *RequestInformation when successful
 func (m *SharesItemJobsPrintJobItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharesItemJobsPrintJobItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

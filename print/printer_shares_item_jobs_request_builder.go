@@ -11,7 +11,7 @@ import (
 type PrinterSharesItemJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrinterSharesItemJobsRequestBuilderGetQueryParameters get jobs from print
+// PrinterSharesItemJobsRequestBuilderGetQueryParameters the list of jobs that are queued for printing by the printer/printerShare.
 type PrinterSharesItemJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,7 +77,7 @@ func NewPrinterSharesItemJobsRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *PrinterSharesItemJobsRequestBuilder) Count()(*PrinterSharesItemJobsCountRequestBuilder) {
     return NewPrinterSharesItemJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get jobs from print
+// Get the list of jobs that are queued for printing by the printer/printerShare.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a PrintJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -119,7 +119,7 @@ func (m *PrinterSharesItemJobsRequestBuilder) Post(ctx context.Context, body ie2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobable), nil
 }
-// ToGetRequestInformation get jobs from print
+// ToGetRequestInformation the list of jobs that are queued for printing by the printer/printerShare.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

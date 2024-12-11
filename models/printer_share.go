@@ -22,7 +22,7 @@ func NewPrinterShare()(*PrinterShare) {
 func CreatePrinterShareFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrinterShare(), nil
 }
-// GetAllowAllUsers gets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
+// GetAllowAllUsers gets the allowAllUsers property value. If true, all users and groups can access this printer share. This property supersedes the lists of allowed users and groups defined by the allowedUsers and allowedGroups navigation properties.
 // returns a *bool when successful
 func (m *PrinterShare) GetAllowAllUsers()(*bool) {
     val, err := m.GetBackingStore().Get("allowAllUsers")
@@ -160,7 +160,7 @@ func (m *PrinterShare) GetPrinter()(Printerable) {
     }
     return nil
 }
-// GetViewPoint gets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
+// GetViewPoint gets the viewPoint property value. More data for a printer share as viewed by the signed-in user.
 // returns a PrinterShareViewpointable when successful
 func (m *PrinterShare) GetViewPoint()(PrinterShareViewpointable) {
     val, err := m.GetBackingStore().Get("viewPoint")
@@ -228,7 +228,7 @@ func (m *PrinterShare) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetAllowAllUsers sets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
+// SetAllowAllUsers sets the allowAllUsers property value. If true, all users and groups can access this printer share. This property supersedes the lists of allowed users and groups defined by the allowedUsers and allowedGroups navigation properties.
 func (m *PrinterShare) SetAllowAllUsers(value *bool)() {
     err := m.GetBackingStore().Set("allowAllUsers", value)
     if err != nil {
@@ -263,7 +263,7 @@ func (m *PrinterShare) SetPrinter(value Printerable)() {
         panic(err)
     }
 }
-// SetViewPoint sets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
+// SetViewPoint sets the viewPoint property value. More data for a printer share as viewed by the signed-in user.
 func (m *PrinterShare) SetViewPoint(value PrinterShareViewpointable)() {
     err := m.GetBackingStore().Set("viewPoint", value)
     if err != nil {

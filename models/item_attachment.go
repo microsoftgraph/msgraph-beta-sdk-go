@@ -37,7 +37,7 @@ func (m *ItemAttachment) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetItem gets the item property value. The attached contact, message or event. Navigation property.
+// GetItem gets the item property value. The attached contact, message, or event. Navigation property.
 // returns a OutlookItemable when successful
 func (m *ItemAttachment) GetItem()(OutlookItemable) {
     val, err := m.GetBackingStore().Get("item")
@@ -63,7 +63,7 @@ func (m *ItemAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetItem sets the item property value. The attached contact, message or event. Navigation property.
+// SetItem sets the item property value. The attached contact, message, or event. Navigation property.
 func (m *ItemAttachment) SetItem(value OutlookItemable)() {
     err := m.GetBackingStore().Set("item", value)
     if err != nil {
