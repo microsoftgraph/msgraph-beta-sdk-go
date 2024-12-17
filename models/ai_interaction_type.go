@@ -1,0 +1,36 @@
+package models
+type AiInteractionType int
+
+const (
+    USERPROMPT_AIINTERACTIONTYPE AiInteractionType = iota
+    AIRESPONSE_AIINTERACTIONTYPE
+    UNKNOWNFUTUREVALUE_AIINTERACTIONTYPE
+)
+
+func (i AiInteractionType) String() string {
+    return []string{"userPrompt", "aiResponse", "unknownFutureValue"}[i]
+}
+func ParseAiInteractionType(v string) (any, error) {
+    result := USERPROMPT_AIINTERACTIONTYPE
+    switch v {
+        case "userPrompt":
+            result = USERPROMPT_AIINTERACTIONTYPE
+        case "aiResponse":
+            result = AIRESPONSE_AIINTERACTIONTYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_AIINTERACTIONTYPE
+        default:
+            return nil, nil
+    }
+    return &result, nil
+}
+func SerializeAiInteractionType(values []AiInteractionType) []string {
+    result := make([]string, len(values))
+    for i, v := range values {
+        result[i] = v.String()
+    }
+    return result
+}
+func (i AiInteractionType) isMultiValue() bool {
+    return false
+}

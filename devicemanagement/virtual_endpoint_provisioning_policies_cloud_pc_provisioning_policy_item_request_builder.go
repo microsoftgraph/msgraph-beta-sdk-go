@@ -134,6 +134,21 @@ func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequest
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcProvisioningPolicyable), nil
 }
+// RetrievePolicyApplyActionResult provides operations to call the retrievePolicyApplyActionResult method.
+// returns a *VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyActionResultRequestBuilder when successful
+func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) RetrievePolicyApplyActionResult()(*VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyActionResultRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyActionResultRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrievePolicyApplySchedule provides operations to call the retrievePolicyApplySchedule method.
+// returns a *VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilder when successful
+func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) RetrievePolicyApplySchedule()(*VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SchedulePolicyApplyTask provides operations to call the schedulePolicyApplyTask method.
+// returns a *VirtualEndpointProvisioningPoliciesItemSchedulePolicyApplyTaskRequestBuilder when successful
+func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) SchedulePolicyApplyTask()(*VirtualEndpointProvisioningPoliciesItemSchedulePolicyApplyTaskRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesItemSchedulePolicyApplyTaskRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesCloudPcProvisioningPolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

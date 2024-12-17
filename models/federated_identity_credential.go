@@ -31,6 +31,18 @@ func (m *FederatedIdentityCredential) GetAudiences()([]string) {
     }
     return nil
 }
+// GetClaimsMatchingExpression gets the claimsMatchingExpression property value. Enables the use of claims matching expressions against specified claims. For the list of supported expression syntax and claims, visit the Flexible FIC reference.
+// returns a FederatedIdentityExpressionable when successful
+func (m *FederatedIdentityCredential) GetClaimsMatchingExpression()(FederatedIdentityExpressionable) {
+    val, err := m.GetBackingStore().Get("claimsMatchingExpression")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FederatedIdentityExpressionable)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The un-validated, user-provided description of the federated identity credential. It has a limit of 600 characters. Optional.
 // returns a *string when successful
 func (m *FederatedIdentityCredential) GetDescription()(*string) {
@@ -60,6 +72,16 @@ func (m *FederatedIdentityCredential) GetFieldDeserializers()(map[string]func(i8
                 }
             }
             m.SetAudiences(res)
+        }
+        return nil
+    }
+    res["claimsMatchingExpression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateFederatedIdentityExpressionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClaimsMatchingExpression(val.(FederatedIdentityExpressionable))
         }
         return nil
     }
@@ -154,6 +176,12 @@ func (m *FederatedIdentityCredential) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteObjectValue("claimsMatchingExpression", m.GetClaimsMatchingExpression())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -182,6 +210,13 @@ func (m *FederatedIdentityCredential) Serialize(writer i878a80d2330e89d26896388a
 // SetAudiences sets the audiences property value. The audience that can appear in the external token. This field is mandatory and should be set to api://AzureADTokenExchange for Microsoft Entra ID. It says what Microsoft identity platform should accept in the aud claim in the incoming token. This value represents Microsoft Entra ID in your external identity provider and has no fixed value across identity providers - you may need to create a new application registration in your identity provider to serve as the audience of this token. This field can only accept a single value and has a limit of 600 characters. Required.
 func (m *FederatedIdentityCredential) SetAudiences(value []string)() {
     err := m.GetBackingStore().Set("audiences", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetClaimsMatchingExpression sets the claimsMatchingExpression property value. Enables the use of claims matching expressions against specified claims. For the list of supported expression syntax and claims, visit the Flexible FIC reference.
+func (m *FederatedIdentityCredential) SetClaimsMatchingExpression(value FederatedIdentityExpressionable)() {
+    err := m.GetBackingStore().Set("claimsMatchingExpression", value)
     if err != nil {
         panic(err)
     }
@@ -218,11 +253,13 @@ type FederatedIdentityCredentialable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAudiences()([]string)
+    GetClaimsMatchingExpression()(FederatedIdentityExpressionable)
     GetDescription()(*string)
     GetIssuer()(*string)
     GetName()(*string)
     GetSubject()(*string)
     SetAudiences(value []string)()
+    SetClaimsMatchingExpression(value FederatedIdentityExpressionable)()
     SetDescription(value *string)()
     SetIssuer(value *string)()
     SetName(value *string)()

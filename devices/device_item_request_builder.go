@@ -88,6 +88,11 @@ func (m *DeviceItemRequestBuilder) Delete(ctx context.Context, requestConfigurat
     }
     return nil
 }
+// DeviceTemplate provides operations to manage the deviceTemplate property of the microsoft.graph.device entity.
+// returns a *ItemDeviceTemplateRequestBuilder when successful
+func (m *DeviceItemRequestBuilder) DeviceTemplate()(*ItemDeviceTemplateRequestBuilder) {
+    return NewItemDeviceTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Extensions provides operations to manage the extensions property of the microsoft.graph.device entity.
 // returns a *ItemExtensionsRequestBuilder when successful
 func (m *DeviceItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {

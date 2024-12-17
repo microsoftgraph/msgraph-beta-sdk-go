@@ -171,6 +171,22 @@ func (m *MailFolder) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["operations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMailFolderOperationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MailFolderOperationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MailFolderOperationable)
+                }
+            }
+            m.SetOperations(res)
+        }
+        return nil
+    }
     res["parentFolderId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -290,6 +306,18 @@ func (m *MailFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtende
     }
     if val != nil {
         return val.([]MultiValueLegacyExtendedPropertyable)
+    }
+    return nil
+}
+// GetOperations gets the operations property value. The operations property
+// returns a []MailFolderOperationable when successful
+func (m *MailFolder) GetOperations()([]MailFolderOperationable) {
+    val, err := m.GetBackingStore().Get("operations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MailFolderOperationable)
     }
     return nil
 }
@@ -437,6 +465,18 @@ func (m *MailFolder) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetOperations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOperations()))
+        for i, v := range m.GetOperations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("operations", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("parentFolderId", m.GetParentFolderId())
         if err != nil {
@@ -536,6 +576,13 @@ func (m *MailFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExt
         panic(err)
     }
 }
+// SetOperations sets the operations property value. The operations property
+func (m *MailFolder) SetOperations(value []MailFolderOperationable)() {
+    err := m.GetBackingStore().Set("operations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetParentFolderId sets the parentFolderId property value. The unique identifier for the mailFolder's parent mailFolder.
 func (m *MailFolder) SetParentFolderId(value *string)() {
     err := m.GetBackingStore().Set("parentFolderId", value)
@@ -588,6 +635,7 @@ type MailFolderable interface {
     GetMessageRules()([]MessageRuleable)
     GetMessages()([]Messageable)
     GetMultiValueExtendedProperties()([]MultiValueLegacyExtendedPropertyable)
+    GetOperations()([]MailFolderOperationable)
     GetParentFolderId()(*string)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     GetTotalItemCount()(*int32)
@@ -601,6 +649,7 @@ type MailFolderable interface {
     SetMessageRules(value []MessageRuleable)()
     SetMessages(value []Messageable)()
     SetMultiValueExtendedProperties(value []MultiValueLegacyExtendedPropertyable)()
+    SetOperations(value []MailFolderOperationable)()
     SetParentFolderId(value *string)()
     SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
     SetTotalItemCount(value *int32)()

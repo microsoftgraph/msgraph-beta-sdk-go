@@ -54,6 +54,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewCrossTenantAccessPolicy(), nil
                     case "#microsoft.graph.device":
                         return NewDevice(), nil
+                    case "#microsoft.graph.deviceTemplate":
+                        return NewDeviceTemplate(), nil
                     case "#microsoft.graph.directoryObjectPartnerReference":
                         return NewDirectoryObjectPartnerReference(), nil
                     case "#microsoft.graph.directoryRole":
@@ -82,6 +84,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewIdentitySecurityDefaultsEnforcementPolicy(), nil
                     case "#microsoft.graph.multiTenantOrganizationMember":
                         return NewMultiTenantOrganizationMember(), nil
+                    case "#microsoft.graph.mutualTlsOauthConfiguration":
+                        return NewMutualTlsOauthConfiguration(), nil
                     case "#microsoft.graph.organization":
                         return NewOrganization(), nil
                     case "#microsoft.graph.orgContact":
@@ -112,6 +116,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewTokenLifetimePolicy(), nil
                     case "#microsoft.graph.trustedCertificateAuthorityAsEntityBase":
                         return NewTrustedCertificateAuthorityAsEntityBase(), nil
+                    case "#microsoft.graph.trustedCertificateAuthorityBase":
+                        return NewTrustedCertificateAuthorityBase(), nil
                     case "#microsoft.graph.user":
                         return NewUser(), nil
                 }

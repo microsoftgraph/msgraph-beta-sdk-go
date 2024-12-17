@@ -429,6 +429,16 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["templates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTemplateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTemplates(val.(Templateable))
+        }
+        return nil
+    }
     return res
 }
 // GetImpactedResources gets the impactedResources property value. The impactedResources property
@@ -536,6 +546,18 @@ func (m *Directory) GetSubscriptions()([]CompanySubscriptionable) {
     }
     if val != nil {
         return val.([]CompanySubscriptionable)
+    }
+    return nil
+}
+// GetTemplates gets the templates property value. The templates property
+// returns a Templateable when successful
+func (m *Directory) GetTemplates()(Templateable) {
+    val, err := m.GetBackingStore().Get("templates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Templateable)
     }
     return nil
 }
@@ -755,6 +777,12 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("templates", m.GetTemplates())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAdministrativeUnits sets the administrativeUnits property value. Conceptual container for user and group directory objects.
@@ -890,6 +918,13 @@ func (m *Directory) SetSubscriptions(value []CompanySubscriptionable)() {
         panic(err)
     }
 }
+// SetTemplates sets the templates property value. The templates property
+func (m *Directory) SetTemplates(value Templateable)() {
+    err := m.GetBackingStore().Set("templates", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type Directoryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -912,6 +947,7 @@ type Directoryable interface {
     GetRecommendations()([]Recommendationable)
     GetSharedEmailDomains()([]SharedEmailDomainable)
     GetSubscriptions()([]CompanySubscriptionable)
+    GetTemplates()(Templateable)
     SetAdministrativeUnits(value []AdministrativeUnitable)()
     SetAttributeSets(value []AttributeSetable)()
     SetAuthenticationMethodDevices(value AuthenticationMethodDeviceable)()
@@ -931,4 +967,5 @@ type Directoryable interface {
     SetRecommendations(value []Recommendationable)()
     SetSharedEmailDomains(value []SharedEmailDomainable)()
     SetSubscriptions(value []CompanySubscriptionable)()
+    SetTemplates(value Templateable)()
 }

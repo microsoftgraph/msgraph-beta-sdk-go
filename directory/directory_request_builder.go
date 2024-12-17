@@ -192,6 +192,11 @@ func (m *DirectoryRequestBuilder) SubscriptionsWithCommerceSubscriptionId(commer
 func (m *DirectoryRequestBuilder) SubscriptionsWithOcpSubscriptionId(ocpSubscriptionId *string)(*SubscriptionsWithOcpSubscriptionIdRequestBuilder) {
     return NewSubscriptionsWithOcpSubscriptionIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, ocpSubscriptionId)
 }
+// Templates provides operations to manage the templates property of the microsoft.graph.directory entity.
+// returns a *TemplatesRequestBuilder when successful
+func (m *DirectoryRequestBuilder) Templates()(*TemplatesRequestBuilder) {
+    return NewTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get directory
 // returns a *RequestInformation when successful
 func (m *DirectoryRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

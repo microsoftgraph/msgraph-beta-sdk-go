@@ -95,6 +95,11 @@ func (m *CertificateAuthoritiesRequestBuilder) Get(ctx context.Context, requestC
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CertificateAuthorityPathable), nil
 }
+// MutualTlsOauthConfigurations provides operations to manage the mutualTlsOauthConfigurations property of the microsoft.graph.certificateAuthorityPath entity.
+// returns a *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder when successful
+func (m *CertificateAuthoritiesRequestBuilder) MutualTlsOauthConfigurations()(*CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder) {
+    return NewCertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property certificateAuthorities in directory
 // returns a CertificateAuthorityPathable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
