@@ -82,6 +82,11 @@ func NewSecurityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
     urlParams["request-raw-url"] = rawUrl
     return NewSecurityRequestBuilderInternal(urlParams, requestAdapter)
 }
+// DataDiscovery provides operations to manage the dataDiscovery property of the microsoft.graph.security entity.
+// returns a *DataDiscoveryRequestBuilder when successful
+func (m *SecurityRequestBuilder) DataDiscovery()(*DataDiscoveryRequestBuilder) {
+    return NewDataDiscoveryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // DomainSecurityProfiles provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
 // returns a *DomainSecurityProfilesRequestBuilder when successful
 func (m *SecurityRequestBuilder) DomainSecurityProfiles()(*DomainSecurityProfilesRequestBuilder) {

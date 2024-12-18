@@ -25,6 +25,16 @@ func CreateServiceHostedMediaConfigFromDiscriminatorValue(parseNode i878a80d2330
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ServiceHostedMediaConfig) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MediaConfig.GetFieldDeserializers()
+    res["liveCaptionOptions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateLiveCaptionOptionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLiveCaptionOptions(val.(LiveCaptionOptionsable))
+        }
+        return nil
+    }
     res["preFetchMedia"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateMediaInfoFromDiscriminatorValue)
         if err != nil {
@@ -42,6 +52,18 @@ func (m *ServiceHostedMediaConfig) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetLiveCaptionOptions gets the liveCaptionOptions property value. The liveCaptionOptions property
+// returns a LiveCaptionOptionsable when successful
+func (m *ServiceHostedMediaConfig) GetLiveCaptionOptions()(LiveCaptionOptionsable) {
+    val, err := m.GetBackingStore().Get("liveCaptionOptions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(LiveCaptionOptionsable)
+    }
+    return nil
 }
 // GetPreFetchMedia gets the preFetchMedia property value. The list of media to prefetch.
 // returns a []MediaInfoable when successful
@@ -61,6 +83,12 @@ func (m *ServiceHostedMediaConfig) Serialize(writer i878a80d2330e89d26896388a3f4
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("liveCaptionOptions", m.GetLiveCaptionOptions())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetPreFetchMedia() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPreFetchMedia()))
         for i, v := range m.GetPreFetchMedia() {
@@ -75,6 +103,13 @@ func (m *ServiceHostedMediaConfig) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
+// SetLiveCaptionOptions sets the liveCaptionOptions property value. The liveCaptionOptions property
+func (m *ServiceHostedMediaConfig) SetLiveCaptionOptions(value LiveCaptionOptionsable)() {
+    err := m.GetBackingStore().Set("liveCaptionOptions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPreFetchMedia sets the preFetchMedia property value. The list of media to prefetch.
 func (m *ServiceHostedMediaConfig) SetPreFetchMedia(value []MediaInfoable)() {
     err := m.GetBackingStore().Set("preFetchMedia", value)
@@ -85,6 +120,8 @@ func (m *ServiceHostedMediaConfig) SetPreFetchMedia(value []MediaInfoable)() {
 type ServiceHostedMediaConfigable interface {
     MediaConfigable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetLiveCaptionOptions()(LiveCaptionOptionsable)
     GetPreFetchMedia()([]MediaInfoable)
+    SetLiveCaptionOptions(value LiveCaptionOptionsable)()
     SetPreFetchMedia(value []MediaInfoable)()
 }

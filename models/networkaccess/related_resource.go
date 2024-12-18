@@ -42,8 +42,6 @@ func CreateRelatedResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewRelatedFileHash(), nil
                     case "#microsoft.graph.networkaccess.relatedMalware":
                         return NewRelatedMalware(), nil
-                    case "#microsoft.graph.networkaccess.relatedProcess":
-                        return NewRelatedProcess(), nil
                     case "#microsoft.graph.networkaccess.relatedRemoteNetwork":
                         return NewRelatedRemoteNetwork(), nil
                     case "#microsoft.graph.networkaccess.relatedTenant":

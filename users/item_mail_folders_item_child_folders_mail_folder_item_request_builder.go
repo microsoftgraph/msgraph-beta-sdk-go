@@ -112,6 +112,11 @@ func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) Messages()
 func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) Move()(*ItemMailFoldersItemChildFoldersItemMoveRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemMoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Operations provides operations to manage the operations property of the microsoft.graph.mailFolder entity.
+// returns a *ItemMailFoldersItemChildFoldersItemOperationsRequestBuilder when successful
+func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) Operations()(*ItemMailFoldersItemChildFoldersItemOperationsRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property childFolders in users
 // returns a MailFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -176,6 +181,11 @@ func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) ToPatchReq
         return nil, err
     }
     return requestInfo, nil
+}
+// UpdateAllMessagesReadState provides operations to call the updateAllMessagesReadState method.
+// returns a *ItemMailFoldersItemChildFoldersItemUpdateAllMessagesReadStateRequestBuilder when successful
+func (m *ItemMailFoldersItemChildFoldersMailFolderItemRequestBuilder) UpdateAllMessagesReadState()(*ItemMailFoldersItemChildFoldersItemUpdateAllMessagesReadStateRequestBuilder) {
+    return NewItemMailFoldersItemChildFoldersItemUpdateAllMessagesReadStateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // UserConfigurations provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.
 // returns a *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder when successful

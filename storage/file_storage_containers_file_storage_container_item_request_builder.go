@@ -108,6 +108,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Get(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerable), nil
 }
+// Lock provides operations to call the lock method.
+// returns a *FileStorageContainersItemLockRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Lock()(*FileStorageContainersItemLockRequestBuilder) {
+    return NewFileStorageContainersItemLockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property containers in storage
 // returns a FileStorageContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -187,6 +192,11 @@ func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) ToPatchReq
         return nil, err
     }
     return requestInfo, nil
+}
+// Unlock provides operations to call the unlock method.
+// returns a *FileStorageContainersItemUnlockRequestBuilder when successful
+func (m *FileStorageContainersFileStorageContainerItemRequestBuilder) Unlock()(*FileStorageContainersItemUnlockRequestBuilder) {
+    return NewFileStorageContainersItemUnlockRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *FileStorageContainersFileStorageContainerItemRequestBuilder when successful

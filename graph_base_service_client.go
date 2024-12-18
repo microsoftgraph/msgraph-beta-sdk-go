@@ -66,6 +66,7 @@ import (
     i65ec2d26e2745c20b2909e217069fc9c66fc5d6b449f4f50e1f705a550f3e781 "github.com/microsoftgraph/msgraph-beta-sdk-go/filteringpolicies"
     i65ed27543dee9887d3df7d7d883303dfead48cba6be4e357fa7d5c21332b4626 "github.com/microsoftgraph/msgraph-beta-sdk-go/admin"
     i66f18ccab4e34309d26d1056f0e7dd8b563a5f8ee6f8d9c6e8e77c5fac50f8b5 "github.com/microsoftgraph/msgraph-beta-sdk-go/teamstemplates"
+    i685cd6feb816a252c2833ae74ca6928f7c1b72065e4425fb081f3f898dd5cb56 "github.com/microsoftgraph/msgraph-beta-sdk-go/certificateauthorities"
     i6878457452f8bce5904d31522016d9cbd75b82042526e5ae91637c530b8658e8 "github.com/microsoftgraph/msgraph-beta-sdk-go/authenticationmethoddevices"
     i6b96a96c52bbdff1731b8a5490cd5f342e33866e0931912944d323bc79f663e4 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedsignupstatus"
     i6c3f8c4b4b571cf0fbb7c7c8791ae736e28cc3f4bb62262698b6291c13e127b9 "github.com/microsoftgraph/msgraph-beta-sdk-go/auditlogs"
@@ -110,6 +111,7 @@ import (
     ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1 "github.com/microsoftgraph/msgraph-beta-sdk-go/places"
     icb4f253cb1cd35435f5752b611229032c618bbcfeb3be80ee4d6a06d404114fc "github.com/microsoftgraph/msgraph-beta-sdk-go/teamwork"
     icd01c84a90833c55ac2309fd7034cb1962c60f59eb1ee2b2cf7b04c708402b6a "github.com/microsoftgraph/msgraph-beta-sdk-go/users"
+    iceb786ac5ddc912df815a8d082165101d7e95dbcf2a94981f8fb37db8c5a4422 "github.com/microsoftgraph/msgraph-beta-sdk-go/templates"
     id14bafb4ee71e1257662cacab67dd479e54eba65ce10c6816ee4676804caf821 "github.com/microsoftgraph/msgraph-beta-sdk-go/storage"
     id53bdaa191b823f3e2f4009f4cc095b46d1c7a433bde3b6d09ef0bd8df3514c2 "github.com/microsoftgraph/msgraph-beta-sdk-go/certificatebasedauthconfiguration"
     id5c2ef977a00dd1757d258dbbbfb4080031771e62e6c6b3b1339a0f03fc1c1f1 "github.com/microsoftgraph/msgraph-beta-sdk-go/tenantrelationships"
@@ -252,6 +254,11 @@ func (m *GraphBaseServiceClient) BookingCurrencies()(*ie573fcc25112f624100d67f5c
 // returns a *BusinessFlowTemplatesRequestBuilder when successful
 func (m *GraphBaseServiceClient) BusinessFlowTemplates()(*i97c9750160852aa25d52a4c6fa196b644ce728c6645ca520427ff4d85c76afa0.BusinessFlowTemplatesRequestBuilder) {
     return i97c9750160852aa25d52a4c6fa196b644ce728c6645ca520427ff4d85c76afa0.NewBusinessFlowTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CertificateAuthorities provides operations to manage the certificateAuthorityPath singleton.
+// returns a *CertificateAuthoritiesRequestBuilder when successful
+func (m *GraphBaseServiceClient) CertificateAuthorities()(*i685cd6feb816a252c2833ae74ca6928f7c1b72065e4425fb081f3f898dd5cb56.CertificateAuthoritiesRequestBuilder) {
+    return i685cd6feb816a252c2833ae74ca6928f7c1b72065e4425fb081f3f898dd5cb56.NewCertificateAuthoritiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // CertificateBasedAuthConfiguration provides operations to manage the collection of certificateBasedAuthConfiguration entities.
 // returns a *CertificateBasedAuthConfigurationRequestBuilder when successful
@@ -741,6 +748,11 @@ func (m *GraphBaseServiceClient) TeamTemplateDefinition()(*i1c7e7a5d0708841f8c98
 // returns a *TeamworkRequestBuilder when successful
 func (m *GraphBaseServiceClient) Teamwork()(*icb4f253cb1cd35435f5752b611229032c618bbcfeb3be80ee4d6a06d404114fc.TeamworkRequestBuilder) {
     return icb4f253cb1cd35435f5752b611229032c618bbcfeb3be80ee4d6a06d404114fc.NewTeamworkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Templates provides operations to manage the template singleton.
+// returns a *TemplatesRequestBuilder when successful
+func (m *GraphBaseServiceClient) Templates()(*iceb786ac5ddc912df815a8d082165101d7e95dbcf2a94981f8fb37db8c5a4422.TemplatesRequestBuilder) {
+    return iceb786ac5ddc912df815a8d082165101d7e95dbcf2a94981f8fb37db8c5a4422.NewTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // TenantRelationships provides operations to manage the tenantRelationship singleton.
 // returns a *TenantRelationshipsRequestBuilder when successful
