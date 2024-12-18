@@ -1,0 +1,77 @@
+package security
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
+)
+
+type DataDiscoveryRoot struct {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entity
+}
+// NewDataDiscoveryRoot instantiates a new DataDiscoveryRoot and sets the default values.
+func NewDataDiscoveryRoot()(*DataDiscoveryRoot) {
+    m := &DataDiscoveryRoot{
+        Entity: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewEntity(),
+    }
+    return m
+}
+// CreateDataDiscoveryRootFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateDataDiscoveryRootFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewDataDiscoveryRoot(), nil
+}
+// GetCloudAppDiscovery gets the cloudAppDiscovery property value. The available entities are IP addresses, devices, and users who access a cloud app.
+// returns a DataDiscoveryReportable when successful
+func (m *DataDiscoveryRoot) GetCloudAppDiscovery()(DataDiscoveryReportable) {
+    val, err := m.GetBackingStore().Get("cloudAppDiscovery")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DataDiscoveryReportable)
+    }
+    return nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *DataDiscoveryRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.Entity.GetFieldDeserializers()
+    res["cloudAppDiscovery"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDataDiscoveryReportFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCloudAppDiscovery(val.(DataDiscoveryReportable))
+        }
+        return nil
+    }
+    return res
+}
+// Serialize serializes information the current object
+func (m *DataDiscoveryRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteObjectValue("cloudAppDiscovery", m.GetCloudAppDiscovery())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetCloudAppDiscovery sets the cloudAppDiscovery property value. The available entities are IP addresses, devices, and users who access a cloud app.
+func (m *DataDiscoveryRoot) SetCloudAppDiscovery(value DataDiscoveryReportable)() {
+    err := m.GetBackingStore().Set("cloudAppDiscovery", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type DataDiscoveryRootable interface {
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCloudAppDiscovery()(DataDiscoveryReportable)
+    SetCloudAppDiscovery(value DataDiscoveryReportable)()
+}

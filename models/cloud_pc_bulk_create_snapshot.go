@@ -21,7 +21,7 @@ func NewCloudPcBulkCreateSnapshot()(*CloudPcBulkCreateSnapshot) {
 func CreateCloudPcBulkCreateSnapshotFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcBulkCreateSnapshot(), nil
 }
-// GetAccessTier gets the accessTier property value. The accessTier property
+// GetAccessTier gets the accessTier property value. Indicates the access tier of the blob file that the snapshot is copied to. Possible values are hot, cool, cold, archive, and unknownFutureValue. The default value is hot. Read-Only.
 // returns a *CloudPcBlobAccessTier when successful
 func (m *CloudPcBulkCreateSnapshot) GetAccessTier()(*CloudPcBlobAccessTier) {
     val, err := m.GetBackingStore().Get("accessTier")
@@ -59,7 +59,7 @@ func (m *CloudPcBulkCreateSnapshot) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetStorageAccountId gets the storageAccountId property value. The storageAccountId property
+// GetStorageAccountId gets the storageAccountId property value. The unique identifier for Secure Azure Storage Account, which receives the restore points (snapshots). The value can't be modified after it's created. For example, '/subscriptions/06199b73-30a1-4922-8734-93feca64cdf6/resourceGroups/res2627/providers/Microsoft.Storage/storageAccounts/sto1125'. Read-Only.
 // returns a *string when successful
 func (m *CloudPcBulkCreateSnapshot) GetStorageAccountId()(*string) {
     val, err := m.GetBackingStore().Get("storageAccountId")
@@ -92,14 +92,14 @@ func (m *CloudPcBulkCreateSnapshot) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAccessTier sets the accessTier property value. The accessTier property
+// SetAccessTier sets the accessTier property value. Indicates the access tier of the blob file that the snapshot is copied to. Possible values are hot, cool, cold, archive, and unknownFutureValue. The default value is hot. Read-Only.
 func (m *CloudPcBulkCreateSnapshot) SetAccessTier(value *CloudPcBlobAccessTier)() {
     err := m.GetBackingStore().Set("accessTier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStorageAccountId sets the storageAccountId property value. The storageAccountId property
+// SetStorageAccountId sets the storageAccountId property value. The unique identifier for Secure Azure Storage Account, which receives the restore points (snapshots). The value can't be modified after it's created. For example, '/subscriptions/06199b73-30a1-4922-8734-93feca64cdf6/resourceGroups/res2627/providers/Microsoft.Storage/storageAccounts/sto1125'. Read-Only.
 func (m *CloudPcBulkCreateSnapshot) SetStorageAccountId(value *string)() {
     err := m.GetBackingStore().Set("storageAccountId", value)
     if err != nil {

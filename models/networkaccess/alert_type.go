@@ -11,10 +11,12 @@ const (
     UNKNOWNFUTUREVALUE_ALERTTYPE
     WEBCONTENTBLOCKED_ALERTTYPE
     MALWARE_ALERTTYPE
+    PATIENTZERO_ALERTTYPE
+    DLP_ALERTTYPE
 )
 
 func (i AlertType) String() string {
-    return []string{"unhealthyRemoteNetworks", "unhealthyConnectors", "deviceTokenInconsistency", "crossTenantAnomaly", "suspiciousProcess", "threatIntelligenceTransactions", "unknownFutureValue", "webContentBlocked", "malware"}[i]
+    return []string{"unhealthyRemoteNetworks", "unhealthyConnectors", "deviceTokenInconsistency", "crossTenantAnomaly", "suspiciousProcess", "threatIntelligenceTransactions", "unknownFutureValue", "webContentBlocked", "malware", "patientZero", "dlp"}[i]
 }
 func ParseAlertType(v string) (any, error) {
     result := UNHEALTHYREMOTENETWORKS_ALERTTYPE
@@ -37,6 +39,10 @@ func ParseAlertType(v string) (any, error) {
             result = WEBCONTENTBLOCKED_ALERTTYPE
         case "malware":
             result = MALWARE_ALERTTYPE
+        case "patientZero":
+            result = PATIENTZERO_ALERTTYPE
+        case "dlp":
+            result = DLP_ALERTTYPE
         default:
             return nil, nil
     }

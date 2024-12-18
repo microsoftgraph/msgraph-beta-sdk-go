@@ -350,6 +350,42 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["wafAllowedHeaders"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWafAllowedHeadersDictionaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWafAllowedHeaders(val.(WafAllowedHeadersDictionaryable))
+        }
+        return nil
+    }
+    res["wafIpRanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIpRangeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IpRangeable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(IpRangeable)
+                }
+            }
+            m.SetWafIpRanges(res)
+        }
+        return nil
+    }
+    res["wafProvider"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWafProvider(val)
+        }
+        return nil
+    }
     return res
 }
 // GetInternalUrl gets the internalUrl property value. The internal url of the application. For example, https://intranet/.
@@ -580,6 +616,42 @@ func (m *OnPremisesPublishing) GetVerifiedCustomDomainPasswordCredential()(Passw
     }
     return nil
 }
+// GetWafAllowedHeaders gets the wafAllowedHeaders property value. The wafAllowedHeaders property
+// returns a WafAllowedHeadersDictionaryable when successful
+func (m *OnPremisesPublishing) GetWafAllowedHeaders()(WafAllowedHeadersDictionaryable) {
+    val, err := m.GetBackingStore().Get("wafAllowedHeaders")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WafAllowedHeadersDictionaryable)
+    }
+    return nil
+}
+// GetWafIpRanges gets the wafIpRanges property value. The wafIpRanges property
+// returns a []IpRangeable when successful
+func (m *OnPremisesPublishing) GetWafIpRanges()([]IpRangeable) {
+    val, err := m.GetBackingStore().Get("wafIpRanges")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IpRangeable)
+    }
+    return nil
+}
+// GetWafProvider gets the wafProvider property value. The wafProvider property
+// returns a *string when successful
+func (m *OnPremisesPublishing) GetWafProvider()(*string) {
+    val, err := m.GetBackingStore().Get("wafProvider")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -729,6 +801,30 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     {
         err := writer.WriteObjectValue("verifiedCustomDomainPasswordCredential", m.GetVerifiedCustomDomainPasswordCredential())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("wafAllowedHeaders", m.GetWafAllowedHeaders())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetWafIpRanges() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetWafIpRanges()))
+        for i, v := range m.GetWafIpRanges() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("wafIpRanges", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("wafProvider", m.GetWafProvider())
         if err != nil {
             return err
         }
@@ -920,6 +1016,27 @@ func (m *OnPremisesPublishing) SetVerifiedCustomDomainPasswordCredential(value P
         panic(err)
     }
 }
+// SetWafAllowedHeaders sets the wafAllowedHeaders property value. The wafAllowedHeaders property
+func (m *OnPremisesPublishing) SetWafAllowedHeaders(value WafAllowedHeadersDictionaryable)() {
+    err := m.GetBackingStore().Set("wafAllowedHeaders", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWafIpRanges sets the wafIpRanges property value. The wafIpRanges property
+func (m *OnPremisesPublishing) SetWafIpRanges(value []IpRangeable)() {
+    err := m.GetBackingStore().Set("wafIpRanges", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWafProvider sets the wafProvider property value. The wafProvider property
+func (m *OnPremisesPublishing) SetWafProvider(value *string)() {
+    err := m.GetBackingStore().Set("wafProvider", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type OnPremisesPublishingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -949,6 +1066,9 @@ type OnPremisesPublishingable interface {
     GetVerifiedCustomDomainCertificatesMetadata()(VerifiedCustomDomainCertificatesMetadataable)
     GetVerifiedCustomDomainKeyCredential()(KeyCredentialable)
     GetVerifiedCustomDomainPasswordCredential()(PasswordCredentialable)
+    GetWafAllowedHeaders()(WafAllowedHeadersDictionaryable)
+    GetWafIpRanges()([]IpRangeable)
+    GetWafProvider()(*string)
     SetAlternateUrl(value *string)()
     SetApplicationServerTimeout(value *string)()
     SetApplicationType(value *string)()
@@ -974,4 +1094,7 @@ type OnPremisesPublishingable interface {
     SetVerifiedCustomDomainCertificatesMetadata(value VerifiedCustomDomainCertificatesMetadataable)()
     SetVerifiedCustomDomainKeyCredential(value KeyCredentialable)()
     SetVerifiedCustomDomainPasswordCredential(value PasswordCredentialable)()
+    SetWafAllowedHeaders(value WafAllowedHeadersDictionaryable)()
+    SetWafIpRanges(value []IpRangeable)()
+    SetWafProvider(value *string)()
 }

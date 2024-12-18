@@ -42,7 +42,7 @@ func CreateRestoreArtifactsBulkRequestBaseFromDiscriminatorValue(parseNode i878a
     }
     return NewRestoreArtifactsBulkRequestBase(), nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. The identity of the person who created the bulk request.
 // returns a IdentitySetable when successful
 func (m *RestoreArtifactsBulkRequestBase) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -54,7 +54,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetCreatedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The time when the bulk request was created.
 // returns a *Time when successful
 func (m *RestoreArtifactsBulkRequestBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -66,7 +66,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetCreatedDateTime()(*i336074805fc8539
     }
     return nil
 }
-// GetDestinationType gets the destinationType property value. The destinationType property
+// GetDestinationType gets the destinationType property value. Indicates the restoration destination. The possible values are: new, inPlace, unknownFutureValue.
 // returns a *DestinationType when successful
 func (m *RestoreArtifactsBulkRequestBase) GetDestinationType()(*DestinationType) {
     val, err := m.GetBackingStore().Get("destinationType")
@@ -78,7 +78,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetDestinationType()(*DestinationType)
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Name of the addition request.
 // returns a *string when successful
 func (m *RestoreArtifactsBulkRequestBase) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -90,7 +90,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. Error details are populated for resource resolution failures.
 // returns a PublicErrorable when successful
 func (m *RestoreArtifactsBulkRequestBase) GetError()(PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
@@ -234,7 +234,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Identity of the person who last modified this entity.
 // returns a IdentitySetable when successful
 func (m *RestoreArtifactsBulkRequestBase) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -246,7 +246,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetLastModifiedBy()(IdentitySetable) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Timestamp when this entity was last modified.
 // returns a *Time when successful
 func (m *RestoreArtifactsBulkRequestBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -258,7 +258,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetLastModifiedDateTime()(*i336074805f
     }
     return nil
 }
-// GetProtectionTimePeriod gets the protectionTimePeriod property value. The protectionTimePeriod property
+// GetProtectionTimePeriod gets the protectionTimePeriod property value. The start and end date and time of the protection period.
 // returns a TimePeriodable when successful
 func (m *RestoreArtifactsBulkRequestBase) GetProtectionTimePeriod()(TimePeriodable) {
     val, err := m.GetBackingStore().Get("protectionTimePeriod")
@@ -270,7 +270,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetProtectionTimePeriod()(TimePeriodab
     }
     return nil
 }
-// GetProtectionUnitIds gets the protectionUnitIds property value. The protectionUnitIds property
+// GetProtectionUnitIds gets the protectionUnitIds property value. Indicates which protection units to restore. This property isn't implemented yet. Future value; don't use.
 // returns a []string when successful
 func (m *RestoreArtifactsBulkRequestBase) GetProtectionUnitIds()([]string) {
     val, err := m.GetBackingStore().Get("protectionUnitIds")
@@ -282,7 +282,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetProtectionUnitIds()([]string) {
     }
     return nil
 }
-// GetRestorePointPreference gets the restorePointPreference property value. The restorePointPreference property
+// GetRestorePointPreference gets the restorePointPreference property value. Indicates which restore point to return. The possible values are: oldest, latest, unknownFutureValue.
 // returns a *RestorePointPreference when successful
 func (m *RestoreArtifactsBulkRequestBase) GetRestorePointPreference()(*RestorePointPreference) {
     val, err := m.GetBackingStore().Get("restorePointPreference")
@@ -294,7 +294,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetRestorePointPreference()(*RestorePo
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Determines the status of the long-running operation. The possible values area: unknown, active, completed, completedWithErrors, unknownFutureValue.
 // returns a *RestoreArtifactsBulkRequestStatus when successful
 func (m *RestoreArtifactsBulkRequestBase) GetStatus()(*RestoreArtifactsBulkRequestStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -306,7 +306,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetStatus()(*RestoreArtifactsBulkReque
     }
     return nil
 }
-// GetTags gets the tags property value. The tags property
+// GetTags gets the tags property value. The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue.
 // returns a *RestorePointTags when successful
 func (m *RestoreArtifactsBulkRequestBase) GetTags()(*RestorePointTags) {
     val, err := m.GetBackingStore().Get("tags")
@@ -402,84 +402,84 @@ func (m *RestoreArtifactsBulkRequestBase) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. The identity of the person who created the bulk request.
 func (m *RestoreArtifactsBulkRequestBase) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The time when the bulk request was created.
 func (m *RestoreArtifactsBulkRequestBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationType sets the destinationType property value. The destinationType property
+// SetDestinationType sets the destinationType property value. Indicates the restoration destination. The possible values are: new, inPlace, unknownFutureValue.
 func (m *RestoreArtifactsBulkRequestBase) SetDestinationType(value *DestinationType)() {
     err := m.GetBackingStore().Set("destinationType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Name of the addition request.
 func (m *RestoreArtifactsBulkRequestBase) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. Error details are populated for resource resolution failures.
 func (m *RestoreArtifactsBulkRequestBase) SetError(value PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Identity of the person who last modified this entity.
 func (m *RestoreArtifactsBulkRequestBase) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Timestamp when this entity was last modified.
 func (m *RestoreArtifactsBulkRequestBase) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProtectionTimePeriod sets the protectionTimePeriod property value. The protectionTimePeriod property
+// SetProtectionTimePeriod sets the protectionTimePeriod property value. The start and end date and time of the protection period.
 func (m *RestoreArtifactsBulkRequestBase) SetProtectionTimePeriod(value TimePeriodable)() {
     err := m.GetBackingStore().Set("protectionTimePeriod", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProtectionUnitIds sets the protectionUnitIds property value. The protectionUnitIds property
+// SetProtectionUnitIds sets the protectionUnitIds property value. Indicates which protection units to restore. This property isn't implemented yet. Future value; don't use.
 func (m *RestoreArtifactsBulkRequestBase) SetProtectionUnitIds(value []string)() {
     err := m.GetBackingStore().Set("protectionUnitIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRestorePointPreference sets the restorePointPreference property value. The restorePointPreference property
+// SetRestorePointPreference sets the restorePointPreference property value. Indicates which restore point to return. The possible values are: oldest, latest, unknownFutureValue.
 func (m *RestoreArtifactsBulkRequestBase) SetRestorePointPreference(value *RestorePointPreference)() {
     err := m.GetBackingStore().Set("restorePointPreference", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Determines the status of the long-running operation. The possible values area: unknown, active, completed, completedWithErrors, unknownFutureValue.
 func (m *RestoreArtifactsBulkRequestBase) SetStatus(value *RestoreArtifactsBulkRequestStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTags sets the tags property value. The tags property
+// SetTags sets the tags property value. The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue.
 func (m *RestoreArtifactsBulkRequestBase) SetTags(value *RestorePointTags)() {
     err := m.GetBackingStore().Set("tags", value)
     if err != nil {

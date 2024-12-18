@@ -51,7 +51,35 @@ func (m *CertificateAuthorityPath) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["mutualTlsOauthConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateMutualTlsOauthConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]MutualTlsOauthConfigurationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(MutualTlsOauthConfigurationable)
+                }
+            }
+            m.SetMutualTlsOauthConfigurations(res)
+        }
+        return nil
+    }
     return res
+}
+// GetMutualTlsOauthConfigurations gets the mutualTlsOauthConfigurations property value. The mutualTlsOauthConfigurations property
+// returns a []MutualTlsOauthConfigurationable when successful
+func (m *CertificateAuthorityPath) GetMutualTlsOauthConfigurations()([]MutualTlsOauthConfigurationable) {
+    val, err := m.GetBackingStore().Get("mutualTlsOauthConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]MutualTlsOauthConfigurationable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *CertificateAuthorityPath) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -71,6 +99,18 @@ func (m *CertificateAuthorityPath) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    if m.GetMutualTlsOauthConfigurations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMutualTlsOauthConfigurations()))
+        for i, v := range m.GetMutualTlsOauthConfigurations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("mutualTlsOauthConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCertificateBasedApplicationConfigurations sets the certificateBasedApplicationConfigurations property value. Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
@@ -80,9 +120,18 @@ func (m *CertificateAuthorityPath) SetCertificateBasedApplicationConfigurations(
         panic(err)
     }
 }
+// SetMutualTlsOauthConfigurations sets the mutualTlsOauthConfigurations property value. The mutualTlsOauthConfigurations property
+func (m *CertificateAuthorityPath) SetMutualTlsOauthConfigurations(value []MutualTlsOauthConfigurationable)() {
+    err := m.GetBackingStore().Set("mutualTlsOauthConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CertificateAuthorityPathable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCertificateBasedApplicationConfigurations()([]CertificateBasedApplicationConfigurationable)
+    GetMutualTlsOauthConfigurations()([]MutualTlsOauthConfigurationable)
     SetCertificateBasedApplicationConfigurations(value []CertificateBasedApplicationConfigurationable)()
+    SetMutualTlsOauthConfigurations(value []MutualTlsOauthConfigurationable)()
 }

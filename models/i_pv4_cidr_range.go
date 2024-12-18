@@ -4,6 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
+// IPv4CidrRange iP range base class for representing IPV4, IPV6 address ranges
 type IPv4CidrRange struct {
     IpRange
 }

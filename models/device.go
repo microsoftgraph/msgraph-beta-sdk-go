@@ -34,6 +34,18 @@ func (m *Device) GetAccountEnabled()(*bool) {
     }
     return nil
 }
+// GetAlternativeNames gets the alternativeNames property value. The alternativeNames property
+// returns a []string when successful
+func (m *Device) GetAlternativeNames()([]string) {
+    val, err := m.GetBackingStore().Get("alternativeNames")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetAlternativeSecurityIds gets the alternativeSecurityIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
 // returns a []AlternativeSecurityIdable when successful
 func (m *Device) GetAlternativeSecurityIds()([]AlternativeSecurityIdable) {
@@ -127,6 +139,18 @@ func (m *Device) GetDeviceOwnership()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetDeviceTemplate gets the deviceTemplate property value. The deviceTemplate property
+// returns a []DeviceTemplateable when successful
+func (m *Device) GetDeviceTemplate()([]DeviceTemplateable) {
+    val, err := m.GetBackingStore().Get("deviceTemplate")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DeviceTemplateable)
     }
     return nil
 }
@@ -228,6 +252,22 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         return nil
     }
+    res["alternativeNames"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetAlternativeNames(res)
+        }
+        return nil
+    }
     res["alternativeSecurityIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAlternativeSecurityIdFromDiscriminatorValue)
         if err != nil {
@@ -317,6 +357,22 @@ func (m *Device) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         if val != nil {
             m.SetDeviceOwnership(val)
+        }
+        return nil
+    }
+    res["deviceTemplate"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDeviceTemplateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DeviceTemplateable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DeviceTemplateable)
+                }
+            }
+            m.SetDeviceTemplate(res)
         }
         return nil
     }
@@ -1074,6 +1130,12 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             return err
         }
     }
+    if m.GetAlternativeNames() != nil {
+        err = writer.WriteCollectionOfStringValues("alternativeNames", m.GetAlternativeNames())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAlternativeSecurityIds() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAlternativeSecurityIds()))
         for i, v := range m.GetAlternativeSecurityIds() {
@@ -1130,6 +1192,18 @@ func (m *Device) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     {
         err = writer.WriteStringValue("deviceOwnership", m.GetDeviceOwnership())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetDeviceTemplate() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDeviceTemplate()))
+        for i, v := range m.GetDeviceTemplate() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("deviceTemplate", cast)
         if err != nil {
             return err
         }
@@ -1389,6 +1463,13 @@ func (m *Device) SetAccountEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetAlternativeNames sets the alternativeNames property value. The alternativeNames property
+func (m *Device) SetAlternativeNames(value []string)() {
+    err := m.GetBackingStore().Set("alternativeNames", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAlternativeSecurityIds sets the alternativeSecurityIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *Device) SetAlternativeSecurityIds(value []AlternativeSecurityIdable)() {
     err := m.GetBackingStore().Set("alternativeSecurityIds", value)
@@ -1441,6 +1522,13 @@ func (m *Device) SetDeviceMetadata(value *string)() {
 // SetDeviceOwnership sets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
 func (m *Device) SetDeviceOwnership(value *string)() {
     err := m.GetBackingStore().Set("deviceOwnership", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDeviceTemplate sets the deviceTemplate property value. The deviceTemplate property
+func (m *Device) SetDeviceTemplate(value []DeviceTemplateable)() {
+    err := m.GetBackingStore().Set("deviceTemplate", value)
     if err != nil {
         panic(err)
     }
@@ -1694,6 +1782,7 @@ type Deviceable interface {
     DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccountEnabled()(*bool)
+    GetAlternativeNames()([]string)
     GetAlternativeSecurityIds()([]AlternativeSecurityIdable)
     GetApproximateLastSignInDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCommands()([]Commandable)
@@ -1702,6 +1791,7 @@ type Deviceable interface {
     GetDeviceId()(*string)
     GetDeviceMetadata()(*string)
     GetDeviceOwnership()(*string)
+    GetDeviceTemplate()([]DeviceTemplateable)
     GetDeviceVersion()(*int32)
     GetDisplayName()(*string)
     GetDomainName()(*string)
@@ -1738,6 +1828,7 @@ type Deviceable interface {
     GetTrustType()(*string)
     GetUsageRights()([]UsageRightable)
     SetAccountEnabled(value *bool)()
+    SetAlternativeNames(value []string)()
     SetAlternativeSecurityIds(value []AlternativeSecurityIdable)()
     SetApproximateLastSignInDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCommands(value []Commandable)()
@@ -1746,6 +1837,7 @@ type Deviceable interface {
     SetDeviceId(value *string)()
     SetDeviceMetadata(value *string)()
     SetDeviceOwnership(value *string)()
+    SetDeviceTemplate(value []DeviceTemplateable)()
     SetDeviceVersion(value *int32)()
     SetDisplayName(value *string)()
     SetDomainName(value *string)()

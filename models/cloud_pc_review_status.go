@@ -23,7 +23,7 @@ func NewCloudPcReviewStatus()(*CloudPcReviewStatus) {
 func CreateCloudPcReviewStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcReviewStatus(), nil
 }
-// GetAccessTier gets the accessTier property value. The accessTier property
+// GetAccessTier gets the accessTier property value. The blob access tier of the Azure Storage account in which the Cloud PC snapshot is saved with. Possible values are hot, cool, cold, and archive, default value is hot.
 // returns a *CloudPcBlobAccessTier when successful
 func (m *CloudPcReviewStatus) GetAccessTier()(*CloudPcBlobAccessTier) {
     val, err := m.GetBackingStore().Get("accessTier")
@@ -367,7 +367,7 @@ func (m *CloudPcReviewStatus) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetAccessTier sets the accessTier property value. The accessTier property
+// SetAccessTier sets the accessTier property value. The blob access tier of the Azure Storage account in which the Cloud PC snapshot is saved with. Possible values are hot, cool, cold, and archive, default value is hot.
 func (m *CloudPcReviewStatus) SetAccessTier(value *CloudPcBlobAccessTier)() {
     err := m.GetBackingStore().Set("accessTier", value)
     if err != nil {
