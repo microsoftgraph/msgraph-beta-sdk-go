@@ -21,7 +21,7 @@ func NewIpApplicationSegment()(*IpApplicationSegment) {
 func CreateIpApplicationSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIpApplicationSegment(), nil
 }
-// GetApplication gets the application property value. The application property
+// GetApplication gets the application property value. The on-premises nonweb application published through Microsoft Entra application proxy. Expanded by default and supports $expand.
 // returns a Applicationable when successful
 func (m *IpApplicationSegment) GetApplication()(Applicationable) {
     val, err := m.GetBackingStore().Get("application")
@@ -33,7 +33,7 @@ func (m *IpApplicationSegment) GetApplication()(Applicationable) {
     }
     return nil
 }
-// GetDestinationHost gets the destinationHost property value. The destinationHost property
+// GetDestinationHost gets the destinationHost property value. Either the IP address, IP range, or FQDN of the applicationSegment, with or without wildcards.
 // returns a *string when successful
 func (m *IpApplicationSegment) GetDestinationHost()(*string) {
     val, err := m.GetBackingStore().Get("destinationHost")
@@ -45,7 +45,7 @@ func (m *IpApplicationSegment) GetDestinationHost()(*string) {
     }
     return nil
 }
-// GetDestinationType gets the destinationType property value. The destinationType property
+// GetDestinationType gets the destinationType property value. The possible values are: ipAddress, ipRange, ipRangeCidr, fqdn, dnsSuffix, unknownFutureValue.
 // returns a *PrivateNetworkDestinationType when successful
 func (m *IpApplicationSegment) GetDestinationType()(*PrivateNetworkDestinationType) {
     val, err := m.GetBackingStore().Get("destinationType")
@@ -129,7 +129,7 @@ func (m *IpApplicationSegment) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetPort gets the port property value. The port property
+// GetPort gets the port property value. Port supported for the application segment. DO NOT USE.
 // returns a *int32 when successful
 func (m *IpApplicationSegment) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
@@ -141,7 +141,7 @@ func (m *IpApplicationSegment) GetPort()(*int32) {
     }
     return nil
 }
-// GetPorts gets the ports property value. The ports property
+// GetPorts gets the ports property value. List of ports supported for the application segment.
 // returns a []string when successful
 func (m *IpApplicationSegment) GetPorts()([]string) {
     val, err := m.GetBackingStore().Get("ports")
@@ -153,7 +153,7 @@ func (m *IpApplicationSegment) GetPorts()([]string) {
     }
     return nil
 }
-// GetProtocol gets the protocol property value. The protocol property
+// GetProtocol gets the protocol property value. Indicates the protocol of the network traffic acquired for the application segment. The possible values are: tcp, udp, unknownFutureValue.
 // returns a *PrivateNetworkProtocol when successful
 func (m *IpApplicationSegment) GetProtocol()(*PrivateNetworkProtocol) {
     val, err := m.GetBackingStore().Get("protocol")
@@ -211,42 +211,42 @@ func (m *IpApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetApplication sets the application property value. The application property
+// SetApplication sets the application property value. The on-premises nonweb application published through Microsoft Entra application proxy. Expanded by default and supports $expand.
 func (m *IpApplicationSegment) SetApplication(value Applicationable)() {
     err := m.GetBackingStore().Set("application", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationHost sets the destinationHost property value. The destinationHost property
+// SetDestinationHost sets the destinationHost property value. Either the IP address, IP range, or FQDN of the applicationSegment, with or without wildcards.
 func (m *IpApplicationSegment) SetDestinationHost(value *string)() {
     err := m.GetBackingStore().Set("destinationHost", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationType sets the destinationType property value. The destinationType property
+// SetDestinationType sets the destinationType property value. The possible values are: ipAddress, ipRange, ipRangeCidr, fqdn, dnsSuffix, unknownFutureValue.
 func (m *IpApplicationSegment) SetDestinationType(value *PrivateNetworkDestinationType)() {
     err := m.GetBackingStore().Set("destinationType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPort sets the port property value. The port property
+// SetPort sets the port property value. Port supported for the application segment. DO NOT USE.
 func (m *IpApplicationSegment) SetPort(value *int32)() {
     err := m.GetBackingStore().Set("port", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPorts sets the ports property value. The ports property
+// SetPorts sets the ports property value. List of ports supported for the application segment.
 func (m *IpApplicationSegment) SetPorts(value []string)() {
     err := m.GetBackingStore().Set("ports", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProtocol sets the protocol property value. The protocol property
+// SetProtocol sets the protocol property value. Indicates the protocol of the network traffic acquired for the application segment. The possible values are: tcp, udp, unknownFutureValue.
 func (m *IpApplicationSegment) SetProtocol(value *PrivateNetworkProtocol)() {
     err := m.GetBackingStore().Set("protocol", value)
     if err != nil {

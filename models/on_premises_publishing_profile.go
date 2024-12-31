@@ -43,7 +43,7 @@ func (m *OnPremisesPublishingProfile) GetAgents()([]OnPremisesAgentable) {
     }
     return nil
 }
-// GetApplicationSegments gets the applicationSegments property value. The applicationSegments property
+// GetApplicationSegments gets the applicationSegments property value. Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
 // returns a []IpApplicationSegmentable when successful
 func (m *OnPremisesPublishingProfile) GetApplicationSegments()([]IpApplicationSegmentable) {
     val, err := m.GetBackingStore().Get("applicationSegments")
@@ -223,7 +223,7 @@ func (m *OnPremisesPublishingProfile) GetHybridAgentUpdaterConfiguration()(Hybri
     }
     return nil
 }
-// GetIsDefaultAccessEnabled gets the isDefaultAccessEnabled property value. The isDefaultAccessEnabled property
+// GetIsDefaultAccessEnabled gets the isDefaultAccessEnabled property value. Specifies whether default access for app proxy is enabled or disabled.
 // returns a *bool when successful
 func (m *OnPremisesPublishingProfile) GetIsDefaultAccessEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDefaultAccessEnabled")
@@ -371,7 +371,7 @@ func (m *OnPremisesPublishingProfile) SetAgents(value []OnPremisesAgentable)() {
         panic(err)
     }
 }
-// SetApplicationSegments sets the applicationSegments property value. The applicationSegments property
+// SetApplicationSegments sets the applicationSegments property value. Represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
 func (m *OnPremisesPublishingProfile) SetApplicationSegments(value []IpApplicationSegmentable)() {
     err := m.GetBackingStore().Set("applicationSegments", value)
     if err != nil {
@@ -399,7 +399,7 @@ func (m *OnPremisesPublishingProfile) SetHybridAgentUpdaterConfiguration(value H
         panic(err)
     }
 }
-// SetIsDefaultAccessEnabled sets the isDefaultAccessEnabled property value. The isDefaultAccessEnabled property
+// SetIsDefaultAccessEnabled sets the isDefaultAccessEnabled property value. Specifies whether default access for app proxy is enabled or disabled.
 func (m *OnPremisesPublishingProfile) SetIsDefaultAccessEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isDefaultAccessEnabled", value)
     if err != nil {

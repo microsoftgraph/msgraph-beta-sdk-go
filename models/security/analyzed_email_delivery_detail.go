@@ -66,6 +66,16 @@ func (m *AnalyzedEmailDeliveryDetail) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["latestThreats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLatestThreats(val)
+        }
+        return nil
+    }
     res["location"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseDeliveryLocation)
         if err != nil {
@@ -86,7 +96,29 @@ func (m *AnalyzedEmailDeliveryDetail) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["originalThreats"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOriginalThreats(val)
+        }
+        return nil
+    }
     return res
+}
+// GetLatestThreats gets the latestThreats property value. The latestThreats property
+// returns a *string when successful
+func (m *AnalyzedEmailDeliveryDetail) GetLatestThreats()(*string) {
+    val, err := m.GetBackingStore().Get("latestThreats")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetLocation gets the location property value. The delivery location of the email. The possible values are: unknown, inboxfolder, junkFolder, deletedFolder, quarantine, onpremexternal, failed, dropped, others, unknownFutureValue.
 // returns a *DeliveryLocation when successful
@@ -112,11 +144,29 @@ func (m *AnalyzedEmailDeliveryDetail) GetOdataType()(*string) {
     }
     return nil
 }
+// GetOriginalThreats gets the originalThreats property value. The originalThreats property
+// returns a *string when successful
+func (m *AnalyzedEmailDeliveryDetail) GetOriginalThreats()(*string) {
+    val, err := m.GetBackingStore().Get("originalThreats")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *AnalyzedEmailDeliveryDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAction() != nil {
         cast := (*m.GetAction()).String()
         err := writer.WriteStringValue("action", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("latestThreats", m.GetLatestThreats())
         if err != nil {
             return err
         }
@@ -130,6 +180,12 @@ func (m *AnalyzedEmailDeliveryDetail) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("originalThreats", m.GetOriginalThreats())
         if err != nil {
             return err
         }
@@ -160,6 +216,13 @@ func (m *AnalyzedEmailDeliveryDetail) SetAdditionalData(value map[string]any)() 
 func (m *AnalyzedEmailDeliveryDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetLatestThreats sets the latestThreats property value. The latestThreats property
+func (m *AnalyzedEmailDeliveryDetail) SetLatestThreats(value *string)() {
+    err := m.GetBackingStore().Set("latestThreats", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLocation sets the location property value. The delivery location of the email. The possible values are: unknown, inboxfolder, junkFolder, deletedFolder, quarantine, onpremexternal, failed, dropped, others, unknownFutureValue.
 func (m *AnalyzedEmailDeliveryDetail) SetLocation(value *DeliveryLocation)() {
     err := m.GetBackingStore().Set("location", value)
@@ -174,16 +237,27 @@ func (m *AnalyzedEmailDeliveryDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetOriginalThreats sets the originalThreats property value. The originalThreats property
+func (m *AnalyzedEmailDeliveryDetail) SetOriginalThreats(value *string)() {
+    err := m.GetBackingStore().Set("originalThreats", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AnalyzedEmailDeliveryDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAction()(*DeliveryAction)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetLatestThreats()(*string)
     GetLocation()(*DeliveryLocation)
     GetOdataType()(*string)
+    GetOriginalThreats()(*string)
     SetAction(value *DeliveryAction)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetLatestThreats(value *string)()
     SetLocation(value *DeliveryLocation)()
     SetOdataType(value *string)()
+    SetOriginalThreats(value *string)()
 }

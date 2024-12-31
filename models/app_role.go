@@ -181,7 +181,7 @@ func (m *AppRole) GetId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e555994
     }
     return nil
 }
-// GetIsEnabled gets the isEnabled property value. When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
+// GetIsEnabled gets the isEnabled property value. When you create or updating an app role, this value must be true. To delete a role, this must first be set to false. At that point, in a subsequent call, this role might be removed. Default value is true.
 // returns a *bool when successful
 func (m *AppRole) GetIsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEnabled")
@@ -217,7 +217,7 @@ func (m *AppRole) GetOrigin()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
+// GetValue gets the value property value. Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
 // returns a *string when successful
 func (m *AppRole) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -326,7 +326,7 @@ func (m *AppRole) SetId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e55
         panic(err)
     }
 }
-// SetIsEnabled sets the isEnabled property value. When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
+// SetIsEnabled sets the isEnabled property value. When you create or updating an app role, this value must be true. To delete a role, this must first be set to false. At that point, in a subsequent call, this role might be removed. Default value is true.
 func (m *AppRole) SetIsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
@@ -347,7 +347,7 @@ func (m *AppRole) SetOrigin(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
+// SetValue sets the value property value. Specifies the value to include in the roles claim in ID tokens and access tokens authenticating an assigned user or service principal. Must not exceed 120 characters in length. Allowed characters are : ! # $ % & ' ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, and characters in the ranges 0-9, A-Z, and a-z. Any other character, including the space character, aren't allowed. May not begin with ..
 func (m *AppRole) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

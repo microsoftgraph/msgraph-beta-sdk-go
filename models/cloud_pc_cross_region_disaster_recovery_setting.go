@@ -130,6 +130,16 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetFieldDeserializers()(map[
         }
         return nil
     }
+    res["userInitiatedDisasterRecoveryAllowed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserInitiatedDisasterRecoveryAllowed(val)
+        }
+        return nil
+    }
     return res
 }
 // GetMaintainCrossRegionRestorePointEnabled gets the maintainCrossRegionRestorePointEnabled property value. Indicates whether Windows 365 maintain the cross-region disaster recovery function generated restore points. If true, the Windows 365 stored restore points; false indicates that Windows 365 doesn't generate or keep the restore point from the original Cloud PC. If a disaster occurs, the new Cloud PC can only be provisioned using the initial image. This limitation can result in the loss of some user data on the original Cloud PC. The default value is false.
@@ -153,6 +163,18 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetUserInitiatedDisasterRecoveryAllowed gets the userInitiatedDisasterRecoveryAllowed property value. Indicates whether the client allows the end user to initiate a disaster recovery activation. True indicates that the client includes the option for the end user to activate Backup Cloud PC. When false, the end user doesn't have the option to activate disaster recovery. The default value is false. Currently, only premium disaster recovery is supported.
+// returns a *bool when successful
+func (m *CloudPcCrossRegionDisasterRecoverySetting) GetUserInitiatedDisasterRecoveryAllowed()(*bool) {
+    val, err := m.GetBackingStore().Get("userInitiatedDisasterRecoveryAllowed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -185,6 +207,12 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) Serialize(writer i878a80d233
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("userInitiatedDisasterRecoveryAllowed", m.GetUserInitiatedDisasterRecoveryAllowed())
         if err != nil {
             return err
         }
@@ -243,6 +271,13 @@ func (m *CloudPcCrossRegionDisasterRecoverySetting) SetOdataType(value *string)(
         panic(err)
     }
 }
+// SetUserInitiatedDisasterRecoveryAllowed sets the userInitiatedDisasterRecoveryAllowed property value. Indicates whether the client allows the end user to initiate a disaster recovery activation. True indicates that the client includes the option for the end user to activate Backup Cloud PC. When false, the end user doesn't have the option to activate disaster recovery. The default value is false. Currently, only premium disaster recovery is supported.
+func (m *CloudPcCrossRegionDisasterRecoverySetting) SetUserInitiatedDisasterRecoveryAllowed(value *bool)() {
+    err := m.GetBackingStore().Set("userInitiatedDisasterRecoveryAllowed", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CloudPcCrossRegionDisasterRecoverySettingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -253,10 +288,12 @@ type CloudPcCrossRegionDisasterRecoverySettingable interface {
     GetDisasterRecoveryType()(*CloudPcDisasterRecoveryType)
     GetMaintainCrossRegionRestorePointEnabled()(*bool)
     GetOdataType()(*string)
+    GetUserInitiatedDisasterRecoveryAllowed()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCrossRegionDisasterRecoveryEnabled(value *bool)()
     SetDisasterRecoveryNetworkSetting(value CloudPcDisasterRecoveryNetworkSettingable)()
     SetDisasterRecoveryType(value *CloudPcDisasterRecoveryType)()
     SetMaintainCrossRegionRestorePointEnabled(value *bool)()
     SetOdataType(value *string)()
+    SetUserInitiatedDisasterRecoveryAllowed(value *bool)()
 }

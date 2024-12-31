@@ -21,7 +21,7 @@ func NewIosLobAppProvisioningConfiguration()(*IosLobAppProvisioningConfiguration
 func CreateIosLobAppProvisioningConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosLobAppProvisioningConfiguration(), nil
 }
-// GetAssignments gets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
+// GetAssignments gets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
 // returns a []IosLobAppProvisioningConfigurationAssignmentable when successful
 func (m *IosLobAppProvisioningConfiguration) GetAssignments()([]IosLobAppProvisioningConfigurationAssignmentable) {
     val, err := m.GetBackingStore().Get("assignments")
@@ -81,7 +81,7 @@ func (m *IosLobAppProvisioningConfiguration) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+// GetExpirationDateTime gets the expirationDateTime property value. Optional profile expiration date and time.
 // returns a *Time when successful
 func (m *IosLobAppProvisioningConfiguration) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -453,7 +453,7 @@ func (m *IosLobAppProvisioningConfiguration) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetAssignments sets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.
+// SetAssignments sets the assignments property value. The associated group assignments for IosLobAppProvisioningConfiguration.
 func (m *IosLobAppProvisioningConfiguration) SetAssignments(value []IosLobAppProvisioningConfigurationAssignmentable)() {
     err := m.GetBackingStore().Set("assignments", value)
     if err != nil {
@@ -488,7 +488,7 @@ func (m *IosLobAppProvisioningConfiguration) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
+// SetExpirationDateTime sets the expirationDateTime property value. Optional profile expiration date and time.
 func (m *IosLobAppProvisioningConfiguration) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {

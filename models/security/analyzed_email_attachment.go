@@ -66,6 +66,16 @@ func (m *AnalyzedEmailAttachment) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["fileExtension"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFileExtension(val)
+        }
+        return nil
+    }
     res["fileName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -76,6 +86,16 @@ func (m *AnalyzedEmailAttachment) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["fileSize"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFileSize(val)
+        }
+        return nil
+    }
     res["fileType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -83,6 +103,16 @@ func (m *AnalyzedEmailAttachment) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetFileType(val)
+        }
+        return nil
+    }
+    res["malwareFamily"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMalwareFamily(val)
         }
         return nil
     }
@@ -106,13 +136,13 @@ func (m *AnalyzedEmailAttachment) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
-    res["threatName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["tenantAllowBlockListDetailInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetThreatName(val)
+            m.SetTenantAllowBlockListDetailInfo(val)
         }
         return nil
     }
@@ -128,6 +158,18 @@ func (m *AnalyzedEmailAttachment) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
+// GetFileExtension gets the fileExtension property value. The fileExtension property
+// returns a *string when successful
+func (m *AnalyzedEmailAttachment) GetFileExtension()(*string) {
+    val, err := m.GetBackingStore().Get("fileExtension")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFileName gets the fileName property value. The name of the attachment in the email.
 // returns a *string when successful
 func (m *AnalyzedEmailAttachment) GetFileName()(*string) {
@@ -140,10 +182,34 @@ func (m *AnalyzedEmailAttachment) GetFileName()(*string) {
     }
     return nil
 }
+// GetFileSize gets the fileSize property value. The fileSize property
+// returns a *int32 when successful
+func (m *AnalyzedEmailAttachment) GetFileSize()(*int32) {
+    val, err := m.GetBackingStore().Get("fileSize")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetFileType gets the fileType property value. The type of the attachment in the email.
 // returns a *string when successful
 func (m *AnalyzedEmailAttachment) GetFileType()(*string) {
     val, err := m.GetBackingStore().Get("fileType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMalwareFamily gets the malwareFamily property value. The malwareFamily property
+// returns a *string when successful
+func (m *AnalyzedEmailAttachment) GetMalwareFamily()(*string) {
+    val, err := m.GetBackingStore().Get("malwareFamily")
     if err != nil {
         panic(err)
     }
@@ -176,10 +242,10 @@ func (m *AnalyzedEmailAttachment) GetSha256()(*string) {
     }
     return nil
 }
-// GetThreatName gets the threatName property value. The threat name associated with the threat type.
+// GetTenantAllowBlockListDetailInfo gets the tenantAllowBlockListDetailInfo property value. The tenantAllowBlockListDetailInfo property
 // returns a *string when successful
-func (m *AnalyzedEmailAttachment) GetThreatName()(*string) {
-    val, err := m.GetBackingStore().Get("threatName")
+func (m *AnalyzedEmailAttachment) GetTenantAllowBlockListDetailInfo()(*string) {
+    val, err := m.GetBackingStore().Get("tenantAllowBlockListDetailInfo")
     if err != nil {
         panic(err)
     }
@@ -209,13 +275,31 @@ func (m *AnalyzedEmailAttachment) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
+        err := writer.WriteStringValue("fileExtension", m.GetFileExtension())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("fileName", m.GetFileName())
         if err != nil {
             return err
         }
     }
     {
+        err := writer.WriteInt32Value("fileSize", m.GetFileSize())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("fileType", m.GetFileType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("malwareFamily", m.GetMalwareFamily())
         if err != nil {
             return err
         }
@@ -233,7 +317,7 @@ func (m *AnalyzedEmailAttachment) Serialize(writer i878a80d2330e89d26896388a3f48
         }
     }
     {
-        err := writer.WriteStringValue("threatName", m.GetThreatName())
+        err := writer.WriteStringValue("tenantAllowBlockListDetailInfo", m.GetTenantAllowBlockListDetailInfo())
         if err != nil {
             return err
         }
@@ -271,6 +355,13 @@ func (m *AnalyzedEmailAttachment) SetDetonationDetails(value DetonationDetailsab
         panic(err)
     }
 }
+// SetFileExtension sets the fileExtension property value. The fileExtension property
+func (m *AnalyzedEmailAttachment) SetFileExtension(value *string)() {
+    err := m.GetBackingStore().Set("fileExtension", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFileName sets the fileName property value. The name of the attachment in the email.
 func (m *AnalyzedEmailAttachment) SetFileName(value *string)() {
     err := m.GetBackingStore().Set("fileName", value)
@@ -278,9 +369,23 @@ func (m *AnalyzedEmailAttachment) SetFileName(value *string)() {
         panic(err)
     }
 }
+// SetFileSize sets the fileSize property value. The fileSize property
+func (m *AnalyzedEmailAttachment) SetFileSize(value *int32)() {
+    err := m.GetBackingStore().Set("fileSize", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFileType sets the fileType property value. The type of the attachment in the email.
 func (m *AnalyzedEmailAttachment) SetFileType(value *string)() {
     err := m.GetBackingStore().Set("fileType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMalwareFamily sets the malwareFamily property value. The malwareFamily property
+func (m *AnalyzedEmailAttachment) SetMalwareFamily(value *string)() {
+    err := m.GetBackingStore().Set("malwareFamily", value)
     if err != nil {
         panic(err)
     }
@@ -299,9 +404,9 @@ func (m *AnalyzedEmailAttachment) SetSha256(value *string)() {
         panic(err)
     }
 }
-// SetThreatName sets the threatName property value. The threat name associated with the threat type.
-func (m *AnalyzedEmailAttachment) SetThreatName(value *string)() {
-    err := m.GetBackingStore().Set("threatName", value)
+// SetTenantAllowBlockListDetailInfo sets the tenantAllowBlockListDetailInfo property value. The tenantAllowBlockListDetailInfo property
+func (m *AnalyzedEmailAttachment) SetTenantAllowBlockListDetailInfo(value *string)() {
+    err := m.GetBackingStore().Set("tenantAllowBlockListDetailInfo", value)
     if err != nil {
         panic(err)
     }
@@ -319,18 +424,24 @@ type AnalyzedEmailAttachmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDetonationDetails()(DetonationDetailsable)
+    GetFileExtension()(*string)
     GetFileName()(*string)
+    GetFileSize()(*int32)
     GetFileType()(*string)
+    GetMalwareFamily()(*string)
     GetOdataType()(*string)
     GetSha256()(*string)
-    GetThreatName()(*string)
+    GetTenantAllowBlockListDetailInfo()(*string)
     GetThreatType()(*ThreatType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDetonationDetails(value DetonationDetailsable)()
+    SetFileExtension(value *string)()
     SetFileName(value *string)()
+    SetFileSize(value *int32)()
     SetFileType(value *string)()
+    SetMalwareFamily(value *string)()
     SetOdataType(value *string)()
     SetSha256(value *string)()
-    SetThreatName(value *string)()
+    SetTenantAllowBlockListDetailInfo(value *string)()
     SetThreatType(value *ThreatType)()
 }

@@ -43,7 +43,7 @@ func (m *AttendanceRecord) GetEmailAddress()(*string) {
     }
     return nil
 }
-// GetExternalRegistrationInformation gets the externalRegistrationInformation property value. The externalRegistrationInformation property
+// GetExternalRegistrationInformation gets the externalRegistrationInformation property value. The external information for a virtual event registration.
 // returns a VirtualEventExternalRegistrationInformationable when successful
 func (m *AttendanceRecord) GetExternalRegistrationInformation()(VirtualEventExternalRegistrationInformationable) {
     val, err := m.GetBackingStore().Get("externalRegistrationInformation")
@@ -283,7 +283,7 @@ func (m *AttendanceRecord) SetEmailAddress(value *string)() {
         panic(err)
     }
 }
-// SetExternalRegistrationInformation sets the externalRegistrationInformation property value. The externalRegistrationInformation property
+// SetExternalRegistrationInformation sets the externalRegistrationInformation property value. The external information for a virtual event registration.
 func (m *AttendanceRecord) SetExternalRegistrationInformation(value VirtualEventExternalRegistrationInformationable)() {
     err := m.GetBackingStore().Set("externalRegistrationInformation", value)
     if err != nil {

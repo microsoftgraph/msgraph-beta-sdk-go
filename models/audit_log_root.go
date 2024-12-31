@@ -170,6 +170,22 @@ func (m *AuditLogRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["signUps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSelfServiceSignUpFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SelfServiceSignUpable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SelfServiceSignUpable)
+                }
+            }
+            m.SetSignUps(res)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -205,6 +221,18 @@ func (m *AuditLogRoot) GetSignIns()([]SignInable) {
     }
     if val != nil {
         return val.([]SignInable)
+    }
+    return nil
+}
+// GetSignUps gets the signUps property value. The signUps property
+// returns a []SelfServiceSignUpable when successful
+func (m *AuditLogRoot) GetSignUps()([]SelfServiceSignUpable) {
+    val, err := m.GetBackingStore().Get("signUps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SelfServiceSignUpable)
     }
     return nil
 }
@@ -276,6 +304,18 @@ func (m *AuditLogRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
             return err
         }
     }
+    if m.GetSignUps() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSignUps()))
+        for i, v := range m.GetSignUps() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("signUps", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteAdditionalData(m.GetAdditionalData())
         if err != nil {
@@ -337,6 +377,13 @@ func (m *AuditLogRoot) SetSignIns(value []SignInable)() {
         panic(err)
     }
 }
+// SetSignUps sets the signUps property value. The signUps property
+func (m *AuditLogRoot) SetSignUps(value []SelfServiceSignUpable)() {
+    err := m.GetBackingStore().Set("signUps", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AuditLogRootable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -348,6 +395,7 @@ type AuditLogRootable interface {
     GetOdataType()(*string)
     GetProvisioning()([]ProvisioningObjectSummaryable)
     GetSignIns()([]SignInable)
+    GetSignUps()([]SelfServiceSignUpable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCustomSecurityAttributeAudits(value []CustomSecurityAttributeAuditable)()
     SetDirectoryAudits(value []DirectoryAuditable)()
@@ -355,4 +403,5 @@ type AuditLogRootable interface {
     SetOdataType(value *string)()
     SetProvisioning(value []ProvisioningObjectSummaryable)()
     SetSignIns(value []SignInable)()
+    SetSignUps(value []SelfServiceSignUpable)()
 }

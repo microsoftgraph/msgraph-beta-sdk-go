@@ -2056,6 +2056,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOneDriveForBusinessProtectionPolicy(), nil
                     case "#microsoft.graph.oneDriveForBusinessRestoreSession":
                         return NewOneDriveForBusinessRestoreSession(), nil
+                    case "#microsoft.graph.onEmailOtpSendListener":
+                        return NewOnEmailOtpSendListener(), nil
                     case "#microsoft.graph.onenote":
                         return NewOnenote(), nil
                     case "#microsoft.graph.onenoteEntityBaseModel":
@@ -2078,6 +2080,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnlineMeeting(), nil
                     case "#microsoft.graph.onlineMeetingBase":
                         return NewOnlineMeetingBase(), nil
+                    case "#microsoft.graph.onOtpSendCustomExtension":
+                        return NewOnOtpSendCustomExtension(), nil
                     case "#microsoft.graph.onPremisesAgent":
                         return NewOnPremisesAgent(), nil
                     case "#microsoft.graph.onPremisesAgentGroup":
@@ -2122,8 +2126,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOrganizationalBrandingLocalization(), nil
                     case "#microsoft.graph.organizationalBrandingProperties":
                         return NewOrganizationalBrandingProperties(), nil
-                    case "#microsoft.graph.organizationalBrandingTheme":
-                        return NewOrganizationalBrandingTheme(), nil
                     case "#microsoft.graph.organizationSettings":
                         return NewOrganizationSettings(), nil
                     case "#microsoft.graph.orgContact":
@@ -2566,6 +2568,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSecurityToolAwsServerlessFunctionAdministratorFinding(), nil
                     case "#microsoft.graph.securityToolAwsUserAdministratorFinding":
                         return NewSecurityToolAwsUserAdministratorFinding(), nil
+                    case "#microsoft.graph.selfServiceSignUp":
+                        return NewSelfServiceSignUp(), nil
                     case "#microsoft.graph.sendDtmfTonesOperation":
                         return NewSendDtmfTonesOperation(), nil
                     case "#microsoft.graph.sensitiveType":

@@ -112,6 +112,11 @@ func (m *AuditLogsRequestBuilder) Provisioning()(*ProvisioningRequestBuilder) {
 func (m *AuditLogsRequestBuilder) SignIns()(*SignInsRequestBuilder) {
     return NewSignInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SignUps provides operations to manage the signUps property of the microsoft.graph.auditLogRoot entity.
+// returns a *SignUpsRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) SignUps()(*SignUpsRequestBuilder) {
+    return NewSignUpsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get auditLogs
 // returns a *RequestInformation when successful
 func (m *AuditLogsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AuditLogsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

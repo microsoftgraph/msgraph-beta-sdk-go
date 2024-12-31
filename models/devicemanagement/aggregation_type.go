@@ -7,10 +7,11 @@ const (
     AFFECTEDCLOUDPCCOUNT_AGGREGATIONTYPE
     AFFECTEDCLOUDPCPERCENTAGE_AGGREGATIONTYPE
     UNKNOWNFUTUREVALUE_AGGREGATIONTYPE
+    DURATIONINMINUTES_AGGREGATIONTYPE
 )
 
 func (i AggregationType) String() string {
-    return []string{"count", "percentage", "affectedCloudPcCount", "affectedCloudPcPercentage", "unknownFutureValue"}[i]
+    return []string{"count", "percentage", "affectedCloudPcCount", "affectedCloudPcPercentage", "unknownFutureValue", "durationInMinutes"}[i]
 }
 func ParseAggregationType(v string) (any, error) {
     result := COUNT_AGGREGATIONTYPE
@@ -25,6 +26,8 @@ func ParseAggregationType(v string) (any, error) {
             result = AFFECTEDCLOUDPCPERCENTAGE_AGGREGATIONTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_AGGREGATIONTYPE
+        case "durationInMinutes":
+            result = DURATIONINMINUTES_AGGREGATIONTYPE
         default:
             return nil, nil
     }

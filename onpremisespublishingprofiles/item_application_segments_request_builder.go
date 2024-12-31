@@ -11,7 +11,7 @@ import (
 type ItemApplicationSegmentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemApplicationSegmentsRequestBuilderGetQueryParameters get applicationSegments from onPremisesPublishingProfiles
+// ItemApplicationSegmentsRequestBuilderGetQueryParameters represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
 type ItemApplicationSegmentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewItemApplicationSegmentsRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemApplicationSegmentsRequestBuilder) Count()(*ItemApplicationSegmentsCountRequestBuilder) {
     return NewItemApplicationSegmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get applicationSegments from onPremisesPublishingProfiles
+// Get represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
 // returns a IpApplicationSegmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemApplicationSegmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemApplicationSegmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IpApplicationSegmentCollectionResponseable, error) {
@@ -89,7 +89,7 @@ func (m *ItemApplicationSegmentsRequestBuilder) Get(ctx context.Context, request
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IpApplicationSegmentCollectionResponseable), nil
 }
-// ToGetRequestInformation get applicationSegments from onPremisesPublishingProfiles
+// ToGetRequestInformation represents the segment configurations that are allowed for an on-premises non-web application published through Microsoft Entra application proxy.
 // returns a *RequestInformation when successful
 func (m *ItemApplicationSegmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemApplicationSegmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

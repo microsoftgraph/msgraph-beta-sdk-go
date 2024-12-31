@@ -166,7 +166,7 @@ func (m *TextColumn) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTextType gets the textType property value. The type of text being stored. Must be one of plain or richText
+// GetTextType gets the textType property value. The type of text being stored. Must be one of plain or richText.
 // returns a *string when successful
 func (m *TextColumn) GetTextType()(*string) {
     val, err := m.GetBackingStore().Get("textType")
@@ -270,7 +270,7 @@ func (m *TextColumn) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTextType sets the textType property value. The type of text being stored. Must be one of plain or richText
+// SetTextType sets the textType property value. The type of text being stored. Must be one of plain or richText.
 func (m *TextColumn) SetTextType(value *string)() {
     err := m.GetBackingStore().Set("textType", value)
     if err != nil {

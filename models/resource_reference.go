@@ -86,7 +86,7 @@ func (m *ResourceReference) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetId gets the id property value. The item's unique identifier.
+// GetId gets the id property value. The id property
 // returns a *string when successful
 func (m *ResourceReference) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -110,7 +110,7 @@ func (m *ResourceReference) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
+// GetTypeEscaped gets the type property value. The type property
 // returns a *string when successful
 func (m *ResourceReference) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -122,7 +122,7 @@ func (m *ResourceReference) GetTypeEscaped()(*string) {
     }
     return nil
 }
-// GetWebUrl gets the webUrl property value. A URL leading to the referenced item.
+// GetWebUrl gets the webUrl property value. The webUrl property
 // returns a *string when successful
 func (m *ResourceReference) GetWebUrl()(*string) {
     val, err := m.GetBackingStore().Get("webUrl")
@@ -179,7 +179,7 @@ func (m *ResourceReference) SetAdditionalData(value map[string]any)() {
 func (m *ResourceReference) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetId sets the id property value. The item's unique identifier.
+// SetId sets the id property value. The id property
 func (m *ResourceReference) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {
@@ -193,14 +193,14 @@ func (m *ResourceReference) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
+// SetTypeEscaped sets the type property value. The type property
 func (m *ResourceReference) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWebUrl sets the webUrl property value. A URL leading to the referenced item.
+// SetWebUrl sets the webUrl property value. The webUrl property
 func (m *ResourceReference) SetWebUrl(value *string)() {
     err := m.GetBackingStore().Set("webUrl", value)
     if err != nil {

@@ -100,7 +100,7 @@ func (m *WorkbookSessionInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPersistChanges gets the persistChanges property value. true for persistent session. false for non-persistent session (view mode)
+// GetPersistChanges gets the persistChanges property value. Set to true for persistent session. Set to false for non-persistent session (view mode).
 // returns a *bool when successful
 func (m *WorkbookSessionInfo) GetPersistChanges()(*bool) {
     val, err := m.GetBackingStore().Get("persistChanges")
@@ -165,7 +165,7 @@ func (m *WorkbookSessionInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPersistChanges sets the persistChanges property value. true for persistent session. false for non-persistent session (view mode)
+// SetPersistChanges sets the persistChanges property value. Set to true for persistent session. Set to false for non-persistent session (view mode).
 func (m *WorkbookSessionInfo) SetPersistChanges(value *bool)() {
     err := m.GetBackingStore().Set("persistChanges", value)
     if err != nil {
