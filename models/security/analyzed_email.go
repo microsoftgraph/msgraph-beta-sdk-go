@@ -45,18 +45,6 @@ func (m *AnalyzedEmail) GetAttachments()([]AnalyzedEmailAttachmentable) {
     }
     return nil
 }
-// GetAttachmentsCount gets the attachmentsCount property value. The number of attachments in the email.
-// returns a *int32 when successful
-func (m *AnalyzedEmail) GetAttachmentsCount()(*int32) {
-    val, err := m.GetBackingStore().Get("attachmentsCount")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
-}
 // GetAuthenticationDetails gets the authenticationDetails property value. The authentication details associated with the email.
 // returns a AnalyzedEmailAuthenticationDetailable when successful
 func (m *AnalyzedEmail) GetAuthenticationDetails()(AnalyzedEmailAuthenticationDetailable) {
@@ -73,6 +61,18 @@ func (m *AnalyzedEmail) GetAuthenticationDetails()(AnalyzedEmailAuthenticationDe
 // returns a *string when successful
 func (m *AnalyzedEmail) GetBulkComplaintLevel()(*string) {
     val, err := m.GetBackingStore().Get("bulkComplaintLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetClientType gets the clientType property value. The clientType property
+// returns a *string when successful
+func (m *AnalyzedEmail) GetClientType()(*string) {
+    val, err := m.GetBackingStore().Get("clientType")
     if err != nil {
         panic(err)
     }
@@ -126,6 +126,18 @@ func (m *AnalyzedEmail) GetDistributionList()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetDlpRules gets the dlpRules property value. The dlpRules property
+// returns a []AnalyzedEmailDlpRuleInfoable when successful
+func (m *AnalyzedEmail) GetDlpRules()([]AnalyzedEmailDlpRuleInfoable) {
+    val, err := m.GetBackingStore().Get("dlpRules")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AnalyzedEmailDlpRuleInfoable)
     }
     return nil
 }
@@ -189,16 +201,6 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["attachmentsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAttachmentsCount(val)
-        }
-        return nil
-    }
     res["authenticationDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAnalyzedEmailAuthenticationDetailFromDiscriminatorValue)
         if err != nil {
@@ -216,6 +218,16 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetBulkComplaintLevel(val)
+        }
+        return nil
+    }
+    res["clientType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientType(val)
         }
         return nil
     }
@@ -271,6 +283,22 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["dlpRules"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAnalyzedEmailDlpRuleInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AnalyzedEmailDlpRuleInfoable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AnalyzedEmailDlpRuleInfoable)
+                }
+            }
+            m.SetDlpRules(res)
+        }
+        return nil
+    }
     res["emailClusterId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -294,6 +322,26 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
                 }
             }
             m.SetExchangeTransportRules(res)
+        }
+        return nil
+    }
+    res["forwardingDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetForwardingDetail(val)
+        }
+        return nil
+    }
+    res["inboundConnectorFormattedName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInboundConnectorFormattedName(val)
         }
         return nil
     }
@@ -403,6 +451,36 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["policyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPolicyType(val)
+        }
+        return nil
+    }
+    res["primaryOverrideSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrimaryOverrideSource(val)
+        }
+        return nil
+    }
+    res["recipientDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAnalyzedEmailRecipientDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecipientDetail(val.(AnalyzedEmailRecipientDetailable))
+        }
+        return nil
+    }
     res["recipientEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -463,6 +541,22 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["threatDetectionDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateThreatDetectionDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ThreatDetectionDetailable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ThreatDetectionDetailable)
+                }
+            }
+            m.SetThreatDetectionDetails(res)
+        }
+        return nil
+    }
     res["threatTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfEnumValues(ParseThreatType)
         if err != nil {
@@ -476,6 +570,22 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
                 }
             }
             m.SetThreatTypes(res)
+        }
+        return nil
+    }
+    res["timelineEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTimelineEventFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TimelineEventable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TimelineEventable)
+                }
+            }
+            m.SetTimelineEvents(res)
         }
         return nil
     }
@@ -495,17 +605,31 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["urlsCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUrlsCount(val)
-        }
-        return nil
-    }
     return res
+}
+// GetForwardingDetail gets the forwardingDetail property value. The forwardingDetail property
+// returns a *string when successful
+func (m *AnalyzedEmail) GetForwardingDetail()(*string) {
+    val, err := m.GetBackingStore().Get("forwardingDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetInboundConnectorFormattedName gets the inboundConnectorFormattedName property value. The inboundConnectorFormattedName property
+// returns a *string when successful
+func (m *AnalyzedEmail) GetInboundConnectorFormattedName()(*string) {
+    val, err := m.GetBackingStore().Get("inboundConnectorFormattedName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetInternetMessageId gets the internetMessageId property value. A public-facing identifier for the email that is sent. The message ID is in the format specified by RFC2822.
 // returns a *string when successful
@@ -627,6 +751,42 @@ func (m *AnalyzedEmail) GetPolicyAction()(*string) {
     }
     return nil
 }
+// GetPolicyType gets the policyType property value. The policyType property
+// returns a *string when successful
+func (m *AnalyzedEmail) GetPolicyType()(*string) {
+    val, err := m.GetBackingStore().Get("policyType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPrimaryOverrideSource gets the primaryOverrideSource property value. The primaryOverrideSource property
+// returns a *string when successful
+func (m *AnalyzedEmail) GetPrimaryOverrideSource()(*string) {
+    val, err := m.GetBackingStore().Get("primaryOverrideSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetRecipientDetail gets the recipientDetail property value. The recipientDetail property
+// returns a AnalyzedEmailRecipientDetailable when successful
+func (m *AnalyzedEmail) GetRecipientDetail()(AnalyzedEmailRecipientDetailable) {
+    val, err := m.GetBackingStore().Get("recipientDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AnalyzedEmailRecipientDetailable)
+    }
+    return nil
+}
 // GetRecipientEmailAddress gets the recipientEmailAddress property value. Contains the email address of the recipient.
 // returns a *string when successful
 func (m *AnalyzedEmail) GetRecipientEmailAddress()(*string) {
@@ -699,6 +859,18 @@ func (m *AnalyzedEmail) GetSubject()(*string) {
     }
     return nil
 }
+// GetThreatDetectionDetails gets the threatDetectionDetails property value. The threatDetectionDetails property
+// returns a []ThreatDetectionDetailable when successful
+func (m *AnalyzedEmail) GetThreatDetectionDetails()([]ThreatDetectionDetailable) {
+    val, err := m.GetBackingStore().Get("threatDetectionDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ThreatDetectionDetailable)
+    }
+    return nil
+}
 // GetThreatTypes gets the threatTypes property value. Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.
 // returns a []ThreatType when successful
 func (m *AnalyzedEmail) GetThreatTypes()([]ThreatType) {
@@ -711,6 +883,18 @@ func (m *AnalyzedEmail) GetThreatTypes()([]ThreatType) {
     }
     return nil
 }
+// GetTimelineEvents gets the timelineEvents property value. The timelineEvents property
+// returns a []TimelineEventable when successful
+func (m *AnalyzedEmail) GetTimelineEvents()([]TimelineEventable) {
+    val, err := m.GetBackingStore().Get("timelineEvents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TimelineEventable)
+    }
+    return nil
+}
 // GetUrls gets the urls property value. A collection of the URLs in the email.
 // returns a []AnalyzedEmailUrlable when successful
 func (m *AnalyzedEmail) GetUrls()([]AnalyzedEmailUrlable) {
@@ -720,18 +904,6 @@ func (m *AnalyzedEmail) GetUrls()([]AnalyzedEmailUrlable) {
     }
     if val != nil {
         return val.([]AnalyzedEmailUrlable)
-    }
-    return nil
-}
-// GetUrlsCount gets the urlsCount property value. The number of URLs in the email.
-// returns a *int32 when successful
-func (m *AnalyzedEmail) GetUrlsCount()(*int32) {
-    val, err := m.GetBackingStore().Get("urlsCount")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
     }
     return nil
 }
@@ -760,12 +932,6 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
-        err = writer.WriteInt32Value("attachmentsCount", m.GetAttachmentsCount())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err = writer.WriteObjectValue("authenticationDetails", m.GetAuthenticationDetails())
         if err != nil {
             return err
@@ -773,6 +939,12 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err = writer.WriteStringValue("bulkComplaintLevel", m.GetBulkComplaintLevel())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("clientType", m.GetClientType())
         if err != nil {
             return err
         }
@@ -802,6 +974,18 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetDlpRules() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDlpRules()))
+        for i, v := range m.GetDlpRules() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("dlpRules", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("emailClusterId", m.GetEmailClusterId())
         if err != nil {
@@ -816,6 +1000,18 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             }
         }
         err = writer.WriteCollectionOfObjectValues("exchangeTransportRules", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("forwardingDetail", m.GetForwardingDetail())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("inboundConnectorFormattedName", m.GetInboundConnectorFormattedName())
         if err != nil {
             return err
         }
@@ -881,6 +1077,24 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("policyType", m.GetPolicyType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("primaryOverrideSource", m.GetPrimaryOverrideSource())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("recipientDetail", m.GetRecipientDetail())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("recipientEmailAddress", m.GetRecipientEmailAddress())
         if err != nil {
             return err
@@ -916,8 +1130,32 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetThreatDetectionDetails() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetThreatDetectionDetails()))
+        for i, v := range m.GetThreatDetectionDetails() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("threatDetectionDetails", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetThreatTypes() != nil {
         err = writer.WriteCollectionOfStringValues("threatTypes", SerializeThreatType(m.GetThreatTypes()))
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTimelineEvents() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTimelineEvents()))
+        for i, v := range m.GetTimelineEvents() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("timelineEvents", cast)
         if err != nil {
             return err
         }
@@ -930,12 +1168,6 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             }
         }
         err = writer.WriteCollectionOfObjectValues("urls", cast)
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("urlsCount", m.GetUrlsCount())
         if err != nil {
             return err
         }
@@ -956,13 +1188,6 @@ func (m *AnalyzedEmail) SetAttachments(value []AnalyzedEmailAttachmentable)() {
         panic(err)
     }
 }
-// SetAttachmentsCount sets the attachmentsCount property value. The number of attachments in the email.
-func (m *AnalyzedEmail) SetAttachmentsCount(value *int32)() {
-    err := m.GetBackingStore().Set("attachmentsCount", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetAuthenticationDetails sets the authenticationDetails property value. The authentication details associated with the email.
 func (m *AnalyzedEmail) SetAuthenticationDetails(value AnalyzedEmailAuthenticationDetailable)() {
     err := m.GetBackingStore().Set("authenticationDetails", value)
@@ -973,6 +1198,13 @@ func (m *AnalyzedEmail) SetAuthenticationDetails(value AnalyzedEmailAuthenticati
 // SetBulkComplaintLevel sets the bulkComplaintLevel property value. The bulk complaint level of the email. A higher level is more likely to be spam.
 func (m *AnalyzedEmail) SetBulkComplaintLevel(value *string)() {
     err := m.GetBackingStore().Set("bulkComplaintLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetClientType sets the clientType property value. The clientType property
+func (m *AnalyzedEmail) SetClientType(value *string)() {
+    err := m.GetBackingStore().Set("clientType", value)
     if err != nil {
         panic(err)
     }
@@ -1005,6 +1237,13 @@ func (m *AnalyzedEmail) SetDistributionList(value *string)() {
         panic(err)
     }
 }
+// SetDlpRules sets the dlpRules property value. The dlpRules property
+func (m *AnalyzedEmail) SetDlpRules(value []AnalyzedEmailDlpRuleInfoable)() {
+    err := m.GetBackingStore().Set("dlpRules", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEmailClusterId sets the emailClusterId property value. The identifier for the group of similar emails clustered based on heuristic analysis of their content.
 func (m *AnalyzedEmail) SetEmailClusterId(value *string)() {
     err := m.GetBackingStore().Set("emailClusterId", value)
@@ -1015,6 +1254,20 @@ func (m *AnalyzedEmail) SetEmailClusterId(value *string)() {
 // SetExchangeTransportRules sets the exchangeTransportRules property value. The name of the Exchange transport rules (ETRs) associated with the email.
 func (m *AnalyzedEmail) SetExchangeTransportRules(value []AnalyzedEmailExchangeTransportRuleInfoable)() {
     err := m.GetBackingStore().Set("exchangeTransportRules", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetForwardingDetail sets the forwardingDetail property value. The forwardingDetail property
+func (m *AnalyzedEmail) SetForwardingDetail(value *string)() {
+    err := m.GetBackingStore().Set("forwardingDetail", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetInboundConnectorFormattedName sets the inboundConnectorFormattedName property value. The inboundConnectorFormattedName property
+func (m *AnalyzedEmail) SetInboundConnectorFormattedName(value *string)() {
+    err := m.GetBackingStore().Set("inboundConnectorFormattedName", value)
     if err != nil {
         panic(err)
     }
@@ -1089,6 +1342,27 @@ func (m *AnalyzedEmail) SetPolicyAction(value *string)() {
         panic(err)
     }
 }
+// SetPolicyType sets the policyType property value. The policyType property
+func (m *AnalyzedEmail) SetPolicyType(value *string)() {
+    err := m.GetBackingStore().Set("policyType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPrimaryOverrideSource sets the primaryOverrideSource property value. The primaryOverrideSource property
+func (m *AnalyzedEmail) SetPrimaryOverrideSource(value *string)() {
+    err := m.GetBackingStore().Set("primaryOverrideSource", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRecipientDetail sets the recipientDetail property value. The recipientDetail property
+func (m *AnalyzedEmail) SetRecipientDetail(value AnalyzedEmailRecipientDetailable)() {
+    err := m.GetBackingStore().Set("recipientDetail", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecipientEmailAddress sets the recipientEmailAddress property value. Contains the email address of the recipient.
 func (m *AnalyzedEmail) SetRecipientEmailAddress(value *string)() {
     err := m.GetBackingStore().Set("recipientEmailAddress", value)
@@ -1131,9 +1405,23 @@ func (m *AnalyzedEmail) SetSubject(value *string)() {
         panic(err)
     }
 }
+// SetThreatDetectionDetails sets the threatDetectionDetails property value. The threatDetectionDetails property
+func (m *AnalyzedEmail) SetThreatDetectionDetails(value []ThreatDetectionDetailable)() {
+    err := m.GetBackingStore().Set("threatDetectionDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetThreatTypes sets the threatTypes property value. Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.
 func (m *AnalyzedEmail) SetThreatTypes(value []ThreatType)() {
     err := m.GetBackingStore().Set("threatTypes", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTimelineEvents sets the timelineEvents property value. The timelineEvents property
+func (m *AnalyzedEmail) SetTimelineEvents(value []TimelineEventable)() {
+    err := m.GetBackingStore().Set("timelineEvents", value)
     if err != nil {
         panic(err)
     }
@@ -1145,27 +1433,23 @@ func (m *AnalyzedEmail) SetUrls(value []AnalyzedEmailUrlable)() {
         panic(err)
     }
 }
-// SetUrlsCount sets the urlsCount property value. The number of URLs in the email.
-func (m *AnalyzedEmail) SetUrlsCount(value *int32)() {
-    err := m.GetBackingStore().Set("urlsCount", value)
-    if err != nil {
-        panic(err)
-    }
-}
 type AnalyzedEmailable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAlertIds()([]string)
     GetAttachments()([]AnalyzedEmailAttachmentable)
-    GetAttachmentsCount()(*int32)
     GetAuthenticationDetails()(AnalyzedEmailAuthenticationDetailable)
     GetBulkComplaintLevel()(*string)
+    GetClientType()(*string)
     GetContexts()([]string)
     GetDetectionMethods()([]string)
     GetDirectionality()(*AntispamDirectionality)
     GetDistributionList()(*string)
+    GetDlpRules()([]AnalyzedEmailDlpRuleInfoable)
     GetEmailClusterId()(*string)
     GetExchangeTransportRules()([]AnalyzedEmailExchangeTransportRuleInfoable)
+    GetForwardingDetail()(*string)
+    GetInboundConnectorFormattedName()(*string)
     GetInternetMessageId()(*string)
     GetLanguage()(*string)
     GetLatestDelivery()(AnalyzedEmailDeliveryDetailable)
@@ -1176,26 +1460,33 @@ type AnalyzedEmailable interface {
     GetPhishConfidenceLevel()(*string)
     GetPolicy()(*string)
     GetPolicyAction()(*string)
+    GetPolicyType()(*string)
+    GetPrimaryOverrideSource()(*string)
+    GetRecipientDetail()(AnalyzedEmailRecipientDetailable)
     GetRecipientEmailAddress()(*string)
     GetReturnPath()(*string)
     GetSenderDetail()(AnalyzedEmailSenderDetailable)
     GetSizeInBytes()(*int32)
     GetSpamConfidenceLevel()(*string)
     GetSubject()(*string)
+    GetThreatDetectionDetails()([]ThreatDetectionDetailable)
     GetThreatTypes()([]ThreatType)
+    GetTimelineEvents()([]TimelineEventable)
     GetUrls()([]AnalyzedEmailUrlable)
-    GetUrlsCount()(*int32)
     SetAlertIds(value []string)()
     SetAttachments(value []AnalyzedEmailAttachmentable)()
-    SetAttachmentsCount(value *int32)()
     SetAuthenticationDetails(value AnalyzedEmailAuthenticationDetailable)()
     SetBulkComplaintLevel(value *string)()
+    SetClientType(value *string)()
     SetContexts(value []string)()
     SetDetectionMethods(value []string)()
     SetDirectionality(value *AntispamDirectionality)()
     SetDistributionList(value *string)()
+    SetDlpRules(value []AnalyzedEmailDlpRuleInfoable)()
     SetEmailClusterId(value *string)()
     SetExchangeTransportRules(value []AnalyzedEmailExchangeTransportRuleInfoable)()
+    SetForwardingDetail(value *string)()
+    SetInboundConnectorFormattedName(value *string)()
     SetInternetMessageId(value *string)()
     SetLanguage(value *string)()
     SetLatestDelivery(value AnalyzedEmailDeliveryDetailable)()
@@ -1206,13 +1497,17 @@ type AnalyzedEmailable interface {
     SetPhishConfidenceLevel(value *string)()
     SetPolicy(value *string)()
     SetPolicyAction(value *string)()
+    SetPolicyType(value *string)()
+    SetPrimaryOverrideSource(value *string)()
+    SetRecipientDetail(value AnalyzedEmailRecipientDetailable)()
     SetRecipientEmailAddress(value *string)()
     SetReturnPath(value *string)()
     SetSenderDetail(value AnalyzedEmailSenderDetailable)()
     SetSizeInBytes(value *int32)()
     SetSpamConfidenceLevel(value *string)()
     SetSubject(value *string)()
+    SetThreatDetectionDetails(value []ThreatDetectionDetailable)()
     SetThreatTypes(value []ThreatType)()
+    SetTimelineEvents(value []TimelineEventable)()
     SetUrls(value []AnalyzedEmailUrlable)()
-    SetUrlsCount(value *int32)()
 }

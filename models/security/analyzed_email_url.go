@@ -98,6 +98,16 @@ func (m *AnalyzedEmailUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["tenantAllowBlockListDetailInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTenantAllowBlockListDetailInfo(val)
+        }
+        return nil
+    }
     res["threatType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseThreatType)
         if err != nil {
@@ -124,6 +134,18 @@ func (m *AnalyzedEmailUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e
 // returns a *string when successful
 func (m *AnalyzedEmailUrl) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetTenantAllowBlockListDetailInfo gets the tenantAllowBlockListDetailInfo property value. The tenantAllowBlockListDetailInfo property
+// returns a *string when successful
+func (m *AnalyzedEmailUrl) GetTenantAllowBlockListDetailInfo()(*string) {
+    val, err := m.GetBackingStore().Get("tenantAllowBlockListDetailInfo")
     if err != nil {
         panic(err)
     }
@@ -172,6 +194,12 @@ func (m *AnalyzedEmailUrl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("tenantAllowBlockListDetailInfo", m.GetTenantAllowBlockListDetailInfo())
         if err != nil {
             return err
         }
@@ -229,6 +257,13 @@ func (m *AnalyzedEmailUrl) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetTenantAllowBlockListDetailInfo sets the tenantAllowBlockListDetailInfo property value. The tenantAllowBlockListDetailInfo property
+func (m *AnalyzedEmailUrl) SetTenantAllowBlockListDetailInfo(value *string)() {
+    err := m.GetBackingStore().Set("tenantAllowBlockListDetailInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetThreatType sets the threatType property value. The type of threat associated with the URL. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.
 func (m *AnalyzedEmailUrl) SetThreatType(value *ThreatType)() {
     err := m.GetBackingStore().Set("threatType", value)
@@ -251,12 +286,14 @@ type AnalyzedEmailUrlable interface {
     GetDetectionMethod()(*string)
     GetDetonationDetails()(DetonationDetailsable)
     GetOdataType()(*string)
+    GetTenantAllowBlockListDetailInfo()(*string)
     GetThreatType()(*ThreatType)
     GetUrl()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDetectionMethod(value *string)()
     SetDetonationDetails(value DetonationDetailsable)()
     SetOdataType(value *string)()
+    SetTenantAllowBlockListDetailInfo(value *string)()
     SetThreatType(value *ThreatType)()
     SetUrl(value *string)()
 }

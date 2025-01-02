@@ -70,10 +70,10 @@ func (m *CertificateAuthorityDetail) GetCreatedDateTime()(*i336074805fc853987abe
     }
     return nil
 }
-// GetDeltacertificateRevocationListUrl gets the deltacertificateRevocationListUrl property value. The URL to check to find out whether the certificate is revoked.
+// GetDeltaCertificateRevocationListUrl gets the deltaCertificateRevocationListUrl property value. The deltaCertificateRevocationListUrl property
 // returns a *string when successful
-func (m *CertificateAuthorityDetail) GetDeltacertificateRevocationListUrl()(*string) {
-    val, err := m.GetBackingStore().Get("deltacertificateRevocationListUrl")
+func (m *CertificateAuthorityDetail) GetDeltaCertificateRevocationListUrl()(*string) {
+    val, err := m.GetBackingStore().Get("deltaCertificateRevocationListUrl")
     if err != nil {
         panic(err)
     }
@@ -150,13 +150,13 @@ func (m *CertificateAuthorityDetail) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
-    res["deltacertificateRevocationListUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["deltaCertificateRevocationListUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDeltacertificateRevocationListUrl(val)
+            m.SetDeltaCertificateRevocationListUrl(val)
         }
         return nil
     }
@@ -302,7 +302,7 @@ func (m *CertificateAuthorityDetail) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
-        err = writer.WriteStringValue("deltacertificateRevocationListUrl", m.GetDeltacertificateRevocationListUrl())
+        err = writer.WriteStringValue("deltaCertificateRevocationListUrl", m.GetDeltaCertificateRevocationListUrl())
         if err != nil {
             return err
         }
@@ -373,9 +373,9 @@ func (m *CertificateAuthorityDetail) SetCreatedDateTime(value *i336074805fc85398
         panic(err)
     }
 }
-// SetDeltacertificateRevocationListUrl sets the deltacertificateRevocationListUrl property value. The URL to check to find out whether the certificate is revoked.
-func (m *CertificateAuthorityDetail) SetDeltacertificateRevocationListUrl(value *string)() {
-    err := m.GetBackingStore().Set("deltacertificateRevocationListUrl", value)
+// SetDeltaCertificateRevocationListUrl sets the deltaCertificateRevocationListUrl property value. The deltaCertificateRevocationListUrl property
+func (m *CertificateAuthorityDetail) SetDeltaCertificateRevocationListUrl(value *string)() {
+    err := m.GetBackingStore().Set("deltaCertificateRevocationListUrl", value)
     if err != nil {
         panic(err)
     }
@@ -429,7 +429,7 @@ type CertificateAuthorityDetailable interface {
     GetCertificateAuthorityType()(*CertificateAuthorityType)
     GetCertificateRevocationListUrl()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetDeltacertificateRevocationListUrl()(*string)
+    GetDeltaCertificateRevocationListUrl()(*string)
     GetDisplayName()(*string)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsIssuerHintEnabled()(*bool)
@@ -440,7 +440,7 @@ type CertificateAuthorityDetailable interface {
     SetCertificateAuthorityType(value *CertificateAuthorityType)()
     SetCertificateRevocationListUrl(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetDeltacertificateRevocationListUrl(value *string)()
+    SetDeltaCertificateRevocationListUrl(value *string)()
     SetDisplayName(value *string)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsIssuerHintEnabled(value *bool)()

@@ -40,7 +40,7 @@ func (m *ListInfo) GetAdditionalData()(map[string]any) {
 func (m *ListInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContentTypesEnabled gets the contentTypesEnabled property value. If true, indicates that content types are enabled for this list.
+// GetContentTypesEnabled gets the contentTypesEnabled property value. If true, it indicates that content types are enabled for this list.
 // returns a *bool when successful
 func (m *ListInfo) GetContentTypesEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("contentTypesEnabled")
@@ -98,7 +98,7 @@ func (m *ListInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetHidden gets the hidden property value. If true, indicates that the list isn't normally visible in the SharePoint user experience.
+// GetHidden gets the hidden property value. If true, it indicates that the list isn't normally visible in the SharePoint user experience.
 // returns a *bool when successful
 func (m *ListInfo) GetHidden()(*bool) {
     val, err := m.GetBackingStore().Get("hidden")
@@ -122,7 +122,7 @@ func (m *ListInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTemplate gets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
+// GetTemplate gets the template property value. Represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
 // returns a *string when successful
 func (m *ListInfo) GetTemplate()(*string) {
     val, err := m.GetBackingStore().Get("template")
@@ -179,14 +179,14 @@ func (m *ListInfo) SetAdditionalData(value map[string]any)() {
 func (m *ListInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContentTypesEnabled sets the contentTypesEnabled property value. If true, indicates that content types are enabled for this list.
+// SetContentTypesEnabled sets the contentTypesEnabled property value. If true, it indicates that content types are enabled for this list.
 func (m *ListInfo) SetContentTypesEnabled(value *bool)() {
     err := m.GetBackingStore().Set("contentTypesEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHidden sets the hidden property value. If true, indicates that the list isn't normally visible in the SharePoint user experience.
+// SetHidden sets the hidden property value. If true, it indicates that the list isn't normally visible in the SharePoint user experience.
 func (m *ListInfo) SetHidden(value *bool)() {
     err := m.GetBackingStore().Set("hidden", value)
     if err != nil {
@@ -200,7 +200,7 @@ func (m *ListInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTemplate sets the template property value. An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
+// SetTemplate sets the template property value. Represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.
 func (m *ListInfo) SetTemplate(value *string)() {
     err := m.GetBackingStore().Set("template", value)
     if err != nil {

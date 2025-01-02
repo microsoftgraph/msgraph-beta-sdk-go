@@ -35,7 +35,7 @@ func (m *OnPremisesPublishing) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.
+// GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple app proxy applications, this user-friendly URL points to the traffic manager.
 // returns a *string when successful
 func (m *OnPremisesPublishing) GetAlternateUrl()(*string) {
     val, err := m.GetBackingStore().Get("alternateUrl")
@@ -59,7 +59,7 @@ func (m *OnPremisesPublishing) GetApplicationServerTimeout()(*string) {
     }
     return nil
 }
-// GetApplicationType gets the applicationType property value. Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.
+// GetApplicationType gets the applicationType property value. System-defined value that indicates whether this application is an application proxy configured application. The possible values are quickaccessapp and nonwebapp. Read-only.
 // returns a *string when successful
 func (m *OnPremisesPublishing) GetApplicationType()(*string) {
     val, err := m.GetBackingStore().Get("applicationType")
@@ -88,7 +88,7 @@ func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*ExternalAuthenti
     }
     return nil
 }
-// GetExternalUrl gets the externalUrl property value. The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.
+// GetExternalUrl gets the externalUrl property value. The published external URL for the application. For example, https://intranet-contoso.msappproxy.net/.
 // returns a *string when successful
 func (m *OnPremisesPublishing) GetExternalUrl()(*string) {
     val, err := m.GetBackingStore().Get("externalUrl")
@@ -400,7 +400,7 @@ func (m *OnPremisesPublishing) GetInternalUrl()(*string) {
     }
     return nil
 }
-// GetIsAccessibleViaZTNAClient gets the isAccessibleViaZTNAClient property value. The isAccessibleViaZTNAClient property
+// GetIsAccessibleViaZTNAClient gets the isAccessibleViaZTNAClient property value. Indicates whether the application is accessible via a Global Secure Access client on a managed device.
 // returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient()(*bool) {
     val, err := m.GetBackingStore().Get("isAccessibleViaZTNAClient")
@@ -424,7 +424,7 @@ func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool)
     }
     return nil
 }
-// GetIsDnsResolutionEnabled gets the isDnsResolutionEnabled property value. The isDnsResolutionEnabled property
+// GetIsDnsResolutionEnabled gets the isDnsResolutionEnabled property value. Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.
 // returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsDnsResolutionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDnsResolutionEnabled")
@@ -568,7 +568,7 @@ func (m *OnPremisesPublishing) GetSingleSignOnSettings()(OnPremisesPublishingSin
     }
     return nil
 }
-// GetUseAlternateUrlForTranslationAndRedirect gets the useAlternateUrlForTranslationAndRedirect property value. The useAlternateUrlForTranslationAndRedirect property
+// GetUseAlternateUrlForTranslationAndRedirect gets the useAlternateUrlForTranslationAndRedirect property value. Indicates whether the application should use alternateUrl instead of externalUrl.
 // returns a *bool when successful
 func (m *OnPremisesPublishing) GetUseAlternateUrlForTranslationAndRedirect()(*bool) {
     val, err := m.GetBackingStore().Get("useAlternateUrlForTranslationAndRedirect")
@@ -844,7 +844,7 @@ func (m *OnPremisesPublishing) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAlternateUrl sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.
+// SetAlternateUrl sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple app proxy applications, this user-friendly URL points to the traffic manager.
 func (m *OnPremisesPublishing) SetAlternateUrl(value *string)() {
     err := m.GetBackingStore().Set("alternateUrl", value)
     if err != nil {
@@ -858,7 +858,7 @@ func (m *OnPremisesPublishing) SetApplicationServerTimeout(value *string)() {
         panic(err)
     }
 }
-// SetApplicationType sets the applicationType property value. Indicates if this application is an Application Proxy configured application. This is pre-set by the system. Read-only.
+// SetApplicationType sets the applicationType property value. System-defined value that indicates whether this application is an application proxy configured application. The possible values are quickaccessapp and nonwebapp. Read-only.
 func (m *OnPremisesPublishing) SetApplicationType(value *string)() {
     err := m.GetBackingStore().Set("applicationType", value)
     if err != nil {
@@ -876,7 +876,7 @@ func (m *OnPremisesPublishing) SetExternalAuthenticationType(value *ExternalAuth
         panic(err)
     }
 }
-// SetExternalUrl sets the externalUrl property value. The published external url for the application. For example, https://intranet-contoso.msappproxy.net/.
+// SetExternalUrl sets the externalUrl property value. The published external URL for the application. For example, https://intranet-contoso.msappproxy.net/.
 func (m *OnPremisesPublishing) SetExternalUrl(value *string)() {
     err := m.GetBackingStore().Set("externalUrl", value)
     if err != nil {
@@ -890,7 +890,7 @@ func (m *OnPremisesPublishing) SetInternalUrl(value *string)() {
         panic(err)
     }
 }
-// SetIsAccessibleViaZTNAClient sets the isAccessibleViaZTNAClient property value. The isAccessibleViaZTNAClient property
+// SetIsAccessibleViaZTNAClient sets the isAccessibleViaZTNAClient property value. Indicates whether the application is accessible via a Global Secure Access client on a managed device.
 func (m *OnPremisesPublishing) SetIsAccessibleViaZTNAClient(value *bool)() {
     err := m.GetBackingStore().Set("isAccessibleViaZTNAClient", value)
     if err != nil {
@@ -904,7 +904,7 @@ func (m *OnPremisesPublishing) SetIsBackendCertificateValidationEnabled(value *b
         panic(err)
     }
 }
-// SetIsDnsResolutionEnabled sets the isDnsResolutionEnabled property value. The isDnsResolutionEnabled property
+// SetIsDnsResolutionEnabled sets the isDnsResolutionEnabled property value. Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.
 func (m *OnPremisesPublishing) SetIsDnsResolutionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isDnsResolutionEnabled", value)
     if err != nil {
@@ -988,7 +988,7 @@ func (m *OnPremisesPublishing) SetSingleSignOnSettings(value OnPremisesPublishin
         panic(err)
     }
 }
-// SetUseAlternateUrlForTranslationAndRedirect sets the useAlternateUrlForTranslationAndRedirect property value. The useAlternateUrlForTranslationAndRedirect property
+// SetUseAlternateUrlForTranslationAndRedirect sets the useAlternateUrlForTranslationAndRedirect property value. Indicates whether the application should use alternateUrl instead of externalUrl.
 func (m *OnPremisesPublishing) SetUseAlternateUrlForTranslationAndRedirect(value *bool)() {
     err := m.GetBackingStore().Set("useAlternateUrlForTranslationAndRedirect", value)
     if err != nil {

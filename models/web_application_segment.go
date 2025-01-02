@@ -21,7 +21,7 @@ func NewWebApplicationSegment()(*WebApplicationSegment) {
 func CreateWebApplicationSegmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWebApplicationSegment(), nil
 }
-// GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
+// GetAlternateUrl gets the alternateUrl property value. If you're configuring a traffic manager in front of multiple app proxy application segments, this property contains the user-friendly URL that points to the traffic manager.
 // returns a *string when successful
 func (m *WebApplicationSegment) GetAlternateUrl()(*string) {
     val, err := m.GetBackingStore().Get("alternateUrl")
@@ -159,7 +159,7 @@ func (m *WebApplicationSegment) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetAlternateUrl sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.
+// SetAlternateUrl sets the alternateUrl property value. If you're configuring a traffic manager in front of multiple app proxy application segments, this property contains the user-friendly URL that points to the traffic manager.
 func (m *WebApplicationSegment) SetAlternateUrl(value *string)() {
     err := m.GetBackingStore().Set("alternateUrl", value)
     if err != nil {

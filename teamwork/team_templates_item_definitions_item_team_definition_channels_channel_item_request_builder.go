@@ -41,6 +41,11 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AllMembers provides operations to manage the allMembers property of the microsoft.graph.channel entity.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) AllMembers()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Archive provides operations to call the archive method.
 // returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemArchiveRequestBuilder when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) Archive()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemArchiveRequestBuilder) {
@@ -109,11 +114,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemReques
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
-}
-// GetAllMembers provides operations to manage the getAllMembers property of the microsoft.graph.channel entity.
-// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemGetAllMembersRequestBuilder when successful
-func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) GetAllMembers()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemGetAllMembersRequestBuilder) {
-    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemGetAllMembersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Members provides operations to manage the members property of the microsoft.graph.channel entity.
 // returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRequestBuilder when successful

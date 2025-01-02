@@ -88,7 +88,7 @@ func (m *DateTimeColumn) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetFormat gets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
+// GetFormat gets the format property value. Indicates whether the value should be presented as a date only or a date and time. It must be either dateOnly or dateTime.
 // returns a *string when successful
 func (m *DateTimeColumn) GetFormat()(*string) {
     val, err := m.GetBackingStore().Get("format")
@@ -158,7 +158,7 @@ func (m *DateTimeColumn) SetDisplayAs(value *string)() {
         panic(err)
     }
 }
-// SetFormat sets the format property value. Indicates whether the value should be presented as a date only or a date and time. Must be one of dateOnly or dateTime
+// SetFormat sets the format property value. Indicates whether the value should be presented as a date only or a date and time. It must be either dateOnly or dateTime.
 func (m *DateTimeColumn) SetFormat(value *string)() {
     err := m.GetBackingStore().Set("format", value)
     if err != nil {

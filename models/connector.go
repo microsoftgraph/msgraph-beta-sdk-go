@@ -129,7 +129,7 @@ func (m *Connector) GetStatus()(*ConnectorStatus) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version of the connector.
+// GetVersion gets the version property value. The version of the connector. Read-only.
 // returns a *string when successful
 func (m *Connector) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
@@ -214,7 +214,7 @@ func (m *Connector) SetStatus(value *ConnectorStatus)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version of the connector.
+// SetVersion sets the version property value. The version of the connector. Read-only.
 func (m *Connector) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

@@ -222,6 +222,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["frontlineCloudPcAvailability"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseFrontlineCloudPcAvailability)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFrontlineCloudPcAvailability(val.(*FrontlineCloudPcAvailability))
+        }
+        return nil
+    }
     res["gracePeriodEndDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -465,6 +475,18 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         return nil
     }
     return res
+}
+// GetFrontlineCloudPcAvailability gets the frontlineCloudPcAvailability property value. The frontlineCloudPcAvailability property
+// returns a *FrontlineCloudPcAvailability when successful
+func (m *CloudPC) GetFrontlineCloudPcAvailability()(*FrontlineCloudPcAvailability) {
+    val, err := m.GetBackingStore().Get("frontlineCloudPcAvailability")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*FrontlineCloudPcAvailability)
+    }
+    return nil
 }
 // GetGracePeriodEndDateTime gets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
@@ -803,6 +825,13 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetFrontlineCloudPcAvailability() != nil {
+        cast := (*m.GetFrontlineCloudPcAvailability()).String()
+        err = writer.WriteStringValue("frontlineCloudPcAvailability", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("gracePeriodEndDateTime", m.GetGracePeriodEndDateTime())
         if err != nil {
@@ -1018,6 +1047,13 @@ func (m *CloudPC) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetFrontlineCloudPcAvailability sets the frontlineCloudPcAvailability property value. The frontlineCloudPcAvailability property
+func (m *CloudPC) SetFrontlineCloudPcAvailability(value *FrontlineCloudPcAvailability)() {
+    err := m.GetBackingStore().Set("frontlineCloudPcAvailability", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetGracePeriodEndDateTime sets the gracePeriodEndDateTime property value. The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPC) SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("gracePeriodEndDateTime", value)
@@ -1191,6 +1227,7 @@ type CloudPCable interface {
     GetDisasterRecoveryCapability()(CloudPcDisasterRecoveryCapabilityable)
     GetDiskEncryptionState()(*CloudPcDiskEncryptionState)
     GetDisplayName()(*string)
+    GetFrontlineCloudPcAvailability()(*FrontlineCloudPcAvailability)
     GetGracePeriodEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetImageDisplayName()(*string)
     GetLastLoginResult()(CloudPcLoginResultable)
@@ -1223,6 +1260,7 @@ type CloudPCable interface {
     SetDisasterRecoveryCapability(value CloudPcDisasterRecoveryCapabilityable)()
     SetDiskEncryptionState(value *CloudPcDiskEncryptionState)()
     SetDisplayName(value *string)()
+    SetFrontlineCloudPcAvailability(value *FrontlineCloudPcAvailability)()
     SetGracePeriodEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetImageDisplayName(value *string)()
     SetLastLoginResult(value CloudPcLoginResultable)()

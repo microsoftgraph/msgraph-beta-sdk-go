@@ -20,6 +20,18 @@ func NewChannel()(*Channel) {
 func CreateChannelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewChannel(), nil
 }
+// GetAllMembers gets the allMembers property value. A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+// returns a []ConversationMemberable when successful
+func (m *Channel) GetAllMembers()([]ConversationMemberable) {
+    val, err := m.GetBackingStore().Get("allMembers")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ConversationMemberable)
+    }
+    return nil
+}
 // GetCreatedDateTime gets the createdDateTime property value. Read only. Timestamp at which the channel was created.
 // returns a *Time when successful
 func (m *Channel) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
@@ -72,6 +84,22 @@ func (m *Channel) GetEmail()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["allMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ConversationMemberable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ConversationMemberable)
+                }
+            }
+            m.SetAllMembers(res)
+        }
+        return nil
+    }
     res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -122,22 +150,6 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
-    res["getAllMembers"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConversationMemberFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConversationMemberable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ConversationMemberable)
-                }
-            }
-            m.SetGetAllMembers(res)
-        }
-        return nil
-    }
     res["isArchived"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -155,6 +167,16 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetIsFavoriteByDefault(val)
+        }
+        return nil
+    }
+    res["layoutType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseChannelLayoutType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLayoutType(val.(*ChannelLayoutType))
         }
         return nil
     }
@@ -286,18 +308,6 @@ func (m *Channel) GetFilesFolder()(DriveItemable) {
     }
     return nil
 }
-// GetGetAllMembers gets the getAllMembers property value. The getAllMembers property
-// returns a []ConversationMemberable when successful
-func (m *Channel) GetGetAllMembers()([]ConversationMemberable) {
-    val, err := m.GetBackingStore().Get("getAllMembers")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ConversationMemberable)
-    }
-    return nil
-}
 // GetIsArchived gets the isArchived property value. Indicates whether the channel is archived. Read-only.
 // returns a *bool when successful
 func (m *Channel) GetIsArchived()(*bool) {
@@ -319,6 +329,18 @@ func (m *Channel) GetIsFavoriteByDefault()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetLayoutType gets the layoutType property value. The layoutType property
+// returns a *ChannelLayoutType when successful
+func (m *Channel) GetLayoutType()(*ChannelLayoutType) {
+    val, err := m.GetBackingStore().Get("layoutType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ChannelLayoutType)
     }
     return nil
 }
@@ -436,6 +458,18 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if err != nil {
         return err
     }
+    if m.GetAllMembers() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAllMembers()))
+        for i, v := range m.GetAllMembers() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("allMembers", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
         if err != nil {
@@ -466,18 +500,6 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
-    if m.GetGetAllMembers() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetGetAllMembers()))
-        for i, v := range m.GetGetAllMembers() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("getAllMembers", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteBoolValue("isArchived", m.GetIsArchived())
         if err != nil {
@@ -486,6 +508,13 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err = writer.WriteBoolValue("isFavoriteByDefault", m.GetIsFavoriteByDefault())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetLayoutType() != nil {
+        cast := (*m.GetLayoutType()).String()
+        err = writer.WriteStringValue("layoutType", &cast)
         if err != nil {
             return err
         }
@@ -571,6 +600,13 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
+// SetAllMembers sets the allMembers property value. A collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+func (m *Channel) SetAllMembers(value []ConversationMemberable)() {
+    err := m.GetBackingStore().Set("allMembers", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedDateTime sets the createdDateTime property value. Read only. Timestamp at which the channel was created.
 func (m *Channel) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
@@ -606,13 +642,6 @@ func (m *Channel) SetFilesFolder(value DriveItemable)() {
         panic(err)
     }
 }
-// SetGetAllMembers sets the getAllMembers property value. The getAllMembers property
-func (m *Channel) SetGetAllMembers(value []ConversationMemberable)() {
-    err := m.GetBackingStore().Set("getAllMembers", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetIsArchived sets the isArchived property value. Indicates whether the channel is archived. Read-only.
 func (m *Channel) SetIsArchived(value *bool)() {
     err := m.GetBackingStore().Set("isArchived", value)
@@ -623,6 +652,13 @@ func (m *Channel) SetIsArchived(value *bool)() {
 // SetIsFavoriteByDefault sets the isFavoriteByDefault property value. Indicates whether the channel should be marked as recommended for all members of the team to show in their channel list. Note: All recommended channels automatically show in the channels list for education and frontline worker users. The property can only be set programmatically via the Create team method. The default value is false.
 func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
     err := m.GetBackingStore().Set("isFavoriteByDefault", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLayoutType sets the layoutType property value. The layoutType property
+func (m *Channel) SetLayoutType(value *ChannelLayoutType)() {
+    err := m.GetBackingStore().Set("layoutType", value)
     if err != nil {
         panic(err)
     }
@@ -693,14 +729,15 @@ func (m *Channel) SetWebUrl(value *string)() {
 type Channelable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAllMembers()([]ConversationMemberable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetEmail()(*string)
     GetFilesFolder()(DriveItemable)
-    GetGetAllMembers()([]ConversationMemberable)
     GetIsArchived()(*bool)
     GetIsFavoriteByDefault()(*bool)
+    GetLayoutType()(*ChannelLayoutType)
     GetMembers()([]ConversationMemberable)
     GetMembershipType()(*ChannelMembershipType)
     GetMessages()([]ChatMessageable)
@@ -710,14 +747,15 @@ type Channelable interface {
     GetTabs()([]TeamsTabable)
     GetTenantId()(*string)
     GetWebUrl()(*string)
+    SetAllMembers(value []ConversationMemberable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetEmail(value *string)()
     SetFilesFolder(value DriveItemable)()
-    SetGetAllMembers(value []ConversationMemberable)()
     SetIsArchived(value *bool)()
     SetIsFavoriteByDefault(value *bool)()
+    SetLayoutType(value *ChannelLayoutType)()
     SetMembers(value []ConversationMemberable)()
     SetMembershipType(value *ChannelMembershipType)()
     SetMessages(value []ChatMessageable)()

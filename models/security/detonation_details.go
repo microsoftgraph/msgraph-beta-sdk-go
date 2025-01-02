@@ -53,6 +53,30 @@ func (m *DetonationDetails) GetAnalysisDateTime()(*i336074805fc853987abe6f7fe3ad
 func (m *DetonationDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetCompromiseIndicators gets the compromiseIndicators property value. The compromiseIndicators property
+// returns a []CompromiseIndicatorable when successful
+func (m *DetonationDetails) GetCompromiseIndicators()([]CompromiseIndicatorable) {
+    val, err := m.GetBackingStore().Get("compromiseIndicators")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CompromiseIndicatorable)
+    }
+    return nil
+}
+// GetDetonationBehaviourDetails gets the detonationBehaviourDetails property value. The detonationBehaviourDetails property
+// returns a DetonationBehaviourDetailsable when successful
+func (m *DetonationDetails) GetDetonationBehaviourDetails()(DetonationBehaviourDetailsable) {
+    val, err := m.GetBackingStore().Get("detonationBehaviourDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DetonationBehaviourDetailsable)
+    }
+    return nil
+}
 // GetDetonationChain gets the detonationChain property value. The chain of detonation.
 // returns a DetonationChainable when successful
 func (m *DetonationDetails) GetDetonationChain()(DetonationChainable) {
@@ -74,6 +98,18 @@ func (m *DetonationDetails) GetDetonationObservables()(DetonationObservablesable
     }
     if val != nil {
         return val.(DetonationObservablesable)
+    }
+    return nil
+}
+// GetDetonationScreenshotUri gets the detonationScreenshotUri property value. The detonationScreenshotUri property
+// returns a *string when successful
+func (m *DetonationDetails) GetDetonationScreenshotUri()(*string) {
+    val, err := m.GetBackingStore().Get("detonationScreenshotUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -115,6 +151,32 @@ func (m *DetonationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["compromiseIndicators"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCompromiseIndicatorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CompromiseIndicatorable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CompromiseIndicatorable)
+                }
+            }
+            m.SetCompromiseIndicators(res)
+        }
+        return nil
+    }
+    res["detonationBehaviourDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDetonationBehaviourDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDetonationBehaviourDetails(val.(DetonationBehaviourDetailsable))
+        }
+        return nil
+    }
     res["detonationChain"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDetonationChainFromDiscriminatorValue)
         if err != nil {
@@ -132,6 +194,16 @@ func (m *DetonationDetails) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetDetonationObservables(val.(DetonationObservablesable))
+        }
+        return nil
+    }
+    res["detonationScreenshotUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDetonationScreenshotUri(val)
         }
         return nil
     }
@@ -187,6 +259,24 @@ func (m *DetonationDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetCompromiseIndicators() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCompromiseIndicators()))
+        for i, v := range m.GetCompromiseIndicators() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("compromiseIndicators", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("detonationBehaviourDetails", m.GetDetonationBehaviourDetails())
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("detonationChain", m.GetDetonationChain())
         if err != nil {
@@ -195,6 +285,12 @@ func (m *DetonationDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteObjectValue("detonationObservables", m.GetDetonationObservables())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("detonationScreenshotUri", m.GetDetonationScreenshotUri())
         if err != nil {
             return err
         }
@@ -243,6 +339,20 @@ func (m *DetonationDetails) SetAnalysisDateTime(value *i336074805fc853987abe6f7f
 func (m *DetonationDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetCompromiseIndicators sets the compromiseIndicators property value. The compromiseIndicators property
+func (m *DetonationDetails) SetCompromiseIndicators(value []CompromiseIndicatorable)() {
+    err := m.GetBackingStore().Set("compromiseIndicators", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDetonationBehaviourDetails sets the detonationBehaviourDetails property value. The detonationBehaviourDetails property
+func (m *DetonationDetails) SetDetonationBehaviourDetails(value DetonationBehaviourDetailsable)() {
+    err := m.GetBackingStore().Set("detonationBehaviourDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDetonationChain sets the detonationChain property value. The chain of detonation.
 func (m *DetonationDetails) SetDetonationChain(value DetonationChainable)() {
     err := m.GetBackingStore().Set("detonationChain", value)
@@ -253,6 +363,13 @@ func (m *DetonationDetails) SetDetonationChain(value DetonationChainable)() {
 // SetDetonationObservables sets the detonationObservables property value. All observables in the detonation tree.
 func (m *DetonationDetails) SetDetonationObservables(value DetonationObservablesable)() {
     err := m.GetBackingStore().Set("detonationObservables", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDetonationScreenshotUri sets the detonationScreenshotUri property value. The detonationScreenshotUri property
+func (m *DetonationDetails) SetDetonationScreenshotUri(value *string)() {
+    err := m.GetBackingStore().Set("detonationScreenshotUri", value)
     if err != nil {
         panic(err)
     }
@@ -284,15 +401,21 @@ type DetonationDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAnalysisDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetCompromiseIndicators()([]CompromiseIndicatorable)
+    GetDetonationBehaviourDetails()(DetonationBehaviourDetailsable)
     GetDetonationChain()(DetonationChainable)
     GetDetonationObservables()(DetonationObservablesable)
+    GetDetonationScreenshotUri()(*string)
     GetDetonationVerdict()(*string)
     GetDetonationVerdictReason()(*string)
     GetOdataType()(*string)
     SetAnalysisDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetCompromiseIndicators(value []CompromiseIndicatorable)()
+    SetDetonationBehaviourDetails(value DetonationBehaviourDetailsable)()
     SetDetonationChain(value DetonationChainable)()
     SetDetonationObservables(value DetonationObservablesable)()
+    SetDetonationScreenshotUri(value *string)()
     SetDetonationVerdict(value *string)()
     SetDetonationVerdictReason(value *string)()
     SetOdataType(value *string)()

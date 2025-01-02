@@ -150,11 +150,6 @@ func (m *VirtualEndpointReportsRequestBuilder) GetRealTimeRemoteConnectionStatus
 func (m *VirtualEndpointReportsRequestBuilder) GetRemoteConnectionHistoricalReports()(*VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// GetSharedUseLicenseUsageReport provides operations to call the getSharedUseLicenseUsageReport method.
-// returns a *VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder when successful
-func (m *VirtualEndpointReportsRequestBuilder) GetSharedUseLicenseUsageReport()(*VirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilder) {
-    return NewVirtualEndpointReportsGetSharedUseLicenseUsageReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // GetTotalAggregatedRemoteConnectionReports provides operations to call the getTotalAggregatedRemoteConnectionReports method.
 // returns a *VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) GetTotalAggregatedRemoteConnectionReports()(*VirtualEndpointReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilder) {
@@ -184,6 +179,11 @@ func (m *VirtualEndpointReportsRequestBuilder) Patch(ctx context.Context, body i
 // returns a *VirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) RetrieveBulkActionStatusReport()(*VirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilder) {
     return NewVirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveCloudPcTroubleshootReports provides operations to call the retrieveCloudPcTroubleshootReports method.
+// returns a *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilder when successful
+func (m *VirtualEndpointReportsRequestBuilder) RetrieveCloudPcTroubleshootReports()(*VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilder) {
+    return NewVirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveConnectionQualityReports provides operations to call the retrieveConnectionQualityReports method.
 // returns a *VirtualEndpointReportsRetrieveConnectionQualityReportsRequestBuilder when successful

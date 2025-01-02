@@ -5,8 +5,6 @@ const (
     REMOTECONNECTIONHISTORICALREPORTS_CLOUDPCREPORTNAME CloudPcReportName = iota
     DAILYAGGREGATEDREMOTECONNECTIONREPORTS_CLOUDPCREPORTNAME
     TOTALAGGREGATEDREMOTECONNECTIONREPORTS_CLOUDPCREPORTNAME
-    SHAREDUSELICENSEUSAGEREPORT_CLOUDPCREPORTNAME
-    SHAREDUSELICENSEUSAGEREALTIMEREPORT_CLOUDPCREPORTNAME
     UNKNOWNFUTUREVALUE_CLOUDPCREPORTNAME
     NOLICENSEAVAILABLECONNECTIVITYFAILUREREPORT_CLOUDPCREPORTNAME
     FRONTLINELICENSEUSAGEREPORT_CLOUDPCREPORTNAME
@@ -25,10 +23,14 @@ const (
     FRONTLINELICENSEHOURLYUSAGEREPORT_CLOUDPCREPORTNAME
     FRONTLINEREALTIMEUSERCONNECTIONSREPORT_CLOUDPCREPORTNAME
     BULKACTIONSTATUSREPORT_CLOUDPCREPORTNAME
+    TROUBLESHOOTDETAILSREPORT_CLOUDPCREPORTNAME
+    TROUBLESHOOTTRENDCOUNTREPORT_CLOUDPCREPORTNAME
+    TROUBLESHOOTREGIONALREPORT_CLOUDPCREPORTNAME
+    TROUBLESHOOTISSUECOUNTREPORT_CLOUDPCREPORTNAME
 )
 
 func (i CloudPcReportName) String() string {
-    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "sharedUseLicenseUsageReport", "sharedUseLicenseUsageRealTimeReport", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "actionStatusReport", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport", "regionalConnectionQualityTrendReport", "regionalConnectionQualityInsightsReport", "remoteConnectionQualityReport", "frontlineLicenseHourlyUsageReport", "frontlineRealtimeUserConnectionsReport", "bulkActionStatusReport"}[i]
+    return []string{"remoteConnectionHistoricalReports", "dailyAggregatedRemoteConnectionReports", "totalAggregatedRemoteConnectionReports", "unknownFutureValue", "noLicenseAvailableConnectivityFailureReport", "frontlineLicenseUsageReport", "frontlineLicenseUsageRealTimeReport", "remoteConnectionQualityReports", "inaccessibleCloudPcReports", "actionStatusReport", "rawRemoteConnectionReports", "cloudPcUsageCategoryReports", "crossRegionDisasterRecoveryReport", "performanceTrendReport", "inaccessibleCloudPcTrendReport", "regionalConnectionQualityTrendReport", "regionalConnectionQualityInsightsReport", "remoteConnectionQualityReport", "frontlineLicenseHourlyUsageReport", "frontlineRealtimeUserConnectionsReport", "bulkActionStatusReport", "troubleshootDetailsReport", "troubleshootTrendCountReport", "troubleshootRegionalReport", "troubleshootIssueCountReport"}[i]
 }
 func ParseCloudPcReportName(v string) (any, error) {
     result := REMOTECONNECTIONHISTORICALREPORTS_CLOUDPCREPORTNAME
@@ -39,10 +41,6 @@ func ParseCloudPcReportName(v string) (any, error) {
             result = DAILYAGGREGATEDREMOTECONNECTIONREPORTS_CLOUDPCREPORTNAME
         case "totalAggregatedRemoteConnectionReports":
             result = TOTALAGGREGATEDREMOTECONNECTIONREPORTS_CLOUDPCREPORTNAME
-        case "sharedUseLicenseUsageReport":
-            result = SHAREDUSELICENSEUSAGEREPORT_CLOUDPCREPORTNAME
-        case "sharedUseLicenseUsageRealTimeReport":
-            result = SHAREDUSELICENSEUSAGEREALTIMEREPORT_CLOUDPCREPORTNAME
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCREPORTNAME
         case "noLicenseAvailableConnectivityFailureReport":
@@ -79,6 +77,14 @@ func ParseCloudPcReportName(v string) (any, error) {
             result = FRONTLINEREALTIMEUSERCONNECTIONSREPORT_CLOUDPCREPORTNAME
         case "bulkActionStatusReport":
             result = BULKACTIONSTATUSREPORT_CLOUDPCREPORTNAME
+        case "troubleshootDetailsReport":
+            result = TROUBLESHOOTDETAILSREPORT_CLOUDPCREPORTNAME
+        case "troubleshootTrendCountReport":
+            result = TROUBLESHOOTTRENDCOUNTREPORT_CLOUDPCREPORTNAME
+        case "troubleshootRegionalReport":
+            result = TROUBLESHOOTREGIONALREPORT_CLOUDPCREPORTNAME
+        case "troubleshootIssueCountReport":
+            result = TROUBLESHOOTISSUECOUNTREPORT_CLOUDPCREPORTNAME
         default:
             return nil, nil
     }
