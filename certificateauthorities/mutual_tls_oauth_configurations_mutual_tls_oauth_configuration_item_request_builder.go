@@ -18,7 +18,7 @@ type MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderDe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters get mutualTlsOauthConfigurations from certificateAuthorities
+// MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
 type MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -54,8 +54,11 @@ func NewMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property mutualTlsOauthConfigurations for certificateAuthorities
+// Delete delete the specified mutualTlsOauthConfiguration resource. You must first delete the deviceTemplate object that references the ID.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mutualtlsoauthconfiguration-delete?view=graph-rest-beta
 func (m *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -70,7 +73,7 @@ func (m *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuild
     }
     return nil
 }
-// Get get mutualTlsOauthConfigurations from certificateAuthorities
+// Get defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
 // returns a MutualTlsOauthConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable, error) {
@@ -110,7 +113,7 @@ func (m *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable), nil
 }
-// ToDeleteRequestInformation delete navigation property mutualTlsOauthConfigurations for certificateAuthorities
+// ToDeleteRequestInformation delete the specified mutualTlsOauthConfiguration resource. You must first delete the deviceTemplate object that references the ID.
 // returns a *RequestInformation when successful
 func (m *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -121,7 +124,7 @@ func (m *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuild
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get mutualTlsOauthConfigurations from certificateAuthorities
+// ToGetRequestInformation defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
 // returns a *RequestInformation when successful
 func (m *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

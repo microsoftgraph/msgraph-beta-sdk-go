@@ -21,7 +21,7 @@ func NewMutualTlsOauthConfiguration()(*MutualTlsOauthConfiguration) {
 func CreateMutualTlsOauthConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMutualTlsOauthConfiguration(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Friendly name. Supports $filter (eq, in).
 // returns a *string when successful
 func (m *MutualTlsOauthConfiguration) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -92,7 +92,7 @@ func (m *MutualTlsOauthConfiguration) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Friendly name. Supports $filter (eq, in).
 func (m *MutualTlsOauthConfiguration) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

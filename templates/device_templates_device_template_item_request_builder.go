@@ -18,7 +18,7 @@ type DeviceTemplatesDeviceTemplateItemRequestBuilderDeleteRequestConfiguration s
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeviceTemplatesDeviceTemplateItemRequestBuilderGetQueryParameters get deviceTemplates from templates
+// DeviceTemplatesDeviceTemplateItemRequestBuilderGetQueryParameters defines the templates that are common to a set of device objects, such as IoT devices.
 type DeviceTemplatesDeviceTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -85,7 +85,7 @@ func (m *DeviceTemplatesDeviceTemplateItemRequestBuilder) DeviceInstances()(*Dev
 func (m *DeviceTemplatesDeviceTemplateItemRequestBuilder) DeviceInstancesWithDeviceId(deviceId *string)(*DeviceTemplatesItemDeviceInstancesWithDeviceIdRequestBuilder) {
     return NewDeviceTemplatesItemDeviceInstancesWithDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, deviceId)
 }
-// Get get deviceTemplates from templates
+// Get defines the templates that are common to a set of device objects, such as IoT devices.
 // returns a DeviceTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DeviceTemplatesDeviceTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DeviceTemplatesDeviceTemplateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateable, error) {
@@ -141,7 +141,7 @@ func (m *DeviceTemplatesDeviceTemplateItemRequestBuilder) ToDeleteRequestInforma
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get deviceTemplates from templates
+// ToGetRequestInformation defines the templates that are common to a set of device objects, such as IoT devices.
 // returns a *RequestInformation when successful
 func (m *DeviceTemplatesDeviceTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeviceTemplatesDeviceTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -11,7 +11,7 @@ import (
 type TemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderGetQueryParameters get deviceInstances from directory
+// TemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderGetQueryParameters collection of device objects created based on this template.
 type TemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewTemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewTemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get deviceInstances from directory
+// Get collection of device objects created based on this template.
 // returns a Deviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -60,7 +60,7 @@ func (m *TemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
-// ToGetRequestInformation get deviceInstances from directory
+// ToGetRequestInformation collection of device objects created based on this template.
 // returns a *RequestInformation when successful
 func (m *TemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesItemDeviceInstancesDeviceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

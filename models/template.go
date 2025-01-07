@@ -19,7 +19,7 @@ func NewTemplate()(*Template) {
 func CreateTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTemplate(), nil
 }
-// GetDeviceTemplates gets the deviceTemplates property value. The deviceTemplates property
+// GetDeviceTemplates gets the deviceTemplates property value. Defines the templates that are common to a set of device objects, such as IoT devices.
 // returns a []DeviceTemplateable when successful
 func (m *Template) GetDeviceTemplates()([]DeviceTemplateable) {
     val, err := m.GetBackingStore().Get("deviceTemplates")
@@ -73,7 +73,7 @@ func (m *Template) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetDeviceTemplates sets the deviceTemplates property value. The deviceTemplates property
+// SetDeviceTemplates sets the deviceTemplates property value. Defines the templates that are common to a set of device objects, such as IoT devices.
 func (m *Template) SetDeviceTemplates(value []DeviceTemplateable)() {
     err := m.GetBackingStore().Set("deviceTemplates", value)
     if err != nil {

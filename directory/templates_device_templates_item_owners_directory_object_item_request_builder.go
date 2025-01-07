@@ -11,7 +11,7 @@ import (
 type TemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilderGetQueryParameters get owners from directory
+// TemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilderGetQueryParameters collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn't require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners.  Supports $expand.
 type TemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewTemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewTemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get owners from directory
+// Get collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn't require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners.  Supports $expand.
 // returns a DirectoryObjectable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -60,7 +60,7 @@ func (m *TemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ToGetRequestInformation get owners from directory
+// ToGetRequestInformation collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn't require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners.  Supports $expand.
 // returns a *RequestInformation when successful
 func (m *TemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesItemOwnersDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

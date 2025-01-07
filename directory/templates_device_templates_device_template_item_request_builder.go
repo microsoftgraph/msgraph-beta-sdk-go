@@ -18,7 +18,7 @@ type TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilderDeleteRequestConfig
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilderGetQueryParameters get deviceTemplates from directory
+// TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilderGetQueryParameters get the properties and relationships of a deviceTemplate object.
 type TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -59,8 +59,11 @@ func NewTemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder(rawUrl string, 
 func (m *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder) CreateDeviceFromTemplate()(*TemplatesDeviceTemplatesItemCreateDeviceFromTemplateRequestBuilder) {
     return NewTemplatesDeviceTemplatesItemCreateDeviceFromTemplateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Delete delete navigation property deviceTemplates for directory
+// Delete delete a registered deviceTemplate. You must first delete all devices linked to the template before deleting the template itself. Only registered owners of the template can perform this operation.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/devicetemplate-delete?view=graph-rest-beta
 func (m *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -85,9 +88,12 @@ func (m *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder) DeviceInstanc
 func (m *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder) DeviceInstancesWithDeviceId(deviceId *string)(*TemplatesDeviceTemplatesItemDeviceInstancesWithDeviceIdRequestBuilder) {
     return NewTemplatesDeviceTemplatesItemDeviceInstancesWithDeviceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, deviceId)
 }
-// Get get deviceTemplates from directory
+// Get get the properties and relationships of a deviceTemplate object.
 // returns a DeviceTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/devicetemplate-get?view=graph-rest-beta
 func (m *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -130,7 +136,7 @@ func (m *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder) Patch(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateable), nil
 }
-// ToDeleteRequestInformation delete navigation property deviceTemplates for directory
+// ToDeleteRequestInformation delete a registered deviceTemplate. You must first delete all devices linked to the template before deleting the template itself. Only registered owners of the template can perform this operation.
 // returns a *RequestInformation when successful
 func (m *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +147,7 @@ func (m *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder) ToDeleteReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get deviceTemplates from directory
+// ToGetRequestInformation get the properties and relationships of a deviceTemplate object.
 // returns a *RequestInformation when successful
 func (m *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesDeviceTemplateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

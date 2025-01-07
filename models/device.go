@@ -34,7 +34,7 @@ func (m *Device) GetAccountEnabled()(*bool) {
     }
     return nil
 }
-// GetAlternativeNames gets the alternativeNames property value. The alternativeNames property
+// GetAlternativeNames gets the alternativeNames property value. List of alternative names for the device.
 // returns a []string when successful
 func (m *Device) GetAlternativeNames()([]string) {
     val, err := m.GetBackingStore().Get("alternativeNames")
@@ -106,7 +106,7 @@ func (m *Device) GetDeviceCategory()(*string) {
     }
     return nil
 }
-// GetDeviceId gets the deviceId property value. Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).
+// GetDeviceId gets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This ID is an alternate key that can be used to reference the device object. Also supports $filter (eq, ne, not, startsWith).
 // returns a *string when successful
 func (m *Device) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -130,7 +130,7 @@ func (m *Device) GetDeviceMetadata()(*string) {
     }
     return nil
 }
-// GetDeviceOwnership gets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+// GetDeviceOwnership gets the deviceOwnership property value. Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.
 // returns a *string when successful
 func (m *Device) GetDeviceOwnership()(*string) {
     val, err := m.GetBackingStore().Get("deviceOwnership")
@@ -142,7 +142,7 @@ func (m *Device) GetDeviceOwnership()(*string) {
     }
     return nil
 }
-// GetDeviceTemplate gets the deviceTemplate property value. The deviceTemplate property
+// GetDeviceTemplate gets the deviceTemplate property value. Device template used to instantiate this device. Nullable. Read-only.
 // returns a []DeviceTemplateable when successful
 func (m *Device) GetDeviceTemplate()([]DeviceTemplateable) {
     val, err := m.GetBackingStore().Get("deviceTemplate")
@@ -178,7 +178,7 @@ func (m *Device) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDomainName gets the domainName property value. The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
+// GetDomainName gets the domainName property value. The on-premises domain name of Microsoft Entra hybrid joined devices. Intune sets this property.
 // returns a *string when successful
 func (m *Device) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
@@ -190,7 +190,7 @@ func (m *Device) GetDomainName()(*string) {
     }
     return nil
 }
-// GetEnrollmentProfileName gets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
+// GetEnrollmentProfileName gets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. Intune sets this property.
 // returns a *string when successful
 func (m *Device) GetEnrollmentProfileName()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentProfileName")
@@ -202,7 +202,7 @@ func (m *Device) GetEnrollmentProfileName()(*string) {
     }
     return nil
 }
-// GetEnrollmentType gets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
+// GetEnrollmentType gets the enrollmentType property value. Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
 // returns a *string when successful
 func (m *Device) GetEnrollmentType()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentType")
@@ -854,7 +854,7 @@ func (m *Device) GetKind()(*string) {
     }
     return nil
 }
-// GetManagementType gets the managementType property value. Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
+// GetManagementType gets the managementType property value. Management channel of the device. Intune sets this property. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 // returns a *string when successful
 func (m *Device) GetManagementType()(*string) {
     val, err := m.GetBackingStore().Get("managementType")
@@ -1463,7 +1463,7 @@ func (m *Device) SetAccountEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetAlternativeNames sets the alternativeNames property value. The alternativeNames property
+// SetAlternativeNames sets the alternativeNames property value. List of alternative names for the device.
 func (m *Device) SetAlternativeNames(value []string)() {
     err := m.GetBackingStore().Set("alternativeNames", value)
     if err != nil {
@@ -1505,7 +1505,7 @@ func (m *Device) SetDeviceCategory(value *string)() {
         panic(err)
     }
 }
-// SetDeviceId sets the deviceId property value. Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).
+// SetDeviceId sets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This ID is an alternate key that can be used to reference the device object. Also supports $filter (eq, ne, not, startsWith).
 func (m *Device) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
@@ -1519,14 +1519,14 @@ func (m *Device) SetDeviceMetadata(value *string)() {
         panic(err)
     }
 }
-// SetDeviceOwnership sets the deviceOwnership property value. Ownership of the device. This property is set by Intune. Possible values are: unknown, company, personal.
+// SetDeviceOwnership sets the deviceOwnership property value. Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.
 func (m *Device) SetDeviceOwnership(value *string)() {
     err := m.GetBackingStore().Set("deviceOwnership", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceTemplate sets the deviceTemplate property value. The deviceTemplate property
+// SetDeviceTemplate sets the deviceTemplate property value. Device template used to instantiate this device. Nullable. Read-only.
 func (m *Device) SetDeviceTemplate(value []DeviceTemplateable)() {
     err := m.GetBackingStore().Set("deviceTemplate", value)
     if err != nil {
@@ -1547,21 +1547,21 @@ func (m *Device) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetDomainName sets the domainName property value. The on-premises domain name of Microsoft Entra hybrid joined devices. This property is set by Intune.
+// SetDomainName sets the domainName property value. The on-premises domain name of Microsoft Entra hybrid joined devices. Intune sets this property.
 func (m *Device) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnrollmentProfileName sets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. This property is set by Intune.
+// SetEnrollmentProfileName sets the enrollmentProfileName property value. Enrollment profile applied to the device. For example, Apple Device Enrollment Profile, Device enrollment - Corporate device identifiers, or Windows Autopilot profile name. Intune sets this property.
 func (m *Device) SetEnrollmentProfileName(value *string)() {
     err := m.GetBackingStore().Set("enrollmentProfileName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnrollmentType sets the enrollmentType property value. Enrollment type of the device. This property is set by Intune. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
+// SetEnrollmentType sets the enrollmentType property value. Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
 func (m *Device) SetEnrollmentType(value *string)() {
     err := m.GetBackingStore().Set("enrollmentType", value)
     if err != nil {
@@ -1624,7 +1624,7 @@ func (m *Device) SetKind(value *string)() {
         panic(err)
     }
 }
-// SetManagementType sets the managementType property value. Management channel of the device.  This property is set by Intune. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
+// SetManagementType sets the managementType property value. Management channel of the device. Intune sets this property. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 func (m *Device) SetManagementType(value *string)() {
     err := m.GetBackingStore().Set("managementType", value)
     if err != nil {

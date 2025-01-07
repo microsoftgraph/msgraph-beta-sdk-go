@@ -18,7 +18,7 @@ type CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurati
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters get mutualTlsOauthConfigurations from directory
+// CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters get the properties and relationships of the specified mutualTlsOauthConfiguration resource.
 type CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,9 +70,12 @@ func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigu
     }
     return nil
 }
-// Get get mutualTlsOauthConfigurations from directory
+// Get get the properties and relationships of the specified mutualTlsOauthConfiguration resource.
 // returns a MutualTlsOauthConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mutualtlsoauthconfiguration-get?view=graph-rest-beta
 func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -90,9 +93,12 @@ func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable), nil
 }
-// Patch update the navigation property mutualTlsOauthConfigurations in directory
+// Patch update the specified mutualTlsOauthConfiguration resource. You can only update the following two properties: displayName, certificateAuthority. To update a subset of objects in the certificateAuthorities collection, first get the complete list, make your modifications, and then repost the entire contents of the certificateAuthorities attribute list in the request body. Excluding a subset of objects removes them from the collection.
 // returns a MutualTlsOauthConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mutualtlsoauthconfiguration-update?view=graph-rest-beta
 func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable, requestConfiguration *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -121,7 +127,7 @@ func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigu
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get mutualTlsOauthConfigurations from directory
+// ToGetRequestInformation get the properties and relationships of the specified mutualTlsOauthConfiguration resource.
 // returns a *RequestInformation when successful
 func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +141,7 @@ func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigu
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property mutualTlsOauthConfigurations in directory
+// ToPatchRequestInformation update the specified mutualTlsOauthConfiguration resource. You can only update the following two properties: displayName, certificateAuthority. To update a subset of objects in the certificateAuthorities collection, first get the complete list, make your modifications, and then repost the entire contents of the certificateAuthorities attribute list in the request body. Excluding a subset of objects removes them from the collection.
 // returns a *RequestInformation when successful
 func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable, requestConfiguration *CertificateAuthoritiesMutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
