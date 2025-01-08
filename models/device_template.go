@@ -21,7 +21,7 @@ func NewDeviceTemplate()(*DeviceTemplate) {
 func CreateDeviceTemplateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceTemplate(), nil
 }
-// GetDeviceAuthority gets the deviceAuthority property value. The deviceAuthority property
+// GetDeviceAuthority gets the deviceAuthority property value. A tenant-defined name for the party that's responsible for provisioning and managing devices on the Microsoft Entra tenant. For example, Tailwind Traders (the manufacturer) makes security cameras that are installed in customer buildings and managed by Lakeshore Retail (the device authority). This value is provided to the customer by the device authority (manufacturer or reseller).
 // returns a *string when successful
 func (m *DeviceTemplate) GetDeviceAuthority()(*string) {
     val, err := m.GetBackingStore().Get("deviceAuthority")
@@ -33,7 +33,7 @@ func (m *DeviceTemplate) GetDeviceAuthority()(*string) {
     }
     return nil
 }
-// GetDeviceInstances gets the deviceInstances property value. The deviceInstances property
+// GetDeviceInstances gets the deviceInstances property value. Collection of device objects created based on this template.
 // returns a []Deviceable when successful
 func (m *DeviceTemplate) GetDeviceInstances()([]Deviceable) {
     val, err := m.GetBackingStore().Get("deviceInstances")
@@ -143,7 +143,7 @@ func (m *DeviceTemplate) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetManufacturer gets the manufacturer property value. The manufacturer property
+// GetManufacturer gets the manufacturer property value. Manufacturer name.
 // returns a *string when successful
 func (m *DeviceTemplate) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
@@ -155,7 +155,7 @@ func (m *DeviceTemplate) GetManufacturer()(*string) {
     }
     return nil
 }
-// GetModel gets the model property value. The model property
+// GetModel gets the model property value. Model name.
 // returns a *string when successful
 func (m *DeviceTemplate) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
@@ -167,7 +167,7 @@ func (m *DeviceTemplate) GetModel()(*string) {
     }
     return nil
 }
-// GetMutualTlsOauthConfigurationId gets the mutualTlsOauthConfigurationId property value. The mutualTlsOauthConfigurationId property
+// GetMutualTlsOauthConfigurationId gets the mutualTlsOauthConfigurationId property value. Object ID of the mutualTlsOauthConfiguration. This value isn't required if self-signed certificates are used. This value is provided to the customer by the device authority (manufacturer or reseller).
 // returns a *string when successful
 func (m *DeviceTemplate) GetMutualTlsOauthConfigurationId()(*string) {
     val, err := m.GetBackingStore().Get("mutualTlsOauthConfigurationId")
@@ -179,7 +179,7 @@ func (m *DeviceTemplate) GetMutualTlsOauthConfigurationId()(*string) {
     }
     return nil
 }
-// GetMutualTlsOauthConfigurationTenantId gets the mutualTlsOauthConfigurationTenantId property value. The mutualTlsOauthConfigurationTenantId property
+// GetMutualTlsOauthConfigurationTenantId gets the mutualTlsOauthConfigurationTenantId property value. ID (tenant ID for device authority) of the tenant that contains the mutualTlsOauthConfiguration. This value isn't required if self-signed certificates are used. This value is provided to the customer by the device authority (manufacturer or reseller).
 // returns a *string when successful
 func (m *DeviceTemplate) GetMutualTlsOauthConfigurationTenantId()(*string) {
     val, err := m.GetBackingStore().Get("mutualTlsOauthConfigurationTenantId")
@@ -191,7 +191,7 @@ func (m *DeviceTemplate) GetMutualTlsOauthConfigurationTenantId()(*string) {
     }
     return nil
 }
-// GetOperatingSystem gets the operatingSystem property value. The operatingSystem property
+// GetOperatingSystem gets the operatingSystem property value. Operating system type. Supports $filter (eq, in).
 // returns a *string when successful
 func (m *DeviceTemplate) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
@@ -203,7 +203,7 @@ func (m *DeviceTemplate) GetOperatingSystem()(*string) {
     }
     return nil
 }
-// GetOwners gets the owners property value. The owners property
+// GetOwners gets the owners property value. Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn't require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners.  Supports $expand.
 // returns a []DirectoryObjectable when successful
 func (m *DeviceTemplate) GetOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("owners")
@@ -283,56 +283,56 @@ func (m *DeviceTemplate) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetDeviceAuthority sets the deviceAuthority property value. The deviceAuthority property
+// SetDeviceAuthority sets the deviceAuthority property value. A tenant-defined name for the party that's responsible for provisioning and managing devices on the Microsoft Entra tenant. For example, Tailwind Traders (the manufacturer) makes security cameras that are installed in customer buildings and managed by Lakeshore Retail (the device authority). This value is provided to the customer by the device authority (manufacturer or reseller).
 func (m *DeviceTemplate) SetDeviceAuthority(value *string)() {
     err := m.GetBackingStore().Set("deviceAuthority", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceInstances sets the deviceInstances property value. The deviceInstances property
+// SetDeviceInstances sets the deviceInstances property value. Collection of device objects created based on this template.
 func (m *DeviceTemplate) SetDeviceInstances(value []Deviceable)() {
     err := m.GetBackingStore().Set("deviceInstances", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManufacturer sets the manufacturer property value. The manufacturer property
+// SetManufacturer sets the manufacturer property value. Manufacturer name.
 func (m *DeviceTemplate) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModel sets the model property value. The model property
+// SetModel sets the model property value. Model name.
 func (m *DeviceTemplate) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMutualTlsOauthConfigurationId sets the mutualTlsOauthConfigurationId property value. The mutualTlsOauthConfigurationId property
+// SetMutualTlsOauthConfigurationId sets the mutualTlsOauthConfigurationId property value. Object ID of the mutualTlsOauthConfiguration. This value isn't required if self-signed certificates are used. This value is provided to the customer by the device authority (manufacturer or reseller).
 func (m *DeviceTemplate) SetMutualTlsOauthConfigurationId(value *string)() {
     err := m.GetBackingStore().Set("mutualTlsOauthConfigurationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMutualTlsOauthConfigurationTenantId sets the mutualTlsOauthConfigurationTenantId property value. The mutualTlsOauthConfigurationTenantId property
+// SetMutualTlsOauthConfigurationTenantId sets the mutualTlsOauthConfigurationTenantId property value. ID (tenant ID for device authority) of the tenant that contains the mutualTlsOauthConfiguration. This value isn't required if self-signed certificates are used. This value is provided to the customer by the device authority (manufacturer or reseller).
 func (m *DeviceTemplate) SetMutualTlsOauthConfigurationTenantId(value *string)() {
     err := m.GetBackingStore().Set("mutualTlsOauthConfigurationTenantId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOperatingSystem sets the operatingSystem property value. The operatingSystem property
+// SetOperatingSystem sets the operatingSystem property value. Operating system type. Supports $filter (eq, in).
 func (m *DeviceTemplate) SetOperatingSystem(value *string)() {
     err := m.GetBackingStore().Set("operatingSystem", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwners sets the owners property value. The owners property
+// SetOwners sets the owners property value. Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn't require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners.  Supports $expand.
 func (m *DeviceTemplate) SetOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("owners", value)
     if err != nil {

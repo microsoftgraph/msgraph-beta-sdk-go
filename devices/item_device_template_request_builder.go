@@ -11,7 +11,7 @@ import (
 type ItemDeviceTemplateRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemDeviceTemplateRequestBuilderGetQueryParameters get deviceTemplate from devices
+// ItemDeviceTemplateRequestBuilderGetQueryParameters device template used to instantiate this device. Nullable. Read-only.
 type ItemDeviceTemplateRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,7 +69,7 @@ func NewItemDeviceTemplateRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *ItemDeviceTemplateRequestBuilder) Count()(*ItemDeviceTemplateCountRequestBuilder) {
     return NewItemDeviceTemplateCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get deviceTemplate from devices
+// Get device template used to instantiate this device. Nullable. Read-only.
 // returns a DeviceTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDeviceTemplateRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDeviceTemplateRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateCollectionResponseable, error) {
@@ -89,7 +89,7 @@ func (m *ItemDeviceTemplateRequestBuilder) Get(ctx context.Context, requestConfi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateCollectionResponseable), nil
 }
-// ToGetRequestInformation get deviceTemplate from devices
+// ToGetRequestInformation device template used to instantiate this device. Nullable. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemDeviceTemplateRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDeviceTemplateRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

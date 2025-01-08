@@ -11,7 +11,7 @@ import (
 type MutualTlsOauthConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MutualTlsOauthConfigurationsRequestBuilderGetQueryParameters get mutualTlsOauthConfigurations from certificateAuthorities
+// MutualTlsOauthConfigurationsRequestBuilderGetQueryParameters defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
 type MutualTlsOauthConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,7 +76,7 @@ func NewMutualTlsOauthConfigurationsRequestBuilder(rawUrl string, requestAdapter
 func (m *MutualTlsOauthConfigurationsRequestBuilder) Count()(*MutualTlsOauthConfigurationsCountRequestBuilder) {
     return NewMutualTlsOauthConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get mutualTlsOauthConfigurations from certificateAuthorities
+// Get defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
 // returns a MutualTlsOauthConfigurationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MutualTlsOauthConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *MutualTlsOauthConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationCollectionResponseable, error) {
@@ -116,7 +116,7 @@ func (m *MutualTlsOauthConfigurationsRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable), nil
 }
-// ToGetRequestInformation get mutualTlsOauthConfigurations from certificateAuthorities
+// ToGetRequestInformation defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
 // returns a *RequestInformation when successful
 func (m *MutualTlsOauthConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MutualTlsOauthConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

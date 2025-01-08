@@ -11,7 +11,7 @@ import (
 type TemplatesDeviceTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TemplatesDeviceTemplatesRequestBuilderGetQueryParameters get deviceTemplates from directory
+// TemplatesDeviceTemplatesRequestBuilderGetQueryParameters get a list of deviceTemplate objects registered in the directory.
 type TemplatesDeviceTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewTemplatesDeviceTemplatesRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *TemplatesDeviceTemplatesRequestBuilder) Count()(*TemplatesDeviceTemplatesCountRequestBuilder) {
     return NewTemplatesDeviceTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get deviceTemplates from directory
+// Get get a list of deviceTemplate objects registered in the directory.
 // returns a DeviceTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/template-list-devicetemplates?view=graph-rest-beta
 func (m *TemplatesDeviceTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *TemplatesDeviceTemplatesRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateCollectionResponseable), nil
 }
-// Post create new navigation property to deviceTemplates for directory
+// Post create a new deviceTemplate used to identify attributes and manage a group of devices with similar characteristics.
 // returns a DeviceTemplateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/template-post-devicetemplates?view=graph-rest-beta
 func (m *TemplatesDeviceTemplatesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateable, requestConfiguration *TemplatesDeviceTemplatesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *TemplatesDeviceTemplatesRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateable), nil
 }
-// ToGetRequestInformation get deviceTemplates from directory
+// ToGetRequestInformation get a list of deviceTemplate objects registered in the directory.
 // returns a *RequestInformation when successful
 func (m *TemplatesDeviceTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *TemplatesDeviceTemplatesRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to deviceTemplates for directory
+// ToPostRequestInformation create a new deviceTemplate used to identify attributes and manage a group of devices with similar characteristics.
 // returns a *RequestInformation when successful
 func (m *TemplatesDeviceTemplatesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceTemplateable, requestConfiguration *TemplatesDeviceTemplatesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

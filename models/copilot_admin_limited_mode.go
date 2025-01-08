@@ -45,7 +45,7 @@ func (m *CopilotAdminLimitedMode) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetGroupId gets the groupId property value. The ID of a Microsoft Entra group to which the value of the isEnabledForGroup property is applied value. The default value is null. This parameter is optional. If isEnabledForGroup is set to true, the groupId value must be provided in order for Copilot limited mode in Teams Meetings to be enabled for the members of the group.
+// GetGroupId gets the groupId property value. The ID of a Microsoft Entra group to which the value of the isEnabledForGroup property is applied value. The default value is null. This parameter is optional. If isEnabledForGroup is set to true, the groupId value must be provided in order for Copilot limited mode in Teams meetings to be enabled for the members of the group.
 // returns a *string when successful
 func (m *CopilotAdminLimitedMode) GetGroupId()(*string) {
     val, err := m.GetBackingStore().Get("groupId")
@@ -89,7 +89,7 @@ func (m *CopilotAdminLimitedMode) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetGroupId sets the groupId property value. The ID of a Microsoft Entra group to which the value of the isEnabledForGroup property is applied value. The default value is null. This parameter is optional. If isEnabledForGroup is set to true, the groupId value must be provided in order for Copilot limited mode in Teams Meetings to be enabled for the members of the group.
+// SetGroupId sets the groupId property value. The ID of a Microsoft Entra group to which the value of the isEnabledForGroup property is applied value. The default value is null. This parameter is optional. If isEnabledForGroup is set to true, the groupId value must be provided in order for Copilot limited mode in Teams meetings to be enabled for the members of the group.
 func (m *CopilotAdminLimitedMode) SetGroupId(value *string)() {
     err := m.GetBackingStore().Set("groupId", value)
     if err != nil {

@@ -69,7 +69,7 @@ func (m *CertificateAuthorityPath) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetMutualTlsOauthConfigurations gets the mutualTlsOauthConfigurations property value. The mutualTlsOauthConfigurations property
+// GetMutualTlsOauthConfigurations gets the mutualTlsOauthConfigurations property value. Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
 // returns a []MutualTlsOauthConfigurationable when successful
 func (m *CertificateAuthorityPath) GetMutualTlsOauthConfigurations()([]MutualTlsOauthConfigurationable) {
     val, err := m.GetBackingStore().Get("mutualTlsOauthConfigurations")
@@ -120,7 +120,7 @@ func (m *CertificateAuthorityPath) SetCertificateBasedApplicationConfigurations(
         panic(err)
     }
 }
-// SetMutualTlsOauthConfigurations sets the mutualTlsOauthConfigurations property value. The mutualTlsOauthConfigurations property
+// SetMutualTlsOauthConfigurations sets the mutualTlsOauthConfigurations property value. Defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.
 func (m *CertificateAuthorityPath) SetMutualTlsOauthConfigurations(value []MutualTlsOauthConfigurationable)() {
     err := m.GetBackingStore().Set("mutualTlsOauthConfigurations", value)
     if err != nil {

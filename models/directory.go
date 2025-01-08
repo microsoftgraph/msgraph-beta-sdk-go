@@ -55,7 +55,7 @@ func (m *Directory) GetAuthenticationMethodDevices()(AuthenticationMethodDevicea
     }
     return nil
 }
-// GetCertificateAuthorities gets the certificateAuthorities property value. The certificateAuthorities property
+// GetCertificateAuthorities gets the certificateAuthorities property value. Container for certificate authorities-related configurations for applications in the tenant.
 // returns a CertificateAuthorityPathable when successful
 func (m *Directory) GetCertificateAuthorities()(CertificateAuthorityPathable) {
     val, err := m.GetBackingStore().Get("certificateAuthorities")
@@ -549,7 +549,7 @@ func (m *Directory) GetSubscriptions()([]CompanySubscriptionable) {
     }
     return nil
 }
-// GetTemplates gets the templates property value. The templates property
+// GetTemplates gets the templates property value. A container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.
 // returns a Templateable when successful
 func (m *Directory) GetTemplates()(Templateable) {
     val, err := m.GetBackingStore().Get("templates")
@@ -806,7 +806,7 @@ func (m *Directory) SetAuthenticationMethodDevices(value AuthenticationMethodDev
         panic(err)
     }
 }
-// SetCertificateAuthorities sets the certificateAuthorities property value. The certificateAuthorities property
+// SetCertificateAuthorities sets the certificateAuthorities property value. Container for certificate authorities-related configurations for applications in the tenant.
 func (m *Directory) SetCertificateAuthorities(value CertificateAuthorityPathable)() {
     err := m.GetBackingStore().Set("certificateAuthorities", value)
     if err != nil {
@@ -918,7 +918,7 @@ func (m *Directory) SetSubscriptions(value []CompanySubscriptionable)() {
         panic(err)
     }
 }
-// SetTemplates sets the templates property value. The templates property
+// SetTemplates sets the templates property value. A container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.
 func (m *Directory) SetTemplates(value Templateable)() {
     err := m.GetBackingStore().Set("templates", value)
     if err != nil {

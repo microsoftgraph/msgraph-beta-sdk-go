@@ -11,7 +11,7 @@ import (
 type TemplatesDeviceTemplatesItemOwnersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TemplatesDeviceTemplatesItemOwnersRequestBuilderGetQueryParameters get owners from directory
+// TemplatesDeviceTemplatesItemOwnersRequestBuilderGetQueryParameters get a list of owners for a deviceTemplate object. Owners can be represented as service principals, users, or applications.
 type TemplatesDeviceTemplatesItemOwnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -69,9 +69,12 @@ func NewTemplatesDeviceTemplatesItemOwnersRequestBuilder(rawUrl string, requestA
 func (m *TemplatesDeviceTemplatesItemOwnersRequestBuilder) Count()(*TemplatesDeviceTemplatesItemOwnersCountRequestBuilder) {
     return NewTemplatesDeviceTemplatesItemOwnersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get owners from directory
+// Get get a list of owners for a deviceTemplate object. Owners can be represented as service principals, users, or applications.
 // returns a DirectoryObjectCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/devicetemplate-list-owners?view=graph-rest-beta
 func (m *TemplatesDeviceTemplatesItemOwnersRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesItemOwnersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -89,7 +92,7 @@ func (m *TemplatesDeviceTemplatesItemOwnersRequestBuilder) Get(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
-// ToGetRequestInformation get owners from directory
+// ToGetRequestInformation get a list of owners for a deviceTemplate object. Owners can be represented as service principals, users, or applications.
 // returns a *RequestInformation when successful
 func (m *TemplatesDeviceTemplatesItemOwnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesDeviceTemplatesItemOwnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -39,7 +39,7 @@ func CreateTrustedCertificateAuthorityBaseFromDiscriminatorValue(parseNode i878a
     }
     return NewTrustedCertificateAuthorityBase(), nil
 }
-// GetCertificateAuthorities gets the certificateAuthorities property value. The certificateAuthorities property
+// GetCertificateAuthorities gets the certificateAuthorities property value. Multi-value property that represents a list of trusted certificate authorities.
 // returns a []CertificateAuthorityable when successful
 func (m *TrustedCertificateAuthorityBase) GetCertificateAuthorities()([]CertificateAuthorityable) {
     val, err := m.GetBackingStore().Get("certificateAuthorities")
@@ -93,7 +93,7 @@ func (m *TrustedCertificateAuthorityBase) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetCertificateAuthorities sets the certificateAuthorities property value. The certificateAuthorities property
+// SetCertificateAuthorities sets the certificateAuthorities property value. Multi-value property that represents a list of trusted certificate authorities.
 func (m *TrustedCertificateAuthorityBase) SetCertificateAuthorities(value []CertificateAuthorityable)() {
     err := m.GetBackingStore().Set("certificateAuthorities", value)
     if err != nil {

@@ -18,7 +18,7 @@ type TemplatesRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TemplatesRequestBuilderGetQueryParameters get templates from directory
+// TemplatesRequestBuilderGetQueryParameters a container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.
 type TemplatesRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -75,7 +75,7 @@ func (m *TemplatesRequestBuilder) Delete(ctx context.Context, requestConfigurati
 func (m *TemplatesRequestBuilder) DeviceTemplates()(*TemplatesDeviceTemplatesRequestBuilder) {
     return NewTemplatesDeviceTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get templates from directory
+// Get a container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.
 // returns a Templateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *TemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Templateable, error) {
@@ -126,7 +126,7 @@ func (m *TemplatesRequestBuilder) ToDeleteRequestInformation(ctx context.Context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get templates from directory
+// ToGetRequestInformation a container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.
 // returns a *RequestInformation when successful
 func (m *TemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

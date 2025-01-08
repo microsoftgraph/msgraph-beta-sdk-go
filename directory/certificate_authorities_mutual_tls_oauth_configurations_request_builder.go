@@ -11,7 +11,7 @@ import (
 type CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilderGetQueryParameters get mutualTlsOauthConfigurations from directory
+// CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilderGetQueryParameters get a list of the available mutualTlsOauthConfiguration resources.
 type CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -76,9 +76,12 @@ func NewCertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder(rawUrl 
 func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder) Count()(*CertificateAuthoritiesMutualTlsOauthConfigurationsCountRequestBuilder) {
     return NewCertificateAuthoritiesMutualTlsOauthConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get mutualTlsOauthConfigurations from directory
+// Get get a list of the available mutualTlsOauthConfiguration resources.
 // returns a MutualTlsOauthConfigurationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificateauthoritypath-list-mutualtlsoauthconfigurations?view=graph-rest-beta
 func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -96,9 +99,12 @@ func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder) Get(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationCollectionResponseable), nil
 }
-// Post create new navigation property to mutualTlsOauthConfigurations for directory
+// Post create a mutualTlsOauthConfiguration resource that contains a specified certificate authority object.
 // returns a MutualTlsOauthConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/certificateauthoritypath-post-mutualtlsoauthconfigurations?view=graph-rest-beta
 func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable, requestConfiguration *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -116,7 +122,7 @@ func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder) Post(
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable), nil
 }
-// ToGetRequestInformation get mutualTlsOauthConfigurations from directory
+// ToGetRequestInformation get a list of the available mutualTlsOauthConfiguration resources.
 // returns a *RequestInformation when successful
 func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -130,7 +136,7 @@ func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder) ToGet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to mutualTlsOauthConfigurations for directory
+// ToPostRequestInformation create a mutualTlsOauthConfiguration resource that contains a specified certificate authority object.
 // returns a *RequestInformation when successful
 func (m *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MutualTlsOauthConfigurationable, requestConfiguration *CertificateAuthoritiesMutualTlsOauthConfigurationsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

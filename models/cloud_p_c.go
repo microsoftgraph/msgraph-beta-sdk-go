@@ -476,7 +476,7 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetFrontlineCloudPcAvailability gets the frontlineCloudPcAvailability property value. The frontlineCloudPcAvailability property
+// GetFrontlineCloudPcAvailability gets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available,notAvailable and unknownFutureValue. Default value is notApplicable. Read Only.
 // returns a *FrontlineCloudPcAvailability when successful
 func (m *CloudPC) GetFrontlineCloudPcAvailability()(*FrontlineCloudPcAvailability) {
     val, err := m.GetBackingStore().Get("frontlineCloudPcAvailability")
@@ -1047,7 +1047,7 @@ func (m *CloudPC) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetFrontlineCloudPcAvailability sets the frontlineCloudPcAvailability property value. The frontlineCloudPcAvailability property
+// SetFrontlineCloudPcAvailability sets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available,notAvailable and unknownFutureValue. Default value is notApplicable. Read Only.
 func (m *CloudPC) SetFrontlineCloudPcAvailability(value *FrontlineCloudPcAvailability)() {
     err := m.GetBackingStore().Set("frontlineCloudPcAvailability", value)
     if err != nil {

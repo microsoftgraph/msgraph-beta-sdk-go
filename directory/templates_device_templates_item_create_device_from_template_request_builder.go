@@ -31,9 +31,12 @@ func NewTemplatesDeviceTemplatesItemCreateDeviceFromTemplateRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewTemplatesDeviceTemplatesItemCreateDeviceFromTemplateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action createDeviceFromTemplate
+// Post create a new device from a deviceTemplate.
 // returns a Deviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/devicetemplate-createdevicefromtemplate?view=graph-rest-beta
 func (m *TemplatesDeviceTemplatesItemCreateDeviceFromTemplateRequestBuilder) Post(ctx context.Context, body TemplatesDeviceTemplatesItemCreateDeviceFromTemplatePostRequestBodyable, requestConfiguration *TemplatesDeviceTemplatesItemCreateDeviceFromTemplateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *TemplatesDeviceTemplatesItemCreateDeviceFromTemplateRequestBuilder) Pos
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
-// ToPostRequestInformation invoke action createDeviceFromTemplate
+// ToPostRequestInformation create a new device from a deviceTemplate.
 // returns a *RequestInformation when successful
 func (m *TemplatesDeviceTemplatesItemCreateDeviceFromTemplateRequestBuilder) ToPostRequestInformation(ctx context.Context, body TemplatesDeviceTemplatesItemCreateDeviceFromTemplatePostRequestBodyable, requestConfiguration *TemplatesDeviceTemplatesItemCreateDeviceFromTemplateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
