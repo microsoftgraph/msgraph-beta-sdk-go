@@ -21,7 +21,7 @@ func NewOnOtpSendCustomExtensionHandler()(*OnOtpSendCustomExtensionHandler) {
 func CreateOnOtpSendCustomExtensionHandlerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewOnOtpSendCustomExtensionHandler(), nil
 }
-// GetConfiguration gets the configuration property value. The configuration property
+// GetConfiguration gets the configuration property value. Configuration regarding properties of the custom extension that are can be overwritten for the onEmailOtpSendListener event listener.
 // returns a CustomExtensionOverwriteConfigurationable when successful
 func (m *OnOtpSendCustomExtensionHandler) GetConfiguration()(CustomExtensionOverwriteConfigurationable) {
     val, err := m.GetBackingStore().Get("configuration")
@@ -91,7 +91,7 @@ func (m *OnOtpSendCustomExtensionHandler) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetConfiguration sets the configuration property value. The configuration property
+// SetConfiguration sets the configuration property value. Configuration regarding properties of the custom extension that are can be overwritten for the onEmailOtpSendListener event listener.
 func (m *OnOtpSendCustomExtensionHandler) SetConfiguration(value CustomExtensionOverwriteConfigurationable)() {
     err := m.GetBackingStore().Set("configuration", value)
     if err != nil {

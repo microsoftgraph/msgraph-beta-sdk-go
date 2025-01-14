@@ -87,7 +87,7 @@ func (m *ReferenceAttachment) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIsFolder gets the isFolder property value. Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.
+// GetIsFolder gets the isFolder property value. Specifies whether the attachment is a link to a folder. You must set this property to true if sourceUrl is a link to a folder. Optional.
 // returns a *bool when successful
 func (m *ReferenceAttachment) GetIsFolder()(*bool) {
     val, err := m.GetBackingStore().Get("isFolder")
@@ -135,7 +135,7 @@ func (m *ReferenceAttachment) GetProviderType()(*ReferenceAttachmentProvider) {
     }
     return nil
 }
-// GetSourceUrl gets the sourceUrl property value. URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
+// GetSourceUrl gets the sourceUrl property value. URL to get the attachment content. If this value is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
 // returns a *string when successful
 func (m *ReferenceAttachment) GetSourceUrl()(*string) {
     val, err := m.GetBackingStore().Get("sourceUrl")
@@ -205,7 +205,7 @@ func (m *ReferenceAttachment) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetIsFolder sets the isFolder property value. Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.
+// SetIsFolder sets the isFolder property value. Specifies whether the attachment is a link to a folder. You must set this property to true if sourceUrl is a link to a folder. Optional.
 func (m *ReferenceAttachment) SetIsFolder(value *bool)() {
     err := m.GetBackingStore().Set("isFolder", value)
     if err != nil {
@@ -233,7 +233,7 @@ func (m *ReferenceAttachment) SetProviderType(value *ReferenceAttachmentProvider
         panic(err)
     }
 }
-// SetSourceUrl sets the sourceUrl property value. URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
+// SetSourceUrl sets the sourceUrl property value. URL to get the attachment content. If this value is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.
 func (m *ReferenceAttachment) SetSourceUrl(value *string)() {
     err := m.GetBackingStore().Set("sourceUrl", value)
     if err != nil {

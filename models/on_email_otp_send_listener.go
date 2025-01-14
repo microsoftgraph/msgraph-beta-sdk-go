@@ -37,7 +37,7 @@ func (m *OnEmailOtpSendListener) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetHandler gets the handler property value. The handler property
+// GetHandler gets the handler property value. Used to configure what to invoke if the onEmailOTPSend event resolves to this listener. This base class serves as a generic OTP event handler used for both email and SMS OTP messages.
 // returns a OnOtpSendHandlerable when successful
 func (m *OnEmailOtpSendListener) GetHandler()(OnOtpSendHandlerable) {
     val, err := m.GetBackingStore().Get("handler")
@@ -63,7 +63,7 @@ func (m *OnEmailOtpSendListener) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetHandler sets the handler property value. The handler property
+// SetHandler sets the handler property value. Used to configure what to invoke if the onEmailOTPSend event resolves to this listener. This base class serves as a generic OTP event handler used for both email and SMS OTP messages.
 func (m *OnEmailOtpSendListener) SetHandler(value OnOtpSendHandlerable)() {
     err := m.GetBackingStore().Set("handler", value)
     if err != nil {
