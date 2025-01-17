@@ -99,7 +99,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollection()(On
     }
     return nil
 }
-// GetOnAttributeCollectionStart gets the onAttributeCollectionStart property value. The configuration for what to invoke when attribution collection has started.
+// GetOnAttributeCollectionStart gets the onAttributeCollectionStart property value. The configuration for what to invoke when attribution collection starts.
 // returns a OnAttributeCollectionStartHandlerable when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollectionStart()(OnAttributeCollectionStartHandlerable) {
     val, err := m.GetBackingStore().Get("onAttributeCollectionStart")
@@ -111,7 +111,7 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollectionStart
     }
     return nil
 }
-// GetOnAttributeCollectionSubmit gets the onAttributeCollectionSubmit property value. The configuration for what to invoke when attributes have been submitted at the end of attribution collection.
+// GetOnAttributeCollectionSubmit gets the onAttributeCollectionSubmit property value. The configuration for what to invoke when attributes are submitted at the end of attribution collection.
 // returns a OnAttributeCollectionSubmitHandlerable when successful
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) GetOnAttributeCollectionSubmit()(OnAttributeCollectionSubmitHandlerable) {
     val, err := m.GetBackingStore().Get("onAttributeCollectionSubmit")
@@ -210,14 +210,14 @@ func (m *ExternalUsersSelfServiceSignUpEventsFlow) SetOnAttributeCollection(valu
         panic(err)
     }
 }
-// SetOnAttributeCollectionStart sets the onAttributeCollectionStart property value. The configuration for what to invoke when attribution collection has started.
+// SetOnAttributeCollectionStart sets the onAttributeCollectionStart property value. The configuration for what to invoke when attribution collection starts.
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) SetOnAttributeCollectionStart(value OnAttributeCollectionStartHandlerable)() {
     err := m.GetBackingStore().Set("onAttributeCollectionStart", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnAttributeCollectionSubmit sets the onAttributeCollectionSubmit property value. The configuration for what to invoke when attributes have been submitted at the end of attribution collection.
+// SetOnAttributeCollectionSubmit sets the onAttributeCollectionSubmit property value. The configuration for what to invoke when attributes are submitted at the end of attribution collection.
 func (m *ExternalUsersSelfServiceSignUpEventsFlow) SetOnAttributeCollectionSubmit(value OnAttributeCollectionSubmitHandlerable)() {
     err := m.GetBackingStore().Set("onAttributeCollectionSubmit", value)
     if err != nil {

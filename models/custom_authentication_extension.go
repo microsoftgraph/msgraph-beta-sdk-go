@@ -45,7 +45,7 @@ func CreateCustomAuthenticationExtensionFromDiscriminatorValue(parseNode i878a80
     }
     return NewCustomAuthenticationExtension(), nil
 }
-// GetBehaviorOnError gets the behaviorOnError property value. The behaviorOnError property
+// GetBehaviorOnError gets the behaviorOnError property value. The behaviour on error for the custom authentication extension.
 // returns a CustomExtensionBehaviorOnErrorable when successful
 func (m *CustomAuthenticationExtension) GetBehaviorOnError()(CustomExtensionBehaviorOnErrorable) {
     val, err := m.GetBackingStore().Get("behaviorOnError")
@@ -87,7 +87,7 @@ func (m *CustomAuthenticationExtension) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetBehaviorOnError sets the behaviorOnError property value. The behaviorOnError property
+// SetBehaviorOnError sets the behaviorOnError property value. The behaviour on error for the custom authentication extension.
 func (m *CustomAuthenticationExtension) SetBehaviorOnError(value CustomExtensionBehaviorOnErrorable)() {
     err := m.GetBackingStore().Set("behaviorOnError", value)
     if err != nil {

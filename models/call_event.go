@@ -38,7 +38,7 @@ func CreateCallEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     }
     return NewCallEvent(), nil
 }
-// GetCallEventType gets the callEventType property value. The callEventType property
+// GetCallEventType gets the callEventType property value. The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: rosterUpdated.
 // returns a *CallEventType when successful
 func (m *CallEvent) GetCallEventType()(*CallEventType) {
     val, err := m.GetBackingStore().Get("callEventType")
@@ -50,7 +50,7 @@ func (m *CallEvent) GetCallEventType()(*CallEventType) {
     }
     return nil
 }
-// GetEventDateTime gets the eventDateTime property value. The eventDateTime property
+// GetEventDateTime gets the eventDateTime property value. The time when event occurred.
 // returns a *Time when successful
 func (m *CallEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
@@ -104,7 +104,7 @@ func (m *CallEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
     }
     return res
 }
-// GetParticipants gets the participants property value. The participants property
+// GetParticipants gets the participants property value. Participants collection for the call event.
 // returns a []Participantable when successful
 func (m *CallEvent) GetParticipants()([]Participantable) {
     val, err := m.GetBackingStore().Get("participants")
@@ -149,21 +149,21 @@ func (m *CallEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetCallEventType sets the callEventType property value. The callEventType property
+// SetCallEventType sets the callEventType property value. The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: rosterUpdated.
 func (m *CallEvent) SetCallEventType(value *CallEventType)() {
     err := m.GetBackingStore().Set("callEventType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventDateTime sets the eventDateTime property value. The eventDateTime property
+// SetEventDateTime sets the eventDateTime property value. The time when event occurred.
 func (m *CallEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("eventDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParticipants sets the participants property value. The participants property
+// SetParticipants sets the participants property value. Participants collection for the call event.
 func (m *CallEvent) SetParticipants(value []Participantable)() {
     err := m.GetBackingStore().Set("participants", value)
     if err != nil {

@@ -92,7 +92,7 @@ func (m *CloudPC) GetDeviceRegionName()(*string) {
     }
     return nil
 }
-// GetDisasterRecoveryCapability gets the disasterRecoveryCapability property value. The disaster recovery status of the Cloud PC, including the primary region, secondary region, and capability type. The default value is null that indicates that the disaster recovery setting is disabled. To receive a response with the disasterRecoveryCapability property, $select and $filter it by disasterRecoveryCapability/{subProperty} in the request URL. For more information, see Example 4: List Cloud PCs filtered by disaster recovery capability type. Read-only.
+// GetDisasterRecoveryCapability gets the disasterRecoveryCapability property value. The disaster recovery status of the Cloud PC, including the primary region, secondary region, and capability type. The default value is null that indicates that the disaster recovery setting is disabled. To receive a response with the disasterRecoveryCapability property, $select and $filter it by disasterRecoveryCapability/{subProperty} in the request URL. For more information, see Example 3: List Cloud PCs filtered by disaster recovery capability type. Read-only.
 // returns a CloudPcDisasterRecoveryCapabilityable when successful
 func (m *CloudPC) GetDisasterRecoveryCapability()(CloudPcDisasterRecoveryCapabilityable) {
     val, err := m.GetBackingStore().Get("disasterRecoveryCapability")
@@ -1026,7 +1026,7 @@ func (m *CloudPC) SetDeviceRegionName(value *string)() {
         panic(err)
     }
 }
-// SetDisasterRecoveryCapability sets the disasterRecoveryCapability property value. The disaster recovery status of the Cloud PC, including the primary region, secondary region, and capability type. The default value is null that indicates that the disaster recovery setting is disabled. To receive a response with the disasterRecoveryCapability property, $select and $filter it by disasterRecoveryCapability/{subProperty} in the request URL. For more information, see Example 4: List Cloud PCs filtered by disaster recovery capability type. Read-only.
+// SetDisasterRecoveryCapability sets the disasterRecoveryCapability property value. The disaster recovery status of the Cloud PC, including the primary region, secondary region, and capability type. The default value is null that indicates that the disaster recovery setting is disabled. To receive a response with the disasterRecoveryCapability property, $select and $filter it by disasterRecoveryCapability/{subProperty} in the request URL. For more information, see Example 3: List Cloud PCs filtered by disaster recovery capability type. Read-only.
 func (m *CloudPC) SetDisasterRecoveryCapability(value CloudPcDisasterRecoveryCapabilityable)() {
     err := m.GetBackingStore().Set("disasterRecoveryCapability", value)
     if err != nil {
