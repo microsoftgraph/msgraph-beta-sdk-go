@@ -20,7 +20,7 @@ func NewEducationSynchronizationProfileStatus()(*EducationSynchronizationProfile
 func CreateEducationSynchronizationProfileStatusFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSynchronizationProfileStatus(), nil
 }
-// GetErrorCount gets the errorCount property value. Number of errors during synchronization.
+// GetErrorCount gets the errorCount property value. The errorCount property
 // returns a *int64 when successful
 func (m *EducationSynchronizationProfileStatus) GetErrorCount()(*int64) {
     val, err := m.GetBackingStore().Get("errorCount")
@@ -88,7 +88,7 @@ func (m *EducationSynchronizationProfileStatus) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetLastActivityDateTime gets the lastActivityDateTime property value. Date and time when most recent changes were observed in the profile.
+// GetLastActivityDateTime gets the lastActivityDateTime property value. The lastActivityDateTime property
 // returns a *Time when successful
 func (m *EducationSynchronizationProfileStatus) GetLastActivityDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastActivityDateTime")
@@ -100,7 +100,7 @@ func (m *EducationSynchronizationProfileStatus) GetLastActivityDateTime()(*i3360
     }
     return nil
 }
-// GetLastSynchronizationDateTime gets the lastSynchronizationDateTime property value. Date and time of the most recent successful synchronization.
+// GetLastSynchronizationDateTime gets the lastSynchronizationDateTime property value. The lastSynchronizationDateTime property
 // returns a *Time when successful
 func (m *EducationSynchronizationProfileStatus) GetLastSynchronizationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSynchronizationDateTime")
@@ -112,7 +112,7 @@ func (m *EducationSynchronizationProfileStatus) GetLastSynchronizationDateTime()
     }
     return nil
 }
-// GetStatus gets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
+// GetStatus gets the status property value. The status property
 // returns a *EducationSynchronizationStatus when successful
 func (m *EducationSynchronizationProfileStatus) GetStatus()(*EducationSynchronizationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -124,7 +124,7 @@ func (m *EducationSynchronizationProfileStatus) GetStatus()(*EducationSynchroniz
     }
     return nil
 }
-// GetStatusMessage gets the statusMessage property value. Status message for the synchronization stage of the current profile.
+// GetStatusMessage gets the statusMessage property value. The statusMessage property
 // returns a *string when successful
 func (m *EducationSynchronizationProfileStatus) GetStatusMessage()(*string) {
     val, err := m.GetBackingStore().Get("statusMessage")
@@ -175,35 +175,35 @@ func (m *EducationSynchronizationProfileStatus) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetErrorCount sets the errorCount property value. Number of errors during synchronization.
+// SetErrorCount sets the errorCount property value. The errorCount property
 func (m *EducationSynchronizationProfileStatus) SetErrorCount(value *int64)() {
     err := m.GetBackingStore().Set("errorCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastActivityDateTime sets the lastActivityDateTime property value. Date and time when most recent changes were observed in the profile.
+// SetLastActivityDateTime sets the lastActivityDateTime property value. The lastActivityDateTime property
 func (m *EducationSynchronizationProfileStatus) SetLastActivityDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastActivityDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSynchronizationDateTime sets the lastSynchronizationDateTime property value. Date and time of the most recent successful synchronization.
+// SetLastSynchronizationDateTime sets the lastSynchronizationDateTime property value. The lastSynchronizationDateTime property
 func (m *EducationSynchronizationProfileStatus) SetLastSynchronizationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSynchronizationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.
+// SetStatus sets the status property value. The status property
 func (m *EducationSynchronizationProfileStatus) SetStatus(value *EducationSynchronizationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatusMessage sets the statusMessage property value. Status message for the synchronization stage of the current profile.
+// SetStatusMessage sets the statusMessage property value. The statusMessage property
 func (m *EducationSynchronizationProfileStatus) SetStatusMessage(value *string)() {
     err := m.GetBackingStore().Set("statusMessage", value)
     if err != nil {

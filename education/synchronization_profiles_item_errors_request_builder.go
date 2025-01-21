@@ -11,7 +11,7 @@ import (
 type SynchronizationProfilesItemErrorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SynchronizationProfilesItemErrorsRequestBuilderGetQueryParameters get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+// SynchronizationProfilesItemErrorsRequestBuilderGetQueryParameters get errors from education
 type SynchronizationProfilesItemErrorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,13 +77,10 @@ func NewSynchronizationProfilesItemErrorsRequestBuilder(rawUrl string, requestAd
 func (m *SynchronizationProfilesItemErrorsRequestBuilder) Count()(*SynchronizationProfilesItemErrorsCountRequestBuilder) {
     return NewSynchronizationProfilesItemErrorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+// Get get errors from education
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a EducationSynchronizationErrorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-beta
 func (m *SynchronizationProfilesItemErrorsRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +119,7 @@ func (m *SynchronizationProfilesItemErrorsRequestBuilder) Post(ctx context.Conte
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationErrorable), nil
 }
-// ToGetRequestInformation get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+// ToGetRequestInformation get errors from education
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemErrorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

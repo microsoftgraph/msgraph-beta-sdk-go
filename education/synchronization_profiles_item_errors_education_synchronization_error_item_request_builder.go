@@ -18,7 +18,7 @@ type SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderGetQueryParameters all errors associated with this synchronization profile.
+// SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderGetQueryParameters get errors from education
 type SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,7 +71,7 @@ func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReque
     }
     return nil
 }
-// Get all errors associated with this synchronization profile.
+// Get get errors from education
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a EducationSynchronizationErrorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -125,7 +125,7 @@ func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemReque
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation all errors associated with this synchronization profile.
+// ToGetRequestInformation get errors from education
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemErrorsEducationSynchronizationErrorItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

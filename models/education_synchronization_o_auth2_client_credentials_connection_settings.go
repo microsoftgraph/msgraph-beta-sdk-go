@@ -47,7 +47,7 @@ func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetF
     }
     return res
 }
-// GetScope gets the scope property value. The scope of the access request (see RFC6749).
+// GetScope gets the scope property value. The scope property
 // returns a *string when successful
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetScope()(*string) {
     val, err := m.GetBackingStore().Get("scope")
@@ -59,7 +59,7 @@ func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetS
     }
     return nil
 }
-// GetTokenUrl gets the tokenUrl property value. The URL to get access tokens for the data provider.
+// GetTokenUrl gets the tokenUrl property value. The tokenUrl property
 // returns a *string when successful
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) GetTokenUrl()(*string) {
     val, err := m.GetBackingStore().Get("tokenUrl")
@@ -91,14 +91,14 @@ func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) Seri
     }
     return nil
 }
-// SetScope sets the scope property value. The scope of the access request (see RFC6749).
+// SetScope sets the scope property value. The scope property
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) SetScope(value *string)() {
     err := m.GetBackingStore().Set("scope", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTokenUrl sets the tokenUrl property value. The URL to get access tokens for the data provider.
+// SetTokenUrl sets the tokenUrl property value. The tokenUrl property
 func (m *EducationSynchronizationOAuth2ClientCredentialsConnectionSettings) SetTokenUrl(value *string)() {
     err := m.GetBackingStore().Set("tokenUrl", value)
     if err != nil {

@@ -36,7 +36,7 @@ func (m *EducationSynchronizationCustomization) GetAdditionalData()(map[string]a
     }
     return val.(map[string]any)
 }
-// GetAllowDisplayNameUpdate gets the allowDisplayNameUpdate property value. Indicates whether the display name of the resource can be overwritten by the sync.
+// GetAllowDisplayNameUpdate gets the allowDisplayNameUpdate property value. The allowDisplayNameUpdate property
 // returns a *bool when successful
 func (m *EducationSynchronizationCustomization) GetAllowDisplayNameUpdate()(*bool) {
     val, err := m.GetBackingStore().Get("allowDisplayNameUpdate")
@@ -115,7 +115,7 @@ func (m *EducationSynchronizationCustomization) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetIsSyncDeferred gets the isSyncDeferred property value. Indicates whether synchronization of the parent entity is deferred to a later date.
+// GetIsSyncDeferred gets the isSyncDeferred property value. The isSyncDeferred property
 // returns a *bool when successful
 func (m *EducationSynchronizationCustomization) GetIsSyncDeferred()(*bool) {
     val, err := m.GetBackingStore().Get("isSyncDeferred")
@@ -139,7 +139,7 @@ func (m *EducationSynchronizationCustomization) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOptionalPropertiesToSync gets the optionalPropertiesToSync property value. The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters
+// GetOptionalPropertiesToSync gets the optionalPropertiesToSync property value. The optionalPropertiesToSync property
 // returns a []string when successful
 func (m *EducationSynchronizationCustomization) GetOptionalPropertiesToSync()([]string) {
     val, err := m.GetBackingStore().Get("optionalPropertiesToSync")
@@ -151,7 +151,7 @@ func (m *EducationSynchronizationCustomization) GetOptionalPropertiesToSync()([]
     }
     return nil
 }
-// GetSynchronizationStartDate gets the synchronizationStartDate property value. The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments
+// GetSynchronizationStartDate gets the synchronizationStartDate property value. The synchronizationStartDate property
 // returns a *Time when successful
 func (m *EducationSynchronizationCustomization) GetSynchronizationStartDate()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("synchronizationStartDate")
@@ -210,7 +210,7 @@ func (m *EducationSynchronizationCustomization) SetAdditionalData(value map[stri
         panic(err)
     }
 }
-// SetAllowDisplayNameUpdate sets the allowDisplayNameUpdate property value. Indicates whether the display name of the resource can be overwritten by the sync.
+// SetAllowDisplayNameUpdate sets the allowDisplayNameUpdate property value. The allowDisplayNameUpdate property
 func (m *EducationSynchronizationCustomization) SetAllowDisplayNameUpdate(value *bool)() {
     err := m.GetBackingStore().Set("allowDisplayNameUpdate", value)
     if err != nil {
@@ -221,7 +221,7 @@ func (m *EducationSynchronizationCustomization) SetAllowDisplayNameUpdate(value 
 func (m *EducationSynchronizationCustomization) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsSyncDeferred sets the isSyncDeferred property value. Indicates whether synchronization of the parent entity is deferred to a later date.
+// SetIsSyncDeferred sets the isSyncDeferred property value. The isSyncDeferred property
 func (m *EducationSynchronizationCustomization) SetIsSyncDeferred(value *bool)() {
     err := m.GetBackingStore().Set("isSyncDeferred", value)
     if err != nil {
@@ -235,14 +235,14 @@ func (m *EducationSynchronizationCustomization) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOptionalPropertiesToSync sets the optionalPropertiesToSync property value. The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters
+// SetOptionalPropertiesToSync sets the optionalPropertiesToSync property value. The optionalPropertiesToSync property
 func (m *EducationSynchronizationCustomization) SetOptionalPropertiesToSync(value []string)() {
     err := m.GetBackingStore().Set("optionalPropertiesToSync", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSynchronizationStartDate sets the synchronizationStartDate property value. The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments
+// SetSynchronizationStartDate sets the synchronizationStartDate property value. The synchronizationStartDate property
 func (m *EducationSynchronizationCustomization) SetSynchronizationStartDate(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("synchronizationStartDate", value)
     if err != nil {

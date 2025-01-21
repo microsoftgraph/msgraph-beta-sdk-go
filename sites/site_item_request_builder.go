@@ -39,6 +39,11 @@ type SiteItemRequestBuilderPatchRequestConfiguration struct {
 func (m *SiteItemRequestBuilder) Analytics()(*ItemAnalyticsRequestBuilder) {
     return NewItemAnalyticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Archive provides operations to call the archive method.
+// returns a *ItemArchiveRequestBuilder when successful
+func (m *SiteItemRequestBuilder) Archive()(*ItemArchiveRequestBuilder) {
+    return NewItemArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Columns provides operations to manage the columns property of the microsoft.graph.site entity.
 // returns a *ItemColumnsRequestBuilder when successful
 func (m *SiteItemRequestBuilder) Columns()(*ItemColumnsRequestBuilder) {
@@ -238,6 +243,11 @@ func (m *SiteItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
         return nil, err
     }
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+// returns a *ItemUnarchiveRequestBuilder when successful
+func (m *SiteItemRequestBuilder) Unarchive()(*ItemUnarchiveRequestBuilder) {
+    return NewItemUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *SiteItemRequestBuilder when successful

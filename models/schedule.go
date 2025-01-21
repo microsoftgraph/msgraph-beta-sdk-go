@@ -19,7 +19,7 @@ func NewSchedule()(*Schedule) {
 func CreateScheduleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSchedule(), nil
 }
-// GetActivitiesIncludedWhenCopyingShiftsEnabled gets the activitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts should include the activities.
+// GetActivitiesIncludedWhenCopyingShiftsEnabled gets the activitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts should include the activities. This property will be removed by November 20, 2027. Use isActivitiesIncludedWhenCopyingShiftsEnabled instead. activitiesIncludedWhenCopyingShiftsEnabled and isActivitiesIncludedWhenCopyingShiftsEnabled always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isActivitiesIncludedWhenCopyingShiftsEnabled takes precedence.
 // returns a *bool when successful
 func (m *Schedule) GetActivitiesIncludedWhenCopyingShiftsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("activitiesIncludedWhenCopyingShiftsEnabled")
@@ -928,7 +928,7 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetActivitiesIncludedWhenCopyingShiftsEnabled sets the activitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts should include the activities.
+// SetActivitiesIncludedWhenCopyingShiftsEnabled sets the activitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts should include the activities. This property will be removed by November 20, 2027. Use isActivitiesIncludedWhenCopyingShiftsEnabled instead. activitiesIncludedWhenCopyingShiftsEnabled and isActivitiesIncludedWhenCopyingShiftsEnabled always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isActivitiesIncludedWhenCopyingShiftsEnabled takes precedence.
 func (m *Schedule) SetActivitiesIncludedWhenCopyingShiftsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("activitiesIncludedWhenCopyingShiftsEnabled", value)
     if err != nil {

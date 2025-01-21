@@ -30,12 +30,9 @@ func NewSynchronizationProfilesItemResetRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesItemResetRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post reset the sync of a specific school data synchronization profile in the tenant.
+// Post invoke action reset
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-reset?view=graph-rest-beta
 func (m *SynchronizationProfilesItemResetRequestBuilder) Post(ctx context.Context, requestConfiguration *SynchronizationProfilesItemResetRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -50,7 +47,7 @@ func (m *SynchronizationProfilesItemResetRequestBuilder) Post(ctx context.Contex
     }
     return nil
 }
-// ToPostRequestInformation reset the sync of a specific school data synchronization profile in the tenant.
+// ToPostRequestInformation invoke action reset
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemResetRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemResetRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -30,13 +30,10 @@ func NewSynchronizationProfilesItemStartRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesItemStartRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts.
+// Post invoke action start
 // Deprecated: This method is obsolete. Use PostAsStartPostResponse instead.
 // returns a SynchronizationProfilesItemStartResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-beta
 func (m *SynchronizationProfilesItemStartRequestBuilder) Post(ctx context.Context, requestConfiguration *SynchronizationProfilesItemStartRequestBuilderPostRequestConfiguration)(SynchronizationProfilesItemStartResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,13 +51,10 @@ func (m *SynchronizationProfilesItemStartRequestBuilder) Post(ctx context.Contex
     }
     return res.(SynchronizationProfilesItemStartResponseable), nil
 }
-// PostAsStartPostResponse verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts.
+// PostAsStartPostResponse invoke action start
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a SynchronizationProfilesItemStartPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-beta
 func (m *SynchronizationProfilesItemStartRequestBuilder) PostAsStartPostResponse(ctx context.Context, requestConfiguration *SynchronizationProfilesItemStartRequestBuilderPostRequestConfiguration)(SynchronizationProfilesItemStartPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +72,7 @@ func (m *SynchronizationProfilesItemStartRequestBuilder) PostAsStartPostResponse
     }
     return res.(SynchronizationProfilesItemStartPostResponseable), nil
 }
-// ToPostRequestInformation verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won't start. If the response contains only warnings, synchronization starts.
+// ToPostRequestInformation invoke action start
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemStartRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemStartRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

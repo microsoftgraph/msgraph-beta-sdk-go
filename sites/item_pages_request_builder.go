@@ -104,12 +104,12 @@ func (m *ItemPagesRequestBuilder) Get(ctx context.Context, requestConfiguration 
 func (m *ItemPagesRequestBuilder) GraphSitePage()(*ItemPagesGraphSitePageRequestBuilder) {
     return NewItemPagesGraphSitePageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Post create a new sitePage in the site pages list in a site.
+// Post create a new newsLinkPage in the site pages list of a site.
 // returns a BaseSitePageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/sitepage-create?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/newslinkpage-create?view=graph-rest-beta
 func (m *ItemPagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageable, requestConfiguration *ItemPagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -141,7 +141,7 @@ func (m *ItemPagesRequestBuilder) ToGetRequestInformation(ctx context.Context, r
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new sitePage in the site pages list in a site.
+// ToPostRequestInformation create a new newsLinkPage in the site pages list of a site.
 // returns a *RequestInformation when successful
 func (m *ItemPagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseSitePageable, requestConfiguration *ItemPagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

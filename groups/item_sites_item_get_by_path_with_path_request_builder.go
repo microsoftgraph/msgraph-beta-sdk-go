@@ -23,6 +23,11 @@ type ItemSitesItemGetByPathWithPathRequestBuilderGetRequestConfiguration struct 
 func (m *ItemSitesItemGetByPathWithPathRequestBuilder) Analytics()(*ItemSitesItemGetByPathWithPathAnalyticsRequestBuilder) {
     return NewItemSitesItemGetByPathWithPathAnalyticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Archive provides operations to call the archive method.
+// returns a *ItemSitesItemGetByPathWithPathArchiveRequestBuilder when successful
+func (m *ItemSitesItemGetByPathWithPathRequestBuilder) Archive()(*ItemSitesItemGetByPathWithPathArchiveRequestBuilder) {
+    return NewItemSitesItemGetByPathWithPathArchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Columns provides operations to manage the columns property of the microsoft.graph.site entity.
 // returns a *ItemSitesItemGetByPathWithPathColumnsRequestBuilder when successful
 func (m *ItemSitesItemGetByPathWithPathRequestBuilder) Columns()(*ItemSitesItemGetByPathWithPathColumnsRequestBuilder) {
@@ -179,6 +184,11 @@ func (m *ItemSitesItemGetByPathWithPathRequestBuilder) ToGetRequestInformation(c
     }
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
+}
+// Unarchive provides operations to call the unarchive method.
+// returns a *ItemSitesItemGetByPathWithPathUnarchiveRequestBuilder when successful
+func (m *ItemSitesItemGetByPathWithPathRequestBuilder) Unarchive()(*ItemSitesItemGetByPathWithPathUnarchiveRequestBuilder) {
+    return NewItemSitesItemGetByPathWithPathUnarchiveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *ItemSitesItemGetByPathWithPathRequestBuilder when successful

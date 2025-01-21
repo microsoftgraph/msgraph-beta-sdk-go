@@ -18,7 +18,7 @@ type SynchronizationProfilesItemProfileStatusRequestBuilderDeleteRequestConfigur
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SynchronizationProfilesItemProfileStatusRequestBuilderGetQueryParameters get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
+// SynchronizationProfilesItemProfileStatusRequestBuilderGetQueryParameters get profileStatus from education
 type SynchronizationProfilesItemProfileStatusRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -71,13 +71,10 @@ func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) Delete(ctx cont
     }
     return nil
 }
-// Get get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
+// Get get profileStatus from education
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a EducationSynchronizationProfileStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofilestatus-get?view=graph-rest-beta
 func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesItemProfileStatusRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -128,7 +125,7 @@ func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) ToDeleteRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
+// ToGetRequestInformation get profileStatus from education
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemProfileStatusRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemProfileStatusRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
