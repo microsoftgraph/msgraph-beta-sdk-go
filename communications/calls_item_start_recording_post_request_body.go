@@ -1,48 +1,30 @@
-package windowsupdates
+package communications
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-type UpdatableAssetEnrollment struct {
+type CallsItemStartRecordingPostRequestBody struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewUpdatableAssetEnrollment instantiates a new UpdatableAssetEnrollment and sets the default values.
-func NewUpdatableAssetEnrollment()(*UpdatableAssetEnrollment) {
-    m := &UpdatableAssetEnrollment{
+// NewCallsItemStartRecordingPostRequestBody instantiates a new CallsItemStartRecordingPostRequestBody and sets the default values.
+func NewCallsItemStartRecordingPostRequestBody()(*CallsItemStartRecordingPostRequestBody) {
+    m := &CallsItemStartRecordingPostRequestBody{
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateUpdatableAssetEnrollmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateCallsItemStartRecordingPostRequestBodyFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateUpdatableAssetEnrollmentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    if parseNode != nil {
-        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
-        if err != nil {
-            return nil, err
-        }
-        if mappingValueNode != nil {
-            mappingValue, err := mappingValueNode.GetStringValue()
-            if err != nil {
-                return nil, err
-            }
-            if mappingValue != nil {
-                switch *mappingValue {
-                    case "#microsoft.graph.windowsUpdates.updateManagementEnrollment":
-                        return NewUpdateManagementEnrollment(), nil
-                }
-            }
-        }
-    }
-    return NewUpdatableAssetEnrollment(), nil
+func CreateCallsItemStartRecordingPostRequestBodyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewCallsItemStartRecordingPostRequestBody(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *UpdatableAssetEnrollment) GetAdditionalData()(map[string]any) {
+func (m *CallsItemStartRecordingPostRequestBody) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
         panic(err)
@@ -55,29 +37,13 @@ func (m *UpdatableAssetEnrollment) GetAdditionalData()(map[string]any) {
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *UpdatableAssetEnrollment) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+func (m *CallsItemStartRecordingPostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetFieldDeserializers the deserialization information for the current model
-// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *UpdatableAssetEnrollment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
-        }
-        return nil
-    }
-    return res
-}
-// GetOdataType gets the @odata.type property value. The OdataType property
+// GetClientContext gets the clientContext property value. The clientContext property
 // returns a *string when successful
-func (m *UpdatableAssetEnrollment) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
+func (m *CallsItemStartRecordingPostRequestBody) GetClientContext()(*string) {
+    val, err := m.GetBackingStore().Get("clientContext")
     if err != nil {
         panic(err)
     }
@@ -86,10 +52,26 @@ func (m *UpdatableAssetEnrollment) GetOdataType()(*string) {
     }
     return nil
 }
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *CallsItemStartRecordingPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["clientContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientContext(val)
+        }
+        return nil
+    }
+    return res
+}
 // Serialize serializes information the current object
-func (m *UpdatableAssetEnrollment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *CallsItemStartRecordingPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        err := writer.WriteStringValue("clientContext", m.GetClientContext())
         if err != nil {
             return err
         }
@@ -103,29 +85,29 @@ func (m *UpdatableAssetEnrollment) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *UpdatableAssetEnrollment) SetAdditionalData(value map[string]any)() {
+func (m *CallsItemStartRecordingPostRequestBody) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *UpdatableAssetEnrollment) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+func (m *CallsItemStartRecordingPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *UpdatableAssetEnrollment) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
+// SetClientContext sets the clientContext property value. The clientContext property
+func (m *CallsItemStartRecordingPostRequestBody) SetClientContext(value *string)() {
+    err := m.GetBackingStore().Set("clientContext", value)
     if err != nil {
         panic(err)
     }
 }
-type UpdatableAssetEnrollmentable interface {
+type CallsItemStartRecordingPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetOdataType()(*string)
+    GetClientContext()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetOdataType(value *string)()
+    SetClientContext(value *string)()
 }

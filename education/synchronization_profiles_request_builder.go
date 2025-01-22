@@ -11,7 +11,7 @@ import (
 type SynchronizationProfilesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SynchronizationProfilesRequestBuilderGetQueryParameters retrieve the collection of school data synchronization profiles in the tenant.
+// SynchronizationProfilesRequestBuilderGetQueryParameters get synchronizationProfiles from education
 type SynchronizationProfilesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -77,13 +77,10 @@ func NewSynchronizationProfilesRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *SynchronizationProfilesRequestBuilder) Count()(*SynchronizationProfilesCountRequestBuilder) {
     return NewSynchronizationProfilesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve the collection of school data synchronization profiles in the tenant.
+// Get get synchronizationProfiles from education
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a EducationSynchronizationProfileCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-list?view=graph-rest-beta
 func (m *SynchronizationProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +119,7 @@ func (m *SynchronizationProfilesRequestBuilder) Post(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationSynchronizationProfileable), nil
 }
-// ToGetRequestInformation retrieve the collection of school data synchronization profiles in the tenant.
+// ToGetRequestInformation get synchronizationProfiles from education
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

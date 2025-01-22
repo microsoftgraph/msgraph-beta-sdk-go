@@ -88,7 +88,7 @@ func (m *EducationIdentityDomain) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetName gets the name property value. Represents the domain for the user account.
+// GetName gets the name property value. The name property
 // returns a *string when successful
 func (m *EducationIdentityDomain) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -159,7 +159,7 @@ func (m *EducationIdentityDomain) SetAppliesTo(value *EducationUserRole)() {
 func (m *EducationIdentityDomain) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. Represents the domain for the user account.
+// SetName sets the name property value. The name property
 func (m *EducationIdentityDomain) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

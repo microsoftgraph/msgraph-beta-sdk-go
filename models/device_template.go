@@ -203,7 +203,7 @@ func (m *DeviceTemplate) GetOperatingSystem()(*string) {
     }
     return nil
 }
-// GetOwners gets the owners property value. Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn't require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners.  Supports $expand.
+// GetOwners gets the owners property value. Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn't require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners. There can be a maximum of 100 owners on a device template.  Supports $expand.
 // returns a []DirectoryObjectable when successful
 func (m *DeviceTemplate) GetOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("owners")
@@ -332,7 +332,7 @@ func (m *DeviceTemplate) SetOperatingSystem(value *string)() {
         panic(err)
     }
 }
-// SetOwners sets the owners property value. Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn't require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners.  Supports $expand.
+// SetOwners sets the owners property value. Collection of directory objects that can manage the device template and the related deviceInstances. Owners can be represented as service principals, users, or applications. An owner has full privileges over the device template and doesn't require other administrator roles to create, update, or delete devices from this template, as well as to add or remove template owners. There can be a maximum of 100 owners on a device template.  Supports $expand.
 func (m *DeviceTemplate) SetOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("owners", value)
     if err != nil {

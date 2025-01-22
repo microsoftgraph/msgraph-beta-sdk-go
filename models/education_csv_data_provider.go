@@ -21,7 +21,7 @@ func NewEducationCsvDataProvider()(*EducationCsvDataProvider) {
 func CreateEducationCsvDataProviderFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationCsvDataProvider(), nil
 }
-// GetCustomizations gets the customizations property value. Optional customizations to be applied to the synchronization profile.
+// GetCustomizations gets the customizations property value. The customizations property
 // returns a EducationSynchronizationCustomizationsable when successful
 func (m *EducationCsvDataProvider) GetCustomizations()(EducationSynchronizationCustomizationsable) {
     val, err := m.GetBackingStore().Get("customizations")
@@ -63,7 +63,7 @@ func (m *EducationCsvDataProvider) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetCustomizations sets the customizations property value. Optional customizations to be applied to the synchronization profile.
+// SetCustomizations sets the customizations property value. The customizations property
 func (m *EducationCsvDataProvider) SetCustomizations(value EducationSynchronizationCustomizationsable)() {
     err := m.GetBackingStore().Set("customizations", value)
     if err != nil {

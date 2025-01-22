@@ -24,7 +24,29 @@ func CreateTeamsAdminRootFromDiscriminatorValue(parseNode i878a80d2330e89d268963
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsAdminRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["policy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamsPolicyAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPolicy(val.(TeamsPolicyAssignmentable))
+        }
+        return nil
+    }
     return res
+}
+// GetPolicy gets the policy property value. The policy property
+// returns a TeamsPolicyAssignmentable when successful
+func (m *TeamsAdminRoot) GetPolicy()(TeamsPolicyAssignmentable) {
+    val, err := m.GetBackingStore().Get("policy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamsPolicyAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamsAdminRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -32,9 +54,24 @@ func (m *TeamsAdminRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("policy", m.GetPolicy())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetPolicy sets the policy property value. The policy property
+func (m *TeamsAdminRoot) SetPolicy(value TeamsPolicyAssignmentable)() {
+    err := m.GetBackingStore().Set("policy", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type TeamsAdminRootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPolicy()(TeamsPolicyAssignmentable)
+    SetPolicy(value TeamsPolicyAssignmentable)()
 }

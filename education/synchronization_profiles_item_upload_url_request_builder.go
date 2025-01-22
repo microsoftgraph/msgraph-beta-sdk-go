@@ -30,13 +30,10 @@ func NewSynchronizationProfilesItemUploadUrlRequestBuilder(rawUrl string, reques
     urlParams["request-raw-url"] = rawUrl
     return NewSynchronizationProfilesItemUploadUrlRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get retrieve a shared access signature (SAS) for uploading source files to Azure blob storage for a specific school data synchronization profile in the tenant. The SAS token has a validity of one hour. The upload URL is provided only for the CSV data provider.
+// Get invoke function uploadUrl
 // Deprecated: This method is obsolete. Use GetAsUploadUrlGetResponse instead.
 // returns a SynchronizationProfilesItemUploadUrlResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-uploadurl?view=graph-rest-beta
 func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) Get(ctx context.Context, requestConfiguration *SynchronizationProfilesItemUploadUrlRequestBuilderGetRequestConfiguration)(SynchronizationProfilesItemUploadUrlResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,13 +51,10 @@ func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) Get(ctx context.Con
     }
     return res.(SynchronizationProfilesItemUploadUrlResponseable), nil
 }
-// GetAsUploadUrlGetResponse retrieve a shared access signature (SAS) for uploading source files to Azure blob storage for a specific school data synchronization profile in the tenant. The SAS token has a validity of one hour. The upload URL is provided only for the CSV data provider.
+// GetAsUploadUrlGetResponse invoke function uploadUrl
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a SynchronizationProfilesItemUploadUrlGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationsynchronizationprofile-uploadurl?view=graph-rest-beta
 func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) GetAsUploadUrlGetResponse(ctx context.Context, requestConfiguration *SynchronizationProfilesItemUploadUrlRequestBuilderGetRequestConfiguration)(SynchronizationProfilesItemUploadUrlGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,7 +72,7 @@ func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) GetAsUploadUrlGetRe
     }
     return res.(SynchronizationProfilesItemUploadUrlGetResponseable), nil
 }
-// ToGetRequestInformation retrieve a shared access signature (SAS) for uploading source files to Azure blob storage for a specific school data synchronization profile in the tenant. The SAS token has a validity of one hour. The upload URL is provided only for the CSV data provider.
+// ToGetRequestInformation invoke function uploadUrl
 // Deprecated: The Education Sync Profile API is deprecated and will stop returning data on December 31, 2024. Please transition to the new IndustryData API. as of 2024-06/Deprecated:SynchronizationProfiles
 // returns a *RequestInformation when successful
 func (m *SynchronizationProfilesItemUploadUrlRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SynchronizationProfilesItemUploadUrlRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

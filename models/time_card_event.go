@@ -36,7 +36,7 @@ func (m *TimeCardEvent) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAtApprovedLocation gets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
+// GetAtApprovedLocation gets the atApprovedLocation property value. Indicates whether this action happens at an approved location. This property will be removed by November 20, 2027. Use isAtApprovedLocation instead. atApprovedLocation and isAtApprovedLocation always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isAtApprovedLocation takes precedence.
 // returns a *bool when successful
 func (m *TimeCardEvent) GetAtApprovedLocation()(*bool) {
     val, err := m.GetBackingStore().Get("atApprovedLocation")
@@ -176,7 +176,7 @@ func (m *TimeCardEvent) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAtApprovedLocation sets the atApprovedLocation property value. Indicates whether the entry was recorded at the approved location.
+// SetAtApprovedLocation sets the atApprovedLocation property value. Indicates whether this action happens at an approved location. This property will be removed by November 20, 2027. Use isAtApprovedLocation instead. atApprovedLocation and isAtApprovedLocation always have the same value, so setting one automatically sets the value for the other. If both are included in the request with different values, the value for isAtApprovedLocation takes precedence.
 func (m *TimeCardEvent) SetAtApprovedLocation(value *bool)() {
     err := m.GetBackingStore().Set("atApprovedLocation", value)
     if err != nil {

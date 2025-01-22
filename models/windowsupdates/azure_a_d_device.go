@@ -21,15 +21,15 @@ func NewAzureADDevice()(*AzureADDevice) {
 func CreateAzureADDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAzureADDevice(), nil
 }
-// GetEnrollments gets the enrollments property value. Specifies areas in which the device is enrolled. Read-only. Returned by default.
-// returns a []UpdatableAssetEnrollmentable when successful
-func (m *AzureADDevice) GetEnrollments()([]UpdatableAssetEnrollmentable) {
-    val, err := m.GetBackingStore().Get("enrollments")
+// GetEnrollment gets the enrollment property value. The enrollment property
+// returns a UpdateManagementEnrollmentable when successful
+func (m *AzureADDevice) GetEnrollment()(UpdateManagementEnrollmentable) {
+    val, err := m.GetBackingStore().Get("enrollment")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]UpdatableAssetEnrollmentable)
+        return val.(UpdateManagementEnrollmentable)
     }
     return nil
 }
@@ -49,19 +49,13 @@ func (m *AzureADDevice) GetErrors()([]UpdatableAssetErrorable) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AzureADDevice) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.UpdatableAsset.GetFieldDeserializers()
-    res["enrollments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateUpdatableAssetEnrollmentFromDiscriminatorValue)
+    res["enrollment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUpdateManagementEnrollmentFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]UpdatableAssetEnrollmentable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(UpdatableAssetEnrollmentable)
-                }
-            }
-            m.SetEnrollments(res)
+            m.SetEnrollment(val.(UpdateManagementEnrollmentable))
         }
         return nil
     }
@@ -89,14 +83,8 @@ func (m *AzureADDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     if err != nil {
         return err
     }
-    if m.GetEnrollments() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnrollments()))
-        for i, v := range m.GetEnrollments() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("enrollments", cast)
+    {
+        err = writer.WriteObjectValue("enrollment", m.GetEnrollment())
         if err != nil {
             return err
         }
@@ -115,9 +103,9 @@ func (m *AzureADDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetEnrollments sets the enrollments property value. Specifies areas in which the device is enrolled. Read-only. Returned by default.
-func (m *AzureADDevice) SetEnrollments(value []UpdatableAssetEnrollmentable)() {
-    err := m.GetBackingStore().Set("enrollments", value)
+// SetEnrollment sets the enrollment property value. The enrollment property
+func (m *AzureADDevice) SetEnrollment(value UpdateManagementEnrollmentable)() {
+    err := m.GetBackingStore().Set("enrollment", value)
     if err != nil {
         panic(err)
     }
@@ -132,8 +120,8 @@ func (m *AzureADDevice) SetErrors(value []UpdatableAssetErrorable)() {
 type AzureADDeviceable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     UpdatableAssetable
-    GetEnrollments()([]UpdatableAssetEnrollmentable)
+    GetEnrollment()(UpdateManagementEnrollmentable)
     GetErrors()([]UpdatableAssetErrorable)
-    SetEnrollments(value []UpdatableAssetEnrollmentable)()
+    SetEnrollment(value UpdateManagementEnrollmentable)()
     SetErrors(value []UpdatableAssetErrorable)()
 }

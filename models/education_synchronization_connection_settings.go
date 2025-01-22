@@ -60,7 +60,7 @@ func (m *EducationSynchronizationConnectionSettings) GetAdditionalData()(map[str
 func (m *EducationSynchronizationConnectionSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClientId gets the clientId property value. Client ID used to connect to the provider.
+// GetClientId gets the clientId property value. The clientId property
 // returns a *string when successful
 func (m *EducationSynchronizationConnectionSettings) GetClientId()(*string) {
     val, err := m.GetBackingStore().Get("clientId")
@@ -72,7 +72,7 @@ func (m *EducationSynchronizationConnectionSettings) GetClientId()(*string) {
     }
     return nil
 }
-// GetClientSecret gets the clientSecret property value. Client secret to authenticate the connection to the provider.
+// GetClientSecret gets the clientSecret property value. The clientSecret property
 // returns a *string when successful
 func (m *EducationSynchronizationConnectionSettings) GetClientSecret()(*string) {
     val, err := m.GetBackingStore().Get("clientSecret")
@@ -171,14 +171,14 @@ func (m *EducationSynchronizationConnectionSettings) SetAdditionalData(value map
 func (m *EducationSynchronizationConnectionSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClientId sets the clientId property value. Client ID used to connect to the provider.
+// SetClientId sets the clientId property value. The clientId property
 func (m *EducationSynchronizationConnectionSettings) SetClientId(value *string)() {
     err := m.GetBackingStore().Set("clientId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetClientSecret sets the clientSecret property value. Client secret to authenticate the connection to the provider.
+// SetClientSecret sets the clientSecret property value. The clientSecret property
 func (m *EducationSynchronizationConnectionSettings) SetClientSecret(value *string)() {
     err := m.GetBackingStore().Set("clientSecret", value)
     if err != nil {

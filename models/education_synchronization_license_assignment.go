@@ -35,7 +35,7 @@ func (m *EducationSynchronizationLicenseAssignment) GetAdditionalData()(map[stri
     }
     return val.(map[string]any)
 }
-// GetAppliesTo gets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
+// GetAppliesTo gets the appliesTo property value. The appliesTo property
 // returns a *EducationUserRole when successful
 func (m *EducationSynchronizationLicenseAssignment) GetAppliesTo()(*EducationUserRole) {
     val, err := m.GetBackingStore().Get("appliesTo")
@@ -106,7 +106,7 @@ func (m *EducationSynchronizationLicenseAssignment) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSkuIds gets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
+// GetSkuIds gets the skuIds property value. The skuIds property
 // returns a []string when successful
 func (m *EducationSynchronizationLicenseAssignment) GetSkuIds()([]string) {
     val, err := m.GetBackingStore().Get("skuIds")
@@ -154,7 +154,7 @@ func (m *EducationSynchronizationLicenseAssignment) SetAdditionalData(value map[
         panic(err)
     }
 }
-// SetAppliesTo sets the appliesTo property value. The user role type to assign to license. Possible values are: student, teacher, faculty.
+// SetAppliesTo sets the appliesTo property value. The appliesTo property
 func (m *EducationSynchronizationLicenseAssignment) SetAppliesTo(value *EducationUserRole)() {
     err := m.GetBackingStore().Set("appliesTo", value)
     if err != nil {
@@ -172,7 +172,7 @@ func (m *EducationSynchronizationLicenseAssignment) SetOdataType(value *string)(
         panic(err)
     }
 }
-// SetSkuIds sets the skuIds property value. Represents the SKU identifiers of the licenses to assign.
+// SetSkuIds sets the skuIds property value. The skuIds property
 func (m *EducationSynchronizationLicenseAssignment) SetSkuIds(value []string)() {
     err := m.GetBackingStore().Set("skuIds", value)
     if err != nil {

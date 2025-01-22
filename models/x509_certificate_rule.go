@@ -188,7 +188,7 @@ func (m *X509CertificateRule) GetX509CertificateRequiredAffinityLevel()(*X509Cer
     }
     return nil
 }
-// GetX509CertificateRuleType gets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.
+// GetX509CertificateRuleType gets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.
 // returns a *X509CertificateRuleType when successful
 func (m *X509CertificateRule) GetX509CertificateRuleType()(*X509CertificateRuleType) {
     val, err := m.GetBackingStore().Get("x509CertificateRuleType")
@@ -308,7 +308,7 @@ func (m *X509CertificateRule) SetX509CertificateRequiredAffinityLevel(value *X50
         panic(err)
     }
 }
-// SetX509CertificateRuleType sets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.
+// SetX509CertificateRuleType sets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.
 func (m *X509CertificateRule) SetX509CertificateRuleType(value *X509CertificateRuleType)() {
     err := m.GetBackingStore().Set("x509CertificateRuleType", value)
     if err != nil {

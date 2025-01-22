@@ -196,6 +196,26 @@ func (m *CallsCallItemRequestBuilder) Reject()(*CallsItemRejectRequestBuilder) {
 func (m *CallsCallItemRequestBuilder) SendDtmfTones()(*CallsItemSendDtmfTonesRequestBuilder) {
     return NewCallsItemSendDtmfTonesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// StartRecording provides operations to call the startRecording method.
+// returns a *CallsItemStartRecordingRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) StartRecording()(*CallsItemStartRecordingRequestBuilder) {
+    return NewCallsItemStartRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StartTranscription provides operations to call the startTranscription method.
+// returns a *CallsItemStartTranscriptionRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) StartTranscription()(*CallsItemStartTranscriptionRequestBuilder) {
+    return NewCallsItemStartTranscriptionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StopRecording provides operations to call the stopRecording method.
+// returns a *CallsItemStopRecordingRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) StopRecording()(*CallsItemStopRecordingRequestBuilder) {
+    return NewCallsItemStopRecordingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// StopTranscription provides operations to call the stopTranscription method.
+// returns a *CallsItemStopTranscriptionRequestBuilder when successful
+func (m *CallsCallItemRequestBuilder) StopTranscription()(*CallsItemStopTranscriptionRequestBuilder) {
+    return NewCallsItemStopTranscriptionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SubscribeToTone provides operations to call the subscribeToTone method.
 // returns a *CallsItemSubscribeToToneRequestBuilder when successful
 func (m *CallsCallItemRequestBuilder) SubscribeToTone()(*CallsItemSubscribeToToneRequestBuilder) {

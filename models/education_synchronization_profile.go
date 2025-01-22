@@ -31,7 +31,7 @@ func (m *EducationSynchronizationProfile) GetDataProvider()(EducationSynchroniza
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Name of the configuration profile for syncing identities.
+// GetDisplayName gets the displayName property value. The displayName property
 // returns a *string when successful
 func (m *EducationSynchronizationProfile) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -43,7 +43,7 @@ func (m *EducationSynchronizationProfile) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetErrors gets the errors property value. All errors associated with this synchronization profile.
+// GetErrors gets the errors property value. The errors property
 // returns a []EducationSynchronizationErrorable when successful
 func (m *EducationSynchronizationProfile) GetErrors()([]EducationSynchronizationErrorable) {
     val, err := m.GetBackingStore().Get("errors")
@@ -55,7 +55,7 @@ func (m *EducationSynchronizationProfile) GetErrors()([]EducationSynchronization
     }
     return nil
 }
-// GetExpirationDate gets the expirationDate property value. The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)
+// GetExpirationDate gets the expirationDate property value. The expirationDate property
 // returns a *DateOnly when successful
 func (m *EducationSynchronizationProfile) GetExpirationDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
     val, err := m.GetBackingStore().Get("expirationDate")
@@ -175,7 +175,7 @@ func (m *EducationSynchronizationProfile) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetHandleSpecialCharacterConstraint gets the handleSpecialCharacterConstraint property value. Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
+// GetHandleSpecialCharacterConstraint gets the handleSpecialCharacterConstraint property value. The handleSpecialCharacterConstraint property
 // returns a *bool when successful
 func (m *EducationSynchronizationProfile) GetHandleSpecialCharacterConstraint()(*bool) {
     val, err := m.GetBackingStore().Get("handleSpecialCharacterConstraint")
@@ -199,7 +199,7 @@ func (m *EducationSynchronizationProfile) GetIdentitySynchronizationConfiguratio
     }
     return nil
 }
-// GetLicensesToAssign gets the licensesToAssign property value. License setup configuration.
+// GetLicensesToAssign gets the licensesToAssign property value. The licensesToAssign property
 // returns a []EducationSynchronizationLicenseAssignmentable when successful
 func (m *EducationSynchronizationProfile) GetLicensesToAssign()([]EducationSynchronizationLicenseAssignmentable) {
     val, err := m.GetBackingStore().Get("licensesToAssign")
@@ -211,7 +211,7 @@ func (m *EducationSynchronizationProfile) GetLicensesToAssign()([]EducationSynch
     }
     return nil
 }
-// GetProfileStatus gets the profileStatus property value. The synchronization status.
+// GetProfileStatus gets the profileStatus property value. The profileStatus property
 // returns a EducationSynchronizationProfileStatusable when successful
 func (m *EducationSynchronizationProfile) GetProfileStatus()(EducationSynchronizationProfileStatusable) {
     val, err := m.GetBackingStore().Get("profileStatus")
@@ -223,7 +223,7 @@ func (m *EducationSynchronizationProfile) GetProfileStatus()(EducationSynchroniz
     }
     return nil
 }
-// GetState gets the state property value. The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
+// GetState gets the state property value. The state property
 // returns a *EducationSynchronizationProfileState when successful
 func (m *EducationSynchronizationProfile) GetState()(*EducationSynchronizationProfileState) {
     val, err := m.GetBackingStore().Get("state")
@@ -317,28 +317,28 @@ func (m *EducationSynchronizationProfile) SetDataProvider(value EducationSynchro
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Name of the configuration profile for syncing identities.
+// SetDisplayName sets the displayName property value. The displayName property
 func (m *EducationSynchronizationProfile) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetErrors sets the errors property value. All errors associated with this synchronization profile.
+// SetErrors sets the errors property value. The errors property
 func (m *EducationSynchronizationProfile) SetErrors(value []EducationSynchronizationErrorable)() {
     err := m.GetBackingStore().Set("errors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDate sets the expirationDate property value. The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)
+// SetExpirationDate sets the expirationDate property value. The expirationDate property
 func (m *EducationSynchronizationProfile) SetExpirationDate(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("expirationDate", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHandleSpecialCharacterConstraint sets the handleSpecialCharacterConstraint property value. Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.
+// SetHandleSpecialCharacterConstraint sets the handleSpecialCharacterConstraint property value. The handleSpecialCharacterConstraint property
 func (m *EducationSynchronizationProfile) SetHandleSpecialCharacterConstraint(value *bool)() {
     err := m.GetBackingStore().Set("handleSpecialCharacterConstraint", value)
     if err != nil {
@@ -352,21 +352,21 @@ func (m *EducationSynchronizationProfile) SetIdentitySynchronizationConfiguratio
         panic(err)
     }
 }
-// SetLicensesToAssign sets the licensesToAssign property value. License setup configuration.
+// SetLicensesToAssign sets the licensesToAssign property value. The licensesToAssign property
 func (m *EducationSynchronizationProfile) SetLicensesToAssign(value []EducationSynchronizationLicenseAssignmentable)() {
     err := m.GetBackingStore().Set("licensesToAssign", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProfileStatus sets the profileStatus property value. The synchronization status.
+// SetProfileStatus sets the profileStatus property value. The profileStatus property
 func (m *EducationSynchronizationProfile) SetProfileStatus(value EducationSynchronizationProfileStatusable)() {
     err := m.GetBackingStore().Set("profileStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetState sets the state property value. The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.
+// SetState sets the state property value. The state property
 func (m *EducationSynchronizationProfile) SetState(value *EducationSynchronizationProfileState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

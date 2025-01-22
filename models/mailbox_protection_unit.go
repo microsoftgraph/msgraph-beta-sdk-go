@@ -91,7 +91,29 @@ func (m *MailboxProtectionUnit) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["mailboxType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMailboxType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMailboxType(val.(*MailboxType))
+        }
+        return nil
+    }
     return res
+}
+// GetMailboxType gets the mailboxType property value. The type of mailbox which is assigned to the user with id: directoryObjectId.The possible values are: unknown, user, shared, unknownFutureValue.
+// returns a *MailboxType when successful
+func (m *MailboxProtectionUnit) GetMailboxType()(*MailboxType) {
+    val, err := m.GetBackingStore().Get("mailboxType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MailboxType)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *MailboxProtectionUnit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -101,6 +123,13 @@ func (m *MailboxProtectionUnit) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err = writer.WriteStringValue("directoryObjectId", m.GetDirectoryObjectId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetMailboxType() != nil {
+        cast := (*m.GetMailboxType()).String()
+        err = writer.WriteStringValue("mailboxType", &cast)
         if err != nil {
             return err
         }
@@ -128,13 +157,22 @@ func (m *MailboxProtectionUnit) SetEmail(value *string)() {
         panic(err)
     }
 }
+// SetMailboxType sets the mailboxType property value. The type of mailbox which is assigned to the user with id: directoryObjectId.The possible values are: unknown, user, shared, unknownFutureValue.
+func (m *MailboxProtectionUnit) SetMailboxType(value *MailboxType)() {
+    err := m.GetBackingStore().Set("mailboxType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type MailboxProtectionUnitable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ProtectionUnitBaseable
     GetDirectoryObjectId()(*string)
     GetDisplayName()(*string)
     GetEmail()(*string)
+    GetMailboxType()(*MailboxType)
     SetDirectoryObjectId(value *string)()
     SetDisplayName(value *string)()
     SetEmail(value *string)()
+    SetMailboxType(value *MailboxType)()
 }

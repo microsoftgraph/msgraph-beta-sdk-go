@@ -120,7 +120,7 @@ func (m *EducationIdentityMatchingOptions) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSourcePropertyName gets the sourcePropertyName property value. The name of the source property, which should be a field name in the source data. This property is case-sensitive.
+// GetSourcePropertyName gets the sourcePropertyName property value. The sourcePropertyName property
 // returns a *string when successful
 func (m *EducationIdentityMatchingOptions) GetSourcePropertyName()(*string) {
     val, err := m.GetBackingStore().Get("sourcePropertyName")
@@ -132,7 +132,7 @@ func (m *EducationIdentityMatchingOptions) GetSourcePropertyName()(*string) {
     }
     return nil
 }
-// GetTargetDomain gets the targetDomain property value. The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
+// GetTargetDomain gets the targetDomain property value. The targetDomain property
 // returns a *string when successful
 func (m *EducationIdentityMatchingOptions) GetTargetDomain()(*string) {
     val, err := m.GetBackingStore().Get("targetDomain")
@@ -144,7 +144,7 @@ func (m *EducationIdentityMatchingOptions) GetTargetDomain()(*string) {
     }
     return nil
 }
-// GetTargetPropertyName gets the targetPropertyName property value. The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.
+// GetTargetPropertyName gets the targetPropertyName property value. The targetPropertyName property
 // returns a *string when successful
 func (m *EducationIdentityMatchingOptions) GetTargetPropertyName()(*string) {
     val, err := m.GetBackingStore().Get("targetPropertyName")
@@ -222,21 +222,21 @@ func (m *EducationIdentityMatchingOptions) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSourcePropertyName sets the sourcePropertyName property value. The name of the source property, which should be a field name in the source data. This property is case-sensitive.
+// SetSourcePropertyName sets the sourcePropertyName property value. The sourcePropertyName property
 func (m *EducationIdentityMatchingOptions) SetSourcePropertyName(value *string)() {
     err := m.GetBackingStore().Set("sourcePropertyName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetDomain sets the targetDomain property value. The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.
+// SetTargetDomain sets the targetDomain property value. The targetDomain property
 func (m *EducationIdentityMatchingOptions) SetTargetDomain(value *string)() {
     err := m.GetBackingStore().Set("targetDomain", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetPropertyName sets the targetPropertyName property value. The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.
+// SetTargetPropertyName sets the targetPropertyName property value. The targetPropertyName property
 func (m *EducationIdentityMatchingOptions) SetTargetPropertyName(value *string)() {
     err := m.GetBackingStore().Set("targetPropertyName", value)
     if err != nil {

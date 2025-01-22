@@ -234,7 +234,7 @@ func (m *RestoreSessionBase) GetRestoreSessionArtifactCount()(RestoreSessionArti
     }
     return nil
 }
-// GetStatus gets the status property value. Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: failed.
+// GetStatus gets the status property value. Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: failed.
 // returns a *RestoreSessionStatus when successful
 func (m *RestoreSessionBase) GetStatus()(*RestoreSessionStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -366,7 +366,7 @@ func (m *RestoreSessionBase) SetRestoreSessionArtifactCount(value RestoreSession
         panic(err)
     }
 }
-// SetStatus sets the status property value. Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: failed.
+// SetStatus sets the status property value. Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: failed.
 func (m *RestoreSessionBase) SetStatus(value *RestoreSessionStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

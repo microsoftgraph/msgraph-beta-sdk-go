@@ -40,7 +40,7 @@ func (m *EducationFileSynchronizationVerificationMessage) GetAdditionalData()(ma
 func (m *EducationFileSynchronizationVerificationMessage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDescription gets the description property value. Detailed information about the message type.
+// GetDescription gets the description property value. The description property
 // returns a *string when successful
 func (m *EducationFileSynchronizationVerificationMessage) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -98,7 +98,7 @@ func (m *EducationFileSynchronizationVerificationMessage) GetFieldDeserializers(
     }
     return res
 }
-// GetFileName gets the fileName property value. Source file that contains the error.
+// GetFileName gets the fileName property value. The fileName property
 // returns a *string when successful
 func (m *EducationFileSynchronizationVerificationMessage) GetFileName()(*string) {
     val, err := m.GetBackingStore().Get("fileName")
@@ -122,7 +122,7 @@ func (m *EducationFileSynchronizationVerificationMessage) GetOdataType()(*string
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Type of the message. Possible values are: error, warning, information.
+// GetTypeEscaped gets the type property value. The type property
 // returns a *string when successful
 func (m *EducationFileSynchronizationVerificationMessage) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -179,14 +179,14 @@ func (m *EducationFileSynchronizationVerificationMessage) SetAdditionalData(valu
 func (m *EducationFileSynchronizationVerificationMessage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDescription sets the description property value. Detailed information about the message type.
+// SetDescription sets the description property value. The description property
 func (m *EducationFileSynchronizationVerificationMessage) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFileName sets the fileName property value. Source file that contains the error.
+// SetFileName sets the fileName property value. The fileName property
 func (m *EducationFileSynchronizationVerificationMessage) SetFileName(value *string)() {
     err := m.GetBackingStore().Set("fileName", value)
     if err != nil {
@@ -200,7 +200,7 @@ func (m *EducationFileSynchronizationVerificationMessage) SetOdataType(value *st
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Type of the message. Possible values are: error, warning, information.
+// SetTypeEscaped sets the type property value. The type property
 func (m *EducationFileSynchronizationVerificationMessage) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {
