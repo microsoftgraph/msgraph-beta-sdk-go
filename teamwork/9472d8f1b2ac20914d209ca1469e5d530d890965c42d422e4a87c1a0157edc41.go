@@ -18,7 +18,7 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMes
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilderGetQueryParameters a collection of all the messages in the channel. A navigation property. Nullable.
+// TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilderGetQueryParameters a collection of all the messages in the channel. Nullable.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -70,7 +70,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesCha
     }
     return nil
 }
-// Get a collection of all the messages in the channel. A navigation property. Nullable.
+// Get a collection of all the messages in the channel. Nullable.
 // returns a ChatMessageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
@@ -141,7 +141,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesCha
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
+// ToGetRequestInformation a collection of all the messages in the channel. Nullable.
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesChatMessageItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

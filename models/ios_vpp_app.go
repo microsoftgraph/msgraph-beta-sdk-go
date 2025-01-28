@@ -197,6 +197,16 @@ func (m *IosVppApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["vppTokenDisplayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVppTokenDisplayName(val)
+        }
+        return nil
+    }
     res["vppTokenId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -295,6 +305,18 @@ func (m *IosVppApp) GetVppTokenAccountType()(*VppTokenAccountType) {
 // returns a *string when successful
 func (m *IosVppApp) GetVppTokenAppleId()(*string) {
     val, err := m.GetBackingStore().Get("vppTokenAppleId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetVppTokenDisplayName gets the vppTokenDisplayName property value. Display name of the VPP token associated with this app.
+// returns a *string when successful
+func (m *IosVppApp) GetVppTokenDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("vppTokenDisplayName")
     if err != nil {
         panic(err)
     }
@@ -413,6 +435,12 @@ func (m *IosVppApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err = writer.WriteStringValue("vppTokenDisplayName", m.GetVppTokenDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("vppTokenId", m.GetVppTokenId())
         if err != nil {
             return err
@@ -503,6 +531,13 @@ func (m *IosVppApp) SetVppTokenAppleId(value *string)() {
         panic(err)
     }
 }
+// SetVppTokenDisplayName sets the vppTokenDisplayName property value. Display name of the VPP token associated with this app.
+func (m *IosVppApp) SetVppTokenDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("vppTokenDisplayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVppTokenId sets the vppTokenId property value. Identifier of the VPP token associated with this app.
 func (m *IosVppApp) SetVppTokenId(value *string)() {
     err := m.GetBackingStore().Set("vppTokenId", value)
@@ -531,6 +566,7 @@ type IosVppAppable interface {
     GetUsedLicenseCount()(*int32)
     GetVppTokenAccountType()(*VppTokenAccountType)
     GetVppTokenAppleId()(*string)
+    GetVppTokenDisplayName()(*string)
     GetVppTokenId()(*string)
     GetVppTokenOrganizationName()(*string)
     SetApplicableDeviceType(value IosDeviceTypeable)()
@@ -544,6 +580,7 @@ type IosVppAppable interface {
     SetUsedLicenseCount(value *int32)()
     SetVppTokenAccountType(value *VppTokenAccountType)()
     SetVppTokenAppleId(value *string)()
+    SetVppTokenDisplayName(value *string)()
     SetVppTokenId(value *string)()
     SetVppTokenOrganizationName(value *string)()
 }

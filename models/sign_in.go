@@ -68,6 +68,18 @@ func (m *SignIn) GetAppliedEventListeners()([]AppliedAuthenticationEventListener
     }
     return nil
 }
+// GetAppOwnerTenantId gets the appOwnerTenantId property value. The appOwnerTenantId property
+// returns a *string when successful
+func (m *SignIn) GetAppOwnerTenantId()(*string) {
+    val, err := m.GetBackingStore().Get("appOwnerTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetAppTokenProtectionStatus gets the appTokenProtectionStatus property value. Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the app token was bound to the device.
 // returns a *TokenProtectionStatus when successful
 func (m *SignIn) GetAppTokenProtectionStatus()(*TokenProtectionStatus) {
@@ -373,6 +385,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
                 }
             }
             m.SetAppliedEventListeners(res)
+        }
+        return nil
+    }
+    res["appOwnerTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppOwnerTenantId(val)
         }
         return nil
     }
@@ -831,6 +853,16 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         }
         if val != nil {
             m.SetResourceId(val)
+        }
+        return nil
+    }
+    res["resourceOwnerTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetResourceOwnerTenantId(val)
         }
         return nil
     }
@@ -1364,6 +1396,18 @@ func (m *SignIn) GetResourceId()(*string) {
     }
     return nil
 }
+// GetResourceOwnerTenantId gets the resourceOwnerTenantId property value. The resourceOwnerTenantId property
+// returns a *string when successful
+func (m *SignIn) GetResourceOwnerTenantId()(*string) {
+    val, err := m.GetBackingStore().Get("resourceOwnerTenantId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetResourceServicePrincipalId gets the resourceServicePrincipalId property value. The identifier of the service principal representing the target resource in the sign-in event.
 // returns a *string when successful
 func (m *SignIn) GetResourceServicePrincipalId()(*string) {
@@ -1520,7 +1564,7 @@ func (m *SignIn) GetSessionLifetimePolicies()([]SessionLifetimePolicyable) {
     }
     return nil
 }
-// GetSignInEventTypes gets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).
+// GetSignInEventTypes gets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=signInEventTypes/any(t: t eq 'nonInteractiveUser').
 // returns a []string when successful
 func (m *SignIn) GetSignInEventTypes()([]string) {
     val, err := m.GetBackingStore().Get("signInEventTypes")
@@ -1726,6 +1770,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
             }
         }
         err = writer.WriteCollectionOfObjectValues("appliedEventListeners", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("appOwnerTenantId", m.GetAppOwnerTenantId())
         if err != nil {
             return err
         }
@@ -2026,6 +2076,12 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     {
+        err = writer.WriteStringValue("resourceOwnerTenantId", m.GetResourceOwnerTenantId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("resourceServicePrincipalId", m.GetResourceServicePrincipalId())
         if err != nil {
             return err
@@ -2227,6 +2283,13 @@ func (m *SignIn) SetAppliedConditionalAccessPolicies(value []AppliedConditionalA
 // SetAppliedEventListeners sets the appliedEventListeners property value. Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which the corresponding events in the sign-in event triggered.
 func (m *SignIn) SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)() {
     err := m.GetBackingStore().Set("appliedEventListeners", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAppOwnerTenantId sets the appOwnerTenantId property value. The appOwnerTenantId property
+func (m *SignIn) SetAppOwnerTenantId(value *string)() {
+    err := m.GetBackingStore().Set("appOwnerTenantId", value)
     if err != nil {
         panic(err)
     }
@@ -2518,6 +2581,13 @@ func (m *SignIn) SetResourceId(value *string)() {
         panic(err)
     }
 }
+// SetResourceOwnerTenantId sets the resourceOwnerTenantId property value. The resourceOwnerTenantId property
+func (m *SignIn) SetResourceOwnerTenantId(value *string)() {
+    err := m.GetBackingStore().Set("resourceOwnerTenantId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResourceServicePrincipalId sets the resourceServicePrincipalId property value. The identifier of the service principal representing the target resource in the sign-in event.
 func (m *SignIn) SetResourceServicePrincipalId(value *string)() {
     err := m.GetBackingStore().Set("resourceServicePrincipalId", value)
@@ -2609,7 +2679,7 @@ func (m *SignIn) SetSessionLifetimePolicies(value []SessionLifetimePolicyable)()
         panic(err)
     }
 }
-// SetSignInEventTypes sets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).
+// SetSignInEventTypes sets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=signInEventTypes/any(t: t eq 'nonInteractiveUser').
 func (m *SignIn) SetSignInEventTypes(value []string)() {
     err := m.GetBackingStore().Set("signInEventTypes", value)
     if err != nil {
@@ -2714,6 +2784,7 @@ type SignInable interface {
     GetAppId()(*string)
     GetAppliedConditionalAccessPolicies()([]AppliedConditionalAccessPolicyable)
     GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable)
+    GetAppOwnerTenantId()(*string)
     GetAppTokenProtectionStatus()(*TokenProtectionStatus)
     GetAuthenticationAppDeviceDetails()(AuthenticationAppDeviceDetailsable)
     GetAuthenticationAppPolicyEvaluationDetails()([]AuthenticationAppPolicyDetailsable)
@@ -2755,6 +2826,7 @@ type SignInable interface {
     GetProcessingTimeInMilliseconds()(*int32)
     GetResourceDisplayName()(*string)
     GetResourceId()(*string)
+    GetResourceOwnerTenantId()(*string)
     GetResourceServicePrincipalId()(*string)
     GetResourceTenantId()(*string)
     GetRiskDetail()(*RiskDetail)
@@ -2786,6 +2858,7 @@ type SignInable interface {
     SetAppId(value *string)()
     SetAppliedConditionalAccessPolicies(value []AppliedConditionalAccessPolicyable)()
     SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)()
+    SetAppOwnerTenantId(value *string)()
     SetAppTokenProtectionStatus(value *TokenProtectionStatus)()
     SetAuthenticationAppDeviceDetails(value AuthenticationAppDeviceDetailsable)()
     SetAuthenticationAppPolicyEvaluationDetails(value []AuthenticationAppPolicyDetailsable)()
@@ -2827,6 +2900,7 @@ type SignInable interface {
     SetProcessingTimeInMilliseconds(value *int32)()
     SetResourceDisplayName(value *string)()
     SetResourceId(value *string)()
+    SetResourceOwnerTenantId(value *string)()
     SetResourceServicePrincipalId(value *string)()
     SetResourceTenantId(value *string)()
     SetRiskDetail(value *RiskDetail)()

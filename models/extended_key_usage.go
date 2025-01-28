@@ -5,7 +5,7 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-// ExtendedKeyUsage complex type that represents the extended key usage of a certificate. This is shared complex type.
+// ExtendedKeyUsage the Custom Extended Key Usage definition
 type ExtendedKeyUsage struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
@@ -77,7 +77,7 @@ func (m *ExtendedKeyUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetName gets the name property value. The extended key usage (EKU) name that provides a user-friendly way to identify an EKU.
+// GetName gets the name property value. Extended Key Usage Name
 // returns a *string when successful
 func (m *ExtendedKeyUsage) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -89,7 +89,7 @@ func (m *ExtendedKeyUsage) GetName()(*string) {
     }
     return nil
 }
-// GetObjectIdentifier gets the objectIdentifier property value. The object identifier (OID) of an extended key usage of a certificate. For example, '1.3.6.1.5.5.7.3.2' for client authentication.
+// GetObjectIdentifier gets the objectIdentifier property value. Extended Key Usage Object Identifier
 // returns a *string when successful
 func (m *ExtendedKeyUsage) GetObjectIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("objectIdentifier")
@@ -152,14 +152,14 @@ func (m *ExtendedKeyUsage) SetAdditionalData(value map[string]any)() {
 func (m *ExtendedKeyUsage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The extended key usage (EKU) name that provides a user-friendly way to identify an EKU.
+// SetName sets the name property value. Extended Key Usage Name
 func (m *ExtendedKeyUsage) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetObjectIdentifier sets the objectIdentifier property value. The object identifier (OID) of an extended key usage of a certificate. For example, '1.3.6.1.5.5.7.3.2' for client authentication.
+// SetObjectIdentifier sets the objectIdentifier property value. Extended Key Usage Object Identifier
 func (m *ExtendedKeyUsage) SetObjectIdentifier(value *string)() {
     err := m.GetBackingStore().Set("objectIdentifier", value)
     if err != nil {

@@ -69,6 +69,30 @@ func (m *DepOnboardingSetting) GetDefaultMacOsEnrollmentProfile()(DepMacOSEnroll
     }
     return nil
 }
+// GetDefaultTvOSEnrollmentProfile gets the defaultTvOSEnrollmentProfile property value. Default TvOS Enrollment Profile
+// returns a DepTvOSEnrollmentProfileable when successful
+func (m *DepOnboardingSetting) GetDefaultTvOSEnrollmentProfile()(DepTvOSEnrollmentProfileable) {
+    val, err := m.GetBackingStore().Get("defaultTvOSEnrollmentProfile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DepTvOSEnrollmentProfileable)
+    }
+    return nil
+}
+// GetDefaultVisionOSEnrollmentProfile gets the defaultVisionOSEnrollmentProfile property value. Default VisionOS Enrollment Profile
+// returns a DepVisionOSEnrollmentProfileable when successful
+func (m *DepOnboardingSetting) GetDefaultVisionOSEnrollmentProfile()(DepVisionOSEnrollmentProfileable) {
+    val, err := m.GetBackingStore().Get("defaultVisionOSEnrollmentProfile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DepVisionOSEnrollmentProfileable)
+    }
+    return nil
+}
 // GetEnrollmentProfiles gets the enrollmentProfiles property value. The enrollment profiles.
 // returns a []EnrollmentProfileable when successful
 func (m *DepOnboardingSetting) GetEnrollmentProfiles()([]EnrollmentProfileable) {
@@ -122,6 +146,26 @@ func (m *DepOnboardingSetting) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         if val != nil {
             m.SetDefaultMacOsEnrollmentProfile(val.(DepMacOSEnrollmentProfileable))
+        }
+        return nil
+    }
+    res["defaultTvOSEnrollmentProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDepTvOSEnrollmentProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultTvOSEnrollmentProfile(val.(DepTvOSEnrollmentProfileable))
+        }
+        return nil
+    }
+    res["defaultVisionOSEnrollmentProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDepVisionOSEnrollmentProfileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultVisionOSEnrollmentProfile(val.(DepVisionOSEnrollmentProfileable))
         }
         return nil
     }
@@ -427,6 +471,18 @@ func (m *DepOnboardingSetting) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("defaultTvOSEnrollmentProfile", m.GetDefaultTvOSEnrollmentProfile())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("defaultVisionOSEnrollmentProfile", m.GetDefaultVisionOSEnrollmentProfile())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetEnrollmentProfiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEnrollmentProfiles()))
         for i, v := range m.GetEnrollmentProfiles() {
@@ -542,6 +598,20 @@ func (m *DepOnboardingSetting) SetDefaultMacOsEnrollmentProfile(value DepMacOSEn
         panic(err)
     }
 }
+// SetDefaultTvOSEnrollmentProfile sets the defaultTvOSEnrollmentProfile property value. Default TvOS Enrollment Profile
+func (m *DepOnboardingSetting) SetDefaultTvOSEnrollmentProfile(value DepTvOSEnrollmentProfileable)() {
+    err := m.GetBackingStore().Set("defaultTvOSEnrollmentProfile", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDefaultVisionOSEnrollmentProfile sets the defaultVisionOSEnrollmentProfile property value. Default VisionOS Enrollment Profile
+func (m *DepOnboardingSetting) SetDefaultVisionOSEnrollmentProfile(value DepVisionOSEnrollmentProfileable)() {
+    err := m.GetBackingStore().Set("defaultVisionOSEnrollmentProfile", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEnrollmentProfiles sets the enrollmentProfiles property value. The enrollment profiles.
 func (m *DepOnboardingSetting) SetEnrollmentProfiles(value []EnrollmentProfileable)() {
     err := m.GetBackingStore().Set("enrollmentProfiles", value)
@@ -633,6 +703,8 @@ type DepOnboardingSettingable interface {
     GetDataSharingConsentGranted()(*bool)
     GetDefaultIosEnrollmentProfile()(DepIOSEnrollmentProfileable)
     GetDefaultMacOsEnrollmentProfile()(DepMacOSEnrollmentProfileable)
+    GetDefaultTvOSEnrollmentProfile()(DepTvOSEnrollmentProfileable)
+    GetDefaultVisionOSEnrollmentProfile()(DepVisionOSEnrollmentProfileable)
     GetEnrollmentProfiles()([]EnrollmentProfileable)
     GetImportedAppleDeviceIdentities()([]ImportedAppleDeviceIdentityable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -649,6 +721,8 @@ type DepOnboardingSettingable interface {
     SetDataSharingConsentGranted(value *bool)()
     SetDefaultIosEnrollmentProfile(value DepIOSEnrollmentProfileable)()
     SetDefaultMacOsEnrollmentProfile(value DepMacOSEnrollmentProfileable)()
+    SetDefaultTvOSEnrollmentProfile(value DepTvOSEnrollmentProfileable)()
+    SetDefaultVisionOSEnrollmentProfile(value DepVisionOSEnrollmentProfileable)()
     SetEnrollmentProfiles(value []EnrollmentProfileable)()
     SetImportedAppleDeviceIdentities(value []ImportedAppleDeviceIdentityable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

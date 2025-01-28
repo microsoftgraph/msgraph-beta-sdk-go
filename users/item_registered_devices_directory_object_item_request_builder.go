@@ -60,6 +60,11 @@ func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) Get(ctx context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
+// GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+// returns a *ItemRegisteredDevicesItemGraphAppRoleAssignmentRequestBuilder when successful
+func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) GraphAppRoleAssignment()(*ItemRegisteredDevicesItemGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemRegisteredDevicesItemGraphAppRoleAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphDevice casts the previous resource to device.
 // returns a *ItemRegisteredDevicesItemGraphDeviceRequestBuilder when successful
 func (m *ItemRegisteredDevicesDirectoryObjectItemRequestBuilder) GraphDevice()(*ItemRegisteredDevicesItemGraphDeviceRequestBuilder) {

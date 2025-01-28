@@ -239,7 +239,7 @@ func (m *ImportedAppleDeviceIdentity) GetLastContactedDateTime()(*i336074805fc85
     }
     return nil
 }
-// GetPlatform gets the platform property value. The platform property
+// GetPlatform gets the platform property value. Supported platform types for policies.
 // returns a *Platform when successful
 func (m *ImportedAppleDeviceIdentity) GetPlatform()(*Platform) {
     val, err := m.GetBackingStore().Get("platform")
@@ -413,7 +413,7 @@ func (m *ImportedAppleDeviceIdentity) SetLastContactedDateTime(value *i336074805
         panic(err)
     }
 }
-// SetPlatform sets the platform property value. The platform property
+// SetPlatform sets the platform property value. Supported platform types for policies.
 func (m *ImportedAppleDeviceIdentity) SetPlatform(value *Platform)() {
     err := m.GetBackingStore().Set("platform", value)
     if err != nil {

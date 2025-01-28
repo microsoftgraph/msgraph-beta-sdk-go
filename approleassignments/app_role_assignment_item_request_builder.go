@@ -41,6 +41,16 @@ type AppRoleAssignmentItemRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// CheckMemberGroups provides operations to call the checkMemberGroups method.
+// returns a *ItemCheckMemberGroupsRequestBuilder when successful
+func (m *AppRoleAssignmentItemRequestBuilder) CheckMemberGroups()(*ItemCheckMemberGroupsRequestBuilder) {
+    return NewItemCheckMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// CheckMemberObjects provides operations to call the checkMemberObjects method.
+// returns a *ItemCheckMemberObjectsRequestBuilder when successful
+func (m *AppRoleAssignmentItemRequestBuilder) CheckMemberObjects()(*ItemCheckMemberObjectsRequestBuilder) {
+    return NewItemCheckMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAppRoleAssignmentItemRequestBuilderInternal instantiates a new AppRoleAssignmentItemRequestBuilder and sets the default values.
 func NewAppRoleAssignmentItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AppRoleAssignmentItemRequestBuilder) {
     m := &AppRoleAssignmentItemRequestBuilder{
@@ -90,6 +100,16 @@ func (m *AppRoleAssignmentItemRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable), nil
 }
+// GetMemberGroups provides operations to call the getMemberGroups method.
+// returns a *ItemGetMemberGroupsRequestBuilder when successful
+func (m *AppRoleAssignmentItemRequestBuilder) GetMemberGroups()(*ItemGetMemberGroupsRequestBuilder) {
+    return NewItemGetMemberGroupsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetMemberObjects provides operations to call the getMemberObjects method.
+// returns a *ItemGetMemberObjectsRequestBuilder when successful
+func (m *AppRoleAssignmentItemRequestBuilder) GetMemberObjects()(*ItemGetMemberObjectsRequestBuilder) {
+    return NewItemGetMemberObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update entity in appRoleAssignments
 // returns a AppRoleAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -109,6 +129,11 @@ func (m *AppRoleAssignmentItemRequestBuilder) Patch(ctx context.Context, body ie
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentable), nil
+}
+// Restore provides operations to call the restore method.
+// returns a *ItemRestoreRequestBuilder when successful
+func (m *AppRoleAssignmentItemRequestBuilder) Restore()(*ItemRestoreRequestBuilder) {
+    return NewItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete entity from appRoleAssignments
 // returns a *RequestInformation when successful
