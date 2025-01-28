@@ -92,6 +92,11 @@ func (m *ItemRegisteredOwnersRequestBuilder) Get(ctx context.Context, requestCon
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectCollectionResponseable), nil
 }
+// GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+// returns a *ItemRegisteredOwnersGraphAppRoleAssignmentRequestBuilder when successful
+func (m *ItemRegisteredOwnersRequestBuilder) GraphAppRoleAssignment()(*ItemRegisteredOwnersGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemRegisteredOwnersGraphAppRoleAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphEndpoint casts the previous resource to endpoint.
 // returns a *ItemRegisteredOwnersGraphEndpointRequestBuilder when successful
 func (m *ItemRegisteredOwnersRequestBuilder) GraphEndpoint()(*ItemRegisteredOwnersGraphEndpointRequestBuilder) {

@@ -38,6 +38,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewApplication(), nil
                     case "#microsoft.graph.appManagementPolicy":
                         return NewAppManagementPolicy(), nil
+                    case "#microsoft.graph.appRoleAssignment":
+                        return NewAppRoleAssignment(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
                     case "#microsoft.graph.certificateAuthorityDetail":

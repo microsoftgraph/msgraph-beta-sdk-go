@@ -66,6 +66,16 @@ func (m *CloudPcDisasterRecoveryCapability) GetFieldDeserializers()(map[string]f
         }
         return nil
     }
+    res["licenseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcDisasterRecoveryLicenseType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLicenseType(val.(*CloudPcDisasterRecoveryLicenseType))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -97,6 +107,18 @@ func (m *CloudPcDisasterRecoveryCapability) GetFieldDeserializers()(map[string]f
         return nil
     }
     return res
+}
+// GetLicenseType gets the licenseType property value. The licenseType property
+// returns a *CloudPcDisasterRecoveryLicenseType when successful
+func (m *CloudPcDisasterRecoveryCapability) GetLicenseType()(*CloudPcDisasterRecoveryLicenseType) {
+    val, err := m.GetBackingStore().Get("licenseType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcDisasterRecoveryLicenseType)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
@@ -139,6 +161,13 @@ func (m *CloudPcDisasterRecoveryCapability) Serialize(writer i878a80d2330e89d268
     if m.GetCapabilityType() != nil {
         cast := (*m.GetCapabilityType()).String()
         err := writer.WriteStringValue("capabilityType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetLicenseType() != nil {
+        cast := (*m.GetLicenseType()).String()
+        err := writer.WriteStringValue("licenseType", &cast)
         if err != nil {
             return err
         }
@@ -187,6 +216,13 @@ func (m *CloudPcDisasterRecoveryCapability) SetCapabilityType(value *CloudPcDisa
         panic(err)
     }
 }
+// SetLicenseType sets the licenseType property value. The licenseType property
+func (m *CloudPcDisasterRecoveryCapability) SetLicenseType(value *CloudPcDisasterRecoveryLicenseType)() {
+    err := m.GetBackingStore().Set("licenseType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcDisasterRecoveryCapability) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -214,11 +250,13 @@ type CloudPcDisasterRecoveryCapabilityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCapabilityType()(*CloudPcDisasterRecoveryCapabilityType)
+    GetLicenseType()(*CloudPcDisasterRecoveryLicenseType)
     GetOdataType()(*string)
     GetPrimaryRegion()(*string)
     GetSecondaryRegion()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCapabilityType(value *CloudPcDisasterRecoveryCapabilityType)()
+    SetLicenseType(value *CloudPcDisasterRecoveryLicenseType)()
     SetOdataType(value *string)()
     SetPrimaryRegion(value *string)()
     SetSecondaryRegion(value *string)()

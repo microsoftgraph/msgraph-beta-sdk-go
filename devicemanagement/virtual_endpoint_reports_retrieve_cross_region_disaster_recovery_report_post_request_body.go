@@ -2,6 +2,7 @@ package devicemanagement
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -83,6 +84,16 @@ func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequ
                 }
             }
             m.SetOrderBy(res)
+        }
+        return nil
+    }
+    res["reportName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseCloudPcDisasterRecoveryReportName)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReportName(val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDisasterRecoveryReportName))
         }
         return nil
     }
@@ -170,6 +181,18 @@ func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequ
     }
     return nil
 }
+// GetReportName gets the reportName property value. The reportName property
+// returns a *CloudPcDisasterRecoveryReportName when successful
+func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequestBody) GetReportName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDisasterRecoveryReportName) {
+    val, err := m.GetBackingStore().Get("reportName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDisasterRecoveryReportName)
+    }
+    return nil
+}
 // GetSearch gets the search property value. The search property
 // returns a *string when successful
 func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequestBody) GetSearch()(*string) {
@@ -238,6 +261,13 @@ func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequ
             return err
         }
     }
+    if m.GetReportName() != nil {
+        cast := (*m.GetReportName()).String()
+        err := writer.WriteStringValue("reportName", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("search", m.GetSearch())
         if err != nil {
@@ -302,6 +332,13 @@ func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequ
         panic(err)
     }
 }
+// SetReportName sets the reportName property value. The reportName property
+func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequestBody) SetReportName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDisasterRecoveryReportName)() {
+    err := m.GetBackingStore().Set("reportName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSearch sets the search property value. The search property
 func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequestBody) SetSearch(value *string)() {
     err := m.GetBackingStore().Set("search", value)
@@ -338,6 +375,7 @@ type VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequestB
     GetFilter()(*string)
     GetGroupBy()([]string)
     GetOrderBy()([]string)
+    GetReportName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDisasterRecoveryReportName)
     GetSearch()(*string)
     GetSelectEscaped()([]string)
     GetSkip()(*int32)
@@ -346,6 +384,7 @@ type VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequestB
     SetFilter(value *string)()
     SetGroupBy(value []string)()
     SetOrderBy(value []string)()
+    SetReportName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcDisasterRecoveryReportName)()
     SetSearch(value *string)()
     SetSelectEscaped(value []string)()
     SetSkip(value *int32)()

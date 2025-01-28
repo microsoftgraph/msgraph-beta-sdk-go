@@ -65,6 +65,11 @@ func (m *ItemOwnedObjectsDirectoryObjectItemRequestBuilder) Get(ctx context.Cont
 func (m *ItemOwnedObjectsDirectoryObjectItemRequestBuilder) GraphApplication()(*ItemOwnedObjectsItemGraphApplicationRequestBuilder) {
     return NewItemOwnedObjectsItemGraphApplicationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+// returns a *ItemOwnedObjectsItemGraphAppRoleAssignmentRequestBuilder when successful
+func (m *ItemOwnedObjectsDirectoryObjectItemRequestBuilder) GraphAppRoleAssignment()(*ItemOwnedObjectsItemGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemOwnedObjectsItemGraphAppRoleAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphEndpoint casts the previous resource to endpoint.
 // returns a *ItemOwnedObjectsItemGraphEndpointRequestBuilder when successful
 func (m *ItemOwnedObjectsDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemOwnedObjectsItemGraphEndpointRequestBuilder) {

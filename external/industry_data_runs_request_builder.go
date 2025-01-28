@@ -97,6 +97,11 @@ func (m *IndustryDataRunsRequestBuilder) Get(ctx context.Context, requestConfigu
 func (m *IndustryDataRunsRequestBuilder) MicrosoftGraphIndustryDataGetStatistics()(*IndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilder) {
     return NewIndustryDataRunsMicrosoftGraphIndustryDataGetStatisticsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// MicrosoftGraphIndustryDataStart provides operations to call the start method.
+// returns a *IndustryDataRunsMicrosoftGraphIndustryDataStartRequestBuilder when successful
+func (m *IndustryDataRunsRequestBuilder) MicrosoftGraphIndustryDataStart()(*IndustryDataRunsMicrosoftGraphIndustryDataStartRequestBuilder) {
+    return NewIndustryDataRunsMicrosoftGraphIndustryDataStartRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get a list of the industryDataRun objects and their properties.
 // returns a *RequestInformation when successful
 func (m *IndustryDataRunsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IndustryDataRunsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

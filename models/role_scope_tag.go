@@ -106,6 +106,22 @@ func (m *RoleScopeTag) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
         }
         return nil
     }
+    res["permissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetPermissions(res)
+        }
+        return nil
+    }
     return res
 }
 // GetIsBuiltIn gets the isBuiltIn property value. Description of the Role Scope Tag. This property is read-only.
@@ -117,6 +133,18 @@ func (m *RoleScopeTag) GetIsBuiltIn()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetPermissions gets the permissions property value. Permissions associated with the Role Scope Tag. This property is read-only.
+// returns a []string when successful
+func (m *RoleScopeTag) GetPermissions()([]string) {
+    val, err := m.GetBackingStore().Get("permissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
     }
     return nil
 }
@@ -180,6 +208,13 @@ func (m *RoleScopeTag) SetIsBuiltIn(value *bool)() {
         panic(err)
     }
 }
+// SetPermissions sets the permissions property value. Permissions associated with the Role Scope Tag. This property is read-only.
+func (m *RoleScopeTag) SetPermissions(value []string)() {
+    err := m.GetBackingStore().Set("permissions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type RoleScopeTagable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -187,8 +222,10 @@ type RoleScopeTagable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetIsBuiltIn()(*bool)
+    GetPermissions()([]string)
     SetAssignments(value []RoleScopeTagAutoAssignmentable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsBuiltIn(value *bool)()
+    SetPermissions(value []string)()
 }

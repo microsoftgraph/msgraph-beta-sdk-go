@@ -862,6 +862,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDepMacOSEnrollmentProfile(), nil
                     case "#microsoft.graph.depOnboardingSetting":
                         return NewDepOnboardingSetting(), nil
+                    case "#microsoft.graph.depTvOSEnrollmentProfile":
+                        return NewDepTvOSEnrollmentProfile(), nil
+                    case "#microsoft.graph.depVisionOSEnrollmentProfile":
+                        return NewDepVisionOSEnrollmentProfile(), nil
                     case "#microsoft.graph.detectedApp":
                         return NewDetectedApp(), nil
                     case "#microsoft.graph.device":

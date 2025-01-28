@@ -273,6 +273,16 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
         }
         return nil
     }
+    res["riskLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseDeviceManagementConfigurationSettingRiskLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRiskLevel(val.(*DeviceManagementConfigurationSettingRiskLevel))
+        }
+        return nil
+    }
     res["rootDefinitionId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -406,6 +416,18 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetReferredSettingInfor
     }
     if val != nil {
         return val.([]DeviceManagementConfigurationReferredSettingInformationable)
+    }
+    return nil
+}
+// GetRiskLevel gets the riskLevel property value. Setting RiskLevel
+// returns a *DeviceManagementConfigurationSettingRiskLevel when successful
+func (m *DeviceManagementConfigurationSettingDefinition) GetRiskLevel()(*DeviceManagementConfigurationSettingRiskLevel) {
+    val, err := m.GetBackingStore().Get("riskLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*DeviceManagementConfigurationSettingRiskLevel)
     }
     return nil
 }
@@ -560,6 +582,13 @@ func (m *DeviceManagementConfigurationSettingDefinition) Serialize(writer i878a8
             return err
         }
     }
+    if m.GetRiskLevel() != nil {
+        cast := (*m.GetRiskLevel()).String()
+        err = writer.WriteStringValue("riskLevel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("rootDefinitionId", m.GetRootDefinitionId())
         if err != nil {
@@ -686,6 +715,13 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetReferredSettingInfor
         panic(err)
     }
 }
+// SetRiskLevel sets the riskLevel property value. Setting RiskLevel
+func (m *DeviceManagementConfigurationSettingDefinition) SetRiskLevel(value *DeviceManagementConfigurationSettingRiskLevel)() {
+    err := m.GetBackingStore().Set("riskLevel", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRootDefinitionId sets the rootDefinitionId property value. Root setting definition id if the setting is a child setting.
 func (m *DeviceManagementConfigurationSettingDefinition) SetRootDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("rootDefinitionId", value)
@@ -737,6 +773,7 @@ type DeviceManagementConfigurationSettingDefinitionable interface {
     GetOccurrence()(DeviceManagementConfigurationSettingOccurrenceable)
     GetOffsetUri()(*string)
     GetReferredSettingInformationList()([]DeviceManagementConfigurationReferredSettingInformationable)
+    GetRiskLevel()(*DeviceManagementConfigurationSettingRiskLevel)
     GetRootDefinitionId()(*string)
     GetSettingUsage()(*DeviceManagementConfigurationSettingUsage)
     GetUxBehavior()(*DeviceManagementConfigurationControlType)
@@ -755,6 +792,7 @@ type DeviceManagementConfigurationSettingDefinitionable interface {
     SetOccurrence(value DeviceManagementConfigurationSettingOccurrenceable)()
     SetOffsetUri(value *string)()
     SetReferredSettingInformationList(value []DeviceManagementConfigurationReferredSettingInformationable)()
+    SetRiskLevel(value *DeviceManagementConfigurationSettingRiskLevel)()
     SetRootDefinitionId(value *string)()
     SetSettingUsage(value *DeviceManagementConfigurationSettingUsage)()
     SetUxBehavior(value *DeviceManagementConfigurationControlType)()

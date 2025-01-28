@@ -67,6 +67,16 @@ func (m *ItemTeamScheduleTimeCardsItemClockOutPostRequestBody) GetFieldDeseriali
         }
         return nil
     }
+    res["isAtApprovedLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsAtApprovedLocation(val)
+        }
+        return nil
+    }
     res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateItemBodyFromDiscriminatorValue)
         if err != nil {
@@ -78,6 +88,18 @@ func (m *ItemTeamScheduleTimeCardsItemClockOutPostRequestBody) GetFieldDeseriali
         return nil
     }
     return res
+}
+// GetIsAtApprovedLocation gets the isAtApprovedLocation property value. The isAtApprovedLocation property
+// returns a *bool when successful
+func (m *ItemTeamScheduleTimeCardsItemClockOutPostRequestBody) GetIsAtApprovedLocation()(*bool) {
+    val, err := m.GetBackingStore().Get("isAtApprovedLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetNotes gets the notes property value. The notes property
 // returns a ItemBodyable when successful
@@ -95,6 +117,12 @@ func (m *ItemTeamScheduleTimeCardsItemClockOutPostRequestBody) GetNotes()(ie233e
 func (m *ItemTeamScheduleTimeCardsItemClockOutPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteBoolValue("atApprovedLocation", m.GetAtApprovedLocation())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isAtApprovedLocation", m.GetIsAtApprovedLocation())
         if err != nil {
             return err
         }
@@ -131,6 +159,13 @@ func (m *ItemTeamScheduleTimeCardsItemClockOutPostRequestBody) SetAtApprovedLoca
 func (m *ItemTeamScheduleTimeCardsItemClockOutPostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetIsAtApprovedLocation sets the isAtApprovedLocation property value. The isAtApprovedLocation property
+func (m *ItemTeamScheduleTimeCardsItemClockOutPostRequestBody) SetIsAtApprovedLocation(value *bool)() {
+    err := m.GetBackingStore().Set("isAtApprovedLocation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNotes sets the notes property value. The notes property
 func (m *ItemTeamScheduleTimeCardsItemClockOutPostRequestBody) SetNotes(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)() {
     err := m.GetBackingStore().Set("notes", value)
@@ -144,8 +179,10 @@ type ItemTeamScheduleTimeCardsItemClockOutPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAtApprovedLocation()(*bool)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetIsAtApprovedLocation()(*bool)
     GetNotes()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)
     SetAtApprovedLocation(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetIsAtApprovedLocation(value *bool)()
     SetNotes(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ItemBodyable)()
 }

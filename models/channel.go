@@ -368,7 +368,7 @@ func (m *Channel) GetMembershipType()(*ChannelMembershipType) {
     }
     return nil
 }
-// GetMessages gets the messages property value. A collection of all the messages in the channel. A navigation property. Nullable.
+// GetMessages gets the messages property value. A collection of all the messages in the channel. Nullable.
 // returns a []ChatMessageable when successful
 func (m *Channel) GetMessages()([]ChatMessageable) {
     val, err := m.GetBackingStore().Get("messages")
@@ -416,7 +416,7 @@ func (m *Channel) GetSummary()(ChannelSummaryable) {
     }
     return nil
 }
-// GetTabs gets the tabs property value. A collection of all the tabs in the channel. A navigation property.
+// GetTabs gets the tabs property value. A collection of all the tabs in the channel.
 // returns a []TeamsTabable when successful
 func (m *Channel) GetTabs()([]TeamsTabable) {
     val, err := m.GetBackingStore().Get("tabs")
@@ -677,7 +677,7 @@ func (m *Channel) SetMembershipType(value *ChannelMembershipType)() {
         panic(err)
     }
 }
-// SetMessages sets the messages property value. A collection of all the messages in the channel. A navigation property. Nullable.
+// SetMessages sets the messages property value. A collection of all the messages in the channel. Nullable.
 func (m *Channel) SetMessages(value []ChatMessageable)() {
     err := m.GetBackingStore().Set("messages", value)
     if err != nil {
@@ -705,7 +705,7 @@ func (m *Channel) SetSummary(value ChannelSummaryable)() {
         panic(err)
     }
 }
-// SetTabs sets the tabs property value. A collection of all the tabs in the channel. A navigation property.
+// SetTabs sets the tabs property value. A collection of all the tabs in the channel.
 func (m *Channel) SetTabs(value []TeamsTabable)() {
     err := m.GetBackingStore().Set("tabs", value)
     if err != nil {

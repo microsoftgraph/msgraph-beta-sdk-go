@@ -38,6 +38,10 @@ func CreateEnrollmentProfileFromDiscriminatorValue(parseNode i878a80d2330e89d268
                         return NewDepIOSEnrollmentProfile(), nil
                     case "#microsoft.graph.depMacOSEnrollmentProfile":
                         return NewDepMacOSEnrollmentProfile(), nil
+                    case "#microsoft.graph.depTvOSEnrollmentProfile":
+                        return NewDepTvOSEnrollmentProfile(), nil
+                    case "#microsoft.graph.depVisionOSEnrollmentProfile":
+                        return NewDepVisionOSEnrollmentProfile(), nil
                 }
             }
         }

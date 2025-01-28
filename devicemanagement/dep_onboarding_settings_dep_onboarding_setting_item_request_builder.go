@@ -64,6 +64,16 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) DefaultIos
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) DefaultMacOsEnrollmentProfile()(*DepOnboardingSettingsItemDefaultMacOsEnrollmentProfileRequestBuilder) {
     return NewDepOnboardingSettingsItemDefaultMacOsEnrollmentProfileRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DefaultTvOSEnrollmentProfile provides operations to manage the defaultTvOSEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
+// returns a *DepOnboardingSettingsItemDefaultTvOSEnrollmentProfileRequestBuilder when successful
+func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) DefaultTvOSEnrollmentProfile()(*DepOnboardingSettingsItemDefaultTvOSEnrollmentProfileRequestBuilder) {
+    return NewDepOnboardingSettingsItemDefaultTvOSEnrollmentProfileRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// DefaultVisionOSEnrollmentProfile provides operations to manage the defaultVisionOSEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.
+// returns a *DepOnboardingSettingsItemDefaultVisionOSEnrollmentProfileRequestBuilder when successful
+func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) DefaultVisionOSEnrollmentProfile()(*DepOnboardingSettingsItemDefaultVisionOSEnrollmentProfileRequestBuilder) {
+    return NewDepOnboardingSettingsItemDefaultVisionOSEnrollmentProfileRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property depOnboardingSettings for deviceManagement
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration)(error) {

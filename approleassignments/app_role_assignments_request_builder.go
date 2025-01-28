@@ -76,6 +76,11 @@ func NewAppRoleAssignmentsRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 func (m *AppRoleAssignmentsRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Delta provides operations to call the delta method.
+// returns a *DeltaRequestBuilder when successful
+func (m *AppRoleAssignmentsRequestBuilder) Delta()(*DeltaRequestBuilder) {
+    return NewDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get entities from appRoleAssignments
 // returns a AppRoleAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -95,6 +100,16 @@ func (m *AppRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfi
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppRoleAssignmentCollectionResponseable), nil
+}
+// GetByIds provides operations to call the getByIds method.
+// returns a *GetByIdsRequestBuilder when successful
+func (m *AppRoleAssignmentsRequestBuilder) GetByIds()(*GetByIdsRequestBuilder) {
+    return NewGetByIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetUserOwnedObjects provides operations to call the getUserOwnedObjects method.
+// returns a *GetUserOwnedObjectsRequestBuilder when successful
+func (m *AppRoleAssignmentsRequestBuilder) GetUserOwnedObjects()(*GetUserOwnedObjectsRequestBuilder) {
+    return NewGetUserOwnedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post add new entity to appRoleAssignments
 // returns a AppRoleAssignmentable when successful
@@ -144,6 +159,11 @@ func (m *AppRoleAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.
         return nil, err
     }
     return requestInfo, nil
+}
+// ValidateProperties provides operations to call the validateProperties method.
+// returns a *ValidatePropertiesRequestBuilder when successful
+func (m *AppRoleAssignmentsRequestBuilder) ValidateProperties()(*ValidatePropertiesRequestBuilder) {
+    return NewValidatePropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *AppRoleAssignmentsRequestBuilder when successful
