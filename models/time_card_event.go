@@ -89,6 +89,16 @@ func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["isAtApprovedLocation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsAtApprovedLocation(val)
+        }
+        return nil
+    }
     res["notes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateItemBodyFromDiscriminatorValue)
         if err != nil {
@@ -110,6 +120,18 @@ func (m *TimeCardEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetIsAtApprovedLocation gets the isAtApprovedLocation property value. Indicates whether this action happens at an approved location.
+// returns a *bool when successful
+func (m *TimeCardEvent) GetIsAtApprovedLocation()(*bool) {
+    val, err := m.GetBackingStore().Get("isAtApprovedLocation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetNotes gets the notes property value. Notes about the timeCardEvent.
 // returns a ItemBodyable when successful
@@ -145,6 +167,12 @@ func (m *TimeCardEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteTimeValue("dateTime", m.GetDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("isAtApprovedLocation", m.GetIsAtApprovedLocation())
         if err != nil {
             return err
         }
@@ -194,6 +222,13 @@ func (m *TimeCardEvent) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3
         panic(err)
     }
 }
+// SetIsAtApprovedLocation sets the isAtApprovedLocation property value. Indicates whether this action happens at an approved location.
+func (m *TimeCardEvent) SetIsAtApprovedLocation(value *bool)() {
+    err := m.GetBackingStore().Set("isAtApprovedLocation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetNotes sets the notes property value. Notes about the timeCardEvent.
 func (m *TimeCardEvent) SetNotes(value ItemBodyable)() {
     err := m.GetBackingStore().Set("notes", value)
@@ -215,11 +250,13 @@ type TimeCardEventable interface {
     GetAtApprovedLocation()(*bool)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetIsAtApprovedLocation()(*bool)
     GetNotes()(ItemBodyable)
     GetOdataType()(*string)
     SetAtApprovedLocation(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetIsAtApprovedLocation(value *bool)()
     SetNotes(value ItemBodyable)()
     SetOdataType(value *string)()
 }

@@ -88,6 +88,18 @@ func (m *Admin) GetEntra()(Entraable) {
     }
     return nil
 }
+// GetExchange gets the exchange property value. A container for the Exchange admin functionality. Read-only.
+// returns a ExchangeAdminable when successful
+func (m *Admin) GetExchange()(ExchangeAdminable) {
+    val, err := m.GetBackingStore().Get("exchange")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExchangeAdminable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -129,6 +141,16 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetEntra(val.(Entraable))
+        }
+        return nil
+    }
+    res["exchange"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateExchangeAdminFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExchange(val.(ExchangeAdminable))
         }
         return nil
     }
@@ -359,6 +381,12 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err := writer.WriteObjectValue("exchange", m.GetExchange())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("forms", m.GetForms())
         if err != nil {
             return err
@@ -459,6 +487,13 @@ func (m *Admin) SetEntra(value Entraable)() {
         panic(err)
     }
 }
+// SetExchange sets the exchange property value. A container for the Exchange admin functionality. Read-only.
+func (m *Admin) SetExchange(value ExchangeAdminable)() {
+    err := m.GetBackingStore().Set("exchange", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetForms sets the forms property value. The forms property
 func (m *Admin) SetForms(value AdminFormsable)() {
     err := m.GetBackingStore().Set("forms", value)
@@ -531,6 +566,7 @@ type Adminable interface {
     GetDynamics()(AdminDynamicsable)
     GetEdge()(Edgeable)
     GetEntra()(Entraable)
+    GetExchange()(ExchangeAdminable)
     GetForms()(AdminFormsable)
     GetMicrosoft365Apps()(AdminMicrosoft365Appsable)
     GetOdataType()(*string)
@@ -545,6 +581,7 @@ type Adminable interface {
     SetDynamics(value AdminDynamicsable)()
     SetEdge(value Edgeable)()
     SetEntra(value Entraable)()
+    SetExchange(value ExchangeAdminable)()
     SetForms(value AdminFormsable)()
     SetMicrosoft365Apps(value AdminMicrosoft365Appsable)()
     SetOdataType(value *string)()

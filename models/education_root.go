@@ -118,22 +118,6 @@ func (m *EducationRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
-    res["synchronizationProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateEducationSynchronizationProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]EducationSynchronizationProfileable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(EducationSynchronizationProfileable)
-                }
-            }
-            m.SetSynchronizationProfiles(res)
-        }
-        return nil
-    }
     res["users"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateEducationUserFromDiscriminatorValue)
         if err != nil {
@@ -200,18 +184,6 @@ func (m *EducationRoot) GetSchools()([]EducationSchoolable) {
     }
     return nil
 }
-// GetSynchronizationProfiles gets the synchronizationProfiles property value. The synchronizationProfiles property
-// returns a []EducationSynchronizationProfileable when successful
-func (m *EducationRoot) GetSynchronizationProfiles()([]EducationSynchronizationProfileable) {
-    val, err := m.GetBackingStore().Get("synchronizationProfiles")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]EducationSynchronizationProfileable)
-    }
-    return nil
-}
 // GetUsers gets the users property value. The users property
 // returns a []EducationUserable when successful
 func (m *EducationRoot) GetUsers()([]EducationUserable) {
@@ -264,18 +236,6 @@ func (m *EducationRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             }
         }
         err := writer.WriteCollectionOfObjectValues("schools", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetSynchronizationProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSynchronizationProfiles()))
-        for i, v := range m.GetSynchronizationProfiles() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("synchronizationProfiles", cast)
         if err != nil {
             return err
         }
@@ -346,13 +306,6 @@ func (m *EducationRoot) SetSchools(value []EducationSchoolable)() {
         panic(err)
     }
 }
-// SetSynchronizationProfiles sets the synchronizationProfiles property value. The synchronizationProfiles property
-func (m *EducationRoot) SetSynchronizationProfiles(value []EducationSynchronizationProfileable)() {
-    err := m.GetBackingStore().Set("synchronizationProfiles", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetUsers sets the users property value. The users property
 func (m *EducationRoot) SetUsers(value []EducationUserable)() {
     err := m.GetBackingStore().Set("users", value)
@@ -370,7 +323,6 @@ type EducationRootable interface {
     GetOdataType()(*string)
     GetReports()(ReportsRootable)
     GetSchools()([]EducationSchoolable)
-    GetSynchronizationProfiles()([]EducationSynchronizationProfileable)
     GetUsers()([]EducationUserable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetClasses(value []EducationClassable)()
@@ -378,6 +330,5 @@ type EducationRootable interface {
     SetOdataType(value *string)()
     SetReports(value ReportsRootable)()
     SetSchools(value []EducationSchoolable)()
-    SetSynchronizationProfiles(value []EducationSynchronizationProfileable)()
     SetUsers(value []EducationUserable)()
 }

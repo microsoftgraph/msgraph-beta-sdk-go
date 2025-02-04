@@ -19,7 +19,7 @@ func NewEdiscoverySearchExportOperation()(*EdiscoverySearchExportOperation) {
 func CreateEdiscoverySearchExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoverySearchExportOperation(), nil
 }
-// GetAdditionalOptions gets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.
+// GetAdditionalOptions gets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, optimizedPartitionSize, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, optimizedPartitionSize, includeReport.
 // returns a *AdditionalOptions when successful
 func (m *EdiscoverySearchExportOperation) GetAdditionalOptions()(*AdditionalOptions) {
     val, err := m.GetBackingStore().Get("additionalOptions")
@@ -301,7 +301,7 @@ func (m *EdiscoverySearchExportOperation) Serialize(writer i878a80d2330e89d26896
     }
     return nil
 }
-// SetAdditionalOptions sets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.
+// SetAdditionalOptions sets the additionalOptions property value. The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, optimizedPartitionSize, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, optimizedPartitionSize, includeReport.
 func (m *EdiscoverySearchExportOperation) SetAdditionalOptions(value *AdditionalOptions)() {
     err := m.GetBackingStore().Set("additionalOptions", value)
     if err != nil {

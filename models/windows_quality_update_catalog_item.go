@@ -22,15 +22,15 @@ func NewWindowsQualityUpdateCatalogItem()(*WindowsQualityUpdateCatalogItem) {
 func CreateWindowsQualityUpdateCatalogItemFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsQualityUpdateCatalogItem(), nil
 }
-// GetClassification gets the classification property value. Windows quality update classification
-// returns a *WindowsQualityUpdateClassification when successful
-func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpdateClassification) {
+// GetClassification gets the classification property value. Windows quality update category
+// returns a *WindowsQualityUpdateCategory when successful
+func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpdateCategory) {
     val, err := m.GetBackingStore().Get("classification")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*WindowsQualityUpdateClassification)
+        return val.(*WindowsQualityUpdateCategory)
     }
     return nil
 }
@@ -39,12 +39,12 @@ func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpd
 func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.WindowsUpdateCatalogItem.GetFieldDeserializers()
     res["classification"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseWindowsQualityUpdateClassification)
+        val, err := n.GetEnumValue(ParseWindowsQualityUpdateCategory)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetClassification(val.(*WindowsQualityUpdateClassification))
+            m.SetClassification(val.(*WindowsQualityUpdateCategory))
         }
         return nil
     }
@@ -65,6 +65,32 @@ func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]fun
         }
         if val != nil {
             m.SetKbArticleId(val)
+        }
+        return nil
+    }
+    res["productRevisions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsQualityUpdateCatalogProductRevisionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WindowsQualityUpdateCatalogProductRevisionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(WindowsQualityUpdateCatalogProductRevisionable)
+                }
+            }
+            m.SetProductRevisions(res)
+        }
+        return nil
+    }
+    res["qualityUpdateCadence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsQualityUpdateCadence)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQualityUpdateCadence(val.(*WindowsQualityUpdateCadence))
         }
         return nil
     }
@@ -94,6 +120,30 @@ func (m *WindowsQualityUpdateCatalogItem) GetKbArticleId()(*string) {
     }
     return nil
 }
+// GetProductRevisions gets the productRevisions property value. The operating system product revisions that are released as part of this quality update. Read-only.
+// returns a []WindowsQualityUpdateCatalogProductRevisionable when successful
+func (m *WindowsQualityUpdateCatalogItem) GetProductRevisions()([]WindowsQualityUpdateCatalogProductRevisionable) {
+    val, err := m.GetBackingStore().Get("productRevisions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsQualityUpdateCatalogProductRevisionable)
+    }
+    return nil
+}
+// GetQualityUpdateCadence gets the qualityUpdateCadence property value. The publishing cadence of the quality update. Possible values are: monthly, outOfBand. This property cannot be modified and is automatically populated when the catalog is created.
+// returns a *WindowsQualityUpdateCadence when successful
+func (m *WindowsQualityUpdateCatalogItem) GetQualityUpdateCadence()(*WindowsQualityUpdateCadence) {
+    val, err := m.GetBackingStore().Get("qualityUpdateCadence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsQualityUpdateCadence)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *WindowsQualityUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.WindowsUpdateCatalogItem.Serialize(writer)
@@ -119,10 +169,29 @@ func (m *WindowsQualityUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896
             return err
         }
     }
+    if m.GetProductRevisions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProductRevisions()))
+        for i, v := range m.GetProductRevisions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("productRevisions", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetQualityUpdateCadence() != nil {
+        cast := (*m.GetQualityUpdateCadence()).String()
+        err = writer.WriteStringValue("qualityUpdateCadence", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
-// SetClassification sets the classification property value. Windows quality update classification
-func (m *WindowsQualityUpdateCatalogItem) SetClassification(value *WindowsQualityUpdateClassification)() {
+// SetClassification sets the classification property value. Windows quality update category
+func (m *WindowsQualityUpdateCatalogItem) SetClassification(value *WindowsQualityUpdateCategory)() {
     err := m.GetBackingStore().Set("classification", value)
     if err != nil {
         panic(err)
@@ -142,13 +211,31 @@ func (m *WindowsQualityUpdateCatalogItem) SetKbArticleId(value *string)() {
         panic(err)
     }
 }
+// SetProductRevisions sets the productRevisions property value. The operating system product revisions that are released as part of this quality update. Read-only.
+func (m *WindowsQualityUpdateCatalogItem) SetProductRevisions(value []WindowsQualityUpdateCatalogProductRevisionable)() {
+    err := m.GetBackingStore().Set("productRevisions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetQualityUpdateCadence sets the qualityUpdateCadence property value. The publishing cadence of the quality update. Possible values are: monthly, outOfBand. This property cannot be modified and is automatically populated when the catalog is created.
+func (m *WindowsQualityUpdateCatalogItem) SetQualityUpdateCadence(value *WindowsQualityUpdateCadence)() {
+    err := m.GetBackingStore().Set("qualityUpdateCadence", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type WindowsQualityUpdateCatalogItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsUpdateCatalogItemable
-    GetClassification()(*WindowsQualityUpdateClassification)
+    GetClassification()(*WindowsQualityUpdateCategory)
     GetIsExpeditable()(*bool)
     GetKbArticleId()(*string)
-    SetClassification(value *WindowsQualityUpdateClassification)()
+    GetProductRevisions()([]WindowsQualityUpdateCatalogProductRevisionable)
+    GetQualityUpdateCadence()(*WindowsQualityUpdateCadence)
+    SetClassification(value *WindowsQualityUpdateCategory)()
     SetIsExpeditable(value *bool)()
     SetKbArticleId(value *string)()
+    SetProductRevisions(value []WindowsQualityUpdateCatalogProductRevisionable)()
+    SetQualityUpdateCadence(value *WindowsQualityUpdateCadence)()
 }

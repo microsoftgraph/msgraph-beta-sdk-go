@@ -4,7 +4,7 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-// DeviceEnrollmentPlatformRestrictionsConfiguration device Enrollment Configuration that restricts the types of devices a user can enroll
+// DeviceEnrollmentPlatformRestrictionsConfiguration default Device Enrollment Platform Restrictions Configuration that restricts the types of devices a user can enroll
 type DeviceEnrollmentPlatformRestrictionsConfiguration struct {
     DeviceEnrollmentConfiguration
 }
@@ -100,6 +100,26 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetFieldDeserializer
         }
         return nil
     }
+    res["tvosRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTvosRestriction(val.(DeviceEnrollmentPlatformRestrictionable))
+        }
+        return nil
+    }
+    res["visionOSRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetVisionOSRestriction(val.(DeviceEnrollmentPlatformRestrictionable))
+        }
+        return nil
+    }
     res["windowsHomeSkuRestriction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateDeviceEnrollmentPlatformRestrictionFromDiscriminatorValue)
         if err != nil {
@@ -160,6 +180,30 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacOSRestriction(
 // returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("macRestriction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceEnrollmentPlatformRestrictionable)
+    }
+    return nil
+}
+// GetTvosRestriction gets the tvosRestriction property value. Indicates restrictions for TvOS platform.
+// returns a DeviceEnrollmentPlatformRestrictionable when successful
+func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetTvosRestriction()(DeviceEnrollmentPlatformRestrictionable) {
+    val, err := m.GetBackingStore().Get("tvosRestriction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceEnrollmentPlatformRestrictionable)
+    }
+    return nil
+}
+// GetVisionOSRestriction gets the visionOSRestriction property value. Indicates restrictions for VisionOS platform.
+// returns a DeviceEnrollmentPlatformRestrictionable when successful
+func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetVisionOSRestriction()(DeviceEnrollmentPlatformRestrictionable) {
+    val, err := m.GetBackingStore().Get("visionOSRestriction")
     if err != nil {
         panic(err)
     }
@@ -241,6 +285,18 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) Serialize(writer i87
         }
     }
     {
+        err = writer.WriteObjectValue("tvosRestriction", m.GetTvosRestriction())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("visionOSRestriction", m.GetVisionOSRestriction())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("windowsHomeSkuRestriction", m.GetWindowsHomeSkuRestriction())
         if err != nil {
             return err
@@ -295,6 +351,20 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetMacRestriction(va
         panic(err)
     }
 }
+// SetTvosRestriction sets the tvosRestriction property value. Indicates restrictions for TvOS platform.
+func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetTvosRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
+    err := m.GetBackingStore().Set("tvosRestriction", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetVisionOSRestriction sets the visionOSRestriction property value. Indicates restrictions for VisionOS platform.
+func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetVisionOSRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
+    err := m.GetBackingStore().Set("visionOSRestriction", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindowsHomeSkuRestriction sets the windowsHomeSkuRestriction property value. Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetWindowsHomeSkuRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("windowsHomeSkuRestriction", value)
@@ -324,6 +394,8 @@ type DeviceEnrollmentPlatformRestrictionsConfigurationable interface {
     GetIosRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetMacOSRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetMacRestriction()(DeviceEnrollmentPlatformRestrictionable)
+    GetTvosRestriction()(DeviceEnrollmentPlatformRestrictionable)
+    GetVisionOSRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetWindowsHomeSkuRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetWindowsMobileRestriction()(DeviceEnrollmentPlatformRestrictionable)
     GetWindowsRestriction()(DeviceEnrollmentPlatformRestrictionable)
@@ -332,6 +404,8 @@ type DeviceEnrollmentPlatformRestrictionsConfigurationable interface {
     SetIosRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetMacOSRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetMacRestriction(value DeviceEnrollmentPlatformRestrictionable)()
+    SetTvosRestriction(value DeviceEnrollmentPlatformRestrictionable)()
+    SetVisionOSRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetWindowsHomeSkuRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetWindowsMobileRestriction(value DeviceEnrollmentPlatformRestrictionable)()
     SetWindowsRestriction(value DeviceEnrollmentPlatformRestrictionable)()

@@ -41,7 +41,7 @@ func (m *AiInteractionHistory) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetInteractions gets the interactions property value. The list of AI interactions.
+// GetInteractions gets the interactions property value. The interactions property
 // returns a []AiInteractionable when successful
 func (m *AiInteractionHistory) GetInteractions()([]AiInteractionable) {
     val, err := m.GetBackingStore().Get("interactions")
@@ -73,7 +73,7 @@ func (m *AiInteractionHistory) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetInteractions sets the interactions property value. The list of AI interactions.
+// SetInteractions sets the interactions property value. The interactions property
 func (m *AiInteractionHistory) SetInteractions(value []AiInteractionable)() {
     err := m.GetBackingStore().Set("interactions", value)
     if err != nil {

@@ -111,6 +111,16 @@ func (m *IdentifierUriRestriction) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["isStateSetByMicrosoft"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsStateSetByMicrosoft(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -142,6 +152,18 @@ func (m *IdentifierUriRestriction) GetFieldDeserializers()(map[string]func(i878a
         return nil
     }
     return res
+}
+// GetIsStateSetByMicrosoft gets the isStateSetByMicrosoft property value. If true, Microsoft sets the identifierUriRestriction state. If false, the tenant modifies the identifierUriRestriction state. Read-only.
+// returns a *bool when successful
+func (m *IdentifierUriRestriction) GetIsStateSetByMicrosoft()(*bool) {
+    val, err := m.GetBackingStore().Get("isStateSetByMicrosoft")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
@@ -258,6 +280,13 @@ func (m *IdentifierUriRestriction) SetExcludeSaml(value *bool)() {
         panic(err)
     }
 }
+// SetIsStateSetByMicrosoft sets the isStateSetByMicrosoft property value. If true, Microsoft sets the identifierUriRestriction state. If false, the tenant modifies the identifierUriRestriction state. Read-only.
+func (m *IdentifierUriRestriction) SetIsStateSetByMicrosoft(value *bool)() {
+    err := m.GetBackingStore().Set("isStateSetByMicrosoft", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *IdentifierUriRestriction) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -287,6 +316,7 @@ type IdentifierUriRestrictionable interface {
     GetExcludeActors()(AppManagementPolicyActorExemptionsable)
     GetExcludeAppsReceivingV2Tokens()(*bool)
     GetExcludeSaml()(*bool)
+    GetIsStateSetByMicrosoft()(*bool)
     GetOdataType()(*string)
     GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetState()(*AppManagementRestrictionState)
@@ -294,6 +324,7 @@ type IdentifierUriRestrictionable interface {
     SetExcludeActors(value AppManagementPolicyActorExemptionsable)()
     SetExcludeAppsReceivingV2Tokens(value *bool)()
     SetExcludeSaml(value *bool)()
+    SetIsStateSetByMicrosoft(value *bool)()
     SetOdataType(value *string)()
     SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetState(value *AppManagementRestrictionState)()

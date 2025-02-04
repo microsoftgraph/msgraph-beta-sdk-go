@@ -7,13 +7,15 @@ import (
 )
 
 type AppRoleAssignment struct {
-    Entity
+    DirectoryObject
 }
 // NewAppRoleAssignment instantiates a new AppRoleAssignment and sets the default values.
 func NewAppRoleAssignment()(*AppRoleAssignment) {
     m := &AppRoleAssignment{
-        Entity: *NewEntity(),
+        DirectoryObject: *NewDirectoryObject(),
     }
+    odataTypeValue := "#microsoft.graph.appRoleAssignment"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAppRoleAssignmentFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +50,7 @@ func (m *AppRoleAssignment) GetCreationTimestamp()(*i336074805fc853987abe6f7fe3a
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AppRoleAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.Entity.GetFieldDeserializers()
+    res := m.DirectoryObject.GetFieldDeserializers()
     res["appRoleId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetUUIDValue()
         if err != nil {
@@ -183,7 +185,7 @@ func (m *AppRoleAssignment) GetResourceId()(*i561e97a8befe7661a44c8f54600992b420
 }
 // Serialize serializes information the current object
 func (m *AppRoleAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.Entity.Serialize(writer)
+    err := m.DirectoryObject.Serialize(writer)
     if err != nil {
         return err
     }
@@ -281,7 +283,7 @@ func (m *AppRoleAssignment) SetResourceId(value *i561e97a8befe7661a44c8f54600992
     }
 }
 type AppRoleAssignmentable interface {
-    Entityable
+    DirectoryObjectable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppRoleId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetCreationTimestamp()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)

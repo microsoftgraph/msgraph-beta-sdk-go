@@ -142,6 +142,16 @@ func (m *ProtectionUnitBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["protectionSources"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseProtectionSource)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProtectionSources(val.(*ProtectionSource))
+        }
+        return nil
+    }
     res["status"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseProtectionUnitStatus)
         if err != nil {
@@ -187,6 +197,18 @@ func (m *ProtectionUnitBase) GetPolicyId()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetProtectionSources gets the protectionSources property value. The protectionSources property
+// returns a *ProtectionSource when successful
+func (m *ProtectionUnitBase) GetProtectionSources()(*ProtectionSource) {
+    val, err := m.GetBackingStore().Get("protectionSources")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ProtectionSource)
     }
     return nil
 }
@@ -244,6 +266,13 @@ func (m *ProtectionUnitBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetProtectionSources() != nil {
+        cast := (*m.GetProtectionSources()).String()
+        err = writer.WriteStringValue("protectionSources", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetStatus() != nil {
         cast := (*m.GetStatus()).String()
         err = writer.WriteStringValue("status", &cast)
@@ -295,6 +324,13 @@ func (m *ProtectionUnitBase) SetPolicyId(value *string)() {
         panic(err)
     }
 }
+// SetProtectionSources sets the protectionSources property value. The protectionSources property
+func (m *ProtectionUnitBase) SetProtectionSources(value *ProtectionSource)() {
+    err := m.GetBackingStore().Set("protectionSources", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatus sets the status property value. The status of the protection unit. The possible values are: protectRequested, protected, unprotectRequested, unprotected, removeRequested, unknownFutureValue.
 func (m *ProtectionUnitBase) SetStatus(value *ProtectionUnitStatus)() {
     err := m.GetBackingStore().Set("status", value)
@@ -311,6 +347,7 @@ type ProtectionUnitBaseable interface {
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPolicyId()(*string)
+    GetProtectionSources()(*ProtectionSource)
     GetStatus()(*ProtectionUnitStatus)
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
@@ -318,5 +355,6 @@ type ProtectionUnitBaseable interface {
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPolicyId(value *string)()
+    SetProtectionSources(value *ProtectionSource)()
     SetStatus(value *ProtectionUnitStatus)()
 }

@@ -11,7 +11,7 @@ import (
 type ItemPrimaryChannelMessagesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemPrimaryChannelMessagesRequestBuilderGetQueryParameters a collection of all the messages in the channel. A navigation property. Nullable.
+// ItemPrimaryChannelMessagesRequestBuilderGetQueryParameters a collection of all the messages in the channel. Nullable.
 type ItemPrimaryChannelMessagesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,7 +81,7 @@ func (m *ItemPrimaryChannelMessagesRequestBuilder) Count()(*ItemPrimaryChannelMe
 func (m *ItemPrimaryChannelMessagesRequestBuilder) Delta()(*ItemPrimaryChannelMessagesDeltaRequestBuilder) {
     return NewItemPrimaryChannelMessagesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of all the messages in the channel. A navigation property. Nullable.
+// Get a collection of all the messages in the channel. Nullable.
 // returns a ChatMessageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemPrimaryChannelMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPrimaryChannelMessagesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageCollectionResponseable, error) {
@@ -121,7 +121,7 @@ func (m *ItemPrimaryChannelMessagesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
-// ToGetRequestInformation a collection of all the messages in the channel. A navigation property. Nullable.
+// ToGetRequestInformation a collection of all the messages in the channel. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemPrimaryChannelMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPrimaryChannelMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

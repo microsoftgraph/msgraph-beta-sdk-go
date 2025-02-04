@@ -21,6 +21,11 @@ func NewItemOwnersDirectoryObjectItemRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemOwnersDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
+// GraphAppRoleAssignment casts the previous resource to appRoleAssignment.
+// returns a *ItemOwnersItemGraphAppRoleAssignmentRequestBuilder when successful
+func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphAppRoleAssignment()(*ItemOwnersItemGraphAppRoleAssignmentRequestBuilder) {
+    return NewItemOwnersItemGraphAppRoleAssignmentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GraphEndpoint casts the previous resource to endpoint.
 // returns a *ItemOwnersItemGraphEndpointRequestBuilder when successful
 func (m *ItemOwnersDirectoryObjectItemRequestBuilder) GraphEndpoint()(*ItemOwnersItemGraphEndpointRequestBuilder) {
