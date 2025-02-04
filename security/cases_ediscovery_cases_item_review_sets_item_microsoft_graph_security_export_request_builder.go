@@ -30,7 +30,7 @@ func NewCasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportReques
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post initiate an export from a reviewSet.  For details, see Export documents from a review set in eDiscovery (Premium).
+// Post initiate an export from a reviewSet. For more information, see Export documents from a review set in eDiscovery (Premium).
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportReque
     }
     return nil
 }
-// ToPostRequestInformation initiate an export from a reviewSet.  For details, see Export documents from a review set in eDiscovery (Premium).
+// ToPostRequestInformation initiate an export from a reviewSet. For more information, see Export documents from a review set in eDiscovery (Premium).
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportRequestBuilder) ToPostRequestInformation(ctx context.Context, body CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportExportPostRequestBodyable, requestConfiguration *CasesEdiscoveryCasesItemReviewSetsItemMicrosoftGraphSecurityExportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -862,6 +862,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDepMacOSEnrollmentProfile(), nil
                     case "#microsoft.graph.depOnboardingSetting":
                         return NewDepOnboardingSetting(), nil
+                    case "#microsoft.graph.depTvOSEnrollmentProfile":
+                        return NewDepTvOSEnrollmentProfile(), nil
+                    case "#microsoft.graph.depVisionOSEnrollmentProfile":
+                        return NewDepVisionOSEnrollmentProfile(), nil
                     case "#microsoft.graph.detectedApp":
                         return NewDetectedApp(), nil
                     case "#microsoft.graph.device":
@@ -1214,12 +1218,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEducationSubmission(), nil
                     case "#microsoft.graph.educationSubmissionResource":
                         return NewEducationSubmissionResource(), nil
-                    case "#microsoft.graph.educationSynchronizationError":
-                        return NewEducationSynchronizationError(), nil
-                    case "#microsoft.graph.educationSynchronizationProfile":
-                        return NewEducationSynchronizationProfile(), nil
-                    case "#microsoft.graph.educationSynchronizationProfileStatus":
-                        return NewEducationSynchronizationProfileStatus(), nil
                     case "#microsoft.graph.educationUser":
                         return NewEducationUser(), nil
                     case "#microsoft.graph.emailActivityStatistics":
@@ -1296,10 +1294,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewExactMatchSessionBase(), nil
                     case "#microsoft.graph.exactMatchUploadAgent":
                         return NewExactMatchUploadAgent(), nil
+                    case "#microsoft.graph.exchangeAdmin":
+                        return NewExchangeAdmin(), nil
                     case "#microsoft.graph.exchangeProtectionPolicy":
                         return NewExchangeProtectionPolicy(), nil
                     case "#microsoft.graph.exchangeRestoreSession":
                         return NewExchangeRestoreSession(), nil
+                    case "#microsoft.graph.exchangeSettings":
+                        return NewExchangeSettings(), nil
                     case "#microsoft.graph.extension":
                         return NewExtension(), nil
                     case "#microsoft.graph.extensionProperty":
@@ -1782,6 +1784,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMacOSWiredNetworkConfiguration(), nil
                     case "#microsoft.graph.mailAssessmentRequest":
                         return NewMailAssessmentRequest(), nil
+                    case "#microsoft.graph.mailbox":
+                        return NewMailbox(), nil
+                    case "#microsoft.graph.mailboxFolder":
+                        return NewMailboxFolder(), nil
+                    case "#microsoft.graph.mailboxItem":
+                        return NewMailboxItem(), nil
                     case "#microsoft.graph.mailboxProtectionRule":
                         return NewMailboxProtectionRule(), nil
                     case "#microsoft.graph.mailboxProtectionUnit":

@@ -95,6 +95,16 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["isActivitiesIncludedWhenCopyingShiftsEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsActivitiesIncludedWhenCopyingShiftsEnabled(val)
+        }
+        return nil
+    }
     res["isCrossLocationShiftRequestApprovalRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -408,6 +418,18 @@ func (m *Schedule) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         return nil
     }
     return res
+}
+// GetIsActivitiesIncludedWhenCopyingShiftsEnabled gets the isActivitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts include activities from the original shift.
+// returns a *bool when successful
+func (m *Schedule) GetIsActivitiesIncludedWhenCopyingShiftsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isActivitiesIncludedWhenCopyingShiftsEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetIsCrossLocationShiftRequestApprovalRequired gets the isCrossLocationShiftRequestApprovalRequired property value. Indicates whether approval is required by a manager of this schedule for cross location shift requests.
 // returns a *bool when successful
@@ -728,6 +750,12 @@ func (m *Schedule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
         }
     }
     {
+        err = writer.WriteBoolValue("isActivitiesIncludedWhenCopyingShiftsEnabled", m.GetIsActivitiesIncludedWhenCopyingShiftsEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isCrossLocationShiftRequestApprovalRequired", m.GetIsCrossLocationShiftRequestApprovalRequired())
         if err != nil {
             return err
@@ -949,6 +977,13 @@ func (m *Schedule) SetEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetIsActivitiesIncludedWhenCopyingShiftsEnabled sets the isActivitiesIncludedWhenCopyingShiftsEnabled property value. Indicates whether copied shifts include activities from the original shift.
+func (m *Schedule) SetIsActivitiesIncludedWhenCopyingShiftsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isActivitiesIncludedWhenCopyingShiftsEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsCrossLocationShiftRequestApprovalRequired sets the isCrossLocationShiftRequestApprovalRequired property value. Indicates whether approval is required by a manager of this schedule for cross location shift requests.
 func (m *Schedule) SetIsCrossLocationShiftRequestApprovalRequired(value *bool)() {
     err := m.GetBackingStore().Set("isCrossLocationShiftRequestApprovalRequired", value)
@@ -1123,6 +1158,7 @@ type Scheduleable interface {
     GetActivitiesIncludedWhenCopyingShiftsEnabled()(*bool)
     GetDayNotes()([]DayNoteable)
     GetEnabled()(*bool)
+    GetIsActivitiesIncludedWhenCopyingShiftsEnabled()(*bool)
     GetIsCrossLocationShiftRequestApprovalRequired()(*bool)
     GetIsCrossLocationShiftsEnabled()(*bool)
     GetOfferShiftRequests()([]OfferShiftRequestable)
@@ -1150,6 +1186,7 @@ type Scheduleable interface {
     SetActivitiesIncludedWhenCopyingShiftsEnabled(value *bool)()
     SetDayNotes(value []DayNoteable)()
     SetEnabled(value *bool)()
+    SetIsActivitiesIncludedWhenCopyingShiftsEnabled(value *bool)()
     SetIsCrossLocationShiftRequestApprovalRequired(value *bool)()
     SetIsCrossLocationShiftsEnabled(value *bool)()
     SetOfferShiftRequests(value []OfferShiftRequestable)()

@@ -67,6 +67,11 @@ func (m *AdminRequestBuilder) Edge()(*EdgeRequestBuilder) {
 func (m *AdminRequestBuilder) Entra()(*EntraRequestBuilder) {
     return NewEntraRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Exchange provides operations to manage the exchange property of the microsoft.graph.admin entity.
+// returns a *ExchangeRequestBuilder when successful
+func (m *AdminRequestBuilder) Exchange()(*ExchangeRequestBuilder) {
+    return NewExchangeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Forms provides operations to manage the forms property of the microsoft.graph.admin entity.
 // returns a *FormsRequestBuilder when successful
 func (m *AdminRequestBuilder) Forms()(*FormsRequestBuilder) {

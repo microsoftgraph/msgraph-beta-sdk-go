@@ -470,6 +470,16 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable), nil
 }
+// RetrieveCloudPkiLeafCertificateReport provides operations to call the retrieveCloudPkiLeafCertificateReport method.
+// returns a *ReportsRetrieveCloudPkiLeafCertificateReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveCloudPkiLeafCertificateReport()(*ReportsRetrieveCloudPkiLeafCertificateReportRequestBuilder) {
+    return NewReportsRetrieveCloudPkiLeafCertificateReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveCloudPkiLeafCertificateSummaryReport provides operations to call the retrieveCloudPkiLeafCertificateSummaryReport method.
+// returns a *ReportsRetrieveCloudPkiLeafCertificateSummaryReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveCloudPkiLeafCertificateSummaryReport()(*ReportsRetrieveCloudPkiLeafCertificateSummaryReportRequestBuilder) {
+    return NewReportsRetrieveCloudPkiLeafCertificateSummaryReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveDeviceAppInstallationStatusReport provides operations to call the retrieveDeviceAppInstallationStatusReport method.
 // returns a *ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder when successful
 func (m *ReportsRequestBuilder) RetrieveDeviceAppInstallationStatusReport()(*ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder) {

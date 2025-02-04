@@ -19,7 +19,7 @@ func NewEdiscoveryExportOperation()(*EdiscoveryExportOperation) {
 func CreateEdiscoveryExportOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryExportOperation(), nil
 }
-// GetAzureBlobContainer gets the azureBlobContainer property value. The name of the Azure storage location where the export is stored. This only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and will stop returning data on April 30th, 2023.
+// GetAzureBlobContainer gets the azureBlobContainer property value. The name of the Azure storage location where the export is stored. This name only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and stopped returning data on April 30, 2023.
 // returns a *string when successful
 func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobContainer")
@@ -31,7 +31,7 @@ func (m *EdiscoveryExportOperation) GetAzureBlobContainer()(*string) {
     }
     return nil
 }
-// GetAzureBlobToken gets the azureBlobToken property value. The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and will stop returning data on April 30, 2023.
+// GetAzureBlobToken gets the azureBlobToken property value. The SAS token for the Azure storage location. This token only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and stopped returning data on April 30, 2023.
 // returns a *string when successful
 func (m *EdiscoveryExportOperation) GetAzureBlobToken()(*string) {
     val, err := m.GetBackingStore().Get("azureBlobToken")
@@ -67,7 +67,7 @@ func (m *EdiscoveryExportOperation) GetExportFileMetadata()([]ExportFileMetadata
     }
     return nil
 }
-// GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30, 2023. Going forward, the summary and load file are always included.
+// GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize.
 // returns a *ExportOptions when successful
 func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
@@ -79,7 +79,7 @@ func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
     }
     return nil
 }
-// GetExportStructure gets the exportStructure property value. The options provided that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
+// GetExportStructure gets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg.
 // returns a *ExportFileStructure when successful
 func (m *EdiscoveryExportOperation) GetExportStructure()(*ExportFileStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
@@ -203,7 +203,7 @@ func (m *EdiscoveryExportOperation) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetOutputFolderId gets the outputFolderId property value. The output folder ID. The outputFolderId property is deprecated and will stop returning data on April 30, 2023.
+// GetOutputFolderId gets the outputFolderId property value. The output folder ID. The outputFolderId property is deprecated and stopped returning data on April 30, 2023.
 // returns a *string when successful
 func (m *EdiscoveryExportOperation) GetOutputFolderId()(*string) {
     val, err := m.GetBackingStore().Get("outputFolderId")
@@ -327,14 +327,14 @@ func (m *EdiscoveryExportOperation) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetAzureBlobContainer sets the azureBlobContainer property value. The name of the Azure storage location where the export is stored. This only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and will stop returning data on April 30th, 2023.
+// SetAzureBlobContainer sets the azureBlobContainer property value. The name of the Azure storage location where the export is stored. This name only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and stopped returning data on April 30, 2023.
 func (m *EdiscoveryExportOperation) SetAzureBlobContainer(value *string)() {
     err := m.GetBackingStore().Set("azureBlobContainer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAzureBlobToken sets the azureBlobToken property value. The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and will stop returning data on April 30, 2023.
+// SetAzureBlobToken sets the azureBlobToken property value. The SAS token for the Azure storage location. This token only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and stopped returning data on April 30, 2023.
 func (m *EdiscoveryExportOperation) SetAzureBlobToken(value *string)() {
     err := m.GetBackingStore().Set("azureBlobToken", value)
     if err != nil {
@@ -355,21 +355,21 @@ func (m *EdiscoveryExportOperation) SetExportFileMetadata(value []ExportFileMeta
         panic(err)
     }
 }
-// SetExportOptions sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30, 2023. Going forward, the summary and load file are always included.
+// SetExportOptions sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize.
 func (m *EdiscoveryExportOperation) SetExportOptions(value *ExportOptions)() {
     err := m.GetBackingStore().Set("exportOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportStructure sets the exportStructure property value. The options provided that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.
+// SetExportStructure sets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg.
 func (m *EdiscoveryExportOperation) SetExportStructure(value *ExportFileStructure)() {
     err := m.GetBackingStore().Set("exportStructure", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOutputFolderId sets the outputFolderId property value. The output folder ID. The outputFolderId property is deprecated and will stop returning data on April 30, 2023.
+// SetOutputFolderId sets the outputFolderId property value. The output folder ID. The outputFolderId property is deprecated and stopped returning data on April 30, 2023.
 func (m *EdiscoveryExportOperation) SetOutputFolderId(value *string)() {
     err := m.GetBackingStore().Set("outputFolderId", value)
     if err != nil {

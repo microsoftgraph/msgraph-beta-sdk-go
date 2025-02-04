@@ -348,6 +348,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["productType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcProductType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProductType(val.(*CloudPcProductType))
+        }
+        return nil
+    }
     res["provisioningPolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -617,6 +627,18 @@ func (m *CloudPC) GetPowerState()(*CloudPcPowerState) {
     }
     if val != nil {
         return val.(*CloudPcPowerState)
+    }
+    return nil
+}
+// GetProductType gets the productType property value. The product type of the Cloud PC. The possible values are: enterprise, frontline, devBox, powerAutomate, business, unknownFutureValue. For the available service plans and pricing for enterprise, frontline, and business, see Windows 365 for business. For pricing information for devBox, see Microsoft Dev Box pricing. For the available plans and pricing for powerAutomate, see Power Automate pricing. The default value is enterprise. Supports $filter and $select. For more information, see Example 4: List Cloud PCs filtered by product type. Read-only.
+// returns a *CloudPcProductType when successful
+func (m *CloudPC) GetProductType()(*CloudPcProductType) {
+    val, err := m.GetBackingStore().Get("productType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcProductType)
     }
     return nil
 }
@@ -906,6 +928,13 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    if m.GetProductType() != nil {
+        cast := (*m.GetProductType()).String()
+        err = writer.WriteStringValue("productType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("provisioningPolicyId", m.GetProvisioningPolicyId())
         if err != nil {
@@ -1131,6 +1160,13 @@ func (m *CloudPC) SetPowerState(value *CloudPcPowerState)() {
         panic(err)
     }
 }
+// SetProductType sets the productType property value. The product type of the Cloud PC. The possible values are: enterprise, frontline, devBox, powerAutomate, business, unknownFutureValue. For the available service plans and pricing for enterprise, frontline, and business, see Windows 365 for business. For pricing information for devBox, see Microsoft Dev Box pricing. For the available plans and pricing for powerAutomate, see Power Automate pricing. The default value is enterprise. Supports $filter and $select. For more information, see Example 4: List Cloud PCs filtered by product type. Read-only.
+func (m *CloudPC) SetProductType(value *CloudPcProductType)() {
+    err := m.GetBackingStore().Set("productType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProvisioningPolicyId sets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
 func (m *CloudPC) SetProvisioningPolicyId(value *string)() {
     err := m.GetBackingStore().Set("provisioningPolicyId", value)
@@ -1239,6 +1275,7 @@ type CloudPCable interface {
     GetOsVersion()(*CloudPcOperatingSystem)
     GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallResultable)
     GetPowerState()(*CloudPcPowerState)
+    GetProductType()(*CloudPcProductType)
     GetProvisioningPolicyId()(*string)
     GetProvisioningPolicyName()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
@@ -1272,6 +1309,7 @@ type CloudPCable interface {
     SetOsVersion(value *CloudPcOperatingSystem)()
     SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInstallResultable)()
     SetPowerState(value *CloudPcPowerState)()
+    SetProductType(value *CloudPcProductType)()
     SetProvisioningPolicyId(value *string)()
     SetProvisioningPolicyName(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()
