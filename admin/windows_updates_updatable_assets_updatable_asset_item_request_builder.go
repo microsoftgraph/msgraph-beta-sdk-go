@@ -54,11 +54,11 @@ func NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder(rawUrl str
     urlParams["request-raw-url"] = rawUrl
     return NewWindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
+// Delete delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered and automatically unenrolled from management for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-beta
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -136,7 +136,7 @@ func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) Patch(ct
     }
     return res.(i17376df570f19ff3c32da2d66a677d31250ed0ff64059351645f48a152316b3c.UpdatableAssetable), nil
 }
-// ToDeleteRequestInformation delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted.
+// ToDeleteRequestInformation delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered and automatically unenrolled from management for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
 // returns a *RequestInformation when successful
 func (m *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *WindowsUpdatesUpdatableAssetsUpdatableAssetItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
