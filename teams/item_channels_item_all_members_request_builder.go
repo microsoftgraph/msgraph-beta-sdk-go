@@ -11,7 +11,7 @@ import (
 type ItemChannelsItemAllMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemChannelsItemAllMembersRequestBuilderGetQueryParameters retrieve a list of conversationMember objects from a team channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
+// ItemChannelsItemAllMembersRequestBuilderGetQueryParameters get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
 type ItemChannelsItemAllMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -81,7 +81,7 @@ func NewItemChannelsItemAllMembersRequestBuilder(rawUrl string, requestAdapter i
 func (m *ItemChannelsItemAllMembersRequestBuilder) Count()(*ItemChannelsItemAllMembersCountRequestBuilder) {
     return NewItemChannelsItemAllMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of conversationMember objects from a team channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
+// Get get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
 // returns a ConversationMemberCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -129,7 +129,7 @@ func (m *ItemChannelsItemAllMembersRequestBuilder) Post(ctx context.Context, bod
 func (m *ItemChannelsItemAllMembersRequestBuilder) Remove()(*ItemChannelsItemAllMembersRemoveRequestBuilder) {
     return NewItemChannelsItemAllMembersRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of conversationMember objects from a team channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
+// ToGetRequestInformation get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemAllMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemAllMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

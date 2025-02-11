@@ -77,6 +77,16 @@ func (m *Presence) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["sequenceNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSequenceNumber(val)
+        }
+        return nil
+    }
     res["statusMessage"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePresenceStatusMessageFromDiscriminatorValue)
         if err != nil {
@@ -98,6 +108,18 @@ func (m *Presence) GetOutOfOfficeSettings()(OutOfOfficeSettingsable) {
     }
     if val != nil {
         return val.(OutOfOfficeSettingsable)
+    }
+    return nil
+}
+// GetSequenceNumber gets the sequenceNumber property value. The sequenceNumber property
+// returns a *string when successful
+func (m *Presence) GetSequenceNumber()(*string) {
+    val, err := m.GetBackingStore().Get("sequenceNumber")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -166,6 +188,13 @@ func (m *Presence) SetOutOfOfficeSettings(value OutOfOfficeSettingsable)() {
         panic(err)
     }
 }
+// SetSequenceNumber sets the sequenceNumber property value. The sequenceNumber property
+func (m *Presence) SetSequenceNumber(value *string)() {
+    err := m.GetBackingStore().Set("sequenceNumber", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetStatusMessage sets the statusMessage property value. The presence status message of a user.
 func (m *Presence) SetStatusMessage(value PresenceStatusMessageable)() {
     err := m.GetBackingStore().Set("statusMessage", value)
@@ -179,9 +208,11 @@ type Presenceable interface {
     GetActivity()(*string)
     GetAvailability()(*string)
     GetOutOfOfficeSettings()(OutOfOfficeSettingsable)
+    GetSequenceNumber()(*string)
     GetStatusMessage()(PresenceStatusMessageable)
     SetActivity(value *string)()
     SetAvailability(value *string)()
     SetOutOfOfficeSettings(value OutOfOfficeSettingsable)()
+    SetSequenceNumber(value *string)()
     SetStatusMessage(value PresenceStatusMessageable)()
 }

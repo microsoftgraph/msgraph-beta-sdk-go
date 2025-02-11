@@ -31,9 +31,12 @@ func NewVirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleReques
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function retrievePolicyApplySchedule
+// Get get the scheduled apply rule set on the policy. Frontline shared only. Administrators only.
 // returns a CloudPcPolicyScheduledApplyActionDetailable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-retrievepolicyapplyschedule?view=graph-rest-beta
 func (m *VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicyScheduledApplyActionDetailable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -51,7 +54,7 @@ func (m *VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleReque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcPolicyScheduledApplyActionDetailable), nil
 }
-// ToGetRequestInformation invoke function retrievePolicyApplySchedule
+// ToGetRequestInformation get the scheduled apply rule set on the policy. Frontline shared only. Administrators only.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointProvisioningPoliciesItemRetrievePolicyApplyScheduleRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
