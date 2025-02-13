@@ -2,19 +2,16 @@ package models
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
 type CloudPcPolicyScheduledApplyActionDetail struct {
-    // Stores model information.
-    backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
+    Entity
 }
 // NewCloudPcPolicyScheduledApplyActionDetail instantiates a new CloudPcPolicyScheduledApplyActionDetail and sets the default values.
 func NewCloudPcPolicyScheduledApplyActionDetail()(*CloudPcPolicyScheduledApplyActionDetail) {
     m := &CloudPcPolicyScheduledApplyActionDetail{
+        Entity: *NewEntity(),
     }
-    m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
-    m.SetAdditionalData(make(map[string]any))
     return m
 }
 // CreateCloudPcPolicyScheduledApplyActionDetailFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
@@ -22,25 +19,7 @@ func NewCloudPcPolicyScheduledApplyActionDetail()(*CloudPcPolicyScheduledApplyAc
 func CreateCloudPcPolicyScheduledApplyActionDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcPolicyScheduledApplyActionDetail(), nil
 }
-// GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-// returns a map[string]any when successful
-func (m *CloudPcPolicyScheduledApplyActionDetail) GetAdditionalData()(map[string]any) {
-    val , err :=  m.backingStore.Get("additionalData")
-    if err != nil {
-        panic(err)
-    }
-    if val == nil {
-        var value = make(map[string]any);
-        m.SetAdditionalData(value);
-    }
-    return val.(map[string]any)
-}
-// GetBackingStore gets the BackingStore property value. Stores model information.
-// returns a BackingStore when successful
-func (m *CloudPcPolicyScheduledApplyActionDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
-    return m.backingStore
-}
-// GetCronScheduleExpression gets the cronScheduleExpression property value. The cronScheduleExpression property
+// GetCronScheduleExpression gets the cronScheduleExpression property value. An expression that specifies the cron schedule. (For example, '0 0 0 20  ' means schedules a job to run at midnight on the 20th of every month) Administrators can set a cron expression to define the scheduling rules for automatic regular application. When auto-provision is disabled, cronScheduleExpression is set to null, stopping the automatic task scheduling. Read-Only.
 // returns a *string when successful
 func (m *CloudPcPolicyScheduledApplyActionDetail) GetCronScheduleExpression()(*string) {
     val, err := m.GetBackingStore().Get("cronScheduleExpression")
@@ -55,7 +34,7 @@ func (m *CloudPcPolicyScheduledApplyActionDetail) GetCronScheduleExpression()(*s
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcPolicyScheduledApplyActionDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res := m.Entity.GetFieldDeserializers()
     res["cronScheduleExpression"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -63,16 +42,6 @@ func (m *CloudPcPolicyScheduledApplyActionDetail) GetFieldDeserializers()(map[st
         }
         if val != nil {
             m.SetCronScheduleExpression(val)
-        }
-        return nil
-    }
-    res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetOdataType(val)
         }
         return nil
     }
@@ -88,19 +57,7 @@ func (m *CloudPcPolicyScheduledApplyActionDetail) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetOdataType gets the @odata.type property value. The OdataType property
-// returns a *string when successful
-func (m *CloudPcPolicyScheduledApplyActionDetail) GetOdataType()(*string) {
-    val, err := m.GetBackingStore().Get("odataType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetReservePercentage gets the reservePercentage property value. The reservePercentage property
+// GetReservePercentage gets the reservePercentage property value. The percentage of Cloud PCs to keep available. Administrators can set this property to a value from 0 to 99. Cloud PCs are reprovisioned only when there are no active and connected Cloud PC users. Frontline shared only.
 // returns a *int32 when successful
 func (m *CloudPcPolicyScheduledApplyActionDetail) GetReservePercentage()(*int32) {
     val, err := m.GetBackingStore().Get("reservePercentage")
@@ -114,58 +71,32 @@ func (m *CloudPcPolicyScheduledApplyActionDetail) GetReservePercentage()(*int32)
 }
 // Serialize serializes information the current object
 func (m *CloudPcPolicyScheduledApplyActionDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.Entity.Serialize(writer)
+    if err != nil {
+        return err
+    }
     {
-        err := writer.WriteStringValue("cronScheduleExpression", m.GetCronScheduleExpression())
+        err = writer.WriteStringValue("cronScheduleExpression", m.GetCronScheduleExpression())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteInt32Value("reservePercentage", m.GetReservePercentage())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteAdditionalData(m.GetAdditionalData())
+        err = writer.WriteInt32Value("reservePercentage", m.GetReservePercentage())
         if err != nil {
             return err
         }
     }
     return nil
 }
-// SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *CloudPcPolicyScheduledApplyActionDetail) SetAdditionalData(value map[string]any)() {
-    err := m.GetBackingStore().Set("additionalData", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *CloudPcPolicyScheduledApplyActionDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
-    m.backingStore = value
-}
-// SetCronScheduleExpression sets the cronScheduleExpression property value. The cronScheduleExpression property
+// SetCronScheduleExpression sets the cronScheduleExpression property value. An expression that specifies the cron schedule. (For example, '0 0 0 20  ' means schedules a job to run at midnight on the 20th of every month) Administrators can set a cron expression to define the scheduling rules for automatic regular application. When auto-provision is disabled, cronScheduleExpression is set to null, stopping the automatic task scheduling. Read-Only.
 func (m *CloudPcPolicyScheduledApplyActionDetail) SetCronScheduleExpression(value *string)() {
     err := m.GetBackingStore().Set("cronScheduleExpression", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOdataType sets the @odata.type property value. The OdataType property
-func (m *CloudPcPolicyScheduledApplyActionDetail) SetOdataType(value *string)() {
-    err := m.GetBackingStore().Set("odataType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetReservePercentage sets the reservePercentage property value. The reservePercentage property
+// SetReservePercentage sets the reservePercentage property value. The percentage of Cloud PCs to keep available. Administrators can set this property to a value from 0 to 99. Cloud PCs are reprovisioned only when there are no active and connected Cloud PC users. Frontline shared only.
 func (m *CloudPcPolicyScheduledApplyActionDetail) SetReservePercentage(value *int32)() {
     err := m.GetBackingStore().Set("reservePercentage", value)
     if err != nil {
@@ -173,15 +104,10 @@ func (m *CloudPcPolicyScheduledApplyActionDetail) SetReservePercentage(value *in
     }
 }
 type CloudPcPolicyScheduledApplyActionDetailable interface {
-    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
-    ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
+    Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCronScheduleExpression()(*string)
-    GetOdataType()(*string)
     GetReservePercentage()(*int32)
-    SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCronScheduleExpression(value *string)()
-    SetOdataType(value *string)()
     SetReservePercentage(value *int32)()
 }

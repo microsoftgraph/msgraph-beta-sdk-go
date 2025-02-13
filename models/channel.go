@@ -232,6 +232,16 @@ func (m *Channel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["planner"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTeamsChannelPlannerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPlanner(val.(TeamsChannelPlannerable))
+        }
+        return nil
+    }
     res["sharedWithTeams"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSharedWithChannelTeamInfoFromDiscriminatorValue)
         if err != nil {
@@ -389,6 +399,18 @@ func (m *Channel) GetModerationSettings()(ChannelModerationSettingsable) {
     }
     if val != nil {
         return val.(ChannelModerationSettingsable)
+    }
+    return nil
+}
+// GetPlanner gets the planner property value. Selective Planner services available to this channel. Currently, only shared channels are supported. Read-only. Nullable.
+// returns a TeamsChannelPlannerable when successful
+func (m *Channel) GetPlanner()(TeamsChannelPlannerable) {
+    val, err := m.GetBackingStore().Get("planner")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TeamsChannelPlannerable)
     }
     return nil
 }
@@ -556,6 +578,12 @@ func (m *Channel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("planner", m.GetPlanner())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSharedWithTeams() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSharedWithTeams()))
         for i, v := range m.GetSharedWithTeams() {
@@ -691,6 +719,13 @@ func (m *Channel) SetModerationSettings(value ChannelModerationSettingsable)() {
         panic(err)
     }
 }
+// SetPlanner sets the planner property value. Selective Planner services available to this channel. Currently, only shared channels are supported. Read-only. Nullable.
+func (m *Channel) SetPlanner(value TeamsChannelPlannerable)() {
+    err := m.GetBackingStore().Set("planner", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSharedWithTeams sets the sharedWithTeams property value. A collection of teams with which a channel is shared.
 func (m *Channel) SetSharedWithTeams(value []SharedWithChannelTeamInfoable)() {
     err := m.GetBackingStore().Set("sharedWithTeams", value)
@@ -742,6 +777,7 @@ type Channelable interface {
     GetMembershipType()(*ChannelMembershipType)
     GetMessages()([]ChatMessageable)
     GetModerationSettings()(ChannelModerationSettingsable)
+    GetPlanner()(TeamsChannelPlannerable)
     GetSharedWithTeams()([]SharedWithChannelTeamInfoable)
     GetSummary()(ChannelSummaryable)
     GetTabs()([]TeamsTabable)
@@ -760,6 +796,7 @@ type Channelable interface {
     SetMembershipType(value *ChannelMembershipType)()
     SetMessages(value []ChatMessageable)()
     SetModerationSettings(value ChannelModerationSettingsable)()
+    SetPlanner(value TeamsChannelPlannerable)()
     SetSharedWithTeams(value []SharedWithChannelTeamInfoable)()
     SetSummary(value ChannelSummaryable)()
     SetTabs(value []TeamsTabable)()

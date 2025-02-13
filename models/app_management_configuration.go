@@ -110,7 +110,7 @@ func (m *AppManagementConfiguration) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetKeyCredentials gets the keyCredentials property value. Collection of certificate restrictions settings to be applied to an application or service principal.
+// GetKeyCredentials gets the keyCredentials property value. The keyCredentials property
 // returns a []KeyCredentialConfigurationable when successful
 func (m *AppManagementConfiguration) GetKeyCredentials()([]KeyCredentialConfigurationable) {
     val, err := m.GetBackingStore().Get("keyCredentials")
@@ -134,7 +134,7 @@ func (m *AppManagementConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPasswordCredentials gets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal.
+// GetPasswordCredentials gets the passwordCredentials property value. The passwordCredentials property
 // returns a []PasswordCredentialConfigurationable when successful
 func (m *AppManagementConfiguration) GetPasswordCredentials()([]PasswordCredentialConfigurationable) {
     val, err := m.GetBackingStore().Get("passwordCredentials")
@@ -197,7 +197,7 @@ func (m *AppManagementConfiguration) SetAdditionalData(value map[string]any)() {
 func (m *AppManagementConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKeyCredentials sets the keyCredentials property value. Collection of certificate restrictions settings to be applied to an application or service principal.
+// SetKeyCredentials sets the keyCredentials property value. The keyCredentials property
 func (m *AppManagementConfiguration) SetKeyCredentials(value []KeyCredentialConfigurationable)() {
     err := m.GetBackingStore().Set("keyCredentials", value)
     if err != nil {
@@ -211,7 +211,7 @@ func (m *AppManagementConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPasswordCredentials sets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal.
+// SetPasswordCredentials sets the passwordCredentials property value. The passwordCredentials property
 func (m *AppManagementConfiguration) SetPasswordCredentials(value []PasswordCredentialConfigurationable)() {
     err := m.GetBackingStore().Set("passwordCredentials", value)
     if err != nil {
