@@ -31,7 +31,7 @@ func (m *FederatedIdentityCredential) GetAudiences()([]string) {
     }
     return nil
 }
-// GetClaimsMatchingExpression gets the claimsMatchingExpression property value. Enables the use of claims matching expressions against specified claims. For the list of supported expression syntax and claims, visit the Flexible FIC reference.
+// GetClaimsMatchingExpression gets the claimsMatchingExpression property value. Nullable.  Defaults to null if not set. Enables the use of claims matching expressions against specified claims. If claimsMatchingExpression is defined, subject must be null. For the list of supported expression syntax and claims, visit the Flexible FIC reference.
 // returns a FederatedIdentityExpressionable when successful
 func (m *FederatedIdentityCredential) GetClaimsMatchingExpression()(FederatedIdentityExpressionable) {
     val, err := m.GetBackingStore().Get("claimsMatchingExpression")
@@ -151,7 +151,7 @@ func (m *FederatedIdentityCredential) GetName()(*string) {
     }
     return nil
 }
-// GetSubject gets the subject property value. Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
+// GetSubject gets the subject property value. Nullable.  Defaults to null if not set. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. If subject is defined, claimsMatchingExpression must be null. Supports $filter (eq).
 // returns a *string when successful
 func (m *FederatedIdentityCredential) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
@@ -214,7 +214,7 @@ func (m *FederatedIdentityCredential) SetAudiences(value []string)() {
         panic(err)
     }
 }
-// SetClaimsMatchingExpression sets the claimsMatchingExpression property value. Enables the use of claims matching expressions against specified claims. For the list of supported expression syntax and claims, visit the Flexible FIC reference.
+// SetClaimsMatchingExpression sets the claimsMatchingExpression property value. Nullable.  Defaults to null if not set. Enables the use of claims matching expressions against specified claims. If claimsMatchingExpression is defined, subject must be null. For the list of supported expression syntax and claims, visit the Flexible FIC reference.
 func (m *FederatedIdentityCredential) SetClaimsMatchingExpression(value FederatedIdentityExpressionable)() {
     err := m.GetBackingStore().Set("claimsMatchingExpression", value)
     if err != nil {
@@ -242,7 +242,7 @@ func (m *FederatedIdentityCredential) SetName(value *string)() {
         panic(err)
     }
 }
-// SetSubject sets the subject property value. Required. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. Supports $filter (eq).
+// SetSubject sets the subject property value. Nullable.  Defaults to null if not set. The identifier of the external software workload within the external identity provider. Like the audience value, it has no fixed format, as each identity provider uses their own - sometimes a GUID, sometimes a colon delimited identifier, sometimes arbitrary strings. The value here must match the sub claim within the token presented to Microsoft Entra ID. The combination of issuer and subject must be unique on the app. It has a limit of 600 characters. If subject is defined, claimsMatchingExpression must be null. Supports $filter (eq).
 func (m *FederatedIdentityCredential) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {

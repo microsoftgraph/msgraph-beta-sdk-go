@@ -1,0 +1,27 @@
+package teamtemplatedefinition
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaGetResponseable instead.
+type ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponse struct {
+    ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaGetResponse
+}
+// NewItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponse instantiates a new ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponse and sets the default values.
+func NewItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponse()(*ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponse) {
+    m := &ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponse{
+        ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaGetResponse: *NewItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaGetResponse(),
+    }
+    return m
+}
+// CreateItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponse(), nil
+}
+// Deprecated: This class is obsolete. Use ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaGetResponseable instead.
+type ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaResponseable interface {
+    ItemTeamDefinitionChannelsItemPlannerPlansItemTasksDeltaGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

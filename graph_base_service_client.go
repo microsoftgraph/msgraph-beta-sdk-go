@@ -39,7 +39,6 @@ import (
     i310cda3e9f244aa61f9c9c78de433773f341b91c4a2310b8991671fe773be16e "github.com/microsoftgraph/msgraph-beta-sdk-go/rolemanagement"
     i312c0a09d8ded5436957205a14adfc7e2facbcc6f26ef9872a5b5eb79228375f "github.com/microsoftgraph/msgraph-beta-sdk-go/trustframework"
     i32f7b810493504f82bd6c97020faab5a8ff5f541a46dd3d6b9cc2aa77fc22fe4 "github.com/microsoftgraph/msgraph-beta-sdk-go/privilegedroles"
-    i35277464b5f866fcf2cb5324cd283216c9f6e9fc22956c71cb5b11c4ab649a29 "github.com/microsoftgraph/msgraph-beta-sdk-go/approleassignments"
     i39dbae52481ac3c9530d9fae0a2292348b8f7327bab28ea21183045324adadbc "github.com/microsoftgraph/msgraph-beta-sdk-go/authenticationmethodspolicy"
     i3b7da1b693d5428b20b0bf3340acb4b879042a9393e45df9349b04a5b2830acb "github.com/microsoftgraph/msgraph-beta-sdk-go/governanceresources"
     i3c2d5b7a05b0c58ca1d3b72343c5f03221f2bd894e75f89f62ccf8020a48250b "github.com/microsoftgraph/msgraph-beta-sdk-go/monitoring"
@@ -209,11 +208,6 @@ func (m *GraphBaseServiceClient) ApplicationsWithUniqueName(uniqueName *string)(
 // returns a *ApplicationTemplatesRequestBuilder when successful
 func (m *GraphBaseServiceClient) ApplicationTemplates()(*i9fb9a4d9d99571d2cc1de51809c0dfccf1dae8bd81c7eb39e51d1382c2ec81ba.ApplicationTemplatesRequestBuilder) {
     return i9fb9a4d9d99571d2cc1de51809c0dfccf1dae8bd81c7eb39e51d1382c2ec81ba.NewApplicationTemplatesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// AppRoleAssignments provides operations to manage the collection of appRoleAssignment entities.
-// returns a *AppRoleAssignmentsRequestBuilder when successful
-func (m *GraphBaseServiceClient) AppRoleAssignments()(*i35277464b5f866fcf2cb5324cd283216c9f6e9fc22956c71cb5b11c4ab649a29.AppRoleAssignmentsRequestBuilder) {
-    return i35277464b5f866fcf2cb5324cd283216c9f6e9fc22956c71cb5b11c4ab649a29.NewAppRoleAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ApprovalWorkflowProviders provides operations to manage the collection of approvalWorkflowProvider entities.
 // returns a *ApprovalWorkflowProvidersRequestBuilder when successful

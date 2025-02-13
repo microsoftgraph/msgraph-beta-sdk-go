@@ -31,6 +31,18 @@ func (m *TeamsAppSettings) GetAllowUserRequestsForAppAccess()(*bool) {
     }
     return nil
 }
+// GetCustomAppSettings gets the customAppSettings property value. The customAppSettings property
+// returns a CustomAppSettingsable when successful
+func (m *TeamsAppSettings) GetCustomAppSettings()(CustomAppSettingsable) {
+    val, err := m.GetBackingStore().Get("customAppSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CustomAppSettingsable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsAppSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -42,6 +54,16 @@ func (m *TeamsAppSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetAllowUserRequestsForAppAccess(val)
+        }
+        return nil
+    }
+    res["customAppSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCustomAppSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomAppSettings(val.(CustomAppSettingsable))
         }
         return nil
     }
@@ -104,6 +126,12 @@ func (m *TeamsAppSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteObjectValue("customAppSettings", m.GetCustomAppSettings())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isChatResourceSpecificConsentEnabled", m.GetIsChatResourceSpecificConsentEnabled())
         if err != nil {
             return err
@@ -120,6 +148,13 @@ func (m *TeamsAppSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 // SetAllowUserRequestsForAppAccess sets the allowUserRequestsForAppAccess property value. Indicates whether users are allowed to request access to the unavailable Teams apps.
 func (m *TeamsAppSettings) SetAllowUserRequestsForAppAccess(value *bool)() {
     err := m.GetBackingStore().Set("allowUserRequestsForAppAccess", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCustomAppSettings sets the customAppSettings property value. The customAppSettings property
+func (m *TeamsAppSettings) SetCustomAppSettings(value CustomAppSettingsable)() {
+    err := m.GetBackingStore().Set("customAppSettings", value)
     if err != nil {
         panic(err)
     }
@@ -142,9 +177,11 @@ type TeamsAppSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowUserRequestsForAppAccess()(*bool)
+    GetCustomAppSettings()(CustomAppSettingsable)
     GetIsChatResourceSpecificConsentEnabled()(*bool)
     GetIsUserPersonalScopeResourceSpecificConsentEnabled()(*bool)
     SetAllowUserRequestsForAppAccess(value *bool)()
+    SetCustomAppSettings(value CustomAppSettingsable)()
     SetIsChatResourceSpecificConsentEnabled(value *bool)()
     SetIsUserPersonalScopeResourceSpecificConsentEnabled(value *bool)()
 }

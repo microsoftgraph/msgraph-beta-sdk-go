@@ -1,0 +1,27 @@
+package teamtemplatedefinition
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaGetResponseable instead.
+type ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponse struct {
+    ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaGetResponse
+}
+// NewItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponse instantiates a new ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponse and sets the default values.
+func NewItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponse()(*ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponse) {
+    m := &ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponse{
+        ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaGetResponse: *NewItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaGetResponse(),
+    }
+    return m
+}
+// CreateItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponse(), nil
+}
+// Deprecated: This class is obsolete. Use ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaGetResponseable instead.
+type ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaResponseable interface {
+    ItemTeamDefinitionPrimaryChannelPlannerPlansItemBucketsDeltaGetResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}

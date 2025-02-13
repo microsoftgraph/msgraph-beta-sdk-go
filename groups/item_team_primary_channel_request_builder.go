@@ -145,6 +145,11 @@ func (m *ItemTeamPrimaryChannelRequestBuilder) Patch(ctx context.Context, body i
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Channelable), nil
 }
+// Planner provides operations to manage the planner property of the microsoft.graph.channel entity.
+// returns a *ItemTeamPrimaryChannelPlannerRequestBuilder when successful
+func (m *ItemTeamPrimaryChannelRequestBuilder) Planner()(*ItemTeamPrimaryChannelPlannerRequestBuilder) {
+    return NewItemTeamPrimaryChannelPlannerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ProvisionEmail provides operations to call the provisionEmail method.
 // returns a *ItemTeamPrimaryChannelProvisionEmailRequestBuilder when successful
 func (m *ItemTeamPrimaryChannelRequestBuilder) ProvisionEmail()(*ItemTeamPrimaryChannelProvisionEmailRequestBuilder) {
