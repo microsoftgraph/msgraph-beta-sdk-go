@@ -2090,6 +2090,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnlineMeetingBase(), nil
                     case "#microsoft.graph.onOtpSendCustomExtension":
                         return NewOnOtpSendCustomExtension(), nil
+                    case "#microsoft.graph.onPhoneMethodLoadStartListener":
+                        return NewOnPhoneMethodLoadStartListener(), nil
                     case "#microsoft.graph.onPremisesAgent":
                         return NewOnPremisesAgent(), nil
                     case "#microsoft.graph.onPremisesAgentGroup":
