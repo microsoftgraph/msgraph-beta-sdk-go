@@ -11,7 +11,7 @@ const (
     BUILTIN_GROUPPOLICYCONFIGURATIONINGESTIONTYPE
     // Indicated atleast 1 tenant admin & system ingested definitions configured for this policy
     MIXED_GROUPPOLICYCONFIGURATIONINGESTIONTYPE
-    // Unknown future enum value
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_GROUPPOLICYCONFIGURATIONINGESTIONTYPE
 )
 

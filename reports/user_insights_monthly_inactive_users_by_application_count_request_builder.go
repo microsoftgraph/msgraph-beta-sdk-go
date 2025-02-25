@@ -40,7 +40,7 @@ func NewUserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilder(rawUrl 
     return NewUserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated: The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
+// Deprecated: The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs on 2024-02-02 and will be removed 2024-02-16
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilder) Get(ctx context.Context, requestConfiguration *UserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -61,7 +61,7 @@ func (m *UserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilder) Get(c
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated: The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
+// Deprecated: The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs on 2024-02-02 and will be removed 2024-02-16
 // returns a *RequestInformation when successful
 func (m *UserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,7 +76,7 @@ func (m *UserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilder) ToGet
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs
+// Deprecated: The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs on 2024-02-02 and will be removed 2024-02-16
 // returns a *UserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilder when successful
 func (m *UserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilder) WithUrl(rawUrl string)(*UserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilder) {
     return NewUserInsightsMonthlyInactiveUsersByApplicationCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

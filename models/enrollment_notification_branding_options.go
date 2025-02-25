@@ -19,7 +19,7 @@ const (
     INCLUDECOMPANYPORTALLINK_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 16
     // Indicates that the DeviceDetails is included in the notification.
     INCLUDEDEVICEDETAILS_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 32
-    // unknownFutureValue for evolvable enums pattern.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONBRANDINGOPTIONS = 64
 )
 

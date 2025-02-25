@@ -55,7 +55,7 @@ func NewExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuil
     return NewExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property events for admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +72,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBui
     return nil
 }
 // Get get events from admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MessageEventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, error) {
@@ -93,7 +93,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBui
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable), nil
 }
 // Patch update the navigation property events in admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MessageEventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, error) {
@@ -114,7 +114,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBui
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable), nil
 }
 // ToDeleteRequestInformation delete navigation property events for admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +126,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBui
     return requestInfo, nil
 }
 // ToGetRequestInformation get events from admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +141,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBui
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property events in admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +157,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBui
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder) WithUrl(rawUrl string)(*ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder) {
     return NewExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

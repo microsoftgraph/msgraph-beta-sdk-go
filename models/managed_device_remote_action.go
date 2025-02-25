@@ -38,7 +38,7 @@ const (
     INITIATEMOBILEDEVICEMANAGEMENTKEYRECOVERY_MANAGEDDEVICEREMOTEACTION
     // Name of action to initiate On Demand Proactive Remediation
     INITIATEONDEMANDPROACTIVEREMEDIATION_MANAGEDDEVICEREMOTEACTION
-    // Evolvable enum member
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_MANAGEDDEVICEREMOTEACTION
     // Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it
     INITIATEDEVICEATTESTATION_MANAGEDDEVICEREMOTEACTION

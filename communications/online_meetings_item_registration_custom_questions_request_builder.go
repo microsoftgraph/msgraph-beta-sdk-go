@@ -47,7 +47,7 @@ type OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderPostRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByMeetingRegistrationQuestionId provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
-// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
 // returns a *OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder when successful
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) ByMeetingRegistrationQuestionId(meetingRegistrationQuestionId string)(*OnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQuestionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +78,7 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Count()(*O
     return NewOnlineMeetingsItemRegistrationCustomQuestionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get custom registration questions.
-// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
 // returns a MeetingRegistrationQuestionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionCollectionResponseable, error) {
@@ -99,7 +99,7 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionCollectionResponseable), nil
 }
 // Post create new navigation property to customQuestions for communications
-// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
 // returns a MeetingRegistrationQuestionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, error) {
@@ -120,7 +120,7 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) Post(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable), nil
 }
 // ToGetRequestInformation custom registration questions.
-// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +135,7 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to customQuestions for communications
-// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingRegistrationQuestionable, requestConfiguration *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +151,7 @@ func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation
+// Deprecated: The meetingRegistrationBase Entity is deprecated and will stop returning data on Dec 12th, 2024. Please use the new webinar APIs. as of 2024-04/meetingRegistrationDeprecation on 2024-04-01 and will be removed 2024-12-12
 // returns a *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder when successful
 func (m *OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) WithUrl(rawUrl string)(*OnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder) {
     return NewOnlineMeetingsItemRegistrationCustomQuestionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

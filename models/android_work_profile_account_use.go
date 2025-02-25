@@ -9,7 +9,7 @@ const (
     BLOCKALL_ANDROIDWORKPROFILEACCOUNTUSE
     // Allow addition of all accounts (including Google accounts) in Android Work Profile.
     ALLOWALL_ANDROIDWORKPROFILEACCOUNTUSE
-    // Unknown future value for evolvable enum patterns.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ANDROIDWORKPROFILEACCOUNTUSE
 )
 

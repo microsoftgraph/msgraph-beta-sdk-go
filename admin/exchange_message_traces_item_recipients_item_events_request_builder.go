@@ -47,7 +47,7 @@ type ExchangeMessageTracesItemRecipientsItemEventsRequestBuilderPostRequestConfi
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByMessageEventId provides operations to manage the events property of the microsoft.graph.messageRecipient entity.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) ByMessageEventId(messageEventId string)(*ExchangeMessageTracesItemRecipientsItemEventsMessageEventItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +78,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) Count()(*E
     return NewExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get events from admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MessageEventCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventCollectionResponseable, error) {
@@ -99,7 +99,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) Get(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventCollectionResponseable), nil
 }
 // Post create new navigation property to events for admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MessageEventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, error) {
@@ -120,7 +120,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) Post(ctx c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable), nil
 }
 // ToGetRequestInformation get events from admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +135,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) ToGetReque
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to events for admin
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MessageEventable, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +151,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) WithUrl(rawUrl string)(*ExchangeMessageTracesItemRecipientsItemEventsRequestBuilder) {
     return NewExchangeMessageTracesItemRecipientsItemEventsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

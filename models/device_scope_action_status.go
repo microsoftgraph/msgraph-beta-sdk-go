@@ -7,7 +7,7 @@ const (
     FAILED_DEVICESCOPEACTIONSTATUS DeviceScopeActionStatus = iota
     // Indicates the device scope action was successfully triggered.
     SUCCEEDED_DEVICESCOPEACTIONSTATUS
-    // Placeholder value for future expansion.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICESCOPEACTIONSTATUS
 )
 

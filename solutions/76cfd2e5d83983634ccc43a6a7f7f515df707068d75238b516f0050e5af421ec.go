@@ -99,7 +99,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAddit
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactsBulkAdditionRequestCollectionResponseable), nil
 }
-// Post create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+// Post create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The following steps describe how to create and manage a sharePointRestoreSession with bulk artifact additions:
 // returns a SiteRestoreArtifactsBulkAdditionRequestable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -136,7 +136,7 @@ func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAddit
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The initial status upon creation of the restore session is active. When all the sites are added to the corresponding SharePoint restore session and the restore session is activated, the status becomes completed. If any failures are encountered during resource resolution, the status of the restore session becomes completedWithErrors.
+// ToPostRequestInformation create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The following steps describe how to create and manage a sharePointRestoreSession with bulk artifact additions:
 // returns a *RequestInformation when successful
 func (m *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SiteRestoreArtifactsBulkAdditionRequestable, requestConfiguration *BackupRestoreSharePointRestoreSessionsItemSiteRestoreArtifactsBulkAdditionRequestsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

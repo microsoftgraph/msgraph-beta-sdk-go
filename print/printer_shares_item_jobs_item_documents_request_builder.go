@@ -47,7 +47,7 @@ type PrinterSharesItemJobsItemDocumentsRequestBuilderPostRequestConfiguration st
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByPrintDocumentId provides operations to manage the documents property of the microsoft.graph.printJob entity.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *PrinterSharesItemJobsItemDocumentsPrintDocumentItemRequestBuilder when successful
 func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) ByPrintDocumentId(printDocumentId string)(*PrinterSharesItemJobsItemDocumentsPrintDocumentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -78,7 +78,7 @@ func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) Count()(*PrinterShare
     return NewPrinterSharesItemJobsItemDocumentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get documents from print
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a PrintDocumentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) Get(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemDocumentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentCollectionResponseable, error) {
@@ -99,7 +99,7 @@ func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) Get(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentCollectionResponseable), nil
 }
 // Post create new navigation property to documents for print
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a PrintDocumentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentable, requestConfiguration *PrinterSharesItemJobsItemDocumentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentable, error) {
@@ -120,7 +120,7 @@ func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) Post(ctx context.Cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentable), nil
 }
 // ToGetRequestInformation get documents from print
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemDocumentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +135,7 @@ func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) ToGetRequestInformati
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to documents for print
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintDocumentable, requestConfiguration *PrinterSharesItemJobsItemDocumentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,7 +151,7 @@ func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) ToPostRequestInformat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *PrinterSharesItemJobsItemDocumentsRequestBuilder when successful
 func (m *PrinterSharesItemJobsItemDocumentsRequestBuilder) WithUrl(rawUrl string)(*PrinterSharesItemJobsItemDocumentsRequestBuilder) {
     return NewPrinterSharesItemJobsItemDocumentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -6,10 +6,11 @@ const (
     READY_CLOUDPCDEVICEIMAGESTATUS
     FAILED_CLOUDPCDEVICEIMAGESTATUS
     UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGESTATUS
+    WARNING_CLOUDPCDEVICEIMAGESTATUS
 )
 
 func (i CloudPcDeviceImageStatus) String() string {
-    return []string{"pending", "ready", "failed", "unknownFutureValue"}[i]
+    return []string{"pending", "ready", "failed", "unknownFutureValue", "warning"}[i]
 }
 func ParseCloudPcDeviceImageStatus(v string) (any, error) {
     result := PENDING_CLOUDPCDEVICEIMAGESTATUS
@@ -22,6 +23,8 @@ func ParseCloudPcDeviceImageStatus(v string) (any, error) {
             result = FAILED_CLOUDPCDEVICEIMAGESTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCDEVICEIMAGESTATUS
+        case "warning":
+            result = WARNING_CLOUDPCDEVICEIMAGESTATUS
         default:
             return nil, nil
     }

@@ -27,7 +27,7 @@ const (
     ANDROIDMOBILEAPPLICATIONMANAGEMENT_DEVICEPLATFORMTYPE
     // Indicates Mobile Application Management (MAM) for iOS devices
     IOSMOBILEAPPLICATIONMANAGEMENT_DEVICEPLATFORMTYPE
-    // Evolvable enumeration sentinel value. Do not use
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEPLATFORMTYPE
     // Indicates Mobile Application Management (MAM) for Windows devices.
     WINDOWSMOBILEAPPLICATIONMANAGEMENT_DEVICEPLATFORMTYPE

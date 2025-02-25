@@ -19,7 +19,7 @@ const (
     MAC_ENROLLMENTRESTRICTIONPLATFORMTYPE
     // Indicates that the enrollment configuration applies only to Linux devices
     LINUX_ENROLLMENTRESTRICTIONPLATFORMTYPE
-    // Evolvable enumeration sentinel value. Do not use
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ENROLLMENTRESTRICTIONPLATFORMTYPE
 )
 

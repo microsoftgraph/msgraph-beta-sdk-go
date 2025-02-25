@@ -17,7 +17,7 @@ const (
     PENDINGCANCEL_ZEBRAFOTADEPLOYMENTSTATE
     // Deployment has been successfully canceled by Zebra.
     CANCELED_ZEBRAFOTADEPLOYMENTSTATE
-    // Unknown future enum value.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ZEBRAFOTADEPLOYMENTSTATE
 )
 

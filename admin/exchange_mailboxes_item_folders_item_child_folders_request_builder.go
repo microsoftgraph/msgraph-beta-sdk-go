@@ -40,7 +40,7 @@ type ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilderGetRequestConfigu
     QueryParameters *ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilderGetQueryParameters
 }
 // ByMailboxFolderId1 provides operations to manage the childFolders property of the microsoft.graph.mailboxFolder entity.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilder when successful
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilder) ByMailboxFolderId1(mailboxFolderId1 string)(*ExchangeMailboxesItemFoldersItemChildFoldersMailboxFolderItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -76,7 +76,7 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilder) Delta()(*Ex
     return NewExchangeMailboxesItemFoldersItemChildFoldersDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MailboxFolderCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -100,7 +100,7 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilder) Get(ctx con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxFolderCollectionResponseable), nil
 }
 // ToGetRequestInformation get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -115,7 +115,7 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilder) ToGetReques
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilder when successful
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilder) WithUrl(rawUrl string)(*ExchangeMailboxesItemFoldersItemChildFoldersRequestBuilder) {
     return NewExchangeMailboxesItemFoldersItemChildFoldersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

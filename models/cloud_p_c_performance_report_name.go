@@ -4,10 +4,11 @@ type CloudPCPerformanceReportName int
 const (
     PERFORMANCETRENDREPORT_CLOUDPCPERFORMANCEREPORTNAME CloudPCPerformanceReportName = iota
     UNKNOWNFUTUREVALUE_CLOUDPCPERFORMANCEREPORTNAME
+    CLOUDPCINSIGHTREPORT_CLOUDPCPERFORMANCEREPORTNAME
 )
 
 func (i CloudPCPerformanceReportName) String() string {
-    return []string{"performanceTrendReport", "unknownFutureValue"}[i]
+    return []string{"performanceTrendReport", "unknownFutureValue", "cloudPcInsightReport"}[i]
 }
 func ParseCloudPCPerformanceReportName(v string) (any, error) {
     result := PERFORMANCETRENDREPORT_CLOUDPCPERFORMANCEREPORTNAME
@@ -16,6 +17,8 @@ func ParseCloudPCPerformanceReportName(v string) (any, error) {
             result = PERFORMANCETRENDREPORT_CLOUDPCPERFORMANCEREPORTNAME
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCPERFORMANCEREPORTNAME
+        case "cloudPcInsightReport":
+            result = CLOUDPCINSIGHTREPORT_CLOUDPCPERFORMANCEREPORTNAME
         default:
             return nil, nil
     }

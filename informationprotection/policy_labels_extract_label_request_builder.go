@@ -32,7 +32,7 @@ func NewPolicyLabelsExtractLabelRequestBuilder(rawUrl string, requestAdapter i2a
     return NewPolicyLabelsExtractLabelRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a InformationProtectionContentLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -56,7 +56,7 @@ func (m *PolicyLabelsExtractLabelRequestBuilder) Post(ctx context.Context, body 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable), nil
 }
 // ToPostRequestInformation using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *RequestInformation when successful
 func (m *PolicyLabelsExtractLabelRequestBuilder) ToPostRequestInformation(ctx context.Context, body PolicyLabelsExtractLabelPostRequestBodyable, requestConfiguration *PolicyLabelsExtractLabelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -72,7 +72,7 @@ func (m *PolicyLabelsExtractLabelRequestBuilder) ToPostRequestInformation(ctx co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *PolicyLabelsExtractLabelRequestBuilder when successful
 func (m *PolicyLabelsExtractLabelRequestBuilder) WithUrl(rawUrl string)(*PolicyLabelsExtractLabelRequestBuilder) {
     return NewPolicyLabelsExtractLabelRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

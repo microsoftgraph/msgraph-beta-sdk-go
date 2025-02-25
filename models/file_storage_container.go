@@ -21,6 +21,18 @@ func NewFileStorageContainer()(*FileStorageContainer) {
 func CreateFileStorageContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileStorageContainer(), nil
 }
+// GetArchivalDetails gets the archivalDetails property value. The archivalDetails property
+// returns a SiteArchivalDetailsable when successful
+func (m *FileStorageContainer) GetArchivalDetails()(SiteArchivalDetailsable) {
+    val, err := m.GetBackingStore().Get("archivalDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SiteArchivalDetailsable)
+    }
+    return nil
+}
 // GetAssignedSensitivityLabel gets the assignedSensitivityLabel property value. Sensitivity label assigned to the fileStorageContainer. Read-write.
 // returns a AssignedLabelable when successful
 func (m *FileStorageContainer) GetAssignedSensitivityLabel()(AssignedLabelable) {
@@ -133,6 +145,16 @@ func (m *FileStorageContainer) GetExternalGroupId()(*i561e97a8befe7661a44c8f5460
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["archivalDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSiteArchivalDetailsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArchivalDetails(val.(SiteArchivalDetailsable))
+        }
+        return nil
+    }
     res["assignedSensitivityLabel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAssignedLabelFromDiscriminatorValue)
         if err != nil {
@@ -492,6 +514,12 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
         return err
     }
     {
+        err = writer.WriteObjectValue("archivalDetails", m.GetArchivalDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("assignedSensitivityLabel", m.GetAssignedSensitivityLabel())
         if err != nil {
             return err
@@ -633,6 +661,13 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     return nil
+}
+// SetArchivalDetails sets the archivalDetails property value. The archivalDetails property
+func (m *FileStorageContainer) SetArchivalDetails(value SiteArchivalDetailsable)() {
+    err := m.GetBackingStore().Set("archivalDetails", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignedSensitivityLabel sets the assignedSensitivityLabel property value. Sensitivity label assigned to the fileStorageContainer. Read-write.
 func (m *FileStorageContainer) SetAssignedSensitivityLabel(value AssignedLabelable)() {
@@ -777,6 +812,7 @@ func (m *FileStorageContainer) SetViewpoint(value FileStorageContainerViewpointa
 type FileStorageContainerable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetArchivalDetails()(SiteArchivalDetailsable)
     GetAssignedSensitivityLabel()(AssignedLabelable)
     GetColumns()([]ColumnDefinitionable)
     GetContainerTypeId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
@@ -797,6 +833,7 @@ type FileStorageContainerable interface {
     GetStatus()(*FileStorageContainerStatus)
     GetStorageUsedInBytes()(*int64)
     GetViewpoint()(FileStorageContainerViewpointable)
+    SetArchivalDetails(value SiteArchivalDetailsable)()
     SetAssignedSensitivityLabel(value AssignedLabelable)()
     SetColumns(value []ColumnDefinitionable)()
     SetContainerTypeId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()

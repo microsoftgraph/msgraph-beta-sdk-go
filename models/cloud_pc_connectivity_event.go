@@ -23,6 +23,18 @@ func NewCloudPcConnectivityEvent()(*CloudPcConnectivityEvent) {
 func CreateCloudPcConnectivityEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcConnectivityEvent(), nil
 }
+// GetActivityId gets the activityId property value. The unique identifier (GUID) that represents the activity associated with this event. When the event type is userConnection, this value is the activity identifier for this event. For any other event types, this value is 00000000-0000-0000-0000-000000000000.
+// returns a *string when successful
+func (m *CloudPcConnectivityEvent) GetActivityId()(*string) {
+    val, err := m.GetBackingStore().Get("activityId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
 func (m *CloudPcConnectivityEvent) GetAdditionalData()(map[string]any) {
@@ -93,6 +105,16 @@ func (m *CloudPcConnectivityEvent) GetEventType()(*CloudPcConnectivityEventType)
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudPcConnectivityEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["activityId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActivityId(val)
+        }
+        return nil
+    }
     res["eventDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -182,6 +204,12 @@ func (m *CloudPcConnectivityEvent) GetOdataType()(*string) {
 // Serialize serializes information the current object
 func (m *CloudPcConnectivityEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteStringValue("activityId", m.GetActivityId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteTimeValue("eventDateTime", m.GetEventDateTime())
         if err != nil {
             return err
@@ -226,6 +254,13 @@ func (m *CloudPcConnectivityEvent) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     return nil
+}
+// SetActivityId sets the activityId property value. The unique identifier (GUID) that represents the activity associated with this event. When the event type is userConnection, this value is the activity identifier for this event. For any other event types, this value is 00000000-0000-0000-0000-000000000000.
+func (m *CloudPcConnectivityEvent) SetActivityId(value *string)() {
+    err := m.GetBackingStore().Set("activityId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *CloudPcConnectivityEvent) SetAdditionalData(value map[string]any)() {
@@ -284,6 +319,7 @@ type CloudPcConnectivityEventable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActivityId()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEventName()(*string)
@@ -291,6 +327,7 @@ type CloudPcConnectivityEventable interface {
     GetEventType()(*CloudPcConnectivityEventType)
     GetMessage()(*string)
     GetOdataType()(*string)
+    SetActivityId(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEventName(value *string)()

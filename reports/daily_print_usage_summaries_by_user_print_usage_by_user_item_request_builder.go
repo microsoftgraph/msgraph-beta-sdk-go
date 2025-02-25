@@ -55,7 +55,7 @@ func NewDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder(rawUrl 
     return NewDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property dailyPrintUsageSummariesByUser for reports
-// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +72,7 @@ func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) Delet
     return nil
 }
 // Get get dailyPrintUsageSummariesByUser from reports
-// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a PrintUsageByUserable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, error) {
@@ -93,7 +93,7 @@ func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) Get(c
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable), nil
 }
 // Patch update the navigation property dailyPrintUsageSummariesByUser in reports
-// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a PrintUsageByUserable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, requestConfiguration *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, error) {
@@ -114,7 +114,7 @@ func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) Patch
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable), nil
 }
 // ToDeleteRequestInformation delete navigation property dailyPrintUsageSummariesByUser for reports
-// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +126,7 @@ func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) ToDel
     return requestInfo, nil
 }
 // ToGetRequestInformation get dailyPrintUsageSummariesByUser from reports
-// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +141,7 @@ func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) ToGet
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property dailyPrintUsageSummariesByUser in reports
-// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintUsageByUserable, requestConfiguration *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +157,7 @@ func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) ToPat
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder when successful
 func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) WithUrl(rawUrl string)(*DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) {
     return NewDailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

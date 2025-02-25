@@ -40,7 +40,7 @@ func NewConnectivityBranchesItemDeviceLinksCountRequestBuilder(rawUrl string, re
     return NewConnectivityBranchesItemDeviceLinksCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityBranchesItemDeviceLinksCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -61,7 +61,7 @@ func (m *ConnectivityBranchesItemDeviceLinksCountRequestBuilder) Get(ctx context
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemDeviceLinksCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemDeviceLinksCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,7 +76,7 @@ func (m *ConnectivityBranchesItemDeviceLinksCountRequestBuilder) ToGetRequestInf
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a *ConnectivityBranchesItemDeviceLinksCountRequestBuilder when successful
 func (m *ConnectivityBranchesItemDeviceLinksCountRequestBuilder) WithUrl(rawUrl string)(*ConnectivityBranchesItemDeviceLinksCountRequestBuilder) {
     return NewConnectivityBranchesItemDeviceLinksCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

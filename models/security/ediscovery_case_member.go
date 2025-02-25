@@ -20,7 +20,7 @@ func NewEdiscoveryCaseMember()(*EdiscoveryCaseMember) {
 func CreateEdiscoveryCaseMemberFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEdiscoveryCaseMember(), nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name of the eDiscovery case member. Allowed only for case members of type roleGroup.
 // returns a *string when successful
 func (m *EdiscoveryCaseMember) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -68,7 +68,7 @@ func (m *EdiscoveryCaseMember) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetRecipientType gets the recipientType property value. The recipientType property
+// GetRecipientType gets the recipientType property value. Specifies the recipient type of the eDiscovery case member. The possible values are: user, roleGroup, unknownFutureValue.
 // returns a *RecipientType when successful
 func (m *EdiscoveryCaseMember) GetRecipientType()(*RecipientType) {
     val, err := m.GetBackingStore().Get("recipientType")
@@ -80,7 +80,7 @@ func (m *EdiscoveryCaseMember) GetRecipientType()(*RecipientType) {
     }
     return nil
 }
-// GetSmtpAddress gets the smtpAddress property value. The smtpAddress property
+// GetSmtpAddress gets the smtpAddress property value. The smtp address of the eDiscovery case member. Allowed only for case members of type user.
 // returns a *string when successful
 func (m *EdiscoveryCaseMember) GetSmtpAddress()(*string) {
     val, err := m.GetBackingStore().Get("smtpAddress")
@@ -119,21 +119,21 @@ func (m *EdiscoveryCaseMember) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name of the eDiscovery case member. Allowed only for case members of type roleGroup.
 func (m *EdiscoveryCaseMember) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecipientType sets the recipientType property value. The recipientType property
+// SetRecipientType sets the recipientType property value. Specifies the recipient type of the eDiscovery case member. The possible values are: user, roleGroup, unknownFutureValue.
 func (m *EdiscoveryCaseMember) SetRecipientType(value *RecipientType)() {
     err := m.GetBackingStore().Set("recipientType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSmtpAddress sets the smtpAddress property value. The smtpAddress property
+// SetSmtpAddress sets the smtpAddress property value. The smtp address of the eDiscovery case member. Allowed only for case members of type user.
 func (m *EdiscoveryCaseMember) SetSmtpAddress(value *string)() {
     err := m.GetBackingStore().Set("smtpAddress", value)
     if err != nil {

@@ -7,7 +7,7 @@ const (
     DISABLED_SERVICENOWCONNECTIONSTATUS ServiceNowConnectionStatus = iota
     // Tenant has enabled the connection
     ENABLED_SERVICENOWCONNECTIONSTATUS
-    // Future authentication method to be added here.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_SERVICENOWCONNECTIONSTATUS
 )
 

@@ -11,7 +11,7 @@ const (
     DEVICEMANAGEMENTCONFIGURATIONPOLICY_DEVICEASSIGNMENTITEMTYPE
     // Indicates that the device assignment item type for the action is `graph.managedDeviceMobileAppConfiguration`. MobileAppConfiguration associated settings are removed on removal and added back on restoration
     MOBILEAPPCONFIGURATION_DEVICEASSIGNMENTITEMTYPE
-    // Evolvable enumeration sentinel value. Do not use
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEASSIGNMENTITEMTYPE
 )
 

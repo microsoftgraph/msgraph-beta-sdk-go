@@ -55,7 +55,7 @@ func (m *ExchangeMailboxesItemExportItemsRequestBuilder) Post(ctx context.Contex
     return res.(ExchangeMailboxesItemExportItemsResponseable), nil
 }
 // PostAsExportItemsPostResponse export Exchange mailboxItem objects in full-fidelity FastTransfer stream format for backup purposes. This item format can be restored to the same mailbox or a different one. You can export up to 20 items in a single export request.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2024-06-30
 // returns a ExchangeMailboxesItemExportItemsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -79,7 +79,7 @@ func (m *ExchangeMailboxesItemExportItemsRequestBuilder) PostAsExportItemsPostRe
     return res.(ExchangeMailboxesItemExportItemsPostResponseable), nil
 }
 // ToPostRequestInformation export Exchange mailboxItem objects in full-fidelity FastTransfer stream format for backup purposes. This item format can be restored to the same mailbox or a different one. You can export up to 20 items in a single export request.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemExportItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ExchangeMailboxesItemExportItemsPostRequestBodyable, requestConfiguration *ExchangeMailboxesItemExportItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -95,7 +95,7 @@ func (m *ExchangeMailboxesItemExportItemsRequestBuilder) ToPostRequestInformatio
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2024-06-30
 // returns a *ExchangeMailboxesItemExportItemsRequestBuilder when successful
 func (m *ExchangeMailboxesItemExportItemsRequestBuilder) WithUrl(rawUrl string)(*ExchangeMailboxesItemExportItemsRequestBuilder) {
     return NewExchangeMailboxesItemExportItemsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

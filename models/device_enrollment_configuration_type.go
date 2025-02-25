@@ -25,7 +25,7 @@ const (
     DEVICECOMANAGEMENTAUTHORITYCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
     // Indicates that configuration is of type single platform restriction which refers to types of devices a user is allowed to enroll.
     SINGLEPLATFORMRESTRICTION_DEVICEENROLLMENTCONFIGURATIONTYPE
-    // Unknown future value
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEENROLLMENTCONFIGURATIONTYPE
     // Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
     ENROLLMENTNOTIFICATIONSCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE

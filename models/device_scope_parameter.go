@@ -7,7 +7,7 @@ const (
     NONE_DEVICESCOPEPARAMETER DeviceScopeParameter = iota
     // use Scope Tag as parameter for the device scope configuration.
     SCOPETAG_DEVICESCOPEPARAMETER
-    // Placeholder value for future expansion.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICESCOPEPARAMETER
 )
 

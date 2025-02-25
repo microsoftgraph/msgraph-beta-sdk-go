@@ -11,7 +11,7 @@ const (
     CAPTURENETWORKACTIVITYLOG_ANDROIDDEVICEOWNERDELEGATEDAPPSCOPETYPE
     // Specified that the admin has given permission to capture security logs on device. More info on Security logs: https://developer.android.com/work/dpc/security#log_enterprise_device_activity
     CAPTURESECURITYLOG_ANDROIDDEVICEOWNERDELEGATEDAPPSCOPETYPE
-    // Unknown future value (reserved, not used right now)
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ANDROIDDEVICEOWNERDELEGATEDAPPSCOPETYPE
 )
 

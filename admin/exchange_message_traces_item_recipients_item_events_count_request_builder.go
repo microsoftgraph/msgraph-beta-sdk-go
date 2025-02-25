@@ -40,7 +40,7 @@ func NewExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilder(rawUrl 
     return NewExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -61,7 +61,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilder) Get(c
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -76,7 +76,7 @@ func (m *ExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilder) ToGet
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *ExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilder when successful
 func (m *ExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilder) WithUrl(rawUrl string)(*ExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilder) {
     return NewExchangeMessageTracesItemRecipientsItemEventsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

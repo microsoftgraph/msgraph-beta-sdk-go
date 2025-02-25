@@ -32,7 +32,7 @@ func NewItemInformationProtectionSignDigestRequestBuilder(rawUrl string, request
     return NewItemInformationProtectionSignDigestRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action signDigest
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a SigningResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemInformationProtectionSignDigestRequestBuilder) Post(ctx context.Context, body ItemInformationProtectionSignDigestPostRequestBodyable, requestConfiguration *ItemInformationProtectionSignDigestRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SigningResultable, error) {
@@ -53,7 +53,7 @@ func (m *ItemInformationProtectionSignDigestRequestBuilder) Post(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SigningResultable), nil
 }
 // ToPostRequestInformation invoke action signDigest
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *RequestInformation when successful
 func (m *ItemInformationProtectionSignDigestRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemInformationProtectionSignDigestPostRequestBodyable, requestConfiguration *ItemInformationProtectionSignDigestRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -69,7 +69,7 @@ func (m *ItemInformationProtectionSignDigestRequestBuilder) ToPostRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *ItemInformationProtectionSignDigestRequestBuilder when successful
 func (m *ItemInformationProtectionSignDigestRequestBuilder) WithUrl(rawUrl string)(*ItemInformationProtectionSignDigestRequestBuilder) {
     return NewItemInformationProtectionSignDigestRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

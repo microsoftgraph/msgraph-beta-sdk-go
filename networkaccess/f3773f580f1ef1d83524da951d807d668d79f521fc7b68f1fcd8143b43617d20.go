@@ -74,7 +74,7 @@ func (m *AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDate
     return res.(AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeResponseable), nil
 }
 // GetAsGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse invoke function getAlertSeveritySummaries
-// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01
 // returns a AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponseable, error) {
@@ -95,7 +95,7 @@ func (m *AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDate
     return res.(AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAlertSeveritySummaries
-// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01
 // returns a *RequestInformation when successful
 func (m *AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -110,7 +110,7 @@ func (m *AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDate
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01
 // returns a *AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder when successful
 func (m *AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder) WithUrl(rawUrl string)(*AlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return NewAlertsMicrosoftGraphNetworkaccessGetAlertSeveritySummariesWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

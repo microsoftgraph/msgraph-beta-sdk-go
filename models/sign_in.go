@@ -249,14 +249,14 @@ func (m *SignIn) GetClientCredentialType()(*ClientCredentialType) {
     return nil
 }
 // GetConditionalAccessAudiences gets the conditionalAccessAudiences property value. A list that indicates the audience that Conditional Access evaluated during a sign-in event.  Supports $filter (eq).
-// returns a []ConditionalAccessAudienceable when successful
-func (m *SignIn) GetConditionalAccessAudiences()([]ConditionalAccessAudienceable) {
+// returns a []string when successful
+func (m *SignIn) GetConditionalAccessAudiences()([]string) {
     val, err := m.GetBackingStore().Get("conditionalAccessAudiences")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]ConditionalAccessAudienceable)
+        return val.([]string)
     }
     return nil
 }
@@ -575,15 +575,15 @@ func (m *SignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
         return nil
     }
     res["conditionalAccessAudiences"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessAudienceFromDiscriminatorValue)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ConditionalAccessAudienceable, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(ConditionalAccessAudienceable)
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetConditionalAccessAudiences(res)
@@ -1898,13 +1898,7 @@ func (m *SignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
         }
     }
     if m.GetConditionalAccessAudiences() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditionalAccessAudiences()))
-        for i, v := range m.GetConditionalAccessAudiences() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("conditionalAccessAudiences", cast)
+        err = writer.WriteCollectionOfStringValues("conditionalAccessAudiences", m.GetConditionalAccessAudiences())
         if err != nil {
             return err
         }
@@ -2393,7 +2387,7 @@ func (m *SignIn) SetClientCredentialType(value *ClientCredentialType)() {
     }
 }
 // SetConditionalAccessAudiences sets the conditionalAccessAudiences property value. A list that indicates the audience that Conditional Access evaluated during a sign-in event.  Supports $filter (eq).
-func (m *SignIn) SetConditionalAccessAudiences(value []ConditionalAccessAudienceable)() {
+func (m *SignIn) SetConditionalAccessAudiences(value []string)() {
     err := m.GetBackingStore().Set("conditionalAccessAudiences", value)
     if err != nil {
         panic(err)
@@ -2799,7 +2793,7 @@ type SignInable interface {
     GetAzureResourceId()(*string)
     GetClientAppUsed()(*string)
     GetClientCredentialType()(*ClientCredentialType)
-    GetConditionalAccessAudiences()([]ConditionalAccessAudienceable)
+    GetConditionalAccessAudiences()([]string)
     GetConditionalAccessStatus()(*ConditionalAccessStatus)
     GetCorrelationId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -2873,7 +2867,7 @@ type SignInable interface {
     SetAzureResourceId(value *string)()
     SetClientAppUsed(value *string)()
     SetClientCredentialType(value *ClientCredentialType)()
-    SetConditionalAccessAudiences(value []ConditionalAccessAudienceable)()
+    SetConditionalAccessAudiences(value []string)()
     SetConditionalAccessStatus(value *ConditionalAccessStatus)()
     SetCorrelationId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

@@ -55,7 +55,7 @@ func (m *PolicyLabelsEvaluateClassificationResultsRequestBuilder) Post(ctx conte
     return res.(PolicyLabelsEvaluateClassificationResultsResponseable), nil
 }
 // PostAsEvaluateClassificationResultsPostResponse using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a PolicyLabelsEvaluateClassificationResultsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -79,7 +79,7 @@ func (m *PolicyLabelsEvaluateClassificationResultsRequestBuilder) PostAsEvaluate
     return res.(PolicyLabelsEvaluateClassificationResultsPostResponseable), nil
 }
 // ToPostRequestInformation using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service. To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following:
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *RequestInformation when successful
 func (m *PolicyLabelsEvaluateClassificationResultsRequestBuilder) ToPostRequestInformation(ctx context.Context, body PolicyLabelsEvaluateClassificationResultsPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateClassificationResultsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -95,7 +95,7 @@ func (m *PolicyLabelsEvaluateClassificationResultsRequestBuilder) ToPostRequestI
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *PolicyLabelsEvaluateClassificationResultsRequestBuilder when successful
 func (m *PolicyLabelsEvaluateClassificationResultsRequestBuilder) WithUrl(rawUrl string)(*PolicyLabelsEvaluateClassificationResultsRequestBuilder) {
     return NewPolicyLabelsEvaluateClassificationResultsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

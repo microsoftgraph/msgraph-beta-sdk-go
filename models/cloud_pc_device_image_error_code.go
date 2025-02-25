@@ -12,10 +12,12 @@ const (
     PAIDSOURCEIMAGENOTSUPPORT_CLOUDPCDEVICEIMAGEERRORCODE
     SOURCEIMAGENOTSUPPORTCUSTOMIZEVMNAME_CLOUDPCDEVICEIMAGEERRORCODE
     SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGEERRORCODE
+    SOURCEIMAGEWITHDATADISKNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+    SOURCEIMAGEWITHDISKENCRYPTIONSETNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
 )
 
 func (i CloudPcDeviceImageErrorCode) String() string {
-    return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue", "vmAlreadyAzureAdjoined", "paidSourceImageNotSupport", "sourceImageNotSupportCustomizeVMName", "sourceImageSizeExceedsLimitation"}[i]
+    return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue", "vmAlreadyAzureAdjoined", "paidSourceImageNotSupport", "sourceImageNotSupportCustomizeVMName", "sourceImageSizeExceedsLimitation", "sourceImageWithDataDiskNotSupported", "sourceImageWithDiskEncryptionSetNotSupported"}[i]
 }
 func ParseCloudPcDeviceImageErrorCode(v string) (any, error) {
     result := INTERNALSERVERERROR_CLOUDPCDEVICEIMAGEERRORCODE
@@ -40,6 +42,10 @@ func ParseCloudPcDeviceImageErrorCode(v string) (any, error) {
             result = SOURCEIMAGENOTSUPPORTCUSTOMIZEVMNAME_CLOUDPCDEVICEIMAGEERRORCODE
         case "sourceImageSizeExceedsLimitation":
             result = SOURCEIMAGESIZEEXCEEDSLIMITATION_CLOUDPCDEVICEIMAGEERRORCODE
+        case "sourceImageWithDataDiskNotSupported":
+            result = SOURCEIMAGEWITHDATADISKNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+        case "sourceImageWithDiskEncryptionSetNotSupported":
+            result = SOURCEIMAGEWITHDISKENCRYPTIONSETNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
         default:
             return nil, nil
     }

@@ -70,7 +70,7 @@ func (m *ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) Get(
     return res.(ItemManagedDevicesItemGetCloudPcRemoteActionResultsResponseable), nil
 }
 // GetAsGetCloudPcRemoteActionResultsGetResponse check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
-// Deprecated: Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults
+// Deprecated: Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults on 2024-05-08 and will be removed 2024-09-30
 // returns a ItemManagedDevicesItemGetCloudPcRemoteActionResultsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -94,7 +94,7 @@ func (m *ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) GetA
     return res.(ItemManagedDevicesItemGetCloudPcRemoteActionResultsGetResponseable), nil
 }
 // ToGetRequestInformation check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
-// Deprecated: Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults
+// Deprecated: Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults on 2024-05-08 and will be removed 2024-09-30
 // returns a *RequestInformation when successful
 func (m *ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -109,7 +109,7 @@ func (m *ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) ToGe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults
+// Deprecated: Starting September 30, 2024, getCloudPcRemoteActionResults API bound to managedDevice entity will be deprecated and no longer supported. Please use retrieveCloudPcRemoteActionResults API bound to cloudpc entity instead. as of 2024-05/getCloudPcRemoteActionResults on 2024-05-08 and will be removed 2024-09-30
 // returns a *ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder when successful
 func (m *ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) WithUrl(rawUrl string)(*ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) {
     return NewItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -60,7 +60,7 @@ func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) Definition()
     return NewPrinterSharesItemJobsItemTasksItemDefinitionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Delete delete navigation property tasks for print
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -77,7 +77,7 @@ func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) Delete(ctx c
     return nil
 }
 // Get a list of printTasks that were triggered by this print job.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a PrintTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, error) {
@@ -98,7 +98,7 @@ func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable), nil
 }
 // Patch update the navigation property tasks in print
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a PrintTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, requestConfiguration *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, error) {
@@ -119,7 +119,7 @@ func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) Patch(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable), nil
 }
 // ToDeleteRequestInformation delete navigation property tasks for print
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -131,7 +131,7 @@ func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToDeleteRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation a list of printTasks that were triggered by this print job.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -146,7 +146,7 @@ func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property tasks in print
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintTaskable, requestConfiguration *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -167,7 +167,7 @@ func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) Trigger()(*P
     return NewPrinterSharesItemJobsItemTasksItemTriggerRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder when successful
 func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) WithUrl(rawUrl string)(*PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) {
     return NewPrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

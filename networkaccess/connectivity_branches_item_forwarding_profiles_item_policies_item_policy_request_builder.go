@@ -41,7 +41,7 @@ func NewConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestB
     return NewConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get policy.
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a Policyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Policyable, error) {
@@ -62,7 +62,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequest
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Policyable), nil
 }
 // ToGetRequestInformation policy.
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,7 +77,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a *ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilder when successful
 func (m *ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilder) WithUrl(rawUrl string)(*ConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilder) {
     return NewConnectivityBranchesItemForwardingProfilesItemPoliciesItemPolicyRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

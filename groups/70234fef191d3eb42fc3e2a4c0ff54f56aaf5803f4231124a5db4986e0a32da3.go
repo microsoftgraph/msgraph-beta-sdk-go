@@ -55,7 +55,7 @@ func NewItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabel
     return NewItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property labels for groups
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +72,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabe
     return nil
 }
 // Get get labels from groups
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a InformationProtectionLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, error) {
@@ -93,7 +93,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabe
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable), nil
 }
 // Patch update the navigation property labels in groups
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a InformationProtectionLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, error) {
@@ -114,7 +114,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabe
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable), nil
 }
 // ToDeleteRequestInformation delete navigation property labels for groups
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +126,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabe
     return requestInfo, nil
 }
 // ToGetRequestInformation get labels from groups
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +141,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabe
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property labels in groups
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *RequestInformation when successful
 func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionLabelable, requestConfiguration *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +157,7 @@ func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabe
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels
+// Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder when successful
 func (m *ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) WithUrl(rawUrl string)(*ItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder) {
     return NewItemSitesItemInformationProtectionPolicyLabelsInformationProtectionLabelItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

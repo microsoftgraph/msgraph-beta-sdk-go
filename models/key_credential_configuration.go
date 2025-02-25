@@ -161,7 +161,7 @@ func (m *KeyCredentialConfiguration) GetRestrictForAppsCreatedAfterDateTime()(*i
     }
     return nil
 }
-// GetRestrictionType gets the restrictionType property value. A unique identifier key for keyCredentialConfiguration. This value also represents the type of restriction being applied. Possible values are asymmetricKeyLifetime, and unknownFutureValue. Each value of restrictionType can be used only once per policy.
+// GetRestrictionType gets the restrictionType property value. The restrictionType property
 // returns a *AppKeyCredentialRestrictionType when successful
 func (m *KeyCredentialConfiguration) GetRestrictionType()(*AppKeyCredentialRestrictionType) {
     val, err := m.GetBackingStore().Get("restrictionType")
@@ -272,7 +272,7 @@ func (m *KeyCredentialConfiguration) SetRestrictForAppsCreatedAfterDateTime(valu
         panic(err)
     }
 }
-// SetRestrictionType sets the restrictionType property value. A unique identifier key for keyCredentialConfiguration. This value also represents the type of restriction being applied. Possible values are asymmetricKeyLifetime, and unknownFutureValue. Each value of restrictionType can be used only once per policy.
+// SetRestrictionType sets the restrictionType property value. The restrictionType property
 func (m *KeyCredentialConfiguration) SetRestrictionType(value *AppKeyCredentialRestrictionType)() {
     err := m.GetBackingStore().Set("restrictionType", value)
     if err != nil {

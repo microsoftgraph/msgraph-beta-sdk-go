@@ -55,7 +55,7 @@ func NewUserSecurityProfilesUserSecurityProfileItemRequestBuilder(rawUrl string,
     return NewUserSecurityProfilesUserSecurityProfileItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property userSecurityProfiles for security
-// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserSecurityProfilesUserSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +72,7 @@ func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) Delete(ctx c
     return nil
 }
 // Get get userSecurityProfiles from security
-// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a UserSecurityProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserSecurityProfilesUserSecurityProfileItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, error) {
@@ -93,7 +93,7 @@ func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) Get(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable), nil
 }
 // Patch update the navigation property userSecurityProfiles in security
-// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a UserSecurityProfileable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, requestConfiguration *UserSecurityProfilesUserSecurityProfileItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, error) {
@@ -114,7 +114,7 @@ func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) Patch(ctx co
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable), nil
 }
 // ToDeleteRequestInformation delete navigation property userSecurityProfiles for security
-// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a *RequestInformation when successful
 func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UserSecurityProfilesUserSecurityProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +126,7 @@ func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) ToDeleteRequ
     return requestInfo, nil
 }
 // ToGetRequestInformation get userSecurityProfiles from security
-// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a *RequestInformation when successful
 func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserSecurityProfilesUserSecurityProfileItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +141,7 @@ func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) ToGetRequest
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property userSecurityProfiles in security
-// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a *RequestInformation when successful
 func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserSecurityProfileable, requestConfiguration *UserSecurityProfilesUserSecurityProfileItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +157,7 @@ func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) ToPatchReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation
+// Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a *UserSecurityProfilesUserSecurityProfileItemRequestBuilder when successful
 func (m *UserSecurityProfilesUserSecurityProfileItemRequestBuilder) WithUrl(rawUrl string)(*UserSecurityProfilesUserSecurityProfileItemRequestBuilder) {
     return NewUserSecurityProfilesUserSecurityProfileItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
