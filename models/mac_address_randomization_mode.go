@@ -7,7 +7,7 @@ const (
     AUTOMATIC_MACADDRESSRANDOMIZATIONMODE MacAddressRandomizationMode = iota
     // Indicates MAC randomization is disabled and the factory MAC address is used when connecting to the internet.
     HARDWARE_MACADDRESSRANDOMIZATIONMODE
-    // Indicates evolvable enumeration sentinel value. Do not use.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_MACADDRESSRANDOMIZATIONMODE
 )
 

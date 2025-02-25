@@ -11,7 +11,7 @@ const (
     CELLULAR_ZEBRAFOTANETWORKTYPE
     // The device will install the update when connected both WiFi and Cellular.
     WIFIANDCELLULAR_ZEBRAFOTANETWORKTYPE
-    // Unknown future enum value.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ZEBRAFOTANETWORKTYPE
 )
 

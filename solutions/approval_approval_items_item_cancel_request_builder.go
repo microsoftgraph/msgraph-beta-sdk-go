@@ -30,7 +30,7 @@ func NewApprovalApprovalItemsItemCancelRequestBuilder(rawUrl string, requestAdap
     urlParams["request-raw-url"] = rawUrl
     return NewApprovalApprovalItemsItemCancelRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post cancel the approval item. The owner of the approval can trigger this endpoint.
+// Post cancel the approval item. The owner of the approval is the only user who can trigger this endpoint.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -49,7 +49,7 @@ func (m *ApprovalApprovalItemsItemCancelRequestBuilder) Post(ctx context.Context
     }
     return nil
 }
-// ToPostRequestInformation cancel the approval item. The owner of the approval can trigger this endpoint.
+// ToPostRequestInformation cancel the approval item. The owner of the approval is the only user who can trigger this endpoint.
 // returns a *RequestInformation when successful
 func (m *ApprovalApprovalItemsItemCancelRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ApprovalApprovalItemsItemCancelRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

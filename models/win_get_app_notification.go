@@ -9,7 +9,7 @@ const (
     SHOWREBOOT_WINGETAPPNOTIFICATION
     // Hide all notifications.
     HIDEALL_WINGETAPPNOTIFICATION
-    // Unknown future value, reserved for future usage as expandable enum.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_WINGETAPPNOTIFICATION
 )
 

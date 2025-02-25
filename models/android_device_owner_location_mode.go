@@ -7,7 +7,7 @@ const (
     NOTCONFIGURED_ANDROIDDEVICEOWNERLOCATIONMODE AndroidDeviceOwnerLocationMode = iota
     // Location setting is disabled on the device
     DISABLED_ANDROIDDEVICEOWNERLOCATIONMODE
-    // Evolvable enumeration sentinel value. Do not use
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ANDROIDDEVICEOWNERLOCATIONMODE
 )
 

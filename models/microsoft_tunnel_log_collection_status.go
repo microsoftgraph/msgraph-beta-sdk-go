@@ -9,7 +9,7 @@ const (
     COMPLETED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
     // Indicates that the log collection has failed
     FAILED_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
-    // Placeholder value for future expansion enums
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_MICROSOFTTUNNELLOGCOLLECTIONSTATUS
 )
 

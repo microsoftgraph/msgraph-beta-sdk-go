@@ -13,7 +13,7 @@ const (
     DELAYOSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY = 2
     // Force delays for app software updates.
     DELAYAPPUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY = 4
-    // Sentinel member for cases where the client cannot handle the new enum values.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_MACOSSOFTWAREUPDATEDELAYPOLICY = 8
     // Force delays for major OS software updates.
     DELAYMAJOROSUPDATEVISIBILITY_MACOSSOFTWAREUPDATEDELAYPOLICY = 16

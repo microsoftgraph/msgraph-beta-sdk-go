@@ -32,7 +32,7 @@ func NewComanagedDevicesBulkReprovisionCloudPcRequestBuilder(rawUrl string, requ
     return NewComanagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
-// Deprecated: The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc
+// Deprecated: The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24
 // returns a CloudPcBulkRemoteActionResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -56,7 +56,7 @@ func (m *ComanagedDevicesBulkReprovisionCloudPcRequestBuilder) Post(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcBulkRemoteActionResultable), nil
 }
 // ToPostRequestInformation bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
-// Deprecated: The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc
+// Deprecated: The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24
 // returns a *RequestInformation when successful
 func (m *ComanagedDevicesBulkReprovisionCloudPcRequestBuilder) ToPostRequestInformation(ctx context.Context, body ComanagedDevicesBulkReprovisionCloudPcPostRequestBodyable, requestConfiguration *ComanagedDevicesBulkReprovisionCloudPcRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -72,7 +72,7 @@ func (m *ComanagedDevicesBulkReprovisionCloudPcRequestBuilder) ToPostRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc
+// Deprecated: The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24
 // returns a *ComanagedDevicesBulkReprovisionCloudPcRequestBuilder when successful
 func (m *ComanagedDevicesBulkReprovisionCloudPcRequestBuilder) WithUrl(rawUrl string)(*ComanagedDevicesBulkReprovisionCloudPcRequestBuilder) {
     return NewComanagedDevicesBulkReprovisionCloudPcRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

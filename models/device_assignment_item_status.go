@@ -13,7 +13,7 @@ const (
     ERROR_DEVICEASSIGNMENTITEMSTATUS
     // Indicates that the application or configuration has been successfully restored on the managed device
     SUCCEEDED_DEVICEASSIGNMENTITEMSTATUS
-    // Evolvable enumeration sentinel value. Do not use
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEASSIGNMENTITEMSTATUS
 )
 

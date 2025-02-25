@@ -9,7 +9,7 @@ const (
     CUSTOM_INGESTIONSOURCE
     // Indicates the category is ingested through system ingestion process
     BUILTIN_INGESTIONSOURCE
-    // Unknown future enum value
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_INGESTIONSOURCE
 )
 

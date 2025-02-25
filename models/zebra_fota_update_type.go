@@ -9,7 +9,7 @@ const (
     LATEST_ZEBRAFOTAUPDATETYPE
     // The device always looks for the latest package available in the repo and tries to update whenever a new package is available. This continues until the admin cancels the auto update.
     AUTO_ZEBRAFOTAUPDATETYPE
-    // Unknown future enum value.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ZEBRAFOTAUPDATETYPE
 )
 

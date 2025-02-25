@@ -31,7 +31,7 @@ func NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder(rawUrl s
     return NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
-// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -51,7 +51,7 @@ func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) Post(c
     return nil
 }
 // ToPostRequestInformation reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
-// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // returns a *RequestInformation when successful
 func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -63,7 +63,7 @@ func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) ToPost
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace
+// Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // returns a *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder when successful
 func (m *EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) WithUrl(rawUrl string)(*EdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder) {
     return NewEdiscoveryCasesItemMicrosoftGraphEdiscoveryReopenRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -70,7 +70,7 @@ func (m *GetAttackSimulationTrainingUserCoverageRequestBuilder) Get(ctx context.
     return res.(GetAttackSimulationTrainingUserCoverageResponseable), nil
 }
 // GetAsGetAttackSimulationTrainingUserCoverageGetResponse list training coverage for each user of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-// Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans
+// Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
 // returns a GetAttackSimulationTrainingUserCoverageGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -94,7 +94,7 @@ func (m *GetAttackSimulationTrainingUserCoverageRequestBuilder) GetAsGetAttackSi
     return res.(GetAttackSimulationTrainingUserCoverageGetResponseable), nil
 }
 // ToGetRequestInformation list training coverage for each user of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-// Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans
+// Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
 // returns a *RequestInformation when successful
 func (m *GetAttackSimulationTrainingUserCoverageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *GetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -109,7 +109,7 @@ func (m *GetAttackSimulationTrainingUserCoverageRequestBuilder) ToGetRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans
+// Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
 // returns a *GetAttackSimulationTrainingUserCoverageRequestBuilder when successful
 func (m *GetAttackSimulationTrainingUserCoverageRequestBuilder) WithUrl(rawUrl string)(*GetAttackSimulationTrainingUserCoverageRequestBuilder) {
     return NewGetAttackSimulationTrainingUserCoverageRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

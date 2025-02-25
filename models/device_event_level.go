@@ -15,7 +15,7 @@ const (
     ERROR_DEVICEEVENTLEVEL
     // Indicates that the device event level is critical.
     CRITICAL_DEVICEEVENTLEVEL
-    // Placeholder value for future expansion.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEEVENTLEVEL
 )
 

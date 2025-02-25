@@ -33,7 +33,7 @@ const (
     DEVICELICENSEREMOVESUCCEED_DEVICELICENSINGSTATUS
     // This status is set when the device license removing fails.
     DEVICELICENSEREMOVEFAILED_DEVICELICENSINGSTATUS
-    // This is put here as a place holder for future extension.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICELICENSINGSTATUS
 )
 

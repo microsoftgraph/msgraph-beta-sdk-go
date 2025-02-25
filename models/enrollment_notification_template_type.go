@@ -7,7 +7,7 @@ const (
     EMAIL_ENROLLMENTNOTIFICATIONTEMPLATETYPE EnrollmentNotificationTemplateType = iota
     // Push Notification
     PUSH_ENROLLMENTNOTIFICATIONTEMPLATETYPE
-    // Unknown Type
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ENROLLMENTNOTIFICATIONTEMPLATETYPE
 )
 

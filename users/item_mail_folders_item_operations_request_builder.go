@@ -40,7 +40,7 @@ type ItemMailFoldersItemOperationsRequestBuilderGetRequestConfiguration struct {
     QueryParameters *ItemMailFoldersItemOperationsRequestBuilderGetQueryParameters
 }
 // ByMailFolderOperationId provides operations to manage the operations property of the microsoft.graph.mailFolder entity.
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *ItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilder when successful
 func (m *ItemMailFoldersItemOperationsRequestBuilder) ByMailFolderOperationId(mailFolderOperationId string)(*ItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -71,7 +71,7 @@ func (m *ItemMailFoldersItemOperationsRequestBuilder) Count()(*ItemMailFoldersIt
     return NewItemMailFoldersItemOperationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get operations from users
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a MailFolderOperationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemOperationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderOperationCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *ItemMailFoldersItemOperationsRequestBuilder) Get(ctx context.Context, r
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderOperationCollectionResponseable), nil
 }
 // ToGetRequestInformation get operations from users
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -107,7 +107,7 @@ func (m *ItemMailFoldersItemOperationsRequestBuilder) ToGetRequestInformation(ct
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *ItemMailFoldersItemOperationsRequestBuilder when successful
 func (m *ItemMailFoldersItemOperationsRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemOperationsRequestBuilder) {
     return NewItemMailFoldersItemOperationsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -7,7 +7,7 @@ const (
     REMOVE_DEVICEASSIGNMENTITEMINTENT DeviceAssignmentItemIntent = iota
     // Indicates that the application or configuration already under removal through previous actions and is now intended to be restored on the managed device
     RESTORE_DEVICEASSIGNMENTITEMINTENT
-    // Evolvable enumeration sentinel value. Do not use
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEASSIGNMENTITEMINTENT
 )
 

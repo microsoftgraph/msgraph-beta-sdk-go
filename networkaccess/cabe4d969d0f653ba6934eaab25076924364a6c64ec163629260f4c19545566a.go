@@ -74,7 +74,7 @@ func (m *AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWi
     return res.(AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetAlertFrequenciesWithStartDateTimeWithEndDateTimeResponseable), nil
 }
 // GetAsGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse invoke function getAlertFrequencies
-// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01
 // returns a AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponseable, error) {
@@ -95,7 +95,7 @@ func (m *AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWi
     return res.(AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetAlertFrequenciesWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
 // ToGetRequestInformation invoke function getAlertFrequencies
-// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01
 // returns a *RequestInformation when successful
 func (m *AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -110,7 +110,7 @@ func (m *AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWi
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated:  as of 2022-06/PrivatePreview:NetworkAccess on 2024-09-09 and will be removed 2024-11-01
 // returns a *AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder when successful
 func (m *AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder) WithUrl(rawUrl string)(*AlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder) {
     return NewAlertsMicrosoftGraphNetworkaccessGetAlertFrequenciesWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

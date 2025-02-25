@@ -55,7 +55,7 @@ func NewConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfig
     return NewConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property links for networkAccess
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -72,7 +72,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfi
     return nil
 }
 // Get list of connectivity configurations for deviceLink objects.
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a ConnectivityConfigurationLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable, error) {
@@ -93,7 +93,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfi
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable), nil
 }
 // Patch update the navigation property links in networkAccess
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a ConnectivityConfigurationLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable, error) {
@@ -114,7 +114,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfi
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable), nil
 }
 // ToDeleteRequestInformation delete navigation property links for networkAccess
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -126,7 +126,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfi
     return requestInfo, nil
 }
 // ToGetRequestInformation list of connectivity configurations for deviceLink objects.
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -141,7 +141,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfi
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property links in networkAccess
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a *RequestInformation when successful
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ConnectivityConfigurationLinkable, requestConfiguration *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -157,7 +157,7 @@ func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfi
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess
+// Deprecated: The Branches API is deprecated and will stop returning data on March 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess on 2023-12-19 and will be removed 2024-03-20
 // returns a *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder when successful
 func (m *ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) WithUrl(rawUrl string)(*ConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder) {
     return NewConnectivityBranchesItemConnectivityConfigurationLinksConnectivityConfigurationLinkItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

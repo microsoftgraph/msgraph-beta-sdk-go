@@ -73,7 +73,7 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilde
     return res.(ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaResponseable), nil
 }
 // GetAsDeltaGetResponse get a set of mailboxItem objects that have been added, deleted, or updated in a specified mailboxFolder. A delta function call for items in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the items in that folder. This approach allows you to maintain and synchronize a local store of a user's mailbox items without having to fetch the entire set of items from the server every time.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilderGetRequestConfiguration)(ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaGetResponseable, error) {
@@ -94,7 +94,7 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilde
     return res.(ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaGetResponseable), nil
 }
 // ToGetRequestInformation get a set of mailboxItem objects that have been added, deleted, or updated in a specified mailboxFolder. A delta function call for items in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the items in that folder. This approach allows you to maintain and synchronize a local store of a user's mailbox items without having to fetch the entire set of items from the server every time.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -109,7 +109,7 @@ func (m *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilde
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilder when successful
 func (m *ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilder) WithUrl(rawUrl string)(*ExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilder) {
     return NewExchangeMailboxesItemFoldersItemChildFoldersItemItemsDeltaRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

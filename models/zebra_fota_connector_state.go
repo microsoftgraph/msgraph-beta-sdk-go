@@ -9,7 +9,7 @@ const (
     CONNECTED_ZEBRAFOTACONNECTORSTATE
     // Disconnected state indicates that the account was connected in the past and later disconnected.
     DISCONNECTED_ZEBRAFOTACONNECTORSTATE
-    // Unknown future enum value.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ZEBRAFOTACONNECTORSTATE
 )
 

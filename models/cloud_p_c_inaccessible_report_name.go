@@ -5,10 +5,11 @@ const (
     INACCESSIBLECLOUDPCREPORTS_CLOUDPCINACCESSIBLEREPORTNAME CloudPCInaccessibleReportName = iota
     INACCESSIBLECLOUDPCTRENDREPORT_CLOUDPCINACCESSIBLEREPORTNAME
     UNKNOWNFUTUREVALUE_CLOUDPCINACCESSIBLEREPORTNAME
+    REGIONALINACCESSIBLECLOUDPCTRENDREPORT_CLOUDPCINACCESSIBLEREPORTNAME
 )
 
 func (i CloudPCInaccessibleReportName) String() string {
-    return []string{"inaccessibleCloudPcReports", "inaccessibleCloudPcTrendReport", "unknownFutureValue"}[i]
+    return []string{"inaccessibleCloudPcReports", "inaccessibleCloudPcTrendReport", "unknownFutureValue", "regionalInaccessibleCloudPcTrendReport"}[i]
 }
 func ParseCloudPCInaccessibleReportName(v string) (any, error) {
     result := INACCESSIBLECLOUDPCREPORTS_CLOUDPCINACCESSIBLEREPORTNAME
@@ -19,6 +20,8 @@ func ParseCloudPCInaccessibleReportName(v string) (any, error) {
             result = INACCESSIBLECLOUDPCTRENDREPORT_CLOUDPCINACCESSIBLEREPORTNAME
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCINACCESSIBLEREPORTNAME
+        case "regionalInaccessibleCloudPcTrendReport":
+            result = REGIONALINACCESSIBLECLOUDPCTRENDREPORT_CLOUDPCINACCESSIBLEREPORTNAME
         default:
             return nil, nil
     }

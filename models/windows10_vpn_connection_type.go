@@ -25,7 +25,7 @@ const (
     PALOALTOGLOBALPROTECT_WINDOWS10VPNCONNECTIONTYPE
     // Cisco AnyConnect
     CISCOANYCONNECT_WINDOWS10VPNCONNECTIONTYPE
-    // Sentinel member for cases where the client cannot handle the new enum values.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_WINDOWS10VPNCONNECTIONTYPE
     // Microsoft Tunnel connection type
     MICROSOFTTUNNEL_WINDOWS10VPNCONNECTIONTYPE

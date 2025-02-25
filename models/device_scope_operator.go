@@ -7,7 +7,7 @@ const (
     NONE_DEVICESCOPEOPERATOR DeviceScopeOperator = iota
     // Operator for the device configuration query to be used (Equals).
     EQUALS_DEVICESCOPEOPERATOR
-    // Placeholder value for future expansion enums such as notEquals, contains, notContains, greaterThan, lessThan.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICESCOPEOPERATOR
 )
 

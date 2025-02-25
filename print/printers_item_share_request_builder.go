@@ -41,7 +41,7 @@ func NewPrintersItemShareRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     return NewPrintersItemShareRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get share from print
-// Deprecated: The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a PrinterShareable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrintersItemShareRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemShareRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable, error) {
@@ -62,7 +62,7 @@ func (m *PrintersItemShareRequestBuilder) Get(ctx context.Context, requestConfig
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterShareable), nil
 }
 // ToGetRequestInformation get share from print
-// Deprecated: The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *PrintersItemShareRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrintersItemShareRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,7 +77,7 @@ func (m *PrintersItemShareRequestBuilder) ToGetRequestInformation(ctx context.Co
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *PrintersItemShareRequestBuilder when successful
 func (m *PrintersItemShareRequestBuilder) WithUrl(rawUrl string)(*PrintersItemShareRequestBuilder) {
     return NewPrintersItemShareRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

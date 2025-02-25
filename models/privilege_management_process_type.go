@@ -9,7 +9,7 @@ const (
     PARENT_PRIVILEGEMANAGEMENTPROCESSTYPE
     // The elevated process is a child process
     CHILD_PRIVILEGEMANAGEMENTPROCESSTYPE
-    // Evolvable emuneration sentinel value. Do not use
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_PRIVILEGEMANAGEMENTPROCESSTYPE
 )
 

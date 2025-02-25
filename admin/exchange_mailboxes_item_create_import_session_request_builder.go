@@ -32,7 +32,7 @@ func NewExchangeMailboxesItemCreateImportSessionRequestBuilder(rawUrl string, re
     return NewExchangeMailboxesItemCreateImportSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post create a session to import an Exchange mailbox item using its FastTransfer stream (FTS) format.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MailboxItemImportSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -56,7 +56,7 @@ func (m *ExchangeMailboxesItemCreateImportSessionRequestBuilder) Post(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxItemImportSessionable), nil
 }
 // ToPostRequestInformation create a session to import an Exchange mailbox item using its FastTransfer stream (FTS) format.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemCreateImportSessionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemCreateImportSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -68,7 +68,7 @@ func (m *ExchangeMailboxesItemCreateImportSessionRequestBuilder) ToPostRequestIn
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport
+// Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *ExchangeMailboxesItemCreateImportSessionRequestBuilder when successful
 func (m *ExchangeMailboxesItemCreateImportSessionRequestBuilder) WithUrl(rawUrl string)(*ExchangeMailboxesItemCreateImportSessionRequestBuilder) {
     return NewExchangeMailboxesItemCreateImportSessionRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

@@ -32,7 +32,7 @@ func NewPrintersItemJobsItemStartPrintJobRequestBuilder(rawUrl string, requestAd
     return NewPrintersItemJobsItemStartPrintJobRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action startPrintJob
-// Deprecated: The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a PrintJobStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrintersItemJobsItemStartPrintJobRequestBuilder) Post(ctx context.Context, requestConfiguration *PrintersItemJobsItemStartPrintJobRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobStatusable, error) {
@@ -53,7 +53,7 @@ func (m *PrintersItemJobsItemStartPrintJobRequestBuilder) Post(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrintJobStatusable), nil
 }
 // ToPostRequestInformation invoke action startPrintJob
-// Deprecated: The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *RequestInformation when successful
 func (m *PrintersItemJobsItemStartPrintJobRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PrintersItemJobsItemStartPrintJobRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -65,7 +65,7 @@ func (m *PrintersItemJobsItemStartPrintJobRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this. as of 2023-06/Tasks_And_Plans
+// Deprecated: The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a *PrintersItemJobsItemStartPrintJobRequestBuilder when successful
 func (m *PrintersItemJobsItemStartPrintJobRequestBuilder) WithUrl(rawUrl string)(*PrintersItemJobsItemStartPrintJobRequestBuilder) {
     return NewPrintersItemJobsItemStartPrintJobRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

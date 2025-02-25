@@ -7,7 +7,7 @@ const (
     INSTALLNOW_ZEBRAFOTASCHEDULEMODE ZebraFotaScheduleMode = iota
     // Schedule an update to be installed at a specified date and time.
     SCHEDULED_ZEBRAFOTASCHEDULEMODE
-    // Unknown future enum value.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ZEBRAFOTASCHEDULEMODE
 )
 

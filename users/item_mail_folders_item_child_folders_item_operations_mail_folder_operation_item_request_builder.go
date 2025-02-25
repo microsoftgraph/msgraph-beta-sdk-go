@@ -41,7 +41,7 @@ func NewItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequ
     return NewItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get operations from users
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a MailFolderOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderOperationable, error) {
@@ -62,7 +62,7 @@ func (m *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemReq
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderOperationable), nil
 }
 // ToGetRequestInformation get operations from users
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,7 +77,7 @@ func (m *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilder when successful
 func (m *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

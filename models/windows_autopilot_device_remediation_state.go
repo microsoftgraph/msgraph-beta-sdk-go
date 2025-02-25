@@ -11,7 +11,7 @@ const (
     AUTOMATICREMEDIATIONREQUIRED_WINDOWSAUTOPILOTDEVICEREMEDIATIONSTATE
     // Hardware change detected on client that could not resolved automatically. Additional remediation is required.
     MANUALREMEDIATIONREQUIRED_WINDOWSAUTOPILOTDEVICEREMEDIATIONSTATE
-    // Marks the end of known enum values, and allows for additional values in the future.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_WINDOWSAUTOPILOTDEVICEREMEDIATIONSTATE
 )
 

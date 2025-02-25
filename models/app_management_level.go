@@ -21,7 +21,7 @@ const (
     ANDROIDOPENSOURCEPROJECTUSERASSOCIATED_APPMANAGEMENTLEVEL = 32
     // Android Open Source Project (AOSP) userless devices
     ANDROIDOPENSOURCEPROJECTUSERLESS_APPMANAGEMENTLEVEL = 64
-    // Place holder for evolvable enum
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_APPMANAGEMENTLEVEL = 128
 )
 

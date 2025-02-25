@@ -11,7 +11,7 @@ const (
     HYBRID_PRIVILEGEMANAGEMENTENDUSERTYPE
     // The user who performed the elevation logged in using a Windows local account.
     LOCAL_PRIVILEGEMANAGEMENTENDUSERTYPE
-    // Evolvable emuneration sentinel value. Do not use.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_PRIVILEGEMANAGEMENTENDUSERTYPE
 )
 

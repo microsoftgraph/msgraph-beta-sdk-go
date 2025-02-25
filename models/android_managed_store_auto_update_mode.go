@@ -9,7 +9,7 @@ const (
     POSTPONED_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
     // The app is updated as soon as possible by the developer. If device is online, it will be updated within minutes.
     PRIORITY_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
-    // Unknown future mode (reserved, not used right now).
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ANDROIDMANAGEDSTOREAUTOUPDATEMODE
 )
 

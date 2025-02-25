@@ -7,7 +7,7 @@ const (
     OUTBOUND_VPNTRAFFICDIRECTION VpnTrafficDirection = iota
     // The rule applies to all inbound traffic.
     INBOUND_VPNTRAFFICDIRECTION
-    // Evolvable enum member
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_VPNTRAFFICDIRECTION
 )
 

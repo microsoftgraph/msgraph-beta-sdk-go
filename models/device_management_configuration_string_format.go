@@ -33,7 +33,7 @@ const (
     SURFACEHUB_DEVICEMANAGEMENTCONFIGURATIONSTRINGFORMAT
     // String whose value is a bash script
     BASHSCRIPT_DEVICEMANAGEMENTCONFIGURATIONSTRINGFORMAT
-    // Sentinel member for cases where the client cannot handle the new enum values.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSTRINGFORMAT
 )
 

@@ -31,7 +31,7 @@ func NewItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder(rawUrl strin
     return NewItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action updateAllMessagesReadState
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemUpdateAllMessagesReadStatePostRequestBodyable, requestConfiguration *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
@@ -48,7 +48,7 @@ func (m *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder) Post(ctx c
     return nil
 }
 // ToPostRequestInformation invoke action updateAllMessagesReadState
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemUpdateAllMessagesReadStatePostRequestBodyable, requestConfiguration *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -64,7 +64,7 @@ func (m *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder) ToPostRequ
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI
+// Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder when successful
 func (m *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder) WithUrl(rawUrl string)(*ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder) {
     return NewItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

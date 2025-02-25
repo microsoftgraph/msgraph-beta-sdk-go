@@ -1,6 +1,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
@@ -35,6 +36,30 @@ func (m *SiteArchivalDetails) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetArchivedBy gets the archivedBy property value. The archivedBy property
+// returns a IdentitySetable when successful
+func (m *SiteArchivalDetails) GetArchivedBy()(IdentitySetable) {
+    val, err := m.GetBackingStore().Get("archivedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
+}
+// GetArchivedDateTime gets the archivedDateTime property value. The archivedDateTime property
+// returns a *Time when successful
+func (m *SiteArchivalDetails) GetArchivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("archivedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetArchiveStatus gets the archiveStatus property value. Represents the current archive status of the site collection. Returned only on $select.
 // returns a *SiteArchiveStatus when successful
 func (m *SiteArchivalDetails) GetArchiveStatus()(*SiteArchiveStatus) {
@@ -56,6 +81,26 @@ func (m *SiteArchivalDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SiteArchivalDetails) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["archivedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArchivedBy(val.(IdentitySetable))
+        }
+        return nil
+    }
+    res["archivedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetArchivedDateTime(val)
+        }
+        return nil
+    }
     res["archiveStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSiteArchiveStatus)
         if err != nil {
@@ -92,6 +137,18 @@ func (m *SiteArchivalDetails) GetOdataType()(*string) {
 }
 // Serialize serializes information the current object
 func (m *SiteArchivalDetails) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteObjectValue("archivedBy", m.GetArchivedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteTimeValue("archivedDateTime", m.GetArchivedDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetArchiveStatus() != nil {
         cast := (*m.GetArchiveStatus()).String()
         err := writer.WriteStringValue("archiveStatus", &cast)
@@ -120,6 +177,20 @@ func (m *SiteArchivalDetails) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
+// SetArchivedBy sets the archivedBy property value. The archivedBy property
+func (m *SiteArchivalDetails) SetArchivedBy(value IdentitySetable)() {
+    err := m.GetBackingStore().Set("archivedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetArchivedDateTime sets the archivedDateTime property value. The archivedDateTime property
+func (m *SiteArchivalDetails) SetArchivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("archivedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetArchiveStatus sets the archiveStatus property value. Represents the current archive status of the site collection. Returned only on $select.
 func (m *SiteArchivalDetails) SetArchiveStatus(value *SiteArchiveStatus)() {
     err := m.GetBackingStore().Set("archiveStatus", value)
@@ -142,9 +213,13 @@ type SiteArchivalDetailsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetArchivedBy()(IdentitySetable)
+    GetArchivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetArchiveStatus()(*SiteArchiveStatus)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
+    SetArchivedBy(value IdentitySetable)()
+    SetArchivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetArchiveStatus(value *SiteArchiveStatus)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()

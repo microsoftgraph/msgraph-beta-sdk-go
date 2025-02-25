@@ -9,7 +9,7 @@ const (
     OFFICEOPENXMLFORMAT_OFFICESUITEDEFAULTFILEFORMATTYPE
     // Office Open Document Format selected
     OFFICEOPENDOCUMENTFORMAT_OFFICESUITEDEFAULTFILEFORMATTYPE
-    // Placeholder for evolvable enum.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_OFFICESUITEDEFAULTFILEFORMATTYPE
 )
 

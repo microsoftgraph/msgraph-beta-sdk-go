@@ -7,7 +7,7 @@ const (
     USERAPPROVAL_ANDROIDDEVICEOWNERCERTIFICATEACCESSTYPE AndroidDeviceOwnerCertificateAccessType = iota
     // Pre-grant certificate access for specific apps (require user approval for other apps).
     SPECIFICAPPS_ANDROIDDEVICEOWNERCERTIFICATEACCESSTYPE
-    // Unknown future value for evolvable enum patterns.
+    // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ANDROIDDEVICEOWNERCERTIFICATEACCESSTYPE
 )
 
