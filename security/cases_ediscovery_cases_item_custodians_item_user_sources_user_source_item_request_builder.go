@@ -54,8 +54,11 @@ func NewCasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewCasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property userSources for security
+// Delete delete a userSource object associated with an ediscoveryCustodian.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycustodian-delete-usersources?view=graph-rest-beta
 func (m *CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -110,7 +113,7 @@ func (m *CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestB
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.UserSourceable), nil
 }
-// ToDeleteRequestInformation delete navigation property userSources for security
+// ToDeleteRequestInformation delete a userSource object associated with an ediscoveryCustodian.
 // returns a *RequestInformation when successful
 func (m *CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCustodiansItemUserSourcesUserSourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

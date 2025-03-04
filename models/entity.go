@@ -2006,6 +2006,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMutualTlsOauthConfiguration(), nil
                     case "#microsoft.graph.namedLocation":
                         return NewNamedLocation(), nil
+                    case "#microsoft.graph.namePronunciationSettings":
+                        return NewNamePronunciationSettings(), nil
                     case "#microsoft.graph.ndesConnector":
                         return NewNdesConnector(), nil
                     case "#microsoft.graph.newsLinkPage":
