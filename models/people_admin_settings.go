@@ -33,6 +33,16 @@ func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["namePronunciation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateNamePronunciationSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNamePronunciation(val.(NamePronunciationSettingsable))
+        }
+        return nil
+    }
     res["profileCardProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProfileCardPropertyFromDiscriminatorValue)
         if err != nil {
@@ -73,6 +83,18 @@ func (m *PeopleAdminSettings) GetItemInsights()(InsightsSettingsable) {
     }
     return nil
 }
+// GetNamePronunciation gets the namePronunciation property value. Administrator settings that manage the support of name pronunciation in an organization.
+// returns a NamePronunciationSettingsable when successful
+func (m *PeopleAdminSettings) GetNamePronunciation()(NamePronunciationSettingsable) {
+    val, err := m.GetBackingStore().Get("namePronunciation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(NamePronunciationSettingsable)
+    }
+    return nil
+}
 // GetProfileCardProperties gets the profileCardProperties property value. A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
 // returns a []ProfileCardPropertyable when successful
 func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
@@ -109,6 +131,12 @@ func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("namePronunciation", m.GetNamePronunciation())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProfileCardProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfileCardProperties()))
         for i, v := range m.GetProfileCardProperties() {
@@ -136,6 +164,13 @@ func (m *PeopleAdminSettings) SetItemInsights(value InsightsSettingsable)() {
         panic(err)
     }
 }
+// SetNamePronunciation sets the namePronunciation property value. Administrator settings that manage the support of name pronunciation in an organization.
+func (m *PeopleAdminSettings) SetNamePronunciation(value NamePronunciationSettingsable)() {
+    err := m.GetBackingStore().Set("namePronunciation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProfileCardProperties sets the profileCardProperties property value. A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
 func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
     err := m.GetBackingStore().Set("profileCardProperties", value)
@@ -154,9 +189,11 @@ type PeopleAdminSettingsable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItemInsights()(InsightsSettingsable)
+    GetNamePronunciation()(NamePronunciationSettingsable)
     GetProfileCardProperties()([]ProfileCardPropertyable)
     GetPronouns()(PronounsSettingsable)
     SetItemInsights(value InsightsSettingsable)()
+    SetNamePronunciation(value NamePronunciationSettingsable)()
     SetProfileCardProperties(value []ProfileCardPropertyable)()
     SetPronouns(value PronounsSettingsable)()
 }

@@ -133,6 +133,32 @@ func (m *ComplianceManagementPartner) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["linuxEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ComplianceManagementPartnerAssignmentable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ComplianceManagementPartnerAssignmentable)
+                }
+            }
+            m.SetLinuxEnrollmentAssignments(res)
+        }
+        return nil
+    }
+    res["linuxOnboarded"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLinuxOnboarded(val)
+        }
+        return nil
+    }
     res["macOsEnrollmentAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateComplianceManagementPartnerAssignmentFromDiscriminatorValue)
         if err != nil {
@@ -204,6 +230,30 @@ func (m *ComplianceManagementPartner) GetLastHeartbeatDateTime()(*i336074805fc85
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetLinuxEnrollmentAssignments gets the linuxEnrollmentAssignments property value. User groups which enroll Linux devices through partner.
+// returns a []ComplianceManagementPartnerAssignmentable when successful
+func (m *ComplianceManagementPartner) GetLinuxEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable) {
+    val, err := m.GetBackingStore().Get("linuxEnrollmentAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ComplianceManagementPartnerAssignmentable)
+    }
+    return nil
+}
+// GetLinuxOnboarded gets the linuxOnboarded property value. Partner onboarded for Linux devices.
+// returns a *bool when successful
+func (m *ComplianceManagementPartner) GetLinuxOnboarded()(*bool) {
+    val, err := m.GetBackingStore().Get("linuxOnboarded")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -297,6 +347,24 @@ func (m *ComplianceManagementPartner) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetLinuxEnrollmentAssignments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLinuxEnrollmentAssignments()))
+        for i, v := range m.GetLinuxEnrollmentAssignments() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("linuxEnrollmentAssignments", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("linuxOnboarded", m.GetLinuxOnboarded())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMacOsEnrollmentAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMacOsEnrollmentAssignments()))
         for i, v := range m.GetMacOsEnrollmentAssignments() {
@@ -366,6 +434,20 @@ func (m *ComplianceManagementPartner) SetLastHeartbeatDateTime(value *i336074805
         panic(err)
     }
 }
+// SetLinuxEnrollmentAssignments sets the linuxEnrollmentAssignments property value. User groups which enroll Linux devices through partner.
+func (m *ComplianceManagementPartner) SetLinuxEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)() {
+    err := m.GetBackingStore().Set("linuxEnrollmentAssignments", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLinuxOnboarded sets the linuxOnboarded property value. Partner onboarded for Linux devices.
+func (m *ComplianceManagementPartner) SetLinuxOnboarded(value *bool)() {
+    err := m.GetBackingStore().Set("linuxOnboarded", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMacOsEnrollmentAssignments sets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
 func (m *ComplianceManagementPartner) SetMacOsEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)() {
     err := m.GetBackingStore().Set("macOsEnrollmentAssignments", value)
@@ -396,6 +478,8 @@ type ComplianceManagementPartnerable interface {
     GetIosEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable)
     GetIosOnboarded()(*bool)
     GetLastHeartbeatDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLinuxEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable)
+    GetLinuxOnboarded()(*bool)
     GetMacOsEnrollmentAssignments()([]ComplianceManagementPartnerAssignmentable)
     GetMacOsOnboarded()(*bool)
     GetPartnerState()(*DeviceManagementPartnerTenantState)
@@ -405,6 +489,8 @@ type ComplianceManagementPartnerable interface {
     SetIosEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)()
     SetIosOnboarded(value *bool)()
     SetLastHeartbeatDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLinuxEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)()
+    SetLinuxOnboarded(value *bool)()
     SetMacOsEnrollmentAssignments(value []ComplianceManagementPartnerAssignmentable)()
     SetMacOsOnboarded(value *bool)()
     SetPartnerState(value *DeviceManagementPartnerTenantState)()

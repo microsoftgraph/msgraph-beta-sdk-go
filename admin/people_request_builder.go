@@ -98,6 +98,11 @@ func (m *PeopleRequestBuilder) Get(ctx context.Context, requestConfiguration *Pe
 func (m *PeopleRequestBuilder) ItemInsights()(*PeopleItemInsightsRequestBuilder) {
     return NewPeopleItemInsightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// NamePronunciation provides operations to manage the namePronunciation property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleNamePronunciationRequestBuilder when successful
+func (m *PeopleRequestBuilder) NamePronunciation()(*PeopleNamePronunciationRequestBuilder) {
+    return NewPeopleNamePronunciationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property people in admin
 // returns a PeopleAdminSettingsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
