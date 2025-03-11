@@ -81,6 +81,11 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Count()(*ItemTe
 func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Delta()(*ItemTeamDefinitionPrimaryChannelMessagesDeltaRequestBuilder) {
     return NewItemTeamDefinitionPrimaryChannelMessagesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ForwardToChat provides operations to call the forwardToChat method.
+// returns a *ItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilder when successful
+func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ForwardToChat()(*ItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get a collection of all the messages in the channel. Nullable.
 // returns a ChatMessageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -120,6 +125,11 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Post(ctx contex
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
+}
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *ItemTeamDefinitionPrimaryChannelMessagesReplyWithQuoteRequestBuilder when successful
+func (m *ItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ReplyWithQuote()(*ItemTeamDefinitionPrimaryChannelMessagesReplyWithQuoteRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelMessagesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation a collection of all the messages in the channel. Nullable.
 // returns a *RequestInformation when successful

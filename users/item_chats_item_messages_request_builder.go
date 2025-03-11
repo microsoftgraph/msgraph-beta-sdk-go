@@ -81,6 +81,11 @@ func (m *ItemChatsItemMessagesRequestBuilder) Count()(*ItemChatsItemMessagesCoun
 func (m *ItemChatsItemMessagesRequestBuilder) Delta()(*ItemChatsItemMessagesDeltaRequestBuilder) {
     return NewItemChatsItemMessagesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ForwardToChat provides operations to call the forwardToChat method.
+// returns a *ItemChatsItemMessagesForwardToChatRequestBuilder when successful
+func (m *ItemChatsItemMessagesRequestBuilder) ForwardToChat()(*ItemChatsItemMessagesForwardToChatRequestBuilder) {
+    return NewItemChatsItemMessagesForwardToChatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get a collection of all the messages in the chat. Nullable.
 // returns a ChatMessageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -120,6 +125,11 @@ func (m *ItemChatsItemMessagesRequestBuilder) Post(ctx context.Context, body ie2
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
+}
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *ItemChatsItemMessagesReplyWithQuoteRequestBuilder when successful
+func (m *ItemChatsItemMessagesRequestBuilder) ReplyWithQuote()(*ItemChatsItemMessagesReplyWithQuoteRequestBuilder) {
+    return NewItemChatsItemMessagesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation a collection of all the messages in the chat. Nullable.
 // returns a *RequestInformation when successful

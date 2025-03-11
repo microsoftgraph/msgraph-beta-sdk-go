@@ -34,7 +34,7 @@ func (m *CertificateBasedAuthPki) GetCertificateAuthorities()([]CertificateAutho
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The name of the object.
+// GetDisplayName gets the displayName property value. The name of the object. Maximum length is 256 characters.
 // returns a *string when successful
 func (m *CertificateBasedAuthPki) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -195,7 +195,7 @@ func (m *CertificateBasedAuthPki) SetCertificateAuthorities(value []CertificateA
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The name of the object.
+// SetDisplayName sets the displayName property value. The name of the object. Maximum length is 256 characters.
 func (m *CertificateBasedAuthPki) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

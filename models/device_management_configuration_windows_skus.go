@@ -2,20 +2,35 @@ package models
 type DeviceManagementConfigurationWindowsSkus int
 
 const (
+    // Indicates the Device Management Configuration Windows SKU is 'unknown' 
     UNKNOWN_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS DeviceManagementConfigurationWindowsSkus = iota
+    // Indicates the Device Management Configuration Windows SKU is 'windowsHome' 
     WINDOWSHOME_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'windowsProfessional' 
     WINDOWSPROFESSIONAL_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'windowsEnterprise' 
     WINDOWSENTERPRISE_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'windowsEducation' 
     WINDOWSEDUCATION_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'windowsMobile' 
     WINDOWSMOBILE_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'windowsMobileEnterprise' 
     WINDOWSMOBILEENTERPRISE_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'windowsTeamSurface' 
     WINDOWSTEAMSURFACE_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'iot' 
     IOT_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'iotEnterprise' 
     IOTENTERPRISE_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'holoLens' 
     HOLOLENS_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'holoLensEnterprise' 
     HOLOLENSENTERPRISE_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'holographicForBusiness' 
     HOLOGRAPHICFORBUSINESS_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'windowsMultiSession' 
     WINDOWSMULTISESSION_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
+    // Indicates the Device Management Configuration Windows SKU is 'surfaceHub' 
     SURFACEHUB_DEVICEMANAGEMENTCONFIGURATIONWINDOWSSKUS
 )
 

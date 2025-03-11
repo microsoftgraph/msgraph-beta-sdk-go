@@ -25,10 +25,12 @@ const (
     SOUTHKOREA_CLOUDPCREGIONGROUP
     MIDDLEEAST_CLOUDPCREGIONGROUP
     MEXICO_CLOUDPCREGIONGROUP
+    AUSTRALASIA_CLOUDPCREGIONGROUP
+    EUROPE_CLOUDPCREGIONGROUP
 )
 
 func (i CloudPcRegionGroup) String() string {
-    return []string{"default", "australia", "canada", "usCentral", "usEast", "usWest", "france", "germany", "europeUnion", "unitedKingdom", "japan", "asia", "india", "southAmerica", "euap", "usGovernment", "usGovernmentDOD", "unknownFutureValue", "norway", "switzerland", "southKorea", "middleEast", "mexico"}[i]
+    return []string{"default", "australia", "canada", "usCentral", "usEast", "usWest", "france", "germany", "europeUnion", "unitedKingdom", "japan", "asia", "india", "southAmerica", "euap", "usGovernment", "usGovernmentDOD", "unknownFutureValue", "norway", "switzerland", "southKorea", "middleEast", "mexico", "australasia", "europe"}[i]
 }
 func ParseCloudPcRegionGroup(v string) (any, error) {
     result := DEFAULT_CLOUDPCREGIONGROUP
@@ -79,6 +81,10 @@ func ParseCloudPcRegionGroup(v string) (any, error) {
             result = MIDDLEEAST_CLOUDPCREGIONGROUP
         case "mexico":
             result = MEXICO_CLOUDPCREGIONGROUP
+        case "australasia":
+            result = AUSTRALASIA_CLOUDPCREGIONGROUP
+        case "europe":
+            result = EUROPE_CLOUDPCREGIONGROUP
         default:
             return nil, nil
     }

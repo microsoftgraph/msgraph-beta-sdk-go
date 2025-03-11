@@ -1,0 +1,158 @@
+package security
+
+import (
+    "context"
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
+    i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/security"
+    i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
+)
+
+// CasesEdiscoveryCasesItemCaseMembersRequestBuilder provides operations to manage the caseMembers property of the microsoft.graph.security.ediscoveryCase entity.
+type CasesEdiscoveryCasesItemCaseMembersRequestBuilder struct {
+    i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
+}
+// CasesEdiscoveryCasesItemCaseMembersRequestBuilderGetQueryParameters get a list of ediscoveryCaseMember objects for an ediscoveryCase.
+type CasesEdiscoveryCasesItemCaseMembersRequestBuilderGetQueryParameters struct {
+    // Include count of items
+    Count *bool `uriparametername:"%24count"`
+    // Expand related entities
+    Expand []string `uriparametername:"%24expand"`
+    // Filter items by property values
+    Filter *string `uriparametername:"%24filter"`
+    // Order items by property values
+    Orderby []string `uriparametername:"%24orderby"`
+    // Search items by search phrases
+    Search *string `uriparametername:"%24search"`
+    // Select properties to be returned
+    Select []string `uriparametername:"%24select"`
+    // Skip the first n items
+    Skip *int32 `uriparametername:"%24skip"`
+    // Show only the first n items
+    Top *int32 `uriparametername:"%24top"`
+}
+// CasesEdiscoveryCasesItemCaseMembersRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type CasesEdiscoveryCasesItemCaseMembersRequestBuilderGetRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+    // Request query parameters
+    QueryParameters *CasesEdiscoveryCasesItemCaseMembersRequestBuilderGetQueryParameters
+}
+// CasesEdiscoveryCasesItemCaseMembersRequestBuilderPostRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
+type CasesEdiscoveryCasesItemCaseMembersRequestBuilderPostRequestConfiguration struct {
+    // Request headers
+    Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
+    // Request options
+    Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ByEdiscoveryCaseMemberId provides operations to manage the caseMembers property of the microsoft.graph.security.ediscoveryCase entity.
+// returns a *CasesEdiscoveryCasesItemCaseMembersEdiscoveryCaseMemberItemRequestBuilder when successful
+func (m *CasesEdiscoveryCasesItemCaseMembersRequestBuilder) ByEdiscoveryCaseMemberId(ediscoveryCaseMemberId string)(*CasesEdiscoveryCasesItemCaseMembersEdiscoveryCaseMemberItemRequestBuilder) {
+    urlTplParams := make(map[string]string)
+    for idx, item := range m.BaseRequestBuilder.PathParameters {
+        urlTplParams[idx] = item
+    }
+    if ediscoveryCaseMemberId != "" {
+        urlTplParams["ediscoveryCaseMember%2Did"] = ediscoveryCaseMemberId
+    }
+    return NewCasesEdiscoveryCasesItemCaseMembersEdiscoveryCaseMemberItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+}
+// NewCasesEdiscoveryCasesItemCaseMembersRequestBuilderInternal instantiates a new CasesEdiscoveryCasesItemCaseMembersRequestBuilder and sets the default values.
+func NewCasesEdiscoveryCasesItemCaseMembersRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemCaseMembersRequestBuilder) {
+    m := &CasesEdiscoveryCasesItemCaseMembersRequestBuilder{
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/caseMembers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+    }
+    return m
+}
+// NewCasesEdiscoveryCasesItemCaseMembersRequestBuilder instantiates a new CasesEdiscoveryCasesItemCaseMembersRequestBuilder and sets the default values.
+func NewCasesEdiscoveryCasesItemCaseMembersRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*CasesEdiscoveryCasesItemCaseMembersRequestBuilder) {
+    urlParams := make(map[string]string)
+    urlParams["request-raw-url"] = rawUrl
+    return NewCasesEdiscoveryCasesItemCaseMembersRequestBuilderInternal(urlParams, requestAdapter)
+}
+// Count provides operations to count the resources in the collection.
+// returns a *CasesEdiscoveryCasesItemCaseMembersCountRequestBuilder when successful
+func (m *CasesEdiscoveryCasesItemCaseMembersRequestBuilder) Count()(*CasesEdiscoveryCasesItemCaseMembersCountRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCaseMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Get get a list of ediscoveryCaseMember objects for an ediscoveryCase.
+// returns a EdiscoveryCaseMemberCollectionResponseable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycasemember-list?view=graph-rest-beta
+func (m *CasesEdiscoveryCasesItemCaseMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCaseMembersRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseMemberCollectionResponseable, error) {
+    requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateEdiscoveryCaseMemberCollectionResponseFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseMemberCollectionResponseable), nil
+}
+// Post add an ediscoveryCaseMember to an ediscoveryCase. The ediscoveryCaseMember can be one of two types: a user or a role group.
+// returns a EdiscoveryCaseMemberable when successful
+// returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-ediscoverycasemember-post?view=graph-rest-beta
+func (m *CasesEdiscoveryCasesItemCaseMembersRequestBuilder) Post(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseMemberable, requestConfiguration *CasesEdiscoveryCasesItemCaseMembersRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseMemberable, error) {
+    requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
+    if err != nil {
+        return nil, err
+    }
+    errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
+        "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
+    }
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.CreateEdiscoveryCaseMemberFromDiscriminatorValue, errorMapping)
+    if err != nil {
+        return nil, err
+    }
+    if res == nil {
+        return nil, nil
+    }
+    return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseMemberable), nil
+}
+// ToGetRequestInformation get a list of ediscoveryCaseMember objects for an ediscoveryCase.
+// returns a *RequestInformation when successful
+func (m *CasesEdiscoveryCasesItemCaseMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CasesEdiscoveryCasesItemCaseMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        if requestConfiguration.QueryParameters != nil {
+            requestInfo.AddQueryParameters(*(requestConfiguration.QueryParameters))
+        }
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    return requestInfo, nil
+}
+// ToPostRequestInformation add an ediscoveryCaseMember to an ediscoveryCase. The ediscoveryCaseMember can be one of two types: a user or a role group.
+// returns a *RequestInformation when successful
+func (m *CasesEdiscoveryCasesItemCaseMembersRequestBuilder) ToPostRequestInformation(ctx context.Context, body i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryCaseMemberable, requestConfiguration *CasesEdiscoveryCasesItemCaseMembersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+    requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
+    if requestConfiguration != nil {
+        requestInfo.Headers.AddAll(requestConfiguration.Headers)
+        requestInfo.AddRequestOptions(requestConfiguration.Options)
+    }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
+    err := requestInfo.SetContentFromParsable(ctx, m.BaseRequestBuilder.RequestAdapter, "application/json", body)
+    if err != nil {
+        return nil, err
+    }
+    return requestInfo, nil
+}
+// WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// returns a *CasesEdiscoveryCasesItemCaseMembersRequestBuilder when successful
+func (m *CasesEdiscoveryCasesItemCaseMembersRequestBuilder) WithUrl(rawUrl string)(*CasesEdiscoveryCasesItemCaseMembersRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemCaseMembersRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);
+}

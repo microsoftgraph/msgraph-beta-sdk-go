@@ -34,6 +34,8 @@ func CreateActionResultPartFromDiscriminatorValue(parseNode i878a80d2330e89d2689
                 switch *mappingValue {
                     case "#microsoft.graph.aadUserConversationMemberResult":
                         return NewAadUserConversationMemberResult(), nil
+                    case "#microsoft.graph.forwardToChatResult":
+                        return NewForwardToChatResult(), nil
                 }
             }
         }

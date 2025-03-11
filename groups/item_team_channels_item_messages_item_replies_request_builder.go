@@ -81,6 +81,11 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) Count()(*ItemTea
 func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) Delta()(*ItemTeamChannelsItemMessagesItemRepliesDeltaRequestBuilder) {
     return NewItemTeamChannelsItemMessagesItemRepliesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ForwardToChat provides operations to call the forwardToChat method.
+// returns a *ItemTeamChannelsItemMessagesItemRepliesForwardToChatRequestBuilder when successful
+func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) ForwardToChat()(*ItemTeamChannelsItemMessagesItemRepliesForwardToChatRequestBuilder) {
+    return NewItemTeamChannelsItemMessagesItemRepliesForwardToChatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get replies for a specified message. Supports $expand for channel messages.
 // returns a ChatMessageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -120,6 +125,11 @@ func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) Post(ctx context
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
+}
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *ItemTeamChannelsItemMessagesItemRepliesReplyWithQuoteRequestBuilder when successful
+func (m *ItemTeamChannelsItemMessagesItemRepliesRequestBuilder) ReplyWithQuote()(*ItemTeamChannelsItemMessagesItemRepliesReplyWithQuoteRequestBuilder) {
+    return NewItemTeamChannelsItemMessagesItemRepliesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation replies for a specified message. Supports $expand for channel messages.
 // returns a *RequestInformation when successful
