@@ -81,6 +81,11 @@ func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) Count()(*ItemChannel
 func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) Delta()(*ItemChannelsItemMessagesItemRepliesDeltaRequestBuilder) {
     return NewItemChannelsItemMessagesItemRepliesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ForwardToChat provides operations to call the forwardToChat method.
+// returns a *ItemChannelsItemMessagesItemRepliesForwardToChatRequestBuilder when successful
+func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) ForwardToChat()(*ItemChannelsItemMessagesItemRepliesForwardToChatRequestBuilder) {
+    return NewItemChannelsItemMessagesItemRepliesForwardToChatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, call get channel message.
 // returns a ChatMessageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -126,6 +131,11 @@ func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) Post(ctx context.Con
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
+}
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *ItemChannelsItemMessagesItemRepliesReplyWithQuoteRequestBuilder when successful
+func (m *ItemChannelsItemMessagesItemRepliesRequestBuilder) ReplyWithQuote()(*ItemChannelsItemMessagesItemRepliesReplyWithQuoteRequestBuilder) {
+    return NewItemChannelsItemMessagesItemRepliesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, call get channel message.
 // returns a *RequestInformation when successful

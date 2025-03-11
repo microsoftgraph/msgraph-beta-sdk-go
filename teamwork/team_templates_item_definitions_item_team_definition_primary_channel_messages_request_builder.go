@@ -81,6 +81,11 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesReq
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) Delta()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ForwardToChat provides operations to call the forwardToChat method.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ForwardToChat()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get a collection of all the messages in the channel. Nullable.
 // returns a ChatMessageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -120,6 +125,11 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesReq
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
+}
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesReplyWithQuoteRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesRequestBuilder) ReplyWithQuote()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesReplyWithQuoteRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelMessagesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation a collection of all the messages in the channel. Nullable.
 // returns a *RequestInformation when successful

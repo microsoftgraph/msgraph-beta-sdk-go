@@ -81,6 +81,11 @@ func (m *ItemChannelsItemMessagesRequestBuilder) Count()(*ItemChannelsItemMessag
 func (m *ItemChannelsItemMessagesRequestBuilder) Delta()(*ItemChannelsItemMessagesDeltaRequestBuilder) {
     return NewItemChannelsItemMessagesDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ForwardToChat provides operations to call the forwardToChat method.
+// returns a *ItemChannelsItemMessagesForwardToChatRequestBuilder when successful
+func (m *ItemChannelsItemMessagesRequestBuilder) ForwardToChat()(*ItemChannelsItemMessagesForwardToChatRequestBuilder) {
+    return NewItemChannelsItemMessagesForwardToChatRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
 // returns a ChatMessageCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -104,12 +109,12 @@ func (m *ItemChannelsItemMessagesRequestBuilder) Get(ctx context.Context, reques
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageCollectionResponseable), nil
 }
-// Post send a new chatMessage in the specified channel.
+// Post send a new chatMessage in the specified channel or a chat.
 // returns a ChatMessageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-beta
 func (m *ItemChannelsItemMessagesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemChannelsItemMessagesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -127,6 +132,11 @@ func (m *ItemChannelsItemMessagesRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable), nil
 }
+// ReplyWithQuote provides operations to call the replyWithQuote method.
+// returns a *ItemChannelsItemMessagesReplyWithQuoteRequestBuilder when successful
+func (m *ItemChannelsItemMessagesRequestBuilder) ReplyWithQuote()(*ItemChannelsItemMessagesReplyWithQuoteRequestBuilder) {
+    return NewItemChannelsItemMessagesReplyWithQuoteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation retrieve the list of messages (without the replies) in a channel of a team. To get the replies for a message, call the list message replies or the get message reply API. This method supports federation. To list channel messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemMessagesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemMessagesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -141,7 +151,7 @@ func (m *ItemChannelsItemMessagesRequestBuilder) ToGetRequestInformation(ctx con
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation send a new chatMessage in the specified channel.
+// ToPostRequestInformation send a new chatMessage in the specified channel or a chat.
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemMessagesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, requestConfiguration *ItemChannelsItemMessagesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

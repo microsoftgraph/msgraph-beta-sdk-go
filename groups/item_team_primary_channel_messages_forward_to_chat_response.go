@@ -1,0 +1,27 @@
+package groups
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+// Deprecated: This class is obsolete. Use ItemTeamPrimaryChannelMessagesForwardToChatPostResponseable instead.
+type ItemTeamPrimaryChannelMessagesForwardToChatResponse struct {
+    ItemTeamPrimaryChannelMessagesForwardToChatPostResponse
+}
+// NewItemTeamPrimaryChannelMessagesForwardToChatResponse instantiates a new ItemTeamPrimaryChannelMessagesForwardToChatResponse and sets the default values.
+func NewItemTeamPrimaryChannelMessagesForwardToChatResponse()(*ItemTeamPrimaryChannelMessagesForwardToChatResponse) {
+    m := &ItemTeamPrimaryChannelMessagesForwardToChatResponse{
+        ItemTeamPrimaryChannelMessagesForwardToChatPostResponse: *NewItemTeamPrimaryChannelMessagesForwardToChatPostResponse(),
+    }
+    return m
+}
+// CreateItemTeamPrimaryChannelMessagesForwardToChatResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreateItemTeamPrimaryChannelMessagesForwardToChatResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewItemTeamPrimaryChannelMessagesForwardToChatResponse(), nil
+}
+// Deprecated: This class is obsolete. Use ItemTeamPrimaryChannelMessagesForwardToChatPostResponseable instead.
+type ItemTeamPrimaryChannelMessagesForwardToChatResponseable interface {
+    ItemTeamPrimaryChannelMessagesForwardToChatPostResponseable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+}
