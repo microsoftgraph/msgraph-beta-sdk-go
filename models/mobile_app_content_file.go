@@ -253,7 +253,7 @@ func (m *MobileAppContentFile) GetName()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. The size of the file prior to encryption. To be deprecated, please use sizeInBytes property instead.
+// GetSize gets the size property value. Indicates the original size of the file, in bytes.
 // returns a *int64 when successful
 func (m *MobileAppContentFile) GetSize()(*int64) {
     val, err := m.GetBackingStore().Get("size")
@@ -265,7 +265,7 @@ func (m *MobileAppContentFile) GetSize()(*int64) {
     }
     return nil
 }
-// GetSizeEncrypted gets the sizeEncrypted property value. The size of the file after encryption. To be deprecated, please use sizeEncryptedInBytes property instead.
+// GetSizeEncrypted gets the sizeEncrypted property value. Indicates the size of the file after encryption, in bytes.
 // returns a *int64 when successful
 func (m *MobileAppContentFile) GetSizeEncrypted()(*int64) {
     val, err := m.GetBackingStore().Get("sizeEncrypted")
@@ -277,7 +277,7 @@ func (m *MobileAppContentFile) GetSizeEncrypted()(*int64) {
     }
     return nil
 }
-// GetSizeEncryptedInBytes gets the sizeEncryptedInBytes property value. Indicates the size of the file after encryption, in bytes. Valid values 0 to 9.22337203685478E+18
+// GetSizeEncryptedInBytes gets the sizeEncryptedInBytes property value. Indicates the size of the file after encryption, in bytes. To be deprecated in February 2025, please use SizeEncrypted property instead. Valid values 0 to 9.22337203685478E+18
 // returns a *int64 when successful
 func (m *MobileAppContentFile) GetSizeEncryptedInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("sizeEncryptedInBytes")
@@ -289,7 +289,7 @@ func (m *MobileAppContentFile) GetSizeEncryptedInBytes()(*int64) {
     }
     return nil
 }
-// GetSizeInBytes gets the sizeInBytes property value. Indicates the original size of the file, in bytes. Valid values 0 to 9.22337203685478E+18
+// GetSizeInBytes gets the sizeInBytes property value. Indicates the original size of the file, in bytes. To be deprecated in February 2025, please use Size property instead. Valid values 0 to 9.22337203685478E+18
 // returns a *int64 when successful
 func (m *MobileAppContentFile) GetSizeInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("sizeInBytes")
@@ -432,28 +432,28 @@ func (m *MobileAppContentFile) SetName(value *string)() {
         panic(err)
     }
 }
-// SetSize sets the size property value. The size of the file prior to encryption. To be deprecated, please use sizeInBytes property instead.
+// SetSize sets the size property value. Indicates the original size of the file, in bytes.
 func (m *MobileAppContentFile) SetSize(value *int64)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSizeEncrypted sets the sizeEncrypted property value. The size of the file after encryption. To be deprecated, please use sizeEncryptedInBytes property instead.
+// SetSizeEncrypted sets the sizeEncrypted property value. Indicates the size of the file after encryption, in bytes.
 func (m *MobileAppContentFile) SetSizeEncrypted(value *int64)() {
     err := m.GetBackingStore().Set("sizeEncrypted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSizeEncryptedInBytes sets the sizeEncryptedInBytes property value. Indicates the size of the file after encryption, in bytes. Valid values 0 to 9.22337203685478E+18
+// SetSizeEncryptedInBytes sets the sizeEncryptedInBytes property value. Indicates the size of the file after encryption, in bytes. To be deprecated in February 2025, please use SizeEncrypted property instead. Valid values 0 to 9.22337203685478E+18
 func (m *MobileAppContentFile) SetSizeEncryptedInBytes(value *int64)() {
     err := m.GetBackingStore().Set("sizeEncryptedInBytes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSizeInBytes sets the sizeInBytes property value. Indicates the original size of the file, in bytes. Valid values 0 to 9.22337203685478E+18
+// SetSizeInBytes sets the sizeInBytes property value. Indicates the original size of the file, in bytes. To be deprecated in February 2025, please use Size property instead. Valid values 0 to 9.22337203685478E+18
 func (m *MobileAppContentFile) SetSizeInBytes(value *int64)() {
     err := m.GetBackingStore().Set("sizeInBytes", value)
     if err != nil {

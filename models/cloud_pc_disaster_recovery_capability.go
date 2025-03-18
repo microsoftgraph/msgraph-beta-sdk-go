@@ -108,7 +108,7 @@ func (m *CloudPcDisasterRecoveryCapability) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetLicenseType gets the licenseType property value. The licenseType property
+// GetLicenseType gets the licenseType property value. The disaster recovery license type that provides the capability.
 // returns a *CloudPcDisasterRecoveryLicenseType when successful
 func (m *CloudPcDisasterRecoveryCapability) GetLicenseType()(*CloudPcDisasterRecoveryLicenseType) {
     val, err := m.GetBackingStore().Get("licenseType")
@@ -216,7 +216,7 @@ func (m *CloudPcDisasterRecoveryCapability) SetCapabilityType(value *CloudPcDisa
         panic(err)
     }
 }
-// SetLicenseType sets the licenseType property value. The licenseType property
+// SetLicenseType sets the licenseType property value. The disaster recovery license type that provides the capability.
 func (m *CloudPcDisasterRecoveryCapability) SetLicenseType(value *CloudPcDisasterRecoveryLicenseType)() {
     err := m.GetBackingStore().Set("licenseType", value)
     if err != nil {
