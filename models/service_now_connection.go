@@ -133,7 +133,7 @@ func (m *ServiceNowConnection) GetIncidentApiUrl()(*string) {
     }
     return nil
 }
-// GetInstanceUrl gets the instanceUrl property value. Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com
+// GetInstanceUrl gets the instanceUrl property value. Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://<instance>.service-now.com
 // returns a *string when successful
 func (m *ServiceNowConnection) GetInstanceUrl()(*string) {
     val, err := m.GetBackingStore().Get("instanceUrl")
@@ -253,7 +253,7 @@ func (m *ServiceNowConnection) SetIncidentApiUrl(value *string)() {
         panic(err)
     }
 }
-// SetInstanceUrl sets the instanceUrl property value. Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com
+// SetInstanceUrl sets the instanceUrl property value. Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://<instance>.service-now.com
 func (m *ServiceNowConnection) SetInstanceUrl(value *string)() {
     err := m.GetBackingStore().Set("instanceUrl", value)
     if err != nil {

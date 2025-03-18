@@ -96,7 +96,7 @@ func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]fun
     }
     return res
 }
-// GetIsExpeditable gets the isExpeditable property value. Flag indicating if update qualifies for expedite
+// GetIsExpeditable gets the isExpeditable property value. When TRUE, indicates that the quality updates qualify for expedition. When FALSE, indicates the quality updates do not quality for expedition. Default value is FALSE. Read-only
 // returns a *bool when successful
 func (m *WindowsQualityUpdateCatalogItem) GetIsExpeditable()(*bool) {
     val, err := m.GetBackingStore().Get("isExpeditable")
@@ -108,7 +108,7 @@ func (m *WindowsQualityUpdateCatalogItem) GetIsExpeditable()(*bool) {
     }
     return nil
 }
-// GetKbArticleId gets the kbArticleId property value. Knowledge base article id
+// GetKbArticleId gets the kbArticleId property value. Identifies the knowledge base article associated with the Windows quality update catalog item. Read-only
 // returns a *string when successful
 func (m *WindowsQualityUpdateCatalogItem) GetKbArticleId()(*string) {
     val, err := m.GetBackingStore().Get("kbArticleId")
@@ -197,14 +197,14 @@ func (m *WindowsQualityUpdateCatalogItem) SetClassification(value *WindowsQualit
         panic(err)
     }
 }
-// SetIsExpeditable sets the isExpeditable property value. Flag indicating if update qualifies for expedite
+// SetIsExpeditable sets the isExpeditable property value. When TRUE, indicates that the quality updates qualify for expedition. When FALSE, indicates the quality updates do not quality for expedition. Default value is FALSE. Read-only
 func (m *WindowsQualityUpdateCatalogItem) SetIsExpeditable(value *bool)() {
     err := m.GetBackingStore().Set("isExpeditable", value)
     if err != nil {
         panic(err)
     }
 }
-// SetKbArticleId sets the kbArticleId property value. Knowledge base article id
+// SetKbArticleId sets the kbArticleId property value. Identifies the knowledge base article associated with the Windows quality update catalog item. Read-only
 func (m *WindowsQualityUpdateCatalogItem) SetKbArticleId(value *string)() {
     err := m.GetBackingStore().Set("kbArticleId", value)
     if err != nil {

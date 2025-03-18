@@ -30,10 +30,13 @@ func NewItemTeamChannelsItemMessagesForwardToChatRequestBuilder(rawUrl string, r
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamChannelsItemMessagesForwardToChatRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action forwardToChat
+// Post forward a chat message, a channel message, or a channel message reply to a chat.
 // Deprecated: This method is obsolete. Use PostAsForwardToChatPostResponse instead.
 // returns a ItemTeamChannelsItemMessagesForwardToChatResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *ItemTeamChannelsItemMessagesForwardToChatRequestBuilder) Post(ctx context.Context, body ItemTeamChannelsItemMessagesForwardToChatPostRequestBodyable, requestConfiguration *ItemTeamChannelsItemMessagesForwardToChatRequestBuilderPostRequestConfiguration)(ItemTeamChannelsItemMessagesForwardToChatResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -51,9 +54,12 @@ func (m *ItemTeamChannelsItemMessagesForwardToChatRequestBuilder) Post(ctx conte
     }
     return res.(ItemTeamChannelsItemMessagesForwardToChatResponseable), nil
 }
-// PostAsForwardToChatPostResponse invoke action forwardToChat
+// PostAsForwardToChatPostResponse forward a chat message, a channel message, or a channel message reply to a chat.
 // returns a ItemTeamChannelsItemMessagesForwardToChatPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *ItemTeamChannelsItemMessagesForwardToChatRequestBuilder) PostAsForwardToChatPostResponse(ctx context.Context, body ItemTeamChannelsItemMessagesForwardToChatPostRequestBodyable, requestConfiguration *ItemTeamChannelsItemMessagesForwardToChatRequestBuilderPostRequestConfiguration)(ItemTeamChannelsItemMessagesForwardToChatPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -71,7 +77,7 @@ func (m *ItemTeamChannelsItemMessagesForwardToChatRequestBuilder) PostAsForwardT
     }
     return res.(ItemTeamChannelsItemMessagesForwardToChatPostResponseable), nil
 }
-// ToPostRequestInformation invoke action forwardToChat
+// ToPostRequestInformation forward a chat message, a channel message, or a channel message reply to a chat.
 // returns a *RequestInformation when successful
 func (m *ItemTeamChannelsItemMessagesForwardToChatRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemTeamChannelsItemMessagesForwardToChatPostRequestBodyable, requestConfiguration *ItemTeamChannelsItemMessagesForwardToChatRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

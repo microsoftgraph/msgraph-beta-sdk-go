@@ -30,7 +30,7 @@ func NewVirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post retrieve the Windows 365 cross-region disaster recovery report, including CloudPcId, UserId, DeviceId, CloudPCDeviceDisplayName, UserPrincipalName, IsCrossRegionEnabled, CrossRegionHealthStatus, LicenseType, DisasterRecoveryStatus, CurrentRestorePointDateTime, and ActivationExpirationDateTime.
+// Post retrieve the Windows 365 cross-region disaster recovery report, including cloudPcId, userId, deviceId, cloudPCDeviceDisplayName, userPrincipalName, enabledDRType, disasterRecoveryStatus, licenseType, drHealthStatus, currentRestorePointDateTime, backupCloudPcStatus, and activationExpirationDateTime.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -53,7 +53,7 @@ func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestB
     }
     return res.([]byte), nil
 }
-// ToPostRequestInformation retrieve the Windows 365 cross-region disaster recovery report, including CloudPcId, UserId, DeviceId, CloudPCDeviceDisplayName, UserPrincipalName, IsCrossRegionEnabled, CrossRegionHealthStatus, LicenseType, DisasterRecoveryStatus, CurrentRestorePointDateTime, and ActivationExpirationDateTime.
+// ToPostRequestInformation retrieve the Windows 365 cross-region disaster recovery report, including cloudPcId, userId, deviceId, cloudPCDeviceDisplayName, userPrincipalName, enabledDRType, disasterRecoveryStatus, licenseType, drHealthStatus, currentRestorePointDateTime, backupCloudPcStatus, and activationExpirationDateTime.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

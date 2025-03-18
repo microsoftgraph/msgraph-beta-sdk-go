@@ -21,7 +21,7 @@ func NewCustomAppManagementConfiguration()(*CustomAppManagementConfiguration) {
 func CreateCustomAppManagementConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomAppManagementConfiguration(), nil
 }
-// GetApplicationRestrictions gets the applicationRestrictions property value. Restrictions applicable only to application objects that the policy applies to.
+// GetApplicationRestrictions gets the applicationRestrictions property value. Restrictions that are applicable only to application objects to which the policy is attached.
 // returns a CustomAppManagementApplicationConfigurationable when successful
 func (m *CustomAppManagementConfiguration) GetApplicationRestrictions()(CustomAppManagementApplicationConfigurationable) {
     val, err := m.GetBackingStore().Get("applicationRestrictions")
@@ -63,7 +63,7 @@ func (m *CustomAppManagementConfiguration) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetApplicationRestrictions sets the applicationRestrictions property value. Restrictions applicable only to application objects that the policy applies to.
+// SetApplicationRestrictions sets the applicationRestrictions property value. Restrictions that are applicable only to application objects to which the policy is attached.
 func (m *CustomAppManagementConfiguration) SetApplicationRestrictions(value CustomAppManagementApplicationConfigurationable)() {
     err := m.GetBackingStore().Set("applicationRestrictions", value)
     if err != nil {

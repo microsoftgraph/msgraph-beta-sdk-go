@@ -47,7 +47,7 @@ func (m *ForwardToChatResult) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetForwardedMessageId gets the forwardedMessageId property value. The forwardedMessageId property
+// GetForwardedMessageId gets the forwardedMessageId property value. The chatMessage ID generated after a message is successfully forwarded to the target chat ID.
 // returns a *string when successful
 func (m *ForwardToChatResult) GetForwardedMessageId()(*string) {
     val, err := m.GetBackingStore().Get("forwardedMessageId")
@@ -59,7 +59,7 @@ func (m *ForwardToChatResult) GetForwardedMessageId()(*string) {
     }
     return nil
 }
-// GetTargetChatId gets the targetChatId property value. The targetChatId property
+// GetTargetChatId gets the targetChatId property value. The target chat ID where the message was forwarded.
 // returns a *string when successful
 func (m *ForwardToChatResult) GetTargetChatId()(*string) {
     val, err := m.GetBackingStore().Get("targetChatId")
@@ -91,14 +91,14 @@ func (m *ForwardToChatResult) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetForwardedMessageId sets the forwardedMessageId property value. The forwardedMessageId property
+// SetForwardedMessageId sets the forwardedMessageId property value. The chatMessage ID generated after a message is successfully forwarded to the target chat ID.
 func (m *ForwardToChatResult) SetForwardedMessageId(value *string)() {
     err := m.GetBackingStore().Set("forwardedMessageId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetChatId sets the targetChatId property value. The targetChatId property
+// SetTargetChatId sets the targetChatId property value. The target chat ID where the message was forwarded.
 func (m *ForwardToChatResult) SetTargetChatId(value *string)() {
     err := m.GetBackingStore().Set("targetChatId", value)
     if err != nil {

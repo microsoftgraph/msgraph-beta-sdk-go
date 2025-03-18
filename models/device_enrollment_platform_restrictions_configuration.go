@@ -22,7 +22,7 @@ func NewDeviceEnrollmentPlatformRestrictionsConfiguration()(*DeviceEnrollmentPla
 func CreateDeviceEnrollmentPlatformRestrictionsConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDeviceEnrollmentPlatformRestrictionsConfiguration(), nil
 }
-// GetAndroidForWorkRestriction gets the androidForWorkRestriction property value. Android for work restrictions based on platform, platform operating system version, and device ownership
+// GetAndroidForWorkRestriction gets the androidForWorkRestriction property value. Indicates restrictions for Android For Work platform.
 // returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetAndroidForWorkRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("androidForWorkRestriction")
@@ -34,7 +34,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetAndroidForWorkRes
     }
     return nil
 }
-// GetAndroidRestriction gets the androidRestriction property value. Android restrictions based on platform, platform operating system version, and device ownership
+// GetAndroidRestriction gets the androidRestriction property value. Indicates restrictions for Android platform.
 // returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetAndroidRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("androidRestriction")
@@ -152,7 +152,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetFieldDeserializer
     }
     return res
 }
-// GetIosRestriction gets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership
+// GetIosRestriction gets the iosRestriction property value. Indicates restrictions for IOS platform.
 // returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetIosRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("iosRestriction")
@@ -164,7 +164,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetIosRestriction()(
     }
     return nil
 }
-// GetMacOSRestriction gets the macOSRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
+// GetMacOSRestriction gets the macOSRestriction property value. Indicates restrictions for MacOS platform.
 // returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacOSRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("macOSRestriction")
@@ -176,7 +176,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacOSRestriction(
     }
     return nil
 }
-// GetMacRestriction gets the macRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
+// GetMacRestriction gets the macRestriction property value. Indicates restrictions for Mac platform.
 // returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetMacRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("macRestriction")
@@ -212,7 +212,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetVisionOSRestricti
     }
     return nil
 }
-// GetWindowsHomeSkuRestriction gets the windowsHomeSkuRestriction property value. Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
+// GetWindowsHomeSkuRestriction gets the windowsHomeSkuRestriction property value. Indicates restrictions for Windows HomeSku platform.
 // returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsHomeSkuRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("windowsHomeSkuRestriction")
@@ -224,7 +224,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsHomeSkuRes
     }
     return nil
 }
-// GetWindowsMobileRestriction gets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership
+// GetWindowsMobileRestriction gets the windowsMobileRestriction property value. Indicates restrictions for Windows Mobile platform.
 // returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsMobileRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("windowsMobileRestriction")
@@ -236,7 +236,7 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsMobileRest
     }
     return nil
 }
-// GetWindowsRestriction gets the windowsRestriction property value. Windows restrictions based on platform, platform operating system version, and device ownership
+// GetWindowsRestriction gets the windowsRestriction property value. Indicates restrictions for Windows platform.
 // returns a DeviceEnrollmentPlatformRestrictionable when successful
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) GetWindowsRestriction()(DeviceEnrollmentPlatformRestrictionable) {
     val, err := m.GetBackingStore().Get("windowsRestriction")
@@ -316,35 +316,35 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) Serialize(writer i87
     }
     return nil
 }
-// SetAndroidForWorkRestriction sets the androidForWorkRestriction property value. Android for work restrictions based on platform, platform operating system version, and device ownership
+// SetAndroidForWorkRestriction sets the androidForWorkRestriction property value. Indicates restrictions for Android For Work platform.
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetAndroidForWorkRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("androidForWorkRestriction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAndroidRestriction sets the androidRestriction property value. Android restrictions based on platform, platform operating system version, and device ownership
+// SetAndroidRestriction sets the androidRestriction property value. Indicates restrictions for Android platform.
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetAndroidRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("androidRestriction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIosRestriction sets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership
+// SetIosRestriction sets the iosRestriction property value. Indicates restrictions for IOS platform.
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetIosRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("iosRestriction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMacOSRestriction sets the macOSRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
+// SetMacOSRestriction sets the macOSRestriction property value. Indicates restrictions for MacOS platform.
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetMacOSRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("macOSRestriction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMacRestriction sets the macRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
+// SetMacRestriction sets the macRestriction property value. Indicates restrictions for Mac platform.
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetMacRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("macRestriction", value)
     if err != nil {
@@ -365,21 +365,21 @@ func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetVisionOSRestricti
         panic(err)
     }
 }
-// SetWindowsHomeSkuRestriction sets the windowsHomeSkuRestriction property value. Windows Home Sku restrictions based on platform, platform operating system version, and device ownership
+// SetWindowsHomeSkuRestriction sets the windowsHomeSkuRestriction property value. Indicates restrictions for Windows HomeSku platform.
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetWindowsHomeSkuRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("windowsHomeSkuRestriction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWindowsMobileRestriction sets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership
+// SetWindowsMobileRestriction sets the windowsMobileRestriction property value. Indicates restrictions for Windows Mobile platform.
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetWindowsMobileRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("windowsMobileRestriction", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWindowsRestriction sets the windowsRestriction property value. Windows restrictions based on platform, platform operating system version, and device ownership
+// SetWindowsRestriction sets the windowsRestriction property value. Indicates restrictions for Windows platform.
 func (m *DeviceEnrollmentPlatformRestrictionsConfiguration) SetWindowsRestriction(value DeviceEnrollmentPlatformRestrictionable)() {
     err := m.GetBackingStore().Set("windowsRestriction", value)
     if err != nil {
