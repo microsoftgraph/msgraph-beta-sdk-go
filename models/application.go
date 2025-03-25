@@ -911,7 +911,7 @@ func (m *Application) GetOptionalClaims()(OptionalClaimsable) {
     }
     return nil
 }
-// GetOwners gets the owners property value. Directory objects that are owners of this application. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+// GetOwners gets the owners property value. Directory objects that are owners of this application. The owners are a set of nonadmin users or service principals allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 // returns a []DirectoryObjectable when successful
 func (m *Application) GetOwners()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("owners")
@@ -1715,7 +1715,7 @@ func (m *Application) SetOptionalClaims(value OptionalClaimsable)() {
         panic(err)
     }
 }
-// SetOwners sets the owners property value. Directory objects that are owners of this application. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
+// SetOwners sets the owners property value. Directory objects that are owners of this application. The owners are a set of nonadmin users or service principals allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
 func (m *Application) SetOwners(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("owners", value)
     if err != nil {
