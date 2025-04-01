@@ -19,7 +19,7 @@ func NewCallSettings()(*CallSettings) {
 func CreateCallSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallSettings(), nil
 }
-// GetDelegates gets the delegates property value. The delegates property
+// GetDelegates gets the delegates property value. Represents the delegate settings.
 // returns a []DelegationSettingsable when successful
 func (m *CallSettings) GetDelegates()([]DelegationSettingsable) {
     val, err := m.GetBackingStore().Get("delegates")
@@ -31,7 +31,7 @@ func (m *CallSettings) GetDelegates()([]DelegationSettingsable) {
     }
     return nil
 }
-// GetDelegators gets the delegators property value. The delegators property
+// GetDelegators gets the delegators property value. Represents the delegator settings.
 // returns a []DelegationSettingsable when successful
 func (m *CallSettings) GetDelegators()([]DelegationSettingsable) {
     val, err := m.GetBackingStore().Get("delegators")
@@ -113,14 +113,14 @@ func (m *CallSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetDelegates sets the delegates property value. The delegates property
+// SetDelegates sets the delegates property value. Represents the delegate settings.
 func (m *CallSettings) SetDelegates(value []DelegationSettingsable)() {
     err := m.GetBackingStore().Set("delegates", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDelegators sets the delegators property value. The delegators property
+// SetDelegators sets the delegators property value. Represents the delegator settings.
 func (m *CallSettings) SetDelegators(value []DelegationSettingsable)() {
     err := m.GetBackingStore().Set("delegators", value)
     if err != nil {

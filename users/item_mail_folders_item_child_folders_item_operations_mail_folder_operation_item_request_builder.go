@@ -11,7 +11,7 @@ import (
 type ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetQueryParameters get operations from users
+// ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetQueryParameters the collection of long-running operations in the mailFolder.
 type ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequ
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get operations from users
+// Get the collection of long-running operations in the mailFolder.
 // Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a MailFolderOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -61,7 +61,7 @@ func (m *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemReq
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderOperationable), nil
 }
-// ToGetRequestInformation get operations from users
+// ToGetRequestInformation the collection of long-running operations in the mailFolder.
 // Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemOperationsMailFolderOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

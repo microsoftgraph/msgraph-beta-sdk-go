@@ -309,7 +309,7 @@ func (m *MailFolder) GetMultiValueExtendedProperties()([]MultiValueLegacyExtende
     }
     return nil
 }
-// GetOperations gets the operations property value. The operations property
+// GetOperations gets the operations property value. The collection of long-running operations in the mailFolder.
 // returns a []MailFolderOperationable when successful
 func (m *MailFolder) GetOperations()([]MailFolderOperationable) {
     val, err := m.GetBackingStore().Get("operations")
@@ -576,7 +576,7 @@ func (m *MailFolder) SetMultiValueExtendedProperties(value []MultiValueLegacyExt
         panic(err)
     }
 }
-// SetOperations sets the operations property value. The operations property
+// SetOperations sets the operations property value. The collection of long-running operations in the mailFolder.
 func (m *MailFolder) SetOperations(value []MailFolderOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
     if err != nil {

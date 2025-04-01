@@ -92,6 +92,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewMutualTlsOauthConfiguration(), nil
                     case "#microsoft.graph.organization":
                         return NewOrganization(), nil
+                    case "#microsoft.graph.organizationalUnit":
+                        return NewOrganizationalUnit(), nil
                     case "#microsoft.graph.orgContact":
                         return NewOrgContact(), nil
                     case "#microsoft.graph.pendingExternalUserProfile":

@@ -56,6 +56,16 @@ func (m *PlannerTeamsPublicationInfo) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["publicationName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPublicationName(val)
+        }
+        return nil
+    }
     res["publishedToPlanId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -116,6 +126,18 @@ func (m *PlannerTeamsPublicationInfo) GetOdataType()(*string) {
 // returns a *string when successful
 func (m *PlannerTeamsPublicationInfo) GetPublicationId()(*string) {
     val, err := m.GetBackingStore().Get("publicationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPublicationName gets the publicationName property value. The name of the published task list. Read-only.
+// returns a *string when successful
+func (m *PlannerTeamsPublicationInfo) GetPublicationName()(*string) {
+    val, err := m.GetBackingStore().Get("publicationName")
     if err != nil {
         panic(err)
     }
@@ -185,6 +207,12 @@ func (m *PlannerTeamsPublicationInfo) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("publicationName", m.GetPublicationName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("publishedToPlanId", m.GetPublishedToPlanId())
         if err != nil {
             return err
@@ -225,6 +253,13 @@ func (m *PlannerTeamsPublicationInfo) SetPublicationId(value *string)() {
         panic(err)
     }
 }
+// SetPublicationName sets the publicationName property value. The name of the published task list. Read-only.
+func (m *PlannerTeamsPublicationInfo) SetPublicationName(value *string)() {
+    err := m.GetBackingStore().Set("publicationName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublishedToPlanId sets the publishedToPlanId property value. The identifier of the plannerPlan this task was originally placed in. Read-only.
 func (m *PlannerTeamsPublicationInfo) SetPublishedToPlanId(value *string)() {
     err := m.GetBackingStore().Set("publishedToPlanId", value)
@@ -252,12 +287,14 @@ type PlannerTeamsPublicationInfoable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetOdataType()(*string)
     GetPublicationId()(*string)
+    GetPublicationName()(*string)
     GetPublishedToPlanId()(*string)
     GetPublishingTeamId()(*string)
     GetPublishingTeamName()(*string)
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetOdataType(value *string)()
     SetPublicationId(value *string)()
+    SetPublicationName(value *string)()
     SetPublishedToPlanId(value *string)()
     SetPublishingTeamId(value *string)()
     SetPublishingTeamName(value *string)()

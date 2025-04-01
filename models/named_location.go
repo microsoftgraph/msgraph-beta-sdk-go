@@ -36,6 +36,10 @@ func CreateNamedLocationFromDiscriminatorValue(parseNode i878a80d2330e89d2689638
                         return NewCountryNamedLocation(), nil
                     case "#microsoft.graph.ipNamedLocation":
                         return NewIpNamedLocation(), nil
+                    case "#microsoft.graph.privateLinkNamedLocation":
+                        return NewPrivateLinkNamedLocation(), nil
+                    case "#microsoft.graph.serviceTagNamedLocation":
+                        return NewServiceTagNamedLocation(), nil
                 }
             }
         }

@@ -11,7 +11,7 @@ import (
 type ItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilderGetQueryParameters get operations from users
+// ItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilderGetQueryParameters the collection of long-running operations in the mailFolder.
 type ItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -40,7 +40,7 @@ func NewItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilder(rawUr
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get operations from users
+// Get the collection of long-running operations in the mailFolder.
 // Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a MailFolderOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -61,7 +61,7 @@ func (m *ItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilder) Get
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderOperationable), nil
 }
-// ToGetRequestInformation get operations from users
+// ToGetRequestInformation the collection of long-running operations in the mailFolder.
 // Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemOperationsMailFolderOperationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

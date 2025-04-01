@@ -21,10 +21,22 @@ func NewInternalDomainFederation()(*InternalDomainFederation) {
 func CreateInternalDomainFederationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewInternalDomainFederation(), nil
 }
-// GetActiveSignInUri gets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// GetActiveSignInUri gets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
 // returns a *string when successful
 func (m *InternalDomainFederation) GetActiveSignInUri()(*string) {
     val, err := m.GetBackingStore().Get("activeSignInUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetDefaultInteractiveAuthenticationMethod gets the defaultInteractiveAuthenticationMethod property value. The defaultInteractiveAuthenticationMethod property
+// returns a *string when successful
+func (m *InternalDomainFederation) GetDefaultInteractiveAuthenticationMethod()(*string) {
+    val, err := m.GetBackingStore().Get("defaultInteractiveAuthenticationMethod")
     if err != nil {
         panic(err)
     }
@@ -59,6 +71,16 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["defaultInteractiveAuthenticationMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDefaultInteractiveAuthenticationMethod(val)
+        }
+        return nil
+    }
     res["federatedIdpMfaBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseFederatedIdpMfaBehavior)
         if err != nil {
@@ -86,6 +108,26 @@ func (m *InternalDomainFederation) GetFieldDeserializers()(map[string]func(i878a
         }
         if val != nil {
             m.SetNextSigningCertificate(val)
+        }
+        return nil
+    }
+    res["openIdConnectDiscoveryEndpoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOpenIdConnectDiscoveryEndpoint(val)
+        }
+        return nil
+    }
+    res["passwordChangeUri"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasswordChangeUri(val)
         }
         return nil
     }
@@ -155,6 +197,30 @@ func (m *InternalDomainFederation) GetNextSigningCertificate()(*string) {
     }
     return nil
 }
+// GetOpenIdConnectDiscoveryEndpoint gets the openIdConnectDiscoveryEndpoint property value. The openIdConnectDiscoveryEndpoint property
+// returns a *string when successful
+func (m *InternalDomainFederation) GetOpenIdConnectDiscoveryEndpoint()(*string) {
+    val, err := m.GetBackingStore().Get("openIdConnectDiscoveryEndpoint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetPasswordChangeUri gets the passwordChangeUri property value. The passwordChangeUri property
+// returns a *string when successful
+func (m *InternalDomainFederation) GetPasswordChangeUri()(*string) {
+    val, err := m.GetBackingStore().Get("passwordChangeUri")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetPasswordResetUri gets the passwordResetUri property value. URI that clients are redirected to for resetting their password.
 // returns a *string when successful
 func (m *InternalDomainFederation) GetPasswordResetUri()(*string) {
@@ -191,7 +257,7 @@ func (m *InternalDomainFederation) GetSigningCertificateUpdateStatus()(SigningCe
     }
     return nil
 }
-// GetSignOutUri gets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// GetSignOutUri gets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
 // returns a *string when successful
 func (m *InternalDomainFederation) GetSignOutUri()(*string) {
     val, err := m.GetBackingStore().Get("signOutUri")
@@ -215,6 +281,12 @@ func (m *InternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f4
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("defaultInteractiveAuthenticationMethod", m.GetDefaultInteractiveAuthenticationMethod())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetFederatedIdpMfaBehavior() != nil {
         cast := (*m.GetFederatedIdpMfaBehavior()).String()
         err = writer.WriteStringValue("federatedIdpMfaBehavior", &cast)
@@ -230,6 +302,18 @@ func (m *InternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     {
         err = writer.WriteStringValue("nextSigningCertificate", m.GetNextSigningCertificate())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("openIdConnectDiscoveryEndpoint", m.GetOpenIdConnectDiscoveryEndpoint())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("passwordChangeUri", m.GetPasswordChangeUri())
         if err != nil {
             return err
         }
@@ -261,9 +345,16 @@ func (m *InternalDomainFederation) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetActiveSignInUri sets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// SetActiveSignInUri sets the activeSignInUri property value. URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
 func (m *InternalDomainFederation) SetActiveSignInUri(value *string)() {
     err := m.GetBackingStore().Set("activeSignInUri", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDefaultInteractiveAuthenticationMethod sets the defaultInteractiveAuthenticationMethod property value. The defaultInteractiveAuthenticationMethod property
+func (m *InternalDomainFederation) SetDefaultInteractiveAuthenticationMethod(value *string)() {
+    err := m.GetBackingStore().Set("defaultInteractiveAuthenticationMethod", value)
     if err != nil {
         panic(err)
     }
@@ -289,6 +380,20 @@ func (m *InternalDomainFederation) SetNextSigningCertificate(value *string)() {
         panic(err)
     }
 }
+// SetOpenIdConnectDiscoveryEndpoint sets the openIdConnectDiscoveryEndpoint property value. The openIdConnectDiscoveryEndpoint property
+func (m *InternalDomainFederation) SetOpenIdConnectDiscoveryEndpoint(value *string)() {
+    err := m.GetBackingStore().Set("openIdConnectDiscoveryEndpoint", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPasswordChangeUri sets the passwordChangeUri property value. The passwordChangeUri property
+func (m *InternalDomainFederation) SetPasswordChangeUri(value *string)() {
+    err := m.GetBackingStore().Set("passwordChangeUri", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPasswordResetUri sets the passwordResetUri property value. URI that clients are redirected to for resetting their password.
 func (m *InternalDomainFederation) SetPasswordResetUri(value *string)() {
     err := m.GetBackingStore().Set("passwordResetUri", value)
@@ -310,7 +415,7 @@ func (m *InternalDomainFederation) SetSigningCertificateUpdateStatus(value Signi
         panic(err)
     }
 }
-// SetSignOutUri sets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.
+// SetSignOutUri sets the signOutUri property value. URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.
 func (m *InternalDomainFederation) SetSignOutUri(value *string)() {
     err := m.GetBackingStore().Set("signOutUri", value)
     if err != nil {
@@ -321,17 +426,23 @@ type InternalDomainFederationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     SamlOrWsFedProviderable
     GetActiveSignInUri()(*string)
+    GetDefaultInteractiveAuthenticationMethod()(*string)
     GetFederatedIdpMfaBehavior()(*FederatedIdpMfaBehavior)
     GetIsSignedAuthenticationRequestRequired()(*bool)
     GetNextSigningCertificate()(*string)
+    GetOpenIdConnectDiscoveryEndpoint()(*string)
+    GetPasswordChangeUri()(*string)
     GetPasswordResetUri()(*string)
     GetPromptLoginBehavior()(*PromptLoginBehavior)
     GetSigningCertificateUpdateStatus()(SigningCertificateUpdateStatusable)
     GetSignOutUri()(*string)
     SetActiveSignInUri(value *string)()
+    SetDefaultInteractiveAuthenticationMethod(value *string)()
     SetFederatedIdpMfaBehavior(value *FederatedIdpMfaBehavior)()
     SetIsSignedAuthenticationRequestRequired(value *bool)()
     SetNextSigningCertificate(value *string)()
+    SetOpenIdConnectDiscoveryEndpoint(value *string)()
+    SetPasswordChangeUri(value *string)()
     SetPasswordResetUri(value *string)()
     SetPromptLoginBehavior(value *PromptLoginBehavior)()
     SetSigningCertificateUpdateStatus(value SigningCertificateUpdateStatusable)()

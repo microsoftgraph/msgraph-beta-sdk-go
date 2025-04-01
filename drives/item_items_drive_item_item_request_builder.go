@@ -145,6 +145,11 @@ func (m *ItemItemsDriveItemItemRequestBuilder) DeltaWithToken(token *string)(*It
 func (m *ItemItemsDriveItemItemRequestBuilder) DiscardCheckout()(*ItemItemsItemDiscardCheckoutRequestBuilder) {
     return NewItemItemsItemDiscardCheckoutRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Extensions provides operations to manage the extensions property of the microsoft.graph.driveItem entity.
+// returns a *ItemItemsItemExtensionsRequestBuilder when successful
+func (m *ItemItemsDriveItemItemRequestBuilder) Extensions()(*ItemItemsItemExtensionsRequestBuilder) {
+    return NewItemItemsItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ExtractSensitivityLabels provides operations to call the extractSensitivityLabels method.
 // returns a *ItemItemsItemExtractSensitivityLabelsRequestBuilder when successful
 func (m *ItemItemsDriveItemItemRequestBuilder) ExtractSensitivityLabels()(*ItemItemsItemExtractSensitivityLabelsRequestBuilder) {
