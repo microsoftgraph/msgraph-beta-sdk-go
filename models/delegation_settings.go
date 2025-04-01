@@ -20,7 +20,7 @@ func NewDelegationSettings()(*DelegationSettings) {
 func CreateDelegationSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDelegationSettings(), nil
 }
-// GetAllowedActions gets the allowedActions property value. The allowedActions property
+// GetAllowedActions gets the allowedActions property value. The allowed actions for the delegator or delegate.
 // returns a DelegateAllowedActionsable when successful
 func (m *DelegationSettings) GetAllowedActions()(DelegateAllowedActionsable) {
     val, err := m.GetBackingStore().Get("allowedActions")
@@ -32,7 +32,7 @@ func (m *DelegationSettings) GetAllowedActions()(DelegateAllowedActionsable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time when the delegator or delegate entry was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *DelegationSettings) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -80,7 +80,7 @@ func (m *DelegationSettings) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetIsActive gets the isActive property value. The isActive property
+// GetIsActive gets the isActive property value. Indicates whether the delegator or delegate relationship is currently active.
 // returns a *bool when successful
 func (m *DelegationSettings) GetIsActive()(*bool) {
     val, err := m.GetBackingStore().Get("isActive")
@@ -118,21 +118,21 @@ func (m *DelegationSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAllowedActions sets the allowedActions property value. The allowedActions property
+// SetAllowedActions sets the allowedActions property value. The allowed actions for the delegator or delegate.
 func (m *DelegationSettings) SetAllowedActions(value DelegateAllowedActionsable)() {
     err := m.GetBackingStore().Set("allowedActions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time when the delegator or delegate entry was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *DelegationSettings) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsActive sets the isActive property value. The isActive property
+// SetIsActive sets the isActive property value. Indicates whether the delegator or delegate relationship is currently active.
 func (m *DelegationSettings) SetIsActive(value *bool)() {
     err := m.GetBackingStore().Set("isActive", value)
     if err != nil {

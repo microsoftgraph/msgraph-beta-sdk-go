@@ -129,6 +129,18 @@ func (m *DriveItem) GetDeleted()(Deletedable) {
     }
     return nil
 }
+// GetExtensions gets the extensions property value. The extensions property
+// returns a []Extensionable when successful
+func (m *DriveItem) GetExtensions()([]Extensionable) {
+    val, err := m.GetBackingStore().Get("extensions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Extensionable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -232,6 +244,22 @@ func (m *DriveItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         if val != nil {
             m.SetDeleted(val.(Deletedable))
+        }
+        return nil
+    }
+    res["extensions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateExtensionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Extensionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Extensionable)
+                }
+            }
+            m.SetExtensions(res)
         }
         return nil
     }
@@ -971,6 +999,18 @@ func (m *DriveItem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    if m.GetExtensions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExtensions()))
+        for i, v := range m.GetExtensions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("extensions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("file", m.GetFile())
         if err != nil {
@@ -1234,6 +1274,13 @@ func (m *DriveItem) SetDeleted(value Deletedable)() {
         panic(err)
     }
 }
+// SetExtensions sets the extensions property value. The extensions property
+func (m *DriveItem) SetExtensions(value []Extensionable)() {
+    err := m.GetBackingStore().Set("extensions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetFile sets the file property value. File metadata, if the item is a file. Read-only.
 func (m *DriveItem) SetFile(value Fileable)() {
     err := m.GetBackingStore().Set("file", value)
@@ -1449,6 +1496,7 @@ type DriveItemable interface {
     GetContentStream()([]byte)
     GetCTag()(*string)
     GetDeleted()(Deletedable)
+    GetExtensions()([]Extensionable)
     GetFile()(Fileable)
     GetFileSystemInfo()(FileSystemInfoable)
     GetFolder()(Folderable)
@@ -1487,6 +1535,7 @@ type DriveItemable interface {
     SetContentStream(value []byte)()
     SetCTag(value *string)()
     SetDeleted(value Deletedable)()
+    SetExtensions(value []Extensionable)()
     SetFile(value Fileable)()
     SetFileSystemInfo(value FileSystemInfoable)()
     SetFolder(value Folderable)()

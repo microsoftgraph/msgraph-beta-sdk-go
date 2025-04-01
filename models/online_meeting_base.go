@@ -75,7 +75,7 @@ func (m *OnlineMeetingBase) GetAllowBreakoutRooms()(*bool) {
     }
     return nil
 }
-// GetAllowCopyingAndSharingMeetingContent gets the allowCopyingAndSharingMeetingContent property value. The allowCopyingAndSharingMeetingContent property
+// GetAllowCopyingAndSharingMeetingContent gets the allowCopyingAndSharingMeetingContent property value. Indicates whether copying and sharing meeting content is enabled for the meeting.
 // returns a *bool when successful
 func (m *OnlineMeetingBase) GetAllowCopyingAndSharingMeetingContent()(*bool) {
     val, err := m.GetBackingStore().Get("allowCopyingAndSharingMeetingContent")
@@ -937,7 +937,7 @@ func (m *OnlineMeetingBase) SetAllowBreakoutRooms(value *bool)() {
         panic(err)
     }
 }
-// SetAllowCopyingAndSharingMeetingContent sets the allowCopyingAndSharingMeetingContent property value. The allowCopyingAndSharingMeetingContent property
+// SetAllowCopyingAndSharingMeetingContent sets the allowCopyingAndSharingMeetingContent property value. Indicates whether copying and sharing meeting content is enabled for the meeting.
 func (m *OnlineMeetingBase) SetAllowCopyingAndSharingMeetingContent(value *bool)() {
     err := m.GetBackingStore().Set("allowCopyingAndSharingMeetingContent", value)
     if err != nil {

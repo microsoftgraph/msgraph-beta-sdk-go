@@ -69,15 +69,15 @@ func (m *DiscoveredCloudAppInfo) GetDataRetentionPolicy()(*AppInfoDataRetentionP
     }
     return nil
 }
-// GetDataTypes gets the dataTypes property value. The dataTypes property
-// returns a *AppInfoUploadedDataTypes when successful
-func (m *DiscoveredCloudAppInfo) GetDataTypes()(*AppInfoUploadedDataTypes) {
+// GetDataTypes gets the dataTypes property value. Indicates the data types that an end user can upload to the app. The possible values are: documents, mediaFiles, codingFiles, creditCards, databaseFiles, none, unknown, unknownFutureValue.
+// returns a []AppInfoUploadedDataTypes when successful
+func (m *DiscoveredCloudAppInfo) GetDataTypes()([]AppInfoUploadedDataTypes) {
     val, err := m.GetBackingStore().Get("dataTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*AppInfoUploadedDataTypes)
+        return val.([]AppInfoUploadedDataTypes)
     }
     return nil
 }
@@ -162,12 +162,18 @@ func (m *DiscoveredCloudAppInfo) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["dataTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseAppInfoUploadedDataTypes)
+        val, err := n.GetCollectionOfEnumValues(ParseAppInfoUploadedDataTypes)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetDataTypes(val.(*AppInfoUploadedDataTypes))
+            res := make([]AppInfoUploadedDataTypes, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*AppInfoUploadedDataTypes))
+                }
+            }
+            m.SetDataTypes(res)
         }
         return nil
     }
@@ -922,12 +928,18 @@ func (m *DiscoveredCloudAppInfo) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     res["logonUrls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetLogonUrls(val)
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetLogonUrls(res)
         }
         return nil
     }
@@ -1818,14 +1830,14 @@ func (m *DiscoveredCloudAppInfo) GetLatestBreachDateTime()(*i336074805fc853987ab
     return nil
 }
 // GetLogonUrls gets the logonUrls property value. Indicates the URL that users can use to sign into the app.
-// returns a *string when successful
-func (m *DiscoveredCloudAppInfo) GetLogonUrls()(*string) {
+// returns a []string when successful
+func (m *DiscoveredCloudAppInfo) GetLogonUrls()([]string) {
     val, err := m.GetBackingStore().Get("logonUrls")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*string)
+        return val.([]string)
     }
     return nil
 }
@@ -1887,8 +1899,7 @@ func (m *DiscoveredCloudAppInfo) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     if m.GetDataTypes() != nil {
-        cast := (*m.GetDataTypes()).String()
-        err = writer.WriteStringValue("dataTypes", &cast)
+        err = writer.WriteCollectionOfStringValues("dataTypes", SerializeAppInfoUploadedDataTypes(m.GetDataTypes()))
         if err != nil {
             return err
         }
@@ -2412,8 +2423,8 @@ func (m *DiscoveredCloudAppInfo) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("logonUrls", m.GetLogonUrls())
+    if m.GetLogonUrls() != nil {
+        err = writer.WriteCollectionOfStringValues("logonUrls", m.GetLogonUrls())
         if err != nil {
             return err
         }
@@ -2461,8 +2472,8 @@ func (m *DiscoveredCloudAppInfo) SetDataRetentionPolicy(value *AppInfoDataRetent
         panic(err)
     }
 }
-// SetDataTypes sets the dataTypes property value. The dataTypes property
-func (m *DiscoveredCloudAppInfo) SetDataTypes(value *AppInfoUploadedDataTypes)() {
+// SetDataTypes sets the dataTypes property value. Indicates the data types that an end user can upload to the app. The possible values are: documents, mediaFiles, codingFiles, creditCards, databaseFiles, none, unknown, unknownFutureValue.
+func (m *DiscoveredCloudAppInfo) SetDataTypes(value []AppInfoUploadedDataTypes)() {
     err := m.GetBackingStore().Set("dataTypes", value)
     if err != nil {
         panic(err)
@@ -2994,7 +3005,7 @@ func (m *DiscoveredCloudAppInfo) SetLatestBreachDateTime(value *i336074805fc8539
     }
 }
 // SetLogonUrls sets the logonUrls property value. Indicates the URL that users can use to sign into the app.
-func (m *DiscoveredCloudAppInfo) SetLogonUrls(value *string)() {
+func (m *DiscoveredCloudAppInfo) SetLogonUrls(value []string)() {
     err := m.GetBackingStore().Set("logonUrls", value)
     if err != nil {
         panic(err)
@@ -3021,7 +3032,7 @@ type DiscoveredCloudAppInfoable interface {
     GetDataAtRestEncryptionMethod()(*AppInfoDataAtRestEncryptionMethod)
     GetDataCenter()(*string)
     GetDataRetentionPolicy()(*AppInfoDataRetentionPolicy)
-    GetDataTypes()(*AppInfoUploadedDataTypes)
+    GetDataTypes()([]AppInfoUploadedDataTypes)
     GetDomainRegistrationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEncryptionProtocol()(*AppInfoEncryptionProtocol)
     GetFedRampLevel()(*AppInfoFedRampLevel)
@@ -3097,14 +3108,14 @@ type DiscoveredCloudAppInfoable interface {
     GetIsUserRolesSupport()(*CloudAppInfoState)
     GetIsValidCertificateName()(*CloudAppInfoState)
     GetLatestBreachDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    GetLogonUrls()(*string)
+    GetLogonUrls()([]string)
     GetPciDssVersion()(*AppInfoPciDssVersion)
     GetVendorEscaped()(*string)
     SetCsaStarLevel(value *AppInfoCsaStarLevel)()
     SetDataAtRestEncryptionMethod(value *AppInfoDataAtRestEncryptionMethod)()
     SetDataCenter(value *string)()
     SetDataRetentionPolicy(value *AppInfoDataRetentionPolicy)()
-    SetDataTypes(value *AppInfoUploadedDataTypes)()
+    SetDataTypes(value []AppInfoUploadedDataTypes)()
     SetDomainRegistrationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEncryptionProtocol(value *AppInfoEncryptionProtocol)()
     SetFedRampLevel(value *AppInfoFedRampLevel)()
@@ -3180,7 +3191,7 @@ type DiscoveredCloudAppInfoable interface {
     SetIsUserRolesSupport(value *CloudAppInfoState)()
     SetIsValidCertificateName(value *CloudAppInfoState)()
     SetLatestBreachDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
-    SetLogonUrls(value *string)()
+    SetLogonUrls(value []string)()
     SetPciDssVersion(value *AppInfoPciDssVersion)()
     SetVendorEscaped(value *string)()
 }

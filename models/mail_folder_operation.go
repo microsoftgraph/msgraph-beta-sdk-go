@@ -63,7 +63,7 @@ func (m *MailFolderOperation) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetResourceLocation gets the resourceLocation property value. The resourceLocation property
+// GetResourceLocation gets the resourceLocation property value. The location of the long-running operation.
 // returns a *string when successful
 func (m *MailFolderOperation) GetResourceLocation()(*string) {
     val, err := m.GetBackingStore().Get("resourceLocation")
@@ -75,7 +75,7 @@ func (m *MailFolderOperation) GetResourceLocation()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. The status of the long-running operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.
 // returns a *MailFolderOperationStatus when successful
 func (m *MailFolderOperation) GetStatus()(*MailFolderOperationStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -108,14 +108,14 @@ func (m *MailFolderOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetResourceLocation sets the resourceLocation property value. The resourceLocation property
+// SetResourceLocation sets the resourceLocation property value. The location of the long-running operation.
 func (m *MailFolderOperation) SetResourceLocation(value *string)() {
     err := m.GetBackingStore().Set("resourceLocation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. The status of the long-running operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.
 func (m *MailFolderOperation) SetStatus(value *MailFolderOperationStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

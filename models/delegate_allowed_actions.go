@@ -106,7 +106,7 @@ func (m *DelegateAllowedActions) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetJoinActiveCalls gets the joinActiveCalls property value. The joinActiveCalls property
+// GetJoinActiveCalls gets the joinActiveCalls property value. Indicates whether the delegator or delegate allows participation in active calls.
 // returns a *bool when successful
 func (m *DelegateAllowedActions) GetJoinActiveCalls()(*bool) {
     val, err := m.GetBackingStore().Get("joinActiveCalls")
@@ -118,7 +118,7 @@ func (m *DelegateAllowedActions) GetJoinActiveCalls()(*bool) {
     }
     return nil
 }
-// GetMakeCalls gets the makeCalls property value. The makeCalls property
+// GetMakeCalls gets the makeCalls property value. Indicates whether the delegator or delegate allows calls to be made on their behalf.
 // returns a *bool when successful
 func (m *DelegateAllowedActions) GetMakeCalls()(*bool) {
     val, err := m.GetBackingStore().Get("makeCalls")
@@ -130,7 +130,7 @@ func (m *DelegateAllowedActions) GetMakeCalls()(*bool) {
     }
     return nil
 }
-// GetManageCallAndDelegateSettings gets the manageCallAndDelegateSettings property value. The manageCallAndDelegateSettings property
+// GetManageCallAndDelegateSettings gets the manageCallAndDelegateSettings property value. Indicates whether the delegator or delegate allows the management of call and delegation settings.
 // returns a *bool when successful
 func (m *DelegateAllowedActions) GetManageCallAndDelegateSettings()(*bool) {
     val, err := m.GetBackingStore().Get("manageCallAndDelegateSettings")
@@ -154,7 +154,7 @@ func (m *DelegateAllowedActions) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPickUpHeldCalls gets the pickUpHeldCalls property value. The pickUpHeldCalls property
+// GetPickUpHeldCalls gets the pickUpHeldCalls property value. Indicates whether the delegator or delegate allows held calls to be picked up.
 // returns a *bool when successful
 func (m *DelegateAllowedActions) GetPickUpHeldCalls()(*bool) {
     val, err := m.GetBackingStore().Get("pickUpHeldCalls")
@@ -166,7 +166,7 @@ func (m *DelegateAllowedActions) GetPickUpHeldCalls()(*bool) {
     }
     return nil
 }
-// GetReceiveCalls gets the receiveCalls property value. The receiveCalls property
+// GetReceiveCalls gets the receiveCalls property value. Indicates whether the delegator or delegate allows calls to be received on their behalf.
 // returns a *bool when successful
 func (m *DelegateAllowedActions) GetReceiveCalls()(*bool) {
     val, err := m.GetBackingStore().Get("receiveCalls")
@@ -235,21 +235,21 @@ func (m *DelegateAllowedActions) SetAdditionalData(value map[string]any)() {
 func (m *DelegateAllowedActions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetJoinActiveCalls sets the joinActiveCalls property value. The joinActiveCalls property
+// SetJoinActiveCalls sets the joinActiveCalls property value. Indicates whether the delegator or delegate allows participation in active calls.
 func (m *DelegateAllowedActions) SetJoinActiveCalls(value *bool)() {
     err := m.GetBackingStore().Set("joinActiveCalls", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMakeCalls sets the makeCalls property value. The makeCalls property
+// SetMakeCalls sets the makeCalls property value. Indicates whether the delegator or delegate allows calls to be made on their behalf.
 func (m *DelegateAllowedActions) SetMakeCalls(value *bool)() {
     err := m.GetBackingStore().Set("makeCalls", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManageCallAndDelegateSettings sets the manageCallAndDelegateSettings property value. The manageCallAndDelegateSettings property
+// SetManageCallAndDelegateSettings sets the manageCallAndDelegateSettings property value. Indicates whether the delegator or delegate allows the management of call and delegation settings.
 func (m *DelegateAllowedActions) SetManageCallAndDelegateSettings(value *bool)() {
     err := m.GetBackingStore().Set("manageCallAndDelegateSettings", value)
     if err != nil {
@@ -263,14 +263,14 @@ func (m *DelegateAllowedActions) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPickUpHeldCalls sets the pickUpHeldCalls property value. The pickUpHeldCalls property
+// SetPickUpHeldCalls sets the pickUpHeldCalls property value. Indicates whether the delegator or delegate allows held calls to be picked up.
 func (m *DelegateAllowedActions) SetPickUpHeldCalls(value *bool)() {
     err := m.GetBackingStore().Set("pickUpHeldCalls", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReceiveCalls sets the receiveCalls property value. The receiveCalls property
+// SetReceiveCalls sets the receiveCalls property value. Indicates whether the delegator or delegate allows calls to be received on their behalf.
 func (m *DelegateAllowedActions) SetReceiveCalls(value *bool)() {
     err := m.GetBackingStore().Set("receiveCalls", value)
     if err != nil {

@@ -2138,6 +2138,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOrganizationalBrandingLocalization(), nil
                     case "#microsoft.graph.organizationalBrandingProperties":
                         return NewOrganizationalBrandingProperties(), nil
+                    case "#microsoft.graph.organizationalUnit":
+                        return NewOrganizationalUnit(), nil
                     case "#microsoft.graph.organizationSettings":
                         return NewOrganizationSettings(), nil
                     case "#microsoft.graph.orgContact":
@@ -2330,6 +2332,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPrintUsageByPrinter(), nil
                     case "#microsoft.graph.printUsageByUser":
                         return NewPrintUsageByUser(), nil
+                    case "#microsoft.graph.privateLinkNamedLocation":
+                        return NewPrivateLinkNamedLocation(), nil
                     case "#microsoft.graph.privilegedAccess":
                         return NewPrivilegedAccess(), nil
                     case "#microsoft.graph.privilegedAccessGroup":
@@ -2624,6 +2628,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewServicePrincipalSignInActivity(), nil
                     case "#microsoft.graph.serviceStorageQuotaBreakdown":
                         return NewServiceStorageQuotaBreakdown(), nil
+                    case "#microsoft.graph.serviceTagNamedLocation":
+                        return NewServiceTagNamedLocation(), nil
                     case "#microsoft.graph.serviceUpdateMessage":
                         return NewServiceUpdateMessage(), nil
                     case "#microsoft.graph.settingStateDeviceSummary":

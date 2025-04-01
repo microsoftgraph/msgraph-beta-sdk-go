@@ -1,0 +1,119 @@
+package models
+
+import (
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+type PrivateLinkNamedLocation struct {
+    NamedLocation
+}
+// NewPrivateLinkNamedLocation instantiates a new PrivateLinkNamedLocation and sets the default values.
+func NewPrivateLinkNamedLocation()(*PrivateLinkNamedLocation) {
+    m := &PrivateLinkNamedLocation{
+        NamedLocation: *NewNamedLocation(),
+    }
+    return m
+}
+// CreatePrivateLinkNamedLocationFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// returns a Parsable when successful
+func CreatePrivateLinkNamedLocationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewPrivateLinkNamedLocation(), nil
+}
+// GetFieldDeserializers the deserialization information for the current model
+// returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
+func (m *PrivateLinkNamedLocation) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.NamedLocation.GetFieldDeserializers()
+    res["isTrusted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsTrusted(val)
+        }
+        return nil
+    }
+    res["privateLinkResourcePolicyIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetPrivateLinkResourcePolicyIds(res)
+        }
+        return nil
+    }
+    return res
+}
+// GetIsTrusted gets the isTrusted property value. The isTrusted property
+// returns a *bool when successful
+func (m *PrivateLinkNamedLocation) GetIsTrusted()(*bool) {
+    val, err := m.GetBackingStore().Get("isTrusted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetPrivateLinkResourcePolicyIds gets the privateLinkResourcePolicyIds property value. The privateLinkResourcePolicyIds property
+// returns a []string when successful
+func (m *PrivateLinkNamedLocation) GetPrivateLinkResourcePolicyIds()([]string) {
+    val, err := m.GetBackingStore().Get("privateLinkResourcePolicyIds")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
+// Serialize serializes information the current object
+func (m *PrivateLinkNamedLocation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.NamedLocation.Serialize(writer)
+    if err != nil {
+        return err
+    }
+    {
+        err = writer.WriteBoolValue("isTrusted", m.GetIsTrusted())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetPrivateLinkResourcePolicyIds() != nil {
+        err = writer.WriteCollectionOfStringValues("privateLinkResourcePolicyIds", m.GetPrivateLinkResourcePolicyIds())
+        if err != nil {
+            return err
+        }
+    }
+    return nil
+}
+// SetIsTrusted sets the isTrusted property value. The isTrusted property
+func (m *PrivateLinkNamedLocation) SetIsTrusted(value *bool)() {
+    err := m.GetBackingStore().Set("isTrusted", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPrivateLinkResourcePolicyIds sets the privateLinkResourcePolicyIds property value. The privateLinkResourcePolicyIds property
+func (m *PrivateLinkNamedLocation) SetPrivateLinkResourcePolicyIds(value []string)() {
+    err := m.GetBackingStore().Set("privateLinkResourcePolicyIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
+type PrivateLinkNamedLocationable interface {
+    NamedLocationable
+    i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetIsTrusted()(*bool)
+    GetPrivateLinkResourcePolicyIds()([]string)
+    SetIsTrusted(value *bool)()
+    SetPrivateLinkResourcePolicyIds(value []string)()
+}

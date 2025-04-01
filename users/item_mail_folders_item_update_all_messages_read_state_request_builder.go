@@ -30,9 +30,12 @@ func NewItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder(rawUrl strin
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action updateAllMessagesReadState
+// Post update the read state of all messages in a mailFolder object.
 // Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-updateallmessagesreadstate?view=graph-rest-beta
 func (m *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemUpdateAllMessagesReadStatePostRequestBodyable, requestConfiguration *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -47,7 +50,7 @@ func (m *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder) Post(ctx c
     }
     return nil
 }
-// ToPostRequestInformation invoke action updateAllMessagesReadState
+// ToPostRequestInformation update the read state of all messages in a mailFolder object.
 // Deprecated:  as of 2024-04/PrivatePreview:updateAllMessagesReadStateAPI on 2024-04-29 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMailFoldersItemUpdateAllMessagesReadStatePostRequestBodyable, requestConfiguration *ItemMailFoldersItemUpdateAllMessagesReadStateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
