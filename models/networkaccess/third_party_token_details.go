@@ -44,7 +44,7 @@ func (m *ThirdPartyTokenDetails) GetAdditionalData()(map[string]any) {
 func (m *ThirdPartyTokenDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. Time the token will expire.
 // returns a *Time when successful
 func (m *ThirdPartyTokenDetails) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -112,7 +112,7 @@ func (m *ThirdPartyTokenDetails) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetIssuedAtDateTime gets the issuedAtDateTime property value. The issuedAtDateTime property
+// GetIssuedAtDateTime gets the issuedAtDateTime property value. Time the token was issued at.
 // returns a *Time when successful
 func (m *ThirdPartyTokenDetails) GetIssuedAtDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("issuedAtDateTime")
@@ -136,7 +136,7 @@ func (m *ThirdPartyTokenDetails) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. The uniqueTokenIdentifier property
+// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. Unique token identifier.
 // returns a *string when successful
 func (m *ThirdPartyTokenDetails) GetUniqueTokenIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("uniqueTokenIdentifier")
@@ -148,7 +148,7 @@ func (m *ThirdPartyTokenDetails) GetUniqueTokenIdentifier()(*string) {
     }
     return nil
 }
-// GetValidFromDateTime gets the validFromDateTime property value. The validFromDateTime property
+// GetValidFromDateTime gets the validFromDateTime property value. Time the token is valid from.
 // returns a *Time when successful
 func (m *ThirdPartyTokenDetails) GetValidFromDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("validFromDateTime")
@@ -211,14 +211,14 @@ func (m *ThirdPartyTokenDetails) SetAdditionalData(value map[string]any)() {
 func (m *ThirdPartyTokenDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. Time the token will expire.
 func (m *ThirdPartyTokenDetails) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIssuedAtDateTime sets the issuedAtDateTime property value. The issuedAtDateTime property
+// SetIssuedAtDateTime sets the issuedAtDateTime property value. Time the token was issued at.
 func (m *ThirdPartyTokenDetails) SetIssuedAtDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("issuedAtDateTime", value)
     if err != nil {
@@ -232,14 +232,14 @@ func (m *ThirdPartyTokenDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. The uniqueTokenIdentifier property
+// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. Unique token identifier.
 func (m *ThirdPartyTokenDetails) SetUniqueTokenIdentifier(value *string)() {
     err := m.GetBackingStore().Set("uniqueTokenIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValidFromDateTime sets the validFromDateTime property value. The validFromDateTime property
+// SetValidFromDateTime sets the validFromDateTime property value. Time the token is valid from.
 func (m *ThirdPartyTokenDetails) SetValidFromDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("validFromDateTime", value)
     if err != nil {

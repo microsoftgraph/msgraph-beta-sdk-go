@@ -14,7 +14,7 @@ import (
 type LogsTrafficItemDeviceRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LogsTrafficItemDeviceRequestBuilderGetQueryParameters get device from networkAccess
+// LogsTrafficItemDeviceRequestBuilderGetQueryParameters represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
 type LogsTrafficItemDeviceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewLogsTrafficItemDeviceRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewLogsTrafficItemDeviceRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get device from networkAccess
+// Get represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
 // returns a Deviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LogsTrafficItemDeviceRequestBuilder) Get(ctx context.Context, requestConfiguration *LogsTrafficItemDeviceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable, error) {
@@ -63,7 +63,7 @@ func (m *LogsTrafficItemDeviceRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Deviceable), nil
 }
-// ToGetRequestInformation get device from networkAccess
+// ToGetRequestInformation represents the device associated with the network traffic, providing details about the hardware or virtual machine involved in the transaction.
 // returns a *RequestInformation when successful
 func (m *LogsTrafficItemDeviceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LogsTrafficItemDeviceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

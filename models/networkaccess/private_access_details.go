@@ -25,7 +25,7 @@ func NewPrivateAccessDetails()(*PrivateAccessDetails) {
 func CreatePrivateAccessDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPrivateAccessDetails(), nil
 }
-// GetAccessType gets the accessType property value. The accessType property
+// GetAccessType gets the accessType property value. Type of accessed application. Access type options: QuickAccess, PrivateAccess.
 // returns a *AccessType when successful
 func (m *PrivateAccessDetails) GetAccessType()(*AccessType) {
     val, err := m.GetBackingStore().Get("accessType")
@@ -50,7 +50,7 @@ func (m *PrivateAccessDetails) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppSegmentId gets the appSegmentId property value. The appSegmentId property
+// GetAppSegmentId gets the appSegmentId property value. The unique identifier for Application segment ID from Azure AD.
 // returns a *string when successful
 func (m *PrivateAccessDetails) GetAppSegmentId()(*string) {
     val, err := m.GetBackingStore().Get("appSegmentId")
@@ -67,7 +67,7 @@ func (m *PrivateAccessDetails) GetAppSegmentId()(*string) {
 func (m *PrivateAccessDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetConnectionStatus gets the connectionStatus property value. The connectionStatus property
+// GetConnectionStatus gets the connectionStatus property value. Status of a connection. Status options: Open, Active, Closed.
 // returns a *ConnectionStatus when successful
 func (m *PrivateAccessDetails) GetConnectionStatus()(*ConnectionStatus) {
     val, err := m.GetBackingStore().Get("connectionStatus")
@@ -79,7 +79,7 @@ func (m *PrivateAccessDetails) GetConnectionStatus()(*ConnectionStatus) {
     }
     return nil
 }
-// GetConnectorId gets the connectorId property value. The connectorId property
+// GetConnectorId gets the connectorId property value. Private access connector ID.
 // returns a *string when successful
 func (m *PrivateAccessDetails) GetConnectorId()(*string) {
     val, err := m.GetBackingStore().Get("connectorId")
@@ -91,7 +91,7 @@ func (m *PrivateAccessDetails) GetConnectorId()(*string) {
     }
     return nil
 }
-// GetConnectorIp gets the connectorIp property value. The connectorIp property
+// GetConnectorIp gets the connectorIp property value. Private access connector IP address.
 // returns a *string when successful
 func (m *PrivateAccessDetails) GetConnectorIp()(*string) {
     val, err := m.GetBackingStore().Get("connectorIp")
@@ -103,7 +103,7 @@ func (m *PrivateAccessDetails) GetConnectorIp()(*string) {
     }
     return nil
 }
-// GetConnectorName gets the connectorName property value. The connectorName property
+// GetConnectorName gets the connectorName property value. Private access connector name.
 // returns a *string when successful
 func (m *PrivateAccessDetails) GetConnectorName()(*string) {
     val, err := m.GetBackingStore().Get("connectorName")
@@ -223,7 +223,7 @@ func (m *PrivateAccessDetails) GetOdataType()(*string) {
     }
     return nil
 }
-// GetProcessingRegion gets the processingRegion property value. The processingRegion property
+// GetProcessingRegion gets the processingRegion property value. Region where the request was processed by the backend service.
 // returns a *string when successful
 func (m *PrivateAccessDetails) GetProcessingRegion()(*string) {
     val, err := m.GetBackingStore().Get("processingRegion")
@@ -235,7 +235,7 @@ func (m *PrivateAccessDetails) GetProcessingRegion()(*string) {
     }
     return nil
 }
-// GetThirdPartyTokenDetails gets the thirdPartyTokenDetails property value. The thirdPartyTokenDetails property
+// GetThirdPartyTokenDetails gets the thirdPartyTokenDetails property value. Details about third-party tokens used in the transaction.
 // returns a ThirdPartyTokenDetailsable when successful
 func (m *PrivateAccessDetails) GetThirdPartyTokenDetails()(ThirdPartyTokenDetailsable) {
     val, err := m.GetBackingStore().Get("thirdPartyTokenDetails")
@@ -313,7 +313,7 @@ func (m *PrivateAccessDetails) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAccessType sets the accessType property value. The accessType property
+// SetAccessType sets the accessType property value. Type of accessed application. Access type options: QuickAccess, PrivateAccess.
 func (m *PrivateAccessDetails) SetAccessType(value *AccessType)() {
     err := m.GetBackingStore().Set("accessType", value)
     if err != nil {
@@ -327,7 +327,7 @@ func (m *PrivateAccessDetails) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppSegmentId sets the appSegmentId property value. The appSegmentId property
+// SetAppSegmentId sets the appSegmentId property value. The unique identifier for Application segment ID from Azure AD.
 func (m *PrivateAccessDetails) SetAppSegmentId(value *string)() {
     err := m.GetBackingStore().Set("appSegmentId", value)
     if err != nil {
@@ -338,28 +338,28 @@ func (m *PrivateAccessDetails) SetAppSegmentId(value *string)() {
 func (m *PrivateAccessDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetConnectionStatus sets the connectionStatus property value. The connectionStatus property
+// SetConnectionStatus sets the connectionStatus property value. Status of a connection. Status options: Open, Active, Closed.
 func (m *PrivateAccessDetails) SetConnectionStatus(value *ConnectionStatus)() {
     err := m.GetBackingStore().Set("connectionStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConnectorId sets the connectorId property value. The connectorId property
+// SetConnectorId sets the connectorId property value. Private access connector ID.
 func (m *PrivateAccessDetails) SetConnectorId(value *string)() {
     err := m.GetBackingStore().Set("connectorId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConnectorIp sets the connectorIp property value. The connectorIp property
+// SetConnectorIp sets the connectorIp property value. Private access connector IP address.
 func (m *PrivateAccessDetails) SetConnectorIp(value *string)() {
     err := m.GetBackingStore().Set("connectorIp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConnectorName sets the connectorName property value. The connectorName property
+// SetConnectorName sets the connectorName property value. Private access connector name.
 func (m *PrivateAccessDetails) SetConnectorName(value *string)() {
     err := m.GetBackingStore().Set("connectorName", value)
     if err != nil {
@@ -373,14 +373,14 @@ func (m *PrivateAccessDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProcessingRegion sets the processingRegion property value. The processingRegion property
+// SetProcessingRegion sets the processingRegion property value. Region where the request was processed by the backend service.
 func (m *PrivateAccessDetails) SetProcessingRegion(value *string)() {
     err := m.GetBackingStore().Set("processingRegion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetThirdPartyTokenDetails sets the thirdPartyTokenDetails property value. The thirdPartyTokenDetails property
+// SetThirdPartyTokenDetails sets the thirdPartyTokenDetails property value. Details about third-party tokens used in the transaction.
 func (m *PrivateAccessDetails) SetThirdPartyTokenDetails(value ThirdPartyTokenDetailsable)() {
     err := m.GetBackingStore().Set("thirdPartyTokenDetails", value)
     if err != nil {

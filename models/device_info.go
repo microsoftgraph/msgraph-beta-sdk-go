@@ -43,7 +43,7 @@ func (m *DeviceInfo) GetAdditionalData()(map[string]any) {
 func (m *DeviceInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceId gets the deviceId property value. The deviceId property
+// GetDeviceId gets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration.
 // returns a *string when successful
 func (m *DeviceInfo) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -55,7 +55,7 @@ func (m *DeviceInfo) GetDeviceId()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name for the device.
 // returns a *string when successful
 func (m *DeviceInfo) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -67,7 +67,7 @@ func (m *DeviceInfo) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetEnrollmentProfileName gets the enrollmentProfileName property value. The enrollmentProfileName property
+// GetEnrollmentProfileName gets the enrollmentProfileName property value. Enrollment profile applied to the device.
 // returns a *string when successful
 func (m *DeviceInfo) GetEnrollmentProfileName()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentProfileName")
@@ -79,7 +79,7 @@ func (m *DeviceInfo) GetEnrollmentProfileName()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute1 gets the extensionAttribute1 property value. The extensionAttribute1 property
+// GetExtensionAttribute1 gets the extensionAttribute1 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute1()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute1")
@@ -91,7 +91,7 @@ func (m *DeviceInfo) GetExtensionAttribute1()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute10 gets the extensionAttribute10 property value. The extensionAttribute10 property
+// GetExtensionAttribute10 gets the extensionAttribute10 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute10()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute10")
@@ -103,7 +103,7 @@ func (m *DeviceInfo) GetExtensionAttribute10()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute11 gets the extensionAttribute11 property value. The extensionAttribute11 property
+// GetExtensionAttribute11 gets the extensionAttribute11 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute11()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute11")
@@ -115,7 +115,7 @@ func (m *DeviceInfo) GetExtensionAttribute11()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute12 gets the extensionAttribute12 property value. The extensionAttribute12 property
+// GetExtensionAttribute12 gets the extensionAttribute12 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute12()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute12")
@@ -127,7 +127,7 @@ func (m *DeviceInfo) GetExtensionAttribute12()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute13 gets the extensionAttribute13 property value. The extensionAttribute13 property
+// GetExtensionAttribute13 gets the extensionAttribute13 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute13()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute13")
@@ -139,7 +139,7 @@ func (m *DeviceInfo) GetExtensionAttribute13()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute14 gets the extensionAttribute14 property value. The extensionAttribute14 property
+// GetExtensionAttribute14 gets the extensionAttribute14 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute14()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute14")
@@ -151,7 +151,7 @@ func (m *DeviceInfo) GetExtensionAttribute14()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute15 gets the extensionAttribute15 property value. The extensionAttribute15 property
+// GetExtensionAttribute15 gets the extensionAttribute15 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute15()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute15")
@@ -163,7 +163,7 @@ func (m *DeviceInfo) GetExtensionAttribute15()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute2 gets the extensionAttribute2 property value. The extensionAttribute2 property
+// GetExtensionAttribute2 gets the extensionAttribute2 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute2()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute2")
@@ -175,7 +175,7 @@ func (m *DeviceInfo) GetExtensionAttribute2()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute3 gets the extensionAttribute3 property value. The extensionAttribute3 property
+// GetExtensionAttribute3 gets the extensionAttribute3 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute3()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute3")
@@ -187,7 +187,7 @@ func (m *DeviceInfo) GetExtensionAttribute3()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute4 gets the extensionAttribute4 property value. The extensionAttribute4 property
+// GetExtensionAttribute4 gets the extensionAttribute4 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute4()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute4")
@@ -199,7 +199,7 @@ func (m *DeviceInfo) GetExtensionAttribute4()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute5 gets the extensionAttribute5 property value. The extensionAttribute5 property
+// GetExtensionAttribute5 gets the extensionAttribute5 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute5()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute5")
@@ -211,7 +211,7 @@ func (m *DeviceInfo) GetExtensionAttribute5()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute6 gets the extensionAttribute6 property value. The extensionAttribute6 property
+// GetExtensionAttribute6 gets the extensionAttribute6 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute6()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute6")
@@ -223,7 +223,7 @@ func (m *DeviceInfo) GetExtensionAttribute6()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute7 gets the extensionAttribute7 property value. The extensionAttribute7 property
+// GetExtensionAttribute7 gets the extensionAttribute7 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute7()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute7")
@@ -235,7 +235,7 @@ func (m *DeviceInfo) GetExtensionAttribute7()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute8 gets the extensionAttribute8 property value. The extensionAttribute8 property
+// GetExtensionAttribute8 gets the extensionAttribute8 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute8()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute8")
@@ -247,7 +247,7 @@ func (m *DeviceInfo) GetExtensionAttribute8()(*string) {
     }
     return nil
 }
-// GetExtensionAttribute9 gets the extensionAttribute9 property value. The extensionAttribute9 property
+// GetExtensionAttribute9 gets the extensionAttribute9 property value. Extension attribute.
 // returns a *string when successful
 func (m *DeviceInfo) GetExtensionAttribute9()(*string) {
     val, err := m.GetBackingStore().Get("extensionAttribute9")
@@ -577,7 +577,7 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIsCompliant gets the isCompliant property value. The isCompliant property
+// GetIsCompliant gets the isCompliant property value. Indicates the device compliance status with Mobile Management Device (MDM) policies.
 // returns a *bool when successful
 func (m *DeviceInfo) GetIsCompliant()(*bool) {
     val, err := m.GetBackingStore().Get("isCompliant")
@@ -589,7 +589,7 @@ func (m *DeviceInfo) GetIsCompliant()(*bool) {
     }
     return nil
 }
-// GetManufacturer gets the manufacturer property value. The manufacturer property
+// GetManufacturer gets the manufacturer property value. Manufacturer of the device.
 // returns a *string when successful
 func (m *DeviceInfo) GetManufacturer()(*string) {
     val, err := m.GetBackingStore().Get("manufacturer")
@@ -601,7 +601,7 @@ func (m *DeviceInfo) GetManufacturer()(*string) {
     }
     return nil
 }
-// GetMdmAppId gets the mdmAppId property value. The mdmAppId property
+// GetMdmAppId gets the mdmAppId property value. Application identifier used to register device into MDM.
 // returns a *string when successful
 func (m *DeviceInfo) GetMdmAppId()(*string) {
     val, err := m.GetBackingStore().Get("mdmAppId")
@@ -613,7 +613,7 @@ func (m *DeviceInfo) GetMdmAppId()(*string) {
     }
     return nil
 }
-// GetModel gets the model property value. The model property
+// GetModel gets the model property value. Model of the device.
 // returns a *string when successful
 func (m *DeviceInfo) GetModel()(*string) {
     val, err := m.GetBackingStore().Get("model")
@@ -637,7 +637,7 @@ func (m *DeviceInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOperatingSystem gets the operatingSystem property value. The operatingSystem property
+// GetOperatingSystem gets the operatingSystem property value. The type of operating system on the device.
 // returns a *string when successful
 func (m *DeviceInfo) GetOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystem")
@@ -649,7 +649,7 @@ func (m *DeviceInfo) GetOperatingSystem()(*string) {
     }
     return nil
 }
-// GetOperatingSystemVersion gets the operatingSystemVersion property value. The operatingSystemVersion property
+// GetOperatingSystemVersion gets the operatingSystemVersion property value. The version of the operating system on the device.
 // returns a *string when successful
 func (m *DeviceInfo) GetOperatingSystemVersion()(*string) {
     val, err := m.GetBackingStore().Get("operatingSystemVersion")
@@ -661,7 +661,7 @@ func (m *DeviceInfo) GetOperatingSystemVersion()(*string) {
     }
     return nil
 }
-// GetOwnership gets the ownership property value. The ownership property
+// GetOwnership gets the ownership property value. Ownership of the device. This property is set by Intune.
 // returns a *string when successful
 func (m *DeviceInfo) GetOwnership()(*string) {
     val, err := m.GetBackingStore().Get("ownership")
@@ -673,7 +673,7 @@ func (m *DeviceInfo) GetOwnership()(*string) {
     }
     return nil
 }
-// GetPhysicalIds gets the physicalIds property value. The physicalIds property
+// GetPhysicalIds gets the physicalIds property value. A collection of physical identifiers for the device.
 // returns a []string when successful
 func (m *DeviceInfo) GetPhysicalIds()([]string) {
     val, err := m.GetBackingStore().Get("physicalIds")
@@ -685,7 +685,7 @@ func (m *DeviceInfo) GetPhysicalIds()([]string) {
     }
     return nil
 }
-// GetProfileType gets the profileType property value. The profileType property
+// GetProfileType gets the profileType property value. The profile type of the device.
 // returns a *string when successful
 func (m *DeviceInfo) GetProfileType()(*string) {
     val, err := m.GetBackingStore().Get("profileType")
@@ -697,7 +697,7 @@ func (m *DeviceInfo) GetProfileType()(*string) {
     }
     return nil
 }
-// GetSystemLabels gets the systemLabels property value. The systemLabels property
+// GetSystemLabels gets the systemLabels property value. List of labels applied to the device by the system.
 // returns a []string when successful
 func (m *DeviceInfo) GetSystemLabels()([]string) {
     val, err := m.GetBackingStore().Get("systemLabels")
@@ -709,7 +709,7 @@ func (m *DeviceInfo) GetSystemLabels()([]string) {
     }
     return nil
 }
-// GetTrustType gets the trustType property value. The trustType property
+// GetTrustType gets the trustType property value. Type of trust for the joined device.
 // returns a *string when successful
 func (m *DeviceInfo) GetTrustType()(*string) {
     val, err := m.GetBackingStore().Get("trustType")
@@ -922,154 +922,154 @@ func (m *DeviceInfo) SetAdditionalData(value map[string]any)() {
 func (m *DeviceInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceId sets the deviceId property value. The deviceId property
+// SetDeviceId sets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration.
 func (m *DeviceInfo) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name for the device.
 func (m *DeviceInfo) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEnrollmentProfileName sets the enrollmentProfileName property value. The enrollmentProfileName property
+// SetEnrollmentProfileName sets the enrollmentProfileName property value. Enrollment profile applied to the device.
 func (m *DeviceInfo) SetEnrollmentProfileName(value *string)() {
     err := m.GetBackingStore().Set("enrollmentProfileName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute1 sets the extensionAttribute1 property value. The extensionAttribute1 property
+// SetExtensionAttribute1 sets the extensionAttribute1 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute1(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute1", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute10 sets the extensionAttribute10 property value. The extensionAttribute10 property
+// SetExtensionAttribute10 sets the extensionAttribute10 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute10(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute10", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute11 sets the extensionAttribute11 property value. The extensionAttribute11 property
+// SetExtensionAttribute11 sets the extensionAttribute11 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute11(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute11", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute12 sets the extensionAttribute12 property value. The extensionAttribute12 property
+// SetExtensionAttribute12 sets the extensionAttribute12 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute12(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute12", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute13 sets the extensionAttribute13 property value. The extensionAttribute13 property
+// SetExtensionAttribute13 sets the extensionAttribute13 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute13(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute13", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute14 sets the extensionAttribute14 property value. The extensionAttribute14 property
+// SetExtensionAttribute14 sets the extensionAttribute14 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute14(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute14", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute15 sets the extensionAttribute15 property value. The extensionAttribute15 property
+// SetExtensionAttribute15 sets the extensionAttribute15 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute15(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute15", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute2 sets the extensionAttribute2 property value. The extensionAttribute2 property
+// SetExtensionAttribute2 sets the extensionAttribute2 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute2(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute2", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute3 sets the extensionAttribute3 property value. The extensionAttribute3 property
+// SetExtensionAttribute3 sets the extensionAttribute3 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute3(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute3", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute4 sets the extensionAttribute4 property value. The extensionAttribute4 property
+// SetExtensionAttribute4 sets the extensionAttribute4 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute4(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute4", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute5 sets the extensionAttribute5 property value. The extensionAttribute5 property
+// SetExtensionAttribute5 sets the extensionAttribute5 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute5(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute5", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute6 sets the extensionAttribute6 property value. The extensionAttribute6 property
+// SetExtensionAttribute6 sets the extensionAttribute6 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute6(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute6", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute7 sets the extensionAttribute7 property value. The extensionAttribute7 property
+// SetExtensionAttribute7 sets the extensionAttribute7 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute7(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute7", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute8 sets the extensionAttribute8 property value. The extensionAttribute8 property
+// SetExtensionAttribute8 sets the extensionAttribute8 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute8(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute8", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExtensionAttribute9 sets the extensionAttribute9 property value. The extensionAttribute9 property
+// SetExtensionAttribute9 sets the extensionAttribute9 property value. Extension attribute.
 func (m *DeviceInfo) SetExtensionAttribute9(value *string)() {
     err := m.GetBackingStore().Set("extensionAttribute9", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsCompliant sets the isCompliant property value. The isCompliant property
+// SetIsCompliant sets the isCompliant property value. Indicates the device compliance status with Mobile Management Device (MDM) policies.
 func (m *DeviceInfo) SetIsCompliant(value *bool)() {
     err := m.GetBackingStore().Set("isCompliant", value)
     if err != nil {
         panic(err)
     }
 }
-// SetManufacturer sets the manufacturer property value. The manufacturer property
+// SetManufacturer sets the manufacturer property value. Manufacturer of the device.
 func (m *DeviceInfo) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMdmAppId sets the mdmAppId property value. The mdmAppId property
+// SetMdmAppId sets the mdmAppId property value. Application identifier used to register device into MDM.
 func (m *DeviceInfo) SetMdmAppId(value *string)() {
     err := m.GetBackingStore().Set("mdmAppId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModel sets the model property value. The model property
+// SetModel sets the model property value. Model of the device.
 func (m *DeviceInfo) SetModel(value *string)() {
     err := m.GetBackingStore().Set("model", value)
     if err != nil {
@@ -1083,49 +1083,49 @@ func (m *DeviceInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOperatingSystem sets the operatingSystem property value. The operatingSystem property
+// SetOperatingSystem sets the operatingSystem property value. The type of operating system on the device.
 func (m *DeviceInfo) SetOperatingSystem(value *string)() {
     err := m.GetBackingStore().Set("operatingSystem", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOperatingSystemVersion sets the operatingSystemVersion property value. The operatingSystemVersion property
+// SetOperatingSystemVersion sets the operatingSystemVersion property value. The version of the operating system on the device.
 func (m *DeviceInfo) SetOperatingSystemVersion(value *string)() {
     err := m.GetBackingStore().Set("operatingSystemVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwnership sets the ownership property value. The ownership property
+// SetOwnership sets the ownership property value. Ownership of the device. This property is set by Intune.
 func (m *DeviceInfo) SetOwnership(value *string)() {
     err := m.GetBackingStore().Set("ownership", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPhysicalIds sets the physicalIds property value. The physicalIds property
+// SetPhysicalIds sets the physicalIds property value. A collection of physical identifiers for the device.
 func (m *DeviceInfo) SetPhysicalIds(value []string)() {
     err := m.GetBackingStore().Set("physicalIds", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProfileType sets the profileType property value. The profileType property
+// SetProfileType sets the profileType property value. The profile type of the device.
 func (m *DeviceInfo) SetProfileType(value *string)() {
     err := m.GetBackingStore().Set("profileType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSystemLabels sets the systemLabels property value. The systemLabels property
+// SetSystemLabels sets the systemLabels property value. List of labels applied to the device by the system.
 func (m *DeviceInfo) SetSystemLabels(value []string)() {
     err := m.GetBackingStore().Set("systemLabels", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTrustType sets the trustType property value. The trustType property
+// SetTrustType sets the trustType property value. Type of trust for the joined device.
 func (m *DeviceInfo) SetTrustType(value *string)() {
     err := m.GetBackingStore().Set("trustType", value)
     if err != nil {
