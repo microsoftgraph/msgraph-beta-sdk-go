@@ -132,6 +132,18 @@ func (m *Alert) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a1
     }
     return nil
 }
+// GetCustomDetails gets the customDetails property value. The customDetails property
+// returns a Dictionaryable when successful
+func (m *Alert) GetCustomDetails()(Dictionaryable) {
+    val, err := m.GetBackingStore().Get("customDetails")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Dictionaryable)
+    }
+    return nil
+}
 // GetDescription gets the description property value. String value describing each alert.
 // returns a *string when successful
 func (m *Alert) GetDescription()(*string) {
@@ -289,6 +301,16 @@ func (m *Alert) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
+    res["customDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDictionaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCustomDetails(val.(Dictionaryable))
         }
         return nil
     }
@@ -826,6 +848,12 @@ func (m *Alert) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteObjectValue("customDetails", m.GetCustomDetails())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -1039,6 +1067,13 @@ func (m *Alert) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f30
         panic(err)
     }
 }
+// SetCustomDetails sets the customDetails property value. The customDetails property
+func (m *Alert) SetCustomDetails(value Dictionaryable)() {
+    err := m.GetBackingStore().Set("customDetails", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. String value describing each alert.
 func (m *Alert) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -1212,6 +1247,7 @@ type Alertable interface {
     GetClassification()(*AlertClassification)
     GetComments()([]AlertCommentable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetCustomDetails()(Dictionaryable)
     GetDescription()(*string)
     GetDetectionSource()(*DetectionSource)
     GetDetectorId()(*string)
@@ -1244,6 +1280,7 @@ type Alertable interface {
     SetClassification(value *AlertClassification)()
     SetComments(value []AlertCommentable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetCustomDetails(value Dictionaryable)()
     SetDescription(value *string)()
     SetDetectionSource(value *DetectionSource)()
     SetDetectorId(value *string)()

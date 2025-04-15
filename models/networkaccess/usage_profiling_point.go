@@ -110,7 +110,7 @@ func (m *UsageProfilingPoint) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetInternetAccessTrafficCount gets the internetAccessTrafficCount property value. The internetAccessTrafficCount property
+// GetInternetAccessTrafficCount gets the internetAccessTrafficCount property value. The count of traffic requests directed to general internet destinations.
 // returns a *int64 when successful
 func (m *UsageProfilingPoint) GetInternetAccessTrafficCount()(*int64) {
     val, err := m.GetBackingStore().Get("internetAccessTrafficCount")
@@ -122,7 +122,7 @@ func (m *UsageProfilingPoint) GetInternetAccessTrafficCount()(*int64) {
     }
     return nil
 }
-// GetMicrosoft365AccessTrafficCount gets the microsoft365AccessTrafficCount property value. The microsoft365AccessTrafficCount property
+// GetMicrosoft365AccessTrafficCount gets the microsoft365AccessTrafficCount property value. The count of traffic requests directed to Microsoft 365 services.
 // returns a *int64 when successful
 func (m *UsageProfilingPoint) GetMicrosoft365AccessTrafficCount()(*int64) {
     val, err := m.GetBackingStore().Get("microsoft365AccessTrafficCount")
@@ -146,7 +146,7 @@ func (m *UsageProfilingPoint) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPrivateAccessTrafficCount gets the privateAccessTrafficCount property value. The privateAccessTrafficCount property
+// GetPrivateAccessTrafficCount gets the privateAccessTrafficCount property value. The count of traffic requests directed to internal private network destinations.
 // returns a *int64 when successful
 func (m *UsageProfilingPoint) GetPrivateAccessTrafficCount()(*int64) {
     val, err := m.GetBackingStore().Get("privateAccessTrafficCount")
@@ -158,7 +158,7 @@ func (m *UsageProfilingPoint) GetPrivateAccessTrafficCount()(*int64) {
     }
     return nil
 }
-// GetTimeStampDateTime gets the timeStampDateTime property value. The timeStampDateTime property
+// GetTimeStampDateTime gets the timeStampDateTime property value. The date and time of this data point.
 // returns a *Time when successful
 func (m *UsageProfilingPoint) GetTimeStampDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("timeStampDateTime")
@@ -170,7 +170,7 @@ func (m *UsageProfilingPoint) GetTimeStampDateTime()(*i336074805fc853987abe6f7fe
     }
     return nil
 }
-// GetTotalTrafficCount gets the totalTrafficCount property value. The totalTrafficCount property
+// GetTotalTrafficCount gets the totalTrafficCount property value. The total count of all traffic requests across all access types.
 // returns a *int64 when successful
 func (m *UsageProfilingPoint) GetTotalTrafficCount()(*int64) {
     val, err := m.GetBackingStore().Get("totalTrafficCount")
@@ -239,14 +239,14 @@ func (m *UsageProfilingPoint) SetAdditionalData(value map[string]any)() {
 func (m *UsageProfilingPoint) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetInternetAccessTrafficCount sets the internetAccessTrafficCount property value. The internetAccessTrafficCount property
+// SetInternetAccessTrafficCount sets the internetAccessTrafficCount property value. The count of traffic requests directed to general internet destinations.
 func (m *UsageProfilingPoint) SetInternetAccessTrafficCount(value *int64)() {
     err := m.GetBackingStore().Set("internetAccessTrafficCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMicrosoft365AccessTrafficCount sets the microsoft365AccessTrafficCount property value. The microsoft365AccessTrafficCount property
+// SetMicrosoft365AccessTrafficCount sets the microsoft365AccessTrafficCount property value. The count of traffic requests directed to Microsoft 365 services.
 func (m *UsageProfilingPoint) SetMicrosoft365AccessTrafficCount(value *int64)() {
     err := m.GetBackingStore().Set("microsoft365AccessTrafficCount", value)
     if err != nil {
@@ -260,21 +260,21 @@ func (m *UsageProfilingPoint) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPrivateAccessTrafficCount sets the privateAccessTrafficCount property value. The privateAccessTrafficCount property
+// SetPrivateAccessTrafficCount sets the privateAccessTrafficCount property value. The count of traffic requests directed to internal private network destinations.
 func (m *UsageProfilingPoint) SetPrivateAccessTrafficCount(value *int64)() {
     err := m.GetBackingStore().Set("privateAccessTrafficCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTimeStampDateTime sets the timeStampDateTime property value. The timeStampDateTime property
+// SetTimeStampDateTime sets the timeStampDateTime property value. The date and time of this data point.
 func (m *UsageProfilingPoint) SetTimeStampDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("timeStampDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalTrafficCount sets the totalTrafficCount property value. The totalTrafficCount property
+// SetTotalTrafficCount sets the totalTrafficCount property value. The total count of all traffic requests across all access types.
 func (m *UsageProfilingPoint) SetTotalTrafficCount(value *int64)() {
     err := m.GetBackingStore().Set("totalTrafficCount", value)
     if err != nil {

@@ -38,7 +38,7 @@ func (m *ApplicationSnapshot) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. The unique identifier of the application accessed during the transaction.
 // returns a *string when successful
 func (m *ApplicationSnapshot) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
@@ -122,7 +122,7 @@ func (m *ApplicationSnapshot) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. The unique identifier of the application accessed during the transaction.
 func (m *ApplicationSnapshot) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {

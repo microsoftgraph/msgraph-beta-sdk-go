@@ -81,7 +81,7 @@ func (m *AuthenticationFlow) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTransferMethod gets the transferMethod property value. The transferMethod property
+// GetTransferMethod gets the transferMethod property value. Represents the transfer methods in scope for the policy. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
 // returns a *ConditionalAccessTransferMethods when successful
 func (m *AuthenticationFlow) GetTransferMethod()(*ConditionalAccessTransferMethods) {
     val, err := m.GetBackingStore().Get("transferMethod")
@@ -134,7 +134,7 @@ func (m *AuthenticationFlow) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTransferMethod sets the transferMethod property value. The transferMethod property
+// SetTransferMethod sets the transferMethod property value. Represents the transfer methods in scope for the policy. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
 func (m *AuthenticationFlow) SetTransferMethod(value *ConditionalAccessTransferMethods)() {
     err := m.GetBackingStore().Set("transferMethod", value)
     if err != nil {

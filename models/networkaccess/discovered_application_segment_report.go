@@ -26,7 +26,7 @@ func NewDiscoveredApplicationSegmentReport()(*DiscoveredApplicationSegmentReport
 func CreateDiscoveredApplicationSegmentReportFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDiscoveredApplicationSegmentReport(), nil
 }
-// GetAccessType gets the accessType property value. The accessType property
+// GetAccessType gets the accessType property value. The type of access used to connect to this application segment. The possible values are: quickAccess, privateAccess, unknownFutureValue, appAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: appAccess.
 // returns a *AccessType when successful
 func (m *DiscoveredApplicationSegmentReport) GetAccessType()(*AccessType) {
     val, err := m.GetBackingStore().Get("accessType")
@@ -56,7 +56,7 @@ func (m *DiscoveredApplicationSegmentReport) GetAdditionalData()(map[string]any)
 func (m *DiscoveredApplicationSegmentReport) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDeviceCount gets the deviceCount property value. The deviceCount property
+// GetDeviceCount gets the deviceCount property value. The number of unique devices that have accessed this application segment.
 // returns a *int32 when successful
 func (m *DiscoveredApplicationSegmentReport) GetDeviceCount()(*int32) {
     val, err := m.GetBackingStore().Get("deviceCount")
@@ -68,7 +68,7 @@ func (m *DiscoveredApplicationSegmentReport) GetDeviceCount()(*int32) {
     }
     return nil
 }
-// GetDiscoveredApplicationSegmentId gets the discoveredApplicationSegmentId property value. The discoveredApplicationSegmentId property
+// GetDiscoveredApplicationSegmentId gets the discoveredApplicationSegmentId property value. The unique identifier for this discovered application segment.
 // returns a *string when successful
 func (m *DiscoveredApplicationSegmentReport) GetDiscoveredApplicationSegmentId()(*string) {
     val, err := m.GetBackingStore().Get("discoveredApplicationSegmentId")
@@ -226,7 +226,7 @@ func (m *DiscoveredApplicationSegmentReport) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetFirstAccessDateTime gets the firstAccessDateTime property value. The firstAccessDateTime property
+// GetFirstAccessDateTime gets the firstAccessDateTime property value. The date and time when this application segment was first accessed.
 // returns a *Time when successful
 func (m *DiscoveredApplicationSegmentReport) GetFirstAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstAccessDateTime")
@@ -238,7 +238,7 @@ func (m *DiscoveredApplicationSegmentReport) GetFirstAccessDateTime()(*i33607480
     }
     return nil
 }
-// GetFqdn gets the fqdn property value. The fqdn property
+// GetFqdn gets the fqdn property value. The fully qualified domain name associated with this application segment.
 // returns a *string when successful
 func (m *DiscoveredApplicationSegmentReport) GetFqdn()(*string) {
     val, err := m.GetBackingStore().Get("fqdn")
@@ -250,7 +250,7 @@ func (m *DiscoveredApplicationSegmentReport) GetFqdn()(*string) {
     }
     return nil
 }
-// GetIp gets the ip property value. The ip property
+// GetIp gets the ip property value. The IP address associated with this application segment.
 // returns a *string when successful
 func (m *DiscoveredApplicationSegmentReport) GetIp()(*string) {
     val, err := m.GetBackingStore().Get("ip")
@@ -262,7 +262,7 @@ func (m *DiscoveredApplicationSegmentReport) GetIp()(*string) {
     }
     return nil
 }
-// GetLastAccessDateTime gets the lastAccessDateTime property value. The lastAccessDateTime property
+// GetLastAccessDateTime gets the lastAccessDateTime property value. The date and time when this application segment was last accessed.
 // returns a *Time when successful
 func (m *DiscoveredApplicationSegmentReport) GetLastAccessDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastAccessDateTime")
@@ -286,7 +286,7 @@ func (m *DiscoveredApplicationSegmentReport) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPort gets the port property value. The port property
+// GetPort gets the port property value. The port number used to access this application segment.
 // returns a *int32 when successful
 func (m *DiscoveredApplicationSegmentReport) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
@@ -298,7 +298,7 @@ func (m *DiscoveredApplicationSegmentReport) GetPort()(*int32) {
     }
     return nil
 }
-// GetTotalBytesReceived gets the totalBytesReceived property value. The totalBytesReceived property
+// GetTotalBytesReceived gets the totalBytesReceived property value. The total number of bytes received from this application segment.
 // returns a *int64 when successful
 func (m *DiscoveredApplicationSegmentReport) GetTotalBytesReceived()(*int64) {
     val, err := m.GetBackingStore().Get("totalBytesReceived")
@@ -310,7 +310,7 @@ func (m *DiscoveredApplicationSegmentReport) GetTotalBytesReceived()(*int64) {
     }
     return nil
 }
-// GetTotalBytesSent gets the totalBytesSent property value. The totalBytesSent property
+// GetTotalBytesSent gets the totalBytesSent property value. The total number of bytes sent to this application segment.
 // returns a *int64 when successful
 func (m *DiscoveredApplicationSegmentReport) GetTotalBytesSent()(*int64) {
     val, err := m.GetBackingStore().Get("totalBytesSent")
@@ -322,7 +322,7 @@ func (m *DiscoveredApplicationSegmentReport) GetTotalBytesSent()(*int64) {
     }
     return nil
 }
-// GetTransactionCount gets the transactionCount property value. The transactionCount property
+// GetTransactionCount gets the transactionCount property value. The number of transactions recorded for this application segment.
 // returns a *int32 when successful
 func (m *DiscoveredApplicationSegmentReport) GetTransactionCount()(*int32) {
     val, err := m.GetBackingStore().Get("transactionCount")
@@ -346,7 +346,7 @@ func (m *DiscoveredApplicationSegmentReport) GetTransportProtocol()(*NetworkingP
     }
     return nil
 }
-// GetUserCount gets the userCount property value. The userCount property
+// GetUserCount gets the userCount property value. The number of unique users who have accessed this application segment.
 // returns a *int32 when successful
 func (m *DiscoveredApplicationSegmentReport) GetUserCount()(*int32) {
     val, err := m.GetBackingStore().Get("userCount")
@@ -454,7 +454,7 @@ func (m *DiscoveredApplicationSegmentReport) Serialize(writer i878a80d2330e89d26
     }
     return nil
 }
-// SetAccessType sets the accessType property value. The accessType property
+// SetAccessType sets the accessType property value. The type of access used to connect to this application segment. The possible values are: quickAccess, privateAccess, unknownFutureValue, appAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: appAccess.
 func (m *DiscoveredApplicationSegmentReport) SetAccessType(value *AccessType)() {
     err := m.GetBackingStore().Set("accessType", value)
     if err != nil {
@@ -472,42 +472,42 @@ func (m *DiscoveredApplicationSegmentReport) SetAdditionalData(value map[string]
 func (m *DiscoveredApplicationSegmentReport) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDeviceCount sets the deviceCount property value. The deviceCount property
+// SetDeviceCount sets the deviceCount property value. The number of unique devices that have accessed this application segment.
 func (m *DiscoveredApplicationSegmentReport) SetDeviceCount(value *int32)() {
     err := m.GetBackingStore().Set("deviceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDiscoveredApplicationSegmentId sets the discoveredApplicationSegmentId property value. The discoveredApplicationSegmentId property
+// SetDiscoveredApplicationSegmentId sets the discoveredApplicationSegmentId property value. The unique identifier for this discovered application segment.
 func (m *DiscoveredApplicationSegmentReport) SetDiscoveredApplicationSegmentId(value *string)() {
     err := m.GetBackingStore().Set("discoveredApplicationSegmentId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFirstAccessDateTime sets the firstAccessDateTime property value. The firstAccessDateTime property
+// SetFirstAccessDateTime sets the firstAccessDateTime property value. The date and time when this application segment was first accessed.
 func (m *DiscoveredApplicationSegmentReport) SetFirstAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstAccessDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFqdn sets the fqdn property value. The fqdn property
+// SetFqdn sets the fqdn property value. The fully qualified domain name associated with this application segment.
 func (m *DiscoveredApplicationSegmentReport) SetFqdn(value *string)() {
     err := m.GetBackingStore().Set("fqdn", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIp sets the ip property value. The ip property
+// SetIp sets the ip property value. The IP address associated with this application segment.
 func (m *DiscoveredApplicationSegmentReport) SetIp(value *string)() {
     err := m.GetBackingStore().Set("ip", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastAccessDateTime sets the lastAccessDateTime property value. The lastAccessDateTime property
+// SetLastAccessDateTime sets the lastAccessDateTime property value. The date and time when this application segment was last accessed.
 func (m *DiscoveredApplicationSegmentReport) SetLastAccessDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastAccessDateTime", value)
     if err != nil {
@@ -521,28 +521,28 @@ func (m *DiscoveredApplicationSegmentReport) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPort sets the port property value. The port property
+// SetPort sets the port property value. The port number used to access this application segment.
 func (m *DiscoveredApplicationSegmentReport) SetPort(value *int32)() {
     err := m.GetBackingStore().Set("port", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalBytesReceived sets the totalBytesReceived property value. The totalBytesReceived property
+// SetTotalBytesReceived sets the totalBytesReceived property value. The total number of bytes received from this application segment.
 func (m *DiscoveredApplicationSegmentReport) SetTotalBytesReceived(value *int64)() {
     err := m.GetBackingStore().Set("totalBytesReceived", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalBytesSent sets the totalBytesSent property value. The totalBytesSent property
+// SetTotalBytesSent sets the totalBytesSent property value. The total number of bytes sent to this application segment.
 func (m *DiscoveredApplicationSegmentReport) SetTotalBytesSent(value *int64)() {
     err := m.GetBackingStore().Set("totalBytesSent", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTransactionCount sets the transactionCount property value. The transactionCount property
+// SetTransactionCount sets the transactionCount property value. The number of transactions recorded for this application segment.
 func (m *DiscoveredApplicationSegmentReport) SetTransactionCount(value *int32)() {
     err := m.GetBackingStore().Set("transactionCount", value)
     if err != nil {
@@ -556,7 +556,7 @@ func (m *DiscoveredApplicationSegmentReport) SetTransportProtocol(value *Network
         panic(err)
     }
 }
-// SetUserCount sets the userCount property value. The userCount property
+// SetUserCount sets the userCount property value. The number of unique users who have accessed this application segment.
 func (m *DiscoveredApplicationSegmentReport) SetUserCount(value *int32)() {
     err := m.GetBackingStore().Set("userCount", value)
     if err != nil {

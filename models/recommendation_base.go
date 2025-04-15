@@ -393,7 +393,7 @@ func (m *RecommendationBase) GetImpactStartDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetImpactType gets the impactType property value. Indicates the scope of impact of a recommendation. Tenant level indicates that the recommendation impacts the whole tenant. Other possible values include users, applications.
+// GetImpactType gets the impactType property value. Indicates the scope of impact of a recommendation. tenantLevel indicates that the recommendation impacts the whole tenant. Other possible values include users, apps.
 // returns a *string when successful
 func (m *RecommendationBase) GetImpactType()(*string) {
     val, err := m.GetBackingStore().Get("impactType")
@@ -769,7 +769,7 @@ func (m *RecommendationBase) SetImpactStartDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
-// SetImpactType sets the impactType property value. Indicates the scope of impact of a recommendation. Tenant level indicates that the recommendation impacts the whole tenant. Other possible values include users, applications.
+// SetImpactType sets the impactType property value. Indicates the scope of impact of a recommendation. tenantLevel indicates that the recommendation impacts the whole tenant. Other possible values include users, apps.
 func (m *RecommendationBase) SetImpactType(value *string)() {
     err := m.GetBackingStore().Set("impactType", value)
     if err != nil {

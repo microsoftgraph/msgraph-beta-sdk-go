@@ -33,10 +33,13 @@ func NewConditionalAccessEvaluateRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessEvaluateRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action evaluate
+// Post evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
 // Deprecated: This method is obsolete. Use PostAsEvaluatePostResponse instead.
 // returns a ConditionalAccessEvaluateResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta
 func (m *ConditionalAccessEvaluateRequestBuilder) Post(ctx context.Context, body ConditionalAccessEvaluatePostRequestBodyable, requestConfiguration *ConditionalAccessEvaluateRequestBuilderPostRequestConfiguration)(ConditionalAccessEvaluateResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -54,10 +57,13 @@ func (m *ConditionalAccessEvaluateRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ConditionalAccessEvaluateResponseable), nil
 }
-// PostAsEvaluatePostResponse invoke action evaluate
+// PostAsEvaluatePostResponse evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
 // Deprecated: Private preview for conditional access what If API as of 2024-07/PrivatePreview:WhatIfEvaluation on 2024-07-25 and will be removed 2025-02-01
 // returns a ConditionalAccessEvaluatePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccessroot-evaluate?view=graph-rest-beta
 func (m *ConditionalAccessEvaluateRequestBuilder) PostAsEvaluatePostResponse(ctx context.Context, body ConditionalAccessEvaluatePostRequestBodyable, requestConfiguration *ConditionalAccessEvaluateRequestBuilderPostRequestConfiguration)(ConditionalAccessEvaluatePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -75,7 +81,7 @@ func (m *ConditionalAccessEvaluateRequestBuilder) PostAsEvaluatePostResponse(ctx
     }
     return res.(ConditionalAccessEvaluatePostResponseable), nil
 }
-// ToPostRequestInformation invoke action evaluate
+// ToPostRequestInformation evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
 // Deprecated: Private preview for conditional access what If API as of 2024-07/PrivatePreview:WhatIfEvaluation on 2024-07-25 and will be removed 2025-02-01
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessEvaluateRequestBuilder) ToPostRequestInformation(ctx context.Context, body ConditionalAccessEvaluatePostRequestBodyable, requestConfiguration *ConditionalAccessEvaluateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
