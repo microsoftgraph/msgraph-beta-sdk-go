@@ -649,6 +649,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcBulkAction(), nil
                     case "#microsoft.graph.cloudPcBulkCreateSnapshot":
                         return NewCloudPcBulkCreateSnapshot(), nil
+                    case "#microsoft.graph.cloudPcBulkDisasterRecovery":
+                        return NewCloudPcBulkDisasterRecovery(), nil
                     case "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback":
                         return NewCloudPcBulkDisasterRecoveryFailback(), nil
                     case "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover":
@@ -661,6 +663,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcBulkPowerOff(), nil
                     case "#microsoft.graph.cloudPcBulkPowerOn":
                         return NewCloudPcBulkPowerOn(), nil
+                    case "#microsoft.graph.cloudPcBulkReinstallAgent":
+                        return NewCloudPcBulkReinstallAgent(), nil
                     case "#microsoft.graph.cloudPcBulkReprovision":
                         return NewCloudPcBulkReprovision(), nil
                     case "#microsoft.graph.cloudPcBulkResize":
@@ -731,8 +735,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewConditionalAccessRoot(), nil
                     case "#microsoft.graph.conditionalAccessTemplate":
                         return NewConditionalAccessTemplate(), nil
-                    case "#microsoft.graph.conditionalAccessWhatIfPolicy":
-                        return NewConditionalAccessWhatIfPolicy(), nil
                     case "#microsoft.graph.configManagerCollection":
                         return NewConfigManagerCollection(), nil
                     case "#microsoft.graph.connectedOrganization":
@@ -2433,6 +2435,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPublishedResource(), nil
                     case "#microsoft.graph.purchaseInvoiceLine":
                         return NewPurchaseInvoiceLine(), nil
+                    case "#microsoft.graph.qrCode":
+                        return NewQrCode(), nil
+                    case "#microsoft.graph.qrCodePinAuthenticationMethod":
+                        return NewQrCodePinAuthenticationMethod(), nil
+                    case "#microsoft.graph.qrCodePinAuthenticationMethodConfiguration":
+                        return NewQrCodePinAuthenticationMethodConfiguration(), nil
+                    case "#microsoft.graph.qrPin":
+                        return NewQrPin(), nil
                     case "#microsoft.graph.rbacApplication":
                         return NewRbacApplication(), nil
                     case "#microsoft.graph.rbacApplicationMultiple":
@@ -2999,6 +3009,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserAnalytics(), nil
                     case "#microsoft.graph.userAppInstallStatus":
                         return NewUserAppInstallStatus(), nil
+                    case "#microsoft.graph.userCloudCommunication":
+                        return NewUserCloudCommunication(), nil
                     case "#microsoft.graph.userConfiguration":
                         return NewUserConfiguration(), nil
                     case "#microsoft.graph.userConsentRequest":
@@ -3181,6 +3193,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWebApplicationSegment(), nil
                     case "#microsoft.graph.webPart":
                         return NewWebPart(), nil
+                    case "#microsoft.graph.whatIfAnalysisResult":
+                        return NewWhatIfAnalysisResult(), nil
                     case "#microsoft.graph.win32CatalogApp":
                         return NewWin32CatalogApp(), nil
                     case "#microsoft.graph.win32LobApp":

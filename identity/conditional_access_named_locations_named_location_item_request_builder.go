@@ -21,7 +21,7 @@ type ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters read the properties and relationships of a compliantNetworkNamedLocation object.
+// ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters retrieve the properties and relationships of an ipNamedLocation object.
 type ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,11 +57,11 @@ func NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessNamedLocationsNamedLocationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an ipNamedLocation object.
+// Delete delete a namedLocation object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-beta
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,12 +76,12 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get read the properties and relationships of a compliantNetworkNamedLocation object.
+// Get retrieve the properties and relationships of an ipNamedLocation object.
 // returns a NamedLocationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/compliantnetworknamedlocation-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-beta
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Patch(c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable), nil
 }
-// ToDeleteRequestInformation delete an ipNamedLocation object.
+// ToDeleteRequestInformation delete a namedLocation object.
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -132,7 +132,7 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a compliantNetworkNamedLocation object.
+// ToGetRequestInformation retrieve the properties and relationships of an ipNamedLocation object.
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

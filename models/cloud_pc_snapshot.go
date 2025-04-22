@@ -93,6 +93,16 @@ func (m *CloudPcSnapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["healthCheckStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcSnapshotHealthCheckStatus)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHealthCheckStatus(val.(*CloudPcSnapshotHealthCheckStatus))
+        }
+        return nil
+    }
     res["lastRestoredDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -124,6 +134,18 @@ func (m *CloudPcSnapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     return res
+}
+// GetHealthCheckStatus gets the healthCheckStatus property value. The healthCheckStatus property
+// returns a *CloudPcSnapshotHealthCheckStatus when successful
+func (m *CloudPcSnapshot) GetHealthCheckStatus()(*CloudPcSnapshotHealthCheckStatus) {
+    val, err := m.GetBackingStore().Get("healthCheckStatus")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcSnapshotHealthCheckStatus)
+    }
+    return nil
 }
 // GetLastRestoredDateTime gets the lastRestoredDateTime property value. The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
@@ -185,6 +207,13 @@ func (m *CloudPcSnapshot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetHealthCheckStatus() != nil {
+        cast := (*m.GetHealthCheckStatus()).String()
+        err = writer.WriteStringValue("healthCheckStatus", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteTimeValue("lastRestoredDateTime", m.GetLastRestoredDateTime())
         if err != nil {
@@ -228,6 +257,13 @@ func (m *CloudPcSnapshot) SetExpirationDateTime(value *i336074805fc853987abe6f7f
         panic(err)
     }
 }
+// SetHealthCheckStatus sets the healthCheckStatus property value. The healthCheckStatus property
+func (m *CloudPcSnapshot) SetHealthCheckStatus(value *CloudPcSnapshotHealthCheckStatus)() {
+    err := m.GetBackingStore().Set("healthCheckStatus", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastRestoredDateTime sets the lastRestoredDateTime property value. The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CloudPcSnapshot) SetLastRestoredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastRestoredDateTime", value)
@@ -255,12 +291,14 @@ type CloudPcSnapshotable interface {
     GetCloudPcId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetHealthCheckStatus()(*CloudPcSnapshotHealthCheckStatus)
     GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetSnapshotType()(*CloudPcSnapshotType)
     GetStatus()(*CloudPcSnapshotStatus)
     SetCloudPcId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetHealthCheckStatus(value *CloudPcSnapshotHealthCheckStatus)()
     SetLastRestoredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetSnapshotType(value *CloudPcSnapshotType)()
     SetStatus(value *CloudPcSnapshotStatus)()

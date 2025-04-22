@@ -35,6 +35,8 @@ func CreateCloudPcBulkActionFromDiscriminatorValue(parseNode i878a80d2330e89d268
                 switch *mappingValue {
                     case "#microsoft.graph.cloudPcBulkCreateSnapshot":
                         return NewCloudPcBulkCreateSnapshot(), nil
+                    case "#microsoft.graph.cloudPcBulkDisasterRecovery":
+                        return NewCloudPcBulkDisasterRecovery(), nil
                     case "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback":
                         return NewCloudPcBulkDisasterRecoveryFailback(), nil
                     case "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover":
@@ -47,6 +49,8 @@ func CreateCloudPcBulkActionFromDiscriminatorValue(parseNode i878a80d2330e89d268
                         return NewCloudPcBulkPowerOff(), nil
                     case "#microsoft.graph.cloudPcBulkPowerOn":
                         return NewCloudPcBulkPowerOn(), nil
+                    case "#microsoft.graph.cloudPcBulkReinstallAgent":
+                        return NewCloudPcBulkReinstallAgent(), nil
                     case "#microsoft.graph.cloudPcBulkReprovision":
                         return NewCloudPcBulkReprovision(), nil
                     case "#microsoft.graph.cloudPcBulkResize":

@@ -33,8 +33,8 @@ func CreateConditionalAccessPolicyFromDiscriminatorValue(parseNode i878a80d2330e
             }
             if mappingValue != nil {
                 switch *mappingValue {
-                    case "#microsoft.graph.conditionalAccessWhatIfPolicy":
-                        return NewConditionalAccessWhatIfPolicy(), nil
+                    case "#microsoft.graph.whatIfAnalysisResult":
+                        return NewWhatIfAnalysisResult(), nil
                 }
             }
         }
