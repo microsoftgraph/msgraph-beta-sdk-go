@@ -8,21 +8,21 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-type ConditionalAccessContext struct {
+type SignInIdentity struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConditionalAccessContext instantiates a new ConditionalAccessContext and sets the default values.
-func NewConditionalAccessContext()(*ConditionalAccessContext) {
-    m := &ConditionalAccessContext{
+// NewSignInIdentity instantiates a new SignInIdentity and sets the default values.
+func NewSignInIdentity()(*SignInIdentity) {
+    m := &SignInIdentity{
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateConditionalAccessContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateSignInIdentityFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateConditionalAccessContextFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+func CreateSignInIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     if parseNode != nil {
         mappingValueNode, err := parseNode.GetChildNode("@odata.type")
         if err != nil {
@@ -35,21 +35,19 @@ func CreateConditionalAccessContextFromDiscriminatorValue(parseNode i878a80d2330
             }
             if mappingValue != nil {
                 switch *mappingValue {
-                    case "#microsoft.graph.whatIfApplicationContext":
-                        return NewWhatIfApplicationContext(), nil
-                    case "#microsoft.graph.whatIfAuthenticationContext":
-                        return NewWhatIfAuthenticationContext(), nil
-                    case "#microsoft.graph.whatIfUserActionContext":
-                        return NewWhatIfUserActionContext(), nil
+                    case "#microsoft.graph.servicePrincipalSignIn":
+                        return NewServicePrincipalSignIn(), nil
+                    case "#microsoft.graph.userSignIn":
+                        return NewUserSignIn(), nil
                 }
             }
         }
     }
-    return NewConditionalAccessContext(), nil
+    return NewSignInIdentity(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *ConditionalAccessContext) GetAdditionalData()(map[string]any) {
+func (m *SignInIdentity) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
         panic(err)
@@ -62,12 +60,12 @@ func (m *ConditionalAccessContext) GetAdditionalData()(map[string]any) {
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *ConditionalAccessContext) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+func (m *SignInIdentity) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *ConditionalAccessContext) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SignInIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
@@ -83,7 +81,7 @@ func (m *ConditionalAccessContext) GetFieldDeserializers()(map[string]func(i878a
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
-func (m *ConditionalAccessContext) GetOdataType()(*string) {
+func (m *SignInIdentity) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
@@ -94,7 +92,7 @@ func (m *ConditionalAccessContext) GetOdataType()(*string) {
     return nil
 }
 // Serialize serializes information the current object
-func (m *ConditionalAccessContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *SignInIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -110,24 +108,24 @@ func (m *ConditionalAccessContext) Serialize(writer i878a80d2330e89d26896388a3f4
     return nil
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessContext) SetAdditionalData(value map[string]any)() {
+func (m *SignInIdentity) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *ConditionalAccessContext) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+func (m *SignInIdentity) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ConditionalAccessContext) SetOdataType(value *string)() {
+func (m *SignInIdentity) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
 }
-type ConditionalAccessContextable interface {
+type SignInIdentityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

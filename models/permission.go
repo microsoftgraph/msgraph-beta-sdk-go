@@ -229,7 +229,7 @@ func (m *Permission) GetHasPassword()(*bool) {
     }
     return nil
 }
-// GetInheritedFrom gets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.
+// GetInheritedFrom gets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if inherited from an ancestor. Read-only.
 // returns a ItemReferenceable when successful
 func (m *Permission) GetInheritedFrom()(ItemReferenceable) {
     val, err := m.GetBackingStore().Get("inheritedFrom")
@@ -417,7 +417,7 @@ func (m *Permission) SetHasPassword(value *bool)() {
         panic(err)
     }
 }
-// SetInheritedFrom sets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it's inherited from an ancestor. Read-only.
+// SetInheritedFrom sets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if inherited from an ancestor. Read-only.
 func (m *Permission) SetInheritedFrom(value ItemReferenceable)() {
     err := m.GetBackingStore().Set("inheritedFrom", value)
     if err != nil {

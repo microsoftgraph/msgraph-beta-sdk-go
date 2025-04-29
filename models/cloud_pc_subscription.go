@@ -48,7 +48,7 @@ func (m *CloudPcSubscription) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetSubscriptionId gets the subscriptionId property value. The ID of the subscription.
+// GetSubscriptionId gets the subscriptionId property value. Indicates the ID of the subscription.
 // returns a *string when successful
 func (m *CloudPcSubscription) GetSubscriptionId()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionId")
@@ -60,7 +60,7 @@ func (m *CloudPcSubscription) GetSubscriptionId()(*string) {
     }
     return nil
 }
-// GetSubscriptionName gets the subscriptionName property value. The name of the subscription.
+// GetSubscriptionName gets the subscriptionName property value. Indicates the name of the subscription.
 // returns a *string when successful
 func (m *CloudPcSubscription) GetSubscriptionName()(*string) {
     val, err := m.GetBackingStore().Get("subscriptionName")
@@ -92,14 +92,14 @@ func (m *CloudPcSubscription) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetSubscriptionId sets the subscriptionId property value. The ID of the subscription.
+// SetSubscriptionId sets the subscriptionId property value. Indicates the ID of the subscription.
 func (m *CloudPcSubscription) SetSubscriptionId(value *string)() {
     err := m.GetBackingStore().Set("subscriptionId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubscriptionName sets the subscriptionName property value. The name of the subscription.
+// SetSubscriptionName sets the subscriptionName property value. Indicates the name of the subscription.
 func (m *CloudPcSubscription) SetSubscriptionName(value *string)() {
     err := m.GetBackingStore().Set("subscriptionName", value)
     if err != nil {

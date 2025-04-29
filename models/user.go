@@ -325,6 +325,18 @@ func (m *User) GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInf
     }
     return nil
 }
+// GetCommunications gets the communications property value. The user's communications settings on Teams.
+// returns a UserCloudCommunicationable when successful
+func (m *User) GetCommunications()(UserCloudCommunicationable) {
+    val, err := m.GetBackingStore().Get("communications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserCloudCommunicationable)
+    }
+    return nil
+}
 // GetCompanyName gets the companyName property value. The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 // returns a *string when successful
 func (m *User) GetCompanyName()(*string) {
@@ -1020,6 +1032,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetCloudRealtimeCommunicationInfo(val.(CloudRealtimeCommunicationInfoable))
+        }
+        return nil
+    }
+    res["communications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserCloudCommunicationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCommunications(val.(UserCloudCommunicationable))
         }
         return nil
     }
@@ -4078,6 +4100,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("communications", m.GetCommunications())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("companyName", m.GetCompanyName())
         if err != nil {
             return err
@@ -5298,6 +5326,13 @@ func (m *User) SetCloudRealtimeCommunicationInfo(value CloudRealtimeCommunicatio
         panic(err)
     }
 }
+// SetCommunications sets the communications property value. The user's communications settings on Teams.
+func (m *User) SetCommunications(value UserCloudCommunicationable)() {
+    err := m.GetBackingStore().Set("communications", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCompanyName sets the companyName property value. The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
 func (m *User) SetCompanyName(value *string)() {
     err := m.GetBackingStore().Set("companyName", value)
@@ -6236,6 +6271,7 @@ type Userable interface {
     GetCloudClipboard()(CloudClipboardRootable)
     GetCloudPCs()([]CloudPCable)
     GetCloudRealtimeCommunicationInfo()(CloudRealtimeCommunicationInfoable)
+    GetCommunications()(UserCloudCommunicationable)
     GetCompanyName()(*string)
     GetConsentProvidedForMinor()(*string)
     GetContactFolders()([]ContactFolderable)
@@ -6391,6 +6427,7 @@ type Userable interface {
     SetCloudClipboard(value CloudClipboardRootable)()
     SetCloudPCs(value []CloudPCable)()
     SetCloudRealtimeCommunicationInfo(value CloudRealtimeCommunicationInfoable)()
+    SetCommunications(value UserCloudCommunicationable)()
     SetCompanyName(value *string)()
     SetConsentProvidedForMinor(value *string)()
     SetContactFolders(value []ContactFolderable)()

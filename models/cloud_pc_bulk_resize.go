@@ -40,7 +40,7 @@ func (m *CloudPcBulkResize) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetTargetServicePlanId gets the targetServicePlanId property value. The target service plan ID of the resize configuration with new vCPU and storage size.
+// GetTargetServicePlanId gets the targetServicePlanId property value. Indicates the target service plan ID of the resize configuration with new vCPU and storage size.
 // returns a *string when successful
 func (m *CloudPcBulkResize) GetTargetServicePlanId()(*string) {
     val, err := m.GetBackingStore().Get("targetServicePlanId")
@@ -66,7 +66,7 @@ func (m *CloudPcBulkResize) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetTargetServicePlanId sets the targetServicePlanId property value. The target service plan ID of the resize configuration with new vCPU and storage size.
+// SetTargetServicePlanId sets the targetServicePlanId property value. Indicates the target service plan ID of the resize configuration with new vCPU and storage size.
 func (m *CloudPcBulkResize) SetTargetServicePlanId(value *string)() {
     err := m.GetBackingStore().Set("targetServicePlanId", value)
     if err != nil {

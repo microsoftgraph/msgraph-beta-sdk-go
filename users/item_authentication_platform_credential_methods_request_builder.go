@@ -14,7 +14,7 @@ import (
 type ItemAuthenticationPlatformCredentialMethodsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationPlatformCredentialMethodsRequestBuilderGetQueryParameters get platformCredentialMethods from users
+// ItemAuthenticationPlatformCredentialMethodsRequestBuilderGetQueryParameters represents a platform credential instance registered to a user on Mac OS.
 type ItemAuthenticationPlatformCredentialMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemAuthenticationPlatformCredentialMethodsRequestBuilder(rawUrl string,
 func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) Count()(*ItemAuthenticationPlatformCredentialMethodsCountRequestBuilder) {
     return NewItemAuthenticationPlatformCredentialMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get platformCredentialMethods from users
+// Get represents a platform credential instance registered to a user on Mac OS.
 // returns a PlatformCredentialAuthenticationMethodCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlatformCredentialAuthenticationMethodCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlatformCredentialAuthenticationMethodCollectionResponseable), nil
 }
-// ToGetRequestInformation get platformCredentialMethods from users
+// ToGetRequestInformation represents a platform credential instance registered to a user on Mac OS.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationPlatformCredentialMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationPlatformCredentialMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

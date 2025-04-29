@@ -163,6 +163,11 @@ func (m *ItemAuthenticationRequestBuilder) PhoneMethods()(*ItemAuthenticationPho
 func (m *ItemAuthenticationRequestBuilder) PlatformCredentialMethods()(*ItemAuthenticationPlatformCredentialMethodsRequestBuilder) {
     return NewItemAuthenticationPlatformCredentialMethodsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// QrCodePinMethod provides operations to manage the qrCodePinMethod property of the microsoft.graph.authentication entity.
+// returns a *ItemAuthenticationQrCodePinMethodRequestBuilder when successful
+func (m *ItemAuthenticationRequestBuilder) QrCodePinMethod()(*ItemAuthenticationQrCodePinMethodRequestBuilder) {
+    return NewItemAuthenticationQrCodePinMethodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Requirements the requirements property
 // returns a *ItemAuthenticationRequirementsRequestBuilder when successful
 func (m *ItemAuthenticationRequestBuilder) Requirements()(*ItemAuthenticationRequirementsRequestBuilder) {

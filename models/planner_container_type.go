@@ -12,10 +12,11 @@ const (
     DRIVEITEM_PLANNERCONTAINERTYPE
     USER_PLANNERCONTAINERTYPE
     TEAMSCHANNEL_PLANNERCONTAINERTYPE
+    PLANNERTASK_PLANNERCONTAINERTYPE
 )
 
 func (i PlannerContainerType) String() string {
-    return []string{"group", "unknownFutureValue", "roster", "project", "driveItem", "user", "teamsChannel"}[i]
+    return []string{"group", "unknownFutureValue", "roster", "project", "driveItem", "user", "teamsChannel", "plannerTask"}[i]
 }
 func ParsePlannerContainerType(v string) (any, error) {
     result := GROUP_PLANNERCONTAINERTYPE
@@ -34,6 +35,8 @@ func ParsePlannerContainerType(v string) (any, error) {
             result = USER_PLANNERCONTAINERTYPE
         case "teamsChannel":
             result = TEAMSCHANNEL_PLANNERCONTAINERTYPE
+        case "plannerTask":
+            result = PLANNERTASK_PLANNERCONTAINERTYPE
         default:
             return nil, nil
     }

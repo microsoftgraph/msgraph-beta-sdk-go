@@ -210,6 +210,16 @@ func (m *Authentication) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["qrCodePinMethod"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateQrCodePinAuthenticationMethodFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetQrCodePinMethod(val.(QrCodePinAuthenticationMethodable))
+        }
+        return nil
+    }
     res["requirements"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateStrongAuthenticationRequirementsFromDiscriminatorValue)
         if err != nil {
@@ -364,7 +374,7 @@ func (m *Authentication) GetPhoneMethods()([]PhoneAuthenticationMethodable) {
     }
     return nil
 }
-// GetPlatformCredentialMethods gets the platformCredentialMethods property value. The platformCredentialMethods property
+// GetPlatformCredentialMethods gets the platformCredentialMethods property value. Represents a platform credential instance registered to a user on Mac OS.
 // returns a []PlatformCredentialAuthenticationMethodable when successful
 func (m *Authentication) GetPlatformCredentialMethods()([]PlatformCredentialAuthenticationMethodable) {
     val, err := m.GetBackingStore().Get("platformCredentialMethods")
@@ -373,6 +383,18 @@ func (m *Authentication) GetPlatformCredentialMethods()([]PlatformCredentialAuth
     }
     if val != nil {
         return val.([]PlatformCredentialAuthenticationMethodable)
+    }
+    return nil
+}
+// GetQrCodePinMethod gets the qrCodePinMethod property value. Represents a QR code authentication method registered to a user for authentication.
+// returns a QrCodePinAuthenticationMethodable when successful
+func (m *Authentication) GetQrCodePinMethod()(QrCodePinAuthenticationMethodable) {
+    val, err := m.GetBackingStore().Get("qrCodePinMethod")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(QrCodePinAuthenticationMethodable)
     }
     return nil
 }
@@ -563,6 +585,12 @@ func (m *Authentication) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err = writer.WriteObjectValue("qrCodePinMethod", m.GetQrCodePinMethod())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("requirements", m.GetRequirements())
         if err != nil {
             return err
@@ -675,9 +703,16 @@ func (m *Authentication) SetPhoneMethods(value []PhoneAuthenticationMethodable)(
         panic(err)
     }
 }
-// SetPlatformCredentialMethods sets the platformCredentialMethods property value. The platformCredentialMethods property
+// SetPlatformCredentialMethods sets the platformCredentialMethods property value. Represents a platform credential instance registered to a user on Mac OS.
 func (m *Authentication) SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)() {
     err := m.GetBackingStore().Set("platformCredentialMethods", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetQrCodePinMethod sets the qrCodePinMethod property value. Represents a QR code authentication method registered to a user for authentication.
+func (m *Authentication) SetQrCodePinMethod(value QrCodePinAuthenticationMethodable)() {
+    err := m.GetBackingStore().Set("qrCodePinMethod", value)
     if err != nil {
         panic(err)
     }
@@ -730,6 +765,7 @@ type Authenticationable interface {
     GetPasswordMethods()([]PasswordAuthenticationMethodable)
     GetPhoneMethods()([]PhoneAuthenticationMethodable)
     GetPlatformCredentialMethods()([]PlatformCredentialAuthenticationMethodable)
+    GetQrCodePinMethod()(QrCodePinAuthenticationMethodable)
     GetRequirements()(StrongAuthenticationRequirementsable)
     GetSignInPreferences()(SignInPreferencesable)
     GetSoftwareOathMethods()([]SoftwareOathAuthenticationMethodable)
@@ -745,6 +781,7 @@ type Authenticationable interface {
     SetPasswordMethods(value []PasswordAuthenticationMethodable)()
     SetPhoneMethods(value []PhoneAuthenticationMethodable)()
     SetPlatformCredentialMethods(value []PlatformCredentialAuthenticationMethodable)()
+    SetQrCodePinMethod(value QrCodePinAuthenticationMethodable)()
     SetRequirements(value StrongAuthenticationRequirementsable)()
     SetSignInPreferences(value SignInPreferencesable)()
     SetSoftwareOathMethods(value []SoftwareOathAuthenticationMethodable)()

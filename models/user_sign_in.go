@@ -7,26 +7,26 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-type UserSubject struct {
-    ConditionalAccessWhatIfSubject
+type UserSignIn struct {
+    SignInIdentity
 }
-// NewUserSubject instantiates a new UserSubject and sets the default values.
-func NewUserSubject()(*UserSubject) {
-    m := &UserSubject{
-        ConditionalAccessWhatIfSubject: *NewConditionalAccessWhatIfSubject(),
+// NewUserSignIn instantiates a new UserSignIn and sets the default values.
+func NewUserSignIn()(*UserSignIn) {
+    m := &UserSignIn{
+        SignInIdentity: *NewSignInIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.userSubject"
+    odataTypeValue := "#microsoft.graph.userSignIn"
     m.SetOdataType(&odataTypeValue)
     return m
 }
-// CreateUserSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateUserSignInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateUserSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewUserSubject(), nil
+func CreateUserSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewUserSignIn(), nil
 }
-// GetExternalTenantId gets the externalTenantId property value. The externalTenantId property
+// GetExternalTenantId gets the externalTenantId property value. TenantId of the guest user as applies to Microsoft Entra B2B scenarios.
 // returns a *string when successful
-func (m *UserSubject) GetExternalTenantId()(*string) {
+func (m *UserSignIn) GetExternalTenantId()(*string) {
     val, err := m.GetBackingStore().Get("externalTenantId")
     if err != nil {
         panic(err)
@@ -38,7 +38,7 @@ func (m *UserSubject) GetExternalTenantId()(*string) {
 }
 // GetExternalUserType gets the externalUserType property value. The externalUserType property
 // returns a *ConditionalAccessGuestOrExternalUserTypes when successful
-func (m *UserSubject) GetExternalUserType()(*ConditionalAccessGuestOrExternalUserTypes) {
+func (m *UserSignIn) GetExternalUserType()(*ConditionalAccessGuestOrExternalUserTypes) {
     val, err := m.GetBackingStore().Get("externalUserType")
     if err != nil {
         panic(err)
@@ -50,8 +50,8 @@ func (m *UserSubject) GetExternalUserType()(*ConditionalAccessGuestOrExternalUse
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *UserSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ConditionalAccessWhatIfSubject.GetFieldDeserializers()
+func (m *UserSignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.SignInIdentity.GetFieldDeserializers()
     res["externalTenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -84,9 +84,9 @@ func (m *UserSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. Object ID of the user.
 // returns a *string when successful
-func (m *UserSubject) GetUserId()(*string) {
+func (m *UserSignIn) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
     if err != nil {
         panic(err)
@@ -97,8 +97,8 @@ func (m *UserSubject) GetUserId()(*string) {
     return nil
 }
 // Serialize serializes information the current object
-func (m *UserSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ConditionalAccessWhatIfSubject.Serialize(writer)
+func (m *UserSignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.SignInIdentity.Serialize(writer)
     if err != nil {
         return err
     }
@@ -123,30 +123,30 @@ func (m *UserSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetExternalTenantId sets the externalTenantId property value. The externalTenantId property
-func (m *UserSubject) SetExternalTenantId(value *string)() {
+// SetExternalTenantId sets the externalTenantId property value. TenantId of the guest user as applies to Microsoft Entra B2B scenarios.
+func (m *UserSignIn) SetExternalTenantId(value *string)() {
     err := m.GetBackingStore().Set("externalTenantId", value)
     if err != nil {
         panic(err)
     }
 }
 // SetExternalUserType sets the externalUserType property value. The externalUserType property
-func (m *UserSubject) SetExternalUserType(value *ConditionalAccessGuestOrExternalUserTypes)() {
+func (m *UserSignIn) SetExternalUserType(value *ConditionalAccessGuestOrExternalUserTypes)() {
     err := m.GetBackingStore().Set("externalUserType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
-func (m *UserSubject) SetUserId(value *string)() {
+// SetUserId sets the userId property value. Object ID of the user.
+func (m *UserSignIn) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-type UserSubjectable interface {
-    ConditionalAccessWhatIfSubjectable
+type UserSignInable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SignInIdentityable
     GetExternalTenantId()(*string)
     GetExternalUserType()(*ConditionalAccessGuestOrExternalUserTypes)
     GetUserId()(*string)

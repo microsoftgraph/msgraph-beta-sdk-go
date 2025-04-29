@@ -7,27 +7,27 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-type ServicePrincipalSubject struct {
-    ConditionalAccessWhatIfSubject
+type ServicePrincipalSignIn struct {
+    SignInIdentity
 }
-// NewServicePrincipalSubject instantiates a new ServicePrincipalSubject and sets the default values.
-func NewServicePrincipalSubject()(*ServicePrincipalSubject) {
-    m := &ServicePrincipalSubject{
-        ConditionalAccessWhatIfSubject: *NewConditionalAccessWhatIfSubject(),
+// NewServicePrincipalSignIn instantiates a new ServicePrincipalSignIn and sets the default values.
+func NewServicePrincipalSignIn()(*ServicePrincipalSignIn) {
+    m := &ServicePrincipalSignIn{
+        SignInIdentity: *NewSignInIdentity(),
     }
-    odataTypeValue := "#microsoft.graph.servicePrincipalSubject"
+    odataTypeValue := "#microsoft.graph.servicePrincipalSignIn"
     m.SetOdataType(&odataTypeValue)
     return m
 }
-// CreateServicePrincipalSubjectFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateServicePrincipalSignInFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateServicePrincipalSubjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewServicePrincipalSubject(), nil
+func CreateServicePrincipalSignInFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewServicePrincipalSignIn(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *ServicePrincipalSubject) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ConditionalAccessWhatIfSubject.GetFieldDeserializers()
+func (m *ServicePrincipalSignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.SignInIdentity.GetFieldDeserializers()
     res["servicePrincipalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -40,9 +40,9 @@ func (m *ServicePrincipalSubject) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetServicePrincipalId gets the servicePrincipalId property value. The servicePrincipalId property
+// GetServicePrincipalId gets the servicePrincipalId property value. appId of the service principal that is signing in.
 // returns a *string when successful
-func (m *ServicePrincipalSubject) GetServicePrincipalId()(*string) {
+func (m *ServicePrincipalSignIn) GetServicePrincipalId()(*string) {
     val, err := m.GetBackingStore().Get("servicePrincipalId")
     if err != nil {
         panic(err)
@@ -53,8 +53,8 @@ func (m *ServicePrincipalSubject) GetServicePrincipalId()(*string) {
     return nil
 }
 // Serialize serializes information the current object
-func (m *ServicePrincipalSubject) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ConditionalAccessWhatIfSubject.Serialize(writer)
+func (m *ServicePrincipalSignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.SignInIdentity.Serialize(writer)
     if err != nil {
         return err
     }
@@ -66,16 +66,16 @@ func (m *ServicePrincipalSubject) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetServicePrincipalId sets the servicePrincipalId property value. The servicePrincipalId property
-func (m *ServicePrincipalSubject) SetServicePrincipalId(value *string)() {
+// SetServicePrincipalId sets the servicePrincipalId property value. appId of the service principal that is signing in.
+func (m *ServicePrincipalSignIn) SetServicePrincipalId(value *string)() {
     err := m.GetBackingStore().Set("servicePrincipalId", value)
     if err != nil {
         panic(err)
     }
 }
-type ServicePrincipalSubjectable interface {
-    ConditionalAccessWhatIfSubjectable
+type ServicePrincipalSignInable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SignInIdentityable
     GetServicePrincipalId()(*string)
     SetServicePrincipalId(value *string)()
 }

@@ -127,6 +127,11 @@ func (m *ReportsRequestBuilder) Get(ctx context.Context, requestConfiguration *R
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReportRootable), nil
 }
+// GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId provides operations to call the getApiUsage method.
+// returns a *GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder when successful
+func (m *ReportsRequestBuilder) GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppId()(*GetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilder) {
+    return NewGetApiUsageserviceAreaServiceAreaPeriodPeriodAppIdAppIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GetAttackSimulationRepeatOffenders provides operations to call the getAttackSimulationRepeatOffenders method.
 // returns a *GetAttackSimulationRepeatOffendersRequestBuilder when successful
 func (m *ReportsRequestBuilder) GetAttackSimulationRepeatOffenders()(*GetAttackSimulationRepeatOffendersRequestBuilder) {

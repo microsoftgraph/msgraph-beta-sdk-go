@@ -7,27 +7,27 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-type WhatIfApplicationContext struct {
-    ConditionalAccessContext
+type ApplicationContext struct {
+    SignInContext
 }
-// NewWhatIfApplicationContext instantiates a new WhatIfApplicationContext and sets the default values.
-func NewWhatIfApplicationContext()(*WhatIfApplicationContext) {
-    m := &WhatIfApplicationContext{
-        ConditionalAccessContext: *NewConditionalAccessContext(),
+// NewApplicationContext instantiates a new ApplicationContext and sets the default values.
+func NewApplicationContext()(*ApplicationContext) {
+    m := &ApplicationContext{
+        SignInContext: *NewSignInContext(),
     }
-    odataTypeValue := "#microsoft.graph.whatIfApplicationContext"
+    odataTypeValue := "#microsoft.graph.applicationContext"
     m.SetOdataType(&odataTypeValue)
     return m
 }
-// CreateWhatIfApplicationContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateApplicationContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateWhatIfApplicationContextFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewWhatIfApplicationContext(), nil
+func CreateApplicationContextFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewApplicationContext(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *WhatIfApplicationContext) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ConditionalAccessContext.GetFieldDeserializers()
+func (m *ApplicationContext) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.SignInContext.GetFieldDeserializers()
     res["includeApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -46,9 +46,9 @@ func (m *WhatIfApplicationContext) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetIncludeApplications gets the includeApplications property value. The includeApplications property
+// GetIncludeApplications gets the includeApplications property value. Collection of appId values for the applications.
 // returns a []string when successful
-func (m *WhatIfApplicationContext) GetIncludeApplications()([]string) {
+func (m *ApplicationContext) GetIncludeApplications()([]string) {
     val, err := m.GetBackingStore().Get("includeApplications")
     if err != nil {
         panic(err)
@@ -59,8 +59,8 @@ func (m *WhatIfApplicationContext) GetIncludeApplications()([]string) {
     return nil
 }
 // Serialize serializes information the current object
-func (m *WhatIfApplicationContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ConditionalAccessContext.Serialize(writer)
+func (m *ApplicationContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.SignInContext.Serialize(writer)
     if err != nil {
         return err
     }
@@ -72,16 +72,16 @@ func (m *WhatIfApplicationContext) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetIncludeApplications sets the includeApplications property value. The includeApplications property
-func (m *WhatIfApplicationContext) SetIncludeApplications(value []string)() {
+// SetIncludeApplications sets the includeApplications property value. Collection of appId values for the applications.
+func (m *ApplicationContext) SetIncludeApplications(value []string)() {
     err := m.GetBackingStore().Set("includeApplications", value)
     if err != nil {
         panic(err)
     }
 }
-type WhatIfApplicationContextable interface {
-    ConditionalAccessContextable
+type ApplicationContextable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SignInContextable
     GetIncludeApplications()([]string)
     SetIncludeApplications(value []string)()
 }

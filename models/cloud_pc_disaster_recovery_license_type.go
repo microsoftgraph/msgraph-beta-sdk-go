@@ -8,10 +8,11 @@ const (
     NONE_CLOUDPCDISASTERRECOVERYLICENSETYPE CloudPcDisasterRecoveryLicenseType = iota
     STANDARD_CLOUDPCDISASTERRECOVERYLICENSETYPE
     UNKNOWNFUTUREVALUE_CLOUDPCDISASTERRECOVERYLICENSETYPE
+    PLUS_CLOUDPCDISASTERRECOVERYLICENSETYPE
 )
 
 func (i CloudPcDisasterRecoveryLicenseType) String() string {
-    return []string{"none", "standard", "unknownFutureValue"}[i]
+    return []string{"none", "standard", "unknownFutureValue", "plus"}[i]
 }
 func ParseCloudPcDisasterRecoveryLicenseType(v string) (any, error) {
     result := NONE_CLOUDPCDISASTERRECOVERYLICENSETYPE
@@ -22,6 +23,8 @@ func ParseCloudPcDisasterRecoveryLicenseType(v string) (any, error) {
             result = STANDARD_CLOUDPCDISASTERRECOVERYLICENSETYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCDISASTERRECOVERYLICENSETYPE
+        case "plus":
+            result = PLUS_CLOUDPCDISASTERRECOVERYLICENSETYPE
         default:
             return nil, nil
     }

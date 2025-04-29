@@ -577,7 +577,7 @@ func (m *DeviceInfo) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetIsCompliant gets the isCompliant property value. Indicates the device compliance status with Mobile Management Device (MDM) policies.
+// GetIsCompliant gets the isCompliant property value. Indicates the device compliance status with Mobile Management Device (MDM) policies. Default is false.
 // returns a *bool when successful
 func (m *DeviceInfo) GetIsCompliant()(*bool) {
     val, err := m.GetBackingStore().Get("isCompliant")
@@ -1048,7 +1048,7 @@ func (m *DeviceInfo) SetExtensionAttribute9(value *string)() {
         panic(err)
     }
 }
-// SetIsCompliant sets the isCompliant property value. Indicates the device compliance status with Mobile Management Device (MDM) policies.
+// SetIsCompliant sets the isCompliant property value. Indicates the device compliance status with Mobile Management Device (MDM) policies. Default is false.
 func (m *DeviceInfo) SetIsCompliant(value *bool)() {
     err := m.GetBackingStore().Set("isCompliant", value)
     if err != nil {

@@ -62,7 +62,7 @@ func (m *CloudPcBulkCreateSnapshot) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetStorageAccountId gets the storageAccountId property value. The unique identifier for Secure Azure Storage Account, which receives the restore points (snapshots). The value can't be modified after it's created. For example, '/subscriptions/06199b73-30a1-4922-8734-93feca64cdf6/resourceGroups/res2627/providers/Microsoft.Storage/storageAccounts/sto1125'. Read-Only.
+// GetStorageAccountId gets the storageAccountId property value. Indicates the unique identifier for Secure Azure Storage Account, which receives the restore points (snapshots). The value can't be modified after it's created. For example, '/subscriptions/06199b73-30a1-4922-8734-93feca64cdf6/resourceGroups/res2627/providers/Microsoft.Storage/storageAccounts/sto1125'. Read-Only.
 // returns a *string when successful
 func (m *CloudPcBulkCreateSnapshot) GetStorageAccountId()(*string) {
     val, err := m.GetBackingStore().Get("storageAccountId")
@@ -102,7 +102,7 @@ func (m *CloudPcBulkCreateSnapshot) SetAccessTier(value *CloudPcBlobAccessTier)(
         panic(err)
     }
 }
-// SetStorageAccountId sets the storageAccountId property value. The unique identifier for Secure Azure Storage Account, which receives the restore points (snapshots). The value can't be modified after it's created. For example, '/subscriptions/06199b73-30a1-4922-8734-93feca64cdf6/resourceGroups/res2627/providers/Microsoft.Storage/storageAccounts/sto1125'. Read-Only.
+// SetStorageAccountId sets the storageAccountId property value. Indicates the unique identifier for Secure Azure Storage Account, which receives the restore points (snapshots). The value can't be modified after it's created. For example, '/subscriptions/06199b73-30a1-4922-8734-93feca64cdf6/resourceGroups/res2627/providers/Microsoft.Storage/storageAccounts/sto1125'. Read-Only.
 func (m *CloudPcBulkCreateSnapshot) SetStorageAccountId(value *string)() {
     err := m.GetBackingStore().Set("storageAccountId", value)
     if err != nil {
