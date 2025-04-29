@@ -58,7 +58,6 @@ func (m *ConditionalAccessEvaluateRequestBuilder) Post(ctx context.Context, body
     return res.(ConditionalAccessEvaluateResponseable), nil
 }
 // PostAsEvaluatePostResponse evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
-// Deprecated: Private preview for conditional access what If API as of 2024-07/PrivatePreview:WhatIfEvaluation on 2024-07-25 and will be removed 2025-02-01
 // returns a ConditionalAccessEvaluatePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -82,7 +81,6 @@ func (m *ConditionalAccessEvaluateRequestBuilder) PostAsEvaluatePostResponse(ctx
     return res.(ConditionalAccessEvaluatePostResponseable), nil
 }
 // ToPostRequestInformation evaluates the applicability of Conditional Access Policies in your tenant based on the provided sign-in properties.
-// Deprecated: Private preview for conditional access what If API as of 2024-07/PrivatePreview:WhatIfEvaluation on 2024-07-25 and will be removed 2025-02-01
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessEvaluateRequestBuilder) ToPostRequestInformation(ctx context.Context, body ConditionalAccessEvaluatePostRequestBodyable, requestConfiguration *ConditionalAccessEvaluateRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -98,7 +96,6 @@ func (m *ConditionalAccessEvaluateRequestBuilder) ToPostRequestInformation(ctx c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
-// Deprecated: Private preview for conditional access what If API as of 2024-07/PrivatePreview:WhatIfEvaluation on 2024-07-25 and will be removed 2025-02-01
 // returns a *ConditionalAccessEvaluateRequestBuilder when successful
 func (m *ConditionalAccessEvaluateRequestBuilder) WithUrl(rawUrl string)(*ConditionalAccessEvaluateRequestBuilder) {
     return NewConditionalAccessEvaluateRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

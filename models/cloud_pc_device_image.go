@@ -159,6 +159,16 @@ func (m *CloudPcDeviceImage) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["sizeInGB"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSizeInGB(val)
+        }
+        return nil
+    }
     res["sourceImageResourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -273,6 +283,18 @@ func (m *CloudPcDeviceImage) GetScopeIds()([]string) {
     }
     return nil
 }
+// GetSizeInGB gets the sizeInGB property value. The sizeInGB property
+// returns a *int32 when successful
+func (m *CloudPcDeviceImage) GetSizeInGB()(*int32) {
+    val, err := m.GetBackingStore().Get("sizeInGB")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetSourceImageResourceId gets the sourceImageResourceId property value. The unique identifier (ID) of the source image resource on Azure. The required ID format is: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'. Read-only.
 // returns a *string when successful
 func (m *CloudPcDeviceImage) GetSourceImageResourceId()(*string) {
@@ -384,6 +406,12 @@ func (m *CloudPcDeviceImage) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteInt32Value("sizeInGB", m.GetSizeInGB())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("sourceImageResourceId", m.GetSourceImageResourceId())
         if err != nil {
             return err
@@ -474,6 +502,13 @@ func (m *CloudPcDeviceImage) SetScopeIds(value []string)() {
         panic(err)
     }
 }
+// SetSizeInGB sets the sizeInGB property value. The sizeInGB property
+func (m *CloudPcDeviceImage) SetSizeInGB(value *int32)() {
+    err := m.GetBackingStore().Set("sizeInGB", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSourceImageResourceId sets the sourceImageResourceId property value. The unique identifier (ID) of the source image resource on Azure. The required ID format is: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'. Read-only.
 func (m *CloudPcDeviceImage) SetSourceImageResourceId(value *string)() {
     err := m.GetBackingStore().Set("sourceImageResourceId", value)
@@ -514,6 +549,7 @@ type CloudPcDeviceImageable interface {
     GetOsStatus()(*CloudPcDeviceImageOsStatus)
     GetOsVersionNumber()(*string)
     GetScopeIds()([]string)
+    GetSizeInGB()(*int32)
     GetSourceImageResourceId()(*string)
     GetStatus()(*CloudPcDeviceImageStatus)
     GetStatusDetails()(*CloudPcDeviceImageStatusDetails)
@@ -527,6 +563,7 @@ type CloudPcDeviceImageable interface {
     SetOsStatus(value *CloudPcDeviceImageOsStatus)()
     SetOsVersionNumber(value *string)()
     SetScopeIds(value []string)()
+    SetSizeInGB(value *int32)()
     SetSourceImageResourceId(value *string)()
     SetStatus(value *CloudPcDeviceImageStatus)()
     SetStatusDetails(value *CloudPcDeviceImageStatusDetails)()

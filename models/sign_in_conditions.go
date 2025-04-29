@@ -8,26 +8,26 @@ import (
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
-type ConditionalAccessWhatIfConditions struct {
+type SignInConditions struct {
     // Stores model information.
     backingStore ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore
 }
-// NewConditionalAccessWhatIfConditions instantiates a new ConditionalAccessWhatIfConditions and sets the default values.
-func NewConditionalAccessWhatIfConditions()(*ConditionalAccessWhatIfConditions) {
-    m := &ConditionalAccessWhatIfConditions{
+// NewSignInConditions instantiates a new SignInConditions and sets the default values.
+func NewSignInConditions()(*SignInConditions) {
+    m := &SignInConditions{
     }
     m.backingStore = ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStoreFactoryInstance();
     m.SetAdditionalData(make(map[string]any))
     return m
 }
-// CreateConditionalAccessWhatIfConditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateSignInConditionsFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateConditionalAccessWhatIfConditionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewConditionalAccessWhatIfConditions(), nil
+func CreateSignInConditionsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewSignInConditions(), nil
 }
 // GetAdditionalData gets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 // returns a map[string]any when successful
-func (m *ConditionalAccessWhatIfConditions) GetAdditionalData()(map[string]any) {
+func (m *SignInConditions) GetAdditionalData()(map[string]any) {
     val , err :=  m.backingStore.Get("additionalData")
     if err != nil {
         panic(err)
@@ -38,9 +38,9 @@ func (m *ConditionalAccessWhatIfConditions) GetAdditionalData()(map[string]any) 
     }
     return val.(map[string]any)
 }
-// GetAuthenticationFlow gets the authenticationFlow property value. The authenticationFlow property
+// GetAuthenticationFlow gets the authenticationFlow property value. Type of authentication flow. The possible value is: deviceCodeFlow or authenticationTransfer. Default value is none.
 // returns a AuthenticationFlowable when successful
-func (m *ConditionalAccessWhatIfConditions) GetAuthenticationFlow()(AuthenticationFlowable) {
+func (m *SignInConditions) GetAuthenticationFlow()(AuthenticationFlowable) {
     val, err := m.GetBackingStore().Get("authenticationFlow")
     if err != nil {
         panic(err)
@@ -52,12 +52,12 @@ func (m *ConditionalAccessWhatIfConditions) GetAuthenticationFlow()(Authenticati
 }
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
-func (m *ConditionalAccessWhatIfConditions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
+func (m *SignInConditions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClientAppType gets the clientAppType property value. The clientAppType property
+// GetClientAppType gets the clientAppType property value. Client application type. The possible value is: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other, unknownFutureValue. Default value is all.
 // returns a *ConditionalAccessClientApp when successful
-func (m *ConditionalAccessWhatIfConditions) GetClientAppType()(*ConditionalAccessClientApp) {
+func (m *SignInConditions) GetClientAppType()(*ConditionalAccessClientApp) {
     val, err := m.GetBackingStore().Get("clientAppType")
     if err != nil {
         panic(err)
@@ -67,9 +67,9 @@ func (m *ConditionalAccessWhatIfConditions) GetClientAppType()(*ConditionalAcces
     }
     return nil
 }
-// GetCountry gets the country property value. The country property
+// GetCountry gets the country property value. Country from where the identity is authenticating.
 // returns a *string when successful
-func (m *ConditionalAccessWhatIfConditions) GetCountry()(*string) {
+func (m *SignInConditions) GetCountry()(*string) {
     val, err := m.GetBackingStore().Get("country")
     if err != nil {
         panic(err)
@@ -79,9 +79,9 @@ func (m *ConditionalAccessWhatIfConditions) GetCountry()(*string) {
     }
     return nil
 }
-// GetDeviceInfo gets the deviceInfo property value. The deviceInfo property
+// GetDeviceInfo gets the deviceInfo property value. Information about the device used for the sign-in.
 // returns a DeviceInfoable when successful
-func (m *ConditionalAccessWhatIfConditions) GetDeviceInfo()(DeviceInfoable) {
+func (m *SignInConditions) GetDeviceInfo()(DeviceInfoable) {
     val, err := m.GetBackingStore().Get("deviceInfo")
     if err != nil {
         panic(err)
@@ -91,9 +91,9 @@ func (m *ConditionalAccessWhatIfConditions) GetDeviceInfo()(DeviceInfoable) {
     }
     return nil
 }
-// GetDevicePlatform gets the devicePlatform property value. The devicePlatform property
+// GetDevicePlatform gets the devicePlatform property value. Device platform. The possible value is: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux. Default value is all.
 // returns a *ConditionalAccessDevicePlatform when successful
-func (m *ConditionalAccessWhatIfConditions) GetDevicePlatform()(*ConditionalAccessDevicePlatform) {
+func (m *SignInConditions) GetDevicePlatform()(*ConditionalAccessDevicePlatform) {
     val, err := m.GetBackingStore().Get("devicePlatform")
     if err != nil {
         panic(err)
@@ -105,7 +105,7 @@ func (m *ConditionalAccessWhatIfConditions) GetDevicePlatform()(*ConditionalAcce
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *ConditionalAccessWhatIfConditions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *SignInConditions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["authenticationFlow"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAuthenticationFlowFromDiscriminatorValue)
@@ -219,9 +219,9 @@ func (m *ConditionalAccessWhatIfConditions) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetInsiderRiskLevel gets the insiderRiskLevel property value. The insiderRiskLevel property
+// GetInsiderRiskLevel gets the insiderRiskLevel property value. Insider risk associated with the authenticating user. The possible value is: none, minor, moderate, elevated, unknownFutureValue. Default value is none.
 // returns a *InsiderRiskLevel when successful
-func (m *ConditionalAccessWhatIfConditions) GetInsiderRiskLevel()(*InsiderRiskLevel) {
+func (m *SignInConditions) GetInsiderRiskLevel()(*InsiderRiskLevel) {
     val, err := m.GetBackingStore().Get("insiderRiskLevel")
     if err != nil {
         panic(err)
@@ -231,9 +231,9 @@ func (m *ConditionalAccessWhatIfConditions) GetInsiderRiskLevel()(*InsiderRiskLe
     }
     return nil
 }
-// GetIpAddress gets the ipAddress property value. The ipAddress property
+// GetIpAddress gets the ipAddress property value. Ip address of the authenticating identity.
 // returns a *string when successful
-func (m *ConditionalAccessWhatIfConditions) GetIpAddress()(*string) {
+func (m *SignInConditions) GetIpAddress()(*string) {
     val, err := m.GetBackingStore().Get("ipAddress")
     if err != nil {
         panic(err)
@@ -245,7 +245,7 @@ func (m *ConditionalAccessWhatIfConditions) GetIpAddress()(*string) {
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
-func (m *ConditionalAccessWhatIfConditions) GetOdataType()(*string) {
+func (m *SignInConditions) GetOdataType()(*string) {
     val, err := m.GetBackingStore().Get("odataType")
     if err != nil {
         panic(err)
@@ -255,9 +255,9 @@ func (m *ConditionalAccessWhatIfConditions) GetOdataType()(*string) {
     }
     return nil
 }
-// GetServicePrincipalRiskLevel gets the servicePrincipalRiskLevel property value. The servicePrincipalRiskLevel property
+// GetServicePrincipalRiskLevel gets the servicePrincipalRiskLevel property value. Risk associated with the service principal. The possible value is: low, medium, high, hidden, none, unknownFutureValue. Default value is none.
 // returns a *RiskLevel when successful
-func (m *ConditionalAccessWhatIfConditions) GetServicePrincipalRiskLevel()(*RiskLevel) {
+func (m *SignInConditions) GetServicePrincipalRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("servicePrincipalRiskLevel")
     if err != nil {
         panic(err)
@@ -267,9 +267,9 @@ func (m *ConditionalAccessWhatIfConditions) GetServicePrincipalRiskLevel()(*Risk
     }
     return nil
 }
-// GetSignInRiskLevel gets the signInRiskLevel property value. The signInRiskLevel property
+// GetSignInRiskLevel gets the signInRiskLevel property value. Sign-in risk associated with the user. The possible value is: low, medium, high, hidden, none, unknownFutureValue. Default value is none.
 // returns a *RiskLevel when successful
-func (m *ConditionalAccessWhatIfConditions) GetSignInRiskLevel()(*RiskLevel) {
+func (m *SignInConditions) GetSignInRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("signInRiskLevel")
     if err != nil {
         panic(err)
@@ -279,9 +279,9 @@ func (m *ConditionalAccessWhatIfConditions) GetSignInRiskLevel()(*RiskLevel) {
     }
     return nil
 }
-// GetUserRiskLevel gets the userRiskLevel property value. The userRiskLevel property
+// GetUserRiskLevel gets the userRiskLevel property value. The authenticating user's risk level. The possible value is: low, medium, high, hidden, none, unknownFutureValue. Default value is none.
 // returns a *RiskLevel when successful
-func (m *ConditionalAccessWhatIfConditions) GetUserRiskLevel()(*RiskLevel) {
+func (m *SignInConditions) GetUserRiskLevel()(*RiskLevel) {
     val, err := m.GetBackingStore().Get("userRiskLevel")
     if err != nil {
         panic(err)
@@ -292,7 +292,7 @@ func (m *ConditionalAccessWhatIfConditions) GetUserRiskLevel()(*RiskLevel) {
     return nil
 }
 // Serialize serializes information the current object
-func (m *ConditionalAccessWhatIfConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *SignInConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
         err := writer.WriteObjectValue("authenticationFlow", m.GetAuthenticationFlow())
         if err != nil {
@@ -374,94 +374,94 @@ func (m *ConditionalAccessWhatIfConditions) Serialize(writer i878a80d2330e89d268
     return nil
 }
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-func (m *ConditionalAccessWhatIfConditions) SetAdditionalData(value map[string]any)() {
+func (m *SignInConditions) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAuthenticationFlow sets the authenticationFlow property value. The authenticationFlow property
-func (m *ConditionalAccessWhatIfConditions) SetAuthenticationFlow(value AuthenticationFlowable)() {
+// SetAuthenticationFlow sets the authenticationFlow property value. Type of authentication flow. The possible value is: deviceCodeFlow or authenticationTransfer. Default value is none.
+func (m *SignInConditions) SetAuthenticationFlow(value AuthenticationFlowable)() {
     err := m.GetBackingStore().Set("authenticationFlow", value)
     if err != nil {
         panic(err)
     }
 }
 // SetBackingStore sets the BackingStore property value. Stores model information.
-func (m *ConditionalAccessWhatIfConditions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
+func (m *SignInConditions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClientAppType sets the clientAppType property value. The clientAppType property
-func (m *ConditionalAccessWhatIfConditions) SetClientAppType(value *ConditionalAccessClientApp)() {
+// SetClientAppType sets the clientAppType property value. Client application type. The possible value is: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other, unknownFutureValue. Default value is all.
+func (m *SignInConditions) SetClientAppType(value *ConditionalAccessClientApp)() {
     err := m.GetBackingStore().Set("clientAppType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCountry sets the country property value. The country property
-func (m *ConditionalAccessWhatIfConditions) SetCountry(value *string)() {
+// SetCountry sets the country property value. Country from where the identity is authenticating.
+func (m *SignInConditions) SetCountry(value *string)() {
     err := m.GetBackingStore().Set("country", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceInfo sets the deviceInfo property value. The deviceInfo property
-func (m *ConditionalAccessWhatIfConditions) SetDeviceInfo(value DeviceInfoable)() {
+// SetDeviceInfo sets the deviceInfo property value. Information about the device used for the sign-in.
+func (m *SignInConditions) SetDeviceInfo(value DeviceInfoable)() {
     err := m.GetBackingStore().Set("deviceInfo", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDevicePlatform sets the devicePlatform property value. The devicePlatform property
-func (m *ConditionalAccessWhatIfConditions) SetDevicePlatform(value *ConditionalAccessDevicePlatform)() {
+// SetDevicePlatform sets the devicePlatform property value. Device platform. The possible value is: android, iOS, windows, windowsPhone, macOS, all, unknownFutureValue, linux. Default value is all.
+func (m *SignInConditions) SetDevicePlatform(value *ConditionalAccessDevicePlatform)() {
     err := m.GetBackingStore().Set("devicePlatform", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInsiderRiskLevel sets the insiderRiskLevel property value. The insiderRiskLevel property
-func (m *ConditionalAccessWhatIfConditions) SetInsiderRiskLevel(value *InsiderRiskLevel)() {
+// SetInsiderRiskLevel sets the insiderRiskLevel property value. Insider risk associated with the authenticating user. The possible value is: none, minor, moderate, elevated, unknownFutureValue. Default value is none.
+func (m *SignInConditions) SetInsiderRiskLevel(value *InsiderRiskLevel)() {
     err := m.GetBackingStore().Set("insiderRiskLevel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIpAddress sets the ipAddress property value. The ipAddress property
-func (m *ConditionalAccessWhatIfConditions) SetIpAddress(value *string)() {
+// SetIpAddress sets the ipAddress property value. Ip address of the authenticating identity.
+func (m *SignInConditions) SetIpAddress(value *string)() {
     err := m.GetBackingStore().Set("ipAddress", value)
     if err != nil {
         panic(err)
     }
 }
 // SetOdataType sets the @odata.type property value. The OdataType property
-func (m *ConditionalAccessWhatIfConditions) SetOdataType(value *string)() {
+func (m *SignInConditions) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetServicePrincipalRiskLevel sets the servicePrincipalRiskLevel property value. The servicePrincipalRiskLevel property
-func (m *ConditionalAccessWhatIfConditions) SetServicePrincipalRiskLevel(value *RiskLevel)() {
+// SetServicePrincipalRiskLevel sets the servicePrincipalRiskLevel property value. Risk associated with the service principal. The possible value is: low, medium, high, hidden, none, unknownFutureValue. Default value is none.
+func (m *SignInConditions) SetServicePrincipalRiskLevel(value *RiskLevel)() {
     err := m.GetBackingStore().Set("servicePrincipalRiskLevel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignInRiskLevel sets the signInRiskLevel property value. The signInRiskLevel property
-func (m *ConditionalAccessWhatIfConditions) SetSignInRiskLevel(value *RiskLevel)() {
+// SetSignInRiskLevel sets the signInRiskLevel property value. Sign-in risk associated with the user. The possible value is: low, medium, high, hidden, none, unknownFutureValue. Default value is none.
+func (m *SignInConditions) SetSignInRiskLevel(value *RiskLevel)() {
     err := m.GetBackingStore().Set("signInRiskLevel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserRiskLevel sets the userRiskLevel property value. The userRiskLevel property
-func (m *ConditionalAccessWhatIfConditions) SetUserRiskLevel(value *RiskLevel)() {
+// SetUserRiskLevel sets the userRiskLevel property value. The authenticating user's risk level. The possible value is: low, medium, high, hidden, none, unknownFutureValue. Default value is none.
+func (m *SignInConditions) SetUserRiskLevel(value *RiskLevel)() {
     err := m.GetBackingStore().Set("userRiskLevel", value)
     if err != nil {
         panic(err)
     }
 }
-type ConditionalAccessWhatIfConditionsable interface {
+type SignInConditionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable

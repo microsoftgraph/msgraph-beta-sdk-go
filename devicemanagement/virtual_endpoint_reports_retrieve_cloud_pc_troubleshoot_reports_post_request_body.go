@@ -58,6 +58,22 @@ func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBody
         }
         return nil
     }
+    res["groupBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetGroupBy(res)
+        }
+        return nil
+    }
     res["orderBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -144,6 +160,18 @@ func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBody
     }
     return nil
 }
+// GetGroupBy gets the groupBy property value. The groupBy property
+// returns a []string when successful
+func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBody) GetGroupBy()([]string) {
+    val, err := m.GetBackingStore().Get("groupBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
 // GetOrderBy gets the orderBy property value. The orderBy property
 // returns a []string when successful
 func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBody) GetOrderBy()([]string) {
@@ -224,6 +252,12 @@ func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBody
             return err
         }
     }
+    if m.GetGroupBy() != nil {
+        err := writer.WriteCollectionOfStringValues("groupBy", m.GetGroupBy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOrderBy() != nil {
         err := writer.WriteCollectionOfStringValues("orderBy", m.GetOrderBy())
         if err != nil {
@@ -287,6 +321,13 @@ func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBody
         panic(err)
     }
 }
+// SetGroupBy sets the groupBy property value. The groupBy property
+func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBody) SetGroupBy(value []string)() {
+    err := m.GetBackingStore().Set("groupBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOrderBy sets the orderBy property value. The orderBy property
 func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBody) SetOrderBy(value []string)() {
     err := m.GetBackingStore().Set("orderBy", value)
@@ -335,6 +376,7 @@ type VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBodyable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetFilter()(*string)
+    GetGroupBy()([]string)
     GetOrderBy()([]string)
     GetReportName()(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCTroubleshootReportType)
     GetSearch()(*string)
@@ -343,6 +385,7 @@ type VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBodyable
     GetTop()(*int32)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetFilter(value *string)()
+    SetGroupBy(value []string)()
     SetOrderBy(value []string)()
     SetReportName(value *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCTroubleshootReportType)()
     SetSearch(value *string)()

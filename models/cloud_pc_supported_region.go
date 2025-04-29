@@ -58,6 +58,16 @@ func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["regionRestrictionDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcSupportedRegionRestrictionDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRegionRestrictionDetail(val.(CloudPcSupportedRegionRestrictionDetailable))
+        }
+        return nil
+    }
     res["regionStatus"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcSupportedRegionStatus)
         if err != nil {
@@ -89,6 +99,18 @@ func (m *CloudPcSupportedRegion) GetRegionGroup()(*CloudPcRegionGroup) {
     }
     if val != nil {
         return val.(*CloudPcRegionGroup)
+    }
+    return nil
+}
+// GetRegionRestrictionDetail gets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to three properties: cPURestricted, gPURestricted, and nestedVirtualizationRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, and nestedVirtualizationRestricted indicates whether the region is available for nested virtualization. Read-only.
+// returns a CloudPcSupportedRegionRestrictionDetailable when successful
+func (m *CloudPcSupportedRegion) GetRegionRestrictionDetail()(CloudPcSupportedRegionRestrictionDetailable) {
+    val, err := m.GetBackingStore().Get("regionRestrictionDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcSupportedRegionRestrictionDetailable)
     }
     return nil
 }
@@ -135,6 +157,12 @@ func (m *CloudPcSupportedRegion) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("regionRestrictionDetail", m.GetRegionRestrictionDetail())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRegionStatus() != nil {
         cast := (*m.GetRegionStatus()).String()
         err = writer.WriteStringValue("regionStatus", &cast)
@@ -165,6 +193,13 @@ func (m *CloudPcSupportedRegion) SetRegionGroup(value *CloudPcRegionGroup)() {
         panic(err)
     }
 }
+// SetRegionRestrictionDetail sets the regionRestrictionDetail property value. When the region isn't available, all region restrictions are set to true. These restrictions apply to three properties: cPURestricted, gPURestricted, and nestedVirtualizationRestricted. cPURestricted indicates whether the region is available for CPU, gPURestricted indicates whether the region is available for GPU, and nestedVirtualizationRestricted indicates whether the region is available for nested virtualization. Read-only.
+func (m *CloudPcSupportedRegion) SetRegionRestrictionDetail(value CloudPcSupportedRegionRestrictionDetailable)() {
+    err := m.GetBackingStore().Set("regionRestrictionDetail", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegionStatus sets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
 func (m *CloudPcSupportedRegion) SetRegionStatus(value *CloudPcSupportedRegionStatus)() {
     err := m.GetBackingStore().Set("regionStatus", value)
@@ -184,10 +219,12 @@ type CloudPcSupportedRegionable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
     GetRegionGroup()(*CloudPcRegionGroup)
+    GetRegionRestrictionDetail()(CloudPcSupportedRegionRestrictionDetailable)
     GetRegionStatus()(*CloudPcSupportedRegionStatus)
     GetSupportedSolution()(*CloudPcManagementService)
     SetDisplayName(value *string)()
     SetRegionGroup(value *CloudPcRegionGroup)()
+    SetRegionRestrictionDetail(value CloudPcSupportedRegionRestrictionDetailable)()
     SetRegionStatus(value *CloudPcSupportedRegionStatus)()
     SetSupportedSolution(value *CloudPcManagementService)()
 }

@@ -28,15 +28,15 @@ func CreateConditionalAccessEvaluatePostResponseFromDiscriminatorValue(parseNode
 func (m *ConditionalAccessEvaluatePostResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConditionalAccessWhatIfPolicyFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateWhatIfAnalysisResultFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfPolicyable, len(val))
+            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WhatIfAnalysisResultable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfPolicyable)
+                    res[i] = v.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WhatIfAnalysisResultable)
                 }
             }
             m.SetValue(res)
@@ -46,14 +46,14 @@ func (m *ConditionalAccessEvaluatePostResponse) GetFieldDeserializers()(map[stri
     return res
 }
 // GetValue gets the value property value. The value property
-// returns a []ConditionalAccessWhatIfPolicyable when successful
-func (m *ConditionalAccessEvaluatePostResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfPolicyable) {
+// returns a []WhatIfAnalysisResultable when successful
+func (m *ConditionalAccessEvaluatePostResponse) GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WhatIfAnalysisResultable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfPolicyable)
+        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WhatIfAnalysisResultable)
     }
     return nil
 }
@@ -78,7 +78,7 @@ func (m *ConditionalAccessEvaluatePostResponse) Serialize(writer i878a80d2330e89
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *ConditionalAccessEvaluatePostResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfPolicyable)() {
+func (m *ConditionalAccessEvaluatePostResponse) SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WhatIfAnalysisResultable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
@@ -87,6 +87,6 @@ func (m *ConditionalAccessEvaluatePostResponse) SetValue(value []ie233ee762e29b4
 type ConditionalAccessEvaluatePostResponseable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfPolicyable)
-    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfPolicyable)()
+    GetValue()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WhatIfAnalysisResultable)
+    SetValue(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WhatIfAnalysisResultable)()
 }

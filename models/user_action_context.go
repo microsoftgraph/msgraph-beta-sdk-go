@@ -7,27 +7,27 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-type WhatIfUserActionContext struct {
-    ConditionalAccessContext
+type UserActionContext struct {
+    SignInContext
 }
-// NewWhatIfUserActionContext instantiates a new WhatIfUserActionContext and sets the default values.
-func NewWhatIfUserActionContext()(*WhatIfUserActionContext) {
-    m := &WhatIfUserActionContext{
-        ConditionalAccessContext: *NewConditionalAccessContext(),
+// NewUserActionContext instantiates a new UserActionContext and sets the default values.
+func NewUserActionContext()(*UserActionContext) {
+    m := &UserActionContext{
+        SignInContext: *NewSignInContext(),
     }
-    odataTypeValue := "#microsoft.graph.whatIfUserActionContext"
+    odataTypeValue := "#microsoft.graph.userActionContext"
     m.SetOdataType(&odataTypeValue)
     return m
 }
-// CreateWhatIfUserActionContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateUserActionContextFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateWhatIfUserActionContextFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewWhatIfUserActionContext(), nil
+func CreateUserActionContextFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewUserActionContext(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *WhatIfUserActionContext) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.ConditionalAccessContext.GetFieldDeserializers()
+func (m *UserActionContext) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+    res := m.SignInContext.GetFieldDeserializers()
     res["userAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseUserAction)
         if err != nil {
@@ -40,9 +40,9 @@ func (m *WhatIfUserActionContext) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetUserAction gets the userAction property value. The userAction property
+// GetUserAction gets the userAction property value. Represents the user action that the authenticating identity is performing. The possible values are: registerSecurityInformation, registerOrJoinDevices, unknownFutureValue.
 // returns a *UserAction when successful
-func (m *WhatIfUserActionContext) GetUserAction()(*UserAction) {
+func (m *UserActionContext) GetUserAction()(*UserAction) {
     val, err := m.GetBackingStore().Get("userAction")
     if err != nil {
         panic(err)
@@ -53,8 +53,8 @@ func (m *WhatIfUserActionContext) GetUserAction()(*UserAction) {
     return nil
 }
 // Serialize serializes information the current object
-func (m *WhatIfUserActionContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.ConditionalAccessContext.Serialize(writer)
+func (m *UserActionContext) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    err := m.SignInContext.Serialize(writer)
     if err != nil {
         return err
     }
@@ -67,16 +67,16 @@ func (m *WhatIfUserActionContext) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetUserAction sets the userAction property value. The userAction property
-func (m *WhatIfUserActionContext) SetUserAction(value *UserAction)() {
+// SetUserAction sets the userAction property value. Represents the user action that the authenticating identity is performing. The possible values are: registerSecurityInformation, registerOrJoinDevices, unknownFutureValue.
+func (m *UserActionContext) SetUserAction(value *UserAction)() {
     err := m.GetBackingStore().Set("userAction", value)
     if err != nil {
         panic(err)
     }
 }
-type WhatIfUserActionContextable interface {
-    ConditionalAccessContextable
+type UserActionContextable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    SignInContextable
     GetUserAction()(*UserAction)
     SetUserAction(value *UserAction)()
 }

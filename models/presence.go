@@ -114,7 +114,7 @@ func (m *Presence) GetOutOfOfficeSettings()(OutOfOfficeSettingsable) {
     }
     return nil
 }
-// GetSequenceNumber gets the sequenceNumber property value. The sequenceNumber property
+// GetSequenceNumber gets the sequenceNumber property value. The lexicographically sortable String stamp that represents the version of a presence object.
 // returns a *string when successful
 func (m *Presence) GetSequenceNumber()(*string) {
     val, err := m.GetBackingStore().Get("sequenceNumber")
@@ -191,7 +191,7 @@ func (m *Presence) SetOutOfOfficeSettings(value OutOfOfficeSettingsable)() {
         panic(err)
     }
 }
-// SetSequenceNumber sets the sequenceNumber property value. The sequenceNumber property
+// SetSequenceNumber sets the sequenceNumber property value. The lexicographically sortable String stamp that represents the version of a presence object.
 func (m *Presence) SetSequenceNumber(value *string)() {
     err := m.GetBackingStore().Set("sequenceNumber", value)
     if err != nil {

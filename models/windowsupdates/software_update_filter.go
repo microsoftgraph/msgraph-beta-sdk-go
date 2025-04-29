@@ -38,6 +38,8 @@ func CreateSoftwareUpdateFilterFromDiscriminatorValue(parseNode i878a80d2330e89d
                         return NewDriverUpdateFilter(), nil
                     case "#microsoft.graph.windowsUpdates.qualityUpdateFilter":
                         return NewQualityUpdateFilter(), nil
+                    case "#microsoft.graph.windowsUpdates.remediationUpdateFilter":
+                        return NewRemediationUpdateFilter(), nil
                     case "#microsoft.graph.windowsUpdates.windowsUpdateFilter":
                         return NewWindowsUpdateFilter(), nil
                 }

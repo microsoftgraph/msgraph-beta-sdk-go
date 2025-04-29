@@ -22,7 +22,7 @@ func NewCloudPcForensicStorageAccount()(*CloudPcForensicStorageAccount) {
 func CreateCloudPcForensicStorageAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcForensicStorageAccount(), nil
 }
-// GetAccessTier gets the accessTier property value. The access tier of the storage account. Possible values are hot, cool, premium, cold, and unknownFutureValue. Default value is hot. Read-only.
+// GetAccessTier gets the accessTier property value. Indicates the access tier of the storage account. Possible values are hot, cool, premium, cold, and unknownFutureValue. Default value is hot. Read-only.
 // returns a *CloudPcStorageAccountAccessTier when successful
 func (m *CloudPcForensicStorageAccount) GetAccessTier()(*CloudPcStorageAccountAccessTier) {
     val, err := m.GetBackingStore().Get("accessTier")
@@ -92,7 +92,7 @@ func (m *CloudPcForensicStorageAccount) GetImmutableStorage()(*bool) {
     }
     return nil
 }
-// GetStorageAccountId gets the storageAccountId property value. The ID of the storage account. Read-only.
+// GetStorageAccountId gets the storageAccountId property value. Indicates the ID of the storage account. Read-only.
 // returns a *string when successful
 func (m *CloudPcForensicStorageAccount) GetStorageAccountId()(*string) {
     val, err := m.GetBackingStore().Get("storageAccountId")
@@ -104,7 +104,7 @@ func (m *CloudPcForensicStorageAccount) GetStorageAccountId()(*string) {
     }
     return nil
 }
-// GetStorageAccountName gets the storageAccountName property value. The name of the storage account. Read-only.
+// GetStorageAccountName gets the storageAccountName property value. Indicates the name of the storage account. Read-only.
 // returns a *string when successful
 func (m *CloudPcForensicStorageAccount) GetStorageAccountName()(*string) {
     val, err := m.GetBackingStore().Get("storageAccountName")
@@ -149,7 +149,7 @@ func (m *CloudPcForensicStorageAccount) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetAccessTier sets the accessTier property value. The access tier of the storage account. Possible values are hot, cool, premium, cold, and unknownFutureValue. Default value is hot. Read-only.
+// SetAccessTier sets the accessTier property value. Indicates the access tier of the storage account. Possible values are hot, cool, premium, cold, and unknownFutureValue. Default value is hot. Read-only.
 func (m *CloudPcForensicStorageAccount) SetAccessTier(value *CloudPcStorageAccountAccessTier)() {
     err := m.GetBackingStore().Set("accessTier", value)
     if err != nil {
@@ -163,14 +163,14 @@ func (m *CloudPcForensicStorageAccount) SetImmutableStorage(value *bool)() {
         panic(err)
     }
 }
-// SetStorageAccountId sets the storageAccountId property value. The ID of the storage account. Read-only.
+// SetStorageAccountId sets the storageAccountId property value. Indicates the ID of the storage account. Read-only.
 func (m *CloudPcForensicStorageAccount) SetStorageAccountId(value *string)() {
     err := m.GetBackingStore().Set("storageAccountId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStorageAccountName sets the storageAccountName property value. The name of the storage account. Read-only.
+// SetStorageAccountName sets the storageAccountName property value. Indicates the name of the storage account. Read-only.
 func (m *CloudPcForensicStorageAccount) SetStorageAccountName(value *string)() {
     err := m.GetBackingStore().Set("storageAccountName", value)
     if err != nil {

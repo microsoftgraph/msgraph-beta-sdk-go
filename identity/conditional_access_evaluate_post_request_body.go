@@ -56,42 +56,6 @@ func (m *ConditionalAccessEvaluatePostRequestBody) GetAppliedPoliciesOnly()(*boo
 func (m *ConditionalAccessEvaluatePostRequestBody) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetConditionalAccessContext gets the conditionalAccessContext property value. The conditionalAccessContext property
-// returns a ConditionalAccessContextable when successful
-func (m *ConditionalAccessEvaluatePostRequestBody) GetConditionalAccessContext()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessContextable) {
-    val, err := m.GetBackingStore().Get("conditionalAccessContext")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessContextable)
-    }
-    return nil
-}
-// GetConditionalAccessWhatIfConditions gets the conditionalAccessWhatIfConditions property value. The conditionalAccessWhatIfConditions property
-// returns a ConditionalAccessWhatIfConditionsable when successful
-func (m *ConditionalAccessEvaluatePostRequestBody) GetConditionalAccessWhatIfConditions()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfConditionsable) {
-    val, err := m.GetBackingStore().Get("conditionalAccessWhatIfConditions")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfConditionsable)
-    }
-    return nil
-}
-// GetConditionalAccessWhatIfSubject gets the conditionalAccessWhatIfSubject property value. The conditionalAccessWhatIfSubject property
-// returns a ConditionalAccessWhatIfSubjectable when successful
-func (m *ConditionalAccessEvaluatePostRequestBody) GetConditionalAccessWhatIfSubject()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfSubjectable) {
-    val, err := m.GetBackingStore().Get("conditionalAccessWhatIfSubject")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfSubjectable)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessEvaluatePostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -106,37 +70,73 @@ func (m *ConditionalAccessEvaluatePostRequestBody) GetFieldDeserializers()(map[s
         }
         return nil
     }
-    res["conditionalAccessContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConditionalAccessContextFromDiscriminatorValue)
+    res["signInConditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSignInConditionsFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditionalAccessContext(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessContextable))
+            m.SetSignInConditions(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInConditionsable))
         }
         return nil
     }
-    res["conditionalAccessWhatIfConditions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConditionalAccessWhatIfConditionsFromDiscriminatorValue)
+    res["signInContext"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSignInContextFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditionalAccessWhatIfConditions(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfConditionsable))
+            m.SetSignInContext(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInContextable))
         }
         return nil
     }
-    res["conditionalAccessWhatIfSubject"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateConditionalAccessWhatIfSubjectFromDiscriminatorValue)
+    res["signInIdentity"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateSignInIdentityFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetConditionalAccessWhatIfSubject(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfSubjectable))
+            m.SetSignInIdentity(val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInIdentityable))
         }
         return nil
     }
     return res
+}
+// GetSignInConditions gets the signInConditions property value. The signInConditions property
+// returns a SignInConditionsable when successful
+func (m *ConditionalAccessEvaluatePostRequestBody) GetSignInConditions()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInConditionsable) {
+    val, err := m.GetBackingStore().Get("signInConditions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInConditionsable)
+    }
+    return nil
+}
+// GetSignInContext gets the signInContext property value. The signInContext property
+// returns a SignInContextable when successful
+func (m *ConditionalAccessEvaluatePostRequestBody) GetSignInContext()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInContextable) {
+    val, err := m.GetBackingStore().Get("signInContext")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInContextable)
+    }
+    return nil
+}
+// GetSignInIdentity gets the signInIdentity property value. The signInIdentity property
+// returns a SignInIdentityable when successful
+func (m *ConditionalAccessEvaluatePostRequestBody) GetSignInIdentity()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInIdentityable) {
+    val, err := m.GetBackingStore().Get("signInIdentity")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInIdentityable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessEvaluatePostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -147,19 +147,19 @@ func (m *ConditionalAccessEvaluatePostRequestBody) Serialize(writer i878a80d2330
         }
     }
     {
-        err := writer.WriteObjectValue("conditionalAccessContext", m.GetConditionalAccessContext())
+        err := writer.WriteObjectValue("signInConditions", m.GetSignInConditions())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("conditionalAccessWhatIfConditions", m.GetConditionalAccessWhatIfConditions())
+        err := writer.WriteObjectValue("signInContext", m.GetSignInContext())
         if err != nil {
             return err
         }
     }
     {
-        err := writer.WriteObjectValue("conditionalAccessWhatIfSubject", m.GetConditionalAccessWhatIfSubject())
+        err := writer.WriteObjectValue("signInIdentity", m.GetSignInIdentity())
         if err != nil {
             return err
         }
@@ -190,23 +190,23 @@ func (m *ConditionalAccessEvaluatePostRequestBody) SetAppliedPoliciesOnly(value 
 func (m *ConditionalAccessEvaluatePostRequestBody) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetConditionalAccessContext sets the conditionalAccessContext property value. The conditionalAccessContext property
-func (m *ConditionalAccessEvaluatePostRequestBody) SetConditionalAccessContext(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessContextable)() {
-    err := m.GetBackingStore().Set("conditionalAccessContext", value)
+// SetSignInConditions sets the signInConditions property value. The signInConditions property
+func (m *ConditionalAccessEvaluatePostRequestBody) SetSignInConditions(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInConditionsable)() {
+    err := m.GetBackingStore().Set("signInConditions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConditionalAccessWhatIfConditions sets the conditionalAccessWhatIfConditions property value. The conditionalAccessWhatIfConditions property
-func (m *ConditionalAccessEvaluatePostRequestBody) SetConditionalAccessWhatIfConditions(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfConditionsable)() {
-    err := m.GetBackingStore().Set("conditionalAccessWhatIfConditions", value)
+// SetSignInContext sets the signInContext property value. The signInContext property
+func (m *ConditionalAccessEvaluatePostRequestBody) SetSignInContext(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInContextable)() {
+    err := m.GetBackingStore().Set("signInContext", value)
     if err != nil {
         panic(err)
     }
 }
-// SetConditionalAccessWhatIfSubject sets the conditionalAccessWhatIfSubject property value. The conditionalAccessWhatIfSubject property
-func (m *ConditionalAccessEvaluatePostRequestBody) SetConditionalAccessWhatIfSubject(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfSubjectable)() {
-    err := m.GetBackingStore().Set("conditionalAccessWhatIfSubject", value)
+// SetSignInIdentity sets the signInIdentity property value. The signInIdentity property
+func (m *ConditionalAccessEvaluatePostRequestBody) SetSignInIdentity(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInIdentityable)() {
+    err := m.GetBackingStore().Set("signInIdentity", value)
     if err != nil {
         panic(err)
     }
@@ -217,12 +217,12 @@ type ConditionalAccessEvaluatePostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppliedPoliciesOnly()(*bool)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetConditionalAccessContext()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessContextable)
-    GetConditionalAccessWhatIfConditions()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfConditionsable)
-    GetConditionalAccessWhatIfSubject()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfSubjectable)
+    GetSignInConditions()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInConditionsable)
+    GetSignInContext()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInContextable)
+    GetSignInIdentity()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInIdentityable)
     SetAppliedPoliciesOnly(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetConditionalAccessContext(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessContextable)()
-    SetConditionalAccessWhatIfConditions(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfConditionsable)()
-    SetConditionalAccessWhatIfSubject(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessWhatIfSubjectable)()
+    SetSignInConditions(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInConditionsable)()
+    SetSignInContext(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInContextable)()
+    SetSignInIdentity(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SignInIdentityable)()
 }
