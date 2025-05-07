@@ -98,38 +98,6 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
-    res["namedLocations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateNamedLocationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]NamedLocationable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(NamedLocationable)
-                }
-            }
-            m.SetNamedLocations(res)
-        }
-        return nil
-    }
-    res["policies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ConditionalAccessPolicyable)
-                }
-            }
-            m.SetPolicies(res)
-        }
-        return nil
-    }
     res["templates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessTemplateFromDiscriminatorValue)
         if err != nil {
@@ -147,30 +115,6 @@ func (m *ConditionalAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     return res
-}
-// GetNamedLocations gets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
-// returns a []NamedLocationable when successful
-func (m *ConditionalAccessRoot) GetNamedLocations()([]NamedLocationable) {
-    val, err := m.GetBackingStore().Get("namedLocations")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]NamedLocationable)
-    }
-    return nil
-}
-// GetPolicies gets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
-// returns a []ConditionalAccessPolicyable when successful
-func (m *ConditionalAccessRoot) GetPolicies()([]ConditionalAccessPolicyable) {
-    val, err := m.GetBackingStore().Get("policies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ConditionalAccessPolicyable)
-    }
-    return nil
 }
 // GetTemplates gets the templates property value. Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
 // returns a []ConditionalAccessTemplateable when successful
@@ -214,30 +158,6 @@ func (m *ConditionalAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
-    if m.GetNamedLocations() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNamedLocations()))
-        for i, v := range m.GetNamedLocations() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("namedLocations", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicies()))
-        for i, v := range m.GetPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("policies", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetTemplates() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemplates()))
         for i, v := range m.GetTemplates() {
@@ -273,20 +193,6 @@ func (m *ConditionalAccessRoot) SetAuthenticationStrengths(value AuthenticationS
         panic(err)
     }
 }
-// SetNamedLocations sets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
-func (m *ConditionalAccessRoot) SetNamedLocations(value []NamedLocationable)() {
-    err := m.GetBackingStore().Set("namedLocations", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetPolicies sets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
-func (m *ConditionalAccessRoot) SetPolicies(value []ConditionalAccessPolicyable)() {
-    err := m.GetBackingStore().Set("policies", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetTemplates sets the templates property value. Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
 func (m *ConditionalAccessRoot) SetTemplates(value []ConditionalAccessTemplateable)() {
     err := m.GetBackingStore().Set("templates", value)
@@ -300,13 +206,9 @@ type ConditionalAccessRootable interface {
     GetAuthenticationContextClassReferences()([]AuthenticationContextClassReferenceable)
     GetAuthenticationStrength()(AuthenticationStrengthRootable)
     GetAuthenticationStrengths()(AuthenticationStrengthRootable)
-    GetNamedLocations()([]NamedLocationable)
-    GetPolicies()([]ConditionalAccessPolicyable)
     GetTemplates()([]ConditionalAccessTemplateable)
     SetAuthenticationContextClassReferences(value []AuthenticationContextClassReferenceable)()
     SetAuthenticationStrength(value AuthenticationStrengthRootable)()
     SetAuthenticationStrengths(value AuthenticationStrengthRootable)()
-    SetNamedLocations(value []NamedLocationable)()
-    SetPolicies(value []ConditionalAccessPolicyable)()
     SetTemplates(value []ConditionalAccessTemplateable)()
 }

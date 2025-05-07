@@ -145,6 +145,11 @@ func (m *AdminRequestBuilder) ServiceAnnouncement()(*ServiceAnnouncementRequestB
 func (m *AdminRequestBuilder) Sharepoint()(*SharepointRequestBuilder) {
     return NewSharepointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Teams provides operations to manage the teams property of the microsoft.graph.admin entity.
+// returns a *TeamsRequestBuilder when successful
+func (m *AdminRequestBuilder) Teams()(*TeamsRequestBuilder) {
+    return NewTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Todo provides operations to manage the todo property of the microsoft.graph.admin entity.
 // returns a *TodoRequestBuilder when successful
 func (m *AdminRequestBuilder) Todo()(*TodoRequestBuilder) {

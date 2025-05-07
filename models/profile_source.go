@@ -48,6 +48,26 @@ func (m *ProfileSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["kind"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetKind(val)
+        }
+        return nil
+    }
+    res["sourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSourceId(val)
+        }
+        return nil
+    }
     res["webUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -59,6 +79,30 @@ func (m *ProfileSource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetKind gets the kind property value. The kind property
+// returns a *string when successful
+func (m *ProfileSource) GetKind()(*string) {
+    val, err := m.GetBackingStore().Get("kind")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSourceId gets the sourceId property value. The sourceId property
+// returns a *string when successful
+func (m *ProfileSource) GetSourceId()(*string) {
+    val, err := m.GetBackingStore().Get("sourceId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetWebUrl gets the webUrl property value. The webUrl property
 // returns a *string when successful
@@ -85,6 +129,18 @@ func (m *ProfileSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteStringValue("kind", m.GetKind())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("sourceId", m.GetSourceId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("webUrl", m.GetWebUrl())
         if err != nil {
             return err
@@ -95,6 +151,20 @@ func (m *ProfileSource) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
 // SetDisplayName sets the displayName property value. The displayName property
 func (m *ProfileSource) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetKind sets the kind property value. The kind property
+func (m *ProfileSource) SetKind(value *string)() {
+    err := m.GetBackingStore().Set("kind", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSourceId sets the sourceId property value. The sourceId property
+func (m *ProfileSource) SetSourceId(value *string)() {
+    err := m.GetBackingStore().Set("sourceId", value)
     if err != nil {
         panic(err)
     }
@@ -110,7 +180,11 @@ type ProfileSourceable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetKind()(*string)
+    GetSourceId()(*string)
     GetWebUrl()(*string)
     SetDisplayName(value *string)()
+    SetKind(value *string)()
+    SetSourceId(value *string)()
     SetWebUrl(value *string)()
 }

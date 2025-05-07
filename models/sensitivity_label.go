@@ -70,6 +70,18 @@ func (m *SensitivityLabel) GetAutoLabeling()(AutoLabelingable) {
     }
     return nil
 }
+// GetColor gets the color property value. The color property
+// returns a *string when successful
+func (m *SensitivityLabel) GetColor()(*string) {
+    val, err := m.GetBackingStore().Get("color")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDescription gets the description property value. The description property
 // returns a *string when successful
 func (m *SensitivityLabel) GetDescription()(*string) {
@@ -144,6 +156,16 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["color"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetColor(val)
+        }
+        return nil
+    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -171,6 +193,16 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetIsDefault(val)
+        }
+        return nil
+    }
+    res["isEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEnabled(val)
         }
         return nil
     }
@@ -252,6 +284,18 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
 // returns a *bool when successful
 func (m *SensitivityLabel) GetIsDefault()(*bool) {
     val, err := m.GetBackingStore().Get("isDefault")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsEnabled gets the isEnabled property value. The isEnabled property
+// returns a *bool when successful
+func (m *SensitivityLabel) GetIsEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isEnabled")
     if err != nil {
         panic(err)
     }
@@ -371,6 +415,12 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("color", m.GetColor())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -384,6 +434,12 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteBoolValue("isDefault", m.GetIsDefault())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isEnabled", m.GetIsEnabled())
         if err != nil {
             return err
         }
@@ -466,6 +522,13 @@ func (m *SensitivityLabel) SetAutoLabeling(value AutoLabelingable)() {
         panic(err)
     }
 }
+// SetColor sets the color property value. The color property
+func (m *SensitivityLabel) SetColor(value *string)() {
+    err := m.GetBackingStore().Set("color", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. The description property
 func (m *SensitivityLabel) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -483,6 +546,13 @@ func (m *SensitivityLabel) SetDisplayName(value *string)() {
 // SetIsDefault sets the isDefault property value. The isDefault property
 func (m *SensitivityLabel) SetIsDefault(value *bool)() {
     err := m.GetBackingStore().Set("isDefault", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsEnabled sets the isEnabled property value. The isEnabled property
+func (m *SensitivityLabel) SetIsEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isEnabled", value)
     if err != nil {
         panic(err)
     }
@@ -536,9 +606,11 @@ type SensitivityLabelable interface {
     GetApplicationMode()(*ApplicationMode)
     GetAssignedPolicies()([]LabelPolicyable)
     GetAutoLabeling()(AutoLabelingable)
+    GetColor()(*string)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetIsDefault()(*bool)
+    GetIsEnabled()(*bool)
     GetIsEndpointProtectionEnabled()(*bool)
     GetLabelActions()([]LabelActionBaseable)
     GetName()(*string)
@@ -549,9 +621,11 @@ type SensitivityLabelable interface {
     SetApplicationMode(value *ApplicationMode)()
     SetAssignedPolicies(value []LabelPolicyable)()
     SetAutoLabeling(value AutoLabelingable)()
+    SetColor(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsDefault(value *bool)()
+    SetIsEnabled(value *bool)()
     SetIsEndpointProtectionEnabled(value *bool)()
     SetLabelActions(value []LabelActionBaseable)()
     SetName(value *string)()

@@ -142,18 +142,6 @@ func (m *PolicyRoot) GetClaimsMappingPolicies()([]ClaimsMappingPolicyable) {
     }
     return nil
 }
-// GetConditionalAccessPolicies gets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
-// returns a []ConditionalAccessPolicyable when successful
-func (m *PolicyRoot) GetConditionalAccessPolicies()([]ConditionalAccessPolicyable) {
-    val, err := m.GetBackingStore().Get("conditionalAccessPolicies")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ConditionalAccessPolicyable)
-    }
-    return nil
-}
 // GetCrossTenantAccessPolicy gets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
 // returns a CrossTenantAccessPolicyable when successful
 func (m *PolicyRoot) GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable) {
@@ -369,22 +357,6 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
                 }
             }
             m.SetClaimsMappingPolicies(res)
-        }
-        return nil
-    }
-    res["conditionalAccessPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ConditionalAccessPolicyable)
-                }
-            }
-            m.SetConditionalAccessPolicies(res)
         }
         return nil
     }
@@ -864,18 +836,6 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
-    if m.GetConditionalAccessPolicies() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConditionalAccessPolicies()))
-        for i, v := range m.GetConditionalAccessPolicies() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("conditionalAccessPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteObjectValue("crossTenantAccessPolicy", m.GetCrossTenantAccessPolicy())
         if err != nil {
@@ -1122,13 +1082,6 @@ func (m *PolicyRoot) SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
         panic(err)
     }
 }
-// SetConditionalAccessPolicies sets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
-func (m *PolicyRoot) SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)() {
-    err := m.GetBackingStore().Set("conditionalAccessPolicies", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetCrossTenantAccessPolicy sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.
 func (m *PolicyRoot) SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)() {
     err := m.GetBackingStore().Set("crossTenantAccessPolicy", value)
@@ -1268,7 +1221,6 @@ type PolicyRootable interface {
     GetAuthorizationPolicy()([]AuthorizationPolicyable)
     GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethodsPolicyable)
     GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
-    GetConditionalAccessPolicies()([]ConditionalAccessPolicyable)
     GetCrossTenantAccessPolicy()(CrossTenantAccessPolicyable)
     GetDefaultAppManagementPolicy()(TenantAppManagementPolicyable)
     GetDeviceRegistrationPolicy()(DeviceRegistrationPolicyable)
@@ -1297,7 +1249,6 @@ type PolicyRootable interface {
     SetAuthorizationPolicy(value []AuthorizationPolicyable)()
     SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)()
     SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
-    SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)()
     SetCrossTenantAccessPolicy(value CrossTenantAccessPolicyable)()
     SetDefaultAppManagementPolicy(value TenantAppManagementPolicyable)()
     SetDeviceRegistrationPolicy(value DeviceRegistrationPolicyable)()

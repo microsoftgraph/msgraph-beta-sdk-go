@@ -23,10 +23,38 @@ func NewLogs()(*Logs) {
 func CreateLogsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLogs(), nil
 }
+// GetConnections gets the connections property value. The connections property
+// returns a []Connectionable when successful
+func (m *Logs) GetConnections()([]Connectionable) {
+    val, err := m.GetBackingStore().Get("connections")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Connectionable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Logs) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["connections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateConnectionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Connectionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Connectionable)
+                }
+            }
+            m.SetConnections(res)
+        }
+        return nil
+    }
     res["remoteNetworks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRemoteNetworkHealthEventFromDiscriminatorValue)
         if err != nil {
@@ -91,6 +119,18 @@ func (m *Logs) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     if err != nil {
         return err
     }
+    if m.GetConnections() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetConnections()))
+        for i, v := range m.GetConnections() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("connections", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRemoteNetworks() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRemoteNetworks()))
         for i, v := range m.GetRemoteNetworks() {
@@ -117,6 +157,13 @@ func (m *Logs) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
+// SetConnections sets the connections property value. The connections property
+func (m *Logs) SetConnections(value []Connectionable)() {
+    err := m.GetBackingStore().Set("connections", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRemoteNetworks sets the remoteNetworks property value. A collection of remote network health events.
 func (m *Logs) SetRemoteNetworks(value []RemoteNetworkHealthEventable)() {
     err := m.GetBackingStore().Set("remoteNetworks", value)
@@ -134,8 +181,10 @@ func (m *Logs) SetTraffic(value []NetworkAccessTrafficable)() {
 type Logsable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetConnections()([]Connectionable)
     GetRemoteNetworks()([]RemoteNetworkHealthEventable)
     GetTraffic()([]NetworkAccessTrafficable)
+    SetConnections(value []Connectionable)()
     SetRemoteNetworks(value []RemoteNetworkHealthEventable)()
     SetTraffic(value []NetworkAccessTrafficable)()
 }

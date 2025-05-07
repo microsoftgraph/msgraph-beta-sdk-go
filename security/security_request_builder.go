@@ -90,6 +90,11 @@ func NewSecurityRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *SecurityRequestBuilder) DataDiscovery()(*DataDiscoveryRequestBuilder) {
     return NewDataDiscoveryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DataSecurityAndGovernance provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.security entity.
+// returns a *DataSecurityAndGovernanceRequestBuilder when successful
+func (m *SecurityRequestBuilder) DataSecurityAndGovernance()(*DataSecurityAndGovernanceRequestBuilder) {
+    return NewDataSecurityAndGovernanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // DomainSecurityProfiles provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.
 // returns a *DomainSecurityProfilesRequestBuilder when successful
 func (m *SecurityRequestBuilder) DomainSecurityProfiles()(*DomainSecurityProfilesRequestBuilder) {

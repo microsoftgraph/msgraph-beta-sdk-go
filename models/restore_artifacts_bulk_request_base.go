@@ -297,7 +297,7 @@ func (m *RestoreArtifactsBulkRequestBase) GetRestorePointPreference()(*RestorePo
     }
     return nil
 }
-// GetStatus gets the status property value. Determines the status of the long-running operation. The possible values area: unknown, active, completed, completedWithErrors, unknownFutureValue.
+// GetStatus gets the status property value. The status property
 // returns a *RestoreArtifactsBulkRequestStatus when successful
 func (m *RestoreArtifactsBulkRequestBase) GetStatus()(*RestoreArtifactsBulkRequestStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -475,7 +475,7 @@ func (m *RestoreArtifactsBulkRequestBase) SetRestorePointPreference(value *Resto
         panic(err)
     }
 }
-// SetStatus sets the status property value. Determines the status of the long-running operation. The possible values area: unknown, active, completed, completedWithErrors, unknownFutureValue.
+// SetStatus sets the status property value. The status property
 func (m *RestoreArtifactsBulkRequestBase) SetStatus(value *RestoreArtifactsBulkRequestStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

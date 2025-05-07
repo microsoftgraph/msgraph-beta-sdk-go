@@ -37,6 +37,8 @@ func CreateClassifcationErrorBaseFromDiscriminatorValue(parseNode i878a80d2330e8
                 switch *mappingValue {
                     case "#microsoft.graph.classificationError":
                         return NewClassificationError(), nil
+                    case "#microsoft.graph.processingError":
+                        return NewProcessingError(), nil
                 }
             }
         }

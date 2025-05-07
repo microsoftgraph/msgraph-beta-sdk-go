@@ -182,6 +182,11 @@ func (m *UserItemRequestBuilder) ConvertExternalToInternalMemberUser()(*ItemConv
 func (m *UserItemRequestBuilder) CreatedObjects()(*ItemCreatedObjectsRequestBuilder) {
     return NewItemCreatedObjectsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DataSecurityAndGovernance provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.user entity.
+// returns a *ItemDataSecurityAndGovernanceRequestBuilder when successful
+func (m *UserItemRequestBuilder) DataSecurityAndGovernance()(*ItemDataSecurityAndGovernanceRequestBuilder) {
+    return NewItemDataSecurityAndGovernanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
