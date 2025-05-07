@@ -47,38 +47,6 @@ func (m *AuthenticationStrengthUsage) GetBackingStore()(ie8677ce2c7e1b4c22e9c382
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationStrengthUsage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["mfa"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ConditionalAccessPolicyable)
-                }
-            }
-            m.SetMfa(res)
-        }
-        return nil
-    }
-    res["none"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateConditionalAccessPolicyFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ConditionalAccessPolicyable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ConditionalAccessPolicyable)
-                }
-            }
-            m.SetNone(res)
-        }
-        return nil
-    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -90,30 +58,6 @@ func (m *AuthenticationStrengthUsage) GetFieldDeserializers()(map[string]func(i8
         return nil
     }
     return res
-}
-// GetMfa gets the mfa property value. The mfa property
-// returns a []ConditionalAccessPolicyable when successful
-func (m *AuthenticationStrengthUsage) GetMfa()([]ConditionalAccessPolicyable) {
-    val, err := m.GetBackingStore().Get("mfa")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ConditionalAccessPolicyable)
-    }
-    return nil
-}
-// GetNone gets the none property value. The none property
-// returns a []ConditionalAccessPolicyable when successful
-func (m *AuthenticationStrengthUsage) GetNone()([]ConditionalAccessPolicyable) {
-    val, err := m.GetBackingStore().Get("none")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ConditionalAccessPolicyable)
-    }
-    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
@@ -129,30 +73,6 @@ func (m *AuthenticationStrengthUsage) GetOdataType()(*string) {
 }
 // Serialize serializes information the current object
 func (m *AuthenticationStrengthUsage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetMfa() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMfa()))
-        for i, v := range m.GetMfa() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("mfa", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetNone() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetNone()))
-        for i, v := range m.GetNone() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("none", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -178,20 +98,6 @@ func (m *AuthenticationStrengthUsage) SetAdditionalData(value map[string]any)() 
 func (m *AuthenticationStrengthUsage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMfa sets the mfa property value. The mfa property
-func (m *AuthenticationStrengthUsage) SetMfa(value []ConditionalAccessPolicyable)() {
-    err := m.GetBackingStore().Set("mfa", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetNone sets the none property value. The none property
-func (m *AuthenticationStrengthUsage) SetNone(value []ConditionalAccessPolicyable)() {
-    err := m.GetBackingStore().Set("none", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *AuthenticationStrengthUsage) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -204,11 +110,7 @@ type AuthenticationStrengthUsageable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetMfa()([]ConditionalAccessPolicyable)
-    GetNone()([]ConditionalAccessPolicyable)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetMfa(value []ConditionalAccessPolicyable)()
-    SetNone(value []ConditionalAccessPolicyable)()
     SetOdataType(value *string)()
 }

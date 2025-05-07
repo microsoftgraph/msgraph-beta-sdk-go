@@ -39,21 +39,6 @@ func NewConditionalAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Evaluate provides operations to call the evaluate method.
-// returns a *ConditionalAccessEvaluateRequestBuilder when successful
-func (m *ConditionalAccessRequestBuilder) Evaluate()(*ConditionalAccessEvaluateRequestBuilder) {
-    return NewConditionalAccessEvaluateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// NamedLocations provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
-// returns a *ConditionalAccessNamedLocationsRequestBuilder when successful
-func (m *ConditionalAccessRequestBuilder) NamedLocations()(*ConditionalAccessNamedLocationsRequestBuilder) {
-    return NewConditionalAccessNamedLocationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// Policies provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
-// returns a *ConditionalAccessPoliciesRequestBuilder when successful
-func (m *ConditionalAccessRequestBuilder) Policies()(*ConditionalAccessPoliciesRequestBuilder) {
-    return NewConditionalAccessPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // Templates provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
 // returns a *ConditionalAccessTemplatesRequestBuilder when successful
 func (m *ConditionalAccessRequestBuilder) Templates()(*ConditionalAccessTemplatesRequestBuilder) {

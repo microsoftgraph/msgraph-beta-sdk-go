@@ -58,6 +58,7 @@ func NewProductChangesChangeItemBaseItemRequestBuilder(rawUrl string, requestAda
     return NewProductChangesChangeItemBaseItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property productChanges for identity
+// Deprecated: What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ProductChangesChangeItemBaseItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ProductChangesChangeItemBaseItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *ProductChangesChangeItemBaseItemRequestBuilder) Delete(ctx context.Cont
     return nil
 }
 // Get represents entry point for Microsoft Entra product changes and planned new features.
+// Deprecated: What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
 // returns a ChangeItemBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ProductChangesChangeItemBaseItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ProductChangesChangeItemBaseItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChangeItemBaseable, error) {
@@ -94,6 +96,7 @@ func (m *ProductChangesChangeItemBaseItemRequestBuilder) Get(ctx context.Context
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChangeItemBaseable), nil
 }
 // Patch update the navigation property productChanges in identity
+// Deprecated: What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
 // returns a ChangeItemBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ProductChangesChangeItemBaseItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChangeItemBaseable, requestConfiguration *ProductChangesChangeItemBaseItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChangeItemBaseable, error) {
@@ -114,6 +117,7 @@ func (m *ProductChangesChangeItemBaseItemRequestBuilder) Patch(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChangeItemBaseable), nil
 }
 // ToDeleteRequestInformation delete navigation property productChanges for identity
+// Deprecated: What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
 // returns a *RequestInformation when successful
 func (m *ProductChangesChangeItemBaseItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ProductChangesChangeItemBaseItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,6 +128,7 @@ func (m *ProductChangesChangeItemBaseItemRequestBuilder) ToDeleteRequestInformat
     return requestInfo, nil
 }
 // ToGetRequestInformation represents entry point for Microsoft Entra product changes and planned new features.
+// Deprecated: What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
 // returns a *RequestInformation when successful
 func (m *ProductChangesChangeItemBaseItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ProductChangesChangeItemBaseItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,6 +143,7 @@ func (m *ProductChangesChangeItemBaseItemRequestBuilder) ToGetRequestInformation
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property productChanges in identity
+// Deprecated: What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
 // returns a *RequestInformation when successful
 func (m *ProductChangesChangeItemBaseItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChangeItemBaseable, requestConfiguration *ProductChangesChangeItemBaseItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -153,6 +159,7 @@ func (m *ProductChangesChangeItemBaseItemRequestBuilder) ToPatchRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: What&apos;s new API is being deprecated and will be removed. as of 2025-04/changeManagement on 2025-04-15 and will be removed 2025-05-15
 // returns a *ProductChangesChangeItemBaseItemRequestBuilder when successful
 func (m *ProductChangesChangeItemBaseItemRequestBuilder) WithUrl(rawUrl string)(*ProductChangesChangeItemBaseItemRequestBuilder) {
     return NewProductChangesChangeItemBaseItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

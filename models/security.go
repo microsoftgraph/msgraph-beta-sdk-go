@@ -79,6 +79,18 @@ func (m *Security) GetCloudAppSecurityProfiles()([]CloudAppSecurityProfileable) 
     }
     return nil
 }
+// GetDataSecurityAndGovernance gets the dataSecurityAndGovernance property value. The dataSecurityAndGovernance property
+// returns a TenantDataSecurityAndGovernanceable when successful
+func (m *Security) GetDataSecurityAndGovernance()(TenantDataSecurityAndGovernanceable) {
+    val, err := m.GetBackingStore().Get("dataSecurityAndGovernance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TenantDataSecurityAndGovernanceable)
+    }
+    return nil
+}
 // GetDomainSecurityProfiles gets the domainSecurityProfiles property value. The domainSecurityProfiles property
 // returns a []DomainSecurityProfileable when successful
 func (m *Security) GetDomainSecurityProfiles()([]DomainSecurityProfileable) {
@@ -134,6 +146,16 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
                 }
             }
             m.SetCloudAppSecurityProfiles(res)
+        }
+        return nil
+    }
+    res["dataSecurityAndGovernance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTenantDataSecurityAndGovernanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDataSecurityAndGovernance(val.(TenantDataSecurityAndGovernanceable))
         }
         return nil
     }
@@ -489,6 +511,12 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("dataSecurityAndGovernance", m.GetDataSecurityAndGovernance())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDomainSecurityProfiles() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDomainSecurityProfiles()))
         for i, v := range m.GetDomainSecurityProfiles() {
@@ -667,6 +695,13 @@ func (m *Security) SetCloudAppSecurityProfiles(value []CloudAppSecurityProfileab
         panic(err)
     }
 }
+// SetDataSecurityAndGovernance sets the dataSecurityAndGovernance property value. The dataSecurityAndGovernance property
+func (m *Security) SetDataSecurityAndGovernance(value TenantDataSecurityAndGovernanceable)() {
+    err := m.GetBackingStore().Set("dataSecurityAndGovernance", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDomainSecurityProfiles sets the domainSecurityProfiles property value. The domainSecurityProfiles property
 func (m *Security) SetDomainSecurityProfiles(value []DomainSecurityProfileable)() {
     err := m.GetBackingStore().Set("domainSecurityProfiles", value)
@@ -759,6 +794,7 @@ type Securityable interface {
     GetAttackSimulation()(AttackSimulationRootable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCloudAppSecurityProfiles()([]CloudAppSecurityProfileable)
+    GetDataSecurityAndGovernance()(TenantDataSecurityAndGovernanceable)
     GetDomainSecurityProfiles()([]DomainSecurityProfileable)
     GetFileSecurityProfiles()([]FileSecurityProfileable)
     GetHostSecurityProfiles()([]HostSecurityProfileable)
@@ -775,6 +811,7 @@ type Securityable interface {
     SetAttackSimulation(value AttackSimulationRootable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCloudAppSecurityProfiles(value []CloudAppSecurityProfileable)()
+    SetDataSecurityAndGovernance(value TenantDataSecurityAndGovernanceable)()
     SetDomainSecurityProfiles(value []DomainSecurityProfileable)()
     SetFileSecurityProfiles(value []FileSecurityProfileable)()
     SetHostSecurityProfiles(value []HostSecurityProfileable)()

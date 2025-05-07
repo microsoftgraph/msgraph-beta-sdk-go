@@ -44,6 +44,11 @@ type LogsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// Connections provides operations to manage the connections property of the microsoft.graph.networkaccess.logs entity.
+// returns a *LogsConnectionsRequestBuilder when successful
+func (m *LogsRequestBuilder) Connections()(*LogsConnectionsRequestBuilder) {
+    return NewLogsConnectionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLogsRequestBuilderInternal instantiates a new LogsRequestBuilder and sets the default values.
 func NewLogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LogsRequestBuilder) {
     m := &LogsRequestBuilder{

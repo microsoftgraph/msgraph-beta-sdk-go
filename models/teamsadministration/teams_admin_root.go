@@ -37,6 +37,22 @@ func (m *TeamsAdminRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["userConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsUserConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamsUserConfigurationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TeamsUserConfigurationable)
+                }
+            }
+            m.SetUserConfigurations(res)
+        }
+        return nil
+    }
     return res
 }
 // GetPolicy gets the policy property value. The policy property
@@ -48,6 +64,18 @@ func (m *TeamsAdminRoot) GetPolicy()(TeamsPolicyAssignmentable) {
     }
     if val != nil {
         return val.(TeamsPolicyAssignmentable)
+    }
+    return nil
+}
+// GetUserConfigurations gets the userConfigurations property value. Represents the configuration information of users who have accounts hosted on Microsoft Teams.
+// returns a []TeamsUserConfigurationable when successful
+func (m *TeamsAdminRoot) GetUserConfigurations()([]TeamsUserConfigurationable) {
+    val, err := m.GetBackingStore().Get("userConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsUserConfigurationable)
     }
     return nil
 }
@@ -63,6 +91,18 @@ func (m *TeamsAdminRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetUserConfigurations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserConfigurations()))
+        for i, v := range m.GetUserConfigurations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("userConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetPolicy sets the policy property value. The policy property
@@ -72,9 +112,18 @@ func (m *TeamsAdminRoot) SetPolicy(value TeamsPolicyAssignmentable)() {
         panic(err)
     }
 }
+// SetUserConfigurations sets the userConfigurations property value. Represents the configuration information of users who have accounts hosted on Microsoft Teams.
+func (m *TeamsAdminRoot) SetUserConfigurations(value []TeamsUserConfigurationable)() {
+    err := m.GetBackingStore().Set("userConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type TeamsAdminRootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetPolicy()(TeamsPolicyAssignmentable)
+    GetUserConfigurations()([]TeamsUserConfigurationable)
     SetPolicy(value TeamsPolicyAssignmentable)()
+    SetUserConfigurations(value []TeamsUserConfigurationable)()
 }

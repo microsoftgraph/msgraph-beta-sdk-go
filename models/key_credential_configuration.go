@@ -56,6 +56,18 @@ func (m *KeyCredentialConfiguration) GetCertificateBasedApplicationConfiguration
     }
     return nil
 }
+// GetExcludeActors gets the excludeActors property value. The excludeActors property
+// returns a AppManagementPolicyActorExemptionsable when successful
+func (m *KeyCredentialConfiguration) GetExcludeActors()(AppManagementPolicyActorExemptionsable) {
+    val, err := m.GetBackingStore().Get("excludeActors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AppManagementPolicyActorExemptionsable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -73,6 +85,16 @@ func (m *KeyCredentialConfiguration) GetFieldDeserializers()(map[string]func(i87
                 }
             }
             m.SetCertificateBasedApplicationConfigurationIds(res)
+        }
+        return nil
+    }
+    res["excludeActors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAppManagementPolicyActorExemptionsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExcludeActors(val.(AppManagementPolicyActorExemptionsable))
         }
         return nil
     }
@@ -197,6 +219,12 @@ func (m *KeyCredentialConfiguration) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     {
+        err := writer.WriteObjectValue("excludeActors", m.GetExcludeActors())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteISODurationValue("maxLifetime", m.GetMaxLifetime())
         if err != nil {
             return err
@@ -254,6 +282,13 @@ func (m *KeyCredentialConfiguration) SetCertificateBasedApplicationConfiguration
         panic(err)
     }
 }
+// SetExcludeActors sets the excludeActors property value. The excludeActors property
+func (m *KeyCredentialConfiguration) SetExcludeActors(value AppManagementPolicyActorExemptionsable)() {
+    err := m.GetBackingStore().Set("excludeActors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetMaxLifetime sets the maxLifetime property value. String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.
 func (m *KeyCredentialConfiguration) SetMaxLifetime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)() {
     err := m.GetBackingStore().Set("maxLifetime", value)
@@ -295,6 +330,7 @@ type KeyCredentialConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCertificateBasedApplicationConfigurationIds()([]string)
+    GetExcludeActors()(AppManagementPolicyActorExemptionsable)
     GetMaxLifetime()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetOdataType()(*string)
     GetRestrictForAppsCreatedAfterDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -302,6 +338,7 @@ type KeyCredentialConfigurationable interface {
     GetState()(*AppManagementRestrictionState)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCertificateBasedApplicationConfigurationIds(value []string)()
+    SetExcludeActors(value AppManagementPolicyActorExemptionsable)()
     SetMaxLifetime(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetOdataType(value *string)()
     SetRestrictForAppsCreatedAfterDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

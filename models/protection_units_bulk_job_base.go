@@ -193,7 +193,7 @@ func (m *ProtectionUnitsBulkJobBase) GetLastModifiedDateTime()(*i336074805fc8539
     }
     return nil
 }
-// GetStatus gets the status property value. The status of the job. The possible values are: unknown, active, completed, completedWithErrors, and unknownFutureValue.
+// GetStatus gets the status property value. The status property
 // returns a *ProtectionUnitsBulkJobStatus when successful
 func (m *ProtectionUnitsBulkJobBase) GetStatus()(*ProtectionUnitsBulkJobStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -298,7 +298,7 @@ func (m *ProtectionUnitsBulkJobBase) SetLastModifiedDateTime(value *i336074805fc
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status of the job. The possible values are: unknown, active, completed, completedWithErrors, and unknownFutureValue.
+// SetStatus sets the status property value. The status property
 func (m *ProtectionUnitsBulkJobBase) SetStatus(value *ProtectionUnitsBulkJobStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

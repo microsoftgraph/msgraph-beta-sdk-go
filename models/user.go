@@ -445,6 +445,18 @@ func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
     }
     return nil
 }
+// GetDataSecurityAndGovernance gets the dataSecurityAndGovernance property value. The dataSecurityAndGovernance property
+// returns a UserDataSecurityAndGovernanceable when successful
+func (m *User) GetDataSecurityAndGovernance()(UserDataSecurityAndGovernanceable) {
+    val, err := m.GetBackingStore().Get("dataSecurityAndGovernance")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UserDataSecurityAndGovernanceable)
+    }
+    return nil
+}
 // GetDepartment gets the department property value. The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
 // returns a *string when successful
 func (m *User) GetDepartment()(*string) {
@@ -1150,6 +1162,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         if val != nil {
             m.SetCustomSecurityAttributes(val.(CustomSecurityAttributeValueable))
+        }
+        return nil
+    }
+    res["dataSecurityAndGovernance"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUserDataSecurityAndGovernanceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDataSecurityAndGovernance(val.(UserDataSecurityAndGovernanceable))
         }
         return nil
     }
@@ -4178,6 +4200,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("dataSecurityAndGovernance", m.GetDataSecurityAndGovernance())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("department", m.GetDepartment())
         if err != nil {
             return err
@@ -5396,6 +5424,13 @@ func (m *User) SetCustomSecurityAttributes(value CustomSecurityAttributeValueabl
         panic(err)
     }
 }
+// SetDataSecurityAndGovernance sets the dataSecurityAndGovernance property value. The dataSecurityAndGovernance property
+func (m *User) SetDataSecurityAndGovernance(value UserDataSecurityAndGovernanceable)() {
+    err := m.GetBackingStore().Set("dataSecurityAndGovernance", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDepartment sets the department property value. The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).
 func (m *User) SetDepartment(value *string)() {
     err := m.GetBackingStore().Set("department", value)
@@ -6281,6 +6316,7 @@ type Userable interface {
     GetCreatedObjects()([]DirectoryObjectable)
     GetCreationType()(*string)
     GetCustomSecurityAttributes()(CustomSecurityAttributeValueable)
+    GetDataSecurityAndGovernance()(UserDataSecurityAndGovernanceable)
     GetDepartment()(*string)
     GetDeviceEnrollmentConfigurations()([]DeviceEnrollmentConfigurationable)
     GetDeviceEnrollmentLimit()(*int32)
@@ -6437,6 +6473,7 @@ type Userable interface {
     SetCreatedObjects(value []DirectoryObjectable)()
     SetCreationType(value *string)()
     SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)()
+    SetDataSecurityAndGovernance(value UserDataSecurityAndGovernanceable)()
     SetDepartment(value *string)()
     SetDeviceEnrollmentConfigurations(value []DeviceEnrollmentConfigurationable)()
     SetDeviceEnrollmentLimit(value *int32)()

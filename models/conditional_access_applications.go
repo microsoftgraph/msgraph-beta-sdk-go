@@ -97,6 +97,16 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["globalSecureAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessGlobalSecureAccessFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGlobalSecureAccess(val.(ConditionalAccessGlobalSecureAccessable))
+        }
+        return nil
+    }
     res["includeApplications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -145,6 +155,16 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
+    res["networkAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConditionalAccessNetworkAccessFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNetworkAccess(val.(ConditionalAccessNetworkAccessable))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -156,6 +176,18 @@ func (m *ConditionalAccessApplications) GetFieldDeserializers()(map[string]func(
         return nil
     }
     return res
+}
+// GetGlobalSecureAccess gets the globalSecureAccess property value. Represents traffic profile for Global Secure Access. This property is deprecated and will stop returning data on June 1, 2025. Use new Global Secure Access applications instead.
+// returns a ConditionalAccessGlobalSecureAccessable when successful
+func (m *ConditionalAccessApplications) GetGlobalSecureAccess()(ConditionalAccessGlobalSecureAccessable) {
+    val, err := m.GetBackingStore().Get("globalSecureAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConditionalAccessGlobalSecureAccessable)
+    }
+    return nil
 }
 // GetIncludeApplications gets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For more information, see Conditional Access Target resources: Microsoft Admin Portals
 // returns a []string when successful
@@ -193,6 +225,18 @@ func (m *ConditionalAccessApplications) GetIncludeUserActions()([]string) {
     }
     return nil
 }
+// GetNetworkAccess gets the networkAccess property value. Represents traffic profile for Global Secure Access. This property is deprecated and will stop returning data on June 1, 2025. Use new Global Secure Access applications instead.
+// returns a ConditionalAccessNetworkAccessable when successful
+func (m *ConditionalAccessApplications) GetNetworkAccess()(ConditionalAccessNetworkAccessable) {
+    val, err := m.GetBackingStore().Get("networkAccess")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConditionalAccessNetworkAccessable)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *ConditionalAccessApplications) GetOdataType()(*string) {
@@ -219,6 +263,12 @@ func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("globalSecureAccess", m.GetGlobalSecureAccess())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetIncludeApplications() != nil {
         err := writer.WriteCollectionOfStringValues("includeApplications", m.GetIncludeApplications())
         if err != nil {
@@ -233,6 +283,12 @@ func (m *ConditionalAccessApplications) Serialize(writer i878a80d2330e89d2689638
     }
     if m.GetIncludeUserActions() != nil {
         err := writer.WriteCollectionOfStringValues("includeUserActions", m.GetIncludeUserActions())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("networkAccess", m.GetNetworkAccess())
         if err != nil {
             return err
         }
@@ -276,6 +332,13 @@ func (m *ConditionalAccessApplications) SetExcludeApplications(value []string)()
         panic(err)
     }
 }
+// SetGlobalSecureAccess sets the globalSecureAccess property value. Represents traffic profile for Global Secure Access. This property is deprecated and will stop returning data on June 1, 2025. Use new Global Secure Access applications instead.
+func (m *ConditionalAccessApplications) SetGlobalSecureAccess(value ConditionalAccessGlobalSecureAccessable)() {
+    err := m.GetBackingStore().Set("globalSecureAccess", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIncludeApplications sets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Apps included in Conditional Access Office 365 app suite  MicrosoftAdminPortals - For more information, see Conditional Access Target resources: Microsoft Admin Portals
 func (m *ConditionalAccessApplications) SetIncludeApplications(value []string)() {
     err := m.GetBackingStore().Set("includeApplications", value)
@@ -297,6 +360,13 @@ func (m *ConditionalAccessApplications) SetIncludeUserActions(value []string)() 
         panic(err)
     }
 }
+// SetNetworkAccess sets the networkAccess property value. Represents traffic profile for Global Secure Access. This property is deprecated and will stop returning data on June 1, 2025. Use new Global Secure Access applications instead.
+func (m *ConditionalAccessApplications) SetNetworkAccess(value ConditionalAccessNetworkAccessable)() {
+    err := m.GetBackingStore().Set("networkAccess", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *ConditionalAccessApplications) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -311,15 +381,19 @@ type ConditionalAccessApplicationsable interface {
     GetApplicationFilter()(ConditionalAccessFilterable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetExcludeApplications()([]string)
+    GetGlobalSecureAccess()(ConditionalAccessGlobalSecureAccessable)
     GetIncludeApplications()([]string)
     GetIncludeAuthenticationContextClassReferences()([]string)
     GetIncludeUserActions()([]string)
+    GetNetworkAccess()(ConditionalAccessNetworkAccessable)
     GetOdataType()(*string)
     SetApplicationFilter(value ConditionalAccessFilterable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetExcludeApplications(value []string)()
+    SetGlobalSecureAccess(value ConditionalAccessGlobalSecureAccessable)()
     SetIncludeApplications(value []string)()
     SetIncludeAuthenticationContextClassReferences(value []string)()
     SetIncludeUserActions(value []string)()
+    SetNetworkAccess(value ConditionalAccessNetworkAccessable)()
     SetOdataType(value *string)()
 }
