@@ -21,7 +21,7 @@ type LogsConnectionsConnectionItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// LogsConnectionsConnectionItemRequestBuilderGetQueryParameters get connections from networkAccess
+// LogsConnectionsConnectionItemRequestBuilderGetQueryParameters read the properties and relationships of a connection object.
 type LogsConnectionsConnectionItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *LogsConnectionsConnectionItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get get connections from networkAccess
+// Get read the properties and relationships of a connection object.
 // returns a Connectionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-connection-get?view=graph-rest-beta
 func (m *LogsConnectionsConnectionItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LogsConnectionsConnectionItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Connectionable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -123,7 +126,7 @@ func (m *LogsConnectionsConnectionItemRequestBuilder) ToDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get connections from networkAccess
+// ToGetRequestInformation read the properties and relationships of a connection object.
 // returns a *RequestInformation when successful
 func (m *LogsConnectionsConnectionItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LogsConnectionsConnectionItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

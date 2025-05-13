@@ -58,6 +58,7 @@ func NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder(rawUrl str
     return NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property appScopes for roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) Delete(c
     return nil
 }
 // Get read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a AppScopeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable, error) {
@@ -94,6 +96,7 @@ func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) Get(ctx 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable), nil
 }
 // Patch update the navigation property appScopes in roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a AppScopeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable, requestConfiguration *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable, error) {
@@ -114,6 +117,7 @@ func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) Patch(ct
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable), nil
 }
 // ToDeleteRequestInformation delete navigation property appScopes for roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,6 +128,7 @@ func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) ToDelete
     return requestInfo, nil
 }
 // ToGetRequestInformation read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,6 +143,7 @@ func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) ToGetReq
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property appScopes in roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppScopeable, requestConfiguration *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -153,6 +159,7 @@ func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) ToPatchR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder when successful
 func (m *CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) WithUrl(rawUrl string)(*CloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder) {
     return NewCloudPCRoleAssignmentsItemAppScopesAppScopeItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

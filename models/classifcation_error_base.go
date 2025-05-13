@@ -63,7 +63,7 @@ func (m *ClassifcationErrorBase) GetAdditionalData()(map[string]any) {
 func (m *ClassifcationErrorBase) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCode gets the code property value. The code property
+// GetCode gets the code property value. A service-defined error code string.
 // returns a *string when successful
 func (m *ClassifcationErrorBase) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
@@ -131,7 +131,7 @@ func (m *ClassifcationErrorBase) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetInnerError gets the innerError property value. The innerError property
+// GetInnerError gets the innerError property value. Contains more specific, potentially internal error details.
 // returns a ClassificationInnerErrorable when successful
 func (m *ClassifcationErrorBase) GetInnerError()(ClassificationInnerErrorable) {
     val, err := m.GetBackingStore().Get("innerError")
@@ -143,7 +143,7 @@ func (m *ClassifcationErrorBase) GetInnerError()(ClassificationInnerErrorable) {
     }
     return nil
 }
-// GetMessage gets the message property value. The message property
+// GetMessage gets the message property value. A human-readable representation of the error.
 // returns a *string when successful
 func (m *ClassifcationErrorBase) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
@@ -167,7 +167,7 @@ func (m *ClassifcationErrorBase) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTarget gets the target property value. The target property
+// GetTarget gets the target property value. The target of the error (for example, the specific property or item causing the issue).
 // returns a *string when successful
 func (m *ClassifcationErrorBase) GetTarget()(*string) {
     val, err := m.GetBackingStore().Get("target")
@@ -230,21 +230,21 @@ func (m *ClassifcationErrorBase) SetAdditionalData(value map[string]any)() {
 func (m *ClassifcationErrorBase) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCode sets the code property value. The code property
+// SetCode sets the code property value. A service-defined error code string.
 func (m *ClassifcationErrorBase) SetCode(value *string)() {
     err := m.GetBackingStore().Set("code", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInnerError sets the innerError property value. The innerError property
+// SetInnerError sets the innerError property value. Contains more specific, potentially internal error details.
 func (m *ClassifcationErrorBase) SetInnerError(value ClassificationInnerErrorable)() {
     err := m.GetBackingStore().Set("innerError", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMessage sets the message property value. The message property
+// SetMessage sets the message property value. A human-readable representation of the error.
 func (m *ClassifcationErrorBase) SetMessage(value *string)() {
     err := m.GetBackingStore().Set("message", value)
     if err != nil {
@@ -258,7 +258,7 @@ func (m *ClassifcationErrorBase) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTarget sets the target property value. The target property
+// SetTarget sets the target property value. The target of the error (for example, the specific property or item causing the issue).
 func (m *ClassifcationErrorBase) SetTarget(value *string)() {
     err := m.GetBackingStore().Set("target", value)
     if err != nil {

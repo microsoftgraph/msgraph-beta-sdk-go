@@ -445,7 +445,7 @@ func (m *User) GetCustomSecurityAttributes()(CustomSecurityAttributeValueable) {
     }
     return nil
 }
-// GetDataSecurityAndGovernance gets the dataSecurityAndGovernance property value. The dataSecurityAndGovernance property
+// GetDataSecurityAndGovernance gets the dataSecurityAndGovernance property value. The data security and governance settings for the user. Read-only. Nullable.
 // returns a UserDataSecurityAndGovernanceable when successful
 func (m *User) GetDataSecurityAndGovernance()(UserDataSecurityAndGovernanceable) {
     val, err := m.GetBackingStore().Get("dataSecurityAndGovernance")
@@ -5424,7 +5424,7 @@ func (m *User) SetCustomSecurityAttributes(value CustomSecurityAttributeValueabl
         panic(err)
     }
 }
-// SetDataSecurityAndGovernance sets the dataSecurityAndGovernance property value. The dataSecurityAndGovernance property
+// SetDataSecurityAndGovernance sets the dataSecurityAndGovernance property value. The data security and governance settings for the user. Read-only. Nullable.
 func (m *User) SetDataSecurityAndGovernance(value UserDataSecurityAndGovernanceable)() {
     err := m.GetBackingStore().Set("dataSecurityAndGovernance", value)
     if err != nil {

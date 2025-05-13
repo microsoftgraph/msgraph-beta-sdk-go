@@ -103,7 +103,7 @@ func (m *PolicyLocation) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The actual value representing the location (for example, 'contoso.com', 'https://partner.contoso.com/upload', '83ef198a-0396-4893-9d4f-d36efbffcaaa').
 // returns a *string when successful
 func (m *PolicyLocation) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -155,7 +155,7 @@ func (m *PolicyLocation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The actual value representing the location (for example, 'contoso.com', 'https://partner.contoso.com/upload', '83ef198a-0396-4893-9d4f-d36efbffcaaa').
 func (m *PolicyLocation) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

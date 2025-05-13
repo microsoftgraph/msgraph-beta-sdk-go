@@ -58,6 +58,7 @@ func NewDirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilde
     return NewDirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property resourceNamespaces for roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
     return nil
 }
 // Get read the properties and relationships of an unifiedRbacResourceNamespace object.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a UnifiedRbacResourceNamespaceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,6 +104,7 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
     return NewDirectoryResourceNamespacesItemImportResourceActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property resourceNamespaces in roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a UnifiedRbacResourceNamespaceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, requestConfiguration *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
@@ -127,6 +130,7 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
     return NewDirectoryResourceNamespacesItemResourceActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property resourceNamespaces for roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of an unifiedRbacResourceNamespace object.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -151,6 +156,7 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property resourceNamespaces in roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, requestConfiguration *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -166,6 +172,7 @@ func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuild
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder when successful
 func (m *DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) WithUrl(rawUrl string)(*DirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder) {
     return NewDirectoryResourceNamespacesUnifiedRbacResourceNamespaceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

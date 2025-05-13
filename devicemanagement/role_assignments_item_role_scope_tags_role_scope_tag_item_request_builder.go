@@ -14,7 +14,7 @@ import (
 type RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderGetQueryParameters the set of Role Scope Tags defined on the Role Assignment.
+// RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderGetQueryParameters indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
 type RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewRoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the set of Role Scope Tags defined on the Role Assignment.
+// Get indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
 // returns a RoleScopeTagable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagable, error) {
@@ -63,7 +63,7 @@ func (m *RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) Get(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RoleScopeTagable), nil
 }
-// ToGetRequestInformation the set of Role Scope Tags defined on the Role Assignment.
+// ToGetRequestInformation indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
 // returns a *RequestInformation when successful
 func (m *RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RoleAssignmentsItemRoleScopeTagsRoleScopeTagItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

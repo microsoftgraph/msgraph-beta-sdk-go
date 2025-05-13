@@ -34,9 +34,12 @@ func NewItemDataSecurityAndGovernanceProcessContentRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewItemDataSecurityAndGovernanceProcessContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action processContent
+// Post process content against data protection policies in the context of the current user. 
 // returns a ProcessContentResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-processcontent?view=graph-rest-beta
 func (m *ItemDataSecurityAndGovernanceProcessContentRequestBuilder) Post(ctx context.Context, body ItemDataSecurityAndGovernanceProcessContentPostRequestBodyable, requestConfiguration *ItemDataSecurityAndGovernanceProcessContentRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProcessContentResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -54,7 +57,7 @@ func (m *ItemDataSecurityAndGovernanceProcessContentRequestBuilder) Post(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProcessContentResponseable), nil
 }
-// ToPostRequestInformation invoke action processContent
+// ToPostRequestInformation process content against data protection policies in the context of the current user. 
 // returns a *RequestInformation when successful
 func (m *ItemDataSecurityAndGovernanceProcessContentRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemDataSecurityAndGovernanceProcessContentPostRequestBodyable, requestConfiguration *ItemDataSecurityAndGovernanceProcessContentRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

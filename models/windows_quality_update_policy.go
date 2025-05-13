@@ -24,6 +24,18 @@ func NewWindowsQualityUpdatePolicy()(*WindowsQualityUpdatePolicy) {
 func CreateWindowsQualityUpdatePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewWindowsQualityUpdatePolicy(), nil
 }
+// GetApprovalSettings gets the approvalSettings property value. The list of approval settings for this policy. The maximun number of approval settings supported for one policy is 6. The expected number of approval settings for one policy from UX is 4.
+// returns a []WindowsQualityUpdateApprovalSettingable when successful
+func (m *WindowsQualityUpdatePolicy) GetApprovalSettings()([]WindowsQualityUpdateApprovalSettingable) {
+    val, err := m.GetBackingStore().Get("approvalSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]WindowsQualityUpdateApprovalSettingable)
+    }
+    return nil
+}
 // GetAssignments gets the assignments property value. List of the groups this profile is assgined to.
 // returns a []WindowsQualityUpdatePolicyAssignmentable when successful
 func (m *WindowsQualityUpdatePolicy) GetAssignments()([]WindowsQualityUpdatePolicyAssignmentable) {
@@ -76,6 +88,22 @@ func (m *WindowsQualityUpdatePolicy) GetDisplayName()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsQualityUpdatePolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["approvalSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateWindowsQualityUpdateApprovalSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]WindowsQualityUpdateApprovalSettingable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(WindowsQualityUpdateApprovalSettingable)
+                }
+            }
+            m.SetApprovalSettings(res)
+        }
+        return nil
+    }
     res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateWindowsQualityUpdatePolicyAssignmentFromDiscriminatorValue)
         if err != nil {
@@ -202,6 +230,18 @@ func (m *WindowsQualityUpdatePolicy) Serialize(writer i878a80d2330e89d26896388a3
     if err != nil {
         return err
     }
+    if m.GetApprovalSettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetApprovalSettings()))
+        for i, v := range m.GetApprovalSettings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("approvalSettings", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAssignments() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
         for i, v := range m.GetAssignments() {
@@ -251,6 +291,13 @@ func (m *WindowsQualityUpdatePolicy) Serialize(writer i878a80d2330e89d26896388a3
         }
     }
     return nil
+}
+// SetApprovalSettings sets the approvalSettings property value. The list of approval settings for this policy. The maximun number of approval settings supported for one policy is 6. The expected number of approval settings for one policy from UX is 4.
+func (m *WindowsQualityUpdatePolicy) SetApprovalSettings(value []WindowsQualityUpdateApprovalSettingable)() {
+    err := m.GetBackingStore().Set("approvalSettings", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetAssignments sets the assignments property value. List of the groups this profile is assgined to.
 func (m *WindowsQualityUpdatePolicy) SetAssignments(value []WindowsQualityUpdatePolicyAssignmentable)() {
@@ -304,6 +351,7 @@ func (m *WindowsQualityUpdatePolicy) SetRoleScopeTagIds(value []string)() {
 type WindowsQualityUpdatePolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApprovalSettings()([]WindowsQualityUpdateApprovalSettingable)
     GetAssignments()([]WindowsQualityUpdatePolicyAssignmentable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
@@ -311,6 +359,7 @@ type WindowsQualityUpdatePolicyable interface {
     GetHotpatchEnabled()(*bool)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRoleScopeTagIds()([]string)
+    SetApprovalSettings(value []WindowsQualityUpdateApprovalSettingable)()
     SetAssignments(value []WindowsQualityUpdatePolicyAssignmentable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()

@@ -97,7 +97,7 @@ func (m *IntegratedApplicationMetadata) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the integrated application.
 // returns a *string when successful
 func (m *IntegratedApplicationMetadata) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -121,7 +121,7 @@ func (m *IntegratedApplicationMetadata) GetOdataType()(*string) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The version number of the integrated application.
 // returns a *string when successful
 func (m *IntegratedApplicationMetadata) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
@@ -172,7 +172,7 @@ func (m *IntegratedApplicationMetadata) SetAdditionalData(value map[string]any)(
 func (m *IntegratedApplicationMetadata) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the integrated application.
 func (m *IntegratedApplicationMetadata) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -186,7 +186,7 @@ func (m *IntegratedApplicationMetadata) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The version number of the integrated application.
 func (m *IntegratedApplicationMetadata) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

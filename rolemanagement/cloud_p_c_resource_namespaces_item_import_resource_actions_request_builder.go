@@ -35,6 +35,7 @@ func NewCloudPCResourceNamespacesItemImportResourceActionsRequestBuilder(rawUrl 
     return NewCloudPCResourceNamespacesItemImportResourceActionsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action importResourceActions
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a UnifiedRbacResourceNamespaceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *CloudPCResourceNamespacesItemImportResourceActionsRequestBuilder) Post(ctx context.Context, body CloudPCResourceNamespacesItemImportResourceActionsPostRequestBodyable, requestConfiguration *CloudPCResourceNamespacesItemImportResourceActionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable, error) {
@@ -55,6 +56,7 @@ func (m *CloudPCResourceNamespacesItemImportResourceActionsRequestBuilder) Post(
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceNamespaceable), nil
 }
 // ToPostRequestInformation invoke action importResourceActions
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *CloudPCResourceNamespacesItemImportResourceActionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body CloudPCResourceNamespacesItemImportResourceActionsPostRequestBodyable, requestConfiguration *CloudPCResourceNamespacesItemImportResourceActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -70,6 +72,7 @@ func (m *CloudPCResourceNamespacesItemImportResourceActionsRequestBuilder) ToPos
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *CloudPCResourceNamespacesItemImportResourceActionsRequestBuilder when successful
 func (m *CloudPCResourceNamespacesItemImportResourceActionsRequestBuilder) WithUrl(rawUrl string)(*CloudPCResourceNamespacesItemImportResourceActionsRequestBuilder) {
     return NewCloudPCResourceNamespacesItemImportResourceActionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

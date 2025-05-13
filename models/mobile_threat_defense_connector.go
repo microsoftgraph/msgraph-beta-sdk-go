@@ -36,10 +36,34 @@ func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSApplicationMet
     }
     return nil
 }
+// GetAllowPartnerToCollectIosCertificateMetadata gets the allowPartnerToCollectIosCertificateMetadata property value. When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, indicates that metadata about installed certificates will not be collected. Default value is FALSE.
+// returns a *bool when successful
+func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIosCertificateMetadata()(*bool) {
+    val, err := m.GetBackingStore().Get("allowPartnerToCollectIosCertificateMetadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetAllowPartnerToCollectIOSPersonalApplicationMetadata gets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for iOS devices. Default value is FALSE.
 // returns a *bool when successful
 func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIOSPersonalApplicationMetadata()(*bool) {
     val, err := m.GetBackingStore().Get("allowPartnerToCollectIOSPersonalApplicationMetadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetAllowPartnerToCollectIosPersonalCertificateMetadata gets the allowPartnerToCollectIosPersonalCertificateMetadata property value. When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on personally owned iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled personally owned iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, no metadata for installed certificates is sent for personally owned iOS/iPadOS devices. Default value is FALSE.
+// returns a *bool when successful
+func (m *MobileThreatDefenseConnector) GetAllowPartnerToCollectIosPersonalCertificateMetadata()(*bool) {
+    val, err := m.GetBackingStore().Get("allowPartnerToCollectIosPersonalCertificateMetadata")
     if err != nil {
         panic(err)
     }
@@ -98,6 +122,16 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["allowPartnerToCollectIosCertificateMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowPartnerToCollectIosCertificateMetadata(val)
+        }
+        return nil
+    }
     res["allowPartnerToCollectIOSPersonalApplicationMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -105,6 +139,16 @@ func (m *MobileThreatDefenseConnector) GetFieldDeserializers()(map[string]func(i
         }
         if val != nil {
             m.SetAllowPartnerToCollectIOSPersonalApplicationMetadata(val)
+        }
+        return nil
+    }
+    res["allowPartnerToCollectIosPersonalCertificateMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowPartnerToCollectIosPersonalCertificateMetadata(val)
         }
         return nil
     }
@@ -439,7 +483,19 @@ func (m *MobileThreatDefenseConnector) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err = writer.WriteBoolValue("allowPartnerToCollectIosCertificateMetadata", m.GetAllowPartnerToCollectIosCertificateMetadata())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("allowPartnerToCollectIOSPersonalApplicationMetadata", m.GetAllowPartnerToCollectIOSPersonalApplicationMetadata())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("allowPartnerToCollectIosPersonalCertificateMetadata", m.GetAllowPartnerToCollectIosPersonalCertificateMetadata())
         if err != nil {
             return err
         }
@@ -550,9 +606,23 @@ func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSApplicationMet
         panic(err)
     }
 }
+// SetAllowPartnerToCollectIosCertificateMetadata sets the allowPartnerToCollectIosCertificateMetadata property value. When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, indicates that metadata about installed certificates will not be collected. Default value is FALSE.
+func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIosCertificateMetadata(value *bool)() {
+    err := m.GetBackingStore().Set("allowPartnerToCollectIosCertificateMetadata", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAllowPartnerToCollectIOSPersonalApplicationMetadata sets the allowPartnerToCollectIOSPersonalApplicationMetadata property value. When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for iOS devices. Default value is FALSE.
 func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIOSPersonalApplicationMetadata(value *bool)() {
     err := m.GetBackingStore().Set("allowPartnerToCollectIOSPersonalApplicationMetadata", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAllowPartnerToCollectIosPersonalCertificateMetadata sets the allowPartnerToCollectIosPersonalCertificateMetadata property value. When TRUE, allows the Mobile Threat Defense partner to request a list of installed certificates on personally owned iOS/iPadOS devices from Intune to use for threat analysis. This list of installed certificates will be sent from enrolled personally owned iOS/iPadOS devices and will include unmanaged certificates (certificates not deployed through Intune). When FALSE, no metadata for installed certificates is sent for personally owned iOS/iPadOS devices. Default value is FALSE.
+func (m *MobileThreatDefenseConnector) SetAllowPartnerToCollectIosPersonalCertificateMetadata(value *bool)() {
+    err := m.GetBackingStore().Set("allowPartnerToCollectIosPersonalCertificateMetadata", value)
     if err != nil {
         panic(err)
     }
@@ -673,7 +743,9 @@ type MobileThreatDefenseConnectorable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowPartnerToCollectIOSApplicationMetadata()(*bool)
+    GetAllowPartnerToCollectIosCertificateMetadata()(*bool)
     GetAllowPartnerToCollectIOSPersonalApplicationMetadata()(*bool)
+    GetAllowPartnerToCollectIosPersonalCertificateMetadata()(*bool)
     GetAndroidDeviceBlockedOnMissingPartnerData()(*bool)
     GetAndroidEnabled()(*bool)
     GetAndroidMobileApplicationManagementEnabled()(*bool)
@@ -691,7 +763,9 @@ type MobileThreatDefenseConnectorable interface {
     GetWindowsEnabled()(*bool)
     GetWindowsMobileApplicationManagementEnabled()(*bool)
     SetAllowPartnerToCollectIOSApplicationMetadata(value *bool)()
+    SetAllowPartnerToCollectIosCertificateMetadata(value *bool)()
     SetAllowPartnerToCollectIOSPersonalApplicationMetadata(value *bool)()
+    SetAllowPartnerToCollectIosPersonalCertificateMetadata(value *bool)()
     SetAndroidDeviceBlockedOnMissingPartnerData(value *bool)()
     SetAndroidEnabled(value *bool)()
     SetAndroidMobileApplicationManagementEnabled(value *bool)()

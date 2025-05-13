@@ -55,6 +55,18 @@ func (m *Win32LobApp) GetAllowAvailableUninstall()(*bool) {
     }
     return nil
 }
+// GetAllowedArchitectures gets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral, arm64.
+// returns a *WindowsArchitecture when successful
+func (m *Win32LobApp) GetAllowedArchitectures()(*WindowsArchitecture) {
+    val, err := m.GetBackingStore().Get("allowedArchitectures")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WindowsArchitecture)
+    }
+    return nil
+}
 // GetApplicableArchitectures gets the applicableArchitectures property value. Contains properties for Windows architecture.
 // returns a *WindowsArchitecture when successful
 func (m *Win32LobApp) GetApplicableArchitectures()(*WindowsArchitecture) {
@@ -102,6 +114,16 @@ func (m *Win32LobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetAllowAvailableUninstall(val)
+        }
+        return nil
+    }
+    res["allowedArchitectures"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWindowsArchitecture)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAllowedArchitectures(val.(*WindowsArchitecture))
         }
         return nil
     }
@@ -481,6 +503,13 @@ func (m *Win32LobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetAllowedArchitectures() != nil {
+        cast := (*m.GetAllowedArchitectures()).String()
+        err = writer.WriteStringValue("allowedArchitectures", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetApplicableArchitectures() != nil {
         cast := (*m.GetApplicableArchitectures()).String()
         err = writer.WriteStringValue("applicableArchitectures", &cast)
@@ -617,6 +646,13 @@ func (m *Win32LobApp) SetAllowAvailableUninstall(value *bool)() {
         panic(err)
     }
 }
+// SetAllowedArchitectures sets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral, arm64.
+func (m *Win32LobApp) SetAllowedArchitectures(value *WindowsArchitecture)() {
+    err := m.GetBackingStore().Set("allowedArchitectures", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetApplicableArchitectures sets the applicableArchitectures property value. Contains properties for Windows architecture.
 func (m *Win32LobApp) SetApplicableArchitectures(value *WindowsArchitecture)() {
     err := m.GetBackingStore().Set("applicableArchitectures", value)
@@ -740,6 +776,7 @@ type Win32LobAppable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAllowAvailableUninstall()(*bool)
+    GetAllowedArchitectures()(*WindowsArchitecture)
     GetApplicableArchitectures()(*WindowsArchitecture)
     GetDetectionRules()([]Win32LobAppDetectionable)
     GetDisplayVersion()(*string)
@@ -758,6 +795,7 @@ type Win32LobAppable interface {
     GetSetupFilePath()(*string)
     GetUninstallCommandLine()(*string)
     SetAllowAvailableUninstall(value *bool)()
+    SetAllowedArchitectures(value *WindowsArchitecture)()
     SetApplicableArchitectures(value *WindowsArchitecture)()
     SetDetectionRules(value []Win32LobAppDetectionable)()
     SetDisplayVersion(value *string)()

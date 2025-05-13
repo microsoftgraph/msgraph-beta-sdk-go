@@ -50,6 +50,7 @@ type EnterpriseAppsItemRoleAssignmentsRequestBuilderPostRequestConfiguration str
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUnifiedRoleAssignmentId provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder when successful
 func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) ByUnifiedRoleAssignmentId(unifiedRoleAssignmentId string)(*EnterpriseAppsItemRoleAssignmentsUnifiedRoleAssignmentItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) Count()(*EnterpriseApp
     return NewEnterpriseAppsItemRoleAssignmentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get roleAssignments from roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a UnifiedRoleAssignmentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) Get(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleAssignmentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) Get(ctx context.Contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentCollectionResponseable), nil
 }
 // Post create new navigation property to roleAssignments for roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a UnifiedRoleAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, requestConfiguration *EnterpriseAppsItemRoleAssignmentsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, error) {
@@ -120,6 +123,7 @@ func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) Post(ctx context.Conte
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable), nil
 }
 // ToGetRequestInformation get roleAssignments from roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemRoleAssignmentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) ToGetRequestInformatio
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to roleAssignments for roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRoleAssignmentable, requestConfiguration *EnterpriseAppsItemRoleAssignmentsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) ToPostRequestInformati
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *EnterpriseAppsItemRoleAssignmentsRequestBuilder when successful
 func (m *EnterpriseAppsItemRoleAssignmentsRequestBuilder) WithUrl(rawUrl string)(*EnterpriseAppsItemRoleAssignmentsRequestBuilder) {
     return NewEnterpriseAppsItemRoleAssignmentsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

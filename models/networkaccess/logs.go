@@ -23,7 +23,7 @@ func NewLogs()(*Logs) {
 func CreateLogsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewLogs(), nil
 }
-// GetConnections gets the connections property value. The connections property
+// GetConnections gets the connections property value. An aggregated log entry that contains comprehensive information about network traffic events.
 // returns a []Connectionable when successful
 func (m *Logs) GetConnections()([]Connectionable) {
     val, err := m.GetBackingStore().Get("connections")
@@ -157,7 +157,7 @@ func (m *Logs) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     }
     return nil
 }
-// SetConnections sets the connections property value. The connections property
+// SetConnections sets the connections property value. An aggregated log entry that contains comprehensive information about network traffic events.
 func (m *Logs) SetConnections(value []Connectionable)() {
     err := m.GetBackingStore().Set("connections", value)
     if err != nil {

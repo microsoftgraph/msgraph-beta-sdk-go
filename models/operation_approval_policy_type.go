@@ -10,14 +10,16 @@ const (
     UNKNOWN_OPERATIONAPPROVALPOLICYTYPE OperationApprovalPolicyType = iota
     // Indicates that the configured policy type is an application type, such as mobile apps or built-in apps.
     APP_OPERATIONAPPROVALPOLICYTYPE
-    // Indicates that the configured policy type is a script type, such as Powershell scripts or remediation scripts.
+    // Indicates that the configured policy type is a script type, such as PowerShell scripts or remediation scripts.
     SCRIPT_OPERATIONAPPROVALPOLICYTYPE
+    // Indicates that the configured policy type type is for Intune roles, such as application administrator or a custom role.
+    ROLE_OPERATIONAPPROVALPOLICYTYPE
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYTYPE
 )
 
 func (i OperationApprovalPolicyType) String() string {
-    return []string{"unknown", "app", "script", "unknownFutureValue"}[i]
+    return []string{"unknown", "app", "script", "role", "unknownFutureValue"}[i]
 }
 func ParseOperationApprovalPolicyType(v string) (any, error) {
     result := UNKNOWN_OPERATIONAPPROVALPOLICYTYPE
@@ -28,6 +30,8 @@ func ParseOperationApprovalPolicyType(v string) (any, error) {
             result = APP_OPERATIONAPPROVALPOLICYTYPE
         case "script":
             result = SCRIPT_OPERATIONAPPROVALPOLICYTYPE
+        case "role":
+            result = ROLE_OPERATIONAPPROVALPOLICYTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_OPERATIONAPPROVALPOLICYTYPE
         default:

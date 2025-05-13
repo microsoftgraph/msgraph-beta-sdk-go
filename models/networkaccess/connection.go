@@ -24,7 +24,7 @@ func NewConnection()(*Connection) {
 func CreateConnectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConnection(), nil
 }
-// GetAgentVersion gets the agentVersion property value. The agentVersion property
+// GetAgentVersion gets the agentVersion property value. The version of the client that initiated the connection.
 // returns a *string when successful
 func (m *Connection) GetAgentVersion()(*string) {
     val, err := m.GetBackingStore().Get("agentVersion")
@@ -36,7 +36,7 @@ func (m *Connection) GetAgentVersion()(*string) {
     }
     return nil
 }
-// GetApplicationSnapshot gets the applicationSnapshot property value. The applicationSnapshot property
+// GetApplicationSnapshot gets the applicationSnapshot property value. appId (or client ID) of the destination Microsoft Entra application.
 // returns a ApplicationSnapshotable when successful
 func (m *Connection) GetApplicationSnapshot()(ApplicationSnapshotable) {
     val, err := m.GetBackingStore().Get("applicationSnapshot")
@@ -48,7 +48,7 @@ func (m *Connection) GetApplicationSnapshot()(ApplicationSnapshotable) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The time the connection was created.
 // returns a *Time when successful
 func (m *Connection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -60,7 +60,7 @@ func (m *Connection) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3
     }
     return nil
 }
-// GetDestinationFqdn gets the destinationFqdn property value. The destinationFqdn property
+// GetDestinationFqdn gets the destinationFqdn property value. The destination FQDN of the connection.
 // returns a *string when successful
 func (m *Connection) GetDestinationFqdn()(*string) {
     val, err := m.GetBackingStore().Get("destinationFqdn")
@@ -72,7 +72,7 @@ func (m *Connection) GetDestinationFqdn()(*string) {
     }
     return nil
 }
-// GetDestinationIp gets the destinationIp property value. The destinationIp property
+// GetDestinationIp gets the destinationIp property value. The destination IP of the connection.
 // returns a *string when successful
 func (m *Connection) GetDestinationIp()(*string) {
     val, err := m.GetBackingStore().Get("destinationIp")
@@ -84,7 +84,7 @@ func (m *Connection) GetDestinationIp()(*string) {
     }
     return nil
 }
-// GetDestinationPort gets the destinationPort property value. The destinationPort property
+// GetDestinationPort gets the destinationPort property value. The destination port of the connection.
 // returns a *int32 when successful
 func (m *Connection) GetDestinationPort()(*int32) {
     val, err := m.GetBackingStore().Get("destinationPort")
@@ -96,7 +96,7 @@ func (m *Connection) GetDestinationPort()(*int32) {
     }
     return nil
 }
-// GetDeviceCategory gets the deviceCategory property value. The deviceCategory property
+// GetDeviceCategory gets the deviceCategory property value. The category of the device. The possible values are: client, branch, unknownFutureValue, remoteNetwork. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: remoteNetwork.
 // returns a *DeviceCategory when successful
 func (m *Connection) GetDeviceCategory()(*DeviceCategory) {
     val, err := m.GetBackingStore().Get("deviceCategory")
@@ -108,7 +108,7 @@ func (m *Connection) GetDeviceCategory()(*DeviceCategory) {
     }
     return nil
 }
-// GetDeviceId gets the deviceId property value. The deviceId property
+// GetDeviceId gets the deviceId property value. The DeviceID.
 // returns a *string when successful
 func (m *Connection) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -120,7 +120,7 @@ func (m *Connection) GetDeviceId()(*string) {
     }
     return nil
 }
-// GetDeviceOperatingSystem gets the deviceOperatingSystem property value. The deviceOperatingSystem property
+// GetDeviceOperatingSystem gets the deviceOperatingSystem property value. The device operating system type.
 // returns a *string when successful
 func (m *Connection) GetDeviceOperatingSystem()(*string) {
     val, err := m.GetBackingStore().Get("deviceOperatingSystem")
@@ -132,7 +132,7 @@ func (m *Connection) GetDeviceOperatingSystem()(*string) {
     }
     return nil
 }
-// GetDeviceOperatingSystemVersion gets the deviceOperatingSystemVersion property value. The deviceOperatingSystemVersion property
+// GetDeviceOperatingSystemVersion gets the deviceOperatingSystemVersion property value. The device operating system version.
 // returns a *string when successful
 func (m *Connection) GetDeviceOperatingSystemVersion()(*string) {
     val, err := m.GetBackingStore().Get("deviceOperatingSystemVersion")
@@ -144,7 +144,7 @@ func (m *Connection) GetDeviceOperatingSystemVersion()(*string) {
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. The time the connection was terminated.
 // returns a *Time when successful
 func (m *Connection) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -442,7 +442,7 @@ func (m *Connection) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetInitiatingProcessName gets the initiatingProcessName property value. The initiatingProcessName property
+// GetInitiatingProcessName gets the initiatingProcessName property value. The process initiating the traffic connection.
 // returns a *string when successful
 func (m *Connection) GetInitiatingProcessName()(*string) {
     val, err := m.GetBackingStore().Get("initiatingProcessName")
@@ -454,7 +454,7 @@ func (m *Connection) GetInitiatingProcessName()(*string) {
     }
     return nil
 }
-// GetLastUpdateDateTime gets the lastUpdateDateTime property value. The lastUpdateDateTime property
+// GetLastUpdateDateTime gets the lastUpdateDateTime property value. When the connection was last updated.
 // returns a *Time when successful
 func (m *Connection) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdateDateTime")
@@ -466,7 +466,7 @@ func (m *Connection) GetLastUpdateDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetNetworkProtocol gets the networkProtocol property value. The networkProtocol property
+// GetNetworkProtocol gets the networkProtocol property value. The network protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
 // returns a *NetworkingProtocol when successful
 func (m *Connection) GetNetworkProtocol()(*NetworkingProtocol) {
     val, err := m.GetBackingStore().Get("networkProtocol")
@@ -478,7 +478,7 @@ func (m *Connection) GetNetworkProtocol()(*NetworkingProtocol) {
     }
     return nil
 }
-// GetPopProcessingRegion gets the popProcessingRegion property value. The popProcessingRegion property
+// GetPopProcessingRegion gets the popProcessingRegion property value. The Point-of-Presence processing region of the traffic.
 // returns a *string when successful
 func (m *Connection) GetPopProcessingRegion()(*string) {
     val, err := m.GetBackingStore().Get("popProcessingRegion")
@@ -490,7 +490,7 @@ func (m *Connection) GetPopProcessingRegion()(*string) {
     }
     return nil
 }
-// GetPrivateAccessDetails gets the privateAccessDetails property value. The privateAccessDetails property
+// GetPrivateAccessDetails gets the privateAccessDetails property value. Private access details.
 // returns a PrivateAccessDetailsable when successful
 func (m *Connection) GetPrivateAccessDetails()(PrivateAccessDetailsable) {
     val, err := m.GetBackingStore().Get("privateAccessDetails")
@@ -502,7 +502,7 @@ func (m *Connection) GetPrivateAccessDetails()(PrivateAccessDetailsable) {
     }
     return nil
 }
-// GetReceivedBytes gets the receivedBytes property value. The receivedBytes property
+// GetReceivedBytes gets the receivedBytes property value. Accumulative bytes received.
 // returns a *int64 when successful
 func (m *Connection) GetReceivedBytes()(*int64) {
     val, err := m.GetBackingStore().Get("receivedBytes")
@@ -514,7 +514,7 @@ func (m *Connection) GetReceivedBytes()(*int64) {
     }
     return nil
 }
-// GetSentBytes gets the sentBytes property value. The sentBytes property
+// GetSentBytes gets the sentBytes property value. Accumulative bytes sent.
 // returns a *int64 when successful
 func (m *Connection) GetSentBytes()(*int64) {
     val, err := m.GetBackingStore().Get("sentBytes")
@@ -526,7 +526,7 @@ func (m *Connection) GetSentBytes()(*int64) {
     }
     return nil
 }
-// GetSourceIp gets the sourceIp property value. The sourceIp property
+// GetSourceIp gets the sourceIp property value. The source IP of the connection.
 // returns a *string when successful
 func (m *Connection) GetSourceIp()(*string) {
     val, err := m.GetBackingStore().Get("sourceIp")
@@ -538,7 +538,7 @@ func (m *Connection) GetSourceIp()(*string) {
     }
     return nil
 }
-// GetSourcePort gets the sourcePort property value. The sourcePort property
+// GetSourcePort gets the sourcePort property value. The source port of the connection.
 // returns a *int32 when successful
 func (m *Connection) GetSourcePort()(*int32) {
     val, err := m.GetBackingStore().Get("sourcePort")
@@ -550,7 +550,7 @@ func (m *Connection) GetSourcePort()(*int32) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Status of the connection. The possible values are: open, active, closed, unknownFutureValue.
 // returns a *ConnectionStatus when successful
 func (m *Connection) GetStatus()(*ConnectionStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -562,7 +562,7 @@ func (m *Connection) GetStatus()(*ConnectionStatus) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. The ID of the tenant where the connection was initiated.
 // returns a *string when successful
 func (m *Connection) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -586,7 +586,7 @@ func (m *Connection) GetTrafficType()(*TrafficType) {
     }
     return nil
 }
-// GetTransactionBlockCount gets the transactionBlockCount property value. The transactionBlockCount property
+// GetTransactionBlockCount gets the transactionBlockCount property value. The number of blocked transactions belonging to the connection.
 // returns a *int32 when successful
 func (m *Connection) GetTransactionBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("transactionBlockCount")
@@ -598,7 +598,7 @@ func (m *Connection) GetTransactionBlockCount()(*int32) {
     }
     return nil
 }
-// GetTransactionCount gets the transactionCount property value. The transactionCount property
+// GetTransactionCount gets the transactionCount property value. The number of transactions belonging to the connection.
 // returns a *int32 when successful
 func (m *Connection) GetTransactionCount()(*int32) {
     val, err := m.GetBackingStore().Get("transactionCount")
@@ -610,7 +610,7 @@ func (m *Connection) GetTransactionCount()(*int32) {
     }
     return nil
 }
-// GetTransportProtocol gets the transportProtocol property value. The transportProtocol property
+// GetTransportProtocol gets the transportProtocol property value. The transport protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
 // returns a *NetworkingProtocol when successful
 func (m *Connection) GetTransportProtocol()(*NetworkingProtocol) {
     val, err := m.GetBackingStore().Get("transportProtocol")
@@ -622,7 +622,7 @@ func (m *Connection) GetTransportProtocol()(*NetworkingProtocol) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The user ID.
 // returns a *string when successful
 func (m *Connection) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
@@ -634,7 +634,7 @@ func (m *Connection) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// GetUserPrincipalName gets the userPrincipalName property value. The principal name of the user.
 // returns a *string when successful
 func (m *Connection) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
@@ -827,154 +827,154 @@ func (m *Connection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetAgentVersion sets the agentVersion property value. The agentVersion property
+// SetAgentVersion sets the agentVersion property value. The version of the client that initiated the connection.
 func (m *Connection) SetAgentVersion(value *string)() {
     err := m.GetBackingStore().Set("agentVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetApplicationSnapshot sets the applicationSnapshot property value. The applicationSnapshot property
+// SetApplicationSnapshot sets the applicationSnapshot property value. appId (or client ID) of the destination Microsoft Entra application.
 func (m *Connection) SetApplicationSnapshot(value ApplicationSnapshotable)() {
     err := m.GetBackingStore().Set("applicationSnapshot", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The time the connection was created.
 func (m *Connection) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationFqdn sets the destinationFqdn property value. The destinationFqdn property
+// SetDestinationFqdn sets the destinationFqdn property value. The destination FQDN of the connection.
 func (m *Connection) SetDestinationFqdn(value *string)() {
     err := m.GetBackingStore().Set("destinationFqdn", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationIp sets the destinationIp property value. The destinationIp property
+// SetDestinationIp sets the destinationIp property value. The destination IP of the connection.
 func (m *Connection) SetDestinationIp(value *string)() {
     err := m.GetBackingStore().Set("destinationIp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDestinationPort sets the destinationPort property value. The destinationPort property
+// SetDestinationPort sets the destinationPort property value. The destination port of the connection.
 func (m *Connection) SetDestinationPort(value *int32)() {
     err := m.GetBackingStore().Set("destinationPort", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceCategory sets the deviceCategory property value. The deviceCategory property
+// SetDeviceCategory sets the deviceCategory property value. The category of the device. The possible values are: client, branch, unknownFutureValue, remoteNetwork. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: remoteNetwork.
 func (m *Connection) SetDeviceCategory(value *DeviceCategory)() {
     err := m.GetBackingStore().Set("deviceCategory", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceId sets the deviceId property value. The deviceId property
+// SetDeviceId sets the deviceId property value. The DeviceID.
 func (m *Connection) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceOperatingSystem sets the deviceOperatingSystem property value. The deviceOperatingSystem property
+// SetDeviceOperatingSystem sets the deviceOperatingSystem property value. The device operating system type.
 func (m *Connection) SetDeviceOperatingSystem(value *string)() {
     err := m.GetBackingStore().Set("deviceOperatingSystem", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceOperatingSystemVersion sets the deviceOperatingSystemVersion property value. The deviceOperatingSystemVersion property
+// SetDeviceOperatingSystemVersion sets the deviceOperatingSystemVersion property value. The device operating system version.
 func (m *Connection) SetDeviceOperatingSystemVersion(value *string)() {
     err := m.GetBackingStore().Set("deviceOperatingSystemVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. The time the connection was terminated.
 func (m *Connection) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInitiatingProcessName sets the initiatingProcessName property value. The initiatingProcessName property
+// SetInitiatingProcessName sets the initiatingProcessName property value. The process initiating the traffic connection.
 func (m *Connection) SetInitiatingProcessName(value *string)() {
     err := m.GetBackingStore().Set("initiatingProcessName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastUpdateDateTime sets the lastUpdateDateTime property value. The lastUpdateDateTime property
+// SetLastUpdateDateTime sets the lastUpdateDateTime property value. When the connection was last updated.
 func (m *Connection) SetLastUpdateDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdateDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNetworkProtocol sets the networkProtocol property value. The networkProtocol property
+// SetNetworkProtocol sets the networkProtocol property value. The network protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
 func (m *Connection) SetNetworkProtocol(value *NetworkingProtocol)() {
     err := m.GetBackingStore().Set("networkProtocol", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPopProcessingRegion sets the popProcessingRegion property value. The popProcessingRegion property
+// SetPopProcessingRegion sets the popProcessingRegion property value. The Point-of-Presence processing region of the traffic.
 func (m *Connection) SetPopProcessingRegion(value *string)() {
     err := m.GetBackingStore().Set("popProcessingRegion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPrivateAccessDetails sets the privateAccessDetails property value. The privateAccessDetails property
+// SetPrivateAccessDetails sets the privateAccessDetails property value. Private access details.
 func (m *Connection) SetPrivateAccessDetails(value PrivateAccessDetailsable)() {
     err := m.GetBackingStore().Set("privateAccessDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReceivedBytes sets the receivedBytes property value. The receivedBytes property
+// SetReceivedBytes sets the receivedBytes property value. Accumulative bytes received.
 func (m *Connection) SetReceivedBytes(value *int64)() {
     err := m.GetBackingStore().Set("receivedBytes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSentBytes sets the sentBytes property value. The sentBytes property
+// SetSentBytes sets the sentBytes property value. Accumulative bytes sent.
 func (m *Connection) SetSentBytes(value *int64)() {
     err := m.GetBackingStore().Set("sentBytes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourceIp sets the sourceIp property value. The sourceIp property
+// SetSourceIp sets the sourceIp property value. The source IP of the connection.
 func (m *Connection) SetSourceIp(value *string)() {
     err := m.GetBackingStore().Set("sourceIp", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourcePort sets the sourcePort property value. The sourcePort property
+// SetSourcePort sets the sourcePort property value. The source port of the connection.
 func (m *Connection) SetSourcePort(value *int32)() {
     err := m.GetBackingStore().Set("sourcePort", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Status of the connection. The possible values are: open, active, closed, unknownFutureValue.
 func (m *Connection) SetStatus(value *ConnectionStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. The ID of the tenant where the connection was initiated.
 func (m *Connection) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
@@ -988,35 +988,35 @@ func (m *Connection) SetTrafficType(value *TrafficType)() {
         panic(err)
     }
 }
-// SetTransactionBlockCount sets the transactionBlockCount property value. The transactionBlockCount property
+// SetTransactionBlockCount sets the transactionBlockCount property value. The number of blocked transactions belonging to the connection.
 func (m *Connection) SetTransactionBlockCount(value *int32)() {
     err := m.GetBackingStore().Set("transactionBlockCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTransactionCount sets the transactionCount property value. The transactionCount property
+// SetTransactionCount sets the transactionCount property value. The number of transactions belonging to the connection.
 func (m *Connection) SetTransactionCount(value *int32)() {
     err := m.GetBackingStore().Set("transactionCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTransportProtocol sets the transportProtocol property value. The transportProtocol property
+// SetTransportProtocol sets the transportProtocol property value. The transport protocol of the connection. The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue.
 func (m *Connection) SetTransportProtocol(value *NetworkingProtocol)() {
     err := m.GetBackingStore().Set("transportProtocol", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The user ID.
 func (m *Connection) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
+// SetUserPrincipalName sets the userPrincipalName property value. The principal name of the user.
 func (m *Connection) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

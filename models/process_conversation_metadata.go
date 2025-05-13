@@ -24,7 +24,7 @@ func NewProcessConversationMetadata()(*ProcessConversationMetadata) {
 func CreateProcessConversationMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProcessConversationMetadata(), nil
 }
-// GetAccessedResources gets the accessedResources property value. The accessedResources property
+// GetAccessedResources gets the accessedResources property value. List of resources (for example, file URLs, web URLs) accessed during the generation of this message (relevant for bot interactions).
 // returns a []string when successful
 func (m *ProcessConversationMetadata) GetAccessedResources()([]string) {
     val, err := m.GetBackingStore().Get("accessedResources")
@@ -84,7 +84,7 @@ func (m *ProcessConversationMetadata) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetParentMessageId gets the parentMessageId property value. The parentMessageId property
+// GetParentMessageId gets the parentMessageId property value. Identifier of the parent message in a threaded conversation, if applicable.
 // returns a *string when successful
 func (m *ProcessConversationMetadata) GetParentMessageId()(*string) {
     val, err := m.GetBackingStore().Get("parentMessageId")
@@ -96,7 +96,7 @@ func (m *ProcessConversationMetadata) GetParentMessageId()(*string) {
     }
     return nil
 }
-// GetPlugins gets the plugins property value. The plugins property
+// GetPlugins gets the plugins property value. List of plugins used during the generation of this message (relevant for AI/bot interactions).
 // returns a []AiInteractionPluginable when successful
 func (m *ProcessConversationMetadata) GetPlugins()([]AiInteractionPluginable) {
     val, err := m.GetBackingStore().Get("plugins")
@@ -140,21 +140,21 @@ func (m *ProcessConversationMetadata) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetAccessedResources sets the accessedResources property value. The accessedResources property
+// SetAccessedResources sets the accessedResources property value. List of resources (for example, file URLs, web URLs) accessed during the generation of this message (relevant for bot interactions).
 func (m *ProcessConversationMetadata) SetAccessedResources(value []string)() {
     err := m.GetBackingStore().Set("accessedResources", value)
     if err != nil {
         panic(err)
     }
 }
-// SetParentMessageId sets the parentMessageId property value. The parentMessageId property
+// SetParentMessageId sets the parentMessageId property value. Identifier of the parent message in a threaded conversation, if applicable.
 func (m *ProcessConversationMetadata) SetParentMessageId(value *string)() {
     err := m.GetBackingStore().Set("parentMessageId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPlugins sets the plugins property value. The plugins property
+// SetPlugins sets the plugins property value. List of plugins used during the generation of this message (relevant for AI/bot interactions).
 func (m *ProcessConversationMetadata) SetPlugins(value []AiInteractionPluginable)() {
     err := m.GetBackingStore().Set("plugins", value)
     if err != nil {

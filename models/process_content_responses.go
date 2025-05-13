@@ -91,7 +91,7 @@ func (m *ProcessContentResponses) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRequestId gets the requestId property value. The requestId property
+// GetRequestId gets the requestId property value. The unique identifier that matches the requestId provided in the corresponding processContentBatchRequest.
 // returns a *string when successful
 func (m *ProcessContentResponses) GetRequestId()(*string) {
     val, err := m.GetBackingStore().Get("requestId")
@@ -161,7 +161,7 @@ func (m *ProcessContentResponses) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRequestId sets the requestId property value. The requestId property
+// SetRequestId sets the requestId property value. The unique identifier that matches the requestId provided in the corresponding processContentBatchRequest.
 func (m *ProcessContentResponses) SetRequestId(value *string)() {
     err := m.GetBackingStore().Set("requestId", value)
     if err != nil {

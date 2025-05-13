@@ -61,7 +61,7 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetMembers gets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
+// GetMembers gets the members property value. Indicates the list of role member security group Entra IDs. For example: {dec942f4-6777-4998-96b4-522e383b08e2}.
 // returns a []string when successful
 func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
     val, err := m.GetBackingStore().Get("members")
@@ -73,7 +73,7 @@ func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
     }
     return nil
 }
-// GetRoleScopeTags gets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
+// GetRoleScopeTags gets the roleScopeTags property value. Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
 // returns a []RoleScopeTagable when successful
 func (m *DeviceAndAppManagementRoleAssignment) GetRoleScopeTags()([]RoleScopeTagable) {
     val, err := m.GetBackingStore().Get("roleScopeTags")
@@ -111,14 +111,14 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetMembers sets the members property value. The list of ids of role member security groups. These are IDs from Azure Active Directory.
+// SetMembers sets the members property value. Indicates the list of role member security group Entra IDs. For example: {dec942f4-6777-4998-96b4-522e383b08e2}.
 func (m *DeviceAndAppManagementRoleAssignment) SetMembers(value []string)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRoleScopeTags sets the roleScopeTags property value. The set of Role Scope Tags defined on the Role Assignment.
+// SetRoleScopeTags sets the roleScopeTags property value. Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
 func (m *DeviceAndAppManagementRoleAssignment) SetRoleScopeTags(value []RoleScopeTagable)() {
     err := m.GetBackingStore().Set("roleScopeTags", value)
     if err != nil {

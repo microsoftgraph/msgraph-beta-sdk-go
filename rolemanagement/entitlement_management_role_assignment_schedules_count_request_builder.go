@@ -43,6 +43,7 @@ func NewEntitlementManagementRoleAssignmentSchedulesCountRequestBuilder(rawUrl s
     return NewEntitlementManagementRoleAssignmentSchedulesCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementRoleAssignmentSchedulesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentSchedulesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -63,6 +64,7 @@ func (m *EntitlementManagementRoleAssignmentSchedulesCountRequestBuilder) Get(ct
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementRoleAssignmentSchedulesCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleAssignmentSchedulesCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,6 +79,7 @@ func (m *EntitlementManagementRoleAssignmentSchedulesCountRequestBuilder) ToGetR
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *EntitlementManagementRoleAssignmentSchedulesCountRequestBuilder when successful
 func (m *EntitlementManagementRoleAssignmentSchedulesCountRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementRoleAssignmentSchedulesCountRequestBuilder) {
     return NewEntitlementManagementRoleAssignmentSchedulesCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

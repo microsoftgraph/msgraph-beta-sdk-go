@@ -50,6 +50,7 @@ type EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilderPostRe
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUnifiedRbacResourceActionId provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *EnterpriseAppsItemResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder when successful
 func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) ByUnifiedRbacResourceActionId(unifiedRbacResourceActionId string)(*EnterpriseAppsItemResourceNamespacesItemResourceActionsUnifiedRbacResourceActionItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) 
     return NewEnterpriseAppsItemResourceNamespacesItemResourceActionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get operations that an authorized principal is allowed to perform.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a UnifiedRbacResourceActionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) Get(ctx context.Context, requestConfiguration *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionCollectionResponseable, error) {
@@ -100,6 +102,7 @@ func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionCollectionResponseable), nil
 }
 // Post create new navigation property to resourceActions for roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a UnifiedRbacResourceActionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, requestConfiguration *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, error) {
@@ -120,6 +123,7 @@ func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable), nil
 }
 // ToGetRequestInformation operations that an authorized principal is allowed to perform.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -134,6 +138,7 @@ func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) 
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to resourceActions for roleManagement
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UnifiedRbacResourceActionable, requestConfiguration *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -149,6 +154,7 @@ func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder when successful
 func (m *EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) WithUrl(rawUrl string)(*EnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder) {
     return NewEnterpriseAppsItemResourceNamespacesItemResourceActionsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

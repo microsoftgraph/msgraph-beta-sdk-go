@@ -24,7 +24,7 @@ func NewUserDataSecurityAndGovernance()(*UserDataSecurityAndGovernance) {
 func CreateUserDataSecurityAndGovernanceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserDataSecurityAndGovernance(), nil
 }
-// GetActivities gets the activities property value. The activities property
+// GetActivities gets the activities property value. Container for activity logs (content processing and audit) related to this user. ContainsTarget: true.
 // returns a ActivitiesContainerable when successful
 func (m *UserDataSecurityAndGovernance) GetActivities()(ActivitiesContainerable) {
     val, err := m.GetBackingStore().Get("activities")
@@ -94,7 +94,7 @@ func (m *UserDataSecurityAndGovernance) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetActivities sets the activities property value. The activities property
+// SetActivities sets the activities property value. Container for activity logs (content processing and audit) related to this user. ContainsTarget: true.
 func (m *UserDataSecurityAndGovernance) SetActivities(value ActivitiesContainerable)() {
     err := m.GetBackingStore().Set("activities", value)
     if err != nil {

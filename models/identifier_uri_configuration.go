@@ -69,7 +69,7 @@ func (m *IdentifierUriConfiguration) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetNonDefaultUriAddition gets the nonDefaultUriAddition property value. Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId}.
+// GetNonDefaultUriAddition gets the nonDefaultUriAddition property value. Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId} or api://{tenantId}/{appId}.
 // returns a IdentifierUriRestrictionable when successful
 func (m *IdentifierUriConfiguration) GetNonDefaultUriAddition()(IdentifierUriRestrictionable) {
     val, err := m.GetBackingStore().Get("nonDefaultUriAddition")
@@ -126,7 +126,7 @@ func (m *IdentifierUriConfiguration) SetAdditionalData(value map[string]any)() {
 func (m *IdentifierUriConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetNonDefaultUriAddition sets the nonDefaultUriAddition property value. Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId}.
+// SetNonDefaultUriAddition sets the nonDefaultUriAddition property value. Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId} or api://{tenantId}/{appId}.
 func (m *IdentifierUriConfiguration) SetNonDefaultUriAddition(value IdentifierUriRestrictionable)() {
     err := m.GetBackingStore().Set("nonDefaultUriAddition", value)
     if err != nil {

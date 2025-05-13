@@ -497,7 +497,7 @@ func (m *AndroidForWorkCompliancePolicy) GetRequiredPasswordComplexity()(*Androi
     }
     return nil
 }
-// GetSecurityBlockJailbrokenDevices gets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
+// GetSecurityBlockJailbrokenDevices gets the securityBlockJailbrokenDevices property value. Indicates the device should not be rooted. When TRUE, if the device is detected as rooted it will be reported non-compliant. When FALSE, the device is not reported as non-compliant regardless of device rooted state. Default is FALSE.
 // returns a *bool when successful
 func (m *AndroidForWorkCompliancePolicy) GetSecurityBlockJailbrokenDevices()(*bool) {
     val, err := m.GetBackingStore().Get("securityBlockJailbrokenDevices")
@@ -1004,7 +1004,7 @@ func (m *AndroidForWorkCompliancePolicy) SetRequiredPasswordComplexity(value *An
         panic(err)
     }
 }
-// SetSecurityBlockJailbrokenDevices sets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
+// SetSecurityBlockJailbrokenDevices sets the securityBlockJailbrokenDevices property value. Indicates the device should not be rooted. When TRUE, if the device is detected as rooted it will be reported non-compliant. When FALSE, the device is not reported as non-compliant regardless of device rooted state. Default is FALSE.
 func (m *AndroidForWorkCompliancePolicy) SetSecurityBlockJailbrokenDevices(value *bool)() {
     err := m.GetBackingStore().Set("securityBlockJailbrokenDevices", value)
     if err != nil {

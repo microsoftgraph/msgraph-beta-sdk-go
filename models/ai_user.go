@@ -66,7 +66,7 @@ func (m *AiUser) GetInteractionHistory()(AiInteractionHistoryable) {
     }
     return nil
 }
-// GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
+// GetOnlineMeetings gets the onlineMeetings property value. Information about an online meeting, including AI insights.
 // returns a []AiOnlineMeetingable when successful
 func (m *AiUser) GetOnlineMeetings()([]AiOnlineMeetingable) {
     val, err := m.GetBackingStore().Get("onlineMeetings")
@@ -111,7 +111,7 @@ func (m *AiUser) SetInteractionHistory(value AiInteractionHistoryable)() {
         panic(err)
     }
 }
-// SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
+// SetOnlineMeetings sets the onlineMeetings property value. Information about an online meeting, including AI insights.
 func (m *AiUser) SetOnlineMeetings(value []AiOnlineMeetingable)() {
     err := m.GetBackingStore().Set("onlineMeetings", value)
     if err != nil {

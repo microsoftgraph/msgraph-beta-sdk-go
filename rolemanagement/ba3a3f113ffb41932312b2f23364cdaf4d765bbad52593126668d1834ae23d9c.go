@@ -82,6 +82,7 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUse
     return res.(EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnResponseable), nil
 }
 // GetAsFilterByCurrentUserWithOnGetResponse get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties associated with a particular principal object.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -105,6 +106,7 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUse
     return res.(EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnGetResponseable), nil
 }
 // ToGetRequestInformation get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties associated with a particular principal object.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -119,6 +121,7 @@ func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUse
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder when successful
 func (m *EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) WithUrl(rawUrl string)(*EntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder) {
     return NewEntitlementManagementRoleEligibilityScheduleInstancesFilterByCurrentUserWithOnRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

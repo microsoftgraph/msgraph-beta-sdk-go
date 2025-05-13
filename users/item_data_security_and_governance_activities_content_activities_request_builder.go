@@ -14,7 +14,7 @@ import (
 type ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilderGetQueryParameters get contentActivities from users
+// ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilderGetQueryParameters collection of activity logs related to content processing.
 type ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilder(r
 func (m *ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilder) Count()(*ItemDataSecurityAndGovernanceActivitiesContentActivitiesCountRequestBuilder) {
     return NewItemDataSecurityAndGovernanceActivitiesContentActivitiesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get contentActivities from users
+// Get collection of activity logs related to content processing.
 // returns a ContentActivityCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentActivityCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilder)
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ContentActivityable), nil
 }
-// ToGetRequestInformation get contentActivities from users
+// ToGetRequestInformation collection of activity logs related to content processing.
 // returns a *RequestInformation when successful
 func (m *ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDataSecurityAndGovernanceActivitiesContentActivitiesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

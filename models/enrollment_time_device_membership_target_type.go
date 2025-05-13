@@ -6,22 +6,18 @@ package models
 type EnrollmentTimeDeviceMembershipTargetType int
 
 const (
-    // Default value. Do not use.
-    UNKNOWN_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE EnrollmentTimeDeviceMembershipTargetType = iota
     // Indicates the device membership target specified refer to static Entra Security Groups.
-    STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
+    STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE EnrollmentTimeDeviceMembershipTargetType = iota
     // Evolvable enumeration sentinel value. Do not use.
     UNKNOWNFUTUREVALUE_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
 )
 
 func (i EnrollmentTimeDeviceMembershipTargetType) String() string {
-    return []string{"unknown", "staticSecurityGroup", "unknownFutureValue"}[i]
+    return []string{"staticSecurityGroup", "unknownFutureValue"}[i]
 }
 func ParseEnrollmentTimeDeviceMembershipTargetType(v string) (any, error) {
-    result := UNKNOWN_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
+    result := STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
     switch v {
-        case "unknown":
-            result = UNKNOWN_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
         case "staticSecurityGroup":
             result = STATICSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETTYPE
         case "unknownFutureValue":

@@ -48,6 +48,8 @@ func CreateDeviceEnrollmentConfigurationFromDiscriminatorValue(parseNode i878a80
                         return NewDeviceEnrollmentWindowsHelloForBusinessConfiguration(), nil
                     case "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration":
                         return NewWindows10EnrollmentCompletionPageConfiguration(), nil
+                    case "#microsoft.graph.windowsRestoreDeviceEnrollmentConfiguration":
+                        return NewWindowsRestoreDeviceEnrollmentConfiguration(), nil
                 }
             }
         }

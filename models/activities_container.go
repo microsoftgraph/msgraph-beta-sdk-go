@@ -22,7 +22,7 @@ func NewActivitiesContainer()(*ActivitiesContainer) {
 func CreateActivitiesContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewActivitiesContainer(), nil
 }
-// GetContentActivities gets the contentActivities property value. The contentActivities property
+// GetContentActivities gets the contentActivities property value. Collection of activity logs related to content processing.
 // returns a []ContentActivityable when successful
 func (m *ActivitiesContainer) GetContentActivities()([]ContentActivityable) {
     val, err := m.GetBackingStore().Get("contentActivities")
@@ -76,7 +76,7 @@ func (m *ActivitiesContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetContentActivities sets the contentActivities property value. The contentActivities property
+// SetContentActivities sets the contentActivities property value. Collection of activity logs related to content processing.
 func (m *ActivitiesContainer) SetContentActivities(value []ContentActivityable)() {
     err := m.GetBackingStore().Set("contentActivities", value)
     if err != nil {

@@ -107,7 +107,7 @@ func (m *MeetingNote) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSubpoints gets the subpoints property value. The subpoints property
+// GetSubpoints gets the subpoints property value. A collection of subpoints of the meeting note.
 // returns a []MeetingNoteSubpointable when successful
 func (m *MeetingNote) GetSubpoints()([]MeetingNoteSubpointable) {
     val, err := m.GetBackingStore().Get("subpoints")
@@ -119,7 +119,7 @@ func (m *MeetingNote) GetSubpoints()([]MeetingNoteSubpointable) {
     }
     return nil
 }
-// GetText gets the text property value. The text property
+// GetText gets the text property value. The text of the meeting note.
 // returns a *string when successful
 func (m *MeetingNote) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
@@ -131,7 +131,7 @@ func (m *MeetingNote) GetText()(*string) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. The title of the meeting note.
 // returns a *string when successful
 func (m *MeetingNote) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -201,21 +201,21 @@ func (m *MeetingNote) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSubpoints sets the subpoints property value. The subpoints property
+// SetSubpoints sets the subpoints property value. A collection of subpoints of the meeting note.
 func (m *MeetingNote) SetSubpoints(value []MeetingNoteSubpointable)() {
     err := m.GetBackingStore().Set("subpoints", value)
     if err != nil {
         panic(err)
     }
 }
-// SetText sets the text property value. The text property
+// SetText sets the text property value. The text of the meeting note.
 func (m *MeetingNote) SetText(value *string)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. The title of the meeting note.
 func (m *MeetingNote) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {
