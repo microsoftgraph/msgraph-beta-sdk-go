@@ -24,7 +24,7 @@ func NewProcessFileMetadata()(*ProcessFileMetadata) {
 func CreateProcessFileMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProcessFileMetadata(), nil
 }
-// GetCustomProperties gets the customProperties property value. The customProperties property
+// GetCustomProperties gets the customProperties property value. A dictionary containing custom metadata associated with the file, potentially extracted by the calling application.
 // returns a CustomMetadataDictionaryable when successful
 func (m *ProcessFileMetadata) GetCustomProperties()(CustomMetadataDictionaryable) {
     val, err := m.GetBackingStore().Get("customProperties")
@@ -62,7 +62,7 @@ func (m *ProcessFileMetadata) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOwnerId gets the ownerId property value. The ownerId property
+// GetOwnerId gets the ownerId property value. The unique identifier (for example, Object ID or UPN) of the owner of the file.
 // returns a *string when successful
 func (m *ProcessFileMetadata) GetOwnerId()(*string) {
     val, err := m.GetBackingStore().Get("ownerId")
@@ -94,14 +94,14 @@ func (m *ProcessFileMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCustomProperties sets the customProperties property value. The customProperties property
+// SetCustomProperties sets the customProperties property value. A dictionary containing custom metadata associated with the file, potentially extracted by the calling application.
 func (m *ProcessFileMetadata) SetCustomProperties(value CustomMetadataDictionaryable)() {
     err := m.GetBackingStore().Set("customProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwnerId sets the ownerId property value. The ownerId property
+// SetOwnerId sets the ownerId property value. The unique identifier (for example, Object ID or UPN) of the owner of the file.
 func (m *ProcessFileMetadata) SetOwnerId(value *string)() {
     err := m.GetBackingStore().Set("ownerId", value)
     if err != nil {

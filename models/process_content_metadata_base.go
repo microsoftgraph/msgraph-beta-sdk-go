@@ -64,7 +64,7 @@ func (m *ProcessContentMetadataBase) GetAdditionalData()(map[string]any) {
 func (m *ProcessContentMetadataBase) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContent gets the content property value. The content property
+// GetContent gets the content property value. Represents the actual content, either as text (textContent) or binary data (binaryContent). Optional if metadata alone is sufficient for policy evaluation. Do not use for contentActivities.
 // returns a ContentBaseable when successful
 func (m *ProcessContentMetadataBase) GetContent()(ContentBaseable) {
     val, err := m.GetBackingStore().Get("content")
@@ -76,7 +76,7 @@ func (m *ProcessContentMetadataBase) GetContent()(ContentBaseable) {
     }
     return nil
 }
-// GetCorrelationId gets the correlationId property value. The correlationId property
+// GetCorrelationId gets the correlationId property value. An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).
 // returns a *string when successful
 func (m *ProcessContentMetadataBase) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -88,7 +88,7 @@ func (m *ProcessContentMetadataBase) GetCorrelationId()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).
 // returns a *Time when successful
 func (m *ProcessContentMetadataBase) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -206,7 +206,7 @@ func (m *ProcessContentMetadataBase) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIdentifier gets the identifier property value. The identifier property
+// GetIdentifier gets the identifier property value. Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).
 // returns a *string when successful
 func (m *ProcessContentMetadataBase) GetIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("identifier")
@@ -218,7 +218,7 @@ func (m *ProcessContentMetadataBase) GetIdentifier()(*string) {
     }
     return nil
 }
-// GetIsTruncated gets the isTruncated property value. The isTruncated property
+// GetIsTruncated gets the isTruncated property value. Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).
 // returns a *bool when successful
 func (m *ProcessContentMetadataBase) GetIsTruncated()(*bool) {
     val, err := m.GetBackingStore().Get("isTruncated")
@@ -230,7 +230,7 @@ func (m *ProcessContentMetadataBase) GetIsTruncated()(*bool) {
     }
     return nil
 }
-// GetLength gets the length property value. The length property
+// GetLength gets the length property value. The length of the original content in bytes.
 // returns a *int64 when successful
 func (m *ProcessContentMetadataBase) GetLength()(*int64) {
     val, err := m.GetBackingStore().Get("length")
@@ -242,7 +242,7 @@ func (m *ProcessContentMetadataBase) GetLength()(*int64) {
     }
     return nil
 }
-// GetModifiedDateTime gets the modifiedDateTime property value. The modifiedDateTime property
+// GetModifiedDateTime gets the modifiedDateTime property value. Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.
 // returns a *Time when successful
 func (m *ProcessContentMetadataBase) GetModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("modifiedDateTime")
@@ -254,7 +254,7 @@ func (m *ProcessContentMetadataBase) GetModifiedDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Required. A descriptive name for the content (for example, file name, web page title, 'Chat Message').
 // returns a *string when successful
 func (m *ProcessContentMetadataBase) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -278,7 +278,7 @@ func (m *ProcessContentMetadataBase) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSequenceNumber gets the sequenceNumber property value. The sequenceNumber property
+// GetSequenceNumber gets the sequenceNumber property value. A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.
 // returns a *int64 when successful
 func (m *ProcessContentMetadataBase) GetSequenceNumber()(*int64) {
     val, err := m.GetBackingStore().Get("sequenceNumber")
@@ -371,56 +371,56 @@ func (m *ProcessContentMetadataBase) SetAdditionalData(value map[string]any)() {
 func (m *ProcessContentMetadataBase) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContent sets the content property value. The content property
+// SetContent sets the content property value. Represents the actual content, either as text (textContent) or binary data (binaryContent). Optional if metadata alone is sufficient for policy evaluation. Do not use for contentActivities.
 func (m *ProcessContentMetadataBase) SetContent(value ContentBaseable)() {
     err := m.GetBackingStore().Set("content", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCorrelationId sets the correlationId property value. The correlationId property
+// SetCorrelationId sets the correlationId property value. An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).
 func (m *ProcessContentMetadataBase) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Required. Timestamp indicating when the original content was created (for example, file creation time, message sent time).
 func (m *ProcessContentMetadataBase) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIdentifier sets the identifier property value. The identifier property
+// SetIdentifier sets the identifier property value. Required. A unique identifier for this specific content entry within the context of the calling application or enforcement plane (for example, message ID, file path/URL).
 func (m *ProcessContentMetadataBase) SetIdentifier(value *string)() {
     err := m.GetBackingStore().Set("identifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsTruncated sets the isTruncated property value. The isTruncated property
+// SetIsTruncated sets the isTruncated property value. Required. Indicates if the provided content has been truncated from its original form (for example, due to size limits).
 func (m *ProcessContentMetadataBase) SetIsTruncated(value *bool)() {
     err := m.GetBackingStore().Set("isTruncated", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLength sets the length property value. The length property
+// SetLength sets the length property value. The length of the original content in bytes.
 func (m *ProcessContentMetadataBase) SetLength(value *int64)() {
     err := m.GetBackingStore().Set("length", value)
     if err != nil {
         panic(err)
     }
 }
-// SetModifiedDateTime sets the modifiedDateTime property value. The modifiedDateTime property
+// SetModifiedDateTime sets the modifiedDateTime property value. Required. Timestamp indicating when the original content was last modified. For ephemeral content like messages, this might be the same as createdDateTime.
 func (m *ProcessContentMetadataBase) SetModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("modifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Required. A descriptive name for the content (for example, file name, web page title, 'Chat Message').
 func (m *ProcessContentMetadataBase) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -434,7 +434,7 @@ func (m *ProcessContentMetadataBase) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSequenceNumber sets the sequenceNumber property value. The sequenceNumber property
+// SetSequenceNumber sets the sequenceNumber property value. A sequence number indicating the order in which content was generated or should be processed, required when correlationId is used.
 func (m *ProcessContentMetadataBase) SetSequenceNumber(value *int64)() {
     err := m.GetBackingStore().Set("sequenceNumber", value)
     if err != nil {

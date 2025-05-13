@@ -36,6 +36,18 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetAuthenticationMode
     }
     return nil
 }
+// GetCertificateAuthorityScopes gets the certificateAuthorityScopes property value. Defines configuration to allow a group of users to use certificates from specific issuing certificate authorities to successfully authenticate.
+// returns a []X509CertificateAuthorityScopeable when successful
+func (m *X509CertificateAuthenticationMethodConfiguration) GetCertificateAuthorityScopes()([]X509CertificateAuthorityScopeable) {
+    val, err := m.GetBackingStore().Get("certificateAuthorityScopes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]X509CertificateAuthorityScopeable)
+    }
+    return nil
+}
 // GetCertificateUserBindings gets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
 // returns a []X509CertificateUserBindingable when successful
 func (m *X509CertificateAuthenticationMethodConfiguration) GetCertificateUserBindings()([]X509CertificateUserBindingable) {
@@ -59,6 +71,22 @@ func (m *X509CertificateAuthenticationMethodConfiguration) GetFieldDeserializers
         }
         if val != nil {
             m.SetAuthenticationModeConfiguration(val.(X509CertificateAuthenticationModeConfigurationable))
+        }
+        return nil
+    }
+    res["certificateAuthorityScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateX509CertificateAuthorityScopeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]X509CertificateAuthorityScopeable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(X509CertificateAuthorityScopeable)
+                }
+            }
+            m.SetCertificateAuthorityScopes(res)
         }
         return nil
     }
@@ -142,6 +170,18 @@ func (m *X509CertificateAuthenticationMethodConfiguration) Serialize(writer i878
             return err
         }
     }
+    if m.GetCertificateAuthorityScopes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCertificateAuthorityScopes()))
+        for i, v := range m.GetCertificateAuthorityScopes() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("certificateAuthorityScopes", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCertificateUserBindings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCertificateUserBindings()))
         for i, v := range m.GetCertificateUserBindings() {
@@ -181,6 +221,13 @@ func (m *X509CertificateAuthenticationMethodConfiguration) SetAuthenticationMode
         panic(err)
     }
 }
+// SetCertificateAuthorityScopes sets the certificateAuthorityScopes property value. Defines configuration to allow a group of users to use certificates from specific issuing certificate authorities to successfully authenticate.
+func (m *X509CertificateAuthenticationMethodConfiguration) SetCertificateAuthorityScopes(value []X509CertificateAuthorityScopeable)() {
+    err := m.GetBackingStore().Set("certificateAuthorityScopes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCertificateUserBindings sets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
 func (m *X509CertificateAuthenticationMethodConfiguration) SetCertificateUserBindings(value []X509CertificateUserBindingable)() {
     err := m.GetBackingStore().Set("certificateUserBindings", value)
@@ -206,10 +253,12 @@ type X509CertificateAuthenticationMethodConfigurationable interface {
     AuthenticationMethodConfigurationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationModeConfiguration()(X509CertificateAuthenticationModeConfigurationable)
+    GetCertificateAuthorityScopes()([]X509CertificateAuthorityScopeable)
     GetCertificateUserBindings()([]X509CertificateUserBindingable)
     GetIncludeTargets()([]AuthenticationMethodTargetable)
     GetIssuerHintsConfiguration()(X509CertificateIssuerHintsConfigurationable)
     SetAuthenticationModeConfiguration(value X509CertificateAuthenticationModeConfigurationable)()
+    SetCertificateAuthorityScopes(value []X509CertificateAuthorityScopeable)()
     SetCertificateUserBindings(value []X509CertificateUserBindingable)()
     SetIncludeTargets(value []AuthenticationMethodTargetable)()
     SetIssuerHintsConfiguration(value X509CertificateIssuerHintsConfigurationable)()

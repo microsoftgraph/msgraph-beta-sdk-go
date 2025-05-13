@@ -91,7 +91,7 @@ func (m *MeetingNoteSubpoint) GetOdataType()(*string) {
     }
     return nil
 }
-// GetText gets the text property value. The text property
+// GetText gets the text property value. The text of the meeting note subpoint.
 // returns a *string when successful
 func (m *MeetingNoteSubpoint) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
@@ -103,7 +103,7 @@ func (m *MeetingNoteSubpoint) GetText()(*string) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title property
+// GetTitle gets the title property value. The title of the meeting note subpoint.
 // returns a *string when successful
 func (m *MeetingNoteSubpoint) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -161,14 +161,14 @@ func (m *MeetingNoteSubpoint) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetText sets the text property value. The text property
+// SetText sets the text property value. The text of the meeting note subpoint.
 func (m *MeetingNoteSubpoint) SetText(value *string)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title property
+// SetTitle sets the title property value. The title of the meeting note subpoint.
 func (m *MeetingNoteSubpoint) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {

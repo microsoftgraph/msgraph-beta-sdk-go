@@ -91,7 +91,7 @@ func (m *ConnectionSummary) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTotalCount gets the totalCount property value. The totalCount property
+// GetTotalCount gets the totalCount property value. Total number of connections for the specified traffic type.
 // returns a *int32 when successful
 func (m *ConnectionSummary) GetTotalCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalCount")
@@ -162,7 +162,7 @@ func (m *ConnectionSummary) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTotalCount sets the totalCount property value. The totalCount property
+// SetTotalCount sets the totalCount property value. Total number of connections for the specified traffic type.
 func (m *ConnectionSummary) SetTotalCount(value *int32)() {
     err := m.GetBackingStore().Set("totalCount", value)
     if err != nil {

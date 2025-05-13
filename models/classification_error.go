@@ -40,7 +40,7 @@ func CreateClassificationErrorFromDiscriminatorValue(parseNode i878a80d2330e89d2
     }
     return NewClassificationError(), nil
 }
-// GetDetails gets the details property value. The details property
+// GetDetails gets the details property value. A collection of more specific errors that contribute to the overall error.
 // returns a []ClassifcationErrorBaseable when successful
 func (m *ClassificationError) GetDetails()([]ClassifcationErrorBaseable) {
     val, err := m.GetBackingStore().Get("details")
@@ -94,7 +94,7 @@ func (m *ClassificationError) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetDetails sets the details property value. The details property
+// SetDetails sets the details property value. A collection of more specific errors that contribute to the overall error.
 func (m *ClassificationError) SetDetails(value []ClassifcationErrorBaseable)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {

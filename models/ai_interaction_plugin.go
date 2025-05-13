@@ -89,7 +89,7 @@ func (m *AiInteractionPlugin) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetIdentifier gets the identifier property value. The identifier property
+// GetIdentifier gets the identifier property value. The unique identifier of the plugin.
 // returns a *string when successful
 func (m *AiInteractionPlugin) GetIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("identifier")
@@ -101,7 +101,7 @@ func (m *AiInteractionPlugin) GetIdentifier()(*string) {
     }
     return nil
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The display name of the plugin.
 // returns a *string when successful
 func (m *AiInteractionPlugin) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -125,7 +125,7 @@ func (m *AiInteractionPlugin) GetOdataType()(*string) {
     }
     return nil
 }
-// GetVersion gets the version property value. The version property
+// GetVersion gets the version property value. The version of the plugin used.
 // returns a *string when successful
 func (m *AiInteractionPlugin) GetVersion()(*string) {
     val, err := m.GetBackingStore().Get("version")
@@ -182,14 +182,14 @@ func (m *AiInteractionPlugin) SetAdditionalData(value map[string]any)() {
 func (m *AiInteractionPlugin) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIdentifier sets the identifier property value. The identifier property
+// SetIdentifier sets the identifier property value. The unique identifier of the plugin.
 func (m *AiInteractionPlugin) SetIdentifier(value *string)() {
     err := m.GetBackingStore().Set("identifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The display name of the plugin.
 func (m *AiInteractionPlugin) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -203,7 +203,7 @@ func (m *AiInteractionPlugin) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetVersion sets the version property value. The version property
+// SetVersion sets the version property value. The version of the plugin used.
 func (m *AiInteractionPlugin) SetVersion(value *string)() {
     err := m.GetBackingStore().Set("version", value)
     if err != nil {

@@ -23,7 +23,7 @@ func NewCallAiInsight()(*CallAiInsight) {
 func CreateCallAiInsightFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCallAiInsight(), nil
 }
-// GetActionItems gets the actionItems property value. The actionItems property
+// GetActionItems gets the actionItems property value. The collection of AI-generated action items. Read-only.
 // returns a []ActionItemable when successful
 func (m *CallAiInsight) GetActionItems()([]ActionItemable) {
     val, err := m.GetBackingStore().Get("actionItems")
@@ -35,7 +35,7 @@ func (m *CallAiInsight) GetActionItems()([]ActionItemable) {
     }
     return nil
 }
-// GetCallId gets the callId property value. The callId property
+// GetCallId gets the callId property value. The ID for the online meeting call for which the callAiInsight was generated. Read-only.
 // returns a *string when successful
 func (m *CallAiInsight) GetCallId()(*string) {
     val, err := m.GetBackingStore().Get("callId")
@@ -47,7 +47,7 @@ func (m *CallAiInsight) GetCallId()(*string) {
     }
     return nil
 }
-// GetContentCorrelationId gets the contentCorrelationId property value. The contentCorrelationId property
+// GetContentCorrelationId gets the contentCorrelationId property value. The unique ID that correlates the transcript from which the insights were generated. Read-only.
 // returns a *string when successful
 func (m *CallAiInsight) GetContentCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("contentCorrelationId")
@@ -59,7 +59,7 @@ func (m *CallAiInsight) GetContentCorrelationId()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time at which the corresponding transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *CallAiInsight) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -71,7 +71,7 @@ func (m *CallAiInsight) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
     }
     return nil
 }
-// GetEndDateTime gets the endDateTime property value. The endDateTime property
+// GetEndDateTime gets the endDateTime property value. Date and time at which the corresponding transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *CallAiInsight) GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("endDateTime")
@@ -171,7 +171,7 @@ func (m *CallAiInsight) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetMeetingNotes gets the meetingNotes property value. The meetingNotes property
+// GetMeetingNotes gets the meetingNotes property value. The collection of AI-generated meeting notes. Read-only.
 // returns a []MeetingNoteable when successful
 func (m *CallAiInsight) GetMeetingNotes()([]MeetingNoteable) {
     val, err := m.GetBackingStore().Get("meetingNotes")
@@ -183,7 +183,7 @@ func (m *CallAiInsight) GetMeetingNotes()([]MeetingNoteable) {
     }
     return nil
 }
-// GetViewpoint gets the viewpoint property value. The viewpoint property
+// GetViewpoint gets the viewpoint property value. The caller-specific properties of the callAiInsight entity. Read-only.
 // returns a CallAiInsightViewPointable when successful
 func (m *CallAiInsight) GetViewpoint()(CallAiInsightViewPointable) {
     val, err := m.GetBackingStore().Get("viewpoint")
@@ -257,49 +257,49 @@ func (m *CallAiInsight) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetActionItems sets the actionItems property value. The actionItems property
+// SetActionItems sets the actionItems property value. The collection of AI-generated action items. Read-only.
 func (m *CallAiInsight) SetActionItems(value []ActionItemable)() {
     err := m.GetBackingStore().Set("actionItems", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCallId sets the callId property value. The callId property
+// SetCallId sets the callId property value. The ID for the online meeting call for which the callAiInsight was generated. Read-only.
 func (m *CallAiInsight) SetCallId(value *string)() {
     err := m.GetBackingStore().Set("callId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContentCorrelationId sets the contentCorrelationId property value. The contentCorrelationId property
+// SetContentCorrelationId sets the contentCorrelationId property value. The unique ID that correlates the transcript from which the insights were generated. Read-only.
 func (m *CallAiInsight) SetContentCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("contentCorrelationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time at which the corresponding transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *CallAiInsight) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEndDateTime sets the endDateTime property value. The endDateTime property
+// SetEndDateTime sets the endDateTime property value. Date and time at which the corresponding transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *CallAiInsight) SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("endDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMeetingNotes sets the meetingNotes property value. The meetingNotes property
+// SetMeetingNotes sets the meetingNotes property value. The collection of AI-generated meeting notes. Read-only.
 func (m *CallAiInsight) SetMeetingNotes(value []MeetingNoteable)() {
     err := m.GetBackingStore().Set("meetingNotes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetViewpoint sets the viewpoint property value. The viewpoint property
+// SetViewpoint sets the viewpoint property value. The caller-specific properties of the callAiInsight entity. Read-only.
 func (m *CallAiInsight) SetViewpoint(value CallAiInsightViewPointable)() {
     err := m.GetBackingStore().Set("viewpoint", value)
     if err != nil {

@@ -21,7 +21,7 @@ type ItemDataSecurityAndGovernanceRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemDataSecurityAndGovernanceRequestBuilderGetQueryParameters get dataSecurityAndGovernance from users
+// ItemDataSecurityAndGovernanceRequestBuilderGetQueryParameters the data security and governance settings for the user. Read-only. Nullable.
 type ItemDataSecurityAndGovernanceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *ItemDataSecurityAndGovernanceRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get get dataSecurityAndGovernance from users
+// Get the data security and governance settings for the user. Read-only. Nullable.
 // returns a UserDataSecurityAndGovernanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemDataSecurityAndGovernanceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemDataSecurityAndGovernanceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserDataSecurityAndGovernanceable, error) {
@@ -143,7 +143,7 @@ func (m *ItemDataSecurityAndGovernanceRequestBuilder) ToDeleteRequestInformation
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get dataSecurityAndGovernance from users
+// ToGetRequestInformation the data security and governance settings for the user. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemDataSecurityAndGovernanceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemDataSecurityAndGovernanceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

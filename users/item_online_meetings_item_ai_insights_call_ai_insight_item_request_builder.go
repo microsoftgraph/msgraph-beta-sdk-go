@@ -21,7 +21,7 @@ type ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderGetQueryParameters get aiInsights from users
+// ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderGetQueryParameters the AI insights generated for an online meeting. Read-only.
 type ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) Delete
     }
     return nil
 }
-// Get get aiInsights from users
+// Get the AI insights generated for an online meeting. Read-only.
 // returns a CallAiInsightable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallAiInsightable, error) {
@@ -123,7 +123,7 @@ func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get aiInsights from users
+// ToGetRequestInformation the AI insights generated for an online meeting. Read-only.
 // returns a *RequestInformation when successful
 func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

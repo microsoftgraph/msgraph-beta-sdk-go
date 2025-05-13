@@ -113,7 +113,7 @@ func (m *ProcessContentBatchRequest) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRequestId gets the requestId property value. The requestId property
+// GetRequestId gets the requestId property value. A unique identifier provided by the client to correlate this specific request item within the batch.
 // returns a *string when successful
 func (m *ProcessContentBatchRequest) GetRequestId()(*string) {
     val, err := m.GetBackingStore().Get("requestId")
@@ -125,7 +125,7 @@ func (m *ProcessContentBatchRequest) GetRequestId()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. The unique identifier (Object ID or UPN) of the user in whose context the content should be processed.
 // returns a *string when successful
 func (m *ProcessContentBatchRequest) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
@@ -196,14 +196,14 @@ func (m *ProcessContentBatchRequest) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRequestId sets the requestId property value. The requestId property
+// SetRequestId sets the requestId property value. A unique identifier provided by the client to correlate this specific request item within the batch.
 func (m *ProcessContentBatchRequest) SetRequestId(value *string)() {
     err := m.GetBackingStore().Set("requestId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. The unique identifier (Object ID or UPN) of the user in whose context the content should be processed.
 func (m *ProcessContentBatchRequest) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

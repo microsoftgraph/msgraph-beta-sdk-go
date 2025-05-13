@@ -24,7 +24,7 @@ func NewBinaryContent()(*BinaryContent) {
 func CreateBinaryContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewBinaryContent(), nil
 }
-// GetData gets the data property value. The data property
+// GetData gets the data property value. The binary content, encoded as a Base64 string. Inherited from contentBase.
 // returns a []byte when successful
 func (m *BinaryContent) GetData()([]byte) {
     val, err := m.GetBackingStore().Get("data")
@@ -66,7 +66,7 @@ func (m *BinaryContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetData sets the data property value. The data property
+// SetData sets the data property value. The binary content, encoded as a Base64 string. Inherited from contentBase.
 func (m *BinaryContent) SetData(value []byte)() {
     err := m.GetBackingStore().Set("data", value)
     if err != nil {

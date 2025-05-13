@@ -6,10 +6,8 @@ package models
 type EnrollmentTimeDeviceMembershipTargetValidationErrorCode int
 
 const (
-    // Default. Indicates the status of device membership target is not specified. Do not use.
-    UNKNOWN_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETVALIDATIONERRORCODE EnrollmentTimeDeviceMembershipTargetValidationErrorCode = iota
     // Indicates device membership target cannot be found.
-    SECURITYGROUPNOTFOUND_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETVALIDATIONERRORCODE
+    SECURITYGROUPNOTFOUND_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETVALIDATIONERRORCODE EnrollmentTimeDeviceMembershipTargetValidationErrorCode = iota
     // Indicates device membership target is not a security group.
     NOTSECURITYGROUP_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETVALIDATIONERRORCODE
     // Indicates device membership target which is security group but not a static one.
@@ -23,13 +21,11 @@ const (
 )
 
 func (i EnrollmentTimeDeviceMembershipTargetValidationErrorCode) String() string {
-    return []string{"unknown", "securityGroupNotFound", "notSecurityGroup", "notStaticSecurityGroup", "firstPartyAppNotAnOwner", "securityGroupNotInCallerScope", "unknownFutureValue"}[i]
+    return []string{"securityGroupNotFound", "notSecurityGroup", "notStaticSecurityGroup", "firstPartyAppNotAnOwner", "securityGroupNotInCallerScope", "unknownFutureValue"}[i]
 }
 func ParseEnrollmentTimeDeviceMembershipTargetValidationErrorCode(v string) (any, error) {
-    result := UNKNOWN_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETVALIDATIONERRORCODE
+    result := SECURITYGROUPNOTFOUND_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETVALIDATIONERRORCODE
     switch v {
-        case "unknown":
-            result = UNKNOWN_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETVALIDATIONERRORCODE
         case "securityGroupNotFound":
             result = SECURITYGROUPNOTFOUND_ENROLLMENTTIMEDEVICEMEMBERSHIPTARGETVALIDATIONERRORCODE
         case "notSecurityGroup":

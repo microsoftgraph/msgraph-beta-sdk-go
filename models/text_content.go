@@ -24,7 +24,7 @@ func NewTextContent()(*TextContent) {
 func CreateTextContentFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTextContent(), nil
 }
-// GetData gets the data property value. The data property
+// GetData gets the data property value. The text content data. Inherits properties from contentBase.
 // returns a *string when successful
 func (m *TextContent) GetData()(*string) {
     val, err := m.GetBackingStore().Get("data")
@@ -66,7 +66,7 @@ func (m *TextContent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetData sets the data property value. The data property
+// SetData sets the data property value. The text content data. Inherits properties from contentBase.
 func (m *TextContent) SetData(value *string)() {
     err := m.GetBackingStore().Set("data", value)
     if err != nil {

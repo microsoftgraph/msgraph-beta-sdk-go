@@ -58,6 +58,7 @@ func NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilder(rawUrl string, r
     return NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -77,6 +78,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Delete(ctx con
     return nil
 }
 // Get get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a CustomAppScopeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -100,6 +102,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Get(ctx contex
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable), nil
 }
 // Patch update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a CustomAppScopeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -123,6 +126,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) Patch(ctx cont
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable), nil
 }
 // ToDeleteRequestInformation delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,6 +137,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToDeleteReques
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,6 +152,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToGetRequestIn
     return requestInfo, nil
 }
 // ToPatchRequestInformation update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *RequestInformation when successful
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CustomAppScopeable, requestConfiguration *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -162,6 +168,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToPatchRequest
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
 // returns a *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder when successful
 func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) WithUrl(rawUrl string)(*ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) {
     return NewExchangeCustomAppScopesCustomAppScopeItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

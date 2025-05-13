@@ -26,7 +26,7 @@ func NewClassificationInnerError()(*ClassificationInnerError) {
 func CreateClassificationInnerErrorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewClassificationInnerError(), nil
 }
-// GetActivityId gets the activityId property value. The activityId property
+// GetActivityId gets the activityId property value. The activity ID associated with the request that generated the error.
 // returns a *string when successful
 func (m *ClassificationInnerError) GetActivityId()(*string) {
     val, err := m.GetBackingStore().Get("activityId")
@@ -56,7 +56,7 @@ func (m *ClassificationInnerError) GetAdditionalData()(map[string]any) {
 func (m *ClassificationInnerError) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetClientRequestId gets the clientRequestId property value. The clientRequestId property
+// GetClientRequestId gets the clientRequestId property value. The client request ID, if provided by the caller.
 // returns a *string when successful
 func (m *ClassificationInnerError) GetClientRequestId()(*string) {
     val, err := m.GetBackingStore().Get("clientRequestId")
@@ -68,7 +68,7 @@ func (m *ClassificationInnerError) GetClientRequestId()(*string) {
     }
     return nil
 }
-// GetCode gets the code property value. The code property
+// GetCode gets the code property value. A more specific, potentially internal, error code string.
 // returns a *string when successful
 func (m *ClassificationInnerError) GetCode()(*string) {
     val, err := m.GetBackingStore().Get("code")
@@ -80,7 +80,7 @@ func (m *ClassificationInnerError) GetCode()(*string) {
     }
     return nil
 }
-// GetErrorDateTime gets the errorDateTime property value. The errorDateTime property
+// GetErrorDateTime gets the errorDateTime property value. The date and time the inner error occurred.
 // returns a *Time when successful
 func (m *ClassificationInnerError) GetErrorDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("errorDateTime")
@@ -200,7 +200,7 @@ func (m *ClassificationInnerError) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetActivityId sets the activityId property value. The activityId property
+// SetActivityId sets the activityId property value. The activity ID associated with the request that generated the error.
 func (m *ClassificationInnerError) SetActivityId(value *string)() {
     err := m.GetBackingStore().Set("activityId", value)
     if err != nil {
@@ -218,21 +218,21 @@ func (m *ClassificationInnerError) SetAdditionalData(value map[string]any)() {
 func (m *ClassificationInnerError) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetClientRequestId sets the clientRequestId property value. The clientRequestId property
+// SetClientRequestId sets the clientRequestId property value. The client request ID, if provided by the caller.
 func (m *ClassificationInnerError) SetClientRequestId(value *string)() {
     err := m.GetBackingStore().Set("clientRequestId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCode sets the code property value. The code property
+// SetCode sets the code property value. A more specific, potentially internal, error code string.
 func (m *ClassificationInnerError) SetCode(value *string)() {
     err := m.GetBackingStore().Set("code", value)
     if err != nil {
         panic(err)
     }
 }
-// SetErrorDateTime sets the errorDateTime property value. The errorDateTime property
+// SetErrorDateTime sets the errorDateTime property value. The date and time the inner error occurred.
 func (m *ClassificationInnerError) SetErrorDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("errorDateTime", value)
     if err != nil {

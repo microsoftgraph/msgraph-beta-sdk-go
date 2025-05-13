@@ -468,6 +468,11 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DeviceManagementReportsable), nil
 }
+// RetrieveAndroidWorkProfileDeviceMigrationStatuses provides operations to call the retrieveAndroidWorkProfileDeviceMigrationStatuses method.
+// returns a *ReportsRetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveAndroidWorkProfileDeviceMigrationStatuses()(*ReportsRetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder) {
+    return NewReportsRetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveCloudPkiLeafCertificateReport provides operations to call the retrieveCloudPkiLeafCertificateReport method.
 // returns a *ReportsRetrieveCloudPkiLeafCertificateReportRequestBuilder when successful
 func (m *ReportsRequestBuilder) RetrieveCloudPkiLeafCertificateReport()(*ReportsRetrieveCloudPkiLeafCertificateReportRequestBuilder) {

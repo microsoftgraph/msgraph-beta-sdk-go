@@ -113,7 +113,7 @@ func (m *ProcessContentResponse) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPolicyActions gets the policyActions property value. The policyActions property
+// GetPolicyActions gets the policyActions property value. A collection of policy actions (like DLP actions) triggered by the processed content.
 // returns a []DlpActionInfoable when successful
 func (m *ProcessContentResponse) GetPolicyActions()([]DlpActionInfoable) {
     val, err := m.GetBackingStore().Get("policyActions")
@@ -125,7 +125,7 @@ func (m *ProcessContentResponse) GetPolicyActions()([]DlpActionInfoable) {
     }
     return nil
 }
-// GetProcessingErrors gets the processingErrors property value. The processingErrors property
+// GetProcessingErrors gets the processingErrors property value. A collection of errors encountered during the content processing.
 // returns a []ProcessingErrorable when successful
 func (m *ProcessContentResponse) GetProcessingErrors()([]ProcessingErrorable) {
     val, err := m.GetBackingStore().Get("processingErrors")
@@ -214,14 +214,14 @@ func (m *ProcessContentResponse) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPolicyActions sets the policyActions property value. The policyActions property
+// SetPolicyActions sets the policyActions property value. A collection of policy actions (like DLP actions) triggered by the processed content.
 func (m *ProcessContentResponse) SetPolicyActions(value []DlpActionInfoable)() {
     err := m.GetBackingStore().Set("policyActions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProcessingErrors sets the processingErrors property value. The processingErrors property
+// SetProcessingErrors sets the processingErrors property value. A collection of errors encountered during the content processing.
 func (m *ProcessContentResponse) SetProcessingErrors(value []ProcessingErrorable)() {
     err := m.GetBackingStore().Set("processingErrors", value)
     if err != nil {

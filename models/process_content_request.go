@@ -55,7 +55,7 @@ func (m *ProcessContentRequest) GetAdditionalData()(map[string]any) {
 func (m *ProcessContentRequest) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContentEntries gets the contentEntries property value. The contentEntries property
+// GetContentEntries gets the contentEntries property value. A collection of content entries to be processed. Each entry contains the content itself and its metadata. Required.
 // returns a []ProcessContentMetadataBaseable when successful
 func (m *ProcessContentRequest) GetContentEntries()([]ProcessContentMetadataBaseable) {
     val, err := m.GetBackingStore().Get("contentEntries")
@@ -229,7 +229,7 @@ func (m *ProcessContentRequest) SetAdditionalData(value map[string]any)() {
 func (m *ProcessContentRequest) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContentEntries sets the contentEntries property value. The contentEntries property
+// SetContentEntries sets the contentEntries property value. A collection of content entries to be processed. Each entry contains the content itself and its metadata. Required.
 func (m *ProcessContentRequest) SetContentEntries(value []ProcessContentMetadataBaseable)() {
     err := m.GetBackingStore().Set("contentEntries", value)
     if err != nil {

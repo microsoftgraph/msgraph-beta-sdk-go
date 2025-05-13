@@ -3387,6 +3387,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWindowsQualityUpdateProfile(), nil
                     case "#microsoft.graph.windowsQualityUpdateProfileAssignment":
                         return NewWindowsQualityUpdateProfileAssignment(), nil
+                    case "#microsoft.graph.windowsRestoreDeviceEnrollmentConfiguration":
+                        return NewWindowsRestoreDeviceEnrollmentConfiguration(), nil
                     case "#microsoft.graph.windowsSetting":
                         return NewWindowsSetting(), nil
                     case "#microsoft.graph.windowsSettingInstance":

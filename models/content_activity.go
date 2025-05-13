@@ -70,7 +70,7 @@ func (m *ContentActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetScopeIdentifier gets the scopeIdentifier property value. The scopeIdentifier property
+// GetScopeIdentifier gets the scopeIdentifier property value. The scope identified from computed protection scopes.
 // returns a *string when successful
 func (m *ContentActivity) GetScopeIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("scopeIdentifier")
@@ -82,7 +82,7 @@ func (m *ContentActivity) GetScopeIdentifier()(*string) {
     }
     return nil
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. ID of the user.
 // returns a *string when successful
 func (m *ContentActivity) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
@@ -127,14 +127,14 @@ func (m *ContentActivity) SetContentMetadata(value ProcessContentRequestable)() 
         panic(err)
     }
 }
-// SetScopeIdentifier sets the scopeIdentifier property value. The scopeIdentifier property
+// SetScopeIdentifier sets the scopeIdentifier property value. The scope identified from computed protection scopes.
 func (m *ContentActivity) SetScopeIdentifier(value *string)() {
     err := m.GetBackingStore().Set("scopeIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. ID of the user.
 func (m *ContentActivity) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {

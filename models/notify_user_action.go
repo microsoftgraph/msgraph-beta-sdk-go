@@ -23,7 +23,7 @@ func NewNotifyUserAction()(*NotifyUserAction) {
 func CreateNotifyUserActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNotifyUserAction(), nil
 }
-// GetActionLastModifiedDateTime gets the actionLastModifiedDateTime property value. The actionLastModifiedDateTime property
+// GetActionLastModifiedDateTime gets the actionLastModifiedDateTime property value. Timestamp when the notification action configuration was last modified.
 // returns a *Time when successful
 func (m *NotifyUserAction) GetActionLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("actionLastModifiedDateTime")
@@ -35,7 +35,7 @@ func (m *NotifyUserAction) GetActionLastModifiedDateTime()(*i336074805fc853987ab
     }
     return nil
 }
-// GetEmailText gets the emailText property value. The emailText property
+// GetEmailText gets the emailText property value. The body text of the email notification sent to users.
 // returns a *string when successful
 func (m *NotifyUserAction) GetEmailText()(*string) {
     val, err := m.GetBackingStore().Get("emailText")
@@ -99,7 +99,7 @@ func (m *NotifyUserAction) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetPolicyTip gets the policyTip property value. The policyTip property
+// GetPolicyTip gets the policyTip property value. The text of the policy tip displayed to the user within the application (For example, Outlook, Word).
 // returns a *string when successful
 func (m *NotifyUserAction) GetPolicyTip()(*string) {
     val, err := m.GetBackingStore().Get("policyTip")
@@ -111,7 +111,7 @@ func (m *NotifyUserAction) GetPolicyTip()(*string) {
     }
     return nil
 }
-// GetRecipients gets the recipients property value. The recipients property
+// GetRecipients gets the recipients property value. List of email addresses or user identifiers designated to receive the notification email. Can include sender, owner, manager, etc.
 // returns a []string when successful
 func (m *NotifyUserAction) GetRecipients()([]string) {
     val, err := m.GetBackingStore().Get("recipients")
@@ -155,28 +155,28 @@ func (m *NotifyUserAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetActionLastModifiedDateTime sets the actionLastModifiedDateTime property value. The actionLastModifiedDateTime property
+// SetActionLastModifiedDateTime sets the actionLastModifiedDateTime property value. Timestamp when the notification action configuration was last modified.
 func (m *NotifyUserAction) SetActionLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("actionLastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEmailText sets the emailText property value. The emailText property
+// SetEmailText sets the emailText property value. The body text of the email notification sent to users.
 func (m *NotifyUserAction) SetEmailText(value *string)() {
     err := m.GetBackingStore().Set("emailText", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicyTip sets the policyTip property value. The policyTip property
+// SetPolicyTip sets the policyTip property value. The text of the policy tip displayed to the user within the application (For example, Outlook, Word).
 func (m *NotifyUserAction) SetPolicyTip(value *string)() {
     err := m.GetBackingStore().Set("policyTip", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecipients sets the recipients property value. The recipients property
+// SetRecipients sets the recipients property value. List of email addresses or user identifiers designated to receive the notification email. Can include sender, owner, manager, etc.
 func (m *NotifyUserAction) SetRecipients(value []string)() {
     err := m.GetBackingStore().Set("recipients", value)
     if err != nil {

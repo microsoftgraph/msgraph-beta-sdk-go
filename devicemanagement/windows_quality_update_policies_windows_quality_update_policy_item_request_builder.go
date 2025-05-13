@@ -54,6 +54,11 @@ func (m *WindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilde
 func (m *WindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilder) Assignments()(*WindowsQualityUpdatePoliciesItemAssignmentsRequestBuilder) {
     return NewWindowsQualityUpdatePoliciesItemAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// BulkAction provides operations to call the bulkAction method.
+// returns a *WindowsQualityUpdatePoliciesItemBulkActionRequestBuilder when successful
+func (m *WindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilder) BulkAction()(*WindowsQualityUpdatePoliciesItemBulkActionRequestBuilder) {
+    return NewWindowsQualityUpdatePoliciesItemBulkActionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewWindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilderInternal instantiates a new WindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilder and sets the default values.
 func NewWindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*WindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilder) {
     m := &WindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilder{
@@ -122,6 +127,11 @@ func (m *WindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilde
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WindowsQualityUpdatePolicyable), nil
+}
+// RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds provides operations to call the retrieveWindowsQualityUpdateCatalogItemDetails method.
+// returns a *WindowsQualityUpdatePoliciesItemRetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder when successful
+func (m *WindowsQualityUpdatePoliciesWindowsQualityUpdatePolicyItemRequestBuilder) RetrieveWindowsQualityUpdateCatalogItemDetailsWithIds(ids *string)(*WindowsQualityUpdatePoliciesItemRetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilder) {
+    return NewWindowsQualityUpdatePoliciesItemRetrieveWindowsQualityUpdateCatalogItemDetailsWithIdsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, ids)
 }
 // ToDeleteRequestInformation delete navigation property windowsQualityUpdatePolicies for deviceManagement
 // returns a *RequestInformation when successful
