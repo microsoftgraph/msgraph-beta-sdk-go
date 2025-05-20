@@ -183,6 +183,11 @@ func (m *VirtualEndpointReportsRequestBuilder) Patch(ctx context.Context, body i
 func (m *VirtualEndpointReportsRequestBuilder) RetrieveBulkActionStatusReport()(*VirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilder) {
     return NewVirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveCloudPcRecommendationReports provides operations to call the retrieveCloudPcRecommendationReports method.
+// returns a *VirtualEndpointReportsRetrieveCloudPcRecommendationReportsRequestBuilder when successful
+func (m *VirtualEndpointReportsRequestBuilder) RetrieveCloudPcRecommendationReports()(*VirtualEndpointReportsRetrieveCloudPcRecommendationReportsRequestBuilder) {
+    return NewVirtualEndpointReportsRetrieveCloudPcRecommendationReportsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveCloudPcTenantMetricsReport provides operations to call the retrieveCloudPcTenantMetricsReport method.
 // returns a *VirtualEndpointReportsRetrieveCloudPcTenantMetricsReportRequestBuilder when successful
 func (m *VirtualEndpointReportsRequestBuilder) RetrieveCloudPcTenantMetricsReport()(*VirtualEndpointReportsRetrieveCloudPcTenantMetricsReportRequestBuilder) {

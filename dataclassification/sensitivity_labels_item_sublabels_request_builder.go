@@ -61,6 +61,16 @@ func (m *SensitivityLabelsItemSublabelsRequestBuilder) BySensitivityLabelId1(sen
     }
     return NewSensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
+// ComputeInheritanceWithLabelIdsWithLocaleWithContentFormats provides operations to call the computeInheritance method.
+// returns a *SensitivityLabelsItemSublabelsComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder when successful
+func (m *SensitivityLabelsItemSublabelsRequestBuilder) ComputeInheritanceWithLabelIdsWithLocaleWithContentFormats(contentFormats *string, labelIds *string, locale *string)(*SensitivityLabelsItemSublabelsComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder) {
+    return NewSensitivityLabelsItemSublabelsComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, contentFormats, labelIds, locale)
+}
+// ComputeRightsAndInheritance provides operations to call the computeRightsAndInheritance method.
+// returns a *SensitivityLabelsItemSublabelsComputeRightsAndInheritanceRequestBuilder when successful
+func (m *SensitivityLabelsItemSublabelsRequestBuilder) ComputeRightsAndInheritance()(*SensitivityLabelsItemSublabelsComputeRightsAndInheritanceRequestBuilder) {
+    return NewSensitivityLabelsItemSublabelsComputeRightsAndInheritanceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewSensitivityLabelsItemSublabelsRequestBuilderInternal instantiates a new SensitivityLabelsItemSublabelsRequestBuilder and sets the default values.
 func NewSensitivityLabelsItemSublabelsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*SensitivityLabelsItemSublabelsRequestBuilder) {
     m := &SensitivityLabelsItemSublabelsRequestBuilder{

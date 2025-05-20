@@ -59,7 +59,7 @@ func (m *AccessPackageAssignmentPolicy) GetAccessPackageId()(*string) {
     }
     return nil
 }
-// GetAccessPackageNotificationSettings gets the accessPackageNotificationSettings property value. The accessPackageNotificationSettings property
+// GetAccessPackageNotificationSettings gets the accessPackageNotificationSettings property value. Represents the settings for email notifications for requests to an access package.
 // returns a AccessPackageNotificationSettingsable when successful
 func (m *AccessPackageAssignmentPolicy) GetAccessPackageNotificationSettings()(AccessPackageNotificationSettingsable) {
     val, err := m.GetBackingStore().Get("accessPackageNotificationSettings")
@@ -654,7 +654,7 @@ func (m *AccessPackageAssignmentPolicy) SetAccessPackageId(value *string)() {
         panic(err)
     }
 }
-// SetAccessPackageNotificationSettings sets the accessPackageNotificationSettings property value. The accessPackageNotificationSettings property
+// SetAccessPackageNotificationSettings sets the accessPackageNotificationSettings property value. Represents the settings for email notifications for requests to an access package.
 func (m *AccessPackageAssignmentPolicy) SetAccessPackageNotificationSettings(value AccessPackageNotificationSettingsable)() {
     err := m.GetBackingStore().Set("accessPackageNotificationSettings", value)
     if err != nil {

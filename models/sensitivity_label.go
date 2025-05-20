@@ -22,6 +22,18 @@ func NewSensitivityLabel()(*SensitivityLabel) {
 func CreateSensitivityLabelFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSensitivityLabel(), nil
 }
+// GetActionSource gets the actionSource property value. The actionSource property
+// returns a *LabelActionSource when successful
+func (m *SensitivityLabel) GetActionSource()(*LabelActionSource) {
+    val, err := m.GetBackingStore().Get("actionSource")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*LabelActionSource)
+    }
+    return nil
+}
 // GetApplicableTo gets the applicableTo property value. The applicableTo property
 // returns a *SensitivityLabelTarget when successful
 func (m *SensitivityLabel) GetApplicableTo()(*SensitivityLabelTarget) {
@@ -70,6 +82,18 @@ func (m *SensitivityLabel) GetAutoLabeling()(AutoLabelingable) {
     }
     return nil
 }
+// GetAutoTooltip gets the autoTooltip property value. The autoTooltip property
+// returns a *string when successful
+func (m *SensitivityLabel) GetAutoTooltip()(*string) {
+    val, err := m.GetBackingStore().Get("autoTooltip")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetColor gets the color property value. The color property
 // returns a *string when successful
 func (m *SensitivityLabel) GetColor()(*string) {
@@ -110,6 +134,16 @@ func (m *SensitivityLabel) GetDisplayName()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["actionSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseLabelActionSource)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActionSource(val.(*LabelActionSource))
+        }
+        return nil
+    }
     res["applicableTo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSensitivityLabelTarget)
         if err != nil {
@@ -153,6 +187,16 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetAutoLabeling(val.(AutoLabelingable))
+        }
+        return nil
+    }
+    res["autoTooltip"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAutoTooltip(val)
         }
         return nil
     }
@@ -216,6 +260,16 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["isScopedToUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsScopedToUser(val)
+        }
+        return nil
+    }
     res["labelActions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateLabelActionBaseFromDiscriminatorValue)
         if err != nil {
@@ -229,6 +283,16 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
                 }
             }
             m.SetLabelActions(res)
+        }
+        return nil
+    }
+    res["locale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLocale(val)
         }
         return nil
     }
@@ -249,6 +313,16 @@ func (m *SensitivityLabel) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetPriority(val)
+        }
+        return nil
+    }
+    res["rights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateUsageRightsIncludedFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRights(val.(UsageRightsIncludedable))
         }
         return nil
     }
@@ -316,6 +390,18 @@ func (m *SensitivityLabel) GetIsEndpointProtectionEnabled()(*bool) {
     }
     return nil
 }
+// GetIsScopedToUser gets the isScopedToUser property value. The isScopedToUser property
+// returns a *bool when successful
+func (m *SensitivityLabel) GetIsScopedToUser()(*bool) {
+    val, err := m.GetBackingStore().Get("isScopedToUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetLabelActions gets the labelActions property value. The labelActions property
 // returns a []LabelActionBaseable when successful
 func (m *SensitivityLabel) GetLabelActions()([]LabelActionBaseable) {
@@ -325,6 +411,18 @@ func (m *SensitivityLabel) GetLabelActions()([]LabelActionBaseable) {
     }
     if val != nil {
         return val.([]LabelActionBaseable)
+    }
+    return nil
+}
+// GetLocale gets the locale property value. The locale property
+// returns a *string when successful
+func (m *SensitivityLabel) GetLocale()(*string) {
+    val, err := m.GetBackingStore().Get("locale")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -349,6 +447,18 @@ func (m *SensitivityLabel) GetPriority()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetRights gets the rights property value. The rights property
+// returns a UsageRightsIncludedable when successful
+func (m *SensitivityLabel) GetRights()(UsageRightsIncludedable) {
+    val, err := m.GetBackingStore().Get("rights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(UsageRightsIncludedable)
     }
     return nil
 }
@@ -382,6 +492,13 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if err != nil {
         return err
     }
+    if m.GetActionSource() != nil {
+        cast := (*m.GetActionSource()).String()
+        err = writer.WriteStringValue("actionSource", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetApplicableTo() != nil {
         cast := (*m.GetApplicableTo()).String()
         err = writer.WriteStringValue("applicableTo", &cast)
@@ -410,6 +527,12 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteObjectValue("autoLabeling", m.GetAutoLabeling())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("autoTooltip", m.GetAutoTooltip())
         if err != nil {
             return err
         }
@@ -450,6 +573,12 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isScopedToUser", m.GetIsScopedToUser())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetLabelActions() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLabelActions()))
         for i, v := range m.GetLabelActions() {
@@ -463,6 +592,12 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     {
+        err = writer.WriteStringValue("locale", m.GetLocale())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("name", m.GetName())
         if err != nil {
             return err
@@ -470,6 +605,12 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     {
         err = writer.WriteInt32Value("priority", m.GetPriority())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("rights", m.GetRights())
         if err != nil {
             return err
         }
@@ -493,6 +634,13 @@ func (m *SensitivityLabel) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     return nil
+}
+// SetActionSource sets the actionSource property value. The actionSource property
+func (m *SensitivityLabel) SetActionSource(value *LabelActionSource)() {
+    err := m.GetBackingStore().Set("actionSource", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicableTo sets the applicableTo property value. The applicableTo property
 func (m *SensitivityLabel) SetApplicableTo(value *SensitivityLabelTarget)() {
@@ -518,6 +666,13 @@ func (m *SensitivityLabel) SetAssignedPolicies(value []LabelPolicyable)() {
 // SetAutoLabeling sets the autoLabeling property value. The autoLabeling property
 func (m *SensitivityLabel) SetAutoLabeling(value AutoLabelingable)() {
     err := m.GetBackingStore().Set("autoLabeling", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAutoTooltip sets the autoTooltip property value. The autoTooltip property
+func (m *SensitivityLabel) SetAutoTooltip(value *string)() {
+    err := m.GetBackingStore().Set("autoTooltip", value)
     if err != nil {
         panic(err)
     }
@@ -564,9 +719,23 @@ func (m *SensitivityLabel) SetIsEndpointProtectionEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetIsScopedToUser sets the isScopedToUser property value. The isScopedToUser property
+func (m *SensitivityLabel) SetIsScopedToUser(value *bool)() {
+    err := m.GetBackingStore().Set("isScopedToUser", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLabelActions sets the labelActions property value. The labelActions property
 func (m *SensitivityLabel) SetLabelActions(value []LabelActionBaseable)() {
     err := m.GetBackingStore().Set("labelActions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLocale sets the locale property value. The locale property
+func (m *SensitivityLabel) SetLocale(value *string)() {
+    err := m.GetBackingStore().Set("locale", value)
     if err != nil {
         panic(err)
     }
@@ -581,6 +750,13 @@ func (m *SensitivityLabel) SetName(value *string)() {
 // SetPriority sets the priority property value. The priority property
 func (m *SensitivityLabel) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRights sets the rights property value. The rights property
+func (m *SensitivityLabel) SetRights(value UsageRightsIncludedable)() {
+    err := m.GetBackingStore().Set("rights", value)
     if err != nil {
         panic(err)
     }
@@ -602,34 +778,44 @@ func (m *SensitivityLabel) SetToolTip(value *string)() {
 type SensitivityLabelable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetActionSource()(*LabelActionSource)
     GetApplicableTo()(*SensitivityLabelTarget)
     GetApplicationMode()(*ApplicationMode)
     GetAssignedPolicies()([]LabelPolicyable)
     GetAutoLabeling()(AutoLabelingable)
+    GetAutoTooltip()(*string)
     GetColor()(*string)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetIsDefault()(*bool)
     GetIsEnabled()(*bool)
     GetIsEndpointProtectionEnabled()(*bool)
+    GetIsScopedToUser()(*bool)
     GetLabelActions()([]LabelActionBaseable)
+    GetLocale()(*string)
     GetName()(*string)
     GetPriority()(*int32)
+    GetRights()(UsageRightsIncludedable)
     GetSublabels()([]SensitivityLabelable)
     GetToolTip()(*string)
+    SetActionSource(value *LabelActionSource)()
     SetApplicableTo(value *SensitivityLabelTarget)()
     SetApplicationMode(value *ApplicationMode)()
     SetAssignedPolicies(value []LabelPolicyable)()
     SetAutoLabeling(value AutoLabelingable)()
+    SetAutoTooltip(value *string)()
     SetColor(value *string)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsDefault(value *bool)()
     SetIsEnabled(value *bool)()
     SetIsEndpointProtectionEnabled(value *bool)()
+    SetIsScopedToUser(value *bool)()
     SetLabelActions(value []LabelActionBaseable)()
+    SetLocale(value *string)()
     SetName(value *string)()
     SetPriority(value *int32)()
+    SetRights(value UsageRightsIncludedable)()
     SetSublabels(value []SensitivityLabelable)()
     SetToolTip(value *string)()
 }

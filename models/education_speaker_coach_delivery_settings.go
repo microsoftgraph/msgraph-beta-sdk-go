@@ -38,7 +38,7 @@ func (m *EducationSpeakerCoachDeliverySettings) GetAdditionalData()(map[string]a
     }
     return val.(map[string]any)
 }
-// GetAreFillerWordsEnabled gets the areFillerWordsEnabled property value. The areFillerWordsEnabled property
+// GetAreFillerWordsEnabled gets the areFillerWordsEnabled property value. Indicates whether the student should receive feedback on their filler words from the Speaker Coach.
 // returns a *bool when successful
 func (m *EducationSpeakerCoachDeliverySettings) GetAreFillerWordsEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("areFillerWordsEnabled")
@@ -111,7 +111,7 @@ func (m *EducationSpeakerCoachDeliverySettings) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetIsPaceEnabled gets the isPaceEnabled property value. The isPaceEnabled property
+// GetIsPaceEnabled gets the isPaceEnabled property value. Indicates whether the student should receive feedback on their pace from the Speaker Coach.
 // returns a *bool when successful
 func (m *EducationSpeakerCoachDeliverySettings) GetIsPaceEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isPaceEnabled")
@@ -123,7 +123,7 @@ func (m *EducationSpeakerCoachDeliverySettings) GetIsPaceEnabled()(*bool) {
     }
     return nil
 }
-// GetIsPitchEnabled gets the isPitchEnabled property value. The isPitchEnabled property
+// GetIsPitchEnabled gets the isPitchEnabled property value. Indicates whether the student should receive feedback on their pitch from the Speaker Coach.
 // returns a *bool when successful
 func (m *EducationSpeakerCoachDeliverySettings) GetIsPitchEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isPitchEnabled")
@@ -135,7 +135,7 @@ func (m *EducationSpeakerCoachDeliverySettings) GetIsPitchEnabled()(*bool) {
     }
     return nil
 }
-// GetIsPronunciationEnabled gets the isPronunciationEnabled property value. The isPronunciationEnabled property
+// GetIsPronunciationEnabled gets the isPronunciationEnabled property value. Indicates whether the student should receive feedback on their pronunciation from the Speaker Coach. This is automatically enabled if isAiFeedbackEnabled is set to true on the educationSpeakerProgressResource, or if spokenLanguageLocale is set to a value besides en-US on the educationSpeakerProgressResource.
 // returns a *bool when successful
 func (m *EducationSpeakerCoachDeliverySettings) GetIsPronunciationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isPronunciationEnabled")
@@ -206,7 +206,7 @@ func (m *EducationSpeakerCoachDeliverySettings) SetAdditionalData(value map[stri
         panic(err)
     }
 }
-// SetAreFillerWordsEnabled sets the areFillerWordsEnabled property value. The areFillerWordsEnabled property
+// SetAreFillerWordsEnabled sets the areFillerWordsEnabled property value. Indicates whether the student should receive feedback on their filler words from the Speaker Coach.
 func (m *EducationSpeakerCoachDeliverySettings) SetAreFillerWordsEnabled(value *bool)() {
     err := m.GetBackingStore().Set("areFillerWordsEnabled", value)
     if err != nil {
@@ -217,21 +217,21 @@ func (m *EducationSpeakerCoachDeliverySettings) SetAreFillerWordsEnabled(value *
 func (m *EducationSpeakerCoachDeliverySettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsPaceEnabled sets the isPaceEnabled property value. The isPaceEnabled property
+// SetIsPaceEnabled sets the isPaceEnabled property value. Indicates whether the student should receive feedback on their pace from the Speaker Coach.
 func (m *EducationSpeakerCoachDeliverySettings) SetIsPaceEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isPaceEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsPitchEnabled sets the isPitchEnabled property value. The isPitchEnabled property
+// SetIsPitchEnabled sets the isPitchEnabled property value. Indicates whether the student should receive feedback on their pitch from the Speaker Coach.
 func (m *EducationSpeakerCoachDeliverySettings) SetIsPitchEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isPitchEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsPronunciationEnabled sets the isPronunciationEnabled property value. The isPronunciationEnabled property
+// SetIsPronunciationEnabled sets the isPronunciationEnabled property value. Indicates whether the student should receive feedback on their pronunciation from the Speaker Coach. This is automatically enabled if isAiFeedbackEnabled is set to true on the educationSpeakerProgressResource, or if spokenLanguageLocale is set to a value besides en-US on the educationSpeakerProgressResource.
 func (m *EducationSpeakerCoachDeliverySettings) SetIsPronunciationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isPronunciationEnabled", value)
     if err != nil {

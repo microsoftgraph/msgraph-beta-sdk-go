@@ -38,7 +38,7 @@ func (m *EducationAiFeedbackSettings) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAudienceEngagementSettings gets the audienceEngagementSettings property value. The audienceEngagementSettings property
+// GetAudienceEngagementSettings gets the audienceEngagementSettings property value. The audience engagement related feedback types that students should receive from the AI feedback.
 // returns a EducationAiFeedbackAudienceEngagementSettingsable when successful
 func (m *EducationAiFeedbackSettings) GetAudienceEngagementSettings()(EducationAiFeedbackAudienceEngagementSettingsable) {
     val, err := m.GetBackingStore().Get("audienceEngagementSettings")
@@ -55,7 +55,7 @@ func (m *EducationAiFeedbackSettings) GetAudienceEngagementSettings()(EducationA
 func (m *EducationAiFeedbackSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContentSettings gets the contentSettings property value. The contentSettings property
+// GetContentSettings gets the contentSettings property value. The content related feedback types that students should receive from the AI feedback.
 // returns a EducationAiFeedbackContentSettingsable when successful
 func (m *EducationAiFeedbackSettings) GetContentSettings()(EducationAiFeedbackContentSettingsable) {
     val, err := m.GetBackingStore().Get("contentSettings")
@@ -67,7 +67,7 @@ func (m *EducationAiFeedbackSettings) GetContentSettings()(EducationAiFeedbackCo
     }
     return nil
 }
-// GetDeliverySettings gets the deliverySettings property value. The deliverySettings property
+// GetDeliverySettings gets the deliverySettings property value. The delivery related feedback types that students should receive from the AI feedback.
 // returns a EducationAiFeedbackDeliverySettingsable when successful
 func (m *EducationAiFeedbackSettings) GetDeliverySettings()(EducationAiFeedbackDeliverySettingsable) {
     val, err := m.GetBackingStore().Get("deliverySettings")
@@ -178,7 +178,7 @@ func (m *EducationAiFeedbackSettings) SetAdditionalData(value map[string]any)() 
         panic(err)
     }
 }
-// SetAudienceEngagementSettings sets the audienceEngagementSettings property value. The audienceEngagementSettings property
+// SetAudienceEngagementSettings sets the audienceEngagementSettings property value. The audience engagement related feedback types that students should receive from the AI feedback.
 func (m *EducationAiFeedbackSettings) SetAudienceEngagementSettings(value EducationAiFeedbackAudienceEngagementSettingsable)() {
     err := m.GetBackingStore().Set("audienceEngagementSettings", value)
     if err != nil {
@@ -189,14 +189,14 @@ func (m *EducationAiFeedbackSettings) SetAudienceEngagementSettings(value Educat
 func (m *EducationAiFeedbackSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContentSettings sets the contentSettings property value. The contentSettings property
+// SetContentSettings sets the contentSettings property value. The content related feedback types that students should receive from the AI feedback.
 func (m *EducationAiFeedbackSettings) SetContentSettings(value EducationAiFeedbackContentSettingsable)() {
     err := m.GetBackingStore().Set("contentSettings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeliverySettings sets the deliverySettings property value. The deliverySettings property
+// SetDeliverySettings sets the deliverySettings property value. The delivery related feedback types that students should receive from the AI feedback.
 func (m *EducationAiFeedbackSettings) SetDeliverySettings(value EducationAiFeedbackDeliverySettingsable)() {
     err := m.GetBackingStore().Set("deliverySettings", value)
     if err != nil {

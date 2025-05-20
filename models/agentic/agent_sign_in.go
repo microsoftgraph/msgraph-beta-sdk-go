@@ -103,7 +103,7 @@ func (m *AgentSignIn) GetOdataType()(*string) {
     }
     return nil
 }
-// GetParentAppId gets the parentAppId property value. The parentAppId property
+// GetParentAppId gets the parentAppId property value. The ID of the parent application for agentic instances.
 // returns a *string when successful
 func (m *AgentSignIn) GetParentAppId()(*string) {
     val, err := m.GetBackingStore().Get("parentAppId")
@@ -169,7 +169,7 @@ func (m *AgentSignIn) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetParentAppId sets the parentAppId property value. The parentAppId property
+// SetParentAppId sets the parentAppId property value. The ID of the parent application for agentic instances.
 func (m *AgentSignIn) SetParentAppId(value *string)() {
     err := m.GetBackingStore().Set("parentAppId", value)
     if err != nil {

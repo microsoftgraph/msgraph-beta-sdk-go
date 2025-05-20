@@ -38,7 +38,7 @@ func (m *EducationSpeakerCoachSettings) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAudienceEngagementSettings gets the audienceEngagementSettings property value. The audienceEngagementSettings property
+// GetAudienceEngagementSettings gets the audienceEngagementSettings property value. The audience engagement related feedback types that students should receive from the Speaker Coach.
 // returns a EducationSpeakerCoachAudienceEngagementSettingsable when successful
 func (m *EducationSpeakerCoachSettings) GetAudienceEngagementSettings()(EducationSpeakerCoachAudienceEngagementSettingsable) {
     val, err := m.GetBackingStore().Get("audienceEngagementSettings")
@@ -55,7 +55,7 @@ func (m *EducationSpeakerCoachSettings) GetAudienceEngagementSettings()(Educatio
 func (m *EducationSpeakerCoachSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContentSettings gets the contentSettings property value. The contentSettings property
+// GetContentSettings gets the contentSettings property value. The content related feedback types that students should receive from the Speaker Coach.
 // returns a EducationSpeakerCoachContentSettingsable when successful
 func (m *EducationSpeakerCoachSettings) GetContentSettings()(EducationSpeakerCoachContentSettingsable) {
     val, err := m.GetBackingStore().Get("contentSettings")
@@ -67,7 +67,7 @@ func (m *EducationSpeakerCoachSettings) GetContentSettings()(EducationSpeakerCoa
     }
     return nil
 }
-// GetDeliverySettings gets the deliverySettings property value. The deliverySettings property
+// GetDeliverySettings gets the deliverySettings property value. The delivery related feedback types that students should receive from the Speaker Coach.
 // returns a EducationSpeakerCoachDeliverySettingsable when successful
 func (m *EducationSpeakerCoachSettings) GetDeliverySettings()(EducationSpeakerCoachDeliverySettingsable) {
     val, err := m.GetBackingStore().Get("deliverySettings")
@@ -178,7 +178,7 @@ func (m *EducationSpeakerCoachSettings) SetAdditionalData(value map[string]any)(
         panic(err)
     }
 }
-// SetAudienceEngagementSettings sets the audienceEngagementSettings property value. The audienceEngagementSettings property
+// SetAudienceEngagementSettings sets the audienceEngagementSettings property value. The audience engagement related feedback types that students should receive from the Speaker Coach.
 func (m *EducationSpeakerCoachSettings) SetAudienceEngagementSettings(value EducationSpeakerCoachAudienceEngagementSettingsable)() {
     err := m.GetBackingStore().Set("audienceEngagementSettings", value)
     if err != nil {
@@ -189,14 +189,14 @@ func (m *EducationSpeakerCoachSettings) SetAudienceEngagementSettings(value Educ
 func (m *EducationSpeakerCoachSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContentSettings sets the contentSettings property value. The contentSettings property
+// SetContentSettings sets the contentSettings property value. The content related feedback types that students should receive from the Speaker Coach.
 func (m *EducationSpeakerCoachSettings) SetContentSettings(value EducationSpeakerCoachContentSettingsable)() {
     err := m.GetBackingStore().Set("contentSettings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeliverySettings sets the deliverySettings property value. The deliverySettings property
+// SetDeliverySettings sets the deliverySettings property value. The delivery related feedback types that students should receive from the Speaker Coach.
 func (m *EducationSpeakerCoachSettings) SetDeliverySettings(value EducationSpeakerCoachDeliverySettingsable)() {
     err := m.GetBackingStore().Set("deliverySettings", value)
     if err != nil {

@@ -62,6 +62,22 @@ func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["profilePropertySettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateProfilePropertySettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ProfilePropertySettingable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ProfilePropertySettingable)
+                }
+            }
+            m.SetProfilePropertySettings(res)
+        }
+        return nil
+    }
     res["pronouns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreatePronounsSettingsFromDiscriminatorValue)
         if err != nil {
@@ -110,6 +126,18 @@ func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyab
     }
     return nil
 }
+// GetProfilePropertySettings gets the profilePropertySettings property value. A collection of profile property configuration settings defined by an administrator for an organization.
+// returns a []ProfilePropertySettingable when successful
+func (m *PeopleAdminSettings) GetProfilePropertySettings()([]ProfilePropertySettingable) {
+    val, err := m.GetBackingStore().Get("profilePropertySettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ProfilePropertySettingable)
+    }
+    return nil
+}
 // GetPronouns gets the pronouns property value. Administrator settings that manage the support of pronouns in an organization.
 // returns a PronounsSettingsable when successful
 func (m *PeopleAdminSettings) GetPronouns()(PronounsSettingsable) {
@@ -152,6 +180,18 @@ func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetProfilePropertySettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfilePropertySettings()))
+        for i, v := range m.GetProfilePropertySettings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("profilePropertySettings", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("pronouns", m.GetPronouns())
         if err != nil {
@@ -181,6 +221,13 @@ func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardProper
         panic(err)
     }
 }
+// SetProfilePropertySettings sets the profilePropertySettings property value. A collection of profile property configuration settings defined by an administrator for an organization.
+func (m *PeopleAdminSettings) SetProfilePropertySettings(value []ProfilePropertySettingable)() {
+    err := m.GetBackingStore().Set("profilePropertySettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPronouns sets the pronouns property value. Administrator settings that manage the support of pronouns in an organization.
 func (m *PeopleAdminSettings) SetPronouns(value PronounsSettingsable)() {
     err := m.GetBackingStore().Set("pronouns", value)
@@ -194,9 +241,11 @@ type PeopleAdminSettingsable interface {
     GetItemInsights()(InsightsSettingsable)
     GetNamePronunciation()(NamePronunciationSettingsable)
     GetProfileCardProperties()([]ProfileCardPropertyable)
+    GetProfilePropertySettings()([]ProfilePropertySettingable)
     GetPronouns()(PronounsSettingsable)
     SetItemInsights(value InsightsSettingsable)()
     SetNamePronunciation(value NamePronunciationSettingsable)()
     SetProfileCardProperties(value []ProfileCardPropertyable)()
+    SetProfilePropertySettings(value []ProfilePropertySettingable)()
     SetPronouns(value PronounsSettingsable)()
 }

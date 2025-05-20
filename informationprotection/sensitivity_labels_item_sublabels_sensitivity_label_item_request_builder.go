@@ -113,6 +113,11 @@ func (m *SensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) Patch
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable), nil
 }
+// Rights provides operations to manage the rights property of the microsoft.graph.sensitivityLabel entity.
+// returns a *SensitivityLabelsItemSublabelsItemRightsRequestBuilder when successful
+func (m *SensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) Rights()(*SensitivityLabelsItemSublabelsItemRightsRequestBuilder) {
+    return NewSensitivityLabelsItemSublabelsItemRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property sublabels for informationProtection
 // returns a *RequestInformation when successful
 func (m *SensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *SensitivityLabelsItemSublabelsSensitivityLabelItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

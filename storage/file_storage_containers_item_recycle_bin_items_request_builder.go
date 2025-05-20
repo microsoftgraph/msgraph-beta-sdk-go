@@ -79,6 +79,11 @@ func NewFileStorageContainersItemRecycleBinItemsRequestBuilder(rawUrl string, re
 func (m *FileStorageContainersItemRecycleBinItemsRequestBuilder) Count()(*FileStorageContainersItemRecycleBinItemsCountRequestBuilder) {
     return NewFileStorageContainersItemRecycleBinItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DeletePath provides operations to call the delete method.
+// returns a *FileStorageContainersItemRecycleBinItemsDeleteRequestBuilder when successful
+func (m *FileStorageContainersItemRecycleBinItemsRequestBuilder) DeletePath()(*FileStorageContainersItemRecycleBinItemsDeleteRequestBuilder) {
+    return NewFileStorageContainersItemRecycleBinItemsDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get list of the recycleBinItems deleted by a user.
 // returns a RecycleBinItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -118,6 +123,11 @@ func (m *FileStorageContainersItemRecycleBinItemsRequestBuilder) Post(ctx contex
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecycleBinItemable), nil
+}
+// Restore provides operations to call the restore method.
+// returns a *FileStorageContainersItemRecycleBinItemsRestoreRequestBuilder when successful
+func (m *FileStorageContainersItemRecycleBinItemsRequestBuilder) Restore()(*FileStorageContainersItemRecycleBinItemsRestoreRequestBuilder) {
+    return NewFileStorageContainersItemRecycleBinItemsRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list of the recycleBinItems deleted by a user.
 // returns a *RequestInformation when successful

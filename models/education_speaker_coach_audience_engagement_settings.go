@@ -69,7 +69,7 @@ func (m *EducationSpeakerCoachAudienceEngagementSettings) GetFieldDeserializers(
     }
     return res
 }
-// GetIsBodyLanguageEnabled gets the isBodyLanguageEnabled property value. The isBodyLanguageEnabled property
+// GetIsBodyLanguageEnabled gets the isBodyLanguageEnabled property value. Indicates whether the student should receive feedback on their body language from the Speaker Coach.
 // returns a *bool when successful
 func (m *EducationSpeakerCoachAudienceEngagementSettings) GetIsBodyLanguageEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isBodyLanguageEnabled")
@@ -126,7 +126,7 @@ func (m *EducationSpeakerCoachAudienceEngagementSettings) SetAdditionalData(valu
 func (m *EducationSpeakerCoachAudienceEngagementSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsBodyLanguageEnabled sets the isBodyLanguageEnabled property value. The isBodyLanguageEnabled property
+// SetIsBodyLanguageEnabled sets the isBodyLanguageEnabled property value. Indicates whether the student should receive feedback on their body language from the Speaker Coach.
 func (m *EducationSpeakerCoachAudienceEngagementSettings) SetIsBodyLanguageEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isBodyLanguageEnabled", value)
     if err != nil {

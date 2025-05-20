@@ -79,6 +79,11 @@ func NewItemRecycleBinItemsRequestBuilder(rawUrl string, requestAdapter i2ae4187
 func (m *ItemRecycleBinItemsRequestBuilder) Count()(*ItemRecycleBinItemsCountRequestBuilder) {
     return NewItemRecycleBinItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DeletePath provides operations to call the delete method.
+// returns a *ItemRecycleBinItemsDeleteRequestBuilder when successful
+func (m *ItemRecycleBinItemsRequestBuilder) DeletePath()(*ItemRecycleBinItemsDeleteRequestBuilder) {
+    return NewItemRecycleBinItemsDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
 // returns a RecycleBinItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -121,6 +126,11 @@ func (m *ItemRecycleBinItemsRequestBuilder) Post(ctx context.Context, body ie233
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecycleBinItemable), nil
+}
+// Restore provides operations to call the restore method.
+// returns a *ItemRecycleBinItemsRestoreRequestBuilder when successful
+func (m *ItemRecycleBinItemsRequestBuilder) Restore()(*ItemRecycleBinItemsRestoreRequestBuilder) {
+    return NewItemRecycleBinItemsRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
 // returns a *RequestInformation when successful

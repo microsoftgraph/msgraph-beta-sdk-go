@@ -79,7 +79,7 @@ func (m *EducationSpeakerCoachContentSettings) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetIsInclusivenessEnabled gets the isInclusivenessEnabled property value. The isInclusivenessEnabled property
+// GetIsInclusivenessEnabled gets the isInclusivenessEnabled property value. Indicates whether the student should receive feedback on their inclusiveness from the Speaker Coach.
 // returns a *bool when successful
 func (m *EducationSpeakerCoachContentSettings) GetIsInclusivenessEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isInclusivenessEnabled")
@@ -91,7 +91,7 @@ func (m *EducationSpeakerCoachContentSettings) GetIsInclusivenessEnabled()(*bool
     }
     return nil
 }
-// GetIsRepetitiveLanguageEnabled gets the isRepetitiveLanguageEnabled property value. The isRepetitiveLanguageEnabled property
+// GetIsRepetitiveLanguageEnabled gets the isRepetitiveLanguageEnabled property value. Indicates whether the student should receive feedback on their repetitive language from the Speaker Coach.
 // returns a *bool when successful
 func (m *EducationSpeakerCoachContentSettings) GetIsRepetitiveLanguageEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isRepetitiveLanguageEnabled")
@@ -154,14 +154,14 @@ func (m *EducationSpeakerCoachContentSettings) SetAdditionalData(value map[strin
 func (m *EducationSpeakerCoachContentSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsInclusivenessEnabled sets the isInclusivenessEnabled property value. The isInclusivenessEnabled property
+// SetIsInclusivenessEnabled sets the isInclusivenessEnabled property value. Indicates whether the student should receive feedback on their inclusiveness from the Speaker Coach.
 func (m *EducationSpeakerCoachContentSettings) SetIsInclusivenessEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isInclusivenessEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsRepetitiveLanguageEnabled sets the isRepetitiveLanguageEnabled property value. The isRepetitiveLanguageEnabled property
+// SetIsRepetitiveLanguageEnabled sets the isRepetitiveLanguageEnabled property value. Indicates whether the student should receive feedback on their repetitive language from the Speaker Coach.
 func (m *EducationSpeakerCoachContentSettings) SetIsRepetitiveLanguageEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isRepetitiveLanguageEnabled", value)
     if err != nil {

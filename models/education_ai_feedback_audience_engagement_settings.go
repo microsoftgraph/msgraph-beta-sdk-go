@@ -38,7 +38,7 @@ func (m *EducationAiFeedbackAudienceEngagementSettings) GetAdditionalData()(map[
     }
     return val.(map[string]any)
 }
-// GetAreEngagementStrategiesEnabled gets the areEngagementStrategiesEnabled property value. The areEngagementStrategiesEnabled property
+// GetAreEngagementStrategiesEnabled gets the areEngagementStrategiesEnabled property value. Indicates whether the student should receive feedback on their engagement strategies from the AI feedback.
 // returns a *bool when successful
 func (m *EducationAiFeedbackAudienceEngagementSettings) GetAreEngagementStrategiesEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("areEngagementStrategiesEnabled")
@@ -101,7 +101,7 @@ func (m *EducationAiFeedbackAudienceEngagementSettings) GetFieldDeserializers()(
     }
     return res
 }
-// GetIsCallToActionEnabled gets the isCallToActionEnabled property value. The isCallToActionEnabled property
+// GetIsCallToActionEnabled gets the isCallToActionEnabled property value. Indicates whether the student should receive feedback on their call to action from the AI feedback.
 // returns a *bool when successful
 func (m *EducationAiFeedbackAudienceEngagementSettings) GetIsCallToActionEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isCallToActionEnabled")
@@ -113,7 +113,7 @@ func (m *EducationAiFeedbackAudienceEngagementSettings) GetIsCallToActionEnabled
     }
     return nil
 }
-// GetIsEmotionalAndIntellectualAppealEnabled gets the isEmotionalAndIntellectualAppealEnabled property value. The isEmotionalAndIntellectualAppealEnabled property
+// GetIsEmotionalAndIntellectualAppealEnabled gets the isEmotionalAndIntellectualAppealEnabled property value. Indicates whether the student should receive feedback on their emotional and intellectual appeal from the AI feedback.
 // returns a *bool when successful
 func (m *EducationAiFeedbackAudienceEngagementSettings) GetIsEmotionalAndIntellectualAppealEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isEmotionalAndIntellectualAppealEnabled")
@@ -178,7 +178,7 @@ func (m *EducationAiFeedbackAudienceEngagementSettings) SetAdditionalData(value 
         panic(err)
     }
 }
-// SetAreEngagementStrategiesEnabled sets the areEngagementStrategiesEnabled property value. The areEngagementStrategiesEnabled property
+// SetAreEngagementStrategiesEnabled sets the areEngagementStrategiesEnabled property value. Indicates whether the student should receive feedback on their engagement strategies from the AI feedback.
 func (m *EducationAiFeedbackAudienceEngagementSettings) SetAreEngagementStrategiesEnabled(value *bool)() {
     err := m.GetBackingStore().Set("areEngagementStrategiesEnabled", value)
     if err != nil {
@@ -189,14 +189,14 @@ func (m *EducationAiFeedbackAudienceEngagementSettings) SetAreEngagementStrategi
 func (m *EducationAiFeedbackAudienceEngagementSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsCallToActionEnabled sets the isCallToActionEnabled property value. The isCallToActionEnabled property
+// SetIsCallToActionEnabled sets the isCallToActionEnabled property value. Indicates whether the student should receive feedback on their call to action from the AI feedback.
 func (m *EducationAiFeedbackAudienceEngagementSettings) SetIsCallToActionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isCallToActionEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsEmotionalAndIntellectualAppealEnabled sets the isEmotionalAndIntellectualAppealEnabled property value. The isEmotionalAndIntellectualAppealEnabled property
+// SetIsEmotionalAndIntellectualAppealEnabled sets the isEmotionalAndIntellectualAppealEnabled property value. Indicates whether the student should receive feedback on their emotional and intellectual appeal from the AI feedback.
 func (m *EducationAiFeedbackAudienceEngagementSettings) SetIsEmotionalAndIntellectualAppealEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEmotionalAndIntellectualAppealEnabled", value)
     if err != nil {

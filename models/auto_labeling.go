@@ -85,7 +85,7 @@ func (m *AutoLabeling) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetMessage gets the message property value. The message property
+// GetMessage gets the message property value. The message displayed to the user when the label is applied automatically.
 // returns a *string when successful
 func (m *AutoLabeling) GetMessage()(*string) {
     val, err := m.GetBackingStore().Get("message")
@@ -109,7 +109,7 @@ func (m *AutoLabeling) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSensitiveTypeIds gets the sensitiveTypeIds property value. The sensitiveTypeIds property
+// GetSensitiveTypeIds gets the sensitiveTypeIds property value. The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
 // returns a []string when successful
 func (m *AutoLabeling) GetSensitiveTypeIds()([]string) {
     val, err := m.GetBackingStore().Get("sensitiveTypeIds")
@@ -160,7 +160,7 @@ func (m *AutoLabeling) SetAdditionalData(value map[string]any)() {
 func (m *AutoLabeling) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMessage sets the message property value. The message property
+// SetMessage sets the message property value. The message displayed to the user when the label is applied automatically.
 func (m *AutoLabeling) SetMessage(value *string)() {
     err := m.GetBackingStore().Set("message", value)
     if err != nil {
@@ -174,7 +174,7 @@ func (m *AutoLabeling) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSensitiveTypeIds sets the sensitiveTypeIds property value. The sensitiveTypeIds property
+// SetSensitiveTypeIds sets the sensitiveTypeIds property value. The list of sensitive information type (SIT) IDs that trigger the automatic application of this label.
 func (m *AutoLabeling) SetSensitiveTypeIds(value []string)() {
     err := m.GetBackingStore().Set("sensitiveTypeIds", value)
     if err != nil {

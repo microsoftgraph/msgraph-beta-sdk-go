@@ -38,7 +38,7 @@ func (m *EducationAiFeedbackDeliverySettings) GetAdditionalData()(map[string]any
     }
     return val.(map[string]any)
 }
-// GetAreRhetoricalTechniquesEnabled gets the areRhetoricalTechniquesEnabled property value. The areRhetoricalTechniquesEnabled property
+// GetAreRhetoricalTechniquesEnabled gets the areRhetoricalTechniquesEnabled property value. Indicates whether the student should receive feedback on their rhetorical techniques from the AI feedback.
 // returns a *bool when successful
 func (m *EducationAiFeedbackDeliverySettings) GetAreRhetoricalTechniquesEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("areRhetoricalTechniquesEnabled")
@@ -101,7 +101,7 @@ func (m *EducationAiFeedbackDeliverySettings) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetIsLanguageUseEnabled gets the isLanguageUseEnabled property value. The isLanguageUseEnabled property
+// GetIsLanguageUseEnabled gets the isLanguageUseEnabled property value. Indicates whether the student should receive feedback on their language use from the AI feedback.
 // returns a *bool when successful
 func (m *EducationAiFeedbackDeliverySettings) GetIsLanguageUseEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isLanguageUseEnabled")
@@ -113,7 +113,7 @@ func (m *EducationAiFeedbackDeliverySettings) GetIsLanguageUseEnabled()(*bool) {
     }
     return nil
 }
-// GetIsStyleEnabled gets the isStyleEnabled property value. The isStyleEnabled property
+// GetIsStyleEnabled gets the isStyleEnabled property value. Indicates whether the student should receive feedback on their style from the AI feedback.
 // returns a *bool when successful
 func (m *EducationAiFeedbackDeliverySettings) GetIsStyleEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isStyleEnabled")
@@ -178,7 +178,7 @@ func (m *EducationAiFeedbackDeliverySettings) SetAdditionalData(value map[string
         panic(err)
     }
 }
-// SetAreRhetoricalTechniquesEnabled sets the areRhetoricalTechniquesEnabled property value. The areRhetoricalTechniquesEnabled property
+// SetAreRhetoricalTechniquesEnabled sets the areRhetoricalTechniquesEnabled property value. Indicates whether the student should receive feedback on their rhetorical techniques from the AI feedback.
 func (m *EducationAiFeedbackDeliverySettings) SetAreRhetoricalTechniquesEnabled(value *bool)() {
     err := m.GetBackingStore().Set("areRhetoricalTechniquesEnabled", value)
     if err != nil {
@@ -189,14 +189,14 @@ func (m *EducationAiFeedbackDeliverySettings) SetAreRhetoricalTechniquesEnabled(
 func (m *EducationAiFeedbackDeliverySettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsLanguageUseEnabled sets the isLanguageUseEnabled property value. The isLanguageUseEnabled property
+// SetIsLanguageUseEnabled sets the isLanguageUseEnabled property value. Indicates whether the student should receive feedback on their language use from the AI feedback.
 func (m *EducationAiFeedbackDeliverySettings) SetIsLanguageUseEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isLanguageUseEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsStyleEnabled sets the isStyleEnabled property value. The isStyleEnabled property
+// SetIsStyleEnabled sets the isStyleEnabled property value. Indicates whether the student should receive feedback on their style from the AI feedback.
 func (m *EducationAiFeedbackDeliverySettings) SetIsStyleEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isStyleEnabled", value)
     if err != nil {
