@@ -1699,6 +1699,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewItemRetentionLabel(), nil
                     case "#microsoft.graph.jobResponseBase":
                         return NewJobResponseBase(), nil
+                    case "#microsoft.graph.labelContentRight":
+                        return NewLabelContentRight(), nil
                     case "#microsoft.graph.landingPage":
                         return NewLandingPage(), nil
                     case "#microsoft.graph.landingPageDetail":
@@ -2403,6 +2405,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewProfileCardProperty(), nil
                     case "#microsoft.graph.profilePhoto":
                         return NewProfilePhoto(), nil
+                    case "#microsoft.graph.profilePropertySetting":
+                        return NewProfilePropertySetting(), nil
                     case "#microsoft.graph.profileSource":
                         return NewProfileSource(), nil
                     case "#microsoft.graph.program":
@@ -2997,6 +3001,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUrlAssessmentRequest(), nil
                     case "#microsoft.graph.usageRight":
                         return NewUsageRight(), nil
+                    case "#microsoft.graph.usageRightsIncluded":
+                        return NewUsageRightsIncluded(), nil
                     case "#microsoft.graph.usedInsight":
                         return NewUsedInsight(), nil
                     case "#microsoft.graph.user":

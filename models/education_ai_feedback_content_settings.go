@@ -89,7 +89,7 @@ func (m *EducationAiFeedbackContentSettings) GetFieldDeserializers()(map[string]
     }
     return res
 }
-// GetIsMessageClarityEnabled gets the isMessageClarityEnabled property value. The isMessageClarityEnabled property
+// GetIsMessageClarityEnabled gets the isMessageClarityEnabled property value. Indicates whether the student should receive feedback on their message clarity from the AI feedback.
 // returns a *bool when successful
 func (m *EducationAiFeedbackContentSettings) GetIsMessageClarityEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isMessageClarityEnabled")
@@ -101,7 +101,7 @@ func (m *EducationAiFeedbackContentSettings) GetIsMessageClarityEnabled()(*bool)
     }
     return nil
 }
-// GetIsQualityOfInformationEnabled gets the isQualityOfInformationEnabled property value. The isQualityOfInformationEnabled property
+// GetIsQualityOfInformationEnabled gets the isQualityOfInformationEnabled property value. Indicates whether the student should receive feedback on their quality of information from the AI feedback.
 // returns a *bool when successful
 func (m *EducationAiFeedbackContentSettings) GetIsQualityOfInformationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isQualityOfInformationEnabled")
@@ -113,7 +113,7 @@ func (m *EducationAiFeedbackContentSettings) GetIsQualityOfInformationEnabled()(
     }
     return nil
 }
-// GetIsSpeechOrganizationEnabled gets the isSpeechOrganizationEnabled property value. The isSpeechOrganizationEnabled property
+// GetIsSpeechOrganizationEnabled gets the isSpeechOrganizationEnabled property value. Indicates whether the student should receive feedback on their speech organization from the AI feedback.
 // returns a *bool when successful
 func (m *EducationAiFeedbackContentSettings) GetIsSpeechOrganizationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSpeechOrganizationEnabled")
@@ -182,21 +182,21 @@ func (m *EducationAiFeedbackContentSettings) SetAdditionalData(value map[string]
 func (m *EducationAiFeedbackContentSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsMessageClarityEnabled sets the isMessageClarityEnabled property value. The isMessageClarityEnabled property
+// SetIsMessageClarityEnabled sets the isMessageClarityEnabled property value. Indicates whether the student should receive feedback on their message clarity from the AI feedback.
 func (m *EducationAiFeedbackContentSettings) SetIsMessageClarityEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isMessageClarityEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsQualityOfInformationEnabled sets the isQualityOfInformationEnabled property value. The isQualityOfInformationEnabled property
+// SetIsQualityOfInformationEnabled sets the isQualityOfInformationEnabled property value. Indicates whether the student should receive feedback on their quality of information from the AI feedback.
 func (m *EducationAiFeedbackContentSettings) SetIsQualityOfInformationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isQualityOfInformationEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSpeechOrganizationEnabled sets the isSpeechOrganizationEnabled property value. The isSpeechOrganizationEnabled property
+// SetIsSpeechOrganizationEnabled sets the isSpeechOrganizationEnabled property value. Indicates whether the student should receive feedback on their speech organization from the AI feedback.
 func (m *EducationAiFeedbackContentSettings) SetIsSpeechOrganizationEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSpeechOrganizationEnabled", value)
     if err != nil {

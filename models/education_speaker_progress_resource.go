@@ -24,7 +24,7 @@ func NewEducationSpeakerProgressResource()(*EducationSpeakerProgressResource) {
 func CreateEducationSpeakerProgressResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationSpeakerProgressResource(), nil
 }
-// GetAiFeedbackCriteria gets the aiFeedbackCriteria property value. The aiFeedbackCriteria property
+// GetAiFeedbackCriteria gets the aiFeedbackCriteria property value. The feedback types that students should receive from AI feedback. This property should only be provided if isAiFeedbackEnabled is true.
 // returns a EducationAiFeedbackCriteriaable when successful
 func (m *EducationSpeakerProgressResource) GetAiFeedbackCriteria()(EducationAiFeedbackCriteriaable) {
     val, err := m.GetBackingStore().Get("aiFeedbackCriteria")
@@ -132,7 +132,7 @@ func (m *EducationSpeakerProgressResource) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetIsAiFeedbackEnabled gets the isAiFeedbackEnabled property value. The isAiFeedbackEnabled property
+// GetIsAiFeedbackEnabled gets the isAiFeedbackEnabled property value. Indicates whether AI feedback is enabled for the student submissions.
 // returns a *bool when successful
 func (m *EducationSpeakerProgressResource) GetIsAiFeedbackEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAiFeedbackEnabled")
@@ -144,7 +144,7 @@ func (m *EducationSpeakerProgressResource) GetIsAiFeedbackEnabled()(*bool) {
     }
     return nil
 }
-// GetIsVideoRequired gets the isVideoRequired property value. The isVideoRequired property
+// GetIsVideoRequired gets the isVideoRequired property value. Indicates whether video is required for the student recording.
 // returns a *bool when successful
 func (m *EducationSpeakerProgressResource) GetIsVideoRequired()(*bool) {
     val, err := m.GetBackingStore().Get("isVideoRequired")
@@ -156,7 +156,7 @@ func (m *EducationSpeakerProgressResource) GetIsVideoRequired()(*bool) {
     }
     return nil
 }
-// GetMaxRecordingAttempts gets the maxRecordingAttempts property value. The maxRecordingAttempts property
+// GetMaxRecordingAttempts gets the maxRecordingAttempts property value. The maximum number of recording attempts available to the student. Specify 0 to set unlimited recording attempts.
 // returns a *int32 when successful
 func (m *EducationSpeakerProgressResource) GetMaxRecordingAttempts()(*int32) {
     val, err := m.GetBackingStore().Get("maxRecordingAttempts")
@@ -168,7 +168,7 @@ func (m *EducationSpeakerProgressResource) GetMaxRecordingAttempts()(*int32) {
     }
     return nil
 }
-// GetPresentationTitle gets the presentationTitle property value. The presentationTitle property
+// GetPresentationTitle gets the presentationTitle property value. The title of the speaker progress resource visible to students.
 // returns a *string when successful
 func (m *EducationSpeakerProgressResource) GetPresentationTitle()(*string) {
     val, err := m.GetBackingStore().Get("presentationTitle")
@@ -180,7 +180,7 @@ func (m *EducationSpeakerProgressResource) GetPresentationTitle()(*string) {
     }
     return nil
 }
-// GetRecordingTimeLimitInMinutes gets the recordingTimeLimitInMinutes property value. The recordingTimeLimitInMinutes property
+// GetRecordingTimeLimitInMinutes gets the recordingTimeLimitInMinutes property value. The time limit is in minutes for the student recording.
 // returns a *int32 when successful
 func (m *EducationSpeakerProgressResource) GetRecordingTimeLimitInMinutes()(*int32) {
     val, err := m.GetBackingStore().Get("recordingTimeLimitInMinutes")
@@ -192,7 +192,7 @@ func (m *EducationSpeakerProgressResource) GetRecordingTimeLimitInMinutes()(*int
     }
     return nil
 }
-// GetShowRehearsalReportToStudentBeforeMediaUpload gets the showRehearsalReportToStudentBeforeMediaUpload property value. The showRehearsalReportToStudentBeforeMediaUpload property
+// GetShowRehearsalReportToStudentBeforeMediaUpload gets the showRehearsalReportToStudentBeforeMediaUpload property value. Allows students to view their rehearsal report before the assignment is graded.
 // returns a *bool when successful
 func (m *EducationSpeakerProgressResource) GetShowRehearsalReportToStudentBeforeMediaUpload()(*bool) {
     val, err := m.GetBackingStore().Get("showRehearsalReportToStudentBeforeMediaUpload")
@@ -204,7 +204,7 @@ func (m *EducationSpeakerProgressResource) GetShowRehearsalReportToStudentBefore
     }
     return nil
 }
-// GetSpeakerCoachSettings gets the speakerCoachSettings property value. The speakerCoachSettings property
+// GetSpeakerCoachSettings gets the speakerCoachSettings property value. The feedback types that students should receive from the Speaker Coach.
 // returns a EducationSpeakerCoachSettingsable when successful
 func (m *EducationSpeakerProgressResource) GetSpeakerCoachSettings()(EducationSpeakerCoachSettingsable) {
     val, err := m.GetBackingStore().Get("speakerCoachSettings")
@@ -216,7 +216,7 @@ func (m *EducationSpeakerProgressResource) GetSpeakerCoachSettings()(EducationSp
     }
     return nil
 }
-// GetSpokenLanguageLocale gets the spokenLanguageLocale property value. The spokenLanguageLocale property
+// GetSpokenLanguageLocale gets the spokenLanguageLocale property value. The spoken language for the student recording. For example, en-US.
 // returns a *string when successful
 func (m *EducationSpeakerProgressResource) GetSpokenLanguageLocale()(*string) {
     val, err := m.GetBackingStore().Get("spokenLanguageLocale")
@@ -290,63 +290,63 @@ func (m *EducationSpeakerProgressResource) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetAiFeedbackCriteria sets the aiFeedbackCriteria property value. The aiFeedbackCriteria property
+// SetAiFeedbackCriteria sets the aiFeedbackCriteria property value. The feedback types that students should receive from AI feedback. This property should only be provided if isAiFeedbackEnabled is true.
 func (m *EducationSpeakerProgressResource) SetAiFeedbackCriteria(value EducationAiFeedbackCriteriaable)() {
     err := m.GetBackingStore().Set("aiFeedbackCriteria", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsAiFeedbackEnabled sets the isAiFeedbackEnabled property value. The isAiFeedbackEnabled property
+// SetIsAiFeedbackEnabled sets the isAiFeedbackEnabled property value. Indicates whether AI feedback is enabled for the student submissions.
 func (m *EducationSpeakerProgressResource) SetIsAiFeedbackEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isAiFeedbackEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsVideoRequired sets the isVideoRequired property value. The isVideoRequired property
+// SetIsVideoRequired sets the isVideoRequired property value. Indicates whether video is required for the student recording.
 func (m *EducationSpeakerProgressResource) SetIsVideoRequired(value *bool)() {
     err := m.GetBackingStore().Set("isVideoRequired", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMaxRecordingAttempts sets the maxRecordingAttempts property value. The maxRecordingAttempts property
+// SetMaxRecordingAttempts sets the maxRecordingAttempts property value. The maximum number of recording attempts available to the student. Specify 0 to set unlimited recording attempts.
 func (m *EducationSpeakerProgressResource) SetMaxRecordingAttempts(value *int32)() {
     err := m.GetBackingStore().Set("maxRecordingAttempts", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPresentationTitle sets the presentationTitle property value. The presentationTitle property
+// SetPresentationTitle sets the presentationTitle property value. The title of the speaker progress resource visible to students.
 func (m *EducationSpeakerProgressResource) SetPresentationTitle(value *string)() {
     err := m.GetBackingStore().Set("presentationTitle", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecordingTimeLimitInMinutes sets the recordingTimeLimitInMinutes property value. The recordingTimeLimitInMinutes property
+// SetRecordingTimeLimitInMinutes sets the recordingTimeLimitInMinutes property value. The time limit is in minutes for the student recording.
 func (m *EducationSpeakerProgressResource) SetRecordingTimeLimitInMinutes(value *int32)() {
     err := m.GetBackingStore().Set("recordingTimeLimitInMinutes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetShowRehearsalReportToStudentBeforeMediaUpload sets the showRehearsalReportToStudentBeforeMediaUpload property value. The showRehearsalReportToStudentBeforeMediaUpload property
+// SetShowRehearsalReportToStudentBeforeMediaUpload sets the showRehearsalReportToStudentBeforeMediaUpload property value. Allows students to view their rehearsal report before the assignment is graded.
 func (m *EducationSpeakerProgressResource) SetShowRehearsalReportToStudentBeforeMediaUpload(value *bool)() {
     err := m.GetBackingStore().Set("showRehearsalReportToStudentBeforeMediaUpload", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSpeakerCoachSettings sets the speakerCoachSettings property value. The speakerCoachSettings property
+// SetSpeakerCoachSettings sets the speakerCoachSettings property value. The feedback types that students should receive from the Speaker Coach.
 func (m *EducationSpeakerProgressResource) SetSpeakerCoachSettings(value EducationSpeakerCoachSettingsable)() {
     err := m.GetBackingStore().Set("speakerCoachSettings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSpokenLanguageLocale sets the spokenLanguageLocale property value. The spokenLanguageLocale property
+// SetSpokenLanguageLocale sets the spokenLanguageLocale property value. The spoken language for the student recording. For example, en-US.
 func (m *EducationSpeakerProgressResource) SetSpokenLanguageLocale(value *string)() {
     err := m.GetBackingStore().Set("spokenLanguageLocale", value)
     if err != nil {

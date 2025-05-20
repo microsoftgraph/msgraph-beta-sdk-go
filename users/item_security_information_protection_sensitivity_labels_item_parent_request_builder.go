@@ -21,7 +21,7 @@ type ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilderGetQueryParameters the parent label associated with a child label. Null if the label has no parent.
+// ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilderGetQueryParameters get parent from users
 type ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuil
     }
     return nil
 }
-// Get the parent label associated with a child label. Null if the label has no parent.
+// Get get parent from users
 // returns a SensitivityLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
@@ -123,7 +123,7 @@ func (m *ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuil
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the parent label associated with a child label. Null if the label has no parent.
+// ToGetRequestInformation get parent from users
 // returns a *RequestInformation when successful
 func (m *ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemSecurityInformationProtectionSensitivityLabelsItemParentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

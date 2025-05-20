@@ -79,6 +79,11 @@ func NewItemSitesItemRecycleBinItemsRequestBuilder(rawUrl string, requestAdapter
 func (m *ItemSitesItemRecycleBinItemsRequestBuilder) Count()(*ItemSitesItemRecycleBinItemsCountRequestBuilder) {
     return NewItemSitesItemRecycleBinItemsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DeletePath provides operations to call the delete method.
+// returns a *ItemSitesItemRecycleBinItemsDeleteRequestBuilder when successful
+func (m *ItemSitesItemRecycleBinItemsRequestBuilder) DeletePath()(*ItemSitesItemRecycleBinItemsDeleteRequestBuilder) {
+    return NewItemSitesItemRecycleBinItemsDeleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get list of the recycleBinItems deleted by a user.
 // returns a RecycleBinItemCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -118,6 +123,11 @@ func (m *ItemSitesItemRecycleBinItemsRequestBuilder) Post(ctx context.Context, b
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecycleBinItemable), nil
+}
+// Restore provides operations to call the restore method.
+// returns a *ItemSitesItemRecycleBinItemsRestoreRequestBuilder when successful
+func (m *ItemSitesItemRecycleBinItemsRequestBuilder) Restore()(*ItemSitesItemRecycleBinItemsRestoreRequestBuilder) {
+    return NewItemSitesItemRecycleBinItemsRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation list of the recycleBinItems deleted by a user.
 // returns a *RequestInformation when successful

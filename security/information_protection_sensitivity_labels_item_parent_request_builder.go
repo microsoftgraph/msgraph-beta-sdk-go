@@ -21,7 +21,7 @@ type InformationProtectionSensitivityLabelsItemParentRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// InformationProtectionSensitivityLabelsItemParentRequestBuilderGetQueryParameters the parent label associated with a child label. Null if the label has no parent.
+// InformationProtectionSensitivityLabelsItemParentRequestBuilderGetQueryParameters get parent from security
 type InformationProtectionSensitivityLabelsItemParentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) Delete(
     }
     return nil
 }
-// Get the parent label associated with a child label. Null if the label has no parent.
+// Get get parent from security
 // returns a SensitivityLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) Get(ctx context.Context, requestConfiguration *InformationProtectionSensitivityLabelsItemParentRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensitivityLabelable, error) {
@@ -123,7 +123,7 @@ func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) ToDelet
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation the parent label associated with a child label. Null if the label has no parent.
+// ToGetRequestInformation get parent from security
 // returns a *RequestInformation when successful
 func (m *InformationProtectionSensitivityLabelsItemParentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *InformationProtectionSensitivityLabelsItemParentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

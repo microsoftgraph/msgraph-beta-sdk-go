@@ -21,7 +21,7 @@ type DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilde
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilderGetQueryParameters get sensitivityLabels from security
+// DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilderGetQueryParameters get a sensitivity label available for the entire tenant.
 type DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBu
     }
     return nil
 }
-// Get get sensitivityLabels from security
+// Get get a sensitivity label available for the entire tenant.
 // returns a SensitivityLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/sensitivitylabel-get?view=graph-rest-beta
 func (m *DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -113,6 +116,11 @@ func (m *DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable), nil
 }
+// Rights provides operations to manage the rights property of the microsoft.graph.sensitivityLabel entity.
+// returns a *DataSecurityAndGovernanceSensitivityLabelsItemRightsRequestBuilder when successful
+func (m *DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilder) Rights()(*DataSecurityAndGovernanceSensitivityLabelsItemRightsRequestBuilder) {
+    return NewDataSecurityAndGovernanceSensitivityLabelsItemRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Sublabels provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
 // returns a *DataSecurityAndGovernanceSensitivityLabelsItemSublabelsRequestBuilder when successful
 func (m *DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilder) Sublabels()(*DataSecurityAndGovernanceSensitivityLabelsItemSublabelsRequestBuilder) {
@@ -128,7 +136,7 @@ func (m *DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBu
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation get sensitivityLabels from security
+// ToGetRequestInformation get a sensitivity label available for the entire tenant.
 // returns a *RequestInformation when successful
 func (m *DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

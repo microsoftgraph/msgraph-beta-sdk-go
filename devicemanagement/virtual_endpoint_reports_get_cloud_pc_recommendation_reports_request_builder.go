@@ -34,6 +34,7 @@ func NewVirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder(rawU
     return NewVirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the device recommendation reports for Cloud PCs, such as the usage category report. The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn't Rightsized.
+// Deprecated: Starting from July 01, 2025, this API (&apos;getCloudPcRecommendationReports&apos;) will be deprecated and no longer supported. Please use the retrieveCloudPcRecommendationReports API. as of 2025-02/getCloudPcRecommendationReports on 2025-02-27 and will be removed 2025-07-01
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -57,6 +58,7 @@ func (m *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) Po
     return res.([]byte), nil
 }
 // ToPostRequestInformation get the device recommendation reports for Cloud PCs, such as the usage category report. The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn't Rightsized.
+// Deprecated: Starting from July 01, 2025, this API (&apos;getCloudPcRecommendationReports&apos;) will be deprecated and no longer supported. Please use the retrieveCloudPcRecommendationReports API. as of 2025-02/getCloudPcRecommendationReports on 2025-02-27 and will be removed 2025-07-01
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetCloudPcRecommendationReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -72,6 +74,7 @@ func (m *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) To
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Starting from July 01, 2025, this API (&apos;getCloudPcRecommendationReports&apos;) will be deprecated and no longer supported. Please use the retrieveCloudPcRecommendationReports API. as of 2025-02/getCloudPcRecommendationReports on 2025-02-27 and will be removed 2025-07-01
 // returns a *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

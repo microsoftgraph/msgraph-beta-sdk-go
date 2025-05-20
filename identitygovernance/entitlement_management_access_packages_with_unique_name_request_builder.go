@@ -21,7 +21,7 @@ type EntitlementManagementAccessPackagesWithUniqueNameRequestBuilderDeleteReques
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// EntitlementManagementAccessPackagesWithUniqueNameRequestBuilderGetQueryParameters retrieve the properties and relationships of an accessPackage object.
+// EntitlementManagementAccessPackagesWithUniqueNameRequestBuilderGetQueryParameters retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 type EntitlementManagementAccessPackagesWithUniqueNameRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -79,12 +79,12 @@ func (m *EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder) Delete
     }
     return nil
 }
-// Get retrieve the properties and relationships of an accessPackage object.
+// Get retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 // returns a AccessPackageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-list-accesspackageresourcerolescopes?view=graph-rest-beta
 func (m *EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesWithUniqueNameRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AccessPackageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -145,7 +145,7 @@ func (m *EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder) ToDele
     }
     return requestInfo, nil
 }
-// ToGetRequestInformation retrieve the properties and relationships of an accessPackage object.
+// ToGetRequestInformation retrieve an access package with a list of accessPackageResourceRoleScope objects. These objects represent the resource roles that an access package assigns to each subject. Each object links to an accessPackageResourceRole and an accessPackageResourceScope.
 // returns a *RequestInformation when successful
 func (m *EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackagesWithUniqueNameRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

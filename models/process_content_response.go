@@ -113,7 +113,7 @@ func (m *ProcessContentResponse) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPolicyActions gets the policyActions property value. A collection of policy actions (like DLP actions) triggered by the processed content.
+// GetPolicyActions gets the policyActions property value. A collection of policy actions (like DLP actions) triggered by the processed content. NOTE: Currently, the only policyAction supported in processContentResponse is '_restrictAccess'
 // returns a []DlpActionInfoable when successful
 func (m *ProcessContentResponse) GetPolicyActions()([]DlpActionInfoable) {
     val, err := m.GetBackingStore().Get("policyActions")
@@ -214,7 +214,7 @@ func (m *ProcessContentResponse) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPolicyActions sets the policyActions property value. A collection of policy actions (like DLP actions) triggered by the processed content.
+// SetPolicyActions sets the policyActions property value. A collection of policy actions (like DLP actions) triggered by the processed content. NOTE: Currently, the only policyAction supported in processContentResponse is '_restrictAccess'
 func (m *ProcessContentResponse) SetPolicyActions(value []DlpActionInfoable)() {
     err := m.GetBackingStore().Set("policyActions", value)
     if err != nil {

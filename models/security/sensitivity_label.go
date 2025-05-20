@@ -219,7 +219,7 @@ func (m *SensitivityLabel) GetName()(*string) {
     }
     return nil
 }
-// GetParent gets the parent property value. The parent label associated with a child label. Null if the label has no parent.
+// GetParent gets the parent property value. The parent property
 // returns a SensitivityLabelable when successful
 func (m *SensitivityLabel) GetParent()(SensitivityLabelable) {
     val, err := m.GetBackingStore().Get("parent")
@@ -372,7 +372,7 @@ func (m *SensitivityLabel) SetName(value *string)() {
         panic(err)
     }
 }
-// SetParent sets the parent property value. The parent label associated with a child label. Null if the label has no parent.
+// SetParent sets the parent property value. The parent property
 func (m *SensitivityLabel) SetParent(value SensitivityLabelable)() {
     err := m.GetBackingStore().Set("parent", value)
     if err != nil {

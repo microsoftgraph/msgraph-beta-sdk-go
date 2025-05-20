@@ -113,6 +113,11 @@ func (m *SensitivityLabelsSensitivityLabelItemRequestBuilder) Patch(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable), nil
 }
+// Rights provides operations to manage the rights property of the microsoft.graph.sensitivityLabel entity.
+// returns a *SensitivityLabelsItemRightsRequestBuilder when successful
+func (m *SensitivityLabelsSensitivityLabelItemRequestBuilder) Rights()(*SensitivityLabelsItemRightsRequestBuilder) {
+    return NewSensitivityLabelsItemRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Sublabels provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.
 // returns a *SensitivityLabelsItemSublabelsRequestBuilder when successful
 func (m *SensitivityLabelsSensitivityLabelItemRequestBuilder) Sublabels()(*SensitivityLabelsItemSublabelsRequestBuilder) {

@@ -67,6 +67,16 @@ func (m *IdentifierUriConfiguration) GetFieldDeserializers()(map[string]func(i87
         }
         return nil
     }
+    res["uriAdditionWithoutUniqueTenantIdentifier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentifierUriRestrictionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUriAdditionWithoutUniqueTenantIdentifier(val.(IdentifierUriRestrictionable))
+        }
+        return nil
+    }
     return res
 }
 // GetNonDefaultUriAddition gets the nonDefaultUriAddition property value. Block new identifier URIs for applications, unless they are the 'default' URI of the format api://{appId} or api://{tenantId}/{appId}.
@@ -93,6 +103,18 @@ func (m *IdentifierUriConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
+// GetUriAdditionWithoutUniqueTenantIdentifier gets the uriAdditionWithoutUniqueTenantIdentifier property value. Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenatId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
+// returns a IdentifierUriRestrictionable when successful
+func (m *IdentifierUriConfiguration) GetUriAdditionWithoutUniqueTenantIdentifier()(IdentifierUriRestrictionable) {
+    val, err := m.GetBackingStore().Get("uriAdditionWithoutUniqueTenantIdentifier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentifierUriRestrictionable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *IdentifierUriConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -103,6 +125,12 @@ func (m *IdentifierUriConfiguration) Serialize(writer i878a80d2330e89d26896388a3
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("uriAdditionWithoutUniqueTenantIdentifier", m.GetUriAdditionWithoutUniqueTenantIdentifier())
         if err != nil {
             return err
         }
@@ -140,6 +168,13 @@ func (m *IdentifierUriConfiguration) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetUriAdditionWithoutUniqueTenantIdentifier sets the uriAdditionWithoutUniqueTenantIdentifier property value. Block new identifier URIs for applications, unless they contain a unique tenant identifier like the tenant ID, appId (client ID), or verified domain. For example, api://{tenatId}/string, api://{appId}/string, {scheme}://string/{tenantId}, {scheme}://string/{appId}, https://{verified-domain.com}/path, {scheme}://{subdomain}.{verified-domain.com}/path.
+func (m *IdentifierUriConfiguration) SetUriAdditionWithoutUniqueTenantIdentifier(value IdentifierUriRestrictionable)() {
+    err := m.GetBackingStore().Set("uriAdditionWithoutUniqueTenantIdentifier", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type IdentifierUriConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -147,7 +182,9 @@ type IdentifierUriConfigurationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetNonDefaultUriAddition()(IdentifierUriRestrictionable)
     GetOdataType()(*string)
+    GetUriAdditionWithoutUniqueTenantIdentifier()(IdentifierUriRestrictionable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetNonDefaultUriAddition(value IdentifierUriRestrictionable)()
     SetOdataType(value *string)()
+    SetUriAdditionWithoutUniqueTenantIdentifier(value IdentifierUriRestrictionable)()
 }

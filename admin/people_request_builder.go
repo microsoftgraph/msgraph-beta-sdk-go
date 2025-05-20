@@ -131,6 +131,11 @@ func (m *PeopleRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
 func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropertiesRequestBuilder) {
     return NewPeopleProfileCardPropertiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ProfilePropertySettings provides operations to manage the profilePropertySettings property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleProfilePropertySettingsRequestBuilder when successful
+func (m *PeopleRequestBuilder) ProfilePropertySettings()(*PeopleProfilePropertySettingsRequestBuilder) {
+    return NewPeopleProfilePropertySettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Pronouns provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.
 // returns a *PeoplePronounsRequestBuilder when successful
 func (m *PeopleRequestBuilder) Pronouns()(*PeoplePronounsRequestBuilder) {

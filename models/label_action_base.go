@@ -105,7 +105,7 @@ func (m *LabelActionBase) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the action (for example, 'Encrypt', 'AddHeader').
 // returns a *string when successful
 func (m *LabelActionBase) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -162,7 +162,7 @@ func (m *LabelActionBase) SetAdditionalData(value map[string]any)() {
 func (m *LabelActionBase) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the action (for example, 'Encrypt', 'AddHeader').
 func (m *LabelActionBase) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {

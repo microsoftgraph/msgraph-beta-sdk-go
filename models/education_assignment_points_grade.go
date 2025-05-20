@@ -40,7 +40,7 @@ func (m *EducationAssignmentPointsGrade) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetPoints gets the points property value. Number of points a teacher is giving this submission object.
+// GetPoints gets the points property value. Number of points a teacher gives to this submission object.
 // returns a *float32 when successful
 func (m *EducationAssignmentPointsGrade) GetPoints()(*float32) {
     val, err := m.GetBackingStore().Get("points")
@@ -66,7 +66,7 @@ func (m *EducationAssignmentPointsGrade) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetPoints sets the points property value. Number of points a teacher is giving this submission object.
+// SetPoints sets the points property value. Number of points a teacher gives to this submission object.
 func (m *EducationAssignmentPointsGrade) SetPoints(value *float32)() {
     err := m.GetBackingStore().Set("points", value)
     if err != nil {
