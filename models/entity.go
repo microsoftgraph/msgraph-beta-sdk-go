@@ -291,8 +291,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewAndroidWorkProfileVpnConfiguration(), nil
                     case "#microsoft.graph.androidWorkProfileWiFiConfiguration":
                         return NewAndroidWorkProfileWiFiConfiguration(), nil
-                    case "#microsoft.graph.announcement":
-                        return NewAnnouncement(), nil
                     case "#microsoft.graph.anonymousGuestConversationMember":
                         return NewAnonymousGuestConversationMember(), nil
                     case "#microsoft.graph.aospDeviceOwnerCertificateProfileBase":
@@ -611,8 +609,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCertificateBasedAuthPki(), nil
                     case "#microsoft.graph.certificateConnectorDetails":
                         return NewCertificateConnectorDetails(), nil
-                    case "#microsoft.graph.changeItemBase":
-                        return NewChangeItemBase(), nil
                     case "#microsoft.graph.changeTrackedEntity":
                         return NewChangeTrackedEntity(), nil
                     case "#microsoft.graph.channel":
@@ -1247,6 +1243,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEmbeddedSIMDeviceState(), nil
                     case "#microsoft.graph.emergencyCallEvent":
                         return NewEmergencyCallEvent(), nil
+                    case "#microsoft.graph.employeeExperience":
+                        return NewEmployeeExperience(), nil
                     case "#microsoft.graph.employeeExperienceUser":
                         return NewEmployeeExperienceUser(), nil
                     case "#microsoft.graph.encryptedAwsStorageBucketFinding":
@@ -1265,6 +1263,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEndUserNotificationDetail(), nil
                     case "#microsoft.graph.engagementAsyncOperation":
                         return NewEngagementAsyncOperation(), nil
+                    case "#microsoft.graph.engagementRole":
+                        return NewEngagementRole(), nil
+                    case "#microsoft.graph.engagementRoleMember":
+                        return NewEngagementRoleMember(), nil
                     case "#microsoft.graph.enhancedPersonalizationSetting":
                         return NewEnhancedPersonalizationSetting(), nil
                     case "#microsoft.graph.enrollmentConfigurationAssignment":
@@ -2455,6 +2457,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRecommendation(), nil
                     case "#microsoft.graph.recommendationBase":
                         return NewRecommendationBase(), nil
+                    case "#microsoft.graph.recommendationConfiguration":
+                        return NewRecommendationConfiguration(), nil
                     case "#microsoft.graph.recordOperation":
                         return NewRecordOperation(), nil
                     case "#microsoft.graph.recycleBin":
@@ -2515,8 +2519,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRiskyUser(), nil
                     case "#microsoft.graph.riskyUserHistoryItem":
                         return NewRiskyUserHistoryItem(), nil
-                    case "#microsoft.graph.roadmap":
-                        return NewRoadmap(), nil
                     case "#microsoft.graph.roleAssignment":
                         return NewRoleAssignment(), nil
                     case "#microsoft.graph.roleDefinition":

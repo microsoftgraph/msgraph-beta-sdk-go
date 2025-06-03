@@ -79,7 +79,7 @@ func (m *SearchRequest) GetCollapseProperties()([]CollapsePropertyable) {
     }
     return nil
 }
-// GetContentSources gets the contentSources property value. Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
+// GetContentSources gets the contentSources property value. Contains the connection to be targeted. Respects the following format: /external/connections/connectionid where connectionid is the ConnectionId defined in the connectors administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
 // returns a []string when successful
 func (m *SearchRequest) GetContentSources()([]string) {
     val, err := m.GetBackingStore().Get("contentSources")
@@ -349,7 +349,7 @@ func (m *SearchRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetFields gets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
+// GetFields gets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft 365 Copilot connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax : label_title.Optional.
 // returns a []string when successful
 func (m *SearchRequest) GetFields()([]string) {
     val, err := m.GetBackingStore().Get("fields")
@@ -433,7 +433,7 @@ func (m *SearchRequest) GetResultTemplateOptions()(ResultTemplateOptionable) {
     }
     return nil
 }
-// GetSharePointOneDriveOptions gets the sharePointOneDriveOptions property value. Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
+// GetSharePointOneDriveOptions gets the sharePointOneDriveOptions property value. Indicates the kind of content to be searched when a search is performed using application permissions. Optional.
 // returns a SharePointOneDriveOptionsable when successful
 func (m *SearchRequest) GetSharePointOneDriveOptions()(SharePointOneDriveOptionsable) {
     val, err := m.GetBackingStore().Get("sharePointOneDriveOptions")
@@ -481,7 +481,7 @@ func (m *SearchRequest) GetStoredFields()([]string) {
     }
     return nil
 }
-// GetTrimDuplicates gets the trimDuplicates property value. Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
+// GetTrimDuplicates gets the trimDuplicates property value. Indicates whether to trim away the duplicate SharePoint files from search results. The default value is false. Optional.
 // returns a *bool when successful
 func (m *SearchRequest) GetTrimDuplicates()(*bool) {
     val, err := m.GetBackingStore().Get("trimDuplicates")
@@ -661,7 +661,7 @@ func (m *SearchRequest) SetCollapseProperties(value []CollapsePropertyable)() {
         panic(err)
     }
 }
-// SetContentSources sets the contentSources property value. Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
+// SetContentSources sets the contentSources property value. Contains the connection to be targeted. Respects the following format: /external/connections/connectionid where connectionid is the ConnectionId defined in the connectors administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
 func (m *SearchRequest) SetContentSources(value []string)() {
     err := m.GetBackingStore().Set("contentSources", value)
     if err != nil {
@@ -682,7 +682,7 @@ func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
         panic(err)
     }
 }
-// SetFields sets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft Graph connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is label as title, you can retrieve it using the following syntax : label_title.Optional.
+// SetFields sets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content that Microsoft 365 Copilot connectors bring in. The fields property can be using the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax : label_title.Optional.
 func (m *SearchRequest) SetFields(value []string)() {
     err := m.GetBackingStore().Set("fields", value)
     if err != nil {
@@ -731,7 +731,7 @@ func (m *SearchRequest) SetResultTemplateOptions(value ResultTemplateOptionable)
         panic(err)
     }
 }
-// SetSharePointOneDriveOptions sets the sharePointOneDriveOptions property value. Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
+// SetSharePointOneDriveOptions sets the sharePointOneDriveOptions property value. Indicates the kind of content to be searched when a search is performed using application permissions. Optional.
 func (m *SearchRequest) SetSharePointOneDriveOptions(value SharePointOneDriveOptionsable)() {
     err := m.GetBackingStore().Set("sharePointOneDriveOptions", value)
     if err != nil {
@@ -759,7 +759,7 @@ func (m *SearchRequest) SetStoredFields(value []string)() {
         panic(err)
     }
 }
-// SetTrimDuplicates sets the trimDuplicates property value. Indicates whether to trim away the duplicate SharePoint files from search results. Default value is false. Optional.
+// SetTrimDuplicates sets the trimDuplicates property value. Indicates whether to trim away the duplicate SharePoint files from search results. The default value is false. Optional.
 func (m *SearchRequest) SetTrimDuplicates(value *bool)() {
     err := m.GetBackingStore().Set("trimDuplicates", value)
     if err != nil {

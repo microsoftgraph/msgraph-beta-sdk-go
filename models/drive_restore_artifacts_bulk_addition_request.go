@@ -22,7 +22,7 @@ func NewDriveRestoreArtifactsBulkAdditionRequest()(*DriveRestoreArtifactsBulkAdd
 func CreateDriveRestoreArtifactsBulkAdditionRequestFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDriveRestoreArtifactsBulkAdditionRequest(), nil
 }
-// GetDirectoryObjectIds gets the directoryObjectIds property value. The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+// GetDirectoryObjectIds gets the directoryObjectIds property value. The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation.
 // returns a []string when successful
 func (m *DriveRestoreArtifactsBulkAdditionRequest) GetDirectoryObjectIds()([]string) {
     val, err := m.GetBackingStore().Get("directoryObjectIds")
@@ -104,7 +104,7 @@ func (m *DriveRestoreArtifactsBulkAdditionRequest) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetDirectoryObjectIds sets the directoryObjectIds property value. The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+// SetDirectoryObjectIds sets the directoryObjectIds property value. The list of directory object IDs that are added to the corresponding OneDrive for work or school restore session in a bulk operation.
 func (m *DriveRestoreArtifactsBulkAdditionRequest) SetDirectoryObjectIds(value []string)() {
     err := m.GetBackingStore().Set("directoryObjectIds", value)
     if err != nil {

@@ -26,7 +26,7 @@ func NewDetonationBehaviourDetails()(*DetonationBehaviourDetails) {
 func CreateDetonationBehaviourDetailsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewDetonationBehaviourDetails(), nil
 }
-// GetActionStatus gets the actionStatus property value. The actionStatus property
+// GetActionStatus gets the actionStatus property value. The status of the action performed during detonation (e.g., 'Successful', 'Failed', 'Blocked').
 // returns a *string when successful
 func (m *DetonationBehaviourDetails) GetActionStatus()(*string) {
     val, err := m.GetBackingStore().Get("actionStatus")
@@ -56,7 +56,7 @@ func (m *DetonationBehaviourDetails) GetAdditionalData()(map[string]any) {
 func (m *DetonationBehaviourDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBehaviourCapability gets the behaviourCapability property value. The behaviourCapability property
+// GetBehaviourCapability gets the behaviourCapability property value. Categorizes the capability or type of behavior observed.
 // returns a *string when successful
 func (m *DetonationBehaviourDetails) GetBehaviourCapability()(*string) {
     val, err := m.GetBackingStore().Get("behaviourCapability")
@@ -68,7 +68,7 @@ func (m *DetonationBehaviourDetails) GetBehaviourCapability()(*string) {
     }
     return nil
 }
-// GetBehaviourGroup gets the behaviourGroup property value. The behaviourGroup property
+// GetBehaviourGroup gets the behaviourGroup property value. Groups related behaviors together for classification purposes.
 // returns a *string when successful
 func (m *DetonationBehaviourDetails) GetBehaviourGroup()(*string) {
     val, err := m.GetBackingStore().Get("behaviourGroup")
@@ -80,7 +80,7 @@ func (m *DetonationBehaviourDetails) GetBehaviourGroup()(*string) {
     }
     return nil
 }
-// GetDetails gets the details property value. The details property
+// GetDetails gets the details property value. More contextual information about the observed behavior or action.
 // returns a *string when successful
 func (m *DetonationBehaviourDetails) GetDetails()(*string) {
     val, err := m.GetBackingStore().Get("details")
@@ -92,7 +92,7 @@ func (m *DetonationBehaviourDetails) GetDetails()(*string) {
     }
     return nil
 }
-// GetEventDateTime gets the eventDateTime property value. The eventDateTime property
+// GetEventDateTime gets the eventDateTime property value. The date and time when the behavior or action was observed during detonation.
 // returns a *Time when successful
 func (m *DetonationBehaviourDetails) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
@@ -222,7 +222,7 @@ func (m *DetonationBehaviourDetails) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOperation gets the operation property value. The operation property
+// GetOperation gets the operation property value. The specific operation or action that was performed.
 // returns a *string when successful
 func (m *DetonationBehaviourDetails) GetOperation()(*string) {
     val, err := m.GetBackingStore().Get("operation")
@@ -234,7 +234,7 @@ func (m *DetonationBehaviourDetails) GetOperation()(*string) {
     }
     return nil
 }
-// GetProcessId gets the processId property value. The processId property
+// GetProcessId gets the processId property value. The unique identifier of the process involved in the behavior.
 // returns a *string when successful
 func (m *DetonationBehaviourDetails) GetProcessId()(*string) {
     val, err := m.GetBackingStore().Get("processId")
@@ -246,7 +246,7 @@ func (m *DetonationBehaviourDetails) GetProcessId()(*string) {
     }
     return nil
 }
-// GetProcessName gets the processName property value. The processName property
+// GetProcessName gets the processName property value. The name of the process that performed or was involved in the behavior.
 // returns a *string when successful
 func (m *DetonationBehaviourDetails) GetProcessName()(*string) {
     val, err := m.GetBackingStore().Get("processName")
@@ -258,7 +258,7 @@ func (m *DetonationBehaviourDetails) GetProcessName()(*string) {
     }
     return nil
 }
-// GetTarget gets the target property value. The target property
+// GetTarget gets the target property value. The target of the operation.
 // returns a *string when successful
 func (m *DetonationBehaviourDetails) GetTarget()(*string) {
     val, err := m.GetBackingStore().Get("target")
@@ -340,7 +340,7 @@ func (m *DetonationBehaviourDetails) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetActionStatus sets the actionStatus property value. The actionStatus property
+// SetActionStatus sets the actionStatus property value. The status of the action performed during detonation (e.g., 'Successful', 'Failed', 'Blocked').
 func (m *DetonationBehaviourDetails) SetActionStatus(value *string)() {
     err := m.GetBackingStore().Set("actionStatus", value)
     if err != nil {
@@ -358,28 +358,28 @@ func (m *DetonationBehaviourDetails) SetAdditionalData(value map[string]any)() {
 func (m *DetonationBehaviourDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBehaviourCapability sets the behaviourCapability property value. The behaviourCapability property
+// SetBehaviourCapability sets the behaviourCapability property value. Categorizes the capability or type of behavior observed.
 func (m *DetonationBehaviourDetails) SetBehaviourCapability(value *string)() {
     err := m.GetBackingStore().Set("behaviourCapability", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBehaviourGroup sets the behaviourGroup property value. The behaviourGroup property
+// SetBehaviourGroup sets the behaviourGroup property value. Groups related behaviors together for classification purposes.
 func (m *DetonationBehaviourDetails) SetBehaviourGroup(value *string)() {
     err := m.GetBackingStore().Set("behaviourGroup", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetails sets the details property value. The details property
+// SetDetails sets the details property value. More contextual information about the observed behavior or action.
 func (m *DetonationBehaviourDetails) SetDetails(value *string)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventDateTime sets the eventDateTime property value. The eventDateTime property
+// SetEventDateTime sets the eventDateTime property value. The date and time when the behavior or action was observed during detonation.
 func (m *DetonationBehaviourDetails) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("eventDateTime", value)
     if err != nil {
@@ -393,28 +393,28 @@ func (m *DetonationBehaviourDetails) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOperation sets the operation property value. The operation property
+// SetOperation sets the operation property value. The specific operation or action that was performed.
 func (m *DetonationBehaviourDetails) SetOperation(value *string)() {
     err := m.GetBackingStore().Set("operation", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProcessId sets the processId property value. The processId property
+// SetProcessId sets the processId property value. The unique identifier of the process involved in the behavior.
 func (m *DetonationBehaviourDetails) SetProcessId(value *string)() {
     err := m.GetBackingStore().Set("processId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProcessName sets the processName property value. The processName property
+// SetProcessName sets the processName property value. The name of the process that performed or was involved in the behavior.
 func (m *DetonationBehaviourDetails) SetProcessName(value *string)() {
     err := m.GetBackingStore().Set("processName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTarget sets the target property value. The target property
+// SetTarget sets the target property value. The target of the operation.
 func (m *DetonationBehaviourDetails) SetTarget(value *string)() {
     err := m.GetBackingStore().Set("target", value)
     if err != nil {

@@ -125,6 +125,16 @@ func (m *EducationModule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["languageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLanguageTag(val)
+        }
+        return nil
+    }
     res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -183,7 +193,7 @@ func (m *EducationModule) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetIsPinned gets the isPinned property value. Indicates whether the module is pinned or not.
+// GetIsPinned gets the isPinned property value. Indicates whether the module is pinned.
 // returns a *bool when successful
 func (m *EducationModule) GetIsPinned()(*bool) {
     val, err := m.GetBackingStore().Get("isPinned")
@@ -192,6 +202,18 @@ func (m *EducationModule) GetIsPinned()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetLanguageTag gets the languageTag property value. Specifies the language in which UI notifications for the assignment are displayed. If languageTag isn't provided, the default language is en-US. Optional.
+// returns a *string when successful
+func (m *EducationModule) GetLanguageTag()(*string) {
+    val, err := m.GetBackingStore().Get("languageTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -279,6 +301,12 @@ func (m *EducationModule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("languageTag", m.GetLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResources() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResources()))
         for i, v := range m.GetResources() {
@@ -321,9 +349,16 @@ func (m *EducationModule) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetIsPinned sets the isPinned property value. Indicates whether the module is pinned or not.
+// SetIsPinned sets the isPinned property value. Indicates whether the module is pinned.
 func (m *EducationModule) SetIsPinned(value *bool)() {
     err := m.GetBackingStore().Set("isPinned", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLanguageTag sets the languageTag property value. Specifies the language in which UI notifications for the assignment are displayed. If languageTag isn't provided, the default language is en-US. Optional.
+func (m *EducationModule) SetLanguageTag(value *string)() {
+    err := m.GetBackingStore().Set("languageTag", value)
     if err != nil {
         panic(err)
     }
@@ -371,6 +406,7 @@ type EducationModuleable interface {
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetIsPinned()(*bool)
+    GetLanguageTag()(*string)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetResources()([]EducationModuleResourceable)
@@ -381,6 +417,7 @@ type EducationModuleable interface {
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetIsPinned(value *bool)()
+    SetLanguageTag(value *string)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetResources(value []EducationModuleResourceable)()

@@ -56,7 +56,7 @@ func (m *DetonationDetails) GetAnalysisDateTime()(*i336074805fc853987abe6f7fe3ad
 func (m *DetonationDetails) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCompromiseIndicators gets the compromiseIndicators property value. The compromiseIndicators property
+// GetCompromiseIndicators gets the compromiseIndicators property value. Represents indicators and its associated verdict that suggests whether an email is compromised.
 // returns a []CompromiseIndicatorable when successful
 func (m *DetonationDetails) GetCompromiseIndicators()([]CompromiseIndicatorable) {
     val, err := m.GetBackingStore().Get("compromiseIndicators")
@@ -68,7 +68,7 @@ func (m *DetonationDetails) GetCompromiseIndicators()([]CompromiseIndicatorable)
     }
     return nil
 }
-// GetDetonationBehaviourDetails gets the detonationBehaviourDetails property value. The detonationBehaviourDetails property
+// GetDetonationBehaviourDetails gets the detonationBehaviourDetails property value. Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation
 // returns a DetonationBehaviourDetailsable when successful
 func (m *DetonationDetails) GetDetonationBehaviourDetails()(DetonationBehaviourDetailsable) {
     val, err := m.GetBackingStore().Get("detonationBehaviourDetails")
@@ -104,7 +104,7 @@ func (m *DetonationDetails) GetDetonationObservables()(DetonationObservablesable
     }
     return nil
 }
-// GetDetonationScreenshotUri gets the detonationScreenshotUri property value. The detonationScreenshotUri property
+// GetDetonationScreenshotUri gets the detonationScreenshotUri property value. Show any screenshots that were captured during detonation. No screenshots are captured if the URL opens into a link that directly downloads a file. However, you see the downloaded file in the detonation chain.
 // returns a *string when successful
 func (m *DetonationDetails) GetDetonationScreenshotUri()(*string) {
     val, err := m.GetBackingStore().Get("detonationScreenshotUri")
@@ -342,14 +342,14 @@ func (m *DetonationDetails) SetAnalysisDateTime(value *i336074805fc853987abe6f7f
 func (m *DetonationDetails) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCompromiseIndicators sets the compromiseIndicators property value. The compromiseIndicators property
+// SetCompromiseIndicators sets the compromiseIndicators property value. Represents indicators and its associated verdict that suggests whether an email is compromised.
 func (m *DetonationDetails) SetCompromiseIndicators(value []CompromiseIndicatorable)() {
     err := m.GetBackingStore().Set("compromiseIndicators", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDetonationBehaviourDetails sets the detonationBehaviourDetails property value. The detonationBehaviourDetails property
+// SetDetonationBehaviourDetails sets the detonationBehaviourDetails property value. Shows the exact events that took place during detonation, and problematic or benign observations that contain URLs, IPs, domains, and files that were found during detonation
 func (m *DetonationDetails) SetDetonationBehaviourDetails(value DetonationBehaviourDetailsable)() {
     err := m.GetBackingStore().Set("detonationBehaviourDetails", value)
     if err != nil {
@@ -370,7 +370,7 @@ func (m *DetonationDetails) SetDetonationObservables(value DetonationObservables
         panic(err)
     }
 }
-// SetDetonationScreenshotUri sets the detonationScreenshotUri property value. The detonationScreenshotUri property
+// SetDetonationScreenshotUri sets the detonationScreenshotUri property value. Show any screenshots that were captured during detonation. No screenshots are captured if the URL opens into a link that directly downloads a file. However, you see the downloaded file in the detonation chain.
 func (m *DetonationDetails) SetDetonationScreenshotUri(value *string)() {
     err := m.GetBackingStore().Set("detonationScreenshotUri", value)
     if err != nil {

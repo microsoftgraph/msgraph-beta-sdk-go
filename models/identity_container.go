@@ -285,22 +285,6 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["productChanges"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateChangeItemBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ChangeItemBaseable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ChangeItemBaseable)
-                }
-            }
-            m.SetProductChanges(res)
-        }
-        return nil
-    }
     res["userFlowAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateIdentityUserFlowAttributeFromDiscriminatorValue)
         if err != nil {
@@ -356,18 +340,6 @@ func (m *IdentityContainer) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
-    }
-    return nil
-}
-// GetProductChanges gets the productChanges property value. Represents entry point for Microsoft Entra product changes and planned new features.
-// returns a []ChangeItemBaseable when successful
-func (m *IdentityContainer) GetProductChanges()([]ChangeItemBaseable) {
-    val, err := m.GetBackingStore().Get("productChanges")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ChangeItemBaseable)
     }
     return nil
 }
@@ -499,18 +471,6 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetProductChanges() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProductChanges()))
-        for i, v := range m.GetProductChanges() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err := writer.WriteCollectionOfObjectValues("productChanges", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetUserFlowAttributes() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserFlowAttributes()))
         for i, v := range m.GetUserFlowAttributes() {
@@ -624,13 +584,6 @@ func (m *IdentityContainer) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetProductChanges sets the productChanges property value. Represents entry point for Microsoft Entra product changes and planned new features.
-func (m *IdentityContainer) SetProductChanges(value []ChangeItemBaseable)() {
-    err := m.GetBackingStore().Set("productChanges", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetUserFlowAttributes sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
 func (m *IdentityContainer) SetUserFlowAttributes(value []IdentityUserFlowAttributeable)() {
     err := m.GetBackingStore().Set("userFlowAttributes", value)
@@ -660,7 +613,6 @@ type IdentityContainerable interface {
     GetCustomAuthenticationExtensions()([]CustomAuthenticationExtensionable)
     GetIdentityProviders()([]IdentityProviderBaseable)
     GetOdataType()(*string)
-    GetProductChanges()([]ChangeItemBaseable)
     GetUserFlowAttributes()([]IdentityUserFlowAttributeable)
     GetUserFlows()([]IdentityUserFlowable)
     SetApiConnectors(value []IdentityApiConnectorable)()
@@ -674,7 +626,6 @@ type IdentityContainerable interface {
     SetCustomAuthenticationExtensions(value []CustomAuthenticationExtensionable)()
     SetIdentityProviders(value []IdentityProviderBaseable)()
     SetOdataType(value *string)()
-    SetProductChanges(value []ChangeItemBaseable)()
     SetUserFlowAttributes(value []IdentityUserFlowAttributeable)()
     SetUserFlows(value []IdentityUserFlowable)()
 }

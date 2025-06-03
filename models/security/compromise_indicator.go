@@ -91,7 +91,7 @@ func (m *CompromiseIndicator) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. Indicator.
 // returns a *string when successful
 func (m *CompromiseIndicator) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -103,7 +103,7 @@ func (m *CompromiseIndicator) GetValue()(*string) {
     }
     return nil
 }
-// GetVerdict gets the verdict property value. The verdict property
+// GetVerdict gets the verdict property value. .The possible values are: none, malware, phish, siteUnavailable, spam, decryptionFailed, unsupportedUriScheme, unsupportedFileType, undefined, unknownFutureValue.
 // returns a *VerdictCategory when successful
 func (m *CompromiseIndicator) GetVerdict()(*VerdictCategory) {
     val, err := m.GetBackingStore().Get("verdict")
@@ -162,14 +162,14 @@ func (m *CompromiseIndicator) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. Indicator.
 func (m *CompromiseIndicator) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
     }
 }
-// SetVerdict sets the verdict property value. The verdict property
+// SetVerdict sets the verdict property value. .The possible values are: none, malware, phish, siteUnavailable, spam, decryptionFailed, unsupportedUriScheme, unsupportedFileType, undefined, unknownFutureValue.
 func (m *CompromiseIndicator) SetVerdict(value *VerdictCategory)() {
     err := m.GetBackingStore().Set("verdict", value)
     if err != nil {

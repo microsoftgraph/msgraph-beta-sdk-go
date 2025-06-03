@@ -7,35 +7,35 @@ import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
-type ChangeItemBaseCollectionResponse struct {
+type ProfileSourceCollectionResponse struct {
     BaseCollectionPaginationCountResponse
 }
-// NewChangeItemBaseCollectionResponse instantiates a new ChangeItemBaseCollectionResponse and sets the default values.
-func NewChangeItemBaseCollectionResponse()(*ChangeItemBaseCollectionResponse) {
-    m := &ChangeItemBaseCollectionResponse{
+// NewProfileSourceCollectionResponse instantiates a new ProfileSourceCollectionResponse and sets the default values.
+func NewProfileSourceCollectionResponse()(*ProfileSourceCollectionResponse) {
+    m := &ProfileSourceCollectionResponse{
         BaseCollectionPaginationCountResponse: *NewBaseCollectionPaginationCountResponse(),
     }
     return m
 }
-// CreateChangeItemBaseCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
+// CreateProfileSourceCollectionResponseFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
-func CreateChangeItemBaseCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
-    return NewChangeItemBaseCollectionResponse(), nil
+func CreateProfileSourceCollectionResponseFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    return NewProfileSourceCollectionResponse(), nil
 }
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
-func (m *ChangeItemBaseCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
+func (m *ProfileSourceCollectionResponse) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.BaseCollectionPaginationCountResponse.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateChangeItemBaseFromDiscriminatorValue)
+        val, err := n.GetCollectionOfObjectValues(CreateProfileSourceFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ChangeItemBaseable, len(val))
+            res := make([]ProfileSourceable, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = v.(ChangeItemBaseable)
+                    res[i] = v.(ProfileSourceable)
                 }
             }
             m.SetValue(res)
@@ -45,19 +45,19 @@ func (m *ChangeItemBaseCollectionResponse) GetFieldDeserializers()(map[string]fu
     return res
 }
 // GetValue gets the value property value. The value property
-// returns a []ChangeItemBaseable when successful
-func (m *ChangeItemBaseCollectionResponse) GetValue()([]ChangeItemBaseable) {
+// returns a []ProfileSourceable when successful
+func (m *ProfileSourceCollectionResponse) GetValue()([]ProfileSourceable) {
     val, err := m.GetBackingStore().Get("value")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]ChangeItemBaseable)
+        return val.([]ProfileSourceable)
     }
     return nil
 }
 // Serialize serializes information the current object
-func (m *ChangeItemBaseCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+func (m *ProfileSourceCollectionResponse) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.BaseCollectionPaginationCountResponse.Serialize(writer)
     if err != nil {
         return err
@@ -77,15 +77,15 @@ func (m *ChangeItemBaseCollectionResponse) Serialize(writer i878a80d2330e89d2689
     return nil
 }
 // SetValue sets the value property value. The value property
-func (m *ChangeItemBaseCollectionResponse) SetValue(value []ChangeItemBaseable)() {
+func (m *ProfileSourceCollectionResponse) SetValue(value []ProfileSourceable)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {
         panic(err)
     }
 }
-type ChangeItemBaseCollectionResponseable interface {
+type ProfileSourceCollectionResponseable interface {
     BaseCollectionPaginationCountResponseable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetValue()([]ChangeItemBaseable)
-    SetValue(value []ChangeItemBaseable)()
+    GetValue()([]ProfileSourceable)
+    SetValue(value []ProfileSourceable)()
 }

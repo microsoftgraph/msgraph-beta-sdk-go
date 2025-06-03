@@ -54,6 +54,11 @@ func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) ClockOut()(*ItemTe
 func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) Confirm()(*ItemTeamScheduleTimeCardsItemConfirmRequestBuilder) {
     return NewItemTeamScheduleTimeCardsItemConfirmRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ConfirmForUser provides operations to call the confirmForUser method.
+// returns a *ItemTeamScheduleTimeCardsItemConfirmForUserRequestBuilder when successful
+func (m *ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) ConfirmForUser()(*ItemTeamScheduleTimeCardsItemConfirmForUserRequestBuilder) {
+    return NewItemTeamScheduleTimeCardsItemConfirmForUserRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemTeamScheduleTimeCardsTimeCardItemRequestBuilderInternal instantiates a new ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder and sets the default values.
 func NewItemTeamScheduleTimeCardsTimeCardItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder) {
     m := &ItemTeamScheduleTimeCardsTimeCardItemRequestBuilder{

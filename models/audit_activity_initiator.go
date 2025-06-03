@@ -38,7 +38,7 @@ func (m *AuditActivityInitiator) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApp gets the app property value. If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
+// GetApp gets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId and name.
 // returns a AppIdentityable when successful
 func (m *AuditActivityInitiator) GetApp()(AppIdentityable) {
     val, err := m.GetBackingStore().Get("app")
@@ -125,7 +125,7 @@ func (m *AuditActivityInitiator) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUser gets the user property value. If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
+// GetUser gets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like user ID and userPrincipalName.
 // returns a AuditUserIdentityable when successful
 func (m *AuditActivityInitiator) GetUser()(AuditUserIdentityable) {
     val, err := m.GetBackingStore().Get("user")
@@ -178,7 +178,7 @@ func (m *AuditActivityInitiator) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetApp sets the app property value. If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.
+// SetApp sets the app property value. If the resource initiating the activity is an app, this property indicates all the app related information like appId and name.
 func (m *AuditActivityInitiator) SetApp(value AppIdentityable)() {
     err := m.GetBackingStore().Set("app", value)
     if err != nil {
@@ -203,7 +203,7 @@ func (m *AuditActivityInitiator) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUser sets the user property value. If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.
+// SetUser sets the user property value. If the resource initiating the activity is a user, this property Indicates all the user related information like user ID and userPrincipalName.
 func (m *AuditActivityInitiator) SetUser(value AuditUserIdentityable)() {
     err := m.GetBackingStore().Set("user", value)
     if err != nil {

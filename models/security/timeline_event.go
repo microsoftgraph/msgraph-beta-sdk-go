@@ -44,7 +44,7 @@ func (m *TimelineEvent) GetAdditionalData()(map[string]any) {
 func (m *TimelineEvent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEventDateTime gets the eventDateTime property value. The eventDateTime property
+// GetEventDateTime gets the eventDateTime property value. The date and time when the event occurred.
 // returns a *Time when successful
 func (m *TimelineEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
@@ -56,7 +56,7 @@ func (m *TimelineEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f
     }
     return nil
 }
-// GetEventDetails gets the eventDetails property value. The eventDetails property
+// GetEventDetails gets the eventDetails property value. Additional details or context about the event.
 // returns a *string when successful
 func (m *TimelineEvent) GetEventDetails()(*string) {
     val, err := m.GetBackingStore().Get("eventDetails")
@@ -68,7 +68,7 @@ func (m *TimelineEvent) GetEventDetails()(*string) {
     }
     return nil
 }
-// GetEventResult gets the eventResult property value. The eventResult property
+// GetEventResult gets the eventResult property value. The outcome or result of the event, such as delivery location or action taken.
 // returns a *string when successful
 func (m *TimelineEvent) GetEventResult()(*string) {
     val, err := m.GetBackingStore().Get("eventResult")
@@ -80,7 +80,7 @@ func (m *TimelineEvent) GetEventResult()(*string) {
     }
     return nil
 }
-// GetEventSource gets the eventSource property value. The eventSource property
+// GetEventSource gets the eventSource property value. The origin or actor that triggered the event. The possible values are: system, admin, user, unknownFutureValue.
 // returns a *EventSource when successful
 func (m *TimelineEvent) GetEventSource()(*EventSource) {
     val, err := m.GetBackingStore().Get("eventSource")
@@ -92,7 +92,7 @@ func (m *TimelineEvent) GetEventSource()(*EventSource) {
     }
     return nil
 }
-// GetEventThreats gets the eventThreats property value. The eventThreats property
+// GetEventThreats gets the eventThreats property value. Collection of threats identified or associated with this event.
 // returns a []string when successful
 func (m *TimelineEvent) GetEventThreats()([]string) {
     val, err := m.GetBackingStore().Get("eventThreats")
@@ -104,7 +104,7 @@ func (m *TimelineEvent) GetEventThreats()([]string) {
     }
     return nil
 }
-// GetEventType gets the eventType property value. The eventType property
+// GetEventType gets the eventType property value. The type of event that occurred. The possible values are: originalDelivery, systemTimeTravel, dynamicDelivery, userUrlClick, reprocessed, zap, quarantineRelease, air, unknown, unknownFutureValue.
 // returns a *TimelineEventType when successful
 func (m *TimelineEvent) GetEventType()(*TimelineEventType) {
     val, err := m.GetBackingStore().Get("eventType")
@@ -275,42 +275,42 @@ func (m *TimelineEvent) SetAdditionalData(value map[string]any)() {
 func (m *TimelineEvent) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEventDateTime sets the eventDateTime property value. The eventDateTime property
+// SetEventDateTime sets the eventDateTime property value. The date and time when the event occurred.
 func (m *TimelineEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("eventDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventDetails sets the eventDetails property value. The eventDetails property
+// SetEventDetails sets the eventDetails property value. Additional details or context about the event.
 func (m *TimelineEvent) SetEventDetails(value *string)() {
     err := m.GetBackingStore().Set("eventDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventResult sets the eventResult property value. The eventResult property
+// SetEventResult sets the eventResult property value. The outcome or result of the event, such as delivery location or action taken.
 func (m *TimelineEvent) SetEventResult(value *string)() {
     err := m.GetBackingStore().Set("eventResult", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventSource sets the eventSource property value. The eventSource property
+// SetEventSource sets the eventSource property value. The origin or actor that triggered the event. The possible values are: system, admin, user, unknownFutureValue.
 func (m *TimelineEvent) SetEventSource(value *EventSource)() {
     err := m.GetBackingStore().Set("eventSource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventThreats sets the eventThreats property value. The eventThreats property
+// SetEventThreats sets the eventThreats property value. Collection of threats identified or associated with this event.
 func (m *TimelineEvent) SetEventThreats(value []string)() {
     err := m.GetBackingStore().Set("eventThreats", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEventType sets the eventType property value. The eventType property
+// SetEventType sets the eventType property value. The type of event that occurred. The possible values are: originalDelivery, systemTimeTravel, dynamicDelivery, userUrlClick, reprocessed, zap, quarantineRelease, air, unknown, unknownFutureValue.
 func (m *TimelineEvent) SetEventType(value *TimelineEventType)() {
     err := m.GetBackingStore().Set("eventType", value)
     if err != nil {

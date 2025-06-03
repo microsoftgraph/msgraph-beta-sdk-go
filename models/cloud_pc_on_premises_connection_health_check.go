@@ -104,7 +104,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) GetEndDateTime()(*i336074805fc8
     }
     return nil
 }
-// GetErrorType gets the errorType property value. The type of error that occurred during this health check.
+// GetErrorType gets the errorType property value. The type of error that occurred during this health check. For the list of possible values, see cloudPcOnPremisesConnectionHealthCheckErrorType.
 // returns a *CloudPcOnPremisesConnectionHealthCheckErrorType when successful
 func (m *CloudPcOnPremisesConnectionHealthCheck) GetErrorType()(*CloudPcOnPremisesConnectionHealthCheckErrorType) {
     val, err := m.GetBackingStore().Get("errorType")
@@ -388,7 +388,7 @@ func (m *CloudPcOnPremisesConnectionHealthCheck) SetEndDateTime(value *i33607480
         panic(err)
     }
 }
-// SetErrorType sets the errorType property value. The type of error that occurred during this health check.
+// SetErrorType sets the errorType property value. The type of error that occurred during this health check. For the list of possible values, see cloudPcOnPremisesConnectionHealthCheckErrorType.
 func (m *CloudPcOnPremisesConnectionHealthCheck) SetErrorType(value *CloudPcOnPremisesConnectionHealthCheckErrorType)() {
     err := m.GetBackingStore().Set("errorType", value)
     if err != nil {

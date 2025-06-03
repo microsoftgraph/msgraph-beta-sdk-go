@@ -135,11 +135,6 @@ func (m *IdentityRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable), nil
 }
-// ProductChanges provides operations to manage the productChanges property of the microsoft.graph.identityContainer entity.
-// returns a *ProductChangesRequestBuilder when successful
-func (m *IdentityRequestBuilder) ProductChanges()(*ProductChangesRequestBuilder) {
-    return NewProductChangesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ToGetRequestInformation get identity
 // returns a *RequestInformation when successful
 func (m *IdentityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

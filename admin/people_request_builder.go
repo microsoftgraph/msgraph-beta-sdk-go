@@ -136,6 +136,16 @@ func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropert
 func (m *PeopleRequestBuilder) ProfilePropertySettings()(*PeopleProfilePropertySettingsRequestBuilder) {
     return NewPeopleProfilePropertySettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ProfileSources provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleProfileSourcesRequestBuilder when successful
+func (m *PeopleRequestBuilder) ProfileSources()(*PeopleProfileSourcesRequestBuilder) {
+    return NewPeopleProfileSourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ProfileSourcesWithSourceId provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeopleProfileSourcesWithSourceIdRequestBuilder when successful
+func (m *PeopleRequestBuilder) ProfileSourcesWithSourceId(sourceId *string)(*PeopleProfileSourcesWithSourceIdRequestBuilder) {
+    return NewPeopleProfileSourcesWithSourceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, sourceId)
+}
 // Pronouns provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.
 // returns a *PeoplePronounsRequestBuilder when successful
 func (m *PeopleRequestBuilder) Pronouns()(*PeoplePronounsRequestBuilder) {

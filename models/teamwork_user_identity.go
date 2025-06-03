@@ -38,6 +38,16 @@ func (m *TeamworkUserIdentity) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserPrincipalName(val)
+        }
+        return nil
+    }
     return res
 }
 // GetUserIdentityType gets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, emailUser and azureCommunicationServicesUser.
@@ -49,6 +59,18 @@ func (m *TeamworkUserIdentity) GetUserIdentityType()(*TeamworkUserIdentityType) 
     }
     if val != nil {
         return val.(*TeamworkUserIdentityType)
+    }
+    return nil
+}
+// GetUserPrincipalName gets the userPrincipalName property value. User principal name (UPN) of the user.
+// returns a *string when successful
+func (m *TeamworkUserIdentity) GetUserPrincipalName()(*string) {
+    val, err := m.GetBackingStore().Get("userPrincipalName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -65,6 +87,12 @@ func (m *TeamworkUserIdentity) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("userPrincipalName", m.GetUserPrincipalName())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetUserIdentityType sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, emailUser and azureCommunicationServicesUser.
@@ -74,9 +102,18 @@ func (m *TeamworkUserIdentity) SetUserIdentityType(value *TeamworkUserIdentityTy
         panic(err)
     }
 }
+// SetUserPrincipalName sets the userPrincipalName property value. User principal name (UPN) of the user.
+func (m *TeamworkUserIdentity) SetUserPrincipalName(value *string)() {
+    err := m.GetBackingStore().Set("userPrincipalName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type TeamworkUserIdentityable interface {
     Identityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetUserIdentityType()(*TeamworkUserIdentityType)
+    GetUserPrincipalName()(*string)
     SetUserIdentityType(value *TeamworkUserIdentityType)()
+    SetUserPrincipalName(value *string)()
 }
