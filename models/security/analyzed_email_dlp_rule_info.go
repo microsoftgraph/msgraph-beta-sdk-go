@@ -79,7 +79,7 @@ func (m *AnalyzedEmailDlpRuleInfo) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name of the the data loss prevention rule.
 // returns a *string when successful
 func (m *AnalyzedEmailDlpRuleInfo) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -103,7 +103,7 @@ func (m *AnalyzedEmailDlpRuleInfo) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRuleId gets the ruleId property value. The ruleId property
+// GetRuleId gets the ruleId property value. Unique identifier of the data loss prevention rule.
 // returns a *string when successful
 func (m *AnalyzedEmailDlpRuleInfo) GetRuleId()(*string) {
     val, err := m.GetBackingStore().Get("ruleId")
@@ -154,7 +154,7 @@ func (m *AnalyzedEmailDlpRuleInfo) SetAdditionalData(value map[string]any)() {
 func (m *AnalyzedEmailDlpRuleInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name of the the data loss prevention rule.
 func (m *AnalyzedEmailDlpRuleInfo) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
@@ -168,7 +168,7 @@ func (m *AnalyzedEmailDlpRuleInfo) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRuleId sets the ruleId property value. The ruleId property
+// SetRuleId sets the ruleId property value. Unique identifier of the data loss prevention rule.
 func (m *AnalyzedEmailDlpRuleInfo) SetRuleId(value *string)() {
     err := m.GetBackingStore().Set("ruleId", value)
     if err != nil {

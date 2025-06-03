@@ -40,7 +40,7 @@ func CreateAppScopeFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
     }
     return NewAppScope(), nil
 }
-// GetDisplayName gets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable ID. Read only.
+// GetDisplayName gets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Read only.
 // returns a *string when successful
 func (m *AppScope) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -78,7 +78,7 @@ func (m *AppScope) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetTypeEscaped gets the type property value. Describes the type of app-specific resource represented by the app scope. For display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read only.
+// GetTypeEscaped gets the type property value. Describes the type of app-specific resource represented by the app scope. Read-only.
 // returns a *string when successful
 func (m *AppScope) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -110,14 +110,14 @@ func (m *AppScope) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// SetDisplayName sets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Provided for display purposes since appScopeId is often an immutable, non-human-readable ID. Read only.
+// SetDisplayName sets the displayName property value. Provides the display name of the app-specific resource represented by the app scope. Read only.
 func (m *AppScope) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Describes the type of app-specific resource represented by the app scope. For display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read only.
+// SetTypeEscaped sets the type property value. Describes the type of app-specific resource represented by the app scope. Read-only.
 func (m *AppScope) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

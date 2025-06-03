@@ -60,7 +60,7 @@ func (m *SiteRestoreArtifactsBulkAdditionRequest) GetFieldDeserializers()(map[st
     }
     return res
 }
-// GetSiteIds gets the siteIds property value. The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+// GetSiteIds gets the siteIds property value. The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation.
 // returns a []string when successful
 func (m *SiteRestoreArtifactsBulkAdditionRequest) GetSiteIds()([]string) {
     val, err := m.GetBackingStore().Get("siteIds")
@@ -104,7 +104,7 @@ func (m *SiteRestoreArtifactsBulkAdditionRequest) Serialize(writer i878a80d2330e
     }
     return nil
 }
-// SetSiteIds sets the siteIds property value. The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation. This property isn't implemented yet. Future value; don't use.
+// SetSiteIds sets the siteIds property value. The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation.
 func (m *SiteRestoreArtifactsBulkAdditionRequest) SetSiteIds(value []string)() {
     err := m.GetBackingStore().Set("siteIds", value)
     if err != nil {

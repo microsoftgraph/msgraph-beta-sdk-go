@@ -43,7 +43,7 @@ func (m *AnalyzedEmailRecipientDetail) GetAdditionalData()(map[string]any) {
 func (m *AnalyzedEmailRecipientDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCcRecipients gets the ccRecipients property value. The ccRecipients property
+// GetCcRecipients gets the ccRecipients property value. Recipient address in the cc field.
 // returns a []string when successful
 func (m *AnalyzedEmailRecipientDetail) GetCcRecipients()([]string) {
     val, err := m.GetBackingStore().Get("ccRecipients")
@@ -55,7 +55,7 @@ func (m *AnalyzedEmailRecipientDetail) GetCcRecipients()([]string) {
     }
     return nil
 }
-// GetDomainName gets the domainName property value. The domainName property
+// GetDomainName gets the domainName property value. Domain name of the recipient.
 // returns a *string when successful
 func (m *AnalyzedEmailRecipientDetail) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
@@ -160,14 +160,14 @@ func (m *AnalyzedEmailRecipientDetail) SetAdditionalData(value map[string]any)()
 func (m *AnalyzedEmailRecipientDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCcRecipients sets the ccRecipients property value. The ccRecipients property
+// SetCcRecipients sets the ccRecipients property value. Recipient address in the cc field.
 func (m *AnalyzedEmailRecipientDetail) SetCcRecipients(value []string)() {
     err := m.GetBackingStore().Set("ccRecipients", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainName sets the domainName property value. The domainName property
+// SetDomainName sets the domainName property value. Domain name of the recipient.
 func (m *AnalyzedEmailRecipientDetail) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
     if err != nil {

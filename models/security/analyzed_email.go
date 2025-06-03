@@ -72,7 +72,7 @@ func (m *AnalyzedEmail) GetBulkComplaintLevel()(*string) {
     }
     return nil
 }
-// GetClientType gets the clientType property value. The clientType property
+// GetClientType gets the clientType property value. Shows the type of client that sent the message (for example, REST).
 // returns a *string when successful
 func (m *AnalyzedEmail) GetClientType()(*string) {
     val, err := m.GetBackingStore().Get("clientType")
@@ -132,7 +132,7 @@ func (m *AnalyzedEmail) GetDistributionList()(*string) {
     }
     return nil
 }
-// GetDlpRules gets the dlpRules property value. The dlpRules property
+// GetDlpRules gets the dlpRules property value. Data loss prevention rules configured in purview.
 // returns a []AnalyzedEmailDlpRuleInfoable when successful
 func (m *AnalyzedEmail) GetDlpRules()([]AnalyzedEmailDlpRuleInfoable) {
     val, err := m.GetBackingStore().Get("dlpRules")
@@ -610,7 +610,7 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetForwardingDetail gets the forwardingDetail property value. The forwardingDetail property
+// GetForwardingDetail gets the forwardingDetail property value. Email smtp forwarding details.
 // returns a *string when successful
 func (m *AnalyzedEmail) GetForwardingDetail()(*string) {
     val, err := m.GetBackingStore().Get("forwardingDetail")
@@ -622,7 +622,7 @@ func (m *AnalyzedEmail) GetForwardingDetail()(*string) {
     }
     return nil
 }
-// GetInboundConnectorFormattedName gets the inboundConnectorFormattedName property value. The inboundConnectorFormattedName property
+// GetInboundConnectorFormattedName gets the inboundConnectorFormattedName property value. Custom instructions name that defines organizational mail flow and how the email was routed.
 // returns a *string when successful
 func (m *AnalyzedEmail) GetInboundConnectorFormattedName()(*string) {
     val, err := m.GetBackingStore().Get("inboundConnectorFormattedName")
@@ -754,7 +754,7 @@ func (m *AnalyzedEmail) GetPolicyAction()(*string) {
     }
     return nil
 }
-// GetPolicyType gets the policyType property value. The policyType property
+// GetPolicyType gets the policyType property value. Type of policy configured that defines the delivery action on email.
 // returns a *string when successful
 func (m *AnalyzedEmail) GetPolicyType()(*string) {
     val, err := m.GetBackingStore().Get("policyType")
@@ -766,7 +766,7 @@ func (m *AnalyzedEmail) GetPolicyType()(*string) {
     }
     return nil
 }
-// GetPrimaryOverrideSource gets the primaryOverrideSource property value. The primaryOverrideSource property
+// GetPrimaryOverrideSource gets the primaryOverrideSource property value. Shows the organization or user setting that altered the intended delivery location of the message (allowed instead of blocked, or blocked instead of allowed).
 // returns a *string when successful
 func (m *AnalyzedEmail) GetPrimaryOverrideSource()(*string) {
     val, err := m.GetBackingStore().Get("primaryOverrideSource")
@@ -778,7 +778,7 @@ func (m *AnalyzedEmail) GetPrimaryOverrideSource()(*string) {
     }
     return nil
 }
-// GetRecipientDetail gets the recipientDetail property value. The recipientDetail property
+// GetRecipientDetail gets the recipientDetail property value. Details of the recipients.
 // returns a AnalyzedEmailRecipientDetailable when successful
 func (m *AnalyzedEmail) GetRecipientDetail()(AnalyzedEmailRecipientDetailable) {
     val, err := m.GetBackingStore().Get("recipientDetail")
@@ -862,7 +862,7 @@ func (m *AnalyzedEmail) GetSubject()(*string) {
     }
     return nil
 }
-// GetThreatDetectionDetails gets the threatDetectionDetails property value. The threatDetectionDetails property
+// GetThreatDetectionDetails gets the threatDetectionDetails property value. Information about threats detected in the email.
 // returns a []ThreatDetectionDetailable when successful
 func (m *AnalyzedEmail) GetThreatDetectionDetails()([]ThreatDetectionDetailable) {
     val, err := m.GetBackingStore().Get("threatDetectionDetails")
@@ -886,7 +886,7 @@ func (m *AnalyzedEmail) GetThreatTypes()([]ThreatType) {
     }
     return nil
 }
-// GetTimelineEvents gets the timelineEvents property value. The timelineEvents property
+// GetTimelineEvents gets the timelineEvents property value. Delivery and post-delivery events that happened to the email.
 // returns a []TimelineEventable when successful
 func (m *AnalyzedEmail) GetTimelineEvents()([]TimelineEventable) {
     val, err := m.GetBackingStore().Get("timelineEvents")
@@ -1205,7 +1205,7 @@ func (m *AnalyzedEmail) SetBulkComplaintLevel(value *string)() {
         panic(err)
     }
 }
-// SetClientType sets the clientType property value. The clientType property
+// SetClientType sets the clientType property value. Shows the type of client that sent the message (for example, REST).
 func (m *AnalyzedEmail) SetClientType(value *string)() {
     err := m.GetBackingStore().Set("clientType", value)
     if err != nil {
@@ -1240,7 +1240,7 @@ func (m *AnalyzedEmail) SetDistributionList(value *string)() {
         panic(err)
     }
 }
-// SetDlpRules sets the dlpRules property value. The dlpRules property
+// SetDlpRules sets the dlpRules property value. Data loss prevention rules configured in purview.
 func (m *AnalyzedEmail) SetDlpRules(value []AnalyzedEmailDlpRuleInfoable)() {
     err := m.GetBackingStore().Set("dlpRules", value)
     if err != nil {
@@ -1261,14 +1261,14 @@ func (m *AnalyzedEmail) SetExchangeTransportRules(value []AnalyzedEmailExchangeT
         panic(err)
     }
 }
-// SetForwardingDetail sets the forwardingDetail property value. The forwardingDetail property
+// SetForwardingDetail sets the forwardingDetail property value. Email smtp forwarding details.
 func (m *AnalyzedEmail) SetForwardingDetail(value *string)() {
     err := m.GetBackingStore().Set("forwardingDetail", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInboundConnectorFormattedName sets the inboundConnectorFormattedName property value. The inboundConnectorFormattedName property
+// SetInboundConnectorFormattedName sets the inboundConnectorFormattedName property value. Custom instructions name that defines organizational mail flow and how the email was routed.
 func (m *AnalyzedEmail) SetInboundConnectorFormattedName(value *string)() {
     err := m.GetBackingStore().Set("inboundConnectorFormattedName", value)
     if err != nil {
@@ -1345,21 +1345,21 @@ func (m *AnalyzedEmail) SetPolicyAction(value *string)() {
         panic(err)
     }
 }
-// SetPolicyType sets the policyType property value. The policyType property
+// SetPolicyType sets the policyType property value. Type of policy configured that defines the delivery action on email.
 func (m *AnalyzedEmail) SetPolicyType(value *string)() {
     err := m.GetBackingStore().Set("policyType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPrimaryOverrideSource sets the primaryOverrideSource property value. The primaryOverrideSource property
+// SetPrimaryOverrideSource sets the primaryOverrideSource property value. Shows the organization or user setting that altered the intended delivery location of the message (allowed instead of blocked, or blocked instead of allowed).
 func (m *AnalyzedEmail) SetPrimaryOverrideSource(value *string)() {
     err := m.GetBackingStore().Set("primaryOverrideSource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecipientDetail sets the recipientDetail property value. The recipientDetail property
+// SetRecipientDetail sets the recipientDetail property value. Details of the recipients.
 func (m *AnalyzedEmail) SetRecipientDetail(value AnalyzedEmailRecipientDetailable)() {
     err := m.GetBackingStore().Set("recipientDetail", value)
     if err != nil {
@@ -1408,7 +1408,7 @@ func (m *AnalyzedEmail) SetSubject(value *string)() {
         panic(err)
     }
 }
-// SetThreatDetectionDetails sets the threatDetectionDetails property value. The threatDetectionDetails property
+// SetThreatDetectionDetails sets the threatDetectionDetails property value. Information about threats detected in the email.
 func (m *AnalyzedEmail) SetThreatDetectionDetails(value []ThreatDetectionDetailable)() {
     err := m.GetBackingStore().Set("threatDetectionDetails", value)
     if err != nil {
@@ -1422,7 +1422,7 @@ func (m *AnalyzedEmail) SetThreatTypes(value []ThreatType)() {
         panic(err)
     }
 }
-// SetTimelineEvents sets the timelineEvents property value. The timelineEvents property
+// SetTimelineEvents sets the timelineEvents property value. Delivery and post-delivery events that happened to the email.
 func (m *AnalyzedEmail) SetTimelineEvents(value []TimelineEventable)() {
     err := m.GetBackingStore().Set("timelineEvents", value)
     if err != nil {

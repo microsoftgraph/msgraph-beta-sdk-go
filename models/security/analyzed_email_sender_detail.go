@@ -44,7 +44,7 @@ func (m *AnalyzedEmailSenderDetail) GetAdditionalData()(map[string]any) {
 func (m *AnalyzedEmailSenderDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Display name of sender from address.
 // returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -56,7 +56,7 @@ func (m *AnalyzedEmailSenderDetail) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetDomainCreationDateTime gets the domainCreationDateTime property value. The domainCreationDateTime property
+// GetDomainCreationDateTime gets the domainCreationDateTime property value. Date and time of creation of the sender domain.
 // returns a *Time when successful
 func (m *AnalyzedEmailSenderDetail) GetDomainCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("domainCreationDateTime")
@@ -68,7 +68,7 @@ func (m *AnalyzedEmailSenderDetail) GetDomainCreationDateTime()(*i336074805fc853
     }
     return nil
 }
-// GetDomainName gets the domainName property value. The domainName property
+// GetDomainName gets the domainName property value. Registered name of the domain.
 // returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetDomainName()(*string) {
     val, err := m.GetBackingStore().Get("domainName")
@@ -80,7 +80,7 @@ func (m *AnalyzedEmailSenderDetail) GetDomainName()(*string) {
     }
     return nil
 }
-// GetDomainOwner gets the domainOwner property value. The domainOwner property
+// GetDomainOwner gets the domainOwner property value. Owner of the domain.
 // returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetDomainOwner()(*string) {
     val, err := m.GetBackingStore().Get("domainOwner")
@@ -222,7 +222,7 @@ func (m *AnalyzedEmailSenderDetail) GetIpv4()(*string) {
     }
     return nil
 }
-// GetLocation gets the location property value. The location property
+// GetLocation gets the location property value. Location of the domain.
 // returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetLocation()(*string) {
     val, err := m.GetBackingStore().Get("location")
@@ -246,7 +246,7 @@ func (m *AnalyzedEmailSenderDetail) GetMailFromAddress()(*string) {
     }
     return nil
 }
-// GetMailFromDomainName gets the mailFromDomainName property value. The mailFromDomainName property
+// GetMailFromDomainName gets the mailFromDomainName property value. Domain name of sender mail from address.
 // returns a *string when successful
 func (m *AnalyzedEmailSenderDetail) GetMailFromDomainName()(*string) {
     val, err := m.GetBackingStore().Get("mailFromDomainName")
@@ -351,28 +351,28 @@ func (m *AnalyzedEmailSenderDetail) SetAdditionalData(value map[string]any)() {
 func (m *AnalyzedEmailSenderDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Display name of sender from address.
 func (m *AnalyzedEmailSenderDetail) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainCreationDateTime sets the domainCreationDateTime property value. The domainCreationDateTime property
+// SetDomainCreationDateTime sets the domainCreationDateTime property value. Date and time of creation of the sender domain.
 func (m *AnalyzedEmailSenderDetail) SetDomainCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("domainCreationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainName sets the domainName property value. The domainName property
+// SetDomainName sets the domainName property value. Registered name of the domain.
 func (m *AnalyzedEmailSenderDetail) SetDomainName(value *string)() {
     err := m.GetBackingStore().Set("domainName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDomainOwner sets the domainOwner property value. The domainOwner property
+// SetDomainOwner sets the domainOwner property value. Owner of the domain.
 func (m *AnalyzedEmailSenderDetail) SetDomainOwner(value *string)() {
     err := m.GetBackingStore().Set("domainOwner", value)
     if err != nil {
@@ -393,7 +393,7 @@ func (m *AnalyzedEmailSenderDetail) SetIpv4(value *string)() {
         panic(err)
     }
 }
-// SetLocation sets the location property value. The location property
+// SetLocation sets the location property value. Location of the domain.
 func (m *AnalyzedEmailSenderDetail) SetLocation(value *string)() {
     err := m.GetBackingStore().Set("location", value)
     if err != nil {
@@ -407,7 +407,7 @@ func (m *AnalyzedEmailSenderDetail) SetMailFromAddress(value *string)() {
         panic(err)
     }
 }
-// SetMailFromDomainName sets the mailFromDomainName property value. The mailFromDomainName property
+// SetMailFromDomainName sets the mailFromDomainName property value. Domain name of sender mail from address.
 func (m *AnalyzedEmailSenderDetail) SetMailFromDomainName(value *string)() {
     err := m.GetBackingStore().Set("mailFromDomainName", value)
     if err != nil {

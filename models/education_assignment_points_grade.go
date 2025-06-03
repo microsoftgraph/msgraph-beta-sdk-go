@@ -28,6 +28,16 @@ func CreateEducationAssignmentPointsGradeFromDiscriminatorValue(parseNode i878a8
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EducationAssignmentPointsGrade) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.EducationAssignmentGrade.GetFieldDeserializers()
+    res["grade"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGrade(val)
+        }
+        return nil
+    }
     res["points"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetFloat32Value()
         if err != nil {
@@ -39,6 +49,18 @@ func (m *EducationAssignmentPointsGrade) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetGrade gets the grade property value. The grade letter from the grading scheme that corresponds to the given number of points.
+// returns a *string when successful
+func (m *EducationAssignmentPointsGrade) GetGrade()(*string) {
+    val, err := m.GetBackingStore().Get("grade")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetPoints gets the points property value. Number of points a teacher gives to this submission object.
 // returns a *float32 when successful
@@ -59,12 +81,25 @@ func (m *EducationAssignmentPointsGrade) Serialize(writer i878a80d2330e89d268963
         return err
     }
     {
+        err = writer.WriteStringValue("grade", m.GetGrade())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteFloat32Value("points", m.GetPoints())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetGrade sets the grade property value. The grade letter from the grading scheme that corresponds to the given number of points.
+func (m *EducationAssignmentPointsGrade) SetGrade(value *string)() {
+    err := m.GetBackingStore().Set("grade", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetPoints sets the points property value. Number of points a teacher gives to this submission object.
 func (m *EducationAssignmentPointsGrade) SetPoints(value *float32)() {
@@ -76,6 +111,8 @@ func (m *EducationAssignmentPointsGrade) SetPoints(value *float32)() {
 type EducationAssignmentPointsGradeable interface {
     EducationAssignmentGradeable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetGrade()(*string)
     GetPoints()(*float32)
+    SetGrade(value *string)()
     SetPoints(value *float32)()
 }

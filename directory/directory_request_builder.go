@@ -170,6 +170,11 @@ func (m *DirectoryRequestBuilder) PendingExternalUserProfiles()(*PendingExternal
 func (m *DirectoryRequestBuilder) PublicKeyInfrastructure()(*PublicKeyInfrastructureRequestBuilder) {
     return NewPublicKeyInfrastructureRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RecommendationConfiguration provides operations to manage the recommendationConfiguration property of the microsoft.graph.directory entity.
+// returns a *RecommendationConfigurationRequestBuilder when successful
+func (m *DirectoryRequestBuilder) RecommendationConfiguration()(*RecommendationConfigurationRequestBuilder) {
+    return NewRecommendationConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Recommendations provides operations to manage the recommendations property of the microsoft.graph.directory entity.
 // returns a *RecommendationsRequestBuilder when successful
 func (m *DirectoryRequestBuilder) Recommendations()(*RecommendationsRequestBuilder) {

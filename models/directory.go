@@ -384,6 +384,16 @@ func (m *Directory) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["recommendationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRecommendationConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecommendationConfiguration(val.(RecommendationConfigurationable))
+        }
+        return nil
+    }
     res["recommendations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRecommendationFromDiscriminatorValue)
         if err != nil {
@@ -513,6 +523,18 @@ func (m *Directory) GetPublicKeyInfrastructure()(PublicKeyInfrastructureRootable
     }
     if val != nil {
         return val.(PublicKeyInfrastructureRootable)
+    }
+    return nil
+}
+// GetRecommendationConfiguration gets the recommendationConfiguration property value. The recommendationConfiguration property
+// returns a RecommendationConfigurationable when successful
+func (m *Directory) GetRecommendationConfiguration()(RecommendationConfigurationable) {
+    val, err := m.GetBackingStore().Get("recommendationConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RecommendationConfigurationable)
     }
     return nil
 }
@@ -744,6 +766,12 @@ func (m *Directory) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("recommendationConfiguration", m.GetRecommendationConfiguration())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRecommendations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRecommendations()))
         for i, v := range m.GetRecommendations() {
@@ -900,6 +928,13 @@ func (m *Directory) SetPublicKeyInfrastructure(value PublicKeyInfrastructureRoot
         panic(err)
     }
 }
+// SetRecommendationConfiguration sets the recommendationConfiguration property value. The recommendationConfiguration property
+func (m *Directory) SetRecommendationConfiguration(value RecommendationConfigurationable)() {
+    err := m.GetBackingStore().Set("recommendationConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRecommendations sets the recommendations property value. List of recommended improvements to improve tenant posture.
 func (m *Directory) SetRecommendations(value []Recommendationable)() {
     err := m.GetBackingStore().Set("recommendations", value)
@@ -947,6 +982,7 @@ type Directoryable interface {
     GetOutboundSharedUserProfiles()([]OutboundSharedUserProfileable)
     GetPendingExternalUserProfiles()([]PendingExternalUserProfileable)
     GetPublicKeyInfrastructure()(PublicKeyInfrastructureRootable)
+    GetRecommendationConfiguration()(RecommendationConfigurationable)
     GetRecommendations()([]Recommendationable)
     GetSharedEmailDomains()([]SharedEmailDomainable)
     GetSubscriptions()([]CompanySubscriptionable)
@@ -967,6 +1003,7 @@ type Directoryable interface {
     SetOutboundSharedUserProfiles(value []OutboundSharedUserProfileable)()
     SetPendingExternalUserProfiles(value []PendingExternalUserProfileable)()
     SetPublicKeyInfrastructure(value PublicKeyInfrastructureRootable)()
+    SetRecommendationConfiguration(value RecommendationConfigurationable)()
     SetRecommendations(value []Recommendationable)()
     SetSharedEmailDomains(value []SharedEmailDomainable)()
     SetSubscriptions(value []CompanySubscriptionable)()

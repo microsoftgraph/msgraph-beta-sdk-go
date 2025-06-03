@@ -111,7 +111,7 @@ func (m *AnalyzedEmailDeliveryDetail) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetLatestThreats gets the latestThreats property value. The latestThreats property
+// GetLatestThreats gets the latestThreats property value. Latest known threat on the email.
 // returns a *string when successful
 func (m *AnalyzedEmailDeliveryDetail) GetLatestThreats()(*string) {
     val, err := m.GetBackingStore().Get("latestThreats")
@@ -147,7 +147,7 @@ func (m *AnalyzedEmailDeliveryDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOriginalThreats gets the originalThreats property value. The originalThreats property
+// GetOriginalThreats gets the originalThreats property value. Threats identified at the time of delivery.
 // returns a *string when successful
 func (m *AnalyzedEmailDeliveryDetail) GetOriginalThreats()(*string) {
     val, err := m.GetBackingStore().Get("originalThreats")
@@ -219,7 +219,7 @@ func (m *AnalyzedEmailDeliveryDetail) SetAdditionalData(value map[string]any)() 
 func (m *AnalyzedEmailDeliveryDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetLatestThreats sets the latestThreats property value. The latestThreats property
+// SetLatestThreats sets the latestThreats property value. Latest known threat on the email.
 func (m *AnalyzedEmailDeliveryDetail) SetLatestThreats(value *string)() {
     err := m.GetBackingStore().Set("latestThreats", value)
     if err != nil {
@@ -240,7 +240,7 @@ func (m *AnalyzedEmailDeliveryDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOriginalThreats sets the originalThreats property value. The originalThreats property
+// SetOriginalThreats sets the originalThreats property value. Threats identified at the time of delivery.
 func (m *AnalyzedEmailDeliveryDetail) SetOriginalThreats(value *string)() {
     err := m.GetBackingStore().Set("originalThreats", value)
     if err != nil {

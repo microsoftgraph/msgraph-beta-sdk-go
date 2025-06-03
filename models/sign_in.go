@@ -1663,7 +1663,7 @@ func (m *SignIn) GetTokenProtectionStatusDetails()(TokenProtectionStatusDetailsa
     }
     return nil
 }
-// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
+// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. A unique base64-encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
 // returns a *string when successful
 func (m *SignIn) GetUniqueTokenIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("uniqueTokenIdentifier")
@@ -2732,7 +2732,7 @@ func (m *SignIn) SetTokenProtectionStatusDetails(value TokenProtectionStatusDeta
         panic(err)
     }
 }
-// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
+// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. A unique base64-encoded request identifier used to track tokens issued by Microsoft Entra ID as they're redeemed at resource providers.
 func (m *SignIn) SetUniqueTokenIdentifier(value *string)() {
     err := m.GetBackingStore().Set("uniqueTokenIdentifier", value)
     if err != nil {

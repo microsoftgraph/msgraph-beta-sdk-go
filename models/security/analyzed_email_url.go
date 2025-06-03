@@ -145,7 +145,7 @@ func (m *AnalyzedEmailUrl) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTenantAllowBlockListDetailInfo gets the tenantAllowBlockListDetailInfo property value. The tenantAllowBlockListDetailInfo property
+// GetTenantAllowBlockListDetailInfo gets the tenantAllowBlockListDetailInfo property value. Details of entries in tenant allow/block list configured by tenant.
 // returns a *string when successful
 func (m *AnalyzedEmailUrl) GetTenantAllowBlockListDetailInfo()(*string) {
     val, err := m.GetBackingStore().Get("tenantAllowBlockListDetailInfo")
@@ -260,7 +260,7 @@ func (m *AnalyzedEmailUrl) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTenantAllowBlockListDetailInfo sets the tenantAllowBlockListDetailInfo property value. The tenantAllowBlockListDetailInfo property
+// SetTenantAllowBlockListDetailInfo sets the tenantAllowBlockListDetailInfo property value. Details of entries in tenant allow/block list configured by tenant.
 func (m *AnalyzedEmailUrl) SetTenantAllowBlockListDetailInfo(value *string)() {
     err := m.GetBackingStore().Set("tenantAllowBlockListDetailInfo", value)
     if err != nil {

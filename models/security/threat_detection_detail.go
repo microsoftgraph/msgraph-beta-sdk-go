@@ -43,7 +43,7 @@ func (m *ThreatDetectionDetail) GetAdditionalData()(map[string]any) {
 func (m *ThreatDetectionDetail) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetConfidenceLevel gets the confidenceLevel property value. The confidenceLevel property
+// GetConfidenceLevel gets the confidenceLevel property value. Indicates the confidence level in the threat detection.
 // returns a *string when successful
 func (m *ThreatDetectionDetail) GetConfidenceLevel()(*string) {
     val, err := m.GetBackingStore().Get("confidenceLevel")
@@ -113,7 +113,7 @@ func (m *ThreatDetectionDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPriorityAccountProtection gets the priorityAccountProtection property value. The priorityAccountProtection property
+// GetPriorityAccountProtection gets the priorityAccountProtection property value. Indicates if the account has priority protection enabled.
 // returns a *string when successful
 func (m *ThreatDetectionDetail) GetPriorityAccountProtection()(*string) {
     val, err := m.GetBackingStore().Get("priorityAccountProtection")
@@ -125,7 +125,7 @@ func (m *ThreatDetectionDetail) GetPriorityAccountProtection()(*string) {
     }
     return nil
 }
-// GetThreats gets the threats property value. The threats property
+// GetThreats gets the threats property value. Lists the detected threats.
 // returns a *string when successful
 func (m *ThreatDetectionDetail) GetThreats()(*string) {
     val, err := m.GetBackingStore().Get("threats")
@@ -182,7 +182,7 @@ func (m *ThreatDetectionDetail) SetAdditionalData(value map[string]any)() {
 func (m *ThreatDetectionDetail) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetConfidenceLevel sets the confidenceLevel property value. The confidenceLevel property
+// SetConfidenceLevel sets the confidenceLevel property value. Indicates the confidence level in the threat detection.
 func (m *ThreatDetectionDetail) SetConfidenceLevel(value *string)() {
     err := m.GetBackingStore().Set("confidenceLevel", value)
     if err != nil {
@@ -196,14 +196,14 @@ func (m *ThreatDetectionDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPriorityAccountProtection sets the priorityAccountProtection property value. The priorityAccountProtection property
+// SetPriorityAccountProtection sets the priorityAccountProtection property value. Indicates if the account has priority protection enabled.
 func (m *ThreatDetectionDetail) SetPriorityAccountProtection(value *string)() {
     err := m.GetBackingStore().Set("priorityAccountProtection", value)
     if err != nil {
         panic(err)
     }
 }
-// SetThreats sets the threats property value. The threats property
+// SetThreats sets the threats property value. Lists the detected threats.
 func (m *ThreatDetectionDetail) SetThreats(value *string)() {
     err := m.GetBackingStore().Set("threats", value)
     if err != nil {

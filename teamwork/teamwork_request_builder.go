@@ -60,6 +60,11 @@ func (m *TeamworkRequestBuilder) DeletedChats()(*DeletedChatsRequestBuilder) {
 func (m *TeamworkRequestBuilder) DeletedTeams()(*DeletedTeamsRequestBuilder) {
     return NewDeletedTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// DetermineIfInteractionIsAllowed provides operations to call the determineIfInteractionIsAllowed method.
+// returns a *DetermineIfInteractionIsAllowedRequestBuilder when successful
+func (m *TeamworkRequestBuilder) DetermineIfInteractionIsAllowed()(*DetermineIfInteractionIsAllowedRequestBuilder) {
+    return NewDetermineIfInteractionIsAllowedRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Devices provides operations to manage the devices property of the microsoft.graph.teamwork entity.
 // returns a *DevicesRequestBuilder when successful
 func (m *TeamworkRequestBuilder) Devices()(*DevicesRequestBuilder) {
