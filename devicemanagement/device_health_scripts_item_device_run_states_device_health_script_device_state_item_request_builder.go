@@ -126,6 +126,7 @@ func (m *DeviceHealthScriptsItemDeviceRunStatesDeviceHealthScriptDeviceStateItem
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation list of run states for the device health script across all devices

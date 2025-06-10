@@ -126,6 +126,7 @@ func (m *ItemSitesItemPageTemplatesItemCanvasLayoutRequestBuilder) ToDeleteReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the layout of the content in a given SharePoint page template, including horizontal sections and vertical sections.

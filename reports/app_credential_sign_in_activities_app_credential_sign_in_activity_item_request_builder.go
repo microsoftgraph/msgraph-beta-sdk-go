@@ -124,6 +124,7 @@ func (m *AppCredentialSignInActivitiesAppCredentialSignInActivityItemRequestBuil
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get an appCredentialSignInActivity object that contains recent activity of an application credential.

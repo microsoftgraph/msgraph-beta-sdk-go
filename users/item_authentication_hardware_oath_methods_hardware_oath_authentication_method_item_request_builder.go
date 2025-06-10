@@ -109,6 +109,7 @@ func (m *ItemAuthenticationHardwareOathMethodsHardwareOathAuthenticationMethodIt
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the hardware OATH time-based one-time password (TOTP) devices assigned to a user for authentication.

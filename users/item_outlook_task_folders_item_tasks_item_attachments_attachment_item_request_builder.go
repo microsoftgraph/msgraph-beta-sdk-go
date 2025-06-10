@@ -97,6 +97,7 @@ func (m *ItemOutlookTaskFoldersItemTasksItemAttachmentsAttachmentItemRequestBuil
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task. Read-only. Nullable.

@@ -127,6 +127,7 @@ func (m *ItemProfilePhonesItemPhoneItemRequestBuilder) ToDeleteRequestInformatio
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents detailed information about phone numbers associated with a user in various services.

@@ -126,6 +126,7 @@ func (m *ItemDataSecurityAndGovernanceActivitiesRequestBuilder) ToDeleteRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation container for activity logs (content processing and audit) related to this user. ContainsTarget: true.

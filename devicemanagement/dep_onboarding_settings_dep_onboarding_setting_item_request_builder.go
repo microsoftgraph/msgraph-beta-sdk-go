@@ -171,6 +171,7 @@ func (m *DepOnboardingSettingsDepOnboardingSettingItemRequestBuilder) ToDeleteRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation this collections of multiple DEP tokens per-tenant.

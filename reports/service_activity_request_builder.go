@@ -247,6 +247,7 @@ func (m *ServiceActivityRequestBuilder) ToDeleteRequestInformation(ctx context.C
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation reports that relate to tenant-level authentication activities in Microsoft Entra.

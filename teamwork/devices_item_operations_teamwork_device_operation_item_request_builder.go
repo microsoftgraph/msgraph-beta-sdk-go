@@ -124,6 +124,7 @@ func (m *DevicesItemOperationsTeamworkDeviceOperationItemRequestBuilder) ToDelet
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the details of an async, long-running operation on a Microsoft Teams-enabled device.

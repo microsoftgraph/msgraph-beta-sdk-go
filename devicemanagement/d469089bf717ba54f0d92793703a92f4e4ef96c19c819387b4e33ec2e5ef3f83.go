@@ -121,6 +121,7 @@ func (m *WindowsInformationProtectionAppLearningSummariesWindowsInformationProte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the windows information protection app learning summaries.

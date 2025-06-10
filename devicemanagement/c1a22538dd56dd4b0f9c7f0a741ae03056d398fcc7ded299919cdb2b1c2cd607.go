@@ -126,6 +126,7 @@ func (m *MacOSSoftwareUpdateAccountSummariesMacOSSoftwareUpdateAccountSummaryIte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the MacOS software update account summaries for this account.

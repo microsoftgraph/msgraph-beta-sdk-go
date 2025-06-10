@@ -126,6 +126,7 @@ func (m *ExchangeOnPremisesPolicyRequestBuilder) ToDeleteRequestInformation(ctx 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the policy which controls mobile device access to Exchange On Premises

@@ -134,6 +134,7 @@ func (m *ExchangeCustomAppScopesCustomAppScopeItemRequestBuilder) ToDeleteReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.

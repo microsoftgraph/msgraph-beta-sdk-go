@@ -121,6 +121,7 @@ func (m *ItemDevicesItemUsageRightsUsageRightItemRequestBuilder) ToDeleteRequest
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the usage rights a device has been granted.

@@ -124,6 +124,7 @@ func (m *DailyPrintUsageByPrinterPrintUsageByPrinterItemRequestBuilder) ToDelete
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a printer's usage summary for a particular time period. For descriptions of each of the endpoints, see printUsageByPrinter.

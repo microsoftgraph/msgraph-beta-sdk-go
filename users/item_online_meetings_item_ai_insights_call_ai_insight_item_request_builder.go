@@ -121,6 +121,7 @@ func (m *ItemOnlineMeetingsItemAiInsightsCallAiInsightItemRequestBuilder) ToDele
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the AI insights generated for an online meeting. Read-only.

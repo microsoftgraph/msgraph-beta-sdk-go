@@ -136,6 +136,7 @@ func (m *GroupPolicyDefinitionsItemNextVersionDefinitionPreviousVersionDefinitio
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation definition of the previous version of this definition

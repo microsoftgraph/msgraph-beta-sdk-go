@@ -131,6 +131,7 @@ func (m *GroupPolicyConfigurationsItemDefinitionValuesItemPresentationValuesGrou
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the associated group policy presentation values with the definition value.

@@ -49,10 +49,13 @@ const (
     GENERATIVEAI_APPCATEGORY
     UNKNOWN_APPCATEGORY
     UNKNOWNFUTUREVALUE_APPCATEGORY
+    AIMODELPROVIDER_APPCATEGORY
+    MCPSERVER_APPCATEGORY
+    CLIENTAIAPP_APPCATEGORY
 )
 
 func (i AppCategory) String() string {
-    return []string{"security", "collaboration", "hostingServices", "onlineMeetings", "newsAndEntertainment", "eCommerce", "education", "cloudStorage", "marketing", "operationsManagement", "health", "advertising", "productivity", "accountingAndFinance", "contentManagement", "contentSharing", "businessManagement", "communications", "dataAnalytics", "businessIntelligence", "webemail", "codeHosting", "webAnalytics", "socialNetwork", "crm", "forums", "humanResourceManagement", "transportationAndTravel", "productDesign", "sales", "cloudComputingPlatform", "projectManagement", "personalInstantMessaging", "developmentTools", "itServices", "supplyChainAndLogistics", "propertyManagement", "customerSupport", "internetOfThings", "vendorManagementSystems", "websiteMonitoring", "generativeAi", "unknown", "unknownFutureValue"}[i]
+    return []string{"security", "collaboration", "hostingServices", "onlineMeetings", "newsAndEntertainment", "eCommerce", "education", "cloudStorage", "marketing", "operationsManagement", "health", "advertising", "productivity", "accountingAndFinance", "contentManagement", "contentSharing", "businessManagement", "communications", "dataAnalytics", "businessIntelligence", "webemail", "codeHosting", "webAnalytics", "socialNetwork", "crm", "forums", "humanResourceManagement", "transportationAndTravel", "productDesign", "sales", "cloudComputingPlatform", "projectManagement", "personalInstantMessaging", "developmentTools", "itServices", "supplyChainAndLogistics", "propertyManagement", "customerSupport", "internetOfThings", "vendorManagementSystems", "websiteMonitoring", "generativeAi", "unknown", "unknownFutureValue", "aiModelProvider", "mcpServer", "clientAiApp"}[i]
 }
 func ParseAppCategory(v string) (any, error) {
     result := SECURITY_APPCATEGORY
@@ -145,6 +148,12 @@ func ParseAppCategory(v string) (any, error) {
             result = UNKNOWN_APPCATEGORY
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_APPCATEGORY
+        case "aiModelProvider":
+            result = AIMODELPROVIDER_APPCATEGORY
+        case "mcpServer":
+            result = MCPSERVER_APPCATEGORY
+        case "clientAiApp":
+            result = CLIENTAIAPP_APPCATEGORY
         default:
             return nil, nil
     }

@@ -124,6 +124,7 @@ func (m *CasesEdiscoveryCasesItemCaseMembersEdiscoveryCaseMemberItemRequestBuild
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation returns a list of ediscoveryCaseMember objects associated to this case.

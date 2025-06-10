@@ -124,6 +124,7 @@ func (m *ItemDelegatedPermissionClassificationsDelegatedPermissionClassification
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the permission classifications for delegated permissions exposed by the app that this service principal represents. Supports $expand.

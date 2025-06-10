@@ -146,6 +146,7 @@ func (m *ItemSynchronizationRequestBuilder) ToDeleteRequestInformation(ctx conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the capability for Microsoft Entra identity synchronization through the Microsoft Graph API.

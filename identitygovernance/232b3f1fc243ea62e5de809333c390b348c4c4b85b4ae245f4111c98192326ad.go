@@ -141,6 +141,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsItemAccessPackageAssignmen
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the resource roles delivered to the target user for this assignment. Read-only. Nullable.

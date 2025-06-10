@@ -126,6 +126,7 @@ func (m *MessageRecipientItemRequestBuilder) ToDeleteRequestInformation(ctx cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get entity from messageRecipients by key

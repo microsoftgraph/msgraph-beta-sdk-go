@@ -126,6 +126,7 @@ func (m *ManagedTenantsManagedTenantAlertRuleDefinitionsManagedTenantAlertRuleDe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get managedTenantAlertRuleDefinitions from tenantRelationships

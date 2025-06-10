@@ -121,6 +121,7 @@ func (m *IntentsItemUserStatesDeviceManagementIntentUserStateItemRequestBuilder)
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of states of all users that the intent is applied to

@@ -121,6 +121,7 @@ func (m *IntentsItemDeviceSettingStateSummariesDeviceManagementIntentDeviceSetti
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent

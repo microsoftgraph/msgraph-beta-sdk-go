@@ -121,6 +121,7 @@ func (m *WindowsInformationProtectionPoliciesItemExemptAppLockerFilesWindowsInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation another way to input exempt apps through xml files

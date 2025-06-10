@@ -121,6 +121,7 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelConfigurationRequestBuilder) ToD
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite

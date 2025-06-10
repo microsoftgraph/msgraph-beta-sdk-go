@@ -121,6 +121,7 @@ func (m *IntentsItemDeviceStateSummaryRequestBuilder) ToDeleteRequestInformation
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to

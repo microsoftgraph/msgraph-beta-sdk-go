@@ -121,6 +121,7 @@ func (m *IntentsItemCategoriesItemSettingDefinitionsDeviceManagementSettingDefin
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the setting definitions this category contains

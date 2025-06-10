@@ -121,6 +121,7 @@ func (m *ItemSettingsContactMergeSuggestionsRequestBuilder) ToDeleteRequestInfor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the user's settings for the visibility of merge suggestion for the duplicate contacts in the user's contact list.

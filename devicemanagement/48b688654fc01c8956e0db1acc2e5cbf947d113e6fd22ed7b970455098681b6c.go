@@ -121,6 +121,7 @@ func (m *EmbeddedSIMActivationCodePoolsItemAssignmentsEmbeddedSIMActivationCodeP
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation navigational property to a list of targets to which this pool is assigned.

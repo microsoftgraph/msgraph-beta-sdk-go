@@ -126,6 +126,7 @@ func (m *ItemItemsItemWorkbookWorksheetsItemTasksItemCommentRepliesWorkbookComme
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of replies to the comment. Read-only. Nullable.

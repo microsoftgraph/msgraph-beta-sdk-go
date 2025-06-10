@@ -121,6 +121,7 @@ func (m *SettingDefinitionsDeviceManagementSettingDefinitionItemRequestBuilder) 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the device management intent setting definitions

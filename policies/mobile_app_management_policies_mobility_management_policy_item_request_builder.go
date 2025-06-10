@@ -135,6 +135,7 @@ func (m *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a mobilityManagementPolicy object.

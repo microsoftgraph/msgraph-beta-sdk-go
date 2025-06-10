@@ -178,16 +178,6 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ManagedDeviceable), nil
 }
-// GetCloudPcRemoteActionResults provides operations to call the getCloudPcRemoteActionResults method.
-// returns a *ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder when successful
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) GetCloudPcRemoteActionResults()(*ItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilder) {
-    return NewItemManagedDevicesItemGetCloudPcRemoteActionResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// GetCloudPcReviewStatus provides operations to call the getCloudPcReviewStatus method.
-// returns a *ItemManagedDevicesItemGetCloudPcReviewStatusRequestBuilder when successful
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) GetCloudPcReviewStatus()(*ItemManagedDevicesItemGetCloudPcReviewStatusRequestBuilder) {
-    return NewItemManagedDevicesItemGetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // GetFileVaultKey provides operations to call the getFileVaultKey method.
 // returns a *ItemManagedDevicesItemGetFileVaultKeyRequestBuilder when successful
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) GetFileVaultKey()(*ItemManagedDevicesItemGetFileVaultKeyRequestBuilder) {
@@ -338,11 +328,6 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) SecurityBaselineStat
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) SendCustomNotificationToCompanyPortal()(*ItemManagedDevicesItemSendCustomNotificationToCompanyPortalRequestBuilder) {
     return NewItemManagedDevicesItemSendCustomNotificationToCompanyPortalRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// SetCloudPcReviewStatus provides operations to call the setCloudPcReviewStatus method.
-// returns a *ItemManagedDevicesItemSetCloudPcReviewStatusRequestBuilder when successful
-func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) SetCloudPcReviewStatus()(*ItemManagedDevicesItemSetCloudPcReviewStatusRequestBuilder) {
-    return NewItemManagedDevicesItemSetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // SetDeviceName provides operations to call the setDeviceName method.
 // returns a *ItemManagedDevicesItemSetDeviceNameRequestBuilder when successful
 func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) SetDeviceName()(*ItemManagedDevicesItemSetDeviceNameRequestBuilder) {
@@ -366,6 +351,7 @@ func (m *ItemManagedDevicesManagedDeviceItemRequestBuilder) ToDeleteRequestInfor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the managed devices associated with the user.

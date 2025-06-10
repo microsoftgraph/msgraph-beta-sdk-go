@@ -131,6 +131,7 @@ func (m *CompaniesItemSalesCreditMemosItemSalesCreditMemoLinesItemItem_EscapedRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get item from financials

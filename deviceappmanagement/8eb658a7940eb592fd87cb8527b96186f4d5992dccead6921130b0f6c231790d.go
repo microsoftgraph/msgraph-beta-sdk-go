@@ -121,6 +121,7 @@ func (m *WindowsInformationProtectionDeviceRegistrationsWindowsInformationProtec
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation windows information protection device registrations that are not MDM enrolled.

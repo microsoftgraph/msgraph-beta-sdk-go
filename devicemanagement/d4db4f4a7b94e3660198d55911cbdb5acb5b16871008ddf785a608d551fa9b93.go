@@ -121,6 +121,7 @@ func (m *ReportsCachedReportConfigurationsDeviceManagementCachedReportConfigurat
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation entity representing the configuration of a cached report.

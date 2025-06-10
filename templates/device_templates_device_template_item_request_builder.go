@@ -141,6 +141,7 @@ func (m *DeviceTemplatesDeviceTemplateItemRequestBuilder) ToDeleteRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation defines the templates that are common to a set of device objects, such as IoT devices.

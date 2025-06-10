@@ -121,6 +121,7 @@ func (m *DataSecurityAndGovernanceProtectionScopesRequestBuilder) ToDeleteReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation container for actions related to computing tenant-wide data protection scopes.

@@ -141,6 +141,7 @@ func (m *ItemRoleAssignmentRequestsGovernanceRoleAssignmentRequestItemRequestBui
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of role assignment requests for the provider.

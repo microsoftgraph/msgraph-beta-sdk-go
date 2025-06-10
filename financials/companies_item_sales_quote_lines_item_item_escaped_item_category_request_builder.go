@@ -121,6 +121,7 @@ func (m *CompaniesItemSalesQuoteLinesItemItem_EscapedItemCategoryRequestBuilder)
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get itemCategory from financials

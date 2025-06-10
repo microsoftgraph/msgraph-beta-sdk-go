@@ -221,6 +221,7 @@ func (m *ItemTeamDefinitionRequestBuilder) ToDeleteRequestInformation(ctx contex
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.

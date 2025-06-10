@@ -121,6 +121,7 @@ func (m *DataLossPreventionPoliciesDataLossPreventionPolicyItemRequestBuilder) T
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get dataLossPreventionPolicies from informationProtection

@@ -121,6 +121,7 @@ func (m *GroupPolicyMigrationReportsItemUnsupportedGroupPolicyExtensionsUnsuppor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a list of unsupported group policy extensions inside the Group Policy Object.

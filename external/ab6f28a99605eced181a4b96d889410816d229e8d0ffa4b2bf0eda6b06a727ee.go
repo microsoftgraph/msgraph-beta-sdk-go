@@ -126,6 +126,7 @@ func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsProvisioni
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.

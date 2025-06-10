@@ -121,6 +121,7 @@ func (m *ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation users who have been assigned this role.

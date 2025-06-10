@@ -136,6 +136,7 @@ func (m *EmbeddedSIMActivationCodePoolsEmbeddedSIMActivationCodePoolItemRequestB
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the embedded SIM activation code pools created by this account.

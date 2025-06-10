@@ -125,6 +125,7 @@ func (m *OnlineMeetingsItemRegistrationRegistrantsMeetingRegistrantBaseItemReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation registrants of the online meeting.

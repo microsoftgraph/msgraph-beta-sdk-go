@@ -125,6 +125,7 @@ func (m *EdiscoveryCasesItemNoncustodialDataSourcesItemDataSourceRequestBuilder)
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation user source or SharePoint site data source as noncustodial data source.

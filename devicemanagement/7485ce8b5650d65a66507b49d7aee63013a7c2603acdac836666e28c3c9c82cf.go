@@ -121,6 +121,7 @@ func (m *UserExperienceAnalyticsAnomalyCorrelationGroupOverviewUserExperienceAna
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.

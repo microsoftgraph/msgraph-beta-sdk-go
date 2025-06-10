@@ -130,6 +130,7 @@ func (m *ComanagedDevicesItemDeviceHealthScriptStatesWithIdWithPolicyIdWithDevic
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation results of device health scripts that ran for this device. Default is empty list. This property is read-only.

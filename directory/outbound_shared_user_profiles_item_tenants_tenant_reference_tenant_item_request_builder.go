@@ -126,6 +126,7 @@ func (m *OutboundSharedUserProfilesItemTenantsTenantReferenceTenantItemRequestBu
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.

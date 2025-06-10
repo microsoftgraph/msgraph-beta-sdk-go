@@ -121,6 +121,7 @@ func (m *IntentsItemUserStateSummaryRequestBuilder) ToDeleteRequestInformation(c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to

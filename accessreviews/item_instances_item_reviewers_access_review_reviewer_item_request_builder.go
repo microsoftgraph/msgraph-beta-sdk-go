@@ -121,6 +121,7 @@ func (m *ItemInstancesItemReviewersAccessReviewReviewerItemRequestBuilder) ToDel
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of reviewers for an access review, if access review reviewerType is of type delegated.

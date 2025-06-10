@@ -121,6 +121,7 @@ func (m *MacOSSoftwareUpdateAccountSummariesItemCategorySummariesMacOSSoftwareUp
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation summary of the updates by category.

@@ -126,6 +126,7 @@ func (m *TemplatesRequestBuilder) ToDeleteRequestInformation(ctx context.Context
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a container for templates, such as device templates used for onboarding devices in Microsoft Entra ID.

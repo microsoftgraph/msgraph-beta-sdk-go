@@ -121,6 +121,7 @@ func (m *ItemProfileInterestsPersonInterestItemRequestBuilder) ToDeleteRequestIn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation provides detailed information about interests the user has associated with themselves in various services.

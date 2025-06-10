@@ -131,6 +131,7 @@ func (m *ManagedTenantsManagementTemplateStepsManagementTemplateStepItemRequestB
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get managementTemplateSteps from tenantRelationships

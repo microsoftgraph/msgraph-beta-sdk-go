@@ -131,6 +131,7 @@ func (m *IntuneBrandingProfilesIntuneBrandingProfileItemRequestBuilder) ToDelete
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation intune branding profiles targeted to AAD groups

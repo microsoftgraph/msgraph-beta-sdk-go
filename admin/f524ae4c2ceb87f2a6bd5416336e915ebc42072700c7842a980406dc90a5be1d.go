@@ -131,6 +131,7 @@ func (m *WindowsUpdatesUpdatePoliciesItemAudienceApplicableContentApplicableCont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation content eligible to deploy to devices in the audience. Not nullable. Read-only.

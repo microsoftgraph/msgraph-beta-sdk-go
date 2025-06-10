@@ -140,6 +140,7 @@ func (m *ItemOutlookTaskFoldersItemTasksOutlookTaskItemRequestBuilder) ToDeleteR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the tasks in this task folder. Read-only. Nullable.

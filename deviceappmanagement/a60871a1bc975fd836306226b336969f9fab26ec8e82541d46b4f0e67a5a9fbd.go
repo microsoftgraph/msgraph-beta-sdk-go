@@ -121,6 +121,7 @@ func (m *MobileAppsItemGraphIosVppAppAssignedLicensesIosVppAppAssignedLicenseIte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the licenses assigned to this app.

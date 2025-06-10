@@ -121,6 +121,7 @@ func (m *IosLobAppProvisioningConfigurationsItemDeviceStatusesManagedDeviceMobil
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of device installation states for this mobile app configuration.

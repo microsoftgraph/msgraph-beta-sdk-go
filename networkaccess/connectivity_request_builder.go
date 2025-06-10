@@ -131,6 +131,7 @@ func (m *ConnectivityRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation connectivity represents all the connectivity components in Global Secure Access.

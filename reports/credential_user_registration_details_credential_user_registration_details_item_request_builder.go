@@ -125,6 +125,7 @@ func (m *CredentialUserRegistrationDetailsCredentialUserRegistrationDetailsItemR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.

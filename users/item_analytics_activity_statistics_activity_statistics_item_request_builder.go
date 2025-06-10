@@ -121,6 +121,7 @@ func (m *ItemAnalyticsActivityStatisticsActivityStatisticsItemRequestBuilder) To
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.

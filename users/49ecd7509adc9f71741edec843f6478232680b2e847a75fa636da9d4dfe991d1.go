@@ -121,6 +121,7 @@ func (m *ItemManagedDevicesItemManagedDeviceMobileAppConfigurationStatesManagedD
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation managed device mobile app configuration states for this device.

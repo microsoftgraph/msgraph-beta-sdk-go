@@ -125,6 +125,7 @@ func (m *DailyPrintUsageSummariesByUserPrintUsageByUserItemRequestBuilder) ToDel
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get dailyPrintUsageSummariesByUser from reports

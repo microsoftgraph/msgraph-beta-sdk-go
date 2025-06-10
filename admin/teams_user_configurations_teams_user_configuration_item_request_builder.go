@@ -124,6 +124,7 @@ func (m *TeamsUserConfigurationsTeamsUserConfigurationItemRequestBuilder) ToDele
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the Teams user configurations for a specific user using their ID (the user's identifier).

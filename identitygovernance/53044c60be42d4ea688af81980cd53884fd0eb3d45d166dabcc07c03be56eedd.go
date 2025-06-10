@@ -130,6 +130,7 @@ func (m *EntitlementManagementAccessPackageCatalogsItemAccessPackageResourceRole
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the roles in each resource in a catalog. Read-only.

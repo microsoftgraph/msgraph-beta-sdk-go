@@ -121,6 +121,7 @@ func (m *GroupPolicyObjectFilesGroupPolicyObjectFileItemRequestBuilder) ToDelete
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a list of Group Policy Object files uploaded.

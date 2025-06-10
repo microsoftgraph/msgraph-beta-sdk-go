@@ -121,6 +121,7 @@ func (m *ItemSettingsRegionalAndLanguageSettingsRequestBuilder) ToDeleteRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the user's preferences for languages, regional locale and date/time formatting.

@@ -124,6 +124,7 @@ func (m *ForwardingPoliciesItemPolicyRulesPolicyRuleItemRequestBuilder) ToDelete
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the definition of the policy ruleset that makes up the core definition of a policy.

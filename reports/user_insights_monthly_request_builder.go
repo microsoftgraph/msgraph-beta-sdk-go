@@ -166,6 +166,7 @@ func (m *UserInsightsMonthlyRequestBuilder) ToDeleteRequestInformation(ctx conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation summaries of monthly user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.

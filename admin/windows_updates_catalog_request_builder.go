@@ -126,6 +126,7 @@ func (m *WindowsUpdatesCatalogRequestBuilder) ToDeleteRequestInformation(ctx con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation catalog of content that can be approved for deployment by Windows Autopatch. Read-only.

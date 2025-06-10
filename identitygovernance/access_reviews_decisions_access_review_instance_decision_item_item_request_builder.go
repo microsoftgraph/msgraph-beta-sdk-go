@@ -131,6 +131,7 @@ func (m *AccessReviewsDecisionsAccessReviewInstanceDecisionItemItemRequestBuilde
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents a Microsoft Entra access review decision on an instance of a review.

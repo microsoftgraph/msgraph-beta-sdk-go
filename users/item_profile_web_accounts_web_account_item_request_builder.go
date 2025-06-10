@@ -121,6 +121,7 @@ func (m *ItemProfileWebAccountsWebAccountItemRequestBuilder) ToDeleteRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents web accounts the user has indicated they use or has added to their user profile.

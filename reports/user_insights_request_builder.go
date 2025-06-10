@@ -131,6 +131,7 @@ func (m *UserInsightsRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.

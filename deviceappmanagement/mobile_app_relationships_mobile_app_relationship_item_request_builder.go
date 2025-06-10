@@ -121,6 +121,7 @@ func (m *MobileAppRelationshipsMobileAppRelationshipItemRequestBuilder) ToDelete
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation list mobileAppRelationship objects for mobile applications.

@@ -111,6 +111,7 @@ func (m *CallsItemContentSharingSessionsItemPngOfCurrentSlideRequestBuilder) ToD
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get pngOfCurrentSlide for the navigation property contentSharingSessions from app
@@ -121,7 +122,7 @@ func (m *CallsItemContentSharingSessionsItemPngOfCurrentSlideRequestBuilder) ToG
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation update pngOfCurrentSlide for the navigation property contentSharingSessions in app
@@ -132,6 +133,7 @@ func (m *CallsItemContentSharingSessionsItemPngOfCurrentSlideRequestBuilder) ToP
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

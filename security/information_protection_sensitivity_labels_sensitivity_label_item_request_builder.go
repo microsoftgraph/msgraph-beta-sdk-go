@@ -126,6 +126,7 @@ func (m *InformationProtectionSensitivityLabelsSensitivityLabelItemRequestBuilde
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the Microsoft Purview Information Protection labels for the user or organization.
