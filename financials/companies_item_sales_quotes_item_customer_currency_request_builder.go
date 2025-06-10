@@ -121,6 +121,7 @@ func (m *CompaniesItemSalesQuotesItemCustomerCurrencyRequestBuilder) ToDeleteReq
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get currency from financials

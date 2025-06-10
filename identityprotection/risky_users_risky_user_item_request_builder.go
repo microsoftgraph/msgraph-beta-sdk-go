@@ -126,6 +126,7 @@ func (m *RiskyUsersRiskyUserItemRequestBuilder) ToDeleteRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation users that are flagged as at-risk by Microsoft Entra ID Protection.

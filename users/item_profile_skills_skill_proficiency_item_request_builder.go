@@ -121,6 +121,7 @@ func (m *ItemProfileSkillsSkillProficiencyItemRequestBuilder) ToDeleteRequestInf
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents detailed information about skills associated with a user in various services.

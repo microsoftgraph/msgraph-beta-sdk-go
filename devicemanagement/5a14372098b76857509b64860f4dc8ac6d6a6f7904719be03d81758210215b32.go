@@ -126,6 +126,7 @@ func (m *DeviceComplianceScriptsItemDeviceRunStatesDeviceComplianceScriptDeviceS
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation list of run states for the device compliance script across all devices

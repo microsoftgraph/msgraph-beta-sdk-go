@@ -130,6 +130,7 @@ func (m *FeatureRolloutPoliciesFeatureRolloutPolicyItemRequestBuilder) ToDeleteR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get featureRolloutPolicies from directory

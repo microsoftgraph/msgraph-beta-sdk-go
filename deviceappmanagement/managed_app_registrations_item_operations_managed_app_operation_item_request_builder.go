@@ -121,6 +121,7 @@ func (m *ManagedAppRegistrationsItemOperationsManagedAppOperationItemRequestBuil
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation zero or more long running operations triggered on the app registration.

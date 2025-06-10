@@ -126,6 +126,7 @@ func (m *RoleDefinitionsItemRoleAssignmentsRoleAssignmentItemRequestBuilder) ToD
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation list of Role assignments for this role definition.

@@ -130,6 +130,7 @@ func (m *SensorDevicesWorkplaceSensorDeviceItemRequestBuilder) ToDeleteRequestIn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.

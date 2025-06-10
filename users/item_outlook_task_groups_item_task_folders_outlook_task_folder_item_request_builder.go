@@ -135,6 +135,7 @@ func (m *ItemOutlookTaskGroupsItemTaskFoldersOutlookTaskFolderItemRequestBuilder
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of task folders in the task group. Read-only. Nullable.

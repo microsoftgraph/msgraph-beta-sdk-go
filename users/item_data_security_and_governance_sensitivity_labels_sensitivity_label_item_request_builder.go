@@ -131,6 +131,7 @@ func (m *ItemDataSecurityAndGovernanceSensitivityLabelsSensitivityLabelItemReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get sensitivityLabels from users

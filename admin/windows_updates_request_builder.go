@@ -146,6 +146,7 @@ func (m *WindowsUpdatesRequestBuilder) ToDeleteRequestInformation(ctx context.Co
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.

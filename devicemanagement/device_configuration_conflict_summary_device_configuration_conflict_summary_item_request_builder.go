@@ -121,6 +121,7 @@ func (m *DeviceConfigurationConflictSummaryDeviceConfigurationConflictSummaryIte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation summary of policies in conflict state for this account.

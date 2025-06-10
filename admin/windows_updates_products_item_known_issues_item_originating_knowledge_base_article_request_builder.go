@@ -121,6 +121,7 @@ func (m *WindowsUpdatesProductsItemKnownIssuesItemOriginatingKnowledgeBaseArticl
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation knowledge base article associated with the release when the known issue was first reported.

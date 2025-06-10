@@ -112,6 +112,7 @@ func (m *CompaniesItemPurchaseInvoiceLinesItemItem_EscapedPictureItemContentRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get content for the navigation property picture from financials
@@ -122,7 +123,7 @@ func (m *CompaniesItemPurchaseInvoiceLinesItemItem_EscapedPictureItemContentRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation update content for the navigation property picture in financials

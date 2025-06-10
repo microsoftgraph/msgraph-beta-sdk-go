@@ -131,6 +131,7 @@ func (m *ReusablePolicySettingsDeviceManagementReusablePolicySettingItemRequestB
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation list of all reusable settings that can be referred in a policy

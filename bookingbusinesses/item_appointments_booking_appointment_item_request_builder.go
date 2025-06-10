@@ -126,6 +126,7 @@ func (m *ItemAppointmentsBookingAppointmentItemRequestBuilder) ToDeleteRequestIn
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation all the appointments of this business. Read-only. Nullable.

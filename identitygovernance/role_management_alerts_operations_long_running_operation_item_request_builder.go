@@ -121,6 +121,7 @@ func (m *RoleManagementAlertsOperationsLongRunningOperationItemRequestBuilder) T
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents operations on resources that take a long time to complete and can run in the background until completion.

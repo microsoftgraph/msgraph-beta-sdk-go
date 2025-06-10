@@ -142,6 +142,7 @@ func (m *VirtualEventsTownhallsVirtualEventTownhallItemRequestBuilder) ToDeleteR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties and relationships of a virtualEventTownhall object.

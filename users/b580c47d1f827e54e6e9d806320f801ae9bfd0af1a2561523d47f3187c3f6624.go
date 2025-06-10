@@ -125,6 +125,7 @@ func (m *ItemOnlineMeetingsItemRegistrationCustomQuestionsMeetingRegistrationQue
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation custom registration questions.

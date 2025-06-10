@@ -121,6 +121,7 @@ func (m *BookingBusinessesItemStaffMembersBookingStaffMemberItemRequestBuilder) 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation all the staff members that provide services in this business. Read-only. Nullable.

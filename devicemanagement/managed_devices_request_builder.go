@@ -54,21 +54,6 @@ type ManagedDevicesRequestBuilderPostRequestConfiguration struct {
 func (m *ManagedDevicesRequestBuilder) AppDiagnosticsWithUpn(upn *string)(*ManagedDevicesAppDiagnosticsWithUpnRequestBuilder) {
     return NewManagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, upn)
 }
-// BulkReprovisionCloudPc provides operations to call the bulkReprovisionCloudPc method.
-// returns a *ManagedDevicesBulkReprovisionCloudPcRequestBuilder when successful
-func (m *ManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*ManagedDevicesBulkReprovisionCloudPcRequestBuilder) {
-    return NewManagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BulkRestoreCloudPc provides operations to call the bulkRestoreCloudPc method.
-// returns a *ManagedDevicesBulkRestoreCloudPcRequestBuilder when successful
-func (m *ManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*ManagedDevicesBulkRestoreCloudPcRequestBuilder) {
-    return NewManagedDevicesBulkRestoreCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BulkSetCloudPcReviewStatus provides operations to call the bulkSetCloudPcReviewStatus method.
-// returns a *ManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder when successful
-func (m *ManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
-    return NewManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ByManagedDeviceId provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
 // returns a *ManagedDevicesManagedDeviceItemRequestBuilder when successful
 func (m *ManagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*ManagedDevicesManagedDeviceItemRequestBuilder) {

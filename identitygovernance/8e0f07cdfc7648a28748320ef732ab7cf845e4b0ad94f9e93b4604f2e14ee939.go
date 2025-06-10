@@ -121,6 +121,7 @@ func (m *RoleManagementAlertsAlertDefinitionsUnifiedRoleManagementAlertDefinitio
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation defines an alert, its impact, and measures to mitigate or prevent it.

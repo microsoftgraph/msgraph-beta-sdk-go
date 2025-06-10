@@ -121,6 +121,7 @@ func (m *WindowsUpdatesProductsItemEditionsEditionItemRequestBuilder) ToDeleteRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents an edition of a particular Windows product.

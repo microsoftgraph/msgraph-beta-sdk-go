@@ -121,6 +121,7 @@ func (m *UserExperienceAnalyticsAnomalyDeviceUserExperienceAnalyticsAnomalyDevic
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the user experience analytics anomaly entity contains device details.

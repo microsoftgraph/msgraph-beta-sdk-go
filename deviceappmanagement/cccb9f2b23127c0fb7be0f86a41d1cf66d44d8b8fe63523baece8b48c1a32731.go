@@ -121,6 +121,7 @@ func (m *ManagedAppRegistrationsItemManagedAppLogCollectionRequestsManagedAppLog
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation zero or more log collection requests triggered for the app.

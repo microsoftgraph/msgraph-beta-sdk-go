@@ -111,6 +111,7 @@ func (m *CompaniesItemCompanyInformationItemPictureRequestBuilder) ToDeleteReque
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get picture for the navigation property companyInformation from financials
@@ -121,7 +122,7 @@ func (m *CompaniesItemCompanyInformationItemPictureRequestBuilder) ToGetRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation update picture for the navigation property companyInformation in financials
@@ -132,6 +133,7 @@ func (m *CompaniesItemCompanyInformationItemPictureRequestBuilder) ToPutRequestI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

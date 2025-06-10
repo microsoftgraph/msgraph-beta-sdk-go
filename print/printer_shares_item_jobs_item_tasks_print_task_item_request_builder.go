@@ -130,6 +130,7 @@ func (m *PrinterSharesItemJobsItemTasksPrintTaskItemRequestBuilder) ToDeleteRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a list of printTasks that were triggered by this print job.

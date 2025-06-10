@@ -121,6 +121,7 @@ func (m *AlertRulesAlertRuleItemRequestBuilder) ToDeleteRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of alert rules.

@@ -54,21 +54,6 @@ type ItemManagedDevicesRequestBuilderPostRequestConfiguration struct {
 func (m *ItemManagedDevicesRequestBuilder) AppDiagnosticsWithUpn(upn *string)(*ItemManagedDevicesAppDiagnosticsWithUpnRequestBuilder) {
     return NewItemManagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, upn)
 }
-// BulkReprovisionCloudPc provides operations to call the bulkReprovisionCloudPc method.
-// returns a *ItemManagedDevicesBulkReprovisionCloudPcRequestBuilder when successful
-func (m *ItemManagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*ItemManagedDevicesBulkReprovisionCloudPcRequestBuilder) {
-    return NewItemManagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BulkRestoreCloudPc provides operations to call the bulkRestoreCloudPc method.
-// returns a *ItemManagedDevicesBulkRestoreCloudPcRequestBuilder when successful
-func (m *ItemManagedDevicesRequestBuilder) BulkRestoreCloudPc()(*ItemManagedDevicesBulkRestoreCloudPcRequestBuilder) {
-    return NewItemManagedDevicesBulkRestoreCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BulkSetCloudPcReviewStatus provides operations to call the bulkSetCloudPcReviewStatus method.
-// returns a *ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder when successful
-func (m *ItemManagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
-    return NewItemManagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ByManagedDeviceId provides operations to manage the managedDevices property of the microsoft.graph.user entity.
 // returns a *ItemManagedDevicesManagedDeviceItemRequestBuilder when successful
 func (m *ItemManagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*ItemManagedDevicesManagedDeviceItemRequestBuilder) {

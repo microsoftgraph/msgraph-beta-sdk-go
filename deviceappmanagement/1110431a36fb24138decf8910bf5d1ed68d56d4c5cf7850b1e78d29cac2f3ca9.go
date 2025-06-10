@@ -121,6 +121,7 @@ func (m *WdacSupplementalPoliciesItemAssignmentsWindowsDefenderApplicationContro
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the associated group assignments for the Windows Defender Application Control Supplemental Policy.

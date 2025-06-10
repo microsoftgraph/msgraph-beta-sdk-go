@@ -124,6 +124,7 @@ func (m *MutualTlsOauthConfigurationsMutualTlsOauthConfigurationItemRequestBuild
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation defines the trusted certificate authorities for certificates that can be added to Internet of Things (IoT) devices.

@@ -130,6 +130,7 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesAuthenticationStrengthP
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.

@@ -121,6 +121,7 @@ func (m *ItemProfileWebsitesPersonWebsiteItemRequestBuilder) ToDeleteRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents detailed information about websites associated with a user in various services.

@@ -131,6 +131,7 @@ func (m *GroupPolicyConfigurationsItemDefinitionValuesGroupPolicyDefinitionValue
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of enabled or disabled group policy definition values for the configuration.

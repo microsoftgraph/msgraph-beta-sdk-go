@@ -121,6 +121,7 @@ func (m *ItemProfileEducationalActivitiesEducationalActivityItemRequestBuilder) 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.

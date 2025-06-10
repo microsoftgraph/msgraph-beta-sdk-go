@@ -149,6 +149,7 @@ func (m *DeletedItemsDirectoryObjectItemRequestBuilder) ToDeleteRequestInformati
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation recently deleted items. Read-only. Nullable.

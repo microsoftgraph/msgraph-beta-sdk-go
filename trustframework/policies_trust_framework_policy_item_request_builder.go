@@ -129,6 +129,7 @@ func (m *PoliciesTrustFrameworkPolicyItemRequestBuilder) ToDeleteRequestInformat
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get policies from trustFramework

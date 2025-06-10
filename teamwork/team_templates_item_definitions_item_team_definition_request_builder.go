@@ -224,6 +224,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionRequestBuilder) ToDeleteR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties of the team associated with a teamTemplateDefinition object.

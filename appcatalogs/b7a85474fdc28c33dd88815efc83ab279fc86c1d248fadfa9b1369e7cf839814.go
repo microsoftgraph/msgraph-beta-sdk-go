@@ -121,6 +121,7 @@ func (m *TeamsAppsItemAppDefinitionsItemDashboardCardsTeamsAppDashboardCardDefin
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation dashboard cards specified in the Teams app manifest.

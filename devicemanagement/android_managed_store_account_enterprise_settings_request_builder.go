@@ -156,6 +156,7 @@ func (m *AndroidManagedStoreAccountEnterpriseSettingsRequestBuilder) ToDeleteReq
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the singleton Android managed store account enterprise settings entity.

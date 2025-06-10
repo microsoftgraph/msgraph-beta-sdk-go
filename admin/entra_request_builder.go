@@ -121,6 +121,7 @@ func (m *EntraRequestBuilder) ToDeleteRequestInformation(ctx context.Context, re
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a container for Microsoft Entra resources. Read-only.

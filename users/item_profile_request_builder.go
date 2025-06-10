@@ -206,6 +206,7 @@ func (m *ItemProfileRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents properties that are descriptive of a user in a tenant.

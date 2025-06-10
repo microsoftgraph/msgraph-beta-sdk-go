@@ -121,6 +121,7 @@ func (m *DeviceConfigurationsAllManagedDeviceCertificateStatesManagedAllDeviceCe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation summary of all certificates for all devices.

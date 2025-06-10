@@ -121,6 +121,7 @@ func (m *ItemProfileLanguagesLanguageProficiencyItemRequestBuilder) ToDeleteRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation represents detailed information about languages that a user has added to their profile.

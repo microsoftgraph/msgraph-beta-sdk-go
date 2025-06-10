@@ -146,6 +146,7 @@ func (m *WindowsDriverUpdateProfilesWindowsDriverUpdateProfileItemRequestBuilder
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of windows driver update profiles

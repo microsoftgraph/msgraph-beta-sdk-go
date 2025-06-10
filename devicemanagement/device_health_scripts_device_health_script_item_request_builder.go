@@ -151,6 +151,7 @@ func (m *DeviceHealthScriptsDeviceHealthScriptItemRequestBuilder) ToDeleteReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of device health scripts associated with the tenant.

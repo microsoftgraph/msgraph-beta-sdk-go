@@ -135,6 +135,7 @@ func (m *ConditionalAccessAuthenticationStrengthsRequestBuilder) ToDeleteRequest
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation dEPRECATED. See the authenticationStrength relationship instead.

@@ -121,6 +121,7 @@ func (m *ItemSettingsDirectorySettingItemRequestBuilder) ToDeleteRequestInformat
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.

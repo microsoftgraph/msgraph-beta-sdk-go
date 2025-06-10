@@ -121,6 +121,7 @@ func (m *CertificateBasedApplicationConfigurationsCertificateBasedApplicationCon
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.

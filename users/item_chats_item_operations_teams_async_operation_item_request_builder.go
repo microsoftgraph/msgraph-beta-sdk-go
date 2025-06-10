@@ -121,6 +121,7 @@ func (m *ItemChatsItemOperationsTeamsAsyncOperationItemRequestBuilder) ToDeleteR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of all the Teams async operations that ran or are running on the chat. Nullable.

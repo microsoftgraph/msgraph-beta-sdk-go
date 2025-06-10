@@ -145,6 +145,7 @@ func (m *TermsOfUseAgreementsAgreementItemRequestBuilder) ToDeleteRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve all files related to an agreement. This includes the default file and all localized files.

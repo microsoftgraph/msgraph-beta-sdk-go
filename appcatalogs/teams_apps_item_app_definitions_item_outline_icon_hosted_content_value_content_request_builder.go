@@ -114,6 +114,7 @@ func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve the hosted content in an app's icon.
@@ -124,7 +125,7 @@ func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation the contents of the app icon if the icon is hosted within the Teams infrastructure.
@@ -135,6 +136,7 @@ func (m *TeamsAppsItemAppDefinitionsItemOutlineIconHostedContentValueContentRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

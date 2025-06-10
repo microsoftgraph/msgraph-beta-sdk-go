@@ -126,6 +126,7 @@ func (m *CollaborationRequestBuilder) ToDeleteRequestInformation(ctx context.Con
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation enables read and other actions on collaborative entities in Microsoft Defender.

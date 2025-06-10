@@ -126,6 +126,7 @@ func (m *ItemPlannerRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation selective Planner services available to the group. Read-only. Nullable.

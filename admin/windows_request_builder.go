@@ -121,6 +121,7 @@ func (m *WindowsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a container for all Windows administrator functionalities. Read-only.

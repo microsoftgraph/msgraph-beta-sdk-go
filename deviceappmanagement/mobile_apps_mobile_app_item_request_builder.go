@@ -246,6 +246,7 @@ func (m *MobileAppsMobileAppItemRequestBuilder) ToDeleteRequestInformation(ctx c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the mobile apps.

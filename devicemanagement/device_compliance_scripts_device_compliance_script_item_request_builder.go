@@ -141,6 +141,7 @@ func (m *DeviceComplianceScriptsDeviceComplianceScriptItemRequestBuilder) ToDele
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the list of device compliance scripts associated with the tenant.

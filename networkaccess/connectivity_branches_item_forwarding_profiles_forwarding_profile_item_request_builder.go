@@ -135,6 +135,7 @@ func (m *ConnectivityBranchesItemForwardingProfilesForwardingProfileItemRequestB
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation each forwarding profile associated with a branch site is specified. Supports $expand.

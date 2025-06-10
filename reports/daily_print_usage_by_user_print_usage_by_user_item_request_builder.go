@@ -124,6 +124,7 @@ func (m *DailyPrintUsageByUserPrintUsageByUserItemRequestBuilder) ToDeleteReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation retrieve a user's usage summary for a particular time period. See the printUsageByUser documentation for descriptions of each of the endpoints.

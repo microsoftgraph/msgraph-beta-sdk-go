@@ -296,6 +296,7 @@ func (m *ManagedTenantsRequestBuilder) ToDeleteRequestInformation(ctx context.Co
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the operations available to interact with the multi-tenant management platform.

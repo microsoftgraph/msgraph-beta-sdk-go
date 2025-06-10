@@ -141,6 +141,7 @@ func (m *ItemDataSecurityAndGovernanceRequestBuilder) ToDeleteRequestInformation
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the data security and governance settings for the user. Read-only. Nullable.

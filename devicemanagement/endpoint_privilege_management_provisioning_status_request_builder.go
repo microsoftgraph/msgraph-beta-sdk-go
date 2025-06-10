@@ -121,6 +121,7 @@ func (m *EndpointPrivilegeManagementProvisioningStatusRequestBuilder) ToDeleteRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation endpoint privilege management (EPM) tenant provisioning status contains tenant level license and onboarding state information.

@@ -121,6 +121,7 @@ func (m *UserExperienceAnalyticsBatteryHealthRuntimeDetailsRequestBuilder) ToDel
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation user Experience Analytics Battery Health Runtime Details

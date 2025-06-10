@@ -111,6 +111,7 @@ func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) ToDeleteRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get broadcastRecording for the navigation property onlineMeetings from app
@@ -121,7 +122,7 @@ func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) ToGetRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
-    requestInfo.Headers.TryAdd("Accept", "application/octet-stream")
+    requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json")
     return requestInfo, nil
 }
 // ToPutRequestInformation update broadcastRecording for the navigation property onlineMeetings in app
@@ -132,6 +133,7 @@ func (m *OnlineMeetingsItemBroadcastRecordingRequestBuilder) ToPutRequestInforma
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     requestInfo.SetStreamContentAndContentType(body, "application/octet-stream")
     return requestInfo, nil
 }

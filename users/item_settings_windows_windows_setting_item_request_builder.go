@@ -129,6 +129,7 @@ func (m *ItemSettingsWindowsWindowsSettingItemRequestBuilder) ToDeleteRequestInf
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the Windows settings of the user stored in the cloud.

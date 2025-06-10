@@ -126,6 +126,7 @@ func (m *ItemAgentsOnPremisesAgentItemRequestBuilder) ToDeleteRequestInformation
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation list of existing onPremisesAgent objects. Read-only. Nullable.

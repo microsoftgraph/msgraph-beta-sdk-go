@@ -121,6 +121,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionScheduleShiftsShiftItemRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the shifts in the schedule.

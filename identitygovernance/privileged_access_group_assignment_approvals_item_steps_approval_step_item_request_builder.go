@@ -121,6 +121,7 @@ func (m *PrivilegedAccessGroupAssignmentApprovalsItemStepsApprovalStepItemReques
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation used to represent the decision associated with a single step in the approval process configured in approvalStage.

@@ -126,6 +126,7 @@ func (m *AuthenticationMethodDeviceItemRequestBuilder) ToDeleteRequestInformatio
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get entity from authenticationMethodDevices by key

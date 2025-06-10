@@ -139,6 +139,7 @@ func (m *ApprovalRequestBuilder) ToDeleteRequestInformation(ctx context.Context,
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation read the properties of an approvalSolution object to determine the provisioning state for a tenant.

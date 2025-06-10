@@ -131,6 +131,7 @@ func (m *ConnectivityRemoteNetworksItemForwardingProfilesForwardingProfileItemRe
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation each forwarding profile associated with a remote network is specified. Supports $expand and $select.

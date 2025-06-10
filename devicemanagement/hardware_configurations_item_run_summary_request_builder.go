@@ -121,6 +121,7 @@ func (m *HardwareConfigurationsItemRunSummaryRequestBuilder) ToDeleteRequestInfo
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a summary of the results from an attempt to configure hardware settings. Read-Only.

@@ -124,6 +124,7 @@ func (m *DevicesItemHealthRequestBuilder) ToDeleteRequestInformation(ctx context
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.

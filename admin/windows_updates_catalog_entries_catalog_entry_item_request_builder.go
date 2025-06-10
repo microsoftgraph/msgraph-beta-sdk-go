@@ -121,6 +121,7 @@ func (m *WindowsUpdatesCatalogEntriesCatalogEntryItemRequestBuilder) ToDeleteReq
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation lists the content that you can approve for deployment. Read-only.

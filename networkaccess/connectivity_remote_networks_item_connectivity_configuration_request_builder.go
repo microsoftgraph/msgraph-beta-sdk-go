@@ -126,6 +126,7 @@ func (m *ConnectivityRemoteNetworksItemConnectivityConfigurationRequestBuilder) 
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation specifies the connectivity details of all device links associated with a remote network.

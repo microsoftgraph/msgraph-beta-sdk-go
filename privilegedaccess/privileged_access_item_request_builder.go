@@ -146,6 +146,7 @@ func (m *PrivilegedAccessItemRequestBuilder) ToDeleteRequestInformation(ctx cont
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get entity from privilegedAccess by key

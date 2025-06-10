@@ -131,6 +131,7 @@ func (m *CertificateConnectorDetailsCertificateConnectorDetailsItemRequestBuilde
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.

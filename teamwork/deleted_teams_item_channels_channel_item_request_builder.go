@@ -181,6 +181,7 @@ func (m *DeletedTeamsItemChannelsChannelItemRequestBuilder) ToDeleteRequestInfor
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the channels those are either shared with this deleted team or created in this deleted team.

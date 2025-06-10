@@ -166,6 +166,7 @@ func (m *ReusablePolicySettingsItemReferencingConfigurationPoliciesDeviceManagem
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation configuration policies referencing the current reusable setting. This property is read-only.

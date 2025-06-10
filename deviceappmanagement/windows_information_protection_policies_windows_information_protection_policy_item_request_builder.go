@@ -136,6 +136,7 @@ func (m *WindowsInformationProtectionPoliciesWindowsInformationProtectionPolicyI
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation windows information protection for apps running on devices which are not MDM enrolled.

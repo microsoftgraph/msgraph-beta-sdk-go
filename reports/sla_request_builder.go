@@ -126,6 +126,7 @@ func (m *SlaRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation reports that relate to tenant-level Microsoft Entra Health SLA attainment.

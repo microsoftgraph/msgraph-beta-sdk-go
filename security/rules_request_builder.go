@@ -126,6 +126,7 @@ func (m *RulesRequestBuilder) ToDeleteRequestInformation(ctx context.Context, re
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get rules from security

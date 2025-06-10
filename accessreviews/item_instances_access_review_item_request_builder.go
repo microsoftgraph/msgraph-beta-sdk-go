@@ -156,6 +156,7 @@ func (m *ItemInstancesAccessReviewItemRequestBuilder) ToDeleteRequestInformation
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the collection of access reviews instances past, present, and future, if this object is a recurring access review.

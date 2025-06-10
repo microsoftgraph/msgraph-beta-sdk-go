@@ -131,6 +131,7 @@ func (m *ConnectivityBranchesItemDeviceLinksDeviceLinkItemRequestBuilder) ToDele
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation each unique CPE device associated with a branch is specified. Supports $expand.

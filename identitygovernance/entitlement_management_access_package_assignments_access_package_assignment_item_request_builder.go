@@ -151,6 +151,7 @@ func (m *EntitlementManagementAccessPackageAssignmentsAccessPackageAssignmentIte
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the assignment of an access package to a subject for a period of time.

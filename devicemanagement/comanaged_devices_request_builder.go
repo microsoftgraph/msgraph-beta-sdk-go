@@ -54,21 +54,6 @@ type ComanagedDevicesRequestBuilderPostRequestConfiguration struct {
 func (m *ComanagedDevicesRequestBuilder) AppDiagnosticsWithUpn(upn *string)(*ComanagedDevicesAppDiagnosticsWithUpnRequestBuilder) {
     return NewComanagedDevicesAppDiagnosticsWithUpnRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, upn)
 }
-// BulkReprovisionCloudPc provides operations to call the bulkReprovisionCloudPc method.
-// returns a *ComanagedDevicesBulkReprovisionCloudPcRequestBuilder when successful
-func (m *ComanagedDevicesRequestBuilder) BulkReprovisionCloudPc()(*ComanagedDevicesBulkReprovisionCloudPcRequestBuilder) {
-    return NewComanagedDevicesBulkReprovisionCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BulkRestoreCloudPc provides operations to call the bulkRestoreCloudPc method.
-// returns a *ComanagedDevicesBulkRestoreCloudPcRequestBuilder when successful
-func (m *ComanagedDevicesRequestBuilder) BulkRestoreCloudPc()(*ComanagedDevicesBulkRestoreCloudPcRequestBuilder) {
-    return NewComanagedDevicesBulkRestoreCloudPcRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// BulkSetCloudPcReviewStatus provides operations to call the bulkSetCloudPcReviewStatus method.
-// returns a *ComanagedDevicesBulkSetCloudPcReviewStatusRequestBuilder when successful
-func (m *ComanagedDevicesRequestBuilder) BulkSetCloudPcReviewStatus()(*ComanagedDevicesBulkSetCloudPcReviewStatusRequestBuilder) {
-    return NewComanagedDevicesBulkSetCloudPcReviewStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ByManagedDeviceId provides operations to manage the comanagedDevices property of the microsoft.graph.deviceManagement entity.
 // returns a *ComanagedDevicesManagedDeviceItemRequestBuilder when successful
 func (m *ComanagedDevicesRequestBuilder) ByManagedDeviceId(managedDeviceId string)(*ComanagedDevicesManagedDeviceItemRequestBuilder) {

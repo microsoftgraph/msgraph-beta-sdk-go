@@ -127,6 +127,7 @@ func (m *ItemSettingsContactInsightsRequestBuilder) ToDeleteRequestInformation(c
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the properties of an insightsSettings object for displaying or returning contact insights in an organization.

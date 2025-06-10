@@ -126,6 +126,7 @@ func (m *ItemAppConsentRequestsForApprovalItemUserConsentRequestsUserConsentRequ
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a list of pending user consent requests. Supports $filter (eq).

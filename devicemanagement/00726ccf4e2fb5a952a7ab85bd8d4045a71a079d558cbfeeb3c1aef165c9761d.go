@@ -121,6 +121,7 @@ func (m *ComanagedDevicesItemSecurityBaselineStatesItemSettingStatesSecurityBase
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation the security baseline state for different settings for a device

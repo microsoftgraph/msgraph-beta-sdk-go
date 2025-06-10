@@ -14,7 +14,7 @@ import (
 type VirtualEndpointSnapshotsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointSnapshotsRequestBuilderGetQueryParameters get a list of cloudPcSnapshot objects and their properties.
+// VirtualEndpointSnapshotsRequestBuilderGetQueryParameters cloud PC snapshots.
 type VirtualEndpointSnapshotsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,12 +79,9 @@ func NewVirtualEndpointSnapshotsRequestBuilder(rawUrl string, requestAdapter i2a
 func (m *VirtualEndpointSnapshotsRequestBuilder) Count()(*VirtualEndpointSnapshotsCountRequestBuilder) {
     return NewVirtualEndpointSnapshotsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get a list of cloudPcSnapshot objects and their properties.
+// Get cloud PC snapshots.
 // returns a CloudPcSnapshotCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-beta
 func (m *VirtualEndpointSnapshotsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -132,7 +129,7 @@ func (m *VirtualEndpointSnapshotsRequestBuilder) Post(ctx context.Context, body 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable), nil
 }
-// ToGetRequestInformation get a list of cloudPcSnapshot objects and their properties.
+// ToGetRequestInformation cloud PC snapshots.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointSnapshotsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -121,6 +121,7 @@ func (m *AttackSimulationTrainingsItemLanguageDetailsTrainingLanguageDetailItemR
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation details about the language used in the training.

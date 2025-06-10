@@ -121,6 +121,7 @@ func (m *ManagedTenantsAggregatedPolicyCompliancesAggregatedPolicyComplianceItem
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation aggregate view of device compliance policies across managed tenants.

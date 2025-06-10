@@ -124,6 +124,7 @@ func (m *ItemOperationsTeamsAsyncOperationItemRequestBuilder) ToDeleteRequestInf
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation get the specified Teams async operation that ran or is running on a specific resource.

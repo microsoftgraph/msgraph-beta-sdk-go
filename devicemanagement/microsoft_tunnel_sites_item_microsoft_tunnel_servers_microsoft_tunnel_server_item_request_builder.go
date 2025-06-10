@@ -141,6 +141,7 @@ func (m *MicrosoftTunnelSitesItemMicrosoftTunnelServersMicrosoftTunnelServerItem
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
         requestInfo.AddRequestOptions(requestConfiguration.Options)
     }
+    requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
 // ToGetRequestInformation a list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
