@@ -32,10 +32,12 @@ const (
     UNKNOWNFUTUREVALUE_DEVICEENROLLMENTCONFIGURATIONTYPE
     // Indicates that configuration is of type Enrollment Notification which refers to types of notification a user receives during enrollment.
     ENROLLMENTNOTIFICATIONSCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+    // Indicates the configuration is of type Windows Restore which refers to the tenant level Windows Backup and Restore settings a user receives during out-of-box experience (OOBE) Windows enrollment
+    WINDOWSRESTORE_DEVICEENROLLMENTCONFIGURATIONTYPE
 )
 
 func (i DeviceEnrollmentConfigurationType) String() string {
-    return []string{"unknown", "limit", "platformRestrictions", "windowsHelloForBusiness", "defaultLimit", "defaultPlatformRestrictions", "defaultWindowsHelloForBusiness", "defaultWindows10EnrollmentCompletionPageConfiguration", "windows10EnrollmentCompletionPageConfiguration", "deviceComanagementAuthorityConfiguration", "singlePlatformRestriction", "unknownFutureValue", "enrollmentNotificationsConfiguration"}[i]
+    return []string{"unknown", "limit", "platformRestrictions", "windowsHelloForBusiness", "defaultLimit", "defaultPlatformRestrictions", "defaultWindowsHelloForBusiness", "defaultWindows10EnrollmentCompletionPageConfiguration", "windows10EnrollmentCompletionPageConfiguration", "deviceComanagementAuthorityConfiguration", "singlePlatformRestriction", "unknownFutureValue", "enrollmentNotificationsConfiguration", "windowsRestore"}[i]
 }
 func ParseDeviceEnrollmentConfigurationType(v string) (any, error) {
     result := UNKNOWN_DEVICEENROLLMENTCONFIGURATIONTYPE
@@ -66,6 +68,8 @@ func ParseDeviceEnrollmentConfigurationType(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_DEVICEENROLLMENTCONFIGURATIONTYPE
         case "enrollmentNotificationsConfiguration":
             result = ENROLLMENTNOTIFICATIONSCONFIGURATION_DEVICEENROLLMENTCONFIGURATIONTYPE
+        case "windowsRestore":
+            result = WINDOWSRESTORE_DEVICEENROLLMENTCONFIGURATIONTYPE
         default:
             return nil, nil
     }

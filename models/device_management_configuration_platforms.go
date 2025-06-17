@@ -30,12 +30,16 @@ const (
     ANDROIDENTERPRISE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 256
     // Indicates that the settings contained in associated configuration applies to the android open source operating system.
     AOSP_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 512
+    // Indicates that the settings contained in associated configuration applies to visionOS platform.
+    VISIONOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 1024
+    // Indicates that the settings contained in associated configuration applies to the tvOS platform.
+    TVOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS = 2048
 )
 
 func (i DeviceManagementConfigurationPlatforms) String() string {
     var values []string
-    options := []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue", "androidEnterprise", "aosp"}
-    for p := 0; p < 10; p++ {
+    options := []string{"none", "android", "iOS", "macOS", "windows10X", "windows10", "linux", "unknownFutureValue", "androidEnterprise", "aosp", "visionOS", "tvOS"}
+    for p := 0; p < 12; p++ {
         mantis := DeviceManagementConfigurationPlatforms(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -68,6 +72,10 @@ func ParseDeviceManagementConfigurationPlatforms(v string) (any, error) {
                 result |= ANDROIDENTERPRISE_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
             case "aosp":
                 result |= AOSP_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+            case "visionOS":
+                result |= VISIONOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
+            case "tvOS":
+                result |= TVOS_DEVICEMANAGEMENTCONFIGURATIONPLATFORMS
             default:
                 return nil, nil
         }

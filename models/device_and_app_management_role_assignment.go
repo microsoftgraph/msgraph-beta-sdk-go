@@ -43,6 +43,22 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["roleScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetRoleScopeTagIds(res)
+        }
+        return nil
+    }
     res["roleScopeTags"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateRoleScopeTagFromDiscriminatorValue)
         if err != nil {
@@ -65,6 +81,18 @@ func (m *DeviceAndAppManagementRoleAssignment) GetFieldDeserializers()(map[strin
 // returns a []string when successful
 func (m *DeviceAndAppManagementRoleAssignment) GetMembers()([]string) {
     val, err := m.GetBackingStore().Get("members")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]string)
+    }
+    return nil
+}
+// GetRoleScopeTagIds gets the roleScopeTagIds property value. Indicates the set of role scope tag IDs for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
+// returns a []string when successful
+func (m *DeviceAndAppManagementRoleAssignment) GetRoleScopeTagIds()([]string) {
+    val, err := m.GetBackingStore().Get("roleScopeTagIds")
     if err != nil {
         panic(err)
     }
@@ -97,6 +125,12 @@ func (m *DeviceAndAppManagementRoleAssignment) Serialize(writer i878a80d2330e89d
             return err
         }
     }
+    if m.GetRoleScopeTagIds() != nil {
+        err = writer.WriteCollectionOfStringValues("roleScopeTagIds", m.GetRoleScopeTagIds())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRoleScopeTags() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRoleScopeTags()))
         for i, v := range m.GetRoleScopeTags() {
@@ -118,6 +152,13 @@ func (m *DeviceAndAppManagementRoleAssignment) SetMembers(value []string)() {
         panic(err)
     }
 }
+// SetRoleScopeTagIds sets the roleScopeTagIds property value. Indicates the set of role scope tag IDs for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
+func (m *DeviceAndAppManagementRoleAssignment) SetRoleScopeTagIds(value []string)() {
+    err := m.GetBackingStore().Set("roleScopeTagIds", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRoleScopeTags sets the roleScopeTags property value. Indicates the set of scope tags for the role assignment. These scope tags will limit the visibility of any Intune resources to those that match any of the scope tags in this collection.
 func (m *DeviceAndAppManagementRoleAssignment) SetRoleScopeTags(value []RoleScopeTagable)() {
     err := m.GetBackingStore().Set("roleScopeTags", value)
@@ -129,7 +170,9 @@ type DeviceAndAppManagementRoleAssignmentable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RoleAssignmentable
     GetMembers()([]string)
+    GetRoleScopeTagIds()([]string)
     GetRoleScopeTags()([]RoleScopeTagable)
     SetMembers(value []string)()
+    SetRoleScopeTagIds(value []string)()
     SetRoleScopeTags(value []RoleScopeTagable)()
 }

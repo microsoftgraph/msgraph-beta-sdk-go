@@ -68,7 +68,7 @@ func (m *IdentitySet) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetApplication gets the application property value. Optional. The application associated with this action.
+// GetApplication gets the application property value. The Identity of the Application. This property is read-only.
 // returns a Identityable when successful
 func (m *IdentitySet) GetApplication()(Identityable) {
     val, err := m.GetBackingStore().Get("application")
@@ -85,7 +85,7 @@ func (m *IdentitySet) GetApplication()(Identityable) {
 func (m *IdentitySet) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDevice gets the device property value. Optional. The device associated with this action.
+// GetDevice gets the device property value. The Identity of the Device. This property is read-only.
 // returns a Identityable when successful
 func (m *IdentitySet) GetDevice()(Identityable) {
     val, err := m.GetBackingStore().Get("device")
@@ -155,7 +155,7 @@ func (m *IdentitySet) GetOdataType()(*string) {
     }
     return nil
 }
-// GetUser gets the user property value. Optional. The user associated with this action.
+// GetUser gets the user property value. The Identity of the User. This property is read-only.
 // returns a Identityable when successful
 func (m *IdentitySet) GetUser()(Identityable) {
     val, err := m.GetBackingStore().Get("user")
@@ -208,7 +208,7 @@ func (m *IdentitySet) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetApplication sets the application property value. Optional. The application associated with this action.
+// SetApplication sets the application property value. The Identity of the Application. This property is read-only.
 func (m *IdentitySet) SetApplication(value Identityable)() {
     err := m.GetBackingStore().Set("application", value)
     if err != nil {
@@ -219,7 +219,7 @@ func (m *IdentitySet) SetApplication(value Identityable)() {
 func (m *IdentitySet) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDevice sets the device property value. Optional. The device associated with this action.
+// SetDevice sets the device property value. The Identity of the Device. This property is read-only.
 func (m *IdentitySet) SetDevice(value Identityable)() {
     err := m.GetBackingStore().Set("device", value)
     if err != nil {
@@ -233,7 +233,7 @@ func (m *IdentitySet) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetUser sets the user property value. Optional. The user associated with this action.
+// SetUser sets the user property value. The Identity of the User. This property is read-only.
 func (m *IdentitySet) SetUser(value Identityable)() {
     err := m.GetBackingStore().Set("user", value)
     if err != nil {

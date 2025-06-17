@@ -16,14 +16,16 @@ const (
     CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE = 2
     // Compliance setting type.
     COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE = 4
+    // Reusable Setting
+    REUSABLESETTING_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE = 8
     // Evolvable enumeration sentinel value. Do not use.
-    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE = 8
+    UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE = 16
 )
 
 func (i DeviceManagementConfigurationSettingUsage) String() string {
     var values []string
-    options := []string{"none", "configuration", "compliance", "unknownFutureValue"}
-    for p := 0; p < 4; p++ {
+    options := []string{"none", "configuration", "compliance", "reusableSetting", "unknownFutureValue"}
+    for p := 0; p < 5; p++ {
         mantis := DeviceManagementConfigurationSettingUsage(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -42,6 +44,8 @@ func ParseDeviceManagementConfigurationSettingUsage(v string) (any, error) {
                 result |= CONFIGURATION_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
             case "compliance":
                 result |= COMPLIANCE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
+            case "reusableSetting":
+                result |= REUSABLESETTING_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_DEVICEMANAGEMENTCONFIGURATIONSETTINGUSAGE
             default:
