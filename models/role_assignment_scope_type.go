@@ -6,18 +6,20 @@ package models
 type RoleAssignmentScopeType int
 
 const (
-    // Allow assignments to the specified ResourceScopes.
+    // Default. Indicates that assignments are allowed to the specified resource scopes. Resource scopes are listed as Entra ID security group IDs.
     RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE RoleAssignmentScopeType = iota
-    // Allow assignments to all Intune devices.
+    // Indicates that assignments are allowed to all Intune devices. Note that this does not map to any Entra ID security group, it is internal to Intune.
     ALLDEVICES_ROLEASSIGNMENTSCOPETYPE
-    // Allow assignments to all Intune licensed users.
+    // Indicates that assignments are allowed to all Intune licensed users. Note that this does not map to any Entra ID security group, it is internal to Intune.
     ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
-    // Allow assignments to all Intune devices and licensed users.
+    // Indicates that assignments are allowed to all Intune devices and licensed users. Note that this does not map to any Entra ID security group, it is internal to Intune.
     ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_ROLEASSIGNMENTSCOPETYPE
 )
 
 func (i RoleAssignmentScopeType) String() string {
-    return []string{"resourceScope", "allDevices", "allLicensedUsers", "allDevicesAndLicensedUsers"}[i]
+    return []string{"resourceScope", "allDevices", "allLicensedUsers", "allDevicesAndLicensedUsers", "unknownFutureValue"}[i]
 }
 func ParseRoleAssignmentScopeType(v string) (any, error) {
     result := RESOURCESCOPE_ROLEASSIGNMENTSCOPETYPE
@@ -30,6 +32,8 @@ func ParseRoleAssignmentScopeType(v string) (any, error) {
             result = ALLLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
         case "allDevicesAndLicensedUsers":
             result = ALLDEVICESANDLICENSEDUSERS_ROLEASSIGNMENTSCOPETYPE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_ROLEASSIGNMENTSCOPETYPE
         default:
             return nil, nil
     }

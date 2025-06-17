@@ -52,6 +52,10 @@ const (
     CHROMEOS_DEVICETYPE
     // Linux device.
     LINUX_DEVICETYPE
+    // Indicates managed device is running on visionOS operating system.
+    VISIONOS_DEVICETYPE
+    // Indicates managed device is running on tvOS operating system.
+    TVOS_DEVICETYPE
     // Blackberry.
     BLACKBERRY_DEVICETYPE
     // Palm.
@@ -63,7 +67,7 @@ const (
 )
 
 func (i DeviceType) String() string {
-    return []string{"desktop", "windowsRT", "winMO6", "nokia", "windowsPhone", "mac", "winCE", "winEmbedded", "iPhone", "iPad", "iPod", "android", "iSocConsumer", "unix", "macMDM", "holoLens", "surfaceHub", "androidForWork", "androidEnterprise", "windows10x", "androidnGMS", "chromeOS", "linux", "blackberry", "palm", "unknown", "cloudPC"}[i]
+    return []string{"desktop", "windowsRT", "winMO6", "nokia", "windowsPhone", "mac", "winCE", "winEmbedded", "iPhone", "iPad", "iPod", "android", "iSocConsumer", "unix", "macMDM", "holoLens", "surfaceHub", "androidForWork", "androidEnterprise", "windows10x", "androidnGMS", "chromeOS", "linux", "visionOS", "tvOS", "blackberry", "palm", "unknown", "cloudPC"}[i]
 }
 func ParseDeviceType(v string) (any, error) {
     result := DESKTOP_DEVICETYPE
@@ -114,6 +118,10 @@ func ParseDeviceType(v string) (any, error) {
             result = CHROMEOS_DEVICETYPE
         case "linux":
             result = LINUX_DEVICETYPE
+        case "visionOS":
+            result = VISIONOS_DEVICETYPE
+        case "tvOS":
+            result = TVOS_DEVICETYPE
         case "blackberry":
             result = BLACKBERRY_DEVICETYPE
         case "palm":

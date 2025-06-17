@@ -34,7 +34,7 @@ func (m *TeamsAppSettings) GetAllowUserRequestsForAppAccess()(*bool) {
     }
     return nil
 }
-// GetCustomAppSettings gets the customAppSettings property value. The customAppSettings property
+// GetCustomAppSettings gets the customAppSettings property value. The settings for all custom apps in the tenant.
 // returns a CustomAppSettingsable when successful
 func (m *TeamsAppSettings) GetCustomAppSettings()(CustomAppSettingsable) {
     val, err := m.GetBackingStore().Get("customAppSettings")
@@ -155,7 +155,7 @@ func (m *TeamsAppSettings) SetAllowUserRequestsForAppAccess(value *bool)() {
         panic(err)
     }
 }
-// SetCustomAppSettings sets the customAppSettings property value. The customAppSettings property
+// SetCustomAppSettings sets the customAppSettings property value. The settings for all custom apps in the tenant.
 func (m *TeamsAppSettings) SetCustomAppSettings(value CustomAppSettingsable)() {
     err := m.GetBackingStore().Set("customAppSettings", value)
     if err != nil {
