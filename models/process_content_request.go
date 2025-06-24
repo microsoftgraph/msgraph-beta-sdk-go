@@ -67,6 +67,18 @@ func (m *ProcessContentRequest) GetContentEntries()([]ProcessContentMetadataBase
     }
     return nil
 }
+// GetDeviceMetadata gets the deviceMetadata property value. The deviceMetadata property
+// returns a DeviceMetadataable when successful
+func (m *ProcessContentRequest) GetDeviceMetadata()(DeviceMetadataable) {
+    val, err := m.GetBackingStore().Get("deviceMetadata")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DeviceMetadataable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ProcessContentRequest) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -94,6 +106,16 @@ func (m *ProcessContentRequest) GetFieldDeserializers()(map[string]func(i878a80d
                 }
             }
             m.SetContentEntries(res)
+        }
+        return nil
+    }
+    res["deviceMetadata"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeviceMetadataFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeviceMetadata(val.(DeviceMetadataable))
         }
         return nil
     }
@@ -186,6 +208,12 @@ func (m *ProcessContentRequest) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err := writer.WriteObjectValue("deviceMetadata", m.GetDeviceMetadata())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("integratedAppMetadata", m.GetIntegratedAppMetadata())
         if err != nil {
             return err
@@ -236,6 +264,13 @@ func (m *ProcessContentRequest) SetContentEntries(value []ProcessContentMetadata
         panic(err)
     }
 }
+// SetDeviceMetadata sets the deviceMetadata property value. The deviceMetadata property
+func (m *ProcessContentRequest) SetDeviceMetadata(value DeviceMetadataable)() {
+    err := m.GetBackingStore().Set("deviceMetadata", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIntegratedAppMetadata sets the integratedAppMetadata property value. The integratedAppMetadata property
 func (m *ProcessContentRequest) SetIntegratedAppMetadata(value IntegratedApplicationMetadataable)() {
     err := m.GetBackingStore().Set("integratedAppMetadata", value)
@@ -264,12 +299,14 @@ type ProcessContentRequestable interface {
     GetActivityMetadata()(ActivityMetadataable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetContentEntries()([]ProcessContentMetadataBaseable)
+    GetDeviceMetadata()(DeviceMetadataable)
     GetIntegratedAppMetadata()(IntegratedApplicationMetadataable)
     GetOdataType()(*string)
     GetProtectedAppMetadata()(ProtectedApplicationMetadataable)
     SetActivityMetadata(value ActivityMetadataable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetContentEntries(value []ProcessContentMetadataBaseable)()
+    SetDeviceMetadata(value DeviceMetadataable)()
     SetIntegratedAppMetadata(value IntegratedApplicationMetadataable)()
     SetOdataType(value *string)()
     SetProtectedAppMetadata(value ProtectedApplicationMetadataable)()

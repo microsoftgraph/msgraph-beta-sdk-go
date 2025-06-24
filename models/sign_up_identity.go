@@ -91,7 +91,7 @@ func (m *SignUpIdentity) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSignUpIdentifier gets the signUpIdentifier property value. The signUpIdentifier property
+// GetSignUpIdentifier gets the signUpIdentifier property value. The identification that the user is trying to utilize to sign up.
 // returns a *string when successful
 func (m *SignUpIdentity) GetSignUpIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("signUpIdentifier")
@@ -103,7 +103,7 @@ func (m *SignUpIdentity) GetSignUpIdentifier()(*string) {
     }
     return nil
 }
-// GetSignUpIdentifierType gets the signUpIdentifierType property value. The signUpIdentifierType property
+// GetSignUpIdentifierType gets the signUpIdentifierType property value. The type of sign-up the user initiated. Possible values include:  emailAddress, unknownFutureValue. Supports $filter (eq) on the emailAddress.
 // returns a *SignUpIdentifierType when successful
 func (m *SignUpIdentity) GetSignUpIdentifierType()(*SignUpIdentifierType) {
     val, err := m.GetBackingStore().Get("signUpIdentifierType")
@@ -162,14 +162,14 @@ func (m *SignUpIdentity) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSignUpIdentifier sets the signUpIdentifier property value. The signUpIdentifier property
+// SetSignUpIdentifier sets the signUpIdentifier property value. The identification that the user is trying to utilize to sign up.
 func (m *SignUpIdentity) SetSignUpIdentifier(value *string)() {
     err := m.GetBackingStore().Set("signUpIdentifier", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignUpIdentifierType sets the signUpIdentifierType property value. The signUpIdentifierType property
+// SetSignUpIdentifierType sets the signUpIdentifierType property value. The type of sign-up the user initiated. Possible values include:  emailAddress, unknownFutureValue. Supports $filter (eq) on the emailAddress.
 func (m *SignUpIdentity) SetSignUpIdentifierType(value *SignUpIdentifierType)() {
     err := m.GetBackingStore().Set("signUpIdentifierType", value)
     if err != nil {

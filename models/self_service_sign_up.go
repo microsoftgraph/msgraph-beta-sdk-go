@@ -23,7 +23,7 @@ func NewSelfServiceSignUp()(*SelfServiceSignUp) {
 func CreateSelfServiceSignUpFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSelfServiceSignUp(), nil
 }
-// GetAppDisplayName gets the appDisplayName property value. The appDisplayName property
+// GetAppDisplayName gets the appDisplayName property value. App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
 // returns a *string when successful
 func (m *SelfServiceSignUp) GetAppDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("appDisplayName")
@@ -35,7 +35,7 @@ func (m *SelfServiceSignUp) GetAppDisplayName()(*string) {
     }
     return nil
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. Unique GUID that represents the app ID in the Microsoft Entra ID.  Supports $filter (eq).
 // returns a *string when successful
 func (m *SelfServiceSignUp) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
@@ -47,7 +47,7 @@ func (m *SelfServiceSignUp) GetAppId()(*string) {
     }
     return nil
 }
-// GetAppliedEventListeners gets the appliedEventListeners property value. The appliedEventListeners property
+// GetAppliedEventListeners gets the appliedEventListeners property value. Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which the corresponding events in the sign-up event triggered.
 // returns a []AppliedAuthenticationEventListenerable when successful
 func (m *SelfServiceSignUp) GetAppliedEventListeners()([]AppliedAuthenticationEventListenerable) {
     val, err := m.GetBackingStore().Get("appliedEventListeners")
@@ -59,7 +59,7 @@ func (m *SelfServiceSignUp) GetAppliedEventListeners()([]AppliedAuthenticationEv
     }
     return nil
 }
-// GetCorrelationId gets the correlationId property value. The correlationId property
+// GetCorrelationId gets the correlationId property value. The request ID sent from the client when the sign-up is initiated. Used to troubleshoot sign-up activity.  Supports $filter (eq).
 // returns a *string when successful
 func (m *SelfServiceSignUp) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -71,7 +71,7 @@ func (m *SelfServiceSignUp) GetCorrelationId()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Date and time (UTC) the sign-up was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
 // returns a *Time when successful
 func (m *SelfServiceSignUp) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -195,7 +195,7 @@ func (m *SelfServiceSignUp) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetSignUpIdentity gets the signUpIdentity property value. The signUpIdentity property
+// GetSignUpIdentity gets the signUpIdentity property value. Unique identifier for self-service sign-up user. Supports $filter (eq) on the signUpIdentifierType.
 // returns a SignUpIdentityable when successful
 func (m *SelfServiceSignUp) GetSignUpIdentity()(SignUpIdentityable) {
     val, err := m.GetBackingStore().Get("signUpIdentity")
@@ -207,7 +207,7 @@ func (m *SelfServiceSignUp) GetSignUpIdentity()(SignUpIdentityable) {
     }
     return nil
 }
-// GetSignUpIdentityProvider gets the signUpIdentityProvider property value. The signUpIdentityProvider property
+// GetSignUpIdentityProvider gets the signUpIdentityProvider property value. Describes the type of account for which the user registered. Values include Email OTP, Email Password, Google.
 // returns a *string when successful
 func (m *SelfServiceSignUp) GetSignUpIdentityProvider()(*string) {
     val, err := m.GetBackingStore().Get("signUpIdentityProvider")
@@ -231,7 +231,7 @@ func (m *SelfServiceSignUp) GetSignUpStage()(*SignUpStage) {
     }
     return nil
 }
-// GetStatus gets the status property value. The status property
+// GetStatus gets the status property value. Sign-up status. Includes the error code and description of the error (if a sign-up failure or interrupt occurs).  Supports $filter (eq) on errorCode property.
 // returns a SignUpStatusable when successful
 func (m *SelfServiceSignUp) GetStatus()(SignUpStatusable) {
     val, err := m.GetBackingStore().Get("status")
@@ -330,49 +330,49 @@ func (m *SelfServiceSignUp) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetAppDisplayName sets the appDisplayName property value. The appDisplayName property
+// SetAppDisplayName sets the appDisplayName property value. App name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).
 func (m *SelfServiceSignUp) SetAppDisplayName(value *string)() {
     err := m.GetBackingStore().Set("appDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. Unique GUID that represents the app ID in the Microsoft Entra ID.  Supports $filter (eq).
 func (m *SelfServiceSignUp) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppliedEventListeners sets the appliedEventListeners property value. The appliedEventListeners property
+// SetAppliedEventListeners sets the appliedEventListeners property value. Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which the corresponding events in the sign-up event triggered.
 func (m *SelfServiceSignUp) SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)() {
     err := m.GetBackingStore().Set("appliedEventListeners", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCorrelationId sets the correlationId property value. The correlationId property
+// SetCorrelationId sets the correlationId property value. The request ID sent from the client when the sign-up is initiated. Used to troubleshoot sign-up activity.  Supports $filter (eq).
 func (m *SelfServiceSignUp) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Date and time (UTC) the sign-up was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
 func (m *SelfServiceSignUp) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignUpIdentity sets the signUpIdentity property value. The signUpIdentity property
+// SetSignUpIdentity sets the signUpIdentity property value. Unique identifier for self-service sign-up user. Supports $filter (eq) on the signUpIdentifierType.
 func (m *SelfServiceSignUp) SetSignUpIdentity(value SignUpIdentityable)() {
     err := m.GetBackingStore().Set("signUpIdentity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignUpIdentityProvider sets the signUpIdentityProvider property value. The signUpIdentityProvider property
+// SetSignUpIdentityProvider sets the signUpIdentityProvider property value. Describes the type of account for which the user registered. Values include Email OTP, Email Password, Google.
 func (m *SelfServiceSignUp) SetSignUpIdentityProvider(value *string)() {
     err := m.GetBackingStore().Set("signUpIdentityProvider", value)
     if err != nil {
@@ -386,7 +386,7 @@ func (m *SelfServiceSignUp) SetSignUpStage(value *SignUpStage)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. The status property
+// SetStatus sets the status property value. Sign-up status. Includes the error code and description of the error (if a sign-up failure or interrupt occurs).  Supports $filter (eq) on errorCode property.
 func (m *SelfServiceSignUp) SetStatus(value SignUpStatusable)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

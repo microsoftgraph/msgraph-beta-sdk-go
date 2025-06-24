@@ -14,7 +14,7 @@ import (
 type PrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// PrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingRequestBuilderGetQueryParameters when the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
+// PrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingRequestBuilderGetQueryParameters when the request activates a membership or ownership in PIM for Groups, this object represents the eligibility request for the group. Otherwise, it's null.
 type PrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewPrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingReques
     urlParams["request-raw-url"] = rawUrl
     return NewPrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get when the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
+// Get when the request activates a membership or ownership in PIM for Groups, this object represents the eligibility request for the group. Otherwise, it's null.
 // returns a PrivilegedAccessGroupEligibilityScheduleInstanceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *PrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingRequestBuilder) Get(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceable, error) {
@@ -63,7 +63,7 @@ func (m *PrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingReque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupEligibilityScheduleInstanceable), nil
 }
-// ToGetRequestInformation when the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it's null.
+// ToGetRequestInformation when the request activates a membership or ownership in PIM for Groups, this object represents the eligibility request for the group. Otherwise, it's null.
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupAssignmentScheduleInstancesItemActivatedUsingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

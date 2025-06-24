@@ -48,7 +48,7 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionDefinition) GetFiel
     }
     return res
 }
-// GetMaximumCount gets the maximumCount property value. Maximum number of choices in the collection. Valid values 1 to 100
+// GetMaximumCount gets the maximumCount property value. Maximum number of choices in the collection
 // returns a *int32 when successful
 func (m *DeviceManagementConfigurationChoiceSettingCollectionDefinition) GetMaximumCount()(*int32) {
     val, err := m.GetBackingStore().Get("maximumCount")
@@ -60,7 +60,7 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionDefinition) GetMaxi
     }
     return nil
 }
-// GetMinimumCount gets the minimumCount property value. Minimum number of choices in the collection. Valid values 1 to 100
+// GetMinimumCount gets the minimumCount property value. Minimum number of choices in the collection
 // returns a *int32 when successful
 func (m *DeviceManagementConfigurationChoiceSettingCollectionDefinition) GetMinimumCount()(*int32) {
     val, err := m.GetBackingStore().Get("minimumCount")
@@ -92,14 +92,14 @@ func (m *DeviceManagementConfigurationChoiceSettingCollectionDefinition) Seriali
     }
     return nil
 }
-// SetMaximumCount sets the maximumCount property value. Maximum number of choices in the collection. Valid values 1 to 100
+// SetMaximumCount sets the maximumCount property value. Maximum number of choices in the collection
 func (m *DeviceManagementConfigurationChoiceSettingCollectionDefinition) SetMaximumCount(value *int32)() {
     err := m.GetBackingStore().Set("maximumCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMinimumCount sets the minimumCount property value. Minimum number of choices in the collection. Valid values 1 to 100
+// SetMinimumCount sets the minimumCount property value. Minimum number of choices in the collection
 func (m *DeviceManagementConfigurationChoiceSettingCollectionDefinition) SetMinimumCount(value *int32)() {
     err := m.GetBackingStore().Set("minimumCount", value)
     if err != nil {

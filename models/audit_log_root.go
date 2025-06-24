@@ -215,7 +215,7 @@ func (m *AuditLogRoot) GetProvisioning()([]ProvisioningObjectSummaryable) {
     }
     return nil
 }
-// GetSignIns gets the signIns property value. The signIns property
+// GetSignIns gets the signIns property value. Represents Microsoft Entra sign-in events. Read-only. Nullable.
 // returns a []SignInable when successful
 func (m *AuditLogRoot) GetSignIns()([]SignInable) {
     val, err := m.GetBackingStore().Get("signIns")
@@ -227,7 +227,7 @@ func (m *AuditLogRoot) GetSignIns()([]SignInable) {
     }
     return nil
 }
-// GetSignUps gets the signUps property value. The signUps property
+// GetSignUps gets the signUps property value. Represents sign up events in Microsoft Entra External ID. Read-only. Nullable.
 // returns a []SelfServiceSignUpable when successful
 func (m *AuditLogRoot) GetSignUps()([]SelfServiceSignUpable) {
     val, err := m.GetBackingStore().Get("signUps")
@@ -373,14 +373,14 @@ func (m *AuditLogRoot) SetProvisioning(value []ProvisioningObjectSummaryable)() 
         panic(err)
     }
 }
-// SetSignIns sets the signIns property value. The signIns property
+// SetSignIns sets the signIns property value. Represents Microsoft Entra sign-in events. Read-only. Nullable.
 func (m *AuditLogRoot) SetSignIns(value []SignInable)() {
     err := m.GetBackingStore().Set("signIns", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignUps sets the signUps property value. The signUps property
+// SetSignUps sets the signUps property value. Represents sign up events in Microsoft Entra External ID. Read-only. Nullable.
 func (m *AuditLogRoot) SetSignUps(value []SelfServiceSignUpable)() {
     err := m.GetBackingStore().Set("signUps", value)
     if err != nil {

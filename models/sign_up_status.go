@@ -38,7 +38,7 @@ func (m *SignUpStatus) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAdditionalDetails gets the additionalDetails property value. The additionalDetails property
+// GetAdditionalDetails gets the additionalDetails property value. Provides additional details on the sign-up activity.
 // returns a *string when successful
 func (m *SignUpStatus) GetAdditionalDetails()(*string) {
     val, err := m.GetBackingStore().Get("additionalDetails")
@@ -55,7 +55,7 @@ func (m *SignUpStatus) GetAdditionalDetails()(*string) {
 func (m *SignUpStatus) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetErrorCode gets the errorCode property value. The errorCode property
+// GetErrorCode gets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-up failure.
 // returns a *int32 when successful
 func (m *SignUpStatus) GetErrorCode()(*int32) {
     val, err := m.GetBackingStore().Get("errorCode")
@@ -67,7 +67,7 @@ func (m *SignUpStatus) GetErrorCode()(*int32) {
     }
     return nil
 }
-// GetFailureReason gets the failureReason property value. The failureReason property
+// GetFailureReason gets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-up activity.
 // returns a *string when successful
 func (m *SignUpStatus) GetFailureReason()(*string) {
     val, err := m.GetBackingStore().Get("failureReason")
@@ -178,7 +178,7 @@ func (m *SignUpStatus) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAdditionalDetails sets the additionalDetails property value. The additionalDetails property
+// SetAdditionalDetails sets the additionalDetails property value. Provides additional details on the sign-up activity.
 func (m *SignUpStatus) SetAdditionalDetails(value *string)() {
     err := m.GetBackingStore().Set("additionalDetails", value)
     if err != nil {
@@ -189,14 +189,14 @@ func (m *SignUpStatus) SetAdditionalDetails(value *string)() {
 func (m *SignUpStatus) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetErrorCode sets the errorCode property value. The errorCode property
+// SetErrorCode sets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-up failure.
 func (m *SignUpStatus) SetErrorCode(value *int32)() {
     err := m.GetBackingStore().Set("errorCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFailureReason sets the failureReason property value. The failureReason property
+// SetFailureReason sets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-up activity.
 func (m *SignUpStatus) SetFailureReason(value *string)() {
     err := m.GetBackingStore().Set("failureReason", value)
     if err != nil {

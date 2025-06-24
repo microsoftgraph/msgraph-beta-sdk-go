@@ -42,6 +42,11 @@ type AdminRequestBuilderPatchRequestConfiguration struct {
 func (m *AdminRequestBuilder) AppsAndServices()(*AppsAndServicesRequestBuilder) {
     return NewAppsAndServicesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ConfigurationManagement provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.
+// returns a *ConfigurationManagementRequestBuilder when successful
+func (m *AdminRequestBuilder) ConfigurationManagement()(*ConfigurationManagementRequestBuilder) {
+    return NewConfigurationManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAdminRequestBuilderInternal instantiates a new AdminRequestBuilder and sets the default values.
 func NewAdminRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AdminRequestBuilder) {
     m := &AdminRequestBuilder{
