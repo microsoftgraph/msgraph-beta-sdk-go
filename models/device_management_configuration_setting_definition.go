@@ -64,7 +64,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetAccessTypes()(*Devic
     }
     return nil
 }
-// GetApplicability gets the applicability property value. Details which device setting is applicable on. Supports: $filters.
+// GetApplicability gets the applicability property value. Details which device setting is applicable on
 // returns a DeviceManagementConfigurationSettingApplicabilityable when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetApplicability()(DeviceManagementConfigurationSettingApplicabilityable) {
     val, err := m.GetBackingStore().Get("applicability")
@@ -88,7 +88,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetBaseUri()(*string) {
     }
     return nil
 }
-// GetCategoryId gets the categoryId property value. Specify category in which the setting is under. Support $filters.
+// GetCategoryId gets the categoryId property value. Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
 // returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetCategoryId()(*string) {
     val, err := m.GetBackingStore().Get("categoryId")
@@ -100,7 +100,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetCategoryId()(*string
     }
     return nil
 }
-// GetDescription gets the description property value. Description of the setting.
+// GetDescription gets the description property value. Description of the item
 // returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -112,7 +112,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetDescription()(*strin
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. Name of the setting. For example: Allow Toast.
+// GetDisplayName gets the displayName property value. Display name of the item
 // returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -338,7 +338,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetFieldDeserializers()
     }
     return res
 }
-// GetHelpText gets the helpText property value. Help text of the setting. Give more details of the setting.
+// GetHelpText gets the helpText property value. Help text of the item
 // returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetHelpText()(*string) {
     val, err := m.GetBackingStore().Get("helpText")
@@ -350,7 +350,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetHelpText()(*string) 
     }
     return nil
 }
-// GetInfoUrls gets the infoUrls property value. List of links more info for the setting can be found at.
+// GetInfoUrls gets the infoUrls property value. List of links more info for the setting can be found at
 // returns a []string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetInfoUrls()([]string) {
     val, err := m.GetBackingStore().Get("infoUrls")
@@ -434,7 +434,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) GetRiskLevel()(*DeviceM
     }
     return nil
 }
-// GetRootDefinitionId gets the rootDefinitionId property value. Root setting definition id if the setting is a child setting.
+// GetRootDefinitionId gets the rootDefinitionId property value. Root setting definition if the setting is a child setting.
 // returns a *string when successful
 func (m *DeviceManagementConfigurationSettingDefinition) GetRootDefinitionId()(*string) {
     val, err := m.GetBackingStore().Get("rootDefinitionId")
@@ -634,7 +634,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetAccessTypes(value *D
         panic(err)
     }
 }
-// SetApplicability sets the applicability property value. Details which device setting is applicable on. Supports: $filters.
+// SetApplicability sets the applicability property value. Details which device setting is applicable on
 func (m *DeviceManagementConfigurationSettingDefinition) SetApplicability(value DeviceManagementConfigurationSettingApplicabilityable)() {
     err := m.GetBackingStore().Set("applicability", value)
     if err != nil {
@@ -648,35 +648,35 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetBaseUri(value *strin
         panic(err)
     }
 }
-// SetCategoryId sets the categoryId property value. Specify category in which the setting is under. Support $filters.
+// SetCategoryId sets the categoryId property value. Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
 func (m *DeviceManagementConfigurationSettingDefinition) SetCategoryId(value *string)() {
     err := m.GetBackingStore().Set("categoryId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. Description of the setting.
+// SetDescription sets the description property value. Description of the item
 func (m *DeviceManagementConfigurationSettingDefinition) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. Name of the setting. For example: Allow Toast.
+// SetDisplayName sets the displayName property value. Display name of the item
 func (m *DeviceManagementConfigurationSettingDefinition) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetHelpText sets the helpText property value. Help text of the setting. Give more details of the setting.
+// SetHelpText sets the helpText property value. Help text of the item
 func (m *DeviceManagementConfigurationSettingDefinition) SetHelpText(value *string)() {
     err := m.GetBackingStore().Set("helpText", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInfoUrls sets the infoUrls property value. List of links more info for the setting can be found at.
+// SetInfoUrls sets the infoUrls property value. List of links more info for the setting can be found at
 func (m *DeviceManagementConfigurationSettingDefinition) SetInfoUrls(value []string)() {
     err := m.GetBackingStore().Set("infoUrls", value)
     if err != nil {
@@ -725,7 +725,7 @@ func (m *DeviceManagementConfigurationSettingDefinition) SetRiskLevel(value *Dev
         panic(err)
     }
 }
-// SetRootDefinitionId sets the rootDefinitionId property value. Root setting definition id if the setting is a child setting.
+// SetRootDefinitionId sets the rootDefinitionId property value. Root setting definition if the setting is a child setting.
 func (m *DeviceManagementConfigurationSettingDefinition) SetRootDefinitionId(value *string)() {
     err := m.GetBackingStore().Set("rootDefinitionId", value)
     if err != nil {

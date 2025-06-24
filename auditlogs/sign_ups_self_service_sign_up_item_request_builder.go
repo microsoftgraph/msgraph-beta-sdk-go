@@ -21,7 +21,7 @@ type SignUpsSelfServiceSignUpItemRequestBuilderDeleteRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SignUpsSelfServiceSignUpItemRequestBuilderGetQueryParameters get signUps from auditLogs
+// SignUpsSelfServiceSignUpItemRequestBuilderGetQueryParameters retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
 type SignUpsSelfServiceSignUpItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *SignUpsSelfServiceSignUpItemRequestBuilder) Delete(ctx context.Context,
     }
     return nil
 }
-// Get get signUps from auditLogs
+// Get retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
 // returns a SelfServiceSignUpable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/selfservicesignup-get?view=graph-rest-beta
 func (m *SignUpsSelfServiceSignUpItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SignUpsSelfServiceSignUpItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SelfServiceSignUpable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *SignUpsSelfServiceSignUpItemRequestBuilder) ToDeleteRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get signUps from auditLogs
+// ToGetRequestInformation retrieve a specific Microsoft Entra External ID user selfServiceSignUp event for your tenant.  
 // returns a *RequestInformation when successful
 func (m *SignUpsSelfServiceSignUpItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SignUpsSelfServiceSignUpItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

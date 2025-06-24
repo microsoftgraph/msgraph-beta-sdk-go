@@ -735,6 +735,20 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewConditionalAccessTemplate(), nil
                     case "#microsoft.graph.configManagerCollection":
                         return NewConfigManagerCollection(), nil
+                    case "#microsoft.graph.configurationApplication":
+                        return NewConfigurationApplication(), nil
+                    case "#microsoft.graph.configurationBaseline":
+                        return NewConfigurationBaseline(), nil
+                    case "#microsoft.graph.configurationDrift":
+                        return NewConfigurationDrift(), nil
+                    case "#microsoft.graph.configurationManagement":
+                        return NewConfigurationManagement(), nil
+                    case "#microsoft.graph.configurationMonitor":
+                        return NewConfigurationMonitor(), nil
+                    case "#microsoft.graph.configurationMonitoringResult":
+                        return NewConfigurationMonitoringResult(), nil
+                    case "#microsoft.graph.configurationSnapshotJob":
+                        return NewConfigurationSnapshotJob(), nil
                     case "#microsoft.graph.connectedOrganization":
                         return NewConnectedOrganization(), nil
                     case "#microsoft.graph.connectionOperation":
@@ -1237,6 +1251,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEmailAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.emailFileAssessmentRequest":
                         return NewEmailFileAssessmentRequest(), nil
+                    case "#microsoft.graph.emailNotificationsSetting":
+                        return NewEmailNotificationsSetting(), nil
                     case "#microsoft.graph.embeddedSIMActivationCodePool":
                         return NewEmbeddedSIMActivationCodePool(), nil
                     case "#microsoft.graph.embeddedSIMActivationCodePoolAssignment":

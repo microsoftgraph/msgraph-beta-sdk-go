@@ -55,6 +55,18 @@ func (m *Admin) GetAppsAndServices()(AdminAppsAndServicesable) {
 func (m *Admin) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
+// GetConfigurationManagement gets the configurationManagement property value. The configurationManagement property
+// returns a ConfigurationManagementable when successful
+func (m *Admin) GetConfigurationManagement()(ConfigurationManagementable) {
+    val, err := m.GetBackingStore().Get("configurationManagement")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ConfigurationManagementable)
+    }
+    return nil
+}
 // GetDynamics gets the dynamics property value. The dynamics property
 // returns a AdminDynamicsable when successful
 func (m *Admin) GetDynamics()(AdminDynamicsable) {
@@ -114,6 +126,16 @@ func (m *Admin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetAppsAndServices(val.(AdminAppsAndServicesable))
+        }
+        return nil
+    }
+    res["configurationManagement"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateConfigurationManagementFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetConfigurationManagement(val.(ConfigurationManagementable))
         }
         return nil
     }
@@ -366,6 +388,12 @@ func (m *Admin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err := writer.WriteObjectValue("configurationManagement", m.GetConfigurationManagement())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("dynamics", m.GetDynamics())
         if err != nil {
             return err
@@ -469,6 +497,13 @@ func (m *Admin) SetAppsAndServices(value AdminAppsAndServicesable)() {
 func (m *Admin) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
+// SetConfigurationManagement sets the configurationManagement property value. The configurationManagement property
+func (m *Admin) SetConfigurationManagement(value ConfigurationManagementable)() {
+    err := m.GetBackingStore().Set("configurationManagement", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDynamics sets the dynamics property value. The dynamics property
 func (m *Admin) SetDynamics(value AdminDynamicsable)() {
     err := m.GetBackingStore().Set("dynamics", value)
@@ -566,6 +601,7 @@ type Adminable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppsAndServices()(AdminAppsAndServicesable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
+    GetConfigurationManagement()(ConfigurationManagementable)
     GetDynamics()(AdminDynamicsable)
     GetEdge()(Edgeable)
     GetEntra()(Entraable)
@@ -581,6 +617,7 @@ type Adminable interface {
     GetWindows()(AdminWindowsable)
     SetAppsAndServices(value AdminAppsAndServicesable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
+    SetConfigurationManagement(value ConfigurationManagementable)()
     SetDynamics(value AdminDynamicsable)()
     SetEdge(value Edgeable)()
     SetEntra(value Entraable)()

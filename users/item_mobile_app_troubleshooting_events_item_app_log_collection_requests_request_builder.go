@@ -14,7 +14,7 @@ import (
 type ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderGetQueryParameters the collection property of AppLogUploadRequest.
+// ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderGetQueryParameters indicates collection of App Log Upload Request.
 type ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBui
 func (m *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder) Count()(*ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsCountRequestBuilder) {
     return NewItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the collection property of AppLogUploadRequest.
+// Get indicates collection of App Log Upload Request.
 // returns a AppLogCollectionRequestCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppLogCollectionRequestCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBu
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AppLogCollectionRequestable), nil
 }
-// ToGetRequestInformation the collection property of AppLogUploadRequest.
+// ToGetRequestInformation indicates collection of App Log Upload Request.
 // returns a *RequestInformation when successful
 func (m *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMobileAppTroubleshootingEventsItemAppLogCollectionRequestsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
