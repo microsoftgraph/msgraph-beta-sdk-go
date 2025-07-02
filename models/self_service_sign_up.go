@@ -183,13 +183,13 @@ func (m *SelfServiceSignUp) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["userSnapshot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateCiamUserSnapshotFromDiscriminatorValue)
+    res["userId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetUserSnapshot(val.(CiamUserSnapshotable))
+            m.SetUserId(val)
         }
         return nil
     }
@@ -243,15 +243,15 @@ func (m *SelfServiceSignUp) GetStatus()(SignUpStatusable) {
     }
     return nil
 }
-// GetUserSnapshot gets the userSnapshot property value. The userSnapshot property
-// returns a CiamUserSnapshotable when successful
-func (m *SelfServiceSignUp) GetUserSnapshot()(CiamUserSnapshotable) {
-    val, err := m.GetBackingStore().Get("userSnapshot")
+// GetUserId gets the userId property value. The identifier of the user object created during the sign-up.
+// returns a *string when successful
+func (m *SelfServiceSignUp) GetUserId()(*string) {
+    val, err := m.GetBackingStore().Get("userId")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(CiamUserSnapshotable)
+        return val.(*string)
     }
     return nil
 }
@@ -323,7 +323,7 @@ func (m *SelfServiceSignUp) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
-        err = writer.WriteObjectValue("userSnapshot", m.GetUserSnapshot())
+        err = writer.WriteStringValue("userId", m.GetUserId())
         if err != nil {
             return err
         }
@@ -393,9 +393,9 @@ func (m *SelfServiceSignUp) SetStatus(value SignUpStatusable)() {
         panic(err)
     }
 }
-// SetUserSnapshot sets the userSnapshot property value. The userSnapshot property
-func (m *SelfServiceSignUp) SetUserSnapshot(value CiamUserSnapshotable)() {
-    err := m.GetBackingStore().Set("userSnapshot", value)
+// SetUserId sets the userId property value. The identifier of the user object created during the sign-up.
+func (m *SelfServiceSignUp) SetUserId(value *string)() {
+    err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
@@ -412,7 +412,7 @@ type SelfServiceSignUpable interface {
     GetSignUpIdentityProvider()(*string)
     GetSignUpStage()(*SignUpStage)
     GetStatus()(SignUpStatusable)
-    GetUserSnapshot()(CiamUserSnapshotable)
+    GetUserId()(*string)
     SetAppDisplayName(value *string)()
     SetAppId(value *string)()
     SetAppliedEventListeners(value []AppliedAuthenticationEventListenerable)()
@@ -422,5 +422,5 @@ type SelfServiceSignUpable interface {
     SetSignUpIdentityProvider(value *string)()
     SetSignUpStage(value *SignUpStage)()
     SetStatus(value SignUpStatusable)()
-    SetUserSnapshot(value CiamUserSnapshotable)()
+    SetUserId(value *string)()
 }

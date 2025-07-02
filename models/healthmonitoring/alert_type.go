@@ -11,10 +11,11 @@ const (
     COMPLIANTDEVICESIGNINFAILURE_ALERTTYPE
     UNKNOWNFUTUREVALUE_ALERTTYPE
     CONDITIONALACCESSBLOCKEDSIGNIN_ALERTTYPE
+    SAMLSIGNINFAILURE_ALERTTYPE
 )
 
 func (i AlertType) String() string {
-    return []string{"unknown", "mfaSignInFailure", "managedDeviceSignInFailure", "compliantDeviceSignInFailure", "unknownFutureValue", "conditionalAccessBlockedSignIn"}[i]
+    return []string{"unknown", "mfaSignInFailure", "managedDeviceSignInFailure", "compliantDeviceSignInFailure", "unknownFutureValue", "conditionalAccessBlockedSignIn", "samlSignInFailure"}[i]
 }
 func ParseAlertType(v string) (any, error) {
     result := UNKNOWN_ALERTTYPE
@@ -31,6 +32,8 @@ func ParseAlertType(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_ALERTTYPE
         case "conditionalAccessBlockedSignIn":
             result = CONDITIONALACCESSBLOCKEDSIGNIN_ALERTTYPE
+        case "samlSignInFailure":
+            result = SAMLSIGNINFAILURE_ALERTTYPE
         default:
             return nil, nil
     }

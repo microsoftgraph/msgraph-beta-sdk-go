@@ -34,7 +34,7 @@ func NewExchangeMailboxesItemCreateImportSessionRequestBuilder(rawUrl string, re
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeMailboxesItemCreateImportSessionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post create a session to import an Exchange mailbox item using its FastTransfer stream (FTS) format.
+// Post create a session to import an Exchange mailbox item that was exported using the exportItems API.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MailboxItemImportSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -58,7 +58,7 @@ func (m *ExchangeMailboxesItemCreateImportSessionRequestBuilder) Post(ctx contex
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxItemImportSessionable), nil
 }
-// ToPostRequestInformation create a session to import an Exchange mailbox item using its FastTransfer stream (FTS) format.
+// ToPostRequestInformation create a session to import an Exchange mailbox item that was exported using the exportItems API.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemCreateImportSessionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ExchangeMailboxesItemCreateImportSessionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

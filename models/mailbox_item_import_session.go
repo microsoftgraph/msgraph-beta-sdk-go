@@ -92,7 +92,7 @@ func (m *MailboxItemImportSession) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetImportUrl gets the importUrl property value. The URL endpoint that accepts POST requests for FastTransfer stream format of the item.
+// GetImportUrl gets the importUrl property value. The URL endpoint that accepts POST requests for uploading a mailbox item exported using exportItems.
 // returns a *string when successful
 func (m *MailboxItemImportSession) GetImportUrl()(*string) {
     val, err := m.GetBackingStore().Get("importUrl")
@@ -162,7 +162,7 @@ func (m *MailboxItemImportSession) SetExpirationDateTime(value *i336074805fc8539
         panic(err)
     }
 }
-// SetImportUrl sets the importUrl property value. The URL endpoint that accepts POST requests for FastTransfer stream format of the item.
+// SetImportUrl sets the importUrl property value. The URL endpoint that accepts POST requests for uploading a mailbox item exported using exportItems.
 func (m *MailboxItemImportSession) SetImportUrl(value *string)() {
     err := m.GetBackingStore().Set("importUrl", value)
     if err != nil {

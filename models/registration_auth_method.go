@@ -15,10 +15,11 @@ const (
     FIDO_REGISTRATIONAUTHMETHOD
     APPPASSWORD_REGISTRATIONAUTHMETHOD
     UNKNOWNFUTUREVALUE_REGISTRATIONAUTHMETHOD
+    EXTERNALAUTHMETHOD_REGISTRATIONAUTHMETHOD
 )
 
 func (i RegistrationAuthMethod) String() string {
-    return []string{"email", "mobilePhone", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobilePhone", "fido", "appPassword", "unknownFutureValue"}[i]
+    return []string{"email", "mobilePhone", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobilePhone", "fido", "appPassword", "unknownFutureValue", "externalAuthMethod"}[i]
 }
 func ParseRegistrationAuthMethod(v string) (any, error) {
     result := EMAIL_REGISTRATIONAUTHMETHOD
@@ -43,6 +44,8 @@ func ParseRegistrationAuthMethod(v string) (any, error) {
             result = APPPASSWORD_REGISTRATIONAUTHMETHOD
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REGISTRATIONAUTHMETHOD
+        case "externalAuthMethod":
+            result = EXTERNALAUTHMETHOD_REGISTRATIONAUTHMETHOD
         default:
             return nil, nil
     }

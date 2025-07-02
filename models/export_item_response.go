@@ -55,7 +55,7 @@ func (m *ExportItemResponse) GetChangeKey()(*string) {
     }
     return nil
 }
-// GetData gets the data property value. Data that represents an item in a base64 encoded FastTransfer stream format.
+// GetData gets the data property value. Data that represents an item in a base64 encoded opaque stream.
 // returns a []byte when successful
 func (m *ExportItemResponse) GetData()([]byte) {
     val, err := m.GetBackingStore().Get("data")
@@ -217,7 +217,7 @@ func (m *ExportItemResponse) SetChangeKey(value *string)() {
         panic(err)
     }
 }
-// SetData sets the data property value. Data that represents an item in a base64 encoded FastTransfer stream format.
+// SetData sets the data property value. Data that represents an item in a base64 encoded opaque stream.
 func (m *ExportItemResponse) SetData(value []byte)() {
     err := m.GetBackingStore().Set("data", value)
     if err != nil {

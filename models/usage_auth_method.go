@@ -16,10 +16,11 @@ const (
     FIDO_USAGEAUTHMETHOD
     APPPASSWORD_USAGEAUTHMETHOD
     UNKNOWNFUTUREVALUE_USAGEAUTHMETHOD
+    EXTERNALAUTHMETHOD_USAGEAUTHMETHOD
 )
 
 func (i UsageAuthMethod) String() string {
-    return []string{"email", "mobileSMS", "mobileCall", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobileCall", "fido", "appPassword", "unknownFutureValue"}[i]
+    return []string{"email", "mobileSMS", "mobileCall", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobileCall", "fido", "appPassword", "unknownFutureValue", "externalAuthMethod"}[i]
 }
 func ParseUsageAuthMethod(v string) (any, error) {
     result := EMAIL_USAGEAUTHMETHOD
@@ -46,6 +47,8 @@ func ParseUsageAuthMethod(v string) (any, error) {
             result = APPPASSWORD_USAGEAUTHMETHOD
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_USAGEAUTHMETHOD
+        case "externalAuthMethod":
+            result = EXTERNALAUTHMETHOD_USAGEAUTHMETHOD
         default:
             return nil, nil
     }

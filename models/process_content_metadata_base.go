@@ -76,7 +76,7 @@ func (m *ProcessContentMetadataBase) GetContent()(ContentBaseable) {
     }
     return nil
 }
-// GetCorrelationId gets the correlationId property value. An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).
+// GetCorrelationId gets the correlationId property value. An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).
 // returns a *string when successful
 func (m *ProcessContentMetadataBase) GetCorrelationId()(*string) {
     val, err := m.GetBackingStore().Get("correlationId")
@@ -378,7 +378,7 @@ func (m *ProcessContentMetadataBase) SetContent(value ContentBaseable)() {
         panic(err)
     }
 }
-// SetCorrelationId sets the correlationId property value. An GUID identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).
+// SetCorrelationId sets the correlationId property value. An identifier used to group multiple related content entries (for example, different parts of the same file upload, messages in a conversation).
 func (m *ProcessContentMetadataBase) SetCorrelationId(value *string)() {
     err := m.GetBackingStore().Set("correlationId", value)
     if err != nil {

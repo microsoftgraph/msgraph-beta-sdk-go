@@ -48,7 +48,7 @@ func (m *ExchangeSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetInPlaceArchiveMailboxId gets the inPlaceArchiveMailboxId property value. The unique identifier for the user's in-place archive mailbox.
+// GetInPlaceArchiveMailboxId gets the inPlaceArchiveMailboxId property value. The inPlaceArchiveMailboxId property
 // returns a *string when successful
 func (m *ExchangeSettings) GetInPlaceArchiveMailboxId()(*string) {
     val, err := m.GetBackingStore().Get("inPlaceArchiveMailboxId")
@@ -92,7 +92,7 @@ func (m *ExchangeSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     }
     return nil
 }
-// SetInPlaceArchiveMailboxId sets the inPlaceArchiveMailboxId property value. The unique identifier for the user's in-place archive mailbox.
+// SetInPlaceArchiveMailboxId sets the inPlaceArchiveMailboxId property value. The inPlaceArchiveMailboxId property
 func (m *ExchangeSettings) SetInPlaceArchiveMailboxId(value *string)() {
     err := m.GetBackingStore().Set("inPlaceArchiveMailboxId", value)
     if err != nil {
