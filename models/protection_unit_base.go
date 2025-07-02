@@ -135,6 +135,16 @@ func (m *ProtectionUnitBase) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["offboardRequestedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOffboardRequestedDateTime(val)
+        }
+        return nil
+    }
     res["policyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -183,6 +193,18 @@ func (m *ProtectionUnitBase) GetLastModifiedBy()(IdentitySetable) {
 // returns a *Time when successful
 func (m *ProtectionUnitBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOffboardRequestedDateTime gets the offboardRequestedDateTime property value. The time when protection unit offboard was requested.
+// returns a *Time when successful
+func (m *ProtectionUnitBase) GetOffboardRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("offboardRequestedDateTime")
     if err != nil {
         panic(err)
     }
@@ -264,6 +286,12 @@ func (m *ProtectionUnitBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     {
+        err = writer.WriteTimeValue("offboardRequestedDateTime", m.GetOffboardRequestedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("policyId", m.GetPolicyId())
         if err != nil {
             return err
@@ -320,6 +348,13 @@ func (m *ProtectionUnitBase) SetLastModifiedDateTime(value *i336074805fc853987ab
         panic(err)
     }
 }
+// SetOffboardRequestedDateTime sets the offboardRequestedDateTime property value. The time when protection unit offboard was requested.
+func (m *ProtectionUnitBase) SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("offboardRequestedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPolicyId sets the policyId property value. The unique identifier of the protection policy based on which protection unit was created.
 func (m *ProtectionUnitBase) SetPolicyId(value *string)() {
     err := m.GetBackingStore().Set("policyId", value)
@@ -349,6 +384,7 @@ type ProtectionUnitBaseable interface {
     GetError()(PublicErrorable)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOffboardRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetPolicyId()(*string)
     GetProtectionSources()(*ProtectionSource)
     GetStatus()(*ProtectionUnitStatus)
@@ -357,6 +393,7 @@ type ProtectionUnitBaseable interface {
     SetError(value PublicErrorable)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetPolicyId(value *string)()
     SetProtectionSources(value *ProtectionSource)()
     SetStatus(value *ProtectionUnitStatus)()

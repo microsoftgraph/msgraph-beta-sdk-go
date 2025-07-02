@@ -43,7 +43,7 @@ func (m *NotificationRecipients) GetAdditionalData()(map[string]any) {
 func (m *NotificationRecipients) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCustomRecipients gets the customRecipients property value. A list of users or groups that receive notifications.
+// GetCustomRecipients gets the customRecipients property value. A list of users or groups that receive notifications. Only specify this property when role is set to custom.
 // returns a []EmailIdentityable when successful
 func (m *NotificationRecipients) GetCustomRecipients()([]EmailIdentityable) {
     val, err := m.GetBackingStore().Get("customRecipients")
@@ -167,7 +167,7 @@ func (m *NotificationRecipients) SetAdditionalData(value map[string]any)() {
 func (m *NotificationRecipients) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCustomRecipients sets the customRecipients property value. A list of users or groups that receive notifications.
+// SetCustomRecipients sets the customRecipients property value. A list of users or groups that receive notifications. Only specify this property when role is set to custom.
 func (m *NotificationRecipients) SetCustomRecipients(value []EmailIdentityable)() {
     err := m.GetBackingStore().Set("customRecipients", value)
     if err != nil {

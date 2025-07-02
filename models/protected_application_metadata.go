@@ -24,7 +24,7 @@ func NewProtectedApplicationMetadata()(*ProtectedApplicationMetadata) {
 func CreateProtectedApplicationMetadataFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewProtectedApplicationMetadata(), nil
 }
-// GetApplicationLocation gets the applicationLocation property value. The Entra client (application) ID. Required.
+// GetApplicationLocation gets the applicationLocation property value. The client (application) ID of the Microsoft Entra application. Required.
 // returns a PolicyLocationable when successful
 func (m *ProtectedApplicationMetadata) GetApplicationLocation()(PolicyLocationable) {
     val, err := m.GetBackingStore().Get("applicationLocation")
@@ -66,7 +66,7 @@ func (m *ProtectedApplicationMetadata) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetApplicationLocation sets the applicationLocation property value. The Entra client (application) ID. Required.
+// SetApplicationLocation sets the applicationLocation property value. The client (application) ID of the Microsoft Entra application. Required.
 func (m *ProtectedApplicationMetadata) SetApplicationLocation(value PolicyLocationable)() {
     err := m.GetBackingStore().Set("applicationLocation", value)
     if err != nil {

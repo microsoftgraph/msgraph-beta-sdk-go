@@ -62,7 +62,7 @@ func (m *ProcessFileMetadata) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetOwnerId gets the ownerId property value. The unique identifier (for example, Object ID or UPN) of the owner of the file.
+// GetOwnerId gets the ownerId property value. The unique identifier (for example, Entra User ID or UPN) of the owner of the file.
 // returns a *string when successful
 func (m *ProcessFileMetadata) GetOwnerId()(*string) {
     val, err := m.GetBackingStore().Get("ownerId")
@@ -101,7 +101,7 @@ func (m *ProcessFileMetadata) SetCustomProperties(value CustomMetadataDictionary
         panic(err)
     }
 }
-// SetOwnerId sets the ownerId property value. The unique identifier (for example, Object ID or UPN) of the owner of the file.
+// SetOwnerId sets the ownerId property value. The unique identifier (for example, Entra User ID or UPN) of the owner of the file.
 func (m *ProcessFileMetadata) SetOwnerId(value *string)() {
     err := m.GetBackingStore().Set("ownerId", value)
     if err != nil {

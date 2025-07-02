@@ -58,6 +58,22 @@ func (m *ReportsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["speakerAssignmentSubmissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSpeakerAssignmentSubmissionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SpeakerAssignmentSubmissionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SpeakerAssignmentSubmissionable)
+                }
+            }
+            m.SetSpeakerAssignmentSubmissions(res)
+        }
+        return nil
+    }
     return res
 }
 // GetReadingAssignmentSubmissions gets the readingAssignmentSubmissions property value. The readingAssignmentSubmissions property
@@ -81,6 +97,18 @@ func (m *ReportsRoot) GetReflectCheckInResponses()([]ReflectCheckInResponseable)
     }
     if val != nil {
         return val.([]ReflectCheckInResponseable)
+    }
+    return nil
+}
+// GetSpeakerAssignmentSubmissions gets the speakerAssignmentSubmissions property value. Details of submitted speaker assignments.
+// returns a []SpeakerAssignmentSubmissionable when successful
+func (m *ReportsRoot) GetSpeakerAssignmentSubmissions()([]SpeakerAssignmentSubmissionable) {
+    val, err := m.GetBackingStore().Get("speakerAssignmentSubmissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SpeakerAssignmentSubmissionable)
     }
     return nil
 }
@@ -114,6 +142,18 @@ func (m *ReportsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
             return err
         }
     }
+    if m.GetSpeakerAssignmentSubmissions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSpeakerAssignmentSubmissions()))
+        for i, v := range m.GetSpeakerAssignmentSubmissions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("speakerAssignmentSubmissions", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetReadingAssignmentSubmissions sets the readingAssignmentSubmissions property value. The readingAssignmentSubmissions property
@@ -130,11 +170,20 @@ func (m *ReportsRoot) SetReflectCheckInResponses(value []ReflectCheckInResponsea
         panic(err)
     }
 }
+// SetSpeakerAssignmentSubmissions sets the speakerAssignmentSubmissions property value. Details of submitted speaker assignments.
+func (m *ReportsRoot) SetSpeakerAssignmentSubmissions(value []SpeakerAssignmentSubmissionable)() {
+    err := m.GetBackingStore().Set("speakerAssignmentSubmissions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type ReportsRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetReadingAssignmentSubmissions()([]ReadingAssignmentSubmissionable)
     GetReflectCheckInResponses()([]ReflectCheckInResponseable)
+    GetSpeakerAssignmentSubmissions()([]SpeakerAssignmentSubmissionable)
     SetReadingAssignmentSubmissions(value []ReadingAssignmentSubmissionable)()
     SetReflectCheckInResponses(value []ReflectCheckInResponseable)()
+    SetSpeakerAssignmentSubmissions(value []SpeakerAssignmentSubmissionable)()
 }

@@ -123,6 +123,11 @@ func (m *ReportsRequestBuilder) ReadingAssignmentSubmissions()(*ReportsReadingAs
 func (m *ReportsRequestBuilder) ReflectCheckInResponses()(*ReportsReflectCheckInResponsesRequestBuilder) {
     return NewReportsReflectCheckInResponsesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SpeakerAssignmentSubmissions provides operations to manage the speakerAssignmentSubmissions property of the microsoft.graph.reportsRoot entity.
+// returns a *ReportsSpeakerAssignmentSubmissionsRequestBuilder when successful
+func (m *ReportsRequestBuilder) SpeakerAssignmentSubmissions()(*ReportsSpeakerAssignmentSubmissionsRequestBuilder) {
+    return NewReportsSpeakerAssignmentSubmissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property reports for education
 // returns a *RequestInformation when successful
 func (m *ReportsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ReportsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -33,7 +33,7 @@ func NewExchangeMailboxesItemExportItemsRequestBuilder(rawUrl string, requestAda
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeMailboxesItemExportItemsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post export Exchange mailboxItem objects in full-fidelity FastTransfer stream format for backup purposes. This item format can be restored to the same mailbox or a different one. You can export up to 20 items in a single export request.
+// Post export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn't intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see: Overview of the mailbox import and export APIs in Microsoft Graph (preview) You can export up to 20 items in a single export request.
 // Deprecated: This method is obsolete. Use PostAsExportItemsPostResponse instead.
 // returns a ExchangeMailboxesItemExportItemsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -57,7 +57,7 @@ func (m *ExchangeMailboxesItemExportItemsRequestBuilder) Post(ctx context.Contex
     }
     return res.(ExchangeMailboxesItemExportItemsResponseable), nil
 }
-// PostAsExportItemsPostResponse export Exchange mailboxItem objects in full-fidelity FastTransfer stream format for backup purposes. This item format can be restored to the same mailbox or a different one. You can export up to 20 items in a single export request.
+// PostAsExportItemsPostResponse export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn't intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see: Overview of the mailbox import and export APIs in Microsoft Graph (preview) You can export up to 20 items in a single export request.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2024-06-30
 // returns a ExchangeMailboxesItemExportItemsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -81,7 +81,7 @@ func (m *ExchangeMailboxesItemExportItemsRequestBuilder) PostAsExportItemsPostRe
     }
     return res.(ExchangeMailboxesItemExportItemsPostResponseable), nil
 }
-// ToPostRequestInformation export Exchange mailboxItem objects in full-fidelity FastTransfer stream format for backup purposes. This item format can be restored to the same mailbox or a different one. You can export up to 20 items in a single export request.
+// ToPostRequestInformation export Exchange mailboxItem objects in full fidelity. This API exports each item as an opaque stream. The data stream isn't intended for parsing, but can be used to import an item back into an Exchange mailbox. For more information, see: Overview of the mailbox import and export APIs in Microsoft Graph (preview) You can export up to 20 items in a single export request.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *ExchangeMailboxesItemExportItemsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ExchangeMailboxesItemExportItemsPostRequestBodyable, requestConfiguration *ExchangeMailboxesItemExportItemsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

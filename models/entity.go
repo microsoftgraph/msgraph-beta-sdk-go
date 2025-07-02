@@ -2169,8 +2169,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOrganizationalBrandingLocalization(), nil
                     case "#microsoft.graph.organizationalBrandingProperties":
                         return NewOrganizationalBrandingProperties(), nil
-                    case "#microsoft.graph.organizationalUnit":
-                        return NewOrganizationalUnit(), nil
                     case "#microsoft.graph.organizationSettings":
                         return NewOrganizationSettings(), nil
                     case "#microsoft.graph.orgContact":
@@ -2271,6 +2269,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPersonWebsite(), nil
                     case "#microsoft.graph.phoneAuthenticationMethod":
                         return NewPhoneAuthenticationMethod(), nil
+                    case "#microsoft.graph.phoneUserConversationMember":
+                        return NewPhoneUserConversationMember(), nil
                     case "#microsoft.graph.pinnedChatMessageInfo":
                         return NewPinnedChatMessageInfo(), nil
                     case "#microsoft.graph.place":
@@ -2743,6 +2743,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSoftwareOathAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.softwareUpdateStatusSummary":
                         return NewSoftwareUpdateStatusSummary(), nil
+                    case "#microsoft.graph.speakerAssignmentSubmission":
+                        return NewSpeakerAssignmentSubmission(), nil
                     case "#microsoft.graph.staleSignInAlertConfiguration":
                         return NewStaleSignInAlertConfiguration(), nil
                     case "#microsoft.graph.staleSignInAlertIncident":

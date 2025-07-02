@@ -89,6 +89,16 @@ func (m *DeviceMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["operatingSystemSpecifications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOperatingSystemSpecificationsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOperatingSystemSpecifications(val.(OperatingSystemSpecificationsable))
+        }
+        return nil
+    }
     return res
 }
 // GetIpAddress gets the ipAddress property value. The Internet Protocol (IP) address of the device.
@@ -115,6 +125,18 @@ func (m *DeviceMetadata) GetOdataType()(*string) {
     }
     return nil
 }
+// GetOperatingSystemSpecifications gets the operatingSystemSpecifications property value. Details about the operating system platform and version.
+// returns a OperatingSystemSpecificationsable when successful
+func (m *DeviceMetadata) GetOperatingSystemSpecifications()(OperatingSystemSpecificationsable) {
+    val, err := m.GetBackingStore().Get("operatingSystemSpecifications")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OperatingSystemSpecificationsable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *DeviceMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -131,6 +153,12 @@ func (m *DeviceMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("operatingSystemSpecifications", m.GetOperatingSystemSpecifications())
         if err != nil {
             return err
         }
@@ -175,6 +203,13 @@ func (m *DeviceMetadata) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetOperatingSystemSpecifications sets the operatingSystemSpecifications property value. Details about the operating system platform and version.
+func (m *DeviceMetadata) SetOperatingSystemSpecifications(value OperatingSystemSpecificationsable)() {
+    err := m.GetBackingStore().Set("operatingSystemSpecifications", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type DeviceMetadataable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -183,8 +218,10 @@ type DeviceMetadataable interface {
     GetDeviceType()(*string)
     GetIpAddress()(*string)
     GetOdataType()(*string)
+    GetOperatingSystemSpecifications()(OperatingSystemSpecificationsable)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDeviceType(value *string)()
     SetIpAddress(value *string)()
     SetOdataType(value *string)()
+    SetOperatingSystemSpecifications(value OperatingSystemSpecificationsable)()
 }
