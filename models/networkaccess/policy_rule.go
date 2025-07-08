@@ -45,6 +45,8 @@ func CreatePolicyRuleFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                         return NewM365ForwardingRule(), nil
                     case "#microsoft.graph.networkaccess.privateAccessForwardingRule":
                         return NewPrivateAccessForwardingRule(), nil
+                    case "#microsoft.graph.networkaccess.threatIntelligenceRule":
+                        return NewThreatIntelligenceRule(), nil
                     case "#microsoft.graph.networkaccess.webCategoryFilteringRule":
                         return NewWebCategoryFilteringRule(), nil
                 }

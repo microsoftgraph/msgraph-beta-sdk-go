@@ -12,10 +12,11 @@ const (
     MICROSOFTENTRAIDGOVERNANCE_REQUIREDLICENSES
     MICROSOFTENTRAWORKLOADID_REQUIREDLICENSES
     UNKNOWNFUTUREVALUE_REQUIREDLICENSES
+    AATP_REQUIREDLICENSES
 )
 
 func (i RequiredLicenses) String() string {
-    return []string{"notApplicable", "microsoftEntraIdFree", "microsoftEntraIdP1", "microsoftEntraIdP2", "microsoftEntraIdGovernance", "microsoftEntraWorkloadId", "unknownFutureValue"}[i]
+    return []string{"notApplicable", "microsoftEntraIdFree", "microsoftEntraIdP1", "microsoftEntraIdP2", "microsoftEntraIdGovernance", "microsoftEntraWorkloadId", "unknownFutureValue", "aatp"}[i]
 }
 func ParseRequiredLicenses(v string) (any, error) {
     result := NOTAPPLICABLE_REQUIREDLICENSES
@@ -34,6 +35,8 @@ func ParseRequiredLicenses(v string) (any, error) {
             result = MICROSOFTENTRAWORKLOADID_REQUIREDLICENSES
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_REQUIREDLICENSES
+        case "aatp":
+            result = AATP_REQUIREDLICENSES
         default:
             return nil, nil
     }

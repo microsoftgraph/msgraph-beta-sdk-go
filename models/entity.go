@@ -1261,8 +1261,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEmbeddedSIMDeviceState(), nil
                     case "#microsoft.graph.emergencyCallEvent":
                         return NewEmergencyCallEvent(), nil
-                    case "#microsoft.graph.employeeExperience":
-                        return NewEmployeeExperience(), nil
                     case "#microsoft.graph.employeeExperienceUser":
                         return NewEmployeeExperienceUser(), nil
                     case "#microsoft.graph.encryptedAwsStorageBucketFinding":
@@ -1281,6 +1279,18 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEndUserNotificationDetail(), nil
                     case "#microsoft.graph.engagementAsyncOperation":
                         return NewEngagementAsyncOperation(), nil
+                    case "#microsoft.graph.engagementConversation":
+                        return NewEngagementConversation(), nil
+                    case "#microsoft.graph.engagementConversationDiscussionMessage":
+                        return NewEngagementConversationDiscussionMessage(), nil
+                    case "#microsoft.graph.engagementConversationMessage":
+                        return NewEngagementConversationMessage(), nil
+                    case "#microsoft.graph.engagementConversationMessageReaction":
+                        return NewEngagementConversationMessageReaction(), nil
+                    case "#microsoft.graph.engagementConversationQuestionMessage":
+                        return NewEngagementConversationQuestionMessage(), nil
+                    case "#microsoft.graph.engagementConversationSystemMessage":
+                        return NewEngagementConversationSystemMessage(), nil
                     case "#microsoft.graph.engagementRole":
                         return NewEngagementRole(), nil
                     case "#microsoft.graph.engagementRoleMember":
@@ -2121,6 +2131,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnlineMeeting(), nil
                     case "#microsoft.graph.onlineMeetingBase":
                         return NewOnlineMeetingBase(), nil
+                    case "#microsoft.graph.onlineMeetingEngagementConversation":
+                        return NewOnlineMeetingEngagementConversation(), nil
                     case "#microsoft.graph.onOtpSendCustomExtension":
                         return NewOnOtpSendCustomExtension(), nil
                     case "#microsoft.graph.onPhoneMethodLoadStartListener":

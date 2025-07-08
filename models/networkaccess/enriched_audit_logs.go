@@ -23,7 +23,7 @@ func NewEnrichedAuditLogs()(*EnrichedAuditLogs) {
 func CreateEnrichedAuditLogsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnrichedAuditLogs(), nil
 }
-// GetExchange gets the exchange property value. Exchange Online enriched audit logs settings.
+// GetExchange gets the exchange property value. The exchange property
 // returns a EnrichedAuditLogsSettingsable when successful
 func (m *EnrichedAuditLogs) GetExchange()(EnrichedAuditLogsSettingsable) {
     val, err := m.GetBackingStore().Get("exchange")
@@ -71,7 +71,7 @@ func (m *EnrichedAuditLogs) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetSharepoint gets the sharepoint property value. SharePoint Online enriched audit logs settings.
+// GetSharepoint gets the sharepoint property value. The sharepoint property
 // returns a EnrichedAuditLogsSettingsable when successful
 func (m *EnrichedAuditLogs) GetSharepoint()(EnrichedAuditLogsSettingsable) {
     val, err := m.GetBackingStore().Get("sharepoint")
@@ -83,7 +83,7 @@ func (m *EnrichedAuditLogs) GetSharepoint()(EnrichedAuditLogsSettingsable) {
     }
     return nil
 }
-// GetTeams gets the teams property value. Teams enriched audit logs settings.
+// GetTeams gets the teams property value. The teams property
 // returns a EnrichedAuditLogsSettingsable when successful
 func (m *EnrichedAuditLogs) GetTeams()(EnrichedAuditLogsSettingsable) {
     val, err := m.GetBackingStore().Get("teams")
@@ -121,21 +121,21 @@ func (m *EnrichedAuditLogs) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetExchange sets the exchange property value. Exchange Online enriched audit logs settings.
+// SetExchange sets the exchange property value. The exchange property
 func (m *EnrichedAuditLogs) SetExchange(value EnrichedAuditLogsSettingsable)() {
     err := m.GetBackingStore().Set("exchange", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSharepoint sets the sharepoint property value. SharePoint Online enriched audit logs settings.
+// SetSharepoint sets the sharepoint property value. The sharepoint property
 func (m *EnrichedAuditLogs) SetSharepoint(value EnrichedAuditLogsSettingsable)() {
     err := m.GetBackingStore().Set("sharepoint", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTeams sets the teams property value. Teams enriched audit logs settings.
+// SetTeams sets the teams property value. The teams property
 func (m *EnrichedAuditLogs) SetTeams(value EnrichedAuditLogsSettingsable)() {
     err := m.GetBackingStore().Set("teams", value)
     if err != nil {

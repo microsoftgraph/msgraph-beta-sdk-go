@@ -181,6 +181,22 @@ func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["threatIntelligencePolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateThreatIntelligencePolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ThreatIntelligencePolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ThreatIntelligencePolicyable)
+                }
+            }
+            m.SetThreatIntelligencePolicies(res)
+        }
+        return nil
+    }
     return res
 }
 // GetFilteringPolicies gets the filteringPolicies property value. A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
@@ -276,6 +292,18 @@ func (m *NetworkAccessRoot) GetTenantStatus()(TenantStatusable) {
     }
     if val != nil {
         return val.(TenantStatusable)
+    }
+    return nil
+}
+// GetThreatIntelligencePolicies gets the threatIntelligencePolicies property value. The threatIntelligencePolicies property
+// returns a []ThreatIntelligencePolicyable when successful
+func (m *NetworkAccessRoot) GetThreatIntelligencePolicies()([]ThreatIntelligencePolicyable) {
+    val, err := m.GetBackingStore().Get("threatIntelligencePolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ThreatIntelligencePolicyable)
     }
     return nil
 }
@@ -375,6 +403,18 @@ func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetThreatIntelligencePolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetThreatIntelligencePolicies()))
+        for i, v := range m.GetThreatIntelligencePolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("threatIntelligencePolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAlerts sets the alerts property value. The alerts property
@@ -447,6 +487,13 @@ func (m *NetworkAccessRoot) SetTenantStatus(value TenantStatusable)() {
         panic(err)
     }
 }
+// SetThreatIntelligencePolicies sets the threatIntelligencePolicies property value. The threatIntelligencePolicies property
+func (m *NetworkAccessRoot) SetThreatIntelligencePolicies(value []ThreatIntelligencePolicyable)() {
+    err := m.GetBackingStore().Set("threatIntelligencePolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type NetworkAccessRootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -460,6 +507,7 @@ type NetworkAccessRootable interface {
     GetReports()(Reportsable)
     GetSettings()(Settingsable)
     GetTenantStatus()(TenantStatusable)
+    GetThreatIntelligencePolicies()([]ThreatIntelligencePolicyable)
     SetAlerts(value []Alertable)()
     SetConnectivity(value Connectivityable)()
     SetFilteringPolicies(value []FilteringPolicyable)()
@@ -470,4 +518,5 @@ type NetworkAccessRootable interface {
     SetReports(value Reportsable)()
     SetSettings(value Settingsable)()
     SetTenantStatus(value TenantStatusable)()
+    SetThreatIntelligencePolicies(value []ThreatIntelligencePolicyable)()
 }

@@ -37,6 +37,8 @@ func CreatePolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFilteringPolicy(), nil
                     case "#microsoft.graph.networkaccess.forwardingPolicy":
                         return NewForwardingPolicy(), nil
+                    case "#microsoft.graph.networkaccess.threatIntelligencePolicy":
+                        return NewThreatIntelligencePolicy(), nil
                 }
             }
         }

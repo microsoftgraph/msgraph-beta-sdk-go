@@ -80,10 +80,20 @@ func (m *CommunicationsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudCommunicationsable), nil
 }
+// GetAllOnlineMeetingMessages provides operations to call the getAllOnlineMeetingMessages method.
+// returns a *GetAllOnlineMeetingMessagesRequestBuilder when successful
+func (m *CommunicationsRequestBuilder) GetAllOnlineMeetingMessages()(*GetAllOnlineMeetingMessagesRequestBuilder) {
+    return NewGetAllOnlineMeetingMessagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // GetPresencesByUserId provides operations to call the getPresencesByUserId method.
 // returns a *GetPresencesByUserIdRequestBuilder when successful
 func (m *CommunicationsRequestBuilder) GetPresencesByUserId()(*GetPresencesByUserIdRequestBuilder) {
     return NewGetPresencesByUserIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OnlineMeetingConversations provides operations to manage the onlineMeetingConversations property of the microsoft.graph.cloudCommunications entity.
+// returns a *OnlineMeetingConversationsRequestBuilder when successful
+func (m *CommunicationsRequestBuilder) OnlineMeetingConversations()(*OnlineMeetingConversationsRequestBuilder) {
+    return NewOnlineMeetingConversationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // OnlineMeetings provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
 // returns a *OnlineMeetingsRequestBuilder when successful
