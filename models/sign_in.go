@@ -179,7 +179,7 @@ func (m *SignIn) GetAuthenticationProtocol()(*ProtocolType) {
     }
     return nil
 }
-// GetAuthenticationRequirement gets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed.  Supports $filter (eq, startsWith).
+// GetAuthenticationRequirement gets the authenticationRequirement property value. The authentication requirement as explicitly requested by a resource provider. Does not account for previously satisfied claims. If primary authentication fails, the sign-in attempt is not evaluated by Conditional Access, so the resulting value is SingleFactorAuthentication.  Supports $filter (eq, startsWith).
 // returns a *string when successful
 func (m *SignIn) GetAuthenticationRequirement()(*string) {
     val, err := m.GetBackingStore().Get("authenticationRequirement")
@@ -2347,7 +2347,7 @@ func (m *SignIn) SetAuthenticationProtocol(value *ProtocolType)() {
         panic(err)
     }
 }
-// SetAuthenticationRequirement sets the authenticationRequirement property value. This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed.  Supports $filter (eq, startsWith).
+// SetAuthenticationRequirement sets the authenticationRequirement property value. The authentication requirement as explicitly requested by a resource provider. Does not account for previously satisfied claims. If primary authentication fails, the sign-in attempt is not evaluated by Conditional Access, so the resulting value is SingleFactorAuthentication.  Supports $filter (eq, startsWith).
 func (m *SignIn) SetAuthenticationRequirement(value *string)() {
     err := m.GetBackingStore().Set("authenticationRequirement", value)
     if err != nil {

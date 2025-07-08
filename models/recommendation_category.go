@@ -8,10 +8,11 @@ const (
     IDENTITYBESTPRACTICE_RECOMMENDATIONCATEGORY RecommendationCategory = iota
     IDENTITYSECURESCORE_RECOMMENDATIONCATEGORY
     UNKNOWNFUTUREVALUE_RECOMMENDATIONCATEGORY
+    MDISECURESCORE_RECOMMENDATIONCATEGORY
 )
 
 func (i RecommendationCategory) String() string {
-    return []string{"identityBestPractice", "identitySecureScore", "unknownFutureValue"}[i]
+    return []string{"identityBestPractice", "identitySecureScore", "unknownFutureValue", "mdiSecureScore"}[i]
 }
 func ParseRecommendationCategory(v string) (any, error) {
     result := IDENTITYBESTPRACTICE_RECOMMENDATIONCATEGORY
@@ -22,6 +23,8 @@ func ParseRecommendationCategory(v string) (any, error) {
             result = IDENTITYSECURESCORE_RECOMMENDATIONCATEGORY
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECOMMENDATIONCATEGORY
+        case "mdiSecureScore":
+            result = MDISECURESCORE_RECOMMENDATIONCATEGORY
         default:
             return nil, nil
     }

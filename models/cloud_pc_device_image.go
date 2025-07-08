@@ -283,7 +283,7 @@ func (m *CloudPcDeviceImage) GetScopeIds()([]string) {
     }
     return nil
 }
-// GetSizeInGB gets the sizeInGB property value. The sizeInGB property
+// GetSizeInGB gets the sizeInGB property value. The size of the image in GB. For example, 64. Read-only.
 // returns a *int32 when successful
 func (m *CloudPcDeviceImage) GetSizeInGB()(*int32) {
     val, err := m.GetBackingStore().Get("sizeInGB")
@@ -502,7 +502,7 @@ func (m *CloudPcDeviceImage) SetScopeIds(value []string)() {
         panic(err)
     }
 }
-// SetSizeInGB sets the sizeInGB property value. The sizeInGB property
+// SetSizeInGB sets the sizeInGB property value. The size of the image in GB. For example, 64. Read-only.
 func (m *CloudPcDeviceImage) SetSizeInGB(value *int32)() {
     err := m.GetBackingStore().Set("sizeInGB", value)
     if err != nil {

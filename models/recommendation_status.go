@@ -11,10 +11,14 @@ const (
     DISMISSED_RECOMMENDATIONSTATUS
     POSTPONED_RECOMMENDATIONSTATUS
     UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS
+    RISKACCEPTED_RECOMMENDATIONSTATUS
+    THIRDPARTY_RECOMMENDATIONSTATUS
+    PLANNED_RECOMMENDATIONSTATUS
+    ALTERNATEMITIGATION_RECOMMENDATIONSTATUS
 )
 
 func (i RecommendationStatus) String() string {
-    return []string{"active", "completedBySystem", "completedByUser", "dismissed", "postponed", "unknownFutureValue"}[i]
+    return []string{"active", "completedBySystem", "completedByUser", "dismissed", "postponed", "unknownFutureValue", "riskAccepted", "thirdParty", "planned", "alternateMitigation"}[i]
 }
 func ParseRecommendationStatus(v string) (any, error) {
     result := ACTIVE_RECOMMENDATIONSTATUS
@@ -31,6 +35,14 @@ func ParseRecommendationStatus(v string) (any, error) {
             result = POSTPONED_RECOMMENDATIONSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_RECOMMENDATIONSTATUS
+        case "riskAccepted":
+            result = RISKACCEPTED_RECOMMENDATIONSTATUS
+        case "thirdParty":
+            result = THIRDPARTY_RECOMMENDATIONSTATUS
+        case "planned":
+            result = PLANNED_RECOMMENDATIONSTATUS
+        case "alternateMitigation":
+            result = ALTERNATEMITIGATION_RECOMMENDATIONSTATUS
         default:
             return nil, nil
     }
