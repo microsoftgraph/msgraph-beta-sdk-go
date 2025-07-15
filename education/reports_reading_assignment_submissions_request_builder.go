@@ -14,7 +14,7 @@ import (
 type ReportsReadingAssignmentSubmissionsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportsReadingAssignmentSubmissionsRequestBuilderGetQueryParameters read the properties and relationships of a readingAssignmentSubmission object.
+// ReportsReadingAssignmentSubmissionsRequestBuilderGetQueryParameters get a list of reading assignments that were submitted by a student.
 type ReportsReadingAssignmentSubmissionsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -29,9 +29,9 @@ type ReportsReadingAssignmentSubmissionsRequestBuilderGetQueryParameters struct 
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ReportsReadingAssignmentSubmissionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsReadingAssignmentSubmissionsRequestBuilderGetRequestConfiguration struct {
@@ -79,12 +79,12 @@ func NewReportsReadingAssignmentSubmissionsRequestBuilder(rawUrl string, request
 func (m *ReportsReadingAssignmentSubmissionsRequestBuilder) Count()(*ReportsReadingAssignmentSubmissionsCountRequestBuilder) {
     return NewReportsReadingAssignmentSubmissionsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a readingAssignmentSubmission object.
+// Get get a list of reading assignments that were submitted by a student.
 // returns a ReadingAssignmentSubmissionCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/readingassignmentsubmission-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportsroot-list-readingassignmentsubmissions?view=graph-rest-beta
 func (m *ReportsReadingAssignmentSubmissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsReadingAssignmentSubmissionsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReadingAssignmentSubmissionCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *ReportsReadingAssignmentSubmissionsRequestBuilder) Post(ctx context.Con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReadingAssignmentSubmissionable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a readingAssignmentSubmission object.
+// ToGetRequestInformation get a list of reading assignments that were submitted by a student.
 // returns a *RequestInformation when successful
 func (m *ReportsReadingAssignmentSubmissionsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsReadingAssignmentSubmissionsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

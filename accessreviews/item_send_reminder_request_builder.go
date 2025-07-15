@@ -35,9 +35,6 @@ func NewItemSendReminderRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Post in the Microsoft Entra access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review. 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-sendreminder?view=graph-rest-beta
 func (m *ItemSendReminderRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSendReminderRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

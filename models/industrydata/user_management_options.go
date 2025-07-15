@@ -26,14 +26,14 @@ func CreateUserManagementOptionsFromDiscriminatorValue(parseNode i878a80d2330e89
     return NewUserManagementOptions(), nil
 }
 // GetAdditionalAttributes gets the additionalAttributes property value. The different attribute choices for the users to be provisioned. The possible values are: userGradeLevel, userNumber, unknownFutureValue.
-// returns a []AdditionalUserAttributes when successful
-func (m *UserManagementOptions) GetAdditionalAttributes()([]AdditionalUserAttributes) {
+// returns a []string when successful
+func (m *UserManagementOptions) GetAdditionalAttributes()([]string) {
     val, err := m.GetBackingStore().Get("additionalAttributes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]AdditionalUserAttributes)
+        return val.([]string)
     }
     return nil
 }
@@ -72,15 +72,15 @@ func (m *UserManagementOptions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd07
 func (m *UserManagementOptions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["additionalAttributes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseAdditionalUserAttributes)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]AdditionalUserAttributes, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*AdditionalUserAttributes))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetAdditionalAttributes(res)
@@ -124,7 +124,7 @@ func (m *UserManagementOptions) GetOdataType()(*string) {
 // Serialize serializes information the current object
 func (m *UserManagementOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAdditionalAttributes() != nil {
-        err := writer.WriteCollectionOfStringValues("additionalAttributes", SerializeAdditionalUserAttributes(m.GetAdditionalAttributes()))
+        err := writer.WriteCollectionOfStringValues("additionalAttributes", m.GetAdditionalAttributes())
         if err != nil {
             return err
         }
@@ -150,7 +150,7 @@ func (m *UserManagementOptions) Serialize(writer i878a80d2330e89d26896388a3f487e
     return nil
 }
 // SetAdditionalAttributes sets the additionalAttributes property value. The different attribute choices for the users to be provisioned. The possible values are: userGradeLevel, userNumber, unknownFutureValue.
-func (m *UserManagementOptions) SetAdditionalAttributes(value []AdditionalUserAttributes)() {
+func (m *UserManagementOptions) SetAdditionalAttributes(value []string)() {
     err := m.GetBackingStore().Set("additionalAttributes", value)
     if err != nil {
         panic(err)
@@ -185,11 +185,11 @@ type UserManagementOptionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAdditionalAttributes()([]AdditionalUserAttributes)
+    GetAdditionalAttributes()([]string)
     GetAdditionalOptions()(AdditionalUserOptionsable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    SetAdditionalAttributes(value []AdditionalUserAttributes)()
+    SetAdditionalAttributes(value []string)()
     SetAdditionalOptions(value AdditionalUserOptionsable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()

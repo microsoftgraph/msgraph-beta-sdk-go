@@ -51,7 +51,7 @@ func (m *ThreatIntelligencePolicy) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The date and time when the policy was last modified.
 // returns a *Time when successful
 func (m *ThreatIntelligencePolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -95,7 +95,7 @@ func (m *ThreatIntelligencePolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The date and time when the policy was last modified.
 func (m *ThreatIntelligencePolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {

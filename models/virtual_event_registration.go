@@ -291,7 +291,7 @@ func (m *VirtualEventRegistration) GetRegistrationQuestionAnswers()([]VirtualEve
     }
     return nil
 }
-// GetSessions gets the sessions property value. The sessions property
+// GetSessions gets the sessions property value. Sessions for a registration.
 // returns a []VirtualEventSessionable when successful
 func (m *VirtualEventRegistration) GetSessions()([]VirtualEventSessionable) {
     val, err := m.GetBackingStore().Get("sessions")
@@ -496,7 +496,7 @@ func (m *VirtualEventRegistration) SetRegistrationQuestionAnswers(value []Virtua
         panic(err)
     }
 }
-// SetSessions sets the sessions property value. The sessions property
+// SetSessions sets the sessions property value. Sessions for a registration.
 func (m *VirtualEventRegistration) SetSessions(value []VirtualEventSessionable)() {
     err := m.GetBackingStore().Set("sessions", value)
     if err != nil {

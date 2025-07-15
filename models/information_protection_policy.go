@@ -26,35 +26,7 @@ func CreateInformationProtectionPolicyFromDiscriminatorValue(parseNode i878a80d2
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *InformationProtectionPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["labels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateInformationProtectionLabelFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]InformationProtectionLabelable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(InformationProtectionLabelable)
-                }
-            }
-            m.SetLabels(res)
-        }
-        return nil
-    }
     return res
-}
-// GetLabels gets the labels property value. The labels property
-// returns a []InformationProtectionLabelable when successful
-func (m *InformationProtectionPolicy) GetLabels()([]InformationProtectionLabelable) {
-    val, err := m.GetBackingStore().Get("labels")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]InformationProtectionLabelable)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *InformationProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,30 +34,9 @@ func (m *InformationProtectionPolicy) Serialize(writer i878a80d2330e89d26896388a
     if err != nil {
         return err
     }
-    if m.GetLabels() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetLabels()))
-        for i, v := range m.GetLabels() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("labels", cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetLabels sets the labels property value. The labels property
-func (m *InformationProtectionPolicy) SetLabels(value []InformationProtectionLabelable)() {
-    err := m.GetBackingStore().Set("labels", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type InformationProtectionPolicyable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetLabels()([]InformationProtectionLabelable)
-    SetLabels(value []InformationProtectionLabelable)()
 }

@@ -46,7 +46,7 @@ func (m *ThreatIntelligenceFqdnDestination) GetFieldDeserializers()(map[string]f
     }
     return res
 }
-// GetValues gets the values property value. The values property
+// GetValues gets the values property value. A collection of fully qualified domain names (FQDNs) associated with potential security threats.
 // returns a []string when successful
 func (m *ThreatIntelligenceFqdnDestination) GetValues()([]string) {
     val, err := m.GetBackingStore().Get("values")
@@ -72,7 +72,7 @@ func (m *ThreatIntelligenceFqdnDestination) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetValues sets the values property value. The values property
+// SetValues sets the values property value. A collection of fully qualified domain names (FQDNs) associated with potential security threats.
 func (m *ThreatIntelligenceFqdnDestination) SetValues(value []string)() {
     err := m.GetBackingStore().Set("values", value)
     if err != nil {

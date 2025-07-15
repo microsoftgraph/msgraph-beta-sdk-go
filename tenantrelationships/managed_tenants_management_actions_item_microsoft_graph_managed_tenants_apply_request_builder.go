@@ -37,9 +37,6 @@ func NewManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyRequ
 // Post applies a management action against a specific managed tenant. Performing this operation makes the appropriate configurations and creates the appropriate policies. For example, when applying the required multifactor authentication for admins, management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that are assigned an administrative directory role.
 // returns a ManagementActionDeploymentStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-managementaction-apply?view=graph-rest-beta
 func (m *ManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyRequestBuilder) Post(ctx context.Context, body ManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyApplyPostRequestBodyable, requestConfiguration *ManagedTenantsManagementActionsItemMicrosoftGraphManagedTenantsApplyRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.ManagementActionDeploymentStatusable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

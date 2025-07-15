@@ -35,9 +35,6 @@ func NewOnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilder(rawUrl string,
 }
 // Post send an SMS notification to external attendees when a Teams Virtual Appointment is confirmed, rescheduled, or canceled. This feature requires Teams Premium. Attendees must have a valid United States phone number to receive these SMS notifications.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/virtualappointment-sendvirtualappointmentsms?view=graph-rest-beta
 func (m *OnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilder) Post(ctx context.Context, body OnlineMeetingsItemSendVirtualAppointmentSmsPostRequestBodyable, requestConfiguration *OnlineMeetingsItemSendVirtualAppointmentSmsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

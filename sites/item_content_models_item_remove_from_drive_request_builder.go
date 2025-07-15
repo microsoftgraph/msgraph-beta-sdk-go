@@ -35,9 +35,6 @@ func NewItemContentModelsItemRemoveFromDriveRequestBuilder(rawUrl string, reques
 }
 // Post remove a contentModel from a SharePoint document library.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contentmodel-removefromdrive?view=graph-rest-beta
 func (m *ItemContentModelsItemRemoveFromDriveRequestBuilder) Post(ctx context.Context, body ItemContentModelsItemRemoveFromDrivePostRequestBodyable, requestConfiguration *ItemContentModelsItemRemoveFromDriveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

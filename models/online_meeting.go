@@ -87,14 +87,14 @@ func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
     return nil
 }
 // GetCapabilities gets the capabilities property value. The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.
-// returns a []MeetingCapabilities when successful
-func (m *OnlineMeeting) GetCapabilities()([]MeetingCapabilities) {
+// returns a []string when successful
+func (m *OnlineMeeting) GetCapabilities()([]string) {
     val, err := m.GetBackingStore().Get("capabilities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]MeetingCapabilities)
+        return val.([]string)
     }
     return nil
 }
@@ -195,15 +195,15 @@ func (m *OnlineMeeting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["capabilities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseMeetingCapabilities)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]MeetingCapabilities, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*MeetingCapabilities))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetCapabilities(res)
@@ -517,7 +517,7 @@ func (m *OnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetCapabilities() != nil {
-        err = writer.WriteCollectionOfStringValues("capabilities", SerializeMeetingCapabilities(m.GetCapabilities()))
+        err = writer.WriteCollectionOfStringValues("capabilities", m.GetCapabilities())
         if err != nil {
             return err
         }
@@ -650,7 +650,7 @@ func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)
     }
 }
 // SetCapabilities sets the capabilities property value. The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.
-func (m *OnlineMeeting) SetCapabilities(value []MeetingCapabilities)() {
+func (m *OnlineMeeting) SetCapabilities(value []string)() {
     err := m.GetBackingStore().Set("capabilities", value)
     if err != nil {
         panic(err)
@@ -755,7 +755,7 @@ type OnlineMeetingable interface {
     GetAttendeeReport()([]byte)
     GetBroadcastRecording()([]byte)
     GetBroadcastSettings()(BroadcastMeetingSettingsable)
-    GetCapabilities()([]MeetingCapabilities)
+    GetCapabilities()([]string)
     GetCreationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetEndDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetExternalId()(*string)
@@ -774,7 +774,7 @@ type OnlineMeetingable interface {
     SetAttendeeReport(value []byte)()
     SetBroadcastRecording(value []byte)()
     SetBroadcastSettings(value BroadcastMeetingSettingsable)()
-    SetCapabilities(value []MeetingCapabilities)()
+    SetCapabilities(value []string)()
     SetCreationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetEndDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetExternalId(value *string)()

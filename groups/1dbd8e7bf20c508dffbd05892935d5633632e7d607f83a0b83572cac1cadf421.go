@@ -46,9 +46,6 @@ func NewItemSitesItemInformationProtectionSensitivityLabelsItemSublabelsComputeI
 // Get calculate the sensitivity label that should be inherited by an output artifact, given a set of sensitivity labels from input or referenced artifacts.
 // returns a SensitivityLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/sensitivitylabel-computeinheritance?view=graph-rest-beta
 func (m *ItemSitesItemInformationProtectionSensitivityLabelsItemSublabelsComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemInformationProtectionSensitivityLabelsItemSublabelsComputeInheritanceWithLabelIdsWithLocaleWithContentFormatsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SensitivityLabelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

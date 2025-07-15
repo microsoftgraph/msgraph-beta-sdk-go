@@ -26,35 +26,7 @@ func CreateApprovalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *Approval) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["steps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateApprovalStepFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ApprovalStepable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ApprovalStepable)
-                }
-            }
-            m.SetSteps(res)
-        }
-        return nil
-    }
     return res
-}
-// GetSteps gets the steps property value. Used to represent the decision associated with a single step in the approval process configured in approvalStage.
-// returns a []ApprovalStepable when successful
-func (m *Approval) GetSteps()([]ApprovalStepable) {
-    val, err := m.GetBackingStore().Get("steps")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ApprovalStepable)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,30 +34,9 @@ func (m *Approval) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     if err != nil {
         return err
     }
-    if m.GetSteps() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSteps()))
-        for i, v := range m.GetSteps() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("steps", cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetSteps sets the steps property value. Used to represent the decision associated with a single step in the approval process configured in approvalStage.
-func (m *Approval) SetSteps(value []ApprovalStepable)() {
-    err := m.GetBackingStore().Set("steps", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type Approvalable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetSteps()([]ApprovalStepable)
-    SetSteps(value []ApprovalStepable)()
 }

@@ -28,9 +28,9 @@ type GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParameters struct 
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // GetCredentialUsageSummaryWithPeriodRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetCredentialUsageSummaryWithPeriodRequestBuilderGetRequestConfiguration struct {
@@ -61,9 +61,6 @@ func NewGetCredentialUsageSummaryWithPeriodRequestBuilder(rawUrl string, request
 // Deprecated: This method is obsolete. Use GetAsGetCredentialUsageSummaryWithPeriodGetResponse instead.
 // returns a GetCredentialUsageSummaryWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getcredentialusagesummary?view=graph-rest-beta
 func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetCredentialUsageSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetCredentialUsageSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,9 +81,6 @@ func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) Get(ctx context.Cont
 // GetAsGetCredentialUsageSummaryWithPeriodGetResponse report the current state of how many users in your organization used the self-service password reset capabilities.
 // returns a GetCredentialUsageSummaryWithPeriodGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getcredentialusagesummary?view=graph-rest-beta
 func (m *GetCredentialUsageSummaryWithPeriodRequestBuilder) GetAsGetCredentialUsageSummaryWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetCredentialUsageSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetCredentialUsageSummaryWithPeriodGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

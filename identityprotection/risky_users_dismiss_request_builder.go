@@ -35,9 +35,6 @@ func NewRiskyUsersDismissRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Post dismiss the risk of one or more riskyUser objects. This action sets the targeted user's risk level to none. The maximum count of users to dismiss in one call is 60.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskyusers-dismiss?view=graph-rest-beta
 func (m *RiskyUsersDismissRequestBuilder) Post(ctx context.Context, body RiskyUsersDismissPostRequestBodyable, requestConfiguration *RiskyUsersDismissRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

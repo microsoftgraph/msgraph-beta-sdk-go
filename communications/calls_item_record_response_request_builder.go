@@ -37,9 +37,6 @@ func NewCallsItemRecordResponseRequestBuilder(rawUrl string, requestAdapter i2ae
 // Post record a short audio response from the caller. A bot can use this API to capture a voice response from a caller after they're prompted for a response. For more information about how to handle operations, see commsOperation. This action isn't intended to record the entire call. The maximum length of recording is 2 minutes.The Cloud Communications Platform doesn't save the recording permanently and discards it shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value provided in the completed notification.
 // returns a RecordOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/call-record?view=graph-rest-beta
 func (m *CallsItemRecordResponseRequestBuilder) Post(ctx context.Context, body CallsItemRecordResponsePostRequestBodyable, requestConfiguration *CallsItemRecordResponseRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RecordOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

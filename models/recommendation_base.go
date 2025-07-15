@@ -114,14 +114,14 @@ func (m *RecommendationBase) GetDisplayName()(*string) {
     return nil
 }
 // GetFeatureAreas gets the featureAreas property value. The directory feature that the recommendation is related to.
-// returns a []RecommendationFeatureAreas when successful
-func (m *RecommendationBase) GetFeatureAreas()([]RecommendationFeatureAreas) {
+// returns a []string when successful
+func (m *RecommendationBase) GetFeatureAreas()([]string) {
     val, err := m.GetBackingStore().Get("featureAreas")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]RecommendationFeatureAreas)
+        return val.([]string)
     }
     return nil
 }
@@ -196,15 +196,15 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["featureAreas"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseRecommendationFeatureAreas)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]RecommendationFeatureAreas, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*RecommendationFeatureAreas))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetFeatureAreas(res)
@@ -525,7 +525,7 @@ func (m *RecommendationBase) GetRemediationImpact()(*string) {
     }
     return nil
 }
-// GetRequiredLicenses gets the requiredLicenses property value. The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue.
+// GetRequiredLicenses gets the requiredLicenses property value. The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue, aatp. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: aatp.
 // returns a *RequiredLicenses when successful
 func (m *RecommendationBase) GetRequiredLicenses()(*RequiredLicenses) {
     val, err := m.GetBackingStore().Get("requiredLicenses")
@@ -599,7 +599,7 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     if m.GetFeatureAreas() != nil {
-        err = writer.WriteCollectionOfStringValues("featureAreas", SerializeRecommendationFeatureAreas(m.GetFeatureAreas()))
+        err = writer.WriteCollectionOfStringValues("featureAreas", m.GetFeatureAreas())
         if err != nil {
             return err
         }
@@ -749,7 +749,7 @@ func (m *RecommendationBase) SetDisplayName(value *string)() {
     }
 }
 // SetFeatureAreas sets the featureAreas property value. The directory feature that the recommendation is related to.
-func (m *RecommendationBase) SetFeatureAreas(value []RecommendationFeatureAreas)() {
+func (m *RecommendationBase) SetFeatureAreas(value []string)() {
     err := m.GetBackingStore().Set("featureAreas", value)
     if err != nil {
         panic(err)
@@ -846,7 +846,7 @@ func (m *RecommendationBase) SetRemediationImpact(value *string)() {
         panic(err)
     }
 }
-// SetRequiredLicenses sets the requiredLicenses property value. The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue.
+// SetRequiredLicenses sets the requiredLicenses property value. The required licenses to view the recommendation. The possible values are: notApplicable, microsoftEntraIdFree, microsoftEntraIdP1, microsoftEntraIdP2, microsoftEntraIdGovernance, microsoftEntraWorkloadId, unknownFutureValue, aatp. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: aatp.
 func (m *RecommendationBase) SetRequiredLicenses(value *RequiredLicenses)() {
     err := m.GetBackingStore().Set("requiredLicenses", value)
     if err != nil {
@@ -869,7 +869,7 @@ type RecommendationBaseable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCurrentScore()(*float64)
     GetDisplayName()(*string)
-    GetFeatureAreas()([]RecommendationFeatureAreas)
+    GetFeatureAreas()([]string)
     GetImpactedResources()([]ImpactedResourceable)
     GetImpactStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetImpactType()(*string)
@@ -891,7 +891,7 @@ type RecommendationBaseable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCurrentScore(value *float64)()
     SetDisplayName(value *string)()
-    SetFeatureAreas(value []RecommendationFeatureAreas)()
+    SetFeatureAreas(value []string)()
     SetImpactedResources(value []ImpactedResourceable)()
     SetImpactStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetImpactType(value *string)()

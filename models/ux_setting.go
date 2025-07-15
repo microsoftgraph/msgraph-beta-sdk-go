@@ -26,29 +26,7 @@ func CreateUxSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UxSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["restrictNonAdminAccess"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseNonAdminSetting)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRestrictNonAdminAccess(val.(*NonAdminSetting))
-        }
-        return nil
-    }
     return res
-}
-// GetRestrictNonAdminAccess gets the restrictNonAdminAccess property value. The restrictNonAdminAccess property
-// returns a *NonAdminSetting when successful
-func (m *UxSetting) GetRestrictNonAdminAccess()(*NonAdminSetting) {
-    val, err := m.GetBackingStore().Get("restrictNonAdminAccess")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*NonAdminSetting)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *UxSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,25 +34,9 @@ func (m *UxSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if err != nil {
         return err
     }
-    if m.GetRestrictNonAdminAccess() != nil {
-        cast := (*m.GetRestrictNonAdminAccess()).String()
-        err = writer.WriteStringValue("restrictNonAdminAccess", &cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetRestrictNonAdminAccess sets the restrictNonAdminAccess property value. The restrictNonAdminAccess property
-func (m *UxSetting) SetRestrictNonAdminAccess(value *NonAdminSetting)() {
-    err := m.GetBackingStore().Set("restrictNonAdminAccess", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type UxSettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetRestrictNonAdminAccess()(*NonAdminSetting)
-    SetRestrictNonAdminAccess(value *NonAdminSetting)()
 }

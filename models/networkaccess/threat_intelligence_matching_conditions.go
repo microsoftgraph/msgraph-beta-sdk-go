@@ -43,7 +43,7 @@ func (m *ThreatIntelligenceMatchingConditions) GetAdditionalData()(map[string]an
 func (m *ThreatIntelligenceMatchingConditions) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDestinations gets the destinations property value. The destinations property
+// GetDestinations gets the destinations property value. A collection of destinations that are considered potential threats for network access evaluation.
 // returns a []ThreatIntelligenceDestinationable when successful
 func (m *ThreatIntelligenceMatchingConditions) GetDestinations()([]ThreatIntelligenceDestinationable) {
     val, err := m.GetBackingStore().Get("destinations")
@@ -109,7 +109,7 @@ func (m *ThreatIntelligenceMatchingConditions) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSeverity gets the severity property value. The severity property
+// GetSeverity gets the severity property value. The severity level of the threat associated with the destinations. Higher severity levels typically result in stricter security controls. The possible values are: low, medium, high, unknownFutureValue.
 // returns a *ThreatIntelligenceSeverity when successful
 func (m *ThreatIntelligenceMatchingConditions) GetSeverity()(*ThreatIntelligenceSeverity) {
     val, err := m.GetBackingStore().Get("severity")
@@ -167,7 +167,7 @@ func (m *ThreatIntelligenceMatchingConditions) SetAdditionalData(value map[strin
 func (m *ThreatIntelligenceMatchingConditions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDestinations sets the destinations property value. The destinations property
+// SetDestinations sets the destinations property value. A collection of destinations that are considered potential threats for network access evaluation.
 func (m *ThreatIntelligenceMatchingConditions) SetDestinations(value []ThreatIntelligenceDestinationable)() {
     err := m.GetBackingStore().Set("destinations", value)
     if err != nil {
@@ -181,7 +181,7 @@ func (m *ThreatIntelligenceMatchingConditions) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSeverity sets the severity property value. The severity property
+// SetSeverity sets the severity property value. The severity level of the threat associated with the destinations. Higher severity levels typically result in stricter security controls. The possible values are: low, medium, high, unknownFutureValue.
 func (m *ThreatIntelligenceMatchingConditions) SetSeverity(value *ThreatIntelligenceSeverity)() {
     err := m.GetBackingStore().Set("severity", value)
     if err != nil {

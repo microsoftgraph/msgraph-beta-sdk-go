@@ -37,9 +37,6 @@ func NewPolicyLabelsEvaluateRemovalRequestBuilder(rawUrl string, requestAdapter 
 // Deprecated: This method is obsolete. Use PostAsEvaluateRemovalPostResponse instead.
 // returns a PolicyLabelsEvaluateRemovalResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta
 func (m *PolicyLabelsEvaluateRemovalRequestBuilder) Post(ctx context.Context, body PolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(PolicyLabelsEvaluateRemovalResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -61,9 +58,6 @@ func (m *PolicyLabelsEvaluateRemovalRequestBuilder) Post(ctx context.Context, bo
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a PolicyLabelsEvaluateRemovalPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateremoval?view=graph-rest-beta
 func (m *PolicyLabelsEvaluateRemovalRequestBuilder) PostAsEvaluateRemovalPostResponse(ctx context.Context, body PolicyLabelsEvaluateRemovalPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateRemovalRequestBuilderPostRequestConfiguration)(PolicyLabelsEvaluateRemovalPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

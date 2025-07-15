@@ -38,9 +38,6 @@ func NewExchangeMailboxesItemCreateImportSessionRequestBuilder(rawUrl string, re
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MailboxItemImportSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/mailbox-createimportsession?view=graph-rest-beta
 func (m *ExchangeMailboxesItemCreateImportSessionRequestBuilder) Post(ctx context.Context, requestConfiguration *ExchangeMailboxesItemCreateImportSessionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailboxItemImportSessionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

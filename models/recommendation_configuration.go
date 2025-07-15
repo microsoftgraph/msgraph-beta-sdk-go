@@ -26,29 +26,7 @@ func CreateRecommendationConfigurationFromDiscriminatorValue(parseNode i878a80d2
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RecommendationConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["isNotificationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsNotificationEnabled(val)
-        }
-        return nil
-    }
     return res
-}
-// GetIsNotificationEnabled gets the isNotificationEnabled property value. Indicates whether notifications for recommendations are enabled.
-// returns a *bool when successful
-func (m *RecommendationConfiguration) GetIsNotificationEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isNotificationEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *RecommendationConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,24 +34,9 @@ func (m *RecommendationConfiguration) Serialize(writer i878a80d2330e89d26896388a
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteBoolValue("isNotificationEnabled", m.GetIsNotificationEnabled())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetIsNotificationEnabled sets the isNotificationEnabled property value. Indicates whether notifications for recommendations are enabled.
-func (m *RecommendationConfiguration) SetIsNotificationEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isNotificationEnabled", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type RecommendationConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetIsNotificationEnabled()(*bool)
-    SetIsNotificationEnabled(value *bool)()
 }

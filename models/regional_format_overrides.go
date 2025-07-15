@@ -43,7 +43,7 @@ func (m *RegionalFormatOverrides) GetAdditionalData()(map[string]any) {
 func (m *RegionalFormatOverrides) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCalendar gets the calendar property value. The calendar to use, e.g., Gregorian Calendar.Returned by default.
+// GetCalendar gets the calendar property value. The calendar to use; for example, Gregorian Calendar.Returned by default.
 // returns a *string when successful
 func (m *RegionalFormatOverrides) GetCalendar()(*string) {
     val, err := m.GetBackingStore().Get("calendar")
@@ -141,7 +141,7 @@ func (m *RegionalFormatOverrides) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetFirstDayOfWeek gets the firstDayOfWeek property value. The first day of the week to use, e.g., Sunday.Returned by default.
+// GetFirstDayOfWeek gets the firstDayOfWeek property value. The first day of the week to use; for example, Sunday.Returned by default.
 // returns a *string when successful
 func (m *RegionalFormatOverrides) GetFirstDayOfWeek()(*string) {
     val, err := m.GetBackingStore().Get("firstDayOfWeek")
@@ -294,14 +294,14 @@ func (m *RegionalFormatOverrides) SetAdditionalData(value map[string]any)() {
 func (m *RegionalFormatOverrides) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCalendar sets the calendar property value. The calendar to use, e.g., Gregorian Calendar.Returned by default.
+// SetCalendar sets the calendar property value. The calendar to use; for example, Gregorian Calendar.Returned by default.
 func (m *RegionalFormatOverrides) SetCalendar(value *string)() {
     err := m.GetBackingStore().Set("calendar", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFirstDayOfWeek sets the firstDayOfWeek property value. The first day of the week to use, e.g., Sunday.Returned by default.
+// SetFirstDayOfWeek sets the firstDayOfWeek property value. The first day of the week to use; for example, Sunday.Returned by default.
 func (m *RegionalFormatOverrides) SetFirstDayOfWeek(value *string)() {
     err := m.GetBackingStore().Set("firstDayOfWeek", value)
     if err != nil {

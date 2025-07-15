@@ -35,9 +35,6 @@ func NewApprovalApprovalItemsItemCancelRequestBuilder(rawUrl string, requestAdap
 }
 // Post cancel the approval item. The owner of the approval is the only user who can trigger this endpoint.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/approvalitem-cancel?view=graph-rest-beta
 func (m *ApprovalApprovalItemsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *ApprovalApprovalItemsItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

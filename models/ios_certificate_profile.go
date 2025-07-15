@@ -16,8 +16,6 @@ func NewIosCertificateProfile()(*IosCertificateProfile) {
     m := &IosCertificateProfile{
         DeviceConfiguration: *NewDeviceConfiguration(),
     }
-    odataTypeValue := "#microsoft.graph.iosCertificateProfile"
-    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateIosCertificateProfileFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

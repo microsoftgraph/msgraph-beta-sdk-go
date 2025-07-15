@@ -3770,7 +3770,7 @@ func (m *DeviceManagement) GetIntents()([]DeviceManagementIntentable) {
     }
     return nil
 }
-// GetIntuneAccountId gets the intuneAccountId property value. Intune Account ID for given tenant
+// GetIntuneAccountId gets the intuneAccountId property value. Intune Account Id for given tenant
 // returns a *UUID when successful
 func (m *DeviceManagement) GetIntuneAccountId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("intuneAccountId")
@@ -3926,7 +3926,7 @@ func (m *DeviceManagement) GetManagedDeviceWindowsOSImages()([]ManagedDeviceWind
     }
     return nil
 }
-// GetMaximumDepTokens gets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
+// GetMaximumDepTokens gets the maximumDepTokens property value. Maximum number of dep tokens allowed per-tenant.
 // returns a *int32 when successful
 func (m *DeviceManagement) GetMaximumDepTokens()(*int32) {
     val, err := m.GetBackingStore().Get("maximumDepTokens")
@@ -7698,7 +7698,7 @@ func (m *DeviceManagement) SetIntents(value []DeviceManagementIntentable)() {
         panic(err)
     }
 }
-// SetIntuneAccountId sets the intuneAccountId property value. Intune Account ID for given tenant
+// SetIntuneAccountId sets the intuneAccountId property value. Intune Account Id for given tenant
 func (m *DeviceManagement) SetIntuneAccountId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("intuneAccountId", value)
     if err != nil {
@@ -7789,7 +7789,7 @@ func (m *DeviceManagement) SetManagedDeviceWindowsOSImages(value []ManagedDevice
         panic(err)
     }
 }
-// SetMaximumDepTokens sets the maximumDepTokens property value. Maximum number of DEP tokens allowed per-tenant.
+// SetMaximumDepTokens sets the maximumDepTokens property value. Maximum number of dep tokens allowed per-tenant.
 func (m *DeviceManagement) SetMaximumDepTokens(value *int32)() {
     err := m.GetBackingStore().Set("maximumDepTokens", value)
     if err != nil {

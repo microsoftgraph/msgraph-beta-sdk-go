@@ -37,9 +37,6 @@ func NewBackupRestoreRestorePointsSearchRequestBuilder(rawUrl string, requestAda
 // Post search for the restorePoint objects associated with a protectionUnit.
 // returns a RestorePointSearchResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-beta
 func (m *BackupRestoreRestorePointsSearchRequestBuilder) Post(ctx context.Context, body BackupRestoreRestorePointsSearchPostRequestBodyable, requestConfiguration *BackupRestoreRestorePointsSearchRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestorePointSearchResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

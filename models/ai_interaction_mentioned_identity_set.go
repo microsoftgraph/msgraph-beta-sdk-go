@@ -24,7 +24,7 @@ func NewAiInteractionMentionedIdentitySet()(*AiInteractionMentionedIdentitySet) 
 func CreateAiInteractionMentionedIdentitySetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAiInteractionMentionedIdentitySet(), nil
 }
-// GetConversation gets the conversation property value. The conversation details.
+// GetConversation gets the conversation property value. The conversation property
 // returns a TeamworkConversationIdentityable when successful
 func (m *AiInteractionMentionedIdentitySet) GetConversation()(TeamworkConversationIdentityable) {
     val, err := m.GetBackingStore().Get("conversation")
@@ -94,7 +94,7 @@ func (m *AiInteractionMentionedIdentitySet) Serialize(writer i878a80d2330e89d268
     }
     return nil
 }
-// SetConversation sets the conversation property value. The conversation details.
+// SetConversation sets the conversation property value. The conversation property
 func (m *AiInteractionMentionedIdentitySet) SetConversation(value TeamworkConversationIdentityable)() {
     err := m.GetBackingStore().Set("conversation", value)
     if err != nil {

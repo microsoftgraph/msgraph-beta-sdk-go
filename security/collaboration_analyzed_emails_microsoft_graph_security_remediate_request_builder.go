@@ -35,9 +35,6 @@ func NewCollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRequestBuilder
 }
 // Post remove a potential threat from end users' mailboxes. Remediation means to take prescribed action against a threat. This API can trigger email purge actions like move to junk, move to deleted items, soft delete, hard delete, or move to Inbox. This API enables scenarios and use cases such as SOAR integration, playbooks, and automations. For more information read email remediation, trigger action and track actions. If there is false positives admins can take move to inbox action.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/security-analyzedemail-remediate?view=graph-rest-beta
 func (m *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRequestBuilder) Post(ctx context.Context, body CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRemediatePostRequestBodyable, requestConfiguration *CollaborationAnalyzedEmailsMicrosoftGraphSecurityRemediateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

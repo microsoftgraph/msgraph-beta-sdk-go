@@ -35,9 +35,6 @@ func NewItemPublishRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26
 }
 // Post make the scheduling page of this business available to external customers. Set the isPublished property to true, and publicUrl property to the URL of the scheduling page.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-beta
 func (m *ItemPublishRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemPublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

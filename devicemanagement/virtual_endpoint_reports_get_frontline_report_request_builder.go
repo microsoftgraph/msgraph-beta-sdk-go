@@ -37,9 +37,6 @@ func NewVirtualEndpointReportsGetFrontlineReportRequestBuilder(rawUrl string, re
 // Deprecated: Starting from December 31, 2024, this API (&apos;getFrontlineReport&apos;) will be deprecated and no longer supported. Please use the retrieveFrontlineReports API. as of 2024-09/getFrontlineReport on 2024-08-22 and will be removed 2024-12-31
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-beta
 func (m *VirtualEndpointReportsGetFrontlineReportRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetFrontlineReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetFrontlineReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

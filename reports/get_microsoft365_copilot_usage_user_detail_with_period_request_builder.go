@@ -39,9 +39,6 @@ func NewGetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder(rawUrl str
 // Get get the most recent activity data for enabled users of Microsoft 365 Copilot apps.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusageuserdetail?view=graph-rest-beta
 func (m *GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetMicrosoft365CopilotUsageUserDetailWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

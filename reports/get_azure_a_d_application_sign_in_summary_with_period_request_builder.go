@@ -28,9 +28,9 @@ type GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameter
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration struct {
@@ -61,9 +61,6 @@ func NewGetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(rawUrl string
 // Deprecated: This method is obsolete. Use GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponse instead.
 // returns a GetAzureADApplicationSignInSummaryWithPeriodResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getazureadapplicationsigninsummary?view=graph-rest-beta
 func (m *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetAzureADApplicationSignInSummaryWithPeriodResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -84,9 +81,6 @@ func (m *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) Get(ctx con
 // GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponse retrieve applicationSigninSummary objects within either the last seven or 30 days.
 // returns a GetAzureADApplicationSignInSummaryWithPeriodGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getazureadapplicationsigninsummary?view=graph-rest-beta
 func (m *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder) GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponse(ctx context.Context, requestConfiguration *GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration)(GetAzureADApplicationSignInSummaryWithPeriodGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

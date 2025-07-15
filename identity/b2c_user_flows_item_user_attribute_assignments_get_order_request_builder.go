@@ -37,9 +37,6 @@ func NewB2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder(rawUrl st
 // Get get the order of identityUserFlowAttributeAssignments being collected within a user flow.
 // returns a AssignmentOrderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-getorder?view=graph-rest-beta
 func (m *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilder) Get(ctx context.Context, requestConfiguration *B2cUserFlowsItemUserAttributeAssignmentsGetOrderRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AssignmentOrderable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

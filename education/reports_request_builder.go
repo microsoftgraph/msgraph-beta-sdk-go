@@ -118,6 +118,11 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
 func (m *ReportsRequestBuilder) ReadingAssignmentSubmissions()(*ReportsReadingAssignmentSubmissionsRequestBuilder) {
     return NewReportsReadingAssignmentSubmissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ReadingCoachPassages provides operations to manage the readingCoachPassages property of the microsoft.graph.reportsRoot entity.
+// returns a *ReportsReadingCoachPassagesRequestBuilder when successful
+func (m *ReportsRequestBuilder) ReadingCoachPassages()(*ReportsReadingCoachPassagesRequestBuilder) {
+    return NewReportsReadingCoachPassagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ReflectCheckInResponses provides operations to manage the reflectCheckInResponses property of the microsoft.graph.reportsRoot entity.
 // returns a *ReportsReflectCheckInResponsesRequestBuilder when successful
 func (m *ReportsRequestBuilder) ReflectCheckInResponses()(*ReportsReflectCheckInResponsesRequestBuilder) {

@@ -561,15 +561,15 @@ func (m *AnalyzedEmail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     res["threatTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseThreatType)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ThreatType, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*ThreatType))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetThreatTypes(res)
@@ -875,14 +875,14 @@ func (m *AnalyzedEmail) GetThreatDetectionDetails()([]ThreatDetectionDetailable)
     return nil
 }
 // GetThreatTypes gets the threatTypes property value. Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.
-// returns a []ThreatType when successful
-func (m *AnalyzedEmail) GetThreatTypes()([]ThreatType) {
+// returns a []string when successful
+func (m *AnalyzedEmail) GetThreatTypes()([]string) {
     val, err := m.GetBackingStore().Get("threatTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]ThreatType)
+        return val.([]string)
     }
     return nil
 }
@@ -1146,7 +1146,7 @@ func (m *AnalyzedEmail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     if m.GetThreatTypes() != nil {
-        err = writer.WriteCollectionOfStringValues("threatTypes", SerializeThreatType(m.GetThreatTypes()))
+        err = writer.WriteCollectionOfStringValues("threatTypes", m.GetThreatTypes())
         if err != nil {
             return err
         }
@@ -1416,7 +1416,7 @@ func (m *AnalyzedEmail) SetThreatDetectionDetails(value []ThreatDetectionDetaila
     }
 }
 // SetThreatTypes sets the threatTypes property value. Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.
-func (m *AnalyzedEmail) SetThreatTypes(value []ThreatType)() {
+func (m *AnalyzedEmail) SetThreatTypes(value []string)() {
     err := m.GetBackingStore().Set("threatTypes", value)
     if err != nil {
         panic(err)
@@ -1473,7 +1473,7 @@ type AnalyzedEmailable interface {
     GetSpamConfidenceLevel()(*string)
     GetSubject()(*string)
     GetThreatDetectionDetails()([]ThreatDetectionDetailable)
-    GetThreatTypes()([]ThreatType)
+    GetThreatTypes()([]string)
     GetTimelineEvents()([]TimelineEventable)
     GetUrls()([]AnalyzedEmailUrlable)
     SetAlertIds(value []string)()
@@ -1510,7 +1510,7 @@ type AnalyzedEmailable interface {
     SetSpamConfidenceLevel(value *string)()
     SetSubject(value *string)()
     SetThreatDetectionDetails(value []ThreatDetectionDetailable)()
-    SetThreatTypes(value []ThreatType)()
+    SetThreatTypes(value []string)()
     SetTimelineEvents(value []TimelineEventable)()
     SetUrls(value []AnalyzedEmailUrlable)()
 }

@@ -37,9 +37,6 @@ func NewItemGetStaffAvailabilityRequestBuilder(rawUrl string, requestAdapter i2a
 // Deprecated: This method is obsolete. Use PostAsGetStaffAvailabilityPostResponse instead.
 // returns a ItemGetStaffAvailabilityResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
 func (m *ItemGetStaffAvailabilityRequestBuilder) Post(ctx context.Context, body ItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *ItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(ItemGetStaffAvailabilityResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemGetStaffAvailabilityRequestBuilder) Post(ctx context.Context, body 
 // PostAsGetStaffAvailabilityPostResponse get the availability information of staff members of a Microsoft Bookings calendar.
 // returns a ItemGetStaffAvailabilityPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-beta
 func (m *ItemGetStaffAvailabilityRequestBuilder) PostAsGetStaffAvailabilityPostResponse(ctx context.Context, body ItemGetStaffAvailabilityPostRequestBodyable, requestConfiguration *ItemGetStaffAvailabilityRequestBuilderPostRequestConfiguration)(ItemGetStaffAvailabilityPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

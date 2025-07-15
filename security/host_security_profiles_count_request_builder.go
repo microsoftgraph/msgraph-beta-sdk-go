@@ -44,9 +44,9 @@ func NewHostSecurityProfilesCountRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Get get the number of the resource
 // Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
-// returns a *int32 when successful
+// returns a *int64 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *HostSecurityProfilesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *HostSecurityProfilesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
+func (m *HostSecurityProfilesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *HostSecurityProfilesCountRequestBuilderGetRequestConfiguration)(*int64, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -54,14 +54,14 @@ func (m *HostSecurityProfilesCountRequestBuilder) Get(ctx context.Context, reque
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int64", errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(*int32), nil
+    return res.(*int64), nil
 }
 // ToGetRequestInformation get the number of the resource
 // Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10

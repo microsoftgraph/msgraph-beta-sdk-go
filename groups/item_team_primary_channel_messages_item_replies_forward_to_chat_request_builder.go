@@ -37,9 +37,6 @@ func NewItemTeamPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilder(raw
 // Deprecated: This method is obsolete. Use PostAsForwardToChatPostResponse instead.
 // returns a ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilder) Post(ctx context.Context, body ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatPostRequestBodyable, requestConfiguration *ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilderPostRequestConfiguration)(ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilder) P
 // PostAsForwardToChatPostResponse forward a chat message, a channel message, or a channel message reply to a chat.
 // returns a ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilder) PostAsForwardToChatPostResponse(ctx context.Context, body ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatPostRequestBodyable, requestConfiguration *ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilderPostRequestConfiguration)(ItemTeamPrimaryChannelMessagesItemRepliesForwardToChatPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

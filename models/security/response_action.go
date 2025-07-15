@@ -39,18 +39,34 @@ func CreateResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                         return NewAllowFileResponseAction(), nil
                     case "#microsoft.graph.security.blockFileResponseAction":
                         return NewBlockFileResponseAction(), nil
+                    case "#microsoft.graph.security.collectInvestigationPackageIncidentTaskResponseAction":
+                        return NewCollectInvestigationPackageIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.collectInvestigationPackageResponseAction":
                         return NewCollectInvestigationPackageResponseAction(), nil
+                    case "#microsoft.graph.security.disableUserIncidentTaskResponseAction":
+                        return NewDisableUserIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.disableUserResponseAction":
                         return NewDisableUserResponseAction(), nil
+                    case "#microsoft.graph.security.enableUserIncidentTaskResponseAction":
+                        return NewEnableUserIncidentTaskResponseAction(), nil
+                    case "#microsoft.graph.security.forceUserPasswordResetIncidentTaskResponseAction":
+                        return NewForceUserPasswordResetIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.forceUserPasswordResetResponseAction":
                         return NewForceUserPasswordResetResponseAction(), nil
+                    case "#microsoft.graph.security.hardDeleteEmailIncidentTaskResponseAction":
+                        return NewHardDeleteEmailIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.hardDeleteResponseAction":
                         return NewHardDeleteResponseAction(), nil
+                    case "#microsoft.graph.security.incidentTaskResponseAction":
+                        return NewIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.initiateInvestigationResponseAction":
                         return NewInitiateInvestigationResponseAction(), nil
+                    case "#microsoft.graph.security.isolateDeviceIncidentTaskResponseAction":
+                        return NewIsolateDeviceIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.isolateDeviceResponseAction":
                         return NewIsolateDeviceResponseAction(), nil
+                    case "#microsoft.graph.security.markUserAsCompromisedIncidentTaskResponseAction":
+                        return NewMarkUserAsCompromisedIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.markUserAsCompromisedResponseAction":
                         return NewMarkUserAsCompromisedResponseAction(), nil
                     case "#microsoft.graph.security.moveToDeletedItemsResponseAction":
@@ -59,14 +75,28 @@ func CreateResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d268963
                         return NewMoveToInboxResponseAction(), nil
                     case "#microsoft.graph.security.moveToJunkResponseAction":
                         return NewMoveToJunkResponseAction(), nil
+                    case "#microsoft.graph.security.requireSignInIncidentTaskResponseAction":
+                        return NewRequireSignInIncidentTaskResponseAction(), nil
+                    case "#microsoft.graph.security.restrictAppExecutionIncidentTaskResponseAction":
+                        return NewRestrictAppExecutionIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.restrictAppExecutionResponseAction":
                         return NewRestrictAppExecutionResponseAction(), nil
+                    case "#microsoft.graph.security.runAntivirusScanIncidentTaskResponseAction":
+                        return NewRunAntivirusScanIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.runAntivirusScanResponseAction":
                         return NewRunAntivirusScanResponseAction(), nil
+                    case "#microsoft.graph.security.softDeleteIncidentTaskResponseAction":
+                        return NewSoftDeleteIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.softDeleteResponseAction":
                         return NewSoftDeleteResponseAction(), nil
+                    case "#microsoft.graph.security.stopAndQuarantineFileIncidentTaskResponseAction":
+                        return NewStopAndQuarantineFileIncidentTaskResponseAction(), nil
                     case "#microsoft.graph.security.stopAndQuarantineFileResponseAction":
                         return NewStopAndQuarantineFileResponseAction(), nil
+                    case "#microsoft.graph.security.unIsolateDeviceIncidentTaskResponseAction":
+                        return NewUnIsolateDeviceIncidentTaskResponseAction(), nil
+                    case "#microsoft.graph.security.unRestrictAppExecutionIncidentTaskResponseAction":
+                        return NewUnRestrictAppExecutionIncidentTaskResponseAction(), nil
                 }
             }
         }

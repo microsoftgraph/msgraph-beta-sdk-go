@@ -150,6 +150,16 @@ func (m *NetworkAccessRequestBuilder) TenantStatus()(*TenantStatusRequestBuilder
 func (m *NetworkAccessRequestBuilder) ThreatIntelligencePolicies()(*ThreatIntelligencePoliciesRequestBuilder) {
     return NewThreatIntelligencePoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Tls provides operations to manage the tls property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+// returns a *TlsRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) Tls()(*TlsRequestBuilder) {
+    return NewTlsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// TlsInspectionPolicies provides operations to manage the tlsInspectionPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+// returns a *TlsInspectionPoliciesRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) TlsInspectionPolicies()(*TlsInspectionPoliciesRequestBuilder) {
+    return NewTlsInspectionPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get networkAccess
 // returns a *RequestInformation when successful
 func (m *NetworkAccessRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *NetworkAccessRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

@@ -36,7 +36,7 @@ func (m *ThreatIntelligenceRule) GetAction()(*ThreatIntelligenceAction) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A description of the threat intelligence rule. Supports $filter (eq).
 // returns a *string when successful
 func (m *ThreatIntelligenceRule) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -116,7 +116,7 @@ func (m *ThreatIntelligenceRule) GetMatchingConditions()(ThreatIntelligenceMatch
     }
     return nil
 }
-// GetPriority gets the priority property value. The priority property
+// GetPriority gets the priority property value. The priority of the rule which determines the order of rule evaluation. Lower values indicate higher priority. Supports $filter (eq).
 // returns a *int64 when successful
 func (m *ThreatIntelligenceRule) GetPriority()(*int64) {
     val, err := m.GetBackingStore().Get("priority")
@@ -186,7 +186,7 @@ func (m *ThreatIntelligenceRule) SetAction(value *ThreatIntelligenceAction)() {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A description of the threat intelligence rule. Supports $filter (eq).
 func (m *ThreatIntelligenceRule) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
@@ -200,7 +200,7 @@ func (m *ThreatIntelligenceRule) SetMatchingConditions(value ThreatIntelligenceM
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The priority property
+// SetPriority sets the priority property value. The priority of the rule which determines the order of rule evaluation. Lower values indicate higher priority. Supports $filter (eq).
 func (m *ThreatIntelligenceRule) SetPriority(value *int64)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {

@@ -37,9 +37,6 @@ func NewImpactedResourcesItemDismissRequestBuilder(rawUrl string, requestAdapter
 // Post dismiss an impactedResources object and update its status to dismissed.
 // returns a ImpactedResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-beta
 func (m *ImpactedResourcesItemDismissRequestBuilder) Post(ctx context.Context, body ImpactedResourcesItemDismissPostRequestBodyable, requestConfiguration *ImpactedResourcesItemDismissRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ImpactedResourceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

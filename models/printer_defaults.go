@@ -202,15 +202,15 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         return nil
     }
     res["finishings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParsePrintFinishing)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]PrintFinishing, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*PrintFinishing))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetFinishings(res)
@@ -380,14 +380,14 @@ func (m *PrinterDefaults) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     return res
 }
 // GetFinishings gets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
-// returns a []PrintFinishing when successful
-func (m *PrinterDefaults) GetFinishings()([]PrintFinishing) {
+// returns a []string when successful
+func (m *PrinterDefaults) GetFinishings()([]string) {
     val, err := m.GetBackingStore().Get("finishings")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]PrintFinishing)
+        return val.([]string)
     }
     return nil
 }
@@ -631,7 +631,7 @@ func (m *PrinterDefaults) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
         }
     }
     if m.GetFinishings() != nil {
-        err := writer.WriteCollectionOfStringValues("finishings", SerializePrintFinishing(m.GetFinishings()))
+        err := writer.WriteCollectionOfStringValues("finishings", m.GetFinishings())
         if err != nil {
             return err
         }
@@ -808,7 +808,7 @@ func (m *PrinterDefaults) SetDuplexMode(value *PrintDuplexMode)() {
     }
 }
 // SetFinishings sets the finishings property value. The default set of finishings to apply to print jobs. Valid values are described in the following table.
-func (m *PrinterDefaults) SetFinishings(value []PrintFinishing)() {
+func (m *PrinterDefaults) SetFinishings(value []string)() {
     err := m.GetBackingStore().Set("finishings", value)
     if err != nil {
         panic(err)
@@ -938,7 +938,7 @@ type PrinterDefaultsable interface {
     GetDpi()(*int32)
     GetDuplexConfiguration()(*PrintDuplexConfiguration)
     GetDuplexMode()(*PrintDuplexMode)
-    GetFinishings()([]PrintFinishing)
+    GetFinishings()([]string)
     GetFitPdfToPage()(*bool)
     GetInputBin()(*string)
     GetMediaColor()(*string)
@@ -963,7 +963,7 @@ type PrinterDefaultsable interface {
     SetDpi(value *int32)()
     SetDuplexConfiguration(value *PrintDuplexConfiguration)()
     SetDuplexMode(value *PrintDuplexMode)()
-    SetFinishings(value []PrintFinishing)()
+    SetFinishings(value []string)()
     SetFitPdfToPage(value *bool)()
     SetInputBin(value *string)()
     SetMediaColor(value *string)()

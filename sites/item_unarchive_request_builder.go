@@ -35,9 +35,6 @@ func NewItemUnarchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 }
 // Post unarchive an archived SharePoint site.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/site-unarchive?view=graph-rest-beta
 func (m *ItemUnarchiveRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemUnarchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

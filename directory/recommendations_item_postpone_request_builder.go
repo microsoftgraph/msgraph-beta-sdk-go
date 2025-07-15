@@ -37,9 +37,6 @@ func NewRecommendationsItemPostponeRequestBuilder(rawUrl string, requestAdapter 
 // Post postpone action on a recommendation object to a specified future date and time by marking its status as postponed. On the date and time provided, Microsoft Entra ID will automatically update the status of the recommendation object to active again.
 // returns a Recommendationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/recommendation-postpone?view=graph-rest-beta
 func (m *RecommendationsItemPostponeRequestBuilder) Post(ctx context.Context, body RecommendationsItemPostponePostRequestBodyable, requestConfiguration *RecommendationsItemPostponeRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

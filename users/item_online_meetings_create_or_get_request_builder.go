@@ -37,9 +37,6 @@ func NewItemOnlineMeetingsCreateOrGetRequestBuilder(rawUrl string, requestAdapte
 // Post create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. 
 // returns a OnlineMeetingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta
 func (m *ItemOnlineMeetingsCreateOrGetRequestBuilder) Post(ctx context.Context, body ItemOnlineMeetingsCreateOrGetPostRequestBodyable, requestConfiguration *ItemOnlineMeetingsCreateOrGetRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

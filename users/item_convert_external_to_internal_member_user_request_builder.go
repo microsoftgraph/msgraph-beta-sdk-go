@@ -37,9 +37,6 @@ func NewItemConvertExternalToInternalMemberUserRequestBuilder(rawUrl string, req
 // Post convert an externally authenticated user into an internal user. The user is able to sign into the host tenant as an internal user and access resources as a member. For more information about this conversion, see Convert external users to internal users.
 // returns a ConversionUserDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-convertexternaltointernalmemberuser?view=graph-rest-beta
 func (m *ItemConvertExternalToInternalMemberUserRequestBuilder) Post(ctx context.Context, body ItemConvertExternalToInternalMemberUserPostRequestBodyable, requestConfiguration *ItemConvertExternalToInternalMemberUserRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversionUserDetailsable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

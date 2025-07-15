@@ -58,6 +58,18 @@ func (m *ForwardingRule) GetAction()(*ForwardingRuleAction) {
     }
     return nil
 }
+// GetClientFallbackAction gets the clientFallbackAction property value. The clientFallbackAction property
+// returns a *ClientFallbackAction when successful
+func (m *ForwardingRule) GetClientFallbackAction()(*ClientFallbackAction) {
+    val, err := m.GetBackingStore().Get("clientFallbackAction")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ClientFallbackAction)
+    }
+    return nil
+}
 // GetDestinations gets the destinations property value. Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.
 // returns a []RuleDestinationable when successful
 func (m *ForwardingRule) GetDestinations()([]RuleDestinationable) {
@@ -81,6 +93,16 @@ func (m *ForwardingRule) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetAction(val.(*ForwardingRuleAction))
+        }
+        return nil
+    }
+    res["clientFallbackAction"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseClientFallbackAction)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetClientFallbackAction(val.(*ClientFallbackAction))
         }
         return nil
     }
@@ -137,6 +159,13 @@ func (m *ForwardingRule) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    if m.GetClientFallbackAction() != nil {
+        cast := (*m.GetClientFallbackAction()).String()
+        err = writer.WriteStringValue("clientFallbackAction", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetDestinations() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetDestinations()))
         for i, v := range m.GetDestinations() {
@@ -165,6 +194,13 @@ func (m *ForwardingRule) SetAction(value *ForwardingRuleAction)() {
         panic(err)
     }
 }
+// SetClientFallbackAction sets the clientFallbackAction property value. The clientFallbackAction property
+func (m *ForwardingRule) SetClientFallbackAction(value *ClientFallbackAction)() {
+    err := m.GetBackingStore().Set("clientFallbackAction", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDestinations sets the destinations property value. Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.
 func (m *ForwardingRule) SetDestinations(value []RuleDestinationable)() {
     err := m.GetBackingStore().Set("destinations", value)
@@ -183,9 +219,11 @@ type ForwardingRuleable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     PolicyRuleable
     GetAction()(*ForwardingRuleAction)
+    GetClientFallbackAction()(*ClientFallbackAction)
     GetDestinations()([]RuleDestinationable)
     GetRuleType()(*NetworkDestinationType)
     SetAction(value *ForwardingRuleAction)()
+    SetClientFallbackAction(value *ClientFallbackAction)()
     SetDestinations(value []RuleDestinationable)()
     SetRuleType(value *NetworkDestinationType)()
 }

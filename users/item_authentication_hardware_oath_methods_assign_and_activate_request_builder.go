@@ -35,9 +35,6 @@ func NewItemAuthenticationHardwareOathMethodsAssignAndActivateRequestBuilder(raw
 }
 // Post assign and activate a hardware token at the same time. This operation requires the device ID to activate it.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-assignandactivate?view=graph-rest-beta
 func (m *ItemAuthenticationHardwareOathMethodsAssignAndActivateRequestBuilder) Post(ctx context.Context, body ItemAuthenticationHardwareOathMethodsAssignAndActivatePostRequestBodyable, requestConfiguration *ItemAuthenticationHardwareOathMethodsAssignAndActivateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -14,7 +14,7 @@ import (
 type ThreatIntelligencePoliciesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ThreatIntelligencePoliciesRequestBuilderGetQueryParameters get threatIntelligencePolicies from networkAccess
+// ThreatIntelligencePoliciesRequestBuilderGetQueryParameters get a list of the threatIntelligencePolicy objects and their properties.
 type ThreatIntelligencePoliciesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -29,9 +29,9 @@ type ThreatIntelligencePoliciesRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ThreatIntelligencePoliciesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ThreatIntelligencePoliciesRequestBuilderGetRequestConfiguration struct {
@@ -79,9 +79,12 @@ func NewThreatIntelligencePoliciesRequestBuilder(rawUrl string, requestAdapter i
 func (m *ThreatIntelligencePoliciesRequestBuilder) Count()(*ThreatIntelligencePoliciesCountRequestBuilder) {
     return NewThreatIntelligencePoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get threatIntelligencePolicies from networkAccess
+// Get get a list of the threatIntelligencePolicy objects and their properties.
 // returns a ThreatIntelligencePolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-threatintelligencepolicies?view=graph-rest-beta
 func (m *ThreatIntelligencePoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligencePoliciesRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,9 +102,12 @@ func (m *ThreatIntelligencePoliciesRequestBuilder) Get(ctx context.Context, requ
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyCollectionResponseable), nil
 }
-// Post create new navigation property to threatIntelligencePolicies for networkAccess
+// Post create a new threatIntelligencePolicy object.
 // returns a ThreatIntelligencePolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-post-threatintelligencepolicies?view=graph-rest-beta
 func (m *ThreatIntelligencePoliciesRequestBuilder) Post(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyable, requestConfiguration *ThreatIntelligencePoliciesRequestBuilderPostRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *ThreatIntelligencePoliciesRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyable), nil
 }
-// ToGetRequestInformation get threatIntelligencePolicies from networkAccess
+// ToGetRequestInformation get a list of the threatIntelligencePolicy objects and their properties.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligencePoliciesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligencePoliciesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +139,7 @@ func (m *ThreatIntelligencePoliciesRequestBuilder) ToGetRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to threatIntelligencePolicies for networkAccess
+// ToPostRequestInformation create a new threatIntelligencePolicy object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligencePoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyable, requestConfiguration *ThreatIntelligencePoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

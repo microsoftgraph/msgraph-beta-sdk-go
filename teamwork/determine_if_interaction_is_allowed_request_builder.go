@@ -37,9 +37,6 @@ func NewDetermineIfInteractionIsAllowedRequestBuilder(rawUrl string, requestAdap
 // Deprecated: This method is obsolete. Use PostAsDetermineIfInteractionIsAllowedPostResponse instead.
 // returns a DetermineIfInteractionIsAllowedResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamwork-determineifinteractionisallowed?view=graph-rest-beta
 func (m *DetermineIfInteractionIsAllowedRequestBuilder) Post(ctx context.Context, body DetermineIfInteractionIsAllowedPostRequestBodyable, requestConfiguration *DetermineIfInteractionIsAllowedRequestBuilderPostRequestConfiguration)(DetermineIfInteractionIsAllowedResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *DetermineIfInteractionIsAllowedRequestBuilder) Post(ctx context.Context
 // PostAsDetermineIfInteractionIsAllowedPostResponse determine if a specified Microsoft Teams interaction is allowed between the signed-in user and specified users.
 // returns a DetermineIfInteractionIsAllowedPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamwork-determineifinteractionisallowed?view=graph-rest-beta
 func (m *DetermineIfInteractionIsAllowedRequestBuilder) PostAsDetermineIfInteractionIsAllowedPostResponse(ctx context.Context, body DetermineIfInteractionIsAllowedPostRequestBodyable, requestConfiguration *DetermineIfInteractionIsAllowedRequestBuilderPostRequestConfiguration)(DetermineIfInteractionIsAllowedPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

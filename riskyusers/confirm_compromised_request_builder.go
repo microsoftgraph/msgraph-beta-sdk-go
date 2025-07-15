@@ -35,9 +35,6 @@ func NewConfirmCompromisedRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Post confirm one or more riskyUser objects as compromised. This action sets the targeted user's risk level to high.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/riskyusers-confirmcompromised?view=graph-rest-beta
 func (m *ConfirmCompromisedRequestBuilder) Post(ctx context.Context, body ConfirmCompromisedPostRequestBodyable, requestConfiguration *ConfirmCompromisedRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

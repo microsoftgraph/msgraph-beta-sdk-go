@@ -36,9 +36,6 @@ func NewVirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilder(rawUrl
 // Post get inaccessible Cloud PCs with details, including the latest health state, failed connection count, failed health check count, and system status. An inaccessible Cloud PC represents a Cloud PC that is in an unavailable state (at least one of the health checks failed) or has consecutive user connections failure.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getinaccessiblecloudpcreports?view=graph-rest-beta
 func (m *VirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetInaccessibleCloudPcReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetInaccessibleCloudPcReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -35,9 +35,6 @@ func NewVirtualEndpointCloudPCsItemPowerOffRequestBuilder(rawUrl string, request
 }
 // Post power off a Windows 365 Frontline Cloud PC. This action supports Microsoft Endpoint Manager (MEM) admin scenarios.  After a Windows 365 Frontline Cloud PC is powered off, it's deallocated, and licenses are revoked immediately. Only IT admin users can perform this action. 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-poweroff?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemPowerOffRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemPowerOffRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -22,9 +22,9 @@ type ItemSitesItemContentModelsItemGetAppliedDrivesRequestBuilderGetQueryParamet
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemSitesItemContentModelsItemGetAppliedDrivesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemContentModelsItemGetAppliedDrivesRequestBuilderGetRequestConfiguration struct {
@@ -52,9 +52,6 @@ func NewItemSitesItemContentModelsItemGetAppliedDrivesRequestBuilder(rawUrl stri
 // Deprecated: This method is obsolete. Use GetAsGetAppliedDrivesGetResponse instead.
 // returns a ItemSitesItemContentModelsItemGetAppliedDrivesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta
 func (m *ItemSitesItemContentModelsItemGetAppliedDrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentModelsItemGetAppliedDrivesRequestBuilderGetRequestConfiguration)(ItemSitesItemContentModelsItemGetAppliedDrivesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +72,6 @@ func (m *ItemSitesItemContentModelsItemGetAppliedDrivesRequestBuilder) Get(ctx c
 // GetAsGetAppliedDrivesGetResponse list all the contentModelUsage information related to a contentModel applied to a SharePoint document library.
 // returns a ItemSitesItemContentModelsItemGetAppliedDrivesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta
 func (m *ItemSitesItemContentModelsItemGetAppliedDrivesRequestBuilder) GetAsGetAppliedDrivesGetResponse(ctx context.Context, requestConfiguration *ItemSitesItemContentModelsItemGetAppliedDrivesRequestBuilderGetRequestConfiguration)(ItemSitesItemContentModelsItemGetAppliedDrivesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

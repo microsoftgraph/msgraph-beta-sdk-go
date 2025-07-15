@@ -35,9 +35,6 @@ func NewItemTeamDefinitionChannelsItemMessagesItemRepliesItemSoftDeleteRequestBu
 }
 // Post delete a single chatMessage or a chat message reply in a channel or a chat.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-softdelete?view=graph-rest-beta
 func (m *ItemTeamDefinitionChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamDefinitionChannelsItemMessagesItemRepliesItemSoftDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

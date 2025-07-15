@@ -37,9 +37,6 @@ func NewPolicyLabelsEvaluateApplicationRequestBuilder(rawUrl string, requestAdap
 // Deprecated: This method is obsolete. Use PostAsEvaluateApplicationPostResponse instead.
 // returns a PolicyLabelsEvaluateApplicationResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-beta
 func (m *PolicyLabelsEvaluateApplicationRequestBuilder) Post(ctx context.Context, body PolicyLabelsEvaluateApplicationPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateApplicationRequestBuilderPostRequestConfiguration)(PolicyLabelsEvaluateApplicationResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -61,9 +58,6 @@ func (m *PolicyLabelsEvaluateApplicationRequestBuilder) Post(ctx context.Context
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a PolicyLabelsEvaluateApplicationPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateapplication?view=graph-rest-beta
 func (m *PolicyLabelsEvaluateApplicationRequestBuilder) PostAsEvaluateApplicationPostResponse(ctx context.Context, body PolicyLabelsEvaluateApplicationPostRequestBodyable, requestConfiguration *PolicyLabelsEvaluateApplicationRequestBuilderPostRequestConfiguration)(PolicyLabelsEvaluateApplicationPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

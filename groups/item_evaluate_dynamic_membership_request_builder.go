@@ -37,9 +37,6 @@ func NewItemEvaluateDynamicMembershipRequestBuilder(rawUrl string, requestAdapte
 // Post evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
 // returns a EvaluateDynamicMembershipResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/group-evaluatedynamicmembership?view=graph-rest-beta
 func (m *ItemEvaluateDynamicMembershipRequestBuilder) Post(ctx context.Context, body ItemEvaluateDynamicMembershipPostRequestBodyable, requestConfiguration *ItemEvaluateDynamicMembershipRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EvaluateDynamicMembershipResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

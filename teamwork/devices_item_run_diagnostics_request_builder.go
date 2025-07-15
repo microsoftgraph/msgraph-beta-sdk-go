@@ -35,9 +35,6 @@ func NewDevicesItemRunDiagnosticsRequestBuilder(rawUrl string, requestAdapter i2
 }
 // Post run and generate diagnostic logs for the specified Microsoft Teams-enabled device. This API triggers a long-running operation used to generate logs for a device.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamworkdevice-rundiagnostics?view=graph-rest-beta
 func (m *DevicesItemRunDiagnosticsRequestBuilder) Post(ctx context.Context, requestConfiguration *DevicesItemRunDiagnosticsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

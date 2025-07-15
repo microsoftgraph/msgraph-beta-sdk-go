@@ -27,14 +27,14 @@ func CreateCallsItemAnswerPostRequestBodyFromDiscriminatorValue(parseNode i878a8
     return NewCallsItemAnswerPostRequestBody(), nil
 }
 // GetAcceptedModalities gets the acceptedModalities property value. The acceptedModalities property
-// returns a []Modality when successful
-func (m *CallsItemAnswerPostRequestBody) GetAcceptedModalities()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality) {
+// returns a []string when successful
+func (m *CallsItemAnswerPostRequestBody) GetAcceptedModalities()([]string) {
     val, err := m.GetBackingStore().Get("acceptedModalities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)
+        return val.([]string)
     }
     return nil
 }
@@ -85,15 +85,15 @@ func (m *CallsItemAnswerPostRequestBody) GetCallOptions()(ie233ee762e29b4ba6970a
 func (m *CallsItemAnswerPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["acceptedModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseModality)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetAcceptedModalities(res)
@@ -169,7 +169,7 @@ func (m *CallsItemAnswerPostRequestBody) GetParticipantCapacity()(*int32) {
 // Serialize serializes information the current object
 func (m *CallsItemAnswerPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAcceptedModalities() != nil {
-        err := writer.WriteCollectionOfStringValues("acceptedModalities", ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SerializeModality(m.GetAcceptedModalities()))
+        err := writer.WriteCollectionOfStringValues("acceptedModalities", m.GetAcceptedModalities())
         if err != nil {
             return err
         }
@@ -207,7 +207,7 @@ func (m *CallsItemAnswerPostRequestBody) Serialize(writer i878a80d2330e89d268963
     return nil
 }
 // SetAcceptedModalities sets the acceptedModalities property value. The acceptedModalities property
-func (m *CallsItemAnswerPostRequestBody) SetAcceptedModalities(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)() {
+func (m *CallsItemAnswerPostRequestBody) SetAcceptedModalities(value []string)() {
     err := m.GetBackingStore().Set("acceptedModalities", value)
     if err != nil {
         panic(err)
@@ -256,13 +256,13 @@ type CallsItemAnswerPostRequestBodyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAcceptedModalities()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)
+    GetAcceptedModalities()([]string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCallbackUri()(*string)
     GetCallOptions()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IncomingCallOptionsable)
     GetMediaConfig()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MediaConfigable)
     GetParticipantCapacity()(*int32)
-    SetAcceptedModalities(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Modality)()
+    SetAcceptedModalities(value []string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCallbackUri(value *string)()
     SetCallOptions(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IncomingCallOptionsable)()
