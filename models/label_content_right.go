@@ -68,6 +68,16 @@ func (m *LabelContentRight) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["rights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUsageRights)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRights(val.(*UsageRights))
+        }
+        return nil
+    }
     return res
 }
 // GetFormat gets the format property value. The content format.
@@ -91,6 +101,18 @@ func (m *LabelContentRight) GetLabel()(SensitivityLabelable) {
     }
     if val != nil {
         return val.(SensitivityLabelable)
+    }
+    return nil
+}
+// GetRights gets the rights property value. The rights property
+// returns a *UsageRights when successful
+func (m *LabelContentRight) GetRights()(*UsageRights) {
+    val, err := m.GetBackingStore().Get("rights")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UsageRights)
     }
     return nil
 }
@@ -118,6 +140,13 @@ func (m *LabelContentRight) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetRights() != nil {
+        cast := (*m.GetRights()).String()
+        err = writer.WriteStringValue("rights", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCid sets the cid property value. The content identifier.
@@ -141,13 +170,22 @@ func (m *LabelContentRight) SetLabel(value SensitivityLabelable)() {
         panic(err)
     }
 }
+// SetRights sets the rights property value. The rights property
+func (m *LabelContentRight) SetRights(value *UsageRights)() {
+    err := m.GetBackingStore().Set("rights", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type LabelContentRightable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCid()(*string)
     GetFormat()(*string)
     GetLabel()(SensitivityLabelable)
+    GetRights()(*UsageRights)
     SetCid(value *string)()
     SetFormat(value *string)()
     SetLabel(value SensitivityLabelable)()
+    SetRights(value *UsageRights)()
 }

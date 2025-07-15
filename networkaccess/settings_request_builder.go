@@ -83,11 +83,6 @@ func (m *SettingsRequestBuilder) Delete(ctx context.Context, requestConfiguratio
     }
     return nil
 }
-// EnrichedAuditLogs provides operations to manage the enrichedAuditLogs property of the microsoft.graph.networkaccess.settings entity.
-// returns a *SettingsEnrichedAuditLogsRequestBuilder when successful
-func (m *SettingsRequestBuilder) EnrichedAuditLogs()(*SettingsEnrichedAuditLogsRequestBuilder) {
-    return NewSettingsEnrichedAuditLogsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // ForwardingOptions provides operations to manage the forwardingOptions property of the microsoft.graph.networkaccess.settings entity.
 // returns a *SettingsForwardingOptionsRequestBuilder when successful
 func (m *SettingsRequestBuilder) ForwardingOptions()(*SettingsForwardingOptionsRequestBuilder) {

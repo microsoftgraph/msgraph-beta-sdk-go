@@ -58,14 +58,14 @@ func (m *WindowsQualityUpdateCatalogItemPolicyDetail) GetBackingStore()(ie8677ce
     return m.backingStore
 }
 // GetCatalogItemId gets the catalogItemId property value. Catalog item id for this approval intend
-// returns a *UUID when successful
-func (m *WindowsQualityUpdateCatalogItemPolicyDetail) GetCatalogItemId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+// returns a *string when successful
+func (m *WindowsQualityUpdateCatalogItemPolicyDetail) GetCatalogItemId()(*string) {
     val, err := m.GetBackingStore().Get("catalogItemId")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+        return val.(*string)
     }
     return nil
 }
@@ -84,7 +84,7 @@ func (m *WindowsQualityUpdateCatalogItemPolicyDetail) GetFieldDeserializers()(ma
         return nil
     }
     res["catalogItemId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetUUIDValue()
+        val, err := n.GetStringValue()
         if err != nil {
             return err
         }
@@ -149,7 +149,7 @@ func (m *WindowsQualityUpdateCatalogItemPolicyDetail) Serialize(writer i878a80d2
         }
     }
     {
-        err := writer.WriteUUIDValue("catalogItemId", m.GetCatalogItemId())
+        err := writer.WriteStringValue("catalogItemId", m.GetCatalogItemId())
         if err != nil {
             return err
         }
@@ -193,7 +193,7 @@ func (m *WindowsQualityUpdateCatalogItemPolicyDetail) SetBackingStore(value ie86
     m.backingStore = value
 }
 // SetCatalogItemId sets the catalogItemId property value. Catalog item id for this approval intend
-func (m *WindowsQualityUpdateCatalogItemPolicyDetail) SetCatalogItemId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+func (m *WindowsQualityUpdateCatalogItemPolicyDetail) SetCatalogItemId(value *string)() {
     err := m.GetBackingStore().Set("catalogItemId", value)
     if err != nil {
         panic(err)
@@ -219,12 +219,12 @@ type WindowsQualityUpdateCatalogItemPolicyDetailable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApprovalStatus()(*WindowsQualityUpdateApprovalStatus)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCatalogItemId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetCatalogItemId()(*string)
     GetOdataType()(*string)
     GetPolicyId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     SetApprovalStatus(value *WindowsQualityUpdateApprovalStatus)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCatalogItemId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetCatalogItemId(value *string)()
     SetOdataType(value *string)()
     SetPolicyId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
 }

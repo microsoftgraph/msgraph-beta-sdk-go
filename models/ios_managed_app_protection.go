@@ -97,7 +97,7 @@ func (m *IosManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     }
     return nil
 }
-// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
+// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 // returns a *string when successful
 func (m *IosManagedAppProtection) GetCustomBrowserProtocol()(*string) {
     val, err := m.GetBackingStore().Get("customBrowserProtocol")
@@ -365,6 +365,16 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["genmojiConfigurationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseGenmojiIosManagedAppConfigurationState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGenmojiConfigurationState(val.(*GenmojiIosManagedAppConfigurationState))
+        }
+        return nil
+    }
     res["managedUniversalLinks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -431,6 +441,16 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
         }
         return nil
     }
+    res["screenCaptureConfigurationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseScreenCaptureIosManagedAppConfigurationState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScreenCaptureConfigurationState(val.(*ScreenCaptureIosManagedAppConfigurationState))
+        }
+        return nil
+    }
     res["thirdPartyKeyboardsBlocked"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -438,6 +458,16 @@ func (m *IosManagedAppProtection) GetFieldDeserializers()(map[string]func(i878a8
         }
         if val != nil {
             m.SetThirdPartyKeyboardsBlocked(val)
+        }
+        return nil
+    }
+    res["writingToolsConfigurationState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseWritingToolsIosManagedAppConfigurationState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWritingToolsConfigurationState(val.(*WritingToolsIosManagedAppConfigurationState))
         }
         return nil
     }
@@ -452,6 +482,18 @@ func (m *IosManagedAppProtection) GetFilterOpenInToOnlyManagedApps()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetGenmojiConfigurationState gets the genmojiConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence Genmoji setting. Possible values are: notBlocked, blocked, unknownFutureValue.
+// returns a *GenmojiIosManagedAppConfigurationState when successful
+func (m *IosManagedAppProtection) GetGenmojiConfigurationState()(*GenmojiIosManagedAppConfigurationState) {
+    val, err := m.GetBackingStore().Get("genmojiConfigurationState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*GenmojiIosManagedAppConfigurationState)
     }
     return nil
 }
@@ -527,6 +569,18 @@ func (m *IosManagedAppProtection) GetProtectInboundDataFromUnknownSources()(*boo
     }
     return nil
 }
+// GetScreenCaptureConfigurationState gets the screenCaptureConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence screen capture setting. Possible values are: notBlocked, blocked, unknownFutureValue.
+// returns a *ScreenCaptureIosManagedAppConfigurationState when successful
+func (m *IosManagedAppProtection) GetScreenCaptureConfigurationState()(*ScreenCaptureIosManagedAppConfigurationState) {
+    val, err := m.GetBackingStore().Get("screenCaptureConfigurationState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ScreenCaptureIosManagedAppConfigurationState)
+    }
+    return nil
+}
 // GetThirdPartyKeyboardsBlocked gets the thirdPartyKeyboardsBlocked property value. Defines if third party keyboards are allowed while accessing a managed app
 // returns a *bool when successful
 func (m *IosManagedAppProtection) GetThirdPartyKeyboardsBlocked()(*bool) {
@@ -536,6 +590,18 @@ func (m *IosManagedAppProtection) GetThirdPartyKeyboardsBlocked()(*bool) {
     }
     if val != nil {
         return val.(*bool)
+    }
+    return nil
+}
+// GetWritingToolsConfigurationState gets the writingToolsConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence writing tools setting. Possible values are: notBlocked, blocked, unknownFutureValue.
+// returns a *WritingToolsIosManagedAppConfigurationState when successful
+func (m *IosManagedAppProtection) GetWritingToolsConfigurationState()(*WritingToolsIosManagedAppConfigurationState) {
+    val, err := m.GetBackingStore().Get("writingToolsConfigurationState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*WritingToolsIosManagedAppConfigurationState)
     }
     return nil
 }
@@ -650,6 +716,13 @@ func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetGenmojiConfigurationState() != nil {
+        cast := (*m.GetGenmojiConfigurationState()).String()
+        err = writer.WriteStringValue("genmojiConfigurationState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetManagedUniversalLinks() != nil {
         err = writer.WriteCollectionOfStringValues("managedUniversalLinks", m.GetManagedUniversalLinks())
         if err != nil {
@@ -686,8 +759,22 @@ func (m *IosManagedAppProtection) Serialize(writer i878a80d2330e89d26896388a3f48
             return err
         }
     }
+    if m.GetScreenCaptureConfigurationState() != nil {
+        cast := (*m.GetScreenCaptureConfigurationState()).String()
+        err = writer.WriteStringValue("screenCaptureConfigurationState", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("thirdPartyKeyboardsBlocked", m.GetThirdPartyKeyboardsBlocked())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetWritingToolsConfigurationState() != nil {
+        cast := (*m.GetWritingToolsConfigurationState()).String()
+        err = writer.WriteStringValue("writingToolsConfigurationState", &cast)
         if err != nil {
             return err
         }
@@ -736,7 +823,7 @@ func (m *IosManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
         panic(err)
     }
 }
-// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
+// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
 func (m *IosManagedAppProtection) SetCustomBrowserProtocol(value *string)() {
     err := m.GetBackingStore().Set("customBrowserProtocol", value)
     if err != nil {
@@ -799,6 +886,13 @@ func (m *IosManagedAppProtection) SetFilterOpenInToOnlyManagedApps(value *bool)(
         panic(err)
     }
 }
+// SetGenmojiConfigurationState sets the genmojiConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence Genmoji setting. Possible values are: notBlocked, blocked, unknownFutureValue.
+func (m *IosManagedAppProtection) SetGenmojiConfigurationState(value *GenmojiIosManagedAppConfigurationState)() {
+    err := m.GetBackingStore().Set("genmojiConfigurationState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManagedUniversalLinks sets the managedUniversalLinks property value. A list of custom urls that are allowed to invocate a managed app
 func (m *IosManagedAppProtection) SetManagedUniversalLinks(value []string)() {
     err := m.GetBackingStore().Set("managedUniversalLinks", value)
@@ -841,9 +935,23 @@ func (m *IosManagedAppProtection) SetProtectInboundDataFromUnknownSources(value 
         panic(err)
     }
 }
+// SetScreenCaptureConfigurationState sets the screenCaptureConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence screen capture setting. Possible values are: notBlocked, blocked, unknownFutureValue.
+func (m *IosManagedAppProtection) SetScreenCaptureConfigurationState(value *ScreenCaptureIosManagedAppConfigurationState)() {
+    err := m.GetBackingStore().Set("screenCaptureConfigurationState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetThirdPartyKeyboardsBlocked sets the thirdPartyKeyboardsBlocked property value. Defines if third party keyboards are allowed while accessing a managed app
 func (m *IosManagedAppProtection) SetThirdPartyKeyboardsBlocked(value *bool)() {
     err := m.GetBackingStore().Set("thirdPartyKeyboardsBlocked", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetWritingToolsConfigurationState sets the writingToolsConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence writing tools setting. Possible values are: notBlocked, blocked, unknownFutureValue.
+func (m *IosManagedAppProtection) SetWritingToolsConfigurationState(value *WritingToolsIosManagedAppConfigurationState)() {
+    err := m.GetBackingStore().Set("writingToolsConfigurationState", value)
     if err != nil {
         panic(err)
     }
@@ -866,13 +974,16 @@ type IosManagedAppProtectionable interface {
     GetExemptedUniversalLinks()([]string)
     GetFaceIdBlocked()(*bool)
     GetFilterOpenInToOnlyManagedApps()(*bool)
+    GetGenmojiConfigurationState()(*GenmojiIosManagedAppConfigurationState)
     GetManagedUniversalLinks()([]string)
     GetMessagingRedirectAppUrlScheme()(*string)
     GetMinimumRequiredSdkVersion()(*string)
     GetMinimumWarningSdkVersion()(*string)
     GetMinimumWipeSdkVersion()(*string)
     GetProtectInboundDataFromUnknownSources()(*bool)
+    GetScreenCaptureConfigurationState()(*ScreenCaptureIosManagedAppConfigurationState)
     GetThirdPartyKeyboardsBlocked()(*bool)
+    GetWritingToolsConfigurationState()(*WritingToolsIosManagedAppConfigurationState)
     SetAllowedIosDeviceModels(value *string)()
     SetAllowWidgetContentSync(value *bool)()
     SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)()
@@ -888,11 +999,14 @@ type IosManagedAppProtectionable interface {
     SetExemptedUniversalLinks(value []string)()
     SetFaceIdBlocked(value *bool)()
     SetFilterOpenInToOnlyManagedApps(value *bool)()
+    SetGenmojiConfigurationState(value *GenmojiIosManagedAppConfigurationState)()
     SetManagedUniversalLinks(value []string)()
     SetMessagingRedirectAppUrlScheme(value *string)()
     SetMinimumRequiredSdkVersion(value *string)()
     SetMinimumWarningSdkVersion(value *string)()
     SetMinimumWipeSdkVersion(value *string)()
     SetProtectInboundDataFromUnknownSources(value *bool)()
+    SetScreenCaptureConfigurationState(value *ScreenCaptureIosManagedAppConfigurationState)()
     SetThirdPartyKeyboardsBlocked(value *bool)()
+    SetWritingToolsConfigurationState(value *WritingToolsIosManagedAppConfigurationState)()
 }

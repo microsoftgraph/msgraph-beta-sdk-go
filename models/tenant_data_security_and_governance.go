@@ -28,6 +28,22 @@ func CreateTenantDataSecurityAndGovernanceFromDiscriminatorValue(parseNode i878a
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TenantDataSecurityAndGovernance) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.DataSecurityAndGovernance.GetFieldDeserializers()
+    res["policyFiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePolicyFileFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PolicyFileable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PolicyFileable)
+                }
+            }
+            m.SetPolicyFiles(res)
+        }
+        return nil
+    }
     res["protectionScopes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTenantProtectionScopeContainerFromDiscriminatorValue)
         if err != nil {
@@ -39,6 +55,18 @@ func (m *TenantDataSecurityAndGovernance) GetFieldDeserializers()(map[string]fun
         return nil
     }
     return res
+}
+// GetPolicyFiles gets the policyFiles property value. The policyFiles property
+// returns a []PolicyFileable when successful
+func (m *TenantDataSecurityAndGovernance) GetPolicyFiles()([]PolicyFileable) {
+    val, err := m.GetBackingStore().Get("policyFiles")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PolicyFileable)
+    }
+    return nil
 }
 // GetProtectionScopes gets the protectionScopes property value. The protectionScopes property
 // returns a TenantProtectionScopeContainerable when successful
@@ -58,6 +86,18 @@ func (m *TenantDataSecurityAndGovernance) Serialize(writer i878a80d2330e89d26896
     if err != nil {
         return err
     }
+    if m.GetPolicyFiles() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetPolicyFiles()))
+        for i, v := range m.GetPolicyFiles() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("policyFiles", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("protectionScopes", m.GetProtectionScopes())
         if err != nil {
@@ -65,6 +105,13 @@ func (m *TenantDataSecurityAndGovernance) Serialize(writer i878a80d2330e89d26896
         }
     }
     return nil
+}
+// SetPolicyFiles sets the policyFiles property value. The policyFiles property
+func (m *TenantDataSecurityAndGovernance) SetPolicyFiles(value []PolicyFileable)() {
+    err := m.GetBackingStore().Set("policyFiles", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetProtectionScopes sets the protectionScopes property value. The protectionScopes property
 func (m *TenantDataSecurityAndGovernance) SetProtectionScopes(value TenantProtectionScopeContainerable)() {
@@ -76,6 +123,8 @@ func (m *TenantDataSecurityAndGovernance) SetProtectionScopes(value TenantProtec
 type TenantDataSecurityAndGovernanceable interface {
     DataSecurityAndGovernanceable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetPolicyFiles()([]PolicyFileable)
     GetProtectionScopes()(TenantProtectionScopeContainerable)
+    SetPolicyFiles(value []PolicyFileable)()
     SetProtectionScopes(value TenantProtectionScopeContainerable)()
 }

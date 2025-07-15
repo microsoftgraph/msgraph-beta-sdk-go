@@ -5,7 +5,6 @@ package identity
 
 import (
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
-    ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be "github.com/microsoftgraph/msgraph-beta-sdk-go/models"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
 
@@ -40,14 +39,14 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombin
     return val.(map[string]any)
 }
 // GetAllowedCombinations gets the allowedCombinations property value. The allowedCombinations property
-// returns a []AuthenticationMethodModes when successful
-func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) GetAllowedCombinations()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes) {
+// returns a []string when successful
+func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) GetAllowedCombinations()([]string) {
     val, err := m.GetBackingStore().Get("allowedCombinations")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes)
+        return val.([]string)
     }
     return nil
 }
@@ -61,15 +60,15 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombin
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["allowedCombinations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ParseAuthenticationMethodModes)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetAllowedCombinations(res)
@@ -81,7 +80,7 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombin
 // Serialize serializes information the current object
 func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     if m.GetAllowedCombinations() != nil {
-        err := writer.WriteCollectionOfStringValues("allowedCombinations", ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SerializeAuthenticationMethodModes(m.GetAllowedCombinations()))
+        err := writer.WriteCollectionOfStringValues("allowedCombinations", m.GetAllowedCombinations())
         if err != nil {
             return err
         }
@@ -102,7 +101,7 @@ func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombin
     }
 }
 // SetAllowedCombinations sets the allowedCombinations property value. The allowedCombinations property
-func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) SetAllowedCombinations(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes)() {
+func (m *ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinationsPostRequestBody) SetAllowedCombinations(value []string)() {
     err := m.GetBackingStore().Set("allowedCombinations", value)
     if err != nil {
         panic(err)
@@ -116,8 +115,8 @@ type ConditionalAccessAuthenticationStrengthsPoliciesItemUpdateAllowedCombinatio
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedCombinations()([]ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes)
+    GetAllowedCombinations()([]string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    SetAllowedCombinations(value []ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuthenticationMethodModes)()
+    SetAllowedCombinations(value []string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
 }

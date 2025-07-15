@@ -27,29 +27,7 @@ func CreateKnowledgeBaseArticleFromDiscriminatorValue(parseNode i878a80d2330e89d
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *KnowledgeBaseArticle) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetUrl(val)
-        }
-        return nil
-    }
     return res
-}
-// GetUrl gets the url property value. The URL of the knowledge base article. Read-only.
-// returns a *string when successful
-func (m *KnowledgeBaseArticle) GetUrl()(*string) {
-    val, err := m.GetBackingStore().Get("url")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *KnowledgeBaseArticle) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -57,24 +35,9 @@ func (m *KnowledgeBaseArticle) Serialize(writer i878a80d2330e89d26896388a3f487ee
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteStringValue("url", m.GetUrl())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetUrl sets the url property value. The URL of the knowledge base article. Read-only.
-func (m *KnowledgeBaseArticle) SetUrl(value *string)() {
-    err := m.GetBackingStore().Set("url", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type KnowledgeBaseArticleable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetUrl()(*string)
-    SetUrl(value *string)()
 }

@@ -37,9 +37,6 @@ func NewItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilder(rawU
 // Deprecated: This method is obsolete. Use PostAsForwardToChatPostResponse instead.
 // returns a ItemTeamDefinitionPrimaryChannelMessagesForwardToChatResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *ItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilder) Post(ctx context.Context, body ItemTeamDefinitionPrimaryChannelMessagesForwardToChatPostRequestBodyable, requestConfiguration *ItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilderPostRequestConfiguration)(ItemTeamDefinitionPrimaryChannelMessagesForwardToChatResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilder) Po
 // PostAsForwardToChatPostResponse forward a chat message, a channel message, or a channel message reply to a chat.
 // returns a ItemTeamDefinitionPrimaryChannelMessagesForwardToChatPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *ItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilder) PostAsForwardToChatPostResponse(ctx context.Context, body ItemTeamDefinitionPrimaryChannelMessagesForwardToChatPostRequestBodyable, requestConfiguration *ItemTeamDefinitionPrimaryChannelMessagesForwardToChatRequestBuilderPostRequestConfiguration)(ItemTeamDefinitionPrimaryChannelMessagesForwardToChatPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -14,7 +14,7 @@ import (
 type ReportsReflectCheckInResponsesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportsReflectCheckInResponsesRequestBuilderGetQueryParameters read the properties and relationships of a reflectCheckInResponse object. This method gets the responses to a Microsoft Reflect check-in.
+// ReportsReflectCheckInResponsesRequestBuilderGetQueryParameters get a list of Reflect check-ins that were submitted by a student.
 type ReportsReflectCheckInResponsesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -29,9 +29,9 @@ type ReportsReflectCheckInResponsesRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ReportsReflectCheckInResponsesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsReflectCheckInResponsesRequestBuilderGetRequestConfiguration struct {
@@ -79,12 +79,12 @@ func NewReportsReflectCheckInResponsesRequestBuilder(rawUrl string, requestAdapt
 func (m *ReportsReflectCheckInResponsesRequestBuilder) Count()(*ReportsReflectCheckInResponsesCountRequestBuilder) {
     return NewReportsReflectCheckInResponsesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get read the properties and relationships of a reflectCheckInResponse object. This method gets the responses to a Microsoft Reflect check-in.
+// Get get a list of Reflect check-ins that were submitted by a student.
 // returns a ReflectCheckInResponseCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reflectcheckinresponse-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportsroot-list-reflectcheckinresponses?view=graph-rest-beta
 func (m *ReportsReflectCheckInResponsesRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsReflectCheckInResponsesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReflectCheckInResponseCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *ReportsReflectCheckInResponsesRequestBuilder) Post(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ReflectCheckInResponseable), nil
 }
-// ToGetRequestInformation read the properties and relationships of a reflectCheckInResponse object. This method gets the responses to a Microsoft Reflect check-in.
+// ToGetRequestInformation get a list of Reflect check-ins that were submitted by a student.
 // returns a *RequestInformation when successful
 func (m *ReportsReflectCheckInResponsesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsReflectCheckInResponsesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

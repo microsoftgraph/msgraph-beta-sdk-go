@@ -35,9 +35,6 @@ func NewIndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsItemMicroso
 }
 // Post reset a provisioningFlow. This action reprovisions all current data as if it were the initial run, and clears out the existing errors associated with the flow.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-provisioningflow-reset?view=graph-rest-beta
 func (m *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsItemMicrosoftGraphIndustryDataResetRequestBuilder) Post(ctx context.Context, requestConfiguration *IndustryDataOutboundProvisioningFlowSetsItemProvisioningFlowsItemMicrosoftGraphIndustryDataResetRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

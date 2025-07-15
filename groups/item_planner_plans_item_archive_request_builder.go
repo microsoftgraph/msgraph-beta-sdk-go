@@ -35,9 +35,6 @@ func NewItemPlannerPlansItemArchiveRequestBuilder(rawUrl string, requestAdapter 
 }
 // Post archive a plannerPlan object. Archiving a plan, also archives the plannerTasks and plannerBuckets in the plan.  An archived entity is read-only. Archived entities cannot be updated. An archived plan can be unarchived.  All archived entities can be deleted. Archived tasks are not included in the response for list of tasks assigned to a user. 
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-archive?view=graph-rest-beta
 func (m *ItemPlannerPlansItemArchiveRequestBuilder) Post(ctx context.Context, body ItemPlannerPlansItemArchivePostRequestBodyable, requestConfiguration *ItemPlannerPlansItemArchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

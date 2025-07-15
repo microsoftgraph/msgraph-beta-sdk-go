@@ -113,6 +113,11 @@ func (m *DataSecurityAndGovernanceRequestBuilder) Patch(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TenantDataSecurityAndGovernanceable), nil
 }
+// PolicyFiles provides operations to manage the policyFiles property of the microsoft.graph.tenantDataSecurityAndGovernance entity.
+// returns a *DataSecurityAndGovernancePolicyFilesRequestBuilder when successful
+func (m *DataSecurityAndGovernanceRequestBuilder) PolicyFiles()(*DataSecurityAndGovernancePolicyFilesRequestBuilder) {
+    return NewDataSecurityAndGovernancePolicyFilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ProcessContentAsync provides operations to call the processContentAsync method.
 // returns a *DataSecurityAndGovernanceProcessContentAsyncRequestBuilder when successful
 func (m *DataSecurityAndGovernanceRequestBuilder) ProcessContentAsync()(*DataSecurityAndGovernanceProcessContentAsyncRequestBuilder) {

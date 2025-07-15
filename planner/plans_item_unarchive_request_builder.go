@@ -35,9 +35,6 @@ func NewPlansItemUnarchiveRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Post unarchive a plannerPlan object. Unarchiving a plan, also unarchives the plannerTasks and plannerBuckets in the plan.  Only a plan that is archived can be unarchived.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-unarchive?view=graph-rest-beta
 func (m *PlansItemUnarchiveRequestBuilder) Post(ctx context.Context, body PlansItemUnarchivePostRequestBodyable, requestConfiguration *PlansItemUnarchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

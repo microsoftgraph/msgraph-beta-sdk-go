@@ -37,9 +37,6 @@ func NewItemItemsItemCopyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Post create a copy of a driveItem asynchronously. You can optionally copy exclusively the child items, specify a new parent folder, or provide a new name. Once the request is accepted, the operation is queued and processed asynchronously. Use the monitor URL to track progress until the operation completes.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-beta
 func (m *ItemItemsItemCopyRequestBuilder) Post(ctx context.Context, body ItemItemsItemCopyPostRequestBodyable, requestConfiguration *ItemItemsItemCopyRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

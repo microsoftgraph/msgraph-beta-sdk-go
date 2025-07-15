@@ -284,6 +284,22 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["migrationJobs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSharePointMigrationJobFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SharePointMigrationJobable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SharePointMigrationJobable)
+                }
+            }
+            m.SetMigrationJobs(res)
+        }
+        return nil
+    }
     res["owners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserIdentityFromDiscriminatorValue)
         if err != nil {
@@ -427,6 +443,18 @@ func (m *FileStorageContainer) GetLockState()(*SiteLockState) {
     }
     if val != nil {
         return val.(*SiteLockState)
+    }
+    return nil
+}
+// GetMigrationJobs gets the migrationJobs property value. The migrationJobs property
+// returns a []SharePointMigrationJobable when successful
+func (m *FileStorageContainer) GetMigrationJobs()([]SharePointMigrationJobable) {
+    val, err := m.GetBackingStore().Get("migrationJobs")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SharePointMigrationJobable)
     }
     return nil
 }
@@ -629,6 +657,18 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetMigrationJobs() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetMigrationJobs()))
+        for i, v := range m.GetMigrationJobs() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("migrationJobs", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOwners() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOwners()))
         for i, v := range m.GetOwners() {
@@ -796,6 +836,13 @@ func (m *FileStorageContainer) SetLockState(value *SiteLockState)() {
         panic(err)
     }
 }
+// SetMigrationJobs sets the migrationJobs property value. The migrationJobs property
+func (m *FileStorageContainer) SetMigrationJobs(value []SharePointMigrationJobable)() {
+    err := m.GetBackingStore().Set("migrationJobs", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOwners sets the owners property value. List of users who own the fileStorageContainer. Read-only.
 func (m *FileStorageContainer) SetOwners(value []UserIdentityable)() {
     err := m.GetBackingStore().Set("owners", value)
@@ -875,6 +922,7 @@ type FileStorageContainerable interface {
     GetIsItemVersioningEnabled()(*bool)
     GetItemMajorVersionLimit()(*int32)
     GetLockState()(*SiteLockState)
+    GetMigrationJobs()([]SharePointMigrationJobable)
     GetOwners()([]UserIdentityable)
     GetOwnershipType()(*FileStorageContainerOwnershipType)
     GetPermissions()([]Permissionable)
@@ -897,6 +945,7 @@ type FileStorageContainerable interface {
     SetIsItemVersioningEnabled(value *bool)()
     SetItemMajorVersionLimit(value *int32)()
     SetLockState(value *SiteLockState)()
+    SetMigrationJobs(value []SharePointMigrationJobable)()
     SetOwners(value []UserIdentityable)()
     SetOwnershipType(value *FileStorageContainerOwnershipType)()
     SetPermissions(value []Permissionable)()

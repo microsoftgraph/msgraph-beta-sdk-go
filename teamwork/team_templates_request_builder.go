@@ -14,7 +14,7 @@ import (
 type TeamTemplatesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesRequestBuilderGetQueryParameters list the teamTemplateDefinition objects associated with a teamTemplate. 
+// TeamTemplatesRequestBuilderGetQueryParameters get the list of teamTemplate objects that are available for a tenant. 
 type TeamTemplatesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -29,9 +29,9 @@ type TeamTemplatesRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // TeamTemplatesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamTemplatesRequestBuilderGetRequestConfiguration struct {
@@ -79,12 +79,12 @@ func NewTeamTemplatesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *TeamTemplatesRequestBuilder) Count()(*TeamTemplatesCountRequestBuilder) {
     return NewTeamTemplatesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list the teamTemplateDefinition objects associated with a teamTemplate. 
+// Get get the list of teamTemplate objects that are available for a tenant. 
 // returns a TeamTemplateCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-beta
 func (m *TeamTemplatesRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +122,7 @@ func (m *TeamTemplatesRequestBuilder) Post(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamTemplateable), nil
 }
-// ToGetRequestInformation list the teamTemplateDefinition objects associated with a teamTemplate. 
+// ToGetRequestInformation get the list of teamTemplate objects that are available for a tenant. 
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

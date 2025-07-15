@@ -22,9 +22,9 @@ type ItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilderGetQue
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilderGetRequestConfiguration struct {
@@ -52,9 +52,6 @@ func NewItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilder(ra
 // Deprecated: This method is obsolete. Use GetAsGetAppliedDrivesGetResponse instead.
 // returns a ItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta
 func (m *ItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilderGetRequestConfiguration)(ItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +72,6 @@ func (m *ItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilder) 
 // GetAsGetAppliedDrivesGetResponse list all the contentModelUsage information related to a contentModel applied to a SharePoint document library.
 // returns a ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta
 func (m *ItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilder) GetAsGetAppliedDrivesGetResponse(ctx context.Context, requestConfiguration *ItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilderGetRequestConfiguration)(ItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

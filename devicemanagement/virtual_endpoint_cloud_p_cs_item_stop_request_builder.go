@@ -35,9 +35,6 @@ func NewVirtualEndpointCloudPCsItemStopRequestBuilder(rawUrl string, requestAdap
 }
 // Post stop a specific Cloud PC. Currently, only Windows 365 Frontline Cloud PCs are supported.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-stop?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemStopRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemStopRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

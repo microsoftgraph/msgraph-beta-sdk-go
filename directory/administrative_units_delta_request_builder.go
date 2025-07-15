@@ -28,9 +28,9 @@ type AdministrativeUnitsDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewAdministrativeUnitsDeltaRequestBuilder(rawUrl string, requestAdapter i2a
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a AdministrativeUnitsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-delta?view=graph-rest-beta
 func (m *AdministrativeUnitsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration)(AdministrativeUnitsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *AdministrativeUnitsDeltaRequestBuilder) Get(ctx context.Context, reques
 // GetAsDeltaGetResponse get newly created, updated, or deleted administrativeUnits without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 // returns a AdministrativeUnitsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/administrativeunit-delta?view=graph-rest-beta
 func (m *AdministrativeUnitsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *AdministrativeUnitsDeltaRequestBuilderGetRequestConfiguration)(AdministrativeUnitsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -37,9 +37,6 @@ func NewItemChatsItemMessagesItemRepliesReplyWithQuoteRequestBuilder(rawUrl stri
 // Post reply with quote to a single chat message or multiple chat messages in a chat.
 // returns a ChatMessageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-replywithquote?view=graph-rest-beta
 func (m *ItemChatsItemMessagesItemRepliesReplyWithQuoteRequestBuilder) Post(ctx context.Context, body ItemChatsItemMessagesItemRepliesReplyWithQuotePostRequestBodyable, requestConfiguration *ItemChatsItemMessagesItemRepliesReplyWithQuoteRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ChatMessageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

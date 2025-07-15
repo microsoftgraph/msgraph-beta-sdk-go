@@ -197,6 +197,32 @@ func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["tls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTlsTerminationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTls(val.(TlsTerminationable))
+        }
+        return nil
+    }
+    res["tlsInspectionPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTlsInspectionPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TlsInspectionPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TlsInspectionPolicyable)
+                }
+            }
+            m.SetTlsInspectionPolicies(res)
+        }
+        return nil
+    }
     return res
 }
 // GetFilteringPolicies gets the filteringPolicies property value. A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
@@ -223,7 +249,7 @@ func (m *NetworkAccessRoot) GetFilteringProfiles()([]FilteringProfileable) {
     }
     return nil
 }
-// GetForwardingPolicies gets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
+// GetForwardingPolicies gets the forwardingPolicies property value. The forwardingPolicies property
 // returns a []ForwardingPolicyable when successful
 func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
     val, err := m.GetBackingStore().Get("forwardingPolicies")
@@ -235,7 +261,7 @@ func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
     }
     return nil
 }
-// GetForwardingProfiles gets the forwardingProfiles property value. A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
+// GetForwardingProfiles gets the forwardingProfiles property value. The forwardingProfiles property
 // returns a []ForwardingProfileable when successful
 func (m *NetworkAccessRoot) GetForwardingProfiles()([]ForwardingProfileable) {
     val, err := m.GetBackingStore().Get("forwardingProfiles")
@@ -304,6 +330,30 @@ func (m *NetworkAccessRoot) GetThreatIntelligencePolicies()([]ThreatIntelligence
     }
     if val != nil {
         return val.([]ThreatIntelligencePolicyable)
+    }
+    return nil
+}
+// GetTls gets the tls property value. A container for tenant-level TLS inspection settings for Global Secure Access.
+// returns a TlsTerminationable when successful
+func (m *NetworkAccessRoot) GetTls()(TlsTerminationable) {
+    val, err := m.GetBackingStore().Get("tls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TlsTerminationable)
+    }
+    return nil
+}
+// GetTlsInspectionPolicies gets the tlsInspectionPolicies property value. Allows you to configure TLS termination for your organization's network traffic through Global Secure Access.
+// returns a []TlsInspectionPolicyable when successful
+func (m *NetworkAccessRoot) GetTlsInspectionPolicies()([]TlsInspectionPolicyable) {
+    val, err := m.GetBackingStore().Get("tlsInspectionPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TlsInspectionPolicyable)
     }
     return nil
 }
@@ -415,6 +465,24 @@ func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("tls", m.GetTls())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTlsInspectionPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTlsInspectionPolicies()))
+        for i, v := range m.GetTlsInspectionPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("tlsInspectionPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAlerts sets the alerts property value. The alerts property
@@ -445,14 +513,14 @@ func (m *NetworkAccessRoot) SetFilteringProfiles(value []FilteringProfileable)()
         panic(err)
     }
 }
-// SetForwardingPolicies sets the forwardingPolicies property value. A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It's then added to a forwarding profile.
+// SetForwardingPolicies sets the forwardingPolicies property value. The forwardingPolicies property
 func (m *NetworkAccessRoot) SetForwardingPolicies(value []ForwardingPolicyable)() {
     err := m.GetBackingStore().Set("forwardingPolicies", value)
     if err != nil {
         panic(err)
     }
 }
-// SetForwardingProfiles sets the forwardingProfiles property value. A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
+// SetForwardingProfiles sets the forwardingProfiles property value. The forwardingProfiles property
 func (m *NetworkAccessRoot) SetForwardingProfiles(value []ForwardingProfileable)() {
     err := m.GetBackingStore().Set("forwardingProfiles", value)
     if err != nil {
@@ -494,6 +562,20 @@ func (m *NetworkAccessRoot) SetThreatIntelligencePolicies(value []ThreatIntellig
         panic(err)
     }
 }
+// SetTls sets the tls property value. A container for tenant-level TLS inspection settings for Global Secure Access.
+func (m *NetworkAccessRoot) SetTls(value TlsTerminationable)() {
+    err := m.GetBackingStore().Set("tls", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTlsInspectionPolicies sets the tlsInspectionPolicies property value. Allows you to configure TLS termination for your organization's network traffic through Global Secure Access.
+func (m *NetworkAccessRoot) SetTlsInspectionPolicies(value []TlsInspectionPolicyable)() {
+    err := m.GetBackingStore().Set("tlsInspectionPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type NetworkAccessRootable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -508,6 +590,8 @@ type NetworkAccessRootable interface {
     GetSettings()(Settingsable)
     GetTenantStatus()(TenantStatusable)
     GetThreatIntelligencePolicies()([]ThreatIntelligencePolicyable)
+    GetTls()(TlsTerminationable)
+    GetTlsInspectionPolicies()([]TlsInspectionPolicyable)
     SetAlerts(value []Alertable)()
     SetConnectivity(value Connectivityable)()
     SetFilteringPolicies(value []FilteringPolicyable)()
@@ -519,4 +603,6 @@ type NetworkAccessRootable interface {
     SetSettings(value Settingsable)()
     SetTenantStatus(value TenantStatusable)()
     SetThreatIntelligencePolicies(value []ThreatIntelligencePolicyable)()
+    SetTls(value TlsTerminationable)()
+    SetTlsInspectionPolicies(value []TlsInspectionPolicyable)()
 }

@@ -14,7 +14,7 @@ import (
 type MobileAppsItemRelationshipsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsItemRelationshipsRequestBuilderGetQueryParameters list of relationships for this mobile app.
+// MobileAppsItemRelationshipsRequestBuilderGetQueryParameters the set of direct relationships for this app.
 type MobileAppsItemRelationshipsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -29,9 +29,9 @@ type MobileAppsItemRelationshipsRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // MobileAppsItemRelationshipsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemRelationshipsRequestBuilderGetRequestConfiguration struct {
@@ -79,7 +79,7 @@ func NewMobileAppsItemRelationshipsRequestBuilder(rawUrl string, requestAdapter 
 func (m *MobileAppsItemRelationshipsRequestBuilder) Count()(*MobileAppsItemRelationshipsCountRequestBuilder) {
     return NewMobileAppsItemRelationshipsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list of relationships for this mobile app.
+// Get the set of direct relationships for this app.
 // returns a MobileAppRelationshipCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemRelationshipsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *MobileAppsItemRelationshipsRequestBuilder) Post(ctx context.Context, bo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable), nil
 }
-// ToGetRequestInformation list of relationships for this mobile app.
+// ToGetRequestInformation the set of direct relationships for this app.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemRelationshipsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

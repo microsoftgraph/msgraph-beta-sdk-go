@@ -37,9 +37,6 @@ func NewVirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder(rawU
 // Deprecated: Starting from July 01, 2025, this API (&apos;getCloudPcRecommendationReports&apos;) will be deprecated and no longer supported. Please use the retrieveCloudPcRecommendationReports API. as of 2025-02/getCloudPcRecommendationReports on 2025-02-27 and will be removed 2025-07-01
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getcloudpcrecommendationreports?view=graph-rest-beta
 func (m *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetCloudPcRecommendationReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetCloudPcRecommendationReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

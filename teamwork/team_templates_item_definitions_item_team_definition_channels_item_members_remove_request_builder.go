@@ -37,9 +37,6 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveR
 // Deprecated: This method is obsolete. Use PostAsRemovePostResponse instead.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilder) Post(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemove
 // PostAsRemovePostResponse remove multiple members from a team in a single request. The response provides details about which memberships could and couldn't be removed.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilder) PostAsRemovePostResponse(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemoveRequestBuilderPostRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMembersRemovePostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

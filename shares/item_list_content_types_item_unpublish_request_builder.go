@@ -35,9 +35,6 @@ func NewItemListContentTypesItemUnpublishRequestBuilder(rawUrl string, requestAd
 }
 // Post invoke action unpublish
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-beta
 func (m *ItemListContentTypesItemUnpublishRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemListContentTypesItemUnpublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

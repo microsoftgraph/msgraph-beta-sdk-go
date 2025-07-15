@@ -298,6 +298,11 @@ func (m *ManagedDevicesManagedDeviceItemRequestBuilder) ResetPasscode()(*Managed
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) Retire()(*ManagedDevicesItemRetireRequestBuilder) {
     return NewManagedDevicesItemRetireRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveMacOSManagedDeviceLocalAdminAccountDetail provides operations to call the retrieveMacOSManagedDeviceLocalAdminAccountDetail method.
+// returns a *ManagedDevicesItemRetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder when successful
+func (m *ManagedDevicesManagedDeviceItemRequestBuilder) RetrieveMacOSManagedDeviceLocalAdminAccountDetail()(*ManagedDevicesItemRetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilder) {
+    return NewManagedDevicesItemRetrieveMacOSManagedDeviceLocalAdminAccountDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RevokeAppleVppLicenses provides operations to call the revokeAppleVppLicenses method.
 // returns a *ManagedDevicesItemRevokeAppleVppLicensesRequestBuilder when successful
 func (m *ManagedDevicesManagedDeviceItemRequestBuilder) RevokeAppleVppLicenses()(*ManagedDevicesItemRevokeAppleVppLicensesRequestBuilder) {

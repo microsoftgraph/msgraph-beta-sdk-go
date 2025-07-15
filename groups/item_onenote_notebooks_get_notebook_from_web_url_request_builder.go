@@ -37,9 +37,6 @@ func NewItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilder(rawUrl string, r
 // Post retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
 // returns a CopyNotebookModelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-beta
 func (m *ItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilder) Post(ctx context.Context, body ItemOnenoteNotebooksGetNotebookFromWebUrlPostRequestBodyable, requestConfiguration *ItemOnenoteNotebooksGetNotebookFromWebUrlRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CopyNotebookModelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

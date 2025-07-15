@@ -1405,6 +1405,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFileStorage(), nil
                     case "#microsoft.graph.fileStorageContainer":
                         return NewFileStorageContainer(), nil
+                    case "#microsoft.graph.fileStorageContainerType":
+                        return NewFileStorageContainerType(), nil
+                    case "#microsoft.graph.fileStorageContainerTypeRegistration":
+                        return NewFileStorageContainerTypeRegistration(), nil
                     case "#microsoft.graph.filterOperatorSchema":
                         return NewFilterOperatorSchema(), nil
                     case "#microsoft.graph.finding":
@@ -2327,6 +2331,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPlayPromptOperation(), nil
                     case "#microsoft.graph.policyBase":
                         return NewPolicyBase(), nil
+                    case "#microsoft.graph.policyFile":
+                        return NewPolicyFile(), nil
                     case "#microsoft.graph.policyRoot":
                         return NewPolicyRoot(), nil
                     case "#microsoft.graph.policySet":
@@ -2483,6 +2489,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewRbacApplicationMultiple(), nil
                     case "#microsoft.graph.readingAssignmentSubmission":
                         return NewReadingAssignmentSubmission(), nil
+                    case "#microsoft.graph.readingCoachPassage":
+                        return NewReadingCoachPassage(), nil
                     case "#microsoft.graph.recommendation":
                         return NewRecommendation(), nil
                     case "#microsoft.graph.recommendationBase":
@@ -2701,6 +2709,26 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSharePointGroup(), nil
                     case "#microsoft.graph.sharePointGroupMember":
                         return NewSharePointGroupMember(), nil
+                    case "#microsoft.graph.sharePointMigrationEvent":
+                        return NewSharePointMigrationEvent(), nil
+                    case "#microsoft.graph.sharePointMigrationFinishManifestFileUploadEvent":
+                        return NewSharePointMigrationFinishManifestFileUploadEvent(), nil
+                    case "#microsoft.graph.sharePointMigrationJob":
+                        return NewSharePointMigrationJob(), nil
+                    case "#microsoft.graph.sharePointMigrationJobCancelledEvent":
+                        return NewSharePointMigrationJobCancelledEvent(), nil
+                    case "#microsoft.graph.sharePointMigrationJobDeletedEvent":
+                        return NewSharePointMigrationJobDeletedEvent(), nil
+                    case "#microsoft.graph.sharePointMigrationJobErrorEvent":
+                        return NewSharePointMigrationJobErrorEvent(), nil
+                    case "#microsoft.graph.sharePointMigrationJobPostponedEvent":
+                        return NewSharePointMigrationJobPostponedEvent(), nil
+                    case "#microsoft.graph.sharePointMigrationJobProgressEvent":
+                        return NewSharePointMigrationJobProgressEvent(), nil
+                    case "#microsoft.graph.sharePointMigrationJobQueuedEvent":
+                        return NewSharePointMigrationJobQueuedEvent(), nil
+                    case "#microsoft.graph.sharePointMigrationJobStartEvent":
+                        return NewSharePointMigrationJobStartEvent(), nil
                     case "#microsoft.graph.sharePointProtectionPolicy":
                         return NewSharePointProtectionPolicy(), nil
                     case "#microsoft.graph.sharePointRestoreSession":
@@ -2721,6 +2749,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSimulationAutomation(), nil
                     case "#microsoft.graph.simulationAutomationRun":
                         return NewSimulationAutomationRun(), nil
+                    case "#microsoft.graph.singleValueExtendedProperty":
+                        return NewSingleValueExtendedProperty(), nil
                     case "#microsoft.graph.singleValueLegacyExtendedProperty":
                         return NewSingleValueLegacyExtendedProperty(), nil
                     case "#microsoft.graph.site":

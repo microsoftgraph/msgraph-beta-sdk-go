@@ -35,9 +35,6 @@ func NewIndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestB
 }
 // Post perform validations applicable for the specific instance of the data connector.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-beta
 func (m *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilder) Post(ctx context.Context, requestConfiguration *IndustryDataDataConnectorsItemMicrosoftGraphIndustryDataValidateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

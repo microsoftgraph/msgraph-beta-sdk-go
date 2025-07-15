@@ -26,29 +26,7 @@ func CreateUserStorageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *UserStorage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["quota"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateUnifiedStorageQuotaFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetQuota(val.(UnifiedStorageQuotaable))
-        }
-        return nil
-    }
     return res
-}
-// GetQuota gets the quota property value. The quota property
-// returns a UnifiedStorageQuotaable when successful
-func (m *UserStorage) GetQuota()(UnifiedStorageQuotaable) {
-    val, err := m.GetBackingStore().Get("quota")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(UnifiedStorageQuotaable)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *UserStorage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -56,24 +34,9 @@ func (m *UserStorage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteObjectValue("quota", m.GetQuota())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetQuota sets the quota property value. The quota property
-func (m *UserStorage) SetQuota(value UnifiedStorageQuotaable)() {
-    err := m.GetBackingStore().Set("quota", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type UserStorageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetQuota()(UnifiedStorageQuotaable)
-    SetQuota(value UnifiedStorageQuotaable)()
 }

@@ -28,9 +28,9 @@ type DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaRequestBui
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewDeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaRequest
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
 func (m *DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaReques
 // GetAsDeltaGetResponse get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.
 // returns a DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
 func (m *DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilderGetRequestConfiguration)(DeletedTeamsItemChannelsItemPlannerPlansItemBucketsItemTasksDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

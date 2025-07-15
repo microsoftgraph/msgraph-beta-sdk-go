@@ -35,6 +35,8 @@ func CreateDeviceManagementConfigurationSettingValueDefinitionFromDiscriminatorV
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.deviceManagementConfigurationFloatSettingValueDefinition":
+                        return NewDeviceManagementConfigurationFloatSettingValueDefinition(), nil
                     case "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition":
                         return NewDeviceManagementConfigurationIntegerSettingValueDefinition(), nil
                     case "#microsoft.graph.deviceManagementConfigurationStringSettingValueDefinition":

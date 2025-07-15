@@ -38,9 +38,6 @@ func NewItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsCreateUpload
 // Deprecated: The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20
 // returns a UploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/attachment-createuploadsession?view=graph-rest-beta
 func (m *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsCreateUploadSessionRequestBuilder) Post(ctx context.Context, body ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsCreateUploadSessionPostRequestBodyable, requestConfiguration *ItemOutlookTaskGroupsItemTaskFoldersItemTasksItemAttachmentsCreateUploadSessionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

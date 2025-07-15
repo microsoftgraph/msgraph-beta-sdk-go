@@ -36,9 +36,6 @@ func NewVirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilder(rawUrl
 // Post get the raw real-time remote connection report for a Cloud PC without any calculation, such as roundTripTime or available bandwidth, which are aggregated hourly from the raw event data.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getrawremoteconnectionreports?view=graph-rest-beta
 func (m *VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetRawRemoteConnectionReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetRawRemoteConnectionReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

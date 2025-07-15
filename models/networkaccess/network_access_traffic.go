@@ -27,7 +27,7 @@ func NewNetworkAccessTraffic()(*NetworkAccessTraffic) {
 func CreateNetworkAccessTrafficFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewNetworkAccessTraffic(), nil
 }
-// GetAction gets the action property value. Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this {evolvable enum}(/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): bypass , alert.
+// GetAction gets the action property value. Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: bypass , alert.
 // returns a *FilteringPolicyAction when successful
 func (m *NetworkAccessTraffic) GetAction()(*FilteringPolicyAction) {
     val, err := m.GetBackingStore().Get("action")
@@ -1390,7 +1390,7 @@ func (m *NetworkAccessTraffic) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetAction sets the action property value. Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this {evolvable enum}(/graph/best-practices-concept#handling-future-members-in-evolvable-enumerations): bypass , alert.
+// SetAction sets the action property value. Indicates the action taken based on filtering policies. The possible values are: block, allow, unknownFutureValue, bypass, alert. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: bypass , alert.
 func (m *NetworkAccessTraffic) SetAction(value *FilteringPolicyAction)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {

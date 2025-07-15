@@ -28,9 +28,9 @@ type GetOpenShiftsRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // GetOpenShiftsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetOpenShiftsRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewGetOpenShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 // Deprecated: This method is obsolete. Use GetAsGetOpenShiftsGetResponse instead.
 // returns a GetOpenShiftsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta
 func (m *GetOpenShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetOpenShiftsRequestBuilderGetRequestConfiguration)(GetOpenShiftsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *GetOpenShiftsRequestBuilder) Get(ctx context.Context, requestConfigurat
 // GetAsGetOpenShiftsGetResponse get all openShift objects across all teams a user is a direct member of.
 // returns a GetOpenShiftsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta
 func (m *GetOpenShiftsRequestBuilder) GetAsGetOpenShiftsGetResponse(ctx context.Context, requestConfiguration *GetOpenShiftsRequestBuilderGetRequestConfiguration)(GetOpenShiftsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

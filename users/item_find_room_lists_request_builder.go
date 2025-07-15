@@ -22,9 +22,9 @@ type ItemFindRoomListsRequestBuilderGetQueryParameters struct {
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // ItemFindRoomListsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemFindRoomListsRequestBuilderGetRequestConfiguration struct {
@@ -52,9 +52,6 @@ func NewItemFindRoomListsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Deprecated: This method is obsolete. Use GetAsFindRoomListsGetResponse instead.
 // returns a ItemFindRoomListsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta
 func (m *ItemFindRoomListsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemFindRoomListsRequestBuilderGetRequestConfiguration)(ItemFindRoomListsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +72,6 @@ func (m *ItemFindRoomListsRequestBuilder) Get(ctx context.Context, requestConfig
 // GetAsFindRoomListsGetResponse get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
 // returns a ItemFindRoomListsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta
 func (m *ItemFindRoomListsRequestBuilder) GetAsFindRoomListsGetResponse(ctx context.Context, requestConfiguration *ItemFindRoomListsRequestBuilderGetRequestConfiguration)(ItemFindRoomListsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,9 +35,6 @@ func NewSensorDevicesIngestTelemetryRequestBuilder(rawUrl string, requestAdapter
 }
 // Post ingest sensor telemetry for a workplace sensor device.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/workplacesensordevice-ingesttelemetry?view=graph-rest-beta
 func (m *SensorDevicesIngestTelemetryRequestBuilder) Post(ctx context.Context, body SensorDevicesIngestTelemetryPostRequestBodyable, requestConfiguration *SensorDevicesIngestTelemetryRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

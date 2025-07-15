@@ -35,9 +35,6 @@ func NewItemRemoveAllAccessForUserRequestBuilder(rawUrl string, requestAdapter i
 }
 // Post remove access to a chat for a user.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chat-removeallaccessforuser?view=graph-rest-beta
 func (m *ItemRemoveAllAccessForUserRequestBuilder) Post(ctx context.Context, body ItemRemoveAllAccessForUserPostRequestBodyable, requestConfiguration *ItemRemoveAllAccessForUserRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -140,6 +140,11 @@ func (m *SecurityRequestBuilder) Identities()(*IdentitiesRequestBuilder) {
 func (m *SecurityRequestBuilder) Incidents()(*IncidentsRequestBuilder) {
     return NewIncidentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// IncidentTasks provides operations to manage the incidentTasks property of the microsoft.graph.security entity.
+// returns a *IncidentTasksRequestBuilder when successful
+func (m *SecurityRequestBuilder) IncidentTasks()(*IncidentTasksRequestBuilder) {
+    return NewIncidentTasksRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // InformationProtection provides operations to manage the informationProtection property of the microsoft.graph.security entity.
 // returns a *InformationProtectionRequestBuilder when successful
 func (m *SecurityRequestBuilder) InformationProtection()(*InformationProtectionRequestBuilder) {

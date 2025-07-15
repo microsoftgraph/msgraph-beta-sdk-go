@@ -58,15 +58,15 @@ func (m *ApprovalItemViewPoint) GetFieldDeserializers()(map[string]func(i878a80d
         return nil
     }
     res["roles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfEnumValues(ParseApproverRole)
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]ApproverRole, len(val))
+            res := make([]string, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*ApproverRole))
+                    res[i] = *(v.(*string))
                 }
             }
             m.SetRoles(res)
@@ -88,14 +88,14 @@ func (m *ApprovalItemViewPoint) GetOdataType()(*string) {
     return nil
 }
 // GetRoles gets the roles property value. Collection of roles associated with the requesting user for the approval item. If the owner of the approval item is making the request, the collection of roles includes the role owner. If the requesting user was assigned as an approver, the collection includes the role approver.
-// returns a []ApproverRole when successful
-func (m *ApprovalItemViewPoint) GetRoles()([]ApproverRole) {
+// returns a []string when successful
+func (m *ApprovalItemViewPoint) GetRoles()([]string) {
     val, err := m.GetBackingStore().Get("roles")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]ApproverRole)
+        return val.([]string)
     }
     return nil
 }
@@ -108,7 +108,7 @@ func (m *ApprovalItemViewPoint) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     if m.GetRoles() != nil {
-        err := writer.WriteCollectionOfStringValues("roles", SerializeApproverRole(m.GetRoles()))
+        err := writer.WriteCollectionOfStringValues("roles", m.GetRoles())
         if err != nil {
             return err
         }
@@ -140,7 +140,7 @@ func (m *ApprovalItemViewPoint) SetOdataType(value *string)() {
     }
 }
 // SetRoles sets the roles property value. Collection of roles associated with the requesting user for the approval item. If the owner of the approval item is making the request, the collection of roles includes the role owner. If the requesting user was assigned as an approver, the collection includes the role approver.
-func (m *ApprovalItemViewPoint) SetRoles(value []ApproverRole)() {
+func (m *ApprovalItemViewPoint) SetRoles(value []string)() {
     err := m.GetBackingStore().Set("roles", value)
     if err != nil {
         panic(err)
@@ -152,8 +152,8 @@ type ApprovalItemViewPointable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetRoles()([]ApproverRole)
+    GetRoles()([]string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetRoles(value []ApproverRole)()
+    SetRoles(value []string)()
 }

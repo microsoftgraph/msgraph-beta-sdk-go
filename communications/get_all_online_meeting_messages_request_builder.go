@@ -28,9 +28,9 @@ type GetAllOnlineMeetingMessagesRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // GetAllOnlineMeetingMessagesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetAllOnlineMeetingMessagesRequestBuilderGetRequestConfiguration struct {
@@ -58,9 +58,6 @@ func NewGetAllOnlineMeetingMessagesRequestBuilder(rawUrl string, requestAdapter 
 // Deprecated: This method is obsolete. Use GetAsGetAllOnlineMeetingMessagesGetResponse instead.
 // returns a GetAllOnlineMeetingMessagesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudcommunications-getallonlinemeetingmessages?view=graph-rest-beta
 func (m *GetAllOnlineMeetingMessagesRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAllOnlineMeetingMessagesRequestBuilderGetRequestConfiguration)(GetAllOnlineMeetingMessagesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -81,9 +78,6 @@ func (m *GetAllOnlineMeetingMessagesRequestBuilder) Get(ctx context.Context, req
 // GetAsGetAllOnlineMeetingMessagesGetResponse get all Teams question and answer (Q&A) conversation messages in a tenant. This function returns a snapshot of all Q&A activity in JSON format. The export includes:- The original question or discussion text- The user who posted the message- All replies and responders- Vote counts- Moderation status (pending or dismissed)- Private replies- The meeting ID and organizer ID that are used for mapping to meeting metadata.
 // returns a GetAllOnlineMeetingMessagesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudcommunications-getallonlinemeetingmessages?view=graph-rest-beta
 func (m *GetAllOnlineMeetingMessagesRequestBuilder) GetAsGetAllOnlineMeetingMessagesGetResponse(ctx context.Context, requestConfiguration *GetAllOnlineMeetingMessagesRequestBuilderGetRequestConfiguration)(GetAllOnlineMeetingMessagesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

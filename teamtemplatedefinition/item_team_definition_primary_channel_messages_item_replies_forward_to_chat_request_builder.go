@@ -37,9 +37,6 @@ func NewItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatRequestB
 // Deprecated: This method is obsolete. Use PostAsForwardToChatPostResponse instead.
 // returns a ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilder) Post(ctx context.Context, body ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatPostRequestBodyable, requestConfiguration *ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilderPostRequestConfiguration)(ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -60,9 +57,6 @@ func (m *ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatRequest
 // PostAsForwardToChatPostResponse forward a chat message, a channel message, or a channel message reply to a chat.
 // returns a ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilder) PostAsForwardToChatPostResponse(ctx context.Context, body ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatPostRequestBodyable, requestConfiguration *ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatRequestBuilderPostRequestConfiguration)(ItemTeamDefinitionPrimaryChannelMessagesItemRepliesForwardToChatPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

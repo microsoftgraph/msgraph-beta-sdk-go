@@ -14,7 +14,7 @@ import (
 type FilteringProfilesItemPoliciesItemPolicyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FilteringProfilesItemPoliciesItemPolicyRequestBuilderGetQueryParameters policy.
+// FilteringProfilesItemPoliciesItemPolicyRequestBuilderGetQueryParameters get a list of threatIntelligencePolicy objects associated with a threat intelligence policy link.
 type FilteringProfilesItemPoliciesItemPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,9 +43,12 @@ func NewFilteringProfilesItemPoliciesItemPolicyRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewFilteringProfilesItemPoliciesItemPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get policy.
+// Get get a list of threatIntelligencePolicy objects associated with a threat intelligence policy link.
 // returns a Policyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-list-policy?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesItemPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesItemPolicyRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Policyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -63,7 +66,7 @@ func (m *FilteringProfilesItemPoliciesItemPolicyRequestBuilder) Get(ctx context.
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Policyable), nil
 }
-// ToGetRequestInformation policy.
+// ToGetRequestInformation get a list of threatIntelligencePolicy objects associated with a threat intelligence policy link.
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesItemPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesItemPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

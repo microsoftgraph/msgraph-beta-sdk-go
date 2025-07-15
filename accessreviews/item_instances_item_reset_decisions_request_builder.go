@@ -35,9 +35,6 @@ func NewItemInstancesItemResetDecisionsRequestBuilder(rawUrl string, requestAdap
 }
 // Post in the Microsoft Entra access reviews feature, reset the decisions of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review.  Previous decisions are no longer recorded, but reviewers can continue to update decisions.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/accessreview-reset?view=graph-rest-beta
 func (m *ItemInstancesItemResetDecisionsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemInstancesItemResetDecisionsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -37,9 +37,6 @@ func NewAuthenticationMethodsUsersRegisteredByFeatureRequestBuilder(rawUrl strin
 // Get get the number of users capable of multi-factor authentication, self-service password reset, and passwordless authentication.
 // returns a UserRegistrationFeatureSummaryable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbyfeature?view=graph-rest-beta
 func (m *AuthenticationMethodsUsersRegisteredByFeatureRequestBuilder) Get(ctx context.Context, requestConfiguration *AuthenticationMethodsUsersRegisteredByFeatureRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserRegistrationFeatureSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

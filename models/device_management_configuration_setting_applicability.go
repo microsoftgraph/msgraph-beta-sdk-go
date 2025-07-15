@@ -35,10 +35,18 @@ func CreateDeviceManagementConfigurationSettingApplicabilityFromDiscriminatorVal
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.deviceManagementConfigurationAndroidSettingApplicability":
+                        return NewDeviceManagementConfigurationAndroidSettingApplicability(), nil
                     case "#microsoft.graph.deviceManagementConfigurationApplicationSettingApplicability":
                         return NewDeviceManagementConfigurationApplicationSettingApplicability(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationEdgeSettingApplicability":
+                        return NewDeviceManagementConfigurationEdgeSettingApplicability(), nil
                     case "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability":
                         return NewDeviceManagementConfigurationExchangeOnlineSettingApplicability(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationIosSettingApplicability":
+                        return NewDeviceManagementConfigurationIosSettingApplicability(), nil
+                    case "#microsoft.graph.deviceManagementConfigurationLinuxSettingApplicability":
+                        return NewDeviceManagementConfigurationLinuxSettingApplicability(), nil
                     case "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability":
                         return NewDeviceManagementConfigurationWindowsSettingApplicability(), nil
                 }

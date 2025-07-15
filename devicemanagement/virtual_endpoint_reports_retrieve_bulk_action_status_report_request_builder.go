@@ -36,9 +36,6 @@ func NewVirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilder(rawUr
 // Post get the bulk remote action status report, including data such as the bulk action ID, bulk action display name, initiating user's principal name, action type, and action state.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-retrievebulkactionstatusreport?view=graph-rest-beta
 func (m *VirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsRetrieveBulkActionStatusReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsRetrieveBulkActionStatusReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -37,9 +37,6 @@ func NewClassesItemModulesItemPublishRequestBuilder(rawUrl string, requestAdapte
 // Post change the state of an educationModule from its original draft status to the published status. Only teachers in the class can perform this operation. When a module is in draft status, students won't see the module. When you call this API, the module appears in the student's class work list.
 // returns a EducationModuleable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/educationmodule-publish?view=graph-rest-beta
 func (m *ClassesItemModulesItemPublishRequestBuilder) Post(ctx context.Context, requestConfiguration *ClassesItemModulesItemPublishRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationModuleable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

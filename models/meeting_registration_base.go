@@ -42,61 +42,11 @@ func CreateMeetingRegistrationBaseFromDiscriminatorValue(parseNode i878a80d2330e
     }
     return NewMeetingRegistrationBase(), nil
 }
-// GetAllowedRegistrant gets the allowedRegistrant property value. Specifies who can register for the meeting.
-// returns a *MeetingAudience when successful
-func (m *MeetingRegistrationBase) GetAllowedRegistrant()(*MeetingAudience) {
-    val, err := m.GetBackingStore().Get("allowedRegistrant")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*MeetingAudience)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *MeetingRegistrationBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["allowedRegistrant"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMeetingAudience)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAllowedRegistrant(val.(*MeetingAudience))
-        }
-        return nil
-    }
-    res["registrants"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateMeetingRegistrantBaseFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]MeetingRegistrantBaseable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(MeetingRegistrantBaseable)
-                }
-            }
-            m.SetRegistrants(res)
-        }
-        return nil
-    }
     return res
-}
-// GetRegistrants gets the registrants property value. Registrants of the online meeting.
-// returns a []MeetingRegistrantBaseable when successful
-func (m *MeetingRegistrationBase) GetRegistrants()([]MeetingRegistrantBaseable) {
-    val, err := m.GetBackingStore().Get("registrants")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]MeetingRegistrantBaseable)
-    }
-    return nil
 }
 // Serialize serializes information the current object
 func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -104,46 +54,9 @@ func (m *MeetingRegistrationBase) Serialize(writer i878a80d2330e89d26896388a3f48
     if err != nil {
         return err
     }
-    if m.GetAllowedRegistrant() != nil {
-        cast := (*m.GetAllowedRegistrant()).String()
-        err = writer.WriteStringValue("allowedRegistrant", &cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetRegistrants() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetRegistrants()))
-        for i, v := range m.GetRegistrants() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("registrants", cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetAllowedRegistrant sets the allowedRegistrant property value. Specifies who can register for the meeting.
-func (m *MeetingRegistrationBase) SetAllowedRegistrant(value *MeetingAudience)() {
-    err := m.GetBackingStore().Set("allowedRegistrant", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetRegistrants sets the registrants property value. Registrants of the online meeting.
-func (m *MeetingRegistrationBase) SetRegistrants(value []MeetingRegistrantBaseable)() {
-    err := m.GetBackingStore().Set("registrants", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type MeetingRegistrationBaseable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAllowedRegistrant()(*MeetingAudience)
-    GetRegistrants()([]MeetingRegistrantBaseable)
-    SetAllowedRegistrant(value *MeetingAudience)()
-    SetRegistrants(value []MeetingRegistrantBaseable)()
 }

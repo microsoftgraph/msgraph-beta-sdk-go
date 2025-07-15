@@ -21,7 +21,7 @@ type ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderDeleteR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderGetQueryParameters get threatIntelligencePolicies from networkAccess
+// ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderGetQueryParameters read the properties and relationships of a threatIntelligencePolicy object.
 type ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property threatIntelligencePolicies for networkAccess
+// Delete delete a threatIntelligencePolicy object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-delete-threatintelligencepolicies?view=graph-rest-beta
 func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) D
     }
     return nil
 }
-// Get get threatIntelligencePolicies from networkAccess
+// Get read the properties and relationships of a threatIntelligencePolicy object.
 // returns a ThreatIntelligencePolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicy-get?view=graph-rest-beta
 func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +99,12 @@ func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) G
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyable), nil
 }
-// Patch update the navigation property threatIntelligencePolicies in networkAccess
+// Patch update the properties of a threatIntelligencePolicy object.
 // returns a ThreatIntelligencePolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicy-update?view=graph-rest-beta
 func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyable, requestConfiguration *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +127,7 @@ func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) P
 func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) PolicyRules()(*ThreatIntelligencePoliciesItemPolicyRulesRequestBuilder) {
     return NewThreatIntelligencePoliciesItemPolicyRulesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property threatIntelligencePolicies for networkAccess
+// ToDeleteRequestInformation delete a threatIntelligencePolicy object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +138,7 @@ func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get threatIntelligencePolicies from networkAccess
+// ToGetRequestInformation read the properties and relationships of a threatIntelligencePolicy object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -143,7 +152,7 @@ func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) T
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property threatIntelligencePolicies in networkAccess
+// ToPatchRequestInformation update the properties of a threatIntelligencePolicy object.
 // returns a *RequestInformation when successful
 func (m *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.ThreatIntelligencePolicyable, requestConfiguration *ThreatIntelligencePoliciesThreatIntelligencePolicyItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

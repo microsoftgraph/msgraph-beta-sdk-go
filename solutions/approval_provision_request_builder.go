@@ -35,9 +35,6 @@ func NewApprovalProvisionRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 }
 // Post provision an approvalSolution on behalf of a tenant.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/approvalsolution-provision?view=graph-rest-beta
 func (m *ApprovalProvisionRequestBuilder) Post(ctx context.Context, requestConfiguration *ApprovalProvisionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

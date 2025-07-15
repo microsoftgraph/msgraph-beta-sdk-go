@@ -21,7 +21,7 @@ type FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters the traffic forwarding policies associated with this profile.
+// FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters read the properties and relationships of a threatIntelligencePolicyLink object.
 type FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewFilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewFilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property policies for networkAccess
+// Delete delete a tlsInspectionPolicyLink object. Used to unlink a tlsInspectionPolicy from a filtering profile.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-delete?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get the traffic forwarding policies associated with this profile.
+// Get read the properties and relationships of a threatIntelligencePolicyLink object.
 // returns a PolicyLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-get?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +99,12 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Get(ctx cont
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable), nil
 }
-// Patch update the navigation property policies in networkAccess
+// Patch update the properties of a threatIntelligencePolicyLink object.
 // returns a PolicyLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-update?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +127,7 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Patch(ctx co
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Policy()(*FilteringProfilesItemPoliciesItemPolicyRequestBuilder) {
     return NewFilteringProfilesItemPoliciesItemPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property policies for networkAccess
+// ToDeleteRequestInformation delete a tlsInspectionPolicyLink object. Used to unlink a tlsInspectionPolicy from a filtering profile.
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +138,7 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation the traffic forwarding policies associated with this profile.
+// ToGetRequestInformation read the properties and relationships of a threatIntelligencePolicyLink object.
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -143,7 +152,7 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToGetRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property policies in networkAccess
+// ToPatchRequestInformation update the properties of a threatIntelligencePolicyLink object.
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

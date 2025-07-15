@@ -22,9 +22,9 @@ type GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters str
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int32 `uriparametername:"%24skip"`
+    Skip *int64 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int32 `uriparametername:"%24top"`
+    Top *int64 `uriparametername:"%24top"`
 }
 // GetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration struct {
@@ -52,9 +52,6 @@ func NewGetAttackSimulationTrainingUserCoverageRequestBuilder(rawUrl string, req
 // Deprecated: This method is obsolete. Use GetAsGetAttackSimulationTrainingUserCoverageGetResponse instead.
 // returns a GetAttackSimulationTrainingUserCoverageResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getattacksimulationtrainingusercoverage?view=graph-rest-beta
 func (m *GetAttackSimulationTrainingUserCoverageRequestBuilder) Get(ctx context.Context, requestConfiguration *GetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration)(GetAttackSimulationTrainingUserCoverageResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -76,9 +73,6 @@ func (m *GetAttackSimulationTrainingUserCoverageRequestBuilder) Get(ctx context.
 // Deprecated: This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20
 // returns a GetAttackSimulationTrainingUserCoverageGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getattacksimulationtrainingusercoverage?view=graph-rest-beta
 func (m *GetAttackSimulationTrainingUserCoverageRequestBuilder) GetAsGetAttackSimulationTrainingUserCoverageGetResponse(ctx context.Context, requestConfiguration *GetAttackSimulationTrainingUserCoverageRequestBuilderGetRequestConfiguration)(GetAttackSimulationTrainingUserCoverageGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

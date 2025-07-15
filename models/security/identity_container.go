@@ -43,6 +43,22 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["identityAccounts"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateIdentityAccountsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]IdentityAccountsable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(IdentityAccountsable)
+                }
+            }
+            m.SetIdentityAccounts(res)
+        }
+        return nil
+    }
     res["sensors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensorFromDiscriminatorValue)
         if err != nil {
@@ -70,6 +86,18 @@ func (m *IdentityContainer) GetHealthIssues()([]HealthIssueable) {
     }
     if val != nil {
         return val.([]HealthIssueable)
+    }
+    return nil
+}
+// GetIdentityAccounts gets the identityAccounts property value. The identityAccounts property
+// returns a []IdentityAccountsable when successful
+func (m *IdentityContainer) GetIdentityAccounts()([]IdentityAccountsable) {
+    val, err := m.GetBackingStore().Get("identityAccounts")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]IdentityAccountsable)
     }
     return nil
 }
@@ -103,6 +131,18 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetIdentityAccounts() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetIdentityAccounts()))
+        for i, v := range m.GetIdentityAccounts() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("identityAccounts", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSensors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensors()))
         for i, v := range m.GetSensors() {
@@ -124,6 +164,13 @@ func (m *IdentityContainer) SetHealthIssues(value []HealthIssueable)() {
         panic(err)
     }
 }
+// SetIdentityAccounts sets the identityAccounts property value. The identityAccounts property
+func (m *IdentityContainer) SetIdentityAccounts(value []IdentityAccountsable)() {
+    err := m.GetBackingStore().Set("identityAccounts", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSensors sets the sensors property value. Represents a customer's Microsoft Defender for Identity sensors.
 func (m *IdentityContainer) SetSensors(value []Sensorable)() {
     err := m.GetBackingStore().Set("sensors", value)
@@ -135,7 +182,9 @@ type IdentityContainerable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetHealthIssues()([]HealthIssueable)
+    GetIdentityAccounts()([]IdentityAccountsable)
     GetSensors()([]Sensorable)
     SetHealthIssues(value []HealthIssueable)()
+    SetIdentityAccounts(value []IdentityAccountsable)()
     SetSensors(value []Sensorable)()
 }

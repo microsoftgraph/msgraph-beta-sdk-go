@@ -37,9 +37,6 @@ func NewItemItemsItemRestoreRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Post restore a driveItem that has been deleted and is currently in the recycle bin.
 // returns a DriveItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-// [Find more info here]
-// 
-// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-beta
 func (m *ItemItemsItemRestoreRequestBuilder) Post(ctx context.Context, body ItemItemsItemRestorePostRequestBodyable, requestConfiguration *ItemItemsItemRestoreRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DriveItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
