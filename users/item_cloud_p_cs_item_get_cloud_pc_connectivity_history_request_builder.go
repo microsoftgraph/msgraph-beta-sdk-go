@@ -22,9 +22,9 @@ type ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetQueryParamete
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration struct {
@@ -52,6 +52,9 @@ func NewItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder(rawUrl strin
 // Deprecated: This method is obsolete. Use GetAsGetCloudPcConnectivityHistoryGetResponse instead.
 // returns a ItemCloudPCsItemGetCloudPcConnectivityHistoryResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-getcloudpcconnectivityhistory?view=graph-rest-beta
 func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration)(ItemCloudPCsItemGetCloudPcConnectivityHistoryResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +75,9 @@ func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) Get(ctx co
 // GetAsGetCloudPcConnectivityHistoryGetResponse get the connectivity history of a specific Cloud PC.
 // returns a ItemCloudPCsItemGetCloudPcConnectivityHistoryGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-getcloudpcconnectivityhistory?view=graph-rest-beta
 func (m *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilder) GetAsGetCloudPcConnectivityHistoryGetResponse(ctx context.Context, requestConfiguration *ItemCloudPCsItemGetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration)(ItemCloudPCsItemGetCloudPcConnectivityHistoryGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewItemAuthenticationHardwareOathMethodsItemDeactivateRequestBuilder(rawUrl
 }
 // Post deactive a hardware OATH token. It remains assigned to a user.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-deactivate?view=graph-rest-beta
 func (m *ItemAuthenticationHardwareOathMethodsItemDeactivateRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemAuthenticationHardwareOathMethodsItemDeactivateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

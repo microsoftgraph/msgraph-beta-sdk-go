@@ -37,6 +37,9 @@ func NewKeySetsItemUploadSecretRequestBuilder(rawUrl string, requestAdapter i2ae
 // Post upload a plain text secret to a trustFrameworkKeyset. Examples of secrets are application secrets in Microsoft Entra ID, Google, Facebook, or any other identity provider. his method returns trustFrameworkKey.
 // returns a TrustFrameworkKeyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadsecret?view=graph-rest-beta
 func (m *KeySetsItemUploadSecretRequestBuilder) Post(ctx context.Context, body KeySetsItemUploadSecretPostRequestBodyable, requestConfiguration *KeySetsItemUploadSecretRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TrustFrameworkKeyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

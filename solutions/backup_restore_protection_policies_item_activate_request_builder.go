@@ -37,6 +37,9 @@ func NewBackupRestoreProtectionPoliciesItemActivateRequestBuilder(rawUrl string,
 // Post activate a protectionPolicyBase. Currently, only one active backup policy per underlying service is supported (that is, one for OneDrive accounts, one for SharePoint sites, and one for Exchange Online users). You can add or remove artifacts (sites or user accounts) to or from each active policy.
 // returns a ProtectionPolicyBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/protectionpolicybase-activate?view=graph-rest-beta
 func (m *BackupRestoreProtectionPoliciesItemActivateRequestBuilder) Post(ctx context.Context, requestConfiguration *BackupRestoreProtectionPoliciesItemActivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProtectionPolicyBaseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -28,9 +28,9 @@ type ExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilderGetQueryParameters 
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilder(rawUrl string, 
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ExchangeMailboxesItemFoldersItemItemsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailboxitem-delta?view=graph-rest-beta
 func (m *ExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilderGetRequestConfiguration)(ExchangeMailboxesItemFoldersItemItemsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -79,6 +82,9 @@ func (m *ExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilder) Get(ctx conte
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a ExchangeMailboxesItemFoldersItemItemsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailboxitem-delta?view=graph-rest-beta
 func (m *ExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ExchangeMailboxesItemFoldersItemItemsDeltaRequestBuilderGetRequestConfiguration)(ExchangeMailboxesItemFoldersItemItemsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

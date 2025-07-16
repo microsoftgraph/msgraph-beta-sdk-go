@@ -37,6 +37,9 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwar
 // Deprecated: This method is obsolete. Use PostAsForwardToChatPostResponse instead.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatRequestBuilder) Post(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatPostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatRequestBuilderPostRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwa
 // PostAsForwardToChatPostResponse forward a chat message, a channel message, or a channel message reply to a chat.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatRequestBuilder) PostAsForwardToChatPostResponse(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatPostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatRequestBuilderPostRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemMessagesForwardToChatPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

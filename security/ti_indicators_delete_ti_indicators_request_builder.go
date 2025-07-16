@@ -37,6 +37,9 @@ func NewTiIndicatorsDeleteTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
 // Deprecated: This method is obsolete. Use PostAsDeleteTiIndicatorsPostResponse instead.
 // returns a TiIndicatorsDeleteTiIndicatorsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-beta
 func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) Post(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsDeleteTiIndicatorsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -58,6 +61,9 @@ func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) Post(ctx context.Context,
 // Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a TiIndicatorsDeleteTiIndicatorsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicators?view=graph-rest-beta
 func (m *TiIndicatorsDeleteTiIndicatorsRequestBuilder) PostAsDeleteTiIndicatorsPostResponse(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsDeleteTiIndicatorsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

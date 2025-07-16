@@ -35,6 +35,9 @@ func NewItemAuthenticationHardwareOathMethodsAssignAndActivateBySerialNumberRequ
 }
 // Post assign and activate a hardware token at the same time by hardware token serial number.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-assignandactivatebyserialnumber?view=graph-rest-beta
 func (m *ItemAuthenticationHardwareOathMethodsAssignAndActivateBySerialNumberRequestBuilder) Post(ctx context.Context, body ItemAuthenticationHardwareOathMethodsAssignAndActivateBySerialNumberPostRequestBodyable, requestConfiguration *ItemAuthenticationHardwareOathMethodsAssignAndActivateBySerialNumberRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

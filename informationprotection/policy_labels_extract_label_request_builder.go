@@ -38,6 +38,9 @@ func NewPolicyLabelsExtractLabelRequestBuilder(rawUrl string, requestAdapter i2a
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a InformationProtectionContentLabelable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-beta
 func (m *PolicyLabelsExtractLabelRequestBuilder) Post(ctx context.Context, body PolicyLabelsExtractLabelPostRequestBodyable, requestConfiguration *PolicyLabelsExtractLabelRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.InformationProtectionContentLabelable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

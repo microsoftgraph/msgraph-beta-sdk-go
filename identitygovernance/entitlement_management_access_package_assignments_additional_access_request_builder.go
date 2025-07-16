@@ -28,9 +28,9 @@ type EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilder
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewEntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuil
 // Deprecated: This method is obsolete. Use GetAsAdditionalAccessGetResponse instead.
 // returns a EntitlementManagementAccessPackageAssignmentsAdditionalAccessResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-beta
 func (m *EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentsAdditionalAccessResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBui
 // GetAsAdditionalAccessGetResponse in Microsoft Entra Entitlement Management, retrieve a collection of accessPackageAssignment objects that indicate a target user has an assignment to a specified access package and also an assignment to another, potentially incompatible, access package.  It can be used to prepare to configure the incompatible access packages for a specific access package.
 // returns a EntitlementManagementAccessPackageAssignmentsAdditionalAccessGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignment-additionalaccess?view=graph-rest-beta
 func (m *EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilder) GetAsAdditionalAccessGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAccessPackageAssignmentsAdditionalAccessRequestBuilderGetRequestConfiguration)(EntitlementManagementAccessPackageAssignmentsAdditionalAccessGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -28,9 +28,9 @@ type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDel
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlans
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaRequestBuilderGetRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlan
 // GetAsDeltaGetResponse get newly created, updated, or deleted Planner plans in either a group or a Planner roster without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerplan-delta?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaRequestBuilderGetRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelPlannerPlansDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

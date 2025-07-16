@@ -37,6 +37,9 @@ func NewManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantReque
 // Post carries out the appropriate procedures to remove a managed tenant from the multitenant management platform. No relationships, such as commerce and delegate administrative privileges, will be impacted. The only change made by invoking this action is the tenant will be deprovisioned from the multitenant management platform.
 // returns a Tenantable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/managedtenants-tenant-offboardtenant?view=graph-rest-beta
 func (m *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequestBuilder) Post(ctx context.Context, requestConfiguration *ManagedTenantsTenantsItemMicrosoftGraphManagedTenantsOffboardTenantRequestBuilderPostRequestConfiguration)(i72d786f54cc0bb289c971b085dd642b2fc3af6394328682e69783fd7e229b582.Tenantable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

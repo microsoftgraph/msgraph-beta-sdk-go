@@ -22,9 +22,9 @@ type VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderGetRequestConfiguration struct {
@@ -52,6 +52,9 @@ func NewVirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuil
 // Deprecated: This method is obsolete. Use GetAsRetrieveCloudPCRemoteActionResultsGetResponse instead.
 // returns a VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-retrievecloudpcremoteactionresults?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +75,9 @@ func (m *VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBui
 // GetAsRetrieveCloudPCRemoteActionResultsGetResponse retrieve remote action results and check the status of a specific remote action performed on the associated Cloud PC device.
 // returns a VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-retrievecloudpcremoteactionresults?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) GetAsRetrieveCloudPCRemoteActionResultsGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

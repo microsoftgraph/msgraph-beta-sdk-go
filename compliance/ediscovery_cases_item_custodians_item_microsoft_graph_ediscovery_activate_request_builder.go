@@ -36,6 +36,9 @@ func NewEdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateRequest
 // Post activate a custodian that was released from a case. This method makes the custodian part of the case again. For details, see Manage custodians in an Advanced eDiscovery case.
 // Deprecated: The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/ediscovery-custodian-activate?view=graph-rest-beta
 func (m *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateRequestBuilder) Post(ctx context.Context, requestConfiguration *EdiscoveryCasesItemCustodiansItemMicrosoftGraphEdiscoveryActivateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

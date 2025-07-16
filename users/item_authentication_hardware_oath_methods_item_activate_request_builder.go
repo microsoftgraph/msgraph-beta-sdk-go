@@ -35,6 +35,9 @@ func NewItemAuthenticationHardwareOathMethodsItemActivateRequestBuilder(rawUrl s
 }
 // Post activate a hardware OATH token that is already assigned to a user. A user can self-activate their token or an admin can activate for a user.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/hardwareoathauthenticationmethod-activate?view=graph-rest-beta
 func (m *ItemAuthenticationHardwareOathMethodsItemActivateRequestBuilder) Post(ctx context.Context, body ItemAuthenticationHardwareOathMethodsItemActivatePostRequestBodyable, requestConfiguration *ItemAuthenticationHardwareOathMethodsItemActivateRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

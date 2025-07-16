@@ -37,6 +37,9 @@ func NewPartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExport
 // Post export the unbilled invoice reconciliation data for a specific billing period and a given currency.
 // returns a Operationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/partners-billing-unbilledreconciliation-export?view=graph-rest-beta
 func (m *PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportRequestBuilder) Post(ctx context.Context, body PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportExportPostRequestBodyable, requestConfiguration *PartnersBillingReconciliationUnbilledMicrosoftGraphPartnersBillingExportRequestBuilderPostRequestConfiguration)(ibc1d41e06c1155c6505b27a1d0c17b20692636238b0ddb2acdaa2b4548e4f67b.Operationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

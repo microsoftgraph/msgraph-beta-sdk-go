@@ -37,6 +37,9 @@ func NewItemTeamChannelsItemProvisionEmailRequestBuilder(rawUrl string, requestA
 // Post provision an email address for a channel. Microsoft Teams doesn't automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it didn't provisioned one. To remove the email address of a channel, use the removeEmail method.
 // returns a ProvisionChannelEmailResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-provisionemail?view=graph-rest-beta
 func (m *ItemTeamChannelsItemProvisionEmailRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemTeamChannelsItemProvisionEmailRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ProvisionChannelEmailResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

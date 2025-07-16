@@ -114,14 +114,14 @@ func (m *RecommendationBase) GetDisplayName()(*string) {
     return nil
 }
 // GetFeatureAreas gets the featureAreas property value. The directory feature that the recommendation is related to.
-// returns a []string when successful
-func (m *RecommendationBase) GetFeatureAreas()([]string) {
+// returns a []RecommendationFeatureAreas when successful
+func (m *RecommendationBase) GetFeatureAreas()([]RecommendationFeatureAreas) {
     val, err := m.GetBackingStore().Get("featureAreas")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]RecommendationFeatureAreas)
     }
     return nil
 }
@@ -196,15 +196,15 @@ func (m *RecommendationBase) GetFieldDeserializers()(map[string]func(i878a80d233
         return nil
     }
     res["featureAreas"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseRecommendationFeatureAreas)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]RecommendationFeatureAreas, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*RecommendationFeatureAreas))
                 }
             }
             m.SetFeatureAreas(res)
@@ -599,7 +599,7 @@ func (m *RecommendationBase) Serialize(writer i878a80d2330e89d26896388a3f487eef2
         }
     }
     if m.GetFeatureAreas() != nil {
-        err = writer.WriteCollectionOfStringValues("featureAreas", m.GetFeatureAreas())
+        err = writer.WriteCollectionOfStringValues("featureAreas", SerializeRecommendationFeatureAreas(m.GetFeatureAreas()))
         if err != nil {
             return err
         }
@@ -749,7 +749,7 @@ func (m *RecommendationBase) SetDisplayName(value *string)() {
     }
 }
 // SetFeatureAreas sets the featureAreas property value. The directory feature that the recommendation is related to.
-func (m *RecommendationBase) SetFeatureAreas(value []string)() {
+func (m *RecommendationBase) SetFeatureAreas(value []RecommendationFeatureAreas)() {
     err := m.GetBackingStore().Set("featureAreas", value)
     if err != nil {
         panic(err)
@@ -869,7 +869,7 @@ type RecommendationBaseable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetCurrentScore()(*float64)
     GetDisplayName()(*string)
-    GetFeatureAreas()([]string)
+    GetFeatureAreas()([]RecommendationFeatureAreas)
     GetImpactedResources()([]ImpactedResourceable)
     GetImpactStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetImpactType()(*string)
@@ -891,7 +891,7 @@ type RecommendationBaseable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetCurrentScore(value *float64)()
     SetDisplayName(value *string)()
-    SetFeatureAreas(value []string)()
+    SetFeatureAreas(value []RecommendationFeatureAreas)()
     SetImpactedResources(value []ImpactedResourceable)()
     SetImpactStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetImpactType(value *string)()

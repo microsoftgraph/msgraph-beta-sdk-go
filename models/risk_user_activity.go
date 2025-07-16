@@ -56,14 +56,14 @@ func (m *RiskUserActivity) GetDetail()(*RiskDetail) {
     return nil
 }
 // GetEventTypes gets the eventTypes property value. List of risk event types. Deprecated. Use riskEventType instead.
-// returns a []string when successful
-func (m *RiskUserActivity) GetEventTypes()([]string) {
+// returns a []RiskEventType when successful
+func (m *RiskUserActivity) GetEventTypes()([]RiskEventType) {
     val, err := m.GetBackingStore().Get("eventTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]RiskEventType)
     }
     return nil
 }
@@ -82,15 +82,15 @@ func (m *RiskUserActivity) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     res["eventTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseRiskEventType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]RiskEventType, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*RiskEventType))
                 }
             }
             m.SetEventTypes(res)
@@ -159,7 +159,7 @@ func (m *RiskUserActivity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     if m.GetEventTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("eventTypes", m.GetEventTypes())
+        err := writer.WriteCollectionOfStringValues("eventTypes", SerializeRiskEventType(m.GetEventTypes()))
         if err != nil {
             return err
         }
@@ -203,7 +203,7 @@ func (m *RiskUserActivity) SetDetail(value *RiskDetail)() {
     }
 }
 // SetEventTypes sets the eventTypes property value. List of risk event types. Deprecated. Use riskEventType instead.
-func (m *RiskUserActivity) SetEventTypes(value []string)() {
+func (m *RiskUserActivity) SetEventTypes(value []RiskEventType)() {
     err := m.GetBackingStore().Set("eventTypes", value)
     if err != nil {
         panic(err)
@@ -229,12 +229,12 @@ type RiskUserActivityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDetail()(*RiskDetail)
-    GetEventTypes()([]string)
+    GetEventTypes()([]RiskEventType)
     GetOdataType()(*string)
     GetRiskEventTypes()([]string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDetail(value *RiskDetail)()
-    SetEventTypes(value []string)()
+    SetEventTypes(value []RiskEventType)()
     SetOdataType(value *string)()
     SetRiskEventTypes(value []string)()
 }

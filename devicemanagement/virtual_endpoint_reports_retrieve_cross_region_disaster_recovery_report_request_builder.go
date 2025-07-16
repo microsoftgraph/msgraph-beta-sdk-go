@@ -36,6 +36,9 @@ func NewVirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBu
 // Post retrieve the Windows 365 cross-region disaster recovery report, including cloudPcId, userId, deviceId, cloudPCDeviceDisplayName, userPrincipalName, enabledDRType, disasterRecoveryStatus, licenseType, drHealthStatus, currentRestorePointDateTime, backupCloudPcStatus, and activationExpirationDateTime.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-retrievecrossregiondisasterrecoveryreport?view=graph-rest-beta
 func (m *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsRetrieveCrossRegionDisasterRecoveryReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

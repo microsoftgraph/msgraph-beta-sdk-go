@@ -35,6 +35,9 @@ func NewItemEventsItemPermanentDeleteRequestBuilder(rawUrl string, requestAdapte
 }
 // Post permanently delete an event and place it in the Purges folder in the dumpster in the user's mailbox. Email clients such as Outlook or the Outlook on the web can't access permanently deleted items. Unless there's a hold set on the mailbox, the items are permanently deleted after a set period of time. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/event-permanentdelete?view=graph-rest-beta
 func (m *ItemEventsItemPermanentDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemEventsItemPermanentDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -37,6 +37,9 @@ func NewItemFindMeetingTimesRequestBuilder(rawUrl string, requestAdapter i2ae418
 // Post suggest meeting times and locations based on organizer and attendee availability, and time or location constraints specified as parameters. If findMeetingTimes cannot return any meeting suggestions, the response would indicate a reason in the emptySuggestionsReason property.Based on this value, you can better adjust the parameters and call findMeetingTimes again. The algorithm used to suggest meeting times and locations undergoes fine-tuning from time to time. In scenarios like test environments where the input parameters and calendar data remain static, expect that the suggested results may differ over time.
 // returns a MeetingTimeSuggestionsResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-findmeetingtimes?view=graph-rest-beta
 func (m *ItemFindMeetingTimesRequestBuilder) Post(ctx context.Context, body ItemFindMeetingTimesPostRequestBodyable, requestConfiguration *ItemFindMeetingTimesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MeetingTimeSuggestionsResultable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

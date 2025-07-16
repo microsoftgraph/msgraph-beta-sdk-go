@@ -22,9 +22,9 @@ type VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetQueryParameters st
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetRequestConfiguration struct {
@@ -52,6 +52,9 @@ func NewVirtualEndpointRetrieveScopedPermissionsRequestBuilder(rawUrl string, re
 // Deprecated: This method is obsolete. Use GetAsRetrieveScopedPermissionsGetResponse instead.
 // returns a VirtualEndpointRetrieveScopedPermissionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-retrievescopedpermissions?view=graph-rest-beta
 func (m *VirtualEndpointRetrieveScopedPermissionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetRequestConfiguration)(VirtualEndpointRetrieveScopedPermissionsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +75,9 @@ func (m *VirtualEndpointRetrieveScopedPermissionsRequestBuilder) Get(ctx context
 // GetAsRetrieveScopedPermissionsGetResponse get the permissions and corresponding scope IDs for which the authenticated user has access.
 // returns a VirtualEndpointRetrieveScopedPermissionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-retrievescopedpermissions?view=graph-rest-beta
 func (m *VirtualEndpointRetrieveScopedPermissionsRequestBuilder) GetAsRetrieveScopedPermissionsGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointRetrieveScopedPermissionsRequestBuilderGetRequestConfiguration)(VirtualEndpointRetrieveScopedPermissionsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

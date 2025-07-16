@@ -23,14 +23,14 @@ func CreateCallFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487ee
     return NewCall(), nil
 }
 // GetActiveModalities gets the activeModalities property value. The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
-// returns a []string when successful
-func (m *Call) GetActiveModalities()([]string) {
+// returns a []Modality when successful
+func (m *Call) GetActiveModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("activeModalities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]Modality)
     }
     return nil
 }
@@ -147,15 +147,15 @@ func (m *Call) GetDirection()(*CallDirection) {
 func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
     res["activeModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Modality, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*Modality))
                 }
             }
             m.SetActiveModalities(res)
@@ -363,15 +363,15 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["requestedModalities"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseModality)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]Modality, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*Modality))
                 }
             }
             m.SetRequestedModalities(res)
@@ -399,15 +399,15 @@ func (m *Call) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         return nil
     }
     res["routingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseRoutingPolicy)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]RoutingPolicy, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*RoutingPolicy))
                 }
             }
             m.SetRoutingPolicies(res)
@@ -599,14 +599,14 @@ func (m *Call) GetParticipants()([]Participantable) {
     return nil
 }
 // GetRequestedModalities gets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
-// returns a []string when successful
-func (m *Call) GetRequestedModalities()([]string) {
+// returns a []Modality when successful
+func (m *Call) GetRequestedModalities()([]Modality) {
     val, err := m.GetBackingStore().Get("requestedModalities")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]Modality)
     }
     return nil
 }
@@ -635,14 +635,14 @@ func (m *Call) GetRingingTimeoutInSeconds()(*int32) {
     return nil
 }
 // GetRoutingPolicies gets the routingPolicies property value. This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.
-// returns a []string when successful
-func (m *Call) GetRoutingPolicies()([]string) {
+// returns a []RoutingPolicy when successful
+func (m *Call) GetRoutingPolicies()([]RoutingPolicy) {
     val, err := m.GetBackingStore().Get("routingPolicies")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]RoutingPolicy)
     }
     return nil
 }
@@ -749,7 +749,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         return err
     }
     if m.GetActiveModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("activeModalities", m.GetActiveModalities())
+        err = writer.WriteCollectionOfStringValues("activeModalities", SerializeModality(m.GetActiveModalities()))
         if err != nil {
             return err
         }
@@ -888,7 +888,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     if m.GetRequestedModalities() != nil {
-        err = writer.WriteCollectionOfStringValues("requestedModalities", m.GetRequestedModalities())
+        err = writer.WriteCollectionOfStringValues("requestedModalities", SerializeModality(m.GetRequestedModalities()))
         if err != nil {
             return err
         }
@@ -906,7 +906,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     if m.GetRoutingPolicies() != nil {
-        err = writer.WriteCollectionOfStringValues("routingPolicies", m.GetRoutingPolicies())
+        err = writer.WriteCollectionOfStringValues("routingPolicies", SerializeRoutingPolicy(m.GetRoutingPolicies()))
         if err != nil {
             return err
         }
@@ -969,7 +969,7 @@ func (m *Call) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
     return nil
 }
 // SetActiveModalities sets the activeModalities property value. The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.
-func (m *Call) SetActiveModalities(value []string)() {
+func (m *Call) SetActiveModalities(value []Modality)() {
     err := m.GetBackingStore().Set("activeModalities", value)
     if err != nil {
         panic(err)
@@ -1095,7 +1095,7 @@ func (m *Call) SetParticipants(value []Participantable)() {
     }
 }
 // SetRequestedModalities sets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
-func (m *Call) SetRequestedModalities(value []string)() {
+func (m *Call) SetRequestedModalities(value []Modality)() {
     err := m.GetBackingStore().Set("requestedModalities", value)
     if err != nil {
         panic(err)
@@ -1116,7 +1116,7 @@ func (m *Call) SetRingingTimeoutInSeconds(value *int32)() {
     }
 }
 // SetRoutingPolicies sets the routingPolicies property value. This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.
-func (m *Call) SetRoutingPolicies(value []string)() {
+func (m *Call) SetRoutingPolicies(value []RoutingPolicy)() {
     err := m.GetBackingStore().Set("routingPolicies", value)
     if err != nil {
         panic(err)
@@ -1181,7 +1181,7 @@ func (m *Call) SetTranscription(value CallTranscriptionInfoable)() {
 type Callable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetActiveModalities()([]string)
+    GetActiveModalities()([]Modality)
     GetAnsweredBy()(ParticipantInfoable)
     GetAudioRoutingGroups()([]AudioRoutingGroupable)
     GetCallbackUri()(*string)
@@ -1199,10 +1199,10 @@ type Callable interface {
     GetMyParticipantId()(*string)
     GetOperations()([]CommsOperationable)
     GetParticipants()([]Participantable)
-    GetRequestedModalities()([]string)
+    GetRequestedModalities()([]Modality)
     GetResultInfo()(ResultInfoable)
     GetRingingTimeoutInSeconds()(*int32)
-    GetRoutingPolicies()([]string)
+    GetRoutingPolicies()([]RoutingPolicy)
     GetSource()(ParticipantInfoable)
     GetState()(*CallState)
     GetSubject()(*string)
@@ -1211,7 +1211,7 @@ type Callable interface {
     GetTerminationReason()(*string)
     GetToneInfo()(ToneInfoable)
     GetTranscription()(CallTranscriptionInfoable)
-    SetActiveModalities(value []string)()
+    SetActiveModalities(value []Modality)()
     SetAnsweredBy(value ParticipantInfoable)()
     SetAudioRoutingGroups(value []AudioRoutingGroupable)()
     SetCallbackUri(value *string)()
@@ -1229,10 +1229,10 @@ type Callable interface {
     SetMyParticipantId(value *string)()
     SetOperations(value []CommsOperationable)()
     SetParticipants(value []Participantable)()
-    SetRequestedModalities(value []string)()
+    SetRequestedModalities(value []Modality)()
     SetResultInfo(value ResultInfoable)()
     SetRingingTimeoutInSeconds(value *int32)()
-    SetRoutingPolicies(value []string)()
+    SetRoutingPolicies(value []RoutingPolicy)()
     SetSource(value ParticipantInfoable)()
     SetState(value *CallState)()
     SetSubject(value *string)()

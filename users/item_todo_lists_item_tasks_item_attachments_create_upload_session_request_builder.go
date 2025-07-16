@@ -37,6 +37,9 @@ func NewItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilder(r
 // Post create an upload session to iteratively upload ranges of a file as an attachment to a todoTask. As part of the response, this action returns an upload URL that you can use in subsequent sequential PUT queries. The request headers for each PUT operation let you specify the exact range of bytes to be uploaded. This allows the transfer to be resumed, in case the network connection is dropped during the upload. The following are the steps to attach a file to a Microsoft To Do task using an upload session: For an example that describes the end-to-end attachment process, see attach files to a To Do task.
 // returns a UploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/taskfileattachment-createuploadsession?view=graph-rest-beta
 func (m *ItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilder) Post(ctx context.Context, body ItemTodoListsItemTasksItemAttachmentsCreateUploadSessionPostRequestBodyable, requestConfiguration *ItemTodoListsItemTasksItemAttachmentsCreateUploadSessionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

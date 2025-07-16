@@ -37,6 +37,9 @@ func NewItemInvalidateAllRefreshTokensRequestBuilder(rawUrl string, requestAdapt
 // Deprecated: This method is obsolete. Use PostAsInvalidateAllRefreshTokensPostResponse instead.
 // returns a ItemInvalidateAllRefreshTokensResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta
 func (m *ItemInvalidateAllRefreshTokensRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemInvalidateAllRefreshTokensRequestBuilderPostRequestConfiguration)(ItemInvalidateAllRefreshTokensResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ItemInvalidateAllRefreshTokensRequestBuilder) Post(ctx context.Context,
 // PostAsInvalidateAllRefreshTokensPostResponse invalidates all of the user's refresh tokens issued to applications and session cookies in a user's browser, by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation would prevent access to any of the organization's data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application receives an error. If this happens, the application needs to acquire a new refresh token by making a request to the OAuth 2.0 /authorize endpoint, which forces the user to sign in.
 // returns a ItemInvalidateAllRefreshTokensPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta
 func (m *ItemInvalidateAllRefreshTokensRequestBuilder) PostAsInvalidateAllRefreshTokensPostResponse(ctx context.Context, requestConfiguration *ItemInvalidateAllRefreshTokensRequestBuilderPostRequestConfiguration)(ItemInvalidateAllRefreshTokensPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

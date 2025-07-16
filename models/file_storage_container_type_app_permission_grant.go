@@ -51,14 +51,14 @@ func (m *FileStorageContainerTypeAppPermissionGrant) GetAppId()(*string) {
     return nil
 }
 // GetApplicationPermissions gets the applicationPermissions property value. The applicationPermissions property
-// returns a []string when successful
-func (m *FileStorageContainerTypeAppPermissionGrant) GetApplicationPermissions()([]string) {
+// returns a []FileStorageContainerTypeAppPermission when successful
+func (m *FileStorageContainerTypeAppPermissionGrant) GetApplicationPermissions()([]FileStorageContainerTypeAppPermission) {
     val, err := m.GetBackingStore().Get("applicationPermissions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]FileStorageContainerTypeAppPermission)
     }
     return nil
 }
@@ -68,14 +68,14 @@ func (m *FileStorageContainerTypeAppPermissionGrant) GetBackingStore()(ie8677ce2
     return m.backingStore
 }
 // GetDelegatedPermissions gets the delegatedPermissions property value. The delegatedPermissions property
-// returns a []string when successful
-func (m *FileStorageContainerTypeAppPermissionGrant) GetDelegatedPermissions()([]string) {
+// returns a []FileStorageContainerTypeAppPermission when successful
+func (m *FileStorageContainerTypeAppPermissionGrant) GetDelegatedPermissions()([]FileStorageContainerTypeAppPermission) {
     val, err := m.GetBackingStore().Get("delegatedPermissions")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]FileStorageContainerTypeAppPermission)
     }
     return nil
 }
@@ -94,15 +94,15 @@ func (m *FileStorageContainerTypeAppPermissionGrant) GetFieldDeserializers()(map
         return nil
     }
     res["applicationPermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseFileStorageContainerTypeAppPermission)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]FileStorageContainerTypeAppPermission, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*FileStorageContainerTypeAppPermission))
                 }
             }
             m.SetApplicationPermissions(res)
@@ -110,15 +110,15 @@ func (m *FileStorageContainerTypeAppPermissionGrant) GetFieldDeserializers()(map
         return nil
     }
     res["delegatedPermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseFileStorageContainerTypeAppPermission)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]FileStorageContainerTypeAppPermission, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*FileStorageContainerTypeAppPermission))
                 }
             }
             m.SetDelegatedPermissions(res)
@@ -158,13 +158,13 @@ func (m *FileStorageContainerTypeAppPermissionGrant) Serialize(writer i878a80d23
         }
     }
     if m.GetApplicationPermissions() != nil {
-        err := writer.WriteCollectionOfStringValues("applicationPermissions", m.GetApplicationPermissions())
+        err := writer.WriteCollectionOfStringValues("applicationPermissions", SerializeFileStorageContainerTypeAppPermission(m.GetApplicationPermissions()))
         if err != nil {
             return err
         }
     }
     if m.GetDelegatedPermissions() != nil {
-        err := writer.WriteCollectionOfStringValues("delegatedPermissions", m.GetDelegatedPermissions())
+        err := writer.WriteCollectionOfStringValues("delegatedPermissions", SerializeFileStorageContainerTypeAppPermission(m.GetDelegatedPermissions()))
         if err != nil {
             return err
         }
@@ -198,7 +198,7 @@ func (m *FileStorageContainerTypeAppPermissionGrant) SetAppId(value *string)() {
     }
 }
 // SetApplicationPermissions sets the applicationPermissions property value. The applicationPermissions property
-func (m *FileStorageContainerTypeAppPermissionGrant) SetApplicationPermissions(value []string)() {
+func (m *FileStorageContainerTypeAppPermissionGrant) SetApplicationPermissions(value []FileStorageContainerTypeAppPermission)() {
     err := m.GetBackingStore().Set("applicationPermissions", value)
     if err != nil {
         panic(err)
@@ -209,7 +209,7 @@ func (m *FileStorageContainerTypeAppPermissionGrant) SetBackingStore(value ie867
     m.backingStore = value
 }
 // SetDelegatedPermissions sets the delegatedPermissions property value. The delegatedPermissions property
-func (m *FileStorageContainerTypeAppPermissionGrant) SetDelegatedPermissions(value []string)() {
+func (m *FileStorageContainerTypeAppPermissionGrant) SetDelegatedPermissions(value []FileStorageContainerTypeAppPermission)() {
     err := m.GetBackingStore().Set("delegatedPermissions", value)
     if err != nil {
         panic(err)
@@ -227,13 +227,13 @@ type FileStorageContainerTypeAppPermissionGrantable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppId()(*string)
-    GetApplicationPermissions()([]string)
+    GetApplicationPermissions()([]FileStorageContainerTypeAppPermission)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetDelegatedPermissions()([]string)
+    GetDelegatedPermissions()([]FileStorageContainerTypeAppPermission)
     GetOdataType()(*string)
     SetAppId(value *string)()
-    SetApplicationPermissions(value []string)()
+    SetApplicationPermissions(value []FileStorageContainerTypeAppPermission)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetDelegatedPermissions(value []string)()
+    SetDelegatedPermissions(value []FileStorageContainerTypeAppPermission)()
     SetOdataType(value *string)()
 }

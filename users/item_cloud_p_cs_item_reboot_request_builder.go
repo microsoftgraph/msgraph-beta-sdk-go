@@ -35,6 +35,9 @@ func NewItemCloudPCsItemRebootRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Post reboot a specific Cloud PC.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-beta
 func (m *ItemCloudPCsItemRebootRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCloudPCsItemRebootRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

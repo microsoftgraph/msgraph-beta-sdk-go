@@ -35,6 +35,9 @@ func NewItemCloudPCsItemStartRequestBuilder(rawUrl string, requestAdapter i2ae41
 }
 // Post start a specific Cloud PC. Currently, only Windows 365 Frontline Cloud PCs are supported.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-start?view=graph-rest-beta
 func (m *ItemCloudPCsItemStartRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemCloudPCsItemStartRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

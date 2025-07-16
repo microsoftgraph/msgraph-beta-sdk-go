@@ -35,6 +35,9 @@ func NewItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder(rawU
 }
 // Post permanently delete a contact folder and remove its items from the user's mailbox. For more information about item retention, see Configure Deleted Item retention and Recoverable Items quotas.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contactfolder-permanentdelete?view=graph-rest-beta
 func (m *ItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemContactFoldersItemChildFoldersItemPermanentDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

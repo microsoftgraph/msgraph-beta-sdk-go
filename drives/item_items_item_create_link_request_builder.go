@@ -37,6 +37,9 @@ func NewItemItemsItemCreateLinkRequestBuilder(rawUrl string, requestAdapter i2ae
 // Post create a link to share a driveItem driveItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.If a sharing link of the specified type already exists for the app, the existing sharing link is returned. DriveItem resources inherit sharing permissions from their ancestors.
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-beta
 func (m *ItemItemsItemCreateLinkRequestBuilder) Post(ctx context.Context, body ItemItemsItemCreateLinkPostRequestBodyable, requestConfiguration *ItemItemsItemCreateLinkRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -37,6 +37,9 @@ func NewItemMessagesItemMarkAsNotJunkRequestBuilder(rawUrl string, requestAdapte
 // Post mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.
 // returns a Messageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta
 func (m *ItemMessagesItemMarkAsNotJunkRequestBuilder) Post(ctx context.Context, body ItemMessagesItemMarkAsNotJunkPostRequestBodyable, requestConfiguration *ItemMessagesItemMarkAsNotJunkRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
