@@ -35,6 +35,9 @@ func NewItemUpdatePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, r
 }
 // Post update single sign-on credentials using a password for a user or group.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-updatepasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemUpdatePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, body ItemUpdatePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemUpdatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

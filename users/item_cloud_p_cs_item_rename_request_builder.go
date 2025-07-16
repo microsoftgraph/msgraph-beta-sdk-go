@@ -35,6 +35,9 @@ func NewItemCloudPCsItemRenameRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Post rename a specific Cloud PC. Use this API to update the displayName for the Cloud PC entity.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-beta
 func (m *ItemCloudPCsItemRenameRequestBuilder) Post(ctx context.Context, body ItemCloudPCsItemRenamePostRequestBodyable, requestConfiguration *ItemCloudPCsItemRenameRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

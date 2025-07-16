@@ -35,6 +35,9 @@ func NewItemSitesItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilde
 }
 // Post invoke action associateWithHubSites
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-beta
 func (m *ItemSitesItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilder) Post(ctx context.Context, body ItemSitesItemListsItemContentTypesItemAssociateWithHubSitesPostRequestBodyable, requestConfiguration *ItemSitesItemListsItemContentTypesItemAssociateWithHubSitesRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

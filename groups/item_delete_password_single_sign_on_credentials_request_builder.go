@@ -35,6 +35,9 @@ func NewItemDeletePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, r
 }
 // Post delete the password-based single sign-on credentials for a given group to a given service principal.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-deletepasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemDeletePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, body ItemDeletePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemDeletePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -37,6 +37,9 @@ func NewItemInformationProtectionPolicyLabelsEvaluateClassificationResultsReques
 // Deprecated: This method is obsolete. Use PostAsEvaluateClassificationResultsPostResponse instead.
 // returns a ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-beta
 func (m *ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilder) Post(ctx context.Context, body ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsPostRequestBodyable, requestConfiguration *ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilderPostRequestConfiguration)(ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -58,6 +61,9 @@ func (m *ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsReque
 // Deprecated: This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15
 // returns a ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-beta
 func (m *ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilder) PostAsEvaluateClassificationResultsPostResponse(ctx context.Context, body ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsPostRequestBodyable, requestConfiguration *ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsRequestBuilderPostRequestConfiguration)(ItemInformationProtectionPolicyLabelsEvaluateClassificationResultsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

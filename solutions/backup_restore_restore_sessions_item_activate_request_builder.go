@@ -37,6 +37,9 @@ func NewBackupRestoreRestoreSessionsItemActivateRequestBuilder(rawUrl string, re
 // Post activate a draft restoreSessionBase object to restore a protection unit. The following points apply to restoring a protection unit:
 // returns a RestoreSessionBaseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/restoresessionbase-activate?view=graph-rest-beta
 func (m *BackupRestoreRestoreSessionsItemActivateRequestBuilder) Post(ctx context.Context, requestConfiguration *BackupRestoreRestoreSessionsItemActivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.RestoreSessionBaseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -37,6 +37,9 @@ func NewItemItemsItemWorkbookWorksheetsItemTablesItemRowsAddRequestBuilder(rawUr
 // Post adds rows to the end of the table. Note that the API can accept multiple rows data using this API. Adding one row at a time could lead to performance degradation. The recommended approach would be to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform single rows add operation. Experiment with the number of rows to determine the ideal number of rows to use in single API call. 
 // returns a WorkbookTableRowable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablerowcollection-add?view=graph-rest-beta
 func (m *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsAddRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemTablesItemRowsAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemTablesItemRowsAddRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableRowable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

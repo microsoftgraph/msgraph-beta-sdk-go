@@ -14,7 +14,7 @@ import (
 type MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilderGetQueryParameters the set of direct relationships for this app.
+// MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilderGetQueryParameters list of relationships for this mobile app.
 type MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -29,9 +29,9 @@ type MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilderGetQueryParam
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilderGetRequestConfiguration struct {
@@ -79,7 +79,7 @@ func NewMobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilder(rawUrl st
 func (m *MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilder) Count()(*MobileAppsItemGraphWindowsMobileMSIRelationshipsCountRequestBuilder) {
     return NewMobileAppsItemGraphWindowsMobileMSIRelationshipsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the set of direct relationships for this app.
+// Get list of relationships for this mobile app.
 // returns a MobileAppRelationshipCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilder) Post(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable), nil
 }
-// ToGetRequestInformation the set of direct relationships for this app.
+// ToGetRequestInformation list of relationships for this mobile app.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsMobileMSIRelationshipsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

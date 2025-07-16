@@ -28,9 +28,9 @@ type GetShiftsRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // GetShiftsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type GetShiftsRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewGetShiftsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2633
 // Deprecated: This method is obsolete. Use GetAsGetShiftsGetResponse instead.
 // returns a GetShiftsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta
 func (m *GetShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration *GetShiftsRequestBuilderGetRequestConfiguration)(GetShiftsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *GetShiftsRequestBuilder) Get(ctx context.Context, requestConfiguration 
 // GetAsGetShiftsGetResponse get all shift objects across all teams to which a user is a direct member.
 // returns a GetShiftsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta
 func (m *GetShiftsRequestBuilder) GetAsGetShiftsGetResponse(ctx context.Context, requestConfiguration *GetShiftsRequestBuilderGetRequestConfiguration)(GetShiftsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

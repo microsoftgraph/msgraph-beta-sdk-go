@@ -37,6 +37,9 @@ func NewItemSitesItemListsItemItemsItemCreateLinkRequestBuilder(rawUrl string, r
 // Post create a sharing link for a listItem. The createLink action creates a new sharing link if the specified link type doesn't already exist for the calling application.If a sharing link of the specified type already exists for the app, this action returns the existing sharing link. listItem resources inherit sharing permissions from the list the item resides in.
 // returns a Permissionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/listitem-createlink?view=graph-rest-beta
 func (m *ItemSitesItemListsItemItemsItemCreateLinkRequestBuilder) Post(ctx context.Context, body ItemSitesItemListsItemItemsItemCreateLinkPostRequestBodyable, requestConfiguration *ItemSitesItemListsItemItemsItemCreateLinkRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Permissionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

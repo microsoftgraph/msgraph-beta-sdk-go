@@ -37,6 +37,9 @@ func NewRecommendationsItemReactivateRequestBuilder(rawUrl string, requestAdapte
 // Post reactivate a completed, dismissed, or postponed recommendation object. This action updates the status of the recommendation to active. This method only works when the status of the recommendation is completedByUser, dismissed, or postponed.
 // returns a Recommendationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/recommendation-reactivate?view=graph-rest-beta
 func (m *RecommendationsItemReactivateRequestBuilder) Post(ctx context.Context, requestConfiguration *RecommendationsItemReactivateRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -37,6 +37,9 @@ func NewVirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder(rawUrl s
 // Deprecated: Starting from December 31, 2024, this API (&apos;getCloudPcPerformanceReport&apos;) will be deprecated and no longer supported. Please use the retrieveCloudPcTenantMetricsReport API. as of 2024-09/getCloudPcPerformanceReport on 2024-09-10 and will be removed 2024-12-31
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getcloudpcperformancereport?view=graph-rest-beta
 func (m *VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetCloudPcPerformanceReportPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetCloudPcPerformanceReportRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

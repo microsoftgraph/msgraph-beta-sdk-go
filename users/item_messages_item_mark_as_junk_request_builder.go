@@ -37,6 +37,9 @@ func NewItemMessagesItemMarkAsJunkRequestBuilder(rawUrl string, requestAdapter i
 // Post mark a message as junk. This API adds the sender to the list of blocked senders and moves the message to the Junk Email folder, when moveToJunk is true.
 // returns a Messageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/message-markasjunk?view=graph-rest-beta
 func (m *ItemMessagesItemMarkAsJunkRequestBuilder) Post(ctx context.Context, body ItemMessagesItemMarkAsJunkPostRequestBodyable, requestConfiguration *ItemMessagesItemMarkAsJunkRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

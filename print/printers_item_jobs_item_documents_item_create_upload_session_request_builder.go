@@ -37,6 +37,9 @@ func NewPrintersItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder(rawUr
 // Post create an upload session that allows an app to iteratively upload ranges of a binary file linked to the print document. As part of the response, this action returns an upload URL that can be used in subsequent sequential PUT queries. Request headers for each PUT operation can be used to specify the exact range of bytes to be uploaded. This allows transfer to be resumed, in case the network connection is dropped during upload. 
 // returns a UploadSessionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printdocument-createuploadsession?view=graph-rest-beta
 func (m *PrintersItemJobsItemDocumentsItemCreateUploadSessionRequestBuilder) Post(ctx context.Context, body PrintersItemJobsItemDocumentsItemCreateUploadSessionPostRequestBodyable, requestConfiguration *PrintersItemJobsItemDocumentsItemCreateUploadSessionRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UploadSessionable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -28,9 +28,9 @@ type ItemCalendarsDeltaRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemCalendarsDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCalendarsDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewItemCalendarsDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemCalendarsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-delta?view=graph-rest-beta
 func (m *ItemCalendarsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCalendarsDeltaRequestBuilderGetRequestConfiguration)(ItemCalendarsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *ItemCalendarsDeltaRequestBuilder) Get(ctx context.Context, requestConfi
 // GetAsDeltaGetResponse typically, synchronizing calendars in a mailbox in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). Using deltas allows you to incrementally maintain and synchronize a local store of calendars in the specified mailbox.
 // returns a ItemCalendarsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/calendar-delta?view=graph-rest-beta
 func (m *ItemCalendarsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemCalendarsDeltaRequestBuilderGetRequestConfiguration)(ItemCalendarsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -37,6 +37,9 @@ func NewItemItemsItemWorkbookWorksheetsItemNamesAddRequestBuilder(rawUrl string,
 // Post adds a new name to the collection of the given scope using the user's locale for the formula.
 // returns a WorkbookNamedItemable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/nameditem-add?view=graph-rest-beta
 func (m *ItemItemsItemWorkbookWorksheetsItemNamesAddRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookWorksheetsItemNamesAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookWorksheetsItemNamesAddRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookNamedItemable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

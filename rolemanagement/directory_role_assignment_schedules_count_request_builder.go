@@ -44,9 +44,9 @@ func NewDirectoryRoleAssignmentSchedulesCountRequestBuilder(rawUrl string, reque
 }
 // Get get the number of the resource
 // Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01
-// returns a *int64 when successful
+// returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *DirectoryRoleAssignmentSchedulesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentSchedulesCountRequestBuilderGetRequestConfiguration)(*int64, error) {
+func (m *DirectoryRoleAssignmentSchedulesCountRequestBuilder) Get(ctx context.Context, requestConfiguration *DirectoryRoleAssignmentSchedulesCountRequestBuilderGetRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -54,14 +54,14 @@ func (m *DirectoryRoleAssignmentSchedulesCountRequestBuilder) Get(ctx context.Co
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int64", errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "int32", errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(*int64), nil
+    return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
 // Deprecated: This version is being deprecated and is scheduled for removal on 2025-12-01.Please migrate to the latest version before the removal date. as of 2025-01/PrivatePreview:microsoft.applicationAuthorization on 2025-01-01 and will be removed 2025-12-01

@@ -35,6 +35,9 @@ func NewItemCloudPCsItemRestoreRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Post restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-beta
 func (m *ItemCloudPCsItemRestoreRequestBuilder) Post(ctx context.Context, body ItemCloudPCsItemRestorePostRequestBodyable, requestConfiguration *ItemCloudPCsItemRestoreRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

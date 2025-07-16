@@ -37,6 +37,9 @@ func NewItemGroupLifecyclePoliciesRenewGroupRequestBuilder(rawUrl string, reques
 // Deprecated: This method is obsolete. Use PostAsRenewGroupPostResponse instead.
 // returns a ItemGroupLifecyclePoliciesRenewGroupResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-beta
 func (m *ItemGroupLifecyclePoliciesRenewGroupRequestBuilder) Post(ctx context.Context, body ItemGroupLifecyclePoliciesRenewGroupPostRequestBodyable, requestConfiguration *ItemGroupLifecyclePoliciesRenewGroupRequestBuilderPostRequestConfiguration)(ItemGroupLifecyclePoliciesRenewGroupResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ItemGroupLifecyclePoliciesRenewGroupRequestBuilder) Post(ctx context.Co
 // PostAsRenewGroupPostResponse renew a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
 // returns a ItemGroupLifecyclePoliciesRenewGroupPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-beta
 func (m *ItemGroupLifecyclePoliciesRenewGroupRequestBuilder) PostAsRenewGroupPostResponse(ctx context.Context, body ItemGroupLifecyclePoliciesRenewGroupPostRequestBodyable, requestConfiguration *ItemGroupLifecyclePoliciesRenewGroupRequestBuilderPostRequestConfiguration)(ItemGroupLifecyclePoliciesRenewGroupPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

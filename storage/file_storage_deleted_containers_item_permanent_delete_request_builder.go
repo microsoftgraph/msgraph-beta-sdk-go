@@ -35,6 +35,9 @@ func NewFileStorageDeletedContainersItemPermanentDeleteRequestBuilder(rawUrl str
 }
 // Post permanently delete a fileStorageContainer object. Deleting a file storage container with this method permanently removes it. It isn't sent to the deleted container collection. Therefore, it can't be restored later.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestoragecontainer-permanentdelete?view=graph-rest-beta
 func (m *FileStorageDeletedContainersItemPermanentDeleteRequestBuilder) Post(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemPermanentDeleteRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

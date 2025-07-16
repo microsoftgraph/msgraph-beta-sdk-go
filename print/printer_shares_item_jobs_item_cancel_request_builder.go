@@ -36,6 +36,9 @@ func NewPrinterSharesItemJobsItemCancelRequestBuilder(rawUrl string, requestAdap
 // Post cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
 // Deprecated: The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-beta
 func (m *PrinterSharesItemJobsItemCancelRequestBuilder) Post(ctx context.Context, requestConfiguration *PrinterSharesItemJobsItemCancelRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

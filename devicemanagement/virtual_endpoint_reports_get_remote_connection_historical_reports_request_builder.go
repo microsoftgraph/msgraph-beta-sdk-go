@@ -36,6 +36,9 @@ func NewVirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder
 // Post get the remote connection history records of a Cloud PC during a given period. This report contains data such as signInDateTime, signOutDateTime, usageInHour, remoteSignInTimeInSec and roundTripTimeInMsP50, and so on. This data is aggregated hourly for a specified time period, such as the last seven days.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-getremoteconnectionhistoricalreports?view=graph-rest-beta
 func (m *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsGetRemoteConnectionHistoricalReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetRemoteConnectionHistoricalReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewItemSitesItemGetByPathWithPathArchiveRequestBuilder(rawUrl string, reque
 }
 // Post archive an active SharePoint site.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/site-archive?view=graph-rest-beta
 func (m *ItemSitesItemGetByPathWithPathArchiveRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemSitesItemGetByPathWithPathArchiveRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

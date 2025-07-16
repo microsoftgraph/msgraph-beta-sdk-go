@@ -145,15 +145,15 @@ func (m *LogonUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         return nil
     }
     res["logonTypes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseLogonType)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]LogonType, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*LogonType))
                 }
             }
             m.SetLogonTypes(res)
@@ -209,14 +209,14 @@ func (m *LogonUser) GetLogonId()(*string) {
     return nil
 }
 // GetLogonTypes gets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-// returns a []string when successful
-func (m *LogonUser) GetLogonTypes()([]string) {
+// returns a []LogonType when successful
+func (m *LogonUser) GetLogonTypes()([]LogonType) {
     val, err := m.GetBackingStore().Get("logonTypes")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]LogonType)
     }
     return nil
 }
@@ -272,7 +272,7 @@ func (m *LogonUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     if m.GetLogonTypes() != nil {
-        err := writer.WriteCollectionOfStringValues("logonTypes", m.GetLogonTypes())
+        err := writer.WriteCollectionOfStringValues("logonTypes", SerializeLogonType(m.GetLogonTypes()))
         if err != nil {
             return err
         }
@@ -345,7 +345,7 @@ func (m *LogonUser) SetLogonId(value *string)() {
     }
 }
 // SetLogonTypes sets the logonTypes property value. Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-func (m *LogonUser) SetLogonTypes(value []string)() {
+func (m *LogonUser) SetLogonTypes(value []LogonType)() {
     err := m.GetBackingStore().Set("logonTypes", value)
     if err != nil {
         panic(err)
@@ -369,7 +369,7 @@ type LogonUserable interface {
     GetFirstSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLogonId()(*string)
-    GetLogonTypes()([]string)
+    GetLogonTypes()([]LogonType)
     GetOdataType()(*string)
     SetAccountDomain(value *string)()
     SetAccountName(value *string)()
@@ -378,6 +378,6 @@ type LogonUserable interface {
     SetFirstSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLogonId(value *string)()
-    SetLogonTypes(value []string)()
+    SetLogonTypes(value []LogonType)()
     SetOdataType(value *string)()
 }

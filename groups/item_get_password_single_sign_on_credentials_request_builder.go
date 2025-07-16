@@ -37,6 +37,9 @@ func NewItemGetPasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, requ
 // Deprecated: This method is obsolete. Use PostAsGetPasswordSingleSignOnCredentialsPostResponse instead.
 // returns a ItemGetPasswordSingleSignOnCredentialsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-getpasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ItemGetPasswordSingleSignOnCredentialsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.
 // PostAsGetPasswordSingleSignOnCredentialsPostResponse get the list of password-based single sign-on credentials for a group. This API returns the encrypted passwords as null.
 // returns a ItemGetPasswordSingleSignOnCredentialsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/group-getpasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemGetPasswordSingleSignOnCredentialsRequestBuilder) PostAsGetPasswordSingleSignOnCredentialsPostResponse(ctx context.Context, requestConfiguration *ItemGetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ItemGetPasswordSingleSignOnCredentialsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

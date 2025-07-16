@@ -22,9 +22,9 @@ type VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetQueryParameters st
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetRequestConfiguration struct {
@@ -52,6 +52,9 @@ func NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilder(rawUrl string, re
 // Deprecated: This method is obsolete. Use GetAsGetSubscriptionsGetResponse instead.
 // returns a VirtualEndpointSnapshotsGetSubscriptionsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcsnapshot-getsubscriptions?view=graph-rest-beta
 func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetRequestConfiguration)(VirtualEndpointSnapshotsGetSubscriptionsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +75,9 @@ func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) Get(ctx context
 // GetAsGetSubscriptionsGetResponse list all subscriptions cloudPcSubscription that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
 // returns a VirtualEndpointSnapshotsGetSubscriptionsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcsnapshot-getsubscriptions?view=graph-rest-beta
 func (m *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) GetAsGetSubscriptionsGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointSnapshotsGetSubscriptionsRequestBuilderGetRequestConfiguration)(VirtualEndpointSnapshotsGetSubscriptionsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
