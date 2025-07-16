@@ -4,6 +4,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -23,11 +24,297 @@ func NewHardwareConfigurationRunSummary()(*HardwareConfigurationRunSummary) {
 func CreateHardwareConfigurationRunSummaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewHardwareConfigurationRunSummary(), nil
 }
+// GetErrorDeviceCount gets the errorDeviceCount property value. Number of devices for which hardware configuration state is error
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetErrorDeviceCount()(*int32) {
+    val, err := m.GetBackingStore().Get("errorDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetErrorUserCount gets the errorUserCount property value. Number of users for which hardware configuration state is error
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetErrorUserCount()(*int32) {
+    val, err := m.GetBackingStore().Get("errorUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetFailedDeviceCount gets the failedDeviceCount property value. Number of devices for which hardware configuration found an issue
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetFailedDeviceCount()(*int32) {
+    val, err := m.GetBackingStore().Get("failedDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetFailedUserCount gets the failedUserCount property value. Number of users for which hardware configuration found an issue
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetFailedUserCount()(*int32) {
+    val, err := m.GetBackingStore().Get("failedUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *HardwareConfigurationRunSummary) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["errorDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetErrorDeviceCount(val)
+        }
+        return nil
+    }
+    res["errorUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetErrorUserCount(val)
+        }
+        return nil
+    }
+    res["failedDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFailedDeviceCount(val)
+        }
+        return nil
+    }
+    res["failedUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetFailedUserCount(val)
+        }
+        return nil
+    }
+    res["lastRunDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastRunDateTime(val)
+        }
+        return nil
+    }
+    res["notApplicableDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNotApplicableDeviceCount(val)
+        }
+        return nil
+    }
+    res["notApplicableUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetNotApplicableUserCount(val)
+        }
+        return nil
+    }
+    res["pendingDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPendingDeviceCount(val)
+        }
+        return nil
+    }
+    res["pendingUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPendingUserCount(val)
+        }
+        return nil
+    }
+    res["successfulDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSuccessfulDeviceCount(val)
+        }
+        return nil
+    }
+    res["successfulUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSuccessfulUserCount(val)
+        }
+        return nil
+    }
+    res["unknownDeviceCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnknownDeviceCount(val)
+        }
+        return nil
+    }
+    res["unknownUserCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUnknownUserCount(val)
+        }
+        return nil
+    }
     return res
+}
+// GetLastRunDateTime gets the lastRunDateTime property value. Last run time for the configuration across all devices
+// returns a *Time when successful
+func (m *HardwareConfigurationRunSummary) GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastRunDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetNotApplicableDeviceCount gets the notApplicableDeviceCount property value. Number of devices for which hardware configuration state is not applicable
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetNotApplicableDeviceCount()(*int32) {
+    val, err := m.GetBackingStore().Get("notApplicableDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetNotApplicableUserCount gets the notApplicableUserCount property value. Number of users for which hardware configuration state is not applicable
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetNotApplicableUserCount()(*int32) {
+    val, err := m.GetBackingStore().Get("notApplicableUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetPendingDeviceCount gets the pendingDeviceCount property value. Number of devices for which hardware configuration is in pending state
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetPendingDeviceCount()(*int32) {
+    val, err := m.GetBackingStore().Get("pendingDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetPendingUserCount gets the pendingUserCount property value. Number of users for which hardware configuration is in pending state
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetPendingUserCount()(*int32) {
+    val, err := m.GetBackingStore().Get("pendingUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetSuccessfulDeviceCount gets the successfulDeviceCount property value. Number of devices for which hardware configured without any issue
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetSuccessfulDeviceCount()(*int32) {
+    val, err := m.GetBackingStore().Get("successfulDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetSuccessfulUserCount gets the successfulUserCount property value. Number of users for which hardware configured without any issue
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetSuccessfulUserCount()(*int32) {
+    val, err := m.GetBackingStore().Get("successfulUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetUnknownDeviceCount gets the unknownDeviceCount property value. Number of devices for which hardware configuration state is unknown
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetUnknownDeviceCount()(*int32) {
+    val, err := m.GetBackingStore().Get("unknownDeviceCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
+// GetUnknownUserCount gets the unknownUserCount property value. Number of users for which hardware configuration state is unknown
+// returns a *int32 when successful
+func (m *HardwareConfigurationRunSummary) GetUnknownUserCount()(*int32) {
+    val, err := m.GetBackingStore().Get("unknownUserCount")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *HardwareConfigurationRunSummary) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -35,9 +322,204 @@ func (m *HardwareConfigurationRunSummary) Serialize(writer i878a80d2330e89d26896
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteInt32Value("errorDeviceCount", m.GetErrorDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("errorUserCount", m.GetErrorUserCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("failedDeviceCount", m.GetFailedDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("failedUserCount", m.GetFailedUserCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastRunDateTime", m.GetLastRunDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("notApplicableDeviceCount", m.GetNotApplicableDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("notApplicableUserCount", m.GetNotApplicableUserCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("pendingDeviceCount", m.GetPendingDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("pendingUserCount", m.GetPendingUserCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("successfulDeviceCount", m.GetSuccessfulDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("successfulUserCount", m.GetSuccessfulUserCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("unknownDeviceCount", m.GetUnknownDeviceCount())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteInt32Value("unknownUserCount", m.GetUnknownUserCount())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetErrorDeviceCount sets the errorDeviceCount property value. Number of devices for which hardware configuration state is error
+func (m *HardwareConfigurationRunSummary) SetErrorDeviceCount(value *int32)() {
+    err := m.GetBackingStore().Set("errorDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetErrorUserCount sets the errorUserCount property value. Number of users for which hardware configuration state is error
+func (m *HardwareConfigurationRunSummary) SetErrorUserCount(value *int32)() {
+    err := m.GetBackingStore().Set("errorUserCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFailedDeviceCount sets the failedDeviceCount property value. Number of devices for which hardware configuration found an issue
+func (m *HardwareConfigurationRunSummary) SetFailedDeviceCount(value *int32)() {
+    err := m.GetBackingStore().Set("failedDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetFailedUserCount sets the failedUserCount property value. Number of users for which hardware configuration found an issue
+func (m *HardwareConfigurationRunSummary) SetFailedUserCount(value *int32)() {
+    err := m.GetBackingStore().Set("failedUserCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastRunDateTime sets the lastRunDateTime property value. Last run time for the configuration across all devices
+func (m *HardwareConfigurationRunSummary) SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastRunDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetNotApplicableDeviceCount sets the notApplicableDeviceCount property value. Number of devices for which hardware configuration state is not applicable
+func (m *HardwareConfigurationRunSummary) SetNotApplicableDeviceCount(value *int32)() {
+    err := m.GetBackingStore().Set("notApplicableDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetNotApplicableUserCount sets the notApplicableUserCount property value. Number of users for which hardware configuration state is not applicable
+func (m *HardwareConfigurationRunSummary) SetNotApplicableUserCount(value *int32)() {
+    err := m.GetBackingStore().Set("notApplicableUserCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPendingDeviceCount sets the pendingDeviceCount property value. Number of devices for which hardware configuration is in pending state
+func (m *HardwareConfigurationRunSummary) SetPendingDeviceCount(value *int32)() {
+    err := m.GetBackingStore().Set("pendingDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPendingUserCount sets the pendingUserCount property value. Number of users for which hardware configuration is in pending state
+func (m *HardwareConfigurationRunSummary) SetPendingUserCount(value *int32)() {
+    err := m.GetBackingStore().Set("pendingUserCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSuccessfulDeviceCount sets the successfulDeviceCount property value. Number of devices for which hardware configured without any issue
+func (m *HardwareConfigurationRunSummary) SetSuccessfulDeviceCount(value *int32)() {
+    err := m.GetBackingStore().Set("successfulDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSuccessfulUserCount sets the successfulUserCount property value. Number of users for which hardware configured without any issue
+func (m *HardwareConfigurationRunSummary) SetSuccessfulUserCount(value *int32)() {
+    err := m.GetBackingStore().Set("successfulUserCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUnknownDeviceCount sets the unknownDeviceCount property value. Number of devices for which hardware configuration state is unknown
+func (m *HardwareConfigurationRunSummary) SetUnknownDeviceCount(value *int32)() {
+    err := m.GetBackingStore().Set("unknownDeviceCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUnknownUserCount sets the unknownUserCount property value. Number of users for which hardware configuration state is unknown
+func (m *HardwareConfigurationRunSummary) SetUnknownUserCount(value *int32)() {
+    err := m.GetBackingStore().Set("unknownUserCount", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type HardwareConfigurationRunSummaryable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetErrorDeviceCount()(*int32)
+    GetErrorUserCount()(*int32)
+    GetFailedDeviceCount()(*int32)
+    GetFailedUserCount()(*int32)
+    GetLastRunDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetNotApplicableDeviceCount()(*int32)
+    GetNotApplicableUserCount()(*int32)
+    GetPendingDeviceCount()(*int32)
+    GetPendingUserCount()(*int32)
+    GetSuccessfulDeviceCount()(*int32)
+    GetSuccessfulUserCount()(*int32)
+    GetUnknownDeviceCount()(*int32)
+    GetUnknownUserCount()(*int32)
+    SetErrorDeviceCount(value *int32)()
+    SetErrorUserCount(value *int32)()
+    SetFailedDeviceCount(value *int32)()
+    SetFailedUserCount(value *int32)()
+    SetLastRunDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetNotApplicableDeviceCount(value *int32)()
+    SetNotApplicableUserCount(value *int32)()
+    SetPendingDeviceCount(value *int32)()
+    SetPendingUserCount(value *int32)()
+    SetSuccessfulDeviceCount(value *int32)()
+    SetSuccessfulUserCount(value *int32)()
+    SetUnknownDeviceCount(value *int32)()
+    SetUnknownUserCount(value *int32)()
 }

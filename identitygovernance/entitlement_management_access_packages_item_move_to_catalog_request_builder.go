@@ -35,6 +35,9 @@ func NewEntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder(rawUr
 }
 // Post in Microsoft Entra entitlement management, this action moves the accessPackage to a specified target accessPackageCatalog. The resources in the access package must be present in the target catalog.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackage-movetocatalog?view=graph-rest-beta
 func (m *EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilder) Post(ctx context.Context, body EntitlementManagementAccessPackagesItemMoveToCatalogPostRequestBodyable, requestConfiguration *EntitlementManagementAccessPackagesItemMoveToCatalogRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

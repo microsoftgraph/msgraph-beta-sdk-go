@@ -37,6 +37,9 @@ func NewDeletedTeamsItemChannelsItemMessagesForwardToChatRequestBuilder(rawUrl s
 // Deprecated: This method is obsolete. Use PostAsForwardToChatPostResponse instead.
 // returns a DeletedTeamsItemChannelsItemMessagesForwardToChatResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *DeletedTeamsItemChannelsItemMessagesForwardToChatRequestBuilder) Post(ctx context.Context, body DeletedTeamsItemChannelsItemMessagesForwardToChatPostRequestBodyable, requestConfiguration *DeletedTeamsItemChannelsItemMessagesForwardToChatRequestBuilderPostRequestConfiguration)(DeletedTeamsItemChannelsItemMessagesForwardToChatResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *DeletedTeamsItemChannelsItemMessagesForwardToChatRequestBuilder) Post(c
 // PostAsForwardToChatPostResponse forward a chat message, a channel message, or a channel message reply to a chat.
 // returns a DeletedTeamsItemChannelsItemMessagesForwardToChatPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/chatmessage-forwardtochat?view=graph-rest-beta
 func (m *DeletedTeamsItemChannelsItemMessagesForwardToChatRequestBuilder) PostAsForwardToChatPostResponse(ctx context.Context, body DeletedTeamsItemChannelsItemMessagesForwardToChatPostRequestBodyable, requestConfiguration *DeletedTeamsItemChannelsItemMessagesForwardToChatRequestBuilderPostRequestConfiguration)(DeletedTeamsItemChannelsItemMessagesForwardToChatPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

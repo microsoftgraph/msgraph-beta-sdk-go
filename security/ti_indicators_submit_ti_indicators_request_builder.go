@@ -37,6 +37,9 @@ func NewTiIndicatorsSubmitTiIndicatorsRequestBuilder(rawUrl string, requestAdapt
 // Deprecated: This method is obsolete. Use PostAsSubmitTiIndicatorsPostResponse instead.
 // returns a TiIndicatorsSubmitTiIndicatorsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-beta
 func (m *TiIndicatorsSubmitTiIndicatorsRequestBuilder) Post(ctx context.Context, body TiIndicatorsSubmitTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsSubmitTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsSubmitTiIndicatorsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -58,6 +61,9 @@ func (m *TiIndicatorsSubmitTiIndicatorsRequestBuilder) Post(ctx context.Context,
 // Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a TiIndicatorsSubmitTiIndicatorsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-beta
 func (m *TiIndicatorsSubmitTiIndicatorsRequestBuilder) PostAsSubmitTiIndicatorsPostResponse(ctx context.Context, body TiIndicatorsSubmitTiIndicatorsPostRequestBodyable, requestConfiguration *TiIndicatorsSubmitTiIndicatorsRequestBuilderPostRequestConfiguration)(TiIndicatorsSubmitTiIndicatorsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

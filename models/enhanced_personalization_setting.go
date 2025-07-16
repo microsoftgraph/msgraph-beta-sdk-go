@@ -22,11 +22,55 @@ func NewEnhancedPersonalizationSetting()(*EnhancedPersonalizationSetting) {
 func CreateEnhancedPersonalizationSettingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEnhancedPersonalizationSetting(), nil
 }
+// GetDisabledForGroup gets the disabledForGroup property value. The ID of a Microsoft Entra group to which the value is used to disable the control for populated users. The default value is null. This parameter is optional.
+// returns a *string when successful
+func (m *EnhancedPersonalizationSetting) GetDisabledForGroup()(*string) {
+    val, err := m.GetBackingStore().Get("disabledForGroup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EnhancedPersonalizationSetting) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["disabledForGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisabledForGroup(val)
+        }
+        return nil
+    }
+    res["isEnabledInOrganization"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsEnabledInOrganization(val)
+        }
+        return nil
+    }
     return res
+}
+// GetIsEnabledInOrganization gets the isEnabledInOrganization property value. If true, enables the enhanced personalization control and therefore related features as defined in control enhanced personalization privacy
+// returns a *bool when successful
+func (m *EnhancedPersonalizationSetting) GetIsEnabledInOrganization()(*bool) {
+    val, err := m.GetBackingStore().Get("isEnabledInOrganization")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *EnhancedPersonalizationSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -34,9 +78,39 @@ func (m *EnhancedPersonalizationSetting) Serialize(writer i878a80d2330e89d268963
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("disabledForGroup", m.GetDisabledForGroup())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("isEnabledInOrganization", m.GetIsEnabledInOrganization())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetDisabledForGroup sets the disabledForGroup property value. The ID of a Microsoft Entra group to which the value is used to disable the control for populated users. The default value is null. This parameter is optional.
+func (m *EnhancedPersonalizationSetting) SetDisabledForGroup(value *string)() {
+    err := m.GetBackingStore().Set("disabledForGroup", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsEnabledInOrganization sets the isEnabledInOrganization property value. If true, enables the enhanced personalization control and therefore related features as defined in control enhanced personalization privacy
+func (m *EnhancedPersonalizationSetting) SetIsEnabledInOrganization(value *bool)() {
+    err := m.GetBackingStore().Set("isEnabledInOrganization", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type EnhancedPersonalizationSettingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDisabledForGroup()(*string)
+    GetIsEnabledInOrganization()(*bool)
+    SetDisabledForGroup(value *string)()
+    SetIsEnabledInOrganization(value *bool)()
 }

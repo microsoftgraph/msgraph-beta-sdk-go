@@ -37,6 +37,9 @@ func NewItemCreatePasswordSingleSignOnCredentialsRequestBuilder(rawUrl string, r
 // Post create single sign-on credentials using a password for a user or group.
 // returns a PasswordSingleSignOnCredentialSetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/serviceprincipal-createpasswordsinglesignoncredentials?view=graph-rest-beta
 func (m *ItemCreatePasswordSingleSignOnCredentialsRequestBuilder) Post(ctx context.Context, body ItemCreatePasswordSingleSignOnCredentialsPostRequestBodyable, requestConfiguration *ItemCreatePasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordSingleSignOnCredentialSetable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

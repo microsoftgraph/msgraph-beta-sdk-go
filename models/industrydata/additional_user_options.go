@@ -91,7 +91,7 @@ func (m *AdditionalUserOptions) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetMarkAllStudentsAsMinors gets the markAllStudentsAsMinors property value. Indicates whether all students should be marked as minors.
+// GetMarkAllStudentsAsMinors gets the markAllStudentsAsMinors property value. Indicates whether all students should be marked as minors. The markAllStudentsAsMinors property is deprecated and will stop returning data on October 15, 2025. Going forward, use the studentAgeGroup property.
 // returns a *bool when successful
 func (m *AdditionalUserOptions) GetMarkAllStudentsAsMinors()(*bool) {
     val, err := m.GetBackingStore().Get("markAllStudentsAsMinors")
@@ -161,7 +161,7 @@ func (m *AdditionalUserOptions) SetAllowStudentContactAssociation(value *bool)()
 func (m *AdditionalUserOptions) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMarkAllStudentsAsMinors sets the markAllStudentsAsMinors property value. Indicates whether all students should be marked as minors.
+// SetMarkAllStudentsAsMinors sets the markAllStudentsAsMinors property value. Indicates whether all students should be marked as minors. The markAllStudentsAsMinors property is deprecated and will stop returning data on October 15, 2025. Going forward, use the studentAgeGroup property.
 func (m *AdditionalUserOptions) SetMarkAllStudentsAsMinors(value *bool)() {
     err := m.GetBackingStore().Set("markAllStudentsAsMinors", value)
     if err != nil {

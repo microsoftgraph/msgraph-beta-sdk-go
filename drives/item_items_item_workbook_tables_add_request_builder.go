@@ -37,6 +37,9 @@ func NewItemItemsItemWorkbookTablesAddRequestBuilder(rawUrl string, requestAdapt
 // Post create a new table. The range source address determines the worksheet under which the table will be added. If the table can't be added (for example, because the address is invalid, or the table would overlap with another table), an error is thrown.
 // returns a WorkbookTableable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tablecollection-add?view=graph-rest-beta
 func (m *ItemItemsItemWorkbookTablesAddRequestBuilder) Post(ctx context.Context, body ItemItemsItemWorkbookTablesAddPostRequestBodyable, requestConfiguration *ItemItemsItemWorkbookTablesAddRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookTableable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

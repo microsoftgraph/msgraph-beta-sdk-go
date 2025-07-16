@@ -28,9 +28,9 @@ type EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuil
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration struct {
@@ -61,6 +61,9 @@ func NewEntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestB
 // Deprecated: This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponse instead.
 // returns a EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-beta
 func (m *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -82,6 +85,9 @@ func (m *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequest
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-beta
 func (m *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(EntitlementManagementAssignmentRequestsFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

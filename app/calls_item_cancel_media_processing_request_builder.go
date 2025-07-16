@@ -37,6 +37,9 @@ func NewCallsItemCancelMediaProcessingRequestBuilder(rawUrl string, requestAdapt
 // Post cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a ubscribeToTone operation because it operates independent of any operation queue.
 // returns a CancelMediaProcessingOperationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-beta
 func (m *CallsItemCancelMediaProcessingRequestBuilder) Post(ctx context.Context, body CallsItemCancelMediaProcessingPostRequestBodyable, requestConfiguration *CallsItemCancelMediaProcessingRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CancelMediaProcessingOperationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -36,6 +36,9 @@ func NewVirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilder(r
 // Post get troubleshooting reports for Cloud PCs. You can get a regional troubleshooting report, a report with troubleshooting details, a report with troubleshooting trends, or a report on the number of troubleshooting issues.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcreports-retrievecloudpctroubleshootreports?view=graph-rest-beta
 func (m *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsRetrieveCloudPcTroubleshootReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

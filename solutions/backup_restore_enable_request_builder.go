@@ -37,6 +37,9 @@ func NewBackupRestoreEnableRequestBuilder(rawUrl string, requestAdapter i2ae4187
 // Post enable the Microsoft 365 Backup Storage service for a tenant.
 // returns a ServiceStatusable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-beta
 func (m *BackupRestoreEnableRequestBuilder) Post(ctx context.Context, body BackupRestoreEnablePostRequestBodyable, requestConfiguration *BackupRestoreEnableRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServiceStatusable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

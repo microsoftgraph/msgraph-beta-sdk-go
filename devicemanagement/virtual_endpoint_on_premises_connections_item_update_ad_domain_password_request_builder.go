@@ -35,6 +35,9 @@ func NewVirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBui
 }
 // Post update the Active Directory domain password for a cloudPcOnPremisesConnection object. This API is supported when the type of the cloudPcOnPremisesConnection object is hybridAzureADJoin.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-updateaddomainpassword?view=graph-rest-beta
 func (m *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilder) Post(ctx context.Context, body VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordPostRequestBodyable, requestConfiguration *VirtualEndpointOnPremisesConnectionsItemUpdateAdDomainPasswordRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

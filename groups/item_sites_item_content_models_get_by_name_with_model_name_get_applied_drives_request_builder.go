@@ -22,9 +22,9 @@ type ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuil
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilderGetRequestConfiguration struct {
@@ -52,6 +52,9 @@ func NewItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestB
 // Deprecated: This method is obsolete. Use GetAsGetAppliedDrivesGetResponse instead.
 // returns a ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta
 func (m *ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilderGetRequestConfiguration)(ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -72,6 +75,9 @@ func (m *ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequest
 // GetAsGetAppliedDrivesGetResponse list all the contentModelUsage information related to a contentModel applied to a SharePoint document library.
 // returns a ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/contentmodel-getapplieddrives?view=graph-rest-beta
 func (m *ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilder) GetAsGetAppliedDrivesGetResponse(ctx context.Context, requestConfiguration *ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesRequestBuilderGetRequestConfiguration)(ItemSitesItemContentModelsGetByNameWithModelNameGetAppliedDrivesGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

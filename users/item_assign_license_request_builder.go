@@ -37,6 +37,9 @@ func NewItemAssignLicenseRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
 // Post add or remove licenses for the user to enable or disable their use of Microsoft cloud offerings that the company has licenses to. For example, an organization can have a Microsoft 365 Enterprise E3 subscription with 100 licenses, and this request assigns one of those licenses to a specific user. You can also enable and disable specific plans associated with a subscription. Direct user licensing is an alternative to group-based licensing. To get the subscriptions available in the directory, perform a GET subscribedSkus request. 
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-beta
 func (m *ItemAssignLicenseRequestBuilder) Post(ctx context.Context, body ItemAssignLicensePostRequestBodyable, requestConfiguration *ItemAssignLicenseRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

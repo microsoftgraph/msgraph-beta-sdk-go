@@ -37,6 +37,9 @@ func NewTiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder(rawUrl string, 
 // Deprecated: This method is obsolete. Use PostAsDeleteTiIndicatorsByExternalIdPostResponse instead.
 // returns a TiIndicatorsDeleteTiIndicatorsByExternalIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicatorsbyexternalid?view=graph-rest-beta
 func (m *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) Post(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsByExternalIdPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration)(TiIndicatorsDeleteTiIndicatorsByExternalIdResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -58,6 +61,9 @@ func (m *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) Post(ctx cont
 // Deprecated: The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10
 // returns a TiIndicatorsDeleteTiIndicatorsByExternalIdPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/tiindicator-deletetiindicatorsbyexternalid?view=graph-rest-beta
 func (m *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilder) PostAsDeleteTiIndicatorsByExternalIdPostResponse(ctx context.Context, body TiIndicatorsDeleteTiIndicatorsByExternalIdPostRequestBodyable, requestConfiguration *TiIndicatorsDeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration)(TiIndicatorsDeleteTiIndicatorsByExternalIdPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

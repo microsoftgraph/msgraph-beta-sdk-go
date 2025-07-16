@@ -37,6 +37,9 @@ func NewRecommendationsItemDismissRequestBuilder(rawUrl string, requestAdapter i
 // Post dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
 // returns a Recommendationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-beta
 func (m *RecommendationsItemDismissRequestBuilder) Post(ctx context.Context, body RecommendationsItemDismissPostRequestBodyable, requestConfiguration *RecommendationsItemDismissRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Recommendationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

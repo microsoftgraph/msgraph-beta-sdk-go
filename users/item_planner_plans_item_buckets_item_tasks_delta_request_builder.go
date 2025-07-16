@@ -28,9 +28,9 @@ type ItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilderGetQueryParameters s
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilder(rawUrl string, r
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemPlannerPlansItemBucketsItemTasksDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
 func (m *ItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilderGetRequestConfiguration)(ItemPlannerPlansItemBucketsItemTasksDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *ItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilder) Get(ctx contex
 // GetAsDeltaGetResponse get newly created, updated, or deleted tasks in either a Planner plan or assigned to the signed-in user without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.
 // returns a ItemPlannerPlansItemBucketsItemTasksDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannertask-delta?view=graph-rest-beta
 func (m *ItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemPlannerPlansItemBucketsItemTasksDeltaRequestBuilderGetRequestConfiguration)(ItemPlannerPlansItemBucketsItemTasksDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewVirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder(r
 }
 // Post retry installation for the partner agents that failed to install on the Cloud PC. Service side checks which agent installation failed firstly and retry.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilder) Post(ctx context.Context, requestConfiguration *VirtualEndpointCloudPCsItemRetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

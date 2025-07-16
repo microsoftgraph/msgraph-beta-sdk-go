@@ -23,9 +23,9 @@ type ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWi
     // Search items by search phrases
     Search *string `uriparametername:"%24search"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration struct {
@@ -59,6 +59,9 @@ func NewReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTim
 // Deprecated: This method is obsolete. Use GetAsGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetConnectionSummariesWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-reports-getconnectionsummaries?view=graph-rest-beta
 func (m *ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) Get(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetConnectionSummariesWithStartDateTimeWithEndDateTimeResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -79,6 +82,9 @@ func (m *ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTi
 // GetAsGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse an API part of Global Secure Access (GSA) product, reports of connections count per traffic type: Private/Internet/Microsoft.
 // returns a ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-reports-getconnectionsummaries?view=graph-rest-beta
 func (m *ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) GetAsGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponse(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(ReportsMicrosoftGraphNetworkaccessGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetConnectionSummariesWithStartDateTimeWithEndDateTimeGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

@@ -35,6 +35,9 @@ func NewVirtualEndpointProvisioningPoliciesItemSchedulePolicyApplyTaskRequestBui
 }
 // Post set a scheduled auto-reprovision task to do automatic regular apply. Frontline shared only. Administrators only.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-schedulepolicyapplytask?view=graph-rest-beta
 func (m *VirtualEndpointProvisioningPoliciesItemSchedulePolicyApplyTaskRequestBuilder) Post(ctx context.Context, body VirtualEndpointProvisioningPoliciesItemSchedulePolicyApplyTaskPostRequestBodyable, requestConfiguration *VirtualEndpointProvisioningPoliciesItemSchedulePolicyApplyTaskRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

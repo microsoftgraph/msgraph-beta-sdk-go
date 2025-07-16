@@ -211,14 +211,14 @@ func (m *OnlineMeetingBase) GetAllowWhiteboard()(*bool) {
     return nil
 }
 // GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
-// returns a []string when successful
-func (m *OnlineMeetingBase) GetAnonymizeIdentityForRoles()([]string) {
+// returns a []OnlineMeetingRole when successful
+func (m *OnlineMeetingBase) GetAnonymizeIdentityForRoles()([]OnlineMeetingRole) {
     val, err := m.GetBackingStore().Get("anonymizeIdentityForRoles")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.([]string)
+        return val.([]OnlineMeetingRole)
     }
     return nil
 }
@@ -415,15 +415,15 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     res["anonymizeIdentityForRoles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
+        val, err := n.GetCollectionOfEnumValues(ParseOnlineMeetingRole)
         if err != nil {
             return err
         }
         if val != nil {
-            res := make([]string, len(val))
+            res := make([]OnlineMeetingRole, len(val))
             for i, v := range val {
                 if v != nil {
-                    res[i] = *(v.(*string))
+                    res[i] = *(v.(*OnlineMeetingRole))
                 }
             }
             m.SetAnonymizeIdentityForRoles(res)
@@ -815,7 +815,7 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     if m.GetAnonymizeIdentityForRoles() != nil {
-        err = writer.WriteCollectionOfStringValues("anonymizeIdentityForRoles", m.GetAnonymizeIdentityForRoles())
+        err = writer.WriteCollectionOfStringValues("anonymizeIdentityForRoles", SerializeOnlineMeetingRole(m.GetAnonymizeIdentityForRoles()))
         if err != nil {
             return err
         }
@@ -1018,7 +1018,7 @@ func (m *OnlineMeetingBase) SetAllowWhiteboard(value *bool)() {
     }
 }
 // SetAnonymizeIdentityForRoles sets the anonymizeIdentityForRoles property value. Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
-func (m *OnlineMeetingBase) SetAnonymizeIdentityForRoles(value []string)() {
+func (m *OnlineMeetingBase) SetAnonymizeIdentityForRoles(value []OnlineMeetingRole)() {
     err := m.GetBackingStore().Set("anonymizeIdentityForRoles", value)
     if err != nil {
         panic(err)
@@ -1146,7 +1146,7 @@ type OnlineMeetingBaseable interface {
     GetAllowTeamworkReactions()(*bool)
     GetAllowTranscription()(*bool)
     GetAllowWhiteboard()(*bool)
-    GetAnonymizeIdentityForRoles()([]string)
+    GetAnonymizeIdentityForRoles()([]OnlineMeetingRole)
     GetAttendanceReports()([]MeetingAttendanceReportable)
     GetAudioConferencing()(AudioConferencingable)
     GetChatInfo()(ChatInfoable)
@@ -1176,7 +1176,7 @@ type OnlineMeetingBaseable interface {
     SetAllowTeamworkReactions(value *bool)()
     SetAllowTranscription(value *bool)()
     SetAllowWhiteboard(value *bool)()
-    SetAnonymizeIdentityForRoles(value []string)()
+    SetAnonymizeIdentityForRoles(value []OnlineMeetingRole)()
     SetAttendanceReports(value []MeetingAttendanceReportable)()
     SetAudioConferencing(value AudioConferencingable)()
     SetChatInfo(value ChatInfoable)()

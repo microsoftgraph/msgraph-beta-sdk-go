@@ -37,6 +37,9 @@ func NewIdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyRequ
 // Post generate a new deployment access key that can be used to install a sensor associated with the workspace.
 // returns a DeploymentAccessKeyTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-sensor-regeneratedeploymentaccesskey?view=graph-rest-beta
 func (m *IdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyRequestBuilder) Post(ctx context.Context, requestConfiguration *IdentitiesSensorsMicrosoftGraphSecurityRegenerateDeploymentAccessKeyRequestBuilderPostRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.DeploymentAccessKeyTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {

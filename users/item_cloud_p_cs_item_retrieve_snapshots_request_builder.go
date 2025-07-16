@@ -28,9 +28,9 @@ type ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetQueryParameters struct {
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewItemCloudPCsItemRetrieveSnapshotsRequestBuilder(rawUrl string, requestAd
 // Deprecated: This method is obsolete. Use GetAsRetrieveSnapshotsGetResponse instead.
 // returns a ItemCloudPCsItemRetrieveSnapshotsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-retrievesnapshots?view=graph-rest-beta
 func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(ItemCloudPCsItemRetrieveSnapshotsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) Get(ctx context.Contex
 // GetAsRetrieveSnapshotsGetResponse list all cloudPcSnapshot resources for a Cloud PC.
 // returns a ItemCloudPCsItemRetrieveSnapshotsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-retrievesnapshots?view=graph-rest-beta
 func (m *ItemCloudPCsItemRetrieveSnapshotsRequestBuilder) GetAsRetrieveSnapshotsGetResponse(ctx context.Context, requestConfiguration *ItemCloudPCsItemRetrieveSnapshotsRequestBuilderGetRequestConfiguration)(ItemCloudPCsItemRetrieveSnapshotsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

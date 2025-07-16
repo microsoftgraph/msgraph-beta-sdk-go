@@ -39,6 +39,9 @@ func NewGetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder(rawUrl stri
 // Get get the trend in the daily number of active and enabled users of Microsoft 365 Copilot for a specified time period.
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/reportroot-getmicrosoft365copilotusercounttrend?view=graph-rest-beta
 func (m *GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilder) Get(ctx context.Context, requestConfiguration *GetMicrosoft365CopilotUserCountTrendWithPeriodRequestBuilderGetRequestConfiguration)([]byte, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

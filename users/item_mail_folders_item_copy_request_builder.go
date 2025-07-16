@@ -37,6 +37,9 @@ func NewItemMailFoldersItemCopyRequestBuilder(rawUrl string, requestAdapter i2ae
 // Post copy a mail folder and its contents to another mail folder.
 // returns a MailFolderable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-beta
 func (m *ItemMailFoldersItemCopyRequestBuilder) Post(ctx context.Context, body ItemMailFoldersItemCopyPostRequestBodyable, requestConfiguration *ItemMailFoldersItemCopyRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MailFolderable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

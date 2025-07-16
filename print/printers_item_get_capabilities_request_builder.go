@@ -38,6 +38,9 @@ func NewPrintersItemGetCapabilitiesRequestBuilder(rawUrl string, requestAdapter 
 // Deprecated: The getCapabilities API is deprecated and will stop returning data on July 31, 2023. Please use the capabilities property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31
 // returns a PrinterCapabilitiesable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/printer-getcapabilities?view=graph-rest-beta
 func (m *PrintersItemGetCapabilitiesRequestBuilder) Get(ctx context.Context, requestConfiguration *PrintersItemGetCapabilitiesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrinterCapabilitiesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

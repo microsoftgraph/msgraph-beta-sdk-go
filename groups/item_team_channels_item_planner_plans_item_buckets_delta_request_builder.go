@@ -28,9 +28,9 @@ type ItemTeamChannelsItemPlannerPlansItemBucketsDeltaRequestBuilderGetQueryParam
     // Select properties to be returned
     Select []string `uriparametername:"%24select"`
     // Skip the first n items
-    Skip *int64 `uriparametername:"%24skip"`
+    Skip *int32 `uriparametername:"%24skip"`
     // Show only the first n items
-    Top *int64 `uriparametername:"%24top"`
+    Top *int32 `uriparametername:"%24top"`
 }
 // ItemTeamChannelsItemPlannerPlansItemBucketsDeltaRequestBuilderGetRequestConfiguration configuration for the request such as headers, query parameters, and middleware options.
 type ItemTeamChannelsItemPlannerPlansItemBucketsDeltaRequestBuilderGetRequestConfiguration struct {
@@ -58,6 +58,9 @@ func NewItemTeamChannelsItemPlannerPlansItemBucketsDeltaRequestBuilder(rawUrl st
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a ItemTeamChannelsItemPlannerPlansItemBucketsDeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
 func (m *ItemTeamChannelsItemPlannerPlansItemBucketsDeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamChannelsItemPlannerPlansItemBucketsDeltaRequestBuilderGetRequestConfiguration)(ItemTeamChannelsItemPlannerPlansItemBucketsDeltaResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,6 +81,9 @@ func (m *ItemTeamChannelsItemPlannerPlansItemBucketsDeltaRequestBuilder) Get(ctx
 // GetAsDeltaGetResponse get newly created, updated, or deleted buckets in a Planner plan without having to perform a full read of the entire resource collection. For details, see Use delta query to track changes in Microsoft Graph data.
 // returns a ItemTeamChannelsItemPlannerPlansItemBucketsDeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/plannerbucket-delta?view=graph-rest-beta
 func (m *ItemTeamChannelsItemPlannerPlansItemBucketsDeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, requestConfiguration *ItemTeamChannelsItemPlannerPlansItemBucketsDeltaRequestBuilderGetRequestConfiguration)(ItemTeamChannelsItemPlannerPlansItemBucketsDeltaGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

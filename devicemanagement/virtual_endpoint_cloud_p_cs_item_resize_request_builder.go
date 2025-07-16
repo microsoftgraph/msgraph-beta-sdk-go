@@ -35,6 +35,9 @@ func NewVirtualEndpointCloudPCsItemResizeRequestBuilder(rawUrl string, requestAd
 }
 // Post upgrade or downgrade an existing Cloud PC to a configuration with a new virtual CPU (vCPU) and storage size.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpc-resize?view=graph-rest-beta
 func (m *VirtualEndpointCloudPCsItemResizeRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudPCsItemResizePostRequestBodyable, requestConfiguration *VirtualEndpointCloudPCsItemResizeRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

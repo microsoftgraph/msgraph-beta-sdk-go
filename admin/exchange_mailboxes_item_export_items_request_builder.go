@@ -37,6 +37,9 @@ func NewExchangeMailboxesItemExportItemsRequestBuilder(rawUrl string, requestAda
 // Deprecated: This method is obsolete. Use PostAsExportItemsPostResponse instead.
 // returns a ExchangeMailboxesItemExportItemsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailbox-exportitems?view=graph-rest-beta
 func (m *ExchangeMailboxesItemExportItemsRequestBuilder) Post(ctx context.Context, body ExchangeMailboxesItemExportItemsPostRequestBodyable, requestConfiguration *ExchangeMailboxesItemExportItemsRequestBuilderPostRequestConfiguration)(ExchangeMailboxesItemExportItemsResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -58,6 +61,9 @@ func (m *ExchangeMailboxesItemExportItemsRequestBuilder) Post(ctx context.Contex
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2024-06-30
 // returns a ExchangeMailboxesItemExportItemsPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/mailbox-exportitems?view=graph-rest-beta
 func (m *ExchangeMailboxesItemExportItemsRequestBuilder) PostAsExportItemsPostResponse(ctx context.Context, body ExchangeMailboxesItemExportItemsPostRequestBodyable, requestConfiguration *ExchangeMailboxesItemExportItemsRequestBuilderPostRequestConfiguration)(ExchangeMailboxesItemExportItemsPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

@@ -37,6 +37,9 @@ func NewValidatePasswordRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 // Post check a user's password against the organization's password validation policy and report whether the password is valid. Use this action to provide real-time feedback on password strength while the user types their password.
 // returns a PasswordValidationInformationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/user-validatepassword?view=graph-rest-beta
 func (m *ValidatePasswordRequestBuilder) Post(ctx context.Context, body ValidatePasswordPostRequestBodyable, requestConfiguration *ValidatePasswordRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PasswordValidationInformationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {

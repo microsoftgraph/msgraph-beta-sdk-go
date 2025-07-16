@@ -37,6 +37,9 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddR
 // Deprecated: This method is obsolete. Use PostAsAddPostResponse instead.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddRequestBuilder) Post(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddPostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddRequestBuilderPostRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -57,6 +60,9 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAdd
 // PostAsAddPostResponse add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
 // returns a TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddPostResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-beta
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddRequestBuilder) PostAsAddPostResponse(ctx context.Context, body TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddPostRequestBodyable, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddRequestBuilderPostRequestConfiguration)(TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemAllMembersAddPostResponseable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
