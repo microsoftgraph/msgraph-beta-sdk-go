@@ -21,7 +21,7 @@ type FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters read the properties and relationships of a threatIntelligencePolicyLink object.
+// FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters get a tlsInspectionPolicyLink object.
 type FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -76,12 +76,12 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get read the properties and relationships of a threatIntelligencePolicyLink object.
+// Get get a tlsInspectionPolicyLink object.
 // returns a PolicyLinkable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-get?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-get?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.PolicyLinkable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -138,7 +138,7 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a threatIntelligencePolicyLink object.
+// ToGetRequestInformation get a tlsInspectionPolicyLink object.
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
