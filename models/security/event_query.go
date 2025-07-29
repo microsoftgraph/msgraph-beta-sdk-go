@@ -91,7 +91,7 @@ func (m *EventQuery) GetOdataType()(*string) {
     }
     return nil
 }
-// GetQuery gets the query property value. Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
+// GetQuery gets the query property value. Represents unique identification for the  query. 'Asset ID' for SharePoint in Microsoft 365 and OneDrive for work or school, 'keywords' for Exchange Online.
 // returns a *string when successful
 func (m *EventQuery) GetQuery()(*string) {
     val, err := m.GetBackingStore().Get("query")
@@ -103,7 +103,7 @@ func (m *EventQuery) GetQuery()(*string) {
     }
     return nil
 }
-// GetQueryType gets the queryType property value. Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
+// GetQueryType gets the queryType property value. Represents the type of query associated with an event. 'files' for SharePoint in Microsoft 365 and OneDrive for work or school, and 'messages' for Exchange Online. The possible values are: files, messages, unknownFutureValue.
 // returns a *QueryType when successful
 func (m *EventQuery) GetQueryType()(*QueryType) {
     val, err := m.GetBackingStore().Get("queryType")
@@ -162,14 +162,14 @@ func (m *EventQuery) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetQuery sets the query property value. Represents unique identification for the  query. 'Asset ID' for SharePoint Online and OneDrive for Business, 'keywords' for Exchange Online.
+// SetQuery sets the query property value. Represents unique identification for the  query. 'Asset ID' for SharePoint in Microsoft 365 and OneDrive for work or school, 'keywords' for Exchange Online.
 func (m *EventQuery) SetQuery(value *string)() {
     err := m.GetBackingStore().Set("query", value)
     if err != nil {
         panic(err)
     }
 }
-// SetQueryType sets the queryType property value. Represents the type of query associated with an event. 'files' for SPO and ODB and 'messages' for EXO.The possible values are: files, messages, unknownFutureValue.
+// SetQueryType sets the queryType property value. Represents the type of query associated with an event. 'files' for SharePoint in Microsoft 365 and OneDrive for work or school, and 'messages' for Exchange Online. The possible values are: files, messages, unknownFutureValue.
 func (m *EventQuery) SetQueryType(value *QueryType)() {
     err := m.GetBackingStore().Set("queryType", value)
     if err != nil {

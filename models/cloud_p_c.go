@@ -361,6 +361,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["provisionedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProvisionedDateTime(val)
+        }
+        return nil
+    }
     res["provisioningPolicyId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -434,6 +444,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetServicePlanType(val.(*CloudPcServicePlanType))
+        }
+        return nil
+    }
+    res["sharedDeviceDetail"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcFrontlineSharedDeviceDetailFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSharedDeviceDetail(val.(CloudPcFrontlineSharedDeviceDetailable))
         }
         return nil
     }
@@ -645,6 +665,18 @@ func (m *CloudPC) GetProductType()(*CloudPcProductType) {
     }
     return nil
 }
+// GetProvisionedDateTime gets the provisionedDateTime property value. The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// returns a *Time when successful
+func (m *CloudPC) GetProvisionedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("provisionedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetProvisioningPolicyId gets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
 // returns a *string when successful
 func (m *CloudPC) GetProvisioningPolicyId()(*string) {
@@ -726,6 +758,18 @@ func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
     }
     if val != nil {
         return val.(*CloudPcServicePlanType)
+    }
+    return nil
+}
+// GetSharedDeviceDetail gets the sharedDeviceDetail property value. Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.
+// returns a CloudPcFrontlineSharedDeviceDetailable when successful
+func (m *CloudPC) GetSharedDeviceDetail()(CloudPcFrontlineSharedDeviceDetailable) {
+    val, err := m.GetBackingStore().Get("sharedDeviceDetail")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcFrontlineSharedDeviceDetailable)
     }
     return nil
 }
@@ -939,6 +983,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteTimeValue("provisionedDateTime", m.GetProvisionedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("provisioningPolicyId", m.GetProvisioningPolicyId())
         if err != nil {
             return err
@@ -978,6 +1028,12 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetServicePlanType() != nil {
         cast := (*m.GetServicePlanType()).String()
         err = writer.WriteStringValue("servicePlanType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("sharedDeviceDetail", m.GetSharedDeviceDetail())
         if err != nil {
             return err
         }
@@ -1170,6 +1226,13 @@ func (m *CloudPC) SetProductType(value *CloudPcProductType)() {
         panic(err)
     }
 }
+// SetProvisionedDateTime sets the provisionedDateTime property value. The latest provisioned date and time, automatically generated and assigned during the initial provisioning or any subsequent reprovisioning of the Cloud PC. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+func (m *CloudPC) SetProvisionedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("provisionedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProvisioningPolicyId sets the provisioningPolicyId property value. The provisioning policy ID of the Cloud PC.
 func (m *CloudPC) SetProvisioningPolicyId(value *string)() {
     err := m.GetBackingStore().Set("provisioningPolicyId", value)
@@ -1215,6 +1278,13 @@ func (m *CloudPC) SetServicePlanName(value *string)() {
 // SetServicePlanType sets the servicePlanType property value. The service plan type of the Cloud PC.
 func (m *CloudPC) SetServicePlanType(value *CloudPcServicePlanType)() {
     err := m.GetBackingStore().Set("servicePlanType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSharedDeviceDetail sets the sharedDeviceDetail property value. Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.
+func (m *CloudPC) SetSharedDeviceDetail(value CloudPcFrontlineSharedDeviceDetailable)() {
+    err := m.GetBackingStore().Set("sharedDeviceDetail", value)
     if err != nil {
         panic(err)
     }
@@ -1279,6 +1349,7 @@ type CloudPCable interface {
     GetPartnerAgentInstallResults()([]CloudPcPartnerAgentInstallResultable)
     GetPowerState()(*CloudPcPowerState)
     GetProductType()(*CloudPcProductType)
+    GetProvisionedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetProvisioningPolicyId()(*string)
     GetProvisioningPolicyName()(*string)
     GetProvisioningType()(*CloudPcProvisioningType)
@@ -1286,6 +1357,7 @@ type CloudPCable interface {
     GetServicePlanId()(*string)
     GetServicePlanName()(*string)
     GetServicePlanType()(*CloudPcServicePlanType)
+    GetSharedDeviceDetail()(CloudPcFrontlineSharedDeviceDetailable)
     GetStatus()(*CloudPcStatus)
     GetStatusDetail()(CloudPcStatusDetailable)
     GetStatusDetails()(CloudPcStatusDetailsable)
@@ -1313,6 +1385,7 @@ type CloudPCable interface {
     SetPartnerAgentInstallResults(value []CloudPcPartnerAgentInstallResultable)()
     SetPowerState(value *CloudPcPowerState)()
     SetProductType(value *CloudPcProductType)()
+    SetProvisionedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetProvisioningPolicyId(value *string)()
     SetProvisioningPolicyName(value *string)()
     SetProvisioningType(value *CloudPcProvisioningType)()
@@ -1320,6 +1393,7 @@ type CloudPCable interface {
     SetServicePlanId(value *string)()
     SetServicePlanName(value *string)()
     SetServicePlanType(value *CloudPcServicePlanType)()
+    SetSharedDeviceDetail(value CloudPcFrontlineSharedDeviceDetailable)()
     SetStatus(value *CloudPcStatus)()
     SetStatusDetail(value CloudPcStatusDetailable)()
     SetStatusDetails(value CloudPcStatusDetailsable)()

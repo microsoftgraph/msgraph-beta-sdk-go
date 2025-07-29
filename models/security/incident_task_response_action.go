@@ -84,7 +84,7 @@ func (m *IncidentTaskResponseAction) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetIdentifierValue gets the identifierValue property value. The identifierValue property
+// GetIdentifierValue gets the identifierValue property value. Required. The identifier value for the response action. This value is specific to the type of action being performed.
 // returns a *string when successful
 func (m *IncidentTaskResponseAction) GetIdentifierValue()(*string) {
     val, err := m.GetBackingStore().Get("identifierValue")
@@ -110,7 +110,7 @@ func (m *IncidentTaskResponseAction) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetIdentifierValue sets the identifierValue property value. The identifierValue property
+// SetIdentifierValue sets the identifierValue property value. Required. The identifier value for the response action. This value is specific to the type of action being performed.
 func (m *IncidentTaskResponseAction) SetIdentifierValue(value *string)() {
     err := m.GetBackingStore().Set("identifierValue", value)
     if err != nil {

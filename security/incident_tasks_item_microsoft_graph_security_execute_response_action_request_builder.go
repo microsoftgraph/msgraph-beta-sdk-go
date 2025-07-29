@@ -33,8 +33,11 @@ func NewIncidentTasksItemMicrosoftGraphSecurityExecuteResponseActionRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewIncidentTasksItemMicrosoftGraphSecurityExecuteResponseActionRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action executeResponseAction
+// Post execute a remediation action on a Microsoft Defender XDR incident task. Only the following actionType values are supported for automated execution: collectInvestigationPackage, isolateDevice, unRestrictAppExecution, unIsolateDevice, restrictAppExecution, runAntiVirusScan, stopAndQuarantineFile, submitIocRule.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-incidenttask-executeresponseaction?view=graph-rest-beta
 func (m *IncidentTasksItemMicrosoftGraphSecurityExecuteResponseActionRequestBuilder) Post(ctx context.Context, requestConfiguration *IncidentTasksItemMicrosoftGraphSecurityExecuteResponseActionRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *IncidentTasksItemMicrosoftGraphSecurityExecuteResponseActionRequestBuil
     }
     return nil
 }
-// ToPostRequestInformation invoke action executeResponseAction
+// ToPostRequestInformation execute a remediation action on a Microsoft Defender XDR incident task. Only the following actionType values are supported for automated execution: collectInvestigationPackage, isolateDevice, unRestrictAppExecution, unIsolateDevice, restrictAppExecution, runAntiVirusScan, stopAndQuarantineFile, submitIocRule.
 // returns a *RequestInformation when successful
 func (m *IncidentTasksItemMicrosoftGraphSecurityExecuteResponseActionRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *IncidentTasksItemMicrosoftGraphSecurityExecuteResponseActionRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

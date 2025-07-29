@@ -70,7 +70,7 @@ func (m *EdiscoveryExportOperation) GetExportFileMetadata()([]ExportFileMetadata
     }
     return nil
 }
-// GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize.
+// GetExportOptions gets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths.
 // returns a *ExportOptions when successful
 func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
     val, err := m.GetBackingStore().Get("exportOptions")
@@ -82,7 +82,7 @@ func (m *EdiscoveryExportOperation) GetExportOptions()(*ExportOptions) {
     }
     return nil
 }
-// GetExportStructure gets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg.
+// GetExportStructure gets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory (deprecated), pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg. The directory member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.
 // returns a *ExportFileStructure when successful
 func (m *EdiscoveryExportOperation) GetExportStructure()(*ExportFileStructure) {
     val, err := m.GetBackingStore().Get("exportStructure")
@@ -358,14 +358,14 @@ func (m *EdiscoveryExportOperation) SetExportFileMetadata(value []ExportFileMeta
         panic(err)
     }
 }
-// SetExportOptions sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths, optimizedPartitionSize.
+// SetExportOptions sets the exportOptions property value. The options provided for the export. For more information, see reviewSet: export. The fileInfo member is deprecated and stopped returning data on April 30, 2023. Going forward, the summary and load files are always included. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths.
 func (m *EdiscoveryExportOperation) SetExportOptions(value *ExportOptions)() {
     err := m.GetBackingStore().Set("exportOptions", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExportStructure sets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg.
+// SetExportStructure sets the exportStructure property value. The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory (deprecated), pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg. The directory member is deprecated. It remains in beta for backward compatibility. Going forward, use either pst or msg.
 func (m *EdiscoveryExportOperation) SetExportStructure(value *ExportFileStructure)() {
     err := m.GetBackingStore().Set("exportStructure", value)
     if err != nil {

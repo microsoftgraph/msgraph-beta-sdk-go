@@ -24,7 +24,7 @@ func NewItemAddress()(*ItemAddress) {
 func CreateItemAddressFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewItemAddress(), nil
 }
-// GetDetail gets the detail property value. The detail property
+// GetDetail gets the detail property value. Details about the address itself.
 // returns a PhysicalAddressable when successful
 func (m *ItemAddress) GetDetail()(PhysicalAddressable) {
     val, err := m.GetBackingStore().Get("detail")
@@ -122,7 +122,7 @@ func (m *ItemAddress) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetDetail sets the detail property value. The detail property
+// SetDetail sets the detail property value. Details about the address itself.
 func (m *ItemAddress) SetDetail(value PhysicalAddressable)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {

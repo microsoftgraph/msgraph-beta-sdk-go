@@ -48,7 +48,7 @@ func (m *IncidentTask) GetActionType()(*IncidentTaskActionType) {
     }
     return nil
 }
-// GetCreatedByDisplayName gets the createdByDisplayName property value. The createdByDisplayName property
+// GetCreatedByDisplayName gets the createdByDisplayName property value. Name of the entity that created the task. Read-only.
 // returns a *string when successful
 func (m *IncidentTask) GetCreatedByDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("createdByDisplayName")
@@ -60,7 +60,7 @@ func (m *IncidentTask) GetCreatedByDisplayName()(*string) {
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. Creation time of the task. Read-only.
 // returns a *Time when successful
 func (m *IncidentTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -72,7 +72,7 @@ func (m *IncidentTask) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. Description of the remediation action.
 // returns a *string when successful
 func (m *IncidentTask) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -84,7 +84,7 @@ func (m *IncidentTask) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Title of the task.
 // returns a *string when successful
 func (m *IncidentTask) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -222,7 +222,7 @@ func (m *IncidentTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetIncident gets the incident property value. The incident property
+// GetIncident gets the incident property value. Required. The incident that contains this task. Must contain a valid incident ID.
 // returns a Incidentable when successful
 func (m *IncidentTask) GetIncident()(Incidentable) {
     val, err := m.GetBackingStore().Get("incident")
@@ -234,7 +234,7 @@ func (m *IncidentTask) GetIncident()(Incidentable) {
     }
     return nil
 }
-// GetLastModifiedByDisplayName gets the lastModifiedByDisplayName property value. The lastModifiedByDisplayName property
+// GetLastModifiedByDisplayName gets the lastModifiedByDisplayName property value. Name of the entity that last updated the task. Read-only.
 // returns a *string when successful
 func (m *IncidentTask) GetLastModifiedByDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("lastModifiedByDisplayName")
@@ -246,7 +246,7 @@ func (m *IncidentTask) GetLastModifiedByDisplayName()(*string) {
     }
     return nil
 }
-// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. Last update time of the task. Read-only.
 // returns a *Time when successful
 func (m *IncidentTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
@@ -258,7 +258,7 @@ func (m *IncidentTask) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad9
     }
     return nil
 }
-// GetResponseAction gets the responseAction property value. The responseAction property
+// GetResponseAction gets the responseAction property value. The reponse action.
 // returns a IncidentTaskResponseActionable when successful
 func (m *IncidentTask) GetResponseAction()(IncidentTaskResponseActionable) {
     val, err := m.GetBackingStore().Get("responseAction")
@@ -392,56 +392,56 @@ func (m *IncidentTask) SetActionType(value *IncidentTaskActionType)() {
         panic(err)
     }
 }
-// SetCreatedByDisplayName sets the createdByDisplayName property value. The createdByDisplayName property
+// SetCreatedByDisplayName sets the createdByDisplayName property value. Name of the entity that created the task. Read-only.
 func (m *IncidentTask) SetCreatedByDisplayName(value *string)() {
     err := m.GetBackingStore().Set("createdByDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. Creation time of the task. Read-only.
 func (m *IncidentTask) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. Description of the remediation action.
 func (m *IncidentTask) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Title of the task.
 func (m *IncidentTask) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIncident sets the incident property value. The incident property
+// SetIncident sets the incident property value. Required. The incident that contains this task. Must contain a valid incident ID.
 func (m *IncidentTask) SetIncident(value Incidentable)() {
     err := m.GetBackingStore().Set("incident", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedByDisplayName sets the lastModifiedByDisplayName property value. The lastModifiedByDisplayName property
+// SetLastModifiedByDisplayName sets the lastModifiedByDisplayName property value. Name of the entity that last updated the task. Read-only.
 func (m *IncidentTask) SetLastModifiedByDisplayName(value *string)() {
     err := m.GetBackingStore().Set("lastModifiedByDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. Last update time of the task. Read-only.
 func (m *IncidentTask) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResponseAction sets the responseAction property value. The responseAction property
+// SetResponseAction sets the responseAction property value. The reponse action.
 func (m *IncidentTask) SetResponseAction(value IncidentTaskResponseActionable)() {
     err := m.GetBackingStore().Set("responseAction", value)
     if err != nil {

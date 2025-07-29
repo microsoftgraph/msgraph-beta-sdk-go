@@ -896,6 +896,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["onPremisesSyncBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnPremisesSyncBehaviorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSyncBehavior(val.(OnPremisesSyncBehaviorable))
+        }
+        return nil
+    }
     res["onPremisesSyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -1609,6 +1619,18 @@ func (m *Group) GetOnPremisesSecurityIdentifier()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetOnPremisesSyncBehavior gets the onPremisesSyncBehavior property value. Indicates the state of synchronization for a group between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities. For example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.
+// returns a OnPremisesSyncBehaviorable when successful
+func (m *Group) GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable) {
+    val, err := m.GetBackingStore().Get("onPremisesSyncBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnPremisesSyncBehaviorable)
     }
     return nil
 }
@@ -2370,6 +2392,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteObjectValue("onPremisesSyncBehavior", m.GetOnPremisesSyncBehavior())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("onPremisesSyncEnabled", m.GetOnPremisesSyncEnabled())
         if err != nil {
             return err
@@ -2961,6 +2989,13 @@ func (m *Group) SetOnPremisesSecurityIdentifier(value *string)() {
         panic(err)
     }
 }
+// SetOnPremisesSyncBehavior sets the onPremisesSyncBehavior property value. Indicates the state of synchronization for a group between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities. For example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.
+func (m *Group) SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)() {
+    err := m.GetBackingStore().Set("onPremisesSyncBehavior", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *Group) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
@@ -3224,6 +3259,7 @@ type Groupable interface {
     GetOnPremisesProvisioningErrors()([]OnPremisesProvisioningErrorable)
     GetOnPremisesSamAccountName()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
+    GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable)
     GetOnPremisesSyncEnabled()(*bool)
     GetOrganizationId()(*string)
     GetOwners()([]DirectoryObjectable)
@@ -3304,6 +3340,7 @@ type Groupable interface {
     SetOnPremisesProvisioningErrors(value []OnPremisesProvisioningErrorable)()
     SetOnPremisesSamAccountName(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
+    SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)()
     SetOnPremisesSyncEnabled(value *bool)()
     SetOrganizationId(value *string)()
     SetOwners(value []DirectoryObjectable)()

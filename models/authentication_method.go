@@ -35,6 +35,8 @@ func CreateAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d
                 switch *mappingValue {
                     case "#microsoft.graph.emailAuthenticationMethod":
                         return NewEmailAuthenticationMethod(), nil
+                    case "#microsoft.graph.externalAuthenticationMethod":
+                        return NewExternalAuthenticationMethod(), nil
                     case "#microsoft.graph.fido2AuthenticationMethod":
                         return NewFido2AuthenticationMethod(), nil
                     case "#microsoft.graph.hardwareOathAuthenticationMethod":

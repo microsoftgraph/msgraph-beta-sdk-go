@@ -102,7 +102,7 @@ func (m *WebAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetService gets the service property value. The service property
+// GetService gets the service property value. Contains basic detail about the service that is being associated.
 // returns a ServiceInformationable when successful
 func (m *WebAccount) GetService()(ServiceInformationable) {
     val, err := m.GetBackingStore().Get("service")
@@ -213,7 +213,7 @@ func (m *WebAccount) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetService sets the service property value. The service property
+// SetService sets the service property value. Contains basic detail about the service that is being associated.
 func (m *WebAccount) SetService(value ServiceInformationable)() {
     err := m.GetBackingStore().Set("service", value)
     if err != nil {

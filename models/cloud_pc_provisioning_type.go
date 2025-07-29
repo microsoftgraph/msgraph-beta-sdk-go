@@ -10,10 +10,11 @@ const (
     UNKNOWNFUTUREVALUE_CLOUDPCPROVISIONINGTYPE
     SHAREDBYUSER_CLOUDPCPROVISIONINGTYPE
     SHAREDBYENTRAGROUP_CLOUDPCPROVISIONINGTYPE
+    RESERVE_CLOUDPCPROVISIONINGTYPE
 )
 
 func (i CloudPcProvisioningType) String() string {
-    return []string{"dedicated", "shared", "unknownFutureValue", "sharedByUser", "sharedByEntraGroup"}[i]
+    return []string{"dedicated", "shared", "unknownFutureValue", "sharedByUser", "sharedByEntraGroup", "reserve"}[i]
 }
 func ParseCloudPcProvisioningType(v string) (any, error) {
     result := DEDICATED_CLOUDPCPROVISIONINGTYPE
@@ -28,6 +29,8 @@ func ParseCloudPcProvisioningType(v string) (any, error) {
             result = SHAREDBYUSER_CLOUDPCPROVISIONINGTYPE
         case "sharedByEntraGroup":
             result = SHAREDBYENTRAGROUP_CLOUDPCPROVISIONINGTYPE
+        case "reserve":
+            result = RESERVE_CLOUDPCPROVISIONINGTYPE
         default:
             return nil, nil
     }

@@ -48,7 +48,7 @@ func (m *WorkPosition) GetColleagues()([]RelatedPersonable) {
     }
     return nil
 }
-// GetDetail gets the detail property value. The detail property
+// GetDetail gets the detail property value. Contains detailed information about the position.
 // returns a PositionDetailable when successful
 func (m *WorkPosition) GetDetail()(PositionDetailable) {
     val, err := m.GetBackingStore().Get("detail")
@@ -210,7 +210,7 @@ func (m *WorkPosition) SetColleagues(value []RelatedPersonable)() {
         panic(err)
     }
 }
-// SetDetail sets the detail property value. The detail property
+// SetDetail sets the detail property value. Contains detailed information about the position.
 func (m *WorkPosition) SetDetail(value PositionDetailable)() {
     err := m.GetBackingStore().Set("detail", value)
     if err != nil {

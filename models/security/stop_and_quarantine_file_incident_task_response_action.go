@@ -24,7 +24,7 @@ func NewStopAndQuarantineFileIncidentTaskResponseAction()(*StopAndQuarantineFile
 func CreateStopAndQuarantineFileIncidentTaskResponseActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewStopAndQuarantineFileIncidentTaskResponseAction(), nil
 }
-// GetDeviceId gets the deviceId property value. The deviceId property
+// GetDeviceId gets the deviceId property value. Optional. The identifier of the device where the file is located. This property allows targeting the action to a specific device when the same file exists on multiple devices.
 // returns a *string when successful
 func (m *StopAndQuarantineFileIncidentTaskResponseAction) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -66,7 +66,7 @@ func (m *StopAndQuarantineFileIncidentTaskResponseAction) Serialize(writer i878a
     }
     return nil
 }
-// SetDeviceId sets the deviceId property value. The deviceId property
+// SetDeviceId sets the deviceId property value. Optional. The identifier of the device where the file is located. This property allows targeting the action to a specific device when the same file exists on multiple devices.
 func (m *StopAndQuarantineFileIncidentTaskResponseAction) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {

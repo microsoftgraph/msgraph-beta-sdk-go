@@ -35,6 +35,18 @@ func (m *ConfigurationApplication) GetAppId()(*string) {
     }
     return nil
 }
+// GetAppOwnerOrganizationId gets the appOwnerOrganizationId property value. The appOwnerOrganizationId property
+// returns a *string when successful
+func (m *ConfigurationApplication) GetAppOwnerOrganizationId()(*string) {
+    val, err := m.GetBackingStore().Get("appOwnerOrganizationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetClientCredentials gets the clientCredentials property value. The clientCredentials property
 // returns a ClientCredentialsable when successful
 func (m *ConfigurationApplication) GetClientCredentials()(ClientCredentialsable) {
@@ -106,6 +118,16 @@ func (m *ConfigurationApplication) GetFieldDeserializers()(map[string]func(i878a
         }
         if val != nil {
             m.SetAppId(val)
+        }
+        return nil
+    }
+    res["appOwnerOrganizationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppOwnerOrganizationId(val)
         }
         return nil
     }
@@ -240,6 +262,12 @@ func (m *ConfigurationApplication) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err = writer.WriteStringValue("appOwnerOrganizationId", m.GetAppOwnerOrganizationId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("clientCredentials", m.GetClientCredentials())
         if err != nil {
             return err
@@ -274,6 +302,13 @@ func (m *ConfigurationApplication) Serialize(writer i878a80d2330e89d26896388a3f4
 // SetAppId sets the appId property value. The appId property
 func (m *ConfigurationApplication) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAppOwnerOrganizationId sets the appOwnerOrganizationId property value. The appOwnerOrganizationId property
+func (m *ConfigurationApplication) SetAppOwnerOrganizationId(value *string)() {
+    err := m.GetBackingStore().Set("appOwnerOrganizationId", value)
     if err != nil {
         panic(err)
     }
@@ -338,6 +373,7 @@ type ConfigurationApplicationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAppId()(*string)
+    GetAppOwnerOrganizationId()(*string)
     GetClientCredentials()(ClientCredentialsable)
     GetCreatedBy()(IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -347,6 +383,7 @@ type ConfigurationApplicationable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetTenantId()(*string)
     SetAppId(value *string)()
+    SetAppOwnerOrganizationId(value *string)()
     SetClientCredentials(value ClientCredentialsable)()
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

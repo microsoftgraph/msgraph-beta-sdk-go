@@ -1351,6 +1351,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewExtensionProperty(), nil
                     case "#microsoft.graph.external":
                         return NewExternal(), nil
+                    case "#microsoft.graph.externalAuthenticationMethod":
+                        return NewExternalAuthenticationMethod(), nil
                     case "#microsoft.graph.externalAuthenticationMethodConfiguration":
                         return NewExternalAuthenticationMethodConfiguration(), nil
                     case "#microsoft.graph.externalConnection":
@@ -2151,6 +2153,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnPremisesDirectorySynchronization(), nil
                     case "#microsoft.graph.onPremisesPublishingProfile":
                         return NewOnPremisesPublishingProfile(), nil
+                    case "#microsoft.graph.onPremisesSyncBehavior":
+                        return NewOnPremisesSyncBehavior(), nil
                     case "#microsoft.graph.onTokenIssuanceStartCustomExtension":
                         return NewOnTokenIssuanceStartCustomExtension(), nil
                     case "#microsoft.graph.onTokenIssuanceStartListener":
@@ -2995,6 +2999,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUnenforcedMfaAwsUserFinding(), nil
                     case "#microsoft.graph.unifiedRbacApplication":
                         return NewUnifiedRbacApplication(), nil
+                    case "#microsoft.graph.unifiedRbacApplicationMultiple":
+                        return NewUnifiedRbacApplicationMultiple(), nil
                     case "#microsoft.graph.unifiedRbacResourceAction":
                         return NewUnifiedRbacResourceAction(), nil
                     case "#microsoft.graph.unifiedRbacResourceNamespace":

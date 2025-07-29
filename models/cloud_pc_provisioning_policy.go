@@ -4,6 +4,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -91,6 +92,30 @@ func (m *CloudPcProvisioningPolicy) GetCloudPcNamingTemplate()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetCreatedBy gets the createdBy property value. The createdBy property
+// returns a *string when successful
+func (m *CloudPcProvisioningPolicy) GetCreatedBy()(*string) {
+    val, err := m.GetBackingStore().Get("createdBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// returns a *Time when successful
+func (m *CloudPcProvisioningPolicy) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("createdDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -212,6 +237,26 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["createdBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedBy(val)
+        }
+        return nil
+    }
+    res["createdDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedDateTime(val)
+        }
+        return nil
+    }
     res["description"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -295,6 +340,26 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetImageType(val.(*CloudPcProvisioningPolicyImageType))
+        }
+        return nil
+    }
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedBy(val)
+        }
+        return nil
+    }
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
         }
         return nil
     }
@@ -421,6 +486,30 @@ func (m *CloudPcProvisioningPolicy) GetImageType()(*CloudPcProvisioningPolicyIma
     }
     if val != nil {
         return val.(*CloudPcProvisioningPolicyImageType)
+    }
+    return nil
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// returns a *string when successful
+func (m *CloudPcProvisioningPolicy) GetLastModifiedBy()(*string) {
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
+func (m *CloudPcProvisioningPolicy) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -557,6 +646,18 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteStringValue("createdBy", m.GetCreatedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("createdDateTime", m.GetCreatedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("description", m.GetDescription())
         if err != nil {
             return err
@@ -607,6 +708,18 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetImageType() != nil {
         cast := (*m.GetImageType()).String()
         err = writer.WriteStringValue("imageType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("lastModifiedBy", m.GetLastModifiedBy())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
             return err
         }
@@ -699,6 +812,20 @@ func (m *CloudPcProvisioningPolicy) SetCloudPcNamingTemplate(value *string)() {
         panic(err)
     }
 }
+// SetCreatedBy sets the createdBy property value. The createdBy property
+func (m *CloudPcProvisioningPolicy) SetCreatedBy(value *string)() {
+    err := m.GetBackingStore().Set("createdBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+func (m *CloudPcProvisioningPolicy) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("createdDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDescription sets the description property value. The provisioning policy description. Supports $filter, $select, and $orderBy.
 func (m *CloudPcProvisioningPolicy) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
@@ -751,6 +878,20 @@ func (m *CloudPcProvisioningPolicy) SetImageId(value *string)() {
 // SetImageType sets the imageType property value. The imageType property
 func (m *CloudPcProvisioningPolicy) SetImageType(value *CloudPcProvisioningPolicyImageType)() {
     err := m.GetBackingStore().Set("imageType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+func (m *CloudPcProvisioningPolicy) SetLastModifiedBy(value *string)() {
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+func (m *CloudPcProvisioningPolicy) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
     if err != nil {
         panic(err)
     }
@@ -813,6 +954,8 @@ type CloudPcProvisioningPolicyable interface {
     GetAutopilotConfiguration()(CloudPcAutopilotConfigurationable)
     GetCloudPcGroupDisplayName()(*string)
     GetCloudPcNamingTemplate()(*string)
+    GetCreatedBy()(*string)
+    GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
     GetDomainJoinConfigurations()([]CloudPcDomainJoinConfigurationable)
@@ -821,6 +964,8 @@ type CloudPcProvisioningPolicyable interface {
     GetImageDisplayName()(*string)
     GetImageId()(*string)
     GetImageType()(*CloudPcProvisioningPolicyImageType)
+    GetLastModifiedBy()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocalAdminEnabled()(*bool)
     GetManagedBy()(*CloudPcManagementService)
     GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable)
@@ -834,6 +979,8 @@ type CloudPcProvisioningPolicyable interface {
     SetAutopilotConfiguration(value CloudPcAutopilotConfigurationable)()
     SetCloudPcGroupDisplayName(value *string)()
     SetCloudPcNamingTemplate(value *string)()
+    SetCreatedBy(value *string)()
+    SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
     SetDomainJoinConfigurations(value []CloudPcDomainJoinConfigurationable)()
@@ -842,6 +989,8 @@ type CloudPcProvisioningPolicyable interface {
     SetImageDisplayName(value *string)()
     SetImageId(value *string)()
     SetImageType(value *CloudPcProvisioningPolicyImageType)()
+    SetLastModifiedBy(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocalAdminEnabled(value *bool)()
     SetManagedBy(value *CloudPcManagementService)()
     SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)()
