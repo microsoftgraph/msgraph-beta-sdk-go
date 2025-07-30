@@ -21,7 +21,7 @@ type IncidentTasksIncidentTaskItemRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IncidentTasksIncidentTaskItemRequestBuilderGetQueryParameters get incidentTasks from security
+// IncidentTasksIncidentTaskItemRequestBuilderGetQueryParameters a collection of tasks associated with security incidents.
 type IncidentTasksIncidentTaskItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *IncidentTasksIncidentTaskItemRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get get incidentTasks from security
+// Get a collection of tasks associated with security incidents.
 // returns a IncidentTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IncidentTasksIncidentTaskItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IncidentTasksIncidentTaskItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IncidentTaskable, error) {
@@ -134,7 +134,7 @@ func (m *IncidentTasksIncidentTaskItemRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get incidentTasks from security
+// ToGetRequestInformation a collection of tasks associated with security incidents.
 // returns a *RequestInformation when successful
 func (m *IncidentTasksIncidentTaskItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IncidentTasksIncidentTaskItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -8,10 +8,11 @@ const (
     AUTOMATIC_CLOUDPCSNAPSHOTTYPE CloudPcSnapshotType = iota
     MANUAL_CLOUDPCSNAPSHOTTYPE
     UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTTYPE
+    RETENTION_CLOUDPCSNAPSHOTTYPE
 )
 
 func (i CloudPcSnapshotType) String() string {
-    return []string{"automatic", "manual", "unknownFutureValue"}[i]
+    return []string{"automatic", "manual", "unknownFutureValue", "retention"}[i]
 }
 func ParseCloudPcSnapshotType(v string) (any, error) {
     result := AUTOMATIC_CLOUDPCSNAPSHOTTYPE
@@ -22,6 +23,8 @@ func ParseCloudPcSnapshotType(v string) (any, error) {
             result = MANUAL_CLOUDPCSNAPSHOTTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCSNAPSHOTTYPE
+        case "retention":
+            result = RETENTION_CLOUDPCSNAPSHOTTYPE
         default:
             return nil, nil
     }

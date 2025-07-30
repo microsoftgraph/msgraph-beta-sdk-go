@@ -190,6 +190,11 @@ func (m *ItemMessagesMessageItemRequestBuilder) Reply()(*ItemMessagesItemReplyRe
 func (m *ItemMessagesMessageItemRequestBuilder) ReplyAll()(*ItemMessagesItemReplyAllRequestBuilder) {
     return NewItemMessagesItemReplyAllRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ReportMessage provides operations to call the reportMessage method.
+// returns a *ItemMessagesItemReportMessageRequestBuilder when successful
+func (m *ItemMessagesMessageItemRequestBuilder) ReportMessage()(*ItemMessagesItemReportMessageRequestBuilder) {
+    return NewItemMessagesItemReportMessageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Send provides operations to call the send method.
 // returns a *ItemMessagesItemSendRequestBuilder when successful
 func (m *ItemMessagesMessageItemRequestBuilder) Send()(*ItemMessagesItemSendRequestBuilder) {

@@ -104,7 +104,7 @@ func (m *EducationalActivity) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetInstitution gets the institution property value. The institution property
+// GetInstitution gets the institution property value. Contains details of the institution studied at.
 // returns a InstitutionDataable when successful
 func (m *EducationalActivity) GetInstitution()(InstitutionDataable) {
     val, err := m.GetBackingStore().Get("institution")
@@ -116,7 +116,7 @@ func (m *EducationalActivity) GetInstitution()(InstitutionDataable) {
     }
     return nil
 }
-// GetProgram gets the program property value. The program property
+// GetProgram gets the program property value. Contains extended information about the program or course.
 // returns a EducationalActivityDetailable when successful
 func (m *EducationalActivity) GetProgram()(EducationalActivityDetailable) {
     val, err := m.GetBackingStore().Get("program")
@@ -192,14 +192,14 @@ func (m *EducationalActivity) SetEndMonthYear(value *i878a80d2330e89d26896388a3f
         panic(err)
     }
 }
-// SetInstitution sets the institution property value. The institution property
+// SetInstitution sets the institution property value. Contains details of the institution studied at.
 func (m *EducationalActivity) SetInstitution(value InstitutionDataable)() {
     err := m.GetBackingStore().Set("institution", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProgram sets the program property value. The program property
+// SetProgram sets the program property value. Contains extended information about the program or course.
 func (m *EducationalActivity) SetProgram(value EducationalActivityDetailable)() {
     err := m.GetBackingStore().Set("program", value)
     if err != nil {

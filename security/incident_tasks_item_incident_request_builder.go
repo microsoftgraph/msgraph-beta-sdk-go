@@ -14,7 +14,7 @@ import (
 type IncidentTasksItemIncidentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IncidentTasksItemIncidentRequestBuilderGetQueryParameters get incident from security
+// IncidentTasksItemIncidentRequestBuilderGetQueryParameters required. The incident that contains this task. Must contain a valid incident ID.
 type IncidentTasksItemIncidentRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewIncidentTasksItemIncidentRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewIncidentTasksItemIncidentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get incident from security
+// Get required. The incident that contains this task. Must contain a valid incident ID.
 // returns a Incidentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IncidentTasksItemIncidentRequestBuilder) Get(ctx context.Context, requestConfiguration *IncidentTasksItemIncidentRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Incidentable, error) {
@@ -63,7 +63,7 @@ func (m *IncidentTasksItemIncidentRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.Incidentable), nil
 }
-// ToGetRequestInformation get incident from security
+// ToGetRequestInformation required. The incident that contains this task. Must contain a valid incident ID.
 // returns a *RequestInformation when successful
 func (m *IncidentTasksItemIncidentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IncidentTasksItemIncidentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

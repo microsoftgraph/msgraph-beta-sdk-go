@@ -151,6 +151,16 @@ func (m *CloudPcUserSetting) GetFieldDeserializers()(map[string]func(i878a80d233
         }
         return nil
     }
+    res["provisioningSourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcProvisioningSourceType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProvisioningSourceType(val.(*CloudPcProvisioningSourceType))
+        }
+        return nil
+    }
     res["resetEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -216,6 +226,18 @@ func (m *CloudPcUserSetting) GetNotificationSetting()(CloudPcNotificationSetting
     }
     if val != nil {
         return val.(CloudPcNotificationSettingable)
+    }
+    return nil
+}
+// GetProvisioningSourceType gets the provisioningSourceType property value. The provisioningSourceType property
+// returns a *CloudPcProvisioningSourceType when successful
+func (m *CloudPcUserSetting) GetProvisioningSourceType()(*CloudPcProvisioningSourceType) {
+    val, err := m.GetBackingStore().Get("provisioningSourceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcProvisioningSourceType)
     }
     return nil
 }
@@ -309,6 +331,13 @@ func (m *CloudPcUserSetting) Serialize(writer i878a80d2330e89d26896388a3f487eef2
             return err
         }
     }
+    if m.GetProvisioningSourceType() != nil {
+        cast := (*m.GetProvisioningSourceType()).String()
+        err = writer.WriteStringValue("provisioningSourceType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("resetEnabled", m.GetResetEnabled())
         if err != nil {
@@ -378,6 +407,13 @@ func (m *CloudPcUserSetting) SetNotificationSetting(value CloudPcNotificationSet
         panic(err)
     }
 }
+// SetProvisioningSourceType sets the provisioningSourceType property value. The provisioningSourceType property
+func (m *CloudPcUserSetting) SetProvisioningSourceType(value *CloudPcProvisioningSourceType)() {
+    err := m.GetBackingStore().Set("provisioningSourceType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResetEnabled sets the resetEnabled property value. Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset isn't allowed. The default value is false.
 func (m *CloudPcUserSetting) SetResetEnabled(value *bool)() {
     err := m.GetBackingStore().Set("resetEnabled", value)
@@ -409,6 +445,7 @@ type CloudPcUserSettingable interface {
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLocalAdminEnabled()(*bool)
     GetNotificationSetting()(CloudPcNotificationSettingable)
+    GetProvisioningSourceType()(*CloudPcProvisioningSourceType)
     GetResetEnabled()(*bool)
     GetRestorePointSetting()(CloudPcRestorePointSettingable)
     GetSelfServiceEnabled()(*bool)
@@ -419,6 +456,7 @@ type CloudPcUserSettingable interface {
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLocalAdminEnabled(value *bool)()
     SetNotificationSetting(value CloudPcNotificationSettingable)()
+    SetProvisioningSourceType(value *CloudPcProvisioningSourceType)()
     SetResetEnabled(value *bool)()
     SetRestorePointSetting(value CloudPcRestorePointSettingable)()
     SetSelfServiceEnabled(value *bool)()

@@ -35,6 +35,7 @@ func NewItemMessagesItemMarkAsNotJunkRequestBuilder(rawUrl string, requestAdapte
     return NewItemMessagesItemMarkAsNotJunkRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.
+// Deprecated: The MarkAsNotJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Not_Junk on 2025-04-25 and will be removed 2025-12-30
 // returns a Messageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -58,6 +59,7 @@ func (m *ItemMessagesItemMarkAsNotJunkRequestBuilder) Post(ctx context.Context, 
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Messageable), nil
 }
 // ToPostRequestInformation mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.
+// Deprecated: The MarkAsNotJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Not_Junk on 2025-04-25 and will be removed 2025-12-30
 // returns a *RequestInformation when successful
 func (m *ItemMessagesItemMarkAsNotJunkRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemMessagesItemMarkAsNotJunkPostRequestBodyable, requestConfiguration *ItemMessagesItemMarkAsNotJunkRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -73,6 +75,7 @@ func (m *ItemMessagesItemMarkAsNotJunkRequestBuilder) ToPostRequestInformation(c
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The MarkAsNotJunk API is deprecated and will stop working from Dec 30, 2025. Please use the ReportMessage API. as of 2022-09/Mark_As_Not_Junk on 2025-04-25 and will be removed 2025-12-30
 // returns a *ItemMessagesItemMarkAsNotJunkRequestBuilder when successful
 func (m *ItemMessagesItemMarkAsNotJunkRequestBuilder) WithUrl(rawUrl string)(*ItemMessagesItemMarkAsNotJunkRequestBuilder) {
     return NewItemMessagesItemMarkAsNotJunkRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

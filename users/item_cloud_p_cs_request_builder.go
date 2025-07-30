@@ -124,6 +124,11 @@ func (m *ItemCloudPCsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable), nil
 }
+// RetrieveCloudPcCountByStatus provides operations to call the retrieveCloudPcCountByStatus method.
+// returns a *ItemCloudPCsRetrieveCloudPcCountByStatusRequestBuilder when successful
+func (m *ItemCloudPCsRequestBuilder) RetrieveCloudPcCountByStatus()(*ItemCloudPCsRetrieveCloudPcCountByStatusRequestBuilder) {
+    return NewItemCloudPCsRetrieveCloudPcCountByStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get cloudPCs from users
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

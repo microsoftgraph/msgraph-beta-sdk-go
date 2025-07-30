@@ -42,7 +42,7 @@ type ItemTokenIssuancePoliciesRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *ItemTokenIssuancePoliciesRequestBuilderGetQueryParameters
 }
-// ByTokenIssuancePolicyId provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.
+// ByTokenIssuancePolicyId gets an item from the github.com/microsoftgraph/msgraph-beta-sdk-go/.servicePrincipals.item.tokenIssuancePolicies.item collection
 // returns a *ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder when successful
 func (m *ItemTokenIssuancePoliciesRequestBuilder) ByTokenIssuancePolicyId(tokenIssuancePolicyId string)(*ItemTokenIssuancePoliciesTokenIssuancePolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -91,6 +91,11 @@ func (m *ItemTokenIssuancePoliciesRequestBuilder) Get(ctx context.Context, reque
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TokenIssuancePolicyCollectionResponseable), nil
+}
+// Ref provides operations to manage the collection of servicePrincipal entities.
+// returns a *ItemTokenIssuancePoliciesRefRequestBuilder when successful
+func (m *ItemTokenIssuancePoliciesRequestBuilder) Ref()(*ItemTokenIssuancePoliciesRefRequestBuilder) {
+    return NewItemTokenIssuancePoliciesRefRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation the tokenIssuancePolicies assigned to this service principal. Supports $expand.
 // returns a *RequestInformation when successful

@@ -14,7 +14,7 @@ import (
 type IncidentTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// IncidentTasksRequestBuilderGetQueryParameters get incidentTasks from security
+// IncidentTasksRequestBuilderGetQueryParameters get incident tasks that Microsoft Defender Experts for XDR identified for remediation.
 type IncidentTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewIncidentTasksRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *IncidentTasksRequestBuilder) Count()(*IncidentTasksCountRequestBuilder) {
     return NewIncidentTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get incidentTasks from security
+// Get get incident tasks that Microsoft Defender Experts for XDR identified for remediation.
 // returns a IncidentTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-list-incidenttasks?view=graph-rest-beta
 func (m *IncidentTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *IncidentTasksRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IncidentTaskCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *IncidentTasksRequestBuilder) Post(ctx context.Context, body i084fa7ab3b
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IncidentTaskable), nil
 }
-// ToGetRequestInformation get incidentTasks from security
+// ToGetRequestInformation get incident tasks that Microsoft Defender Experts for XDR identified for remediation.
 // returns a *RequestInformation when successful
 func (m *IncidentTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IncidentTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

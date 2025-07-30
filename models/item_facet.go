@@ -91,7 +91,7 @@ func (m *ItemFacet) GetAllowedAudiences()(*AllowedAudiences) {
     }
     return nil
 }
-// GetCreatedBy gets the createdBy property value. The createdBy property
+// GetCreatedBy gets the createdBy property value. Provides the identifier of the user and/or application that created the entity.
 // returns a IdentitySetable when successful
 func (m *ItemFacet) GetCreatedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("createdBy")
@@ -241,7 +241,7 @@ func (m *ItemFacet) GetIsSearchable()(*bool) {
     }
     return nil
 }
-// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// GetLastModifiedBy gets the lastModifiedBy property value. Provides the identifier of the user and/or application that last modified the entity.
 // returns a IdentitySetable when successful
 func (m *ItemFacet) GetLastModifiedBy()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("lastModifiedBy")
@@ -365,7 +365,7 @@ func (m *ItemFacet) SetAllowedAudiences(value *AllowedAudiences)() {
         panic(err)
     }
 }
-// SetCreatedBy sets the createdBy property value. The createdBy property
+// SetCreatedBy sets the createdBy property value. Provides the identifier of the user and/or application that created the entity.
 func (m *ItemFacet) SetCreatedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("createdBy", value)
     if err != nil {
@@ -393,7 +393,7 @@ func (m *ItemFacet) SetIsSearchable(value *bool)() {
         panic(err)
     }
 }
-// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+// SetLastModifiedBy sets the lastModifiedBy property value. Provides the identifier of the user and/or application that last modified the entity.
 func (m *ItemFacet) SetLastModifiedBy(value IdentitySetable)() {
     err := m.GetBackingStore().Set("lastModifiedBy", value)
     if err != nil {

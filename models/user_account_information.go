@@ -94,7 +94,7 @@ func (m *UserAccountInformation) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetPreferredLanguageTag gets the preferredLanguageTag property value. The preferredLanguageTag property
+// GetPreferredLanguageTag gets the preferredLanguageTag property value. Contains the language the user has associated as preferred for the account.
 // returns a LocaleInfoable when successful
 func (m *UserAccountInformation) GetPreferredLanguageTag()(LocaleInfoable) {
     val, err := m.GetBackingStore().Get("preferredLanguageTag")
@@ -164,7 +164,7 @@ func (m *UserAccountInformation) SetCountryCode(value *string)() {
         panic(err)
     }
 }
-// SetPreferredLanguageTag sets the preferredLanguageTag property value. The preferredLanguageTag property
+// SetPreferredLanguageTag sets the preferredLanguageTag property value. Contains the language the user has associated as preferred for the account.
 func (m *UserAccountInformation) SetPreferredLanguageTag(value LocaleInfoable)() {
     err := m.GetBackingStore().Set("preferredLanguageTag", value)
     if err != nil {

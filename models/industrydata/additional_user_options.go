@@ -89,6 +89,16 @@ func (m *AdditionalUserOptions) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["studentAgeGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseStudentAgeGroup)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetStudentAgeGroup(val.(*StudentAgeGroup))
+        }
+        return nil
+    }
     return res
 }
 // GetMarkAllStudentsAsMinors gets the markAllStudentsAsMinors property value. Indicates whether all students should be marked as minors. The markAllStudentsAsMinors property is deprecated and will stop returning data on October 15, 2025. Going forward, use the studentAgeGroup property.
@@ -115,6 +125,18 @@ func (m *AdditionalUserOptions) GetOdataType()(*string) {
     }
     return nil
 }
+// GetStudentAgeGroup gets the studentAgeGroup property value. Indicates the age group classification for students. Possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.
+// returns a *StudentAgeGroup when successful
+func (m *AdditionalUserOptions) GetStudentAgeGroup()(*StudentAgeGroup) {
+    val, err := m.GetBackingStore().Get("studentAgeGroup")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*StudentAgeGroup)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *AdditionalUserOptions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -131,6 +153,13 @@ func (m *AdditionalUserOptions) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetStudentAgeGroup() != nil {
+        cast := (*m.GetStudentAgeGroup()).String()
+        err := writer.WriteStringValue("studentAgeGroup", &cast)
         if err != nil {
             return err
         }
@@ -175,6 +204,13 @@ func (m *AdditionalUserOptions) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetStudentAgeGroup sets the studentAgeGroup property value. Indicates the age group classification for students. Possible values are: minor, notAdult, adult, unknownFutureValue. Use null to disable age group enforcement.
+func (m *AdditionalUserOptions) SetStudentAgeGroup(value *StudentAgeGroup)() {
+    err := m.GetBackingStore().Set("studentAgeGroup", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AdditionalUserOptionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -183,8 +219,10 @@ type AdditionalUserOptionsable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetMarkAllStudentsAsMinors()(*bool)
     GetOdataType()(*string)
+    GetStudentAgeGroup()(*StudentAgeGroup)
     SetAllowStudentContactAssociation(value *bool)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetMarkAllStudentsAsMinors(value *bool)()
     SetOdataType(value *string)()
+    SetStudentAgeGroup(value *StudentAgeGroup)()
 }
