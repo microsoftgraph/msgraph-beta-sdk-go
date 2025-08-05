@@ -50,6 +50,7 @@ type UserCredentialUsageDetailsRequestBuilderPostRequestConfiguration struct {
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByUserCredentialUsageDetailsId provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder when successful
 func (m *UserCredentialUsageDetailsRequestBuilder) ByUserCredentialUsageDetailsId(userCredentialUsageDetailsId string)(*UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) Count()(*UserCredentialUsageD
     return NewUserCredentialUsageDetailsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a UserCredentialUsageDetailsCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) Get(ctx context.Context, requ
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsCollectionResponseable), nil
 }
 // Post create new navigation property to userCredentialUsageDetails for reports
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a UserCredentialUsageDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserCredentialUsageDetailsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable, requestConfiguration *UserCredentialUsageDetailsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable, error) {
@@ -123,6 +126,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) Post(ctx context.Context, bod
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable), nil
 }
 // ToGetRequestInformation get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *UserCredentialUsageDetailsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserCredentialUsageDetailsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -137,6 +141,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) ToGetRequestInformation(ctx c
     return requestInfo, nil
 }
 // ToPostRequestInformation create new navigation property to userCredentialUsageDetails for reports
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *UserCredentialUsageDetailsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable, requestConfiguration *UserCredentialUsageDetailsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -152,6 +157,7 @@ func (m *UserCredentialUsageDetailsRequestBuilder) ToPostRequestInformation(ctx 
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *UserCredentialUsageDetailsRequestBuilder when successful
 func (m *UserCredentialUsageDetailsRequestBuilder) WithUrl(rawUrl string)(*UserCredentialUsageDetailsRequestBuilder) {
     return NewUserCredentialUsageDetailsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

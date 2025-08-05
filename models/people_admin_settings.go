@@ -46,6 +46,16 @@ func (m *PeopleAdminSettings) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["photoUpdateSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePhotoUpdateSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPhotoUpdateSettings(val.(PhotoUpdateSettingsable))
+        }
+        return nil
+    }
     res["profileCardProperties"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateProfileCardPropertyFromDiscriminatorValue)
         if err != nil {
@@ -130,6 +140,18 @@ func (m *PeopleAdminSettings) GetNamePronunciation()(NamePronunciationSettingsab
     }
     return nil
 }
+// GetPhotoUpdateSettings gets the photoUpdateSettings property value. Administrator settings that manage the support for item photo updates in an organization.
+// returns a PhotoUpdateSettingsable when successful
+func (m *PeopleAdminSettings) GetPhotoUpdateSettings()(PhotoUpdateSettingsable) {
+    val, err := m.GetBackingStore().Get("photoUpdateSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PhotoUpdateSettingsable)
+    }
+    return nil
+}
 // GetProfileCardProperties gets the profileCardProperties property value. A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
 // returns a []ProfileCardPropertyable when successful
 func (m *PeopleAdminSettings) GetProfileCardProperties()([]ProfileCardPropertyable) {
@@ -196,6 +218,12 @@ func (m *PeopleAdminSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("photoUpdateSettings", m.GetPhotoUpdateSettings())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProfileCardProperties() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetProfileCardProperties()))
         for i, v := range m.GetProfileCardProperties() {
@@ -254,6 +282,13 @@ func (m *PeopleAdminSettings) SetNamePronunciation(value NamePronunciationSettin
         panic(err)
     }
 }
+// SetPhotoUpdateSettings sets the photoUpdateSettings property value. Administrator settings that manage the support for item photo updates in an organization.
+func (m *PeopleAdminSettings) SetPhotoUpdateSettings(value PhotoUpdateSettingsable)() {
+    err := m.GetBackingStore().Set("photoUpdateSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProfileCardProperties sets the profileCardProperties property value. A collection of the properties an administrator defined as visible on the Microsoft 365 profile card.
 func (m *PeopleAdminSettings) SetProfileCardProperties(value []ProfileCardPropertyable)() {
     err := m.GetBackingStore().Set("profileCardProperties", value)
@@ -287,12 +322,14 @@ type PeopleAdminSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetItemInsights()(InsightsSettingsable)
     GetNamePronunciation()(NamePronunciationSettingsable)
+    GetPhotoUpdateSettings()(PhotoUpdateSettingsable)
     GetProfileCardProperties()([]ProfileCardPropertyable)
     GetProfilePropertySettings()([]ProfilePropertySettingable)
     GetProfileSources()([]ProfileSourceable)
     GetPronouns()(PronounsSettingsable)
     SetItemInsights(value InsightsSettingsable)()
     SetNamePronunciation(value NamePronunciationSettingsable)()
+    SetPhotoUpdateSettings(value PhotoUpdateSettingsable)()
     SetProfileCardProperties(value []ProfileCardPropertyable)()
     SetProfilePropertySettings(value []ProfilePropertySettingable)()
     SetProfileSources(value []ProfileSourceable)()

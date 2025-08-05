@@ -40,7 +40,7 @@ func (m *RelatedTransaction) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetTransactionId gets the transactionId property value. The transactionId property
+// GetTransactionId gets the transactionId property value. Unique identifier of the transaction. Required.
 // returns a *string when successful
 func (m *RelatedTransaction) GetTransactionId()(*string) {
     val, err := m.GetBackingStore().Get("transactionId")
@@ -66,7 +66,7 @@ func (m *RelatedTransaction) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetTransactionId sets the transactionId property value. The transactionId property
+// SetTransactionId sets the transactionId property value. Unique identifier of the transaction. Required.
 func (m *RelatedTransaction) SetTransactionId(value *string)() {
     err := m.GetBackingStore().Set("transactionId", value)
     if err != nil {

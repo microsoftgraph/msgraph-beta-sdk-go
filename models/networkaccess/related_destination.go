@@ -70,7 +70,7 @@ func (m *RelatedDestination) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFqdn gets the fqdn property value. The fqdn property
+// GetFqdn gets the fqdn property value. Fully qualified domain name of the destination. Required.
 // returns a *string when successful
 func (m *RelatedDestination) GetFqdn()(*string) {
     val, err := m.GetBackingStore().Get("fqdn")
@@ -82,7 +82,7 @@ func (m *RelatedDestination) GetFqdn()(*string) {
     }
     return nil
 }
-// GetIp gets the ip property value. The ip property
+// GetIp gets the ip property value. IP address of the destination. Required.
 // returns a *string when successful
 func (m *RelatedDestination) GetIp()(*string) {
     val, err := m.GetBackingStore().Get("ip")
@@ -106,7 +106,7 @@ func (m *RelatedDestination) GetNetworkingProtocol()(*NetworkingProtocol) {
     }
     return nil
 }
-// GetPort gets the port property value. The port property
+// GetPort gets the port property value. Port number used to access the destination. Required.
 // returns a *int32 when successful
 func (m *RelatedDestination) GetPort()(*int32) {
     val, err := m.GetBackingStore().Get("port")
@@ -151,14 +151,14 @@ func (m *RelatedDestination) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetFqdn sets the fqdn property value. The fqdn property
+// SetFqdn sets the fqdn property value. Fully qualified domain name of the destination. Required.
 func (m *RelatedDestination) SetFqdn(value *string)() {
     err := m.GetBackingStore().Set("fqdn", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIp sets the ip property value. The ip property
+// SetIp sets the ip property value. IP address of the destination. Required.
 func (m *RelatedDestination) SetIp(value *string)() {
     err := m.GetBackingStore().Set("ip", value)
     if err != nil {
@@ -172,7 +172,7 @@ func (m *RelatedDestination) SetNetworkingProtocol(value *NetworkingProtocol)() 
         panic(err)
     }
 }
-// SetPort sets the port property value. The port property
+// SetPort sets the port property value. Port number used to access the destination. Required.
 func (m *RelatedDestination) SetPort(value *int32)() {
     err := m.GetBackingStore().Set("port", value)
     if err != nil {

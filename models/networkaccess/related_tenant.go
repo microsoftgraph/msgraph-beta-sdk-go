@@ -40,7 +40,7 @@ func (m *RelatedTenant) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Unique identifier of the tenant. Required.
 // returns a *string when successful
 func (m *RelatedTenant) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -66,7 +66,7 @@ func (m *RelatedTenant) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Unique identifier of the tenant. Required.
 func (m *RelatedTenant) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

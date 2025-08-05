@@ -26,6 +26,54 @@ func CreateAuthenticationMethodsRootFromDiscriminatorValue(parseNode i878a80d233
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationMethodsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["userEventsSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserEventsSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserEventsSummaryable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(UserEventsSummaryable)
+                }
+            }
+            m.SetUserEventsSummary(res)
+        }
+        return nil
+    }
+    res["userMfaSignInSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserMfaSignInSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserMfaSignInSummaryable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(UserMfaSignInSummaryable)
+                }
+            }
+            m.SetUserMfaSignInSummary(res)
+        }
+        return nil
+    }
+    res["userPasswordResetsAndChangesSummary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateUserPasswordResetsAndChangesSummaryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]UserPasswordResetsAndChangesSummaryable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(UserPasswordResetsAndChangesSummaryable)
+                }
+            }
+            m.SetUserPasswordResetsAndChangesSummary(res)
+        }
+        return nil
+    }
     res["userRegistrationDetails"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateUserRegistrationDetailsFromDiscriminatorValue)
         if err != nil {
@@ -43,6 +91,42 @@ func (m *AuthenticationMethodsRoot) GetFieldDeserializers()(map[string]func(i878
         return nil
     }
     return res
+}
+// GetUserEventsSummary gets the userEventsSummary property value. Represents a specific user MFA/SSPR registration or reset event, including whether the event was successful, which authentication method was targeted, and failure reason if any.
+// returns a []UserEventsSummaryable when successful
+func (m *AuthenticationMethodsRoot) GetUserEventsSummary()([]UserEventsSummaryable) {
+    val, err := m.GetBackingStore().Get("userEventsSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserEventsSummaryable)
+    }
+    return nil
+}
+// GetUserMfaSignInSummary gets the userMfaSignInSummary property value. Represents the total count of MFA vs non-MFA sign-in counts for a specified period.
+// returns a []UserMfaSignInSummaryable when successful
+func (m *AuthenticationMethodsRoot) GetUserMfaSignInSummary()([]UserMfaSignInSummaryable) {
+    val, err := m.GetBackingStore().Get("userMfaSignInSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserMfaSignInSummaryable)
+    }
+    return nil
+}
+// GetUserPasswordResetsAndChangesSummary gets the userPasswordResetsAndChangesSummary property value. Represents the summary of password resets and changes for a specific day. This includes the number of password resets that were self-service and those triggered by an administrator.
+// returns a []UserPasswordResetsAndChangesSummaryable when successful
+func (m *AuthenticationMethodsRoot) GetUserPasswordResetsAndChangesSummary()([]UserPasswordResetsAndChangesSummaryable) {
+    val, err := m.GetBackingStore().Get("userPasswordResetsAndChangesSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]UserPasswordResetsAndChangesSummaryable)
+    }
+    return nil
 }
 // GetUserRegistrationDetails gets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).
 // returns a []UserRegistrationDetailsable when successful
@@ -62,6 +146,42 @@ func (m *AuthenticationMethodsRoot) Serialize(writer i878a80d2330e89d26896388a3f
     if err != nil {
         return err
     }
+    if m.GetUserEventsSummary() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserEventsSummary()))
+        for i, v := range m.GetUserEventsSummary() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("userEventsSummary", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserMfaSignInSummary() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserMfaSignInSummary()))
+        for i, v := range m.GetUserMfaSignInSummary() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("userMfaSignInSummary", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserPasswordResetsAndChangesSummary() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserPasswordResetsAndChangesSummary()))
+        for i, v := range m.GetUserPasswordResetsAndChangesSummary() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("userPasswordResetsAndChangesSummary", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetUserRegistrationDetails() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserRegistrationDetails()))
         for i, v := range m.GetUserRegistrationDetails() {
@@ -76,6 +196,27 @@ func (m *AuthenticationMethodsRoot) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
+// SetUserEventsSummary sets the userEventsSummary property value. Represents a specific user MFA/SSPR registration or reset event, including whether the event was successful, which authentication method was targeted, and failure reason if any.
+func (m *AuthenticationMethodsRoot) SetUserEventsSummary(value []UserEventsSummaryable)() {
+    err := m.GetBackingStore().Set("userEventsSummary", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserMfaSignInSummary sets the userMfaSignInSummary property value. Represents the total count of MFA vs non-MFA sign-in counts for a specified period.
+func (m *AuthenticationMethodsRoot) SetUserMfaSignInSummary(value []UserMfaSignInSummaryable)() {
+    err := m.GetBackingStore().Set("userMfaSignInSummary", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserPasswordResetsAndChangesSummary sets the userPasswordResetsAndChangesSummary property value. Represents the summary of password resets and changes for a specific day. This includes the number of password resets that were self-service and those triggered by an administrator.
+func (m *AuthenticationMethodsRoot) SetUserPasswordResetsAndChangesSummary(value []UserPasswordResetsAndChangesSummaryable)() {
+    err := m.GetBackingStore().Set("userPasswordResetsAndChangesSummary", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserRegistrationDetails sets the userRegistrationDetails property value. Represents the state of a user's authentication methods, including which methods are registered and which features the user is registered and capable of (such as multifactor authentication, self-service password reset, and passwordless authentication).
 func (m *AuthenticationMethodsRoot) SetUserRegistrationDetails(value []UserRegistrationDetailsable)() {
     err := m.GetBackingStore().Set("userRegistrationDetails", value)
@@ -86,6 +227,12 @@ func (m *AuthenticationMethodsRoot) SetUserRegistrationDetails(value []UserRegis
 type AuthenticationMethodsRootable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserEventsSummary()([]UserEventsSummaryable)
+    GetUserMfaSignInSummary()([]UserMfaSignInSummaryable)
+    GetUserPasswordResetsAndChangesSummary()([]UserPasswordResetsAndChangesSummaryable)
     GetUserRegistrationDetails()([]UserRegistrationDetailsable)
+    SetUserEventsSummary(value []UserEventsSummaryable)()
+    SetUserMfaSignInSummary(value []UserMfaSignInSummaryable)()
+    SetUserPasswordResetsAndChangesSummary(value []UserPasswordResetsAndChangesSummaryable)()
     SetUserRegistrationDetails(value []UserRegistrationDetailsable)()
 }

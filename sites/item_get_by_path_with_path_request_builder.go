@@ -82,6 +82,11 @@ func (m *ItemGetByPathWithPathRequestBuilder) Drive()(*ItemGetByPathWithPathDriv
 func (m *ItemGetByPathWithPathRequestBuilder) Drives()(*ItemGetByPathWithPathDrivesRequestBuilder) {
     return NewItemGetByPathWithPathDrivesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Extensions provides operations to manage the extensions property of the microsoft.graph.site entity.
+// returns a *ItemGetByPathWithPathExtensionsRequestBuilder when successful
+func (m *ItemGetByPathWithPathRequestBuilder) Extensions()(*ItemGetByPathWithPathExtensionsRequestBuilder) {
+    return NewItemGetByPathWithPathExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ExternalColumns provides operations to manage the externalColumns property of the microsoft.graph.site entity.
 // returns a *ItemGetByPathWithPathExternalColumnsRequestBuilder when successful
 func (m *ItemGetByPathWithPathRequestBuilder) ExternalColumns()(*ItemGetByPathWithPathExternalColumnsRequestBuilder) {

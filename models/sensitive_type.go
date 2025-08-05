@@ -4,6 +4,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -67,6 +68,16 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedDateTime(val)
         }
         return nil
     }
@@ -141,6 +152,18 @@ func (m *SensitiveType) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         return nil
     }
     return res
+}
+// GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+// returns a *Time when successful
+func (m *SensitiveType) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // GetName gets the name property value. The name property
 // returns a *string when successful
@@ -246,6 +269,12 @@ func (m *SensitiveType) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("name", m.GetName())
         if err != nil {
             return err
@@ -305,6 +334,13 @@ func (m *SensitiveType) SetDescription(value *string)() {
         panic(err)
     }
 }
+// SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+func (m *SensitiveType) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastModifiedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetName sets the name property value. The name property
 func (m *SensitiveType) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
@@ -359,6 +395,7 @@ type SensitiveTypeable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetClassificationMethod()(*ClassificationMethod)
     GetDescription()(*string)
+    GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
     GetPublisherName()(*string)
     GetRulePackageId()(*string)
@@ -368,6 +405,7 @@ type SensitiveTypeable interface {
     GetState()(*string)
     SetClassificationMethod(value *ClassificationMethod)()
     SetDescription(value *string)()
+    SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
     SetPublisherName(value *string)()
     SetRulePackageId(value *string)()

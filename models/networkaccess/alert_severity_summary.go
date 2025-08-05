@@ -43,7 +43,7 @@ func (m *AlertSeveritySummary) GetAdditionalData()(map[string]any) {
 func (m *AlertSeveritySummary) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCount gets the count property value. The count property
+// GetCount gets the count property value. Total number of alerts with this specific severity. Required.
 // returns a *int64 when successful
 func (m *AlertSeveritySummary) GetCount()(*int64) {
     val, err := m.GetBackingStore().Get("count")
@@ -155,7 +155,7 @@ func (m *AlertSeveritySummary) SetAdditionalData(value map[string]any)() {
 func (m *AlertSeveritySummary) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCount sets the count property value. The count property
+// SetCount sets the count property value. Total number of alerts with this specific severity. Required.
 func (m *AlertSeveritySummary) SetCount(value *int64)() {
     err := m.GetBackingStore().Set("count", value)
     if err != nil {

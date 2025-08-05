@@ -58,6 +58,7 @@ func NewUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder(r
     return NewUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property userCredentialUsageDetails for reports
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder)
     return nil
 }
 // Get represents the self-service password reset (SSPR) usage for a given tenant.
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a UserCredentialUsageDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable, error) {
@@ -94,6 +96,7 @@ func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable), nil
 }
 // Patch update the navigation property userCredentialUsageDetails in reports
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a UserCredentialUsageDetailsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable, requestConfiguration *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable, error) {
@@ -114,6 +117,7 @@ func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder)
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable), nil
 }
 // ToDeleteRequestInformation delete navigation property userCredentialUsageDetails for reports
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -125,6 +129,7 @@ func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder)
     return requestInfo, nil
 }
 // ToGetRequestInformation represents the self-service password reset (SSPR) usage for a given tenant.
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -139,6 +144,7 @@ func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder)
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property userCredentialUsageDetails in reports
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserCredentialUsageDetailsable, requestConfiguration *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -154,6 +160,7 @@ func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder)
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder when successful
 func (m *UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) WithUrl(rawUrl string)(*UserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder) {
     return NewUserCredentialUsageDetailsUserCredentialUsageDetailsItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

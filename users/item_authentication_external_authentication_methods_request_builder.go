@@ -14,7 +14,7 @@ import (
 type ItemAuthenticationExternalAuthenticationMethodsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAuthenticationExternalAuthenticationMethodsRequestBuilderGetQueryParameters get externalAuthenticationMethods from users
+// ItemAuthenticationExternalAuthenticationMethodsRequestBuilderGetQueryParameters represents the external methods registered to a user for authentication.
 type ItemAuthenticationExternalAuthenticationMethodsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewItemAuthenticationExternalAuthenticationMethodsRequestBuilder(rawUrl str
 func (m *ItemAuthenticationExternalAuthenticationMethodsRequestBuilder) Count()(*ItemAuthenticationExternalAuthenticationMethodsCountRequestBuilder) {
     return NewItemAuthenticationExternalAuthenticationMethodsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get externalAuthenticationMethods from users
+// Get represents the external methods registered to a user for authentication.
 // returns a ExternalAuthenticationMethodCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationExternalAuthenticationMethodsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalAuthenticationMethodCollectionResponseable, error) {
@@ -99,9 +99,12 @@ func (m *ItemAuthenticationExternalAuthenticationMethodsRequestBuilder) Get(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalAuthenticationMethodCollectionResponseable), nil
 }
-// Post create new navigation property to externalAuthenticationMethods for users
+// Post create a new externalAuthenticationMethod object. This API doesn't support self-service operations.
 // returns a ExternalAuthenticationMethodable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authentication-post-externalauthenticationmethods?view=graph-rest-beta
 func (m *ItemAuthenticationExternalAuthenticationMethodsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalAuthenticationMethodable, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalAuthenticationMethodable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *ItemAuthenticationExternalAuthenticationMethodsRequestBuilder) Post(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalAuthenticationMethodable), nil
 }
-// ToGetRequestInformation get externalAuthenticationMethods from users
+// ToGetRequestInformation represents the external methods registered to a user for authentication.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationExternalAuthenticationMethodsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +136,7 @@ func (m *ItemAuthenticationExternalAuthenticationMethodsRequestBuilder) ToGetReq
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to externalAuthenticationMethods for users
+// ToPostRequestInformation create a new externalAuthenticationMethod object. This API doesn't support self-service operations.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationExternalAuthenticationMethodsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalAuthenticationMethodable, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

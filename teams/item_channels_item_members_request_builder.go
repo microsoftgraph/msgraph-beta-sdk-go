@@ -14,7 +14,7 @@ import (
 type ItemChannelsItemMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemChannelsItemMembersRequestBuilderGetQueryParameters retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+// ItemChannelsItemMembersRequestBuilderGetQueryParameters get a list of members in a channel, including direct members of standard, private, and shared channels. Use the List allMembers API to retrieve both direct and indirect members of a shared channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
 type ItemChannelsItemMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -84,7 +84,7 @@ func NewItemChannelsItemMembersRequestBuilder(rawUrl string, requestAdapter i2ae
 func (m *ItemChannelsItemMembersRequestBuilder) Count()(*ItemChannelsItemMembersCountRequestBuilder) {
     return NewItemChannelsItemMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+// Get get a list of members in a channel, including direct members of standard, private, and shared channels. Use the List allMembers API to retrieve both direct and indirect members of a shared channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
 // returns a ConversationMemberCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -135,7 +135,7 @@ func (m *ItemChannelsItemMembersRequestBuilder) Post(ctx context.Context, body i
 func (m *ItemChannelsItemMembersRequestBuilder) Remove()(*ItemChannelsItemMembersRemoveRequestBuilder) {
     return NewItemChannelsItemMembersRemoveRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+// ToGetRequestInformation get a list of members in a channel, including direct members of standard, private, and shared channels. Use the List allMembers API to retrieve both direct and indirect members of a shared channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

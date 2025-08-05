@@ -47,7 +47,7 @@ func NewPoliciesItemValueContentRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewPoliciesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete an existing trustFrameworkPolicy.
+// Delete delete an existing trustFrameworkPolicy object from an Microsoft Entra B2C tenant.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -109,7 +109,7 @@ func (m *PoliciesItemValueContentRequestBuilder) Put(ctx context.Context, body [
     }
     return res.([]byte), nil
 }
-// ToDeleteRequestInformation delete an existing trustFrameworkPolicy.
+// ToDeleteRequestInformation delete an existing trustFrameworkPolicy object from an Microsoft Entra B2C tenant.
 // returns a *RequestInformation when successful
 func (m *PoliciesItemValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PoliciesItemValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

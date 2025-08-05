@@ -110,7 +110,7 @@ func (m *AlertFrequencyPoint) GetFieldDeserializers()(map[string]func(i878a80d23
     }
     return res
 }
-// GetHighSeverityCount gets the highSeverityCount property value. The highSeverityCount property
+// GetHighSeverityCount gets the highSeverityCount property value. Total number of high alert severity. Required.
 // returns a *int64 when successful
 func (m *AlertFrequencyPoint) GetHighSeverityCount()(*int64) {
     val, err := m.GetBackingStore().Get("highSeverityCount")
@@ -122,7 +122,7 @@ func (m *AlertFrequencyPoint) GetHighSeverityCount()(*int64) {
     }
     return nil
 }
-// GetInformationalSeverityCount gets the informationalSeverityCount property value. The informationalSeverityCount property
+// GetInformationalSeverityCount gets the informationalSeverityCount property value. Total number of informational alert severity. Required.
 // returns a *int64 when successful
 func (m *AlertFrequencyPoint) GetInformationalSeverityCount()(*int64) {
     val, err := m.GetBackingStore().Get("informationalSeverityCount")
@@ -134,7 +134,7 @@ func (m *AlertFrequencyPoint) GetInformationalSeverityCount()(*int64) {
     }
     return nil
 }
-// GetLowSeverityCount gets the lowSeverityCount property value. The lowSeverityCount property
+// GetLowSeverityCount gets the lowSeverityCount property value. Total number of low alert severity. Required.
 // returns a *int64 when successful
 func (m *AlertFrequencyPoint) GetLowSeverityCount()(*int64) {
     val, err := m.GetBackingStore().Get("lowSeverityCount")
@@ -146,7 +146,7 @@ func (m *AlertFrequencyPoint) GetLowSeverityCount()(*int64) {
     }
     return nil
 }
-// GetMediumSeverityCount gets the mediumSeverityCount property value. The mediumSeverityCount property
+// GetMediumSeverityCount gets the mediumSeverityCount property value. Total number of medium alert severity. Required.
 // returns a *int64 when successful
 func (m *AlertFrequencyPoint) GetMediumSeverityCount()(*int64) {
     val, err := m.GetBackingStore().Get("mediumSeverityCount")
@@ -170,7 +170,7 @@ func (m *AlertFrequencyPoint) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTimeStampDateTime gets the timeStampDateTime property value. The timeStampDateTime property
+// GetTimeStampDateTime gets the timeStampDateTime property value. The time bucket for counting the alert severities. Required.
 // returns a *Time when successful
 func (m *AlertFrequencyPoint) GetTimeStampDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("timeStampDateTime")
@@ -239,28 +239,28 @@ func (m *AlertFrequencyPoint) SetAdditionalData(value map[string]any)() {
 func (m *AlertFrequencyPoint) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetHighSeverityCount sets the highSeverityCount property value. The highSeverityCount property
+// SetHighSeverityCount sets the highSeverityCount property value. Total number of high alert severity. Required.
 func (m *AlertFrequencyPoint) SetHighSeverityCount(value *int64)() {
     err := m.GetBackingStore().Set("highSeverityCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetInformationalSeverityCount sets the informationalSeverityCount property value. The informationalSeverityCount property
+// SetInformationalSeverityCount sets the informationalSeverityCount property value. Total number of informational alert severity. Required.
 func (m *AlertFrequencyPoint) SetInformationalSeverityCount(value *int64)() {
     err := m.GetBackingStore().Set("informationalSeverityCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLowSeverityCount sets the lowSeverityCount property value. The lowSeverityCount property
+// SetLowSeverityCount sets the lowSeverityCount property value. Total number of low alert severity. Required.
 func (m *AlertFrequencyPoint) SetLowSeverityCount(value *int64)() {
     err := m.GetBackingStore().Set("lowSeverityCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMediumSeverityCount sets the mediumSeverityCount property value. The mediumSeverityCount property
+// SetMediumSeverityCount sets the mediumSeverityCount property value. Total number of medium alert severity. Required.
 func (m *AlertFrequencyPoint) SetMediumSeverityCount(value *int64)() {
     err := m.GetBackingStore().Set("mediumSeverityCount", value)
     if err != nil {
@@ -274,7 +274,7 @@ func (m *AlertFrequencyPoint) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTimeStampDateTime sets the timeStampDateTime property value. The timeStampDateTime property
+// SetTimeStampDateTime sets the timeStampDateTime property value. The time bucket for counting the alert severities. Required.
 func (m *AlertFrequencyPoint) SetTimeStampDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("timeStampDateTime", value)
     if err != nil {

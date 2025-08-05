@@ -43,6 +43,7 @@ func NewUserCredentialUsageDetailsCountRequestBuilder(rawUrl string, requestAdap
     return NewUserCredentialUsageDetailsCountRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the number of the resource
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *int32 when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UserCredentialUsageDetailsCountRequestBuilder) Get(ctx context.Context, requestConfiguration *UserCredentialUsageDetailsCountRequestBuilderGetRequestConfiguration)(*int32, error) {
@@ -63,6 +64,7 @@ func (m *UserCredentialUsageDetailsCountRequestBuilder) Get(ctx context.Context,
     return res.(*int32), nil
 }
 // ToGetRequestInformation get the number of the resource
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *RequestInformation when successful
 func (m *UserCredentialUsageDetailsCountRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UserCredentialUsageDetailsCountRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -77,6 +79,7 @@ func (m *UserCredentialUsageDetailsCountRequestBuilder) ToGetRequestInformation(
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The Reporting userCredentialUsageDetails API is deprecated and will stop returning data on June 30, 2025. Please use the new userEventsSummary API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30
 // returns a *UserCredentialUsageDetailsCountRequestBuilder when successful
 func (m *UserCredentialUsageDetailsCountRequestBuilder) WithUrl(rawUrl string)(*UserCredentialUsageDetailsCountRequestBuilder) {
     return NewUserCredentialUsageDetailsCountRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

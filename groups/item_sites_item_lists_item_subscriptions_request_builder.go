@@ -99,6 +99,11 @@ func (m *ItemSitesItemListsItemSubscriptionsRequestBuilder) Get(ctx context.Cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SubscriptionCollectionResponseable), nil
 }
+// GetVapidPublicKey provides operations to call the getVapidPublicKey method.
+// returns a *ItemSitesItemListsItemSubscriptionsGetVapidPublicKeyRequestBuilder when successful
+func (m *ItemSitesItemListsItemSubscriptionsRequestBuilder) GetVapidPublicKey()(*ItemSitesItemListsItemSubscriptionsGetVapidPublicKeyRequestBuilder) {
+    return NewItemSitesItemListsItemSubscriptionsGetVapidPublicKeyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to subscriptions for groups
 // returns a Subscriptionable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -57,11 +57,11 @@ func NewFilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder(rawUrl string,
     urlParams["request-raw-url"] = rawUrl
     return NewFilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete a tlsInspectionPolicyLink object. Used to unlink a tlsInspectionPolicy from a filtering profile.
+// Delete delete a threatIntelligencePolicyLink object.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-tlsinspectionpolicylink-delete?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-threatintelligencepolicylink-delete?view=graph-rest-beta
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -127,7 +127,7 @@ func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Patch(ctx co
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) Policy()(*FilteringProfilesItemPoliciesItemPolicyRequestBuilder) {
     return NewFilteringProfilesItemPoliciesItemPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete a tlsInspectionPolicyLink object. Used to unlink a tlsInspectionPolicy from a filtering profile.
+// ToDeleteRequestInformation delete a threatIntelligencePolicyLink object.
 // returns a *RequestInformation when successful
 func (m *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FilteringProfilesItemPoliciesPolicyLinkItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

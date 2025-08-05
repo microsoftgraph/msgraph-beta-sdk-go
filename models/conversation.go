@@ -149,7 +149,7 @@ func (m *Conversation) GetThreads()([]ConversationThreadable) {
     }
     return nil
 }
-// GetTopic gets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
+// GetTopic gets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it can't be updated.
 // returns a *string when successful
 func (m *Conversation) GetTopic()(*string) {
     val, err := m.GetBackingStore().Get("topic")
@@ -251,7 +251,7 @@ func (m *Conversation) SetThreads(value []ConversationThreadable)() {
         panic(err)
     }
 }
-// SetTopic sets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.
+// SetTopic sets the topic property value. The topic of the conversation. This property can be set when the conversation is created, but it can't be updated.
 func (m *Conversation) SetTopic(value *string)() {
     err := m.GetBackingStore().Set("topic", value)
     if err != nil {

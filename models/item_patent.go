@@ -148,7 +148,7 @@ func (m *ItemPatent) GetIssuedDate()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// GetIssuingAuthority gets the issuingAuthority property value. Authority which granted the patent.
+// GetIssuingAuthority gets the issuingAuthority property value. Authority that granted the patent.
 // returns a *string when successful
 func (m *ItemPatent) GetIssuingAuthority()(*string) {
     val, err := m.GetBackingStore().Get("issuingAuthority")
@@ -262,7 +262,7 @@ func (m *ItemPatent) SetIssuedDate(value *i878a80d2330e89d26896388a3f487eef27b0a
         panic(err)
     }
 }
-// SetIssuingAuthority sets the issuingAuthority property value. Authority which granted the patent.
+// SetIssuingAuthority sets the issuingAuthority property value. Authority that granted the patent.
 func (m *ItemPatent) SetIssuingAuthority(value *string)() {
     err := m.GetBackingStore().Set("issuingAuthority", value)
     if err != nil {

@@ -24,7 +24,7 @@ func NewRelatedDevice()(*RelatedDevice) {
 func CreateRelatedDeviceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRelatedDevice(), nil
 }
-// GetDeviceId gets the deviceId property value. The deviceId property
+// GetDeviceId gets the deviceId property value. Unique identifier of the device involved in the alert. Required.
 // returns a *string when successful
 func (m *RelatedDevice) GetDeviceId()(*string) {
     val, err := m.GetBackingStore().Get("deviceId")
@@ -66,7 +66,7 @@ func (m *RelatedDevice) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetDeviceId sets the deviceId property value. The deviceId property
+// SetDeviceId sets the deviceId property value. Unique identifier of the device involved in the alert. Required.
 func (m *RelatedDevice) SetDeviceId(value *string)() {
     err := m.GetBackingStore().Set("deviceId", value)
     if err != nil {

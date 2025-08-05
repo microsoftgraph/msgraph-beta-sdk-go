@@ -50,7 +50,7 @@ func (m *RelatedUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetUserId gets the userId property value. The userId property
+// GetUserId gets the userId property value. Unique identifier of the user. Required.
 // returns a *string when successful
 func (m *RelatedUser) GetUserId()(*string) {
     val, err := m.GetBackingStore().Get("userId")
@@ -62,7 +62,7 @@ func (m *RelatedUser) GetUserId()(*string) {
     }
     return nil
 }
-// GetUserPrincipalName gets the userPrincipalName property value. The userPrincipalName property
+// GetUserPrincipalName gets the userPrincipalName property value. Principal name of the user. Required.
 // returns a *string when successful
 func (m *RelatedUser) GetUserPrincipalName()(*string) {
     val, err := m.GetBackingStore().Get("userPrincipalName")
@@ -94,14 +94,14 @@ func (m *RelatedUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetUserId sets the userId property value. The userId property
+// SetUserId sets the userId property value. Unique identifier of the user. Required.
 func (m *RelatedUser) SetUserId(value *string)() {
     err := m.GetBackingStore().Set("userId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserPrincipalName sets the userPrincipalName property value. The userPrincipalName property
+// SetUserPrincipalName sets the userPrincipalName property value. Principal name of the user. Required.
 func (m *RelatedUser) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
     if err != nil {

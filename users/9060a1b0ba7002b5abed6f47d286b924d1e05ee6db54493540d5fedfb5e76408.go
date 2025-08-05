@@ -21,7 +21,7 @@ type ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethod
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetQueryParameters get externalAuthenticationMethods from users
+// ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetQueryParameters represents the external methods registered to a user for authentication.
 type ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMet
     urlParams["request-raw-url"] = rawUrl
     return NewItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property externalAuthenticationMethods for users
+// Delete delete an externalAuthenticationMethod object. This API doesn't support self-service operations.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/authentication-delete-externalauthenticationmethods?view=graph-rest-beta
 func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,7 +76,7 @@ func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMe
     }
     return nil
 }
-// Get get externalAuthenticationMethods from users
+// Get represents the external methods registered to a user for authentication.
 // returns a ExternalAuthenticationMethodable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalAuthenticationMethodable, error) {
@@ -113,7 +116,7 @@ func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMe
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExternalAuthenticationMethodable), nil
 }
-// ToDeleteRequestInformation delete navigation property externalAuthenticationMethods for users
+// ToDeleteRequestInformation delete an externalAuthenticationMethod object. This API doesn't support self-service operations.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +127,7 @@ func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get externalAuthenticationMethods from users
+// ToGetRequestInformation represents the external methods registered to a user for authentication.
 // returns a *RequestInformation when successful
 func (m *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAuthenticationExternalAuthenticationMethodsExternalAuthenticationMethodItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -40,7 +40,7 @@ func (m *RelatedToken) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. The uniqueTokenIdentifier property
+// GetUniqueTokenIdentifier gets the uniqueTokenIdentifier property value. Unique identifier of the token. Required.
 // returns a *string when successful
 func (m *RelatedToken) GetUniqueTokenIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("uniqueTokenIdentifier")
@@ -66,7 +66,7 @@ func (m *RelatedToken) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. The uniqueTokenIdentifier property
+// SetUniqueTokenIdentifier sets the uniqueTokenIdentifier property value. Unique identifier of the token. Required.
 func (m *RelatedToken) SetUniqueTokenIdentifier(value *string)() {
     err := m.GetBackingStore().Set("uniqueTokenIdentifier", value)
     if err != nil {
