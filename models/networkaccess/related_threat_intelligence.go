@@ -40,7 +40,7 @@ func (m *RelatedThreatIntelligence) GetFieldDeserializers()(map[string]func(i878
     }
     return res
 }
-// GetThreatCount gets the threatCount property value. The threatCount property
+// GetThreatCount gets the threatCount property value. Number of threats detected by threat intelligence. Required.
 // returns a *int64 when successful
 func (m *RelatedThreatIntelligence) GetThreatCount()(*int64) {
     val, err := m.GetBackingStore().Get("threatCount")
@@ -66,7 +66,7 @@ func (m *RelatedThreatIntelligence) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetThreatCount sets the threatCount property value. The threatCount property
+// SetThreatCount sets the threatCount property value. Number of threats detected by threat intelligence. Required.
 func (m *RelatedThreatIntelligence) SetThreatCount(value *int64)() {
     err := m.GetBackingStore().Set("threatCount", value)
     if err != nil {

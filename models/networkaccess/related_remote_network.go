@@ -40,7 +40,7 @@ func (m *RelatedRemoteNetwork) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetRemoteNetworkId gets the remoteNetworkId property value. The remoteNetworkId property
+// GetRemoteNetworkId gets the remoteNetworkId property value. Unique identifier of the remote network. Required.
 // returns a *string when successful
 func (m *RelatedRemoteNetwork) GetRemoteNetworkId()(*string) {
     val, err := m.GetBackingStore().Get("remoteNetworkId")
@@ -66,7 +66,7 @@ func (m *RelatedRemoteNetwork) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetRemoteNetworkId sets the remoteNetworkId property value. The remoteNetworkId property
+// SetRemoteNetworkId sets the remoteNetworkId property value. Unique identifier of the remote network. Required.
 func (m *RelatedRemoteNetwork) SetRemoteNetworkId(value *string)() {
     err := m.GetBackingStore().Set("remoteNetworkId", value)
     if err != nil {

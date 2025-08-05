@@ -63,7 +63,7 @@ func NewAppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder(rawU
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/appconsentrequest-filterByCurrentUser?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/appconsentrequest-filterbycurrentuser?view=graph-rest-beta
 func (m *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) Get(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AppConsentAppConsentRequestsFilterByCurrentUserWithOnResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -86,7 +86,7 @@ func (m *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) Ge
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/appconsentrequest-filterByCurrentUser?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/appconsentrequest-filterbycurrentuser?view=graph-rest-beta
 func (m *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilder) GetAsFilterByCurrentUserWithOnGetResponse(ctx context.Context, requestConfiguration *AppConsentAppConsentRequestsFilterByCurrentUserWithOnRequestBuilderGetRequestConfiguration)(AppConsentAppConsentRequestsFilterByCurrentUserWithOnGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {

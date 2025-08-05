@@ -40,7 +40,7 @@ func (m *RelatedWebCategory) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetWebCategoryName gets the webCategoryName property value. The webCategoryName property
+// GetWebCategoryName gets the webCategoryName property value. Name of the web category. Required.
 // returns a *string when successful
 func (m *RelatedWebCategory) GetWebCategoryName()(*string) {
     val, err := m.GetBackingStore().Get("webCategoryName")
@@ -66,7 +66,7 @@ func (m *RelatedWebCategory) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetWebCategoryName sets the webCategoryName property value. The webCategoryName property
+// SetWebCategoryName sets the webCategoryName property value. Name of the web category. Required.
 func (m *RelatedWebCategory) SetWebCategoryName(value *string)() {
     err := m.GetBackingStore().Set("webCategoryName", value)
     if err != nil {

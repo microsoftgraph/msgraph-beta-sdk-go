@@ -25,7 +25,7 @@ func NewAlertAction()(*AlertAction) {
 func CreateAlertActionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAlertAction(), nil
 }
-// GetActionLink gets the actionLink property value. The actionLink property
+// GetActionLink gets the actionLink property value. A link to more information or to perform the action (if applicable).
 // returns a *string when successful
 func (m *AlertAction) GetActionLink()(*string) {
     val, err := m.GetBackingStore().Get("actionLink")
@@ -37,7 +37,7 @@ func (m *AlertAction) GetActionLink()(*string) {
     }
     return nil
 }
-// GetActionText gets the actionText property value. The actionText property
+// GetActionText gets the actionText property value. Text describing the action. Required.
 // returns a *string when successful
 func (m *AlertAction) GetActionText()(*string) {
     val, err := m.GetBackingStore().Get("actionText")
@@ -143,14 +143,14 @@ func (m *AlertAction) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetActionLink sets the actionLink property value. The actionLink property
+// SetActionLink sets the actionLink property value. A link to more information or to perform the action (if applicable).
 func (m *AlertAction) SetActionLink(value *string)() {
     err := m.GetBackingStore().Set("actionLink", value)
     if err != nil {
         panic(err)
     }
 }
-// SetActionText sets the actionText property value. The actionText property
+// SetActionText sets the actionText property value. Text describing the action. Required.
 func (m *AlertAction) SetActionText(value *string)() {
     err := m.GetBackingStore().Set("actionText", value)
     if err != nil {

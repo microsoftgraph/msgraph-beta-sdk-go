@@ -126,6 +126,11 @@ func (m *PeopleRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PeopleAdminSettingsable), nil
 }
+// PhotoUpdateSettings provides operations to manage the photoUpdateSettings property of the microsoft.graph.peopleAdminSettings entity.
+// returns a *PeoplePhotoUpdateSettingsRequestBuilder when successful
+func (m *PeopleRequestBuilder) PhotoUpdateSettings()(*PeoplePhotoUpdateSettingsRequestBuilder) {
+    return NewPeoplePhotoUpdateSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ProfileCardProperties provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.
 // returns a *PeopleProfileCardPropertiesRequestBuilder when successful
 func (m *PeopleRequestBuilder) ProfileCardProperties()(*PeopleProfileCardPropertiesRequestBuilder) {

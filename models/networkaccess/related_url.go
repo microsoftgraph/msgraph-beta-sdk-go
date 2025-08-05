@@ -40,7 +40,7 @@ func (m *RelatedUrl) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
     }
     return res
 }
-// GetUrl gets the url property value. The url property
+// GetUrl gets the url property value. The destination URL. Required.
 // returns a *string when successful
 func (m *RelatedUrl) GetUrl()(*string) {
     val, err := m.GetBackingStore().Get("url")
@@ -66,7 +66,7 @@ func (m *RelatedUrl) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
     }
     return nil
 }
-// SetUrl sets the url property value. The url property
+// SetUrl sets the url property value. The destination URL. Required.
 func (m *RelatedUrl) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
     if err != nil {

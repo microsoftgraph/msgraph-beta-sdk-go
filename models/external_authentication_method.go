@@ -24,7 +24,7 @@ func NewExternalAuthenticationMethod()(*ExternalAuthenticationMethod) {
 func CreateExternalAuthenticationMethodFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExternalAuthenticationMethod(), nil
 }
-// GetConfigurationId gets the configurationId property value. The configurationId property
+// GetConfigurationId gets the configurationId property value. A unique identifier used to manage the external auth method within Microsoft Entra ID.
 // returns a *string when successful
 func (m *ExternalAuthenticationMethod) GetConfigurationId()(*string) {
     val, err := m.GetBackingStore().Get("configurationId")
@@ -36,7 +36,7 @@ func (m *ExternalAuthenticationMethod) GetConfigurationId()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. Custom name given to the registered external authentication method.
 // returns a *string when successful
 func (m *ExternalAuthenticationMethod) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -94,14 +94,14 @@ func (m *ExternalAuthenticationMethod) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetConfigurationId sets the configurationId property value. The configurationId property
+// SetConfigurationId sets the configurationId property value. A unique identifier used to manage the external auth method within Microsoft Entra ID.
 func (m *ExternalAuthenticationMethod) SetConfigurationId(value *string)() {
     err := m.GetBackingStore().Set("configurationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. Custom name given to the registered external authentication method.
 func (m *ExternalAuthenticationMethod) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {

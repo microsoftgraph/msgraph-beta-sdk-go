@@ -62,7 +62,7 @@ func (m *RelatedFileHash) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The hash value. Required.
 // returns a *string when successful
 func (m *RelatedFileHash) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -102,7 +102,7 @@ func (m *RelatedFileHash) SetAlgorithm(value *Algorithm)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The hash value. Required.
 func (m *RelatedFileHash) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

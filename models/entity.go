@@ -2291,6 +2291,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPhoneAuthenticationMethod(), nil
                     case "#microsoft.graph.phoneUserConversationMember":
                         return NewPhoneUserConversationMember(), nil
+                    case "#microsoft.graph.photoUpdateSettings":
+                        return NewPhotoUpdateSettings(), nil
                     case "#microsoft.graph.pinnedChatMessageInfo":
                         return NewPinnedChatMessageInfo(), nil
                     case "#microsoft.graph.place":
@@ -3097,6 +3099,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserCredentialUsageDetails(), nil
                     case "#microsoft.graph.userDataSecurityAndGovernance":
                         return NewUserDataSecurityAndGovernance(), nil
+                    case "#microsoft.graph.userEventsSummary":
+                        return NewUserEventsSummary(), nil
                     case "#microsoft.graph.userExperienceAnalyticsAnomaly":
                         return NewUserExperienceAnalyticsAnomaly(), nil
                     case "#microsoft.graph.userExperienceAnalyticsAnomalyCorrelationGroupOverview":
@@ -3193,10 +3197,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewUserInsightsSettings(), nil
                     case "#microsoft.graph.userInstallStateSummary":
                         return NewUserInstallStateSummary(), nil
+                    case "#microsoft.graph.userMfaSignInSummary":
+                        return NewUserMfaSignInSummary(), nil
+                    case "#microsoft.graph.userPasswordResetsAndChangesSummary":
+                        return NewUserPasswordResetsAndChangesSummary(), nil
                     case "#microsoft.graph.userPFXCertificate":
                         return NewUserPFXCertificate(), nil
                     case "#microsoft.graph.userProtectionScopeContainer":
                         return NewUserProtectionScopeContainer(), nil
+                    case "#microsoft.graph.userRegistrationActivitySummary":
+                        return NewUserRegistrationActivitySummary(), nil
                     case "#microsoft.graph.userRegistrationDetails":
                         return NewUserRegistrationDetails(), nil
                     case "#microsoft.graph.userRequestsMetric":

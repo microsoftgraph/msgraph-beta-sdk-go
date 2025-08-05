@@ -153,10 +153,35 @@ func (m *AuthenticationMethodsRequestBuilder) ToPatchRequestInformation(ctx cont
     }
     return requestInfo, nil
 }
+// UserEventsSummary provides operations to manage the userEventsSummary property of the microsoft.graph.authenticationMethodsRoot entity.
+// returns a *AuthenticationMethodsUserEventsSummaryRequestBuilder when successful
+func (m *AuthenticationMethodsRequestBuilder) UserEventsSummary()(*AuthenticationMethodsUserEventsSummaryRequestBuilder) {
+    return NewAuthenticationMethodsUserEventsSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// UserMfaSignInSummary provides operations to manage the userMfaSignInSummary property of the microsoft.graph.authenticationMethodsRoot entity.
+// returns a *AuthenticationMethodsUserMfaSignInSummaryRequestBuilder when successful
+func (m *AuthenticationMethodsRequestBuilder) UserMfaSignInSummary()(*AuthenticationMethodsUserMfaSignInSummaryRequestBuilder) {
+    return NewAuthenticationMethodsUserMfaSignInSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// UserPasswordResetsAndChangesSummary provides operations to manage the userPasswordResetsAndChangesSummary property of the microsoft.graph.authenticationMethodsRoot entity.
+// returns a *AuthenticationMethodsUserPasswordResetsAndChangesSummaryRequestBuilder when successful
+func (m *AuthenticationMethodsRequestBuilder) UserPasswordResetsAndChangesSummary()(*AuthenticationMethodsUserPasswordResetsAndChangesSummaryRequestBuilder) {
+    return NewAuthenticationMethodsUserPasswordResetsAndChangesSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// UserRegistrationActivityWithPeriod provides operations to call the userRegistrationActivity method.
+// returns a *AuthenticationMethodsUserRegistrationActivityWithPeriodRequestBuilder when successful
+func (m *AuthenticationMethodsRequestBuilder) UserRegistrationActivityWithPeriod(period *string)(*AuthenticationMethodsUserRegistrationActivityWithPeriodRequestBuilder) {
+    return NewAuthenticationMethodsUserRegistrationActivityWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
+}
 // UserRegistrationDetails provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.
 // returns a *AuthenticationMethodsUserRegistrationDetailsRequestBuilder when successful
 func (m *AuthenticationMethodsRequestBuilder) UserRegistrationDetails()(*AuthenticationMethodsUserRegistrationDetailsRequestBuilder) {
     return NewAuthenticationMethodsUserRegistrationDetailsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// UserSignInsByAuthMethodSummaryWithPeriod provides operations to call the userSignInsByAuthMethodSummary method.
+// returns a *AuthenticationMethodsUserSignInsByAuthMethodSummaryWithPeriodRequestBuilder when successful
+func (m *AuthenticationMethodsRequestBuilder) UserSignInsByAuthMethodSummaryWithPeriod(period *string)(*AuthenticationMethodsUserSignInsByAuthMethodSummaryWithPeriodRequestBuilder) {
+    return NewAuthenticationMethodsUserSignInsByAuthMethodSummaryWithPeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, period)
 }
 // UsersRegisteredByFeature provides operations to call the usersRegisteredByFeature method.
 // returns a *AuthenticationMethodsUsersRegisteredByFeatureRequestBuilder when successful

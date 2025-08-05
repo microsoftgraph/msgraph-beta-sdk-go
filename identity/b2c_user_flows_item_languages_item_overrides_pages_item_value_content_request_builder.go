@@ -47,7 +47,7 @@ func NewB2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilde
     urlParams["request-raw-url"] = rawUrl
     return NewB2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
+// Delete delete the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -112,7 +112,7 @@ func (m *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuild
     }
     return res.([]byte), nil
 }
-// ToDeleteRequestInformation deletes the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
+// ToDeleteRequestInformation delete the values in an userFlowLanguagePage object. You may only delete the values in an overridesPage, which is used to customize the values shown to a user during a user journey defined by a user flow.
 // returns a *RequestInformation when successful
 func (m *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *B2cUserFlowsItemLanguagesItemOverridesPagesItemValueContentRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -14,7 +14,7 @@ import (
 type AlertsItemPolicyRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// AlertsItemPolicyRequestBuilderGetQueryParameters get policy from networkAccess
+// AlertsItemPolicyRequestBuilderGetQueryParameters the filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.
 type AlertsItemPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewAlertsItemPolicyRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
     urlParams["request-raw-url"] = rawUrl
     return NewAlertsItemPolicyRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get policy from networkAccess
+// Get the filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.
 // returns a FilteringPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *AlertsItemPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *AlertsItemPolicyRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable, error) {
@@ -63,7 +63,7 @@ func (m *AlertsItemPolicyRequestBuilder) Get(ctx context.Context, requestConfigu
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.FilteringPolicyable), nil
 }
-// ToGetRequestInformation get policy from networkAccess
+// ToGetRequestInformation the filtering policy associated with the alert. This relationship allows you to retrieve or manage the filtering policy that triggered or is related to the alert instance.
 // returns a *RequestInformation when successful
 func (m *AlertsItemPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *AlertsItemPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

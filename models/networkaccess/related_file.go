@@ -24,7 +24,7 @@ func NewRelatedFile()(*RelatedFile) {
 func CreateRelatedFileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRelatedFile(), nil
 }
-// GetDirectory gets the directory property value. The directory property
+// GetDirectory gets the directory property value. Directory path of the file. Required.
 // returns a *string when successful
 func (m *RelatedFile) GetDirectory()(*string) {
     val, err := m.GetBackingStore().Get("directory")
@@ -72,7 +72,7 @@ func (m *RelatedFile) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. Name of the file. Required.
 // returns a *string when successful
 func (m *RelatedFile) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -84,7 +84,7 @@ func (m *RelatedFile) GetName()(*string) {
     }
     return nil
 }
-// GetSizeInBytes gets the sizeInBytes property value. The sizeInBytes property
+// GetSizeInBytes gets the sizeInBytes property value. Size of the file in bytes. Required.
 // returns a *int64 when successful
 func (m *RelatedFile) GetSizeInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("sizeInBytes")
@@ -122,21 +122,21 @@ func (m *RelatedFile) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetDirectory sets the directory property value. The directory property
+// SetDirectory sets the directory property value. Directory path of the file. Required.
 func (m *RelatedFile) SetDirectory(value *string)() {
     err := m.GetBackingStore().Set("directory", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. Name of the file. Required.
 func (m *RelatedFile) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSizeInBytes sets the sizeInBytes property value. The sizeInBytes property
+// SetSizeInBytes sets the sizeInBytes property value. Size of the file in bytes. Required.
 func (m *RelatedFile) SetSizeInBytes(value *int64)() {
     err := m.GetBackingStore().Set("sizeInBytes", value)
     if err != nil {
