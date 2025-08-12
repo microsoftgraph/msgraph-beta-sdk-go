@@ -173,6 +173,16 @@ func (m *AccessReviewScheduleSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["isAgenticExperienceEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsAgenticExperienceEnabled(val)
+        }
+        return nil
+    }
     res["justificationRequiredOnApproval"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -270,6 +280,18 @@ func (m *AccessReviewScheduleSettings) GetInstanceDurationInDays()(*int32) {
     }
     if val != nil {
         return val.(*int32)
+    }
+    return nil
+}
+// GetIsAgenticExperienceEnabled gets the isAgenticExperienceEnabled property value. The isAgenticExperienceEnabled property
+// returns a *bool when successful
+func (m *AccessReviewScheduleSettings) GetIsAgenticExperienceEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isAgenticExperienceEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -414,6 +436,12 @@ func (m *AccessReviewScheduleSettings) Serialize(writer i878a80d2330e89d26896388
         }
     }
     {
+        err := writer.WriteBoolValue("isAgenticExperienceEnabled", m.GetIsAgenticExperienceEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("justificationRequiredOnApproval", m.GetJustificationRequiredOnApproval())
         if err != nil {
             return err
@@ -528,6 +556,13 @@ func (m *AccessReviewScheduleSettings) SetInstanceDurationInDays(value *int32)()
         panic(err)
     }
 }
+// SetIsAgenticExperienceEnabled sets the isAgenticExperienceEnabled property value. The isAgenticExperienceEnabled property
+func (m *AccessReviewScheduleSettings) SetIsAgenticExperienceEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isAgenticExperienceEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetJustificationRequiredOnApproval sets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide justification with their decision. Default value is false.
 func (m *AccessReviewScheduleSettings) SetJustificationRequiredOnApproval(value *bool)() {
     err := m.GetBackingStore().Set("justificationRequiredOnApproval", value)
@@ -595,6 +630,7 @@ type AccessReviewScheduleSettingsable interface {
     GetDefaultDecision()(*string)
     GetDefaultDecisionEnabled()(*bool)
     GetInstanceDurationInDays()(*int32)
+    GetIsAgenticExperienceEnabled()(*bool)
     GetJustificationRequiredOnApproval()(*bool)
     GetMailNotificationsEnabled()(*bool)
     GetOdataType()(*string)
@@ -610,6 +646,7 @@ type AccessReviewScheduleSettingsable interface {
     SetDefaultDecision(value *string)()
     SetDefaultDecisionEnabled(value *bool)()
     SetInstanceDurationInDays(value *int32)()
+    SetIsAgenticExperienceEnabled(value *bool)()
     SetJustificationRequiredOnApproval(value *bool)()
     SetMailNotificationsEnabled(value *bool)()
     SetOdataType(value *string)()

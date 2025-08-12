@@ -740,7 +740,7 @@ func (m *DeviceAppManagement) GetMobileAppConfigurations()([]ManagedDeviceMobile
     }
     return nil
 }
-// GetMobileAppRelationships gets the mobileAppRelationships property value. List mobileAppRelationship objects for mobile applications.
+// GetMobileAppRelationships gets the mobileAppRelationships property value. The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
 // returns a []MobileAppRelationshipable when successful
 func (m *DeviceAppManagement) GetMobileAppRelationships()([]MobileAppRelationshipable) {
     val, err := m.GetBackingStore().Get("mobileAppRelationships")
@@ -1375,7 +1375,7 @@ func (m *DeviceAppManagement) SetMobileAppConfigurations(value []ManagedDeviceMo
         panic(err)
     }
 }
-// SetMobileAppRelationships sets the mobileAppRelationships property value. List mobileAppRelationship objects for mobile applications.
+// SetMobileAppRelationships sets the mobileAppRelationships property value. The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
 func (m *DeviceAppManagement) SetMobileAppRelationships(value []MobileAppRelationshipable)() {
     err := m.GetBackingStore().Set("mobileAppRelationships", value)
     if err != nil {

@@ -14,7 +14,7 @@ import (
 type FileStorageContainerTypesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FileStorageContainerTypesRequestBuilderGetQueryParameters get containerTypes from storage
+// FileStorageContainerTypesRequestBuilderGetQueryParameters get a list of the fileStorageContainerType objects and their properties for the current tenant.
 type FileStorageContainerTypesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewFileStorageContainerTypesRequestBuilder(rawUrl string, requestAdapter i2
 func (m *FileStorageContainerTypesRequestBuilder) Count()(*FileStorageContainerTypesCountRequestBuilder) {
     return NewFileStorageContainerTypesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get containerTypes from storage
+// Get get a list of the fileStorageContainerType objects and their properties for the current tenant.
 // returns a FileStorageContainerTypeCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestorage-list-containertypes?view=graph-rest-beta
 func (m *FileStorageContainerTypesRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainerTypesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,9 +102,12 @@ func (m *FileStorageContainerTypesRequestBuilder) Get(ctx context.Context, reque
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeCollectionResponseable), nil
 }
-// Post create new navigation property to containerTypes for storage
+// Post create a new fileStorageContainerType in the owning tenant. The number of container types in a tenant is limited.
 // returns a FileStorageContainerTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestorage-post-containertypes?view=graph-rest-beta
 func (m *FileStorageContainerTypesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable, requestConfiguration *FileStorageContainerTypesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *FileStorageContainerTypesRequestBuilder) Post(ctx context.Context, body
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable), nil
 }
-// ToGetRequestInformation get containerTypes from storage
+// ToGetRequestInformation get a list of the fileStorageContainerType objects and their properties for the current tenant.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainerTypesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +139,7 @@ func (m *FileStorageContainerTypesRequestBuilder) ToGetRequestInformation(ctx co
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to containerTypes for storage
+// ToPostRequestInformation create a new fileStorageContainerType in the owning tenant. The number of container types in a tenant is limited.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable, requestConfiguration *FileStorageContainerTypesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

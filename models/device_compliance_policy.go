@@ -344,7 +344,7 @@ func (m *DeviceCompliancePolicy) GetRoleScopeTagIds()([]string) {
     }
     return nil
 }
-// GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// GetScheduledActionsForRule gets the scheduledActionsForRule property value. The list of scheduled action for this rule
 // returns a []DeviceComplianceScheduledActionForRuleable when successful
 func (m *DeviceCompliancePolicy) GetScheduledActionsForRule()([]DeviceComplianceScheduledActionForRuleable) {
     val, err := m.GetBackingStore().Get("scheduledActionsForRule")
@@ -571,7 +571,7 @@ func (m *DeviceCompliancePolicy) SetRoleScopeTagIds(value []string)() {
         panic(err)
     }
 }
-// SetScheduledActionsForRule sets the scheduledActionsForRule property value. The list of scheduled action per rule for this compliance policy. This is a required property when creating any individual per-platform compliance policies.
+// SetScheduledActionsForRule sets the scheduledActionsForRule property value. The list of scheduled action for this rule
 func (m *DeviceCompliancePolicy) SetScheduledActionsForRule(value []DeviceComplianceScheduledActionForRuleable)() {
     err := m.GetBackingStore().Set("scheduledActionsForRule", value)
     if err != nil {

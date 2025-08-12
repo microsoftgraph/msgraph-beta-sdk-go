@@ -79,7 +79,7 @@ func (m *KeyValue) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
     }
     return res
 }
-// GetKey gets the key property value. Key.
+// GetKey gets the key property value. Contains the name of the field that a value is associated with.
 // returns a *string when successful
 func (m *KeyValue) GetKey()(*string) {
     val, err := m.GetBackingStore().Get("key")
@@ -103,7 +103,7 @@ func (m *KeyValue) GetOdataType()(*string) {
     }
     return nil
 }
-// GetValue gets the value property value. Value.
+// GetValue gets the value property value. Contains the corresponding value for the specified key.
 // returns a *string when successful
 func (m *KeyValue) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -154,7 +154,7 @@ func (m *KeyValue) SetAdditionalData(value map[string]any)() {
 func (m *KeyValue) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetKey sets the key property value. Key.
+// SetKey sets the key property value. Contains the name of the field that a value is associated with.
 func (m *KeyValue) SetKey(value *string)() {
     err := m.GetBackingStore().Set("key", value)
     if err != nil {
@@ -168,7 +168,7 @@ func (m *KeyValue) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetValue sets the value property value. Value.
+// SetValue sets the value property value. Contains the corresponding value for the specified key.
 func (m *KeyValue) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

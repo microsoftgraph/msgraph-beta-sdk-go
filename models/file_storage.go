@@ -22,7 +22,7 @@ func NewFileStorage()(*FileStorage) {
 func CreateFileStorageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileStorage(), nil
 }
-// GetContainers gets the containers property value. The containers property
+// GetContainers gets the containers property value. The collection of active fileStorageContainer resources.
 // returns a []FileStorageContainerable when successful
 func (m *FileStorage) GetContainers()([]FileStorageContainerable) {
     val, err := m.GetBackingStore().Get("containers")
@@ -34,7 +34,7 @@ func (m *FileStorage) GetContainers()([]FileStorageContainerable) {
     }
     return nil
 }
-// GetContainerTypeRegistrations gets the containerTypeRegistrations property value. The containerTypeRegistrations property
+// GetContainerTypeRegistrations gets the containerTypeRegistrations property value. The collection of fileStorageContainerTypeRegistration resources.
 // returns a []FileStorageContainerTypeRegistrationable when successful
 func (m *FileStorage) GetContainerTypeRegistrations()([]FileStorageContainerTypeRegistrationable) {
     val, err := m.GetBackingStore().Get("containerTypeRegistrations")
@@ -46,7 +46,7 @@ func (m *FileStorage) GetContainerTypeRegistrations()([]FileStorageContainerType
     }
     return nil
 }
-// GetContainerTypes gets the containerTypes property value. The containerTypes property
+// GetContainerTypes gets the containerTypes property value. The collection of fileStorageContainerType resources.
 // returns a []FileStorageContainerTypeable when successful
 func (m *FileStorage) GetContainerTypes()([]FileStorageContainerTypeable) {
     val, err := m.GetBackingStore().Get("containerTypes")
@@ -58,7 +58,7 @@ func (m *FileStorage) GetContainerTypes()([]FileStorageContainerTypeable) {
     }
     return nil
 }
-// GetDeletedContainers gets the deletedContainers property value. The deletedContainers property
+// GetDeletedContainers gets the deletedContainers property value. The collection of deleted fileStorageContainer resources.
 // returns a []FileStorageContainerable when successful
 func (m *FileStorage) GetDeletedContainers()([]FileStorageContainerable) {
     val, err := m.GetBackingStore().Get("deletedContainers")
@@ -196,28 +196,28 @@ func (m *FileStorage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetContainers sets the containers property value. The containers property
+// SetContainers sets the containers property value. The collection of active fileStorageContainer resources.
 func (m *FileStorage) SetContainers(value []FileStorageContainerable)() {
     err := m.GetBackingStore().Set("containers", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContainerTypeRegistrations sets the containerTypeRegistrations property value. The containerTypeRegistrations property
+// SetContainerTypeRegistrations sets the containerTypeRegistrations property value. The collection of fileStorageContainerTypeRegistration resources.
 func (m *FileStorage) SetContainerTypeRegistrations(value []FileStorageContainerTypeRegistrationable)() {
     err := m.GetBackingStore().Set("containerTypeRegistrations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetContainerTypes sets the containerTypes property value. The containerTypes property
+// SetContainerTypes sets the containerTypes property value. The collection of fileStorageContainerType resources.
 func (m *FileStorage) SetContainerTypes(value []FileStorageContainerTypeable)() {
     err := m.GetBackingStore().Set("containerTypes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeletedContainers sets the deletedContainers property value. The deletedContainers property
+// SetDeletedContainers sets the deletedContainers property value. The collection of deleted fileStorageContainer resources.
 func (m *FileStorage) SetDeletedContainers(value []FileStorageContainerable)() {
     err := m.GetBackingStore().Set("deletedContainers", value)
     if err != nil {

@@ -67,6 +67,30 @@ func (m *PositionDetail) GetDescription()(*string) {
     }
     return nil
 }
+// GetEmployeeId gets the employeeId property value. The identifier assigned to the employee.
+// returns a *string when successful
+func (m *PositionDetail) GetEmployeeId()(*string) {
+    val, err := m.GetBackingStore().Get("employeeId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetEmployeeType gets the employeeType property value. The type of employment for the position.
+// returns a *string when successful
+func (m *PositionDetail) GetEmployeeType()(*string) {
+    val, err := m.GetBackingStore().Get("employeeType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetEndMonthYear gets the endMonthYear property value. The date when the position ended.
 // returns a *DateOnly when successful
 func (m *PositionDetail) GetEndMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly) {
@@ -100,6 +124,26 @@ func (m *PositionDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["employeeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmployeeId(val)
+        }
+        return nil
+    }
+    res["employeeType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetEmployeeType(val)
         }
         return nil
     }
@@ -328,6 +372,18 @@ func (m *PositionDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
         }
     }
     {
+        err := writer.WriteStringValue("employeeId", m.GetEmployeeId())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("employeeType", m.GetEmployeeType())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteDateOnlyValue("endMonthYear", m.GetEndMonthYear())
         if err != nil {
             return err
@@ -420,6 +476,20 @@ func (m *PositionDetail) SetDescription(value *string)() {
         panic(err)
     }
 }
+// SetEmployeeId sets the employeeId property value. The identifier assigned to the employee.
+func (m *PositionDetail) SetEmployeeId(value *string)() {
+    err := m.GetBackingStore().Set("employeeId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetEmployeeType sets the employeeType property value. The type of employment for the position.
+func (m *PositionDetail) SetEmployeeType(value *string)() {
+    err := m.GetBackingStore().Set("employeeType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetEndMonthYear sets the endMonthYear property value. The date when the position ended.
 func (m *PositionDetail) SetEndMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)() {
     err := m.GetBackingStore().Set("endMonthYear", value)
@@ -497,6 +567,8 @@ type PositionDetailable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCompany()(CompanyDetailable)
     GetDescription()(*string)
+    GetEmployeeId()(*string)
+    GetEmployeeType()(*string)
     GetEndMonthYear()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
     GetJobTitle()(*string)
     GetLayer()(*int32)
@@ -510,6 +582,8 @@ type PositionDetailable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCompany(value CompanyDetailable)()
     SetDescription(value *string)()
+    SetEmployeeId(value *string)()
+    SetEmployeeType(value *string)()
     SetEndMonthYear(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()
     SetJobTitle(value *string)()
     SetLayer(value *int32)()

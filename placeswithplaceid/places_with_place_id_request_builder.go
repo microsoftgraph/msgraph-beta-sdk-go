@@ -44,8 +44,11 @@ func NewPlacesWithPlaceIdRequestBuilder(rawUrl string, requestAdapter i2ae4187f7
     urlParams["request-raw-url"] = rawUrl
     return NewPlacesWithPlaceIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Delete delete entity from places by placeId
+// Delete delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-beta
 func (m *PlacesWithPlaceIdRequestBuilder) Delete(ctx context.Context, requestConfiguration *PlacesWithPlaceIdRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -60,7 +63,7 @@ func (m *PlacesWithPlaceIdRequestBuilder) Delete(ctx context.Context, requestCon
     }
     return nil
 }
-// Patch update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+// Patch update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
 // returns a Placeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -83,7 +86,7 @@ func (m *PlacesWithPlaceIdRequestBuilder) Patch(ctx context.Context, body ie233e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable), nil
 }
-// ToDeleteRequestInformation delete entity from places by placeId
+// ToDeleteRequestInformation delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
 // returns a *RequestInformation when successful
 func (m *PlacesWithPlaceIdRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PlacesWithPlaceIdRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -94,7 +97,7 @@ func (m *PlacesWithPlaceIdRequestBuilder) ToDeleteRequestInformation(ctx context
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
+// ToPatchRequestInformation update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
 // returns a *RequestInformation when successful
 func (m *PlacesWithPlaceIdRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable, requestConfiguration *PlacesWithPlaceIdRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

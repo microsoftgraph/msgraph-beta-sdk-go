@@ -9,14 +9,12 @@ const (
     CALLENDED_CALLEVENTTYPE
     UNKNOWNFUTUREVALUE_CALLEVENTTYPE
     ROSTERUPDATED_CALLEVENTTYPE
-    TRANSCRIPTIONSTARTED_CALLEVENTTYPE
-    TRANSCRIPTIONSTOPPED_CALLEVENTTYPE
-    RECORDINGSTARTED_CALLEVENTTYPE
-    RECORDINGSTOPPED_CALLEVENTTYPE
+    TRANSCRIPTIONSTATEUPDATED_CALLEVENTTYPE
+    RECORDINGSTATEUPDATED_CALLEVENTTYPE
 )
 
 func (i CallEventType) String() string {
-    return []string{"callStarted", "callEnded", "unknownFutureValue", "rosterUpdated", "transcriptionStarted", "transcriptionStopped", "recordingStarted", "recordingStopped"}[i]
+    return []string{"callStarted", "callEnded", "unknownFutureValue", "rosterUpdated", "transcriptionStateUpdated", "recordingStateUpdated"}[i]
 }
 func ParseCallEventType(v string) (any, error) {
     result := CALLSTARTED_CALLEVENTTYPE
@@ -29,14 +27,10 @@ func ParseCallEventType(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_CALLEVENTTYPE
         case "rosterUpdated":
             result = ROSTERUPDATED_CALLEVENTTYPE
-        case "transcriptionStarted":
-            result = TRANSCRIPTIONSTARTED_CALLEVENTTYPE
-        case "transcriptionStopped":
-            result = TRANSCRIPTIONSTOPPED_CALLEVENTTYPE
-        case "recordingStarted":
-            result = RECORDINGSTARTED_CALLEVENTTYPE
-        case "recordingStopped":
-            result = RECORDINGSTOPPED_CALLEVENTTYPE
+        case "transcriptionStateUpdated":
+            result = TRANSCRIPTIONSTATEUPDATED_CALLEVENTTYPE
+        case "recordingStateUpdated":
+            result = RECORDINGSTATEUPDATED_CALLEVENTTYPE
         default:
             return nil, nil
     }

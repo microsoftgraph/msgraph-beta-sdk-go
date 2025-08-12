@@ -85,7 +85,7 @@ func (m *ManagedAppProtection) GetAllowedInboundDataTransferSources()(*ManagedAp
     }
     return nil
 }
-// GetAllowedOutboundClipboardSharingExceptionLength gets the allowedOutboundClipboardSharingExceptionLength property value. Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of '0' means no exception is allowed.
+// GetAllowedOutboundClipboardSharingExceptionLength gets the allowedOutboundClipboardSharingExceptionLength property value. Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of '0' means no exception is allowed. Valid values 0 to 65535
 // returns a *int32 when successful
 func (m *ManagedAppProtection) GetAllowedOutboundClipboardSharingExceptionLength()(*int32) {
     val, err := m.GetBackingStore().Get("allowedOutboundClipboardSharingExceptionLength")
@@ -777,7 +777,7 @@ func (m *ManagedAppProtection) GetMaximumAllowedDeviceThreatLevel()(*ManagedAppD
     }
     return nil
 }
-// GetMaximumPinRetries gets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+// GetMaximumPinRetries gets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped. Valid values 1 to 65535
 // returns a *int32 when successful
 func (m *ManagedAppProtection) GetMaximumPinRetries()(*int32) {
     val, err := m.GetBackingStore().Get("maximumPinRetries")
@@ -1041,7 +1041,7 @@ func (m *ManagedAppProtection) GetPinRequiredInsteadOfBiometricTimeout()(*i878a8
     }
     return nil
 }
-// GetPreviousPinBlockCount gets the previousPinBlockCount property value. Requires a pin to be unique from the number specified in this property.
+// GetPreviousPinBlockCount gets the previousPinBlockCount property value. Requires a pin to be unique from the number specified in this property. Valid values 0 to 24
 // returns a *int32 when successful
 func (m *ManagedAppProtection) GetPreviousPinBlockCount()(*int32) {
     val, err := m.GetBackingStore().Get("previousPinBlockCount")
@@ -1426,7 +1426,7 @@ func (m *ManagedAppProtection) SetAllowedInboundDataTransferSources(value *Manag
         panic(err)
     }
 }
-// SetAllowedOutboundClipboardSharingExceptionLength sets the allowedOutboundClipboardSharingExceptionLength property value. Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of '0' means no exception is allowed.
+// SetAllowedOutboundClipboardSharingExceptionLength sets the allowedOutboundClipboardSharingExceptionLength property value. Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of '0' means no exception is allowed. Valid values 0 to 65535
 func (m *ManagedAppProtection) SetAllowedOutboundClipboardSharingExceptionLength(value *int32)() {
     err := m.GetBackingStore().Set("allowedOutboundClipboardSharingExceptionLength", value)
     if err != nil {
@@ -1545,7 +1545,7 @@ func (m *ManagedAppProtection) SetMaximumAllowedDeviceThreatLevel(value *Managed
         panic(err)
     }
 }
-// SetMaximumPinRetries sets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
+// SetMaximumPinRetries sets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped. Valid values 1 to 65535
 func (m *ManagedAppProtection) SetMaximumPinRetries(value *int32)() {
     err := m.GetBackingStore().Set("maximumPinRetries", value)
     if err != nil {
@@ -1699,7 +1699,7 @@ func (m *ManagedAppProtection) SetPinRequiredInsteadOfBiometricTimeout(value *i8
         panic(err)
     }
 }
-// SetPreviousPinBlockCount sets the previousPinBlockCount property value. Requires a pin to be unique from the number specified in this property.
+// SetPreviousPinBlockCount sets the previousPinBlockCount property value. Requires a pin to be unique from the number specified in this property. Valid values 0 to 24
 func (m *ManagedAppProtection) SetPreviousPinBlockCount(value *int32)() {
     err := m.GetBackingStore().Set("previousPinBlockCount", value)
     if err != nil {

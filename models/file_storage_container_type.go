@@ -48,7 +48,7 @@ func (m *FileStorageContainerType) GetBillingStatus()(*FileStorageContainerBilli
     }
     return nil
 }
-// GetCreatedDateTime gets the createdDateTime property value. The createdDateTime property
+// GetCreatedDateTime gets the createdDateTime property value. The creation date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *FileStorageContainerType) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("createdDateTime")
@@ -60,7 +60,7 @@ func (m *FileStorageContainerType) GetCreatedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetEtag gets the etag property value. The etag property
+// GetEtag gets the etag property value. Used in update scenarios for optimistic concurrency control. Read-only.
 // returns a *string when successful
 func (m *FileStorageContainerType) GetEtag()(*string) {
     val, err := m.GetBackingStore().Get("etag")
@@ -72,7 +72,7 @@ func (m *FileStorageContainerType) GetEtag()(*string) {
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. The expiration date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *FileStorageContainerType) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -170,7 +170,7 @@ func (m *FileStorageContainerType) GetFieldDeserializers()(map[string]func(i878a
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the fileStorageContainerType.
 // returns a *string when successful
 func (m *FileStorageContainerType) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -182,7 +182,7 @@ func (m *FileStorageContainerType) GetName()(*string) {
     }
     return nil
 }
-// GetOwningAppId gets the owningAppId property value. The owningAppId property
+// GetOwningAppId gets the owningAppId property value. ID of the application that owns the fileStorageContainerType.
 // returns a *UUID when successful
 func (m *FileStorageContainerType) GetOwningAppId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("owningAppId")
@@ -278,35 +278,35 @@ func (m *FileStorageContainerType) SetBillingStatus(value *FileStorageContainerB
         panic(err)
     }
 }
-// SetCreatedDateTime sets the createdDateTime property value. The createdDateTime property
+// SetCreatedDateTime sets the createdDateTime property value. The creation date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *FileStorageContainerType) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("createdDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEtag sets the etag property value. The etag property
+// SetEtag sets the etag property value. Used in update scenarios for optimistic concurrency control. Read-only.
 func (m *FileStorageContainerType) SetEtag(value *string)() {
     err := m.GetBackingStore().Set("etag", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. The expiration date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *FileStorageContainerType) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the fileStorageContainerType.
 func (m *FileStorageContainerType) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwningAppId sets the owningAppId property value. The owningAppId property
+// SetOwningAppId sets the owningAppId property value. ID of the application that owns the fileStorageContainerType.
 func (m *FileStorageContainerType) SetOwningAppId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("owningAppId", value)
     if err != nil {

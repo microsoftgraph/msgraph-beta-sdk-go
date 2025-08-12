@@ -38,7 +38,7 @@ func (m *FileStorageContainerTypeAppPermissionGrant) GetAdditionalData()(map[str
     }
     return val.(map[string]any)
 }
-// GetAppId gets the appId property value. The appId property
+// GetAppId gets the appId property value. Application ID to which to set permissions.
 // returns a *string when successful
 func (m *FileStorageContainerTypeAppPermissionGrant) GetAppId()(*string) {
     val, err := m.GetBackingStore().Get("appId")
@@ -50,7 +50,7 @@ func (m *FileStorageContainerTypeAppPermissionGrant) GetAppId()(*string) {
     }
     return nil
 }
-// GetApplicationPermissions gets the applicationPermissions property value. The applicationPermissions property
+// GetApplicationPermissions gets the applicationPermissions property value. Allowed permissions when you use delegated tokens. The possible values are: none, readContent, writeContent, manageContent, create, delete, read, write, enumeratePermissions, addPermissions, updatePermissions, deletePermissions, deleteOwnPermission, managePermissions, full, unknownFutureValue.
 // returns a []FileStorageContainerTypeAppPermission when successful
 func (m *FileStorageContainerTypeAppPermissionGrant) GetApplicationPermissions()([]FileStorageContainerTypeAppPermission) {
     val, err := m.GetBackingStore().Get("applicationPermissions")
@@ -67,7 +67,7 @@ func (m *FileStorageContainerTypeAppPermissionGrant) GetApplicationPermissions()
 func (m *FileStorageContainerTypeAppPermissionGrant) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDelegatedPermissions gets the delegatedPermissions property value. The delegatedPermissions property
+// GetDelegatedPermissions gets the delegatedPermissions property value. Allowed permissions when you use application tokens. The possible values are: none, readContent, writeContent, manageContent, create, delete, read, write, enumeratePermissions, addPermissions, updatePermissions, deletePermissions, deleteOwnPermission, managePermissions, full, unknownFutureValue.
 // returns a []FileStorageContainerTypeAppPermission when successful
 func (m *FileStorageContainerTypeAppPermissionGrant) GetDelegatedPermissions()([]FileStorageContainerTypeAppPermission) {
     val, err := m.GetBackingStore().Get("delegatedPermissions")
@@ -190,14 +190,14 @@ func (m *FileStorageContainerTypeAppPermissionGrant) SetAdditionalData(value map
         panic(err)
     }
 }
-// SetAppId sets the appId property value. The appId property
+// SetAppId sets the appId property value. Application ID to which to set permissions.
 func (m *FileStorageContainerTypeAppPermissionGrant) SetAppId(value *string)() {
     err := m.GetBackingStore().Set("appId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetApplicationPermissions sets the applicationPermissions property value. The applicationPermissions property
+// SetApplicationPermissions sets the applicationPermissions property value. Allowed permissions when you use delegated tokens. The possible values are: none, readContent, writeContent, manageContent, create, delete, read, write, enumeratePermissions, addPermissions, updatePermissions, deletePermissions, deleteOwnPermission, managePermissions, full, unknownFutureValue.
 func (m *FileStorageContainerTypeAppPermissionGrant) SetApplicationPermissions(value []FileStorageContainerTypeAppPermission)() {
     err := m.GetBackingStore().Set("applicationPermissions", value)
     if err != nil {
@@ -208,7 +208,7 @@ func (m *FileStorageContainerTypeAppPermissionGrant) SetApplicationPermissions(v
 func (m *FileStorageContainerTypeAppPermissionGrant) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDelegatedPermissions sets the delegatedPermissions property value. The delegatedPermissions property
+// SetDelegatedPermissions sets the delegatedPermissions property value. Allowed permissions when you use application tokens. The possible values are: none, readContent, writeContent, manageContent, create, delete, read, write, enumeratePermissions, addPermissions, updatePermissions, deletePermissions, deleteOwnPermission, managePermissions, full, unknownFutureValue.
 func (m *FileStorageContainerTypeAppPermissionGrant) SetDelegatedPermissions(value []FileStorageContainerTypeAppPermission)() {
     err := m.GetBackingStore().Set("delegatedPermissions", value)
     if err != nil {
