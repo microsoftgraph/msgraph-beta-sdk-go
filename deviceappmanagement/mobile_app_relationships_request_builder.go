@@ -14,7 +14,7 @@ import (
 type MobileAppRelationshipsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppRelationshipsRequestBuilderGetQueryParameters list mobileAppRelationship objects for mobile applications.
+// MobileAppRelationshipsRequestBuilderGetQueryParameters the mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
 type MobileAppRelationshipsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewMobileAppRelationshipsRequestBuilder(rawUrl string, requestAdapter i2ae4
 func (m *MobileAppRelationshipsRequestBuilder) Count()(*MobileAppRelationshipsCountRequestBuilder) {
     return NewMobileAppRelationshipsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get list mobileAppRelationship objects for mobile applications.
+// Get the mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
 // returns a MobileAppRelationshipCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppRelationshipsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *MobileAppRelationshipsRequestBuilder) Post(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable), nil
 }
-// ToGetRequestInformation list mobileAppRelationship objects for mobile applications.
+// ToGetRequestInformation the mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.
 // returns a *RequestInformation when successful
 func (m *MobileAppRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppRelationshipsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -105,6 +105,26 @@ func (m *CallEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["recordingState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRecordingStateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecordingState(val.(RecordingStateable))
+        }
+        return nil
+    }
+    res["transcriptionState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateTranscriptionStateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTranscriptionState(val.(TranscriptionStateable))
+        }
+        return nil
+    }
     return res
 }
 // GetParticipants gets the participants property value. Participants collection for the call event.
@@ -116,6 +136,30 @@ func (m *CallEvent) GetParticipants()([]Participantable) {
     }
     if val != nil {
         return val.([]Participantable)
+    }
+    return nil
+}
+// GetRecordingState gets the recordingState property value. The recordingState property
+// returns a RecordingStateable when successful
+func (m *CallEvent) GetRecordingState()(RecordingStateable) {
+    val, err := m.GetBackingStore().Get("recordingState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RecordingStateable)
+    }
+    return nil
+}
+// GetTranscriptionState gets the transcriptionState property value. The transcriptionState property
+// returns a TranscriptionStateable when successful
+func (m *CallEvent) GetTranscriptionState()(TranscriptionStateable) {
+    val, err := m.GetBackingStore().Get("transcriptionState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(TranscriptionStateable)
     }
     return nil
 }
@@ -150,6 +194,18 @@ func (m *CallEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("recordingState", m.GetRecordingState())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("transcriptionState", m.GetTranscriptionState())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCallEventType sets the callEventType property value. The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: rosterUpdated.
@@ -173,13 +229,31 @@ func (m *CallEvent) SetParticipants(value []Participantable)() {
         panic(err)
     }
 }
+// SetRecordingState sets the recordingState property value. The recordingState property
+func (m *CallEvent) SetRecordingState(value RecordingStateable)() {
+    err := m.GetBackingStore().Set("recordingState", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTranscriptionState sets the transcriptionState property value. The transcriptionState property
+func (m *CallEvent) SetTranscriptionState(value TranscriptionStateable)() {
+    err := m.GetBackingStore().Set("transcriptionState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CallEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCallEventType()(*CallEventType)
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetParticipants()([]Participantable)
+    GetRecordingState()(RecordingStateable)
+    GetTranscriptionState()(TranscriptionStateable)
     SetCallEventType(value *CallEventType)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetParticipants(value []Participantable)()
+    SetRecordingState(value RecordingStateable)()
+    SetTranscriptionState(value TranscriptionStateable)()
 }

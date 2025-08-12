@@ -54,7 +54,7 @@ func (m *AiUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689638
     }
     return res
 }
-// GetInteractionHistory gets the interactionHistory property value. The history of interactions between AI agents and users.
+// GetInteractionHistory gets the interactionHistory property value. The interactionHistory property
 // returns a AiInteractionHistoryable when successful
 func (m *AiUser) GetInteractionHistory()(AiInteractionHistoryable) {
     val, err := m.GetBackingStore().Get("interactionHistory")
@@ -66,7 +66,7 @@ func (m *AiUser) GetInteractionHistory()(AiInteractionHistoryable) {
     }
     return nil
 }
-// GetOnlineMeetings gets the onlineMeetings property value. Information about an online meeting, including AI insights.
+// GetOnlineMeetings gets the onlineMeetings property value. The onlineMeetings property
 // returns a []AiOnlineMeetingable when successful
 func (m *AiUser) GetOnlineMeetings()([]AiOnlineMeetingable) {
     val, err := m.GetBackingStore().Get("onlineMeetings")
@@ -104,14 +104,14 @@ func (m *AiUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c
     }
     return nil
 }
-// SetInteractionHistory sets the interactionHistory property value. The history of interactions between AI agents and users.
+// SetInteractionHistory sets the interactionHistory property value. The interactionHistory property
 func (m *AiUser) SetInteractionHistory(value AiInteractionHistoryable)() {
     err := m.GetBackingStore().Set("interactionHistory", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOnlineMeetings sets the onlineMeetings property value. Information about an online meeting, including AI insights.
+// SetOnlineMeetings sets the onlineMeetings property value. The onlineMeetings property
 func (m *AiUser) SetOnlineMeetings(value []AiOnlineMeetingable)() {
     err := m.GetBackingStore().Set("onlineMeetings", value)
     if err != nil {

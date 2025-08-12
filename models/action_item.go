@@ -101,7 +101,7 @@ func (m *ActionItem) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOwnerDisplayName gets the ownerDisplayName property value. The display name of the owner of the action item.
+// GetOwnerDisplayName gets the ownerDisplayName property value. The ownerDisplayName property
 // returns a *string when successful
 func (m *ActionItem) GetOwnerDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("ownerDisplayName")
@@ -113,7 +113,7 @@ func (m *ActionItem) GetOwnerDisplayName()(*string) {
     }
     return nil
 }
-// GetText gets the text property value. The text content of the action item.
+// GetText gets the text property value. The text property
 // returns a *string when successful
 func (m *ActionItem) GetText()(*string) {
     val, err := m.GetBackingStore().Get("text")
@@ -125,7 +125,7 @@ func (m *ActionItem) GetText()(*string) {
     }
     return nil
 }
-// GetTitle gets the title property value. The title of the action item.
+// GetTitle gets the title property value. The title property
 // returns a *string when successful
 func (m *ActionItem) GetTitle()(*string) {
     val, err := m.GetBackingStore().Get("title")
@@ -189,21 +189,21 @@ func (m *ActionItem) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOwnerDisplayName sets the ownerDisplayName property value. The display name of the owner of the action item.
+// SetOwnerDisplayName sets the ownerDisplayName property value. The ownerDisplayName property
 func (m *ActionItem) SetOwnerDisplayName(value *string)() {
     err := m.GetBackingStore().Set("ownerDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetText sets the text property value. The text content of the action item.
+// SetText sets the text property value. The text property
 func (m *ActionItem) SetText(value *string)() {
     err := m.GetBackingStore().Set("text", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTitle sets the title property value. The title of the action item.
+// SetTitle sets the title property value. The title property
 func (m *ActionItem) SetTitle(value *string)() {
     err := m.GetBackingStore().Set("title", value)
     if err != nil {

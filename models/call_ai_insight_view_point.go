@@ -75,7 +75,7 @@ func (m *CallAiInsightViewPoint) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetMentionEvents gets the mentionEvents property value. The collection of AI-generated mention events.
+// GetMentionEvents gets the mentionEvents property value. The mentionEvents property
 // returns a []MentionEventable when successful
 func (m *CallAiInsightViewPoint) GetMentionEvents()([]MentionEventable) {
     val, err := m.GetBackingStore().Get("mentionEvents")
@@ -138,7 +138,7 @@ func (m *CallAiInsightViewPoint) SetAdditionalData(value map[string]any)() {
 func (m *CallAiInsightViewPoint) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetMentionEvents sets the mentionEvents property value. The collection of AI-generated mention events.
+// SetMentionEvents sets the mentionEvents property value. The mentionEvents property
 func (m *CallAiInsightViewPoint) SetMentionEvents(value []MentionEventable)() {
     err := m.GetBackingStore().Set("mentionEvents", value)
     if err != nil {

@@ -54,6 +54,11 @@ func (m *VirtualEndpointRequestBuilder) AuditEvents()(*VirtualEndpointAuditEvent
 func (m *VirtualEndpointRequestBuilder) BulkActions()(*VirtualEndpointBulkActionsRequestBuilder) {
     return NewVirtualEndpointBulkActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CloudApps provides operations to manage the cloudApps property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointCloudAppsRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) CloudApps()(*VirtualEndpointCloudAppsRequestBuilder) {
+    return NewVirtualEndpointCloudAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // CloudPCs provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointCloudPCsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) CloudPCs()(*VirtualEndpointCloudPCsRequestBuilder) {

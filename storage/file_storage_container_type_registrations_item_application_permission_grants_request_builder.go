@@ -14,7 +14,7 @@ import (
 type FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequestBuilderGetQueryParameters get applicationPermissionGrants from storage
+// FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequestBuilderGetQueryParameters list all app permission grants in a fileStorageContainerTypeRegistration.
 type FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewFileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequ
 func (m *FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequestBuilder) Count()(*FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsCountRequestBuilder) {
     return NewFileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get applicationPermissionGrants from storage
+// Get list all app permission grants in a fileStorageContainerTypeRegistration.
 // returns a FileStorageContainerTypeAppPermissionGrantCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestoragecontainertyperegistration-list-applicationpermissiongrants?view=graph-rest-beta
 func (m *FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeAppPermissionGrantCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsReq
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeAppPermissionGrantable), nil
 }
-// ToGetRequestInformation get applicationPermissionGrants from storage
+// ToGetRequestInformation list all app permission grants in a fileStorageContainerTypeRegistration.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainerTypeRegistrationsItemApplicationPermissionGrantsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

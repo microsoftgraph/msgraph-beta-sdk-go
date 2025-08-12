@@ -21,7 +21,7 @@ type FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderDeleteRe
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderGetQueryParameters get containerTypes from storage
+// FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderGetQueryParameters get a fileStorageContainerType using its ID.
 type FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewFileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder(rawU
     urlParams["request-raw-url"] = rawUrl
     return NewFileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property containerTypes for storage
+// Delete delete a fileStorageContainerType object from the tenant. A fileStorageContainerType can only be deleted if no registrations are associated with it in any tenant.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestorage-delete-containertypes?view=graph-rest-beta
 func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) De
     }
     return nil
 }
-// Get get containerTypes from storage
+// Get get a fileStorageContainerType using its ID.
 // returns a FileStorageContainerTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestoragecontainertype-get?view=graph-rest-beta
 func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +99,12 @@ func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable), nil
 }
-// Patch update the navigation property containerTypes in storage
+// Patch update the properties of a fileStorageContainerType object. The properties updated are reflected in each registered fileStorageContainerTypeRegistration in a maximum of 24 hours. Settings overridden in a tenant aren't updated. ETag is used for optimistic concurrency control. It must match the value from Create, Get or the previous Update.
 // returns a FileStorageContainerTypeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestoragecontainertype-update?view=graph-rest-beta
 func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable, requestConfiguration *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -113,7 +122,7 @@ func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) Pa
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable), nil
 }
-// ToDeleteRequestInformation delete navigation property containerTypes for storage
+// ToDeleteRequestInformation delete a fileStorageContainerType object from the tenant. A fileStorageContainerType can only be deleted if no registrations are associated with it in any tenant.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -124,7 +133,7 @@ func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get containerTypes from storage
+// ToGetRequestInformation get a fileStorageContainerType using its ID.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +147,7 @@ func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) To
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property containerTypes in storage
+// ToPatchRequestInformation update the properties of a fileStorageContainerType object. The properties updated are reflected in each registered fileStorageContainerTypeRegistration in a maximum of 24 hours. Settings overridden in a tenant aren't updated. ETag is used for optimistic concurrency control. It must match the value from Create, Get or the previous Update.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeable, requestConfiguration *FileStorageContainerTypesFileStorageContainerTypeItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

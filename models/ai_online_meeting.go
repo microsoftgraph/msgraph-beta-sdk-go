@@ -22,7 +22,7 @@ func NewAiOnlineMeeting()(*AiOnlineMeeting) {
 func CreateAiOnlineMeetingFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAiOnlineMeeting(), nil
 }
-// GetAiInsights gets the aiInsights property value. A set of AI insights associated with an AI online meeting.
+// GetAiInsights gets the aiInsights property value. The aiInsights property
 // returns a []CallAiInsightable when successful
 func (m *AiOnlineMeeting) GetAiInsights()([]CallAiInsightable) {
     val, err := m.GetBackingStore().Get("aiInsights")
@@ -76,7 +76,7 @@ func (m *AiOnlineMeeting) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetAiInsights sets the aiInsights property value. A set of AI insights associated with an AI online meeting.
+// SetAiInsights sets the aiInsights property value. The aiInsights property
 func (m *AiOnlineMeeting) SetAiInsights(value []CallAiInsightable)() {
     err := m.GetBackingStore().Set("aiInsights", value)
     if err != nil {

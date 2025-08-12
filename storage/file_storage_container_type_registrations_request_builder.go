@@ -14,7 +14,7 @@ import (
 type FileStorageContainerTypeRegistrationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FileStorageContainerTypeRegistrationsRequestBuilderGetQueryParameters get containerTypeRegistrations from storage
+// FileStorageContainerTypeRegistrationsRequestBuilderGetQueryParameters get a list of the fileStorageContainerTypeRegistration objects and their properties.
 type FileStorageContainerTypeRegistrationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewFileStorageContainerTypeRegistrationsRequestBuilder(rawUrl string, reque
 func (m *FileStorageContainerTypeRegistrationsRequestBuilder) Count()(*FileStorageContainerTypeRegistrationsCountRequestBuilder) {
     return NewFileStorageContainerTypeRegistrationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get containerTypeRegistrations from storage
+// Get get a list of the fileStorageContainerTypeRegistration objects and their properties.
 // returns a FileStorageContainerTypeRegistrationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestorage-list-containertyperegistrations?view=graph-rest-beta
 func (m *FileStorageContainerTypeRegistrationsRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainerTypeRegistrationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeRegistrationCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -119,7 +122,7 @@ func (m *FileStorageContainerTypeRegistrationsRequestBuilder) Post(ctx context.C
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeRegistrationable), nil
 }
-// ToGetRequestInformation get containerTypeRegistrations from storage
+// ToGetRequestInformation get a list of the fileStorageContainerTypeRegistration objects and their properties.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypeRegistrationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainerTypeRegistrationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

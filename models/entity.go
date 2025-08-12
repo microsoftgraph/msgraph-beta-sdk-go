@@ -553,6 +553,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewBrowserSite(), nil
                     case "#microsoft.graph.browserSiteList":
                         return NewBrowserSiteList(), nil
+                    case "#microsoft.graph.building":
+                        return NewBuilding(), nil
                     case "#microsoft.graph.builtInIdentityProvider":
                         return NewBuiltInIdentityProvider(), nil
                     case "#microsoft.graph.bulkUpload":
@@ -679,6 +681,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCloudPcBulkSetReviewStatus(), nil
                     case "#microsoft.graph.cloudPcBulkTroubleshoot":
                         return NewCloudPcBulkTroubleshoot(), nil
+                    case "#microsoft.graph.cloudPcCloudApp":
+                        return NewCloudPcCloudApp(), nil
                     case "#microsoft.graph.cloudPCConnectivityIssue":
                         return NewCloudPCConnectivityIssue(), nil
                     case "#microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping":
@@ -889,6 +893,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewDepTvOSEnrollmentProfile(), nil
                     case "#microsoft.graph.depVisionOSEnrollmentProfile":
                         return NewDepVisionOSEnrollmentProfile(), nil
+                    case "#microsoft.graph.desk":
+                        return NewDesk(), nil
                     case "#microsoft.graph.detectedApp":
                         return NewDetectedApp(), nil
                     case "#microsoft.graph.device":
@@ -1415,6 +1421,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewFilterOperatorSchema(), nil
                     case "#microsoft.graph.finding":
                         return NewFinding(), nil
+                    case "#microsoft.graph.floor":
+                        return NewFloor(), nil
                     case "#microsoft.graph.focusActivityStatistics":
                         return NewFocusActivityStatistics(), nil
                     case "#microsoft.graph.gcpAuthorizationSystem":
@@ -2617,6 +2625,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewSecretInformationAccessAwsServerlessFunctionFinding(), nil
                     case "#microsoft.graph.secretInformationAccessAwsUserFinding":
                         return NewSecretInformationAccessAwsUserFinding(), nil
+                    case "#microsoft.graph.section":
+                        return NewSection(), nil
                     case "#microsoft.graph.sectionGroup":
                         return NewSectionGroup(), nil
                     case "#microsoft.graph.secureScore":

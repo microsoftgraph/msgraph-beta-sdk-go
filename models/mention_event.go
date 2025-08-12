@@ -44,7 +44,7 @@ func (m *MentionEvent) GetAdditionalData()(map[string]any) {
 func (m *MentionEvent) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEventDateTime gets the eventDateTime property value. The date and time of the mention event. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// GetEventDateTime gets the eventDateTime property value. The eventDateTime property
 // returns a *Time when successful
 func (m *MentionEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
@@ -114,7 +114,7 @@ func (m *MentionEvent) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSpeaker gets the speaker property value. The speaker who mentioned the user.
+// GetSpeaker gets the speaker property value. The speaker property
 // returns a IdentitySetable when successful
 func (m *MentionEvent) GetSpeaker()(IdentitySetable) {
     val, err := m.GetBackingStore().Get("speaker")
@@ -126,7 +126,7 @@ func (m *MentionEvent) GetSpeaker()(IdentitySetable) {
     }
     return nil
 }
-// GetTranscriptUtterance gets the transcriptUtterance property value. The utterance in the online meeting transcript that contains the mention event.
+// GetTranscriptUtterance gets the transcriptUtterance property value. The transcriptUtterance property
 // returns a *string when successful
 func (m *MentionEvent) GetTranscriptUtterance()(*string) {
     val, err := m.GetBackingStore().Get("transcriptUtterance")
@@ -183,7 +183,7 @@ func (m *MentionEvent) SetAdditionalData(value map[string]any)() {
 func (m *MentionEvent) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEventDateTime sets the eventDateTime property value. The date and time of the mention event. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+// SetEventDateTime sets the eventDateTime property value. The eventDateTime property
 func (m *MentionEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("eventDateTime", value)
     if err != nil {
@@ -197,14 +197,14 @@ func (m *MentionEvent) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSpeaker sets the speaker property value. The speaker who mentioned the user.
+// SetSpeaker sets the speaker property value. The speaker property
 func (m *MentionEvent) SetSpeaker(value IdentitySetable)() {
     err := m.GetBackingStore().Set("speaker", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTranscriptUtterance sets the transcriptUtterance property value. The utterance in the online meeting transcript that contains the mention event.
+// SetTranscriptUtterance sets the transcriptUtterance property value. The transcriptUtterance property
 func (m *MentionEvent) SetTranscriptUtterance(value *string)() {
     err := m.GetBackingStore().Set("transcriptUtterance", value)
     if err != nil {
