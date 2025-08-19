@@ -23,7 +23,7 @@ func NewCloudPcCloudApp()(*CloudPcCloudApp) {
 func CreateCloudPcCloudAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcCloudApp(), nil
 }
-// GetActionFailedErrorCode gets the actionFailedErrorCode property value. The actionFailedErrorCode property
+// GetActionFailedErrorCode gets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. Possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.
 // returns a *CloudPcCloudAppActionFailedErrorCode when successful
 func (m *CloudPcCloudApp) GetActionFailedErrorCode()(*CloudPcCloudAppActionFailedErrorCode) {
     val, err := m.GetBackingStore().Get("actionFailedErrorCode")
@@ -35,7 +35,7 @@ func (m *CloudPcCloudApp) GetActionFailedErrorCode()(*CloudPcCloudAppActionFaile
     }
     return nil
 }
-// GetActionFailedErrorMessage gets the actionFailedErrorMessage property value. The actionFailedErrorMessage property
+// GetActionFailedErrorMessage gets the actionFailedErrorMessage property value. The error message when the IT admin failed to publish, unpublish, update, or reset a cloud app. For example: 'Publish failed because it exceeds the 500 cloud apps limitation under the policy. You need to unpublish some cloud apps under this policy in order to publish this cloud app again.' Read-only.
 // returns a *string when successful
 func (m *CloudPcCloudApp) GetActionFailedErrorMessage()(*string) {
     val, err := m.GetBackingStore().Get("actionFailedErrorMessage")
@@ -47,7 +47,7 @@ func (m *CloudPcCloudApp) GetActionFailedErrorMessage()(*string) {
     }
     return nil
 }
-// GetAddedDateTime gets the addedDateTime property value. The addedDateTime property
+// GetAddedDateTime gets the addedDateTime property value. The date and time when the cloud app was added to this tenant and became visible in the admin portal. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can't set or modify it. Supports $filter, $select, and $orderBy. Read-only.
 // returns a *Time when successful
 func (m *CloudPcCloudApp) GetAddedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("addedDateTime")
@@ -83,7 +83,7 @@ func (m *CloudPcCloudApp) GetAppStatus()(*CloudPcCloudAppStatus) {
     }
     return nil
 }
-// GetAvailableToUser gets the availableToUser property value. The availableToUser property
+// GetAvailableToUser gets the availableToUser property value. Indicates whether this cloud app is available to end users through the end-user portal or the Windows App. The default value is false. It changes to true if the cloud app is successfully published, and reverts to false when the admin unpublishes the cloud app. Supports $filter, $select, and $orderBy.
 // returns a *bool when successful
 func (m *CloudPcCloudApp) GetAvailableToUser()(*bool) {
     val, err := m.GetBackingStore().Get("availableToUser")
@@ -95,7 +95,7 @@ func (m *CloudPcCloudApp) GetAvailableToUser()(*bool) {
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. The description associated with the cloud app. The maximum allowed length for this property is 512 characters. Supports $filter, $select, and $orderBy.
 // returns a *string when successful
 func (m *CloudPcCloudApp) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -107,7 +107,7 @@ func (m *CloudPcCloudApp) GetDescription()(*string) {
     }
     return nil
 }
-// GetDiscoveredAppName gets the discoveredAppName property value. The discoveredAppName property
+// GetDiscoveredAppName gets the discoveredAppName property value. Name of the discovered app associated with the cloud app. For example, Paint, Supports $filter, $select, and $orderBy. Read-only.
 // returns a *string when successful
 func (m *CloudPcCloudApp) GetDiscoveredAppName()(*string) {
     val, err := m.GetBackingStore().Get("discoveredAppName")
@@ -119,7 +119,7 @@ func (m *CloudPcCloudApp) GetDiscoveredAppName()(*string) {
     }
     return nil
 }
-// GetDisplayName gets the displayName property value. The displayName property
+// GetDisplayName gets the displayName property value. The display name for the cloud app. The display name for the cloud app, which appears on the end-user portal and must be unique within a single provisioning policy. It uses the discovered app name as the default value. The maximum allowed length for this property is 64 characters. For example, Paint. Supports $filter, $select, and $orderBy.
 // returns a *string when successful
 func (m *CloudPcCloudApp) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
@@ -263,7 +263,7 @@ func (m *CloudPcCloudApp) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetLastPublishedDateTime gets the lastPublishedDateTime property value. The lastPublishedDateTime property
+// GetLastPublishedDateTime gets the lastPublishedDateTime property value. The latest date time when the admin published the cloud app. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can't set or modify it. Supports $filter, $select, and $orderBy. Read-only.
 // returns a *Time when successful
 func (m *CloudPcCloudApp) GetLastPublishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastPublishedDateTime")
@@ -275,7 +275,7 @@ func (m *CloudPcCloudApp) GetLastPublishedDateTime()(*i336074805fc853987abe6f7fe
     }
     return nil
 }
-// GetProvisioningPolicyId gets the provisioningPolicyId property value. The provisioningPolicyId property
+// GetProvisioningPolicyId gets the provisioningPolicyId property value. The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Read-only. Required.
 // returns a *string when successful
 func (m *CloudPcCloudApp) GetProvisioningPolicyId()(*string) {
     val, err := m.GetBackingStore().Get("provisioningPolicyId")
@@ -287,7 +287,7 @@ func (m *CloudPcCloudApp) GetProvisioningPolicyId()(*string) {
     }
     return nil
 }
-// GetScopeIds gets the scopeIds property value. The scopeIds property
+// GetScopeIds gets the scopeIds property value. The list of scope tag IDs for this cloud app. Inherited from the provisioning policy when the app is created or updated. Read-only.
 // returns a []string when successful
 func (m *CloudPcCloudApp) GetScopeIds()([]string) {
     val, err := m.GetBackingStore().Get("scopeIds")
@@ -381,21 +381,21 @@ func (m *CloudPcCloudApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetActionFailedErrorCode sets the actionFailedErrorCode property value. The actionFailedErrorCode property
+// SetActionFailedErrorCode sets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. Possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.
 func (m *CloudPcCloudApp) SetActionFailedErrorCode(value *CloudPcCloudAppActionFailedErrorCode)() {
     err := m.GetBackingStore().Set("actionFailedErrorCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetActionFailedErrorMessage sets the actionFailedErrorMessage property value. The actionFailedErrorMessage property
+// SetActionFailedErrorMessage sets the actionFailedErrorMessage property value. The error message when the IT admin failed to publish, unpublish, update, or reset a cloud app. For example: 'Publish failed because it exceeds the 500 cloud apps limitation under the policy. You need to unpublish some cloud apps under this policy in order to publish this cloud app again.' Read-only.
 func (m *CloudPcCloudApp) SetActionFailedErrorMessage(value *string)() {
     err := m.GetBackingStore().Set("actionFailedErrorMessage", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAddedDateTime sets the addedDateTime property value. The addedDateTime property
+// SetAddedDateTime sets the addedDateTime property value. The date and time when the cloud app was added to this tenant and became visible in the admin portal. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can't set or modify it. Supports $filter, $select, and $orderBy. Read-only.
 func (m *CloudPcCloudApp) SetAddedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("addedDateTime", value)
     if err != nil {
@@ -416,49 +416,49 @@ func (m *CloudPcCloudApp) SetAppStatus(value *CloudPcCloudAppStatus)() {
         panic(err)
     }
 }
-// SetAvailableToUser sets the availableToUser property value. The availableToUser property
+// SetAvailableToUser sets the availableToUser property value. Indicates whether this cloud app is available to end users through the end-user portal or the Windows App. The default value is false. It changes to true if the cloud app is successfully published, and reverts to false when the admin unpublishes the cloud app. Supports $filter, $select, and $orderBy.
 func (m *CloudPcCloudApp) SetAvailableToUser(value *bool)() {
     err := m.GetBackingStore().Set("availableToUser", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. The description associated with the cloud app. The maximum allowed length for this property is 512 characters. Supports $filter, $select, and $orderBy.
 func (m *CloudPcCloudApp) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDiscoveredAppName sets the discoveredAppName property value. The discoveredAppName property
+// SetDiscoveredAppName sets the discoveredAppName property value. Name of the discovered app associated with the cloud app. For example, Paint, Supports $filter, $select, and $orderBy. Read-only.
 func (m *CloudPcCloudApp) SetDiscoveredAppName(value *string)() {
     err := m.GetBackingStore().Set("discoveredAppName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDisplayName sets the displayName property value. The displayName property
+// SetDisplayName sets the displayName property value. The display name for the cloud app. The display name for the cloud app, which appears on the end-user portal and must be unique within a single provisioning policy. It uses the discovered app name as the default value. The maximum allowed length for this property is 64 characters. For example, Paint. Supports $filter, $select, and $orderBy.
 func (m *CloudPcCloudApp) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastPublishedDateTime sets the lastPublishedDateTime property value. The lastPublishedDateTime property
+// SetLastPublishedDateTime sets the lastPublishedDateTime property value. The latest date time when the admin published the cloud app. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. An IT admin can't set or modify it. Supports $filter, $select, and $orderBy. Read-only.
 func (m *CloudPcCloudApp) SetLastPublishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastPublishedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProvisioningPolicyId sets the provisioningPolicyId property value. The provisioningPolicyId property
+// SetProvisioningPolicyId sets the provisioningPolicyId property value. The ID of the provisioning policy associated with this cloud app. For example, 96133506-c05b-4dbb-a150-ed4adc59895f. Supports $filter, $select, and $orderBy. Read-only. Required.
 func (m *CloudPcCloudApp) SetProvisioningPolicyId(value *string)() {
     err := m.GetBackingStore().Set("provisioningPolicyId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetScopeIds sets the scopeIds property value. The scopeIds property
+// SetScopeIds sets the scopeIds property value. The list of scope tag IDs for this cloud app. Inherited from the provisioning policy when the app is created or updated. Read-only.
 func (m *CloudPcCloudApp) SetScopeIds(value []string)() {
     err := m.GetBackingStore().Set("scopeIds", value)
     if err != nil {

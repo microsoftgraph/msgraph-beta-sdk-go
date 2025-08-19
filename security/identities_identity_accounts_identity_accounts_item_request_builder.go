@@ -21,7 +21,7 @@ type IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderDeleteRequestCo
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderGetQueryParameters get identityAccounts from security
+// IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderGetQueryParameters read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
 type IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilder) Delete(ct
     }
     return nil
 }
-// Get get identityAccounts from security
+// Get read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
 // returns a IdentityAccountsable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/security-identityaccounts-get?view=graph-rest-beta
 func (m *IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.IdentityAccountsable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -129,7 +132,7 @@ func (m *IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilder) ToDeleteR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get identityAccounts from security
+// ToGetRequestInformation read the properties and relationships of a single identity security account object. This allows retrieving information about available identity accounts.
 // returns a *RequestInformation when successful
 func (m *IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesIdentityAccountsIdentityAccountsItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

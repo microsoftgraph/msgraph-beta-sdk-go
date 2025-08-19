@@ -33,8 +33,11 @@ func NewVirtualEndpointCloudAppsUnpublishRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudAppsUnpublishRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action unpublish
+// Post unpublish a cloudPcCloudApp to remove it from the end-user portal, for example, the Windows App. When a cloud app is unpublished, any changes made to its app details are reverted and reset to the values of the discovered app it's linked to.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpccloudapp-unpublish?view=graph-rest-beta
 func (m *VirtualEndpointCloudAppsUnpublishRequestBuilder) Post(ctx context.Context, body VirtualEndpointCloudAppsUnpublishPostRequestBodyable, requestConfiguration *VirtualEndpointCloudAppsUnpublishRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *VirtualEndpointCloudAppsUnpublishRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToPostRequestInformation invoke action unpublish
+// ToPostRequestInformation unpublish a cloudPcCloudApp to remove it from the end-user portal, for example, the Windows App. When a cloud app is unpublished, any changes made to its app details are reverted and reset to the values of the discovered app it's linked to.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudAppsUnpublishRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointCloudAppsUnpublishPostRequestBodyable, requestConfiguration *VirtualEndpointCloudAppsUnpublishRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -46,7 +46,7 @@ func (m *VirtualEndpoint) GetBulkActions()([]CloudPcBulkActionable) {
     }
     return nil
 }
-// GetCloudApps gets the cloudApps property value. The cloudApps property
+// GetCloudApps gets the cloudApps property value. A collection of cloud apps that are built on frontline shared options and provide Windows 365 end users with access to app-only sessions instead of a full desktop experience.
 // returns a []CloudPcCloudAppable when successful
 func (m *VirtualEndpoint) GetCloudApps()([]CloudPcCloudAppable) {
     val, err := m.GetBackingStore().Get("cloudApps")
@@ -694,7 +694,7 @@ func (m *VirtualEndpoint) SetBulkActions(value []CloudPcBulkActionable)() {
         panic(err)
     }
 }
-// SetCloudApps sets the cloudApps property value. The cloudApps property
+// SetCloudApps sets the cloudApps property value. A collection of cloud apps that are built on frontline shared options and provide Windows 365 end users with access to app-only sessions instead of a full desktop experience.
 func (m *VirtualEndpoint) SetCloudApps(value []CloudPcCloudAppable)() {
     err := m.GetBackingStore().Set("cloudApps", value)
     if err != nil {

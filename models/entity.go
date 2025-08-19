@@ -791,6 +791,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCopilotAdminLimitedMode(), nil
                     case "#microsoft.graph.copilotAdminSetting":
                         return NewCopilotAdminSetting(), nil
+                    case "#microsoft.graph.copilotCommunicationsRoot":
+                        return NewCopilotCommunicationsRoot(), nil
                     case "#microsoft.graph.copilotPeopleAdminSetting":
                         return NewCopilotPeopleAdminSetting(), nil
                     case "#microsoft.graph.copilotSetting":
@@ -2043,6 +2045,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMonthlyInactiveUsersMetric(), nil
                     case "#microsoft.graph.monthlyUserInsightMetricsRoot":
                         return NewMonthlyUserInsightMetricsRoot(), nil
+                    case "#microsoft.graph.multiActivitySubscription":
+                        return NewMultiActivitySubscription(), nil
                     case "#microsoft.graph.multiTenantOrganization":
                         return NewMultiTenantOrganization(), nil
                     case "#microsoft.graph.multiTenantOrganizationIdentitySyncPolicyTemplate":
@@ -2505,6 +2509,12 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewReadingAssignmentSubmission(), nil
                     case "#microsoft.graph.readingCoachPassage":
                         return NewReadingCoachPassage(), nil
+                    case "#microsoft.graph.realtimeActivityFeedRoot":
+                        return NewRealtimeActivityFeedRoot(), nil
+                    case "#microsoft.graph.realtimeActivityMeeting":
+                        return NewRealtimeActivityMeeting(), nil
+                    case "#microsoft.graph.realTimeTranscript":
+                        return NewRealTimeTranscript(), nil
                     case "#microsoft.graph.recommendation":
                         return NewRecommendation(), nil
                     case "#microsoft.graph.recommendationBase":

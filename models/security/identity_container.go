@@ -89,7 +89,7 @@ func (m *IdentityContainer) GetHealthIssues()([]HealthIssueable) {
     }
     return nil
 }
-// GetIdentityAccounts gets the identityAccounts property value. The identityAccounts property
+// GetIdentityAccounts gets the identityAccounts property value. Represents an identity's details in the context of Microsoft Defender for Identity.
 // returns a []IdentityAccountsable when successful
 func (m *IdentityContainer) GetIdentityAccounts()([]IdentityAccountsable) {
     val, err := m.GetBackingStore().Get("identityAccounts")
@@ -164,7 +164,7 @@ func (m *IdentityContainer) SetHealthIssues(value []HealthIssueable)() {
         panic(err)
     }
 }
-// SetIdentityAccounts sets the identityAccounts property value. The identityAccounts property
+// SetIdentityAccounts sets the identityAccounts property value. Represents an identity's details in the context of Microsoft Defender for Identity.
 func (m *IdentityContainer) SetIdentityAccounts(value []IdentityAccountsable)() {
     err := m.GetBackingStore().Set("identityAccounts", value)
     if err != nil {
