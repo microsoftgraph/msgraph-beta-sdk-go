@@ -13,7 +13,7 @@ import (
 type VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetQueryParameters invoke function retrieveDiscoveredApps
+// VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetQueryParameters get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
 type VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -53,10 +53,13 @@ func NewVirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPo
     urlParams["request-raw-url"] = rawUrl
     return NewVirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function retrieveDiscoveredApps
+// Get get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
 // Deprecated: This method is obsolete. Use GetAsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponse instead.
 // returns a VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpccloudapp-retrievediscoveredapps?view=graph-rest-beta
 func (m *VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -74,9 +77,12 @@ func (m *VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningP
     }
     return res.(VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdResponseable), nil
 }
-// GetAsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponse invoke function retrieveDiscoveredApps
+// GetAsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponse get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
 // returns a VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpccloudapp-retrievediscoveredapps?view=graph-rest-beta
 func (m *VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilder) GetAsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponse(ctx context.Context, requestConfiguration *VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetRequestConfiguration)(VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -94,7 +100,7 @@ func (m *VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningP
     }
     return res.(VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdGetResponseable), nil
 }
-// ToGetRequestInformation invoke function retrieveDiscoveredApps
+// ToGetRequestInformation get a list of cloudPcDiscoveredApp objects whose appdetails can be used to map to a cloudPcCloudApp object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudAppsRetrieveDiscoveredAppsWithSourceIdprovisioningPolicyIdProvisioningPolicyIdRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

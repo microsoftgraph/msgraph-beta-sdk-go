@@ -97,7 +97,7 @@ func (m *IosManagedAppProtection) GetApps()([]ManagedMobileAppable) {
     }
     return nil
 }
-// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// GetCustomBrowserProtocol gets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
 // returns a *string when successful
 func (m *IosManagedAppProtection) GetCustomBrowserProtocol()(*string) {
     val, err := m.GetBackingStore().Get("customBrowserProtocol")
@@ -823,7 +823,7 @@ func (m *IosManagedAppProtection) SetApps(value []ManagedMobileAppable)() {
         panic(err)
     }
 }
-// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
+// SetCustomBrowserProtocol sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS.
 func (m *IosManagedAppProtection) SetCustomBrowserProtocol(value *string)() {
     err := m.GetBackingStore().Set("customBrowserProtocol", value)
     if err != nil {

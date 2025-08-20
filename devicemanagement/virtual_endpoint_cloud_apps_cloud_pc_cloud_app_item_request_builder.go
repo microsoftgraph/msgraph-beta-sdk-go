@@ -21,7 +21,7 @@ type VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderDeleteRequestConfi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderGetQueryParameters get cloudApps from deviceManagement
+// VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderGetQueryParameters read the properties of a specific cloudPcCloudApp object.
 type VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) Delete(ctx c
     }
     return nil
 }
-// Get get cloudApps from deviceManagement
+// Get read the properties of a specific cloudPcCloudApp object.
 // returns a CloudPcCloudAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpccloudapp-get?view=graph-rest-beta
 func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcCloudAppable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +96,12 @@ func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) Get(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcCloudAppable), nil
 }
-// Patch update the navigation property cloudApps in deviceManagement
+// Patch update the properties of a cloudPcCloudApp object, such as the display name or icon path.
 // returns a CloudPcCloudAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/cloudpccloudapp-update?view=graph-rest-beta
 func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcCloudAppable, requestConfiguration *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcCloudAppable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) ToDeleteRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get cloudApps from deviceManagement
+// ToGetRequestInformation read the properties of a specific cloudPcCloudApp object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +144,7 @@ func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) ToGetRequest
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property cloudApps in deviceManagement
+// ToPatchRequestInformation update the properties of a cloudPcCloudApp object, such as the display name or icon path.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcCloudAppable, requestConfiguration *VirtualEndpointCloudAppsCloudPcCloudAppItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
