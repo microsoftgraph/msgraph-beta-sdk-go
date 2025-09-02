@@ -148,7 +148,7 @@ func (m *CloudCommunications) GetOdataType()(*string) {
     }
     return nil
 }
-// GetOnlineMeetingConversations gets the onlineMeetingConversations property value. A collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+// GetOnlineMeetingConversations gets the onlineMeetingConversations property value. A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
 // returns a []OnlineMeetingEngagementConversationable when successful
 func (m *CloudCommunications) GetOnlineMeetingConversations()([]OnlineMeetingEngagementConversationable) {
     val, err := m.GetBackingStore().Get("onlineMeetingConversations")
@@ -273,7 +273,7 @@ func (m *CloudCommunications) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetOnlineMeetingConversations sets the onlineMeetingConversations property value. A collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+// SetOnlineMeetingConversations sets the onlineMeetingConversations property value. A collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
 func (m *CloudCommunications) SetOnlineMeetingConversations(value []OnlineMeetingEngagementConversationable)() {
     err := m.GetBackingStore().Set("onlineMeetingConversations", value)
     if err != nil {

@@ -597,6 +597,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCancelMediaProcessingOperation(), nil
                     case "#microsoft.graph.canvasLayout":
                         return NewCanvasLayout(), nil
+                    case "#microsoft.graph.caPoliciesDeletableRoot":
+                        return NewCaPoliciesDeletableRoot(), nil
                     case "#microsoft.graph.cartToClassAssociation":
                         return NewCartToClassAssociation(), nil
                     case "#microsoft.graph.certificateAuthorityAsEntity":
@@ -2021,6 +2023,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMobileAppInstallSummary(), nil
                     case "#microsoft.graph.mobileAppIntentAndState":
                         return NewMobileAppIntentAndState(), nil
+                    case "#microsoft.graph.mobileAppManagementPolicy":
+                        return NewMobileAppManagementPolicy(), nil
                     case "#microsoft.graph.mobileAppPolicySetItem":
                         return NewMobileAppPolicySetItem(), nil
                     case "#microsoft.graph.mobileAppProvisioningConfigGroupAssignment":
@@ -2033,6 +2037,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMobileAppTroubleshootingEvent(), nil
                     case "#microsoft.graph.mobileContainedApp":
                         return NewMobileContainedApp(), nil
+                    case "#microsoft.graph.mobileDeviceManagementPolicy":
+                        return NewMobileDeviceManagementPolicy(), nil
                     case "#microsoft.graph.mobileLobApp":
                         return NewMobileLobApp(), nil
                     case "#microsoft.graph.mobileThreatDefenseConnector":
@@ -2349,6 +2355,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewPlayPromptOperation(), nil
                     case "#microsoft.graph.policyBase":
                         return NewPolicyBase(), nil
+                    case "#microsoft.graph.policyDeletableRoot":
+                        return NewPolicyDeletableRoot(), nil
                     case "#microsoft.graph.policyFile":
                         return NewPolicyFile(), nil
                     case "#microsoft.graph.policyRoot":
