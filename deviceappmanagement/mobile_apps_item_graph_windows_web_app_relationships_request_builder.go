@@ -14,7 +14,7 @@ import (
 type MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilderGetQueryParameters the set of direct relationships for this app.
+// MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilderGetQueryParameters list of relationships for this mobile app.
 type MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewMobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilder(rawUrl strin
 func (m *MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilder) Count()(*MobileAppsItemGraphWindowsWebAppRelationshipsCountRequestBuilder) {
     return NewMobileAppsItemGraphWindowsWebAppRelationshipsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get the set of direct relationships for this app.
+// Get list of relationships for this mobile app.
 // returns a MobileAppRelationshipCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilder) Post(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppRelationshipable), nil
 }
-// ToGetRequestInformation the set of direct relationships for this app.
+// ToGetRequestInformation list of relationships for this mobile app.
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphWindowsWebAppRelationshipsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

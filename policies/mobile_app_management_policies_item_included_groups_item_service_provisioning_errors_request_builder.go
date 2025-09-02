@@ -10,7 +10,7 @@ import (
     i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459 "github.com/microsoftgraph/msgraph-beta-sdk-go/models/odataerrors"
 )
 
-// MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilder builds and executes requests for operations under \policies\mobileAppManagementPolicies\{mobilityManagementPolicy-id}\includedGroups\{group-id}\serviceProvisioningErrors
+// MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilder builds and executes requests for operations under \policies\mobileAppManagementPolicies\{mobileAppManagementPolicy-id}\includedGroups\{group-id}\serviceProvisioningErrors
 type MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
@@ -45,7 +45,7 @@ type MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsR
 // NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilderInternal instantiates a new MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilder) {
     m := &MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/serviceProvisioningErrors{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobileAppManagementPolicy%2Did}/includedGroups/{group%2Did}/serviceProvisioningErrors{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters),
     }
     return m
 }

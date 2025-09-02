@@ -21,7 +21,7 @@ type OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBui
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilderGetQueryParameters a collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+// OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilderGetQueryParameters a collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
 type OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *OnlineMeetingConversationsOnlineMeetingEngagementConversationItemReques
     }
     return nil
 }
-// Get a collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+// Get a collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
 // returns a OnlineMeetingEngagementConversationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingEngagementConversationable, error) {
@@ -139,7 +139,7 @@ func (m *OnlineMeetingConversationsOnlineMeetingEngagementConversationItemReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+// ToGetRequestInformation a collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingConversationsOnlineMeetingEngagementConversationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

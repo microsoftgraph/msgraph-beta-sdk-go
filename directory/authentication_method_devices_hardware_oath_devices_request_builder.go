@@ -102,12 +102,12 @@ func (m *AuthenticationMethodDevicesHardwareOathDevicesRequestBuilder) Get(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HardwareOathTokenAuthenticationMethodDeviceCollectionResponseable), nil
 }
-// Post create a new hardwareOathTokenAuthenticationMethodDevice object. This API supports two scenarios:- Create the new hardware token without assigning to a user. You can then assign to a user.- Create and assign a hardware token to a user in the same request. 
+// Post create one or more hardwareOathTokenAuthenticationMethodDevice objects. This API supports two scenarios:- Create the new hardware tokens without assigning to users. You can then assign to a user.- Create and assign any individual hardware tokens to users in the same request.
 // returns a HardwareOathTokenAuthenticationMethodDeviceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethoddevice-post-hardwareoathdevices?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/authenticationmethoddevice-update?view=graph-rest-beta
 func (m *AuthenticationMethodDevicesHardwareOathDevicesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HardwareOathTokenAuthenticationMethodDeviceable, requestConfiguration *AuthenticationMethodDevicesHardwareOathDevicesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HardwareOathTokenAuthenticationMethodDeviceable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -139,7 +139,7 @@ func (m *AuthenticationMethodDevicesHardwareOathDevicesRequestBuilder) ToGetRequ
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create a new hardwareOathTokenAuthenticationMethodDevice object. This API supports two scenarios:- Create the new hardware token without assigning to a user. You can then assign to a user.- Create and assign a hardware token to a user in the same request. 
+// ToPostRequestInformation create one or more hardwareOathTokenAuthenticationMethodDevice objects. This API supports two scenarios:- Create the new hardware tokens without assigning to users. You can then assign to a user.- Create and assign any individual hardware tokens to users in the same request.
 // returns a *RequestInformation when successful
 func (m *AuthenticationMethodDevicesHardwareOathDevicesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.HardwareOathTokenAuthenticationMethodDeviceable, requestConfiguration *AuthenticationMethodDevicesHardwareOathDevicesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

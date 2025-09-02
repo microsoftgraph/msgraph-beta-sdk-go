@@ -49,17 +49,17 @@ type MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration struct
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMobilityManagementPolicyId provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder when successful
-func (m *MobileDeviceManagementPoliciesRequestBuilder) ByMobilityManagementPolicyId(mobilityManagementPolicyId string)(*MobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilder) {
+// ByMobileDeviceManagementPolicyId provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.
+// returns a *MobileDeviceManagementPoliciesMobileDeviceManagementPolicyItemRequestBuilder when successful
+func (m *MobileDeviceManagementPoliciesRequestBuilder) ByMobileDeviceManagementPolicyId(mobileDeviceManagementPolicyId string)(*MobileDeviceManagementPoliciesMobileDeviceManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
-    if mobilityManagementPolicyId != "" {
-        urlTplParams["mobilityManagementPolicy%2Did"] = mobilityManagementPolicyId
+    if mobileDeviceManagementPolicyId != "" {
+        urlTplParams["mobileDeviceManagementPolicy%2Did"] = mobileDeviceManagementPolicyId
     }
-    return NewMobileDeviceManagementPoliciesMobilityManagementPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+    return NewMobileDeviceManagementPoliciesMobileDeviceManagementPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewMobileDeviceManagementPoliciesRequestBuilderInternal instantiates a new MobileDeviceManagementPoliciesRequestBuilder and sets the default values.
 func NewMobileDeviceManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileDeviceManagementPoliciesRequestBuilder) {
@@ -80,12 +80,12 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) Count()(*MobileDeviceMana
     return NewMobileDeviceManagementPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the mobilityManagementPolicy objects and their properties.
-// returns a MobilityManagementPolicyCollectionResponseable when successful
+// returns a MobileDeviceManagementPolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobiledevicemanagementpolicies-list?view=graph-rest-beta
-func (m *MobileDeviceManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable, error) {
+func (m *MobileDeviceManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileDeviceManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -93,19 +93,19 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) Get(ctx context.Context, 
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobilityManagementPolicyCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileDeviceManagementPolicyCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileDeviceManagementPolicyCollectionResponseable), nil
 }
 // Post create new navigation property to mobileDeviceManagementPolicies for policies
-// returns a MobilityManagementPolicyable when successful
+// returns a MobileDeviceManagementPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *MobileDeviceManagementPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
+func (m *MobileDeviceManagementPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileDeviceManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileDeviceManagementPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -113,14 +113,14 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) Post(ctx context.Context,
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobilityManagementPolicyFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileDeviceManagementPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileDeviceManagementPolicyable), nil
 }
 // ToGetRequestInformation get a list of the mobilityManagementPolicy objects and their properties.
 // returns a *RequestInformation when successful
@@ -138,7 +138,7 @@ func (m *MobileDeviceManagementPoliciesRequestBuilder) ToGetRequestInformation(c
 }
 // ToPostRequestInformation create new navigation property to mobileDeviceManagementPolicies for policies
 // returns a *RequestInformation when successful
-func (m *MobileDeviceManagementPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MobileDeviceManagementPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileDeviceManagementPolicyable, requestConfiguration *MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

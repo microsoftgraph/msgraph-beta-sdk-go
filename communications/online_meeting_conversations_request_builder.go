@@ -14,7 +14,7 @@ import (
 type OnlineMeetingConversationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// OnlineMeetingConversationsRequestBuilderGetQueryParameters a collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+// OnlineMeetingConversationsRequestBuilderGetQueryParameters a collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
 type OnlineMeetingConversationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewOnlineMeetingConversationsRequestBuilder(rawUrl string, requestAdapter i
 func (m *OnlineMeetingConversationsRequestBuilder) Count()(*OnlineMeetingConversationsCountRequestBuilder) {
     return NewOnlineMeetingConversationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get a collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+// Get a collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
 // returns a OnlineMeetingEngagementConversationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *OnlineMeetingConversationsRequestBuilder) Get(ctx context.Context, requestConfiguration *OnlineMeetingConversationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingEngagementConversationCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *OnlineMeetingConversationsRequestBuilder) Post(ctx context.Context, bod
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.OnlineMeetingEngagementConversationable), nil
 }
-// ToGetRequestInformation a collection of structured question-and-answer (Q&A) thread in Teams directly associated with online meetings.
+// ToGetRequestInformation a collection of structured question-and-answer (Q&A) threads in Teams directly associated with online meetings.
 // returns a *RequestInformation when successful
 func (m *OnlineMeetingConversationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *OnlineMeetingConversationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

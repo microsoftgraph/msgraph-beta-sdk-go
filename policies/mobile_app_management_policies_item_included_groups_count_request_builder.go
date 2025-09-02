@@ -32,7 +32,7 @@ type MobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilderGetRequestC
 // NewMobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilderInternal instantiates a new MobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilder) {
     m := &MobileAppManagementPoliciesItemIncludedGroupsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$count{?%24filter,%24search}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobileAppManagementPolicy%2Did}/includedGroups/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }
