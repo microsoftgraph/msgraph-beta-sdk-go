@@ -123,6 +123,11 @@ func (m *MobileAppsItemGraphManagedMobileLobAppContentVersionsMobileAppContentIt
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppContentable), nil
 }
+// Scripts provides operations to manage the scripts property of the microsoft.graph.mobileAppContent entity.
+// returns a *MobileAppsItemGraphManagedMobileLobAppContentVersionsItemScriptsRequestBuilder when successful
+func (m *MobileAppsItemGraphManagedMobileLobAppContentVersionsMobileAppContentItemRequestBuilder) Scripts()(*MobileAppsItemGraphManagedMobileLobAppContentVersionsItemScriptsRequestBuilder) {
+    return NewMobileAppsItemGraphManagedMobileLobAppContentVersionsItemScriptsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property contentVersions for deviceAppManagement
 // returns a *RequestInformation when successful
 func (m *MobileAppsItemGraphManagedMobileLobAppContentVersionsMobileAppContentItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *MobileAppsItemGraphManagedMobileLobAppContentVersionsMobileAppContentItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

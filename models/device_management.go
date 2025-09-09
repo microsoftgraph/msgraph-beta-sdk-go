@@ -2560,22 +2560,6 @@ func (m *DeviceManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
-    res["telecomExpenseManagementPartners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateTelecomExpenseManagementPartnerFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]TelecomExpenseManagementPartnerable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(TelecomExpenseManagementPartnerable)
-                }
-            }
-            m.SetTelecomExpenseManagementPartners(res)
-        }
-        return nil
-    }
     res["templateInsights"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDeviceManagementTemplateInsightsDefinitionFromDiscriminatorValue)
         if err != nil {
@@ -4271,18 +4255,6 @@ func (m *DeviceManagement) GetSubscriptionState()(*DeviceManagementSubscriptionS
     }
     if val != nil {
         return val.(*DeviceManagementSubscriptionState)
-    }
-    return nil
-}
-// GetTelecomExpenseManagementPartners gets the telecomExpenseManagementPartners property value. The telecom expense management partners.
-// returns a []TelecomExpenseManagementPartnerable when successful
-func (m *DeviceManagement) GetTelecomExpenseManagementPartners()([]TelecomExpenseManagementPartnerable) {
-    val, err := m.GetBackingStore().Get("telecomExpenseManagementPartners")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]TelecomExpenseManagementPartnerable)
     }
     return nil
 }
@@ -6388,18 +6360,6 @@ func (m *DeviceManagement) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
-    if m.GetTelecomExpenseManagementPartners() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTelecomExpenseManagementPartners()))
-        for i, v := range m.GetTelecomExpenseManagementPartners() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("telecomExpenseManagementPartners", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetTemplateInsights() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetTemplateInsights()))
         for i, v := range m.GetTemplateInsights() {
@@ -7992,13 +7952,6 @@ func (m *DeviceManagement) SetSubscriptionState(value *DeviceManagementSubscript
         panic(err)
     }
 }
-// SetTelecomExpenseManagementPartners sets the telecomExpenseManagementPartners property value. The telecom expense management partners.
-func (m *DeviceManagement) SetTelecomExpenseManagementPartners(value []TelecomExpenseManagementPartnerable)() {
-    err := m.GetBackingStore().Set("telecomExpenseManagementPartners", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetTemplateInsights sets the templateInsights property value. List of setting insights in a template
 func (m *DeviceManagement) SetTemplateInsights(value []DeviceManagementTemplateInsightsDefinitionable)() {
     err := m.GetBackingStore().Set("templateInsights", value)
@@ -8612,7 +8565,6 @@ type DeviceManagementable interface {
     GetSoftwareUpdateStatusSummary()(SoftwareUpdateStatusSummaryable)
     GetSubscriptions()(*DeviceManagementSubscriptions)
     GetSubscriptionState()(*DeviceManagementSubscriptionState)
-    GetTelecomExpenseManagementPartners()([]TelecomExpenseManagementPartnerable)
     GetTemplateInsights()([]DeviceManagementTemplateInsightsDefinitionable)
     GetTemplates()([]DeviceManagementTemplateable)
     GetTemplateSettings()([]DeviceManagementConfigurationSettingTemplateable)
@@ -8803,7 +8755,6 @@ type DeviceManagementable interface {
     SetSoftwareUpdateStatusSummary(value SoftwareUpdateStatusSummaryable)()
     SetSubscriptions(value *DeviceManagementSubscriptions)()
     SetSubscriptionState(value *DeviceManagementSubscriptionState)()
-    SetTelecomExpenseManagementPartners(value []TelecomExpenseManagementPartnerable)()
     SetTemplateInsights(value []DeviceManagementTemplateInsightsDefinitionable)()
     SetTemplates(value []DeviceManagementTemplateable)()
     SetTemplateSettings(value []DeviceManagementConfigurationSettingTemplateable)()

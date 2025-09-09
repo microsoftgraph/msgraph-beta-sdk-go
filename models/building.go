@@ -38,6 +38,16 @@ func (m *Building) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["map"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateBuildingMapFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMapEscaped(val.(BuildingMapable))
+        }
+        return nil
+    }
     res["resourceLinks"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateResourceLinkFromDiscriminatorValue)
         if err != nil {
@@ -68,6 +78,18 @@ func (m *Building) GetHasWiFi()(*bool) {
     }
     return nil
 }
+// GetMapEscaped gets the map property value. Map file associated with a building in Places. This object is the IMDF-format representation of building.geojson.
+// returns a BuildingMapable when successful
+func (m *Building) GetMapEscaped()(BuildingMapable) {
+    val, err := m.GetBackingStore().Get("mapEscaped")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(BuildingMapable)
+    }
+    return nil
+}
 // GetResourceLinks gets the resourceLinks property value. A set of links to external resources that are associated with the building. Inherited from place.
 // returns a []ResourceLinkable when successful
 func (m *Building) GetResourceLinks()([]ResourceLinkable) {
@@ -88,6 +110,12 @@ func (m *Building) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     {
         err = writer.WriteBoolValue("hasWiFi", m.GetHasWiFi())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("map", m.GetMapEscaped())
         if err != nil {
             return err
         }
@@ -113,6 +141,13 @@ func (m *Building) SetHasWiFi(value *bool)() {
         panic(err)
     }
 }
+// SetMapEscaped sets the map property value. Map file associated with a building in Places. This object is the IMDF-format representation of building.geojson.
+func (m *Building) SetMapEscaped(value BuildingMapable)() {
+    err := m.GetBackingStore().Set("mapEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResourceLinks sets the resourceLinks property value. A set of links to external resources that are associated with the building. Inherited from place.
 func (m *Building) SetResourceLinks(value []ResourceLinkable)() {
     err := m.GetBackingStore().Set("resourceLinks", value)
@@ -124,7 +159,9 @@ type Buildingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Placeable
     GetHasWiFi()(*bool)
+    GetMapEscaped()(BuildingMapable)
     GetResourceLinks()([]ResourceLinkable)
     SetHasWiFi(value *bool)()
+    SetMapEscaped(value BuildingMapable)()
     SetResourceLinks(value []ResourceLinkable)()
 }

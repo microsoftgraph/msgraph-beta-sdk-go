@@ -59,6 +59,18 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetDescription()(*string) 
     }
     return nil
 }
+// GetDisableEntraGroupPolicyAssignment gets the disableEntraGroupPolicyAssignment property value. Indicates whether assignments to Entra security groups is disabled
+// returns a *bool when successful
+func (m *DeviceManagementConfigurationPolicyTemplate) GetDisableEntraGroupPolicyAssignment()(*bool) {
+    val, err := m.GetBackingStore().Get("disableEntraGroupPolicyAssignment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. Template display name
 // returns a *string when successful
 func (m *DeviceManagementConfigurationPolicyTemplate) GetDisplayName()(*string) {
@@ -114,6 +126,16 @@ func (m *DeviceManagementConfigurationPolicyTemplate) GetFieldDeserializers()(ma
         }
         if val != nil {
             m.SetDescription(val)
+        }
+        return nil
+    }
+    res["disableEntraGroupPolicyAssignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisableEntraGroupPolicyAssignment(val)
         }
         return nil
     }
@@ -324,6 +346,12 @@ func (m *DeviceManagementConfigurationPolicyTemplate) Serialize(writer i878a80d2
         }
     }
     {
+        err = writer.WriteBoolValue("disableEntraGroupPolicyAssignment", m.GetDisableEntraGroupPolicyAssignment())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
             return err
@@ -398,6 +426,13 @@ func (m *DeviceManagementConfigurationPolicyTemplate) SetDescription(value *stri
         panic(err)
     }
 }
+// SetDisableEntraGroupPolicyAssignment sets the disableEntraGroupPolicyAssignment property value. Indicates whether assignments to Entra security groups is disabled
+func (m *DeviceManagementConfigurationPolicyTemplate) SetDisableEntraGroupPolicyAssignment(value *bool)() {
+    err := m.GetBackingStore().Set("disableEntraGroupPolicyAssignment", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDisplayName sets the displayName property value. Template display name
 func (m *DeviceManagementConfigurationPolicyTemplate) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
@@ -467,6 +502,7 @@ type DeviceManagementConfigurationPolicyTemplateable interface {
     GetAllowUnmanagedSettings()(*bool)
     GetBaseId()(*string)
     GetDescription()(*string)
+    GetDisableEntraGroupPolicyAssignment()(*bool)
     GetDisplayName()(*string)
     GetDisplayVersion()(*string)
     GetLifecycleState()(*DeviceManagementTemplateLifecycleState)
@@ -479,6 +515,7 @@ type DeviceManagementConfigurationPolicyTemplateable interface {
     SetAllowUnmanagedSettings(value *bool)()
     SetBaseId(value *string)()
     SetDescription(value *string)()
+    SetDisableEntraGroupPolicyAssignment(value *bool)()
     SetDisplayName(value *string)()
     SetDisplayVersion(value *string)()
     SetLifecycleState(value *DeviceManagementTemplateLifecycleState)()

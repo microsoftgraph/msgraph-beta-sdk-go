@@ -51,6 +51,16 @@ func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["offlineAppAccessEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOfflineAppAccessEnabled(val)
+        }
+        return nil
+    }
     res["package"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -61,7 +71,29 @@ func (m *AndroidDeviceOwnerKioskModeApp) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["preSignInAppAccessEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPreSignInAppAccessEnabled(val)
+        }
+        return nil
+    }
     return res
+}
+// GetOfflineAppAccessEnabled gets the offlineAppAccessEnabled property value. Indicates whether the application can be used when sign in fails due to network issues in Managed Home Screen. When TRUE, indicates the application can be used when sign in fails due to network issues in Managed Home Screen. When FALSE, indicates the application cannot be used when sign in fails due to network issues in Managed Home Screen. Default value is FALSE.
+// returns a *bool when successful
+func (m *AndroidDeviceOwnerKioskModeApp) GetOfflineAppAccessEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("offlineAppAccessEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPackageEscaped gets the package property value. Package name of application
 // returns a *string when successful
@@ -72,6 +104,18 @@ func (m *AndroidDeviceOwnerKioskModeApp) GetPackageEscaped()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPreSignInAppAccessEnabled gets the preSignInAppAccessEnabled property value. Indicates whether the application can be used prior to signing in to the Managed Home Screen. When TRUE, indicates the app can be used prior to sign in for Managed Home Screen. When FALSE, indicates the app cannot be used prior to sign in for Managed Home Screen. Default value is FALSE.
+// returns a *bool when successful
+func (m *AndroidDeviceOwnerKioskModeApp) GetPreSignInAppAccessEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("preSignInAppAccessEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -88,7 +132,19 @@ func (m *AndroidDeviceOwnerKioskModeApp) Serialize(writer i878a80d2330e89d268963
         }
     }
     {
+        err = writer.WriteBoolValue("offlineAppAccessEnabled", m.GetOfflineAppAccessEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("package", m.GetPackageEscaped())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("preSignInAppAccessEnabled", m.GetPreSignInAppAccessEnabled())
         if err != nil {
             return err
         }
@@ -102,9 +158,23 @@ func (m *AndroidDeviceOwnerKioskModeApp) SetClassName(value *string)() {
         panic(err)
     }
 }
+// SetOfflineAppAccessEnabled sets the offlineAppAccessEnabled property value. Indicates whether the application can be used when sign in fails due to network issues in Managed Home Screen. When TRUE, indicates the application can be used when sign in fails due to network issues in Managed Home Screen. When FALSE, indicates the application cannot be used when sign in fails due to network issues in Managed Home Screen. Default value is FALSE.
+func (m *AndroidDeviceOwnerKioskModeApp) SetOfflineAppAccessEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("offlineAppAccessEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPackageEscaped sets the package property value. Package name of application
 func (m *AndroidDeviceOwnerKioskModeApp) SetPackageEscaped(value *string)() {
     err := m.GetBackingStore().Set("packageEscaped", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPreSignInAppAccessEnabled sets the preSignInAppAccessEnabled property value. Indicates whether the application can be used prior to signing in to the Managed Home Screen. When TRUE, indicates the app can be used prior to sign in for Managed Home Screen. When FALSE, indicates the app cannot be used prior to sign in for Managed Home Screen. Default value is FALSE.
+func (m *AndroidDeviceOwnerKioskModeApp) SetPreSignInAppAccessEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("preSignInAppAccessEnabled", value)
     if err != nil {
         panic(err)
     }
@@ -113,7 +183,11 @@ type AndroidDeviceOwnerKioskModeAppable interface {
     AndroidDeviceOwnerKioskModeFolderItemable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetClassName()(*string)
+    GetOfflineAppAccessEnabled()(*bool)
     GetPackageEscaped()(*string)
+    GetPreSignInAppAccessEnabled()(*bool)
     SetClassName(value *string)()
+    SetOfflineAppAccessEnabled(value *bool)()
     SetPackageEscaped(value *string)()
+    SetPreSignInAppAccessEnabled(value *bool)()
 }

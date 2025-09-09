@@ -32,7 +32,7 @@ type MobileDeviceManagementPoliciesItemIncludedGroupsCountRequestBuilderGetReque
 // NewMobileDeviceManagementPoliciesItemIncludedGroupsCountRequestBuilderInternal instantiates a new MobileDeviceManagementPoliciesItemIncludedGroupsCountRequestBuilder and sets the default values.
 func NewMobileDeviceManagementPoliciesItemIncludedGroupsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileDeviceManagementPoliciesItemIncludedGroupsCountRequestBuilder) {
     m := &MobileDeviceManagementPoliciesItemIncludedGroupsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$count{?%24filter,%24search}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies/{mobileDeviceManagementPolicy%2Did}/includedGroups/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

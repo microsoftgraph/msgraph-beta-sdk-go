@@ -4,6 +4,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -82,6 +83,16 @@ func (m *HardwareOathTokenAuthenticationMethodDevice) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["lastUsedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUsedDateTime(val)
+        }
+        return nil
+    }
     res["manufacturer"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -153,6 +164,18 @@ func (m *HardwareOathTokenAuthenticationMethodDevice) GetHashFunction()(*Hardwar
     }
     if val != nil {
         return val.(*HardwareOathTokenHashFunction)
+    }
+    return nil
+}
+// GetLastUsedDateTime gets the lastUsedDateTime property value. The lastUsedDateTime property
+// returns a *Time when successful
+func (m *HardwareOathTokenAuthenticationMethodDevice) GetLastUsedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUsedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     }
     return nil
 }
@@ -254,6 +277,12 @@ func (m *HardwareOathTokenAuthenticationMethodDevice) Serialize(writer i878a80d2
         }
     }
     {
+        err = writer.WriteTimeValue("lastUsedDateTime", m.GetLastUsedDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("manufacturer", m.GetManufacturer())
         if err != nil {
             return err
@@ -313,6 +342,13 @@ func (m *HardwareOathTokenAuthenticationMethodDevice) SetHashFunction(value *Har
         panic(err)
     }
 }
+// SetLastUsedDateTime sets the lastUsedDateTime property value. The lastUsedDateTime property
+func (m *HardwareOathTokenAuthenticationMethodDevice) SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUsedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManufacturer sets the manufacturer property value. Manufacturer name of the hardware token. Supports $filter (eq).
 func (m *HardwareOathTokenAuthenticationMethodDevice) SetManufacturer(value *string)() {
     err := m.GetBackingStore().Set("manufacturer", value)
@@ -361,6 +397,7 @@ type HardwareOathTokenAuthenticationMethodDeviceable interface {
     GetAssignedTo()(Identityable)
     GetAssignTo()(Userable)
     GetHashFunction()(*HardwareOathTokenHashFunction)
+    GetLastUsedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetManufacturer()(*string)
     GetModel()(*string)
     GetSecretKey()(*string)
@@ -370,6 +407,7 @@ type HardwareOathTokenAuthenticationMethodDeviceable interface {
     SetAssignedTo(value Identityable)()
     SetAssignTo(value Userable)()
     SetHashFunction(value *HardwareOathTokenHashFunction)()
+    SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetManufacturer(value *string)()
     SetModel(value *string)()
     SetSecretKey(value *string)()

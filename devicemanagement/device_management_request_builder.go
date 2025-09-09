@@ -705,11 +705,6 @@ func (m *DeviceManagementRequestBuilder) SettingDefinitions()(*SettingDefinition
 func (m *DeviceManagementRequestBuilder) SoftwareUpdateStatusSummary()(*SoftwareUpdateStatusSummaryRequestBuilder) {
     return NewSoftwareUpdateStatusSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// TelecomExpenseManagementPartners provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
-// returns a *TelecomExpenseManagementPartnersRequestBuilder when successful
-func (m *DeviceManagementRequestBuilder) TelecomExpenseManagementPartners()(*TelecomExpenseManagementPartnersRequestBuilder) {
-    return NewTelecomExpenseManagementPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // TemplateInsights provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.
 // returns a *TemplateInsightsRequestBuilder when successful
 func (m *DeviceManagementRequestBuilder) TemplateInsights()(*TemplateInsightsRequestBuilder) {

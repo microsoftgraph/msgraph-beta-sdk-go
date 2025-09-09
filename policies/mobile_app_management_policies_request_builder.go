@@ -49,17 +49,17 @@ type MobileAppManagementPoliciesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByMobilityManagementPolicyId provides operations to manage the mobileAppManagementPolicies property of the microsoft.graph.policyRoot entity.
-// returns a *MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder when successful
-func (m *MobileAppManagementPoliciesRequestBuilder) ByMobilityManagementPolicyId(mobilityManagementPolicyId string)(*MobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilder) {
+// ByMobileAppManagementPolicyId provides operations to manage the mobileAppManagementPolicies property of the microsoft.graph.policyRoot entity.
+// returns a *MobileAppManagementPoliciesMobileAppManagementPolicyItemRequestBuilder when successful
+func (m *MobileAppManagementPoliciesRequestBuilder) ByMobileAppManagementPolicyId(mobileAppManagementPolicyId string)(*MobileAppManagementPoliciesMobileAppManagementPolicyItemRequestBuilder) {
     urlTplParams := make(map[string]string)
     for idx, item := range m.BaseRequestBuilder.PathParameters {
         urlTplParams[idx] = item
     }
-    if mobilityManagementPolicyId != "" {
-        urlTplParams["mobilityManagementPolicy%2Did"] = mobilityManagementPolicyId
+    if mobileAppManagementPolicyId != "" {
+        urlTplParams["mobileAppManagementPolicy%2Did"] = mobileAppManagementPolicyId
     }
-    return NewMobileAppManagementPoliciesMobilityManagementPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
+    return NewMobileAppManagementPoliciesMobileAppManagementPolicyItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
 // NewMobileAppManagementPoliciesRequestBuilderInternal instantiates a new MobileAppManagementPoliciesRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesRequestBuilder) {
@@ -80,12 +80,12 @@ func (m *MobileAppManagementPoliciesRequestBuilder) Count()(*MobileAppManagement
     return NewMobileAppManagementPoliciesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the mobilityManagementPolicy objects and their properties.
-// returns a MobilityManagementPolicyCollectionResponseable when successful
+// returns a MobileAppManagementPolicyCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
 // [Find more info here]: https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list?view=graph-rest-beta
-func (m *MobileAppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable, error) {
+func (m *MobileAppManagementPoliciesRequestBuilder) Get(ctx context.Context, requestConfiguration *MobileAppManagementPoliciesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppManagementPolicyCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
@@ -93,19 +93,19 @@ func (m *MobileAppManagementPoliciesRequestBuilder) Get(ctx context.Context, req
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobilityManagementPolicyCollectionResponseFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileAppManagementPolicyCollectionResponseFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyCollectionResponseable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppManagementPolicyCollectionResponseable), nil
 }
 // Post create new navigation property to mobileAppManagementPolicies for policies
-// returns a MobilityManagementPolicyable when successful
+// returns a MobileAppManagementPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
-func (m *MobileAppManagementPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileAppManagementPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, error) {
+func (m *MobileAppManagementPoliciesRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppManagementPolicyable, requestConfiguration *MobileAppManagementPoliciesRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppManagementPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -113,14 +113,14 @@ func (m *MobileAppManagementPoliciesRequestBuilder) Post(ctx context.Context, bo
     errorMapping := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.ErrorMappings {
         "XXX": i20a3050780ee0b0cde0a884a4f35429a20d60067e3bcda382ec5400079147459.CreateODataErrorFromDiscriminatorValue,
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobilityManagementPolicyFromDiscriminatorValue, errorMapping)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CreateMobileAppManagementPolicyFromDiscriminatorValue, errorMapping)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable), nil
+    return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppManagementPolicyable), nil
 }
 // ToGetRequestInformation get a list of the mobilityManagementPolicy objects and their properties.
 // returns a *RequestInformation when successful
@@ -138,7 +138,7 @@ func (m *MobileAppManagementPoliciesRequestBuilder) ToGetRequestInformation(ctx 
 }
 // ToPostRequestInformation create new navigation property to mobileAppManagementPolicies for policies
 // returns a *RequestInformation when successful
-func (m *MobileAppManagementPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobilityManagementPolicyable, requestConfiguration *MobileAppManagementPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *MobileAppManagementPoliciesRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.MobileAppManagementPolicyable, requestConfiguration *MobileAppManagementPoliciesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

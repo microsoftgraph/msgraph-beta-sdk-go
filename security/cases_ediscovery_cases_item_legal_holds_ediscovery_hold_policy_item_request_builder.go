@@ -93,6 +93,11 @@ func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilde
     }
     return res.(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.EdiscoveryHoldPolicyable), nil
 }
+// MicrosoftGraphSecurityRetryPolicy provides operations to call the retryPolicy method.
+// returns a *CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityRetryPolicyRequestBuilder when successful
+func (m *CasesEdiscoveryCasesItemLegalHoldsEdiscoveryHoldPolicyItemRequestBuilder) MicrosoftGraphSecurityRetryPolicy()(*CasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityRetryPolicyRequestBuilder) {
+    return NewCasesEdiscoveryCasesItemLegalHoldsItemMicrosoftGraphSecurityRetryPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property legalHolds in security
 // returns a EdiscoveryHoldPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -28,6 +28,16 @@ func CreateForwardingPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d2689
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ForwardingPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Policy.GetFieldDeserializers()
+    res["privateAccessAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrivateAccessAppId(val)
+        }
+        return nil
+    }
     res["trafficForwardingType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseTrafficForwardingType)
         if err != nil {
@@ -39,6 +49,18 @@ func (m *ForwardingPolicy) GetFieldDeserializers()(map[string]func(i878a80d2330e
         return nil
     }
     return res
+}
+// GetPrivateAccessAppId gets the privateAccessAppId property value. The privateAccessAppId property
+// returns a *string when successful
+func (m *ForwardingPolicy) GetPrivateAccessAppId()(*string) {
+    val, err := m.GetBackingStore().Get("privateAccessAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
 }
 // GetTrafficForwardingType gets the trafficForwardingType property value. The trafficForwardingType property
 // returns a *TrafficForwardingType when successful
@@ -58,6 +80,12 @@ func (m *ForwardingPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("privateAccessAppId", m.GetPrivateAccessAppId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetTrafficForwardingType() != nil {
         cast := (*m.GetTrafficForwardingType()).String()
         err = writer.WriteStringValue("trafficForwardingType", &cast)
@@ -66,6 +94,13 @@ func (m *ForwardingPolicy) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
         }
     }
     return nil
+}
+// SetPrivateAccessAppId sets the privateAccessAppId property value. The privateAccessAppId property
+func (m *ForwardingPolicy) SetPrivateAccessAppId(value *string)() {
+    err := m.GetBackingStore().Set("privateAccessAppId", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetTrafficForwardingType sets the trafficForwardingType property value. The trafficForwardingType property
 func (m *ForwardingPolicy) SetTrafficForwardingType(value *TrafficForwardingType)() {
@@ -77,6 +112,8 @@ func (m *ForwardingPolicy) SetTrafficForwardingType(value *TrafficForwardingType
 type ForwardingPolicyable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Policyable
+    GetPrivateAccessAppId()(*string)
     GetTrafficForwardingType()(*TrafficForwardingType)
+    SetPrivateAccessAppId(value *string)()
     SetTrafficForwardingType(value *TrafficForwardingType)()
 }
