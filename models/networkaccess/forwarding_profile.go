@@ -57,6 +57,16 @@ func (m *ForwardingProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["isCustomProfile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsCustomProfile(val)
+        }
+        return nil
+    }
     res["priority"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -88,6 +98,18 @@ func (m *ForwardingProfile) GetFieldDeserializers()(map[string]func(i878a80d2330
         return nil
     }
     return res
+}
+// GetIsCustomProfile gets the isCustomProfile property value. The isCustomProfile property
+// returns a *bool when successful
+func (m *ForwardingProfile) GetIsCustomProfile()(*bool) {
+    val, err := m.GetBackingStore().Get("isCustomProfile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetPriority gets the priority property value. Profile priority.
 // returns a *int32 when successful
@@ -144,6 +166,12 @@ func (m *ForwardingProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteBoolValue("isCustomProfile", m.GetIsCustomProfile())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("priority", m.GetPriority())
         if err != nil {
             return err
@@ -167,6 +195,13 @@ func (m *ForwardingProfile) Serialize(writer i878a80d2330e89d26896388a3f487eef27
 // SetAssociations sets the associations property value. Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.
 func (m *ForwardingProfile) SetAssociations(value []Associationable)() {
     err := m.GetBackingStore().Set("associations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetIsCustomProfile sets the isCustomProfile property value. The isCustomProfile property
+func (m *ForwardingProfile) SetIsCustomProfile(value *bool)() {
+    err := m.GetBackingStore().Set("isCustomProfile", value)
     if err != nil {
         panic(err)
     }
@@ -196,10 +231,12 @@ type ForwardingProfileable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     Profileable
     GetAssociations()([]Associationable)
+    GetIsCustomProfile()(*bool)
     GetPriority()(*int32)
     GetServicePrincipal()(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable)
     GetTrafficForwardingType()(*TrafficForwardingType)
     SetAssociations(value []Associationable)()
+    SetIsCustomProfile(value *bool)()
     SetPriority(value *int32)()
     SetServicePrincipal(value ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ServicePrincipalable)()
     SetTrafficForwardingType(value *TrafficForwardingType)()

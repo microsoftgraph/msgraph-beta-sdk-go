@@ -59,6 +59,32 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["sensorCandidateActivationConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSensorCandidateActivationConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSensorCandidateActivationConfiguration(val.(SensorCandidateActivationConfigurationable))
+        }
+        return nil
+    }
+    res["sensorCandidates"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateSensorCandidateFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]SensorCandidateable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(SensorCandidateable)
+                }
+            }
+            m.SetSensorCandidates(res)
+        }
+        return nil
+    }
     res["sensors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSensorFromDiscriminatorValue)
         if err != nil {
@@ -98,6 +124,30 @@ func (m *IdentityContainer) GetIdentityAccounts()([]IdentityAccountsable) {
     }
     if val != nil {
         return val.([]IdentityAccountsable)
+    }
+    return nil
+}
+// GetSensorCandidateActivationConfiguration gets the sensorCandidateActivationConfiguration property value. The sensorCandidateActivationConfiguration property
+// returns a SensorCandidateActivationConfigurationable when successful
+func (m *IdentityContainer) GetSensorCandidateActivationConfiguration()(SensorCandidateActivationConfigurationable) {
+    val, err := m.GetBackingStore().Get("sensorCandidateActivationConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SensorCandidateActivationConfigurationable)
+    }
+    return nil
+}
+// GetSensorCandidates gets the sensorCandidates property value. The sensorCandidates property
+// returns a []SensorCandidateable when successful
+func (m *IdentityContainer) GetSensorCandidates()([]SensorCandidateable) {
+    val, err := m.GetBackingStore().Get("sensorCandidates")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]SensorCandidateable)
     }
     return nil
 }
@@ -143,6 +193,24 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("sensorCandidateActivationConfiguration", m.GetSensorCandidateActivationConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetSensorCandidates() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensorCandidates()))
+        for i, v := range m.GetSensorCandidates() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sensorCandidates", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSensors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensors()))
         for i, v := range m.GetSensors() {
@@ -171,6 +239,20 @@ func (m *IdentityContainer) SetIdentityAccounts(value []IdentityAccountsable)() 
         panic(err)
     }
 }
+// SetSensorCandidateActivationConfiguration sets the sensorCandidateActivationConfiguration property value. The sensorCandidateActivationConfiguration property
+func (m *IdentityContainer) SetSensorCandidateActivationConfiguration(value SensorCandidateActivationConfigurationable)() {
+    err := m.GetBackingStore().Set("sensorCandidateActivationConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSensorCandidates sets the sensorCandidates property value. The sensorCandidates property
+func (m *IdentityContainer) SetSensorCandidates(value []SensorCandidateable)() {
+    err := m.GetBackingStore().Set("sensorCandidates", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSensors sets the sensors property value. Represents a customer's Microsoft Defender for Identity sensors.
 func (m *IdentityContainer) SetSensors(value []Sensorable)() {
     err := m.GetBackingStore().Set("sensors", value)
@@ -183,8 +265,12 @@ type IdentityContainerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetHealthIssues()([]HealthIssueable)
     GetIdentityAccounts()([]IdentityAccountsable)
+    GetSensorCandidateActivationConfiguration()(SensorCandidateActivationConfigurationable)
+    GetSensorCandidates()([]SensorCandidateable)
     GetSensors()([]Sensorable)
     SetHealthIssues(value []HealthIssueable)()
     SetIdentityAccounts(value []IdentityAccountsable)()
+    SetSensorCandidateActivationConfiguration(value SensorCandidateActivationConfigurationable)()
+    SetSensorCandidates(value []SensorCandidateable)()
     SetSensors(value []Sensorable)()
 }

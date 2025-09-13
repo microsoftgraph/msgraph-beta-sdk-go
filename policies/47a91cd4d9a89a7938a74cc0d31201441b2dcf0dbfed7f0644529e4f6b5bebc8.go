@@ -32,7 +32,7 @@ type MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsC
 // NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal instantiates a new MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder and sets the default values.
 func NewMobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder) {
     m := &MobileAppManagementPoliciesItemIncludedGroupsItemServiceProvisioningErrorsCountRequestBuilder{
-        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/serviceProvisioningErrors/$count{?%24filter,%24search}", pathParameters),
+        BaseRequestBuilder: *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewBaseRequestBuilder(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobileAppManagementPolicy%2Did}/includedGroups/{group%2Did}/serviceProvisioningErrors/$count{?%24filter,%24search}", pathParameters),
     }
     return m
 }

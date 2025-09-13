@@ -64,6 +64,18 @@ func (m *Place) GetAddress()(PhysicalAddressable) {
     }
     return nil
 }
+// GetCheckIns gets the checkIns property value. The checkIns property
+// returns a []CheckInClaimable when successful
+func (m *Place) GetCheckIns()([]CheckInClaimable) {
+    val, err := m.GetBackingStore().Get("checkIns")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CheckInClaimable)
+    }
+    return nil
+}
 // GetDisplayName gets the displayName property value. The name that is associated with the place.
 // returns a *string when successful
 func (m *Place) GetDisplayName()(*string) {
@@ -87,6 +99,22 @@ func (m *Place) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         if val != nil {
             m.SetAddress(val.(PhysicalAddressable))
+        }
+        return nil
+    }
+    res["checkIns"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCheckInClaimFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CheckInClaimable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CheckInClaimable)
+                }
+            }
+            m.SetCheckIns(res)
         }
         return nil
     }
@@ -274,6 +302,18 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
             return err
         }
     }
+    if m.GetCheckIns() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCheckIns()))
+        for i, v := range m.GetCheckIns() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("checkIns", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("displayName", m.GetDisplayName())
         if err != nil {
@@ -327,6 +367,13 @@ func (m *Place) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
 // SetAddress sets the address property value. The physical address of the place, including the street, city, state, country or region, and postal code.
 func (m *Place) SetAddress(value PhysicalAddressable)() {
     err := m.GetBackingStore().Set("address", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetCheckIns sets the checkIns property value. The checkIns property
+func (m *Place) SetCheckIns(value []CheckInClaimable)() {
+    err := m.GetBackingStore().Set("checkIns", value)
     if err != nil {
         panic(err)
     }
@@ -391,6 +438,7 @@ type Placeable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAddress()(PhysicalAddressable)
+    GetCheckIns()([]CheckInClaimable)
     GetDisplayName()(*string)
     GetGeoCoordinates()(OutlookGeoCoordinatesable)
     GetIsWheelChairAccessible()(*bool)
@@ -400,6 +448,7 @@ type Placeable interface {
     GetPlaceId()(*string)
     GetTags()([]string)
     SetAddress(value PhysicalAddressable)()
+    SetCheckIns(value []CheckInClaimable)()
     SetDisplayName(value *string)()
     SetGeoCoordinates(value OutlookGeoCoordinatesable)()
     SetIsWheelChairAccessible(value *bool)()

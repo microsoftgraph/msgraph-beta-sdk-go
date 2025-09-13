@@ -498,6 +498,11 @@ func (m *ReportsRequestBuilder) RetrieveCloudPkiLeafCertificateSummaryReport()(*
 func (m *ReportsRequestBuilder) RetrieveDeviceAppInstallationStatusReport()(*ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder) {
     return NewReportsRetrieveDeviceAppInstallationStatusReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveEnrollmentTimeGroupingFailureReport provides operations to call the retrieveEnrollmentTimeGroupingFailureReport method.
+// returns a *ReportsRetrieveEnrollmentTimeGroupingFailureReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveEnrollmentTimeGroupingFailureReport()(*ReportsRetrieveEnrollmentTimeGroupingFailureReportRequestBuilder) {
+    return NewReportsRetrieveEnrollmentTimeGroupingFailureReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveSecurityTaskAppsReport provides operations to call the retrieveSecurityTaskAppsReport method.
 // returns a *ReportsRetrieveSecurityTaskAppsReportRequestBuilder when successful
 func (m *ReportsRequestBuilder) RetrieveSecurityTaskAppsReport()(*ReportsRetrieveSecurityTaskAppsReportRequestBuilder) {

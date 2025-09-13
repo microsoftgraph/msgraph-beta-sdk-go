@@ -10,10 +10,12 @@ const (
     ANYDESTINATIONANYSOURCE_WINDOWSMANAGEDAPPCLIPBOARDSHARINGLEVEL WindowsManagedAppClipboardSharingLevel = iota
     // Org users cannot cut, copy or paste data to or from external accounts, documents, locations or applications from or into the org context.
     NONE_WINDOWSMANAGEDAPPCLIPBOARDSHARINGLEVEL
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_WINDOWSMANAGEDAPPCLIPBOARDSHARINGLEVEL
 )
 
 func (i WindowsManagedAppClipboardSharingLevel) String() string {
-    return []string{"anyDestinationAnySource", "none"}[i]
+    return []string{"anyDestinationAnySource", "none", "unknownFutureValue"}[i]
 }
 func ParseWindowsManagedAppClipboardSharingLevel(v string) (any, error) {
     result := ANYDESTINATIONANYSOURCE_WINDOWSMANAGEDAPPCLIPBOARDSHARINGLEVEL
@@ -22,6 +24,8 @@ func ParseWindowsManagedAppClipboardSharingLevel(v string) (any, error) {
             result = ANYDESTINATIONANYSOURCE_WINDOWSMANAGEDAPPCLIPBOARDSHARINGLEVEL
         case "none":
             result = NONE_WINDOWSMANAGEDAPPCLIPBOARDSHARINGLEVEL
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_WINDOWSMANAGEDAPPCLIPBOARDSHARINGLEVEL
         default:
             return nil, nil
     }

@@ -37,6 +37,18 @@ func (m *WindowsQualityUpdateCatalogItem) GetClassification()(*WindowsQualityUpd
     }
     return nil
 }
+// GetCveSeverityInformation gets the cveSeverityInformation property value. CVE information for catalog items
+// returns a WindowsQualityUpdateCveSeverityInformationable when successful
+func (m *WindowsQualityUpdateCatalogItem) GetCveSeverityInformation()(WindowsQualityUpdateCveSeverityInformationable) {
+    val, err := m.GetBackingStore().Get("cveSeverityInformation")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(WindowsQualityUpdateCveSeverityInformationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -48,6 +60,16 @@ func (m *WindowsQualityUpdateCatalogItem) GetFieldDeserializers()(map[string]fun
         }
         if val != nil {
             m.SetClassification(val.(*WindowsQualityUpdateCategory))
+        }
+        return nil
+    }
+    res["cveSeverityInformation"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateWindowsQualityUpdateCveSeverityInformationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCveSeverityInformation(val.(WindowsQualityUpdateCveSeverityInformationable))
         }
         return nil
     }
@@ -161,6 +183,12 @@ func (m *WindowsQualityUpdateCatalogItem) Serialize(writer i878a80d2330e89d26896
         }
     }
     {
+        err = writer.WriteObjectValue("cveSeverityInformation", m.GetCveSeverityInformation())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isExpeditable", m.GetIsExpeditable())
         if err != nil {
             return err
@@ -200,6 +228,13 @@ func (m *WindowsQualityUpdateCatalogItem) SetClassification(value *WindowsQualit
         panic(err)
     }
 }
+// SetCveSeverityInformation sets the cveSeverityInformation property value. CVE information for catalog items
+func (m *WindowsQualityUpdateCatalogItem) SetCveSeverityInformation(value WindowsQualityUpdateCveSeverityInformationable)() {
+    err := m.GetBackingStore().Set("cveSeverityInformation", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsExpeditable sets the isExpeditable property value. When TRUE, indicates that the quality updates qualify for expedition. When FALSE, indicates the quality updates do not quality for expedition. Default value is FALSE. Read-only
 func (m *WindowsQualityUpdateCatalogItem) SetIsExpeditable(value *bool)() {
     err := m.GetBackingStore().Set("isExpeditable", value)
@@ -232,11 +267,13 @@ type WindowsQualityUpdateCatalogItemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     WindowsUpdateCatalogItemable
     GetClassification()(*WindowsQualityUpdateCategory)
+    GetCveSeverityInformation()(WindowsQualityUpdateCveSeverityInformationable)
     GetIsExpeditable()(*bool)
     GetKbArticleId()(*string)
     GetProductRevisions()([]WindowsQualityUpdateCatalogProductRevisionable)
     GetQualityUpdateCadence()(*WindowsQualityUpdateCadence)
     SetClassification(value *WindowsQualityUpdateCategory)()
+    SetCveSeverityInformation(value WindowsQualityUpdateCveSeverityInformationable)()
     SetIsExpeditable(value *bool)()
     SetKbArticleId(value *string)()
     SetProductRevisions(value []WindowsQualityUpdateCatalogProductRevisionable)()

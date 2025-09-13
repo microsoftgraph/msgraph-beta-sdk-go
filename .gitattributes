@@ -1,0 +1,8 @@
+# Enforce LF line endings for Go module and related files to avoid CRLF normalization issues on Windows
+# Specifically prevent `LF would be replaced by CRLF` when staging files like go.mod
+go.mod text eol=lf
+*.mod text eol=lf
+*.sum text eol=lf
+*.go text eol=lf
+# Fallback: treat everything else as text and let git normalize according to platform/default
+* text=auto

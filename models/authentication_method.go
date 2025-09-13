@@ -91,7 +91,29 @@ func (m *AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["lastUsedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastUsedDateTime(val)
+        }
+        return nil
+    }
     return res
+}
+// GetLastUsedDateTime gets the lastUsedDateTime property value. The lastUsedDateTime property
+// returns a *Time when successful
+func (m *AuthenticationMethod) GetLastUsedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("lastUsedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -105,6 +127,12 @@ func (m *AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteTimeValue("lastUsedDateTime", m.GetLastUsedDateTime())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetCreatedDateTime sets the createdDateTime property value. The date and time the authentication method was registered to the user. Read-only. Optional. This optional value is null if the authentication method doesn't populate it. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -114,9 +142,18 @@ func (m *AuthenticationMethod) SetCreatedDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
+// SetLastUsedDateTime sets the lastUsedDateTime property value. The lastUsedDateTime property
+func (m *AuthenticationMethod) SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("lastUsedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AuthenticationMethodable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetLastUsedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetLastUsedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
 }
