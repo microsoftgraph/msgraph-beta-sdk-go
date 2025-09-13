@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.151.0](https://github.com/microsoftgraph/msgraph-beta-sdk-go/compare/v0.150.0...v0.151.0) (2025-09-13)
+
+
+### Features
+
+* trigger release ([f8f8519](https://github.com/microsoftgraph/msgraph-beta-sdk-go/commit/f8f8519a19dcc46dc16ef22992326f3cd256238a))
+
 ## [0.150.0](https://github.com/microsoftgraph/msgraph-beta-sdk-go/compare/v0.149.0...v0.150.0) (2025-08-20)
 
 
