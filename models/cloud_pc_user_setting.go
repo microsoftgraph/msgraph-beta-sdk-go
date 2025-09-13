@@ -229,7 +229,7 @@ func (m *CloudPcUserSetting) GetNotificationSetting()(CloudPcNotificationSetting
     }
     return nil
 }
-// GetProvisioningSourceType gets the provisioningSourceType property value. The provisioningSourceType property
+// GetProvisioningSourceType gets the provisioningSourceType property value. Indicates the provisioning source of the Cloud PC prepared for an end user. Possible values are: image, snapshot, unknownFutureValue. The default value is image. If this property isn't set or set to null, its functionality is the same as setting it to image.
 // returns a *CloudPcProvisioningSourceType when successful
 func (m *CloudPcUserSetting) GetProvisioningSourceType()(*CloudPcProvisioningSourceType) {
     val, err := m.GetBackingStore().Get("provisioningSourceType")
@@ -265,7 +265,7 @@ func (m *CloudPcUserSetting) GetRestorePointSetting()(CloudPcRestorePointSetting
     }
     return nil
 }
-// GetSelfServiceEnabled gets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.
+// GetSelfServiceEnabled gets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and stopped returning data on December 1, 2023.
 // returns a *bool when successful
 func (m *CloudPcUserSetting) GetSelfServiceEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("selfServiceEnabled")
@@ -407,7 +407,7 @@ func (m *CloudPcUserSetting) SetNotificationSetting(value CloudPcNotificationSet
         panic(err)
     }
 }
-// SetProvisioningSourceType sets the provisioningSourceType property value. The provisioningSourceType property
+// SetProvisioningSourceType sets the provisioningSourceType property value. Indicates the provisioning source of the Cloud PC prepared for an end user. Possible values are: image, snapshot, unknownFutureValue. The default value is image. If this property isn't set or set to null, its functionality is the same as setting it to image.
 func (m *CloudPcUserSetting) SetProvisioningSourceType(value *CloudPcProvisioningSourceType)() {
     err := m.GetBackingStore().Set("provisioningSourceType", value)
     if err != nil {
@@ -428,7 +428,7 @@ func (m *CloudPcUserSetting) SetRestorePointSetting(value CloudPcRestorePointSet
         panic(err)
     }
 }
-// SetSelfServiceEnabled sets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.
+// SetSelfServiceEnabled sets the selfServiceEnabled property value. Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and stopped returning data on December 1, 2023.
 func (m *CloudPcUserSetting) SetSelfServiceEnabled(value *bool)() {
     err := m.GetBackingStore().Set("selfServiceEnabled", value)
     if err != nil {

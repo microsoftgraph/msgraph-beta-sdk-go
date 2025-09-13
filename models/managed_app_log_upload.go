@@ -48,16 +48,6 @@ func (m *ManagedAppLogUpload) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ManagedAppLogUpload) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["managedAppComponent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetManagedAppComponent(val)
-        }
-        return nil
-    }
     res["managedAppComponentDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -99,18 +89,6 @@ func (m *ManagedAppLogUpload) GetFieldDeserializers()(map[string]func(i878a80d23
         return nil
     }
     return res
-}
-// GetManagedAppComponent gets the managedAppComponent property value. The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.
-// returns a *string when successful
-func (m *ManagedAppLogUpload) GetManagedAppComponent()(*string) {
-    val, err := m.GetBackingStore().Get("managedAppComponent")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
 }
 // GetManagedAppComponentDescription gets the managedAppComponentDescription property value. The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.
 // returns a *string when successful
@@ -163,12 +141,6 @@ func (m *ManagedAppLogUpload) GetStatus()(*ManagedAppLogUploadState) {
 // Serialize serializes information the current object
 func (m *ManagedAppLogUpload) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
-        err := writer.WriteStringValue("managedAppComponent", m.GetManagedAppComponent())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteStringValue("managedAppComponentDescription", m.GetManagedAppComponentDescription())
         if err != nil {
             return err
@@ -212,13 +184,6 @@ func (m *ManagedAppLogUpload) SetAdditionalData(value map[string]any)() {
 func (m *ManagedAppLogUpload) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetManagedAppComponent sets the managedAppComponent property value. The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.
-func (m *ManagedAppLogUpload) SetManagedAppComponent(value *string)() {
-    err := m.GetBackingStore().Set("managedAppComponent", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetManagedAppComponentDescription sets the managedAppComponentDescription property value. The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.
 func (m *ManagedAppLogUpload) SetManagedAppComponentDescription(value *string)() {
     err := m.GetBackingStore().Set("managedAppComponentDescription", value)
@@ -252,13 +217,11 @@ type ManagedAppLogUploadable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetManagedAppComponent()(*string)
     GetManagedAppComponentDescription()(*string)
     GetOdataType()(*string)
     GetReferenceId()(*string)
     GetStatus()(*ManagedAppLogUploadState)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetManagedAppComponent(value *string)()
     SetManagedAppComponentDescription(value *string)()
     SetOdataType(value *string)()
     SetReferenceId(value *string)()

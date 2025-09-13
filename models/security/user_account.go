@@ -4,6 +4,7 @@
 package security
 
 import (
+    i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22 "github.com/google/uuid"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e "github.com/microsoft/kiota-abstractions-go/store"
 )
@@ -34,6 +35,18 @@ func (m *UserAccount) GetAccountName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetActiveDirectoryObjectGuid gets the activeDirectoryObjectGuid property value. The unique user identifier assigned by the on-premises Active Directory.
+// returns a *UUID when successful
+func (m *UserAccount) GetActiveDirectoryObjectGuid()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
+    val, err := m.GetBackingStore().Get("activeDirectoryObjectGuid")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     }
     return nil
 }
@@ -105,6 +118,16 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["activeDirectoryObjectGuid"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetUUIDValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetActiveDirectoryObjectGuid(val)
+        }
+        return nil
+    }
     res["azureAdUserId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -145,6 +168,22 @@ func (m *UserAccount) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["resourceAccessEvents"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateResourceAccessEventFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ResourceAccessEventable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ResourceAccessEventable)
+                }
+            }
+            m.SetResourceAccessEvents(res)
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -176,6 +215,18 @@ func (m *UserAccount) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetResourceAccessEvents gets the resourceAccessEvents property value. Information on resource access attempts made by the user account.
+// returns a []ResourceAccessEventable when successful
+func (m *UserAccount) GetResourceAccessEvents()([]ResourceAccessEventable) {
+    val, err := m.GetBackingStore().Get("resourceAccessEvents")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ResourceAccessEventable)
     }
     return nil
 }
@@ -212,6 +263,12 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err := writer.WriteUUIDValue("activeDirectoryObjectGuid", m.GetActiveDirectoryObjectGuid())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("azureAdUserId", m.GetAzureAdUserId())
         if err != nil {
             return err
@@ -231,6 +288,18 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetResourceAccessEvents() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetResourceAccessEvents()))
+        for i, v := range m.GetResourceAccessEvents() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("resourceAccessEvents", cast)
         if err != nil {
             return err
         }
@@ -258,6 +327,13 @@ func (m *UserAccount) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
 // SetAccountName sets the accountName property value. The displayed name of the user account.
 func (m *UserAccount) SetAccountName(value *string)() {
     err := m.GetBackingStore().Set("accountName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetActiveDirectoryObjectGuid sets the activeDirectoryObjectGuid property value. The unique user identifier assigned by the on-premises Active Directory.
+func (m *UserAccount) SetActiveDirectoryObjectGuid(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
+    err := m.GetBackingStore().Set("activeDirectoryObjectGuid", value)
     if err != nil {
         panic(err)
     }
@@ -301,6 +377,13 @@ func (m *UserAccount) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetResourceAccessEvents sets the resourceAccessEvents property value. Information on resource access attempts made by the user account.
+func (m *UserAccount) SetResourceAccessEvents(value []ResourceAccessEventable)() {
+    err := m.GetBackingStore().Set("resourceAccessEvents", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name of the account in Microsoft Entra ID.
 func (m *UserAccount) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
@@ -320,19 +403,23 @@ type UserAccountable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAccountName()(*string)
+    GetActiveDirectoryObjectGuid()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetAzureAdUserId()(*string)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDisplayName()(*string)
     GetDomainName()(*string)
     GetOdataType()(*string)
+    GetResourceAccessEvents()([]ResourceAccessEventable)
     GetUserPrincipalName()(*string)
     GetUserSid()(*string)
     SetAccountName(value *string)()
+    SetActiveDirectoryObjectGuid(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetAzureAdUserId(value *string)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDisplayName(value *string)()
     SetDomainName(value *string)()
     SetOdataType(value *string)()
+    SetResourceAccessEvents(value []ResourceAccessEventable)()
     SetUserPrincipalName(value *string)()
     SetUserSid(value *string)()
 }

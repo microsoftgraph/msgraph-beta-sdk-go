@@ -49,6 +49,11 @@ type UserItemRequestBuilderPatchRequestConfiguration struct {
 func (m *UserItemRequestBuilder) Activities()(*ItemActivitiesRequestBuilder) {
     return NewItemActivitiesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AdhocCalls provides operations to manage the adhocCalls property of the microsoft.graph.user entity.
+// returns a *ItemAdhocCallsRequestBuilder when successful
+func (m *UserItemRequestBuilder) AdhocCalls()(*ItemAdhocCallsRequestBuilder) {
+    return NewItemAdhocCallsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // AgreementAcceptances provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
 // returns a *ItemAgreementAcceptancesRequestBuilder when successful
 func (m *UserItemRequestBuilder) AgreementAcceptances()(*ItemAgreementAcceptancesRequestBuilder) {

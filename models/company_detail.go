@@ -67,6 +67,18 @@ func (m *CompanyDetail) GetCompanyCode()(*string) {
     }
     return nil
 }
+// GetCostCenter gets the costCenter property value. The cost center associated with the company or department.
+// returns a *string when successful
+func (m *CompanyDetail) GetCostCenter()(*string) {
+    val, err := m.GetBackingStore().Get("costCenter")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetDepartment gets the department property value. Department Name within a company.
 // returns a *string when successful
 func (m *CompanyDetail) GetDepartment()(*string) {
@@ -83,6 +95,18 @@ func (m *CompanyDetail) GetDepartment()(*string) {
 // returns a *string when successful
 func (m *CompanyDetail) GetDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetDivision gets the division property value. The division within the company.
+// returns a *string when successful
+func (m *CompanyDetail) GetDivision()(*string) {
+    val, err := m.GetBackingStore().Get("division")
     if err != nil {
         panic(err)
     }
@@ -115,6 +139,16 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["costCenter"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCostCenter(val)
+        }
+        return nil
+    }
     res["department"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -132,6 +166,16 @@ func (m *CompanyDetail) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["division"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDivision(val)
         }
         return nil
     }
@@ -262,6 +306,12 @@ func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err := writer.WriteStringValue("costCenter", m.GetCostCenter())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("department", m.GetDepartment())
         if err != nil {
             return err
@@ -269,6 +319,12 @@ func (m *CompanyDetail) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     {
         err := writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("division", m.GetDivision())
         if err != nil {
             return err
         }
@@ -336,6 +392,13 @@ func (m *CompanyDetail) SetCompanyCode(value *string)() {
         panic(err)
     }
 }
+// SetCostCenter sets the costCenter property value. The cost center associated with the company or department.
+func (m *CompanyDetail) SetCostCenter(value *string)() {
+    err := m.GetBackingStore().Set("costCenter", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDepartment sets the department property value. Department Name within a company.
 func (m *CompanyDetail) SetDepartment(value *string)() {
     err := m.GetBackingStore().Set("department", value)
@@ -346,6 +409,13 @@ func (m *CompanyDetail) SetDepartment(value *string)() {
 // SetDisplayName sets the displayName property value. Company name.
 func (m *CompanyDetail) SetDisplayName(value *string)() {
     err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDivision sets the division property value. The division within the company.
+func (m *CompanyDetail) SetDivision(value *string)() {
+    err := m.GetBackingStore().Set("division", value)
     if err != nil {
         panic(err)
     }
@@ -392,8 +462,10 @@ type CompanyDetailable interface {
     GetAddress()(PhysicalAddressable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetCompanyCode()(*string)
+    GetCostCenter()(*string)
     GetDepartment()(*string)
     GetDisplayName()(*string)
+    GetDivision()(*string)
     GetOdataType()(*string)
     GetOfficeLocation()(*string)
     GetPronunciation()(*string)
@@ -402,8 +474,10 @@ type CompanyDetailable interface {
     SetAddress(value PhysicalAddressable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetCompanyCode(value *string)()
+    SetCostCenter(value *string)()
     SetDepartment(value *string)()
     SetDisplayName(value *string)()
+    SetDivision(value *string)()
     SetOdataType(value *string)()
     SetOfficeLocation(value *string)()
     SetPronunciation(value *string)()

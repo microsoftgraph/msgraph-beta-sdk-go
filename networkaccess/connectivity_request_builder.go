@@ -98,6 +98,11 @@ func (m *ConnectivityRequestBuilder) Get(ctx context.Context, requestConfigurati
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.Connectivityable), nil
 }
+// MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl provides operations to call the getWebCategoryByUrl method.
+// returns a *ConnectivityMicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder when successful
+func (m *ConnectivityRequestBuilder) MicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrl(url *string)(*ConnectivityMicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilder) {
+    return NewConnectivityMicrosoftGraphNetworkaccessGetWebCategoryByUrlWithUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, url)
+}
 // Patch update the navigation property connectivity in networkAccess
 // returns a Connectivityable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

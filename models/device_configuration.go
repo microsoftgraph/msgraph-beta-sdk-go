@@ -190,6 +190,8 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewIosVpnConfiguration(), nil
                     case "#microsoft.graph.iosWiFiConfiguration":
                         return NewIosWiFiConfiguration(), nil
+                    case "#microsoft.graph.iosWiredNetworkConfiguration":
+                        return NewIosWiredNetworkConfiguration(), nil
                     case "#microsoft.graph.macOSCertificateProfileBase":
                         return NewMacOSCertificateProfileBase(), nil
                     case "#microsoft.graph.macOSCustomAppConfiguration":

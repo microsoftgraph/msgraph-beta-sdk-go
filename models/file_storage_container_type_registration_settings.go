@@ -139,7 +139,7 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetFieldDeserializers()(m
     }
     return res
 }
-// GetIsDiscoverabilityEnabled gets the isDiscoverabilityEnabled property value. The isDiscoverabilityEnabled property
+// GetIsDiscoverabilityEnabled gets the isDiscoverabilityEnabled property value. Indicates whether items from containers are surfaced in experiences such as My Activity or Microsoft 365.
 // returns a *bool when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetIsDiscoverabilityEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isDiscoverabilityEnabled")
@@ -151,7 +151,7 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetIsDiscoverabilityEnabl
     }
     return nil
 }
-// GetIsItemVersioningEnabled gets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
+// GetIsItemVersioningEnabled gets the isItemVersioningEnabled property value. Indicates whether item versioning is enabled.
 // returns a *bool when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetIsItemVersioningEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isItemVersioningEnabled")
@@ -163,7 +163,7 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetIsItemVersioningEnable
     }
     return nil
 }
-// GetIsSearchEnabled gets the isSearchEnabled property value. The isSearchEnabled property
+// GetIsSearchEnabled gets the isSearchEnabled property value. Indicates whether search is enabled.
 // returns a *bool when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetIsSearchEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isSearchEnabled")
@@ -175,7 +175,7 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetIsSearchEnabled()(*boo
     }
     return nil
 }
-// GetIsSharingRestricted gets the isSharingRestricted property value. The isSharingRestricted property
+// GetIsSharingRestricted gets the isSharingRestricted property value. Only the manager and owner can share files in the container if restricted sharing is enabled.
 // returns a *bool when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetIsSharingRestricted()(*bool) {
     val, err := m.GetBackingStore().Get("isSharingRestricted")
@@ -187,7 +187,7 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetIsSharingRestricted()(
     }
     return nil
 }
-// GetItemMajorVersionLimit gets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
+// GetItemMajorVersionLimit gets the itemMajorVersionLimit property value. Maximum number of versions. Versioning must be enabled ('isItemVersioningEnabled'=true).
 // returns a *int64 when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetItemMajorVersionLimit()(*int64) {
     val, err := m.GetBackingStore().Get("itemMajorVersionLimit")
@@ -199,7 +199,7 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetItemMajorVersionLimit(
     }
     return nil
 }
-// GetMaxStoragePerContainerInBytes gets the maxStoragePerContainerInBytes property value. The maxStoragePerContainerInBytes property
+// GetMaxStoragePerContainerInBytes gets the maxStoragePerContainerInBytes property value. Controls maximum storage in bytes.
 // returns a *int64 when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetMaxStoragePerContainerInBytes()(*int64) {
     val, err := m.GetBackingStore().Get("maxStoragePerContainerInBytes")
@@ -223,7 +223,7 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSharingCapability gets the sharingCapability property value. The sharingCapability property
+// GetSharingCapability gets the sharingCapability property value. Sharing capabilities permitted for containers. The possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly, unknownFutureValue. Can always be updated.
 // returns a *SharingCapabilities when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetSharingCapability()(*SharingCapabilities) {
     val, err := m.GetBackingStore().Get("sharingCapability")
@@ -235,7 +235,7 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetSharingCapability()(*S
     }
     return nil
 }
-// GetUrlTemplate gets the urlTemplate property value. The urlTemplate property
+// GetUrlTemplate gets the urlTemplate property value. Pattern used to redirect files.
 // returns a *string when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetUrlTemplate()(*string) {
     val, err := m.GetBackingStore().Get("urlTemplate")
@@ -323,42 +323,42 @@ func (m *FileStorageContainerTypeRegistrationSettings) SetAdditionalData(value m
 func (m *FileStorageContainerTypeRegistrationSettings) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsDiscoverabilityEnabled sets the isDiscoverabilityEnabled property value. The isDiscoverabilityEnabled property
+// SetIsDiscoverabilityEnabled sets the isDiscoverabilityEnabled property value. Indicates whether items from containers are surfaced in experiences such as My Activity or Microsoft 365.
 func (m *FileStorageContainerTypeRegistrationSettings) SetIsDiscoverabilityEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isDiscoverabilityEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsItemVersioningEnabled sets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
+// SetIsItemVersioningEnabled sets the isItemVersioningEnabled property value. Indicates whether item versioning is enabled.
 func (m *FileStorageContainerTypeRegistrationSettings) SetIsItemVersioningEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isItemVersioningEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSearchEnabled sets the isSearchEnabled property value. The isSearchEnabled property
+// SetIsSearchEnabled sets the isSearchEnabled property value. Indicates whether search is enabled.
 func (m *FileStorageContainerTypeRegistrationSettings) SetIsSearchEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isSearchEnabled", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsSharingRestricted sets the isSharingRestricted property value. The isSharingRestricted property
+// SetIsSharingRestricted sets the isSharingRestricted property value. Only the manager and owner can share files in the container if restricted sharing is enabled.
 func (m *FileStorageContainerTypeRegistrationSettings) SetIsSharingRestricted(value *bool)() {
     err := m.GetBackingStore().Set("isSharingRestricted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetItemMajorVersionLimit sets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
+// SetItemMajorVersionLimit sets the itemMajorVersionLimit property value. Maximum number of versions. Versioning must be enabled ('isItemVersioningEnabled'=true).
 func (m *FileStorageContainerTypeRegistrationSettings) SetItemMajorVersionLimit(value *int64)() {
     err := m.GetBackingStore().Set("itemMajorVersionLimit", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMaxStoragePerContainerInBytes sets the maxStoragePerContainerInBytes property value. The maxStoragePerContainerInBytes property
+// SetMaxStoragePerContainerInBytes sets the maxStoragePerContainerInBytes property value. Controls maximum storage in bytes.
 func (m *FileStorageContainerTypeRegistrationSettings) SetMaxStoragePerContainerInBytes(value *int64)() {
     err := m.GetBackingStore().Set("maxStoragePerContainerInBytes", value)
     if err != nil {
@@ -372,14 +372,14 @@ func (m *FileStorageContainerTypeRegistrationSettings) SetOdataType(value *strin
         panic(err)
     }
 }
-// SetSharingCapability sets the sharingCapability property value. The sharingCapability property
+// SetSharingCapability sets the sharingCapability property value. Sharing capabilities permitted for containers. The possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly, unknownFutureValue. Can always be updated.
 func (m *FileStorageContainerTypeRegistrationSettings) SetSharingCapability(value *SharingCapabilities)() {
     err := m.GetBackingStore().Set("sharingCapability", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUrlTemplate sets the urlTemplate property value. The urlTemplate property
+// SetUrlTemplate sets the urlTemplate property value. Pattern used to redirect files.
 func (m *FileStorageContainerTypeRegistrationSettings) SetUrlTemplate(value *string)() {
     err := m.GetBackingStore().Set("urlTemplate", value)
     if err != nil {

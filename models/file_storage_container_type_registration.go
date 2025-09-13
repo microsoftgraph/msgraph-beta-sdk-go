@@ -24,7 +24,7 @@ func NewFileStorageContainerTypeRegistration()(*FileStorageContainerTypeRegistra
 func CreateFileStorageContainerTypeRegistrationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewFileStorageContainerTypeRegistration(), nil
 }
-// GetApplicationPermissionGrants gets the applicationPermissionGrants property value. The applicationPermissionGrants property
+// GetApplicationPermissionGrants gets the applicationPermissionGrants property value. Access privileges of applications on containers.
 // returns a []FileStorageContainerTypeAppPermissionGrantable when successful
 func (m *FileStorageContainerTypeRegistration) GetApplicationPermissionGrants()([]FileStorageContainerTypeAppPermissionGrantable) {
     val, err := m.GetBackingStore().Get("applicationPermissionGrants")
@@ -60,7 +60,7 @@ func (m *FileStorageContainerTypeRegistration) GetBillingStatus()(*FileStorageCo
     }
     return nil
 }
-// GetEtag gets the etag property value. The etag property
+// GetEtag gets the etag property value. Used in update scenarios for optimistic concurrency control. Read-only.
 // returns a *string when successful
 func (m *FileStorageContainerTypeRegistration) GetEtag()(*string) {
     val, err := m.GetBackingStore().Get("etag")
@@ -72,7 +72,7 @@ func (m *FileStorageContainerTypeRegistration) GetEtag()(*string) {
     }
     return nil
 }
-// GetExpirationDateTime gets the expirationDateTime property value. The expirationDateTime property
+// GetExpirationDateTime gets the expirationDateTime property value. The expiration date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *FileStorageContainerTypeRegistration) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expirationDateTime")
@@ -186,7 +186,7 @@ func (m *FileStorageContainerTypeRegistration) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetName gets the name property value. The name property
+// GetName gets the name property value. The name of the fileStorageContainerTypeRegistration. Read-only.
 // returns a *string when successful
 func (m *FileStorageContainerTypeRegistration) GetName()(*string) {
     val, err := m.GetBackingStore().Get("name")
@@ -198,7 +198,7 @@ func (m *FileStorageContainerTypeRegistration) GetName()(*string) {
     }
     return nil
 }
-// GetOwningAppId gets the owningAppId property value. The owningAppId property
+// GetOwningAppId gets the owningAppId property value. ID of the application that owns the fileStorageContainerType. Read-only.
 // returns a *UUID when successful
 func (m *FileStorageContainerTypeRegistration) GetOwningAppId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("owningAppId")
@@ -210,7 +210,7 @@ func (m *FileStorageContainerTypeRegistration) GetOwningAppId()(*i561e97a8befe76
     }
     return nil
 }
-// GetRegisteredDateTime gets the registeredDateTime property value. The registeredDateTime property
+// GetRegisteredDateTime gets the registeredDateTime property value. The registration date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *FileStorageContainerTypeRegistration) GetRegisteredDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("registeredDateTime")
@@ -304,7 +304,7 @@ func (m *FileStorageContainerTypeRegistration) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetApplicationPermissionGrants sets the applicationPermissionGrants property value. The applicationPermissionGrants property
+// SetApplicationPermissionGrants sets the applicationPermissionGrants property value. Access privileges of applications on containers.
 func (m *FileStorageContainerTypeRegistration) SetApplicationPermissionGrants(value []FileStorageContainerTypeAppPermissionGrantable)() {
     err := m.GetBackingStore().Set("applicationPermissionGrants", value)
     if err != nil {
@@ -325,35 +325,35 @@ func (m *FileStorageContainerTypeRegistration) SetBillingStatus(value *FileStora
         panic(err)
     }
 }
-// SetEtag sets the etag property value. The etag property
+// SetEtag sets the etag property value. Used in update scenarios for optimistic concurrency control. Read-only.
 func (m *FileStorageContainerTypeRegistration) SetEtag(value *string)() {
     err := m.GetBackingStore().Set("etag", value)
     if err != nil {
         panic(err)
     }
 }
-// SetExpirationDateTime sets the expirationDateTime property value. The expirationDateTime property
+// SetExpirationDateTime sets the expirationDateTime property value. The expiration date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *FileStorageContainerTypeRegistration) SetExpirationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expirationDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetName sets the name property value. The name property
+// SetName sets the name property value. The name of the fileStorageContainerTypeRegistration. Read-only.
 func (m *FileStorageContainerTypeRegistration) SetName(value *string)() {
     err := m.GetBackingStore().Set("name", value)
     if err != nil {
         panic(err)
     }
 }
-// SetOwningAppId sets the owningAppId property value. The owningAppId property
+// SetOwningAppId sets the owningAppId property value. ID of the application that owns the fileStorageContainerType. Read-only.
 func (m *FileStorageContainerTypeRegistration) SetOwningAppId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("owningAppId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRegisteredDateTime sets the registeredDateTime property value. The registeredDateTime property
+// SetRegisteredDateTime sets the registeredDateTime property value. The registration date. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *FileStorageContainerTypeRegistration) SetRegisteredDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("registeredDateTime", value)
     if err != nil {

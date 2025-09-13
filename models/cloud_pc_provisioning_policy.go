@@ -419,6 +419,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["userExperienceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcUserExperienceType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserExperienceType(val.(*CloudPcUserExperienceType))
+        }
+        return nil
+    }
     res["windowsSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcWindowsSettingFromDiscriminatorValue)
         if err != nil {
@@ -570,6 +580,18 @@ func (m *CloudPcProvisioningPolicy) GetScopeIds()([]string) {
     }
     if val != nil {
         return val.([]string)
+    }
+    return nil
+}
+// GetUserExperienceType gets the userExperienceType property value. Specifies the type of cloud object the end user can access. Possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can't be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.
+// returns a *CloudPcUserExperienceType when successful
+func (m *CloudPcProvisioningPolicy) GetUserExperienceType()(*CloudPcUserExperienceType) {
+    val, err := m.GetBackingStore().Get("userExperienceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcUserExperienceType)
     }
     return nil
 }
@@ -756,6 +778,13 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetUserExperienceType() != nil {
+        cast := (*m.GetUserExperienceType()).String()
+        err = writer.WriteStringValue("userExperienceType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("windowsSetting", m.GetWindowsSetting())
         if err != nil {
@@ -931,6 +960,13 @@ func (m *CloudPcProvisioningPolicy) SetScopeIds(value []string)() {
         panic(err)
     }
 }
+// SetUserExperienceType sets the userExperienceType property value. Specifies the type of cloud object the end user can access. Possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can't be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.
+func (m *CloudPcProvisioningPolicy) SetUserExperienceType(value *CloudPcUserExperienceType)() {
+    err := m.GetBackingStore().Set("userExperienceType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindowsSetting sets the windowsSetting property value. Indicates a specific Windows setting to configure during the creation of Cloud PCs for this provisioning policy. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetWindowsSetting(value CloudPcWindowsSettingable)() {
     err := m.GetBackingStore().Set("windowsSetting", value)
@@ -971,6 +1007,7 @@ type CloudPcProvisioningPolicyable interface {
     GetMicrosoftManagedDesktop()(MicrosoftManagedDesktopable)
     GetProvisioningType()(*CloudPcProvisioningType)
     GetScopeIds()([]string)
+    GetUserExperienceType()(*CloudPcUserExperienceType)
     GetWindowsSetting()(CloudPcWindowsSettingable)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetAlternateResourceUrl(value *string)()
@@ -996,6 +1033,7 @@ type CloudPcProvisioningPolicyable interface {
     SetMicrosoftManagedDesktop(value MicrosoftManagedDesktopable)()
     SetProvisioningType(value *CloudPcProvisioningType)()
     SetScopeIds(value []string)()
+    SetUserExperienceType(value *CloudPcUserExperienceType)()
     SetWindowsSetting(value CloudPcWindowsSettingable)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }

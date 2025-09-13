@@ -61,6 +61,18 @@ func (m *User) GetActivities()([]UserActivityable) {
     }
     return nil
 }
+// GetAdhocCalls gets the adhocCalls property value. Ad hoc calls associated with the user. Read-only. Nullable.
+// returns a []AdhocCallable when successful
+func (m *User) GetAdhocCalls()([]AdhocCallable) {
+    val, err := m.GetBackingStore().Get("adhocCalls")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AdhocCallable)
+    }
+    return nil
+}
 // GetAgeGroup gets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
 // returns a *string when successful
 func (m *User) GetAgeGroup()(*string) {
@@ -746,6 +758,22 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetActivities(res)
+        }
+        return nil
+    }
+    res["adhocCalls"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAdhocCallFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AdhocCallable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AdhocCallable)
+                }
+            }
+            m.SetAdhocCalls(res)
         }
         return nil
     }
@@ -3917,6 +3945,18 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             return err
         }
     }
+    if m.GetAdhocCalls() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAdhocCalls()))
+        for i, v := range m.GetAdhocCalls() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("adhocCalls", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("ageGroup", m.GetAgeGroup())
         if err != nil {
@@ -5200,6 +5240,13 @@ func (m *User) SetActivities(value []UserActivityable)() {
         panic(err)
     }
 }
+// SetAdhocCalls sets the adhocCalls property value. Ad hoc calls associated with the user. Read-only. Nullable.
+func (m *User) SetAdhocCalls(value []AdhocCallable)() {
+    err := m.GetBackingStore().Set("adhocCalls", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAgeGroup sets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
 func (m *User) SetAgeGroup(value *string)() {
     err := m.GetBackingStore().Set("ageGroup", value)
@@ -6284,6 +6331,7 @@ type Userable interface {
     GetAboutMe()(*string)
     GetAccountEnabled()(*bool)
     GetActivities()([]UserActivityable)
+    GetAdhocCalls()([]AdhocCallable)
     GetAgeGroup()(*string)
     GetAgreementAcceptances()([]AgreementAcceptanceable)
     GetAnalytics()(UserAnalyticsable)
@@ -6441,6 +6489,7 @@ type Userable interface {
     SetAboutMe(value *string)()
     SetAccountEnabled(value *bool)()
     SetActivities(value []UserActivityable)()
+    SetAdhocCalls(value []AdhocCallable)()
     SetAgeGroup(value *string)()
     SetAgreementAcceptances(value []AgreementAcceptanceable)()
     SetAnalytics(value UserAnalyticsable)()

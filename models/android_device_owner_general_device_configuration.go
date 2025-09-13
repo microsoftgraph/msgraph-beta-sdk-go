@@ -781,6 +781,22 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetFieldDeserializers()(m
         }
         return nil
     }
+    res["kioskModeManagedHomeScreenAppSettings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAndroidDeviceOwnerKioskModeAppFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AndroidDeviceOwnerKioskModeAppable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AndroidDeviceOwnerKioskModeAppable)
+                }
+            }
+            m.SetKioskModeManagedHomeScreenAppSettings(res)
+        }
+        return nil
+    }
     res["kioskModeManagedHomeScreenAutoSignout"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -2012,6 +2028,18 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedFolder
     }
     if val != nil {
         return val.([]AndroidDeviceOwnerKioskModeManagedFolderable)
+    }
+    return nil
+}
+// GetKioskModeManagedHomeScreenAppSettings gets the kioskModeManagedHomeScreenAppSettings property value. Indicates the list of managed applications and associated settings, which will be applied when android device is run on kiosk mode with Managed Home Screen. This collection can contain a maximum of 500 elements.
+// returns a []AndroidDeviceOwnerKioskModeAppable when successful
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenAppSettings()([]AndroidDeviceOwnerKioskModeAppable) {
+    val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenAppSettings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AndroidDeviceOwnerKioskModeAppable)
     }
     return nil
 }
@@ -3464,6 +3492,18 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) Serialize(writer i878a80d
             return err
         }
     }
+    if m.GetKioskModeManagedHomeScreenAppSettings() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKioskModeManagedHomeScreenAppSettings()))
+        for i, v := range m.GetKioskModeManagedHomeScreenAppSettings() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("kioskModeManagedHomeScreenAppSettings", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteBoolValue("kioskModeManagedHomeScreenAutoSignout", m.GetKioskModeManagedHomeScreenAutoSignout())
         if err != nil {
@@ -4369,6 +4409,13 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedFolder
         panic(err)
     }
 }
+// SetKioskModeManagedHomeScreenAppSettings sets the kioskModeManagedHomeScreenAppSettings property value. Indicates the list of managed applications and associated settings, which will be applied when android device is run on kiosk mode with Managed Home Screen. This collection can contain a maximum of 500 elements.
+func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenAppSettings(value []AndroidDeviceOwnerKioskModeAppable)() {
+    err := m.GetBackingStore().Set("kioskModeManagedHomeScreenAppSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetKioskModeManagedHomeScreenAutoSignout sets the kioskModeManagedHomeScreenAutoSignout property value. Whether or not to automatically sign-out of MHS and Shared device mode applications after inactive for Managed Home Screen.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenAutoSignout(value *bool)() {
     err := m.GetBackingStore().Set("kioskModeManagedHomeScreenAutoSignout", value)
@@ -5081,6 +5128,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     GetKioskModeIconSize()(*AndroidDeviceOwnerKioskModeIconSize)
     GetKioskModeLockHomeScreen()(*bool)
     GetKioskModeManagedFolders()([]AndroidDeviceOwnerKioskModeManagedFolderable)
+    GetKioskModeManagedHomeScreenAppSettings()([]AndroidDeviceOwnerKioskModeAppable)
     GetKioskModeManagedHomeScreenAutoSignout()(*bool)
     GetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds()(*int32)
     GetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds()(*int32)
@@ -5220,6 +5268,7 @@ type AndroidDeviceOwnerGeneralDeviceConfigurationable interface {
     SetKioskModeIconSize(value *AndroidDeviceOwnerKioskModeIconSize)()
     SetKioskModeLockHomeScreen(value *bool)()
     SetKioskModeManagedFolders(value []AndroidDeviceOwnerKioskModeManagedFolderable)()
+    SetKioskModeManagedHomeScreenAppSettings(value []AndroidDeviceOwnerKioskModeAppable)()
     SetKioskModeManagedHomeScreenAutoSignout(value *bool)()
     SetKioskModeManagedHomeScreenInactiveSignOutDelayInSeconds(value *int32)()
     SetKioskModeManagedHomeScreenInactiveSignOutNoticeInSeconds(value *int32)()

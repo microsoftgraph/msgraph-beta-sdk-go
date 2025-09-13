@@ -72,6 +72,16 @@ func (m *UserAccountInformation) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["originTenantInfo"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOriginTenantInfoFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOriginTenantInfo(val.(OriginTenantInfoable))
+        }
+        return nil
+    }
     res["preferredLanguageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateLocaleInfoFromDiscriminatorValue)
         if err != nil {
@@ -79,6 +89,16 @@ func (m *UserAccountInformation) GetFieldDeserializers()(map[string]func(i878a80
         }
         if val != nil {
             m.SetPreferredLanguageTag(val.(LocaleInfoable))
+        }
+        return nil
+    }
+    res["userPersona"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseUserPersona)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserPersona(val.(*UserPersona))
         }
         return nil
     }
@@ -94,7 +114,19 @@ func (m *UserAccountInformation) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetPreferredLanguageTag gets the preferredLanguageTag property value. Contains the language the user has associated as preferred for the account.
+// GetOriginTenantInfo gets the originTenantInfo property value. Contains the identifiers of the user and the origin tenant that provisioned the user. This property is populated when the user is invited as a guest to the host tenant.
+// returns a OriginTenantInfoable when successful
+func (m *UserAccountInformation) GetOriginTenantInfo()(OriginTenantInfoable) {
+    val, err := m.GetBackingStore().Get("originTenantInfo")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OriginTenantInfoable)
+    }
+    return nil
+}
+// GetPreferredLanguageTag gets the preferredLanguageTag property value. Contains the language that the user associated as preferred for their account.
 // returns a LocaleInfoable when successful
 func (m *UserAccountInformation) GetPreferredLanguageTag()(LocaleInfoable) {
     val, err := m.GetBackingStore().Get("preferredLanguageTag")
@@ -103,6 +135,18 @@ func (m *UserAccountInformation) GetPreferredLanguageTag()(LocaleInfoable) {
     }
     if val != nil {
         return val.(LocaleInfoable)
+    }
+    return nil
+}
+// GetUserPersona gets the userPersona property value. Represents the user's persona. The possible values are: unknown, externalMember, externalGuest, internalMember, internalGuest, unknownFutureValue.
+// returns a *UserPersona when successful
+func (m *UserAccountInformation) GetUserPersona()(*UserPersona) {
+    val, err := m.GetBackingStore().Get("userPersona")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*UserPersona)
     }
     return nil
 }
@@ -137,7 +181,20 @@ func (m *UserAccountInformation) Serialize(writer i878a80d2330e89d26896388a3f487
         }
     }
     {
+        err = writer.WriteObjectValue("originTenantInfo", m.GetOriginTenantInfo())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("preferredLanguageTag", m.GetPreferredLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserPersona() != nil {
+        cast := (*m.GetUserPersona()).String()
+        err = writer.WriteStringValue("userPersona", &cast)
         if err != nil {
             return err
         }
@@ -164,9 +221,23 @@ func (m *UserAccountInformation) SetCountryCode(value *string)() {
         panic(err)
     }
 }
-// SetPreferredLanguageTag sets the preferredLanguageTag property value. Contains the language the user has associated as preferred for the account.
+// SetOriginTenantInfo sets the originTenantInfo property value. Contains the identifiers of the user and the origin tenant that provisioned the user. This property is populated when the user is invited as a guest to the host tenant.
+func (m *UserAccountInformation) SetOriginTenantInfo(value OriginTenantInfoable)() {
+    err := m.GetBackingStore().Set("originTenantInfo", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPreferredLanguageTag sets the preferredLanguageTag property value. Contains the language that the user associated as preferred for their account.
 func (m *UserAccountInformation) SetPreferredLanguageTag(value LocaleInfoable)() {
     err := m.GetBackingStore().Set("preferredLanguageTag", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetUserPersona sets the userPersona property value. Represents the user's persona. The possible values are: unknown, externalMember, externalGuest, internalMember, internalGuest, unknownFutureValue.
+func (m *UserAccountInformation) SetUserPersona(value *UserPersona)() {
+    err := m.GetBackingStore().Set("userPersona", value)
     if err != nil {
         panic(err)
     }
@@ -183,10 +254,14 @@ type UserAccountInformationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAgeGroup()(*string)
     GetCountryCode()(*string)
+    GetOriginTenantInfo()(OriginTenantInfoable)
     GetPreferredLanguageTag()(LocaleInfoable)
+    GetUserPersona()(*UserPersona)
     GetUserPrincipalName()(*string)
     SetAgeGroup(value *string)()
     SetCountryCode(value *string)()
+    SetOriginTenantInfo(value OriginTenantInfoable)()
     SetPreferredLanguageTag(value LocaleInfoable)()
+    SetUserPersona(value *UserPersona)()
     SetUserPrincipalName(value *string)()
 }

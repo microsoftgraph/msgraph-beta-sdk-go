@@ -25,7 +25,7 @@ func NewAccount()(*Account) {
 func CreateAccountFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAccount(), nil
 }
-// GetActions gets the actions property value. The actions property
+// GetActions gets the actions property value. List of the type of action. The possible values are: disable, enable, forcePasswordReset, revokeAllSessions, requireUserToSignInAgain, markUserAsCompromised.
 // returns a []Action when successful
 func (m *Account) GetActions()([]Action) {
     val, err := m.GetBackingStore().Get("actions")
@@ -107,7 +107,7 @@ func (m *Account) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetIdentifier gets the identifier property value. The identifier property
+// GetIdentifier gets the identifier property value. The account ID.
 // returns a *string when successful
 func (m *Account) GetIdentifier()(*string) {
     val, err := m.GetBackingStore().Get("identifier")
@@ -178,7 +178,7 @@ func (m *Account) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     return nil
 }
-// SetActions sets the actions property value. The actions property
+// SetActions sets the actions property value. List of the type of action. The possible values are: disable, enable, forcePasswordReset, revokeAllSessions, requireUserToSignInAgain, markUserAsCompromised.
 func (m *Account) SetActions(value []Action)() {
     err := m.GetBackingStore().Set("actions", value)
     if err != nil {
@@ -196,7 +196,7 @@ func (m *Account) SetAdditionalData(value map[string]any)() {
 func (m *Account) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIdentifier sets the identifier property value. The identifier property
+// SetIdentifier sets the identifier property value. The account ID.
 func (m *Account) SetIdentifier(value *string)() {
     err := m.GetBackingStore().Set("identifier", value)
     if err != nil {

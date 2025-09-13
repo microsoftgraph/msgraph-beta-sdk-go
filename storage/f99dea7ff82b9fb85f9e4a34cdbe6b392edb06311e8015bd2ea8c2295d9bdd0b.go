@@ -21,7 +21,7 @@ type FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationIt
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderGetQueryParameters get containerTypeRegistrations from storage
+// FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderGetQueryParameters read the properties and relationships of a fileStorageContainerTypeRegistration object.
 type FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -62,8 +62,11 @@ func NewFileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistratio
     urlParams["request-raw-url"] = rawUrl
     return NewFileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property containerTypeRegistrations for storage
+// Delete delete a fileStorageContainerTypeRegistration object. A registration can only be deleted if it has neither containers nor deleted containers
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestorage-delete-containertyperegistrations?view=graph-rest-beta
 func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,9 +81,12 @@ func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrati
     }
     return nil
 }
-// Get get containerTypeRegistrations from storage
+// Get read the properties and relationships of a fileStorageContainerTypeRegistration object.
 // returns a FileStorageContainerTypeRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestoragecontainertyperegistration-get?view=graph-rest-beta
 func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeRegistrationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -98,9 +104,12 @@ func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeRegistrationable), nil
 }
-// Patch update the navigation property containerTypeRegistrations in storage
+// Patch create or replace a fileStorageContainerTypeRegistration object. This method registers a fileStorageContainerType in the tenant.  For standard containers, billing must be valid for the registration to complete successfully. Settings can't be modified during registration.
 // returns a FileStorageContainerTypeRegistrationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/filestorage-post-containertyperegistrations?view=graph-rest-beta
 func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeRegistrationable, requestConfiguration *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeRegistrationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -118,7 +127,7 @@ func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrati
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeRegistrationable), nil
 }
-// ToDeleteRequestInformation delete navigation property containerTypeRegistrations for storage
+// ToDeleteRequestInformation delete a fileStorageContainerTypeRegistration object. A registration can only be deleted if it has neither containers nor deleted containers
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +138,7 @@ func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get containerTypeRegistrations from storage
+// ToGetRequestInformation read the properties and relationships of a fileStorageContainerTypeRegistration object.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -143,7 +152,7 @@ func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrati
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property containerTypeRegistrations in storage
+// ToPatchRequestInformation create or replace a fileStorageContainerTypeRegistration object. This method registers a fileStorageContainerType in the tenant.  For standard containers, billing must be valid for the registration to complete successfully. Settings can't be modified during registration.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FileStorageContainerTypeRegistrationable, requestConfiguration *FileStorageContainerTypeRegistrationsFileStorageContainerTypeRegistrationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

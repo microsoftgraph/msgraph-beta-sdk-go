@@ -497,6 +497,16 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["userExperienceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcUserExperienceType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserExperienceType(val.(*CloudPcUserExperienceType))
+        }
+        return nil
+    }
     res["userPrincipalName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -821,6 +831,18 @@ func (m *CloudPC) GetUserAccountType()(*CloudPcUserAccountType) {
     }
     return nil
 }
+// GetUserExperienceType gets the userExperienceType property value. Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. When set to cloudPc, it indicates that the end user can access the entire desktop. When set to cloudApp, it indicates that the end user can only access cloud apps published under the associated provisioning policy. Since the cloud app experience also creates Cloud PC devices that appear in the Cloud PC device list, this property helps differentiate them. The default value is cloudPc. This property is defined in the provisioning policy.
+// returns a *CloudPcUserExperienceType when successful
+func (m *CloudPC) GetUserExperienceType()(*CloudPcUserExperienceType) {
+    val, err := m.GetBackingStore().Get("userExperienceType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcUserExperienceType)
+    }
+    return nil
+}
 // GetUserPrincipalName gets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the Cloud PC.
 // returns a *string when successful
 func (m *CloudPC) GetUserPrincipalName()(*string) {
@@ -1060,6 +1082,13 @@ func (m *CloudPC) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     if m.GetUserAccountType() != nil {
         cast := (*m.GetUserAccountType()).String()
         err = writer.WriteStringValue("userAccountType", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetUserExperienceType() != nil {
+        cast := (*m.GetUserExperienceType()).String()
+        err = writer.WriteStringValue("userExperienceType", &cast)
         if err != nil {
             return err
         }
@@ -1317,6 +1346,13 @@ func (m *CloudPC) SetUserAccountType(value *CloudPcUserAccountType)() {
         panic(err)
     }
 }
+// SetUserExperienceType sets the userExperienceType property value. Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. When set to cloudPc, it indicates that the end user can access the entire desktop. When set to cloudApp, it indicates that the end user can only access cloud apps published under the associated provisioning policy. Since the cloud app experience also creates Cloud PC devices that appear in the Cloud PC device list, this property helps differentiate them. The default value is cloudPc. This property is defined in the provisioning policy.
+func (m *CloudPC) SetUserExperienceType(value *CloudPcUserExperienceType)() {
+    err := m.GetBackingStore().Set("userExperienceType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUserPrincipalName sets the userPrincipalName property value. The user principal name (UPN) of the user assigned to the Cloud PC.
 func (m *CloudPC) SetUserPrincipalName(value *string)() {
     err := m.GetBackingStore().Set("userPrincipalName", value)
@@ -1362,6 +1398,7 @@ type CloudPCable interface {
     GetStatusDetail()(CloudPcStatusDetailable)
     GetStatusDetails()(CloudPcStatusDetailsable)
     GetUserAccountType()(*CloudPcUserAccountType)
+    GetUserExperienceType()(*CloudPcUserExperienceType)
     GetUserPrincipalName()(*string)
     SetAadDeviceId(value *string)()
     SetAllotmentDisplayName(value *string)()
@@ -1398,5 +1435,6 @@ type CloudPCable interface {
     SetStatusDetail(value CloudPcStatusDetailable)()
     SetStatusDetails(value CloudPcStatusDetailsable)()
     SetUserAccountType(value *CloudPcUserAccountType)()
+    SetUserExperienceType(value *CloudPcUserExperienceType)()
     SetUserPrincipalName(value *string)()
 }

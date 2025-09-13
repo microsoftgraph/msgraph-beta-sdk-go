@@ -473,6 +473,16 @@ func (m *ReportsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4b
 func (m *ReportsRequestBuilder) RetrieveAndroidWorkProfileDeviceMigrationStatuses()(*ReportsRetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilder) {
     return NewReportsRetrieveAndroidWorkProfileDeviceMigrationStatusesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveAppleDeviceOSUpdateStatus provides operations to call the retrieveAppleDeviceOSUpdateStatus method.
+// returns a *ReportsRetrieveAppleDeviceOSUpdateStatusRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveAppleDeviceOSUpdateStatus()(*ReportsRetrieveAppleDeviceOSUpdateStatusRequestBuilder) {
+    return NewReportsRetrieveAppleDeviceOSUpdateStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveAppleOSUpdateFailures provides operations to call the retrieveAppleOSUpdateFailures method.
+// returns a *ReportsRetrieveAppleOSUpdateFailuresRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveAppleOSUpdateFailures()(*ReportsRetrieveAppleOSUpdateFailuresRequestBuilder) {
+    return NewReportsRetrieveAppleOSUpdateFailuresRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveCloudPkiLeafCertificateReport provides operations to call the retrieveCloudPkiLeafCertificateReport method.
 // returns a *ReportsRetrieveCloudPkiLeafCertificateReportRequestBuilder when successful
 func (m *ReportsRequestBuilder) RetrieveCloudPkiLeafCertificateReport()(*ReportsRetrieveCloudPkiLeafCertificateReportRequestBuilder) {
@@ -487,6 +497,11 @@ func (m *ReportsRequestBuilder) RetrieveCloudPkiLeafCertificateSummaryReport()(*
 // returns a *ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder when successful
 func (m *ReportsRequestBuilder) RetrieveDeviceAppInstallationStatusReport()(*ReportsRetrieveDeviceAppInstallationStatusReportRequestBuilder) {
     return NewReportsRetrieveDeviceAppInstallationStatusReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveEnrollmentTimeGroupingFailureReport provides operations to call the retrieveEnrollmentTimeGroupingFailureReport method.
+// returns a *ReportsRetrieveEnrollmentTimeGroupingFailureReportRequestBuilder when successful
+func (m *ReportsRequestBuilder) RetrieveEnrollmentTimeGroupingFailureReport()(*ReportsRetrieveEnrollmentTimeGroupingFailureReportRequestBuilder) {
+    return NewReportsRetrieveEnrollmentTimeGroupingFailureReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveSecurityTaskAppsReport provides operations to call the retrieveSecurityTaskAppsReport method.
 // returns a *ReportsRetrieveSecurityTaskAppsReportRequestBuilder when successful

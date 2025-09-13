@@ -102,6 +102,16 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a
         }
         return nil
     }
+    res["isAgenticExperienceEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsAgenticExperienceEnabled(val)
+        }
+        return nil
+    }
     res["isApprovalJustificationRequired"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -184,6 +194,18 @@ func (m *AssignmentReviewSettings) GetFieldDeserializers()(map[string]func(i878a
 // returns a *bool when successful
 func (m *AssignmentReviewSettings) GetIsAccessRecommendationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isAccessRecommendationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsAgenticExperienceEnabled gets the isAgenticExperienceEnabled property value. The isAgenticExperienceEnabled property
+// returns a *bool when successful
+func (m *AssignmentReviewSettings) GetIsAgenticExperienceEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isAgenticExperienceEnabled")
     if err != nil {
         panic(err)
     }
@@ -298,6 +320,12 @@ func (m *AssignmentReviewSettings) Serialize(writer i878a80d2330e89d26896388a3f4
         }
     }
     {
+        err := writer.WriteBoolValue("isAgenticExperienceEnabled", m.GetIsAgenticExperienceEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isApprovalJustificationRequired", m.GetIsApprovalJustificationRequired())
         if err != nil {
             return err
@@ -385,6 +413,13 @@ func (m *AssignmentReviewSettings) SetIsAccessRecommendationEnabled(value *bool)
         panic(err)
     }
 }
+// SetIsAgenticExperienceEnabled sets the isAgenticExperienceEnabled property value. The isAgenticExperienceEnabled property
+func (m *AssignmentReviewSettings) SetIsAgenticExperienceEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isAgenticExperienceEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsApprovalJustificationRequired sets the isApprovalJustificationRequired property value. Specifies whether the reviewer must provide justification for the approval. The default value is true.
 func (m *AssignmentReviewSettings) SetIsApprovalJustificationRequired(value *bool)() {
     err := m.GetBackingStore().Set("isApprovalJustificationRequired", value)
@@ -442,6 +477,7 @@ type AssignmentReviewSettingsable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDurationInDays()(*int32)
     GetIsAccessRecommendationEnabled()(*bool)
+    GetIsAgenticExperienceEnabled()(*bool)
     GetIsApprovalJustificationRequired()(*bool)
     GetIsEnabled()(*bool)
     GetOdataType()(*string)
@@ -453,6 +489,7 @@ type AssignmentReviewSettingsable interface {
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDurationInDays(value *int32)()
     SetIsAccessRecommendationEnabled(value *bool)()
+    SetIsAgenticExperienceEnabled(value *bool)()
     SetIsApprovalJustificationRequired(value *bool)()
     SetIsEnabled(value *bool)()
     SetOdataType(value *string)()

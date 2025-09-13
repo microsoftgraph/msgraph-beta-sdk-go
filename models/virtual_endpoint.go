@@ -46,6 +46,18 @@ func (m *VirtualEndpoint) GetBulkActions()([]CloudPcBulkActionable) {
     }
     return nil
 }
+// GetCloudApps gets the cloudApps property value. A collection of cloud apps that are built on frontline shared options and provide Windows 365 end users with access to app-only sessions instead of a full desktop experience.
+// returns a []CloudPcCloudAppable when successful
+func (m *VirtualEndpoint) GetCloudApps()([]CloudPcCloudAppable) {
+    val, err := m.GetBackingStore().Get("cloudApps")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcCloudAppable)
+    }
+    return nil
+}
 // GetCloudPCs gets the cloudPCs property value. Cloud managed virtual desktops.
 // returns a []CloudPCable when successful
 func (m *VirtualEndpoint) GetCloudPCs()([]CloudPCable) {
@@ -127,6 +139,22 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
                 }
             }
             m.SetBulkActions(res)
+        }
+        return nil
+    }
+    res["cloudApps"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcCloudAppFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcCloudAppable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudPcCloudAppable)
+                }
+            }
+            m.SetCloudApps(res)
         }
         return nil
     }
@@ -488,6 +516,18 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetCloudApps() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudApps()))
+        for i, v := range m.GetCloudApps() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("cloudApps", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCloudPCs() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCloudPCs()))
         for i, v := range m.GetCloudPCs() {
@@ -654,6 +694,13 @@ func (m *VirtualEndpoint) SetBulkActions(value []CloudPcBulkActionable)() {
         panic(err)
     }
 }
+// SetCloudApps sets the cloudApps property value. A collection of cloud apps that are built on frontline shared options and provide Windows 365 end users with access to app-only sessions instead of a full desktop experience.
+func (m *VirtualEndpoint) SetCloudApps(value []CloudPcCloudAppable)() {
+    err := m.GetBackingStore().Set("cloudApps", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCloudPCs sets the cloudPCs property value. Cloud managed virtual desktops.
 func (m *VirtualEndpoint) SetCloudPCs(value []CloudPCable)() {
     err := m.GetBackingStore().Set("cloudPCs", value)
@@ -757,6 +804,7 @@ type VirtualEndpointable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuditEvents()([]CloudPcAuditEventable)
     GetBulkActions()([]CloudPcBulkActionable)
+    GetCloudApps()([]CloudPcCloudAppable)
     GetCloudPCs()([]CloudPCable)
     GetCrossCloudGovernmentOrganizationMapping()(CloudPcCrossCloudGovernmentOrganizationMappingable)
     GetDeviceImages()([]CloudPcDeviceImageable)
@@ -773,6 +821,7 @@ type VirtualEndpointable interface {
     GetUserSettings()([]CloudPcUserSettingable)
     SetAuditEvents(value []CloudPcAuditEventable)()
     SetBulkActions(value []CloudPcBulkActionable)()
+    SetCloudApps(value []CloudPcCloudAppable)()
     SetCloudPCs(value []CloudPCable)()
     SetCrossCloudGovernmentOrganizationMapping(value CloudPcCrossCloudGovernmentOrganizationMappingable)()
     SetDeviceImages(value []CloudPcDeviceImageable)()
