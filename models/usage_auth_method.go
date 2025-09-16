@@ -17,10 +17,26 @@ const (
     APPPASSWORD_USAGEAUTHMETHOD
     UNKNOWNFUTUREVALUE_USAGEAUTHMETHOD
     EXTERNALAUTHMETHOD_USAGEAUTHMETHOD
+    HARDWAREONETIMEPASSCODE_USAGEAUTHMETHOD
+    WINDOWSHELLOFORBUSINESS_USAGEAUTHMETHOD
+    MICROSOFTAUTHENTICATORPASSWORDLESS_USAGEAUTHMETHOD
+    TEMPORARYACCESSPASS_USAGEAUTHMETHOD
+    MACOSSECUREENCLAVEKEY_USAGEAUTHMETHOD
+    PASSKEYDEVICEBOUND_USAGEAUTHMETHOD
+    PASSKEYDEVICEBOUNDAUTHENTICATOR_USAGEAUTHMETHOD
+    PASSKEYDEVICEBOUNDWINDOWSHELLO_USAGEAUTHMETHOD
+    SOFTWAREONETIMEPASSCODE_USAGEAUTHMETHOD
+    MICROSOFTAUTHENTICATORPUSH_USAGEAUTHMETHOD
+    MOBILEPHONE_USAGEAUTHMETHOD
+    SMS_USAGEAUTHMETHOD
+    ALTERNATEMOBILEPHONE_USAGEAUTHMETHOD
+    FIDO2SECURITYKEY_USAGEAUTHMETHOD
+    ONETIMEPASSCODE_USAGEAUTHMETHOD
+    PASSKEYSYNCED_USAGEAUTHMETHOD
 )
 
 func (i UsageAuthMethod) String() string {
-    return []string{"email", "mobileSMS", "mobileCall", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobileCall", "fido", "appPassword", "unknownFutureValue", "externalAuthMethod"}[i]
+    return []string{"email", "mobileSMS", "mobileCall", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobileCall", "fido", "appPassword", "unknownFutureValue", "externalAuthMethod", "hardwareOneTimePasscode", "windowsHelloForBusiness", "microsoftAuthenticatorPasswordless", "temporaryAccessPass", "macOsSecureEnclaveKey", "passKeyDeviceBound", "passKeyDeviceBoundAuthenticator", "passKeyDeviceBoundWindowsHello", "softwareOneTimePasscode", "microsoftAuthenticatorPush", "mobilePhone", "sms", "alternateMobilePhone", "fido2SecurityKey", "oneTimePasscode", "passKeySynced"}[i]
 }
 func ParseUsageAuthMethod(v string) (any, error) {
     result := EMAIL_USAGEAUTHMETHOD
@@ -49,6 +65,38 @@ func ParseUsageAuthMethod(v string) (any, error) {
             result = UNKNOWNFUTUREVALUE_USAGEAUTHMETHOD
         case "externalAuthMethod":
             result = EXTERNALAUTHMETHOD_USAGEAUTHMETHOD
+        case "hardwareOneTimePasscode":
+            result = HARDWAREONETIMEPASSCODE_USAGEAUTHMETHOD
+        case "windowsHelloForBusiness":
+            result = WINDOWSHELLOFORBUSINESS_USAGEAUTHMETHOD
+        case "microsoftAuthenticatorPasswordless":
+            result = MICROSOFTAUTHENTICATORPASSWORDLESS_USAGEAUTHMETHOD
+        case "temporaryAccessPass":
+            result = TEMPORARYACCESSPASS_USAGEAUTHMETHOD
+        case "macOsSecureEnclaveKey":
+            result = MACOSSECUREENCLAVEKEY_USAGEAUTHMETHOD
+        case "passKeyDeviceBound":
+            result = PASSKEYDEVICEBOUND_USAGEAUTHMETHOD
+        case "passKeyDeviceBoundAuthenticator":
+            result = PASSKEYDEVICEBOUNDAUTHENTICATOR_USAGEAUTHMETHOD
+        case "passKeyDeviceBoundWindowsHello":
+            result = PASSKEYDEVICEBOUNDWINDOWSHELLO_USAGEAUTHMETHOD
+        case "softwareOneTimePasscode":
+            result = SOFTWAREONETIMEPASSCODE_USAGEAUTHMETHOD
+        case "microsoftAuthenticatorPush":
+            result = MICROSOFTAUTHENTICATORPUSH_USAGEAUTHMETHOD
+        case "mobilePhone":
+            result = MOBILEPHONE_USAGEAUTHMETHOD
+        case "sms":
+            result = SMS_USAGEAUTHMETHOD
+        case "alternateMobilePhone":
+            result = ALTERNATEMOBILEPHONE_USAGEAUTHMETHOD
+        case "fido2SecurityKey":
+            result = FIDO2SECURITYKEY_USAGEAUTHMETHOD
+        case "oneTimePasscode":
+            result = ONETIMEPASSCODE_USAGEAUTHMETHOD
+        case "passKeySynced":
+            result = PASSKEYSYNCED_USAGEAUTHMETHOD
         default:
             return nil, nil
     }

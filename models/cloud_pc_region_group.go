@@ -30,10 +30,29 @@ const (
     MEXICO_CLOUDPCREGIONGROUP
     AUSTRALASIA_CLOUDPCREGIONGROUP
     EUROPE_CLOUDPCREGIONGROUP
+    SINGAPORE_CLOUDPCREGIONGROUP
+    HONGKONG_CLOUDPCREGIONGROUP
+    IRELAND_CLOUDPCREGIONGROUP
+    SWEDEN_CLOUDPCREGIONGROUP
+    POLAND_CLOUDPCREGIONGROUP
+    ITALY_CLOUDPCREGIONGROUP
+    SPAIN_CLOUDPCREGIONGROUP
+    NETHERLANDS_CLOUDPCREGIONGROUP
+    BRAZIL_CLOUDPCREGIONGROUP
+    ISRAEL_CLOUDPCREGIONGROUP
+    AUTOMATIC_CLOUDPCREGIONGROUP
+    INDONESIA_CLOUDPCREGIONGROUP
+    TAIWAN_CLOUDPCREGIONGROUP
+    MALAYSIA_CLOUDPCREGIONGROUP
+    NEWZEALAND_CLOUDPCREGIONGROUP
+    AUSTRIA_CLOUDPCREGIONGROUP
+    DENMARK_CLOUDPCREGIONGROUP
+    BELGIUM_CLOUDPCREGIONGROUP
+    KENYA_CLOUDPCREGIONGROUP
 )
 
 func (i CloudPcRegionGroup) String() string {
-    return []string{"default", "australia", "canada", "usCentral", "usEast", "usWest", "france", "germany", "europeUnion", "unitedKingdom", "japan", "asia", "india", "southAmerica", "euap", "usGovernment", "usGovernmentDOD", "unknownFutureValue", "norway", "switzerland", "southKorea", "middleEast", "mexico", "australasia", "europe"}[i]
+    return []string{"default", "australia", "canada", "usCentral", "usEast", "usWest", "france", "germany", "europeUnion", "unitedKingdom", "japan", "asia", "india", "southAmerica", "euap", "usGovernment", "usGovernmentDOD", "unknownFutureValue", "norway", "switzerland", "southKorea", "middleEast", "mexico", "australasia", "europe", "singapore", "hongKong", "ireland", "sweden", "poland", "italy", "spain", "netherlands", "brazil", "israel", "automatic", "indonesia", "taiwan", "malaysia", "newZealand", "austria", "denmark", "belgium", "kenya"}[i]
 }
 func ParseCloudPcRegionGroup(v string) (any, error) {
     result := DEFAULT_CLOUDPCREGIONGROUP
@@ -88,6 +107,44 @@ func ParseCloudPcRegionGroup(v string) (any, error) {
             result = AUSTRALASIA_CLOUDPCREGIONGROUP
         case "europe":
             result = EUROPE_CLOUDPCREGIONGROUP
+        case "singapore":
+            result = SINGAPORE_CLOUDPCREGIONGROUP
+        case "hongKong":
+            result = HONGKONG_CLOUDPCREGIONGROUP
+        case "ireland":
+            result = IRELAND_CLOUDPCREGIONGROUP
+        case "sweden":
+            result = SWEDEN_CLOUDPCREGIONGROUP
+        case "poland":
+            result = POLAND_CLOUDPCREGIONGROUP
+        case "italy":
+            result = ITALY_CLOUDPCREGIONGROUP
+        case "spain":
+            result = SPAIN_CLOUDPCREGIONGROUP
+        case "netherlands":
+            result = NETHERLANDS_CLOUDPCREGIONGROUP
+        case "brazil":
+            result = BRAZIL_CLOUDPCREGIONGROUP
+        case "israel":
+            result = ISRAEL_CLOUDPCREGIONGROUP
+        case "automatic":
+            result = AUTOMATIC_CLOUDPCREGIONGROUP
+        case "indonesia":
+            result = INDONESIA_CLOUDPCREGIONGROUP
+        case "taiwan":
+            result = TAIWAN_CLOUDPCREGIONGROUP
+        case "malaysia":
+            result = MALAYSIA_CLOUDPCREGIONGROUP
+        case "newZealand":
+            result = NEWZEALAND_CLOUDPCREGIONGROUP
+        case "austria":
+            result = AUSTRIA_CLOUDPCREGIONGROUP
+        case "denmark":
+            result = DENMARK_CLOUDPCREGIONGROUP
+        case "belgium":
+            result = BELGIUM_CLOUDPCREGIONGROUP
+        case "kenya":
+            result = KENYA_CLOUDPCREGIONGROUP
         default:
             return nil, nil
     }
