@@ -43,7 +43,7 @@ func (m *AuthenticationBehaviors) GetAdditionalData()(map[string]any) {
 func (m *AuthenticationBehaviors) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetBlockAzureADGraphAccess gets the blockAzureADGraphAccess property value. If false, allows the app to have extended access to Azure AD Graph until June 30, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
+// GetBlockAzureADGraphAccess gets the blockAzureADGraphAccess property value. If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
 // returns a *bool when successful
 func (m *AuthenticationBehaviors) GetBlockAzureADGraphAccess()(*bool) {
     val, err := m.GetBackingStore().Get("blockAzureADGraphAccess")
@@ -182,7 +182,7 @@ func (m *AuthenticationBehaviors) SetAdditionalData(value map[string]any)() {
 func (m *AuthenticationBehaviors) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetBlockAzureADGraphAccess sets the blockAzureADGraphAccess property value. If false, allows the app to have extended access to Azure AD Graph until June 30, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
+// SetBlockAzureADGraphAccess sets the blockAzureADGraphAccess property value. If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.
 func (m *AuthenticationBehaviors) SetBlockAzureADGraphAccess(value *bool)() {
     err := m.GetBackingStore().Set("blockAzureADGraphAccess", value)
     if err != nil {

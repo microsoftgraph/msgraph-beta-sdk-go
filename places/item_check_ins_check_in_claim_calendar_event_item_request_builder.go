@@ -21,7 +21,7 @@ type ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderDeleteRequestConfigu
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderGetQueryParameters get checkIns from places
+// ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderGetQueryParameters read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.
 type ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *ItemCheckInsCheckInClaimCalendarEventItemRequestBuilder) Delete(ctx con
     }
     return nil
 }
-// Get get checkIns from places
+// Get read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.
 // returns a CheckInClaimable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/checkinclaim-get?view=graph-rest-beta
 func (m *ItemCheckInsCheckInClaimCalendarEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CheckInClaimable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ItemCheckInsCheckInClaimCalendarEventItemRequestBuilder) ToDeleteReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get checkIns from places
+// ToGetRequestInformation read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.
 // returns a *RequestInformation when successful
 func (m *ItemCheckInsCheckInClaimCalendarEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCheckInsCheckInClaimCalendarEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

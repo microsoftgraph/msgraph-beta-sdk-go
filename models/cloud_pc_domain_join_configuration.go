@@ -69,6 +69,16 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
         }
         return nil
     }
+    res["geographicLocationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcGeographicLocationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGeographicLocationType(val.(*CloudPcGeographicLocationType))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -120,6 +130,18 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
         return nil
     }
     return res
+}
+// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
+// returns a *CloudPcGeographicLocationType when successful
+func (m *CloudPcDomainJoinConfiguration) GetGeographicLocationType()(*CloudPcGeographicLocationType) {
+    val, err := m.GetBackingStore().Get("geographicLocationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcGeographicLocationType)
+    }
+    return nil
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
@@ -190,6 +212,13 @@ func (m *CloudPcDomainJoinConfiguration) Serialize(writer i878a80d2330e89d268963
             return err
         }
     }
+    if m.GetGeographicLocationType() != nil {
+        cast := (*m.GetGeographicLocationType()).String()
+        err := writer.WriteStringValue("geographicLocationType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -248,6 +277,13 @@ func (m *CloudPcDomainJoinConfiguration) SetDomainJoinType(value *CloudPcDomainJ
         panic(err)
     }
 }
+// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
+func (m *CloudPcDomainJoinConfiguration) SetGeographicLocationType(value *CloudPcGeographicLocationType)() {
+    err := m.GetBackingStore().Set("geographicLocationType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *CloudPcDomainJoinConfiguration) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -289,6 +325,7 @@ type CloudPcDomainJoinConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDomainJoinType()(*CloudPcDomainJoinType)
+    GetGeographicLocationType()(*CloudPcGeographicLocationType)
     GetOdataType()(*string)
     GetOnPremisesConnectionId()(*string)
     GetRegionGroup()(*CloudPcRegionGroup)
@@ -296,6 +333,7 @@ type CloudPcDomainJoinConfigurationable interface {
     GetTypeEscaped()(*CloudPcDomainJoinType)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDomainJoinType(value *CloudPcDomainJoinType)()
+    SetGeographicLocationType(value *CloudPcGeographicLocationType)()
     SetOdataType(value *string)()
     SetOnPremisesConnectionId(value *string)()
     SetRegionGroup(value *CloudPcRegionGroup)()
