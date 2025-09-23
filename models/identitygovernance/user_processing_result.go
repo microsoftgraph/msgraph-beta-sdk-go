@@ -194,7 +194,7 @@ func (m *UserProcessingResult) GetScheduledDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetStartedDateTime gets the startedDateTime property value. The date time that the workflow execution started. Value is null if the workflow execution has not started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// GetStartedDateTime gets the startedDateTime property value. The date time that the workflow execution started. Value is null if the workflow execution hasn't started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 // returns a *Time when successful
 func (m *UserProcessingResult) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
@@ -388,7 +388,7 @@ func (m *UserProcessingResult) SetScheduledDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
-// SetStartedDateTime sets the startedDateTime property value. The date time that the workflow execution started. Value is null if the workflow execution has not started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
+// SetStartedDateTime sets the startedDateTime property value. The date time that the workflow execution started. Value is null if the workflow execution hasn't started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
 func (m *UserProcessingResult) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startedDateTime", value)
     if err != nil {

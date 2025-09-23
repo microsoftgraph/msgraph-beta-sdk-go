@@ -40,7 +40,7 @@ func (m *UserInactivityTrigger) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetInactivityPeriodInDays gets the inactivityPeriodInDays property value. The inactivityPeriodInDays property
+// GetInactivityPeriodInDays gets the inactivityPeriodInDays property value. The number of days a user must be inactive before triggering workflow execution.
 // returns a *int32 when successful
 func (m *UserInactivityTrigger) GetInactivityPeriodInDays()(*int32) {
     val, err := m.GetBackingStore().Get("inactivityPeriodInDays")
@@ -66,7 +66,7 @@ func (m *UserInactivityTrigger) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetInactivityPeriodInDays sets the inactivityPeriodInDays property value. The inactivityPeriodInDays property
+// SetInactivityPeriodInDays sets the inactivityPeriodInDays property value. The number of days a user must be inactive before triggering workflow execution.
 func (m *UserInactivityTrigger) SetInactivityPeriodInDays(value *int32)() {
     err := m.GetBackingStore().Set("inactivityPeriodInDays", value)
     if err != nil {

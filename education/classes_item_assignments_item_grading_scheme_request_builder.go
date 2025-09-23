@@ -14,7 +14,7 @@ import (
 type ClassesItemAssignmentsItemGradingSchemeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemAssignmentsItemGradingSchemeRequestBuilderGetQueryParameters get gradingScheme from education
+// ClassesItemAssignmentsItemGradingSchemeRequestBuilderGetQueryParameters when set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
 type ClassesItemAssignmentsItemGradingSchemeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewClassesItemAssignmentsItemGradingSchemeRequestBuilder(rawUrl string, req
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentsItemGradingSchemeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get gradingScheme from education
+// Get when set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
 // returns a EducationGradingSchemeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentsItemGradingSchemeRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemGradingSchemeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable, error) {
@@ -63,7 +63,7 @@ func (m *ClassesItemAssignmentsItemGradingSchemeRequestBuilder) Get(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable), nil
 }
-// ToGetRequestInformation get gradingScheme from education
+// ToGetRequestInformation when set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentsItemGradingSchemeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentsItemGradingSchemeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
