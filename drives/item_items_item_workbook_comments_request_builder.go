@@ -14,7 +14,7 @@ import (
 type ItemItemsItemWorkbookCommentsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemItemsItemWorkbookCommentsRequestBuilderGetQueryParameters get comments from drives
+// ItemItemsItemWorkbookCommentsRequestBuilderGetQueryParameters represents a collection of comments in a workbook.
 type ItemItemsItemWorkbookCommentsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewItemItemsItemWorkbookCommentsRequestBuilder(rawUrl string, requestAdapte
 func (m *ItemItemsItemWorkbookCommentsRequestBuilder) Count()(*ItemItemsItemWorkbookCommentsCountRequestBuilder) {
     return NewItemItemsItemWorkbookCommentsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get comments from drives
+// Get represents a collection of comments in a workbook.
 // returns a WorkbookCommentCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemItemsItemWorkbookCommentsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookCommentCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemItemsItemWorkbookCommentsRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.WorkbookCommentable), nil
 }
-// ToGetRequestInformation get comments from drives
+// ToGetRequestInformation represents a collection of comments in a workbook.
 // returns a *RequestInformation when successful
 func (m *ItemItemsItemWorkbookCommentsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemItemsItemWorkbookCommentsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

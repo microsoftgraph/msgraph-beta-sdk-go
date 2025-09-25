@@ -14,7 +14,7 @@ import (
 type ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilderGetQueryParameters get defaultGradingScheme from education
+// ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilderGetQueryParameters the default grading scheme for assignments created in this class.
 type ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilder(rawUrl s
     urlParams["request-raw-url"] = rawUrl
     return NewClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get defaultGradingScheme from education
+// Get the default grading scheme for assignments created in this class.
 // returns a EducationGradingSchemeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilder) Get(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable, error) {
@@ -63,7 +63,7 @@ func (m *ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilder) Get(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationGradingSchemeable), nil
 }
-// ToGetRequestInformation get defaultGradingScheme from education
+// ToGetRequestInformation the default grading scheme for assignments created in this class.
 // returns a *RequestInformation when successful
 func (m *ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ClassesItemAssignmentSettingsDefaultGradingSchemeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
