@@ -551,7 +551,7 @@ func (m *EducationAssignment) GetGradingCategory()(EducationGradingCategoryable)
     }
     return nil
 }
-// GetGradingScheme gets the gradingScheme property value. The gradingScheme property
+// GetGradingScheme gets the gradingScheme property value. When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
 // returns a EducationGradingSchemeable when successful
 func (m *EducationAssignment) GetGradingScheme()(EducationGradingSchemeable) {
     val, err := m.GetBackingStore().Get("gradingScheme")
@@ -974,7 +974,7 @@ func (m *EducationAssignment) SetGradingCategory(value EducationGradingCategorya
         panic(err)
     }
 }
-// SetGradingScheme sets the gradingScheme property value. The gradingScheme property
+// SetGradingScheme sets the gradingScheme property value. When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.
 func (m *EducationAssignment) SetGradingScheme(value EducationGradingSchemeable)() {
     err := m.GetBackingStore().Set("gradingScheme", value)
     if err != nil {
