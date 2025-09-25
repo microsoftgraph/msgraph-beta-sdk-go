@@ -103,6 +103,11 @@ func (m *VirtualEndpointRequestBuilder) Delete(ctx context.Context, requestConfi
 func (m *VirtualEndpointRequestBuilder) DeviceImages()(*VirtualEndpointDeviceImagesRequestBuilder) {
     return NewVirtualEndpointDeviceImagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ExternalPartners provides operations to manage the externalPartners property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointExternalPartnersRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) ExternalPartners()(*VirtualEndpointExternalPartnersRequestBuilder) {
+    return NewVirtualEndpointExternalPartnersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ExternalPartnerSettings provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointExternalPartnerSettingsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) ExternalPartnerSettings()(*VirtualEndpointExternalPartnerSettingsRequestBuilder) {

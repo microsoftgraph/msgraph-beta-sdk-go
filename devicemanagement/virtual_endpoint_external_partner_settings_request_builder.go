@@ -50,6 +50,7 @@ type VirtualEndpointExternalPartnerSettingsRequestBuilderPostRequestConfiguratio
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
 // ByCloudPcExternalPartnerSettingId provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.
+// Deprecated: The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
 // returns a *VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder when successful
 func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) ByCloudPcExternalPartnerSettingId(cloudPcExternalPartnerSettingId string)(*VirtualEndpointExternalPartnerSettingsCloudPcExternalPartnerSettingItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,6 +81,7 @@ func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) Count()(*VirtualE
     return NewVirtualEndpointExternalPartnerSettingsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get a list of the cloudPcExternalPartnerSetting objects and their properties.
+// Deprecated: The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
 // returns a CloudPcExternalPartnerSettingCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -103,6 +105,7 @@ func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) Get(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingCollectionResponseable), nil
 }
 // Post create a new cloudPcExternalPartnerSetting object.
+// Deprecated: The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
 // returns a CloudPcExternalPartnerSettingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -126,6 +129,7 @@ func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) Post(ctx context.
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable), nil
 }
 // ToGetRequestInformation get a list of the cloudPcExternalPartnerSetting objects and their properties.
+// Deprecated: The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointExternalPartnerSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -140,6 +144,7 @@ func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // ToPostRequestInformation create a new cloudPcExternalPartnerSetting object.
+// Deprecated: The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerSettingable, requestConfiguration *VirtualEndpointExternalPartnerSettingsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -155,6 +160,7 @@ func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) ToPostRequestInfo
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The cloudPcExternalPartnerSetting is deprecated and will not be supported starting March 31, 2026. This entity will not be included in the API response. Please use externalPartners instead. as of 2025-02/cloudPcExternalPartnerSetting on 2025-02-18 and will be removed 2026-03-31
 // returns a *VirtualEndpointExternalPartnerSettingsRequestBuilder when successful
 func (m *VirtualEndpointExternalPartnerSettingsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointExternalPartnerSettingsRequestBuilder) {
     return NewVirtualEndpointExternalPartnerSettingsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

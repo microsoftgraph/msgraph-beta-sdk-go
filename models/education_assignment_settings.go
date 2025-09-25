@@ -22,7 +22,7 @@ func NewEducationAssignmentSettings()(*EducationAssignmentSettings) {
 func CreateEducationAssignmentSettingsFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignmentSettings(), nil
 }
-// GetDefaultGradingScheme gets the defaultGradingScheme property value. The defaultGradingScheme property
+// GetDefaultGradingScheme gets the defaultGradingScheme property value. The default grading scheme for assignments created in this class.
 // returns a EducationGradingSchemeable when successful
 func (m *EducationAssignmentSettings) GetDefaultGradingScheme()(EducationGradingSchemeable) {
     val, err := m.GetBackingStore().Get("defaultGradingScheme")
@@ -104,7 +104,7 @@ func (m *EducationAssignmentSettings) GetGradingCategories()([]EducationGradingC
     }
     return nil
 }
-// GetGradingSchemes gets the gradingSchemes property value. The gradingSchemes property
+// GetGradingSchemes gets the gradingSchemes property value. The grading schemes that can be attached to assignments created in this class.
 // returns a []EducationGradingSchemeable when successful
 func (m *EducationAssignmentSettings) GetGradingSchemes()([]EducationGradingSchemeable) {
     val, err := m.GetBackingStore().Get("gradingSchemes")
@@ -172,7 +172,7 @@ func (m *EducationAssignmentSettings) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetDefaultGradingScheme sets the defaultGradingScheme property value. The defaultGradingScheme property
+// SetDefaultGradingScheme sets the defaultGradingScheme property value. The default grading scheme for assignments created in this class.
 func (m *EducationAssignmentSettings) SetDefaultGradingScheme(value EducationGradingSchemeable)() {
     err := m.GetBackingStore().Set("defaultGradingScheme", value)
     if err != nil {
@@ -186,7 +186,7 @@ func (m *EducationAssignmentSettings) SetGradingCategories(value []EducationGrad
         panic(err)
     }
 }
-// SetGradingSchemes sets the gradingSchemes property value. The gradingSchemes property
+// SetGradingSchemes sets the gradingSchemes property value. The grading schemes that can be attached to assignments created in this class.
 func (m *EducationAssignmentSettings) SetGradingSchemes(value []EducationGradingSchemeable)() {
     err := m.GetBackingStore().Set("gradingSchemes", value)
     if err != nil {

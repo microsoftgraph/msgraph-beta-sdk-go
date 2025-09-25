@@ -64,7 +64,7 @@ func (m *Place) GetAddress()(PhysicalAddressable) {
     }
     return nil
 }
-// GetCheckIns gets the checkIns property value. The checkIns property
+// GetCheckIns gets the checkIns property value. A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 // returns a []CheckInClaimable when successful
 func (m *Place) GetCheckIns()([]CheckInClaimable) {
     val, err := m.GetBackingStore().Get("checkIns")
@@ -371,7 +371,7 @@ func (m *Place) SetAddress(value PhysicalAddressable)() {
         panic(err)
     }
 }
-// SetCheckIns sets the checkIns property value. The checkIns property
+// SetCheckIns sets the checkIns property value. A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.
 func (m *Place) SetCheckIns(value []CheckInClaimable)() {
     err := m.GetBackingStore().Set("checkIns", value)
     if err != nil {

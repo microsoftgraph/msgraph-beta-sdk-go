@@ -187,6 +187,16 @@ func (m *OnPremisesPublishing) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["isContinuousAccessEvaluationEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsContinuousAccessEvaluationEnabled(val)
+        }
+        return nil
+    }
     res["isDnsResolutionEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -419,6 +429,18 @@ func (m *OnPremisesPublishing) GetIsAccessibleViaZTNAClient()(*bool) {
 // returns a *bool when successful
 func (m *OnPremisesPublishing) GetIsBackendCertificateValidationEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("isBackendCertificateValidationEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsContinuousAccessEvaluationEnabled gets the isContinuousAccessEvaluationEnabled property value. Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.
+// returns a *bool when successful
+func (m *OnPremisesPublishing) GetIsContinuousAccessEvaluationEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isContinuousAccessEvaluationEnabled")
     if err != nil {
         panic(err)
     }
@@ -707,6 +729,12 @@ func (m *OnPremisesPublishing) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err := writer.WriteBoolValue("isContinuousAccessEvaluationEnabled", m.GetIsContinuousAccessEvaluationEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isDnsResolutionEnabled", m.GetIsDnsResolutionEnabled())
         if err != nil {
             return err
@@ -907,6 +935,13 @@ func (m *OnPremisesPublishing) SetIsBackendCertificateValidationEnabled(value *b
         panic(err)
     }
 }
+// SetIsContinuousAccessEvaluationEnabled sets the isContinuousAccessEvaluationEnabled property value. Indicates whether continuous access evaluation is enabled for Application Proxy application. For all Application Proxy apps, the property is set to true by default.
+func (m *OnPremisesPublishing) SetIsContinuousAccessEvaluationEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("isContinuousAccessEvaluationEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsDnsResolutionEnabled sets the isDnsResolutionEnabled property value. Indicates Microsoft Entra Private Access should handle DNS resolution. false by default.
 func (m *OnPremisesPublishing) SetIsDnsResolutionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isDnsResolutionEnabled", value)
@@ -1053,6 +1088,7 @@ type OnPremisesPublishingable interface {
     GetInternalUrl()(*string)
     GetIsAccessibleViaZTNAClient()(*bool)
     GetIsBackendCertificateValidationEnabled()(*bool)
+    GetIsContinuousAccessEvaluationEnabled()(*bool)
     GetIsDnsResolutionEnabled()(*bool)
     GetIsHttpOnlyCookieEnabled()(*bool)
     GetIsOnPremPublishingEnabled()(*bool)
@@ -1081,6 +1117,7 @@ type OnPremisesPublishingable interface {
     SetInternalUrl(value *string)()
     SetIsAccessibleViaZTNAClient(value *bool)()
     SetIsBackendCertificateValidationEnabled(value *bool)()
+    SetIsContinuousAccessEvaluationEnabled(value *bool)()
     SetIsDnsResolutionEnabled(value *bool)()
     SetIsHttpOnlyCookieEnabled(value *bool)()
     SetIsOnPremPublishingEnabled(value *bool)()

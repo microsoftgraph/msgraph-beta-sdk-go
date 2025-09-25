@@ -94,6 +94,18 @@ func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
     }
     return nil
 }
+// GetExternalPartners gets the externalPartners property value. The externalPartners property
+// returns a []CloudPcExternalPartnerable when successful
+func (m *VirtualEndpoint) GetExternalPartners()([]CloudPcExternalPartnerable) {
+    val, err := m.GetBackingStore().Get("externalPartners")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcExternalPartnerable)
+    }
+    return nil
+}
 // GetExternalPartnerSettings gets the externalPartnerSettings property value. The external partner settings on a Cloud PC.
 // returns a []CloudPcExternalPartnerSettingable when successful
 func (m *VirtualEndpoint) GetExternalPartnerSettings()([]CloudPcExternalPartnerSettingable) {
@@ -197,6 +209,22 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
                 }
             }
             m.SetDeviceImages(res)
+        }
+        return nil
+    }
+    res["externalPartners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcExternalPartnerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcExternalPartnerable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudPcExternalPartnerable)
+                }
+            }
+            m.SetExternalPartners(res)
         }
         return nil
     }
@@ -558,6 +586,18 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetExternalPartners() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalPartners()))
+        for i, v := range m.GetExternalPartners() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("externalPartners", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetExternalPartnerSettings() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetExternalPartnerSettings()))
         for i, v := range m.GetExternalPartnerSettings() {
@@ -722,6 +762,13 @@ func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImageable)() {
         panic(err)
     }
 }
+// SetExternalPartners sets the externalPartners property value. The externalPartners property
+func (m *VirtualEndpoint) SetExternalPartners(value []CloudPcExternalPartnerable)() {
+    err := m.GetBackingStore().Set("externalPartners", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetExternalPartnerSettings sets the externalPartnerSettings property value. The external partner settings on a Cloud PC.
 func (m *VirtualEndpoint) SetExternalPartnerSettings(value []CloudPcExternalPartnerSettingable)() {
     err := m.GetBackingStore().Set("externalPartnerSettings", value)
@@ -808,6 +855,7 @@ type VirtualEndpointable interface {
     GetCloudPCs()([]CloudPCable)
     GetCrossCloudGovernmentOrganizationMapping()(CloudPcCrossCloudGovernmentOrganizationMappingable)
     GetDeviceImages()([]CloudPcDeviceImageable)
+    GetExternalPartners()([]CloudPcExternalPartnerable)
     GetExternalPartnerSettings()([]CloudPcExternalPartnerSettingable)
     GetFrontLineServicePlans()([]CloudPcFrontLineServicePlanable)
     GetGalleryImages()([]CloudPcGalleryImageable)
@@ -825,6 +873,7 @@ type VirtualEndpointable interface {
     SetCloudPCs(value []CloudPCable)()
     SetCrossCloudGovernmentOrganizationMapping(value CloudPcCrossCloudGovernmentOrganizationMappingable)()
     SetDeviceImages(value []CloudPcDeviceImageable)()
+    SetExternalPartners(value []CloudPcExternalPartnerable)()
     SetExternalPartnerSettings(value []CloudPcExternalPartnerSettingable)()
     SetFrontLineServicePlans(value []CloudPcFrontLineServicePlanable)()
     SetGalleryImages(value []CloudPcGalleryImageable)()

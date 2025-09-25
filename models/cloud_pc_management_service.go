@@ -13,12 +13,14 @@ const (
     DEVBOX_CLOUDPCMANAGEMENTSERVICE = 2
     UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE = 4
     RPABOX_CLOUDPCMANAGEMENTSERVICE = 8
+    MICROSOFT365OPAL_CLOUDPCMANAGEMENTSERVICE = 16
+    MICROSOFT365BIZCHAT_CLOUDPCMANAGEMENTSERVICE = 32
 )
 
 func (i CloudPcManagementService) String() string {
     var values []string
-    options := []string{"windows365", "devBox", "unknownFutureValue", "rpaBox"}
-    for p := 0; p < 4; p++ {
+    options := []string{"windows365", "devBox", "unknownFutureValue", "rpaBox", "microsoft365Opal", "microsoft365BizChat"}
+    for p := 0; p < 6; p++ {
         mantis := CloudPcManagementService(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -39,6 +41,10 @@ func ParseCloudPcManagementService(v string) (any, error) {
                 result |= UNKNOWNFUTUREVALUE_CLOUDPCMANAGEMENTSERVICE
             case "rpaBox":
                 result |= RPABOX_CLOUDPCMANAGEMENTSERVICE
+            case "microsoft365Opal":
+                result |= MICROSOFT365OPAL_CLOUDPCMANAGEMENTSERVICE
+            case "microsoft365BizChat":
+                result |= MICROSOFT365BIZCHAT_CLOUDPCMANAGEMENTSERVICE
             default:
                 return nil, nil
         }

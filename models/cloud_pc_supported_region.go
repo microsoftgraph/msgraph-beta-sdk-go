@@ -48,6 +48,16 @@ func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["geographicLocationType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcGeographicLocationType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGeographicLocationType(val.(*CloudPcGeographicLocationType))
+        }
+        return nil
+    }
     res["regionGroup"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCloudPcRegionGroup)
         if err != nil {
@@ -89,6 +99,18 @@ func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
+// returns a *CloudPcGeographicLocationType when successful
+func (m *CloudPcSupportedRegion) GetGeographicLocationType()(*CloudPcGeographicLocationType) {
+    val, err := m.GetBackingStore().Get("geographicLocationType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcGeographicLocationType)
+    }
+    return nil
 }
 // GetRegionGroup gets the regionGroup property value. The regionGroup property
 // returns a *CloudPcRegionGroup when successful
@@ -150,6 +172,13 @@ func (m *CloudPcSupportedRegion) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    if m.GetGeographicLocationType() != nil {
+        cast := (*m.GetGeographicLocationType()).String()
+        err = writer.WriteStringValue("geographicLocationType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetRegionGroup() != nil {
         cast := (*m.GetRegionGroup()).String()
         err = writer.WriteStringValue("regionGroup", &cast)
@@ -186,6 +215,13 @@ func (m *CloudPcSupportedRegion) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
+func (m *CloudPcSupportedRegion) SetGeographicLocationType(value *CloudPcGeographicLocationType)() {
+    err := m.GetBackingStore().Set("geographicLocationType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetRegionGroup sets the regionGroup property value. The regionGroup property
 func (m *CloudPcSupportedRegion) SetRegionGroup(value *CloudPcRegionGroup)() {
     err := m.GetBackingStore().Set("regionGroup", value)
@@ -218,11 +254,13 @@ type CloudPcSupportedRegionable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDisplayName()(*string)
+    GetGeographicLocationType()(*CloudPcGeographicLocationType)
     GetRegionGroup()(*CloudPcRegionGroup)
     GetRegionRestrictionDetail()(CloudPcSupportedRegionRestrictionDetailable)
     GetRegionStatus()(*CloudPcSupportedRegionStatus)
     GetSupportedSolution()(*CloudPcManagementService)
     SetDisplayName(value *string)()
+    SetGeographicLocationType(value *CloudPcGeographicLocationType)()
     SetRegionGroup(value *CloudPcRegionGroup)()
     SetRegionRestrictionDetail(value CloudPcSupportedRegionRestrictionDetailable)()
     SetRegionStatus(value *CloudPcSupportedRegionStatus)()
