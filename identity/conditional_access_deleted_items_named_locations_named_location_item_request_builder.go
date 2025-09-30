@@ -21,7 +21,7 @@ type ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderD
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters get namedLocations from identity
+// ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 type ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,8 +57,11 @@ func NewConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuild
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete delete navigation property namedLocations for identity
+// Delete permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/policydeletableitem-delete?view=graph-rest-beta
 func (m *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -73,9 +76,12 @@ func (m *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuil
     }
     return nil
 }
-// Get get namedLocations from identity
+// Get read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 // returns a NamedLocationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/policydeletableitem-get?view=graph-rest-beta
 func (m *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -118,7 +124,7 @@ func (m *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuil
 func (m *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilder) Restore()(*ConditionalAccessDeletedItemsNamedLocationsItemRestoreRequestBuilder) {
     return NewConditionalAccessDeletedItemsNamedLocationsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation delete navigation property namedLocations for identity
+// ToDeleteRequestInformation permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -129,7 +135,7 @@ func (m *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuil
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get namedLocations from identity
+// ToGetRequestInformation read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessDeletedItemsNamedLocationsNamedLocationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

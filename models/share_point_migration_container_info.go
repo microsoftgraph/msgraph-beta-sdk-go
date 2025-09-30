@@ -43,7 +43,7 @@ func (m *SharePointMigrationContainerInfo) GetAdditionalData()(map[string]any) {
 func (m *SharePointMigrationContainerInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetDataContainerUri gets the dataContainerUri property value. The dataContainerUri property
+// GetDataContainerUri gets the dataContainerUri property value. A valid URL with a SAS token for accessing the Azure blob storage container that contains the file content. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationContainerInfo) GetDataContainerUri()(*string) {
     val, err := m.GetBackingStore().Get("dataContainerUri")
@@ -55,7 +55,7 @@ func (m *SharePointMigrationContainerInfo) GetDataContainerUri()(*string) {
     }
     return nil
 }
-// GetEncryptionKey gets the encryptionKey property value. The encryptionKey property
+// GetEncryptionKey gets the encryptionKey property value. Provides the AES-256-CBC encryption key if files stored in Azure blob containers are encrypted. The key is Base64-encoded. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationContainerInfo) GetEncryptionKey()(*string) {
     val, err := m.GetBackingStore().Get("encryptionKey")
@@ -113,7 +113,7 @@ func (m *SharePointMigrationContainerInfo) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetMetadataContainerUri gets the metadataContainerUri property value. The metadataContainerUri property
+// GetMetadataContainerUri gets the metadataContainerUri property value. A valid URL with a SAS token for accessing the Azure blob storage container that contains the file metadata. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationContainerInfo) GetMetadataContainerUri()(*string) {
     val, err := m.GetBackingStore().Get("metadataContainerUri")
@@ -182,21 +182,21 @@ func (m *SharePointMigrationContainerInfo) SetAdditionalData(value map[string]an
 func (m *SharePointMigrationContainerInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetDataContainerUri sets the dataContainerUri property value. The dataContainerUri property
+// SetDataContainerUri sets the dataContainerUri property value. A valid URL with a SAS token for accessing the Azure blob storage container that contains the file content. Read-only.
 func (m *SharePointMigrationContainerInfo) SetDataContainerUri(value *string)() {
     err := m.GetBackingStore().Set("dataContainerUri", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEncryptionKey sets the encryptionKey property value. The encryptionKey property
+// SetEncryptionKey sets the encryptionKey property value. Provides the AES-256-CBC encryption key if files stored in Azure blob containers are encrypted. The key is Base64-encoded. Read-only.
 func (m *SharePointMigrationContainerInfo) SetEncryptionKey(value *string)() {
     err := m.GetBackingStore().Set("encryptionKey", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMetadataContainerUri sets the metadataContainerUri property value. The metadataContainerUri property
+// SetMetadataContainerUri sets the metadataContainerUri property value. A valid URL with a SAS token for accessing the Azure blob storage container that contains the file metadata. Read-only.
 func (m *SharePointMigrationContainerInfo) SetMetadataContainerUri(value *string)() {
     err := m.GetBackingStore().Set("metadataContainerUri", value)
     if err != nil {

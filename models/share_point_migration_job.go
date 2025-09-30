@@ -66,7 +66,7 @@ func (m *SharePointMigrationJob) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetProgressEvents gets the progressEvents property value. The progressEvents property
+// GetProgressEvents gets the progressEvents property value. A collection of migration events that reflects the job status changes.
 // returns a []SharePointMigrationEventable when successful
 func (m *SharePointMigrationJob) GetProgressEvents()([]SharePointMigrationEventable) {
     val, err := m.GetBackingStore().Get("progressEvents")
@@ -111,7 +111,7 @@ func (m *SharePointMigrationJob) SetContainerInfo(value SharePointMigrationConta
         panic(err)
     }
 }
-// SetProgressEvents sets the progressEvents property value. The progressEvents property
+// SetProgressEvents sets the progressEvents property value. A collection of migration events that reflects the job status changes.
 func (m *SharePointMigrationJob) SetProgressEvents(value []SharePointMigrationEventable)() {
     err := m.GetBackingStore().Set("progressEvents", value)
     if err != nil {

@@ -21,7 +21,7 @@ type TeamsPolicyRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsPolicyRequestBuilderGetQueryParameters get policy from admin
+// TeamsPolicyRequestBuilderGetQueryParameters represents a navigation property to the Teams policy assignment object.
 type TeamsPolicyRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *TeamsPolicyRequestBuilder) Delete(ctx context.Context, requestConfigura
     }
     return nil
 }
-// Get get policy from admin
+// Get represents a navigation property to the Teams policy assignment object.
 // returns a TeamsPolicyAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsPolicyRequestBuilderGetRequestConfiguration)(ida00aeab33baad931d9ea7ddda72fd1a74178962fdc58f5709ddf52b9f0fcc0f.TeamsPolicyAssignmentable, error) {
@@ -124,7 +124,7 @@ func (m *TeamsPolicyRequestBuilder) ToDeleteRequestInformation(ctx context.Conte
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get policy from admin
+// ToGetRequestInformation represents a navigation property to the Teams policy assignment object.
 // returns a *RequestInformation when successful
 func (m *TeamsPolicyRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsPolicyRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

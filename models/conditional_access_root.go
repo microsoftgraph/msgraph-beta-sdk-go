@@ -58,7 +58,7 @@ func (m *ConditionalAccessRoot) GetAuthenticationStrengths()(AuthenticationStren
     }
     return nil
 }
-// GetDeletedItems gets the deletedItems property value. The deletedItems property
+// GetDeletedItems gets the deletedItems property value. Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
 // returns a CaPoliciesDeletableRootable when successful
 func (m *ConditionalAccessRoot) GetDeletedItems()(CaPoliciesDeletableRootable) {
     val, err := m.GetBackingStore().Get("deletedItems")
@@ -301,7 +301,7 @@ func (m *ConditionalAccessRoot) SetAuthenticationStrengths(value AuthenticationS
         panic(err)
     }
 }
-// SetDeletedItems sets the deletedItems property value. The deletedItems property
+// SetDeletedItems sets the deletedItems property value. Read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
 func (m *ConditionalAccessRoot) SetDeletedItems(value CaPoliciesDeletableRootable)() {
     err := m.GetBackingStore().Set("deletedItems", value)
     if err != nil {

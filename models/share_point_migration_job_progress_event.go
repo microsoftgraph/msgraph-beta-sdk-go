@@ -22,7 +22,7 @@ func NewSharePointMigrationJobProgressEvent()(*SharePointMigrationJobProgressEve
 func CreateSharePointMigrationJobProgressEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSharePointMigrationJobProgressEvent(), nil
 }
-// GetBytesProcessed gets the bytesProcessed property value. The bytesProcessed property
+// GetBytesProcessed gets the bytesProcessed property value. The number of bytes processed. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetBytesProcessed()(*int64) {
     val, err := m.GetBackingStore().Get("bytesProcessed")
@@ -34,7 +34,7 @@ func (m *SharePointMigrationJobProgressEvent) GetBytesProcessed()(*int64) {
     }
     return nil
 }
-// GetBytesProcessedOnlyCurrentVersion gets the bytesProcessedOnlyCurrentVersion property value. The bytesProcessedOnlyCurrentVersion property
+// GetBytesProcessedOnlyCurrentVersion gets the bytesProcessedOnlyCurrentVersion property value. The number of bytes processed with version history excluded. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetBytesProcessedOnlyCurrentVersion()(*int64) {
     val, err := m.GetBackingStore().Get("bytesProcessedOnlyCurrentVersion")
@@ -46,7 +46,7 @@ func (m *SharePointMigrationJobProgressEvent) GetBytesProcessedOnlyCurrentVersio
     }
     return nil
 }
-// GetCpuDurationMs gets the cpuDurationMs property value. The cpuDurationMs property
+// GetCpuDurationMs gets the cpuDurationMs property value. CPU duration in milliseconds. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetCpuDurationMs()(*int64) {
     val, err := m.GetBackingStore().Get("cpuDurationMs")
@@ -234,7 +234,7 @@ func (m *SharePointMigrationJobProgressEvent) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetFilesProcessed gets the filesProcessed property value. The filesProcessed property
+// GetFilesProcessed gets the filesProcessed property value. The number of files processed. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetFilesProcessed()(*int64) {
     val, err := m.GetBackingStore().Get("filesProcessed")
@@ -246,7 +246,7 @@ func (m *SharePointMigrationJobProgressEvent) GetFilesProcessed()(*int64) {
     }
     return nil
 }
-// GetFilesProcessedOnlyCurrentVersion gets the filesProcessedOnlyCurrentVersion property value. The filesProcessedOnlyCurrentVersion property
+// GetFilesProcessedOnlyCurrentVersion gets the filesProcessedOnlyCurrentVersion property value. The number of files processed with version history excluded. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetFilesProcessedOnlyCurrentVersion()(*int64) {
     val, err := m.GetBackingStore().Get("filesProcessedOnlyCurrentVersion")
@@ -258,7 +258,7 @@ func (m *SharePointMigrationJobProgressEvent) GetFilesProcessedOnlyCurrentVersio
     }
     return nil
 }
-// GetIsCompleted gets the isCompleted property value. The isCompleted property
+// GetIsCompleted gets the isCompleted property value. True if the job status is End. False if the job is In progress. Read-only.
 // returns a *bool when successful
 func (m *SharePointMigrationJobProgressEvent) GetIsCompleted()(*bool) {
     val, err := m.GetBackingStore().Get("isCompleted")
@@ -270,7 +270,7 @@ func (m *SharePointMigrationJobProgressEvent) GetIsCompleted()(*bool) {
     }
     return nil
 }
-// GetLastProcessedObjectId gets the lastProcessedObjectId property value. The lastProcessedObjectId property
+// GetLastProcessedObjectId gets the lastProcessedObjectId property value. The unique identifier of the last object processed. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationJobProgressEvent) GetLastProcessedObjectId()(*string) {
     val, err := m.GetBackingStore().Get("lastProcessedObjectId")
@@ -282,7 +282,7 @@ func (m *SharePointMigrationJobProgressEvent) GetLastProcessedObjectId()(*string
     }
     return nil
 }
-// GetObjectsProcessed gets the objectsProcessed property value. The objectsProcessed property
+// GetObjectsProcessed gets the objectsProcessed property value. The number of objects processed. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetObjectsProcessed()(*int64) {
     val, err := m.GetBackingStore().Get("objectsProcessed")
@@ -294,7 +294,7 @@ func (m *SharePointMigrationJobProgressEvent) GetObjectsProcessed()(*int64) {
     }
     return nil
 }
-// GetSqlDurationMs gets the sqlDurationMs property value. The sqlDurationMs property
+// GetSqlDurationMs gets the sqlDurationMs property value. SQL duration in milliseconds. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetSqlDurationMs()(*int64) {
     val, err := m.GetBackingStore().Get("sqlDurationMs")
@@ -306,7 +306,7 @@ func (m *SharePointMigrationJobProgressEvent) GetSqlDurationMs()(*int64) {
     }
     return nil
 }
-// GetSqlQueryCount gets the sqlQueryCount property value. The sqlQueryCount property
+// GetSqlQueryCount gets the sqlQueryCount property value. SQL query count. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetSqlQueryCount()(*int64) {
     val, err := m.GetBackingStore().Get("sqlQueryCount")
@@ -318,7 +318,7 @@ func (m *SharePointMigrationJobProgressEvent) GetSqlQueryCount()(*int64) {
     }
     return nil
 }
-// GetTotalDurationMs gets the totalDurationMs property value. The totalDurationMs property
+// GetTotalDurationMs gets the totalDurationMs property value. Total duration time in milliseconds. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetTotalDurationMs()(*int64) {
     val, err := m.GetBackingStore().Get("totalDurationMs")
@@ -330,7 +330,7 @@ func (m *SharePointMigrationJobProgressEvent) GetTotalDurationMs()(*int64) {
     }
     return nil
 }
-// GetTotalErrors gets the totalErrors property value. The totalErrors property
+// GetTotalErrors gets the totalErrors property value. Total errors. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetTotalErrors()(*int64) {
     val, err := m.GetBackingStore().Get("totalErrors")
@@ -342,7 +342,7 @@ func (m *SharePointMigrationJobProgressEvent) GetTotalErrors()(*int64) {
     }
     return nil
 }
-// GetTotalExpectedBytes gets the totalExpectedBytes property value. The totalExpectedBytes property
+// GetTotalExpectedBytes gets the totalExpectedBytes property value. Total bytes to be processed. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetTotalExpectedBytes()(*int64) {
     val, err := m.GetBackingStore().Get("totalExpectedBytes")
@@ -354,7 +354,7 @@ func (m *SharePointMigrationJobProgressEvent) GetTotalExpectedBytes()(*int64) {
     }
     return nil
 }
-// GetTotalExpectedObjects gets the totalExpectedObjects property value. The totalExpectedObjects property
+// GetTotalExpectedObjects gets the totalExpectedObjects property value. The number of objects to process. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetTotalExpectedObjects()(*int64) {
     val, err := m.GetBackingStore().Get("totalExpectedObjects")
@@ -366,7 +366,7 @@ func (m *SharePointMigrationJobProgressEvent) GetTotalExpectedObjects()(*int64) 
     }
     return nil
 }
-// GetTotalRetryCount gets the totalRetryCount property value. The totalRetryCount property
+// GetTotalRetryCount gets the totalRetryCount property value. The current retry count of the job. Read-only.
 // returns a *int32 when successful
 func (m *SharePointMigrationJobProgressEvent) GetTotalRetryCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalRetryCount")
@@ -378,7 +378,7 @@ func (m *SharePointMigrationJobProgressEvent) GetTotalRetryCount()(*int32) {
     }
     return nil
 }
-// GetTotalWarnings gets the totalWarnings property value. The totalWarnings property
+// GetTotalWarnings gets the totalWarnings property value. Total warnings. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetTotalWarnings()(*int64) {
     val, err := m.GetBackingStore().Get("totalWarnings")
@@ -390,7 +390,7 @@ func (m *SharePointMigrationJobProgressEvent) GetTotalWarnings()(*int64) {
     }
     return nil
 }
-// GetWaitTimeOnSqlThrottlingMs gets the waitTimeOnSqlThrottlingMs property value. The waitTimeOnSqlThrottlingMs property
+// GetWaitTimeOnSqlThrottlingMs gets the waitTimeOnSqlThrottlingMs property value. Waiting time due to SQL throttling, in milliseconds. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobProgressEvent) GetWaitTimeOnSqlThrottlingMs()(*int64) {
     val, err := m.GetBackingStore().Get("waitTimeOnSqlThrottlingMs")
@@ -512,119 +512,119 @@ func (m *SharePointMigrationJobProgressEvent) Serialize(writer i878a80d2330e89d2
     }
     return nil
 }
-// SetBytesProcessed sets the bytesProcessed property value. The bytesProcessed property
+// SetBytesProcessed sets the bytesProcessed property value. The number of bytes processed. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetBytesProcessed(value *int64)() {
     err := m.GetBackingStore().Set("bytesProcessed", value)
     if err != nil {
         panic(err)
     }
 }
-// SetBytesProcessedOnlyCurrentVersion sets the bytesProcessedOnlyCurrentVersion property value. The bytesProcessedOnlyCurrentVersion property
+// SetBytesProcessedOnlyCurrentVersion sets the bytesProcessedOnlyCurrentVersion property value. The number of bytes processed with version history excluded. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetBytesProcessedOnlyCurrentVersion(value *int64)() {
     err := m.GetBackingStore().Set("bytesProcessedOnlyCurrentVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCpuDurationMs sets the cpuDurationMs property value. The cpuDurationMs property
+// SetCpuDurationMs sets the cpuDurationMs property value. CPU duration in milliseconds. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetCpuDurationMs(value *int64)() {
     err := m.GetBackingStore().Set("cpuDurationMs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFilesProcessed sets the filesProcessed property value. The filesProcessed property
+// SetFilesProcessed sets the filesProcessed property value. The number of files processed. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetFilesProcessed(value *int64)() {
     err := m.GetBackingStore().Set("filesProcessed", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFilesProcessedOnlyCurrentVersion sets the filesProcessedOnlyCurrentVersion property value. The filesProcessedOnlyCurrentVersion property
+// SetFilesProcessedOnlyCurrentVersion sets the filesProcessedOnlyCurrentVersion property value. The number of files processed with version history excluded. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetFilesProcessedOnlyCurrentVersion(value *int64)() {
     err := m.GetBackingStore().Set("filesProcessedOnlyCurrentVersion", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIsCompleted sets the isCompleted property value. The isCompleted property
+// SetIsCompleted sets the isCompleted property value. True if the job status is End. False if the job is In progress. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetIsCompleted(value *bool)() {
     err := m.GetBackingStore().Set("isCompleted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastProcessedObjectId sets the lastProcessedObjectId property value. The lastProcessedObjectId property
+// SetLastProcessedObjectId sets the lastProcessedObjectId property value. The unique identifier of the last object processed. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetLastProcessedObjectId(value *string)() {
     err := m.GetBackingStore().Set("lastProcessedObjectId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetObjectsProcessed sets the objectsProcessed property value. The objectsProcessed property
+// SetObjectsProcessed sets the objectsProcessed property value. The number of objects processed. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetObjectsProcessed(value *int64)() {
     err := m.GetBackingStore().Set("objectsProcessed", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSqlDurationMs sets the sqlDurationMs property value. The sqlDurationMs property
+// SetSqlDurationMs sets the sqlDurationMs property value. SQL duration in milliseconds. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetSqlDurationMs(value *int64)() {
     err := m.GetBackingStore().Set("sqlDurationMs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSqlQueryCount sets the sqlQueryCount property value. The sqlQueryCount property
+// SetSqlQueryCount sets the sqlQueryCount property value. SQL query count. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetSqlQueryCount(value *int64)() {
     err := m.GetBackingStore().Set("sqlQueryCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalDurationMs sets the totalDurationMs property value. The totalDurationMs property
+// SetTotalDurationMs sets the totalDurationMs property value. Total duration time in milliseconds. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetTotalDurationMs(value *int64)() {
     err := m.GetBackingStore().Set("totalDurationMs", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalErrors sets the totalErrors property value. The totalErrors property
+// SetTotalErrors sets the totalErrors property value. Total errors. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetTotalErrors(value *int64)() {
     err := m.GetBackingStore().Set("totalErrors", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalExpectedBytes sets the totalExpectedBytes property value. The totalExpectedBytes property
+// SetTotalExpectedBytes sets the totalExpectedBytes property value. Total bytes to be processed. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetTotalExpectedBytes(value *int64)() {
     err := m.GetBackingStore().Set("totalExpectedBytes", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalExpectedObjects sets the totalExpectedObjects property value. The totalExpectedObjects property
+// SetTotalExpectedObjects sets the totalExpectedObjects property value. The number of objects to process. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetTotalExpectedObjects(value *int64)() {
     err := m.GetBackingStore().Set("totalExpectedObjects", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalRetryCount sets the totalRetryCount property value. The totalRetryCount property
+// SetTotalRetryCount sets the totalRetryCount property value. The current retry count of the job. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetTotalRetryCount(value *int32)() {
     err := m.GetBackingStore().Set("totalRetryCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalWarnings sets the totalWarnings property value. The totalWarnings property
+// SetTotalWarnings sets the totalWarnings property value. Total warnings. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetTotalWarnings(value *int64)() {
     err := m.GetBackingStore().Set("totalWarnings", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWaitTimeOnSqlThrottlingMs sets the waitTimeOnSqlThrottlingMs property value. The waitTimeOnSqlThrottlingMs property
+// SetWaitTimeOnSqlThrottlingMs sets the waitTimeOnSqlThrottlingMs property value. Waiting time due to SQL throttling, in milliseconds. Read-only.
 func (m *SharePointMigrationJobProgressEvent) SetWaitTimeOnSqlThrottlingMs(value *int64)() {
     err := m.GetBackingStore().Set("waitTimeOnSqlThrottlingMs", value)
     if err != nil {
