@@ -199,7 +199,7 @@ func (m *ConditionalAccessPolicy) GetGrantControls()(ConditionalAccessGrantContr
     }
     return nil
 }
-// GetId gets the id property value. The id property
+// GetId gets the id property value. Specifies the identifier of a conditionalAccessPolicy object. Read-only.
 // returns a *string when successful
 func (m *ConditionalAccessPolicy) GetId()(*string) {
     val, err := m.GetBackingStore().Get("id")
@@ -345,7 +345,7 @@ func (m *ConditionalAccessPolicy) SetGrantControls(value ConditionalAccessGrantC
         panic(err)
     }
 }
-// SetId sets the id property value. The id property
+// SetId sets the id property value. Specifies the identifier of a conditionalAccessPolicy object. Read-only.
 func (m *ConditionalAccessPolicy) SetId(value *string)() {
     err := m.GetBackingStore().Set("id", value)
     if err != nil {

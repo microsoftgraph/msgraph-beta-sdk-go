@@ -48,7 +48,7 @@ func (m *SharePointMigrationJobStartEvent) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetIsRestarted gets the isRestarted property value. The isRestarted property
+// GetIsRestarted gets the isRestarted property value. True if the job is restarted. False if it's the initial start. Read-only.
 // returns a *bool when successful
 func (m *SharePointMigrationJobStartEvent) GetIsRestarted()(*bool) {
     val, err := m.GetBackingStore().Get("isRestarted")
@@ -60,7 +60,7 @@ func (m *SharePointMigrationJobStartEvent) GetIsRestarted()(*bool) {
     }
     return nil
 }
-// GetTotalRetryCount gets the totalRetryCount property value. The totalRetryCount property
+// GetTotalRetryCount gets the totalRetryCount property value. The current retry count of the job. Read-only.
 // returns a *int32 when successful
 func (m *SharePointMigrationJobStartEvent) GetTotalRetryCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalRetryCount")
@@ -92,14 +92,14 @@ func (m *SharePointMigrationJobStartEvent) Serialize(writer i878a80d2330e89d2689
     }
     return nil
 }
-// SetIsRestarted sets the isRestarted property value. The isRestarted property
+// SetIsRestarted sets the isRestarted property value. True if the job is restarted. False if it's the initial start. Read-only.
 func (m *SharePointMigrationJobStartEvent) SetIsRestarted(value *bool)() {
     err := m.GetBackingStore().Set("isRestarted", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalRetryCount sets the totalRetryCount property value. The totalRetryCount property
+// SetTotalRetryCount sets the totalRetryCount property value. The current retry count of the job. Read-only.
 func (m *SharePointMigrationJobStartEvent) SetTotalRetryCount(value *int32)() {
     err := m.GetBackingStore().Set("totalRetryCount", value)
     if err != nil {

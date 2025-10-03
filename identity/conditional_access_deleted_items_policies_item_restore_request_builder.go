@@ -34,9 +34,12 @@ func NewConditionalAccessDeletedItemsPoliciesItemRestoreRequestBuilder(rawUrl st
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessDeletedItemsPoliciesItemRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action restore
+// Post restore a deleted conditionalAccessPolicy object.
 // returns a ConditionalAccessPolicyable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/conditionalaccesspolicy-restore?view=graph-rest-beta
 func (m *ConditionalAccessDeletedItemsPoliciesItemRestoreRequestBuilder) Post(ctx context.Context, requestConfiguration *ConditionalAccessDeletedItemsPoliciesItemRestoreRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessPolicyable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -54,7 +57,7 @@ func (m *ConditionalAccessDeletedItemsPoliciesItemRestoreRequestBuilder) Post(ct
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConditionalAccessPolicyable), nil
 }
-// ToPostRequestInformation invoke action restore
+// ToPostRequestInformation restore a deleted conditionalAccessPolicy object.
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessDeletedItemsPoliciesItemRestoreRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessDeletedItemsPoliciesItemRestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

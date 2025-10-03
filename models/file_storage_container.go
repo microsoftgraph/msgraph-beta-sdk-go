@@ -446,7 +446,7 @@ func (m *FileStorageContainer) GetLockState()(*SiteLockState) {
     }
     return nil
 }
-// GetMigrationJobs gets the migrationJobs property value. The migrationJobs property
+// GetMigrationJobs gets the migrationJobs property value. The collection of sharePointMigrationJob objects local to the container. Read-write.
 // returns a []SharePointMigrationJobable when successful
 func (m *FileStorageContainer) GetMigrationJobs()([]SharePointMigrationJobable) {
     val, err := m.GetBackingStore().Get("migrationJobs")
@@ -836,7 +836,7 @@ func (m *FileStorageContainer) SetLockState(value *SiteLockState)() {
         panic(err)
     }
 }
-// SetMigrationJobs sets the migrationJobs property value. The migrationJobs property
+// SetMigrationJobs sets the migrationJobs property value. The collection of sharePointMigrationJob objects local to the container. Read-write.
 func (m *FileStorageContainer) SetMigrationJobs(value []SharePointMigrationJobable)() {
     err := m.GetBackingStore().Set("migrationJobs", value)
     if err != nil {

@@ -69,7 +69,7 @@ func (m *SharePointMigrationJobPostponedEvent) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetJobsInQueue gets the jobsInQueue property value. The jobsInQueue property
+// GetJobsInQueue gets the jobsInQueue property value. The number of migration jobs in the queue of the current database. Read-only.
 // returns a *int64 when successful
 func (m *SharePointMigrationJobPostponedEvent) GetJobsInQueue()(*int64) {
     val, err := m.GetBackingStore().Get("jobsInQueue")
@@ -81,7 +81,7 @@ func (m *SharePointMigrationJobPostponedEvent) GetJobsInQueue()(*int64) {
     }
     return nil
 }
-// GetNextPickupDateTime gets the nextPickupDateTime property value. The nextPickupDateTime property
+// GetNextPickupDateTime gets the nextPickupDateTime property value. The date and time that indicate when this job is picked up next. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 // returns a *Time when successful
 func (m *SharePointMigrationJobPostponedEvent) GetNextPickupDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("nextPickupDateTime")
@@ -93,7 +93,7 @@ func (m *SharePointMigrationJobPostponedEvent) GetNextPickupDateTime()(*i3360748
     }
     return nil
 }
-// GetReason gets the reason property value. The reason property
+// GetReason gets the reason property value. The reason for the postponement. Read-only.
 // returns a *string when successful
 func (m *SharePointMigrationJobPostponedEvent) GetReason()(*string) {
     val, err := m.GetBackingStore().Get("reason")
@@ -105,7 +105,7 @@ func (m *SharePointMigrationJobPostponedEvent) GetReason()(*string) {
     }
     return nil
 }
-// GetTotalRetryCount gets the totalRetryCount property value. The totalRetryCount property
+// GetTotalRetryCount gets the totalRetryCount property value. The current retry count of the job. Read-only.
 // returns a *int32 when successful
 func (m *SharePointMigrationJobPostponedEvent) GetTotalRetryCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalRetryCount")
@@ -149,28 +149,28 @@ func (m *SharePointMigrationJobPostponedEvent) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetJobsInQueue sets the jobsInQueue property value. The jobsInQueue property
+// SetJobsInQueue sets the jobsInQueue property value. The number of migration jobs in the queue of the current database. Read-only.
 func (m *SharePointMigrationJobPostponedEvent) SetJobsInQueue(value *int64)() {
     err := m.GetBackingStore().Set("jobsInQueue", value)
     if err != nil {
         panic(err)
     }
 }
-// SetNextPickupDateTime sets the nextPickupDateTime property value. The nextPickupDateTime property
+// SetNextPickupDateTime sets the nextPickupDateTime property value. The date and time that indicate when this job is picked up next. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
 func (m *SharePointMigrationJobPostponedEvent) SetNextPickupDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("nextPickupDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReason sets the reason property value. The reason property
+// SetReason sets the reason property value. The reason for the postponement. Read-only.
 func (m *SharePointMigrationJobPostponedEvent) SetReason(value *string)() {
     err := m.GetBackingStore().Set("reason", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalRetryCount sets the totalRetryCount property value. The totalRetryCount property
+// SetTotalRetryCount sets the totalRetryCount property value. The current retry count of the job. Read-only.
 func (m *SharePointMigrationJobPostponedEvent) SetTotalRetryCount(value *int32)() {
     err := m.GetBackingStore().Set("totalRetryCount", value)
     if err != nil {

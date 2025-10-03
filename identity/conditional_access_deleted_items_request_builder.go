@@ -21,7 +21,7 @@ type ConditionalAccessDeletedItemsRequestBuilderDeleteRequestConfiguration struc
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConditionalAccessDeletedItemsRequestBuilderGetQueryParameters get deletedItems from identity
+// ConditionalAccessDeletedItemsRequestBuilderGetQueryParameters read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
 type ConditionalAccessDeletedItemsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ConditionalAccessDeletedItemsRequestBuilder) Delete(ctx context.Context
     }
     return nil
 }
-// Get get deletedItems from identity
+// Get read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
 // returns a CaPoliciesDeletableRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConditionalAccessDeletedItemsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConditionalAccessDeletedItemsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CaPoliciesDeletableRootable, error) {
@@ -134,7 +134,7 @@ func (m *ConditionalAccessDeletedItemsRequestBuilder) ToDeleteRequestInformation
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get deletedItems from identity
+// ToGetRequestInformation read-only. Nullable. Returns a collection of the deleted Conditional Access objects.
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessDeletedItemsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessDeletedItemsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

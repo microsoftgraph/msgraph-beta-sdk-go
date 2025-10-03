@@ -60,7 +60,7 @@ func (m *CaPoliciesDeletableRoot) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetNamedLocations gets the namedLocations property value. The namedLocations property
+// GetNamedLocations gets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
 // returns a []NamedLocationable when successful
 func (m *CaPoliciesDeletableRoot) GetNamedLocations()([]NamedLocationable) {
     val, err := m.GetBackingStore().Get("namedLocations")
@@ -72,7 +72,7 @@ func (m *CaPoliciesDeletableRoot) GetNamedLocations()([]NamedLocationable) {
     }
     return nil
 }
-// GetPolicies gets the policies property value. The policies property
+// GetPolicies gets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 // returns a []ConditionalAccessPolicyable when successful
 func (m *CaPoliciesDeletableRoot) GetPolicies()([]ConditionalAccessPolicyable) {
     val, err := m.GetBackingStore().Get("policies")
@@ -116,14 +116,14 @@ func (m *CaPoliciesDeletableRoot) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetNamedLocations sets the namedLocations property value. The namedLocations property
+// SetNamedLocations sets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
 func (m *CaPoliciesDeletableRoot) SetNamedLocations(value []NamedLocationable)() {
     err := m.GetBackingStore().Set("namedLocations", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPolicies sets the policies property value. The policies property
+// SetPolicies sets the policies property value. Read-only. Nullable. Returns a collection of the specified Conditional Access policies.
 func (m *CaPoliciesDeletableRoot) SetPolicies(value []ConditionalAccessPolicyable)() {
     err := m.GetBackingStore().Set("policies", value)
     if err != nil {

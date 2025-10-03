@@ -21,7 +21,7 @@ type DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartn
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderGetQueryParameters read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner
+// DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderGetQueryParameters read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 type DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,7 +57,7 @@ func NewDeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPa
     urlParams["request-raw-url"] = rawUrl
     return NewDeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner
+// Delete permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -76,7 +76,7 @@ func (m *DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyP
     }
     return nil
 }
-// Get read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner
+// Get read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 // returns a CrossTenantIdentitySyncPolicyPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -124,7 +124,7 @@ func (m *DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyP
 func (m *DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilder) Restore()(*DeletedItemsCrossTenantSyncPolicyPartnersItemRestoreRequestBuilder) {
     return NewDeletedItemsCrossTenantSyncPolicyPartnersItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToDeleteRequestInformation permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner
+// ToDeleteRequestInformation permanently delete a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 // returns a *RequestInformation when successful
 func (m *DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -135,7 +135,7 @@ func (m *DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyP
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner
+// ToGetRequestInformation read the properties and relationships of a policyDeletableItem object, which might be one of the following deleted policy types:- crossTenantAccessPolicyConfigurationPartner- crossTenantIdentitySyncPolicyPartner- conditionalAccessPolicy- namedLocation
 // returns a *RequestInformation when successful
 func (m *DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeletedItemsCrossTenantSyncPolicyPartnersCrossTenantIdentitySyncPolicyPartnerTenantItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

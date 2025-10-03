@@ -14,7 +14,7 @@ import (
 type FileStorageContainersItemMigrationJobsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FileStorageContainersItemMigrationJobsRequestBuilderGetQueryParameters get migrationJobs from storage
+// FileStorageContainersItemMigrationJobsRequestBuilderGetQueryParameters the collection of sharePointMigrationJob objects local to the container. Read-write.
 type FileStorageContainersItemMigrationJobsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewFileStorageContainersItemMigrationJobsRequestBuilder(rawUrl string, requ
 func (m *FileStorageContainersItemMigrationJobsRequestBuilder) Count()(*FileStorageContainersItemMigrationJobsCountRequestBuilder) {
     return NewFileStorageContainersItemMigrationJobsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get migrationJobs from storage
+// Get the collection of sharePointMigrationJob objects local to the container. Read-write.
 // returns a SharePointMigrationJobCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageContainersItemMigrationJobsRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageContainersItemMigrationJobsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationJobCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *FileStorageContainersItemMigrationJobsRequestBuilder) Post(ctx context.
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationJobable), nil
 }
-// ToGetRequestInformation get migrationJobs from storage
+// ToGetRequestInformation the collection of sharePointMigrationJob objects local to the container. Read-write.
 // returns a *RequestInformation when successful
 func (m *FileStorageContainersItemMigrationJobsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageContainersItemMigrationJobsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
