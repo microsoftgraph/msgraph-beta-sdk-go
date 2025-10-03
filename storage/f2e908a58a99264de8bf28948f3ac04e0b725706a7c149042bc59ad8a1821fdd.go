@@ -21,7 +21,7 @@ type FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePointMi
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilderGetQueryParameters get progressEvents from storage
+// FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilderGetQueryParameters a collection of migration events that reflects the job status changes.
 type FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePoi
     }
     return nil
 }
-// Get get progressEvents from storage
+// Get a collection of migration events that reflects the job status changes.
 // returns a SharePointMigrationEventable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationEventable, error) {
@@ -124,7 +124,7 @@ func (m *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePoi
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get progressEvents from storage
+// ToGetRequestInformation a collection of migration events that reflects the job status changes.
 // returns a *RequestInformation when successful
 func (m *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsSharePointMigrationEventItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

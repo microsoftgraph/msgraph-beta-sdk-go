@@ -99,12 +99,12 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Get(ctx
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable), nil
 }
-// Patch update the properties of an ipNamedLocation object.
+// Patch update the properties of a countryNamedLocation object.
 // returns a NamedLocationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-beta
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -152,7 +152,7 @@ func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToGetRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the properties of an ipNamedLocation object.
+// ToPatchRequestInformation update the properties of a countryNamedLocation object.
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, requestConfiguration *ConditionalAccessNamedLocationsNamedLocationItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

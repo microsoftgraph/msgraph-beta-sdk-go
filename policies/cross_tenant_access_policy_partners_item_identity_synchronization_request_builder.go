@@ -99,12 +99,12 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantIdentitySyncPolicyPartnerable), nil
 }
-// Put update the user synchronization policy of a partner-specific configuration.
+// Put create a cross-tenant user synchronization policy for a partner-specific configuration.
 // returns a CrossTenantIdentitySyncPolicyPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-beta
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) Put(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantIdentitySyncPolicyPartnerable, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderPutRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantIdentitySyncPolicyPartnerable, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -152,7 +152,7 @@ func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilde
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPutRequestInformation update the user synchronization policy of a partner-specific configuration.
+// ToPutRequestInformation create a cross-tenant user synchronization policy for a partner-specific configuration.
 // returns a *RequestInformation when successful
 func (m *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilder) ToPutRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CrossTenantIdentitySyncPolicyPartnerable, requestConfiguration *CrossTenantAccessPolicyPartnersItemIdentitySynchronizationRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -14,7 +14,7 @@ import (
 type FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBuilderGetQueryParameters get progressEvents from storage
+// FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBuilderGetQueryParameters a collection of migration events that reflects the job status changes.
 type FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewFileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBu
 func (m *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBuilder) Count()(*FileStorageDeletedContainersItemMigrationJobsItemProgressEventsCountRequestBuilder) {
     return NewFileStorageDeletedContainersItemMigrationJobsItemProgressEventsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get progressEvents from storage
+// Get a collection of migration events that reflects the job status changes.
 // returns a SharePointMigrationEventCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBuilder) Get(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationEventCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationEventable), nil
 }
-// ToGetRequestInformation get progressEvents from storage
+// ToGetRequestInformation a collection of migration events that reflects the job status changes.
 // returns a *RequestInformation when successful
 func (m *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *FileStorageDeletedContainersItemMigrationJobsItemProgressEventsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

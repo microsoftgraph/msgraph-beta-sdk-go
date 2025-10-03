@@ -48,7 +48,7 @@ func (m *SharePointMigrationJobCancelledEvent) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetIsCancelledByUser gets the isCancelledByUser property value. The isCancelledByUser property
+// GetIsCancelledByUser gets the isCancelledByUser property value. True when a user cancels the job; otherwise, false. Read-only.
 // returns a *bool when successful
 func (m *SharePointMigrationJobCancelledEvent) GetIsCancelledByUser()(*bool) {
     val, err := m.GetBackingStore().Get("isCancelledByUser")
@@ -60,7 +60,7 @@ func (m *SharePointMigrationJobCancelledEvent) GetIsCancelledByUser()(*bool) {
     }
     return nil
 }
-// GetTotalRetryCount gets the totalRetryCount property value. The totalRetryCount property
+// GetTotalRetryCount gets the totalRetryCount property value. The current retry count of the job. Read-only.
 // returns a *int32 when successful
 func (m *SharePointMigrationJobCancelledEvent) GetTotalRetryCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalRetryCount")
@@ -92,14 +92,14 @@ func (m *SharePointMigrationJobCancelledEvent) Serialize(writer i878a80d2330e89d
     }
     return nil
 }
-// SetIsCancelledByUser sets the isCancelledByUser property value. The isCancelledByUser property
+// SetIsCancelledByUser sets the isCancelledByUser property value. True when a user cancels the job; otherwise, false. Read-only.
 func (m *SharePointMigrationJobCancelledEvent) SetIsCancelledByUser(value *bool)() {
     err := m.GetBackingStore().Set("isCancelledByUser", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalRetryCount sets the totalRetryCount property value. The totalRetryCount property
+// SetTotalRetryCount sets the totalRetryCount property value. The current retry count of the job. Read-only.
 func (m *SharePointMigrationJobCancelledEvent) SetTotalRetryCount(value *int32)() {
     err := m.GetBackingStore().Set("totalRetryCount", value)
     if err != nil {

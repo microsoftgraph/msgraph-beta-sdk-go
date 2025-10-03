@@ -21,7 +21,7 @@ type TeamsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// TeamsRequestBuilderGetQueryParameters a container for all Teams telephone number management functionalities and user configurations.
+// TeamsRequestBuilderGetQueryParameters a container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
 type TeamsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *TeamsRequestBuilder) Delete(ctx context.Context, requestConfiguration *
     }
     return nil
 }
-// Get a container for all Teams telephone number management functionalities and user configurations.
+// Get a container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
 // returns a TeamsAdminRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamsRequestBuilderGetRequestConfiguration)(ida00aeab33baad931d9ea7ddda72fd1a74178962fdc58f5709ddf52b9f0fcc0f.TeamsAdminRootable, error) {
@@ -129,7 +129,7 @@ func (m *TeamsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, re
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a container for all Teams telephone number management functionalities and user configurations.
+// ToGetRequestInformation a container for Teams administration functionalities, such as user configurations, telephone number management, and policy assignments.
 // returns a *RequestInformation when successful
 func (m *TeamsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

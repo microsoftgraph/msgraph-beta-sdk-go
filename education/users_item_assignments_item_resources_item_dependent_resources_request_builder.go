@@ -14,7 +14,7 @@ import (
 type UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilderGetQueryParameters get dependentResources from education
+// UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilderGetQueryParameters a collection of assignment resources that depend on the parent educationAssignmentResource.
 type UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewUsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder(ra
 func (m *UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder) Count()(*UsersItemAssignmentsItemResourcesItemDependentResourcesCountRequestBuilder) {
     return NewUsersItemAssignmentsItemResourcesItemDependentResourcesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get dependentResources from education
+// Get a collection of assignment resources that depend on the parent educationAssignmentResource.
 // returns a EducationAssignmentResourceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentResourceCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentResourceable), nil
 }
-// ToGetRequestInformation get dependentResources from education
+// ToGetRequestInformation a collection of assignment resources that depend on the parent educationAssignmentResource.
 // returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemResourcesItemDependentResourcesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
