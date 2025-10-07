@@ -34,12 +34,12 @@ func NewConditionalAccessNamedLocationsItemRestoreRequestBuilder(rawUrl string, 
     urlParams["request-raw-url"] = rawUrl
     return NewConditionalAccessNamedLocationsItemRestoreRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post restore a deleted ipNamedLocation object.
+// Post restore a deleted countryNamedLocation object.
 // returns a NamedLocationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/ipnamedlocation-restore?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/countrynamedlocation-restore?view=graph-rest-beta
 func (m *ConditionalAccessNamedLocationsItemRestoreRequestBuilder) Post(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsItemRestoreRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,7 +57,7 @@ func (m *ConditionalAccessNamedLocationsItemRestoreRequestBuilder) Post(ctx cont
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NamedLocationable), nil
 }
-// ToPostRequestInformation restore a deleted ipNamedLocation object.
+// ToPostRequestInformation restore a deleted countryNamedLocation object.
 // returns a *RequestInformation when successful
 func (m *ConditionalAccessNamedLocationsItemRestoreRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ConditionalAccessNamedLocationsItemRestoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

@@ -34,7 +34,7 @@ func (m *EducationSubmissionResource) GetAssignmentResourceUrl()(*string) {
     }
     return nil
 }
-// GetDependentResources gets the dependentResources property value. The dependentResources property
+// GetDependentResources gets the dependentResources property value. A collection of submission resources that depend on the parent educationSubmissionResource.
 // returns a []EducationSubmissionResourceable when successful
 func (m *EducationSubmissionResource) GetDependentResources()([]EducationSubmissionResourceable) {
     val, err := m.GetBackingStore().Get("dependentResources")
@@ -139,7 +139,7 @@ func (m *EducationSubmissionResource) SetAssignmentResourceUrl(value *string)() 
         panic(err)
     }
 }
-// SetDependentResources sets the dependentResources property value. The dependentResources property
+// SetDependentResources sets the dependentResources property value. A collection of submission resources that depend on the parent educationSubmissionResource.
 func (m *EducationSubmissionResource) SetDependentResources(value []EducationSubmissionResourceable)() {
     err := m.GetBackingStore().Set("dependentResources", value)
     if err != nil {

@@ -499,6 +499,11 @@ func (m *UserItemRequestBuilder) OnlineMeetings()(*ItemOnlineMeetingsRequestBuil
 func (m *UserItemRequestBuilder) OnlineMeetingsWithJoinWebUrl(joinWebUrl *string)(*ItemOnlineMeetingsWithJoinWebUrlRequestBuilder) {
     return NewItemOnlineMeetingsWithJoinWebUrlRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, joinWebUrl)
 }
+// OnPremisesSyncBehavior provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.user entity.
+// returns a *ItemOnPremisesSyncBehaviorRequestBuilder when successful
+func (m *UserItemRequestBuilder) OnPremisesSyncBehavior()(*ItemOnPremisesSyncBehaviorRequestBuilder) {
+    return NewItemOnPremisesSyncBehaviorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Outlook provides operations to manage the outlook property of the microsoft.graph.user entity.
 // returns a *ItemOutlookRequestBuilder when successful
 func (m *UserItemRequestBuilder) Outlook()(*ItemOutlookRequestBuilder) {

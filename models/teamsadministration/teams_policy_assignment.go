@@ -27,7 +27,35 @@ func CreateTeamsPolicyAssignmentFromDiscriminatorValue(parseNode i878a80d2330e89
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *TeamsPolicyAssignment) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["userAssignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateTeamsPolicyUserAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]TeamsPolicyUserAssignmentable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(TeamsPolicyUserAssignmentable)
+                }
+            }
+            m.SetUserAssignments(res)
+        }
+        return nil
+    }
     return res
+}
+// GetUserAssignments gets the userAssignments property value. Navigation property to the collection of user policy assignments.
+// returns a []TeamsPolicyUserAssignmentable when successful
+func (m *TeamsPolicyAssignment) GetUserAssignments()([]TeamsPolicyUserAssignmentable) {
+    val, err := m.GetBackingStore().Get("userAssignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]TeamsPolicyUserAssignmentable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *TeamsPolicyAssignment) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -35,9 +63,30 @@ func (m *TeamsPolicyAssignment) Serialize(writer i878a80d2330e89d26896388a3f487e
     if err != nil {
         return err
     }
+    if m.GetUserAssignments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUserAssignments()))
+        for i, v := range m.GetUserAssignments() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("userAssignments", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetUserAssignments sets the userAssignments property value. Navigation property to the collection of user policy assignments.
+func (m *TeamsPolicyAssignment) SetUserAssignments(value []TeamsPolicyUserAssignmentable)() {
+    err := m.GetBackingStore().Set("userAssignments", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type TeamsPolicyAssignmentable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetUserAssignments()([]TeamsPolicyUserAssignmentable)
+    SetUserAssignments(value []TeamsPolicyUserAssignmentable)()
 }

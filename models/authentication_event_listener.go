@@ -42,6 +42,8 @@ func CreateAuthenticationEventListenerFromDiscriminatorValue(parseNode i878a80d2
                         return NewOnAuthenticationMethodLoadStartListener(), nil
                     case "#microsoft.graph.onEmailOtpSendListener":
                         return NewOnEmailOtpSendListener(), nil
+                    case "#microsoft.graph.onFraudProtectionLoadStartListener":
+                        return NewOnFraudProtectionLoadStartListener(), nil
                     case "#microsoft.graph.onInteractiveAuthFlowStartListener":
                         return NewOnInteractiveAuthFlowStartListener(), nil
                     case "#microsoft.graph.onPhoneMethodLoadStartListener":
@@ -80,6 +82,18 @@ func (m *AuthenticationEventListener) GetConditions()(AuthenticationConditionsab
     }
     return nil
 }
+// GetDisplayName gets the displayName property value. The displayName property
+// returns a *string when successful
+func (m *AuthenticationEventListener) GetDisplayName()(*string) {
+    val, err := m.GetBackingStore().Get("displayName")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AuthenticationEventListener) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -101,6 +115,16 @@ func (m *AuthenticationEventListener) GetFieldDeserializers()(map[string]func(i8
         }
         if val != nil {
             m.SetConditions(val.(AuthenticationConditionsable))
+        }
+        return nil
+    }
+    res["displayName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDisplayName(val)
         }
         return nil
     }
@@ -147,6 +171,12 @@ func (m *AuthenticationEventListener) Serialize(writer i878a80d2330e89d26896388a
         }
     }
     {
+        err = writer.WriteStringValue("displayName", m.GetDisplayName())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteInt32Value("priority", m.GetPriority())
         if err != nil {
             return err
@@ -168,6 +198,13 @@ func (m *AuthenticationEventListener) SetConditions(value AuthenticationConditio
         panic(err)
     }
 }
+// SetDisplayName sets the displayName property value. The displayName property
+func (m *AuthenticationEventListener) SetDisplayName(value *string)() {
+    err := m.GetBackingStore().Set("displayName", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPriority sets the priority property value. The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).
 func (m *AuthenticationEventListener) SetPriority(value *int32)() {
     err := m.GetBackingStore().Set("priority", value)
@@ -180,8 +217,10 @@ type AuthenticationEventListenerable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetAuthenticationEventsFlowId()(*string)
     GetConditions()(AuthenticationConditionsable)
+    GetDisplayName()(*string)
     GetPriority()(*int32)
     SetAuthenticationEventsFlowId(value *string)()
     SetConditions(value AuthenticationConditionsable)()
+    SetDisplayName(value *string)()
     SetPriority(value *int32)()
 }

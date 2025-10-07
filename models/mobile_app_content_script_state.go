@@ -6,18 +6,30 @@ package models
 type MobileAppContentScriptState int
 
 const (
+    // Indicates that the script content is in a pending state.
+    COMMITPENDING_MOBILEAPPCONTENTSCRIPTSTATE MobileAppContentScriptState = iota
     // Indicates that the script content is ready.
-    COMMITSUCCESS_MOBILEAPPCONTENTSCRIPTSTATE MobileAppContentScriptState = iota
+    COMMITSUCCESS_MOBILEAPPCONTENTSCRIPTSTATE
+    // Indicates that the script is in an unusable state.
+    COMMITFAILED_MOBILEAPPCONTENTSCRIPTSTATE
+    // Evolvable enumeration sentinel value. Do not use.
+    UNKNOWNFUTUREVALUE_MOBILEAPPCONTENTSCRIPTSTATE
 )
 
 func (i MobileAppContentScriptState) String() string {
-    return []string{"commitSuccess"}[i]
+    return []string{"commitPending", "commitSuccess", "commitFailed", "unknownFutureValue"}[i]
 }
 func ParseMobileAppContentScriptState(v string) (any, error) {
-    result := COMMITSUCCESS_MOBILEAPPCONTENTSCRIPTSTATE
+    result := COMMITPENDING_MOBILEAPPCONTENTSCRIPTSTATE
     switch v {
+        case "commitPending":
+            result = COMMITPENDING_MOBILEAPPCONTENTSCRIPTSTATE
         case "commitSuccess":
             result = COMMITSUCCESS_MOBILEAPPCONTENTSCRIPTSTATE
+        case "commitFailed":
+            result = COMMITFAILED_MOBILEAPPCONTENTSCRIPTSTATE
+        case "unknownFutureValue":
+            result = UNKNOWNFUTUREVALUE_MOBILEAPPCONTENTSCRIPTSTATE
         default:
             return nil, nil
     }

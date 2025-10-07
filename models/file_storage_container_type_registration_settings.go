@@ -38,6 +38,18 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetAdditionalData()(map[s
     }
     return val.(map[string]any)
 }
+// GetAgent gets the agent property value. Contains agent-related settings.
+// returns a FileStorageContainerTypeAgentSettingsable when successful
+func (m *FileStorageContainerTypeRegistrationSettings) GetAgent()(FileStorageContainerTypeAgentSettingsable) {
+    val, err := m.GetBackingStore().Get("agent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(FileStorageContainerTypeAgentSettingsable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -47,6 +59,16 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetBackingStore()(ie8677c
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *FileStorageContainerTypeRegistrationSettings) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["agent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateFileStorageContainerTypeAgentSettingsFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAgent(val.(FileStorageContainerTypeAgentSettingsable))
+        }
+        return nil
+    }
     res["isDiscoverabilityEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -250,6 +272,12 @@ func (m *FileStorageContainerTypeRegistrationSettings) GetUrlTemplate()(*string)
 // Serialize serializes information the current object
 func (m *FileStorageContainerTypeRegistrationSettings) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
+        err := writer.WriteObjectValue("agent", m.GetAgent())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isDiscoverabilityEnabled", m.GetIsDiscoverabilityEnabled())
         if err != nil {
             return err
@@ -315,6 +343,13 @@ func (m *FileStorageContainerTypeRegistrationSettings) Serialize(writer i878a80d
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *FileStorageContainerTypeRegistrationSettings) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAgent sets the agent property value. Contains agent-related settings.
+func (m *FileStorageContainerTypeRegistrationSettings) SetAgent(value FileStorageContainerTypeAgentSettingsable)() {
+    err := m.GetBackingStore().Set("agent", value)
     if err != nil {
         panic(err)
     }
@@ -390,6 +425,7 @@ type FileStorageContainerTypeRegistrationSettingsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgent()(FileStorageContainerTypeAgentSettingsable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsDiscoverabilityEnabled()(*bool)
     GetIsItemVersioningEnabled()(*bool)
@@ -400,6 +436,7 @@ type FileStorageContainerTypeRegistrationSettingsable interface {
     GetOdataType()(*string)
     GetSharingCapability()(*SharingCapabilities)
     GetUrlTemplate()(*string)
+    SetAgent(value FileStorageContainerTypeAgentSettingsable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsDiscoverabilityEnabled(value *bool)()
     SetIsItemVersioningEnabled(value *bool)()

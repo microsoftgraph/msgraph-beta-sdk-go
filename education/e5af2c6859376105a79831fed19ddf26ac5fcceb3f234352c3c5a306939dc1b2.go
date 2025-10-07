@@ -21,7 +21,7 @@ type UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentR
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters get dependentResources from education
+// UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters a collection of assignment resources that depend on the parent educationAssignmentResource.
 type UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignm
     }
     return nil
 }
-// Get get dependentResources from education
+// Get a collection of assignment resources that depend on the parent educationAssignmentResource.
 // returns a EducationAssignmentResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EducationAssignmentResourceable, error) {
@@ -124,7 +124,7 @@ func (m *UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignm
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get dependentResources from education
+// ToGetRequestInformation a collection of assignment resources that depend on the parent educationAssignmentResource.
 // returns a *RequestInformation when successful
 func (m *UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *UsersItemAssignmentsItemResourcesItemDependentResourcesEducationAssignmentResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
