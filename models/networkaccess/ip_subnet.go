@@ -8,12 +8,12 @@ import (
 )
 
 type IpSubnet struct {
-    RuleDestination
+    IpDestination
 }
 // NewIpSubnet instantiates a new IpSubnet and sets the default values.
 func NewIpSubnet()(*IpSubnet) {
     m := &IpSubnet{
-        RuleDestination: *NewRuleDestination(),
+        IpDestination: *NewIpDestination(),
     }
     odataTypeValue := "#microsoft.graph.networkaccess.ipSubnet"
     m.SetOdataType(&odataTypeValue)
@@ -27,7 +27,7 @@ func CreateIpSubnetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IpSubnet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
-    res := m.RuleDestination.GetFieldDeserializers()
+    res := m.IpDestination.GetFieldDeserializers()
     res["value"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -54,7 +54,7 @@ func (m *IpSubnet) GetValue()(*string) {
 }
 // Serialize serializes information the current object
 func (m *IpSubnet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    err := m.RuleDestination.Serialize(writer)
+    err := m.IpDestination.Serialize(writer)
     if err != nil {
         return err
     }
@@ -74,8 +74,8 @@ func (m *IpSubnet) SetValue(value *string)() {
     }
 }
 type IpSubnetable interface {
+    IpDestinationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    RuleDestinationable
     GetValue()(*string)
     SetValue(value *string)()
 }

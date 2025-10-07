@@ -22,7 +22,7 @@ func NewEducationAssignmentResource()(*EducationAssignmentResource) {
 func CreateEducationAssignmentResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewEducationAssignmentResource(), nil
 }
-// GetDependentResources gets the dependentResources property value. The dependentResources property
+// GetDependentResources gets the dependentResources property value. A collection of assignment resources that depend on the parent educationAssignmentResource.
 // returns a []EducationAssignmentResourceable when successful
 func (m *EducationAssignmentResource) GetDependentResources()([]EducationAssignmentResourceable) {
     val, err := m.GetBackingStore().Get("dependentResources")
@@ -132,7 +132,7 @@ func (m *EducationAssignmentResource) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetDependentResources sets the dependentResources property value. The dependentResources property
+// SetDependentResources sets the dependentResources property value. A collection of assignment resources that depend on the parent educationAssignmentResource.
 func (m *EducationAssignmentResource) SetDependentResources(value []EducationAssignmentResourceable)() {
     err := m.GetBackingStore().Set("dependentResources", value)
     if err != nil {
