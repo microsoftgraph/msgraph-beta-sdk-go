@@ -173,6 +173,16 @@ func (m *DirectoryAudit) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["performedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAuditActivityPerformerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPerformedBy(val.(AuditActivityPerformerable))
+        }
+        return nil
+    }
     res["result"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseOperationResult)
         if err != nil {
@@ -254,6 +264,18 @@ func (m *DirectoryAudit) GetOperationType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPerformedBy gets the performedBy property value. The performedBy property
+// returns a AuditActivityPerformerable when successful
+func (m *DirectoryAudit) GetPerformedBy()(AuditActivityPerformerable) {
+    val, err := m.GetBackingStore().Get("performedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AuditActivityPerformerable)
     }
     return nil
 }
@@ -365,6 +387,12 @@ func (m *DirectoryAudit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("performedBy", m.GetPerformedBy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetResult() != nil {
         cast := (*m.GetResult()).String()
         err = writer.WriteStringValue("result", &cast)
@@ -454,6 +482,13 @@ func (m *DirectoryAudit) SetOperationType(value *string)() {
         panic(err)
     }
 }
+// SetPerformedBy sets the performedBy property value. The performedBy property
+func (m *DirectoryAudit) SetPerformedBy(value AuditActivityPerformerable)() {
+    err := m.GetBackingStore().Set("performedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetResult sets the result property value. Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.
 func (m *DirectoryAudit) SetResult(value *OperationResult)() {
     err := m.GetBackingStore().Set("result", value)
@@ -493,6 +528,7 @@ type DirectoryAuditable interface {
     GetInitiatedBy()(AuditActivityInitiatorable)
     GetLoggedByService()(*string)
     GetOperationType()(*string)
+    GetPerformedBy()(AuditActivityPerformerable)
     GetResult()(*OperationResult)
     GetResultReason()(*string)
     GetTargetResources()([]TargetResourceable)
@@ -505,6 +541,7 @@ type DirectoryAuditable interface {
     SetInitiatedBy(value AuditActivityInitiatorable)()
     SetLoggedByService(value *string)()
     SetOperationType(value *string)()
+    SetPerformedBy(value AuditActivityPerformerable)()
     SetResult(value *OperationResult)()
     SetResultReason(value *string)()
     SetTargetResources(value []TargetResourceable)()

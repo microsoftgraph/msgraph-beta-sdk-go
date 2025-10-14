@@ -37,6 +37,11 @@ type AuditLogsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AuditActivityTypes provides operations to manage the auditActivityTypes property of the microsoft.graph.auditLogRoot entity.
+// returns a *AuditActivityTypesRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) AuditActivityTypes()(*AuditActivityTypesRequestBuilder) {
+    return NewAuditActivityTypesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewAuditLogsRequestBuilderInternal instantiates a new AuditLogsRequestBuilder and sets the default values.
 func NewAuditLogsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*AuditLogsRequestBuilder) {
     m := &AuditLogsRequestBuilder{
@@ -85,6 +90,21 @@ func (m *AuditLogsRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AuditLogRootable), nil
 }
+// GetSummarizedMSISignInsWithAggregationWindow provides operations to call the getSummarizedMSISignIns method.
+// returns a *GetSummarizedMSISignInsWithAggregationWindowRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) GetSummarizedMSISignInsWithAggregationWindow(aggregationWindow *string)(*GetSummarizedMSISignInsWithAggregationWindowRequestBuilder) {
+    return NewGetSummarizedMSISignInsWithAggregationWindowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, aggregationWindow)
+}
+// GetSummarizedNonInteractiveSignInsWithAggregationWindow provides operations to call the getSummarizedNonInteractiveSignIns method.
+// returns a *GetSummarizedNonInteractiveSignInsWithAggregationWindowRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) GetSummarizedNonInteractiveSignInsWithAggregationWindow(aggregationWindow *string)(*GetSummarizedNonInteractiveSignInsWithAggregationWindowRequestBuilder) {
+    return NewGetSummarizedNonInteractiveSignInsWithAggregationWindowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, aggregationWindow)
+}
+// GetSummarizedServicePrincipalSignInsWithAggregationWindow provides operations to call the getSummarizedServicePrincipalSignIns method.
+// returns a *GetSummarizedServicePrincipalSignInsWithAggregationWindowRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) GetSummarizedServicePrincipalSignInsWithAggregationWindow(aggregationWindow *string)(*GetSummarizedServicePrincipalSignInsWithAggregationWindowRequestBuilder) {
+    return NewGetSummarizedServicePrincipalSignInsWithAggregationWindowRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, aggregationWindow)
+}
 // Patch update auditLogs
 // returns a AuditLogRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -109,6 +129,16 @@ func (m *AuditLogsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
 // returns a *ProvisioningRequestBuilder when successful
 func (m *AuditLogsRequestBuilder) Provisioning()(*ProvisioningRequestBuilder) {
     return NewProvisioningRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SignInEventsAppSummary provides operations to manage the signInEventsAppSummary property of the microsoft.graph.auditLogRoot entity.
+// returns a *SignInEventsAppSummaryRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) SignInEventsAppSummary()(*SignInEventsAppSummaryRequestBuilder) {
+    return NewSignInEventsAppSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SignInEventsSummary provides operations to manage the signInEventsSummary property of the microsoft.graph.auditLogRoot entity.
+// returns a *SignInEventsSummaryRequestBuilder when successful
+func (m *AuditLogsRequestBuilder) SignInEventsSummary()(*SignInEventsSummaryRequestBuilder) {
+    return NewSignInEventsSummaryRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // SignIns provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
 // returns a *SignInsRequestBuilder when successful

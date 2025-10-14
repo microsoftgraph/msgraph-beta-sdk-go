@@ -94,7 +94,7 @@ func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
     }
     return nil
 }
-// GetExternalPartners gets the externalPartners property value. The externalPartners property
+// GetExternalPartners gets the externalPartners property value. The external partners on a Cloud PC.
 // returns a []CloudPcExternalPartnerable when successful
 func (m *VirtualEndpoint) GetExternalPartners()([]CloudPcExternalPartnerable) {
     val, err := m.GetBackingStore().Get("externalPartners")
@@ -762,7 +762,7 @@ func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImageable)() {
         panic(err)
     }
 }
-// SetExternalPartners sets the externalPartners property value. The externalPartners property
+// SetExternalPartners sets the externalPartners property value. The external partners on a Cloud PC.
 func (m *VirtualEndpoint) SetExternalPartners(value []CloudPcExternalPartnerable)() {
     err := m.GetBackingStore().Set("externalPartners", value)
     if err != nil {
