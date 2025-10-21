@@ -15,6 +15,8 @@ func NewPlannerFormsDictionary()(*PlannerFormsDictionary) {
     m := &PlannerFormsDictionary{
         Dictionary: *NewDictionary(),
     }
+    odataTypeValue := "#microsoft.graph.plannerFormsDictionary"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreatePlannerFormsDictionaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

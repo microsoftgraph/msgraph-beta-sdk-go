@@ -198,6 +198,16 @@ func (m *MacOSMinimumOperatingSystem) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["v26_0"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetV260(val)
+        }
+        return nil
+    }
     return res
 }
 // GetOdataType gets the @odata.type property value. The OdataType property
@@ -380,6 +390,18 @@ func (m *MacOSMinimumOperatingSystem) GetV150()(*bool) {
     }
     return nil
 }
+// GetV260 gets the v26_0 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 26.0 or later is required to install the app. If 'False', OS X Version 26.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
+// returns a *bool when successful
+func (m *MacOSMinimumOperatingSystem) GetV260()(*bool) {
+    val, err := m.GetBackingStore().Get("v26_0")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -468,6 +490,12 @@ func (m *MacOSMinimumOperatingSystem) Serialize(writer i878a80d2330e89d26896388a
     }
     {
         err := writer.WriteBoolValue("v15_0", m.GetV150())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("v26_0", m.GetV260())
         if err != nil {
             return err
         }
@@ -596,6 +624,13 @@ func (m *MacOSMinimumOperatingSystem) SetV150(value *bool)() {
         panic(err)
     }
 }
+// SetV260 sets the v26_0 property value. Indicates the minimum OS X version support required for the managed device. When 'True', macOS with OS X 26.0 or later is required to install the app. If 'False', OS X Version 26.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.
+func (m *MacOSMinimumOperatingSystem) SetV260(value *bool)() {
+    err := m.GetBackingStore().Set("v26_0", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type MacOSMinimumOperatingSystemable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -616,6 +651,7 @@ type MacOSMinimumOperatingSystemable interface {
     GetV130()(*bool)
     GetV140()(*bool)
     GetV150()(*bool)
+    GetV260()(*bool)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetV1010(value *bool)()
@@ -632,4 +668,5 @@ type MacOSMinimumOperatingSystemable interface {
     SetV130(value *bool)()
     SetV140(value *bool)()
     SetV150(value *bool)()
+    SetV260(value *bool)()
 }

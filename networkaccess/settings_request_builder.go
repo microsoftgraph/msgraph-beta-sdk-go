@@ -67,6 +67,11 @@ func NewSettingsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee26337
 func (m *SettingsRequestBuilder) CrossTenantAccess()(*SettingsCrossTenantAccessRequestBuilder) {
     return NewSettingsCrossTenantAccessRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// CustomBlockPage provides operations to manage the customBlockPage property of the microsoft.graph.networkaccess.settings entity.
+// returns a *SettingsCustomBlockPageRequestBuilder when successful
+func (m *SettingsRequestBuilder) CustomBlockPage()(*SettingsCustomBlockPageRequestBuilder) {
+    return NewSettingsCustomBlockPageRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property settings for networkAccess
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SettingsRequestBuilder) Delete(ctx context.Context, requestConfiguration *SettingsRequestBuilderDeleteRequestConfiguration)(error) {

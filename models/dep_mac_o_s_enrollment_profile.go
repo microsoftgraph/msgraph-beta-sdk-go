@@ -109,6 +109,18 @@ func (m *DepMacOSEnrollmentProfile) GetChooseYourLockScreenDisabled()(*bool) {
     }
     return nil
 }
+// GetDepProfileAdminAccountPasswordRotationSetting gets the depProfileAdminAccountPasswordRotationSetting property value. Settings for local admin account password automatic rotation.
+// returns a DepProfileAdminAccountPasswordRotationSettingable when successful
+func (m *DepMacOSEnrollmentProfile) GetDepProfileAdminAccountPasswordRotationSetting()(DepProfileAdminAccountPasswordRotationSettingable) {
+    val, err := m.GetBackingStore().Get("depProfileAdminAccountPasswordRotationSetting")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(DepProfileAdminAccountPasswordRotationSettingable)
+    }
+    return nil
+}
 // GetDontAutoPopulatePrimaryAccountInfo gets the dontAutoPopulatePrimaryAccountInfo property value. Indicates whether Setup Assistant will auto populate the primary account information
 // returns a *bool when successful
 func (m *DepMacOSEnrollmentProfile) GetDontAutoPopulatePrimaryAccountInfo()(*bool) {
@@ -204,6 +216,16 @@ func (m *DepMacOSEnrollmentProfile) GetFieldDeserializers()(map[string]func(i878
         }
         if val != nil {
             m.SetChooseYourLockScreenDisabled(val)
+        }
+        return nil
+    }
+    res["depProfileAdminAccountPasswordRotationSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDepProfileAdminAccountPasswordRotationSettingFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDepProfileAdminAccountPasswordRotationSetting(val.(DepProfileAdminAccountPasswordRotationSettingable))
         }
         return nil
     }
@@ -542,6 +564,12 @@ func (m *DepMacOSEnrollmentProfile) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteObjectValue("depProfileAdminAccountPasswordRotationSetting", m.GetDepProfileAdminAccountPasswordRotationSetting())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("dontAutoPopulatePrimaryAccountInfo", m.GetDontAutoPopulatePrimaryAccountInfo())
         if err != nil {
             return err
@@ -676,6 +704,13 @@ func (m *DepMacOSEnrollmentProfile) SetChooseYourLockScreenDisabled(value *bool)
         panic(err)
     }
 }
+// SetDepProfileAdminAccountPasswordRotationSetting sets the depProfileAdminAccountPasswordRotationSetting property value. Settings for local admin account password automatic rotation.
+func (m *DepMacOSEnrollmentProfile) SetDepProfileAdminAccountPasswordRotationSetting(value DepProfileAdminAccountPasswordRotationSettingable)() {
+    err := m.GetBackingStore().Set("depProfileAdminAccountPasswordRotationSetting", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetDontAutoPopulatePrimaryAccountInfo sets the dontAutoPopulatePrimaryAccountInfo property value. Indicates whether Setup Assistant will auto populate the primary account information
 func (m *DepMacOSEnrollmentProfile) SetDontAutoPopulatePrimaryAccountInfo(value *bool)() {
     err := m.GetBackingStore().Set("dontAutoPopulatePrimaryAccountInfo", value)
@@ -784,6 +819,7 @@ type DepMacOSEnrollmentProfileable interface {
     GetAutoAdvanceSetupEnabled()(*bool)
     GetAutoUnlockWithWatchDisabled()(*bool)
     GetChooseYourLockScreenDisabled()(*bool)
+    GetDepProfileAdminAccountPasswordRotationSetting()(DepProfileAdminAccountPasswordRotationSettingable)
     GetDontAutoPopulatePrimaryAccountInfo()(*bool)
     GetEnableRestrictEditing()(*bool)
     GetFileVaultDisabled()(*bool)
@@ -805,6 +841,7 @@ type DepMacOSEnrollmentProfileable interface {
     SetAutoAdvanceSetupEnabled(value *bool)()
     SetAutoUnlockWithWatchDisabled(value *bool)()
     SetChooseYourLockScreenDisabled(value *bool)()
+    SetDepProfileAdminAccountPasswordRotationSetting(value DepProfileAdminAccountPasswordRotationSettingable)()
     SetDontAutoPopulatePrimaryAccountInfo(value *bool)()
     SetEnableRestrictEditing(value *bool)()
     SetFileVaultDisabled(value *bool)()

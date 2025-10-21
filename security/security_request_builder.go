@@ -215,6 +215,11 @@ func (m *SecurityRequestBuilder) SecureScores()(*SecureScoresRequestBuilder) {
 func (m *SecurityRequestBuilder) SecurityActions()(*SecurityActionsRequestBuilder) {
     return NewSecurityActionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// SecurityCopilot provides operations to manage the securityCopilot property of the microsoft.graph.security entity.
+// returns a *SecurityCopilotRequestBuilder when successful
+func (m *SecurityRequestBuilder) SecurityCopilot()(*SecurityCopilotRequestBuilder) {
+    return NewSecurityCopilotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SubjectRightsRequests provides operations to manage the subjectRightsRequests property of the microsoft.graph.security entity.
 // returns a *SubjectRightsRequestsRequestBuilder when successful
 func (m *SecurityRequestBuilder) SubjectRightsRequests()(*SubjectRightsRequestsRequestBuilder) {

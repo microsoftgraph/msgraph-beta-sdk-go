@@ -35,6 +35,18 @@ func (m *ConfigurationMonitoringResult) GetDriftsCount()(*int32) {
     }
     return nil
 }
+// GetDriftsFixed gets the driftsFixed property value. The driftsFixed property
+// returns a *int32 when successful
+func (m *ConfigurationMonitoringResult) GetDriftsFixed()(*int32) {
+    val, err := m.GetBackingStore().Get("driftsFixed")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*int32)
+    }
+    return nil
+}
 // GetErrorDetails gets the errorDetails property value. The errorDetails property
 // returns a []ErrorDetailable when successful
 func (m *ConfigurationMonitoringResult) GetErrorDetails()([]ErrorDetailable) {
@@ -58,6 +70,16 @@ func (m *ConfigurationMonitoringResult) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetDriftsCount(val)
+        }
+        return nil
+    }
+    res["driftsFixed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDriftsFixed(val)
         }
         return nil
     }
@@ -114,6 +136,16 @@ func (m *ConfigurationMonitoringResult) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetRunStatus(val.(*MonitorRunStatus))
+        }
+        return nil
+    }
+    res["runType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseMonitorRunType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRunType(val.(*MonitorRunType))
         }
         return nil
     }
@@ -177,6 +209,18 @@ func (m *ConfigurationMonitoringResult) GetRunStatus()(*MonitorRunStatus) {
     }
     return nil
 }
+// GetRunType gets the runType property value. The runType property
+// returns a *MonitorRunType when successful
+func (m *ConfigurationMonitoringResult) GetRunType()(*MonitorRunType) {
+    val, err := m.GetBackingStore().Get("runType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*MonitorRunType)
+    }
+    return nil
+}
 // GetTenantId gets the tenantId property value. The tenantId property
 // returns a *string when successful
 func (m *ConfigurationMonitoringResult) GetTenantId()(*string) {
@@ -202,11 +246,25 @@ func (m *ConfigurationMonitoringResult) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
+    if m.GetRunType() != nil {
+        cast := (*m.GetRunType()).String()
+        err = writer.WriteStringValue("runType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetDriftsCount sets the driftsCount property value. The driftsCount property
 func (m *ConfigurationMonitoringResult) SetDriftsCount(value *int32)() {
     err := m.GetBackingStore().Set("driftsCount", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetDriftsFixed sets the driftsFixed property value. The driftsFixed property
+func (m *ConfigurationMonitoringResult) SetDriftsFixed(value *int32)() {
+    err := m.GetBackingStore().Set("driftsFixed", value)
     if err != nil {
         panic(err)
     }
@@ -246,6 +304,13 @@ func (m *ConfigurationMonitoringResult) SetRunStatus(value *MonitorRunStatus)() 
         panic(err)
     }
 }
+// SetRunType sets the runType property value. The runType property
+func (m *ConfigurationMonitoringResult) SetRunType(value *MonitorRunType)() {
+    err := m.GetBackingStore().Set("runType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantId sets the tenantId property value. The tenantId property
 func (m *ConfigurationMonitoringResult) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
@@ -257,17 +322,21 @@ type ConfigurationMonitoringResultable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDriftsCount()(*int32)
+    GetDriftsFixed()(*int32)
     GetErrorDetails()([]ErrorDetailable)
     GetMonitorId()(*string)
     GetRunCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRunInitiationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRunStatus()(*MonitorRunStatus)
+    GetRunType()(*MonitorRunType)
     GetTenantId()(*string)
     SetDriftsCount(value *int32)()
+    SetDriftsFixed(value *int32)()
     SetErrorDetails(value []ErrorDetailable)()
     SetMonitorId(value *string)()
     SetRunCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRunInitiationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRunStatus(value *MonitorRunStatus)()
+    SetRunType(value *MonitorRunType)()
     SetTenantId(value *string)()
 }
