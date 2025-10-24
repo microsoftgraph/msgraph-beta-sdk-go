@@ -35,6 +35,7 @@ func NewItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder(rawUrl string, reques
     return NewItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get get the cloudPCLaunchInfo for a specific cloudPC that belongs to the current signed-in user.
+// Deprecated: Starting from Oct 30, 2026, this API: getCloudPcLaunchInfo will be deprecated and no longer be supported. Please use the new API:retrieveCloudPcLaunchDetail to retrieve same details. as of 2025-09/cloudPcLaunchInfo on 2025-09-30 and will be removed 2026-10-30
 // returns a CloudPcLaunchInfoable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -58,6 +59,7 @@ func (m *ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) Get(ctx context.Con
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcLaunchInfoable), nil
 }
 // ToGetRequestInformation get the cloudPCLaunchInfo for a specific cloudPC that belongs to the current signed-in user.
+// Deprecated: Starting from Oct 30, 2026, this API: getCloudPcLaunchInfo will be deprecated and no longer be supported. Please use the new API:retrieveCloudPcLaunchDetail to retrieve same details. as of 2025-09/cloudPcLaunchInfo on 2025-09-30 and will be removed 2026-10-30
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -69,6 +71,7 @@ func (m *ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) ToGetRequestInforma
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Starting from Oct 30, 2026, this API: getCloudPcLaunchInfo will be deprecated and no longer be supported. Please use the new API:retrieveCloudPcLaunchDetail to retrieve same details. as of 2025-09/cloudPcLaunchInfo on 2025-09-30 and will be removed 2026-10-30
 // returns a *ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder when successful
 func (m *ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) WithUrl(rawUrl string)(*ItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder) {
     return NewItemCloudPCsItemGetCloudPcLaunchInfoRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

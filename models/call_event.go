@@ -53,7 +53,7 @@ func (m *CallEvent) GetCallEventType()(*CallEventType) {
     }
     return nil
 }
-// GetEventDateTime gets the eventDateTime property value. The time when event occurred.
+// GetEventDateTime gets the eventDateTime property value. The date and time when the event occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CallEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
@@ -215,7 +215,7 @@ func (m *CallEvent) SetCallEventType(value *CallEventType)() {
         panic(err)
     }
 }
-// SetEventDateTime sets the eventDateTime property value. The time when event occurred.
+// SetEventDateTime sets the eventDateTime property value. The date and time when the event occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CallEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("eventDateTime", value)
     if err != nil {

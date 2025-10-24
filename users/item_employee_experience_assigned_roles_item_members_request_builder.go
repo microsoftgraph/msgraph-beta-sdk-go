@@ -14,7 +14,7 @@ import (
 type ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilderGetQueryParameters users who have been assigned this role.
+// ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilderGetQueryParameters users that have this role assigned.
 type ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewItemEmployeeExperienceAssignedRolesItemMembersRequestBuilder(rawUrl stri
 func (m *ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilder) Count()(*ItemEmployeeExperienceAssignedRolesItemMembersCountRequestBuilder) {
     return NewItemEmployeeExperienceAssignedRolesItemMembersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get users who have been assigned this role.
+// Get users that have this role assigned.
 // returns a EngagementRoleMemberCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EngagementRoleMemberCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilder) Post(ctx 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EngagementRoleMemberable), nil
 }
-// ToGetRequestInformation users who have been assigned this role.
+// ToGetRequestInformation users that have this role assigned.
 // returns a *RequestInformation when successful
 func (m *ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEmployeeExperienceAssignedRolesItemMembersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

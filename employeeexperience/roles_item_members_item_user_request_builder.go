@@ -14,7 +14,7 @@ import (
 type RolesItemMembersItemUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// RolesItemMembersItemUserRequestBuilderGetQueryParameters user entity of the member who has been assigned the role.
+// RolesItemMembersItemUserRequestBuilderGetQueryParameters the user who has this role assigned.
 type RolesItemMembersItemUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewRolesItemMembersItemUserRequestBuilder(rawUrl string, requestAdapter i2a
     urlParams["request-raw-url"] = rawUrl
     return NewRolesItemMembersItemUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get user entity of the member who has been assigned the role.
+// Get the user who has this role assigned.
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *RolesItemMembersItemUserRequestBuilder) Get(ctx context.Context, requestConfiguration *RolesItemMembersItemUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
@@ -73,7 +73,7 @@ func (m *RolesItemMembersItemUserRequestBuilder) MailboxSettings()(*RolesItemMem
 func (m *RolesItemMembersItemUserRequestBuilder) ServiceProvisioningErrors()(*RolesItemMembersItemUserServiceProvisioningErrorsRequestBuilder) {
     return NewRolesItemMembersItemUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation user entity of the member who has been assigned the role.
+// ToGetRequestInformation the user who has this role assigned.
 // returns a *RequestInformation when successful
 func (m *RolesItemMembersItemUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *RolesItemMembersItemUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

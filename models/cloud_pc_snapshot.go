@@ -135,7 +135,7 @@ func (m *CloudPcSnapshot) GetFieldDeserializers()(map[string]func(i878a80d2330e8
     }
     return res
 }
-// GetHealthCheckStatus gets the healthCheckStatus property value. Indicates the health check status of the Cloud PC snapshot. Possible values are, unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.
+// GetHealthCheckStatus gets the healthCheckStatus property value. Indicates the health check status of the Cloud PC snapshot. The possible values are: unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.
 // returns a *CloudPcSnapshotHealthCheckStatus when successful
 func (m *CloudPcSnapshot) GetHealthCheckStatus()(*CloudPcSnapshotHealthCheckStatus) {
     val, err := m.GetBackingStore().Get("healthCheckStatus")
@@ -257,7 +257,7 @@ func (m *CloudPcSnapshot) SetExpirationDateTime(value *i336074805fc853987abe6f7f
         panic(err)
     }
 }
-// SetHealthCheckStatus sets the healthCheckStatus property value. Indicates the health check status of the Cloud PC snapshot. Possible values are, unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.
+// SetHealthCheckStatus sets the healthCheckStatus property value. Indicates the health check status of the Cloud PC snapshot. The possible values are: unknown, healthy, unhealthy, unknownFutureValue. The default value is unknown. Read-only. Nullable.
 func (m *CloudPcSnapshot) SetHealthCheckStatus(value *CloudPcSnapshotHealthCheckStatus)() {
     err := m.GetBackingStore().Set("healthCheckStatus", value)
     if err != nil {

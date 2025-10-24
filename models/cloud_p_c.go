@@ -803,7 +803,7 @@ func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
     }
     return nil
 }
-// GetSharedDeviceDetail gets the sharedDeviceDetail property value. Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.
+// GetSharedDeviceDetail gets the sharedDeviceDetail property value. Indicates the Cloud PC device details associated with the frontline shared service plan, including the user's UPN and the session start date and time.
 // returns a CloudPcFrontlineSharedDeviceDetailable when successful
 func (m *CloudPC) GetSharedDeviceDetail()(CloudPcFrontlineSharedDeviceDetailable) {
     val, err := m.GetBackingStore().Get("sharedDeviceDetail")
@@ -1374,7 +1374,7 @@ func (m *CloudPC) SetServicePlanType(value *CloudPcServicePlanType)() {
         panic(err)
     }
 }
-// SetSharedDeviceDetail sets the sharedDeviceDetail property value. Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.
+// SetSharedDeviceDetail sets the sharedDeviceDetail property value. Indicates the Cloud PC device details associated with the frontline shared service plan, including the user's UPN and the session start date and time.
 func (m *CloudPC) SetSharedDeviceDetail(value CloudPcFrontlineSharedDeviceDetailable)() {
     err := m.GetBackingStore().Set("sharedDeviceDetail", value)
     if err != nil {

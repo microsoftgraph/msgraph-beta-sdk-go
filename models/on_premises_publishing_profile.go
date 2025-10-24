@@ -212,6 +212,22 @@ func (m *OnPremisesPublishingProfile) GetFieldDeserializers()(map[string]func(i8
         }
         return nil
     }
+    res["sensors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreatePrivateAccessSensorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]PrivateAccessSensorable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(PrivateAccessSensorable)
+                }
+            }
+            m.SetSensors(res)
+        }
+        return nil
+    }
     return res
 }
 // GetHybridAgentUpdaterConfiguration gets the hybridAgentUpdaterConfiguration property value. Represents a hybridAgentUpdaterConfiguration object.
@@ -259,6 +275,18 @@ func (m *OnPremisesPublishingProfile) GetPublishedResources()([]PublishedResourc
     }
     if val != nil {
         return val.([]PublishedResourceable)
+    }
+    return nil
+}
+// GetSensors gets the sensors property value. The sensors property
+// returns a []PrivateAccessSensorable when successful
+func (m *OnPremisesPublishingProfile) GetSensors()([]PrivateAccessSensorable) {
+    val, err := m.GetBackingStore().Get("sensors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]PrivateAccessSensorable)
     }
     return nil
 }
@@ -358,6 +386,18 @@ func (m *OnPremisesPublishingProfile) Serialize(writer i878a80d2330e89d26896388a
             return err
         }
     }
+    if m.GetSensors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSensors()))
+        for i, v := range m.GetSensors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sensors", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetAgentGroups sets the agentGroups property value. List of existing onPremisesAgentGroup objects. Read-only. Nullable.
@@ -423,6 +463,13 @@ func (m *OnPremisesPublishingProfile) SetPublishedResources(value []PublishedRes
         panic(err)
     }
 }
+// SetSensors sets the sensors property value. The sensors property
+func (m *OnPremisesPublishingProfile) SetSensors(value []PrivateAccessSensorable)() {
+    err := m.GetBackingStore().Set("sensors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type OnPremisesPublishingProfileable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -435,6 +482,7 @@ type OnPremisesPublishingProfileable interface {
     GetIsDefaultAccessEnabled()(*bool)
     GetIsEnabled()(*bool)
     GetPublishedResources()([]PublishedResourceable)
+    GetSensors()([]PrivateAccessSensorable)
     SetAgentGroups(value []OnPremisesAgentGroupable)()
     SetAgents(value []OnPremisesAgentable)()
     SetApplicationSegments(value []IpApplicationSegmentable)()
@@ -444,4 +492,5 @@ type OnPremisesPublishingProfileable interface {
     SetIsDefaultAccessEnabled(value *bool)()
     SetIsEnabled(value *bool)()
     SetPublishedResources(value []PublishedResourceable)()
+    SetSensors(value []PrivateAccessSensorable)()
 }

@@ -137,6 +137,26 @@ func (m *ConfigurationMonitor) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["inactivationReason"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInactivationReason(val)
+        }
+        return nil
+    }
+    res["lastModifiedBy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLastModifiedBy(val.(IdentitySetable))
+        }
+        return nil
+    }
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -177,6 +197,16 @@ func (m *ConfigurationMonitor) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["runAsUTCMServicePrincipal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRunAsUTCMServicePrincipal(val)
+        }
+        return nil
+    }
     res["runningOnBehalfOf"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIdentitySetFromDiscriminatorValue)
         if err != nil {
@@ -208,6 +238,30 @@ func (m *ConfigurationMonitor) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetInactivationReason gets the inactivationReason property value. The inactivationReason property
+// returns a *string when successful
+func (m *ConfigurationMonitor) GetInactivationReason()(*string) {
+    val, err := m.GetBackingStore().Get("inactivationReason")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetLastModifiedBy gets the lastModifiedBy property value. The lastModifiedBy property
+// returns a IdentitySetable when successful
+func (m *ConfigurationMonitor) GetLastModifiedBy()(IdentitySetable) {
+    val, err := m.GetBackingStore().Get("lastModifiedBy")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentitySetable)
+    }
+    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. The lastModifiedDateTime property
 // returns a *Time when successful
@@ -254,6 +308,18 @@ func (m *ConfigurationMonitor) GetParameters()(OpenComplexDictionaryTypeable) {
     }
     if val != nil {
         return val.(OpenComplexDictionaryTypeable)
+    }
+    return nil
+}
+// GetRunAsUTCMServicePrincipal gets the runAsUTCMServicePrincipal property value. The runAsUTCMServicePrincipal property
+// returns a *bool when successful
+func (m *ConfigurationMonitor) GetRunAsUTCMServicePrincipal()(*bool) {
+    val, err := m.GetBackingStore().Get("runAsUTCMServicePrincipal")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -323,6 +389,12 @@ func (m *ConfigurationMonitor) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("lastModifiedBy", m.GetLastModifiedBy())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetMode() != nil {
         cast := (*m.GetMode()).String()
         err = writer.WriteStringValue("mode", &cast)
@@ -331,7 +403,19 @@ func (m *ConfigurationMonitor) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteInt32Value("monitorRunFrequencyInHours", m.GetMonitorRunFrequencyInHours())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("parameters", m.GetParameters())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteBoolValue("runAsUTCMServicePrincipal", m.GetRunAsUTCMServicePrincipal())
         if err != nil {
             return err
         }
@@ -386,6 +470,20 @@ func (m *ConfigurationMonitor) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetInactivationReason sets the inactivationReason property value. The inactivationReason property
+func (m *ConfigurationMonitor) SetInactivationReason(value *string)() {
+    err := m.GetBackingStore().Set("inactivationReason", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLastModifiedBy sets the lastModifiedBy property value. The lastModifiedBy property
+func (m *ConfigurationMonitor) SetLastModifiedBy(value IdentitySetable)() {
+    err := m.GetBackingStore().Set("lastModifiedBy", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. The lastModifiedDateTime property
 func (m *ConfigurationMonitor) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
@@ -410,6 +508,13 @@ func (m *ConfigurationMonitor) SetMonitorRunFrequencyInHours(value *int32)() {
 // SetParameters sets the parameters property value. The parameters property
 func (m *ConfigurationMonitor) SetParameters(value OpenComplexDictionaryTypeable)() {
     err := m.GetBackingStore().Set("parameters", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetRunAsUTCMServicePrincipal sets the runAsUTCMServicePrincipal property value. The runAsUTCMServicePrincipal property
+func (m *ConfigurationMonitor) SetRunAsUTCMServicePrincipal(value *bool)() {
+    err := m.GetBackingStore().Set("runAsUTCMServicePrincipal", value)
     if err != nil {
         panic(err)
     }
@@ -443,10 +548,13 @@ type ConfigurationMonitorable interface {
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetInactivationReason()(*string)
+    GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMode()(*MonitorMode)
     GetMonitorRunFrequencyInHours()(*int32)
     GetParameters()(OpenComplexDictionaryTypeable)
+    GetRunAsUTCMServicePrincipal()(*bool)
     GetRunningOnBehalfOf()(IdentitySetable)
     GetStatus()(*MonitorStatus)
     GetTenantId()(*string)
@@ -455,10 +563,13 @@ type ConfigurationMonitorable interface {
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetInactivationReason(value *string)()
+    SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetMode(value *MonitorMode)()
     SetMonitorRunFrequencyInHours(value *int32)()
     SetParameters(value OpenComplexDictionaryTypeable)()
+    SetRunAsUTCMServicePrincipal(value *bool)()
     SetRunningOnBehalfOf(value IdentitySetable)()
     SetStatus(value *MonitorStatus)()
     SetTenantId(value *string)()

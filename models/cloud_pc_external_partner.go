@@ -35,7 +35,7 @@ func (m *CloudPcExternalPartner) GetConnectionStatus()(*CloudPcExternalPartnerSt
     }
     return nil
 }
-// GetEnableConnection gets the enableConnection property value. The enableConnection property
+// GetEnableConnection gets the enableConnection property value. Enable or disable the connection to an external partner. If true, an external partner API accepts incoming calls from external partners. Required. Supports $filter (eq).
 // returns a *bool when successful
 func (m *CloudPcExternalPartner) GetEnableConnection()(*bool) {
     val, err := m.GetBackingStore().Get("enableConnection")
@@ -103,7 +103,7 @@ func (m *CloudPcExternalPartner) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetLastSyncDateTime gets the lastSyncDateTime property value. The lastSyncDateTime property
+// GetLastSyncDateTime gets the lastSyncDateTime property value. Last data sync time for this external partner. The timeStamp type represents date and time information in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 // returns a *Time when successful
 func (m *CloudPcExternalPartner) GetLastSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastSyncDateTime")
@@ -115,7 +115,7 @@ func (m *CloudPcExternalPartner) GetLastSyncDateTime()(*i336074805fc853987abe6f7
     }
     return nil
 }
-// GetPartnerId gets the partnerId property value. The partnerId property
+// GetPartnerId gets the partnerId property value. The partner identifier used to identify the external partner. When the Cloud PC service is ready to integrate with a new external partner, it generates a GUID to represent this partner. The Cloud PC service provides this partner ID to the partner, which can then use it to call this Microsoft Graph API and external partner APIs. Read-only.
 // returns a *string when successful
 func (m *CloudPcExternalPartner) GetPartnerId()(*string) {
     val, err := m.GetBackingStore().Get("partnerId")
@@ -127,7 +127,7 @@ func (m *CloudPcExternalPartner) GetPartnerId()(*string) {
     }
     return nil
 }
-// GetStatusDetails gets the statusDetails property value. The statusDetails property
+// GetStatusDetails gets the statusDetails property value. Status details message. Read-only.
 // returns a *string when successful
 func (m *CloudPcExternalPartner) GetStatusDetails()(*string) {
     val, err := m.GetBackingStore().Get("statusDetails")
@@ -185,28 +185,28 @@ func (m *CloudPcExternalPartner) SetConnectionStatus(value *CloudPcExternalPartn
         panic(err)
     }
 }
-// SetEnableConnection sets the enableConnection property value. The enableConnection property
+// SetEnableConnection sets the enableConnection property value. Enable or disable the connection to an external partner. If true, an external partner API accepts incoming calls from external partners. Required. Supports $filter (eq).
 func (m *CloudPcExternalPartner) SetEnableConnection(value *bool)() {
     err := m.GetBackingStore().Set("enableConnection", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastSyncDateTime sets the lastSyncDateTime property value. The lastSyncDateTime property
+// SetLastSyncDateTime sets the lastSyncDateTime property value. Last data sync time for this external partner. The timeStamp type represents date and time information in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
 func (m *CloudPcExternalPartner) SetLastSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastSyncDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPartnerId sets the partnerId property value. The partnerId property
+// SetPartnerId sets the partnerId property value. The partner identifier used to identify the external partner. When the Cloud PC service is ready to integrate with a new external partner, it generates a GUID to represent this partner. The Cloud PC service provides this partner ID to the partner, which can then use it to call this Microsoft Graph API and external partner APIs. Read-only.
 func (m *CloudPcExternalPartner) SetPartnerId(value *string)() {
     err := m.GetBackingStore().Set("partnerId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetStatusDetails sets the statusDetails property value. The statusDetails property
+// SetStatusDetails sets the statusDetails property value. Status details message. Read-only.
 func (m *CloudPcExternalPartner) SetStatusDetails(value *string)() {
     err := m.GetBackingStore().Set("statusDetails", value)
     if err != nil {
