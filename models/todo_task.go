@@ -485,7 +485,7 @@ func (m *TodoTask) GetReminderDateTime()(DateTimeTimeZoneable) {
     }
     return nil
 }
-// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// GetSingleValueExtendedProperties gets the singleValueExtendedProperties property value. A collection of custom fields linked to the task.
 // returns a []SingleValueExtendedPropertyable when successful
 func (m *TodoTask) GetSingleValueExtendedProperties()([]SingleValueExtendedPropertyable) {
     val, err := m.GetBackingStore().Get("singleValueExtendedProperties")
@@ -824,7 +824,7 @@ func (m *TodoTask) SetReminderDateTime(value DateTimeTimeZoneable)() {
         panic(err)
     }
 }
-// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. The singleValueExtendedProperties property
+// SetSingleValueExtendedProperties sets the singleValueExtendedProperties property value. A collection of custom fields linked to the task.
 func (m *TodoTask) SetSingleValueExtendedProperties(value []SingleValueExtendedPropertyable)() {
     err := m.GetBackingStore().Set("singleValueExtendedProperties", value)
     if err != nil {

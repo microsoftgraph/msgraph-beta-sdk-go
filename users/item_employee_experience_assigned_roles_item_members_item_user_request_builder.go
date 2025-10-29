@@ -14,7 +14,7 @@ import (
 type ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilderGetQueryParameters user entity of the member who has been assigned the role.
+// ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilderGetQueryParameters the user who has this role assigned.
 type ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilder(raw
     urlParams["request-raw-url"] = rawUrl
     return NewItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get user entity of the member who has been assigned the role.
+// Get the user who has this role assigned.
 // returns a Userable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Userable, error) {
@@ -73,7 +73,7 @@ func (m *ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilder) M
 func (m *ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilder) ServiceProvisioningErrors()(*ItemEmployeeExperienceAssignedRolesItemMembersItemUserServiceProvisioningErrorsRequestBuilder) {
     return NewItemEmployeeExperienceAssignedRolesItemMembersItemUserServiceProvisioningErrorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation user entity of the member who has been assigned the role.
+// ToGetRequestInformation the user who has this role assigned.
 // returns a *RequestInformation when successful
 func (m *ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEmployeeExperienceAssignedRolesItemMembersItemUserRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

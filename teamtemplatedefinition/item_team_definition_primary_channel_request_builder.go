@@ -93,6 +93,11 @@ func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) Delete(ctx context.Cont
 func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName()(*ItemTeamDefinitionPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder) {
     return NewItemTeamDefinitionPrimaryChannelDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// EnabledApps provides operations to manage the enabledApps property of the microsoft.graph.channel entity.
+// returns a *ItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilder when successful
+func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) EnabledApps()(*ItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // FilesFolder provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
 // returns a *ItemTeamDefinitionPrimaryChannelFilesFolderRequestBuilder when successful
 func (m *ItemTeamDefinitionPrimaryChannelRequestBuilder) FilesFolder()(*ItemTeamDefinitionPrimaryChannelFilesFolderRequestBuilder) {

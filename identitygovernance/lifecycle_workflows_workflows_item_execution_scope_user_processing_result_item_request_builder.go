@@ -14,7 +14,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilderGetQueryParameters the unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilderGetQueryParameters the list of users that meet the workflowExecutionConditions of a workflow.
 type LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewLifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemReq
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get the unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// Get the list of users that meet the workflowExecutionConditions of a workflow.
 // returns a UserProcessingResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilderGetRequestConfiguration)(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.UserProcessingResultable, error) {
@@ -63,7 +63,7 @@ func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRe
     }
     return res.(i45fdec8a8c1f65ca74c5cf52921d432ad02ee300dbbd24b25f33cc8ecf6a1a91.UserProcessingResultable), nil
 }
-// ToGetRequestInformation the unique identifier of the Microsoft Entra identity that last modified the workflow object.
+// ToGetRequestInformation the list of users that meet the workflowExecutionConditions of a workflow.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemExecutionScopeUserProcessingResultItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

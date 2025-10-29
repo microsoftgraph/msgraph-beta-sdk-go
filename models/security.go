@@ -297,6 +297,16 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["securityCopilot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSecurityCopilotFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurityCopilot(val.(SecurityCopilotable))
+        }
+        return nil
+    }
     res["subjectRightsRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSubjectRightsRequestFromDiscriminatorValue)
         if err != nil {
@@ -440,6 +450,18 @@ func (m *Security) GetSecurityActions()([]SecurityActionable) {
     }
     if val != nil {
         return val.([]SecurityActionable)
+    }
+    return nil
+}
+// GetSecurityCopilot gets the securityCopilot property value. The securityCopilot property
+// returns a SecurityCopilotable when successful
+func (m *Security) GetSecurityCopilot()(SecurityCopilotable) {
+    val, err := m.GetBackingStore().Get("securityCopilot")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SecurityCopilotable)
     }
     return nil
 }
@@ -619,6 +641,12 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("securityCopilot", m.GetSecurityCopilot())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSubjectRightsRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjectRightsRequests()))
         for i, v := range m.GetSubjectRightsRequests() {
@@ -765,6 +793,13 @@ func (m *Security) SetSecurityActions(value []SecurityActionable)() {
         panic(err)
     }
 }
+// SetSecurityCopilot sets the securityCopilot property value. The securityCopilot property
+func (m *Security) SetSecurityCopilot(value SecurityCopilotable)() {
+    err := m.GetBackingStore().Set("securityCopilot", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSubjectRightsRequests sets the subjectRightsRequests property value. The subjectRightsRequests property
 func (m *Security) SetSubjectRightsRequests(value []SubjectRightsRequestable)() {
     err := m.GetBackingStore().Set("subjectRightsRequests", value)
@@ -804,6 +839,7 @@ type Securityable interface {
     GetSecureScoreControlProfiles()([]SecureScoreControlProfileable)
     GetSecureScores()([]SecureScoreable)
     GetSecurityActions()([]SecurityActionable)
+    GetSecurityCopilot()(SecurityCopilotable)
     GetSubjectRightsRequests()([]SubjectRightsRequestable)
     GetTiIndicators()([]TiIndicatorable)
     GetUserSecurityProfiles()([]UserSecurityProfileable)
@@ -821,6 +857,7 @@ type Securityable interface {
     SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)()
     SetSecureScores(value []SecureScoreable)()
     SetSecurityActions(value []SecurityActionable)()
+    SetSecurityCopilot(value SecurityCopilotable)()
     SetSubjectRightsRequests(value []SubjectRightsRequestable)()
     SetTiIndicators(value []TiIndicatorable)()
     SetUserSecurityProfiles(value []UserSecurityProfileable)()

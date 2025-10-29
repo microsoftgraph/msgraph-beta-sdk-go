@@ -21,7 +21,7 @@ type ItemCloudPCsCloudPCItemRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemCloudPCsCloudPCItemRequestBuilderGetQueryParameters get cloudPCs from users
+// ItemCloudPCsCloudPCItemRequestBuilderGetQueryParameters the user's Cloud PCs. Read-only. Nullable.
 type ItemCloudPCsCloudPCItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -88,7 +88,7 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Delete(ctx context.Context, requ
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) EndGracePeriod()(*ItemCloudPCsItemEndGracePeriodRequestBuilder) {
     return NewItemCloudPCsItemEndGracePeriodRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get cloudPCs from users
+// Get the user's Cloud PCs. Read-only. Nullable.
 // returns a CloudPCable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCable, error) {
@@ -183,10 +183,20 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) Resize()(*ItemCloudPCsItemResize
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) Restore()(*ItemCloudPCsItemRestoreRequestBuilder) {
     return NewItemCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveCloudPcLaunchDetail provides operations to call the retrieveCloudPcLaunchDetail method.
+// returns a *ItemCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPcLaunchDetail()(*ItemCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilder) {
+    return NewItemCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveCloudPCRemoteActionResults provides operations to call the retrieveCloudPCRemoteActionResults method.
 // returns a *ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPCRemoteActionResults()(*ItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) {
     return NewItemCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveFrontlineCloudPcDetail provides operations to call the retrieveFrontlineCloudPcDetail method.
+// returns a *ItemCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilder when successful
+func (m *ItemCloudPCsCloudPCItemRequestBuilder) RetrieveFrontlineCloudPcDetail()(*ItemCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilder) {
+    return NewItemCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveReviewStatus provides operations to call the retrieveReviewStatus method.
 // returns a *ItemCloudPCsItemRetrieveReviewStatusRequestBuilder when successful
@@ -229,7 +239,7 @@ func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToDeleteRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get cloudPCs from users
+// ToGetRequestInformation the user's Cloud PCs. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsCloudPCItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsCloudPCItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

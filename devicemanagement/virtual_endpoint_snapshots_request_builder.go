@@ -109,6 +109,11 @@ func (m *VirtualEndpointSnapshotsRequestBuilder) GetStorageAccountsWithSubscript
 func (m *VirtualEndpointSnapshotsRequestBuilder) GetSubscriptions()(*VirtualEndpointSnapshotsGetSubscriptionsRequestBuilder) {
     return NewVirtualEndpointSnapshotsGetSubscriptionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ImportSnapshot provides operations to call the importSnapshot method.
+// returns a *VirtualEndpointSnapshotsImportSnapshotRequestBuilder when successful
+func (m *VirtualEndpointSnapshotsRequestBuilder) ImportSnapshot()(*VirtualEndpointSnapshotsImportSnapshotRequestBuilder) {
+    return NewVirtualEndpointSnapshotsImportSnapshotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to snapshots for deviceManagement
 // returns a CloudPcSnapshotable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -128,6 +133,16 @@ func (m *VirtualEndpointSnapshotsRequestBuilder) Post(ctx context.Context, body 
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcSnapshotable), nil
+}
+// PurgeImportedSnapshot provides operations to call the purgeImportedSnapshot method.
+// returns a *VirtualEndpointSnapshotsPurgeImportedSnapshotRequestBuilder when successful
+func (m *VirtualEndpointSnapshotsRequestBuilder) PurgeImportedSnapshot()(*VirtualEndpointSnapshotsPurgeImportedSnapshotRequestBuilder) {
+    return NewVirtualEndpointSnapshotsPurgeImportedSnapshotRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveSnapshotImportResultsWithSnapshotId provides operations to call the retrieveSnapshotImportResults method.
+// returns a *VirtualEndpointSnapshotsRetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder when successful
+func (m *VirtualEndpointSnapshotsRequestBuilder) RetrieveSnapshotImportResultsWithSnapshotId(snapshotId *string)(*VirtualEndpointSnapshotsRetrieveSnapshotImportResultsWithSnapshotIdRequestBuilder) {
+    return NewVirtualEndpointSnapshotsRetrieveSnapshotImportResultsWithSnapshotIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, snapshotId)
 }
 // ToGetRequestInformation cloud PC snapshots.
 // returns a *RequestInformation when successful

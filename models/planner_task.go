@@ -419,6 +419,16 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["hasChat"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetHasChat(val)
+        }
+        return nil
+    }
     res["hasDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -590,6 +600,18 @@ func (m *PlannerTask) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         return nil
     }
     return res
+}
+// GetHasChat gets the hasChat property value. The hasChat property
+// returns a *bool when successful
+func (m *PlannerTask) GetHasChat()(*bool) {
+    val, err := m.GetBackingStore().Get("hasChat")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
 }
 // GetHasDescription gets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.
 // returns a *bool when successful
@@ -904,6 +926,12 @@ func (m *PlannerTask) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteBoolValue("hasChat", m.GetHasChat())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("hasDescription", m.GetHasDescription())
         if err != nil {
             return err
@@ -1128,6 +1156,13 @@ func (m *PlannerTask) SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f
         panic(err)
     }
 }
+// SetHasChat sets the hasChat property value. The hasChat property
+func (m *PlannerTask) SetHasChat(value *bool)() {
+    err := m.GetBackingStore().Set("hasChat", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetHasDescription sets the hasDescription property value. Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.
 func (m *PlannerTask) SetHasDescription(value *bool)() {
     err := m.GetBackingStore().Set("hasDescription", value)
@@ -1267,6 +1302,7 @@ type PlannerTaskable interface {
     GetCreationSource()(PlannerTaskCreationable)
     GetDetails()(PlannerTaskDetailsable)
     GetDueDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetHasChat()(*bool)
     GetHasDescription()(*bool)
     GetIsArchived()(*bool)
     GetIsOnMyDay()(*bool)
@@ -1301,6 +1337,7 @@ type PlannerTaskable interface {
     SetCreationSource(value PlannerTaskCreationable)()
     SetDetails(value PlannerTaskDetailsable)()
     SetDueDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetHasChat(value *bool)()
     SetHasDescription(value *bool)()
     SetIsArchived(value *bool)()
     SetIsOnMyDay(value *bool)()

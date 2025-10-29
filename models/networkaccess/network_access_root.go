@@ -93,22 +93,6 @@ func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["filteringProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateFilteringProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]FilteringProfileable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(FilteringProfileable)
-                }
-            }
-            m.SetFilteringProfiles(res)
-        }
-        return nil
-    }
     res["forwardingPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateForwardingPolicyFromDiscriminatorValue)
         if err != nil {
@@ -122,22 +106,6 @@ func (m *NetworkAccessRoot) GetFieldDeserializers()(map[string]func(i878a80d2330
                 }
             }
             m.SetForwardingPolicies(res)
-        }
-        return nil
-    }
-    res["forwardingProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateForwardingProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ForwardingProfileable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ForwardingProfileable)
-                }
-            }
-            m.SetForwardingProfiles(res)
         }
         return nil
     }
@@ -237,18 +205,6 @@ func (m *NetworkAccessRoot) GetFilteringPolicies()([]FilteringPolicyable) {
     }
     return nil
 }
-// GetFilteringProfiles gets the filteringProfiles property value. A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
-// returns a []FilteringProfileable when successful
-func (m *NetworkAccessRoot) GetFilteringProfiles()([]FilteringProfileable) {
-    val, err := m.GetBackingStore().Get("filteringProfiles")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]FilteringProfileable)
-    }
-    return nil
-}
 // GetForwardingPolicies gets the forwardingPolicies property value. The forwardingPolicies property
 // returns a []ForwardingPolicyable when successful
 func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
@@ -258,18 +214,6 @@ func (m *NetworkAccessRoot) GetForwardingPolicies()([]ForwardingPolicyable) {
     }
     if val != nil {
         return val.([]ForwardingPolicyable)
-    }
-    return nil
-}
-// GetForwardingProfiles gets the forwardingProfiles property value. The forwardingProfiles property
-// returns a []ForwardingProfileable when successful
-func (m *NetworkAccessRoot) GetForwardingProfiles()([]ForwardingProfileable) {
-    val, err := m.GetBackingStore().Get("forwardingProfiles")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ForwardingProfileable)
     }
     return nil
 }
@@ -393,18 +337,6 @@ func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
-    if m.GetFilteringProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetFilteringProfiles()))
-        for i, v := range m.GetFilteringProfiles() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("filteringProfiles", cast)
-        if err != nil {
-            return err
-        }
-    }
     if m.GetForwardingPolicies() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetForwardingPolicies()))
         for i, v := range m.GetForwardingPolicies() {
@@ -413,18 +345,6 @@ func (m *NetworkAccessRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             }
         }
         err = writer.WriteCollectionOfObjectValues("forwardingPolicies", cast)
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetForwardingProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetForwardingProfiles()))
-        for i, v := range m.GetForwardingProfiles() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("forwardingProfiles", cast)
         if err != nil {
             return err
         }
@@ -506,23 +426,9 @@ func (m *NetworkAccessRoot) SetFilteringPolicies(value []FilteringPolicyable)() 
         panic(err)
     }
 }
-// SetFilteringProfiles sets the filteringProfiles property value. A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
-func (m *NetworkAccessRoot) SetFilteringProfiles(value []FilteringProfileable)() {
-    err := m.GetBackingStore().Set("filteringProfiles", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetForwardingPolicies sets the forwardingPolicies property value. The forwardingPolicies property
 func (m *NetworkAccessRoot) SetForwardingPolicies(value []ForwardingPolicyable)() {
     err := m.GetBackingStore().Set("forwardingPolicies", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetForwardingProfiles sets the forwardingProfiles property value. The forwardingProfiles property
-func (m *NetworkAccessRoot) SetForwardingProfiles(value []ForwardingProfileable)() {
-    err := m.GetBackingStore().Set("forwardingProfiles", value)
     if err != nil {
         panic(err)
     }
@@ -582,9 +488,7 @@ type NetworkAccessRootable interface {
     GetAlerts()([]Alertable)
     GetConnectivity()(Connectivityable)
     GetFilteringPolicies()([]FilteringPolicyable)
-    GetFilteringProfiles()([]FilteringProfileable)
     GetForwardingPolicies()([]ForwardingPolicyable)
-    GetForwardingProfiles()([]ForwardingProfileable)
     GetLogs()(Logsable)
     GetReports()(Reportsable)
     GetSettings()(Settingsable)
@@ -595,9 +499,7 @@ type NetworkAccessRootable interface {
     SetAlerts(value []Alertable)()
     SetConnectivity(value Connectivityable)()
     SetFilteringPolicies(value []FilteringPolicyable)()
-    SetFilteringProfiles(value []FilteringProfileable)()
     SetForwardingPolicies(value []ForwardingPolicyable)()
-    SetForwardingProfiles(value []ForwardingProfileable)()
     SetLogs(value Logsable)()
     SetReports(value Reportsable)()
     SetSettings(value Settingsable)()

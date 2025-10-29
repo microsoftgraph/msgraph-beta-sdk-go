@@ -5,19 +5,31 @@ package models
 type MonitorMode int
 
 const (
-    MONITORONLY_MONITORMODE MonitorMode = iota
+    MONITORONCE_MONITORMODE MonitorMode = iota
+    MONITORONLY_MONITORMODE
+    APPLYONCEANDMONITORCONTINUOUS_MONITORMODE
+    APPLYONCE_MONITORMODE
+    APPLYCONTINUOUS_MONITORMODE
     // A marker value for members added after the release of this API.
     UNKNOWNFUTUREVALUE_MONITORMODE
 )
 
 func (i MonitorMode) String() string {
-    return []string{"monitorOnly", "unknownFutureValue"}[i]
+    return []string{"monitorOnce", "monitorOnly", "applyOnceAndMonitorContinuous", "applyOnce", "applyContinuous", "unknownFutureValue"}[i]
 }
 func ParseMonitorMode(v string) (any, error) {
-    result := MONITORONLY_MONITORMODE
+    result := MONITORONCE_MONITORMODE
     switch v {
+        case "monitorOnce":
+            result = MONITORONCE_MONITORMODE
         case "monitorOnly":
             result = MONITORONLY_MONITORMODE
+        case "applyOnceAndMonitorContinuous":
+            result = APPLYONCEANDMONITORCONTINUOUS_MONITORMODE
+        case "applyOnce":
+            result = APPLYONCE_MONITORMODE
+        case "applyContinuous":
+            result = APPLYCONTINUOUS_MONITORMODE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MONITORMODE
         default:

@@ -122,6 +122,16 @@ func (m *CloudPcGalleryImage) GetFieldDeserializers()(map[string]func(i878a80d23
         }
         return nil
     }
+    res["osArchitecture"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseCloudPcImageOsArchitectureType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOsArchitecture(val.(*CloudPcImageOsArchitectureType))
+        }
+        return nil
+    }
     res["osVersionNumber"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -257,6 +267,18 @@ func (m *CloudPcGalleryImage) GetOfferName()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetOsArchitecture gets the osArchitecture property value. The osArchitecture property
+// returns a *CloudPcImageOsArchitectureType when successful
+func (m *CloudPcGalleryImage) GetOsArchitecture()(*CloudPcImageOsArchitectureType) {
+    val, err := m.GetBackingStore().Get("osArchitecture")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*CloudPcImageOsArchitectureType)
     }
     return nil
 }
@@ -422,6 +444,13 @@ func (m *CloudPcGalleryImage) Serialize(writer i878a80d2330e89d26896388a3f487eef
             return err
         }
     }
+    if m.GetOsArchitecture() != nil {
+        cast := (*m.GetOsArchitecture()).String()
+        err = writer.WriteStringValue("osArchitecture", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("osVersionNumber", m.GetOsVersionNumber())
         if err != nil {
@@ -527,6 +556,13 @@ func (m *CloudPcGalleryImage) SetOfferName(value *string)() {
         panic(err)
     }
 }
+// SetOsArchitecture sets the osArchitecture property value. The osArchitecture property
+func (m *CloudPcGalleryImage) SetOsArchitecture(value *CloudPcImageOsArchitectureType)() {
+    err := m.GetBackingStore().Set("osArchitecture", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOsVersionNumber sets the osVersionNumber property value. The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.
 func (m *CloudPcGalleryImage) SetOsVersionNumber(value *string)() {
     err := m.GetBackingStore().Set("osVersionNumber", value)
@@ -606,6 +642,7 @@ type CloudPcGalleryImageable interface {
     GetOffer()(*string)
     GetOfferDisplayName()(*string)
     GetOfferName()(*string)
+    GetOsArchitecture()(*CloudPcImageOsArchitectureType)
     GetOsVersionNumber()(*string)
     GetPublisher()(*string)
     GetPublisherName()(*string)
@@ -622,6 +659,7 @@ type CloudPcGalleryImageable interface {
     SetOffer(value *string)()
     SetOfferDisplayName(value *string)()
     SetOfferName(value *string)()
+    SetOsArchitecture(value *CloudPcImageOsArchitectureType)()
     SetOsVersionNumber(value *string)()
     SetPublisher(value *string)()
     SetPublisherName(value *string)()

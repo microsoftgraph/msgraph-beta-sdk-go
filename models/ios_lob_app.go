@@ -26,6 +26,18 @@ func NewIosLobApp()(*IosLobApp) {
 func CreateIosLobAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosLobApp(), nil
 }
+// GetAppleDeviceAppDeliveryProtocolType gets the appleDeviceAppDeliveryProtocolType property value. Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices
+// returns a *AppleDeviceDeliveryProtocol when successful
+func (m *IosLobApp) GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol) {
+    val, err := m.GetBackingStore().Get("appleDeviceAppDeliveryProtocolType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AppleDeviceDeliveryProtocol)
+    }
+    return nil
+}
 // GetApplicableDeviceType gets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 // returns a IosDeviceTypeable when successful
 func (m *IosLobApp) GetApplicableDeviceType()(IosDeviceTypeable) {
@@ -78,6 +90,16 @@ func (m *IosLobApp) GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *IosLobApp) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.MobileLobApp.GetFieldDeserializers()
+    res["appleDeviceAppDeliveryProtocolType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAppleDeviceDeliveryProtocol)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAppleDeviceAppDeliveryProtocolType(val.(*AppleDeviceDeliveryProtocol))
+        }
+        return nil
+    }
     res["applicableDeviceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateIosDeviceTypeFromDiscriminatorValue)
         if err != nil {
@@ -170,6 +192,13 @@ func (m *IosLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if err != nil {
         return err
     }
+    if m.GetAppleDeviceAppDeliveryProtocolType() != nil {
+        cast := (*m.GetAppleDeviceAppDeliveryProtocolType()).String()
+        err = writer.WriteStringValue("appleDeviceAppDeliveryProtocolType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("applicableDeviceType", m.GetApplicableDeviceType())
         if err != nil {
@@ -207,6 +236,13 @@ func (m *IosLobApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     return nil
+}
+// SetAppleDeviceAppDeliveryProtocolType sets the appleDeviceAppDeliveryProtocolType property value. Enum of the supported types of Apple delivery protocols, representing the available protocols to deliver payloads to Apple devices
+func (m *IosLobApp) SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)() {
+    err := m.GetBackingStore().Set("appleDeviceAppDeliveryProtocolType", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetApplicableDeviceType sets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
 func (m *IosLobApp) SetApplicableDeviceType(value IosDeviceTypeable)() {
@@ -253,12 +289,14 @@ func (m *IosLobApp) SetVersionNumber(value *string)() {
 type IosLobAppable interface {
     MobileLobAppable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAppleDeviceAppDeliveryProtocolType()(*AppleDeviceDeliveryProtocol)
     GetApplicableDeviceType()(IosDeviceTypeable)
     GetBuildNumber()(*string)
     GetBundleId()(*string)
     GetExpirationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetMinimumSupportedOperatingSystem()(IosMinimumOperatingSystemable)
     GetVersionNumber()(*string)
+    SetAppleDeviceAppDeliveryProtocolType(value *AppleDeviceDeliveryProtocol)()
     SetApplicableDeviceType(value IosDeviceTypeable)()
     SetBuildNumber(value *string)()
     SetBundleId(value *string)()

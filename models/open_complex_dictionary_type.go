@@ -15,6 +15,8 @@ func NewOpenComplexDictionaryType()(*OpenComplexDictionaryType) {
     m := &OpenComplexDictionaryType{
         Dictionary: *NewDictionary(),
     }
+    odataTypeValue := "#microsoft.graph.openComplexDictionaryType"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateOpenComplexDictionaryTypeFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
