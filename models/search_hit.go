@@ -59,36 +59,6 @@ func (m *SearchHit) GetContentSource()(*string) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetId(val)
-        }
-        return nil
-    }
-    res["_score"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetScore(val)
-        }
-        return nil
-    }
-    res["_source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSource(val.(Entityable))
-        }
-        return nil
-    }
     res["contentSource"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -106,6 +76,16 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         if val != nil {
             m.SetHitId(val)
+        }
+        return nil
+    }
+    res["_id"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetId(val)
         }
         return nil
     }
@@ -159,6 +139,36 @@ func (m *SearchHit) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2689
         }
         return nil
     }
+    res["_score"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetInt32Value()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetScore(val)
+        }
+        return nil
+    }
+    res["_summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSearchHitSummary(val)
+        }
+        return nil
+    }
+    res["_source"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEntityFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSource(val.(Entityable))
+        }
+        return nil
+    }
     res["summary"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -183,10 +193,10 @@ func (m *SearchHit) GetHitId()(*string) {
     }
     return nil
 }
-// GetId gets the _id property value. The _id property
+// GetId gets the _id property value. The id property
 // returns a *string when successful
 func (m *SearchHit) GetId()(*string) {
-    val, err := m.GetBackingStore().Get("_id")
+    val, err := m.GetBackingStore().Get("id")
     if err != nil {
         panic(err)
     }
@@ -255,10 +265,10 @@ func (m *SearchHit) GetResultTemplateId()(*string) {
     }
     return nil
 }
-// GetScore gets the _score property value. The _score property
+// GetScore gets the _score property value. The score property
 // returns a *int32 when successful
 func (m *SearchHit) GetScore()(*int32) {
-    val, err := m.GetBackingStore().Get("_score")
+    val, err := m.GetBackingStore().Get("score")
     if err != nil {
         panic(err)
     }
@@ -267,10 +277,22 @@ func (m *SearchHit) GetScore()(*int32) {
     }
     return nil
 }
-// GetSource gets the _source property value. The _source property
+// GetSearchHitSummary gets the _summary property value. The summary property
+// returns a *string when successful
+func (m *SearchHit) GetSearchHitSummary()(*string) {
+    val, err := m.GetBackingStore().Get("searchHitSummary")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetSource gets the _source property value. The source property
 // returns a Entityable when successful
 func (m *SearchHit) GetSource()(Entityable) {
-    val, err := m.GetBackingStore().Get("_source")
+    val, err := m.GetBackingStore().Get("source")
     if err != nil {
         panic(err)
     }
@@ -306,6 +328,12 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
+        err := writer.WriteStringValue("_id", m.GetId())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteBoolValue("isCollapsed", m.GetIsCollapsed())
         if err != nil {
             return err
@@ -336,25 +364,25 @@ func (m *SearchHit) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
         }
     }
     {
-        err := writer.WriteStringValue("summary", m.GetSummary())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteStringValue("_id", m.GetId())
-        if err != nil {
-            return err
-        }
-    }
-    {
         err := writer.WriteInt32Value("_score", m.GetScore())
         if err != nil {
             return err
         }
     }
     {
+        err := writer.WriteStringValue("_summary", m.GetSearchHitSummary())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteObjectValue("_source", m.GetSource())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("summary", m.GetSummary())
         if err != nil {
             return err
         }
@@ -392,9 +420,9 @@ func (m *SearchHit) SetHitId(value *string)() {
         panic(err)
     }
 }
-// SetId sets the _id property value. The _id property
+// SetId sets the _id property value. The id property
 func (m *SearchHit) SetId(value *string)() {
-    err := m.GetBackingStore().Set("_id", value)
+    err := m.GetBackingStore().Set("id", value)
     if err != nil {
         panic(err)
     }
@@ -434,16 +462,23 @@ func (m *SearchHit) SetResultTemplateId(value *string)() {
         panic(err)
     }
 }
-// SetScore sets the _score property value. The _score property
+// SetScore sets the _score property value. The score property
 func (m *SearchHit) SetScore(value *int32)() {
-    err := m.GetBackingStore().Set("_score", value)
+    err := m.GetBackingStore().Set("score", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSource sets the _source property value. The _source property
+// SetSearchHitSummary sets the _summary property value. The summary property
+func (m *SearchHit) SetSearchHitSummary(value *string)() {
+    err := m.GetBackingStore().Set("searchHitSummary", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSource sets the _source property value. The source property
 func (m *SearchHit) SetSource(value Entityable)() {
-    err := m.GetBackingStore().Set("_source", value)
+    err := m.GetBackingStore().Set("source", value)
     if err != nil {
         panic(err)
     }
@@ -469,6 +504,7 @@ type SearchHitable interface {
     GetResource()(Entityable)
     GetResultTemplateId()(*string)
     GetScore()(*int32)
+    GetSearchHitSummary()(*string)
     GetSource()(Entityable)
     GetSummary()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -481,6 +517,7 @@ type SearchHitable interface {
     SetResource(value Entityable)()
     SetResultTemplateId(value *string)()
     SetScore(value *int32)()
+    SetSearchHitSummary(value *string)()
     SetSource(value Entityable)()
     SetSummary(value *string)()
 }

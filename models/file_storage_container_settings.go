@@ -67,6 +67,16 @@ func (m *FileStorageContainerSettings) GetFieldDeserializers()(map[string]func(i
         }
         return nil
     }
+    res["itemDefaultSensitivityLabelId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetItemDefaultSensitivityLabelId(val)
+        }
+        return nil
+    }
     res["itemMajorVersionLimit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetInt32Value()
         if err != nil {
@@ -113,6 +123,18 @@ func (m *FileStorageContainerSettings) GetIsOcrEnabled()(*bool) {
     }
     return nil
 }
+// GetItemDefaultSensitivityLabelId gets the itemDefaultSensitivityLabelId property value. The ID of the default sensitivity label for items in the container. Optional. Read-write.
+// returns a *string when successful
+func (m *FileStorageContainerSettings) GetItemDefaultSensitivityLabelId()(*string) {
+    val, err := m.GetBackingStore().Get("itemDefaultSensitivityLabelId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetItemMajorVersionLimit gets the itemMajorVersionLimit property value. The maximum major versions allowed for items in the container. Optional. Read-write.
 // returns a *int32 when successful
 func (m *FileStorageContainerSettings) GetItemMajorVersionLimit()(*int32) {
@@ -147,6 +169,12 @@ func (m *FileStorageContainerSettings) Serialize(writer i878a80d2330e89d26896388
     }
     {
         err := writer.WriteBoolValue("isOcrEnabled", m.GetIsOcrEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteStringValue("itemDefaultSensitivityLabelId", m.GetItemDefaultSensitivityLabelId())
         if err != nil {
             return err
         }
@@ -196,6 +224,13 @@ func (m *FileStorageContainerSettings) SetIsOcrEnabled(value *bool)() {
         panic(err)
     }
 }
+// SetItemDefaultSensitivityLabelId sets the itemDefaultSensitivityLabelId property value. The ID of the default sensitivity label for items in the container. Optional. Read-write.
+func (m *FileStorageContainerSettings) SetItemDefaultSensitivityLabelId(value *string)() {
+    err := m.GetBackingStore().Set("itemDefaultSensitivityLabelId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetItemMajorVersionLimit sets the itemMajorVersionLimit property value. The maximum major versions allowed for items in the container. Optional. Read-write.
 func (m *FileStorageContainerSettings) SetItemMajorVersionLimit(value *int32)() {
     err := m.GetBackingStore().Set("itemMajorVersionLimit", value)
@@ -217,11 +252,13 @@ type FileStorageContainerSettingsable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIsItemVersioningEnabled()(*bool)
     GetIsOcrEnabled()(*bool)
+    GetItemDefaultSensitivityLabelId()(*string)
     GetItemMajorVersionLimit()(*int32)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIsItemVersioningEnabled(value *bool)()
     SetIsOcrEnabled(value *bool)()
+    SetItemDefaultSensitivityLabelId(value *string)()
     SetItemMajorVersionLimit(value *int32)()
     SetOdataType(value *string)()
 }

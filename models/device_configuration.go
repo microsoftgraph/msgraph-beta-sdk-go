@@ -310,6 +310,8 @@ func CreateDeviceConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d2
                         return NewWindowsWifiEnterpriseEAPConfiguration(), nil
                     case "#microsoft.graph.windowsWiredNetworkConfiguration":
                         return NewWindowsWiredNetworkConfiguration(), nil
+                    case "#microsoft.graph.windowsZtdnsConfiguration":
+                        return NewWindowsZtdnsConfiguration(), nil
                 }
             }
         }

@@ -561,7 +561,7 @@ func (m *GraphBaseServiceClient) PayloadResponse()(*i22f037221f506c5b5751f13095c
 func (m *GraphBaseServiceClient) PermissionGrants()(*i48a68a7c83dc874f9d9fdf942afed70a34b11f92d6b2ccb439359753116f65cc.PermissionGrantsRequestBuilder) {
     return i48a68a7c83dc874f9d9fdf942afed70a34b11f92d6b2ccb439359753116f65cc.NewPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Places the places property
+// Places provides operations to manage the collection of place entities.
 // returns a *PlacesRequestBuilder when successful
 func (m *GraphBaseServiceClient) Places()(*ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1.PlacesRequestBuilder) {
     return ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1.NewPlacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

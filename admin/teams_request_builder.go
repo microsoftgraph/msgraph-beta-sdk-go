@@ -118,6 +118,11 @@ func (m *TeamsRequestBuilder) Patch(ctx context.Context, body ida00aeab33baad931
 func (m *TeamsRequestBuilder) Policy()(*TeamsPolicyRequestBuilder) {
     return NewTeamsPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// TelephoneNumberManagement provides operations to manage the telephoneNumberManagement property of the microsoft.graph.teamsAdministration.teamsAdminRoot entity.
+// returns a *TeamsTelephoneNumberManagementRequestBuilder when successful
+func (m *TeamsRequestBuilder) TelephoneNumberManagement()(*TeamsTelephoneNumberManagementRequestBuilder) {
+    return NewTeamsTelephoneNumberManagementRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property teams for admin
 // returns a *RequestInformation when successful
 func (m *TeamsRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *TeamsRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

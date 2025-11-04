@@ -80,16 +80,6 @@ func (m *TranscriptPayload) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
-    res["sequenceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetSequenceId(val)
-        }
-        return nil
-    }
     res["speaker"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateTranscriptSpeakerFromDiscriminatorValue)
         if err != nil {
@@ -131,18 +121,6 @@ func (m *TranscriptPayload) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
-    }
-    return nil
-}
-// GetSequenceId gets the sequenceId property value. The sequenceId property
-// returns a *int32 when successful
-func (m *TranscriptPayload) GetSequenceId()(*int32) {
-    val, err := m.GetBackingStore().Get("sequenceId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
     }
     return nil
 }
@@ -192,12 +170,6 @@ func (m *TranscriptPayload) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err := writer.WriteInt32Value("sequenceId", m.GetSequenceId())
         if err != nil {
             return err
         }
@@ -253,13 +225,6 @@ func (m *TranscriptPayload) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSequenceId sets the sequenceId property value. The sequenceId property
-func (m *TranscriptPayload) SetSequenceId(value *int32)() {
-    err := m.GetBackingStore().Set("sequenceId", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetSpeaker sets the speaker property value. The speaker property
 func (m *TranscriptPayload) SetSpeaker(value TranscriptSpeakerable)() {
     err := m.GetBackingStore().Set("speaker", value)
@@ -288,14 +253,12 @@ type TranscriptPayloadable interface {
     GetAudioCaptureDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
-    GetSequenceId()(*int32)
     GetSpeaker()(TranscriptSpeakerable)
     GetSpokenLanguage()(*string)
     GetText()(*string)
     SetAudioCaptureDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
-    SetSequenceId(value *int32)()
     SetSpeaker(value TranscriptSpeakerable)()
     SetSpokenLanguage(value *string)()
     SetText(value *string)()

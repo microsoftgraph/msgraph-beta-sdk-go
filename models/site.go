@@ -364,6 +364,26 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["locale"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLocale(val)
+        }
+        return nil
+    }
+    res["lockState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSiteLockState)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetLockState(val.(*SiteLockState))
+        }
+        return nil
+    }
     res["onenote"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateOnenoteFromDiscriminatorValue)
         if err != nil {
@@ -387,6 +407,16 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetOperations(res)
+        }
+        return nil
+    }
+    res["ownerIdentityToResolve"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateIdentityInputFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOwnerIdentityToResolve(val.(IdentityInputable))
         }
         return nil
     }
@@ -468,6 +498,16 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["shareByEmailEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetShareByEmailEnabled(val)
+        }
+        return nil
+    }
     res["sharepointIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSharepointIdsFromDiscriminatorValue)
         if err != nil {
@@ -501,6 +541,16 @@ func (m *Site) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
                 }
             }
             m.SetSites(res)
+        }
+        return nil
+    }
+    res["template"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseSiteTemplateType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTemplate(val.(*SiteTemplateType))
         }
         return nil
     }
@@ -554,6 +604,30 @@ func (m *Site) GetLists()([]Listable) {
     }
     return nil
 }
+// GetLocale gets the locale property value. The language settings of the site.
+// returns a *string when successful
+func (m *Site) GetLocale()(*string) {
+    val, err := m.GetBackingStore().Get("locale")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetLockState gets the lockState property value. The state of the site. The possible values are: unlocked, lockedReadOnly, lockedNoAccess, lockedNoAdditions, unknownFutureValue
+// returns a *SiteLockState when successful
+func (m *Site) GetLockState()(*SiteLockState) {
+    val, err := m.GetBackingStore().Get("lockState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SiteLockState)
+    }
+    return nil
+}
 // GetOnenote gets the onenote property value. The onenote property
 // returns a Onenoteable when successful
 func (m *Site) GetOnenote()(Onenoteable) {
@@ -575,6 +649,18 @@ func (m *Site) GetOperations()([]RichLongRunningOperationable) {
     }
     if val != nil {
         return val.([]RichLongRunningOperationable)
+    }
+    return nil
+}
+// GetOwnerIdentityToResolve gets the ownerIdentityToResolve property value. The site owner to be provided at the time of site creation only.
+// returns a IdentityInputable when successful
+func (m *Site) GetOwnerIdentityToResolve()(IdentityInputable) {
+    val, err := m.GetBackingStore().Get("ownerIdentityToResolve")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(IdentityInputable)
     }
     return nil
 }
@@ -650,6 +736,18 @@ func (m *Site) GetSettings()(SiteSettingsable) {
     }
     return nil
 }
+// GetShareByEmailEnabled gets the shareByEmailEnabled property value. Determines whether the site and its content can be shared via email.
+// returns a *bool when successful
+func (m *Site) GetShareByEmailEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("shareByEmailEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetSharepointIds gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 // returns a SharepointIdsable when successful
 func (m *Site) GetSharepointIds()(SharepointIdsable) {
@@ -683,6 +781,18 @@ func (m *Site) GetSites()([]Siteable) {
     }
     if val != nil {
         return val.([]Siteable)
+    }
+    return nil
+}
+// GetTemplate gets the template property value. Specifies the template applied to the site. The possible values are: sitepagepublishing, group, sts, unknownFutureValue.
+// returns a *SiteTemplateType when successful
+func (m *Site) GetTemplate()(*SiteTemplateType) {
+    val, err := m.GetBackingStore().Get("template")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*SiteTemplateType)
     }
     return nil
 }
@@ -837,6 +947,19 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteStringValue("locale", m.GetLocale())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetLockState() != nil {
+        cast := (*m.GetLockState()).String()
+        err = writer.WriteStringValue("lockState", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("onenote", m.GetOnenote())
         if err != nil {
             return err
@@ -850,6 +973,12 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             }
         }
         err = writer.WriteCollectionOfObjectValues("operations", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("ownerIdentityToResolve", m.GetOwnerIdentityToResolve())
         if err != nil {
             return err
         }
@@ -909,6 +1038,12 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteBoolValue("shareByEmailEnabled", m.GetShareByEmailEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("sharepointIds", m.GetSharepointIds())
         if err != nil {
             return err
@@ -928,6 +1063,13 @@ func (m *Site) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
             }
         }
         err = writer.WriteCollectionOfObjectValues("sites", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTemplate() != nil {
+        cast := (*m.GetTemplate()).String()
+        err = writer.WriteStringValue("template", &cast)
         if err != nil {
             return err
         }
@@ -1039,6 +1181,20 @@ func (m *Site) SetLists(value []Listable)() {
         panic(err)
     }
 }
+// SetLocale sets the locale property value. The language settings of the site.
+func (m *Site) SetLocale(value *string)() {
+    err := m.GetBackingStore().Set("locale", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetLockState sets the lockState property value. The state of the site. The possible values are: unlocked, lockedReadOnly, lockedNoAccess, lockedNoAdditions, unknownFutureValue
+func (m *Site) SetLockState(value *SiteLockState)() {
+    err := m.GetBackingStore().Set("lockState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnenote sets the onenote property value. The onenote property
 func (m *Site) SetOnenote(value Onenoteable)() {
     err := m.GetBackingStore().Set("onenote", value)
@@ -1049,6 +1205,13 @@ func (m *Site) SetOnenote(value Onenoteable)() {
 // SetOperations sets the operations property value. The collection of long running operations for the site.
 func (m *Site) SetOperations(value []RichLongRunningOperationable)() {
     err := m.GetBackingStore().Set("operations", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetOwnerIdentityToResolve sets the ownerIdentityToResolve property value. The site owner to be provided at the time of site creation only.
+func (m *Site) SetOwnerIdentityToResolve(value IdentityInputable)() {
+    err := m.GetBackingStore().Set("ownerIdentityToResolve", value)
     if err != nil {
         panic(err)
     }
@@ -1095,6 +1258,13 @@ func (m *Site) SetSettings(value SiteSettingsable)() {
         panic(err)
     }
 }
+// SetShareByEmailEnabled sets the shareByEmailEnabled property value. Determines whether the site and its content can be shared via email.
+func (m *Site) SetShareByEmailEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("shareByEmailEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSharepointIds sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
 func (m *Site) SetSharepointIds(value SharepointIdsable)() {
     err := m.GetBackingStore().Set("sharepointIds", value)
@@ -1112,6 +1282,13 @@ func (m *Site) SetSiteCollection(value SiteCollectionable)() {
 // SetSites sets the sites property value. The collection of the sub-sites under this site.
 func (m *Site) SetSites(value []Siteable)() {
     err := m.GetBackingStore().Set("sites", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTemplate sets the template property value. Specifies the template applied to the site. The possible values are: sitepagepublishing, group, sts, unknownFutureValue.
+func (m *Site) SetTemplate(value *SiteTemplateType)() {
+    err := m.GetBackingStore().Set("template", value)
     if err != nil {
         panic(err)
     }
@@ -1134,17 +1311,22 @@ type Siteable interface {
     GetIsPersonalSite()(*bool)
     GetItems()([]BaseItemable)
     GetLists()([]Listable)
+    GetLocale()(*string)
+    GetLockState()(*SiteLockState)
     GetOnenote()(Onenoteable)
     GetOperations()([]RichLongRunningOperationable)
+    GetOwnerIdentityToResolve()(IdentityInputable)
     GetPages()([]BaseSitePageable)
     GetPageTemplates()([]PageTemplateable)
     GetPermissions()([]Permissionable)
     GetRecycleBin()(RecycleBinable)
     GetRoot()(Rootable)
     GetSettings()(SiteSettingsable)
+    GetShareByEmailEnabled()(*bool)
     GetSharepointIds()(SharepointIdsable)
     GetSiteCollection()(SiteCollectionable)
     GetSites()([]Siteable)
+    GetTemplate()(*SiteTemplateType)
     SetAnalytics(value ItemAnalyticsable)()
     SetColumns(value []ColumnDefinitionable)()
     SetContentModels(value []ContentModelable)()
@@ -1160,15 +1342,20 @@ type Siteable interface {
     SetIsPersonalSite(value *bool)()
     SetItems(value []BaseItemable)()
     SetLists(value []Listable)()
+    SetLocale(value *string)()
+    SetLockState(value *SiteLockState)()
     SetOnenote(value Onenoteable)()
     SetOperations(value []RichLongRunningOperationable)()
+    SetOwnerIdentityToResolve(value IdentityInputable)()
     SetPages(value []BaseSitePageable)()
     SetPageTemplates(value []PageTemplateable)()
     SetPermissions(value []Permissionable)()
     SetRecycleBin(value RecycleBinable)()
     SetRoot(value Rootable)()
     SetSettings(value SiteSettingsable)()
+    SetShareByEmailEnabled(value *bool)()
     SetSharepointIds(value SharepointIdsable)()
     SetSiteCollection(value SiteCollectionable)()
     SetSites(value []Siteable)()
+    SetTemplate(value *SiteTemplateType)()
 }

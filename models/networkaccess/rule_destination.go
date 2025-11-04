@@ -39,6 +39,8 @@ func CreateRuleDestinationFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewFqdn(), nil
                     case "#microsoft.graph.networkaccess.ipAddress":
                         return NewIpAddress(), nil
+                    case "#microsoft.graph.networkaccess.ipDestination":
+                        return NewIpDestination(), nil
                     case "#microsoft.graph.networkaccess.ipRange":
                         return NewIpRange(), nil
                     case "#microsoft.graph.networkaccess.ipSubnet":

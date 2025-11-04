@@ -107,6 +107,11 @@ func (m *ItemSitesRequestBuilder) Get(ctx context.Context, requestConfiguration 
 func (m *ItemSitesRequestBuilder) GetAllSites()(*ItemSitesGetAllSitesRequestBuilder) {
     return NewItemSitesGetAllSitesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetOperationStatusWithOperationId provides operations to call the getOperationStatus method.
+// returns a *ItemSitesGetOperationStatusWithOperationIdRequestBuilder when successful
+func (m *ItemSitesRequestBuilder) GetOperationStatusWithOperationId(operationId *string)(*ItemSitesGetOperationStatusWithOperationIdRequestBuilder) {
+    return NewItemSitesGetOperationStatusWithOperationIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, operationId)
+}
 // Remove provides operations to call the remove method.
 // returns a *ItemSitesRemoveRequestBuilder when successful
 func (m *ItemSitesRequestBuilder) Remove()(*ItemSitesRemoveRequestBuilder) {

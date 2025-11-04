@@ -41,6 +41,18 @@ func CreateCallEventFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     }
     return NewCallEvent(), nil
 }
+// GetCallConversationId gets the callConversationId property value. The callConversationId property
+// returns a *string when successful
+func (m *CallEvent) GetCallConversationId()(*string) {
+    val, err := m.GetBackingStore().Get("callConversationId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetCallEventType gets the callEventType property value. The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: rosterUpdated.
 // returns a *CallEventType when successful
 func (m *CallEvent) GetCallEventType()(*CallEventType) {
@@ -53,7 +65,7 @@ func (m *CallEvent) GetCallEventType()(*CallEventType) {
     }
     return nil
 }
-// GetEventDateTime gets the eventDateTime property value. The time when event occurred.
+// GetEventDateTime gets the eventDateTime property value. The date and time when the event occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *CallEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("eventDateTime")
@@ -69,6 +81,16 @@ func (m *CallEvent) GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CallEvent) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["callConversationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCallConversationId(val)
+        }
+        return nil
+    }
     res["callEventType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseCallEventType)
         if err != nil {
@@ -169,6 +191,12 @@ func (m *CallEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteStringValue("callConversationId", m.GetCallConversationId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCallEventType() != nil {
         cast := (*m.GetCallEventType()).String()
         err = writer.WriteStringValue("callEventType", &cast)
@@ -208,6 +236,13 @@ func (m *CallEvent) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
+// SetCallConversationId sets the callConversationId property value. The callConversationId property
+func (m *CallEvent) SetCallConversationId(value *string)() {
+    err := m.GetBackingStore().Set("callConversationId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCallEventType sets the callEventType property value. The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: rosterUpdated.
 func (m *CallEvent) SetCallEventType(value *CallEventType)() {
     err := m.GetBackingStore().Set("callEventType", value)
@@ -215,7 +250,7 @@ func (m *CallEvent) SetCallEventType(value *CallEventType)() {
         panic(err)
     }
 }
-// SetEventDateTime sets the eventDateTime property value. The time when event occurred.
+// SetEventDateTime sets the eventDateTime property value. The date and time when the event occurred. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *CallEvent) SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("eventDateTime", value)
     if err != nil {
@@ -246,11 +281,13 @@ func (m *CallEvent) SetTranscriptionState(value TranscriptionStateable)() {
 type CallEventable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetCallConversationId()(*string)
     GetCallEventType()(*CallEventType)
     GetEventDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetParticipants()([]Participantable)
     GetRecordingState()(RecordingStateable)
     GetTranscriptionState()(TranscriptionStateable)
+    SetCallConversationId(value *string)()
     SetCallEventType(value *CallEventType)()
     SetEventDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetParticipants(value []Participantable)()

@@ -148,6 +148,11 @@ func (m *VirtualEndpointRequestBuilder) Get(ctx context.Context, requestConfigur
 func (m *VirtualEndpointRequestBuilder) GetEffectivePermissions()(*VirtualEndpointGetEffectivePermissionsRequestBuilder) {
     return NewVirtualEndpointGetEffectivePermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ManagedLicenses provides operations to manage the managedLicenses property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointManagedLicensesRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) ManagedLicenses()(*VirtualEndpointManagedLicensesRequestBuilder) {
+    return NewVirtualEndpointManagedLicensesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // OnPremisesConnections provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointOnPremisesConnectionsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) OnPremisesConnections()(*VirtualEndpointOnPremisesConnectionsRequestBuilder) {

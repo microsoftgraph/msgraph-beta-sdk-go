@@ -12,10 +12,11 @@ const (
     INTUNEPFX_ONPREMISESPUBLISHINGTYPE
     OFLINEDOMAINJOIN_ONPREMISESPUBLISHINGTYPE
     UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE
+    PRIVATEACCESS_ONPREMISESPUBLISHINGTYPE
 )
 
 func (i OnPremisesPublishingType) String() string {
-    return []string{"applicationProxy", "exchangeOnline", "authentication", "provisioning", "intunePfx", "oflineDomainJoin", "unknownFutureValue"}[i]
+    return []string{"applicationProxy", "exchangeOnline", "authentication", "provisioning", "intunePfx", "oflineDomainJoin", "unknownFutureValue", "privateAccess"}[i]
 }
 func ParseOnPremisesPublishingType(v string) (any, error) {
     result := APPLICATIONPROXY_ONPREMISESPUBLISHINGTYPE
@@ -34,6 +35,8 @@ func ParseOnPremisesPublishingType(v string) (any, error) {
             result = OFLINEDOMAINJOIN_ONPREMISESPUBLISHINGTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_ONPREMISESPUBLISHINGTYPE
+        case "privateAccess":
+            result = PRIVATEACCESS_ONPREMISESPUBLISHINGTYPE
         default:
             return nil, nil
     }

@@ -7,13 +7,12 @@ type MonitorStatus int
 const (
     ACTIVE_MONITORSTATUS MonitorStatus = iota
     INACTIVE_MONITORSTATUS
-    INACTIVATEDBYSYSTEM_MONITORSTATUS
     // A marker value for members added after the release of this API.
     UNKNOWNFUTUREVALUE_MONITORSTATUS
 )
 
 func (i MonitorStatus) String() string {
-    return []string{"active", "inactive", "inactivatedBySystem", "unknownFutureValue"}[i]
+    return []string{"active", "inactive", "unknownFutureValue"}[i]
 }
 func ParseMonitorStatus(v string) (any, error) {
     result := ACTIVE_MONITORSTATUS
@@ -22,8 +21,6 @@ func ParseMonitorStatus(v string) (any, error) {
             result = ACTIVE_MONITORSTATUS
         case "inactive":
             result = INACTIVE_MONITORSTATUS
-        case "inactivatedBySystem":
-            result = INACTIVATEDBYSYSTEM_MONITORSTATUS
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_MONITORSTATUS
         default:
