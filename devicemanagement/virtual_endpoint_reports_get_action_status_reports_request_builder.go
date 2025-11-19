@@ -34,6 +34,7 @@ func NewVirtualEndpointReportsGetActionStatusReportsRequestBuilder(rawUrl string
     return NewVirtualEndpointReportsGetActionStatusReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
+// Deprecated: Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -57,6 +58,7 @@ func (m *VirtualEndpointReportsGetActionStatusReportsRequestBuilder) Post(ctx co
     return res.([]byte), nil
 }
 // ToPostRequestInformation get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user's principal name, device owner's user principal name, action taken, and action state.
+// Deprecated: Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsGetActionStatusReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsGetActionStatusReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsGetActionStatusReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -72,6 +74,7 @@ func (m *VirtualEndpointReportsGetActionStatusReportsRequestBuilder) ToPostReque
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
 // returns a *VirtualEndpointReportsGetActionStatusReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsGetActionStatusReportsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointReportsGetActionStatusReportsRequestBuilder) {
     return NewVirtualEndpointReportsGetActionStatusReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

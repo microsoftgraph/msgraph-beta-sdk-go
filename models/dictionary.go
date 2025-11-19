@@ -47,6 +47,8 @@ func CreateDictionaryFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3
                         return NewPlannerFormsDictionary(), nil
                     case "#microsoft.graph.resultTemplateDictionary":
                         return NewResultTemplateDictionary(), nil
+                    case "#microsoft.graph.stringDictionary":
+                        return NewStringDictionary(), nil
                     case "#microsoft.graph.wafAllowedHeadersDictionary":
                         return NewWafAllowedHeadersDictionary(), nil
                 }

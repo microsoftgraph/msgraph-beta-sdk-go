@@ -143,6 +143,11 @@ func (m *OnPremisesPublishingProfileItemRequestBuilder) Patch(ctx context.Contex
 func (m *OnPremisesPublishingProfileItemRequestBuilder) PublishedResources()(*ItemPublishedResourcesRequestBuilder) {
     return NewItemPublishedResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Sensors provides operations to manage the sensors property of the microsoft.graph.onPremisesPublishingProfile entity.
+// returns a *ItemSensorsRequestBuilder when successful
+func (m *OnPremisesPublishingProfileItemRequestBuilder) Sensors()(*ItemSensorsRequestBuilder) {
+    return NewItemSensorsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete entity from onPremisesPublishingProfiles
 // returns a *RequestInformation when successful
 func (m *OnPremisesPublishingProfileItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

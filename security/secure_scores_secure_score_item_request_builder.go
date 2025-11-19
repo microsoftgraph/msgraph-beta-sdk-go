@@ -21,7 +21,7 @@ type SecureScoresSecureScoreItemRequestBuilderDeleteRequestConfiguration struct 
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SecureScoresSecureScoreItemRequestBuilderGetQueryParameters measurements of tenants’ security posture to help protect them from threats.
+// SecureScoresSecureScoreItemRequestBuilderGetQueryParameters measurements of tenants' security posture to help protect them from threats.
 type SecureScoresSecureScoreItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *SecureScoresSecureScoreItemRequestBuilder) Delete(ctx context.Context, 
     }
     return nil
 }
-// Get measurements of tenants’ security posture to help protect them from threats.
+// Get measurements of tenants' security posture to help protect them from threats.
 // returns a SecureScoreable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SecureScoresSecureScoreItemRequestBuilder) Get(ctx context.Context, requestConfiguration *SecureScoresSecureScoreItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SecureScoreable, error) {
@@ -124,7 +124,7 @@ func (m *SecureScoresSecureScoreItemRequestBuilder) ToDeleteRequestInformation(c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation measurements of tenants’ security posture to help protect them from threats.
+// ToGetRequestInformation measurements of tenants' security posture to help protect them from threats.
 // returns a *RequestInformation when successful
 func (m *SecureScoresSecureScoreItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SecureScoresSecureScoreItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

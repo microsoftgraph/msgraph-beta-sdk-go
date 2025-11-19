@@ -186,10 +186,20 @@ func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Resize()(*VirtualEndp
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) Restore()(*VirtualEndpointCloudPCsItemRestoreRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRestoreRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// RetrieveCloudPcLaunchDetail provides operations to call the retrieveCloudPcLaunchDetail method.
+// returns a *VirtualEndpointCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPcLaunchDetail()(*VirtualEndpointCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemRetrieveCloudPcLaunchDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveCloudPCRemoteActionResults provides operations to call the retrieveCloudPCRemoteActionResults method.
 // returns a *VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder when successful
 func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveCloudPCRemoteActionResults()(*VirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilder) {
     return NewVirtualEndpointCloudPCsItemRetrieveCloudPCRemoteActionResultsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// RetrieveFrontlineCloudPcDetail provides operations to call the retrieveFrontlineCloudPcDetail method.
+// returns a *VirtualEndpointCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilder when successful
+func (m *VirtualEndpointCloudPCsCloudPCItemRequestBuilder) RetrieveFrontlineCloudPcDetail()(*VirtualEndpointCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilder) {
+    return NewVirtualEndpointCloudPCsItemRetrieveFrontlineCloudPcDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // RetrieveReviewStatus provides operations to call the retrieveReviewStatus method.
 // returns a *VirtualEndpointCloudPCsItemRetrieveReviewStatusRequestBuilder when successful

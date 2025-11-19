@@ -174,6 +174,16 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetFieldDeserializers()(m
         }
         return nil
     }
+    res["managedGooglePlayEnterpriseType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseManagedGooglePlayEnterpriseType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetManagedGooglePlayEnterpriseType(val.(*ManagedGooglePlayEnterpriseType))
+        }
+        return nil
+    }
     res["managedGooglePlayInitialScopeTagIds"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
@@ -261,6 +271,18 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) GetLastModifiedDateTime()
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetManagedGooglePlayEnterpriseType gets the managedGooglePlayEnterpriseType property value. Bind Type of the tenant with the Google EMM API
+// returns a *ManagedGooglePlayEnterpriseType when successful
+func (m *AndroidManagedStoreAccountEnterpriseSettings) GetManagedGooglePlayEnterpriseType()(*ManagedGooglePlayEnterpriseType) {
+    val, err := m.GetBackingStore().Get("managedGooglePlayEnterpriseType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ManagedGooglePlayEnterpriseType)
     }
     return nil
 }
@@ -375,6 +397,13 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) Serialize(writer i878a80d
             return err
         }
     }
+    if m.GetManagedGooglePlayEnterpriseType() != nil {
+        cast := (*m.GetManagedGooglePlayEnterpriseType()).String()
+        err = writer.WriteStringValue("managedGooglePlayEnterpriseType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetManagedGooglePlayInitialScopeTagIds() != nil {
         err = writer.WriteCollectionOfStringValues("managedGooglePlayInitialScopeTagIds", m.GetManagedGooglePlayInitialScopeTagIds())
         if err != nil {
@@ -457,6 +486,13 @@ func (m *AndroidManagedStoreAccountEnterpriseSettings) SetLastModifiedDateTime(v
         panic(err)
     }
 }
+// SetManagedGooglePlayEnterpriseType sets the managedGooglePlayEnterpriseType property value. Bind Type of the tenant with the Google EMM API
+func (m *AndroidManagedStoreAccountEnterpriseSettings) SetManagedGooglePlayEnterpriseType(value *ManagedGooglePlayEnterpriseType)() {
+    err := m.GetBackingStore().Set("managedGooglePlayEnterpriseType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetManagedGooglePlayInitialScopeTagIds sets the managedGooglePlayInitialScopeTagIds property value. Initial scope tags for MGP apps
 func (m *AndroidManagedStoreAccountEnterpriseSettings) SetManagedGooglePlayInitialScopeTagIds(value []string)() {
     err := m.GetBackingStore().Set("managedGooglePlayInitialScopeTagIds", value)
@@ -496,6 +532,7 @@ type AndroidManagedStoreAccountEnterpriseSettingsable interface {
     GetLastAppSyncDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetLastAppSyncStatus()(*AndroidManagedStoreAccountAppSyncStatus)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetManagedGooglePlayEnterpriseType()(*ManagedGooglePlayEnterpriseType)
     GetManagedGooglePlayInitialScopeTagIds()([]string)
     GetOwnerOrganizationName()(*string)
     GetOwnerUserPrincipalName()(*string)
@@ -508,6 +545,7 @@ type AndroidManagedStoreAccountEnterpriseSettingsable interface {
     SetLastAppSyncDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetLastAppSyncStatus(value *AndroidManagedStoreAccountAppSyncStatus)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetManagedGooglePlayEnterpriseType(value *ManagedGooglePlayEnterpriseType)()
     SetManagedGooglePlayInitialScopeTagIds(value []string)()
     SetOwnerOrganizationName(value *string)()
     SetOwnerUserPrincipalName(value *string)()

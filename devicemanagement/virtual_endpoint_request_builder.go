@@ -148,6 +148,11 @@ func (m *VirtualEndpointRequestBuilder) Get(ctx context.Context, requestConfigur
 func (m *VirtualEndpointRequestBuilder) GetEffectivePermissions()(*VirtualEndpointGetEffectivePermissionsRequestBuilder) {
     return NewVirtualEndpointGetEffectivePermissionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// ManagedLicenses provides operations to manage the managedLicenses property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointManagedLicensesRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) ManagedLicenses()(*VirtualEndpointManagedLicensesRequestBuilder) {
+    return NewVirtualEndpointManagedLicensesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // OnPremisesConnections provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointOnPremisesConnectionsRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) OnPremisesConnections()(*VirtualEndpointOnPremisesConnectionsRequestBuilder) {
@@ -182,6 +187,11 @@ func (m *VirtualEndpointRequestBuilder) Patch(ctx context.Context, body ie233ee7
 // returns a *VirtualEndpointProvisioningPoliciesRequestBuilder when successful
 func (m *VirtualEndpointRequestBuilder) ProvisioningPolicies()(*VirtualEndpointProvisioningPoliciesRequestBuilder) {
     return NewVirtualEndpointProvisioningPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Report provides operations to manage the report property of the microsoft.graph.virtualEndpoint entity.
+// returns a *VirtualEndpointReportRequestBuilder when successful
+func (m *VirtualEndpointRequestBuilder) Report()(*VirtualEndpointReportRequestBuilder) {
+    return NewVirtualEndpointReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Reports provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.
 // returns a *VirtualEndpointReportsRequestBuilder when successful

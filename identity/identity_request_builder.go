@@ -135,6 +135,16 @@ func (m *IdentityRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.IdentityContainerable), nil
 }
+// RiskPrevention provides operations to manage the riskPrevention property of the microsoft.graph.identityContainer entity.
+// returns a *RiskPreventionRequestBuilder when successful
+func (m *IdentityRequestBuilder) RiskPrevention()(*RiskPreventionRequestBuilder) {
+    return NewRiskPreventionRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SignInIdentifiers provides operations to manage the signInIdentifiers property of the microsoft.graph.identityContainer entity.
+// returns a *SignInIdentifiersRequestBuilder when successful
+func (m *IdentityRequestBuilder) SignInIdentifiers()(*SignInIdentifiersRequestBuilder) {
+    return NewSignInIdentifiersRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToGetRequestInformation get identity
 // returns a *RequestInformation when successful
 func (m *IdentityRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentityRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -173,6 +183,11 @@ func (m *IdentityRequestBuilder) UserFlowAttributes()(*UserFlowAttributesRequest
 // returns a *UserFlowsRequestBuilder when successful
 func (m *IdentityRequestBuilder) UserFlows()(*UserFlowsRequestBuilder) {
     return NewUserFlowsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// VerifiedId provides operations to manage the verifiedId property of the microsoft.graph.identityContainer entity.
+// returns a *VerifiedIdRequestBuilder when successful
+func (m *IdentityRequestBuilder) VerifiedId()(*VerifiedIdRequestBuilder) {
+    return NewVerifiedIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *IdentityRequestBuilder when successful

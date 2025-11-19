@@ -67,7 +67,7 @@ func (m *EngagementRole) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetMembers gets the members property value. Users who have been assigned this role.
+// GetMembers gets the members property value. Users that have this role assigned.
 // returns a []EngagementRoleMemberable when successful
 func (m *EngagementRole) GetMembers()([]EngagementRoleMemberable) {
     val, err := m.GetBackingStore().Get("members")
@@ -112,7 +112,7 @@ func (m *EngagementRole) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetMembers sets the members property value. Users who have been assigned this role.
+// SetMembers sets the members property value. Users that have this role assigned.
 func (m *EngagementRole) SetMembers(value []EngagementRoleMemberable)() {
     err := m.GetBackingStore().Set("members", value)
     if err != nil {

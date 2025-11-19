@@ -72,6 +72,16 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetFieldDeserializers()(map[strin
         }
         return nil
     }
+    res["groupSyncInbound"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCrossTenantGroupSyncInboundFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetGroupSyncInbound(val.(CrossTenantGroupSyncInboundable))
+        }
+        return nil
+    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -93,6 +103,18 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetFieldDeserializers()(map[strin
         return nil
     }
     return res
+}
+// GetGroupSyncInbound gets the groupSyncInbound property value. The groupSyncInbound property
+// returns a CrossTenantGroupSyncInboundable when successful
+func (m *CrossTenantIdentitySyncPolicyPartner) GetGroupSyncInbound()(CrossTenantGroupSyncInboundable) {
+    val, err := m.GetBackingStore().Get("groupSyncInbound")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CrossTenantGroupSyncInboundable)
+    }
+    return nil
 }
 // GetTenantId gets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Read-only.
 // returns a *string when successful
@@ -137,6 +159,12 @@ func (m *CrossTenantIdentitySyncPolicyPartner) Serialize(writer i878a80d2330e89d
         }
     }
     {
+        err = writer.WriteObjectValue("groupSyncInbound", m.GetGroupSyncInbound())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("tenantId", m.GetTenantId())
         if err != nil {
             return err
@@ -164,6 +192,13 @@ func (m *CrossTenantIdentitySyncPolicyPartner) SetExternalCloudAuthorizedApplica
         panic(err)
     }
 }
+// SetGroupSyncInbound sets the groupSyncInbound property value. The groupSyncInbound property
+func (m *CrossTenantIdentitySyncPolicyPartner) SetGroupSyncInbound(value CrossTenantGroupSyncInboundable)() {
+    err := m.GetBackingStore().Set("groupSyncInbound", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTenantId sets the tenantId property value. Tenant identifier for the partner Microsoft Entra organization. Read-only.
 func (m *CrossTenantIdentitySyncPolicyPartner) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
@@ -183,10 +218,12 @@ type CrossTenantIdentitySyncPolicyPartnerable interface {
     PolicyDeletableItemable
     GetDisplayName()(*string)
     GetExternalCloudAuthorizedApplicationId()(*string)
+    GetGroupSyncInbound()(CrossTenantGroupSyncInboundable)
     GetTenantId()(*string)
     GetUserSyncInbound()(CrossTenantUserSyncInboundable)
     SetDisplayName(value *string)()
     SetExternalCloudAuthorizedApplicationId(value *string)()
+    SetGroupSyncInbound(value CrossTenantGroupSyncInboundable)()
     SetTenantId(value *string)()
     SetUserSyncInbound(value CrossTenantUserSyncInboundable)()
 }

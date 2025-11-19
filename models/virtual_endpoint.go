@@ -94,7 +94,7 @@ func (m *VirtualEndpoint) GetDeviceImages()([]CloudPcDeviceImageable) {
     }
     return nil
 }
-// GetExternalPartners gets the externalPartners property value. The externalPartners property
+// GetExternalPartners gets the externalPartners property value. The external partners on a Cloud PC.
 // returns a []CloudPcExternalPartnerable when successful
 func (m *VirtualEndpoint) GetExternalPartners()([]CloudPcExternalPartnerable) {
     val, err := m.GetBackingStore().Get("externalPartners")
@@ -276,6 +276,22 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
         }
         return nil
     }
+    res["managedLicenses"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCloudPcManagedLicenseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CloudPcManagedLicenseable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CloudPcManagedLicenseable)
+                }
+            }
+            m.SetManagedLicenses(res)
+        }
+        return nil
+    }
     res["onPremisesConnections"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateCloudPcOnPremisesConnectionFromDiscriminatorValue)
         if err != nil {
@@ -315,6 +331,16 @@ func (m *VirtualEndpoint) GetFieldDeserializers()(map[string]func(i878a80d2330e8
                 }
             }
             m.SetProvisioningPolicies(res)
+        }
+        return nil
+    }
+    res["report"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcReportFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetReport(val.(CloudPcReportable))
         }
         return nil
     }
@@ -418,6 +444,18 @@ func (m *VirtualEndpoint) GetGalleryImages()([]CloudPcGalleryImageable) {
     }
     return nil
 }
+// GetManagedLicenses gets the managedLicenses property value. The managed licenses for Cloud PCs in the organization.
+// returns a []CloudPcManagedLicenseable when successful
+func (m *VirtualEndpoint) GetManagedLicenses()([]CloudPcManagedLicenseable) {
+    val, err := m.GetBackingStore().Get("managedLicenses")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CloudPcManagedLicenseable)
+    }
+    return nil
+}
 // GetOnPremisesConnections gets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 // returns a []CloudPcOnPremisesConnectionable when successful
 func (m *VirtualEndpoint) GetOnPremisesConnections()([]CloudPcOnPremisesConnectionable) {
@@ -454,7 +492,19 @@ func (m *VirtualEndpoint) GetProvisioningPolicies()([]CloudPcProvisioningPolicya
     }
     return nil
 }
-// GetReports gets the reports property value. Cloud PC related reports.
+// GetReport gets the report property value. Cloud PC-related reports. Read-only.
+// returns a CloudPcReportable when successful
+func (m *VirtualEndpoint) GetReport()(CloudPcReportable) {
+    val, err := m.GetBackingStore().Get("report")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcReportable)
+    }
+    return nil
+}
+// GetReports gets the reports property value. Cloud PC-related reports.
 // returns a CloudPcReportsable when successful
 func (m *VirtualEndpoint) GetReports()(CloudPcReportsable) {
     val, err := m.GetBackingStore().Get("reports")
@@ -634,6 +684,18 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             return err
         }
     }
+    if m.GetManagedLicenses() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetManagedLicenses()))
+        for i, v := range m.GetManagedLicenses() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("managedLicenses", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetOnPremisesConnections() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremisesConnections()))
         for i, v := range m.GetOnPremisesConnections() {
@@ -660,6 +722,12 @@ func (m *VirtualEndpoint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
             }
         }
         err = writer.WriteCollectionOfObjectValues("provisioningPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("report", m.GetReport())
         if err != nil {
             return err
         }
@@ -762,7 +830,7 @@ func (m *VirtualEndpoint) SetDeviceImages(value []CloudPcDeviceImageable)() {
         panic(err)
     }
 }
-// SetExternalPartners sets the externalPartners property value. The externalPartners property
+// SetExternalPartners sets the externalPartners property value. The external partners on a Cloud PC.
 func (m *VirtualEndpoint) SetExternalPartners(value []CloudPcExternalPartnerable)() {
     err := m.GetBackingStore().Set("externalPartners", value)
     if err != nil {
@@ -790,6 +858,13 @@ func (m *VirtualEndpoint) SetGalleryImages(value []CloudPcGalleryImageable)() {
         panic(err)
     }
 }
+// SetManagedLicenses sets the managedLicenses property value. The managed licenses for Cloud PCs in the organization.
+func (m *VirtualEndpoint) SetManagedLicenses(value []CloudPcManagedLicenseable)() {
+    err := m.GetBackingStore().Set("managedLicenses", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesConnections sets the onPremisesConnections property value. A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
 func (m *VirtualEndpoint) SetOnPremisesConnections(value []CloudPcOnPremisesConnectionable)() {
     err := m.GetBackingStore().Set("onPremisesConnections", value)
@@ -811,7 +886,14 @@ func (m *VirtualEndpoint) SetProvisioningPolicies(value []CloudPcProvisioningPol
         panic(err)
     }
 }
-// SetReports sets the reports property value. Cloud PC related reports.
+// SetReport sets the report property value. Cloud PC-related reports. Read-only.
+func (m *VirtualEndpoint) SetReport(value CloudPcReportable)() {
+    err := m.GetBackingStore().Set("report", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetReports sets the reports property value. Cloud PC-related reports.
 func (m *VirtualEndpoint) SetReports(value CloudPcReportsable)() {
     err := m.GetBackingStore().Set("reports", value)
     if err != nil {
@@ -859,9 +941,11 @@ type VirtualEndpointable interface {
     GetExternalPartnerSettings()([]CloudPcExternalPartnerSettingable)
     GetFrontLineServicePlans()([]CloudPcFrontLineServicePlanable)
     GetGalleryImages()([]CloudPcGalleryImageable)
+    GetManagedLicenses()([]CloudPcManagedLicenseable)
     GetOnPremisesConnections()([]CloudPcOnPremisesConnectionable)
     GetOrganizationSettings()(CloudPcOrganizationSettingsable)
     GetProvisioningPolicies()([]CloudPcProvisioningPolicyable)
+    GetReport()(CloudPcReportable)
     GetReports()(CloudPcReportsable)
     GetServicePlans()([]CloudPcServicePlanable)
     GetSnapshots()([]CloudPcSnapshotable)
@@ -877,9 +961,11 @@ type VirtualEndpointable interface {
     SetExternalPartnerSettings(value []CloudPcExternalPartnerSettingable)()
     SetFrontLineServicePlans(value []CloudPcFrontLineServicePlanable)()
     SetGalleryImages(value []CloudPcGalleryImageable)()
+    SetManagedLicenses(value []CloudPcManagedLicenseable)()
     SetOnPremisesConnections(value []CloudPcOnPremisesConnectionable)()
     SetOrganizationSettings(value CloudPcOrganizationSettingsable)()
     SetProvisioningPolicies(value []CloudPcProvisioningPolicyable)()
+    SetReport(value CloudPcReportable)()
     SetReports(value CloudPcReportsable)()
     SetServicePlans(value []CloudPcServicePlanable)()
     SetSnapshots(value []CloudPcSnapshotable)()

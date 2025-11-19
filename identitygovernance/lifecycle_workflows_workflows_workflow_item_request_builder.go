@@ -44,6 +44,11 @@ type LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderPatchRequestConfigurat
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
+// AdministrationScopeTargets provides operations to manage the administrationScopeTargets property of the microsoft.graph.identityGovernance.workflowBase entity.
+// returns a *LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) AdministrationScopeTargets()(*LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewLifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderInternal instantiates a new LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder and sets the default values.
 func NewLifecycleWorkflowsWorkflowsWorkflowItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) {
     m := &LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder{
@@ -118,6 +123,11 @@ func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) LastModifiedBy()
 // returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder when successful
 func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceActivate()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilder) {
     return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// MicrosoftGraphIdentityGovernanceActivateWithScope provides operations to call the activateWithScope method.
+// returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder when successful
+func (m *LifecycleWorkflowsWorkflowsWorkflowItemRequestBuilder) MicrosoftGraphIdentityGovernanceActivateWithScope()(*LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder) {
+    return NewLifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // MicrosoftGraphIdentityGovernanceCreateNewVersion provides operations to call the createNewVersion method.
 // returns a *LifecycleWorkflowsWorkflowsItemMicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder when successful

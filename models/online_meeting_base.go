@@ -4,6 +4,7 @@
 package models
 
 import (
+    i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e "time"
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91 "github.com/microsoft/kiota-abstractions-go/serialization"
 )
 
@@ -270,6 +271,18 @@ func (m *OnlineMeetingBase) GetChatRestrictions()(ChatRestrictionsable) {
     }
     return nil
 }
+// GetExpiryDateTime gets the expiryDateTime property value. The expiryDateTime property
+// returns a *Time when successful
+func (m *OnlineMeetingBase) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("expiryDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -473,6 +486,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         if val != nil {
             m.SetChatRestrictions(val.(ChatRestrictionsable))
+        }
+        return nil
+    }
+    res["expiryDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExpiryDateTime(val)
         }
         return nil
     }
@@ -851,6 +874,12 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteTimeValue("expiryDateTime", m.GetExpiryDateTime())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isEndToEndEncryptionEnabled", m.GetIsEndToEndEncryptionEnabled())
         if err != nil {
             return err
@@ -1052,6 +1081,13 @@ func (m *OnlineMeetingBase) SetChatRestrictions(value ChatRestrictionsable)() {
         panic(err)
     }
 }
+// SetExpiryDateTime sets the expiryDateTime property value. The expiryDateTime property
+func (m *OnlineMeetingBase) SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("expiryDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsEndToEndEncryptionEnabled sets the isEndToEndEncryptionEnabled property value. Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.
 func (m *OnlineMeetingBase) SetIsEndToEndEncryptionEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isEndToEndEncryptionEnabled", value)
@@ -1151,6 +1187,7 @@ type OnlineMeetingBaseable interface {
     GetAudioConferencing()(AudioConferencingable)
     GetChatInfo()(ChatInfoable)
     GetChatRestrictions()(ChatRestrictionsable)
+    GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetIsEndToEndEncryptionEnabled()(*bool)
     GetIsEntryExitAnnounced()(*bool)
     GetJoinInformation()(ItemBodyable)
@@ -1181,6 +1218,7 @@ type OnlineMeetingBaseable interface {
     SetAudioConferencing(value AudioConferencingable)()
     SetChatInfo(value ChatInfoable)()
     SetChatRestrictions(value ChatRestrictionsable)()
+    SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetIsEndToEndEncryptionEnabled(value *bool)()
     SetIsEntryExitAnnounced(value *bool)()
     SetJoinInformation(value ItemBodyable)()

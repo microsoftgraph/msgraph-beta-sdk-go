@@ -59,6 +59,18 @@ func (m *PlannerPlan) GetContainer()(PlannerPlanContainerable) {
     }
     return nil
 }
+// GetContentSensitivityLabelAssignment gets the contentSensitivityLabelAssignment property value. The sensitivity label assignment for the plan. Used to classify and protect the plan content based on organizational policies. This property is null if no sensitivity label is assigned. Optional.
+// returns a ContentSensitivityLabelAssignmentable when successful
+func (m *PlannerPlan) GetContentSensitivityLabelAssignment()(ContentSensitivityLabelAssignmentable) {
+    val, err := m.GetBackingStore().Get("contentSensitivityLabelAssignment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ContentSensitivityLabelAssignmentable)
+    }
+    return nil
+}
 // GetContexts gets the contexts property value. Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
 // returns a PlannerPlanContextCollectionable when successful
 func (m *PlannerPlan) GetContexts()(PlannerPlanContextCollectionable) {
@@ -156,6 +168,16 @@ func (m *PlannerPlan) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         if val != nil {
             m.SetContainer(val.(PlannerPlanContainerable))
+        }
+        return nil
+    }
+    res["contentSensitivityLabelAssignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateContentSensitivityLabelAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetContentSensitivityLabelAssignment(val.(ContentSensitivityLabelAssignmentable))
         }
         return nil
     }
@@ -364,6 +386,12 @@ func (m *PlannerPlan) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteObjectValue("contentSensitivityLabelAssignment", m.GetContentSensitivityLabelAssignment())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("contexts", m.GetContexts())
         if err != nil {
             return err
@@ -458,6 +486,13 @@ func (m *PlannerPlan) SetContainer(value PlannerPlanContainerable)() {
         panic(err)
     }
 }
+// SetContentSensitivityLabelAssignment sets the contentSensitivityLabelAssignment property value. The sensitivity label assignment for the plan. Used to classify and protect the plan content based on organizational policies. This property is null if no sensitivity label is assigned. Optional.
+func (m *PlannerPlan) SetContentSensitivityLabelAssignment(value ContentSensitivityLabelAssignmentable)() {
+    err := m.GetBackingStore().Set("contentSensitivityLabelAssignment", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetContexts sets the contexts property value. Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.
 func (m *PlannerPlan) SetContexts(value PlannerPlanContextCollectionable)() {
     err := m.GetBackingStore().Set("contexts", value)
@@ -534,6 +569,7 @@ type PlannerPlanable interface {
     GetArchivalInfo()(PlannerArchivalInfoable)
     GetBuckets()([]PlannerBucketable)
     GetContainer()(PlannerPlanContainerable)
+    GetContentSensitivityLabelAssignment()(ContentSensitivityLabelAssignmentable)
     GetContexts()(PlannerPlanContextCollectionable)
     GetCreatedBy()(IdentitySetable)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
@@ -547,6 +583,7 @@ type PlannerPlanable interface {
     SetArchivalInfo(value PlannerArchivalInfoable)()
     SetBuckets(value []PlannerBucketable)()
     SetContainer(value PlannerPlanContainerable)()
+    SetContentSensitivityLabelAssignment(value ContentSensitivityLabelAssignmentable)()
     SetContexts(value PlannerPlanContextCollectionable)()
     SetCreatedBy(value IdentitySetable)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()

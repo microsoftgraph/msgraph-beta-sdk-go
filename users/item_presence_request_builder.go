@@ -21,7 +21,7 @@ type ItemPresenceRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemPresenceRequestBuilderGetQueryParameters set a presence status message for a user. An optional expiration date and time can be supplied.
+// ItemPresenceRequestBuilderGetQueryParameters get a user's presence information.
 type ItemPresenceRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,6 +43,16 @@ type ItemPresenceRequestBuilderPatchRequestConfiguration struct {
     Headers *i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestHeaders
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
+}
+// ClearAutomaticLocation provides operations to call the clearAutomaticLocation method.
+// returns a *ItemPresenceClearAutomaticLocationRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) ClearAutomaticLocation()(*ItemPresenceClearAutomaticLocationRequestBuilder) {
+    return NewItemPresenceClearAutomaticLocationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ClearLocation provides operations to call the clearLocation method.
+// returns a *ItemPresenceClearLocationRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) ClearLocation()(*ItemPresenceClearLocationRequestBuilder) {
+    return NewItemPresenceClearLocationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ClearPresence provides operations to call the clearPresence method.
 // returns a *ItemPresenceClearPresenceRequestBuilder when successful
@@ -83,12 +93,12 @@ func (m *ItemPresenceRequestBuilder) Delete(ctx context.Context, requestConfigur
     }
     return nil
 }
-// Get set a presence status message for a user. An optional expiration date and time can be supplied.
+// Get get a user's presence information.
 // returns a Presenceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
-// [Find more info here]: https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta
 func (m *ItemPresenceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemPresenceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -126,6 +136,16 @@ func (m *ItemPresenceRequestBuilder) Patch(ctx context.Context, body ie233ee762e
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Presenceable), nil
 }
+// SetAutomaticLocation provides operations to call the setAutomaticLocation method.
+// returns a *ItemPresenceSetAutomaticLocationRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) SetAutomaticLocation()(*ItemPresenceSetAutomaticLocationRequestBuilder) {
+    return NewItemPresenceSetAutomaticLocationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// SetManualLocation provides operations to call the setManualLocation method.
+// returns a *ItemPresenceSetManualLocationRequestBuilder when successful
+func (m *ItemPresenceRequestBuilder) SetManualLocation()(*ItemPresenceSetManualLocationRequestBuilder) {
+    return NewItemPresenceSetManualLocationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // SetPresence provides operations to call the setPresence method.
 // returns a *ItemPresenceSetPresenceRequestBuilder when successful
 func (m *ItemPresenceRequestBuilder) SetPresence()(*ItemPresenceSetPresenceRequestBuilder) {
@@ -152,7 +172,7 @@ func (m *ItemPresenceRequestBuilder) ToDeleteRequestInformation(ctx context.Cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation set a presence status message for a user. An optional expiration date and time can be supplied.
+// ToGetRequestInformation get a user's presence information.
 // returns a *RequestInformation when successful
 func (m *ItemPresenceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemPresenceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

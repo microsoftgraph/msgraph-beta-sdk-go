@@ -13,7 +13,7 @@ import (
 type DeltaRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// DeltaRequestBuilderGetQueryParameters get newly created, updated, or deleted applications without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
+// DeltaRequestBuilderGetQueryParameters get newly created, updated, or deleted applications and agent identity blueprints without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 type DeltaRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,7 +54,7 @@ func NewDeltaRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371cb
     urlParams["request-raw-url"] = rawUrl
     return NewDeltaRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get newly created, updated, or deleted applications without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
+// Get get newly created, updated, or deleted applications and agent identity blueprints without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 // Deprecated: This method is obsolete. Use GetAsDeltaGetResponse instead.
 // returns a DeltaResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -78,7 +78,7 @@ func (m *DeltaRequestBuilder) Get(ctx context.Context, requestConfiguration *Del
     }
     return res.(DeltaResponseable), nil
 }
-// GetAsDeltaGetResponse get newly created, updated, or deleted applications without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
+// GetAsDeltaGetResponse get newly created, updated, or deleted applications and agent identity blueprints without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 // returns a DeltaGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -101,7 +101,7 @@ func (m *DeltaRequestBuilder) GetAsDeltaGetResponse(ctx context.Context, request
     }
     return res.(DeltaGetResponseable), nil
 }
-// ToGetRequestInformation get newly created, updated, or deleted applications without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
+// ToGetRequestInformation get newly created, updated, or deleted applications and agent identity blueprints without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
 // returns a *RequestInformation when successful
 func (m *DeltaRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *DeltaRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

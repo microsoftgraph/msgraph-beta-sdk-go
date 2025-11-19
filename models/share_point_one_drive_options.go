@@ -57,6 +57,16 @@ func (m *SharePointOneDriveOptions) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["includeHiddenContent"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIncludeHiddenContent(val)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -81,6 +91,18 @@ func (m *SharePointOneDriveOptions) GetIncludeContent()(*SearchContent) {
     }
     return nil
 }
+// GetIncludeHiddenContent gets the includeHiddenContent property value. Indicates whether the search results include content that is normally hidden, such as archived content and SharePoint Embedded (RaaS). The default value is false, which prevents hidden content from being returned. You can also optionally include KQL to scope your query for hidden content to specific content types. For more information, see Search hidden content.
+// returns a *bool when successful
+func (m *SharePointOneDriveOptions) GetIncludeHiddenContent()(*bool) {
+    val, err := m.GetBackingStore().Get("includeHiddenContent")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *SharePointOneDriveOptions) GetOdataType()(*string) {
@@ -98,6 +120,12 @@ func (m *SharePointOneDriveOptions) Serialize(writer i878a80d2330e89d26896388a3f
     if m.GetIncludeContent() != nil {
         cast := (*m.GetIncludeContent()).String()
         err := writer.WriteStringValue("includeContent", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteBoolValue("includeHiddenContent", m.GetIncludeHiddenContent())
         if err != nil {
             return err
         }
@@ -134,6 +162,13 @@ func (m *SharePointOneDriveOptions) SetIncludeContent(value *SearchContent)() {
         panic(err)
     }
 }
+// SetIncludeHiddenContent sets the includeHiddenContent property value. Indicates whether the search results include content that is normally hidden, such as archived content and SharePoint Embedded (RaaS). The default value is false, which prevents hidden content from being returned. You can also optionally include KQL to scope your query for hidden content to specific content types. For more information, see Search hidden content.
+func (m *SharePointOneDriveOptions) SetIncludeHiddenContent(value *bool)() {
+    err := m.GetBackingStore().Set("includeHiddenContent", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SharePointOneDriveOptions) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
@@ -147,8 +182,10 @@ type SharePointOneDriveOptionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIncludeContent()(*SearchContent)
+    GetIncludeHiddenContent()(*bool)
     GetOdataType()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIncludeContent(value *SearchContent)()
+    SetIncludeHiddenContent(value *bool)()
     SetOdataType(value *string)()
 }

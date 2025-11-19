@@ -14,7 +14,7 @@ import (
 type VirtualEndpointExternalPartnersRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// VirtualEndpointExternalPartnersRequestBuilderGetQueryParameters get externalPartners from deviceManagement
+// VirtualEndpointExternalPartnersRequestBuilderGetQueryParameters get a list of the cloudPcExternalPartner objects and their properties.
 type VirtualEndpointExternalPartnersRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewVirtualEndpointExternalPartnersRequestBuilder(rawUrl string, requestAdap
 func (m *VirtualEndpointExternalPartnersRequestBuilder) Count()(*VirtualEndpointExternalPartnersCountRequestBuilder) {
     return NewVirtualEndpointExternalPartnersCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get externalPartners from deviceManagement
+// Get get a list of the cloudPcExternalPartner objects and their properties.
 // returns a CloudPcExternalPartnerCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartners?view=graph-rest-beta
 func (m *VirtualEndpointExternalPartnersRequestBuilder) Get(ctx context.Context, requestConfiguration *VirtualEndpointExternalPartnersRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,9 +102,12 @@ func (m *VirtualEndpointExternalPartnersRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerCollectionResponseable), nil
 }
-// Post create new navigation property to externalPartners for deviceManagement
+// Post create a new cloudPcExternalPartner object.
 // returns a CloudPcExternalPartnerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartners?view=graph-rest-beta
 func (m *VirtualEndpointExternalPartnersRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerable, requestConfiguration *VirtualEndpointExternalPartnersRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *VirtualEndpointExternalPartnersRequestBuilder) Post(ctx context.Context
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerable), nil
 }
-// ToGetRequestInformation get externalPartners from deviceManagement
+// ToGetRequestInformation get a list of the cloudPcExternalPartner objects and their properties.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointExternalPartnersRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *VirtualEndpointExternalPartnersRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +139,7 @@ func (m *VirtualEndpointExternalPartnersRequestBuilder) ToGetRequestInformation(
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to externalPartners for deviceManagement
+// ToPostRequestInformation create a new cloudPcExternalPartner object.
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointExternalPartnersRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcExternalPartnerable, requestConfiguration *VirtualEndpointExternalPartnersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

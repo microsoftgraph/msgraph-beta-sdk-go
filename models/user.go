@@ -37,7 +37,7 @@ func (m *User) GetAboutMe()(*string) {
     }
     return nil
 }
-// GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
+// GetAccountEnabled gets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).
 // returns a *bool when successful
 func (m *User) GetAccountEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("accountEnabled")
@@ -313,7 +313,7 @@ func (m *User) GetCloudClipboard()(CloudClipboardRootable) {
     }
     return nil
 }
-// GetCloudPCs gets the cloudPCs property value. The cloudPCs property
+// GetCloudPCs gets the cloudPCs property value. The user's Cloud PCs. Read-only. Nullable.
 // returns a []CloudPCable when successful
 func (m *User) GetCloudPCs()([]CloudPCable) {
     val, err := m.GetBackingStore().Get("cloudPCs")
@@ -2077,6 +2077,16 @@ func (m *User) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["onPremisesSyncBehavior"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnPremisesSyncBehaviorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOnPremisesSyncBehavior(val.(OnPremisesSyncBehaviorable))
+        }
+        return nil
+    }
     res["onPremisesSyncEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -3300,6 +3310,18 @@ func (m *User) GetOnPremisesSipInfo()(OnPremisesSipInfoable) {
     }
     if val != nil {
         return val.(OnPremisesSipInfoable)
+    }
+    return nil
+}
+// GetOnPremisesSyncBehavior gets the onPremisesSyncBehavior property value. Indicates the state of synchronization for a user between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.
+// returns a OnPremisesSyncBehaviorable when successful
+func (m *User) GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable) {
+    val, err := m.GetBackingStore().Get("onPremisesSyncBehavior")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnPremisesSyncBehaviorable)
     }
     return nil
 }
@@ -4822,6 +4844,12 @@ func (m *User) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteObjectValue("onPremisesSyncBehavior", m.GetOnPremisesSyncBehavior())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("onPremisesSyncEnabled", m.GetOnPremisesSyncEnabled())
         if err != nil {
             return err
@@ -5226,7 +5254,7 @@ func (m *User) SetAboutMe(value *string)() {
         panic(err)
     }
 }
-// SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).
+// SetAccountEnabled sets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when creating the object. Supports $filter (eq, ne, not, and in).
 func (m *User) SetAccountEnabled(value *bool)() {
     err := m.GetBackingStore().Set("accountEnabled", value)
     if err != nil {
@@ -5387,7 +5415,7 @@ func (m *User) SetCloudClipboard(value CloudClipboardRootable)() {
         panic(err)
     }
 }
-// SetCloudPCs sets the cloudPCs property value. The cloudPCs property
+// SetCloudPCs sets the cloudPCs property value. The user's Cloud PCs. Read-only. Nullable.
 func (m *User) SetCloudPCs(value []CloudPCable)() {
     err := m.GetBackingStore().Set("cloudPCs", value)
     if err != nil {
@@ -5968,6 +5996,13 @@ func (m *User) SetOnPremisesSipInfo(value OnPremisesSipInfoable)() {
         panic(err)
     }
 }
+// SetOnPremisesSyncBehavior sets the onPremisesSyncBehavior property value. Indicates the state of synchronization for a user between the cloud and on-premises Active Directory. Supports $filter only with advanced query capabilities, for example, $filter=onPremisesSyncBehavior/isCloudManaged eq true&$count=true.
+func (m *User) SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)() {
+    err := m.GetBackingStore().Set("onPremisesSyncBehavior", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOnPremisesSyncEnabled sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn't being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
 func (m *User) SetOnPremisesSyncEnabled(value *bool)() {
     err := m.GetBackingStore().Set("onPremisesSyncEnabled", value)
@@ -6435,6 +6470,7 @@ type Userable interface {
     GetOnPremisesSamAccountName()(*string)
     GetOnPremisesSecurityIdentifier()(*string)
     GetOnPremisesSipInfo()(OnPremisesSipInfoable)
+    GetOnPremisesSyncBehavior()(OnPremisesSyncBehaviorable)
     GetOnPremisesSyncEnabled()(*bool)
     GetOnPremisesUserPrincipalName()(*string)
     GetOtherMails()([]string)
@@ -6593,6 +6629,7 @@ type Userable interface {
     SetOnPremisesSamAccountName(value *string)()
     SetOnPremisesSecurityIdentifier(value *string)()
     SetOnPremisesSipInfo(value OnPremisesSipInfoable)()
+    SetOnPremisesSyncBehavior(value OnPremisesSyncBehaviorable)()
     SetOnPremisesSyncEnabled(value *bool)()
     SetOnPremisesUserPrincipalName(value *string)()
     SetOtherMails(value []string)()
