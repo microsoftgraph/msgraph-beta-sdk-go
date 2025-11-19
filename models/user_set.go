@@ -35,6 +35,8 @@ func CreateUserSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.attributeRuleMembers":
+                        return NewAttributeRuleMembers(), nil
                     case "#microsoft.graph.connectedOrganizationMembers":
                         return NewConnectedOrganizationMembers(), nil
                     case "#microsoft.graph.externalSponsors":

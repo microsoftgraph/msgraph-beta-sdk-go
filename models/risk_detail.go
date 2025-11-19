@@ -23,10 +23,13 @@ const (
     USERCHANGEDPASSWORDONPREMISES_RISKDETAIL
     ADMINDISMISSEDRISKFORSIGNIN_RISKDETAIL
     ADMINCONFIRMEDACCOUNTSAFE_RISKDETAIL
+    ADMINCONFIRMEDAGENTSAFE_RISKDETAIL
+    ADMINCONFIRMEDAGENTCOMPROMISED_RISKDETAIL
+    ADMINDISMISSEDRISKFORAGENT_RISKDETAIL
 )
 
 func (i RiskDetail) String() string {
-    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal", "m365DAdminDismissedDetection", "userChangedPasswordOnPremises", "adminDismissedRiskForSignIn", "adminConfirmedAccountSafe"}[i]
+    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal", "m365DAdminDismissedDetection", "userChangedPasswordOnPremises", "adminDismissedRiskForSignIn", "adminConfirmedAccountSafe", "adminConfirmedAgentSafe", "adminConfirmedAgentCompromised", "adminDismissedRiskForAgent"}[i]
 }
 func ParseRiskDetail(v string) (any, error) {
     result := NONE_RISKDETAIL
@@ -67,6 +70,12 @@ func ParseRiskDetail(v string) (any, error) {
             result = ADMINDISMISSEDRISKFORSIGNIN_RISKDETAIL
         case "adminConfirmedAccountSafe":
             result = ADMINCONFIRMEDACCOUNTSAFE_RISKDETAIL
+        case "adminConfirmedAgentSafe":
+            result = ADMINCONFIRMEDAGENTSAFE_RISKDETAIL
+        case "adminConfirmedAgentCompromised":
+            result = ADMINCONFIRMEDAGENTCOMPROMISED_RISKDETAIL
+        case "adminDismissedRiskForAgent":
+            result = ADMINDISMISSEDRISKFORAGENT_RISKDETAIL
         default:
             return nil, nil
     }

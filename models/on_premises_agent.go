@@ -138,7 +138,7 @@ func (m *OnPremisesAgent) GetStatus()(*AgentStatus) {
     }
     return nil
 }
-// GetSupportedPublishingTypes gets the supportedPublishingTypes property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+// GetSupportedPublishingTypes gets the supportedPublishingTypes property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, intunePfx, oflineDomainJoin, unknownFutureValue, privateAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: privateAccess.
 // returns a []OnPremisesPublishingType when successful
 func (m *OnPremisesAgent) GetSupportedPublishingTypes()([]OnPremisesPublishingType) {
     val, err := m.GetBackingStore().Get("supportedPublishingTypes")
@@ -223,7 +223,7 @@ func (m *OnPremisesAgent) SetStatus(value *AgentStatus)() {
         panic(err)
     }
 }
-// SetSupportedPublishingTypes sets the supportedPublishingTypes property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.
+// SetSupportedPublishingTypes sets the supportedPublishingTypes property value. Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, intunePfx, oflineDomainJoin, unknownFutureValue, privateAccess. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: privateAccess.
 func (m *OnPremisesAgent) SetSupportedPublishingTypes(value []OnPremisesPublishingType)() {
     err := m.GetBackingStore().Set("supportedPublishingTypes", value)
     if err != nil {

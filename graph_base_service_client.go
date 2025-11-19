@@ -132,6 +132,7 @@ import (
     if4a9faac580b9d5510ead8eac155e0cecb2222152b913f0bedc9a44bbe2ee79e "github.com/microsoftgraph/msgraph-beta-sdk-go/approvalworkflowproviders"
     if5cd0cf36bc86d9253920d73c41189ad8a30342e678d4f0138afa5095fd31538 "github.com/microsoftgraph/msgraph-beta-sdk-go/programcontroltypes"
     if7bcb57951e8f2ae550fcf781dc209ed777854429fcfe2465a71b03112dfc346 "github.com/microsoftgraph/msgraph-beta-sdk-go/communications"
+    if83355c856cdd68b36cf7c36343450f4f10444d7b88fd7c8556912e35585cef8 "github.com/microsoftgraph/msgraph-beta-sdk-go/agents"
     ifc2b4dc2959942f88a5b666d62b682ecb910ab6189042234241247fd57d38877 "github.com/microsoftgraph/msgraph-beta-sdk-go/directoryroleswithroletemplateid"
     ifc59747dbaa83f8f51942823114f4abfa41e0c0a64d67957f17e6b60407ce219 "github.com/microsoftgraph/msgraph-beta-sdk-go/app"
     ifcac309012d761a79a74e6d79fad6979f2117e7af36ff6e5ad131093412afcc7 "github.com/microsoftgraph/msgraph-beta-sdk-go/governancesubjects"
@@ -166,6 +167,11 @@ func (m *GraphBaseServiceClient) Admin()(*i65ed27543dee9887d3df7d7d883303dfead48
 // returns a *AdministrativeUnitsRequestBuilder when successful
 func (m *GraphBaseServiceClient) AdministrativeUnits()(*i895a6f3a85eea8558280363fb928ce992d75c89f1c602b57f1d6352b0af78e5f.AdministrativeUnitsRequestBuilder) {
     return i895a6f3a85eea8558280363fb928ce992d75c89f1c602b57f1d6352b0af78e5f.NewAdministrativeUnitsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// Agents provides operations to manage the collection of agent entities.
+// returns a *AgentsRequestBuilder when successful
+func (m *GraphBaseServiceClient) Agents()(*if83355c856cdd68b36cf7c36343450f4f10444d7b88fd7c8556912e35585cef8.AgentsRequestBuilder) {
+    return if83355c856cdd68b36cf7c36343450f4f10444d7b88fd7c8556912e35585cef8.NewAgentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // AgreementAcceptances provides operations to manage the collection of agreementAcceptance entities.
 // returns a *AgreementAcceptancesRequestBuilder when successful
@@ -561,7 +567,7 @@ func (m *GraphBaseServiceClient) PayloadResponse()(*i22f037221f506c5b5751f13095c
 func (m *GraphBaseServiceClient) PermissionGrants()(*i48a68a7c83dc874f9d9fdf942afed70a34b11f92d6b2ccb439359753116f65cc.PermissionGrantsRequestBuilder) {
     return i48a68a7c83dc874f9d9fdf942afed70a34b11f92d6b2ccb439359753116f65cc.NewPermissionGrantsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Places the places property
+// Places provides operations to manage the collection of place entities.
 // returns a *PlacesRequestBuilder when successful
 func (m *GraphBaseServiceClient) Places()(*ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1.PlacesRequestBuilder) {
     return ic21cf429efd6fc3199e67b5b4288a3193ff5e9cfb4e97a5e442e02ccd7748ec1.NewPlacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)

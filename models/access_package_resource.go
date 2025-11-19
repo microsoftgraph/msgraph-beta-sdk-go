@@ -297,7 +297,7 @@ func (m *AccessPackageResource) GetOriginId()(*string) {
     }
     return nil
 }
-// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).
+// GetOriginSystem gets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter (eq).
 // returns a *string when successful
 func (m *AccessPackageResource) GetOriginSystem()(*string) {
     val, err := m.GetBackingStore().Get("originSystem")
@@ -507,7 +507,7 @@ func (m *AccessPackageResource) SetOriginId(value *string)() {
         panic(err)
     }
 }
-// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).
+// SetOriginSystem sets the originSystem property value. The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup or CustomDataProvidedResource. Supports $filter (eq).
 func (m *AccessPackageResource) SetOriginSystem(value *string)() {
     err := m.GetBackingStore().Set("originSystem", value)
     if err != nil {

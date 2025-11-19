@@ -113,7 +113,7 @@ func (m *ConditionalAccessClientApplications) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetIncludeServicePrincipals gets the includeServicePrincipals property value. Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
+// GetIncludeServicePrincipals gets the includeServicePrincipals property value. Service principal IDs included in the policy scope or ServicePrincipalsInMyTenant.
 // returns a []string when successful
 func (m *ConditionalAccessClientApplications) GetIncludeServicePrincipals()([]string) {
     val, err := m.GetBackingStore().Get("includeServicePrincipals")
@@ -201,7 +201,7 @@ func (m *ConditionalAccessClientApplications) SetExcludeServicePrincipals(value 
         panic(err)
     }
 }
-// SetIncludeServicePrincipals sets the includeServicePrincipals property value. Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
+// SetIncludeServicePrincipals sets the includeServicePrincipals property value. Service principal IDs included in the policy scope or ServicePrincipalsInMyTenant.
 func (m *ConditionalAccessClientApplications) SetIncludeServicePrincipals(value []string)() {
     err := m.GetBackingStore().Set("includeServicePrincipals", value)
     if err != nil {

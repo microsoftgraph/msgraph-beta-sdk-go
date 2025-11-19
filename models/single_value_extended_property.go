@@ -38,7 +38,7 @@ func (m *SingleValueExtendedProperty) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetValue gets the value property value. The value property
+// GetValue gets the value property value. The value of the property.
 // returns a *string when successful
 func (m *SingleValueExtendedProperty) GetValue()(*string) {
     val, err := m.GetBackingStore().Get("value")
@@ -64,7 +64,7 @@ func (m *SingleValueExtendedProperty) Serialize(writer i878a80d2330e89d26896388a
     }
     return nil
 }
-// SetValue sets the value property value. The value property
+// SetValue sets the value property value. The value of the property.
 func (m *SingleValueExtendedProperty) SetValue(value *string)() {
     err := m.GetBackingStore().Set("value", value)
     if err != nil {

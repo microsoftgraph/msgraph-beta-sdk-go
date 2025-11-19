@@ -539,7 +539,7 @@ func (m *CloudPC) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
     }
     return res
 }
-// GetFrontlineCloudPcAvailability gets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available,notAvailable and unknownFutureValue. Default value is notApplicable. Read Only.
+// GetFrontlineCloudPcAvailability gets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available, notAvailable, and unknownFutureValue. Default value is notApplicable. Read-only. This property is deprecated and will stop returning data on October 30, 2025. Going forward use the retrieveFrontlineCloudPcDetail API.
 // returns a *FrontlineCloudPcAvailability when successful
 func (m *CloudPC) GetFrontlineCloudPcAvailability()(*FrontlineCloudPcAvailability) {
     val, err := m.GetBackingStore().Get("frontlineCloudPcAvailability")
@@ -803,7 +803,7 @@ func (m *CloudPC) GetServicePlanType()(*CloudPcServicePlanType) {
     }
     return nil
 }
-// GetSharedDeviceDetail gets the sharedDeviceDetail property value. Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.
+// GetSharedDeviceDetail gets the sharedDeviceDetail property value. Indicates the Cloud PC device details associated with the frontline shared service plan, including the user's UPN and the session start date and time.
 // returns a CloudPcFrontlineSharedDeviceDetailable when successful
 func (m *CloudPC) GetSharedDeviceDetail()(CloudPcFrontlineSharedDeviceDetailable) {
     val, err := m.GetBackingStore().Get("sharedDeviceDetail")
@@ -1220,7 +1220,7 @@ func (m *CloudPC) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetFrontlineCloudPcAvailability sets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available,notAvailable and unknownFutureValue. Default value is notApplicable. Read Only.
+// SetFrontlineCloudPcAvailability sets the frontlineCloudPcAvailability property value. The current availability of a frontline assigned Cloud PC. Possible values: notApplicable, available, notAvailable, and unknownFutureValue. Default value is notApplicable. Read-only. This property is deprecated and will stop returning data on October 30, 2025. Going forward use the retrieveFrontlineCloudPcDetail API.
 func (m *CloudPC) SetFrontlineCloudPcAvailability(value *FrontlineCloudPcAvailability)() {
     err := m.GetBackingStore().Set("frontlineCloudPcAvailability", value)
     if err != nil {
@@ -1374,7 +1374,7 @@ func (m *CloudPC) SetServicePlanType(value *CloudPcServicePlanType)() {
         panic(err)
     }
 }
-// SetSharedDeviceDetail sets the sharedDeviceDetail property value. Indicates the Cloud PC device details (for example, assignedToUserPrincipalName) associated with the frontline shared service plan.
+// SetSharedDeviceDetail sets the sharedDeviceDetail property value. Indicates the Cloud PC device details associated with the frontline shared service plan, including the user's UPN and the session start date and time.
 func (m *CloudPC) SetSharedDeviceDetail(value CloudPcFrontlineSharedDeviceDetailable)() {
     err := m.GetBackingStore().Set("sharedDeviceDetail", value)
     if err != nil {

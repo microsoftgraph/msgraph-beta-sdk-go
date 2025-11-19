@@ -108,6 +108,11 @@ func (m *ItemTeamDefinitionPrimaryChannelPlannerPlansPlannerPlanItemRequestBuild
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlannerPlanable), nil
 }
+// GetUsageRights provides operations to call the getUsageRights method.
+// returns a *ItemTeamDefinitionPrimaryChannelPlannerPlansItemGetUsageRightsRequestBuilder when successful
+func (m *ItemTeamDefinitionPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilder) GetUsageRights()(*ItemTeamDefinitionPrimaryChannelPlannerPlansItemGetUsageRightsRequestBuilder) {
+    return NewItemTeamDefinitionPrimaryChannelPlannerPlansItemGetUsageRightsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // MoveToContainer provides operations to call the moveToContainer method.
 // returns a *ItemTeamDefinitionPrimaryChannelPlannerPlansItemMoveToContainerRequestBuilder when successful
 func (m *ItemTeamDefinitionPrimaryChannelPlannerPlansPlannerPlanItemRequestBuilder) MoveToContainer()(*ItemTeamDefinitionPrimaryChannelPlannerPlansItemMoveToContainerRequestBuilder) {

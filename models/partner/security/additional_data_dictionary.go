@@ -16,6 +16,8 @@ func NewAdditionalDataDictionary()(*AdditionalDataDictionary) {
     m := &AdditionalDataDictionary{
         Dictionary: *ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.NewDictionary(),
     }
+    odataTypeValue := "#microsoft.graph.partner.security.additionalDataDictionary"
+    m.SetOdataType(&odataTypeValue)
     return m
 }
 // CreateAdditionalDataDictionaryFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value

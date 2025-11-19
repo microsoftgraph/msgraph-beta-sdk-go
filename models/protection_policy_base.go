@@ -167,6 +167,16 @@ func (m *ProtectionPolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["protectionMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseBackupPolicyProtectionMode)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetProtectionMode(val.(*BackupPolicyProtectionMode))
+        }
+        return nil
+    }
     res["protectionPolicyArtifactCount"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateProtectionPolicyArtifactCountFromDiscriminatorValue)
         if err != nil {
@@ -238,6 +248,18 @@ func (m *ProtectionPolicyBase) GetLastModifiedDateTime()(*i336074805fc853987abe6
     }
     if val != nil {
         return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetProtectionMode gets the protectionMode property value. The protectionMode property
+// returns a *BackupPolicyProtectionMode when successful
+func (m *ProtectionPolicyBase) GetProtectionMode()(*BackupPolicyProtectionMode) {
+    val, err := m.GetBackingStore().Get("protectionMode")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*BackupPolicyProtectionMode)
     }
     return nil
 }
@@ -325,6 +347,13 @@ func (m *ProtectionPolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    if m.GetProtectionMode() != nil {
+        cast := (*m.GetProtectionMode()).String()
+        err = writer.WriteStringValue("protectionMode", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("protectionPolicyArtifactCount", m.GetProtectionPolicyArtifactCount())
         if err != nil {
@@ -401,6 +430,13 @@ func (m *ProtectionPolicyBase) SetLastModifiedDateTime(value *i336074805fc853987
         panic(err)
     }
 }
+// SetProtectionMode sets the protectionMode property value. The protectionMode property
+func (m *ProtectionPolicyBase) SetProtectionMode(value *BackupPolicyProtectionMode)() {
+    err := m.GetBackingStore().Set("protectionMode", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProtectionPolicyArtifactCount sets the protectionPolicyArtifactCount property value. The count of artifacts in the protection policy by status. Returned only on $select.
 func (m *ProtectionPolicyBase) SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)() {
     err := m.GetBackingStore().Set("protectionPolicyArtifactCount", value)
@@ -432,6 +468,7 @@ type ProtectionPolicyBaseable interface {
     GetIsEnabled()(*bool)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetProtectionMode()(*BackupPolicyProtectionMode)
     GetProtectionPolicyArtifactCount()(ProtectionPolicyArtifactCountable)
     GetRetentionSettings()([]RetentionSettingable)
     GetStatus()(*ProtectionPolicyStatus)
@@ -442,6 +479,7 @@ type ProtectionPolicyBaseable interface {
     SetIsEnabled(value *bool)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetProtectionMode(value *BackupPolicyProtectionMode)()
     SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)()
     SetRetentionSettings(value []RetentionSettingable)()
     SetStatus(value *ProtectionPolicyStatus)()

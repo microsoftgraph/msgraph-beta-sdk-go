@@ -101,6 +101,16 @@ func (m *IdentityContainer) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSettingsContainerFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSettings(val.(SettingsContainerable))
+        }
+        return nil
+    }
     return res
 }
 // GetHealthIssues gets the healthIssues property value. Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
@@ -139,7 +149,7 @@ func (m *IdentityContainer) GetSensorCandidateActivationConfiguration()(SensorCa
     }
     return nil
 }
-// GetSensorCandidates gets the sensorCandidates property value. The sensorCandidates property
+// GetSensorCandidates gets the sensorCandidates property value. Represents Microsoft Defender for Identity sensors that are ready to be activated.
 // returns a []SensorCandidateable when successful
 func (m *IdentityContainer) GetSensorCandidates()([]SensorCandidateable) {
     val, err := m.GetBackingStore().Get("sensorCandidates")
@@ -160,6 +170,18 @@ func (m *IdentityContainer) GetSensors()([]Sensorable) {
     }
     if val != nil {
         return val.([]Sensorable)
+    }
+    return nil
+}
+// GetSettings gets the settings property value. Represents a container for security identities settings APIs.
+// returns a SettingsContainerable when successful
+func (m *IdentityContainer) GetSettings()(SettingsContainerable) {
+    val, err := m.GetBackingStore().Get("settings")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SettingsContainerable)
     }
     return nil
 }
@@ -223,6 +245,12 @@ func (m *IdentityContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("settings", m.GetSettings())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetHealthIssues sets the healthIssues property value. Represents potential issues within a customer's Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
@@ -246,7 +274,7 @@ func (m *IdentityContainer) SetSensorCandidateActivationConfiguration(value Sens
         panic(err)
     }
 }
-// SetSensorCandidates sets the sensorCandidates property value. The sensorCandidates property
+// SetSensorCandidates sets the sensorCandidates property value. Represents Microsoft Defender for Identity sensors that are ready to be activated.
 func (m *IdentityContainer) SetSensorCandidates(value []SensorCandidateable)() {
     err := m.GetBackingStore().Set("sensorCandidates", value)
     if err != nil {
@@ -260,6 +288,13 @@ func (m *IdentityContainer) SetSensors(value []Sensorable)() {
         panic(err)
     }
 }
+// SetSettings sets the settings property value. Represents a container for security identities settings APIs.
+func (m *IdentityContainer) SetSettings(value SettingsContainerable)() {
+    err := m.GetBackingStore().Set("settings", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type IdentityContainerable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -268,9 +303,11 @@ type IdentityContainerable interface {
     GetSensorCandidateActivationConfiguration()(SensorCandidateActivationConfigurationable)
     GetSensorCandidates()([]SensorCandidateable)
     GetSensors()([]Sensorable)
+    GetSettings()(SettingsContainerable)
     SetHealthIssues(value []HealthIssueable)()
     SetIdentityAccounts(value []IdentityAccountsable)()
     SetSensorCandidateActivationConfiguration(value SensorCandidateActivationConfigurationable)()
     SetSensorCandidates(value []SensorCandidateable)()
     SetSensors(value []Sensorable)()
+    SetSettings(value SettingsContainerable)()
 }

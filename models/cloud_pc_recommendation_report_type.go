@@ -5,20 +5,23 @@ package models
 type CloudPcRecommendationReportType int
 
 const (
-    CLOUDPCUSAGECATEGORYREPORTS_CLOUDPCRECOMMENDATIONREPORTTYPE CloudPcRecommendationReportType = iota
+    CLOUDPCUSAGECATEGORYREPORT_CLOUDPCRECOMMENDATIONREPORTTYPE CloudPcRecommendationReportType = iota
     UNKNOWNFUTUREVALUE_CLOUDPCRECOMMENDATIONREPORTTYPE
+    CLOUDPCUSAGECATEGORYREPORTS_CLOUDPCRECOMMENDATIONREPORTTYPE
 )
 
 func (i CloudPcRecommendationReportType) String() string {
-    return []string{"cloudPcUsageCategoryReports", "unknownFutureValue"}[i]
+    return []string{"cloudPcUsageCategoryReport", "unknownFutureValue", "cloudPcUsageCategoryReports"}[i]
 }
 func ParseCloudPcRecommendationReportType(v string) (any, error) {
-    result := CLOUDPCUSAGECATEGORYREPORTS_CLOUDPCRECOMMENDATIONREPORTTYPE
+    result := CLOUDPCUSAGECATEGORYREPORT_CLOUDPCRECOMMENDATIONREPORTTYPE
     switch v {
-        case "cloudPcUsageCategoryReports":
-            result = CLOUDPCUSAGECATEGORYREPORTS_CLOUDPCRECOMMENDATIONREPORTTYPE
+        case "cloudPcUsageCategoryReport":
+            result = CLOUDPCUSAGECATEGORYREPORT_CLOUDPCRECOMMENDATIONREPORTTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCRECOMMENDATIONREPORTTYPE
+        case "cloudPcUsageCategoryReports":
+            result = CLOUDPCUSAGECATEGORYREPORTS_CLOUDPCRECOMMENDATIONREPORTTYPE
         default:
             return nil, nil
     }

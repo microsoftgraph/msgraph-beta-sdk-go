@@ -93,6 +93,11 @@ func (m *TeamsPolicyRequestBuilder) Get(ctx context.Context, requestConfiguratio
     }
     return res.(ida00aeab33baad931d9ea7ddda72fd1a74178962fdc58f5709ddf52b9f0fcc0f.TeamsPolicyAssignmentable), nil
 }
+// MicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithName provides operations to call the getPolicyId method.
+// returns a *TeamsPolicyMicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilder when successful
+func (m *TeamsPolicyRequestBuilder) MicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithName(name *string, typeEscaped *string)(*TeamsPolicyMicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilder) {
+    return NewTeamsPolicyMicrosoftGraphTeamsAdministrationGetPolicyIdWithTypeWithNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, name, typeEscaped)
+}
 // Patch update the navigation property policy in admin
 // returns a TeamsPolicyAssignmentable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -152,6 +157,11 @@ func (m *TeamsPolicyRequestBuilder) ToPatchRequestInformation(ctx context.Contex
         return nil, err
     }
     return requestInfo, nil
+}
+// UserAssignments provides operations to manage the userAssignments property of the microsoft.graph.teamsAdministration.teamsPolicyAssignment entity.
+// returns a *TeamsPolicyUserAssignmentsRequestBuilder when successful
+func (m *TeamsPolicyRequestBuilder) UserAssignments()(*TeamsPolicyUserAssignmentsRequestBuilder) {
+    return NewTeamsPolicyUserAssignmentsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *TeamsPolicyRequestBuilder when successful

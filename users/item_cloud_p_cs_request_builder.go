@@ -14,7 +14,7 @@ import (
 type ItemCloudPCsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemCloudPCsRequestBuilderGetQueryParameters get cloudPCs from users
+// ItemCloudPCsRequestBuilderGetQueryParameters the user's Cloud PCs. Read-only. Nullable.
 type ItemCloudPCsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewItemCloudPCsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee2
 func (m *ItemCloudPCsRequestBuilder) Count()(*ItemCloudPCsCountRequestBuilder) {
     return NewItemCloudPCsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get cloudPCs from users
+// Get the user's Cloud PCs. Read-only. Nullable.
 // returns a CloudPCCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemCloudPCsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemCloudPCsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPCCollectionResponseable, error) {
@@ -129,7 +129,7 @@ func (m *ItemCloudPCsRequestBuilder) Post(ctx context.Context, body ie233ee762e2
 func (m *ItemCloudPCsRequestBuilder) RetrieveCloudPcCountByStatus()(*ItemCloudPCsRetrieveCloudPcCountByStatusRequestBuilder) {
     return NewItemCloudPCsRetrieveCloudPcCountByStatusRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ToGetRequestInformation get cloudPCs from users
+// ToGetRequestInformation the user's Cloud PCs. Read-only. Nullable.
 // returns a *RequestInformation when successful
 func (m *ItemCloudPCsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemCloudPCsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

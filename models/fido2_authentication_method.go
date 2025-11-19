@@ -132,6 +132,16 @@ func (m *Fido2AuthenticationMethod) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["passkeyType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePasskeyType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPasskeyType(val.(*PasskeyType))
+        }
+        return nil
+    }
     res["publicKeyCredential"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateWebauthnPublicKeyCredentialFromDiscriminatorValue)
         if err != nil {
@@ -153,6 +163,18 @@ func (m *Fido2AuthenticationMethod) GetModel()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPasskeyType gets the passkeyType property value. The type of passkey allowed in the passkey profile. The possible values are: deviceBound, synced, unknownFutureValue.
+// returns a *PasskeyType when successful
+func (m *Fido2AuthenticationMethod) GetPasskeyType()(*PasskeyType) {
+    val, err := m.GetBackingStore().Get("passkeyType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PasskeyType)
     }
     return nil
 }
@@ -205,6 +227,13 @@ func (m *Fido2AuthenticationMethod) Serialize(writer i878a80d2330e89d26896388a3f
             return err
         }
     }
+    if m.GetPasskeyType() != nil {
+        cast := (*m.GetPasskeyType()).String()
+        err = writer.WriteStringValue("passkeyType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("publicKeyCredential", m.GetPublicKeyCredential())
         if err != nil {
@@ -248,6 +277,13 @@ func (m *Fido2AuthenticationMethod) SetModel(value *string)() {
         panic(err)
     }
 }
+// SetPasskeyType sets the passkeyType property value. The type of passkey allowed in the passkey profile. The possible values are: deviceBound, synced, unknownFutureValue.
+func (m *Fido2AuthenticationMethod) SetPasskeyType(value *PasskeyType)() {
+    err := m.GetBackingStore().Set("passkeyType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPublicKeyCredential sets the publicKeyCredential property value. Contains the WebAuthn public key credential information being registered. Only used for write requests. This property isn't returned on read operations.
 func (m *Fido2AuthenticationMethod) SetPublicKeyCredential(value WebauthnPublicKeyCredentialable)() {
     err := m.GetBackingStore().Set("publicKeyCredential", value)
@@ -263,11 +299,13 @@ type Fido2AuthenticationMethodable interface {
     GetAttestationLevel()(*AttestationLevel)
     GetDisplayName()(*string)
     GetModel()(*string)
+    GetPasskeyType()(*PasskeyType)
     GetPublicKeyCredential()(WebauthnPublicKeyCredentialable)
     SetAaGuid(value *string)()
     SetAttestationCertificates(value []string)()
     SetAttestationLevel(value *AttestationLevel)()
     SetDisplayName(value *string)()
     SetModel(value *string)()
+    SetPasskeyType(value *PasskeyType)()
     SetPublicKeyCredential(value WebauthnPublicKeyCredentialable)()
 }

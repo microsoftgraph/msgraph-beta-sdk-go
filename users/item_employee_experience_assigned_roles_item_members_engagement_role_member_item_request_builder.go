@@ -21,7 +21,7 @@ type ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemReque
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemRequestBuilderGetQueryParameters users who have been assigned this role.
+// ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemRequestBuilderGetQueryParameters users that have this role assigned.
 type ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemR
     }
     return nil
 }
-// Get users who have been assigned this role.
+// Get users that have this role assigned.
 // returns a EngagementRoleMemberable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.EngagementRoleMemberable, error) {
@@ -124,7 +124,7 @@ func (m *ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemR
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation users who have been assigned this role.
+// ToGetRequestInformation users that have this role assigned.
 // returns a *RequestInformation when successful
 func (m *ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemEmployeeExperienceAssignedRolesItemMembersEngagementRoleMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

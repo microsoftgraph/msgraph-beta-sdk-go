@@ -84,7 +84,7 @@ func (m *SensorCandidate) GetLastSeenDateTime()(*i336074805fc853987abe6f7fe3ad97
     }
     return nil
 }
-// GetSenseClientVersion gets the senseClientVersion property value. The version of the Defender for Identity sensor client.
+// GetSenseClientVersion gets the senseClientVersion property value. The version of the Defender for Identity sensor client.  Supports $filter (eq).
 // returns a *string when successful
 func (m *SensorCandidate) GetSenseClientVersion()(*string) {
     val, err := m.GetBackingStore().Get("senseClientVersion")
@@ -136,7 +136,7 @@ func (m *SensorCandidate) SetLastSeenDateTime(value *i336074805fc853987abe6f7fe3
         panic(err)
     }
 }
-// SetSenseClientVersion sets the senseClientVersion property value. The version of the Defender for Identity sensor client.
+// SetSenseClientVersion sets the senseClientVersion property value. The version of the Defender for Identity sensor client.  Supports $filter (eq).
 func (m *SensorCandidate) SetSenseClientVersion(value *string)() {
     err := m.GetBackingStore().Set("senseClientVersion", value)
     if err != nil {

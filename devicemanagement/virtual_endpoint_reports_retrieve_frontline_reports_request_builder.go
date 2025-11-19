@@ -34,6 +34,7 @@ func NewVirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder(rawUrl stri
     return NewVirtualEndpointReportsRetrieveFrontlineReportsRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post invoke action retrieveFrontlineReports
+// Deprecated: Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
 // returns a []byte when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder) Post(ctx context.Context, body VirtualEndpointReportsRetrieveFrontlineReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilderPostRequestConfiguration)([]byte, error) {
@@ -54,6 +55,7 @@ func (m *VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder) Post(ctx 
     return res.([]byte), nil
 }
 // ToPostRequestInformation invoke action retrieveFrontlineReports
+// Deprecated: Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
 // returns a *RequestInformation when successful
 func (m *VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder) ToPostRequestInformation(ctx context.Context, body VirtualEndpointReportsRetrieveFrontlineReportsPostRequestBodyable, requestConfiguration *VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -69,6 +71,7 @@ func (m *VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder) ToPostReq
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: Starting from December 31, 2026, this entity type (&apos;cloudPcReports&apos;) will be deprecated and no longer supported. Please use &apos;cloudPcReport&apos; instead. as of 2025-09/cloudPcReports on 2025-09-01 and will be removed 2026-12-31
 // returns a *VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder when successful
 func (m *VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder) {
     return NewVirtualEndpointReportsRetrieveFrontlineReportsRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

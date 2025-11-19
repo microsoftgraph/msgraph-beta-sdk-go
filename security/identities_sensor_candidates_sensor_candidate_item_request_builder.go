@@ -21,7 +21,7 @@ type IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderGetQueryParameters get sensorCandidates from security
+// IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderGetQueryParameters represents Microsoft Defender for Identity sensors that are ready to be activated.
 type IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *IdentitiesSensorCandidatesSensorCandidateItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get get sensorCandidates from security
+// Get represents Microsoft Defender for Identity sensors that are ready to be activated.
 // returns a SensorCandidateable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IdentitiesSensorCandidatesSensorCandidateItemRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SensorCandidateable, error) {
@@ -124,7 +124,7 @@ func (m *IdentitiesSensorCandidatesSensorCandidateItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get sensorCandidates from security
+// ToGetRequestInformation represents Microsoft Defender for Identity sensors that are ready to be activated.
 // returns a *RequestInformation when successful
 func (m *IdentitiesSensorCandidatesSensorCandidateItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSensorCandidatesSensorCandidateItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

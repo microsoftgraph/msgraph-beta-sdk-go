@@ -144,22 +144,6 @@ func (m *BranchSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
-    res["forwardingProfiles"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfObjectValues(CreateForwardingProfileFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]ForwardingProfileable, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = v.(ForwardingProfileable)
-                }
-            }
-            m.SetForwardingProfiles(res)
-        }
-        return nil
-    }
     res["lastModifiedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetTimeValue()
         if err != nil {
@@ -201,18 +185,6 @@ func (m *BranchSite) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         return nil
     }
     return res
-}
-// GetForwardingProfiles gets the forwardingProfiles property value. Each forwarding profile associated with a branch site is specified. Supports $expand.
-// returns a []ForwardingProfileable when successful
-func (m *BranchSite) GetForwardingProfiles()([]ForwardingProfileable) {
-    val, err := m.GetBackingStore().Get("forwardingProfiles")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]ForwardingProfileable)
-    }
-    return nil
 }
 // GetLastModifiedDateTime gets the lastModifiedDateTime property value. last modified time.
 // returns a *Time when successful
@@ -305,18 +277,6 @@ func (m *BranchSite) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
-    if m.GetForwardingProfiles() != nil {
-        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetForwardingProfiles()))
-        for i, v := range m.GetForwardingProfiles() {
-            if v != nil {
-                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
-            }
-        }
-        err = writer.WriteCollectionOfObjectValues("forwardingProfiles", cast)
-        if err != nil {
-            return err
-        }
-    }
     {
         err = writer.WriteTimeValue("lastModifiedDateTime", m.GetLastModifiedDateTime())
         if err != nil {
@@ -379,13 +339,6 @@ func (m *BranchSite) SetDeviceLinks(value []DeviceLinkable)() {
         panic(err)
     }
 }
-// SetForwardingProfiles sets the forwardingProfiles property value. Each forwarding profile associated with a branch site is specified. Supports $expand.
-func (m *BranchSite) SetForwardingProfiles(value []ForwardingProfileable)() {
-    err := m.GetBackingStore().Set("forwardingProfiles", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetLastModifiedDateTime sets the lastModifiedDateTime property value. last modified time.
 func (m *BranchSite) SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastModifiedDateTime", value)
@@ -422,7 +375,6 @@ type BranchSiteable interface {
     GetConnectivityState()(*ConnectivityState)
     GetCountry()(*string)
     GetDeviceLinks()([]DeviceLinkable)
-    GetForwardingProfiles()([]ForwardingProfileable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetName()(*string)
     GetRegion()(*Region)
@@ -432,7 +384,6 @@ type BranchSiteable interface {
     SetConnectivityState(value *ConnectivityState)()
     SetCountry(value *string)()
     SetDeviceLinks(value []DeviceLinkable)()
-    SetForwardingProfiles(value []ForwardingProfileable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetName(value *string)()
     SetRegion(value *Region)()

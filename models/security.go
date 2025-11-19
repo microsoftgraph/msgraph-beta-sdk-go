@@ -38,7 +38,7 @@ func (m *Security) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
+// GetAlerts gets the alerts property value. Notifications for suspicious or potential security issues in a customer's tenant.
 // returns a []Alertable when successful
 func (m *Security) GetAlerts()([]Alertable) {
     val, err := m.GetBackingStore().Get("alerts")
@@ -297,6 +297,16 @@ func (m *Security) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896
         }
         return nil
     }
+    res["securityCopilot"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSecurityCopilotFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecurityCopilot(val.(SecurityCopilotable))
+        }
+        return nil
+    }
     res["subjectRightsRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateSubjectRightsRequestFromDiscriminatorValue)
         if err != nil {
@@ -419,7 +429,7 @@ func (m *Security) GetSecureScoreControlProfiles()([]SecureScoreControlProfileab
     }
     return nil
 }
-// GetSecureScores gets the secureScores property value. Measurements of tenants’ security posture to help protect them from threats.
+// GetSecureScores gets the secureScores property value. Measurements of tenants' security posture to help protect them from threats.
 // returns a []SecureScoreable when successful
 func (m *Security) GetSecureScores()([]SecureScoreable) {
     val, err := m.GetBackingStore().Get("secureScores")
@@ -440,6 +450,18 @@ func (m *Security) GetSecurityActions()([]SecurityActionable) {
     }
     if val != nil {
         return val.([]SecurityActionable)
+    }
+    return nil
+}
+// GetSecurityCopilot gets the securityCopilot property value. Represents the resources related to Microsoft Security Copilot.
+// returns a SecurityCopilotable when successful
+func (m *Security) GetSecurityCopilot()(SecurityCopilotable) {
+    val, err := m.GetBackingStore().Get("securityCopilot")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SecurityCopilotable)
     }
     return nil
 }
@@ -619,6 +641,12 @@ func (m *Security) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c01
             return err
         }
     }
+    {
+        err := writer.WriteObjectValue("securityCopilot", m.GetSecurityCopilot())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSubjectRightsRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSubjectRightsRequests()))
         for i, v := range m.GetSubjectRightsRequests() {
@@ -670,7 +698,7 @@ func (m *Security) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer’s tenant.
+// SetAlerts sets the alerts property value. Notifications for suspicious or potential security issues in a customer's tenant.
 func (m *Security) SetAlerts(value []Alertable)() {
     err := m.GetBackingStore().Set("alerts", value)
     if err != nil {
@@ -751,7 +779,7 @@ func (m *Security) SetSecureScoreControlProfiles(value []SecureScoreControlProfi
         panic(err)
     }
 }
-// SetSecureScores sets the secureScores property value. Measurements of tenants’ security posture to help protect them from threats.
+// SetSecureScores sets the secureScores property value. Measurements of tenants' security posture to help protect them from threats.
 func (m *Security) SetSecureScores(value []SecureScoreable)() {
     err := m.GetBackingStore().Set("secureScores", value)
     if err != nil {
@@ -761,6 +789,13 @@ func (m *Security) SetSecureScores(value []SecureScoreable)() {
 // SetSecurityActions sets the securityActions property value. The securityActions property
 func (m *Security) SetSecurityActions(value []SecurityActionable)() {
     err := m.GetBackingStore().Set("securityActions", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSecurityCopilot sets the securityCopilot property value. Represents the resources related to Microsoft Security Copilot.
+func (m *Security) SetSecurityCopilot(value SecurityCopilotable)() {
+    err := m.GetBackingStore().Set("securityCopilot", value)
     if err != nil {
         panic(err)
     }
@@ -804,6 +839,7 @@ type Securityable interface {
     GetSecureScoreControlProfiles()([]SecureScoreControlProfileable)
     GetSecureScores()([]SecureScoreable)
     GetSecurityActions()([]SecurityActionable)
+    GetSecurityCopilot()(SecurityCopilotable)
     GetSubjectRightsRequests()([]SubjectRightsRequestable)
     GetTiIndicators()([]TiIndicatorable)
     GetUserSecurityProfiles()([]UserSecurityProfileable)
@@ -821,6 +857,7 @@ type Securityable interface {
     SetSecureScoreControlProfiles(value []SecureScoreControlProfileable)()
     SetSecureScores(value []SecureScoreable)()
     SetSecurityActions(value []SecurityActionable)()
+    SetSecurityCopilot(value SecurityCopilotable)()
     SetSubjectRightsRequests(value []SubjectRightsRequestable)()
     SetTiIndicators(value []TiIndicatorable)()
     SetUserSecurityProfiles(value []UserSecurityProfileable)()

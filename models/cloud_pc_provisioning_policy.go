@@ -429,6 +429,16 @@ func (m *CloudPcProvisioningPolicy) GetFieldDeserializers()(map[string]func(i878
         }
         return nil
     }
+    res["userSettingsPersistenceConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateCloudPcUserSettingsPersistenceConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetUserSettingsPersistenceConfiguration(val.(CloudPcUserSettingsPersistenceConfigurationable))
+        }
+        return nil
+    }
     res["windowsSetting"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateCloudPcWindowsSettingFromDiscriminatorValue)
         if err != nil {
@@ -592,6 +602,18 @@ func (m *CloudPcProvisioningPolicy) GetUserExperienceType()(*CloudPcUserExperien
     }
     if val != nil {
         return val.(*CloudPcUserExperienceType)
+    }
+    return nil
+}
+// GetUserSettingsPersistenceConfiguration gets the userSettingsPersistenceConfiguration property value. Indicates specific settings that enable the persistence of user application settings between Cloud PC sessions. The default value is null. This feature is only available for Cloud PC provisioning policies of type sharedByEntraGroup. Supports $select.
+// returns a CloudPcUserSettingsPersistenceConfigurationable when successful
+func (m *CloudPcProvisioningPolicy) GetUserSettingsPersistenceConfiguration()(CloudPcUserSettingsPersistenceConfigurationable) {
+    val, err := m.GetBackingStore().Get("userSettingsPersistenceConfiguration")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(CloudPcUserSettingsPersistenceConfigurationable)
     }
     return nil
 }
@@ -786,6 +808,12 @@ func (m *CloudPcProvisioningPolicy) Serialize(writer i878a80d2330e89d26896388a3f
         }
     }
     {
+        err = writer.WriteObjectValue("userSettingsPersistenceConfiguration", m.GetUserSettingsPersistenceConfiguration())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("windowsSetting", m.GetWindowsSetting())
         if err != nil {
             return err
@@ -967,6 +995,13 @@ func (m *CloudPcProvisioningPolicy) SetUserExperienceType(value *CloudPcUserExpe
         panic(err)
     }
 }
+// SetUserSettingsPersistenceConfiguration sets the userSettingsPersistenceConfiguration property value. Indicates specific settings that enable the persistence of user application settings between Cloud PC sessions. The default value is null. This feature is only available for Cloud PC provisioning policies of type sharedByEntraGroup. Supports $select.
+func (m *CloudPcProvisioningPolicy) SetUserSettingsPersistenceConfiguration(value CloudPcUserSettingsPersistenceConfigurationable)() {
+    err := m.GetBackingStore().Set("userSettingsPersistenceConfiguration", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWindowsSetting sets the windowsSetting property value. Indicates a specific Windows setting to configure during the creation of Cloud PCs for this provisioning policy. Supports $select.
 func (m *CloudPcProvisioningPolicy) SetWindowsSetting(value CloudPcWindowsSettingable)() {
     err := m.GetBackingStore().Set("windowsSetting", value)
@@ -1008,6 +1043,7 @@ type CloudPcProvisioningPolicyable interface {
     GetProvisioningType()(*CloudPcProvisioningType)
     GetScopeIds()([]string)
     GetUserExperienceType()(*CloudPcUserExperienceType)
+    GetUserSettingsPersistenceConfiguration()(CloudPcUserSettingsPersistenceConfigurationable)
     GetWindowsSetting()(CloudPcWindowsSettingable)
     GetWindowsSettings()(CloudPcWindowsSettingsable)
     SetAlternateResourceUrl(value *string)()
@@ -1034,6 +1070,7 @@ type CloudPcProvisioningPolicyable interface {
     SetProvisioningType(value *CloudPcProvisioningType)()
     SetScopeIds(value []string)()
     SetUserExperienceType(value *CloudPcUserExperienceType)()
+    SetUserSettingsPersistenceConfiguration(value CloudPcUserSettingsPersistenceConfigurationable)()
     SetWindowsSetting(value CloudPcWindowsSettingable)()
     SetWindowsSettings(value CloudPcWindowsSettingsable)()
 }
