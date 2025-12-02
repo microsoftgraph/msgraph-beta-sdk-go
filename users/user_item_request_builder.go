@@ -281,6 +281,11 @@ func (m *UserItemRequestBuilder) ExportPersonalData()(*ItemExportPersonalDataReq
 func (m *UserItemRequestBuilder) Extensions()(*ItemExtensionsRequestBuilder) {
     return NewItemExtensionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// FindMeetingLocations provides operations to call the findMeetingLocations method.
+// returns a *ItemFindMeetingLocationsRequestBuilder when successful
+func (m *UserItemRequestBuilder) FindMeetingLocations()(*ItemFindMeetingLocationsRequestBuilder) {
+    return NewItemFindMeetingLocationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // FindMeetingTimes provides operations to call the findMeetingTimes method.
 // returns a *ItemFindMeetingTimesRequestBuilder when successful
 func (m *UserItemRequestBuilder) FindMeetingTimes()(*ItemFindMeetingTimesRequestBuilder) {

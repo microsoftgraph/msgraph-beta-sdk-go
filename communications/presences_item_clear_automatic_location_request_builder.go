@@ -33,8 +33,11 @@ func NewPresencesItemClearAutomaticLocationRequestBuilder(rawUrl string, request
     urlParams["request-raw-url"] = rawUrl
     return NewPresencesItemClearAutomaticLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action clearAutomaticLocation
+// Post clear the automatic work location signal for a user. After clearing, the user’s final aggregated work location is recomputed according to the precedence rules: Use this operation when you need to remove the current autodetected signal without affecting manual or scheduled layers.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-clearautomaticlocation?view=graph-rest-beta
 func (m *PresencesItemClearAutomaticLocationRequestBuilder) Post(ctx context.Context, requestConfiguration *PresencesItemClearAutomaticLocationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *PresencesItemClearAutomaticLocationRequestBuilder) Post(ctx context.Con
     }
     return nil
 }
-// ToPostRequestInformation invoke action clearAutomaticLocation
+// ToPostRequestInformation clear the automatic work location signal for a user. After clearing, the user’s final aggregated work location is recomputed according to the precedence rules: Use this operation when you need to remove the current autodetected signal without affecting manual or scheduled layers.
 // returns a *RequestInformation when successful
 func (m *PresencesItemClearAutomaticLocationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *PresencesItemClearAutomaticLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

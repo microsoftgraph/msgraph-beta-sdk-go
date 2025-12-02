@@ -101,7 +101,7 @@ func (m *UserWorkLocation) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. The placeId property
+// GetPlaceId gets the placeId property value. Identifier of the place (when applicable).
 // returns a *string when successful
 func (m *UserWorkLocation) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -191,7 +191,7 @@ func (m *UserWorkLocation) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. The placeId property
+// SetPlaceId sets the placeId property value. Identifier of the place (when applicable).
 func (m *UserWorkLocation) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {

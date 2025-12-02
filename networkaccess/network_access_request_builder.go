@@ -65,10 +65,20 @@ func NewNetworkAccessRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee
 func (m *NetworkAccessRequestBuilder) FilteringPolicies()(*FilteringPoliciesRequestBuilder) {
     return NewFilteringPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// FilteringProfiles provides operations to manage the filteringProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+// returns a *FilteringProfilesRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) FilteringProfiles()(*FilteringProfilesRequestBuilder) {
+    return NewFilteringProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ForwardingPolicies provides operations to manage the forwardingPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.
 // returns a *ForwardingPoliciesRequestBuilder when successful
 func (m *NetworkAccessRequestBuilder) ForwardingPolicies()(*ForwardingPoliciesRequestBuilder) {
     return NewForwardingPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ForwardingProfiles provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.
+// returns a *ForwardingProfilesRequestBuilder when successful
+func (m *NetworkAccessRequestBuilder) ForwardingProfiles()(*ForwardingProfilesRequestBuilder) {
+    return NewForwardingProfilesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Get get networkAccess
 // returns a NetworkAccessRootable when successful

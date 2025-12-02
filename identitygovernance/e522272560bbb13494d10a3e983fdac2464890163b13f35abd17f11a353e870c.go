@@ -14,7 +14,7 @@ import (
 type LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetQueryParameters get administrationScopeTargets from identityGovernance
+// LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetQueryParameters the administrative units in the scope of the workflow. Optional. Supports $expand.
 type LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewLifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObject
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get administrationScopeTargets from identityGovernance
+// Get the administrative units in the scope of the workflow. Optional. Supports $expand.
 // returns a DirectoryObjectable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -63,7 +63,7 @@ func (m *LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjec
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ToGetRequestInformation get administrationScopeTargets from identityGovernance
+// ToGetRequestInformation the administrative units in the scope of the workflow. Optional. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

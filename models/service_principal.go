@@ -38,6 +38,8 @@ func CreateServicePrincipalFromDiscriminatorValue(parseNode i878a80d2330e89d2689
                 switch *mappingValue {
                     case "#microsoft.graph.agentIdentity":
                         return NewAgentIdentity(), nil
+                    case "#microsoft.graph.agentIdentityBlueprintPrincipal":
+                        return NewAgentIdentityBlueprintPrincipal(), nil
                 }
             }
         }
@@ -221,6 +223,18 @@ func (m *ServicePrincipal) GetClaimsPolicy()(CustomClaimsPolicyable) {
     }
     if val != nil {
         return val.(CustomClaimsPolicyable)
+    }
+    return nil
+}
+// GetCreatedByAppId gets the createdByAppId property value. The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.
+// returns a *string when successful
+func (m *ServicePrincipal) GetCreatedByAppId()(*string) {
+    val, err := m.GetBackingStore().Get("createdByAppId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -525,6 +539,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         if val != nil {
             m.SetClaimsPolicy(val.(CustomClaimsPolicyable))
+        }
+        return nil
+    }
+    res["createdByAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetCreatedByAppId(val)
         }
         return nil
     }
@@ -1648,6 +1672,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteStringValue("createdByAppId", m.GetCreatedByAppId())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetCreatedObjects() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetCreatedObjects()))
         for i, v := range m.GetCreatedObjects() {
@@ -2121,6 +2151,13 @@ func (m *ServicePrincipal) SetClaimsPolicy(value CustomClaimsPolicyable)() {
         panic(err)
     }
 }
+// SetCreatedByAppId sets the createdByAppId property value. The appId (called Application (client) ID on the Microsoft Entra admin center) of the application used to create the service principal. Set internally by Microsoft Entra ID. Read-only.
+func (m *ServicePrincipal) SetCreatedByAppId(value *string)() {
+    err := m.GetBackingStore().Set("createdByAppId", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetCreatedObjects sets the createdObjects property value. Directory objects created by this service principal. Read-only. Nullable.
 func (m *ServicePrincipal) SetCreatedObjects(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("createdObjects", value)
@@ -2447,6 +2484,7 @@ type ServicePrincipalable interface {
     GetAppRoles()([]AppRoleable)
     GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
     GetClaimsPolicy()(CustomClaimsPolicyable)
+    GetCreatedByAppId()(*string)
     GetCreatedObjects()([]DirectoryObjectable)
     GetCustomSecurityAttributes()(CustomSecurityAttributeValueable)
     GetDelegatedPermissionClassifications()([]DelegatedPermissionClassificationable)
@@ -2506,6 +2544,7 @@ type ServicePrincipalable interface {
     SetAppRoles(value []AppRoleable)()
     SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
     SetClaimsPolicy(value CustomClaimsPolicyable)()
+    SetCreatedByAppId(value *string)()
     SetCreatedObjects(value []DirectoryObjectable)()
     SetCustomSecurityAttributes(value CustomSecurityAttributeValueable)()
     SetDelegatedPermissionClassifications(value []DelegatedPermissionClassificationable)()

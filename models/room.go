@@ -200,6 +200,26 @@ func (m *Room) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a
         }
         return nil
     }
+    res["placeId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPlaceId(val)
+        }
+        return nil
+    }
+    res["teamsEnabledState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePlaceFeatureEnablement)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTeamsEnabledState(val.(*PlaceFeatureEnablement))
+        }
+        return nil
+    }
     res["videoDeviceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -257,6 +277,30 @@ func (m *Room) GetNickname()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPlaceId gets the placeId property value. An alternate immutable unique identifier of the room. Read-only.
+// returns a *string when successful
+func (m *Room) GetPlaceId()(*string) {
+    val, err := m.GetBackingStore().Get("placeId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetTeamsEnabledState gets the teamsEnabledState property value. The teamsEnabledState property
+// returns a *PlaceFeatureEnablement when successful
+func (m *Room) GetTeamsEnabledState()(*PlaceFeatureEnablement) {
+    val, err := m.GetBackingStore().Get("teamsEnabledState")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*PlaceFeatureEnablement)
     }
     return nil
 }
@@ -340,6 +384,19 @@ func (m *Room) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c49
         }
     }
     {
+        err = writer.WriteStringValue("placeId", m.GetPlaceId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetTeamsEnabledState() != nil {
+        cast := (*m.GetTeamsEnabledState()).String()
+        err = writer.WriteStringValue("teamsEnabledState", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("videoDeviceName", m.GetVideoDeviceName())
         if err != nil {
             return err
@@ -417,6 +474,20 @@ func (m *Room) SetNickname(value *string)() {
         panic(err)
     }
 }
+// SetPlaceId sets the placeId property value. An alternate immutable unique identifier of the room. Read-only.
+func (m *Room) SetPlaceId(value *string)() {
+    err := m.GetBackingStore().Set("placeId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTeamsEnabledState sets the teamsEnabledState property value. The teamsEnabledState property
+func (m *Room) SetTeamsEnabledState(value *PlaceFeatureEnablement)() {
+    err := m.GetBackingStore().Set("teamsEnabledState", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetVideoDeviceName sets the videoDeviceName property value. The name of the video device that is available in the room.
 func (m *Room) SetVideoDeviceName(value *string)() {
     err := m.GetBackingStore().Set("videoDeviceName", value)
@@ -437,6 +508,8 @@ type Roomable interface {
     GetFloorNumber()(*int32)
     GetIsTeamsEnabled()(*bool)
     GetNickname()(*string)
+    GetPlaceId()(*string)
+    GetTeamsEnabledState()(*PlaceFeatureEnablement)
     GetVideoDeviceName()(*string)
     SetAudioDeviceName(value *string)()
     SetBookingType(value *BookingType)()
@@ -448,5 +521,7 @@ type Roomable interface {
     SetFloorNumber(value *int32)()
     SetIsTeamsEnabled(value *bool)()
     SetNickname(value *string)()
+    SetPlaceId(value *string)()
+    SetTeamsEnabledState(value *PlaceFeatureEnablement)()
     SetVideoDeviceName(value *string)()
 }

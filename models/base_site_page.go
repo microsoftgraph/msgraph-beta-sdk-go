@@ -84,7 +84,7 @@ func (m *BaseSitePage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d2
     }
     return res
 }
-// GetPageLayout gets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: newsLink.
+// GetPageLayout gets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: newsLink.
 // returns a *PageLayoutType when successful
 func (m *BaseSitePage) GetPageLayout()(*PageLayoutType) {
     val, err := m.GetBackingStore().Get("pageLayout")
@@ -147,7 +147,7 @@ func (m *BaseSitePage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// SetPageLayout sets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: newsLink.
+// SetPageLayout sets the pageLayout property value. The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue, newsLink. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: newsLink.
 func (m *BaseSitePage) SetPageLayout(value *PageLayoutType)() {
     err := m.GetBackingStore().Set("pageLayout", value)
     if err != nil {

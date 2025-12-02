@@ -59,6 +59,18 @@ func (m *AccessReviewInstanceDecisionItem) GetAppliedDateTime()(*i336074805fc853
     }
     return nil
 }
+// GetApplyDescription gets the applyDescription property value. The description of the apply result.
+// returns a *string when successful
+func (m *AccessReviewInstanceDecisionItem) GetApplyDescription()(*string) {
+    val, err := m.GetBackingStore().Get("applyDescription")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
 // GetApplyResult gets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
 // returns a *string when successful
 func (m *AccessReviewInstanceDecisionItem) GetApplyResult()(*string) {
@@ -117,6 +129,16 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         }
         return nil
     }
+    res["applyDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApplyDescription(val)
+        }
+        return nil
+    }
     res["applyResult"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -170,6 +192,16 @@ func (m *AccessReviewInstanceDecisionItem) GetFieldDeserializers()(map[string]fu
         }
         if val != nil {
             m.SetJustification(val)
+        }
+        return nil
+    }
+    res["permission"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAccessReviewInstanceDecisionItemPermissionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPermission(val.(AccessReviewInstanceDecisionItemPermissionable))
         }
         return nil
     }
@@ -298,6 +330,18 @@ func (m *AccessReviewInstanceDecisionItem) GetJustification()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetPermission gets the permission property value. The permission that grants the principal access to a resource.
+// returns a AccessReviewInstanceDecisionItemPermissionable when successful
+func (m *AccessReviewInstanceDecisionItem) GetPermission()(AccessReviewInstanceDecisionItemPermissionable) {
+    val, err := m.GetBackingStore().Get("permission")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AccessReviewInstanceDecisionItemPermissionable)
     }
     return nil
 }
@@ -434,6 +478,12 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i878a80d2330e89d2689
         }
     }
     {
+        err = writer.WriteStringValue("applyDescription", m.GetApplyDescription())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("applyResult", m.GetApplyResult())
         if err != nil {
             return err
@@ -465,6 +515,12 @@ func (m *AccessReviewInstanceDecisionItem) Serialize(writer i878a80d2330e89d2689
     }
     {
         err = writer.WriteStringValue("justification", m.GetJustification())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("permission", m.GetPermission())
         if err != nil {
             return err
         }
@@ -546,6 +602,13 @@ func (m *AccessReviewInstanceDecisionItem) SetAppliedDateTime(value *i336074805f
         panic(err)
     }
 }
+// SetApplyDescription sets the applyDescription property value. The description of the apply result.
+func (m *AccessReviewInstanceDecisionItem) SetApplyDescription(value *string)() {
+    err := m.GetBackingStore().Set("applyDescription", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetApplyResult sets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound, and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
 func (m *AccessReviewInstanceDecisionItem) SetApplyResult(value *string)() {
     err := m.GetBackingStore().Set("applyResult", value)
@@ -577,6 +640,13 @@ func (m *AccessReviewInstanceDecisionItem) SetInstance(value AccessReviewInstanc
 // SetJustification sets the justification property value. Justification left by the reviewer when they made the decision.
 func (m *AccessReviewInstanceDecisionItem) SetJustification(value *string)() {
     err := m.GetBackingStore().Set("justification", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetPermission sets the permission property value. The permission that grants the principal access to a resource.
+func (m *AccessReviewInstanceDecisionItem) SetPermission(value AccessReviewInstanceDecisionItemPermissionable)() {
+    err := m.GetBackingStore().Set("permission", value)
     if err != nil {
         panic(err)
     }
@@ -650,11 +720,13 @@ type AccessReviewInstanceDecisionItemable interface {
     GetAccessReviewId()(*string)
     GetAppliedBy()(UserIdentityable)
     GetAppliedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetApplyDescription()(*string)
     GetApplyResult()(*string)
     GetDecision()(*string)
     GetInsights()([]GovernanceInsightable)
     GetInstance()(AccessReviewInstanceable)
     GetJustification()(*string)
+    GetPermission()(AccessReviewInstanceDecisionItemPermissionable)
     GetPrincipal()(Identityable)
     GetPrincipalLink()(*string)
     GetPrincipalResourceMembership()(DecisionItemPrincipalResourceMembershipable)
@@ -667,11 +739,13 @@ type AccessReviewInstanceDecisionItemable interface {
     SetAccessReviewId(value *string)()
     SetAppliedBy(value UserIdentityable)()
     SetAppliedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetApplyDescription(value *string)()
     SetApplyResult(value *string)()
     SetDecision(value *string)()
     SetInsights(value []GovernanceInsightable)()
     SetInstance(value AccessReviewInstanceable)()
     SetJustification(value *string)()
+    SetPermission(value AccessReviewInstanceDecisionItemPermissionable)()
     SetPrincipal(value Identityable)()
     SetPrincipalLink(value *string)()
     SetPrincipalResourceMembership(value DecisionItemPrincipalResourceMembershipable)()

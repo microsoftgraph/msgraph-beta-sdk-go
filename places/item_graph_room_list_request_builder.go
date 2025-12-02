@@ -35,6 +35,11 @@ type ItemGraphRoomListRequestBuilderGetRequestConfiguration struct {
 func (m *ItemGraphRoomListRequestBuilder) CheckIns()(*ItemGraphRoomListCheckInsRequestBuilder) {
     return NewItemGraphRoomListCheckInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Children provides operations to manage the children property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomListChildrenRequestBuilder when successful
+func (m *ItemGraphRoomListRequestBuilder) Children()(*ItemGraphRoomListChildrenRequestBuilder) {
+    return NewItemGraphRoomListChildrenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemGraphRoomListRequestBuilderInternal instantiates a new ItemGraphRoomListRequestBuilder and sets the default values.
 func NewItemGraphRoomListRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomListRequestBuilder) {
     m := &ItemGraphRoomListRequestBuilder{
@@ -73,11 +78,6 @@ func (m *ItemGraphRoomListRequestBuilder) Get(ctx context.Context, requestConfig
 func (m *ItemGraphRoomListRequestBuilder) Rooms()(*ItemGraphRoomListRoomsRequestBuilder) {
     return NewItemGraphRoomListRoomsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// RoomsWithPlaceId provides operations to manage the rooms property of the microsoft.graph.roomList entity.
-// returns a *ItemGraphRoomListRoomsWithPlaceIdRequestBuilder when successful
-func (m *ItemGraphRoomListRequestBuilder) RoomsWithPlaceId(placeId *string)(*ItemGraphRoomListRoomsWithPlaceIdRequestBuilder) {
-    return NewItemGraphRoomListRoomsWithPlaceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, placeId)
-}
 // ToGetRequestInformation get the item of type microsoft.graph.place as microsoft.graph.roomList
 // returns a *RequestInformation when successful
 func (m *ItemGraphRoomListRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphRoomListRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
@@ -101,9 +101,4 @@ func (m *ItemGraphRoomListRequestBuilder) WithUrl(rawUrl string)(*ItemGraphRoomL
 // returns a *ItemGraphRoomListWorkspacesRequestBuilder when successful
 func (m *ItemGraphRoomListRequestBuilder) Workspaces()(*ItemGraphRoomListWorkspacesRequestBuilder) {
     return NewItemGraphRoomListWorkspacesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
-// WorkspacesWithPlaceId provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
-// returns a *ItemGraphRoomListWorkspacesWithPlaceIdRequestBuilder when successful
-func (m *ItemGraphRoomListRequestBuilder) WorkspacesWithPlaceId(placeId *string)(*ItemGraphRoomListWorkspacesWithPlaceIdRequestBuilder) {
-    return NewItemGraphRoomListWorkspacesWithPlaceIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, placeId)
 }

@@ -33,8 +33,11 @@ func NewPresencesItemSetAutomaticLocationRequestBuilder(rawUrl string, requestAd
     urlParams["request-raw-url"] = rawUrl
     return NewPresencesItemSetAutomaticLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action setAutomaticLocation
+// Post update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn't clear manual or scheduled signals.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-setautomaticlocation?view=graph-rest-beta
 func (m *PresencesItemSetAutomaticLocationRequestBuilder) Post(ctx context.Context, body PresencesItemSetAutomaticLocationPostRequestBodyable, requestConfiguration *PresencesItemSetAutomaticLocationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *PresencesItemSetAutomaticLocationRequestBuilder) Post(ctx context.Conte
     }
     return nil
 }
-// ToPostRequestInformation invoke action setAutomaticLocation
+// ToPostRequestInformation update the automatic work location for a user. The automatic layer participates in the standard precedence model: Use this operation from clients or services that automatically detect location (for example, Teams, network/location agents, or OEM docking apps). It doesn't clear manual or scheduled signals.
 // returns a *RequestInformation when successful
 func (m *PresencesItemSetAutomaticLocationRequestBuilder) ToPostRequestInformation(ctx context.Context, body PresencesItemSetAutomaticLocationPostRequestBodyable, requestConfiguration *PresencesItemSetAutomaticLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

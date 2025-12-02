@@ -100,6 +100,11 @@ func (m *SolutionsRequestBuilder) Get(ctx context.Context, requestConfiguration 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SolutionsRootable), nil
 }
+// Migrations provides operations to manage the migrations property of the microsoft.graph.solutionsRoot entity.
+// returns a *MigrationsRequestBuilder when successful
+func (m *SolutionsRequestBuilder) Migrations()(*MigrationsRequestBuilder) {
+    return NewMigrationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update solutions
 // returns a SolutionsRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -119,6 +124,11 @@ func (m *SolutionsRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b
         return nil, nil
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SolutionsRootable), nil
+}
+// SharePoint provides operations to manage the sharePoint property of the microsoft.graph.solutionsRoot entity.
+// returns a *SharePointRequestBuilder when successful
+func (m *SolutionsRequestBuilder) SharePoint()(*SharePointRequestBuilder) {
+    return NewSharePointRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToGetRequestInformation get solutions
 // returns a *RequestInformation when successful

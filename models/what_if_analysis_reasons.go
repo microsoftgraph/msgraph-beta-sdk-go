@@ -30,12 +30,14 @@ const (
     INSIDERRISK_WHATIFANALYSISREASONS = 262144
     AUTHENTICATIONFLOW_WHATIFANALYSISREASONS = 524288
     UNKNOWNFUTUREVALUE_WHATIFANALYSISREASONS = 1048576
+    AGENTIDRISK_WHATIFANALYSISREASONS = 2097152
+    AGENTIDENTITIES_WHATIFANALYSISREASONS = 4194304
 )
 
 func (i WhatIfAnalysisReasons) String() string {
     var values []string
-    options := []string{"notSet", "notEnoughInformation", "invalidCondition", "users", "workloadIdentities", "application", "userActions", "authenticationContext", "devicePlatform", "devices", "clientApps", "location", "signInRisk", "emptyPolicy", "invalidPolicy", "policyNotEnabled", "userRisk", "time", "insiderRisk", "authenticationFlow", "unknownFutureValue"}
-    for p := 0; p < 21; p++ {
+    options := []string{"notSet", "notEnoughInformation", "invalidCondition", "users", "workloadIdentities", "application", "userActions", "authenticationContext", "devicePlatform", "devices", "clientApps", "location", "signInRisk", "emptyPolicy", "invalidPolicy", "policyNotEnabled", "userRisk", "time", "insiderRisk", "authenticationFlow", "unknownFutureValue", "agentIdRisk", "agentIdentities"}
+    for p := 0; p < 23; p++ {
         mantis := WhatIfAnalysisReasons(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -90,6 +92,10 @@ func ParseWhatIfAnalysisReasons(v string) (any, error) {
                 result |= AUTHENTICATIONFLOW_WHATIFANALYSISREASONS
             case "unknownFutureValue":
                 result |= UNKNOWNFUTUREVALUE_WHATIFANALYSISREASONS
+            case "agentIdRisk":
+                result |= AGENTIDRISK_WHATIFANALYSISREASONS
+            case "agentIdentities":
+                result |= AGENTIDENTITIES_WHATIFANALYSISREASONS
             default:
                 return nil, nil
         }

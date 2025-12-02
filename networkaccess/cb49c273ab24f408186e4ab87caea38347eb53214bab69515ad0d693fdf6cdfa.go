@@ -14,7 +14,7 @@ import (
 type ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters get the total number of transactions and the number of blocked transactions, grouped by traffic type.
+// ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters get the total number of transactions and the number of blocked transactions in Global Secure Access, grouped by traffic type.
 type ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ func NewReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeW
     urlParams["request-raw-url"] = rawUrl
     return NewReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get get the total number of transactions and the number of blocked transactions, grouped by traffic type.
+// Get get the total number of transactions and the number of blocked transactions in Global Secure Access, grouped by traffic type.
 // Deprecated: This method is obsolete. Use GetAsTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeTransactionSummariesWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -79,7 +79,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTime
     }
     return res.(ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeTransactionSummariesWithStartDateTimeWithEndDateTimeResponseable), nil
 }
-// GetAsTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse get the total number of transactions and the number of blocked transactions, grouped by traffic type.
+// GetAsTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse get the total number of transactions and the number of blocked transactions in Global Secure Access, grouped by traffic type.
 // returns a ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,7 +102,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTime
     }
     return res.(ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeTransactionSummariesWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
-// ToGetRequestInformation get the total number of transactions and the number of blocked transactions, grouped by traffic type.
+// ToGetRequestInformation get the total number of transactions and the number of blocked transactions in Global Secure Access, grouped by traffic type.
 // returns a *RequestInformation when successful
 func (m *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

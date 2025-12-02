@@ -108,6 +108,11 @@ func (m *AccessReviewsRequestBuilder) Get(ctx context.Context, requestConfigurat
 func (m *AccessReviewsRequestBuilder) HistoryDefinitions()(*AccessReviewsHistoryDefinitionsRequestBuilder) {
     return NewAccessReviewsHistoryDefinitionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Instances provides operations to manage the instances property of the microsoft.graph.accessReviewSet entity.
+// returns a *AccessReviewsInstancesRequestBuilder when successful
+func (m *AccessReviewsRequestBuilder) Instances()(*AccessReviewsInstancesRequestBuilder) {
+    return NewAccessReviewsInstancesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Patch update the navigation property accessReviews in identityGovernance
 // returns a AccessReviewSetable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -35,6 +35,8 @@ func CreateSignInIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d268963
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.agentSignIn":
+                        return NewAgentSignIn(), nil
                     case "#microsoft.graph.servicePrincipalSignIn":
                         return NewServicePrincipalSignIn(), nil
                     case "#microsoft.graph.userSignIn":

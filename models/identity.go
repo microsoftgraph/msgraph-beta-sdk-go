@@ -53,6 +53,8 @@ func CreateIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f4
                         return NewCommunicationsUserIdentity(), nil
                     case "#microsoft.graph.emailIdentity":
                         return NewEmailIdentity(), nil
+                    case "#microsoft.graph.groupIdentity":
+                        return NewGroupIdentity(), nil
                     case "#microsoft.graph.initiator":
                         return NewInitiator(), nil
                     case "#microsoft.graph.programResource":

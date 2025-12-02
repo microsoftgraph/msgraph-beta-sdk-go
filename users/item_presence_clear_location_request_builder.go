@@ -33,8 +33,11 @@ func NewItemPresenceClearLocationRequestBuilder(rawUrl string, requestAdapter i2
     urlParams["request-raw-url"] = rawUrl
     return NewItemPresenceClearLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action clearLocation
+// Post clear the work location signals for a user, including both the manual and automatic layers for the current date.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-clearlocation?view=graph-rest-beta
 func (m *ItemPresenceClearLocationRequestBuilder) Post(ctx context.Context, requestConfiguration *ItemPresenceClearLocationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *ItemPresenceClearLocationRequestBuilder) Post(ctx context.Context, requ
     }
     return nil
 }
-// ToPostRequestInformation invoke action clearLocation
+// ToPostRequestInformation clear the work location signals for a user, including both the manual and automatic layers for the current date.
 // returns a *RequestInformation when successful
 func (m *ItemPresenceClearLocationRequestBuilder) ToPostRequestInformation(ctx context.Context, requestConfiguration *ItemPresenceClearLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

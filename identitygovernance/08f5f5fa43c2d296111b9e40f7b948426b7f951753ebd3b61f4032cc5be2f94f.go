@@ -14,7 +14,7 @@ import (
 type LifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// LifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetQueryParameters get administrationScopeTargets from identityGovernance
+// LifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetQueryParameters the administrative units in the scope of the workflow. Optional. Supports $expand.
 type LifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewLifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDir
     urlParams["request-raw-url"] = rawUrl
     return NewLifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get administrationScopeTargets from identityGovernance
+// Get the administrative units in the scope of the workflow. Optional. Supports $expand.
 // returns a DirectoryObjectable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilder) Get(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable, error) {
@@ -63,7 +63,7 @@ func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDi
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.DirectoryObjectable), nil
 }
-// ToGetRequestInformation get administrationScopeTargets from identityGovernance
+// ToGetRequestInformation the administrative units in the scope of the workflow. Optional. Supports $expand.
 // returns a *RequestInformation when successful
 func (m *LifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *LifecycleWorkflowsDeletedItemsWorkflowsItemAdministrationScopeTargetsDirectoryObjectItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

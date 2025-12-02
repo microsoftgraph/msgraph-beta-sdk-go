@@ -58,6 +58,7 @@ func NewItemResourcesGovernanceResourceItemRequestBuilder(rawUrl string, request
     return NewItemResourcesGovernanceResourceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Delete delete navigation property resources for privilegedAccess
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemResourcesGovernanceResourceItemRequestBuilder) Delete(ctx context.Context, requestConfiguration *ItemResourcesGovernanceResourceItemRequestBuilderDeleteRequestConfiguration)(error) {
     requestInfo, err := m.ToDeleteRequestInformation(ctx, requestConfiguration);
@@ -74,6 +75,7 @@ func (m *ItemResourcesGovernanceResourceItemRequestBuilder) Delete(ctx context.C
     return nil
 }
 // Get a collection of resources for the provider.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a GovernanceResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemResourcesGovernanceResourceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemResourcesGovernanceResourceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
@@ -99,6 +101,7 @@ func (m *ItemResourcesGovernanceResourceItemRequestBuilder) Parent()(*ItemResour
     return NewItemResourcesItemParentRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update the navigation property resources in privilegedAccess
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a GovernanceResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemResourcesGovernanceResourceItemRequestBuilder) Patch(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, requestConfiguration *ItemResourcesGovernanceResourceItemRequestBuilderPatchRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
@@ -139,6 +142,7 @@ func (m *ItemResourcesGovernanceResourceItemRequestBuilder) RoleSettings()(*Item
     return NewItemResourcesItemRoleSettingsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ToDeleteRequestInformation delete navigation property resources for privilegedAccess
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *RequestInformation when successful
 func (m *ItemResourcesGovernanceResourceItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemResourcesGovernanceResourceItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -150,6 +154,7 @@ func (m *ItemResourcesGovernanceResourceItemRequestBuilder) ToDeleteRequestInfor
     return requestInfo, nil
 }
 // ToGetRequestInformation a collection of resources for the provider.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *RequestInformation when successful
 func (m *ItemResourcesGovernanceResourceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemResourcesGovernanceResourceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -164,6 +169,7 @@ func (m *ItemResourcesGovernanceResourceItemRequestBuilder) ToGetRequestInformat
     return requestInfo, nil
 }
 // ToPatchRequestInformation update the navigation property resources in privilegedAccess
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *RequestInformation when successful
 func (m *ItemResourcesGovernanceResourceItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, requestConfiguration *ItemResourcesGovernanceResourceItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -179,6 +185,7 @@ func (m *ItemResourcesGovernanceResourceItemRequestBuilder) ToPatchRequestInform
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *ItemResourcesGovernanceResourceItemRequestBuilder when successful
 func (m *ItemResourcesGovernanceResourceItemRequestBuilder) WithUrl(rawUrl string)(*ItemResourcesGovernanceResourceItemRequestBuilder) {
     return NewItemResourcesGovernanceResourceItemRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

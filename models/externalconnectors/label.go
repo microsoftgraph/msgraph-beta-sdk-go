@@ -18,10 +18,27 @@ const (
     CONTAINERNAME_LABEL
     CONTAINERURL_LABEL
     ICONURL_LABEL
+    ASSIGNEDTOPEOPLE_LABEL
+    CLOSEDBY_LABEL
+    CLOSEDDATE_LABEL
+    PRIORITY_LABEL
+    SPRINTNAME_LABEL
+    TAGS_LABEL
+    SEVERITY_LABEL
+    STATE_LABEL
+    DUEDATE_LABEL
+    ITEMPARENTID_LABEL
+    ITEMPATH_LABEL
+    ITEMTYPE_LABEL
+    NUMBEROFREACTIONS_LABEL
+    PARENTURL_LABEL
+    PRIORITYNORMALIZED_LABEL
+    REPORTEDBY_LABEL
+    SECONDARYID_LABEL
 )
 
 func (i Label) String() string {
-    return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension", "unknownFutureValue", "containerName", "containerUrl", "iconUrl"}[i]
+    return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension", "unknownFutureValue", "containerName", "containerUrl", "iconUrl", "assignedToPeople", "closedBy", "closedDate", "priority", "sprintName", "tags", "severity", "state", "dueDate", "itemParentId", "itemPath", "itemType", "numberOfReactions", "parentUrl", "priorityNormalized", "reportedBy", "secondaryId"}[i]
 }
 func ParseLabel(v string) (any, error) {
     result := TITLE_LABEL
@@ -52,6 +69,40 @@ func ParseLabel(v string) (any, error) {
             result = CONTAINERURL_LABEL
         case "iconUrl":
             result = ICONURL_LABEL
+        case "assignedToPeople":
+            result = ASSIGNEDTOPEOPLE_LABEL
+        case "closedBy":
+            result = CLOSEDBY_LABEL
+        case "closedDate":
+            result = CLOSEDDATE_LABEL
+        case "priority":
+            result = PRIORITY_LABEL
+        case "sprintName":
+            result = SPRINTNAME_LABEL
+        case "tags":
+            result = TAGS_LABEL
+        case "severity":
+            result = SEVERITY_LABEL
+        case "state":
+            result = STATE_LABEL
+        case "dueDate":
+            result = DUEDATE_LABEL
+        case "itemParentId":
+            result = ITEMPARENTID_LABEL
+        case "itemPath":
+            result = ITEMPATH_LABEL
+        case "itemType":
+            result = ITEMTYPE_LABEL
+        case "numberOfReactions":
+            result = NUMBEROFREACTIONS_LABEL
+        case "parentUrl":
+            result = PARENTURL_LABEL
+        case "priorityNormalized":
+            result = PRIORITYNORMALIZED_LABEL
+        case "reportedBy":
+            result = REPORTEDBY_LABEL
+        case "secondaryId":
+            result = SECONDARYID_LABEL
         default:
             return nil, nil
     }

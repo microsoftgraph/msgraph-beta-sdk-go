@@ -22,10 +22,32 @@ func NewRiskyAgentIdentityBlueprintPrincipal()(*RiskyAgentIdentityBlueprintPrinc
 func CreateRiskyAgentIdentityBlueprintPrincipalFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRiskyAgentIdentityBlueprintPrincipal(), nil
 }
+// GetAgentIdentityBlueprintPrincipal gets the agentIdentityBlueprintPrincipal property value. The agentIdentityBlueprintPrincipal property
+// returns a AgentIdentityBlueprintPrincipalable when successful
+func (m *RiskyAgentIdentityBlueprintPrincipal) GetAgentIdentityBlueprintPrincipal()(AgentIdentityBlueprintPrincipalable) {
+    val, err := m.GetBackingStore().Get("agentIdentityBlueprintPrincipal")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AgentIdentityBlueprintPrincipalable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RiskyAgentIdentityBlueprintPrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RiskyAgent.GetFieldDeserializers()
+    res["agentIdentityBlueprintPrincipal"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAgentIdentityBlueprintPrincipalFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAgentIdentityBlueprintPrincipal(val.(AgentIdentityBlueprintPrincipalable))
+        }
+        return nil
+    }
     return res
 }
 // Serialize serializes information the current object
@@ -34,9 +56,24 @@ func (m *RiskyAgentIdentityBlueprintPrincipal) Serialize(writer i878a80d2330e89d
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("agentIdentityBlueprintPrincipal", m.GetAgentIdentityBlueprintPrincipal())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAgentIdentityBlueprintPrincipal sets the agentIdentityBlueprintPrincipal property value. The agentIdentityBlueprintPrincipal property
+func (m *RiskyAgentIdentityBlueprintPrincipal) SetAgentIdentityBlueprintPrincipal(value AgentIdentityBlueprintPrincipalable)() {
+    err := m.GetBackingStore().Set("agentIdentityBlueprintPrincipal", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type RiskyAgentIdentityBlueprintPrincipalable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RiskyAgentable
+    GetAgentIdentityBlueprintPrincipal()(AgentIdentityBlueprintPrincipalable)
+    SetAgentIdentityBlueprintPrincipal(value AgentIdentityBlueprintPrincipalable)()
 }

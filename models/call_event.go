@@ -53,7 +53,7 @@ func (m *CallEvent) GetCallConversationId()(*string) {
     }
     return nil
 }
-// GetCallEventType gets the callEventType property value. The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: rosterUpdated.
+// GetCallEventType gets the callEventType property value. The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: rosterUpdated.
 // returns a *CallEventType when successful
 func (m *CallEvent) GetCallEventType()(*CallEventType) {
     val, err := m.GetBackingStore().Get("callEventType")
@@ -243,7 +243,7 @@ func (m *CallEvent) SetCallConversationId(value *string)() {
         panic(err)
     }
 }
-// SetCallEventType sets the callEventType property value. The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: rosterUpdated.
+// SetCallEventType sets the callEventType property value. The event type of the call. Possible values are: callStarted, callEnded, unknownFutureValue, rosterUpdated. You must use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: rosterUpdated.
 func (m *CallEvent) SetCallEventType(value *CallEventType)() {
     err := m.GetBackingStore().Set("callEventType", value)
     if err != nil {

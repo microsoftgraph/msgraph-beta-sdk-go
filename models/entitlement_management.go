@@ -154,6 +154,18 @@ func (m *EntitlementManagement) GetAccessPackages()([]AccessPackageable) {
     }
     return nil
 }
+// GetAccessPackageSuggestions gets the accessPackageSuggestions property value. The accessPackageSuggestions property
+// returns a []AccessPackageSuggestionable when successful
+func (m *EntitlementManagement) GetAccessPackageSuggestions()([]AccessPackageSuggestionable) {
+    val, err := m.GetBackingStore().Get("accessPackageSuggestions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AccessPackageSuggestionable)
+    }
+    return nil
+}
 // GetAssignmentRequests gets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
 // returns a []AccessPackageAssignmentRequestable when successful
 func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmentRequestable) {
@@ -163,6 +175,18 @@ func (m *EntitlementManagement) GetAssignmentRequests()([]AccessPackageAssignmen
     }
     if val != nil {
         return val.([]AccessPackageAssignmentRequestable)
+    }
+    return nil
+}
+// GetAvailableAccessPackages gets the availableAccessPackages property value. The availableAccessPackages property
+// returns a []AvailableAccessPackageable when successful
+func (m *EntitlementManagement) GetAvailableAccessPackages()([]AvailableAccessPackageable) {
+    val, err := m.GetBackingStore().Get("availableAccessPackages")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]AvailableAccessPackageable)
     }
     return nil
 }
@@ -358,6 +382,22 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["accessPackageSuggestions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAccessPackageSuggestionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AccessPackageSuggestionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AccessPackageSuggestionable)
+                }
+            }
+            m.SetAccessPackageSuggestions(res)
+        }
+        return nil
+    }
     res["assignmentRequests"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateAccessPackageAssignmentRequestFromDiscriminatorValue)
         if err != nil {
@@ -371,6 +411,22 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
                 }
             }
             m.SetAssignmentRequests(res)
+        }
+        return nil
+    }
+    res["availableAccessPackages"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAvailableAccessPackageFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]AvailableAccessPackageable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(AvailableAccessPackageable)
+                }
+            }
+            m.SetAvailableAccessPackages(res)
         }
         return nil
     }
@@ -580,6 +636,18 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetAccessPackageSuggestions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAccessPackageSuggestions()))
+        for i, v := range m.GetAccessPackageSuggestions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("accessPackageSuggestions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAssignmentRequests() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignmentRequests()))
         for i, v := range m.GetAssignmentRequests() {
@@ -588,6 +656,18 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             }
         }
         err = writer.WriteCollectionOfObjectValues("assignmentRequests", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAvailableAccessPackages() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAvailableAccessPackages()))
+        for i, v := range m.GetAvailableAccessPackages() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("availableAccessPackages", cast)
         if err != nil {
             return err
         }
@@ -701,9 +781,23 @@ func (m *EntitlementManagement) SetAccessPackages(value []AccessPackageable)() {
         panic(err)
     }
 }
+// SetAccessPackageSuggestions sets the accessPackageSuggestions property value. The accessPackageSuggestions property
+func (m *EntitlementManagement) SetAccessPackageSuggestions(value []AccessPackageSuggestionable)() {
+    err := m.GetBackingStore().Set("accessPackageSuggestions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAssignmentRequests sets the assignmentRequests property value. Represents access package assignment requests created by or on behalf of a user.
 func (m *EntitlementManagement) SetAssignmentRequests(value []AccessPackageAssignmentRequestable)() {
     err := m.GetBackingStore().Set("assignmentRequests", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAvailableAccessPackages sets the availableAccessPackages property value. The availableAccessPackages property
+func (m *EntitlementManagement) SetAvailableAccessPackages(value []AvailableAccessPackageable)() {
+    err := m.GetBackingStore().Set("availableAccessPackages", value)
     if err != nil {
         panic(err)
     }
@@ -743,7 +837,9 @@ type EntitlementManagementable interface {
     GetAccessPackageResourceRoleScopes()([]AccessPackageResourceRoleScopeable)
     GetAccessPackageResources()([]AccessPackageResourceable)
     GetAccessPackages()([]AccessPackageable)
+    GetAccessPackageSuggestions()([]AccessPackageSuggestionable)
     GetAssignmentRequests()([]AccessPackageAssignmentRequestable)
+    GetAvailableAccessPackages()([]AvailableAccessPackageable)
     GetConnectedOrganizations()([]ConnectedOrganizationable)
     GetSettings()(EntitlementManagementSettingsable)
     GetSubjects()([]AccessPackageSubjectable)
@@ -758,7 +854,9 @@ type EntitlementManagementable interface {
     SetAccessPackageResourceRoleScopes(value []AccessPackageResourceRoleScopeable)()
     SetAccessPackageResources(value []AccessPackageResourceable)()
     SetAccessPackages(value []AccessPackageable)()
+    SetAccessPackageSuggestions(value []AccessPackageSuggestionable)()
     SetAssignmentRequests(value []AccessPackageAssignmentRequestable)()
+    SetAvailableAccessPackages(value []AvailableAccessPackageable)()
     SetConnectedOrganizations(value []ConnectedOrganizationable)()
     SetSettings(value EntitlementManagementSettingsable)()
     SetSubjects(value []AccessPackageSubjectable)()
