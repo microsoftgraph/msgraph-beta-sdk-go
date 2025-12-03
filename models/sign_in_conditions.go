@@ -38,6 +38,18 @@ func (m *SignInConditions) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetAgentIdRiskLevel gets the agentIdRiskLevel property value. Agent identity risk levels included in the policy. Possible values are: none, low, medium, high, unknownFutureValue. This enumeration is multivalued.
+// returns a *AgentIdRiskLevel when successful
+func (m *SignInConditions) GetAgentIdRiskLevel()(*AgentIdRiskLevel) {
+    val, err := m.GetBackingStore().Get("agentIdRiskLevel")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AgentIdRiskLevel)
+    }
+    return nil
+}
 // GetAuthenticationFlow gets the authenticationFlow property value. Type of authentication flow. The possible value is: deviceCodeFlow or authenticationTransfer. Default value is none.
 // returns a AuthenticationFlowable when successful
 func (m *SignInConditions) GetAuthenticationFlow()(AuthenticationFlowable) {
@@ -107,6 +119,16 @@ func (m *SignInConditions) GetDevicePlatform()(*ConditionalAccessDevicePlatform)
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SignInConditions) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["agentIdRiskLevel"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAgentIdRiskLevel)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAgentIdRiskLevel(val.(*AgentIdRiskLevel))
+        }
+        return nil
+    }
     res["authenticationFlow"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateAuthenticationFlowFromDiscriminatorValue)
         if err != nil {
@@ -293,6 +315,13 @@ func (m *SignInConditions) GetUserRiskLevel()(*RiskLevel) {
 }
 // Serialize serializes information the current object
 func (m *SignInConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAgentIdRiskLevel() != nil {
+        cast := (*m.GetAgentIdRiskLevel()).String()
+        err := writer.WriteStringValue("agentIdRiskLevel", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("authenticationFlow", m.GetAuthenticationFlow())
         if err != nil {
@@ -376,6 +405,13 @@ func (m *SignInConditions) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *SignInConditions) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAgentIdRiskLevel sets the agentIdRiskLevel property value. Agent identity risk levels included in the policy. Possible values are: none, low, medium, high, unknownFutureValue. This enumeration is multivalued.
+func (m *SignInConditions) SetAgentIdRiskLevel(value *AgentIdRiskLevel)() {
+    err := m.GetBackingStore().Set("agentIdRiskLevel", value)
     if err != nil {
         panic(err)
     }
@@ -465,6 +501,7 @@ type SignInConditionsable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgentIdRiskLevel()(*AgentIdRiskLevel)
     GetAuthenticationFlow()(AuthenticationFlowable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetClientAppType()(*ConditionalAccessClientApp)
@@ -477,6 +514,7 @@ type SignInConditionsable interface {
     GetServicePrincipalRiskLevel()(*RiskLevel)
     GetSignInRiskLevel()(*RiskLevel)
     GetUserRiskLevel()(*RiskLevel)
+    SetAgentIdRiskLevel(value *AgentIdRiskLevel)()
     SetAuthenticationFlow(value AuthenticationFlowable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetClientAppType(value *ConditionalAccessClientApp)()

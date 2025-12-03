@@ -22,7 +22,7 @@ func NewAiAgentInfo()(*AiAgentInfo) {
 func CreateAiAgentInfoFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAiAgentInfo(), nil
 }
-// GetBlueprintId gets the blueprintId property value. The blueprintId property
+// GetBlueprintId gets the blueprintId property value. Identifier of the parent agent blueprint that defines the identity and configuration of the agent.
 // returns a *string when successful
 func (m *AiAgentInfo) GetBlueprintId()(*string) {
     val, err := m.GetBackingStore().Get("blueprintId")
@@ -64,7 +64,7 @@ func (m *AiAgentInfo) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetBlueprintId sets the blueprintId property value. The blueprintId property
+// SetBlueprintId sets the blueprintId property value. Identifier of the parent agent blueprint that defines the identity and configuration of the agent.
 func (m *AiAgentInfo) SetBlueprintId(value *string)() {
     err := m.GetBackingStore().Set("blueprintId", value)
     if err != nil {

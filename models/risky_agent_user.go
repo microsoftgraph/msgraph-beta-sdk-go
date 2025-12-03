@@ -22,10 +22,32 @@ func NewRiskyAgentUser()(*RiskyAgentUser) {
 func CreateRiskyAgentUserFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRiskyAgentUser(), nil
 }
+// GetAgentUser gets the agentUser property value. The agentUser property
+// returns a AgentUserable when successful
+func (m *RiskyAgentUser) GetAgentUser()(AgentUserable) {
+    val, err := m.GetBackingStore().Get("agentUser")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(AgentUserable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *RiskyAgentUser) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.RiskyAgent.GetFieldDeserializers()
+    res["agentUser"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateAgentUserFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAgentUser(val.(AgentUserable))
+        }
+        return nil
+    }
     return res
 }
 // Serialize serializes information the current object
@@ -34,9 +56,24 @@ func (m *RiskyAgentUser) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if err != nil {
         return err
     }
+    {
+        err = writer.WriteObjectValue("agentUser", m.GetAgentUser())
+        if err != nil {
+            return err
+        }
+    }
     return nil
+}
+// SetAgentUser sets the agentUser property value. The agentUser property
+func (m *RiskyAgentUser) SetAgentUser(value AgentUserable)() {
+    err := m.GetBackingStore().Set("agentUser", value)
+    if err != nil {
+        panic(err)
+    }
 }
 type RiskyAgentUserable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     RiskyAgentable
+    GetAgentUser()(AgentUserable)
+    SetAgentUser(value AgentUserable)()
 }

@@ -163,6 +163,11 @@ func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPo
     }
     return requestInfo, nil
 }
+// UserSettingsPersistenceDetail provides operations to manage the userSettingsPersistenceDetail property of the microsoft.graph.cloudPcProvisioningPolicyAssignment entity.
+// returns a *VirtualEndpointProvisioningPoliciesItemAssignmentsItemUserSettingsPersistenceDetailRequestBuilder when successful
+func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) UserSettingsPersistenceDetail()(*VirtualEndpointProvisioningPoliciesItemAssignmentsItemUserSettingsPersistenceDetailRequestBuilder) {
+    return NewVirtualEndpointProvisioningPoliciesItemAssignmentsItemUserSettingsPersistenceDetailRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // returns a *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder when successful
 func (m *VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) WithUrl(rawUrl string)(*VirtualEndpointProvisioningPoliciesItemAssignmentsCloudPcProvisioningPolicyAssignmentItemRequestBuilder) {

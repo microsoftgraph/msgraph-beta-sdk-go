@@ -118,6 +118,18 @@ func (m *PolicyRoot) GetAuthorizationPolicy()([]AuthorizationPolicyable) {
     }
     return nil
 }
+// GetB2bManagementPolicies gets the b2bManagementPolicies property value. The policy to manage Microsoft Entra B2B features in Microsoft Entra External ID for workforce tenants.
+// returns a []B2bManagementPolicyable when successful
+func (m *PolicyRoot) GetB2bManagementPolicies()([]B2bManagementPolicyable) {
+    val, err := m.GetBackingStore().Get("b2bManagementPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]B2bManagementPolicyable)
+    }
+    return nil
+}
 // GetB2cAuthenticationMethodsPolicy gets the b2cAuthenticationMethodsPolicy property value. The Azure AD B2C policies that define how end users register via local accounts.
 // returns a B2cAuthenticationMethodsPolicyable when successful
 func (m *PolicyRoot) GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethodsPolicyable) {
@@ -358,6 +370,22 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["b2bManagementPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateB2bManagementPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]B2bManagementPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(B2bManagementPolicyable)
+                }
+            }
+            m.SetB2bManagementPolicies(res)
+        }
+        return nil
+    }
     res["b2cAuthenticationMethodsPolicy"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateB2cAuthenticationMethodsPolicyFromDiscriminatorValue)
         if err != nil {
@@ -544,6 +572,22 @@ func (m *PolicyRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268
         }
         return nil
     }
+    res["onPremAuthenticationPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOnPremAuthenticationPolicyFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OnPremAuthenticationPolicyable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(OnPremAuthenticationPolicyable)
+                }
+            }
+            m.SetOnPremAuthenticationPolicies(res)
+        }
+        return nil
+    }
     res["permissionGrantPolicies"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreatePermissionGrantPolicyFromDiscriminatorValue)
         if err != nil {
@@ -703,6 +747,18 @@ func (m *PolicyRoot) GetMobileDeviceManagementPolicies()([]MobileDeviceManagemen
     }
     if val != nil {
         return val.([]MobileDeviceManagementPolicyable)
+    }
+    return nil
+}
+// GetOnPremAuthenticationPolicies gets the onPremAuthenticationPolicies property value. The policy that controls how authentication requests from on-premises environments are managed.
+// returns a []OnPremAuthenticationPolicyable when successful
+func (m *PolicyRoot) GetOnPremAuthenticationPolicies()([]OnPremAuthenticationPolicyable) {
+    val, err := m.GetBackingStore().Get("onPremAuthenticationPolicies")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OnPremAuthenticationPolicyable)
     }
     return nil
 }
@@ -868,6 +924,18 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             return err
         }
     }
+    if m.GetB2bManagementPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetB2bManagementPolicies()))
+        for i, v := range m.GetB2bManagementPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("b2bManagementPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("b2cAuthenticationMethodsPolicy", m.GetB2cAuthenticationMethodsPolicy())
         if err != nil {
@@ -990,6 +1058,18 @@ func (m *PolicyRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c
             }
         }
         err = writer.WriteCollectionOfObjectValues("mobileDeviceManagementPolicies", cast)
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetOnPremAuthenticationPolicies() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetOnPremAuthenticationPolicies()))
+        for i, v := range m.GetOnPremAuthenticationPolicies() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("onPremAuthenticationPolicies", cast)
         if err != nil {
             return err
         }
@@ -1136,6 +1216,13 @@ func (m *PolicyRoot) SetAuthorizationPolicy(value []AuthorizationPolicyable)() {
         panic(err)
     }
 }
+// SetB2bManagementPolicies sets the b2bManagementPolicies property value. The policy to manage Microsoft Entra B2B features in Microsoft Entra External ID for workforce tenants.
+func (m *PolicyRoot) SetB2bManagementPolicies(value []B2bManagementPolicyable)() {
+    err := m.GetBackingStore().Set("b2bManagementPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetB2cAuthenticationMethodsPolicy sets the b2cAuthenticationMethodsPolicy property value. The Azure AD B2C policies that define how end users register via local accounts.
 func (m *PolicyRoot) SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)() {
     err := m.GetBackingStore().Set("b2cAuthenticationMethodsPolicy", value)
@@ -1241,6 +1328,13 @@ func (m *PolicyRoot) SetMobileDeviceManagementPolicies(value []MobileDeviceManag
         panic(err)
     }
 }
+// SetOnPremAuthenticationPolicies sets the onPremAuthenticationPolicies property value. The policy that controls how authentication requests from on-premises environments are managed.
+func (m *PolicyRoot) SetOnPremAuthenticationPolicies(value []OnPremAuthenticationPolicyable)() {
+    err := m.GetBackingStore().Set("onPremAuthenticationPolicies", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetPermissionGrantPolicies sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
 func (m *PolicyRoot) SetPermissionGrantPolicies(value []PermissionGrantPolicyable)() {
     err := m.GetBackingStore().Set("permissionGrantPolicies", value)
@@ -1301,6 +1395,7 @@ type PolicyRootable interface {
     GetAuthenticationMethodsPolicy()(AuthenticationMethodsPolicyable)
     GetAuthenticationStrengthPolicies()([]AuthenticationStrengthPolicyable)
     GetAuthorizationPolicy()([]AuthorizationPolicyable)
+    GetB2bManagementPolicies()([]B2bManagementPolicyable)
     GetB2cAuthenticationMethodsPolicy()(B2cAuthenticationMethodsPolicyable)
     GetClaimsMappingPolicies()([]ClaimsMappingPolicyable)
     GetConditionalAccessPolicies()([]ConditionalAccessPolicyable)
@@ -1316,6 +1411,7 @@ type PolicyRootable interface {
     GetIdentitySecurityDefaultsEnforcementPolicy()(IdentitySecurityDefaultsEnforcementPolicyable)
     GetMobileAppManagementPolicies()([]MobileAppManagementPolicyable)
     GetMobileDeviceManagementPolicies()([]MobileDeviceManagementPolicyable)
+    GetOnPremAuthenticationPolicies()([]OnPremAuthenticationPolicyable)
     GetPermissionGrantPolicies()([]PermissionGrantPolicyable)
     GetPermissionGrantPreApprovalPolicies()([]PermissionGrantPreApprovalPolicyable)
     GetRoleManagementPolicies()([]UnifiedRoleManagementPolicyable)
@@ -1331,6 +1427,7 @@ type PolicyRootable interface {
     SetAuthenticationMethodsPolicy(value AuthenticationMethodsPolicyable)()
     SetAuthenticationStrengthPolicies(value []AuthenticationStrengthPolicyable)()
     SetAuthorizationPolicy(value []AuthorizationPolicyable)()
+    SetB2bManagementPolicies(value []B2bManagementPolicyable)()
     SetB2cAuthenticationMethodsPolicy(value B2cAuthenticationMethodsPolicyable)()
     SetClaimsMappingPolicies(value []ClaimsMappingPolicyable)()
     SetConditionalAccessPolicies(value []ConditionalAccessPolicyable)()
@@ -1346,6 +1443,7 @@ type PolicyRootable interface {
     SetIdentitySecurityDefaultsEnforcementPolicy(value IdentitySecurityDefaultsEnforcementPolicyable)()
     SetMobileAppManagementPolicies(value []MobileAppManagementPolicyable)()
     SetMobileDeviceManagementPolicies(value []MobileDeviceManagementPolicyable)()
+    SetOnPremAuthenticationPolicies(value []OnPremAuthenticationPolicyable)()
     SetPermissionGrantPolicies(value []PermissionGrantPolicyable)()
     SetPermissionGrantPreApprovalPolicies(value []PermissionGrantPreApprovalPolicyable)()
     SetRoleManagementPolicies(value []UnifiedRoleManagementPolicyable)()

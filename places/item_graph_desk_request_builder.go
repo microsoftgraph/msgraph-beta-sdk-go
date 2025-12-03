@@ -35,6 +35,11 @@ type ItemGraphDeskRequestBuilderGetRequestConfiguration struct {
 func (m *ItemGraphDeskRequestBuilder) CheckIns()(*ItemGraphDeskCheckInsRequestBuilder) {
     return NewItemGraphDeskCheckInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Children provides operations to manage the children property of the microsoft.graph.place entity.
+// returns a *ItemGraphDeskChildrenRequestBuilder when successful
+func (m *ItemGraphDeskRequestBuilder) Children()(*ItemGraphDeskChildrenRequestBuilder) {
+    return NewItemGraphDeskChildrenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemGraphDeskRequestBuilderInternal instantiates a new ItemGraphDeskRequestBuilder and sets the default values.
 func NewItemGraphDeskRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphDeskRequestBuilder) {
     m := &ItemGraphDeskRequestBuilder{

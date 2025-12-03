@@ -105,6 +105,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackageResources()(*Entitlem
 func (m *EntitlementManagementRequestBuilder) AccessPackages()(*EntitlementManagementAccessPackagesRequestBuilder) {
     return NewEntitlementManagementAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// AccessPackageSuggestions provides operations to manage the accessPackageSuggestions property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementAccessPackageSuggestionsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) AccessPackageSuggestions()(*EntitlementManagementAccessPackageSuggestionsRequestBuilder) {
+    return NewEntitlementManagementAccessPackageSuggestionsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // AccessPackagesWithUniqueName provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
 // returns a *EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) AccessPackagesWithUniqueName(uniqueName *string)(*EntitlementManagementAccessPackagesWithUniqueNameRequestBuilder) {
@@ -114,6 +119,11 @@ func (m *EntitlementManagementRequestBuilder) AccessPackagesWithUniqueName(uniqu
 // returns a *EntitlementManagementAssignmentRequestsRequestBuilder when successful
 func (m *EntitlementManagementRequestBuilder) AssignmentRequests()(*EntitlementManagementAssignmentRequestsRequestBuilder) {
     return NewEntitlementManagementAssignmentRequestsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// AvailableAccessPackages provides operations to manage the availableAccessPackages property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementAvailableAccessPackagesRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) AvailableAccessPackages()(*EntitlementManagementAvailableAccessPackagesRequestBuilder) {
+    return NewEntitlementManagementAvailableAccessPackagesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // ConnectedOrganizations provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
 // returns a *EntitlementManagementConnectedOrganizationsRequestBuilder when successful

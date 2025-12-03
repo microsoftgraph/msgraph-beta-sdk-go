@@ -36,10 +36,14 @@ func CreateStsPolicyFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
                 switch *mappingValue {
                     case "#microsoft.graph.activityBasedTimeoutPolicy":
                         return NewActivityBasedTimeoutPolicy(), nil
+                    case "#microsoft.graph.b2bManagementPolicy":
+                        return NewB2bManagementPolicy(), nil
                     case "#microsoft.graph.claimsMappingPolicy":
                         return NewClaimsMappingPolicy(), nil
                     case "#microsoft.graph.homeRealmDiscoveryPolicy":
                         return NewHomeRealmDiscoveryPolicy(), nil
+                    case "#microsoft.graph.onPremAuthenticationPolicy":
+                        return NewOnPremAuthenticationPolicy(), nil
                     case "#microsoft.graph.tokenIssuancePolicy":
                         return NewTokenIssuancePolicy(), nil
                     case "#microsoft.graph.tokenLifetimePolicy":

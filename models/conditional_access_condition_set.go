@@ -38,6 +38,18 @@ func (m *ConditionalAccessConditionSet) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetAgentIdRiskLevels gets the agentIdRiskLevels property value. Agent identity risk levels included in the policy. Possible values are: low, medium, high, unknownFutureValue. This enumeration is multivalued.
+// returns a *ConditionalAccessAgentIdRiskLevels when successful
+func (m *ConditionalAccessConditionSet) GetAgentIdRiskLevels()(*ConditionalAccessAgentIdRiskLevels) {
+    val, err := m.GetBackingStore().Get("agentIdRiskLevels")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ConditionalAccessAgentIdRiskLevels)
+    }
+    return nil
+}
 // GetApplications gets the applications property value. Applications and user actions included in and excluded from the policy. Required.
 // returns a ConditionalAccessApplicationsable when successful
 func (m *ConditionalAccessConditionSet) GetApplications()(ConditionalAccessApplicationsable) {
@@ -119,6 +131,16 @@ func (m *ConditionalAccessConditionSet) GetDeviceStates()(ConditionalAccessDevic
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *ConditionalAccessConditionSet) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["agentIdRiskLevels"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseConditionalAccessAgentIdRiskLevels)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAgentIdRiskLevels(val.(*ConditionalAccessAgentIdRiskLevels))
+        }
+        return nil
+    }
     res["applications"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateConditionalAccessApplicationsFromDiscriminatorValue)
         if err != nil {
@@ -383,6 +405,13 @@ func (m *ConditionalAccessConditionSet) GetUsers()(ConditionalAccessUsersable) {
 }
 // Serialize serializes information the current object
 func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAgentIdRiskLevels() != nil {
+        cast := (*m.GetAgentIdRiskLevels()).String()
+        err := writer.WriteStringValue("agentIdRiskLevels", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteObjectValue("applications", m.GetApplications())
         if err != nil {
@@ -479,6 +508,13 @@ func (m *ConditionalAccessConditionSet) Serialize(writer i878a80d2330e89d2689638
 // SetAdditionalData sets the AdditionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
 func (m *ConditionalAccessConditionSet) SetAdditionalData(value map[string]any)() {
     err := m.GetBackingStore().Set("additionalData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAgentIdRiskLevels sets the agentIdRiskLevels property value. Agent identity risk levels included in the policy. Possible values are: low, medium, high, unknownFutureValue. This enumeration is multivalued.
+func (m *ConditionalAccessConditionSet) SetAgentIdRiskLevels(value *ConditionalAccessAgentIdRiskLevels)() {
+    err := m.GetBackingStore().Set("agentIdRiskLevels", value)
     if err != nil {
         panic(err)
     }
@@ -589,6 +625,7 @@ type ConditionalAccessConditionSetable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgentIdRiskLevels()(*ConditionalAccessAgentIdRiskLevels)
     GetApplications()(ConditionalAccessApplicationsable)
     GetAuthenticationFlows()(ConditionalAccessAuthenticationFlowsable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
@@ -604,6 +641,7 @@ type ConditionalAccessConditionSetable interface {
     GetSignInRiskLevels()([]RiskLevel)
     GetUserRiskLevels()([]RiskLevel)
     GetUsers()(ConditionalAccessUsersable)
+    SetAgentIdRiskLevels(value *ConditionalAccessAgentIdRiskLevels)()
     SetApplications(value ConditionalAccessApplicationsable)()
     SetAuthenticationFlows(value ConditionalAccessAuthenticationFlowsable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()

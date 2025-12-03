@@ -33,8 +33,11 @@ func NewPresencesItemSetManualLocationRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewPresencesItemSetManualLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post invoke action setManualLocation
+// Post set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/presence-setmanuallocation?view=graph-rest-beta
 func (m *PresencesItemSetManualLocationRequestBuilder) Post(ctx context.Context, body PresencesItemSetManualLocationPostRequestBodyable, requestConfiguration *PresencesItemSetManualLocationRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -49,7 +52,7 @@ func (m *PresencesItemSetManualLocationRequestBuilder) Post(ctx context.Context,
     }
     return nil
 }
-// ToPostRequestInformation invoke action setManualLocation
+// ToPostRequestInformation set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
 // returns a *RequestInformation when successful
 func (m *PresencesItemSetManualLocationRequestBuilder) ToPostRequestInformation(ctx context.Context, body PresencesItemSetManualLocationPostRequestBodyable, requestConfiguration *PresencesItemSetManualLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

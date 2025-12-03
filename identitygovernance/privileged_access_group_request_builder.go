@@ -148,6 +148,11 @@ func (m *PrivilegedAccessGroupRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PrivilegedAccessGroupable), nil
 }
+// Resources provides operations to manage the resources property of the microsoft.graph.privilegedAccessGroup entity.
+// returns a *PrivilegedAccessGroupResourcesRequestBuilder when successful
+func (m *PrivilegedAccessGroupRequestBuilder) Resources()(*PrivilegedAccessGroupResourcesRequestBuilder) {
+    return NewPrivilegedAccessGroupResourcesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete navigation property group for identityGovernance
 // returns a *RequestInformation when successful
 func (m *PrivilegedAccessGroupRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *PrivilegedAccessGroupRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

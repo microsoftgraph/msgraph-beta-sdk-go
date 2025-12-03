@@ -49,6 +49,11 @@ type ItemGraphRoomListRoomsRoomItemRequestBuilderPatchRequestConfiguration struc
 func (m *ItemGraphRoomListRoomsRoomItemRequestBuilder) CheckIns()(*ItemGraphRoomListRoomsItemCheckInsRequestBuilder) {
     return NewItemGraphRoomListRoomsItemCheckInsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Children provides operations to manage the children property of the microsoft.graph.place entity.
+// returns a *ItemGraphRoomListRoomsItemChildrenRequestBuilder when successful
+func (m *ItemGraphRoomListRoomsRoomItemRequestBuilder) Children()(*ItemGraphRoomListRoomsItemChildrenRequestBuilder) {
+    return NewItemGraphRoomListRoomsItemChildrenRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // NewItemGraphRoomListRoomsRoomItemRequestBuilderInternal instantiates a new ItemGraphRoomListRoomsRoomItemRequestBuilder and sets the default values.
 func NewItemGraphRoomListRoomsRoomItemRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*ItemGraphRoomListRoomsRoomItemRequestBuilder) {
     m := &ItemGraphRoomListRoomsRoomItemRequestBuilder{

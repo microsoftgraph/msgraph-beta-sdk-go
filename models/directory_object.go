@@ -39,6 +39,12 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewAdministrativeUnit(), nil
                     case "#microsoft.graph.agentIdentity":
                         return NewAgentIdentity(), nil
+                    case "#microsoft.graph.agentIdentityBlueprint":
+                        return NewAgentIdentityBlueprint(), nil
+                    case "#microsoft.graph.agentIdentityBlueprintPrincipal":
+                        return NewAgentIdentityBlueprintPrincipal(), nil
+                    case "#microsoft.graph.agentUser":
+                        return NewAgentUser(), nil
                     case "#microsoft.graph.application":
                         return NewApplication(), nil
                     case "#microsoft.graph.appManagementPolicy":
@@ -47,6 +53,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewAppRoleAssignment(), nil
                     case "#microsoft.graph.authorizationPolicy":
                         return NewAuthorizationPolicy(), nil
+                    case "#microsoft.graph.b2bManagementPolicy":
+                        return NewB2bManagementPolicy(), nil
                     case "#microsoft.graph.certificateAuthorityDetail":
                         return NewCertificateAuthorityDetail(), nil
                     case "#microsoft.graph.certificateBasedApplicationConfiguration":
@@ -85,6 +93,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewFederatedTokenValidationPolicy(), nil
                     case "#microsoft.graph.group":
                         return NewGroup(), nil
+                    case "#microsoft.graph.groupResource":
+                        return NewGroupResource(), nil
                     case "#microsoft.graph.homeRealmDiscoveryPolicy":
                         return NewHomeRealmDiscoveryPolicy(), nil
                     case "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy":
@@ -95,6 +105,8 @@ func CreateDirectoryObjectFromDiscriminatorValue(parseNode i878a80d2330e89d26896
                         return NewMultiTenantOrganizationMember(), nil
                     case "#microsoft.graph.mutualTlsOauthConfiguration":
                         return NewMutualTlsOauthConfiguration(), nil
+                    case "#microsoft.graph.onPremAuthenticationPolicy":
+                        return NewOnPremAuthenticationPolicy(), nil
                     case "#microsoft.graph.organization":
                         return NewOrganization(), nil
                     case "#microsoft.graph.orgContact":

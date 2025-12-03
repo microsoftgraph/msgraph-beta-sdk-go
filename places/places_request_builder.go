@@ -51,6 +51,11 @@ func NewPlacesRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371c
 func (m *PlacesRequestBuilder) Count()(*CountRequestBuilder) {
     return NewCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// GetOperationWithId provides operations to call the getOperation method.
+// returns a *GetOperationWithIdRequestBuilder when successful
+func (m *PlacesRequestBuilder) GetOperationWithId(id *string)(*GetOperationWithIdRequestBuilder) {
+    return NewGetOperationWithIdRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, id)
+}
 // GraphBuilding casts the previous resource to building.
 // returns a *GraphBuildingRequestBuilder when successful
 func (m *PlacesRequestBuilder) GraphBuilding()(*GraphBuildingRequestBuilder) {
@@ -85,6 +90,11 @@ func (m *PlacesRequestBuilder) GraphSection()(*GraphSectionRequestBuilder) {
 // returns a *GraphWorkspaceRequestBuilder when successful
 func (m *PlacesRequestBuilder) GraphWorkspace()(*GraphWorkspaceRequestBuilder) {
     return NewGraphWorkspaceRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// ListOperations provides operations to call the listOperations method.
+// returns a *ListOperationsRequestBuilder when successful
+func (m *PlacesRequestBuilder) ListOperations()(*ListOperationsRequestBuilder) {
+    return NewListOperationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Post create a new place object. You can also use this method to create the following child object types: building, floor, section, room, workspace, or desk.
 // returns a Placeable when successful

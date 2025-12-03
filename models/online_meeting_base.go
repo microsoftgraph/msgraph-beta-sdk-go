@@ -271,7 +271,7 @@ func (m *OnlineMeetingBase) GetChatRestrictions()(ChatRestrictionsable) {
     }
     return nil
 }
-// GetExpiryDateTime gets the expiryDateTime property value. The expiryDateTime property
+// GetExpiryDateTime gets the expiryDateTime property value. Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *OnlineMeetingBase) GetExpiryDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("expiryDateTime")
@@ -559,6 +559,26 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["meetingOptionsWebUrl"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingOptionsWebUrl(val)
+        }
+        return nil
+    }
+    res["meetingSpokenLanguageTag"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMeetingSpokenLanguageTag(val)
+        }
+        return nil
+    }
     res["recordAutomatically"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -680,6 +700,30 @@ func (m *OnlineMeetingBase) GetLobbyBypassSettings()(LobbyBypassSettingsable) {
     }
     if val != nil {
         return val.(LobbyBypassSettingsable)
+    }
+    return nil
+}
+// GetMeetingOptionsWebUrl gets the meetingOptionsWebUrl property value. Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+// returns a *string when successful
+func (m *OnlineMeetingBase) GetMeetingOptionsWebUrl()(*string) {
+    val, err := m.GetBackingStore().Get("meetingOptionsWebUrl")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetMeetingSpokenLanguageTag gets the meetingSpokenLanguageTag property value. Specifies the spoken language used during the meeting for recording and transcription purposes.
+// returns a *string when successful
+func (m *OnlineMeetingBase) GetMeetingSpokenLanguageTag()(*string) {
+    val, err := m.GetBackingStore().Get("meetingSpokenLanguageTag")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
     }
     return nil
 }
@@ -916,6 +960,18 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
         }
     }
     {
+        err = writer.WriteStringValue("meetingOptionsWebUrl", m.GetMeetingOptionsWebUrl())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteStringValue("meetingSpokenLanguageTag", m.GetMeetingSpokenLanguageTag())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("recordAutomatically", m.GetRecordAutomatically())
         if err != nil {
             return err
@@ -1081,7 +1137,7 @@ func (m *OnlineMeetingBase) SetChatRestrictions(value ChatRestrictionsable)() {
         panic(err)
     }
 }
-// SetExpiryDateTime sets the expiryDateTime property value. The expiryDateTime property
+// SetExpiryDateTime sets the expiryDateTime property value. Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *OnlineMeetingBase) SetExpiryDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("expiryDateTime", value)
     if err != nil {
@@ -1126,6 +1182,20 @@ func (m *OnlineMeetingBase) SetJoinWebUrl(value *string)() {
 // SetLobbyBypassSettings sets the lobbyBypassSettings property value. Specifies which participants can bypass the meeting lobby.
 func (m *OnlineMeetingBase) SetLobbyBypassSettings(value LobbyBypassSettingsable)() {
     err := m.GetBackingStore().Set("lobbyBypassSettings", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMeetingOptionsWebUrl sets the meetingOptionsWebUrl property value. Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.
+func (m *OnlineMeetingBase) SetMeetingOptionsWebUrl(value *string)() {
+    err := m.GetBackingStore().Set("meetingOptionsWebUrl", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetMeetingSpokenLanguageTag sets the meetingSpokenLanguageTag property value. Specifies the spoken language used during the meeting for recording and transcription purposes.
+func (m *OnlineMeetingBase) SetMeetingSpokenLanguageTag(value *string)() {
+    err := m.GetBackingStore().Set("meetingSpokenLanguageTag", value)
     if err != nil {
         panic(err)
     }
@@ -1194,6 +1264,8 @@ type OnlineMeetingBaseable interface {
     GetJoinMeetingIdSettings()(JoinMeetingIdSettingsable)
     GetJoinWebUrl()(*string)
     GetLobbyBypassSettings()(LobbyBypassSettingsable)
+    GetMeetingOptionsWebUrl()(*string)
+    GetMeetingSpokenLanguageTag()(*string)
     GetRecordAutomatically()(*bool)
     GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode)
     GetSubject()(*string)
@@ -1225,6 +1297,8 @@ type OnlineMeetingBaseable interface {
     SetJoinMeetingIdSettings(value JoinMeetingIdSettingsable)()
     SetJoinWebUrl(value *string)()
     SetLobbyBypassSettings(value LobbyBypassSettingsable)()
+    SetMeetingOptionsWebUrl(value *string)()
+    SetMeetingSpokenLanguageTag(value *string)()
     SetRecordAutomatically(value *bool)()
     SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)()
     SetSubject(value *string)()

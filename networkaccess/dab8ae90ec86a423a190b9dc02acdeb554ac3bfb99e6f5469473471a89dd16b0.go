@@ -14,7 +14,7 @@ import (
 type ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters get the number of users, devices, and workloads per traffic type in a specified time period.
+// ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters get the number of users, devices, and workloads per traffic type in a specified time period as logged in Global Secure Access.
 type ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -55,7 +55,7 @@ func NewReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWith
     urlParams["request-raw-url"] = rawUrl
     return NewReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderInternal(urlParams, requestAdapter, nil, nil)
 }
-// Get get the number of users, devices, and workloads per traffic type in a specified time period.
+// Get get the number of users, devices, and workloads per traffic type in a specified time period as logged in Global Secure Access.
 // Deprecated: This method is obsolete. Use GetAsEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse instead.
 // returns a ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -79,7 +79,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWit
     }
     return res.(ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeResponseable), nil
 }
-// GetAsEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse get the number of users, devices, and workloads per traffic type in a specified time period.
+// GetAsEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse get the number of users, devices, and workloads per traffic type in a specified time period as logged in Global Secure Access.
 // returns a ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -102,7 +102,7 @@ func (m *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWit
     }
     return res.(ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeEntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponseable), nil
 }
-// ToGetRequestInformation get the number of users, devices, and workloads per traffic type in a specified time period.
+// ToGetRequestInformation get the number of users, devices, and workloads per traffic type in a specified time period as logged in Global Secure Access.
 // returns a *RequestInformation when successful
 func (m *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ReportsMicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

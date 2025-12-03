@@ -25,18 +25,6 @@ func NewAgentIdentity()(*AgentIdentity) {
 func CreateAgentIdentityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAgentIdentity(), nil
 }
-// GetAgentAppId gets the agentAppId property value. The agentAppId property
-// returns a *string when successful
-func (m *AgentIdentity) GetAgentAppId()(*string) {
-    val, err := m.GetBackingStore().Get("agentAppId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
 // GetAgentIdentityBlueprintId gets the agentIdentityBlueprintId property value. The appId of the agent identity blueprint that defines the configuration for this agent identity.
 // returns a *string when successful
 func (m *AgentIdentity) GetAgentIdentityBlueprintId()(*string) {
@@ -65,16 +53,6 @@ func (m *AgentIdentity) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AgentIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.ServicePrincipal.GetFieldDeserializers()
-    res["agentAppId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAgentAppId(val)
-        }
-        return nil
-    }
     res["agentIdentityBlueprintId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -95,19 +73,41 @@ func (m *AgentIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]DirectoryObjectable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(DirectoryObjectable)
+                }
+            }
+            m.SetSponsors(res)
+        }
+        return nil
+    }
     return res
+}
+// GetSponsors gets the sponsors property value. The sponsors for this agent identity.
+// returns a []DirectoryObjectable when successful
+func (m *AgentIdentity) GetSponsors()([]DirectoryObjectable) {
+    val, err := m.GetBackingStore().Get("sponsors")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]DirectoryObjectable)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *AgentIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.ServicePrincipal.Serialize(writer)
     if err != nil {
         return err
-    }
-    {
-        err = writer.WriteStringValue("agentAppId", m.GetAgentAppId())
-        if err != nil {
-            return err
-        }
     }
     {
         err = writer.WriteStringValue("agentIdentityBlueprintId", m.GetAgentIdentityBlueprintId())
@@ -121,14 +121,19 @@ func (m *AgentIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
-    return nil
-}
-// SetAgentAppId sets the agentAppId property value. The agentAppId property
-func (m *AgentIdentity) SetAgentAppId(value *string)() {
-    err := m.GetBackingStore().Set("agentAppId", value)
-    if err != nil {
-        panic(err)
+    if m.GetSponsors() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsors()))
+        for i, v := range m.GetSponsors() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("sponsors", cast)
+        if err != nil {
+            return err
+        }
     }
+    return nil
 }
 // SetAgentIdentityBlueprintId sets the agentIdentityBlueprintId property value. The appId of the agent identity blueprint that defines the configuration for this agent identity.
 func (m *AgentIdentity) SetAgentIdentityBlueprintId(value *string)() {
@@ -144,13 +149,20 @@ func (m *AgentIdentity) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad9
         panic(err)
     }
 }
+// SetSponsors sets the sponsors property value. The sponsors for this agent identity.
+func (m *AgentIdentity) SetSponsors(value []DirectoryObjectable)() {
+    err := m.GetBackingStore().Set("sponsors", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type AgentIdentityable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     ServicePrincipalable
-    GetAgentAppId()(*string)
     GetAgentIdentityBlueprintId()(*string)
     GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
-    SetAgentAppId(value *string)()
+    GetSponsors()([]DirectoryObjectable)
     SetAgentIdentityBlueprintId(value *string)()
     SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetSponsors(value []DirectoryObjectable)()
 }

@@ -43,15 +43,15 @@ func (m *CloudApplicationMetadata) GetAdditionalData()(map[string]any) {
 func (m *CloudApplicationMetadata) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCategory gets the category property value. The category property
-// returns a *CloudApplicationCategory when successful
-func (m *CloudApplicationMetadata) GetCategory()(*CloudApplicationCategory) {
-    val, err := m.GetBackingStore().Get("category")
+// GetCategories gets the categories property value. The list of categories for the application. Supported values are: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
+// returns a []string when successful
+func (m *CloudApplicationMetadata) GetCategories()([]string) {
+    val, err := m.GetBackingStore().Get("categories")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*CloudApplicationCategory)
+        return val.([]string)
     }
     return nil
 }
@@ -83,13 +83,19 @@ func (m *CloudApplicationMetadata) GetComplianceScore()(*int32) {
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *CloudApplicationMetadata) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
-    res["category"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseCloudApplicationCategory)
+    res["categories"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfPrimitiveValues("string")
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetCategory(val.(*CloudApplicationCategory))
+            res := make([]string, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = *(v.(*string))
+                }
+            }
+            m.SetCategories(res)
         }
         return nil
     }
@@ -293,9 +299,8 @@ func (m *CloudApplicationMetadata) GetSubactivity()(*string) {
 }
 // Serialize serializes information the current object
 func (m *CloudApplicationMetadata) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
-    if m.GetCategory() != nil {
-        cast := (*m.GetCategory()).String()
-        err := writer.WriteStringValue("category", &cast)
+    if m.GetCategories() != nil {
+        err := writer.WriteCollectionOfStringValues("categories", m.GetCategories())
         if err != nil {
             return err
         }
@@ -379,9 +384,9 @@ func (m *CloudApplicationMetadata) SetAdditionalData(value map[string]any)() {
 func (m *CloudApplicationMetadata) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCategory sets the category property value. The category property
-func (m *CloudApplicationMetadata) SetCategory(value *CloudApplicationCategory)() {
-    err := m.GetBackingStore().Set("category", value)
+// SetCategories sets the categories property value. The list of categories for the application. Supported values are: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design & hosting.
+func (m *CloudApplicationMetadata) SetCategories(value []string)() {
+    err := m.GetBackingStore().Set("categories", value)
     if err != nil {
         panic(err)
     }
@@ -461,7 +466,7 @@ type CloudApplicationMetadataable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
-    GetCategory()(*CloudApplicationCategory)
+    GetCategories()([]string)
     GetCloudApplicationCatalogId()(*string)
     GetComplianceScore()(*int32)
     GetGeneralScore()(*int32)
@@ -473,7 +478,7 @@ type CloudApplicationMetadataable interface {
     GetSecurityScore()(*int32)
     GetSubactivity()(*string)
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
-    SetCategory(value *CloudApplicationCategory)()
+    SetCategories(value []string)()
     SetCloudApplicationCatalogId(value *string)()
     SetComplianceScore(value *int32)()
     SetGeneralScore(value *int32)()

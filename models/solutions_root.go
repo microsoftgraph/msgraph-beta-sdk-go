@@ -175,6 +175,16 @@ func (m *SolutionsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["migrations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMigrationsRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetMigrations(val.(MigrationsRootable))
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -182,6 +192,16 @@ func (m *SolutionsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetOdataType(val)
+        }
+        return nil
+    }
+    res["sharePoint"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSharePointRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSharePoint(val.(SharePointRootable))
         }
         return nil
     }
@@ -197,6 +217,18 @@ func (m *SolutionsRoot) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
+// GetMigrations gets the migrations property value. The migrations property
+// returns a MigrationsRootable when successful
+func (m *SolutionsRoot) GetMigrations()(MigrationsRootable) {
+    val, err := m.GetBackingStore().Get("migrations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MigrationsRootable)
+    }
+    return nil
+}
 // GetOdataType gets the @odata.type property value. The OdataType property
 // returns a *string when successful
 func (m *SolutionsRoot) GetOdataType()(*string) {
@@ -206,6 +238,18 @@ func (m *SolutionsRoot) GetOdataType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSharePoint gets the sharePoint property value. Container for SharePoint resources that include cross-organization migration operations.
+// returns a SharePointRootable when successful
+func (m *SolutionsRoot) GetSharePoint()(SharePointRootable) {
+    val, err := m.GetBackingStore().Get("sharePoint")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SharePointRootable)
     }
     return nil
 }
@@ -272,7 +316,19 @@ func (m *SolutionsRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
         }
     }
     {
+        err := writer.WriteObjectValue("migrations", m.GetMigrations())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("sharePoint", m.GetSharePoint())
         if err != nil {
             return err
         }
@@ -337,9 +393,23 @@ func (m *SolutionsRoot) SetBusinessScenarios(value []BusinessScenarioable)() {
         panic(err)
     }
 }
+// SetMigrations sets the migrations property value. The migrations property
+func (m *SolutionsRoot) SetMigrations(value MigrationsRootable)() {
+    err := m.GetBackingStore().Set("migrations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetOdataType sets the @odata.type property value. The OdataType property
 func (m *SolutionsRoot) SetOdataType(value *string)() {
     err := m.GetBackingStore().Set("odataType", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSharePoint sets the sharePoint property value. Container for SharePoint resources that include cross-organization migration operations.
+func (m *SolutionsRoot) SetSharePoint(value SharePointRootable)() {
+    err := m.GetBackingStore().Set("sharePoint", value)
     if err != nil {
         panic(err)
     }
@@ -361,7 +431,9 @@ type SolutionsRootable interface {
     GetBookingBusinesses()([]BookingBusinessable)
     GetBookingCurrencies()([]BookingCurrencyable)
     GetBusinessScenarios()([]BusinessScenarioable)
+    GetMigrations()(MigrationsRootable)
     GetOdataType()(*string)
+    GetSharePoint()(SharePointRootable)
     GetVirtualEvents()(VirtualEventsRootable)
     SetApproval(value ApprovalSolutionable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
@@ -369,6 +441,8 @@ type SolutionsRootable interface {
     SetBookingBusinesses(value []BookingBusinessable)()
     SetBookingCurrencies(value []BookingCurrencyable)()
     SetBusinessScenarios(value []BusinessScenarioable)()
+    SetMigrations(value MigrationsRootable)()
     SetOdataType(value *string)()
+    SetSharePoint(value SharePointRootable)()
     SetVirtualEvents(value VirtualEventsRootable)()
 }

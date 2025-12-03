@@ -44,6 +44,7 @@ func NewItemResourcesItemParentRequestBuilder(rawUrl string, requestAdapter i2ae
     return NewItemResourcesItemParentRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a GovernanceResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemResourcesItemParentRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemResourcesItemParentRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
@@ -64,6 +65,7 @@ func (m *ItemResourcesItemParentRequestBuilder) Get(ctx context.Context, request
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
 }
 // ToGetRequestInformation read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *RequestInformation when successful
 func (m *ItemResourcesItemParentRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemResourcesItemParentRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *ItemResourcesItemParentRequestBuilder) ToGetRequestInformation(ctx cont
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *ItemResourcesItemParentRequestBuilder when successful
 func (m *ItemResourcesItemParentRequestBuilder) WithUrl(rawUrl string)(*ItemResourcesItemParentRequestBuilder) {
     return NewItemResourcesItemParentRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

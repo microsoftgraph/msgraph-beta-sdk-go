@@ -44,6 +44,7 @@ func NewItemRoleAssignmentRequestsItemResourceRequestBuilder(rawUrl string, requ
     return NewItemRoleAssignmentRequestsItemResourceRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Get read-only. The resource that the request aims to.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a GovernanceResourceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemRoleAssignmentRequestsItemResourceRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemRoleAssignmentRequestsItemResourceRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable, error) {
@@ -64,6 +65,7 @@ func (m *ItemRoleAssignmentRequestsItemResourceRequestBuilder) Get(ctx context.C
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.GovernanceResourceable), nil
 }
 // ToGetRequestInformation read-only. The resource that the request aims to.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *RequestInformation when successful
 func (m *ItemRoleAssignmentRequestsItemResourceRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemRoleAssignmentRequestsItemResourceRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -78,6 +80,7 @@ func (m *ItemRoleAssignmentRequestsItemResourceRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *ItemRoleAssignmentRequestsItemResourceRequestBuilder when successful
 func (m *ItemRoleAssignmentRequestsItemResourceRequestBuilder) WithUrl(rawUrl string)(*ItemRoleAssignmentRequestsItemResourceRequestBuilder) {
     return NewItemRoleAssignmentRequestsItemResourceRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

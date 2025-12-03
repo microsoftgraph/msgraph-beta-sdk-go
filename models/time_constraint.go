@@ -79,6 +79,16 @@ func (m *TimeConstraint) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["recurrence"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreatePatternedRecurrenceFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRecurrence(val.(PatternedRecurrenceable))
+        }
+        return nil
+    }
     res["timeSlots"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateTimeSlotFromDiscriminatorValue)
         if err != nil {
@@ -109,6 +119,18 @@ func (m *TimeConstraint) GetOdataType()(*string) {
     }
     return nil
 }
+// GetRecurrence gets the recurrence property value. The recurrence property
+// returns a PatternedRecurrenceable when successful
+func (m *TimeConstraint) GetRecurrence()(PatternedRecurrenceable) {
+    val, err := m.GetBackingStore().Get("recurrence")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(PatternedRecurrenceable)
+    }
+    return nil
+}
 // GetTimeSlots gets the timeSlots property value. The timeSlots property
 // returns a []TimeSlotable when successful
 func (m *TimeConstraint) GetTimeSlots()([]TimeSlotable) {
@@ -132,6 +154,12 @@ func (m *TimeConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("recurrence", m.GetRecurrence())
         if err != nil {
             return err
         }
@@ -181,6 +209,13 @@ func (m *TimeConstraint) SetOdataType(value *string)() {
         panic(err)
     }
 }
+// SetRecurrence sets the recurrence property value. The recurrence property
+func (m *TimeConstraint) SetRecurrence(value PatternedRecurrenceable)() {
+    err := m.GetBackingStore().Set("recurrence", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetTimeSlots sets the timeSlots property value. The timeSlots property
 func (m *TimeConstraint) SetTimeSlots(value []TimeSlotable)() {
     err := m.GetBackingStore().Set("timeSlots", value)
@@ -195,9 +230,11 @@ type TimeConstraintable interface {
     GetActivityDomain()(*ActivityDomain)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
+    GetRecurrence()(PatternedRecurrenceable)
     GetTimeSlots()([]TimeSlotable)
     SetActivityDomain(value *ActivityDomain)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
+    SetRecurrence(value PatternedRecurrenceable)()
     SetTimeSlots(value []TimeSlotable)()
 }

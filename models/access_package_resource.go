@@ -21,6 +21,24 @@ func NewAccessPackageResource()(*AccessPackageResource) {
 // CreateAccessPackageResourceFromDiscriminatorValue creates a new instance of the appropriate class based on discriminator value
 // returns a Parsable when successful
 func CreateAccessPackageResourceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
+    if parseNode != nil {
+        mappingValueNode, err := parseNode.GetChildNode("@odata.type")
+        if err != nil {
+            return nil, err
+        }
+        if mappingValueNode != nil {
+            mappingValue, err := mappingValueNode.GetStringValue()
+            if err != nil {
+                return nil, err
+            }
+            if mappingValue != nil {
+                switch *mappingValue {
+                    case "#microsoft.graph.customDataProvidedResource":
+                        return NewCustomDataProvidedResource(), nil
+                }
+            }
+        }
+    }
     return NewAccessPackageResource(), nil
 }
 // GetAccessPackageResourceEnvironment gets the accessPackageResourceEnvironment property value. Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment's originId. Supports $expand.
@@ -261,6 +279,22 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["uploadSessions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateCustomDataProvidedResourceUploadSessionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]CustomDataProvidedResourceUploadSessionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(CustomDataProvidedResourceUploadSessionable)
+                }
+            }
+            m.SetUploadSessions(res)
+        }
+        return nil
+    }
     res["url"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -318,6 +352,18 @@ func (m *AccessPackageResource) GetResourceType()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetUploadSessions gets the uploadSessions property value. The uploadSessions property
+// returns a []CustomDataProvidedResourceUploadSessionable when successful
+func (m *AccessPackageResource) GetUploadSessions()([]CustomDataProvidedResourceUploadSessionable) {
+    val, err := m.GetBackingStore().Get("uploadSessions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]CustomDataProvidedResourceUploadSessionable)
     }
     return nil
 }
@@ -429,6 +475,18 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetUploadSessions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetUploadSessions()))
+        for i, v := range m.GetUploadSessions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("uploadSessions", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteStringValue("url", m.GetUrl())
         if err != nil {
@@ -521,6 +579,13 @@ func (m *AccessPackageResource) SetResourceType(value *string)() {
         panic(err)
     }
 }
+// SetUploadSessions sets the uploadSessions property value. The uploadSessions property
+func (m *AccessPackageResource) SetUploadSessions(value []CustomDataProvidedResourceUploadSessionable)() {
+    err := m.GetBackingStore().Set("uploadSessions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetUrl sets the url property value. A unique resource locator for the resource, such as the URL for signing a user into an application.
 func (m *AccessPackageResource) SetUrl(value *string)() {
     err := m.GetBackingStore().Set("url", value)
@@ -543,6 +608,7 @@ type AccessPackageResourceable interface {
     GetOriginId()(*string)
     GetOriginSystem()(*string)
     GetResourceType()(*string)
+    GetUploadSessions()([]CustomDataProvidedResourceUploadSessionable)
     GetUrl()(*string)
     SetAccessPackageResourceEnvironment(value AccessPackageResourceEnvironmentable)()
     SetAccessPackageResourceRoles(value []AccessPackageResourceRoleable)()
@@ -556,5 +622,6 @@ type AccessPackageResourceable interface {
     SetOriginId(value *string)()
     SetOriginSystem(value *string)()
     SetResourceType(value *string)()
+    SetUploadSessions(value []CustomDataProvidedResourceUploadSessionable)()
     SetUrl(value *string)()
 }

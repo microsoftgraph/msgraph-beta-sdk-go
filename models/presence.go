@@ -148,7 +148,7 @@ func (m *Presence) GetStatusMessage()(PresenceStatusMessageable) {
     }
     return nil
 }
-// GetWorkLocation gets the workLocation property value. The workLocation property
+// GetWorkLocation gets the workLocation property value. Represents the user’s aggregated work location state.
 // returns a UserWorkLocationable when successful
 func (m *Presence) GetWorkLocation()(UserWorkLocationable) {
     val, err := m.GetBackingStore().Get("workLocation")
@@ -233,7 +233,7 @@ func (m *Presence) SetStatusMessage(value PresenceStatusMessageable)() {
         panic(err)
     }
 }
-// SetWorkLocation sets the workLocation property value. The workLocation property
+// SetWorkLocation sets the workLocation property value. Represents the user’s aggregated work location state.
 func (m *Presence) SetWorkLocation(value UserWorkLocationable)() {
     err := m.GetBackingStore().Set("workLocation", value)
     if err != nil {

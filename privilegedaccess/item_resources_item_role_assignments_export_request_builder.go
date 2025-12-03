@@ -70,6 +70,7 @@ func (m *ItemResourcesItemRoleAssignmentsExportRequestBuilder) Get(ctx context.C
     return res.(ItemResourcesItemRoleAssignmentsExportResponseable), nil
 }
 // GetAsExportGetResponse invoke function export
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a ItemResourcesItemRoleAssignmentsExportGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemResourcesItemRoleAssignmentsExportRequestBuilder) GetAsExportGetResponse(ctx context.Context, requestConfiguration *ItemResourcesItemRoleAssignmentsExportRequestBuilderGetRequestConfiguration)(ItemResourcesItemRoleAssignmentsExportGetResponseable, error) {
@@ -90,6 +91,7 @@ func (m *ItemResourcesItemRoleAssignmentsExportRequestBuilder) GetAsExportGetRes
     return res.(ItemResourcesItemRoleAssignmentsExportGetResponseable), nil
 }
 // ToGetRequestInformation invoke function export
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *RequestInformation when successful
 func (m *ItemResourcesItemRoleAssignmentsExportRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemResourcesItemRoleAssignmentsExportRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -104,6 +106,7 @@ func (m *ItemResourcesItemRoleAssignmentsExportRequestBuilder) ToGetRequestInfor
     return requestInfo, nil
 }
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+// Deprecated: The PIM Iteration 2 beta API is deprecated and will be removed on October 28, 2026. Please migrate to PIM Iteration 3 API. as of 2025-10/PIM_Iteration2_Deprecation on 2025-10-27 and will be removed 2026-10-28
 // returns a *ItemResourcesItemRoleAssignmentsExportRequestBuilder when successful
 func (m *ItemResourcesItemRoleAssignmentsExportRequestBuilder) WithUrl(rawUrl string)(*ItemResourcesItemRoleAssignmentsExportRequestBuilder) {
     return NewItemResourcesItemRoleAssignmentsExportRequestBuilder(rawUrl, m.BaseRequestBuilder.RequestAdapter);

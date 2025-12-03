@@ -254,6 +254,16 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["informationBarrier"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateInformationBarrierFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetInformationBarrier(val.(InformationBarrierable))
+        }
+        return nil
+    }
     res["isItemVersioningEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -409,6 +419,18 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         return nil
     }
     return res
+}
+// GetInformationBarrier gets the informationBarrier property value. Information barrier of a fileStorageContainer. Read-write.
+// returns a InformationBarrierable when successful
+func (m *FileStorageContainer) GetInformationBarrier()(InformationBarrierable) {
+    val, err := m.GetBackingStore().Get("informationBarrier")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(InformationBarrierable)
+    }
+    return nil
 }
 // GetIsItemVersioningEnabled gets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
 // returns a *bool when successful
@@ -639,6 +661,12 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
         }
     }
     {
+        err = writer.WriteObjectValue("informationBarrier", m.GetInformationBarrier())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isItemVersioningEnabled", m.GetIsItemVersioningEnabled())
         if err != nil {
             return err
@@ -815,6 +843,13 @@ func (m *FileStorageContainer) SetExternalGroupId(value *i561e97a8befe7661a44c8f
         panic(err)
     }
 }
+// SetInformationBarrier sets the informationBarrier property value. Information barrier of a fileStorageContainer. Read-write.
+func (m *FileStorageContainer) SetInformationBarrier(value InformationBarrierable)() {
+    err := m.GetBackingStore().Set("informationBarrier", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsItemVersioningEnabled sets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
 func (m *FileStorageContainer) SetIsItemVersioningEnabled(value *bool)() {
     err := m.GetBackingStore().Set("isItemVersioningEnabled", value)
@@ -919,6 +954,7 @@ type FileStorageContainerable interface {
     GetDisplayName()(*string)
     GetDrive()(Driveable)
     GetExternalGroupId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    GetInformationBarrier()(InformationBarrierable)
     GetIsItemVersioningEnabled()(*bool)
     GetItemMajorVersionLimit()(*int32)
     GetLockState()(*SiteLockState)
@@ -942,6 +978,7 @@ type FileStorageContainerable interface {
     SetDisplayName(value *string)()
     SetDrive(value Driveable)()
     SetExternalGroupId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
+    SetInformationBarrier(value InformationBarrierable)()
     SetIsItemVersioningEnabled(value *bool)()
     SetItemMajorVersionLimit(value *int32)()
     SetLockState(value *SiteLockState)()

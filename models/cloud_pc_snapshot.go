@@ -159,7 +159,7 @@ func (m *CloudPcSnapshot) GetLastRestoredDateTime()(*i336074805fc853987abe6f7fe3
     }
     return nil
 }
-// GetSnapshotType gets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: retention. The default value is automatic.
+// GetSnapshotType gets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following members from this evolvable enum: retention. The default value is automatic.
 // returns a *CloudPcSnapshotType when successful
 func (m *CloudPcSnapshot) GetSnapshotType()(*CloudPcSnapshotType) {
     val, err := m.GetBackingStore().Get("snapshotType")
@@ -271,7 +271,7 @@ func (m *CloudPcSnapshot) SetLastRestoredDateTime(value *i336074805fc853987abe6f
         panic(err)
     }
 }
-// SetSnapshotType sets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: retention. The default value is automatic.
+// SetSnapshotType sets the snapshotType property value. The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual, unknownFutureValue, retention. Use the Prefer: include-unknown-enum-members request header to get the following members from this evolvable enum: retention. The default value is automatic.
 func (m *CloudPcSnapshot) SetSnapshotType(value *CloudPcSnapshotType)() {
     err := m.GetBackingStore().Set("snapshotType", value)
     if err != nil {

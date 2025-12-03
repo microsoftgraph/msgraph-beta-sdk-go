@@ -44,6 +44,22 @@ func (m *OrganizationalBranding) GetFieldDeserializers()(map[string]func(i878a80
         }
         return nil
     }
+    res["themes"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateOrganizationalBrandingThemeFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]OrganizationalBrandingThemeable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(OrganizationalBrandingThemeable)
+                }
+            }
+            m.SetThemes(res)
+        }
+        return nil
+    }
     return res
 }
 // GetLocalizations gets the localizations property value. Add different branding based on a locale.
@@ -55,6 +71,18 @@ func (m *OrganizationalBranding) GetLocalizations()([]OrganizationalBrandingLoca
     }
     if val != nil {
         return val.([]OrganizationalBrandingLocalizationable)
+    }
+    return nil
+}
+// GetThemes gets the themes property value. Collection of branding themes for the tenant.
+// returns a []OrganizationalBrandingThemeable when successful
+func (m *OrganizationalBranding) GetThemes()([]OrganizationalBrandingThemeable) {
+    val, err := m.GetBackingStore().Get("themes")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]OrganizationalBrandingThemeable)
     }
     return nil
 }
@@ -76,6 +104,18 @@ func (m *OrganizationalBranding) Serialize(writer i878a80d2330e89d26896388a3f487
             return err
         }
     }
+    if m.GetThemes() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetThemes()))
+        for i, v := range m.GetThemes() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("themes", cast)
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetLocalizations sets the localizations property value. Add different branding based on a locale.
@@ -85,9 +125,18 @@ func (m *OrganizationalBranding) SetLocalizations(value []OrganizationalBranding
         panic(err)
     }
 }
+// SetThemes sets the themes property value. Collection of branding themes for the tenant.
+func (m *OrganizationalBranding) SetThemes(value []OrganizationalBrandingThemeable)() {
+    err := m.GetBackingStore().Set("themes", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type OrganizationalBrandingable interface {
     OrganizationalBrandingPropertiesable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetLocalizations()([]OrganizationalBrandingLocalizationable)
+    GetThemes()([]OrganizationalBrandingThemeable)
     SetLocalizations(value []OrganizationalBrandingLocalizationable)()
+    SetThemes(value []OrganizationalBrandingThemeable)()
 }

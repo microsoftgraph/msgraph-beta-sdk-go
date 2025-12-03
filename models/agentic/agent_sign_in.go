@@ -38,6 +38,30 @@ func (m *AgentSignIn) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetAgentSubjectParentId gets the agentSubjectParentId property value. The subject's parent object ID. This is either the id of the agentIdentity or agentIdentityBlueprint.
+// returns a *string when successful
+func (m *AgentSignIn) GetAgentSubjectParentId()(*string) {
+    val, err := m.GetBackingStore().Get("agentSubjectParentId")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*string)
+    }
+    return nil
+}
+// GetAgentSubjectType gets the agentSubjectType property value. The agentSubjectType property
+// returns a *AgentType when successful
+func (m *AgentSignIn) GetAgentSubjectType()(*AgentType) {
+    val, err := m.GetBackingStore().Get("agentSubjectType")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*AgentType)
+    }
+    return nil
+}
 // GetAgentType gets the agentType property value. The agentType property
 // returns a *AgentType when successful
 func (m *AgentSignIn) GetAgentType()(*AgentType) {
@@ -59,6 +83,26 @@ func (m *AgentSignIn) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AgentSignIn) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["agentSubjectParentId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetStringValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAgentSubjectParentId(val)
+        }
+        return nil
+    }
+    res["agentSubjectType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseAgentType)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetAgentSubjectType(val.(*AgentType))
+        }
+        return nil
+    }
     res["agentType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseAgentType)
         if err != nil {
@@ -117,6 +161,19 @@ func (m *AgentSignIn) GetParentAppId()(*string) {
 }
 // Serialize serializes information the current object
 func (m *AgentSignIn) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    {
+        err := writer.WriteStringValue("agentSubjectParentId", m.GetAgentSubjectParentId())
+        if err != nil {
+            return err
+        }
+    }
+    if m.GetAgentSubjectType() != nil {
+        cast := (*m.GetAgentSubjectType()).String()
+        err := writer.WriteStringValue("agentSubjectType", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetAgentType() != nil {
         cast := (*m.GetAgentType()).String()
         err := writer.WriteStringValue("agentType", &cast)
@@ -151,6 +208,20 @@ func (m *AgentSignIn) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
+// SetAgentSubjectParentId sets the agentSubjectParentId property value. The subject's parent object ID. This is either the id of the agentIdentity or agentIdentityBlueprint.
+func (m *AgentSignIn) SetAgentSubjectParentId(value *string)() {
+    err := m.GetBackingStore().Set("agentSubjectParentId", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetAgentSubjectType sets the agentSubjectType property value. The agentSubjectType property
+func (m *AgentSignIn) SetAgentSubjectType(value *AgentType)() {
+    err := m.GetBackingStore().Set("agentSubjectType", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetAgentType sets the agentType property value. The agentType property
 func (m *AgentSignIn) SetAgentType(value *AgentType)() {
     err := m.GetBackingStore().Set("agentType", value)
@@ -180,10 +251,14 @@ type AgentSignInable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAgentSubjectParentId()(*string)
+    GetAgentSubjectType()(*AgentType)
     GetAgentType()(*AgentType)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetParentAppId()(*string)
+    SetAgentSubjectParentId(value *string)()
+    SetAgentSubjectType(value *AgentType)()
     SetAgentType(value *AgentType)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()

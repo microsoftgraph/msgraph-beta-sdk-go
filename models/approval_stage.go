@@ -68,6 +68,18 @@ func (m *ApprovalStage) GetApprovalStageTimeOutInDays()(*int32) {
     }
     return nil
 }
+// GetApproverInformationVisibility gets the approverInformationVisibility property value. The approverInformationVisibility property
+// returns a *ApproverInformationVisibility when successful
+func (m *ApprovalStage) GetApproverInformationVisibility()(*ApproverInformationVisibility) {
+    val, err := m.GetBackingStore().Get("approverInformationVisibility")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApproverInformationVisibility)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *ApprovalStage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -108,6 +120,16 @@ func (m *ApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         if val != nil {
             m.SetApprovalStageTimeOutInDays(val)
+        }
+        return nil
+    }
+    res["approverInformationVisibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseApproverInformationVisibility)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApproverInformationVisibility(val.(*ApproverInformationVisibility))
         }
         return nil
     }
@@ -241,6 +263,13 @@ func (m *ApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    if m.GetApproverInformationVisibility() != nil {
+        cast := (*m.GetApproverInformationVisibility()).String()
+        err := writer.WriteStringValue("approverInformationVisibility", &cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetEscalationApprovers() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetEscalationApprovers()))
         for i, v := range m.GetEscalationApprovers() {
@@ -311,6 +340,13 @@ func (m *ApprovalStage) SetApprovalStageTimeOutInDays(value *int32)() {
         panic(err)
     }
 }
+// SetApproverInformationVisibility sets the approverInformationVisibility property value. The approverInformationVisibility property
+func (m *ApprovalStage) SetApproverInformationVisibility(value *ApproverInformationVisibility)() {
+    err := m.GetBackingStore().Set("approverInformationVisibility", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *ApprovalStage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -362,6 +398,7 @@ type ApprovalStageable interface {
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetApprovalStageTimeOutInDays()(*int32)
+    GetApproverInformationVisibility()(*ApproverInformationVisibility)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetEscalationApprovers()([]UserSetable)
     GetEscalationTimeInMinutes()(*int32)
@@ -370,6 +407,7 @@ type ApprovalStageable interface {
     GetOdataType()(*string)
     GetPrimaryApprovers()([]UserSetable)
     SetApprovalStageTimeOutInDays(value *int32)()
+    SetApproverInformationVisibility(value *ApproverInformationVisibility)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetEscalationApprovers(value []UserSetable)()
     SetEscalationTimeInMinutes(value *int32)()

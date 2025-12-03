@@ -38,6 +38,18 @@ func (m *AccessPackageApprovalStage) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetApproverInformationVisibility gets the approverInformationVisibility property value. The approverInformationVisibility property
+// returns a *ApproverInformationVisibility when successful
+func (m *AccessPackageApprovalStage) GetApproverInformationVisibility()(*ApproverInformationVisibility) {
+    val, err := m.GetBackingStore().Get("approverInformationVisibility")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*ApproverInformationVisibility)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *AccessPackageApprovalStage) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -107,6 +119,16 @@ func (m *AccessPackageApprovalStage) GetFallbackPrimaryApprovers()([]SubjectSeta
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageApprovalStage) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["approverInformationVisibility"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParseApproverInformationVisibility)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetApproverInformationVisibility(val.(*ApproverInformationVisibility))
+        }
+        return nil
+    }
     res["durationBeforeAutomaticDenial"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetISODurationValue()
         if err != nil {
@@ -273,6 +295,13 @@ func (m *AccessPackageApprovalStage) GetPrimaryApprovers()([]SubjectSetable) {
 }
 // Serialize serializes information the current object
 func (m *AccessPackageApprovalStage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetApproverInformationVisibility() != nil {
+        cast := (*m.GetApproverInformationVisibility()).String()
+        err := writer.WriteStringValue("approverInformationVisibility", &cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteISODurationValue("durationBeforeAutomaticDenial", m.GetDurationBeforeAutomaticDenial())
         if err != nil {
@@ -366,6 +395,13 @@ func (m *AccessPackageApprovalStage) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
+// SetApproverInformationVisibility sets the approverInformationVisibility property value. The approverInformationVisibility property
+func (m *AccessPackageApprovalStage) SetApproverInformationVisibility(value *ApproverInformationVisibility)() {
+    err := m.GetBackingStore().Set("approverInformationVisibility", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *AccessPackageApprovalStage) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -437,6 +473,7 @@ type AccessPackageApprovalStageable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetApproverInformationVisibility()(*ApproverInformationVisibility)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetDurationBeforeAutomaticDenial()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
     GetDurationBeforeEscalation()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)
@@ -447,6 +484,7 @@ type AccessPackageApprovalStageable interface {
     GetIsEscalationEnabled()(*bool)
     GetOdataType()(*string)
     GetPrimaryApprovers()([]SubjectSetable)
+    SetApproverInformationVisibility(value *ApproverInformationVisibility)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetDurationBeforeAutomaticDenial(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()
     SetDurationBeforeEscalation(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ISODuration)()

@@ -68,69 +68,23 @@ func (m *AccessReviewDataUploadTriggerCallbackData) GetFieldDeserializers()(map[
         }
         return nil
     }
-    res["principalAADId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+    res["principalId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetPrincipalAADId(val)
+            m.SetPrincipalId(val)
         }
         return nil
     }
-    res["resourceDescription"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
+    res["principalType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetEnumValue(ParsePrincipalType)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetResourceDescription(val)
-        }
-        return nil
-    }
-    res["resourceId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResourceId(val)
-        }
-        return nil
-    }
-    res["resourceName"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResourceName(val)
-        }
-        return nil
-    }
-    res["resourceOwners"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetCollectionOfPrimitiveValues("string")
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            res := make([]string, len(val))
-            for i, v := range val {
-                if v != nil {
-                    res[i] = *(v.(*string))
-                }
-            }
-            m.SetResourceOwners(res)
-        }
-        return nil
-    }
-    res["resourceType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetStringValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetResourceType(val)
+            m.SetPrincipalType(val.(*PrincipalType))
         }
         return nil
     }
@@ -184,10 +138,10 @@ func (m *AccessReviewDataUploadTriggerCallbackData) GetPermissionType()(*string)
     }
     return nil
 }
-// GetPrincipalAADId gets the principalAADId property value. The principalAADId property
+// GetPrincipalId gets the principalId property value. The id of the principal who has permissions on the custom data provided resource.
 // returns a *string when successful
-func (m *AccessReviewDataUploadTriggerCallbackData) GetPrincipalAADId()(*string) {
-    val, err := m.GetBackingStore().Get("principalAADId")
+func (m *AccessReviewDataUploadTriggerCallbackData) GetPrincipalId()(*string) {
+    val, err := m.GetBackingStore().Get("principalId")
     if err != nil {
         panic(err)
     }
@@ -196,63 +150,15 @@ func (m *AccessReviewDataUploadTriggerCallbackData) GetPrincipalAADId()(*string)
     }
     return nil
 }
-// GetResourceDescription gets the resourceDescription property value. The resourceDescription property
-// returns a *string when successful
-func (m *AccessReviewDataUploadTriggerCallbackData) GetResourceDescription()(*string) {
-    val, err := m.GetBackingStore().Get("resourceDescription")
+// GetPrincipalType gets the principalType property value. The principalType property
+// returns a *PrincipalType when successful
+func (m *AccessReviewDataUploadTriggerCallbackData) GetPrincipalType()(*PrincipalType) {
+    val, err := m.GetBackingStore().Get("principalType")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetResourceId gets the resourceId property value. The resourceId property
-// returns a *string when successful
-func (m *AccessReviewDataUploadTriggerCallbackData) GetResourceId()(*string) {
-    val, err := m.GetBackingStore().Get("resourceId")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetResourceName gets the resourceName property value. The resourceName property
-// returns a *string when successful
-func (m *AccessReviewDataUploadTriggerCallbackData) GetResourceName()(*string) {
-    val, err := m.GetBackingStore().Get("resourceName")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
-    }
-    return nil
-}
-// GetResourceOwners gets the resourceOwners property value. The resourceOwners property
-// returns a []string when successful
-func (m *AccessReviewDataUploadTriggerCallbackData) GetResourceOwners()([]string) {
-    val, err := m.GetBackingStore().Get("resourceOwners")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.([]string)
-    }
-    return nil
-}
-// GetResourceType gets the resourceType property value. The resourceType property
-// returns a *string when successful
-func (m *AccessReviewDataUploadTriggerCallbackData) GetResourceType()(*string) {
-    val, err := m.GetBackingStore().Get("resourceType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*string)
+        return val.(*PrincipalType)
     }
     return nil
 }
@@ -287,37 +193,14 @@ func (m *AccessReviewDataUploadTriggerCallbackData) Serialize(writer i878a80d233
         }
     }
     {
-        err = writer.WriteStringValue("principalAADId", m.GetPrincipalAADId())
+        err = writer.WriteStringValue("principalId", m.GetPrincipalId())
         if err != nil {
             return err
         }
     }
-    {
-        err = writer.WriteStringValue("resourceDescription", m.GetResourceDescription())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("resourceId", m.GetResourceId())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("resourceName", m.GetResourceName())
-        if err != nil {
-            return err
-        }
-    }
-    if m.GetResourceOwners() != nil {
-        err = writer.WriteCollectionOfStringValues("resourceOwners", m.GetResourceOwners())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteStringValue("resourceType", m.GetResourceType())
+    if m.GetPrincipalType() != nil {
+        cast := (*m.GetPrincipalType()).String()
+        err = writer.WriteStringValue("principalType", &cast)
         if err != nil {
             return err
         }
@@ -352,44 +235,16 @@ func (m *AccessReviewDataUploadTriggerCallbackData) SetPermissionType(value *str
         panic(err)
     }
 }
-// SetPrincipalAADId sets the principalAADId property value. The principalAADId property
-func (m *AccessReviewDataUploadTriggerCallbackData) SetPrincipalAADId(value *string)() {
-    err := m.GetBackingStore().Set("principalAADId", value)
+// SetPrincipalId sets the principalId property value. The id of the principal who has permissions on the custom data provided resource.
+func (m *AccessReviewDataUploadTriggerCallbackData) SetPrincipalId(value *string)() {
+    err := m.GetBackingStore().Set("principalId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetResourceDescription sets the resourceDescription property value. The resourceDescription property
-func (m *AccessReviewDataUploadTriggerCallbackData) SetResourceDescription(value *string)() {
-    err := m.GetBackingStore().Set("resourceDescription", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetResourceId sets the resourceId property value. The resourceId property
-func (m *AccessReviewDataUploadTriggerCallbackData) SetResourceId(value *string)() {
-    err := m.GetBackingStore().Set("resourceId", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetResourceName sets the resourceName property value. The resourceName property
-func (m *AccessReviewDataUploadTriggerCallbackData) SetResourceName(value *string)() {
-    err := m.GetBackingStore().Set("resourceName", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetResourceOwners sets the resourceOwners property value. The resourceOwners property
-func (m *AccessReviewDataUploadTriggerCallbackData) SetResourceOwners(value []string)() {
-    err := m.GetBackingStore().Set("resourceOwners", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetResourceType sets the resourceType property value. The resourceType property
-func (m *AccessReviewDataUploadTriggerCallbackData) SetResourceType(value *string)() {
-    err := m.GetBackingStore().Set("resourceType", value)
+// SetPrincipalType sets the principalType property value. The principalType property
+func (m *AccessReviewDataUploadTriggerCallbackData) SetPrincipalType(value *PrincipalType)() {
+    err := m.GetBackingStore().Set("principalType", value)
     if err != nil {
         panic(err)
     }
@@ -401,20 +256,12 @@ type AccessReviewDataUploadTriggerCallbackDataable interface {
     GetPermissionId()(*string)
     GetPermissionName()(*string)
     GetPermissionType()(*string)
-    GetPrincipalAADId()(*string)
-    GetResourceDescription()(*string)
-    GetResourceId()(*string)
-    GetResourceName()(*string)
-    GetResourceOwners()([]string)
-    GetResourceType()(*string)
+    GetPrincipalId()(*string)
+    GetPrincipalType()(*PrincipalType)
     SetPermissionDescription(value *string)()
     SetPermissionId(value *string)()
     SetPermissionName(value *string)()
     SetPermissionType(value *string)()
-    SetPrincipalAADId(value *string)()
-    SetResourceDescription(value *string)()
-    SetResourceId(value *string)()
-    SetResourceName(value *string)()
-    SetResourceOwners(value []string)()
-    SetResourceType(value *string)()
+    SetPrincipalId(value *string)()
+    SetPrincipalType(value *PrincipalType)()
 }

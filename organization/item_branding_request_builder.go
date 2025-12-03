@@ -162,6 +162,11 @@ func (m *ItemBrandingRequestBuilder) SquareLogo()(*ItemBrandingSquareLogoRequest
 func (m *ItemBrandingRequestBuilder) SquareLogoDark()(*ItemBrandingSquareLogoDarkRequestBuilder) {
     return NewItemBrandingSquareLogoDarkRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// Themes provides operations to manage the themes property of the microsoft.graph.organizationalBranding entity.
+// returns a *ItemBrandingThemesRequestBuilder when successful
+func (m *ItemBrandingRequestBuilder) Themes()(*ItemBrandingThemesRequestBuilder) {
+    return NewItemBrandingThemesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // ToDeleteRequestInformation delete the default organizational branding object. To delete the organizationalBranding object, all images (Stream types) must first be removed from the object.
 // returns a *RequestInformation when successful
 func (m *ItemBrandingRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemBrandingRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

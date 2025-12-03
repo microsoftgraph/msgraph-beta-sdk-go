@@ -77,6 +77,11 @@ func (m *PoliciesRequestBuilder) AuthenticationStrengthPolicies()(*Authenticatio
 func (m *PoliciesRequestBuilder) AuthorizationPolicy()(*AuthorizationPolicyRequestBuilder) {
     return NewAuthorizationPolicyRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// B2bManagementPolicies provides operations to manage the b2bManagementPolicies property of the microsoft.graph.policyRoot entity.
+// returns a *B2bManagementPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) B2bManagementPolicies()(*B2bManagementPoliciesRequestBuilder) {
+    return NewB2bManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // B2cAuthenticationMethodsPolicy provides operations to manage the b2cAuthenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.
 // returns a *B2cAuthenticationMethodsPolicyRequestBuilder when successful
 func (m *PoliciesRequestBuilder) B2cAuthenticationMethodsPolicy()(*B2cAuthenticationMethodsPolicyRequestBuilder) {
@@ -184,6 +189,11 @@ func (m *PoliciesRequestBuilder) MobileAppManagementPolicies()(*MobileAppManagem
 // returns a *MobileDeviceManagementPoliciesRequestBuilder when successful
 func (m *PoliciesRequestBuilder) MobileDeviceManagementPolicies()(*MobileDeviceManagementPoliciesRequestBuilder) {
     return NewMobileDeviceManagementPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// OnPremAuthenticationPolicies provides operations to manage the onPremAuthenticationPolicies property of the microsoft.graph.policyRoot entity.
+// returns a *OnPremAuthenticationPoliciesRequestBuilder when successful
+func (m *PoliciesRequestBuilder) OnPremAuthenticationPolicies()(*OnPremAuthenticationPoliciesRequestBuilder) {
+    return NewOnPremAuthenticationPoliciesRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
 // Patch update policies
 // returns a PolicyRootable when successful
