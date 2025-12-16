@@ -509,7 +509,7 @@ func (m *Windows10VpnConfiguration) GetOnlyAssociatedAppsCanUseConnection()(*boo
     }
     return nil
 }
-// GetProfileTarget gets the profileTarget property value. Profile target type. Possible values are: user, device, autoPilotDevice.
+// GetProfileTarget gets the profileTarget property value. Profile target type. The possible values are: user, device, autoPilotDevice.
 // returns a *Windows10VpnProfileTarget when successful
 func (m *Windows10VpnConfiguration) GetProfileTarget()(*Windows10VpnProfileTarget) {
     val, err := m.GetBackingStore().Get("profileTarget")
@@ -914,7 +914,7 @@ func (m *Windows10VpnConfiguration) SetOnlyAssociatedAppsCanUseConnection(value 
         panic(err)
     }
 }
-// SetProfileTarget sets the profileTarget property value. Profile target type. Possible values are: user, device, autoPilotDevice.
+// SetProfileTarget sets the profileTarget property value. Profile target type. The possible values are: user, device, autoPilotDevice.
 func (m *Windows10VpnConfiguration) SetProfileTarget(value *Windows10VpnProfileTarget)() {
     err := m.GetBackingStore().Set("profileTarget", value)
     if err != nil {

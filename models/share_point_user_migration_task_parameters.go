@@ -50,7 +50,7 @@ func (m *SharePointUserMigrationTaskParameters) GetFieldDeserializers()(map[stri
     }
     return res
 }
-// GetSourceUserIdentity gets the sourceUserIdentity property value. The sourceUserIdentity property
+// GetSourceUserIdentity gets the sourceUserIdentity property value. The source user in the source tenant, including the user object ID and the user principal name.
 // returns a UserIdentityable when successful
 func (m *SharePointUserMigrationTaskParameters) GetSourceUserIdentity()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("sourceUserIdentity")
@@ -62,7 +62,7 @@ func (m *SharePointUserMigrationTaskParameters) GetSourceUserIdentity()(UserIden
     }
     return nil
 }
-// GetTargetUserIdentity gets the targetUserIdentity property value. The targetUserIdentity property
+// GetTargetUserIdentity gets the targetUserIdentity property value. The target user in the target tenant, including the user object ID and the user principal name.
 // returns a UserIdentityable when successful
 func (m *SharePointUserMigrationTaskParameters) GetTargetUserIdentity()(UserIdentityable) {
     val, err := m.GetBackingStore().Get("targetUserIdentity")
@@ -94,14 +94,14 @@ func (m *SharePointUserMigrationTaskParameters) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetSourceUserIdentity sets the sourceUserIdentity property value. The sourceUserIdentity property
+// SetSourceUserIdentity sets the sourceUserIdentity property value. The source user in the source tenant, including the user object ID and the user principal name.
 func (m *SharePointUserMigrationTaskParameters) SetSourceUserIdentity(value UserIdentityable)() {
     err := m.GetBackingStore().Set("sourceUserIdentity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetUserIdentity sets the targetUserIdentity property value. The targetUserIdentity property
+// SetTargetUserIdentity sets the targetUserIdentity property value. The target user in the target tenant, including the user object ID and the user principal name.
 func (m *SharePointUserMigrationTaskParameters) SetTargetUserIdentity(value UserIdentityable)() {
     err := m.GetBackingStore().Set("targetUserIdentity", value)
     if err != nil {

@@ -91,7 +91,7 @@ func (m *OnlineMeetingBase) GetAllowCopyingAndSharingMeetingContent()(*bool) {
     }
     return nil
 }
-// GetAllowedLobbyAdmitters gets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
+// GetAllowedLobbyAdmitters gets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. The possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
 // returns a *AllowedLobbyAdmitterRoles when successful
 func (m *OnlineMeetingBase) GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRoles) {
     val, err := m.GetBackingStore().Get("allowedLobbyAdmitters")
@@ -103,7 +103,7 @@ func (m *OnlineMeetingBase) GetAllowedLobbyAdmitters()(*AllowedLobbyAdmitterRole
     }
     return nil
 }
-// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.
+// GetAllowedPresenters gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. The possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.
 // returns a *OnlineMeetingPresenters when successful
 func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     val, err := m.GetBackingStore().Get("allowedPresenters")
@@ -115,7 +115,7 @@ func (m *OnlineMeetingBase) GetAllowedPresenters()(*OnlineMeetingPresenters) {
     }
     return nil
 }
-// GetAllowLiveShare gets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.
+// GetAllowLiveShare gets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. The possible values are: enabled, disabled, unknownFutureValue.
 // returns a *MeetingLiveShareOptions when successful
 func (m *OnlineMeetingBase) GetAllowLiveShare()(*MeetingLiveShareOptions) {
     val, err := m.GetBackingStore().Get("allowLiveShare")
@@ -127,7 +127,7 @@ func (m *OnlineMeetingBase) GetAllowLiveShare()(*MeetingLiveShareOptions) {
     }
     return nil
 }
-// GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat. Possible values are: enabled, disabled, limited, unknownFutureValue.
+// GetAllowMeetingChat gets the allowMeetingChat property value. Specifies the mode of meeting chat. The possible values are: enabled, disabled, limited, unknownFutureValue.
 // returns a *MeetingChatMode when successful
 func (m *OnlineMeetingBase) GetAllowMeetingChat()(*MeetingChatMode) {
     val, err := m.GetBackingStore().Get("allowMeetingChat")
@@ -211,7 +211,7 @@ func (m *OnlineMeetingBase) GetAllowWhiteboard()(*bool) {
     }
     return nil
 }
-// GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
+// GetAnonymizeIdentityForRoles gets the anonymizeIdentityForRoles property value. Specifies whose identity is anonymized in the meeting. The possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
 // returns a []OnlineMeetingRole when successful
 func (m *OnlineMeetingBase) GetAnonymizeIdentityForRoles()([]OnlineMeetingRole) {
     val, err := m.GetBackingStore().Get("anonymizeIdentityForRoles")
@@ -589,6 +589,16 @@ func (m *OnlineMeetingBase) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["sensitivityLabelAssignment"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateOnlineMeetingSensitivityLabelAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSensitivityLabelAssignment(val.(OnlineMeetingSensitivityLabelAssignmentable))
+        }
+        return nil
+    }
     res["shareMeetingChatHistoryDefault"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseMeetingChatHistoryDefaultMode)
         if err != nil {
@@ -739,7 +749,19 @@ func (m *OnlineMeetingBase) GetRecordAutomatically()(*bool) {
     }
     return nil
 }
-// GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
+// GetSensitivityLabelAssignment gets the sensitivityLabelAssignment property value. Specifies the sensitivity label applied to the Teams meeting.
+// returns a OnlineMeetingSensitivityLabelAssignmentable when successful
+func (m *OnlineMeetingBase) GetSensitivityLabelAssignment()(OnlineMeetingSensitivityLabelAssignmentable) {
+    val, err := m.GetBackingStore().Get("sensitivityLabelAssignment")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(OnlineMeetingSensitivityLabelAssignmentable)
+    }
+    return nil
+}
+// GetShareMeetingChatHistoryDefault gets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  The possible values are: all, none, unknownFutureValue.
 // returns a *MeetingChatHistoryDefaultMode when successful
 func (m *OnlineMeetingBase) GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode) {
     val, err := m.GetBackingStore().Get("shareMeetingChatHistoryDefault")
@@ -977,6 +999,12 @@ func (m *OnlineMeetingBase) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("sensitivityLabelAssignment", m.GetSensitivityLabelAssignment())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetShareMeetingChatHistoryDefault() != nil {
         cast := (*m.GetShareMeetingChatHistoryDefault()).String()
         err = writer.WriteStringValue("shareMeetingChatHistoryDefault", &cast)
@@ -1032,28 +1060,28 @@ func (m *OnlineMeetingBase) SetAllowCopyingAndSharingMeetingContent(value *bool)
         panic(err)
     }
 }
-// SetAllowedLobbyAdmitters sets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
+// SetAllowedLobbyAdmitters sets the allowedLobbyAdmitters property value. Specifies the users who can admit from the lobby. The possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowedLobbyAdmitters(value *AllowedLobbyAdmitterRoles)() {
     err := m.GetBackingStore().Set("allowedLobbyAdmitters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.
+// SetAllowedPresenters sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. The possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowedPresenters(value *OnlineMeetingPresenters)() {
     err := m.GetBackingStore().Set("allowedPresenters", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowLiveShare sets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.
+// SetAllowLiveShare sets the allowLiveShare property value. Indicates whether live share is enabled for the meeting. The possible values are: enabled, disabled, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowLiveShare(value *MeetingLiveShareOptions)() {
     err := m.GetBackingStore().Set("allowLiveShare", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAllowMeetingChat sets the allowMeetingChat property value. Specifies the mode of meeting chat. Possible values are: enabled, disabled, limited, unknownFutureValue.
+// SetAllowMeetingChat sets the allowMeetingChat property value. Specifies the mode of meeting chat. The possible values are: enabled, disabled, limited, unknownFutureValue.
 func (m *OnlineMeetingBase) SetAllowMeetingChat(value *MeetingChatMode)() {
     err := m.GetBackingStore().Set("allowMeetingChat", value)
     if err != nil {
@@ -1102,7 +1130,7 @@ func (m *OnlineMeetingBase) SetAllowWhiteboard(value *bool)() {
         panic(err)
     }
 }
-// SetAnonymizeIdentityForRoles sets the anonymizeIdentityForRoles property value. Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
+// SetAnonymizeIdentityForRoles sets the anonymizeIdentityForRoles property value. Specifies whose identity is anonymized in the meeting. The possible values are: attendee. The attendee value can't be removed through a PATCH operation once added.
 func (m *OnlineMeetingBase) SetAnonymizeIdentityForRoles(value []OnlineMeetingRole)() {
     err := m.GetBackingStore().Set("anonymizeIdentityForRoles", value)
     if err != nil {
@@ -1207,7 +1235,14 @@ func (m *OnlineMeetingBase) SetRecordAutomatically(value *bool)() {
         panic(err)
     }
 }
-// SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
+// SetSensitivityLabelAssignment sets the sensitivityLabelAssignment property value. Specifies the sensitivity label applied to the Teams meeting.
+func (m *OnlineMeetingBase) SetSensitivityLabelAssignment(value OnlineMeetingSensitivityLabelAssignmentable)() {
+    err := m.GetBackingStore().Set("sensitivityLabelAssignment", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetShareMeetingChatHistoryDefault sets the shareMeetingChatHistoryDefault property value. Specifies whether meeting chat history is shared with participants.  The possible values are: all, none, unknownFutureValue.
 func (m *OnlineMeetingBase) SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)() {
     err := m.GetBackingStore().Set("shareMeetingChatHistoryDefault", value)
     if err != nil {
@@ -1267,6 +1302,7 @@ type OnlineMeetingBaseable interface {
     GetMeetingOptionsWebUrl()(*string)
     GetMeetingSpokenLanguageTag()(*string)
     GetRecordAutomatically()(*bool)
+    GetSensitivityLabelAssignment()(OnlineMeetingSensitivityLabelAssignmentable)
     GetShareMeetingChatHistoryDefault()(*MeetingChatHistoryDefaultMode)
     GetSubject()(*string)
     GetVideoTeleconferenceId()(*string)
@@ -1300,6 +1336,7 @@ type OnlineMeetingBaseable interface {
     SetMeetingOptionsWebUrl(value *string)()
     SetMeetingSpokenLanguageTag(value *string)()
     SetRecordAutomatically(value *bool)()
+    SetSensitivityLabelAssignment(value OnlineMeetingSensitivityLabelAssignmentable)()
     SetShareMeetingChatHistoryDefault(value *MeetingChatHistoryDefaultMode)()
     SetSubject(value *string)()
     SetVideoTeleconferenceId(value *string)()

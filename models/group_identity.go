@@ -40,7 +40,7 @@ func (m *GroupIdentity) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
     }
     return res
 }
-// GetMailNickname gets the mailNickname property value. The mailNickname property
+// GetMailNickname gets the mailNickname property value. The mail nick name, also known as group alias of the group-connected site.
 // returns a *string when successful
 func (m *GroupIdentity) GetMailNickname()(*string) {
     val, err := m.GetBackingStore().Get("mailNickname")
@@ -66,7 +66,7 @@ func (m *GroupIdentity) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetMailNickname sets the mailNickname property value. The mailNickname property
+// SetMailNickname sets the mailNickname property value. The mail nick name, also known as group alias of the group-connected site.
 func (m *GroupIdentity) SetMailNickname(value *string)() {
     err := m.GetBackingStore().Set("mailNickname", value)
     if err != nil {

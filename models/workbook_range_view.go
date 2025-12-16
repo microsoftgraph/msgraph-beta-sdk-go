@@ -286,7 +286,7 @@ func (m *WorkbookRangeView) GetValues()(i878a80d2330e89d26896388a3f487eef27b0a0e
     }
     return nil
 }
-// GetValueTypes gets the valueTypes property value. The type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+// GetValueTypes gets the valueTypes property value. The type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
 // returns a UntypedNodeable when successful
 func (m *WorkbookRangeView) GetValueTypes()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("valueTypes")
@@ -461,7 +461,7 @@ func (m *WorkbookRangeView) SetValues(value i878a80d2330e89d26896388a3f487eef27b
         panic(err)
     }
 }
-// SetValueTypes sets the valueTypes property value. The type of data of each cell. Read-only. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
+// SetValueTypes sets the valueTypes property value. The type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
 func (m *WorkbookRangeView) SetValueTypes(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("valueTypes", value)
     if err != nil {

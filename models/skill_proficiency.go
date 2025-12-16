@@ -138,7 +138,7 @@ func (m *SkillProficiency) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetProficiency gets the proficiency property value. Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
+// GetProficiency gets the proficiency property value. Detail of the users proficiency with this skill. The possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
 // returns a *SkillProficiencyLevel when successful
 func (m *SkillProficiency) GetProficiency()(*SkillProficiencyLevel) {
     val, err := m.GetBackingStore().Get("proficiency")
@@ -240,7 +240,7 @@ func (m *SkillProficiency) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetProficiency sets the proficiency property value. Detail of the users proficiency with this skill. Possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
+// SetProficiency sets the proficiency property value. Detail of the users proficiency with this skill. The possible values are: elementary, limitedWorking, generalProfessional, advancedProfessional, expert, unknownFutureValue.
 func (m *SkillProficiency) SetProficiency(value *SkillProficiencyLevel)() {
     err := m.GetBackingStore().Set("proficiency", value)
     if err != nil {

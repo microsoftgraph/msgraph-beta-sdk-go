@@ -38,7 +38,7 @@ func (m *ConfigurationUri) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAppliesToSingleSignOnMode gets the appliesToSingleSignOnMode property value. The single sign-on mode that the URI is configured for. Possible values are: saml, password.
+// GetAppliesToSingleSignOnMode gets the appliesToSingleSignOnMode property value. The single sign-on mode that the URI is configured for. The possible values are: saml, password.
 // returns a *string when successful
 func (m *ConfigurationUri) GetAppliesToSingleSignOnMode()(*string) {
     val, err := m.GetBackingStore().Get("appliesToSingleSignOnMode")
@@ -247,7 +247,7 @@ func (m *ConfigurationUri) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAppliesToSingleSignOnMode sets the appliesToSingleSignOnMode property value. The single sign-on mode that the URI is configured for. Possible values are: saml, password.
+// SetAppliesToSingleSignOnMode sets the appliesToSingleSignOnMode property value. The single sign-on mode that the URI is configured for. The possible values are: saml, password.
 func (m *ConfigurationUri) SetAppliesToSingleSignOnMode(value *string)() {
     err := m.GetBackingStore().Set("appliesToSingleSignOnMode", value)
     if err != nil {

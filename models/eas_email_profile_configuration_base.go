@@ -105,7 +105,7 @@ func (m *EasEmailProfileConfigurationBase) GetFieldDeserializers()(map[string]fu
     }
     return res
 }
-// GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
+// GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. The possible values are: fullDomainName, netBiosDomainName.
 // returns a *DomainNameSource when successful
 func (m *EasEmailProfileConfigurationBase) GetUserDomainNameSource()(*DomainNameSource) {
     val, err := m.GetBackingStore().Get("userDomainNameSource")
@@ -117,7 +117,7 @@ func (m *EasEmailProfileConfigurationBase) GetUserDomainNameSource()(*DomainName
     }
     return nil
 }
-// GetUsernameAADSource gets the usernameAADSource property value. Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
+// GetUsernameAADSource gets the usernameAADSource property value. Name of the AAD field, that will be used to retrieve UserName for email profile. The possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
 // returns a *UsernameSource when successful
 func (m *EasEmailProfileConfigurationBase) GetUsernameAADSource()(*UsernameSource) {
     val, err := m.GetBackingStore().Get("usernameAADSource")
@@ -183,14 +183,14 @@ func (m *EasEmailProfileConfigurationBase) SetCustomDomainName(value *string)() 
         panic(err)
     }
 }
-// SetUserDomainNameSource sets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
+// SetUserDomainNameSource sets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. The possible values are: fullDomainName, netBiosDomainName.
 func (m *EasEmailProfileConfigurationBase) SetUserDomainNameSource(value *DomainNameSource)() {
     err := m.GetBackingStore().Set("userDomainNameSource", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUsernameAADSource sets the usernameAADSource property value. Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
+// SetUsernameAADSource sets the usernameAADSource property value. Name of the AAD field, that will be used to retrieve UserName for email profile. The possible values are: userPrincipalName, primarySmtpAddress, samAccountName.
 func (m *EasEmailProfileConfigurationBase) SetUsernameAADSource(value *UsernameSource)() {
     err := m.GetBackingStore().Set("usernameAADSource", value)
     if err != nil {

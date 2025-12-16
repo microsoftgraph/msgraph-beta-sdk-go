@@ -333,7 +333,7 @@ func (m *PrintJobConfiguration) GetFieldDeserializers()(map[string]func(i878a80d
     }
     return res
 }
-// GetFinishings gets the finishings property value. Finishing processes to use when printing.
+// GetFinishings gets the finishings property value. Finishing processes to use when printing. Possible values are: none, staple, punch, cover, bind, saddleStitch, stitchEdge, stapleTopLeft, stapleBottomLeft, stapleTopRight, stapleBottomRight, stitchLeftEdge, stitchTopEdge, stitchRightEdge, stitchBottomEdge, stapleDualLeft, stapleDualTop, stapleDualRight, stapleDualBottom, unknownFutureValue. You must use the Prefer: include-unknown-enum-members request header to get the following values in this [evolvable enum](/graph/best-practices-concept#handling-future-members-in-evolvable-enumerottom,bindLeft,bindTop,bindRight,bindBottom,foldAccordion,foldDoubleGate,foldGate,foldHalf,foldHalfZ,foldLeftGate,foldLetter,foldParallel,foldPoster,foldRightGate,foldZ,foldEngineeringZ,punchTopLeft,punchBottomLeft,punchTopRight,punchBottomRight,punchDualLeft,punchDualTop,punchDualRight,punchDualBottom,punchTripleLeft,punchTripleTop,punchTripleRight,punchTripleBottom,punchQuadLeft,punchQuadTop,punchQuadRight,punchQuadBottom,fold,trim,bale,bookletMaker,coat,laminate,trimAfterPages,trimAfterDocuments,trimAfterCopies,trimAfterJob`.
 // returns a []PrintFinishing when successful
 func (m *PrintJobConfiguration) GetFinishings()([]PrintFinishing) {
     val, err := m.GetBackingStore().Get("finishings")
@@ -697,7 +697,7 @@ func (m *PrintJobConfiguration) SetFeedOrientation(value *PrinterFeedOrientation
         panic(err)
     }
 }
-// SetFinishings sets the finishings property value. Finishing processes to use when printing.
+// SetFinishings sets the finishings property value. Finishing processes to use when printing. Possible values are: none, staple, punch, cover, bind, saddleStitch, stitchEdge, stapleTopLeft, stapleBottomLeft, stapleTopRight, stapleBottomRight, stitchLeftEdge, stitchTopEdge, stitchRightEdge, stitchBottomEdge, stapleDualLeft, stapleDualTop, stapleDualRight, stapleDualBottom, unknownFutureValue. You must use the Prefer: include-unknown-enum-members request header to get the following values in this [evolvable enum](/graph/best-practices-concept#handling-future-members-in-evolvable-enumerottom,bindLeft,bindTop,bindRight,bindBottom,foldAccordion,foldDoubleGate,foldGate,foldHalf,foldHalfZ,foldLeftGate,foldLetter,foldParallel,foldPoster,foldRightGate,foldZ,foldEngineeringZ,punchTopLeft,punchBottomLeft,punchTopRight,punchBottomRight,punchDualLeft,punchDualTop,punchDualRight,punchDualBottom,punchTripleLeft,punchTripleTop,punchTripleRight,punchTripleBottom,punchQuadLeft,punchQuadTop,punchQuadRight,punchQuadBottom,fold,trim,bale,bookletMaker,coat,laminate,trimAfterPages,trimAfterDocuments,trimAfterCopies,trimAfterJob`.
 func (m *PrintJobConfiguration) SetFinishings(value []PrintFinishing)() {
     err := m.GetBackingStore().Set("finishings", value)
     if err != nil {

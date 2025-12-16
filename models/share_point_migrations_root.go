@@ -34,7 +34,7 @@ func (m *SharePointMigrationsRoot) GetCrossOrganizationGroupMappings()([]SharePo
     }
     return nil
 }
-// GetCrossOrganizationMigrationTasks gets the crossOrganizationMigrationTasks property value. The crossOrganizationMigrationTasks property
+// GetCrossOrganizationMigrationTasks gets the crossOrganizationMigrationTasks property value. A collection of sharePointMigrationTask resources that represent cross-organization migration tasks.
 // returns a []SharePointMigrationTaskable when successful
 func (m *SharePointMigrationsRoot) GetCrossOrganizationMigrationTasks()([]SharePointMigrationTaskable) {
     val, err := m.GetBackingStore().Get("crossOrganizationMigrationTasks")
@@ -163,7 +163,7 @@ func (m *SharePointMigrationsRoot) SetCrossOrganizationGroupMappings(value []Sha
         panic(err)
     }
 }
-// SetCrossOrganizationMigrationTasks sets the crossOrganizationMigrationTasks property value. The crossOrganizationMigrationTasks property
+// SetCrossOrganizationMigrationTasks sets the crossOrganizationMigrationTasks property value. A collection of sharePointMigrationTask resources that represent cross-organization migration tasks.
 func (m *SharePointMigrationsRoot) SetCrossOrganizationMigrationTasks(value []SharePointMigrationTaskable)() {
     err := m.GetBackingStore().Set("crossOrganizationMigrationTasks", value)
     if err != nil {

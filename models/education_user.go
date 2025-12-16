@@ -131,7 +131,7 @@ func (m *EducationUser) GetDisplayName()(*string) {
     }
     return nil
 }
-// GetExternalSource gets the externalSource property value. The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+// GetExternalSource gets the externalSource property value. The type of external source this resource was generated from (automatically determined from externalSourceDetail). The possible values are: sis, lms, or manual.
 // returns a *EducationExternalSource when successful
 func (m *EducationUser) GetExternalSource()(*EducationExternalSource) {
     val, err := m.GetBackingStore().Get("externalSource")
@@ -1280,7 +1280,7 @@ func (m *EducationUser) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetExternalSource sets the externalSource property value. The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
+// SetExternalSource sets the externalSource property value. The type of external source this resource was generated from (automatically determined from externalSourceDetail). The possible values are: sis, lms, or manual.
 func (m *EducationUser) SetExternalSource(value *EducationExternalSource)() {
     err := m.GetBackingStore().Set("externalSource", value)
     if err != nil {

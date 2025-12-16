@@ -76,7 +76,7 @@ func (m *Place) GetCheckIns()([]CheckInClaimable) {
     }
     return nil
 }
-// GetChildren gets the children property value. The children property
+// GetChildren gets the children property value. A collection of children places that is only used in the Upsert places API.
 // returns a []Placeable when successful
 func (m *Place) GetChildren()([]Placeable) {
     val, err := m.GetBackingStore().Get("children")
@@ -390,7 +390,7 @@ func (m *Place) SetCheckIns(value []CheckInClaimable)() {
         panic(err)
     }
 }
-// SetChildren sets the children property value. The children property
+// SetChildren sets the children property value. A collection of children places that is only used in the Upsert places API.
 func (m *Place) SetChildren(value []Placeable)() {
     err := m.GetBackingStore().Set("children", value)
     if err != nil {

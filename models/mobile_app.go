@@ -622,7 +622,7 @@ func (m *MobileApp) GetSupersedingAppCount()(*int32) {
     }
     return nil
 }
-// GetUploadState gets the uploadState property value. The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.
+// GetUploadState gets the uploadState property value. The upload state. The possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.
 // returns a *int32 when successful
 func (m *MobileApp) GetUploadState()(*int32) {
     val, err := m.GetBackingStore().Get("uploadState")
@@ -898,7 +898,7 @@ func (m *MobileApp) SetSupersedingAppCount(value *int32)() {
         panic(err)
     }
 }
-// SetUploadState sets the uploadState property value. The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.
+// SetUploadState sets the uploadState property value. The upload state. The possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.
 func (m *MobileApp) SetUploadState(value *int32)() {
     err := m.GetBackingStore().Set("uploadState", value)
     if err != nil {

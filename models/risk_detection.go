@@ -23,7 +23,7 @@ func NewRiskDetection()(*RiskDetection) {
 func CreateRiskDetectionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRiskDetection(), nil
 }
-// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
+// GetActivity gets the activity property value. Indicates the activity type the detected risk is linked to.
 // returns a *ActivityType when successful
 func (m *RiskDetection) GetActivity()(*ActivityType) {
     val, err := m.GetBackingStore().Get("activity")
@@ -632,7 +632,7 @@ func (m *RiskDetection) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
     }
     return nil
 }
-// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to. The possible values are signin, user, unknownFutureValue.
+// SetActivity sets the activity property value. Indicates the activity type the detected risk is linked to.
 func (m *RiskDetection) SetActivity(value *ActivityType)() {
     err := m.GetBackingStore().Set("activity", value)
     if err != nil {

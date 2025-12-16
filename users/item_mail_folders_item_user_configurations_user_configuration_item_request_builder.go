@@ -14,7 +14,7 @@ import (
 type ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilderGetQueryParameters get userConfigurations from users
+// ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilderGetQueryParameters the user configuration objects associated to the mailFolder.
 type ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder
     urlParams["request-raw-url"] = rawUrl
     return NewItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get userConfigurations from users
+// Get the user configuration objects associated to the mailFolder.
 // returns a UserConfigurationable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationable, error) {
@@ -63,7 +63,7 @@ func (m *ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilde
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationable), nil
 }
-// ToGetRequestInformation get userConfigurations from users
+// ToGetRequestInformation the user configuration objects associated to the mailFolder.
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemUserConfigurationsUserConfigurationItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

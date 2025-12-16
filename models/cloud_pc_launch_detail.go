@@ -135,7 +135,7 @@ func (m *CloudPcLaunchDetail) GetOdataType()(*string) {
     }
     return nil
 }
-// GetWindows365SwitchCompatibilityFailureReasonType gets the windows365SwitchCompatibilityFailureReasonType property value. Indicates the reason the Cloud PC isn't compatible with Windows 365 Switch. Possible values are: osVersionNotSupported, hardwareNotSupported, unknownFutureValue. osVersionNotSupported indicates that the user needs to update their Cloud PC operating system version. hardwareNotSupported indicates that the Cloud PC needs more CPUs or RAM to support the functionality.
+// GetWindows365SwitchCompatibilityFailureReasonType gets the windows365SwitchCompatibilityFailureReasonType property value. Indicates the reason the Cloud PC isn't compatible with Windows 365 Switch. The possible values are: osVersionNotSupported, hardwareNotSupported, unknownFutureValue. osVersionNotSupported indicates that the user needs to update their Cloud PC operating system version. hardwareNotSupported indicates that the Cloud PC needs more CPUs or RAM to support the functionality.
 // returns a *Windows365SwitchCompatibilityFailureReasonType when successful
 func (m *CloudPcLaunchDetail) GetWindows365SwitchCompatibilityFailureReasonType()(*Windows365SwitchCompatibilityFailureReasonType) {
     val, err := m.GetBackingStore().Get("windows365SwitchCompatibilityFailureReasonType")
@@ -232,7 +232,7 @@ func (m *CloudPcLaunchDetail) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetWindows365SwitchCompatibilityFailureReasonType sets the windows365SwitchCompatibilityFailureReasonType property value. Indicates the reason the Cloud PC isn't compatible with Windows 365 Switch. Possible values are: osVersionNotSupported, hardwareNotSupported, unknownFutureValue. osVersionNotSupported indicates that the user needs to update their Cloud PC operating system version. hardwareNotSupported indicates that the Cloud PC needs more CPUs or RAM to support the functionality.
+// SetWindows365SwitchCompatibilityFailureReasonType sets the windows365SwitchCompatibilityFailureReasonType property value. Indicates the reason the Cloud PC isn't compatible with Windows 365 Switch. The possible values are: osVersionNotSupported, hardwareNotSupported, unknownFutureValue. osVersionNotSupported indicates that the user needs to update their Cloud PC operating system version. hardwareNotSupported indicates that the Cloud PC needs more CPUs or RAM to support the functionality.
 func (m *CloudPcLaunchDetail) SetWindows365SwitchCompatibilityFailureReasonType(value *Windows365SwitchCompatibilityFailureReasonType)() {
     err := m.GetBackingStore().Set("windows365SwitchCompatibilityFailureReasonType", value)
     if err != nil {

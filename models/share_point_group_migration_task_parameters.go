@@ -50,7 +50,7 @@ func (m *SharePointGroupMigrationTaskParameters) GetFieldDeserializers()(map[str
     }
     return res
 }
-// GetSourceGroupIdentity gets the sourceGroupIdentity property value. The sourceGroupIdentity property
+// GetSourceGroupIdentity gets the sourceGroupIdentity property value. The identity of the source group in the source tenant, including its mail nickname.
 // returns a GroupIdentityable when successful
 func (m *SharePointGroupMigrationTaskParameters) GetSourceGroupIdentity()(GroupIdentityable) {
     val, err := m.GetBackingStore().Get("sourceGroupIdentity")
@@ -62,7 +62,7 @@ func (m *SharePointGroupMigrationTaskParameters) GetSourceGroupIdentity()(GroupI
     }
     return nil
 }
-// GetTargetGroupIdentity gets the targetGroupIdentity property value. The targetGroupIdentity property
+// GetTargetGroupIdentity gets the targetGroupIdentity property value. The identity of the target group in the target tenant, including its mail nickname.
 // returns a GroupIdentityable when successful
 func (m *SharePointGroupMigrationTaskParameters) GetTargetGroupIdentity()(GroupIdentityable) {
     val, err := m.GetBackingStore().Get("targetGroupIdentity")
@@ -94,14 +94,14 @@ func (m *SharePointGroupMigrationTaskParameters) Serialize(writer i878a80d2330e8
     }
     return nil
 }
-// SetSourceGroupIdentity sets the sourceGroupIdentity property value. The sourceGroupIdentity property
+// SetSourceGroupIdentity sets the sourceGroupIdentity property value. The identity of the source group in the source tenant, including its mail nickname.
 func (m *SharePointGroupMigrationTaskParameters) SetSourceGroupIdentity(value GroupIdentityable)() {
     err := m.GetBackingStore().Set("sourceGroupIdentity", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetGroupIdentity sets the targetGroupIdentity property value. The targetGroupIdentity property
+// SetTargetGroupIdentity sets the targetGroupIdentity property value. The identity of the target group in the target tenant, including its mail nickname.
 func (m *SharePointGroupMigrationTaskParameters) SetTargetGroupIdentity(value GroupIdentityable)() {
     err := m.GetBackingStore().Set("targetGroupIdentity", value)
     if err != nil {

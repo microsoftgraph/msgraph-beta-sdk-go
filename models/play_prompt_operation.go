@@ -22,7 +22,7 @@ func NewPlayPromptOperation()(*PlayPromptOperation) {
 func CreatePlayPromptOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlayPromptOperation(), nil
 }
-// GetCompletionReason gets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
+// GetCompletionReason gets the completionReason property value. The possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
 // returns a *PlayPromptCompletionReason when successful
 func (m *PlayPromptOperation) GetCompletionReason()(*PlayPromptCompletionReason) {
     val, err := m.GetBackingStore().Get("completionReason")
@@ -65,7 +65,7 @@ func (m *PlayPromptOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef
     }
     return nil
 }
-// SetCompletionReason sets the completionReason property value. Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
+// SetCompletionReason sets the completionReason property value. The possible values are: unknown, completedSuccessfully, mediaOperationCanceled.
 func (m *PlayPromptOperation) SetCompletionReason(value *PlayPromptCompletionReason)() {
     err := m.GetBackingStore().Set("completionReason", value)
     if err != nil {

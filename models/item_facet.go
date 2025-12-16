@@ -79,7 +79,7 @@ func CreateItemFacetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f
     }
     return NewItemFacet(), nil
 }
-// GetAllowedAudiences gets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
+// GetAllowedAudiences gets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. The possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
 // returns a *AllowedAudiences when successful
 func (m *ItemFacet) GetAllowedAudiences()(*AllowedAudiences) {
     val, err := m.GetBackingStore().Get("allowedAudiences")
@@ -358,7 +358,7 @@ func (m *ItemFacet) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c0
     }
     return nil
 }
-// SetAllowedAudiences sets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
+// SetAllowedAudiences sets the allowedAudiences property value. The audiences that are able to see the values contained within the associated entity. The possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.
 func (m *ItemFacet) SetAllowedAudiences(value *AllowedAudiences)() {
     err := m.GetBackingStore().Set("allowedAudiences", value)
     if err != nil {

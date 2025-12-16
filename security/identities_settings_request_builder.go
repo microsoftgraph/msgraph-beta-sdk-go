@@ -44,11 +44,6 @@ type IdentitiesSettingsRequestBuilderPatchRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// AutoAuditingConfiguration provides operations to manage the autoAuditingConfiguration property of the microsoft.graph.security.settingsContainer entity.
-// returns a *IdentitiesSettingsAutoAuditingConfigurationRequestBuilder when successful
-func (m *IdentitiesSettingsRequestBuilder) AutoAuditingConfiguration()(*IdentitiesSettingsAutoAuditingConfigurationRequestBuilder) {
-    return NewIdentitiesSettingsAutoAuditingConfigurationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
-}
 // NewIdentitiesSettingsRequestBuilderInternal instantiates a new IdentitiesSettingsRequestBuilder and sets the default values.
 func NewIdentitiesSettingsRequestBuilderInternal(pathParameters map[string]string, requestAdapter i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestAdapter)(*IdentitiesSettingsRequestBuilder) {
     m := &IdentitiesSettingsRequestBuilder{

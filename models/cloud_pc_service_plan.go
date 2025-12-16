@@ -120,7 +120,7 @@ func (m *CloudPcServicePlan) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
+// GetProvisioningType gets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. The possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
 // returns a *CloudPcProvisioningType when successful
 func (m *CloudPcServicePlan) GetProvisioningType()(*CloudPcProvisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
@@ -168,7 +168,7 @@ func (m *CloudPcServicePlan) GetSupportedSolution()(*CloudPcManagementService) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+// GetTypeEscaped gets the type property value. The type of the service plan. The possible values are: enterprise, business, unknownFutureValue. Read-only.
 // returns a *CloudPcServicePlanType when successful
 func (m *CloudPcServicePlan) GetTypeEscaped()(*CloudPcServicePlanType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -270,7 +270,7 @@ func (m *CloudPcServicePlan) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetProvisioningType sets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
+// SetProvisioningType sets the provisioningType property value. Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. The possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
 func (m *CloudPcServicePlan) SetProvisioningType(value *CloudPcProvisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {
@@ -298,7 +298,7 @@ func (m *CloudPcServicePlan) SetSupportedSolution(value *CloudPcManagementServic
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.
+// SetTypeEscaped sets the type property value. The type of the service plan. The possible values are: enterprise, business, unknownFutureValue. Read-only.
 func (m *CloudPcServicePlan) SetTypeEscaped(value *CloudPcServicePlanType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

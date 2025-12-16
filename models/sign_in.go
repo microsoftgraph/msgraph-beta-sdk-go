@@ -299,7 +299,7 @@ func (m *SignIn) GetCreatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a
     }
     return nil
 }
-// GetCrossTenantAccessType gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: passthrough. If the sign in didn't cross tenant boundaries, the value is none.
+// GetCrossTenantAccessType gets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. The possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: passthrough. If the sign in didn't cross tenant boundaries, the value is none.
 // returns a *SignInAccessType when successful
 func (m *SignIn) GetCrossTenantAccessType()(*SignInAccessType) {
     val, err := m.GetBackingStore().Get("crossTenantAccessType")
@@ -1567,7 +1567,7 @@ func (m *SignIn) GetSessionLifetimePolicies()([]SessionLifetimePolicyable) {
     }
     return nil
 }
-// GetSignInEventTypes gets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=signInEventTypes/any(t: t eq 'nonInteractiveUser').
+// GetSignInEventTypes gets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. The possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=signInEventTypes/any(t: t eq 'nonInteractiveUser').
 // returns a []string when successful
 func (m *SignIn) GetSignInEventTypes()([]string) {
     val, err := m.GetBackingStore().Get("signInEventTypes")
@@ -1591,7 +1591,7 @@ func (m *SignIn) GetSignInIdentifier()(*string) {
     }
     return nil
 }
-// GetSignInIdentifierType gets the signInIdentifierType property value. The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
+// GetSignInIdentifierType gets the signInIdentifierType property value. The type of sign in identifier. The possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
 // returns a *SignInIdentifierType when successful
 func (m *SignIn) GetSignInIdentifierType()(*SignInIdentifierType) {
     val, err := m.GetBackingStore().Get("signInIdentifierType")
@@ -1723,7 +1723,7 @@ func (m *SignIn) GetUserPrincipalName()(*string) {
     }
     return nil
 }
-// GetUserType gets the userType property value. Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
+// GetUserType gets the userType property value. Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
 // returns a *SignInUserType when successful
 func (m *SignIn) GetUserType()(*SignInUserType) {
     val, err := m.GetBackingStore().Get("userType")
@@ -2417,7 +2417,7 @@ func (m *SignIn) SetCreatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3
         panic(err)
     }
 }
-// SetCrossTenantAccessType sets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: passthrough. If the sign in didn't cross tenant boundaries, the value is none.
+// SetCrossTenantAccessType sets the crossTenantAccessType property value. Describes the type of cross-tenant access used by the actor to access the resource. The possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Use the Prefer: include-unknown-enum-members request header to get the following value or values in this evolvable enum: passthrough. If the sign in didn't cross tenant boundaries, the value is none.
 func (m *SignIn) SetCrossTenantAccessType(value *SignInAccessType)() {
     err := m.GetBackingStore().Set("crossTenantAccessType", value)
     if err != nil {
@@ -2676,7 +2676,7 @@ func (m *SignIn) SetSessionLifetimePolicies(value []SessionLifetimePolicyable)()
         panic(err)
     }
 }
-// SetSignInEventTypes sets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=signInEventTypes/any(t: t eq 'nonInteractiveUser').
+// SetSignInEventTypes sets the signInEventTypes property value. Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. The possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne). NOTE: Only interactive sign-ins are returned unless you set an explicit filter. For example, the filter for getting non-interactive sign-ins is https://graph.microsoft.com/beta/auditLogs/signIns?&$filter=signInEventTypes/any(t: t eq 'nonInteractiveUser').
 func (m *SignIn) SetSignInEventTypes(value []string)() {
     err := m.GetBackingStore().Set("signInEventTypes", value)
     if err != nil {
@@ -2690,7 +2690,7 @@ func (m *SignIn) SetSignInIdentifier(value *string)() {
         panic(err)
     }
 }
-// SetSignInIdentifierType sets the signInIdentifierType property value. The type of sign in identifier. Possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
+// SetSignInIdentifierType sets the signInIdentifierType property value. The type of sign in identifier. The possible values are: userPrincipalName, phoneNumber, proxyAddress, qrCode, onPremisesUserPrincipalName, unknownFutureValue.
 func (m *SignIn) SetSignInIdentifierType(value *SignInIdentifierType)() {
     err := m.GetBackingStore().Set("signInIdentifierType", value)
     if err != nil {
@@ -2767,7 +2767,7 @@ func (m *SignIn) SetUserPrincipalName(value *string)() {
         panic(err)
     }
 }
-// SetUserType sets the userType property value. Identifies whether the user is a member or guest in the tenant. Possible values are: member, guest, unknownFutureValue.
+// SetUserType sets the userType property value. Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
 func (m *SignIn) SetUserType(value *SignInUserType)() {
     err := m.GetBackingStore().Set("userType", value)
     if err != nil {

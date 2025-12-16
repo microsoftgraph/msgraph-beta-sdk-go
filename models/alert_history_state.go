@@ -80,7 +80,7 @@ func (m *AlertHistoryState) GetComments()([]string) {
     }
     return nil
 }
-// GetFeedback gets the feedback property value. Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
+// GetFeedback gets the feedback property value. Analyst feedback on the alert in this update. The possible values are: unknown, truePositive, falsePositive, benignPositive.
 // returns a *AlertFeedback when successful
 func (m *AlertHistoryState) GetFeedback()(*AlertFeedback) {
     val, err := m.GetBackingStore().Get("feedback")
@@ -196,7 +196,7 @@ func (m *AlertHistoryState) GetOdataType()(*string) {
     }
     return nil
 }
-// GetStatus gets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
+// GetStatus gets the status property value. Alert status value (if updated). The possible values are: unknown, newAlert, inProgress, resolved, dismissed.
 // returns a *AlertStatus when successful
 func (m *AlertHistoryState) GetStatus()(*AlertStatus) {
     val, err := m.GetBackingStore().Get("status")
@@ -324,7 +324,7 @@ func (m *AlertHistoryState) SetComments(value []string)() {
         panic(err)
     }
 }
-// SetFeedback sets the feedback property value. Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.
+// SetFeedback sets the feedback property value. Analyst feedback on the alert in this update. The possible values are: unknown, truePositive, falsePositive, benignPositive.
 func (m *AlertHistoryState) SetFeedback(value *AlertFeedback)() {
     err := m.GetBackingStore().Set("feedback", value)
     if err != nil {
@@ -338,7 +338,7 @@ func (m *AlertHistoryState) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetStatus sets the status property value. Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.
+// SetStatus sets the status property value. Alert status value (if updated). The possible values are: unknown, newAlert, inProgress, resolved, dismissed.
 func (m *AlertHistoryState) SetStatus(value *AlertStatus)() {
     err := m.GetBackingStore().Set("status", value)
     if err != nil {

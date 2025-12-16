@@ -255,7 +255,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordMinutesOfInactivityBefor
     }
     return nil
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 // returns a *AndroidDeviceOwnerRequiredPasswordType when successful
 func (m *AospDeviceOwnerDeviceConfiguration) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
@@ -481,7 +481,7 @@ func (m *AospDeviceOwnerDeviceConfiguration) SetPasswordMinutesOfInactivityBefor
         panic(err)
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Indicates the minimum password quality required on the device. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AospDeviceOwnerDeviceConfiguration) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
     err := m.GetBackingStore().Set("passwordRequiredType", value)
     if err != nil {

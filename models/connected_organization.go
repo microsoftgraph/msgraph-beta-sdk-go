@@ -255,7 +255,7 @@ func (m *ConnectedOrganization) GetModifiedDateTime()(*i336074805fc853987abe6f7f
     }
     return nil
 }
-// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+// GetState gets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. The possible values are: configured, proposed.
 // returns a *ConnectedOrganizationState when successful
 func (m *ConnectedOrganization) GetState()(*ConnectedOrganizationState) {
     val, err := m.GetBackingStore().Get("state")
@@ -417,7 +417,7 @@ func (m *ConnectedOrganization) SetModifiedDateTime(value *i336074805fc853987abe
         panic(err)
     }
 }
-// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. Possible values are: configured, proposed.
+// SetState sets the state property value. The state of a connected organization defines whether assignment policies with requestor scope type AllConfiguredConnectedOrganizationSubjects are applicable or not. The possible values are: configured, proposed.
 func (m *ConnectedOrganization) SetState(value *ConnectedOrganizationState)() {
     err := m.GetBackingStore().Set("state", value)
     if err != nil {

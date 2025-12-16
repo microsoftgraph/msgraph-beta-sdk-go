@@ -501,7 +501,7 @@ func (m *AppleVpnConfiguration) GetOptInToDeviceIdSharing()(*bool) {
     }
     return nil
 }
-// GetProviderType gets the providerType property value. Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.
+// GetProviderType gets the providerType property value. Provider type for per-app VPN. The possible values are: notConfigured, appProxy, packetTunnel.
 // returns a *VpnProviderType when successful
 func (m *AppleVpnConfiguration) GetProviderType()(*VpnProviderType) {
     val, err := m.GetBackingStore().Get("providerType")
@@ -846,7 +846,7 @@ func (m *AppleVpnConfiguration) SetOptInToDeviceIdSharing(value *bool)() {
         panic(err)
     }
 }
-// SetProviderType sets the providerType property value. Provider type for per-app VPN. Possible values are: notConfigured, appProxy, packetTunnel.
+// SetProviderType sets the providerType property value. Provider type for per-app VPN. The possible values are: notConfigured, appProxy, packetTunnel.
 func (m *AppleVpnConfiguration) SetProviderType(value *VpnProviderType)() {
     err := m.GetBackingStore().Set("providerType", value)
     if err != nil {

@@ -38,7 +38,7 @@ func (m *ConditionalAccessConditionSet) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAgentIdRiskLevels gets the agentIdRiskLevels property value. Agent identity risk levels included in the policy. Possible values are: low, medium, high, unknownFutureValue. This enumeration is multivalued.
+// GetAgentIdRiskLevels gets the agentIdRiskLevels property value. Agent identity risk levels included in the policy. The possible values are: low, medium, high, unknownFutureValue. This enumeration is multivalued.
 // returns a *ConditionalAccessAgentIdRiskLevels when successful
 func (m *ConditionalAccessConditionSet) GetAgentIdRiskLevels()(*ConditionalAccessAgentIdRiskLevels) {
     val, err := m.GetBackingStore().Get("agentIdRiskLevels")
@@ -91,7 +91,7 @@ func (m *ConditionalAccessConditionSet) GetClientApplications()(ConditionalAcces
     }
     return nil
 }
-// GetClientAppTypes gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member is deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
+// GetClientAppTypes gets the clientAppTypes property value. Client application types included in the policy. The possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member is deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
 // returns a []ConditionalAccessClientApp when successful
 func (m *ConditionalAccessConditionSet) GetClientAppTypes()([]ConditionalAccessClientApp) {
     val, err := m.GetBackingStore().Get("clientAppTypes")
@@ -355,7 +355,7 @@ func (m *ConditionalAccessConditionSet) GetPlatforms()(ConditionalAccessPlatform
     }
     return nil
 }
-// GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
+// GetServicePrincipalRiskLevels gets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. The possible values are: low, medium, high, none, unknownFutureValue.
 // returns a []RiskLevel when successful
 func (m *ConditionalAccessConditionSet) GetServicePrincipalRiskLevels()([]RiskLevel) {
     val, err := m.GetBackingStore().Get("servicePrincipalRiskLevels")
@@ -367,7 +367,7 @@ func (m *ConditionalAccessConditionSet) GetServicePrincipalRiskLevels()([]RiskLe
     }
     return nil
 }
-// GetSignInRiskLevels gets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
+// GetSignInRiskLevels gets the signInRiskLevels property value. Sign-in risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 // returns a []RiskLevel when successful
 func (m *ConditionalAccessConditionSet) GetSignInRiskLevels()([]RiskLevel) {
     val, err := m.GetBackingStore().Get("signInRiskLevels")
@@ -379,7 +379,7 @@ func (m *ConditionalAccessConditionSet) GetSignInRiskLevels()([]RiskLevel) {
     }
     return nil
 }
-// GetUserRiskLevels gets the userRiskLevels property value. User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
+// GetUserRiskLevels gets the userRiskLevels property value. User risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 // returns a []RiskLevel when successful
 func (m *ConditionalAccessConditionSet) GetUserRiskLevels()([]RiskLevel) {
     val, err := m.GetBackingStore().Get("userRiskLevels")
@@ -512,7 +512,7 @@ func (m *ConditionalAccessConditionSet) SetAdditionalData(value map[string]any)(
         panic(err)
     }
 }
-// SetAgentIdRiskLevels sets the agentIdRiskLevels property value. Agent identity risk levels included in the policy. Possible values are: low, medium, high, unknownFutureValue. This enumeration is multivalued.
+// SetAgentIdRiskLevels sets the agentIdRiskLevels property value. Agent identity risk levels included in the policy. The possible values are: low, medium, high, unknownFutureValue. This enumeration is multivalued.
 func (m *ConditionalAccessConditionSet) SetAgentIdRiskLevels(value *ConditionalAccessAgentIdRiskLevels)() {
     err := m.GetBackingStore().Set("agentIdRiskLevels", value)
     if err != nil {
@@ -544,7 +544,7 @@ func (m *ConditionalAccessConditionSet) SetClientApplications(value ConditionalA
         panic(err)
     }
 }
-// SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member is deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
+// SetClientAppTypes sets the clientAppTypes property value. Client application types included in the policy. The possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member is deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.
 func (m *ConditionalAccessConditionSet) SetClientAppTypes(value []ConditionalAccessClientApp)() {
     err := m.GetBackingStore().Set("clientAppTypes", value)
     if err != nil {
@@ -593,21 +593,21 @@ func (m *ConditionalAccessConditionSet) SetPlatforms(value ConditionalAccessPlat
         panic(err)
     }
 }
-// SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
+// SetServicePrincipalRiskLevels sets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. The possible values are: low, medium, high, none, unknownFutureValue.
 func (m *ConditionalAccessConditionSet) SetServicePrincipalRiskLevels(value []RiskLevel)() {
     err := m.GetBackingStore().Set("servicePrincipalRiskLevels", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSignInRiskLevels sets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
+// SetSignInRiskLevels sets the signInRiskLevels property value. Sign-in risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) SetSignInRiskLevels(value []RiskLevel)() {
     err := m.GetBackingStore().Set("signInRiskLevels", value)
     if err != nil {
         panic(err)
     }
 }
-// SetUserRiskLevels sets the userRiskLevels property value. User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
+// SetUserRiskLevels sets the userRiskLevels property value. User risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
 func (m *ConditionalAccessConditionSet) SetUserRiskLevels(value []RiskLevel)() {
     err := m.GetBackingStore().Set("userRiskLevels", value)
     if err != nil {

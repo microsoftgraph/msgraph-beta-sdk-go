@@ -23,32 +23,10 @@ func NewSettingsContainer()(*SettingsContainer) {
 func CreateSettingsContainerFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewSettingsContainer(), nil
 }
-// GetAutoAuditingConfiguration gets the autoAuditingConfiguration property value. Represents automatic configuration for collection of Windows event logs as needed for Defender for Identity sensors.
-// returns a AutoAuditingConfigurationable when successful
-func (m *SettingsContainer) GetAutoAuditingConfiguration()(AutoAuditingConfigurationable) {
-    val, err := m.GetBackingStore().Get("autoAuditingConfiguration")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(AutoAuditingConfigurationable)
-    }
-    return nil
-}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SettingsContainer) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
-    res["autoAuditingConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAutoAuditingConfigurationFromDiscriminatorValue)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetAutoAuditingConfiguration(val.(AutoAuditingConfigurationable))
-        }
-        return nil
-    }
     return res
 }
 // Serialize serializes information the current object
@@ -57,24 +35,9 @@ func (m *SettingsContainer) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     if err != nil {
         return err
     }
-    {
-        err = writer.WriteObjectValue("autoAuditingConfiguration", m.GetAutoAuditingConfiguration())
-        if err != nil {
-            return err
-        }
-    }
     return nil
-}
-// SetAutoAuditingConfiguration sets the autoAuditingConfiguration property value. Represents automatic configuration for collection of Windows event logs as needed for Defender for Identity sensors.
-func (m *SettingsContainer) SetAutoAuditingConfiguration(value AutoAuditingConfigurationable)() {
-    err := m.GetBackingStore().Set("autoAuditingConfiguration", value)
-    if err != nil {
-        panic(err)
-    }
 }
 type SettingsContainerable interface {
     ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAutoAuditingConfiguration()(AutoAuditingConfigurationable)
-    SetAutoAuditingConfiguration(value AutoAuditingConfigurationable)()
 }

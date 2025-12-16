@@ -46,7 +46,7 @@ func (m *AppConsentRequest) GetAppId()(*string) {
     }
     return nil
 }
-// GetConsentType gets the consentType property value. The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
+// GetConsentType gets the consentType property value. The consent type of the request. The possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
 // returns a *string when successful
 func (m *AppConsentRequest) GetConsentType()(*string) {
     val, err := m.GetBackingStore().Get("consentType")
@@ -214,7 +214,7 @@ func (m *AppConsentRequest) SetAppId(value *string)() {
         panic(err)
     }
 }
-// SetConsentType sets the consentType property value. The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
+// SetConsentType sets the consentType property value. The consent type of the request. The possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.
 func (m *AppConsentRequest) SetConsentType(value *string)() {
     err := m.GetBackingStore().Set("consentType", value)
     if err != nil {

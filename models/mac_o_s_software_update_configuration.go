@@ -199,7 +199,7 @@ func (m *MacOSSoftwareUpdateConfiguration) GetMaxUserDeferralsCount()(*int32) {
     }
     return nil
 }
-// GetPriority gets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.
+// GetPriority gets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. The possible values are: low, high, unknownFutureValue.
 // returns a *MacOSPriority when successful
 func (m *MacOSSoftwareUpdateConfiguration) GetPriority()(*MacOSPriority) {
     val, err := m.GetBackingStore().Get("priority")
@@ -351,7 +351,7 @@ func (m *MacOSSoftwareUpdateConfiguration) SetMaxUserDeferralsCount(value *int32
         panic(err)
     }
 }
-// SetPriority sets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.
+// SetPriority sets the priority property value. The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. The possible values are: low, high, unknownFutureValue.
 func (m *MacOSSoftwareUpdateConfiguration) SetPriority(value *MacOSPriority)() {
     err := m.GetBackingStore().Set("priority", value)
     if err != nil {

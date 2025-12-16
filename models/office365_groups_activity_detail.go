@@ -310,7 +310,7 @@ func (m *Office365GroupsActivityDetail) GetGroupId()(*string) {
     }
     return nil
 }
-// GetGroupType gets the groupType property value. The group type. Possible values are: Public or Private.
+// GetGroupType gets the groupType property value. The group type. The possible values are: Public or Private.
 // returns a *string when successful
 func (m *Office365GroupsActivityDetail) GetGroupType()(*string) {
     val, err := m.GetBackingStore().Get("groupType")
@@ -666,7 +666,7 @@ func (m *Office365GroupsActivityDetail) SetGroupId(value *string)() {
         panic(err)
     }
 }
-// SetGroupType sets the groupType property value. The group type. Possible values are: Public or Private.
+// SetGroupType sets the groupType property value. The group type. The possible values are: Public or Private.
 func (m *Office365GroupsActivityDetail) SetGroupType(value *string)() {
     err := m.GetBackingStore().Set("groupType", value)
     if err != nil {

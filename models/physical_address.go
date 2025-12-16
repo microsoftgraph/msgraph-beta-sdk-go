@@ -213,7 +213,7 @@ func (m *PhysicalAddress) GetStreet()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of address. Possible values are: unknown, home, business, other.
+// GetTypeEscaped gets the type property value. The type of address. The possible values are: unknown, home, business, other.
 // returns a *PhysicalAddressType when successful
 func (m *PhysicalAddress) GetTypeEscaped()(*PhysicalAddressType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -344,7 +344,7 @@ func (m *PhysicalAddress) SetStreet(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of address. Possible values are: unknown, home, business, other.
+// SetTypeEscaped sets the type property value. The type of address. The possible values are: unknown, home, business, other.
 func (m *PhysicalAddress) SetTypeEscaped(value *PhysicalAddressType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

@@ -43,7 +43,7 @@ func (m *InvitationParticipantInfo) GetAdditionalData()(map[string]any) {
 func (m *InvitationParticipantInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEndpointType gets the endpointType property value. The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
+// GetEndpointType gets the endpointType property value. The type of endpoint. The possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 // returns a *EndpointType when successful
 func (m *InvitationParticipantInfo) GetEndpointType()(*EndpointType) {
     val, err := m.GetBackingStore().Get("endpointType")
@@ -267,7 +267,7 @@ func (m *InvitationParticipantInfo) SetAdditionalData(value map[string]any)() {
 func (m *InvitationParticipantInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEndpointType sets the endpointType property value. The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
+// SetEndpointType sets the endpointType property value. The type of endpoint. The possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
 func (m *InvitationParticipantInfo) SetEndpointType(value *EndpointType)() {
     err := m.GetBackingStore().Set("endpointType", value)
     if err != nil {

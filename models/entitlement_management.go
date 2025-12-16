@@ -202,6 +202,18 @@ func (m *EntitlementManagement) GetConnectedOrganizations()([]ConnectedOrganizat
     }
     return nil
 }
+// GetControlConfigurations gets the controlConfigurations property value. Represents the policies that control lifecycle and access to access packages across the organization.
+// returns a []ControlConfigurationable when successful
+func (m *EntitlementManagement) GetControlConfigurations()([]ControlConfigurationable) {
+    val, err := m.GetBackingStore().Get("controlConfigurations")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]ControlConfigurationable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -446,6 +458,22 @@ func (m *EntitlementManagement) GetFieldDeserializers()(map[string]func(i878a80d
         }
         return nil
     }
+    res["controlConfigurations"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateControlConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]ControlConfigurationable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(ControlConfigurationable)
+                }
+            }
+            m.SetControlConfigurations(res)
+        }
+        return nil
+    }
     res["settings"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateEntitlementManagementSettingsFromDiscriminatorValue)
         if err != nil {
@@ -684,6 +712,18 @@ func (m *EntitlementManagement) Serialize(writer i878a80d2330e89d26896388a3f487e
             return err
         }
     }
+    if m.GetControlConfigurations() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetControlConfigurations()))
+        for i, v := range m.GetControlConfigurations() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("controlConfigurations", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err = writer.WriteObjectValue("settings", m.GetSettings())
         if err != nil {
@@ -809,6 +849,13 @@ func (m *EntitlementManagement) SetConnectedOrganizations(value []ConnectedOrgan
         panic(err)
     }
 }
+// SetControlConfigurations sets the controlConfigurations property value. Represents the policies that control lifecycle and access to access packages across the organization.
+func (m *EntitlementManagement) SetControlConfigurations(value []ControlConfigurationable)() {
+    err := m.GetBackingStore().Set("controlConfigurations", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSettings sets the settings property value. Represents the settings that control the behavior of Microsoft Entra entitlement management.
 func (m *EntitlementManagement) SetSettings(value EntitlementManagementSettingsable)() {
     err := m.GetBackingStore().Set("settings", value)
@@ -841,6 +888,7 @@ type EntitlementManagementable interface {
     GetAssignmentRequests()([]AccessPackageAssignmentRequestable)
     GetAvailableAccessPackages()([]AvailableAccessPackageable)
     GetConnectedOrganizations()([]ConnectedOrganizationable)
+    GetControlConfigurations()([]ControlConfigurationable)
     GetSettings()(EntitlementManagementSettingsable)
     GetSubjects()([]AccessPackageSubjectable)
     SetAccessPackageAssignmentApprovals(value []Approvalable)()
@@ -858,6 +906,7 @@ type EntitlementManagementable interface {
     SetAssignmentRequests(value []AccessPackageAssignmentRequestable)()
     SetAvailableAccessPackages(value []AvailableAccessPackageable)()
     SetConnectedOrganizations(value []ConnectedOrganizationable)()
+    SetControlConfigurations(value []ControlConfigurationable)()
     SetSettings(value EntitlementManagementSettingsable)()
     SetSubjects(value []AccessPackageSubjectable)()
 }

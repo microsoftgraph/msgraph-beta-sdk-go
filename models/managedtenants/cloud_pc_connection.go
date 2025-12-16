@@ -92,7 +92,7 @@ func (m *CloudPcConnection) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetHealthCheckStatus gets the healthCheckStatus property value. The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
+// GetHealthCheckStatus gets the healthCheckStatus property value. The health status of the cloud PC connection. The possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
 // returns a *string when successful
 func (m *CloudPcConnection) GetHealthCheckStatus()(*string) {
     val, err := m.GetBackingStore().Get("healthCheckStatus")
@@ -185,7 +185,7 @@ func (m *CloudPcConnection) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetHealthCheckStatus sets the healthCheckStatus property value. The health status of the cloud PC connection. Possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
+// SetHealthCheckStatus sets the healthCheckStatus property value. The health status of the cloud PC connection. The possible values are: pending, running, passed, failed, unknownFutureValue.  Required. Read-only.
 func (m *CloudPcConnection) SetHealthCheckStatus(value *string)() {
     err := m.GetBackingStore().Set("healthCheckStatus", value)
     if err != nil {

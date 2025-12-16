@@ -21,7 +21,7 @@ type ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuild
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetQueryParameters read the properties and relationships of a federatedIdentityCredential object.
+// ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetQueryParameters read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
 type ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -57,7 +57,7 @@ func NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBu
     urlParams["request-raw-url"] = rawUrl
     return NewItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Delete deletes a federatedIdentityCredential object from an application.
+// Delete delete a federatedIdentityCredential object from an application or an agentIdentityBlueprint.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -76,7 +76,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     }
     return nil
 }
-// Get read the properties and relationships of a federatedIdentityCredential object.
+// Get read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
 // returns a FederatedIdentityCredentialable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -99,7 +99,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable), nil
 }
-// Patch create a new federatedIdentityCredential object for an application if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+// Patch create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration or agentIdentityBlueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agentIdentityBlueprint.
 // returns a FederatedIdentityCredentialable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -122,7 +122,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable), nil
 }
-// ToDeleteRequestInformation deletes a federatedIdentityCredential object from an application.
+// ToDeleteRequestInformation delete a federatedIdentityCredential object from an application or an agentIdentityBlueprint.
 // returns a *RequestInformation when successful
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) ToDeleteRequestInformation(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.DELETE, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +133,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation read the properties and relationships of a federatedIdentityCredential object.
+// ToGetRequestInformation read the properties and relationships of a federatedIdentityCredential object assigned to an application or an agentIdentityBlueprint.
 // returns a *RequestInformation when successful
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -147,7 +147,7 @@ func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestB
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation create a new federatedIdentityCredential object for an application if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+// ToPatchRequestInformation create a new federatedIdentityCredential object for an application or an agentIdentityBlueprint if it doesn't exist, or update the properties of an existing federatedIdentityCredential object. By configuring a trust relationship between your Microsoft Entra application registration or agentIdentityBlueprint and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application or agentIdentityBlueprint.
 // returns a *RequestInformation when successful
 func (m *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilder) ToPatchRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.FederatedIdentityCredentialable, requestConfiguration *ItemFederatedIdentityCredentialsFederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

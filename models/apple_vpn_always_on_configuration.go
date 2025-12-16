@@ -39,7 +39,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAirPrintExceptionAction gets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+// GetAirPrintExceptionAction gets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. The possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 // returns a *VpnServiceExceptionAction when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetAirPrintExceptionAction()(*VpnServiceExceptionAction) {
     val, err := m.GetBackingStore().Get("airPrintExceptionAction")
@@ -92,7 +92,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetAllowedCaptiveNetworkPlugins()(Specif
 func (m *AppleVpnAlwaysOnConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCellularExceptionAction gets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+// GetCellularExceptionAction gets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. The possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 // returns a *VpnServiceExceptionAction when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetCellularExceptionAction()(*VpnServiceExceptionAction) {
     val, err := m.GetBackingStore().Get("cellularExceptionAction")
@@ -280,7 +280,7 @@ func (m *AppleVpnAlwaysOnConfiguration) GetUserToggleEnabled()(*bool) {
     }
     return nil
 }
-// GetVoicemailExceptionAction gets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+// GetVoicemailExceptionAction gets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. The possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 // returns a *VpnServiceExceptionAction when successful
 func (m *AppleVpnAlwaysOnConfiguration) GetVoicemailExceptionAction()(*VpnServiceExceptionAction) {
     val, err := m.GetBackingStore().Get("voicemailExceptionAction")
@@ -379,7 +379,7 @@ func (m *AppleVpnAlwaysOnConfiguration) SetAdditionalData(value map[string]any)(
         panic(err)
     }
 }
-// SetAirPrintExceptionAction sets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+// SetAirPrintExceptionAction sets the airPrintExceptionAction property value. Determine whether AirPrint service will be exempt from the always-on VPN connection. The possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 func (m *AppleVpnAlwaysOnConfiguration) SetAirPrintExceptionAction(value *VpnServiceExceptionAction)() {
     err := m.GetBackingStore().Set("airPrintExceptionAction", value)
     if err != nil {
@@ -411,7 +411,7 @@ func (m *AppleVpnAlwaysOnConfiguration) SetAllowedCaptiveNetworkPlugins(value Sp
 func (m *AppleVpnAlwaysOnConfiguration) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCellularExceptionAction sets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+// SetCellularExceptionAction sets the cellularExceptionAction property value. Determine whether Cellular service will be exempt from the always-on VPN connection. The possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 func (m *AppleVpnAlwaysOnConfiguration) SetCellularExceptionAction(value *VpnServiceExceptionAction)() {
     err := m.GetBackingStore().Set("cellularExceptionAction", value)
     if err != nil {
@@ -453,7 +453,7 @@ func (m *AppleVpnAlwaysOnConfiguration) SetUserToggleEnabled(value *bool)() {
         panic(err)
     }
 }
-// SetVoicemailExceptionAction sets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. Possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
+// SetVoicemailExceptionAction sets the voicemailExceptionAction property value. Determine whether voicemail service will be exempt from the always-on VPN connection. The possible values are: forceTrafficViaVPN, allowTrafficOutside, dropTraffic.
 func (m *AppleVpnAlwaysOnConfiguration) SetVoicemailExceptionAction(value *VpnServiceExceptionAction)() {
     err := m.GetBackingStore().Set("voicemailExceptionAction", value)
     if err != nil {

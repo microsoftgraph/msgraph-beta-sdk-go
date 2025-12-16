@@ -835,6 +835,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewContinuousAccessEvaluationPolicy(), nil
                     case "#microsoft.graph.contract":
                         return NewContract(), nil
+                    case "#microsoft.graph.controlConfiguration":
+                        return NewControlConfiguration(), nil
                     case "#microsoft.graph.conversation":
                         return NewConversation(), nil
                     case "#microsoft.graph.conversationMember":
@@ -1357,6 +1359,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEndUserNotification(), nil
                     case "#microsoft.graph.endUserNotificationDetail":
                         return NewEndUserNotificationDetail(), nil
+                    case "#microsoft.graph.endUserSettings":
+                        return NewEndUserSettings(), nil
                     case "#microsoft.graph.engagementAsyncOperation":
                         return NewEngagementAsyncOperation(), nil
                     case "#microsoft.graph.engagementConversation":
@@ -1393,6 +1397,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewEntitlementManagementSettings(), nil
                     case "#microsoft.graph.entra":
                         return NewEntra(), nil
+                    case "#microsoft.graph.entraIdProtectionRiskyUserApproval":
+                        return NewEntraIdProtectionRiskyUserApproval(), nil
                     case "#microsoft.graph.evaluateLabelJobResponse":
                         return NewEvaluateLabelJobResponse(), nil
                     case "#microsoft.graph.event":
@@ -1711,6 +1717,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewInformationProtectionLabel(), nil
                     case "#microsoft.graph.informationProtectionPolicy":
                         return NewInformationProtectionPolicy(), nil
+                    case "#microsoft.graph.insiderRiskyUserApproval":
+                        return NewInsiderRiskyUserApproval(), nil
                     case "#microsoft.graph.insightsSettings":
                         return NewInsightsSettings(), nil
                     case "#microsoft.graph.insightSummary":

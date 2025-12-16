@@ -50,7 +50,7 @@ func (m *AttendeeAvailability) GetAttendee()(AttendeeBaseable) {
     }
     return nil
 }
-// GetAvailability gets the availability property value. The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// GetAvailability gets the availability property value. The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 // returns a *FreeBusyStatus when successful
 func (m *AttendeeAvailability) GetAvailability()(*FreeBusyStatus) {
     val, err := m.GetBackingStore().Get("availability")
@@ -158,7 +158,7 @@ func (m *AttendeeAvailability) SetAttendee(value AttendeeBaseable)() {
         panic(err)
     }
 }
-// SetAvailability sets the availability property value. The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// SetAvailability sets the availability property value. The availability status of the attendee. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *AttendeeAvailability) SetAvailability(value *FreeBusyStatus)() {
     err := m.GetBackingStore().Set("availability", value)
     if err != nil {

@@ -593,7 +593,7 @@ func (m *CloudPcProvisioningPolicy) GetScopeIds()([]string) {
     }
     return nil
 }
-// GetUserExperienceType gets the userExperienceType property value. Specifies the type of cloud object the end user can access. Possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can't be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.
+// GetUserExperienceType gets the userExperienceType property value. Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can't be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.
 // returns a *CloudPcUserExperienceType when successful
 func (m *CloudPcProvisioningPolicy) GetUserExperienceType()(*CloudPcUserExperienceType) {
     val, err := m.GetBackingStore().Get("userExperienceType")
@@ -988,7 +988,7 @@ func (m *CloudPcProvisioningPolicy) SetScopeIds(value []string)() {
         panic(err)
     }
 }
-// SetUserExperienceType sets the userExperienceType property value. Specifies the type of cloud object the end user can access. Possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can't be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.
+// SetUserExperienceType sets the userExperienceType property value. Specifies the type of cloud object the end user can access. The possible values are: cloudPc, cloudApp, unknownFutureValue. cloudPc indicates that the end user can access the entire desktop. cloudApp indicates that the end user can only access apps published under this provisioning policy. The type can't be changed once the provisioning policy is created. If not specified during creation, the default value is cloudPc. When cloudApp is selected, the provisioningType must be sharedByEntraGroup. Supports $filter, $select, $orderBy.
 func (m *CloudPcProvisioningPolicy) SetUserExperienceType(value *CloudPcUserExperienceType)() {
     err := m.GetBackingStore().Set("userExperienceType", value)
     if err != nil {

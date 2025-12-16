@@ -38,7 +38,7 @@ func (m *SignInConditions) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAgentIdRiskLevel gets the agentIdRiskLevel property value. Agent identity risk levels included in the policy. Possible values are: none, low, medium, high, unknownFutureValue. This enumeration is multivalued.
+// GetAgentIdRiskLevel gets the agentIdRiskLevel property value. Agent identity risk levels included in the policy. The possible values are: none, low, medium, high, unknownFutureValue. This enumeration is multivalued.
 // returns a *AgentIdRiskLevel when successful
 func (m *SignInConditions) GetAgentIdRiskLevel()(*AgentIdRiskLevel) {
     val, err := m.GetBackingStore().Get("agentIdRiskLevel")
@@ -409,7 +409,7 @@ func (m *SignInConditions) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAgentIdRiskLevel sets the agentIdRiskLevel property value. Agent identity risk levels included in the policy. Possible values are: none, low, medium, high, unknownFutureValue. This enumeration is multivalued.
+// SetAgentIdRiskLevel sets the agentIdRiskLevel property value. Agent identity risk levels included in the policy. The possible values are: none, low, medium, high, unknownFutureValue. This enumeration is multivalued.
 func (m *SignInConditions) SetAgentIdRiskLevel(value *AgentIdRiskLevel)() {
     err := m.GetBackingStore().Set("agentIdRiskLevel", value)
     if err != nil {

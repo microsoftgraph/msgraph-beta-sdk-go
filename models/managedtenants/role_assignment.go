@@ -38,7 +38,7 @@ func (m *RoleAssignment) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAssignmentType gets the assignmentType property value. The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
+// GetAssignmentType gets the assignmentType property value. The type of the admin relationship(s) associated with the role assignment. The possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
 // returns a *DelegatedPrivilegeStatus when successful
 func (m *RoleAssignment) GetAssignmentType()(*DelegatedPrivilegeStatus) {
     val, err := m.GetBackingStore().Get("assignmentType")
@@ -163,7 +163,7 @@ func (m *RoleAssignment) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAssignmentType sets the assignmentType property value. The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
+// SetAssignmentType sets the assignmentType property value. The type of the admin relationship(s) associated with the role assignment. The possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.
 func (m *RoleAssignment) SetAssignmentType(value *DelegatedPrivilegeStatus)() {
     err := m.GetBackingStore().Set("assignmentType", value)
     if err != nil {

@@ -22,7 +22,7 @@ func NewUserConfiguration()(*UserConfiguration) {
 func CreateUserConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewUserConfiguration(), nil
 }
-// GetBinaryData gets the binaryData property value. The binaryData property
+// GetBinaryData gets the binaryData property value. Arbitrary binary data.
 // returns a []byte when successful
 func (m *UserConfiguration) GetBinaryData()([]byte) {
     val, err := m.GetBackingStore().Get("binaryData")
@@ -64,7 +64,7 @@ func (m *UserConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27
     }
     return nil
 }
-// SetBinaryData sets the binaryData property value. The binaryData property
+// SetBinaryData sets the binaryData property value. Arbitrary binary data.
 func (m *UserConfiguration) SetBinaryData(value []byte)() {
     err := m.GetBackingStore().Set("binaryData", value)
     if err != nil {

@@ -103,7 +103,7 @@ func (m *SearchRequest) GetEnableTopResults()(*bool) {
     }
     return nil
 }
-// GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
+// GetEntityTypes gets the entityTypes property value. One or more types of resources expected in the response. The possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
 // returns a []EntityType when successful
 func (m *SearchRequest) GetEntityTypes()([]EntityType) {
     val, err := m.GetBackingStore().Get("entityTypes")
@@ -675,7 +675,7 @@ func (m *SearchRequest) SetEnableTopResults(value *bool)() {
         panic(err)
     }
 }
-// SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
+// SetEntityTypes sets the entityTypes property value. One or more types of resources expected in the response. The possible values are: list, site, listItem, message, event, drive, driveItem, person, externalItem, acronym, bookmark, chatMessage. For details about combinations of two or more entity types that are supported in the same search request, see known limitations. Required.
 func (m *SearchRequest) SetEntityTypes(value []EntityType)() {
     err := m.GetBackingStore().Set("entityTypes", value)
     if err != nil {

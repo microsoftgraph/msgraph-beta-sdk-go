@@ -25,7 +25,7 @@ func NewCloudPcRemoteActionCapability()(*CloudPcRemoteActionCapability) {
 func CreateCloudPcRemoteActionCapabilityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcRemoteActionCapability(), nil
 }
-// GetActionCapability gets the actionCapability property value. Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: enabled, disabled. Default value is enabled.
+// GetActionCapability gets the actionCapability property value. Indicates the state of the supported action capability to perform a Cloud PC remote action. The possible values are: enabled, disabled. Default value is enabled.
 // returns a *ActionCapability when successful
 func (m *CloudPcRemoteActionCapability) GetActionCapability()(*ActionCapability) {
     val, err := m.GetBackingStore().Get("actionCapability")
@@ -37,7 +37,7 @@ func (m *CloudPcRemoteActionCapability) GetActionCapability()(*ActionCapability)
     }
     return nil
 }
-// GetActionName gets the actionName property value. The name of the supported Cloud PC remote action. Possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.
+// GetActionName gets the actionName property value. The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.
 // returns a *CloudPcRemoteActionName when successful
 func (m *CloudPcRemoteActionCapability) GetActionName()(*CloudPcRemoteActionName) {
     val, err := m.GetBackingStore().Get("actionName")
@@ -145,14 +145,14 @@ func (m *CloudPcRemoteActionCapability) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetActionCapability sets the actionCapability property value. Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: enabled, disabled. Default value is enabled.
+// SetActionCapability sets the actionCapability property value. Indicates the state of the supported action capability to perform a Cloud PC remote action. The possible values are: enabled, disabled. Default value is enabled.
 func (m *CloudPcRemoteActionCapability) SetActionCapability(value *ActionCapability)() {
     err := m.GetBackingStore().Set("actionCapability", value)
     if err != nil {
         panic(err)
     }
 }
-// SetActionName sets the actionName property value. The name of the supported Cloud PC remote action. Possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.
+// SetActionName sets the actionName property value. The name of the supported Cloud PC remote action. The possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.
 func (m *CloudPcRemoteActionCapability) SetActionName(value *CloudPcRemoteActionName)() {
     err := m.GetBackingStore().Set("actionName", value)
     if err != nil {

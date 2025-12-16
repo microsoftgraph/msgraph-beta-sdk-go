@@ -46,7 +46,7 @@ func (m *AgentIdentityBlueprint) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetSponsors gets the sponsors property value. The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances.
+// GetSponsors gets the sponsors property value. The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances. Required during the create operation.
 // returns a []DirectoryObjectable when successful
 func (m *AgentIdentityBlueprint) GetSponsors()([]DirectoryObjectable) {
     val, err := m.GetBackingStore().Get("sponsors")
@@ -78,7 +78,7 @@ func (m *AgentIdentityBlueprint) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetSponsors sets the sponsors property value. The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances.
+// SetSponsors sets the sponsors property value. The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances. Required during the create operation.
 func (m *AgentIdentityBlueprint) SetSponsors(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("sponsors", value)
     if err != nil {

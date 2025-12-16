@@ -143,7 +143,7 @@ func (m *EducationStudent) GetFieldDeserializers()(map[string]func(i878a80d2330e
     }
     return res
 }
-// GetGender gets the gender property value. Possible values are: female, male, other.
+// GetGender gets the gender property value. The possible values are: female, male, other.
 // returns a *EducationGender when successful
 func (m *EducationStudent) GetGender()(*EducationGender) {
     val, err := m.GetBackingStore().Get("gender")
@@ -281,7 +281,7 @@ func (m *EducationStudent) SetExternalId(value *string)() {
         panic(err)
     }
 }
-// SetGender sets the gender property value. Possible values are: female, male, other.
+// SetGender sets the gender property value. The possible values are: female, male, other.
 func (m *EducationStudent) SetGender(value *EducationGender)() {
     err := m.GetBackingStore().Set("gender", value)
     if err != nil {

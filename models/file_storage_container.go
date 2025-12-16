@@ -264,26 +264,6 @@ func (m *FileStorageContainer) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
-    res["isItemVersioningEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetBoolValue()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetIsItemVersioningEnabled(val)
-        }
-        return nil
-    }
-    res["itemMajorVersionLimit"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetItemMajorVersionLimit(val)
-        }
-        return nil
-    }
     res["lockState"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseSiteLockState)
         if err != nil {
@@ -429,30 +409,6 @@ func (m *FileStorageContainer) GetInformationBarrier()(InformationBarrierable) {
     }
     if val != nil {
         return val.(InformationBarrierable)
-    }
-    return nil
-}
-// GetIsItemVersioningEnabled gets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
-// returns a *bool when successful
-func (m *FileStorageContainer) GetIsItemVersioningEnabled()(*bool) {
-    val, err := m.GetBackingStore().Get("isItemVersioningEnabled")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*bool)
-    }
-    return nil
-}
-// GetItemMajorVersionLimit gets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
-// returns a *int32 when successful
-func (m *FileStorageContainer) GetItemMajorVersionLimit()(*int32) {
-    val, err := m.GetBackingStore().Get("itemMajorVersionLimit")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
     }
     return nil
 }
@@ -666,18 +622,6 @@ func (m *FileStorageContainer) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
-    {
-        err = writer.WriteBoolValue("isItemVersioningEnabled", m.GetIsItemVersioningEnabled())
-        if err != nil {
-            return err
-        }
-    }
-    {
-        err = writer.WriteInt32Value("itemMajorVersionLimit", m.GetItemMajorVersionLimit())
-        if err != nil {
-            return err
-        }
-    }
     if m.GetLockState() != nil {
         cast := (*m.GetLockState()).String()
         err = writer.WriteStringValue("lockState", &cast)
@@ -850,20 +794,6 @@ func (m *FileStorageContainer) SetInformationBarrier(value InformationBarrierabl
         panic(err)
     }
 }
-// SetIsItemVersioningEnabled sets the isItemVersioningEnabled property value. The isItemVersioningEnabled property
-func (m *FileStorageContainer) SetIsItemVersioningEnabled(value *bool)() {
-    err := m.GetBackingStore().Set("isItemVersioningEnabled", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetItemMajorVersionLimit sets the itemMajorVersionLimit property value. The itemMajorVersionLimit property
-func (m *FileStorageContainer) SetItemMajorVersionLimit(value *int32)() {
-    err := m.GetBackingStore().Set("itemMajorVersionLimit", value)
-    if err != nil {
-        panic(err)
-    }
-}
 // SetLockState sets the lockState property value. Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.
 func (m *FileStorageContainer) SetLockState(value *SiteLockState)() {
     err := m.GetBackingStore().Set("lockState", value)
@@ -955,8 +885,6 @@ type FileStorageContainerable interface {
     GetDrive()(Driveable)
     GetExternalGroupId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
     GetInformationBarrier()(InformationBarrierable)
-    GetIsItemVersioningEnabled()(*bool)
-    GetItemMajorVersionLimit()(*int32)
     GetLockState()(*SiteLockState)
     GetMigrationJobs()([]SharePointMigrationJobable)
     GetOwners()([]UserIdentityable)
@@ -979,8 +907,6 @@ type FileStorageContainerable interface {
     SetDrive(value Driveable)()
     SetExternalGroupId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
     SetInformationBarrier(value InformationBarrierable)()
-    SetIsItemVersioningEnabled(value *bool)()
-    SetItemMajorVersionLimit(value *int32)()
     SetLockState(value *SiteLockState)()
     SetMigrationJobs(value []SharePointMigrationJobable)()
     SetOwners(value []UserIdentityable)()

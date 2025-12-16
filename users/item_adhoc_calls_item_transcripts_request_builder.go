@@ -14,7 +14,7 @@ import (
 type ItemAdhocCallsItemTranscriptsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemAdhocCallsItemTranscriptsRequestBuilderGetQueryParameters retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported.  Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+// ItemAdhocCallsItemTranscriptsRequestBuilderGetQueryParameters retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
 type ItemAdhocCallsItemTranscriptsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -84,7 +84,7 @@ func (m *ItemAdhocCallsItemTranscriptsRequestBuilder) Count()(*ItemAdhocCallsIte
 func (m *ItemAdhocCallsItemTranscriptsRequestBuilder) Delta()(*ItemAdhocCallsItemTranscriptsDeltaRequestBuilder) {
     return NewItemAdhocCallsItemTranscriptsDeltaRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported.  Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+// Get retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
 // returns a CallTranscriptCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemAdhocCallsItemTranscriptsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemAdhocCallsItemTranscriptsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptCollectionResponseable, error) {
@@ -124,7 +124,7 @@ func (m *ItemAdhocCallsItemTranscriptsRequestBuilder) Post(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CallTranscriptable), nil
 }
-// ToGetRequestInformation retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported.  Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+// ToGetRequestInformation retrieve a callTranscript object associated with a scheduled onlineMeeting and an ad hoc call. This API supports the retrieval of call transcripts from private chat meetings and channel meetings, and ad hoc calls including PSTN, 1:1, and group calls. Private channel meetings are not supported. Retrieving the transcript returns the metadata of the single transcript associated with an online meeting or an ad hoc call. Retrieving the content of the transcript returns the stream of text associated with the transcript.
 // returns a *RequestInformation when successful
 func (m *ItemAdhocCallsItemTranscriptsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAdhocCallsItemTranscriptsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

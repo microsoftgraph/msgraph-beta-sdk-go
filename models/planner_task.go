@@ -721,7 +721,7 @@ func (m *PlannerTask) GetPlanId()(*string) {
     }
     return nil
 }
-// GetPreviewType gets the previewType property value. The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+// GetPreviewType gets the previewType property value. The type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
 // returns a *PlannerPreviewType when successful
 func (m *PlannerTask) GetPreviewType()(*PlannerPreviewType) {
     val, err := m.GetBackingStore().Get("previewType")
@@ -781,7 +781,7 @@ func (m *PlannerTask) GetReferenceCount()(*int32) {
     }
     return nil
 }
-// GetSpecifiedCompletionRequirements gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+// GetSpecifiedCompletionRequirements gets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. The possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
 // returns a *PlannerTaskCompletionRequirements when successful
 func (m *PlannerTask) GetSpecifiedCompletionRequirements()(*PlannerTaskCompletionRequirements) {
     val, err := m.GetBackingStore().Get("specifiedCompletionRequirements")
@@ -1226,7 +1226,7 @@ func (m *PlannerTask) SetPlanId(value *string)() {
         panic(err)
     }
 }
-// SetPreviewType sets the previewType property value. The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.
+// SetPreviewType sets the previewType property value. The type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference.
 func (m *PlannerTask) SetPreviewType(value *PlannerPreviewType)() {
     err := m.GetBackingStore().Set("previewType", value)
     if err != nil {
@@ -1261,7 +1261,7 @@ func (m *PlannerTask) SetReferenceCount(value *int32)() {
         panic(err)
     }
 }
-// SetSpecifiedCompletionRequirements sets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+// SetSpecifiedCompletionRequirements sets the specifiedCompletionRequirements property value. Indicates all the requirements specified on the plannerTask. The possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
 func (m *PlannerTask) SetSpecifiedCompletionRequirements(value *PlannerTaskCompletionRequirements)() {
     err := m.GetBackingStore().Set("specifiedCompletionRequirements", value)
     if err != nil {

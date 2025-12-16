@@ -136,7 +136,7 @@ func (m *IosVpnSecurityAssociationParameters) GetSecurityDiffieHellmanGroup()(*i
     }
     return nil
 }
-// GetSecurityEncryptionAlgorithm gets the securityEncryptionAlgorithm property value. Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
+// GetSecurityEncryptionAlgorithm gets the securityEncryptionAlgorithm property value. Encryption algorithm. The possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 // returns a *VpnEncryptionAlgorithmType when successful
 func (m *IosVpnSecurityAssociationParameters) GetSecurityEncryptionAlgorithm()(*VpnEncryptionAlgorithmType) {
     val, err := m.GetBackingStore().Get("securityEncryptionAlgorithm")
@@ -148,7 +148,7 @@ func (m *IosVpnSecurityAssociationParameters) GetSecurityEncryptionAlgorithm()(*
     }
     return nil
 }
-// GetSecurityIntegrityAlgorithm gets the securityIntegrityAlgorithm property value. Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
+// GetSecurityIntegrityAlgorithm gets the securityIntegrityAlgorithm property value. Integrity algorithm. The possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
 // returns a *VpnIntegrityAlgorithmType when successful
 func (m *IosVpnSecurityAssociationParameters) GetSecurityIntegrityAlgorithm()(*VpnIntegrityAlgorithmType) {
     val, err := m.GetBackingStore().Get("securityIntegrityAlgorithm")
@@ -234,14 +234,14 @@ func (m *IosVpnSecurityAssociationParameters) SetSecurityDiffieHellmanGroup(valu
         panic(err)
     }
 }
-// SetSecurityEncryptionAlgorithm sets the securityEncryptionAlgorithm property value. Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
+// SetSecurityEncryptionAlgorithm sets the securityEncryptionAlgorithm property value. Encryption algorithm. The possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 func (m *IosVpnSecurityAssociationParameters) SetSecurityEncryptionAlgorithm(value *VpnEncryptionAlgorithmType)() {
     err := m.GetBackingStore().Set("securityEncryptionAlgorithm", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSecurityIntegrityAlgorithm sets the securityIntegrityAlgorithm property value. Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
+// SetSecurityIntegrityAlgorithm sets the securityIntegrityAlgorithm property value. Integrity algorithm. The possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
 func (m *IosVpnSecurityAssociationParameters) SetSecurityIntegrityAlgorithm(value *VpnIntegrityAlgorithmType)() {
     err := m.GetBackingStore().Set("securityIntegrityAlgorithm", value)
     if err != nil {

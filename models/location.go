@@ -205,7 +205,7 @@ func (m *Location) GetLocationEmailAddress()(*string) {
     }
     return nil
 }
-// GetLocationType gets the locationType property value. The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+// GetLocationType gets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
 // returns a *LocationType when successful
 func (m *Location) GetLocationType()(*LocationType) {
     val, err := m.GetBackingStore().Get("locationType")
@@ -370,7 +370,7 @@ func (m *Location) SetLocationEmailAddress(value *string)() {
         panic(err)
     }
 }
-// SetLocationType sets the locationType property value. The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
+// SetLocationType sets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
 func (m *Location) SetLocationType(value *LocationType)() {
     err := m.GetBackingStore().Set("locationType", value)
     if err != nil {

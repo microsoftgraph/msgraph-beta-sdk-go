@@ -124,7 +124,7 @@ func (m *LanguageProficiency) GetProficiency()(*LanguageProficiencyLevel) {
     }
     return nil
 }
-// GetReading gets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// GetReading gets the reading property value. Represents the users reading comprehension for the language represented by the object. The possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 // returns a *LanguageProficiencyLevel when successful
 func (m *LanguageProficiency) GetReading()(*LanguageProficiencyLevel) {
     val, err := m.GetBackingStore().Get("reading")
@@ -136,7 +136,7 @@ func (m *LanguageProficiency) GetReading()(*LanguageProficiencyLevel) {
     }
     return nil
 }
-// GetSpoken gets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// GetSpoken gets the spoken property value. Represents the users spoken proficiency for the language represented by the object. The possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 // returns a *LanguageProficiencyLevel when successful
 func (m *LanguageProficiency) GetSpoken()(*LanguageProficiencyLevel) {
     val, err := m.GetBackingStore().Get("spoken")
@@ -172,7 +172,7 @@ func (m *LanguageProficiency) GetThumbnailUrl()(*string) {
     }
     return nil
 }
-// GetWritten gets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// GetWritten gets the written property value. Represents the users written proficiency for the language represented by the object. The possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 // returns a *LanguageProficiencyLevel when successful
 func (m *LanguageProficiency) GetWritten()(*LanguageProficiencyLevel) {
     val, err := m.GetBackingStore().Get("written")
@@ -252,14 +252,14 @@ func (m *LanguageProficiency) SetProficiency(value *LanguageProficiencyLevel)() 
         panic(err)
     }
 }
-// SetReading sets the reading property value. Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// SetReading sets the reading property value. Represents the users reading comprehension for the language represented by the object. The possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) SetReading(value *LanguageProficiencyLevel)() {
     err := m.GetBackingStore().Set("reading", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSpoken sets the spoken property value. Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// SetSpoken sets the spoken property value. Represents the users spoken proficiency for the language represented by the object. The possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) SetSpoken(value *LanguageProficiencyLevel)() {
     err := m.GetBackingStore().Set("spoken", value)
     if err != nil {
@@ -280,7 +280,7 @@ func (m *LanguageProficiency) SetThumbnailUrl(value *string)() {
         panic(err)
     }
 }
-// SetWritten sets the written property value. Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
+// SetWritten sets the written property value. Represents the users written proficiency for the language represented by the object. The possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.
 func (m *LanguageProficiency) SetWritten(value *LanguageProficiencyLevel)() {
     err := m.GetBackingStore().Set("written", value)
     if err != nil {

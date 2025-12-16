@@ -143,6 +143,11 @@ func NewEntitlementManagementRequestBuilder(rawUrl string, requestAdapter i2ae41
     urlParams["request-raw-url"] = rawUrl
     return NewEntitlementManagementRequestBuilderInternal(urlParams, requestAdapter)
 }
+// ControlConfigurations provides operations to manage the controlConfigurations property of the microsoft.graph.entitlementManagement entity.
+// returns a *EntitlementManagementControlConfigurationsRequestBuilder when successful
+func (m *EntitlementManagementRequestBuilder) ControlConfigurations()(*EntitlementManagementControlConfigurationsRequestBuilder) {
+    return NewEntitlementManagementControlConfigurationsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Delete delete navigation property entitlementManagement for identityGovernance
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *EntitlementManagementRequestBuilder) Delete(ctx context.Context, requestConfiguration *EntitlementManagementRequestBuilderDeleteRequestConfiguration)(error) {

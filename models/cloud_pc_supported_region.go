@@ -100,7 +100,7 @@ func (m *CloudPcSupportedRegion) GetFieldDeserializers()(map[string]func(i878a80
     }
     return res
 }
-// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
+// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
 // returns a *CloudPcGeographicLocationType when successful
 func (m *CloudPcSupportedRegion) GetGeographicLocationType()(*CloudPcGeographicLocationType) {
     val, err := m.GetBackingStore().Get("geographicLocationType")
@@ -136,7 +136,7 @@ func (m *CloudPcSupportedRegion) GetRegionRestrictionDetail()(CloudPcSupportedRe
     }
     return nil
 }
-// GetRegionStatus gets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
+// GetRegionStatus gets the regionStatus property value. The status of the supported region. The possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
 // returns a *CloudPcSupportedRegionStatus when successful
 func (m *CloudPcSupportedRegion) GetRegionStatus()(*CloudPcSupportedRegionStatus) {
     val, err := m.GetBackingStore().Get("regionStatus")
@@ -215,7 +215,7 @@ func (m *CloudPcSupportedRegion) SetDisplayName(value *string)() {
         panic(err)
     }
 }
-// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. Possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
+// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
 func (m *CloudPcSupportedRegion) SetGeographicLocationType(value *CloudPcGeographicLocationType)() {
     err := m.GetBackingStore().Set("geographicLocationType", value)
     if err != nil {
@@ -236,7 +236,7 @@ func (m *CloudPcSupportedRegion) SetRegionRestrictionDetail(value CloudPcSupport
         panic(err)
     }
 }
-// SetRegionStatus sets the regionStatus property value. The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
+// SetRegionStatus sets the regionStatus property value. The status of the supported region. The possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
 func (m *CloudPcSupportedRegion) SetRegionStatus(value *CloudPcSupportedRegionStatus)() {
     err := m.GetBackingStore().Set("regionStatus", value)
     if err != nil {

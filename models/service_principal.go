@@ -286,7 +286,7 @@ func (m *ServicePrincipal) GetDescription()(*string) {
     }
     return nil
 }
-// GetDisabledByMicrosoftStatus gets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
+// GetDisabledByMicrosoftStatus gets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 // returns a *string when successful
 func (m *ServicePrincipal) GetDisabledByMicrosoftStatus()(*string) {
     val, err := m.GetBackingStore().Get("disabledByMicrosoftStatus")
@@ -2186,7 +2186,7 @@ func (m *ServicePrincipal) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
+// SetDisabledByMicrosoftStatus sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. The possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
 func (m *ServicePrincipal) SetDisabledByMicrosoftStatus(value *string)() {
     err := m.GetBackingStore().Set("disabledByMicrosoftStatus", value)
     if err != nil {

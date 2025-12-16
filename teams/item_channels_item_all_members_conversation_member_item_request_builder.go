@@ -21,7 +21,7 @@ type ItemChannelsItemAllMembersConversationMemberItemRequestBuilderDeleteRequest
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemChannelsItemAllMembersConversationMemberItemRequestBuilderGetQueryParameters a collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+// ItemChannelsItemAllMembersConversationMemberItemRequestBuilderGetQueryParameters retrieve a single conversationMember (direct or indirect) from the allMembers collection using the membership ID. This API provides access to the following member types:- *Direct members*: Users who are added directly to the channel, including users from other tenants (cross-tenant).- *Indirect members*: Users who are members of a team with which the channel is shared, including teams in the same tenant or in a different tenant (cross-tenant). When you retrieve an indirect member, the @microsoft.graph.originalSourceMembershipUrl property identifies the original source team, which indicates that the user is an indirect member of the shared channel.
 type ItemChannelsItemAllMembersConversationMemberItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *ItemChannelsItemAllMembersConversationMemberItemRequestBuilder) Delete(
     }
     return nil
 }
-// Get a collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+// Get retrieve a single conversationMember (direct or indirect) from the allMembers collection using the membership ID. This API provides access to the following member types:- *Direct members*: Users who are added directly to the channel, including users from other tenants (cross-tenant).- *Indirect members*: Users who are members of a team with which the channel is shared, including teams in the same tenant or in a different tenant (cross-tenant). When you retrieve an indirect member, the @microsoft.graph.originalSourceMembershipUrl property identifies the original source team, which indicates that the user is an indirect member of the shared channel.
 // returns a ConversationMemberable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/channel-get-allmembers?view=graph-rest-beta
 func (m *ItemChannelsItemAllMembersConversationMemberItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemChannelsItemAllMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConversationMemberable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ItemChannelsItemAllMembersConversationMemberItemRequestBuilder) ToDelet
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation a collection of membership records associated with the channel. It includes both direct and indirect members of shared channels.
+// ToGetRequestInformation retrieve a single conversationMember (direct or indirect) from the allMembers collection using the membership ID. This API provides access to the following member types:- *Direct members*: Users who are added directly to the channel, including users from other tenants (cross-tenant).- *Indirect members*: Users who are members of a team with which the channel is shared, including teams in the same tenant or in a different tenant (cross-tenant). When you retrieve an indirect member, the @microsoft.graph.originalSourceMembershipUrl property identifies the original source team, which indicates that the user is an indirect member of the shared channel.
 // returns a *RequestInformation when successful
 func (m *ItemChannelsItemAllMembersConversationMemberItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemChannelsItemAllMembersConversationMemberItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

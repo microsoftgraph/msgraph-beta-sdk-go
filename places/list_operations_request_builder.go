@@ -13,7 +13,7 @@ import (
 type ListOperationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ListOperationsRequestBuilderGetQueryParameters invoke function listOperations
+// ListOperationsRequestBuilderGetQueryParameters list all existing placeOperation objects. This API doesn't return operation details.
 type ListOperationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -54,10 +54,13 @@ func NewListOperationsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7dae
     urlParams["request-raw-url"] = rawUrl
     return NewListOperationsRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get invoke function listOperations
+// Get list all existing placeOperation objects. This API doesn't return operation details.
 // Deprecated: This method is obsolete. Use GetAsListOperationsGetResponse instead.
 // returns a ListOperationsResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/place-listoperations?view=graph-rest-beta
 func (m *ListOperationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ListOperationsRequestBuilderGetRequestConfiguration)(ListOperationsResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -75,9 +78,12 @@ func (m *ListOperationsRequestBuilder) Get(ctx context.Context, requestConfigura
     }
     return res.(ListOperationsResponseable), nil
 }
-// GetAsListOperationsGetResponse invoke function listOperations
+// GetAsListOperationsGetResponse list all existing placeOperation objects. This API doesn't return operation details.
 // returns a ListOperationsGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/place-listoperations?view=graph-rest-beta
 func (m *ListOperationsRequestBuilder) GetAsListOperationsGetResponse(ctx context.Context, requestConfiguration *ListOperationsRequestBuilderGetRequestConfiguration)(ListOperationsGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -95,7 +101,7 @@ func (m *ListOperationsRequestBuilder) GetAsListOperationsGetResponse(ctx contex
     }
     return res.(ListOperationsGetResponseable), nil
 }
-// ToGetRequestInformation invoke function listOperations
+// ToGetRequestInformation list all existing placeOperation objects. This API doesn't return operation details.
 // returns a *RequestInformation when successful
 func (m *ListOperationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ListOperationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

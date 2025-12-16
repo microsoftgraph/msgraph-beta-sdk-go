@@ -21,7 +21,7 @@ type ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderDeleteRequestCon
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderGetQueryParameters get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from private chat meetings, channel meetings, ad hoc calls, including PSTN, 1:1, and group calls. Private channel meetings are not supported. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
+// ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderGetQueryParameters get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
 type ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -78,7 +78,7 @@ func (m *ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilder) Delete(ctx
     }
     return nil
 }
-// Get get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from private chat meetings, channel meetings, ad hoc calls, including PSTN, 1:1, and group calls. Private channel meetings are not supported. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
+// Get get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
 // returns a CallRecordingable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
@@ -132,7 +132,7 @@ func (m *ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilder) ToDeleteRe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from private chat meetings, channel meetings, ad hoc calls, including PSTN, 1:1, and group calls. Private channel meetings are not supported. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
+// ToGetRequestInformation get a callRecording object associated with a scheduled online meeting and an ad hoc call. This API supports the retrieval of call recordings from all meeting types except live events. For a recording, this API returns the metadata of the single recording associated with the online meeting or an ad hoc call. For the content of a recording, this API returns the stream of bytes associated with the recording.
 // returns a *RequestInformation when successful
 func (m *ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemAdhocCallsItemRecordingsCallRecordingItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

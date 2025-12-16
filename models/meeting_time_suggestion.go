@@ -213,7 +213,7 @@ func (m *MeetingTimeSuggestion) GetOrder()(*int32) {
     }
     return nil
 }
-// GetOrganizerAvailability gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// GetOrganizerAvailability gets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 // returns a *FreeBusyStatus when successful
 func (m *MeetingTimeSuggestion) GetOrganizerAvailability()(*FreeBusyStatus) {
     val, err := m.GetBackingStore().Get("organizerAvailability")
@@ -361,7 +361,7 @@ func (m *MeetingTimeSuggestion) SetOrder(value *int32)() {
         panic(err)
     }
 }
-// SetOrganizerAvailability sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
+// SetOrganizerAvailability sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
 func (m *MeetingTimeSuggestion) SetOrganizerAvailability(value *FreeBusyStatus)() {
     err := m.GetBackingStore().Set("organizerAvailability", value)
     if err != nil {

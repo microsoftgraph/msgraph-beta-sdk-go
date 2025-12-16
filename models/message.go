@@ -605,7 +605,7 @@ func (m *Message) GetImportance()(*Importance) {
     }
     return nil
 }
-// GetInferenceClassification gets the inferenceClassification property value. The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: focused, other.
+// GetInferenceClassification gets the inferenceClassification property value. The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. The possible values are: focused, other.
 // returns a *InferenceClassificationType when successful
 func (m *Message) GetInferenceClassification()(*InferenceClassificationType) {
     val, err := m.GetBackingStore().Get("inferenceClassification")
@@ -1227,7 +1227,7 @@ func (m *Message) SetImportance(value *Importance)() {
         panic(err)
     }
 }
-// SetInferenceClassification sets the inferenceClassification property value. The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. Possible values are: focused, other.
+// SetInferenceClassification sets the inferenceClassification property value. The classification of the message for the user, based on inferred relevance or importance, or on an explicit override. The possible values are: focused, other.
 func (m *Message) SetInferenceClassification(value *InferenceClassificationType)() {
     err := m.GetBackingStore().Set("inferenceClassification", value)
     if err != nil {

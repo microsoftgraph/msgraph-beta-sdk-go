@@ -14,7 +14,7 @@ import (
 type ItemGraphDeskChildrenPlaceItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGraphDeskChildrenPlaceItemRequestBuilderGetQueryParameters get children from places
+// ItemGraphDeskChildrenPlaceItemRequestBuilderGetQueryParameters a collection of children places that is only used in the Upsert places API.
 type ItemGraphDeskChildrenPlaceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewItemGraphDeskChildrenPlaceItemRequestBuilder(rawUrl string, requestAdapt
     urlParams["request-raw-url"] = rawUrl
     return NewItemGraphDeskChildrenPlaceItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get children from places
+// Get a collection of children places that is only used in the Upsert places API.
 // returns a Placeable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphDeskChildrenPlaceItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphDeskChildrenPlaceItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable, error) {
@@ -63,7 +63,7 @@ func (m *ItemGraphDeskChildrenPlaceItemRequestBuilder) Get(ctx context.Context, 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.Placeable), nil
 }
-// ToGetRequestInformation get children from places
+// ToGetRequestInformation a collection of children places that is only used in the Upsert places API.
 // returns a *RequestInformation when successful
 func (m *ItemGraphDeskChildrenPlaceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphDeskChildrenPlaceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

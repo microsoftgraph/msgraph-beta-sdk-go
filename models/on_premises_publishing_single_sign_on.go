@@ -103,7 +103,7 @@ func (m *OnPremisesPublishingSingleSignOn) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSingleSignOnMode gets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
+// GetSingleSignOnMode gets the singleSignOnMode property value. The preferred single-sign on mode for the application. The possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
 // returns a *SingleSignOnMode when successful
 func (m *OnPremisesPublishingSingleSignOn) GetSingleSignOnMode()(*SingleSignOnMode) {
     val, err := m.GetBackingStore().Get("singleSignOnMode")
@@ -169,7 +169,7 @@ func (m *OnPremisesPublishingSingleSignOn) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSingleSignOnMode sets the singleSignOnMode property value. The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
+// SetSingleSignOnMode sets the singleSignOnMode property value. The preferred single-sign on mode for the application. The possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased, oAuthToken.
 func (m *OnPremisesPublishingSingleSignOn) SetSingleSignOnMode(value *SingleSignOnMode)() {
     err := m.GetBackingStore().Set("singleSignOnMode", value)
     if err != nil {

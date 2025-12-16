@@ -103,7 +103,7 @@ func (m *CloudPcUserSettingsPersistenceConfiguration) GetUserSettingsPersistence
     }
     return nil
 }
-// GetUserSettingsPersistenceStorageSizeCategory gets the userSettingsPersistenceStorageSizeCategory property value. Indicates the storage size for persisting user application settings. Possible values are: fourGB, eightGB, sixteenGB, thirtyTwoGB, sixtyFourGB, unknownFutureValue. The default value is fourGB.
+// GetUserSettingsPersistenceStorageSizeCategory gets the userSettingsPersistenceStorageSizeCategory property value. Indicates the storage size for persisting user application settings. The possible values are: fourGB, eightGB, sixteenGB, thirtyTwoGB, sixtyFourGB, unknownFutureValue. The default value is fourGB.
 // returns a *CloudPcUserSettingsPersistenceStorageSizeCategory when successful
 func (m *CloudPcUserSettingsPersistenceConfiguration) GetUserSettingsPersistenceStorageSizeCategory()(*CloudPcUserSettingsPersistenceStorageSizeCategory) {
     val, err := m.GetBackingStore().Get("userSettingsPersistenceStorageSizeCategory")
@@ -169,7 +169,7 @@ func (m *CloudPcUserSettingsPersistenceConfiguration) SetUserSettingsPersistence
         panic(err)
     }
 }
-// SetUserSettingsPersistenceStorageSizeCategory sets the userSettingsPersistenceStorageSizeCategory property value. Indicates the storage size for persisting user application settings. Possible values are: fourGB, eightGB, sixteenGB, thirtyTwoGB, sixtyFourGB, unknownFutureValue. The default value is fourGB.
+// SetUserSettingsPersistenceStorageSizeCategory sets the userSettingsPersistenceStorageSizeCategory property value. Indicates the storage size for persisting user application settings. The possible values are: fourGB, eightGB, sixteenGB, thirtyTwoGB, sixtyFourGB, unknownFutureValue. The default value is fourGB.
 func (m *CloudPcUserSettingsPersistenceConfiguration) SetUserSettingsPersistenceStorageSizeCategory(value *CloudPcUserSettingsPersistenceStorageSizeCategory)() {
     err := m.GetBackingStore().Set("userSettingsPersistenceStorageSizeCategory", value)
     if err != nil {

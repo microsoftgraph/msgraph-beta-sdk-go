@@ -55,7 +55,7 @@ func (m *ParticipantInfo) GetCountryCode()(*string) {
     }
     return nil
 }
-// GetEndpointType gets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
+// GetEndpointType gets the endpointType property value. The type of endpoint the participant is using. The possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
 // returns a *EndpointType when successful
 func (m *ParticipantInfo) GetEndpointType()(*EndpointType) {
     val, err := m.GetBackingStore().Get("endpointType")
@@ -330,7 +330,7 @@ func (m *ParticipantInfo) SetCountryCode(value *string)() {
         panic(err)
     }
 }
-// SetEndpointType sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
+// SetEndpointType sets the endpointType property value. The type of endpoint the participant is using. The possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.
 func (m *ParticipantInfo) SetEndpointType(value *EndpointType)() {
     err := m.GetBackingStore().Set("endpointType", value)
     if err != nil {

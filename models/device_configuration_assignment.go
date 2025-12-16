@@ -69,7 +69,7 @@ func (m *DeviceConfigurationAssignment) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetIntent gets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
+// GetIntent gets the intent property value. The admin intent to apply or remove the profile. The possible values are: apply, remove.
 // returns a *DeviceConfigAssignmentIntent when successful
 func (m *DeviceConfigurationAssignment) GetIntent()(*DeviceConfigAssignmentIntent) {
     val, err := m.GetBackingStore().Get("intent")
@@ -145,7 +145,7 @@ func (m *DeviceConfigurationAssignment) Serialize(writer i878a80d2330e89d2689638
     }
     return nil
 }
-// SetIntent sets the intent property value. The admin intent to apply or remove the profile. Possible values are: apply, remove.
+// SetIntent sets the intent property value. The admin intent to apply or remove the profile. The possible values are: apply, remove.
 func (m *DeviceConfigurationAssignment) SetIntent(value *DeviceConfigAssignmentIntent)() {
     err := m.GetBackingStore().Set("intent", value)
     if err != nil {
