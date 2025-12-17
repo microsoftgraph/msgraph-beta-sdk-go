@@ -373,7 +373,7 @@ func (m *Channel) GetIsFavoriteByDefault()(*bool) {
     }
     return nil
 }
-// GetLayoutType gets the layoutType property value. The layoutType property
+// GetLayoutType gets the layoutType property value. The layout type of the channel. Can be set during creation and can be updated. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with post layout use traditional post-reply conversation format, while channels with chat layout provide a chat-like threading experience similar to group chats.
 // returns a *ChannelLayoutType when successful
 func (m *Channel) GetLayoutType()(*ChannelLayoutType) {
     val, err := m.GetBackingStore().Get("layoutType")
@@ -734,7 +734,7 @@ func (m *Channel) SetIsFavoriteByDefault(value *bool)() {
         panic(err)
     }
 }
-// SetLayoutType sets the layoutType property value. The layoutType property
+// SetLayoutType sets the layoutType property value. The layout type of the channel. Can be set during creation and can be updated. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with post layout use traditional post-reply conversation format, while channels with chat layout provide a chat-like threading experience similar to group chats.
 func (m *Channel) SetLayoutType(value *ChannelLayoutType)() {
     err := m.GetBackingStore().Set("layoutType", value)
     if err != nil {

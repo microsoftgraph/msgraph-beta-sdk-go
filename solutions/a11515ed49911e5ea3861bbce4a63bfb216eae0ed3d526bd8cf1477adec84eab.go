@@ -37,9 +37,12 @@ func NewSharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrinci
     urlParams["request-raw-url"] = rawUrl
     return NewSharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getBySourceUserPrincipalName
+// Get get a sharePointMigrationTask that was previously created for a user, using the source userPrincipalName. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
 // returns a SharePointMigrationTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/sharepointmigrationtask-getbysourceuserprincipalname?view=graph-rest-beta
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder) Get(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -57,7 +60,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrinc
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable), nil
 }
-// ToGetRequestInformation invoke function getBySourceUserPrincipalName
+// ToGetRequestInformation get a sharePointMigrationTask that was previously created for a user, using the source userPrincipalName. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

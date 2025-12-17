@@ -96,7 +96,7 @@ func (m *SourceCollection) GetCustodianSources()([]DataSourceable) {
     }
     return nil
 }
-// GetDataSourceScopes gets the dataSourceScopes property value. When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
+// GetDataSourceScopes gets the dataSourceScopes property value. When specified, the collection spans across a service for an entire workload. The possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
 // returns a *DataSourceScopes when successful
 func (m *SourceCollection) GetDataSourceScopes()(*DataSourceScopes) {
     val, err := m.GetBackingStore().Get("dataSourceScopes")
@@ -481,7 +481,7 @@ func (m *SourceCollection) SetCustodianSources(value []DataSourceable)() {
         panic(err)
     }
 }
-// SetDataSourceScopes sets the dataSourceScopes property value. When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
+// SetDataSourceScopes sets the dataSourceScopes property value. When specified, the collection spans across a service for an entire workload. The possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
 func (m *SourceCollection) SetDataSourceScopes(value *DataSourceScopes)() {
     err := m.GetBackingStore().Set("dataSourceScopes", value)
     if err != nil {

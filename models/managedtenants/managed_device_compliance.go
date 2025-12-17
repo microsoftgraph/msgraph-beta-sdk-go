@@ -24,7 +24,7 @@ func NewManagedDeviceCompliance()(*ManagedDeviceCompliance) {
 func CreateManagedDeviceComplianceFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDeviceCompliance(), nil
 }
-// GetComplianceStatus gets the complianceStatus property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
+// GetComplianceStatus gets the complianceStatus property value. Compliance state of the device. This property is read-only. The possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
 // returns a *string when successful
 func (m *ManagedDeviceCompliance) GetComplianceStatus()(*string) {
     val, err := m.GetBackingStore().Get("complianceStatus")
@@ -36,7 +36,7 @@ func (m *ManagedDeviceCompliance) GetComplianceStatus()(*string) {
     }
     return nil
 }
-// GetDeviceType gets the deviceType property value. Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
+// GetDeviceType gets the deviceType property value. Platform of the device. This property is read-only. The possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
 // returns a *string when successful
 func (m *ManagedDeviceCompliance) GetDeviceType()(*string) {
     val, err := m.GetBackingStore().Get("deviceType")
@@ -430,14 +430,14 @@ func (m *ManagedDeviceCompliance) Serialize(writer i878a80d2330e89d26896388a3f48
     }
     return nil
 }
-// SetComplianceStatus sets the complianceStatus property value. Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
+// SetComplianceStatus sets the complianceStatus property value. Compliance state of the device. This property is read-only. The possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager. Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetComplianceStatus(value *string)() {
     err := m.GetBackingStore().Set("complianceStatus", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeviceType sets the deviceType property value. Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
+// SetDeviceType sets the deviceType property value. Platform of the device. This property is read-only. The possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.  Optional. Read-only.
 func (m *ManagedDeviceCompliance) SetDeviceType(value *string)() {
     err := m.GetBackingStore().Set("deviceType", value)
     if err != nil {

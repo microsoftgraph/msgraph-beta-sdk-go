@@ -101,7 +101,7 @@ func (m *CloudPcRestorePointSetting) GetFrequencyInHours()(*int32) {
     }
     return nil
 }
-// GetFrequencyType gets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
+// GetFrequencyType gets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. The possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
 // returns a *CloudPcRestorePointFrequencyType when successful
 func (m *CloudPcRestorePointSetting) GetFrequencyType()(*CloudPcRestorePointFrequencyType) {
     val, err := m.GetBackingStore().Get("frequencyType")
@@ -190,7 +190,7 @@ func (m *CloudPcRestorePointSetting) SetFrequencyInHours(value *int32)() {
         panic(err)
     }
 }
-// SetFrequencyType sets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
+// SetFrequencyType sets the frequencyType property value. The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. The possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.
 func (m *CloudPcRestorePointSetting) SetFrequencyType(value *CloudPcRestorePointFrequencyType)() {
     err := m.GetBackingStore().Set("frequencyType", value)
     if err != nil {

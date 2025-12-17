@@ -247,7 +247,7 @@ func (m *WorkbookDocumentTaskChange) GetTitle()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.
+// GetTypeEscaped gets the type property value. The type of the change history. The possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.
 // returns a *string when successful
 func (m *WorkbookDocumentTaskChange) GetTypeEscaped()(*string) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -408,7 +408,7 @@ func (m *WorkbookDocumentTaskChange) SetTitle(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.
+// SetTypeEscaped sets the type property value. The type of the change history. The possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.
 func (m *WorkbookDocumentTaskChange) SetTypeEscaped(value *string)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

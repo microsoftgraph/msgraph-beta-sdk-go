@@ -22,7 +22,7 @@ func NewRecordOperation()(*RecordOperation) {
 func CreateRecordOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewRecordOperation(), nil
 }
-// GetCompletionReason gets the completionReason property value. Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
+// GetCompletionReason gets the completionReason property value. The possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
 // returns a *RecordCompletionReason when successful
 func (m *RecordOperation) GetCompletionReason()(*RecordCompletionReason) {
     val, err := m.GetBackingStore().Get("completionReason")
@@ -121,7 +121,7 @@ func (m *RecordOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetCompletionReason sets the completionReason property value. Possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
+// SetCompletionReason sets the completionReason property value. The possible values are: operationCanceled, stopToneDetected, maxRecordDurationReached, initialSilenceTimeout, maxSilenceTimeout, playPromptFailed, playBeepFailed, mediaReceiveTimeout, unspecifiedError, none.
 func (m *RecordOperation) SetCompletionReason(value *RecordCompletionReason)() {
     err := m.GetBackingStore().Set("completionReason", value)
     if err != nil {

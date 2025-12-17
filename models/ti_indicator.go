@@ -23,7 +23,7 @@ func NewTiIndicator()(*TiIndicator) {
 func CreateTiIndicatorFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTiIndicator(), nil
 }
-// GetAction gets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
+// GetAction gets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. The possible values are: unknown, allow, block, alert. Required.
 // returns a *TiAction when successful
 func (m *TiIndicator) GetAction()(*TiAction) {
     val, err := m.GetBackingStore().Get("action")
@@ -95,7 +95,7 @@ func (m *TiIndicator) GetDescription()(*string) {
     }
     return nil
 }
-// GetDiamondModel gets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
+// GetDiamondModel gets the diamondModel property value. The area of the Diamond Model in which this indicator exists. The possible values are: unknown, adversary, capability, infrastructure, victim.
 // returns a *DiamondModel when successful
 func (m *TiIndicator) GetDiamondModel()(*DiamondModel) {
     val, err := m.GetBackingStore().Get("diamondModel")
@@ -1281,7 +1281,7 @@ func (m *TiIndicator) GetTargetProduct()(*string) {
     }
     return nil
 }
-// GetThreatType gets the threatType property value. Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
+// GetThreatType gets the threatType property value. Each indicator must have a valid Indicator Threat Type. The possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
 // returns a *string when successful
 func (m *TiIndicator) GetThreatType()(*string) {
     val, err := m.GetBackingStore().Get("threatType")
@@ -1293,7 +1293,7 @@ func (m *TiIndicator) GetThreatType()(*string) {
     }
     return nil
 }
-// GetTlpLevel gets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
+// GetTlpLevel gets the tlpLevel property value. Traffic Light Protocol value for the indicator. The possible values are: unknown, white, green, amber, red. Required.
 // returns a *TlpLevel when successful
 func (m *TiIndicator) GetTlpLevel()(*TlpLevel) {
     val, err := m.GetBackingStore().Get("tlpLevel")
@@ -1689,7 +1689,7 @@ func (m *TiIndicator) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     return nil
 }
-// SetAction sets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.
+// SetAction sets the action property value. The action to apply if the indicator is matched from within the targetProduct security tool. The possible values are: unknown, allow, block, alert. Required.
 func (m *TiIndicator) SetAction(value *TiAction)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
@@ -1731,7 +1731,7 @@ func (m *TiIndicator) SetDescription(value *string)() {
         panic(err)
     }
 }
-// SetDiamondModel sets the diamondModel property value. The area of the Diamond Model in which this indicator exists. Possible values are: unknown, adversary, capability, infrastructure, victim.
+// SetDiamondModel sets the diamondModel property value. The area of the Diamond Model in which this indicator exists. The possible values are: unknown, adversary, capability, infrastructure, victim.
 func (m *TiIndicator) SetDiamondModel(value *DiamondModel)() {
     err := m.GetBackingStore().Set("diamondModel", value)
     if err != nil {
@@ -2067,14 +2067,14 @@ func (m *TiIndicator) SetTargetProduct(value *string)() {
         panic(err)
     }
 }
-// SetThreatType sets the threatType property value. Each indicator must have a valid Indicator Threat Type. Possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
+// SetThreatType sets the threatType property value. Each indicator must have a valid Indicator Threat Type. The possible values are: Botnet, C2, CryptoMining, Darknet, DDoS, MaliciousUrl, Malware, Phishing, Proxy, PUA, WatchList. Required.
 func (m *TiIndicator) SetThreatType(value *string)() {
     err := m.GetBackingStore().Set("threatType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTlpLevel sets the tlpLevel property value. Traffic Light Protocol value for the indicator. Possible values are: unknown, white, green, amber, red. Required.
+// SetTlpLevel sets the tlpLevel property value. Traffic Light Protocol value for the indicator. The possible values are: unknown, white, green, amber, red. Required.
 func (m *TiIndicator) SetTlpLevel(value *TlpLevel)() {
     err := m.GetBackingStore().Set("tlpLevel", value)
     if err != nil {

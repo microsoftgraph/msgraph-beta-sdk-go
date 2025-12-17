@@ -123,7 +123,7 @@ func (m *RelatedPerson) GetOdataType()(*string) {
     }
     return nil
 }
-// GetRelationship gets the relationship property value. Possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.
+// GetRelationship gets the relationship property value. The possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.
 // returns a *PersonRelationship when successful
 func (m *RelatedPerson) GetRelationship()(*PersonRelationship) {
     val, err := m.GetBackingStore().Get("relationship")
@@ -225,7 +225,7 @@ func (m *RelatedPerson) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetRelationship sets the relationship property value. Possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.
+// SetRelationship sets the relationship property value. The possible values are: manager, colleague, directReport, dotLineReport, assistant, dotLineManager, alternateContact, friend, spouse, sibling, child, parent, sponsor, emergencyContact, other, unknownFutureValue.
 func (m *RelatedPerson) SetRelationship(value *PersonRelationship)() {
     err := m.GetBackingStore().Set("relationship", value)
     if err != nil {

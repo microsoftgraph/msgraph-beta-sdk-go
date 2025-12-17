@@ -14,7 +14,7 @@ import (
 type ItemGraphRoomChildrenRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemGraphRoomChildrenRequestBuilderGetQueryParameters get children from places
+// ItemGraphRoomChildrenRequestBuilderGetQueryParameters a collection of children places that is only used in the Upsert places API.
 type ItemGraphRoomChildrenRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemGraphRoomChildrenRequestBuilder(rawUrl string, requestAdapter i2ae41
 func (m *ItemGraphRoomChildrenRequestBuilder) Count()(*ItemGraphRoomChildrenCountRequestBuilder) {
     return NewItemGraphRoomChildrenCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get children from places
+// Get a collection of children places that is only used in the Upsert places API.
 // returns a PlaceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemGraphRoomChildrenRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemGraphRoomChildrenRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlaceCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *ItemGraphRoomChildrenRequestBuilder) Get(ctx context.Context, requestCo
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.PlaceCollectionResponseable), nil
 }
-// ToGetRequestInformation get children from places
+// ToGetRequestInformation a collection of children places that is only used in the Upsert places API.
 // returns a *RequestInformation when successful
 func (m *ItemGraphRoomChildrenRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemGraphRoomChildrenRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

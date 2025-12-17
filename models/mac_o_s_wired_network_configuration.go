@@ -25,7 +25,7 @@ func NewMacOSWiredNetworkConfiguration()(*MacOSWiredNetworkConfiguration) {
 func CreateMacOSWiredNetworkConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSWiredNetworkConfiguration(), nil
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
+// GetAuthenticationMethod gets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. The possible values are: certificate, usernameAndPassword, derivedCredential.
 // returns a *WiFiAuthenticationMethod when successful
 func (m *MacOSWiredNetworkConfiguration) GetAuthenticationMethod()(*WiFiAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
@@ -37,7 +37,7 @@ func (m *MacOSWiredNetworkConfiguration) GetAuthenticationMethod()(*WiFiAuthenti
     }
     return nil
 }
-// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
 // returns a *AppleDeploymentChannel when successful
 func (m *MacOSWiredNetworkConfiguration) GetDeploymentChannel()(*AppleDeploymentChannel) {
     val, err := m.GetBackingStore().Get("deploymentChannel")
@@ -49,7 +49,7 @@ func (m *MacOSWiredNetworkConfiguration) GetDeploymentChannel()(*AppleDeployment
     }
     return nil
 }
-// GetEapFastConfiguration gets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
+// GetEapFastConfiguration gets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. The possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
 // returns a *EapFastConfiguration when successful
 func (m *MacOSWiredNetworkConfiguration) GetEapFastConfiguration()(*EapFastConfiguration) {
     val, err := m.GetBackingStore().Get("eapFastConfiguration")
@@ -243,7 +243,7 @@ func (m *MacOSWiredNetworkConfiguration) GetNetworkName()(*string) {
     }
     return nil
 }
-// GetNonEapAuthenticationMethodForEapTtls gets the nonEapAuthenticationMethodForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
+// GetNonEapAuthenticationMethodForEapTtls gets the nonEapAuthenticationMethodForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 // returns a *NonEapAuthenticationMethodForEapTtlsType when successful
 func (m *MacOSWiredNetworkConfiguration) GetNonEapAuthenticationMethodForEapTtls()(*NonEapAuthenticationMethodForEapTtlsType) {
     val, err := m.GetBackingStore().Get("nonEapAuthenticationMethodForEapTtls")
@@ -359,21 +359,21 @@ func (m *MacOSWiredNetworkConfiguration) Serialize(writer i878a80d2330e89d268963
     }
     return nil
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.
+// SetAuthenticationMethod sets the authenticationMethod property value. Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. The possible values are: certificate, usernameAndPassword, derivedCredential.
 func (m *MacOSWiredNetworkConfiguration) SetAuthenticationMethod(value *WiFiAuthenticationMethod)() {
     err := m.GetBackingStore().Set("authenticationMethod", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
 func (m *MacOSWiredNetworkConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {
     err := m.GetBackingStore().Set("deploymentChannel", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEapFastConfiguration sets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. Possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
+// SetEapFastConfiguration sets the eapFastConfiguration property value. EAP-FAST Configuration Option when EAP-FAST is the selected EAP Type. The possible values are: noProtectedAccessCredential, useProtectedAccessCredential, useProtectedAccessCredentialAndProvision, useProtectedAccessCredentialAndProvisionAnonymously.
 func (m *MacOSWiredNetworkConfiguration) SetEapFastConfiguration(value *EapFastConfiguration)() {
     err := m.GetBackingStore().Set("eapFastConfiguration", value)
     if err != nil {
@@ -415,7 +415,7 @@ func (m *MacOSWiredNetworkConfiguration) SetNetworkName(value *string)() {
         panic(err)
     }
 }
-// SetNonEapAuthenticationMethodForEapTtls sets the nonEapAuthenticationMethodForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
+// SetNonEapAuthenticationMethodForEapTtls sets the nonEapAuthenticationMethodForEapTtls property value. Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *MacOSWiredNetworkConfiguration) SetNonEapAuthenticationMethodForEapTtls(value *NonEapAuthenticationMethodForEapTtlsType)() {
     err := m.GetBackingStore().Set("nonEapAuthenticationMethodForEapTtls", value)
     if err != nil {

@@ -517,7 +517,7 @@ func (m *Windows10GeneralConfiguration) GetDefenderMonitorFileActivity()(*Defend
     }
     return nil
 }
-// GetDefenderPotentiallyUnwantedAppAction gets the defenderPotentiallyUnwantedAppAction property value. Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.
+// GetDefenderPotentiallyUnwantedAppAction gets the defenderPotentiallyUnwantedAppAction property value. Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. The possible values are: deviceDefault, block, audit.
 // returns a *DefenderPotentiallyUnwantedAppAction when successful
 func (m *Windows10GeneralConfiguration) GetDefenderPotentiallyUnwantedAppAction()(*DefenderPotentiallyUnwantedAppAction) {
     val, err := m.GetBackingStore().Get("defenderPotentiallyUnwantedAppAction")
@@ -769,7 +769,7 @@ func (m *Windows10GeneralConfiguration) GetDefenderSignatureUpdateIntervalInHour
     }
     return nil
 }
-// GetDefenderSubmitSamplesConsentType gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
+// GetDefenderSubmitSamplesConsentType gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. The possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
 // returns a *DefenderSubmitSamplesConsentType when successful
 func (m *Windows10GeneralConfiguration) GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType) {
     val, err := m.GetBackingStore().Get("defenderSubmitSamplesConsentType")
@@ -8373,7 +8373,7 @@ func (m *Windows10GeneralConfiguration) SetDefenderMonitorFileActivity(value *De
         panic(err)
     }
 }
-// SetDefenderPotentiallyUnwantedAppAction sets the defenderPotentiallyUnwantedAppAction property value. Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. Possible values are: deviceDefault, block, audit.
+// SetDefenderPotentiallyUnwantedAppAction sets the defenderPotentiallyUnwantedAppAction property value. Gets or sets Defender’s action to take on Potentially Unwanted Application (PUA), which includes software with behaviors of ad-injection, software bundling, persistent solicitation for payment or subscription, etc. Defender alerts user when PUA is being downloaded or attempts to install itself. Added in Windows 10 for desktop. The possible values are: deviceDefault, block, audit.
 func (m *Windows10GeneralConfiguration) SetDefenderPotentiallyUnwantedAppAction(value *DefenderPotentiallyUnwantedAppAction)() {
     err := m.GetBackingStore().Set("defenderPotentiallyUnwantedAppAction", value)
     if err != nil {
@@ -8520,7 +8520,7 @@ func (m *Windows10GeneralConfiguration) SetDefenderSignatureUpdateIntervalInHour
         panic(err)
     }
 }
-// SetDefenderSubmitSamplesConsentType sets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
+// SetDefenderSubmitSamplesConsentType sets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. The possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
 func (m *Windows10GeneralConfiguration) SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)() {
     err := m.GetBackingStore().Set("defenderSubmitSamplesConsentType", value)
     if err != nil {

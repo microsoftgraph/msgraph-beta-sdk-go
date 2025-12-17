@@ -229,7 +229,7 @@ func (m *CloudPcUserSetting) GetNotificationSetting()(CloudPcNotificationSetting
     }
     return nil
 }
-// GetProvisioningSourceType gets the provisioningSourceType property value. Indicates the provisioning source of the Cloud PC prepared for an end user. Possible values are: image, snapshot, unknownFutureValue. The default value is image. If this property isn't set or set to null, its functionality is the same as setting it to image.
+// GetProvisioningSourceType gets the provisioningSourceType property value. Indicates the provisioning source of the Cloud PC prepared for an end user. The possible values are: image, snapshot, unknownFutureValue. The default value is image. If this property isn't set or set to null, its functionality is the same as setting it to image.
 // returns a *CloudPcProvisioningSourceType when successful
 func (m *CloudPcUserSetting) GetProvisioningSourceType()(*CloudPcProvisioningSourceType) {
     val, err := m.GetBackingStore().Get("provisioningSourceType")
@@ -407,7 +407,7 @@ func (m *CloudPcUserSetting) SetNotificationSetting(value CloudPcNotificationSet
         panic(err)
     }
 }
-// SetProvisioningSourceType sets the provisioningSourceType property value. Indicates the provisioning source of the Cloud PC prepared for an end user. Possible values are: image, snapshot, unknownFutureValue. The default value is image. If this property isn't set or set to null, its functionality is the same as setting it to image.
+// SetProvisioningSourceType sets the provisioningSourceType property value. Indicates the provisioning source of the Cloud PC prepared for an end user. The possible values are: image, snapshot, unknownFutureValue. The default value is image. If this property isn't set or set to null, its functionality is the same as setting it to image.
 func (m *CloudPcUserSetting) SetProvisioningSourceType(value *CloudPcProvisioningSourceType)() {
     err := m.GetBackingStore().Set("provisioningSourceType", value)
     if err != nil {

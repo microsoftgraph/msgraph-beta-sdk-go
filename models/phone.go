@@ -103,7 +103,7 @@ func (m *Phone) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+// GetTypeEscaped gets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 // returns a *PhoneType when successful
 func (m *Phone) GetTypeEscaped()(*PhoneType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -169,7 +169,7 @@ func (m *Phone) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of phone number. Possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
+// SetTypeEscaped sets the type property value. The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
 func (m *Phone) SetTypeEscaped(value *PhoneType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

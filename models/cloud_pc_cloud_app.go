@@ -23,7 +23,7 @@ func NewCloudPcCloudApp()(*CloudPcCloudApp) {
 func CreateCloudPcCloudAppFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCloudPcCloudApp(), nil
 }
-// GetActionFailedErrorCode gets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. Possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.
+// GetActionFailedErrorCode gets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.
 // returns a *CloudPcCloudAppActionFailedErrorCode when successful
 func (m *CloudPcCloudApp) GetActionFailedErrorCode()(*CloudPcCloudAppActionFailedErrorCode) {
     val, err := m.GetBackingStore().Get("actionFailedErrorCode")
@@ -381,7 +381,7 @@ func (m *CloudPcCloudApp) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetActionFailedErrorCode sets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. Possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.
+// SetActionFailedErrorCode sets the actionFailedErrorCode property value. The error code if publishing, unpublishing, or resetting a cloud app fails. The possible values are: cloudAppQuotaExceeded, cloudPcLicenseNotFound, internalServerError, appDiscoveryFailed, unknownFutureValue. The default value is null. Supports $filter, $select, $orderBy. Read-only.
 func (m *CloudPcCloudApp) SetActionFailedErrorCode(value *CloudPcCloudAppActionFailedErrorCode)() {
     err := m.GetBackingStore().Set("actionFailedErrorCode", value)
     if err != nil {

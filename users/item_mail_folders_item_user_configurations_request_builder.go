@@ -14,7 +14,7 @@ import (
 type ItemMailFoldersItemUserConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemUserConfigurationsRequestBuilderGetQueryParameters get userConfigurations from users
+// ItemMailFoldersItemUserConfigurationsRequestBuilderGetQueryParameters the user configuration objects associated to the mailFolder.
 type ItemMailFoldersItemUserConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemMailFoldersItemUserConfigurationsRequestBuilder(rawUrl string, reque
 func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) Count()(*ItemMailFoldersItemUserConfigurationsCountRequestBuilder) {
     return NewItemMailFoldersItemUserConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get userConfigurations from users
+// Get the user configuration objects associated to the mailFolder.
 // returns a UserConfigurationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) Get(ctx context.Co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable), nil
 }
-// ToGetRequestInformation get userConfigurations from users
+// ToGetRequestInformation the user configuration objects associated to the mailFolder.
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemUserConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

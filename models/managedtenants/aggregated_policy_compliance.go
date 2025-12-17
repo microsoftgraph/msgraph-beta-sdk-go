@@ -48,7 +48,7 @@ func (m *AggregatedPolicyCompliance) GetCompliancePolicyName()(*string) {
     }
     return nil
 }
-// GetCompliancePolicyPlatform gets the compliancePolicyPlatform property value. Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
+// GetCompliancePolicyPlatform gets the compliancePolicyPlatform property value. Platform for the device compliance policy. The possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
 // returns a *string when successful
 func (m *AggregatedPolicyCompliance) GetCompliancePolicyPlatform()(*string) {
     val, err := m.GetBackingStore().Get("compliancePolicyPlatform")
@@ -360,7 +360,7 @@ func (m *AggregatedPolicyCompliance) SetCompliancePolicyName(value *string)() {
         panic(err)
     }
 }
-// SetCompliancePolicyPlatform sets the compliancePolicyPlatform property value. Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
+// SetCompliancePolicyPlatform sets the compliancePolicyPlatform property value. Platform for the device compliance policy. The possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.
 func (m *AggregatedPolicyCompliance) SetCompliancePolicyPlatform(value *string)() {
     err := m.GetBackingStore().Set("compliancePolicyPlatform", value)
     if err != nil {

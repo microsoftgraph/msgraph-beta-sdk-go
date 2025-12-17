@@ -14,7 +14,7 @@ import (
 type ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetQueryParameters get userConfigurations from users
+// ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetQueryParameters the user configuration objects associated to the mailFolder.
 type ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder(rawU
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) Count()(*ItemMailFoldersItemChildFoldersItemUserConfigurationsCountRequestBuilder) {
     return NewItemMailFoldersItemChildFoldersItemUserConfigurationsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get userConfigurations from users
+// Get the user configuration objects associated to the mailFolder.
 // returns a UserConfigurationCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) Ge
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.UserConfigurationCollectionResponseable), nil
 }
-// ToGetRequestInformation get userConfigurations from users
+// ToGetRequestInformation the user configuration objects associated to the mailFolder.
 // returns a *RequestInformation when successful
 func (m *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemMailFoldersItemChildFoldersItemUserConfigurationsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

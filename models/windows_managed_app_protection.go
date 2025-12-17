@@ -61,7 +61,7 @@ func (m *WindowsManagedAppProtection) GetAllowedOutboundDataTransferDestinations
     }
     return nil
 }
-// GetAppActionIfUnableToAuthenticateUser gets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn, blockWhenSettingIsSupported.
+// GetAppActionIfUnableToAuthenticateUser gets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. The possible values are: block, wipe, warn, blockWhenSettingIsSupported.
 // returns a *ManagedAppRemediationAction when successful
 func (m *WindowsManagedAppProtection) GetAppActionIfUnableToAuthenticateUser()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfUnableToAuthenticateUser")
@@ -790,7 +790,7 @@ func (m *WindowsManagedAppProtection) SetAllowedOutboundDataTransferDestinations
         panic(err)
     }
 }
-// SetAppActionIfUnableToAuthenticateUser sets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. Possible values are: block, wipe, warn, blockWhenSettingIsSupported.
+// SetAppActionIfUnableToAuthenticateUser sets the appActionIfUnableToAuthenticateUser property value. If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Some possible values are block or wipe. If this property is not set, no action will be taken. The possible values are: block, wipe, warn, blockWhenSettingIsSupported.
 func (m *WindowsManagedAppProtection) SetAppActionIfUnableToAuthenticateUser(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfUnableToAuthenticateUser", value)
     if err != nil {

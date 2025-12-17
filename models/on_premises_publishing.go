@@ -79,7 +79,7 @@ func (m *OnPremisesPublishing) GetApplicationType()(*string) {
 func (m *OnPremisesPublishing) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
+// GetExternalAuthenticationType gets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. The possible values are: passthru, aadPreAuthentication.
 // returns a *ExternalAuthenticationType when successful
 func (m *OnPremisesPublishing) GetExternalAuthenticationType()(*ExternalAuthenticationType) {
     val, err := m.GetBackingStore().Get("externalAuthenticationType")
@@ -900,7 +900,7 @@ func (m *OnPremisesPublishing) SetApplicationType(value *string)() {
 func (m *OnPremisesPublishing) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetExternalAuthenticationType sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. Possible values are: passthru, aadPreAuthentication.
+// SetExternalAuthenticationType sets the externalAuthenticationType property value. Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn't require authentication. The possible values are: passthru, aadPreAuthentication.
 func (m *OnPremisesPublishing) SetExternalAuthenticationType(value *ExternalAuthenticationType)() {
     err := m.GetBackingStore().Set("externalAuthenticationType", value)
     if err != nil {

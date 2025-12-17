@@ -175,7 +175,7 @@ func (m *SharePointMigrationTaskParameters) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPreferredLatestStartDateTime gets the preferredLatestStartDateTime property value. The preferredLatestStartDateTime property
+// GetPreferredLatestStartDateTime gets the preferredLatestStartDateTime property value. The preferred latest start date and time. The system cancels the sharePointMigrationTask if it doesn't start by this time. The value must be greater than the preferredStartDateTime, if present. Optional. Only on OneDrive and SharePoint.
 // returns a *Time when successful
 func (m *SharePointMigrationTaskParameters) GetPreferredLatestStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("preferredLatestStartDateTime")
@@ -187,7 +187,7 @@ func (m *SharePointMigrationTaskParameters) GetPreferredLatestStartDateTime()(*i
     }
     return nil
 }
-// GetPreferredStartDateTime gets the preferredStartDateTime property value. The preferredStartDateTime property
+// GetPreferredStartDateTime gets the preferredStartDateTime property value. The preferred start date and time that allows the sharePointMigrationTask to start at a future time instead of as soon as possible (default). Optional. Only on OneDrive and SharePoint.
 // returns a *Time when successful
 func (m *SharePointMigrationTaskParameters) GetPreferredStartDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("preferredStartDateTime")
@@ -199,7 +199,7 @@ func (m *SharePointMigrationTaskParameters) GetPreferredStartDateTime()(*i336074
     }
     return nil
 }
-// GetSourceSiteUrl gets the sourceSiteUrl property value. The sourceSiteUrl property
+// GetSourceSiteUrl gets the sourceSiteUrl property value. The SharePoint URL of the source site. Optional. Exactly one of sourceSiteId or sourceUrl must be specified. If both or neither are specified, it's an error. Only on OneDrive and SharePoint.
 // returns a *string when successful
 func (m *SharePointMigrationTaskParameters) GetSourceSiteUrl()(*string) {
     val, err := m.GetBackingStore().Get("sourceSiteUrl")
@@ -211,7 +211,7 @@ func (m *SharePointMigrationTaskParameters) GetSourceSiteUrl()(*string) {
     }
     return nil
 }
-// GetTargetDataLocationCode gets the targetDataLocationCode property value. The targetDataLocationCode property
+// GetTargetDataLocationCode gets the targetDataLocationCode property value. In Microsoft Entra, this value represents the geographic location (for example, JPN, NAM) of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn't required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.
 // returns a *string when successful
 func (m *SharePointMigrationTaskParameters) GetTargetDataLocationCode()(*string) {
     val, err := m.GetBackingStore().Get("targetDataLocationCode")
@@ -223,7 +223,7 @@ func (m *SharePointMigrationTaskParameters) GetTargetDataLocationCode()(*string)
     }
     return nil
 }
-// GetTargetOrganizationHost gets the targetOrganizationHost property value. The targetOrganizationHost property
+// GetTargetOrganizationHost gets the targetOrganizationHost property value. The root, admin, or my site host of the specific multi-geo instance of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn't required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.
 // returns a *string when successful
 func (m *SharePointMigrationTaskParameters) GetTargetOrganizationHost()(*string) {
     val, err := m.GetBackingStore().Get("targetOrganizationHost")
@@ -235,7 +235,7 @@ func (m *SharePointMigrationTaskParameters) GetTargetOrganizationHost()(*string)
     }
     return nil
 }
-// GetTargetOrganizationId gets the targetOrganizationId property value. The targetOrganizationId property
+// GetTargetOrganizationId gets the targetOrganizationId property value. The unique Microsoft Entra company ID of the target organization to which the source resource must be migrated. Only on OneDrive and SharePoint.
 // returns a *UUID when successful
 func (m *SharePointMigrationTaskParameters) GetTargetOrganizationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID) {
     val, err := m.GetBackingStore().Get("targetOrganizationId")
@@ -247,7 +247,7 @@ func (m *SharePointMigrationTaskParameters) GetTargetOrganizationId()(*i561e97a8
     }
     return nil
 }
-// GetTargetSiteUrl gets the targetSiteUrl property value. The targetSiteUrl property
+// GetTargetSiteUrl gets the targetSiteUrl property value. The SharePoint URL of the target site. Only on OneDrive and SharePoint.
 // returns a *string when successful
 func (m *SharePointMigrationTaskParameters) GetTargetSiteUrl()(*string) {
     val, err := m.GetBackingStore().Get("targetSiteUrl")
@@ -259,7 +259,7 @@ func (m *SharePointMigrationTaskParameters) GetTargetSiteUrl()(*string) {
     }
     return nil
 }
-// GetValidateOnly gets the validateOnly property value. The validateOnly property
+// GetValidateOnly gets the validateOnly property value. Indicates whether this task is an actual migration or only a validation. If the parameter is missing, the system treats it as false. The default behavior is a real migration. Optional. Only on OneDrive and SharePoint.
 // returns a *bool when successful
 func (m *SharePointMigrationTaskParameters) GetValidateOnly()(*bool) {
     val, err := m.GetBackingStore().Get("validateOnly")
@@ -353,56 +353,56 @@ func (m *SharePointMigrationTaskParameters) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPreferredLatestStartDateTime sets the preferredLatestStartDateTime property value. The preferredLatestStartDateTime property
+// SetPreferredLatestStartDateTime sets the preferredLatestStartDateTime property value. The preferred latest start date and time. The system cancels the sharePointMigrationTask if it doesn't start by this time. The value must be greater than the preferredStartDateTime, if present. Optional. Only on OneDrive and SharePoint.
 func (m *SharePointMigrationTaskParameters) SetPreferredLatestStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("preferredLatestStartDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPreferredStartDateTime sets the preferredStartDateTime property value. The preferredStartDateTime property
+// SetPreferredStartDateTime sets the preferredStartDateTime property value. The preferred start date and time that allows the sharePointMigrationTask to start at a future time instead of as soon as possible (default). Optional. Only on OneDrive and SharePoint.
 func (m *SharePointMigrationTaskParameters) SetPreferredStartDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("preferredStartDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSourceSiteUrl sets the sourceSiteUrl property value. The sourceSiteUrl property
+// SetSourceSiteUrl sets the sourceSiteUrl property value. The SharePoint URL of the source site. Optional. Exactly one of sourceSiteId or sourceUrl must be specified. If both or neither are specified, it's an error. Only on OneDrive and SharePoint.
 func (m *SharePointMigrationTaskParameters) SetSourceSiteUrl(value *string)() {
     err := m.GetBackingStore().Set("sourceSiteUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetDataLocationCode sets the targetDataLocationCode property value. The targetDataLocationCode property
+// SetTargetDataLocationCode sets the targetDataLocationCode property value. In Microsoft Entra, this value represents the geographic location (for example, JPN, NAM) of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn't required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.
 func (m *SharePointMigrationTaskParameters) SetTargetDataLocationCode(value *string)() {
     err := m.GetBackingStore().Set("targetDataLocationCode", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetOrganizationHost sets the targetOrganizationHost property value. The targetOrganizationHost property
+// SetTargetOrganizationHost sets the targetOrganizationHost property value. The root, admin, or my site host of the specific multi-geo instance of the target organization where the resource must be migrated to ensure data residency and compliance. This property isn't required for single-geo target organizations or when the migration is to the default GEO of a multi-geo target organization. Optional. Only on OneDrive and SharePoint.
 func (m *SharePointMigrationTaskParameters) SetTargetOrganizationHost(value *string)() {
     err := m.GetBackingStore().Set("targetOrganizationHost", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetOrganizationId sets the targetOrganizationId property value. The targetOrganizationId property
+// SetTargetOrganizationId sets the targetOrganizationId property value. The unique Microsoft Entra company ID of the target organization to which the source resource must be migrated. Only on OneDrive and SharePoint.
 func (m *SharePointMigrationTaskParameters) SetTargetOrganizationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
     err := m.GetBackingStore().Set("targetOrganizationId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTargetSiteUrl sets the targetSiteUrl property value. The targetSiteUrl property
+// SetTargetSiteUrl sets the targetSiteUrl property value. The SharePoint URL of the target site. Only on OneDrive and SharePoint.
 func (m *SharePointMigrationTaskParameters) SetTargetSiteUrl(value *string)() {
     err := m.GetBackingStore().Set("targetSiteUrl", value)
     if err != nil {
         panic(err)
     }
 }
-// SetValidateOnly sets the validateOnly property value. The validateOnly property
+// SetValidateOnly sets the validateOnly property value. Indicates whether this task is an actual migration or only a validation. If the parameter is missing, the system treats it as false. The default behavior is a real migration. Optional. Only on OneDrive and SharePoint.
 func (m *SharePointMigrationTaskParameters) SetValidateOnly(value *bool)() {
     err := m.GetBackingStore().Set("validateOnly", value)
     if err != nil {

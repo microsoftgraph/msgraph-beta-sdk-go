@@ -105,7 +105,7 @@ func (m *BitlockerRecoveryKey) GetKey()(*string) {
     }
     return nil
 }
-// GetVolumeType gets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
+// GetVolumeType gets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. The possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
 // returns a *VolumeType when successful
 func (m *BitlockerRecoveryKey) GetVolumeType()(*VolumeType) {
     val, err := m.GetBackingStore().Get("volumeType")
@@ -171,7 +171,7 @@ func (m *BitlockerRecoveryKey) SetKey(value *string)() {
         panic(err)
     }
 }
-// SetVolumeType sets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. Possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
+// SetVolumeType sets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. The possible values are: operatingSystemVolume, fixedDataVolume, removableDataVolume, unknownFutureValue.
 func (m *BitlockerRecoveryKey) SetVolumeType(value *VolumeType)() {
     err := m.GetBackingStore().Set("volumeType", value)
     if err != nil {

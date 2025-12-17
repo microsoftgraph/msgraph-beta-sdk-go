@@ -43,7 +43,7 @@ func (m *PlaceExecutionResult) GetAdditionalData()(map[string]any) {
 func (m *PlaceExecutionResult) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetChildren gets the children property value. The children property
+// GetChildren gets the children property value. The upsert results of children places of the place.
 // returns a []PlaceExecutionResultable when successful
 func (m *PlaceExecutionResult) GetChildren()([]PlaceExecutionResultable) {
     val, err := m.GetBackingStore().Get("children")
@@ -55,7 +55,7 @@ func (m *PlaceExecutionResult) GetChildren()([]PlaceExecutionResultable) {
     }
     return nil
 }
-// GetError gets the error property value. The error property
+// GetError gets the error property value. The error that occurred during the upsert of the place.
 // returns a PublicErrorable when successful
 func (m *PlaceExecutionResult) GetError()(PublicErrorable) {
     val, err := m.GetBackingStore().Get("error")
@@ -194,14 +194,14 @@ func (m *PlaceExecutionResult) SetAdditionalData(value map[string]any)() {
 func (m *PlaceExecutionResult) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetChildren sets the children property value. The children property
+// SetChildren sets the children property value. The upsert results of children places of the place.
 func (m *PlaceExecutionResult) SetChildren(value []PlaceExecutionResultable)() {
     err := m.GetBackingStore().Set("children", value)
     if err != nil {
         panic(err)
     }
 }
-// SetError sets the error property value. The error property
+// SetError sets the error property value. The error that occurred during the upsert of the place.
 func (m *PlaceExecutionResult) SetError(value PublicErrorable)() {
     err := m.GetBackingStore().Set("error", value)
     if err != nil {

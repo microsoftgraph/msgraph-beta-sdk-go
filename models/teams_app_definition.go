@@ -23,7 +23,7 @@ func NewTeamsAppDefinition()(*TeamsAppDefinition) {
 func CreateTeamsAppDefinitionFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsAppDefinition(), nil
 }
-// GetAllowedInstallationScopes gets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data. personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
+// GetAllowedInstallationScopes gets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. The possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data. personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
 // returns a *TeamsAppInstallationScopes when successful
 func (m *TeamsAppDefinition) GetAllowedInstallationScopes()(*TeamsAppInstallationScopes) {
     val, err := m.GetBackingStore().Get("allowedInstallationScopes")
@@ -317,7 +317,7 @@ func (m *TeamsAppDefinition) GetOutlineIcon()(TeamsAppIconable) {
     }
     return nil
 }
-// GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published - The request to publish the specific version of the Teams app has been approved by the admin and the app is published. rejected - The request to publish the specific version of the Teams app was rejected by the admin.
+// GetPublishingState gets the publishingState property value. The published status of a specific version of a Teams app. The possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published - The request to publish the specific version of the Teams app has been approved by the admin and the app is published. rejected - The request to publish the specific version of the Teams app was rejected by the admin.
 // returns a *TeamsAppPublishingState when successful
 func (m *TeamsAppDefinition) GetPublishingState()(*TeamsAppPublishingState) {
     val, err := m.GetBackingStore().Get("publishingState")
@@ -471,7 +471,7 @@ func (m *TeamsAppDefinition) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetAllowedInstallationScopes sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data. personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
+// SetAllowedInstallationScopes sets the allowedInstallationScopes property value. A collection of scopes where the Teams app can be installed. The possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team's data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat's data. personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user's data.
 func (m *TeamsAppDefinition) SetAllowedInstallationScopes(value *TeamsAppInstallationScopes)() {
     err := m.GetBackingStore().Set("allowedInstallationScopes", value)
     if err != nil {
@@ -548,7 +548,7 @@ func (m *TeamsAppDefinition) SetOutlineIcon(value TeamsAppIconable)() {
         panic(err)
     }
 }
-// SetPublishingState sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published - The request to publish the specific version of the Teams app has been approved by the admin and the app is published. rejected - The request to publish the specific version of the Teams app was rejected by the admin.
+// SetPublishingState sets the publishingState property value. The published status of a specific version of a Teams app. The possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published - The request to publish the specific version of the Teams app has been approved by the admin and the app is published. rejected - The request to publish the specific version of the Teams app was rejected by the admin.
 func (m *TeamsAppDefinition) SetPublishingState(value *TeamsAppPublishingState)() {
     err := m.GetBackingStore().Set("publishingState", value)
     if err != nil {

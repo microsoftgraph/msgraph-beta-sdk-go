@@ -101,7 +101,7 @@ func (m *SharePointMigrationTask) GetFieldDeserializers()(map[string]func(i878a8
     }
     return res
 }
-// GetFinishedDateTime gets the finishedDateTime property value. The finishedDateTime property
+// GetFinishedDateTime gets the finishedDateTime property value. Date and time when the sharePointMigrationTask ended, if available. The task might complete successfully or fail, but it ends at that time. Read-only. Only on OneDrive and SharePoint. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *SharePointMigrationTask) GetFinishedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("finishedDateTime")
@@ -113,7 +113,7 @@ func (m *SharePointMigrationTask) GetFinishedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// GetLastUpdatedDateTime gets the lastUpdatedDateTime property value. Date and time when the sharePointMigrationTask was last updated or processed, if available. Use this property to find tasks that stopped processing for a long time. Read-only. Optional. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *SharePointMigrationTask) GetLastUpdatedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastUpdatedDateTime")
@@ -137,7 +137,7 @@ func (m *SharePointMigrationTask) GetParameters()(SharePointMigrationTaskParamet
     }
     return nil
 }
-// GetStartedDateTime gets the startedDateTime property value. The startedDateTime property
+// GetStartedDateTime gets the startedDateTime property value. Date and time when the sharePointMigrationTask started, if available. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *SharePointMigrationTask) GetStartedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("startedDateTime")
@@ -213,14 +213,14 @@ func (m *SharePointMigrationTask) SetError(value PublicErrorable)() {
         panic(err)
     }
 }
-// SetFinishedDateTime sets the finishedDateTime property value. The finishedDateTime property
+// SetFinishedDateTime sets the finishedDateTime property value. Date and time when the sharePointMigrationTask ended, if available. The task might complete successfully or fail, but it ends at that time. Read-only. Only on OneDrive and SharePoint. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SharePointMigrationTask) SetFinishedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("finishedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+// SetLastUpdatedDateTime sets the lastUpdatedDateTime property value. Date and time when the sharePointMigrationTask was last updated or processed, if available. Use this property to find tasks that stopped processing for a long time. Read-only. Optional. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SharePointMigrationTask) SetLastUpdatedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("lastUpdatedDateTime", value)
     if err != nil {
@@ -234,7 +234,7 @@ func (m *SharePointMigrationTask) SetParameters(value SharePointMigrationTaskPar
         panic(err)
     }
 }
-// SetStartedDateTime sets the startedDateTime property value. The startedDateTime property
+// SetStartedDateTime sets the startedDateTime property value. Date and time when the sharePointMigrationTask started, if available. Read-only. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *SharePointMigrationTask) SetStartedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("startedDateTime", value)
     if err != nil {

@@ -43,7 +43,7 @@ func (m *PlaceOperationProgress) GetAdditionalData()(map[string]any) {
 func (m *PlaceOperationProgress) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetFailedPlaceCount gets the failedPlaceCount property value. The failedPlaceCount property
+// GetFailedPlaceCount gets the failedPlaceCount property value. The count of places failed to upsert.
 // returns a *int32 when successful
 func (m *PlaceOperationProgress) GetFailedPlaceCount()(*int32) {
     val, err := m.GetBackingStore().Get("failedPlaceCount")
@@ -113,7 +113,7 @@ func (m *PlaceOperationProgress) GetOdataType()(*string) {
     }
     return nil
 }
-// GetSucceededPlaceCount gets the succeededPlaceCount property value. The succeededPlaceCount property
+// GetSucceededPlaceCount gets the succeededPlaceCount property value. The count of places succeeded to upsert.
 // returns a *int32 when successful
 func (m *PlaceOperationProgress) GetSucceededPlaceCount()(*int32) {
     val, err := m.GetBackingStore().Get("succeededPlaceCount")
@@ -125,7 +125,7 @@ func (m *PlaceOperationProgress) GetSucceededPlaceCount()(*int32) {
     }
     return nil
 }
-// GetTotalPlaceCount gets the totalPlaceCount property value. The totalPlaceCount property
+// GetTotalPlaceCount gets the totalPlaceCount property value. The total count of places in the request.
 // returns a *int32 when successful
 func (m *PlaceOperationProgress) GetTotalPlaceCount()(*int32) {
     val, err := m.GetBackingStore().Get("totalPlaceCount")
@@ -182,7 +182,7 @@ func (m *PlaceOperationProgress) SetAdditionalData(value map[string]any)() {
 func (m *PlaceOperationProgress) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetFailedPlaceCount sets the failedPlaceCount property value. The failedPlaceCount property
+// SetFailedPlaceCount sets the failedPlaceCount property value. The count of places failed to upsert.
 func (m *PlaceOperationProgress) SetFailedPlaceCount(value *int32)() {
     err := m.GetBackingStore().Set("failedPlaceCount", value)
     if err != nil {
@@ -196,14 +196,14 @@ func (m *PlaceOperationProgress) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetSucceededPlaceCount sets the succeededPlaceCount property value. The succeededPlaceCount property
+// SetSucceededPlaceCount sets the succeededPlaceCount property value. The count of places succeeded to upsert.
 func (m *PlaceOperationProgress) SetSucceededPlaceCount(value *int32)() {
     err := m.GetBackingStore().Set("succeededPlaceCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetTotalPlaceCount sets the totalPlaceCount property value. The totalPlaceCount property
+// SetTotalPlaceCount sets the totalPlaceCount property value. The total count of places in the request.
 func (m *PlaceOperationProgress) SetTotalPlaceCount(value *int32)() {
     err := m.GetBackingStore().Set("totalPlaceCount", value)
     if err != nil {

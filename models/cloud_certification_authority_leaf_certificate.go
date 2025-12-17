@@ -84,7 +84,7 @@ func (m *CloudCertificationAuthorityLeafCertificate) GetDeviceName()(*string) {
     }
     return nil
 }
-// GetDevicePlatform gets the devicePlatform property value. The platform of the device for which the certificate was created. Possible values are: Android, AndroidForWork, iOS, MacOS, WindowsPhone81, Windows81AndLater, Windows10AndLater, AndroidWorkProfile, Unknown, AndroidAOSP, AndroidMobileApplicationManagement, iOSMobileApplicationManagement. Default value: Unknown. Read-only. Supports $select.
+// GetDevicePlatform gets the devicePlatform property value. The platform of the device for which the certificate was created. The possible values are: Android, AndroidForWork, iOS, MacOS, WindowsPhone81, Windows81AndLater, Windows10AndLater, AndroidWorkProfile, Unknown, AndroidAOSP, AndroidMobileApplicationManagement, iOSMobileApplicationManagement. Default value: Unknown. Read-only. Supports $select.
 // returns a *string when successful
 func (m *CloudCertificationAuthorityLeafCertificate) GetDevicePlatform()(*string) {
     val, err := m.GetBackingStore().Get("devicePlatform")
@@ -618,7 +618,7 @@ func (m *CloudCertificationAuthorityLeafCertificate) SetDeviceName(value *string
         panic(err)
     }
 }
-// SetDevicePlatform sets the devicePlatform property value. The platform of the device for which the certificate was created. Possible values are: Android, AndroidForWork, iOS, MacOS, WindowsPhone81, Windows81AndLater, Windows10AndLater, AndroidWorkProfile, Unknown, AndroidAOSP, AndroidMobileApplicationManagement, iOSMobileApplicationManagement. Default value: Unknown. Read-only. Supports $select.
+// SetDevicePlatform sets the devicePlatform property value. The platform of the device for which the certificate was created. The possible values are: Android, AndroidForWork, iOS, MacOS, WindowsPhone81, Windows81AndLater, Windows10AndLater, AndroidWorkProfile, Unknown, AndroidAOSP, AndroidMobileApplicationManagement, iOSMobileApplicationManagement. Default value: Unknown. Read-only. Supports $select.
 func (m *CloudCertificationAuthorityLeafCertificate) SetDevicePlatform(value *string)() {
     err := m.GetBackingStore().Set("devicePlatform", value)
     if err != nil {

@@ -444,7 +444,7 @@ func (m *WorkbookRange) GetValues()(i878a80d2330e89d26896388a3f487eef27b0a0e6c01
     }
     return nil
 }
-// GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
+// GetValueTypes gets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
 // returns a UntypedNodeable when successful
 func (m *WorkbookRange) GetValueTypes()(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable) {
     val, err := m.GetBackingStore().Get("valueTypes")
@@ -722,7 +722,7 @@ func (m *WorkbookRange) SetValues(value i878a80d2330e89d26896388a3f487eef27b0a0e
         panic(err)
     }
 }
-// SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. Possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
+// SetValueTypes sets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
 func (m *WorkbookRange) SetValueTypes(value i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.UntypedNodeable)() {
     err := m.GetBackingStore().Set("valueTypes", value)
     if err != nil {

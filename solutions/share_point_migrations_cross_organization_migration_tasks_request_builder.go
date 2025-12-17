@@ -14,7 +14,7 @@ import (
 type SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderGetQueryParameters get crossOrganizationMigrationTasks from solutions
+// SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderGetQueryParameters get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
 type SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewSharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder(rawUrl
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) Count()(*SharePointMigrationsCrossOrganizationMigrationTasksCountRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationMigrationTasksCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get crossOrganizationMigrationTasks from solutions
+// Get get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
 // returns a SharePointMigrationTaskCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) Get(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskCollectionResponseable, error) {
@@ -114,9 +114,12 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) GetB
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) GetBySourceUserPrincipalNameWithSourcePrincipalName(sourcePrincipalName *string)(*SharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilder) {
     return NewSharePointMigrationsCrossOrganizationMigrationTasksGetBySourceUserPrincipalNameWithSourcePrincipalNameRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter, sourcePrincipalName)
 }
-// Post create new navigation property to crossOrganizationMigrationTasks for solutions
+// Post create or update a sharePointMigrationTask to migrate a resource from the source organization to the target organization, using the sharePointMigrationTaskParameters. The resource can be a user, a group, or a site. When an existing sharePointMigrationTask is retrieved, it might contain not only the specifics of the source and target organizations and resources, but also the status of the migration and errors encountered during the migration operation. The API calls occur on the source site and only add list items to the my site root web, for example, contoso-my.sharepoint.com. Then, it triggers a multi-geo site move job in the backend to enqueue and orchestrate several tenant workflow jobs, such as backup, restore, and cleanup, supported by TJ infrastructure. The OData type of sharePointResourceMigrationParameters differentiates user migration from site migration, rather than using different subpaths. For a user's OneDrive migration, specify sharePointUserMigrationParameters. If this migration task is a regular SharePoint site migration, specify sharePointSiteMigrationParameters. If this migration task is a group-connected site migration, specify sharePointGroupMigrationParameters.
 // returns a SharePointMigrationTaskable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/sharepointmigrationtask-update?view=graph-rest-beta
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -134,7 +137,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) Post
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable), nil
 }
-// ToGetRequestInformation get crossOrganizationMigrationTasks from solutions
+// ToGetRequestInformation get a sharePointMigrationTask that was previously created, using the task ID. The returned sharePointMigrationTask object includes the source and target site URLs, migration status, optional timestamps (startedDateTime and finishedDateTime), and error details about issues during processing.
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -148,7 +151,7 @@ func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) ToGe
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to crossOrganizationMigrationTasks for solutions
+// ToPostRequestInformation create or update a sharePointMigrationTask to migrate a resource from the source organization to the target organization, using the sharePointMigrationTaskParameters. The resource can be a user, a group, or a site. When an existing sharePointMigrationTask is retrieved, it might contain not only the specifics of the source and target organizations and resources, but also the status of the migration and errors encountered during the migration operation. The API calls occur on the source site and only add list items to the my site root web, for example, contoso-my.sharepoint.com. Then, it triggers a multi-geo site move job in the backend to enqueue and orchestrate several tenant workflow jobs, such as backup, restore, and cleanup, supported by TJ infrastructure. The OData type of sharePointResourceMigrationParameters differentiates user migration from site migration, rather than using different subpaths. For a user's OneDrive migration, specify sharePointUserMigrationParameters. If this migration task is a regular SharePoint site migration, specify sharePointSiteMigrationParameters. If this migration task is a group-connected site migration, specify sharePointGroupMigrationParameters.
 // returns a *RequestInformation when successful
 func (m *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.SharePointMigrationTaskable, requestConfiguration *SharePointMigrationsCrossOrganizationMigrationTasksRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

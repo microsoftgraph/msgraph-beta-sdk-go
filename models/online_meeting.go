@@ -86,7 +86,7 @@ func (m *OnlineMeeting) GetBroadcastSettings()(BroadcastMeetingSettingsable) {
     }
     return nil
 }
-// GetCapabilities gets the capabilities property value. The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.
+// GetCapabilities gets the capabilities property value. The list of meeting capabilities. The possible values are: questionAndAnswer,unknownFutureValue.
 // returns a []MeetingCapabilities when successful
 func (m *OnlineMeeting) GetCapabilities()([]MeetingCapabilities) {
     val, err := m.GetBackingStore().Get("capabilities")
@@ -649,7 +649,7 @@ func (m *OnlineMeeting) SetBroadcastSettings(value BroadcastMeetingSettingsable)
         panic(err)
     }
 }
-// SetCapabilities sets the capabilities property value. The list of meeting capabilities. Possible values are: questionAndAnswer,unknownFutureValue.
+// SetCapabilities sets the capabilities property value. The list of meeting capabilities. The possible values are: questionAndAnswer,unknownFutureValue.
 func (m *OnlineMeeting) SetCapabilities(value []MeetingCapabilities)() {
     err := m.GetBackingStore().Set("capabilities", value)
     if err != nil {

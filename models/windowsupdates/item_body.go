@@ -55,7 +55,7 @@ func (m *ItemBody) GetContent()(*string) {
     }
     return nil
 }
-// GetContentType gets the contentType property value. The type of the content indicated by the enum value of bodyType. Possible values are: text, html, unknownFutureValue.
+// GetContentType gets the contentType property value. The type of the content indicated by the enum value of bodyType. The possible values are: text, html, unknownFutureValue.
 // returns a *BodyType when successful
 func (m *ItemBody) GetContentType()(*BodyType) {
     val, err := m.GetBackingStore().Get("contentType")
@@ -162,7 +162,7 @@ func (m *ItemBody) SetContent(value *string)() {
         panic(err)
     }
 }
-// SetContentType sets the contentType property value. The type of the content indicated by the enum value of bodyType. Possible values are: text, html, unknownFutureValue.
+// SetContentType sets the contentType property value. The type of the content indicated by the enum value of bodyType. The possible values are: text, html, unknownFutureValue.
 func (m *ItemBody) SetContentType(value *BodyType)() {
     err := m.GetBackingStore().Set("contentType", value)
     if err != nil {

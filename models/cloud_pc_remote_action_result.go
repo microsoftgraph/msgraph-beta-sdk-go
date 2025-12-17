@@ -38,7 +38,7 @@ func (m *CloudPcRemoteActionResult) GetActionName()(*string) {
     }
     return nil
 }
-// GetActionState gets the actionState property value. State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
+// GetActionState gets the actionState property value. State of the action. The possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
 // returns a *ActionState when successful
 func (m *CloudPcRemoteActionResult) GetActionState()(*ActionState) {
     val, err := m.GetBackingStore().Get("actionState")
@@ -320,7 +320,7 @@ func (m *CloudPcRemoteActionResult) SetActionName(value *string)() {
         panic(err)
     }
 }
-// SetActionState sets the actionState property value. State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
+// SetActionState sets the actionState property value. State of the action. The possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.
 func (m *CloudPcRemoteActionResult) SetActionState(value *ActionState)() {
     err := m.GetBackingStore().Set("actionState", value)
     if err != nil {

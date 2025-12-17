@@ -43,7 +43,7 @@ func (m *ContentInfo) GetAdditionalData()(map[string]any) {
 func (m *ContentInfo) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetContentFormat gets the contentFormat property value. The format of the content to be labeled. Possible values are: file, email.
+// GetContentFormat gets the contentFormat property value. The format of the content to be labeled. The possible values are: file, email.
 // returns a *string when successful
 func (m *ContentInfo) GetContentFormat()(*string) {
     val, err := m.GetBackingStore().Get("contentFormat")
@@ -223,7 +223,7 @@ func (m *ContentInfo) SetAdditionalData(value map[string]any)() {
 func (m *ContentInfo) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetContentFormat sets the contentFormat property value. The format of the content to be labeled. Possible values are: file, email.
+// SetContentFormat sets the contentFormat property value. The format of the content to be labeled. The possible values are: file, email.
 func (m *ContentInfo) SetContentFormat(value *string)() {
     err := m.GetBackingStore().Set("contentFormat", value)
     if err != nil {

@@ -131,7 +131,7 @@ func (m *PlannerPlanContainer) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project, driveItem, user, teamsChannel, and plannerTask. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: roster, project, driveItem, user, teamsChannel, and plannerTask. Optional.
+// GetTypeEscaped gets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. The possible values are: group, unknownFutureValue, roster, project, driveItem, user, teamsChannel, and plannerTask. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: roster, project, driveItem, user, teamsChannel, and plannerTask. Optional.
 // returns a *PlannerContainerType when successful
 func (m *PlannerPlanContainer) GetTypeEscaped()(*PlannerContainerType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -215,7 +215,7 @@ func (m *PlannerPlanContainer) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, project, driveItem, user, teamsChannel, and plannerTask. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: roster, project, driveItem, user, teamsChannel, and plannerTask. Optional.
+// SetTypeEscaped sets the type property value. The type of the resource that contains the plan. For supported types, see the previous table. The possible values are: group, unknownFutureValue, roster, project, driveItem, user, teamsChannel, and plannerTask. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: roster, project, driveItem, user, teamsChannel, and plannerTask. Optional.
 func (m *PlannerPlanContainer) SetTypeEscaped(value *PlannerContainerType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

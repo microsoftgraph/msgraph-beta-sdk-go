@@ -125,7 +125,7 @@ func (m *Website) GetOdataType()(*string) {
     }
     return nil
 }
-// GetTypeEscaped gets the type property value. Possible values are: other, home, work, blog, profile.
+// GetTypeEscaped gets the type property value. The possible values are: other, home, work, blog, profile.
 // returns a *WebsiteType when successful
 func (m *Website) GetTypeEscaped()(*WebsiteType) {
     val, err := m.GetBackingStore().Get("typeEscaped")
@@ -204,7 +204,7 @@ func (m *Website) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetTypeEscaped sets the type property value. Possible values are: other, home, work, blog, profile.
+// SetTypeEscaped sets the type property value. The possible values are: other, home, work, blog, profile.
 func (m *Website) SetTypeEscaped(value *WebsiteType)() {
     err := m.GetBackingStore().Set("typeEscaped", value)
     if err != nil {

@@ -55,7 +55,7 @@ func (m *WorkloadAction) GetAdditionalData()(map[string]any) {
 func (m *WorkloadAction) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCategory gets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
+// GetCategory gets the category property value. The category for the workload action. The possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
 // returns a *WorkloadActionCategory when successful
 func (m *WorkloadAction) GetCategory()(*WorkloadActionCategory) {
     val, err := m.GetBackingStore().Get("category")
@@ -320,7 +320,7 @@ func (m *WorkloadAction) SetAdditionalData(value map[string]any)() {
 func (m *WorkloadAction) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCategory sets the category property value. The category for the workload action. Possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
+// SetCategory sets the category property value. The category for the workload action. The possible values are: automated, manual, unknownFutureValue. Optional. Read-only.
 func (m *WorkloadAction) SetCategory(value *WorkloadActionCategory)() {
     err := m.GetBackingStore().Set("category", value)
     if err != nil {

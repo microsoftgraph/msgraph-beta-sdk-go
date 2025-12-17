@@ -133,7 +133,7 @@ func (m *Device) GetDeviceMetadata()(*string) {
     }
     return nil
 }
-// GetDeviceOwnership gets the deviceOwnership property value. Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.
+// GetDeviceOwnership gets the deviceOwnership property value. Ownership of the device. Intune sets this property. The possible values are: unknown, company, personal.
 // returns a *string when successful
 func (m *Device) GetDeviceOwnership()(*string) {
     val, err := m.GetBackingStore().Get("deviceOwnership")
@@ -205,7 +205,7 @@ func (m *Device) GetEnrollmentProfileName()(*string) {
     }
     return nil
 }
-// GetEnrollmentType gets the enrollmentType property value. Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
+// GetEnrollmentType gets the enrollmentType property value. Enrollment type of the device. Intune sets this property. The possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
 // returns a *string when successful
 func (m *Device) GetEnrollmentType()(*string) {
     val, err := m.GetBackingStore().Get("enrollmentType")
@@ -857,7 +857,7 @@ func (m *Device) GetKind()(*string) {
     }
     return nil
 }
-// GetManagementType gets the managementType property value. Management channel of the device. Intune sets this property. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
+// GetManagementType gets the managementType property value. Management channel of the device. Intune sets this property. The possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 // returns a *string when successful
 func (m *Device) GetManagementType()(*string) {
     val, err := m.GetBackingStore().Get("managementType")
@@ -1522,7 +1522,7 @@ func (m *Device) SetDeviceMetadata(value *string)() {
         panic(err)
     }
 }
-// SetDeviceOwnership sets the deviceOwnership property value. Ownership of the device. Intune sets this property. Possible values are: unknown, company, personal.
+// SetDeviceOwnership sets the deviceOwnership property value. Ownership of the device. Intune sets this property. The possible values are: unknown, company, personal.
 func (m *Device) SetDeviceOwnership(value *string)() {
     err := m.GetBackingStore().Set("deviceOwnership", value)
     if err != nil {
@@ -1564,7 +1564,7 @@ func (m *Device) SetEnrollmentProfileName(value *string)() {
         panic(err)
     }
 }
-// SetEnrollmentType sets the enrollmentType property value. Enrollment type of the device. Intune sets this property. Possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
+// SetEnrollmentType sets the enrollmentType property value. Enrollment type of the device. Intune sets this property. The possible values are: unknown, userEnrollment, deviceEnrollmentManager, appleBulkWithUser, appleBulkWithoutUser, windowsAzureADJoin, windowsBulkUserless, windowsAutoEnrollment, windowsBulkAzureDomainJoin, windowsCoManagement, windowsAzureADJoinUsingDeviceAuth,appleUserEnrollment, appleUserEnrollmentWithServiceAccount. NOTE: This property might return other values apart from those listed.
 func (m *Device) SetEnrollmentType(value *string)() {
     err := m.GetBackingStore().Set("enrollmentType", value)
     if err != nil {
@@ -1627,7 +1627,7 @@ func (m *Device) SetKind(value *string)() {
         panic(err)
     }
 }
-// SetManagementType sets the managementType property value. Management channel of the device. Intune sets this property. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
+// SetManagementType sets the managementType property value. Management channel of the device. Intune sets this property. The possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController.
 func (m *Device) SetManagementType(value *string)() {
     err := m.GetBackingStore().Set("managementType", value)
     if err != nil {

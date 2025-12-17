@@ -25,7 +25,7 @@ func NewTimeConstraint()(*TimeConstraint) {
 func CreateTimeConstraintFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTimeConstraint(), nil
 }
-// GetActivityDomain gets the activityDomain property value. The nature of the activity, optional. Possible values are: work, personal, unrestricted, or unknown.
+// GetActivityDomain gets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
 // returns a *ActivityDomain when successful
 func (m *TimeConstraint) GetActivityDomain()(*ActivityDomain) {
     val, err := m.GetBackingStore().Get("activityDomain")
@@ -184,7 +184,7 @@ func (m *TimeConstraint) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetActivityDomain sets the activityDomain property value. The nature of the activity, optional. Possible values are: work, personal, unrestricted, or unknown.
+// SetActivityDomain sets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
 func (m *TimeConstraint) SetActivityDomain(value *ActivityDomain)() {
     err := m.GetBackingStore().Set("activityDomain", value)
     if err != nil {

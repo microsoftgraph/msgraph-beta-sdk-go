@@ -36,7 +36,7 @@ func (m *Room) GetAudioDeviceName()(*string) {
     }
     return nil
 }
-// GetBookingType gets the bookingType property value. Specifies how the room can be booked. Possible values are:unknown - Unspecified booking behavior. We don't recommend that you use this value.standard - Available for general booking.reserved - Reserved for specific users or purposes.
+// GetBookingType gets the bookingType property value. Specifies how the room can be booked. The possible values are:unknown - Unspecified booking behavior. We don't recommend that you use this value.standard - Available for general booking.reserved - Reserved for specific users or purposes.
 // returns a *BookingType when successful
 func (m *Room) GetBookingType()(*BookingType) {
     val, err := m.GetBackingStore().Get("bookingType")
@@ -411,7 +411,7 @@ func (m *Room) SetAudioDeviceName(value *string)() {
         panic(err)
     }
 }
-// SetBookingType sets the bookingType property value. Specifies how the room can be booked. Possible values are:unknown - Unspecified booking behavior. We don't recommend that you use this value.standard - Available for general booking.reserved - Reserved for specific users or purposes.
+// SetBookingType sets the bookingType property value. Specifies how the room can be booked. The possible values are:unknown - Unspecified booking behavior. We don't recommend that you use this value.standard - Available for general booking.reserved - Reserved for specific users or purposes.
 func (m *Room) SetBookingType(value *BookingType)() {
     err := m.GetBackingStore().Set("bookingType", value)
     if err != nil {

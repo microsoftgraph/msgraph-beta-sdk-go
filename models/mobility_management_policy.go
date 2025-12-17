@@ -42,7 +42,7 @@ func CreateMobilityManagementPolicyFromDiscriminatorValue(parseNode i878a80d2330
     }
     return NewMobilityManagementPolicy(), nil
 }
-// GetAppliesTo gets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
+// GetAppliesTo gets the appliesTo property value. Indicates the user scope of the mobility management policy. The possible values are: none, all, selected.
 // returns a *PolicyScope when successful
 func (m *MobilityManagementPolicy) GetAppliesTo()(*PolicyScope) {
     val, err := m.GetBackingStore().Get("appliesTo")
@@ -293,7 +293,7 @@ func (m *MobilityManagementPolicy) Serialize(writer i878a80d2330e89d26896388a3f4
     }
     return nil
 }
-// SetAppliesTo sets the appliesTo property value. Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.
+// SetAppliesTo sets the appliesTo property value. Indicates the user scope of the mobility management policy. The possible values are: none, all, selected.
 func (m *MobilityManagementPolicy) SetAppliesTo(value *PolicyScope)() {
     err := m.GetBackingStore().Set("appliesTo", value)
     if err != nil {

@@ -659,7 +659,7 @@ func (m *CloudPC) GetOnPremisesConnectionName()(*string) {
     }
     return nil
 }
-// GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.
+// GetOsVersion gets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 // returns a *CloudPcOperatingSystem when successful
 func (m *CloudPC) GetOsVersion()(*CloudPcOperatingSystem) {
     val, err := m.GetBackingStore().Get("osVersion")
@@ -743,7 +743,7 @@ func (m *CloudPC) GetProvisioningPolicyName()(*string) {
     }
     return nil
 }
-// GetProvisioningType gets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The default value is dedicated. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
+// GetProvisioningType gets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The default value is dedicated. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
 // returns a *CloudPcProvisioningType when successful
 func (m *CloudPC) GetProvisioningType()(*CloudPcProvisioningType) {
     val, err := m.GetBackingStore().Get("provisioningType")
@@ -851,7 +851,7 @@ func (m *CloudPC) GetStatusDetails()(CloudPcStatusDetailsable) {
     }
     return nil
 }
-// GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.
+// GetUserAccountType gets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 // returns a *CloudPcUserAccountType when successful
 func (m *CloudPC) GetUserAccountType()(*CloudPcUserAccountType) {
     val, err := m.GetBackingStore().Get("userAccountType")
@@ -1290,7 +1290,7 @@ func (m *CloudPC) SetOnPremisesConnectionName(value *string)() {
         panic(err)
     }
 }
-// SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.
+// SetOsVersion sets the osVersion property value. The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
 func (m *CloudPC) SetOsVersion(value *CloudPcOperatingSystem)() {
     err := m.GetBackingStore().Set("osVersion", value)
     if err != nil {
@@ -1339,7 +1339,7 @@ func (m *CloudPC) SetProvisioningPolicyName(value *string)() {
         panic(err)
     }
 }
-// SetProvisioningType sets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The default value is dedicated. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
+// SetProvisioningType sets the provisioningType property value. The type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup, reserve. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup, reserve. The default value is dedicated. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.
 func (m *CloudPC) SetProvisioningType(value *CloudPcProvisioningType)() {
     err := m.GetBackingStore().Set("provisioningType", value)
     if err != nil {
@@ -1402,7 +1402,7 @@ func (m *CloudPC) SetStatusDetails(value CloudPcStatusDetailsable)() {
         panic(err)
     }
 }
-// SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.
+// SetUserAccountType sets the userAccountType property value. The account type of the user on provisioned Cloud PCs. The possible values are: standardUser, administrator, unknownFutureValue.
 func (m *CloudPC) SetUserAccountType(value *CloudPcUserAccountType)() {
     err := m.GetBackingStore().Set("userAccountType", value)
     if err != nil {

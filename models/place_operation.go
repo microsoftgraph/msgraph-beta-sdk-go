@@ -22,7 +22,7 @@ func NewPlaceOperation()(*PlaceOperation) {
 func CreatePlaceOperationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewPlaceOperation(), nil
 }
-// GetDetails gets the details property value. The details property
+// GetDetails gets the details property value. The detailed result of the operation, including errors and successful places.
 // returns a []PlaceExecutionResultable when successful
 func (m *PlaceOperation) GetDetails()([]PlaceExecutionResultable) {
     val, err := m.GetBackingStore().Get("details")
@@ -76,7 +76,7 @@ func (m *PlaceOperation) GetFieldDeserializers()(map[string]func(i878a80d2330e89
     }
     return res
 }
-// GetProgress gets the progress property value. The progress property
+// GetProgress gets the progress property value. The progress of the operation.
 // returns a PlaceOperationProgressable when successful
 func (m *PlaceOperation) GetProgress()(PlaceOperationProgressable) {
     val, err := m.GetBackingStore().Get("progress")
@@ -133,14 +133,14 @@ func (m *PlaceOperation) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     }
     return nil
 }
-// SetDetails sets the details property value. The details property
+// SetDetails sets the details property value. The detailed result of the operation, including errors and successful places.
 func (m *PlaceOperation) SetDetails(value []PlaceExecutionResultable)() {
     err := m.GetBackingStore().Set("details", value)
     if err != nil {
         panic(err)
     }
 }
-// SetProgress sets the progress property value. The progress property
+// SetProgress sets the progress property value. The progress of the operation.
 func (m *PlaceOperation) SetProgress(value PlaceOperationProgressable)() {
     err := m.GetBackingStore().Set("progress", value)
     if err != nil {
