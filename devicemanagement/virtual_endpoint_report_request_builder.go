@@ -113,6 +113,11 @@ func (m *VirtualEndpointReportRequestBuilder) Patch(ctx context.Context, body ie
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.CloudPcReportable), nil
 }
+// RetrieveCloudPcClientAppUsageReport provides operations to call the retrieveCloudPcClientAppUsageReport method.
+// returns a *VirtualEndpointReportRetrieveCloudPcClientAppUsageReportRequestBuilder when successful
+func (m *VirtualEndpointReportRequestBuilder) RetrieveCloudPcClientAppUsageReport()(*VirtualEndpointReportRetrieveCloudPcClientAppUsageReportRequestBuilder) {
+    return NewVirtualEndpointReportRetrieveCloudPcClientAppUsageReportRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // RetrieveCloudPcRecommendationReports provides operations to call the retrieveCloudPcRecommendationReports method.
 // returns a *VirtualEndpointReportRetrieveCloudPcRecommendationReportsRequestBuilder when successful
 func (m *VirtualEndpointReportRequestBuilder) RetrieveCloudPcRecommendationReports()(*VirtualEndpointReportRetrieveCloudPcRecommendationReportsRequestBuilder) {

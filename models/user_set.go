@@ -49,6 +49,8 @@ func CreateUserSetFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f48
                         return NewRequestorManager(), nil
                     case "#microsoft.graph.singleUser":
                         return NewSingleUser(), nil
+                    case "#microsoft.graph.targetAgentIdentitySponsorsOrOwners":
+                        return NewTargetAgentIdentitySponsorsOrOwners(), nil
                     case "#microsoft.graph.targetUserSponsors":
                         return NewTargetUserSponsors(), nil
                 }

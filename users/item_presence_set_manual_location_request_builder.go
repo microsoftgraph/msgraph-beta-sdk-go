@@ -33,7 +33,7 @@ func NewItemPresenceSetManualLocationRequestBuilder(rawUrl string, requestAdapte
     urlParams["request-raw-url"] = rawUrl
     return NewItemPresenceSetManualLocationRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Post set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
+// Post set the manual work location signal for a user. The explicit value chosen by a user or an authorized client overrides any automatically detected or scheduled working hours and location.
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 // [Find more info here]
 // 
@@ -52,7 +52,7 @@ func (m *ItemPresenceSetManualLocationRequestBuilder) Post(ctx context.Context, 
     }
     return nil
 }
-// ToPostRequestInformation set the manual work location signal for a user. The explicit value chosen by a user (or an authorized client) overrides any automatically detected or scheduled working hours and location.
+// ToPostRequestInformation set the manual work location signal for a user. The explicit value chosen by a user or an authorized client overrides any automatically detected or scheduled working hours and location.
 // returns a *RequestInformation when successful
 func (m *ItemPresenceSetManualLocationRequestBuilder) ToPostRequestInformation(ctx context.Context, body ItemPresenceSetManualLocationPostRequestBodyable, requestConfiguration *ItemPresenceSetManualLocationRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

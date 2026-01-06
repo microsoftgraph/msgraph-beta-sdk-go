@@ -58,6 +58,16 @@ func (m *ExchangeAdmin) GetFieldDeserializers()(map[string]func(i878a80d2330e89d
         }
         return nil
     }
+    res["tracing"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateMessageTracingRootFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTracing(val.(MessageTracingRootable))
+        }
+        return nil
+    }
     return res
 }
 // GetMailboxes gets the mailboxes property value. Represents a user's mailboxes.
@@ -81,6 +91,18 @@ func (m *ExchangeAdmin) GetMessageTraces()([]MessageTraceable) {
     }
     if val != nil {
         return val.([]MessageTraceable)
+    }
+    return nil
+}
+// GetTracing gets the tracing property value. The tracing property
+// returns a MessageTracingRootable when successful
+func (m *ExchangeAdmin) GetTracing()(MessageTracingRootable) {
+    val, err := m.GetBackingStore().Get("tracing")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(MessageTracingRootable)
     }
     return nil
 }
@@ -114,6 +136,12 @@ func (m *ExchangeAdmin) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0
             return err
         }
     }
+    {
+        err = writer.WriteObjectValue("tracing", m.GetTracing())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetMailboxes sets the mailboxes property value. Represents a user's mailboxes.
@@ -130,11 +158,20 @@ func (m *ExchangeAdmin) SetMessageTraces(value []MessageTraceable)() {
         panic(err)
     }
 }
+// SetTracing sets the tracing property value. The tracing property
+func (m *ExchangeAdmin) SetTracing(value MessageTracingRootable)() {
+    err := m.GetBackingStore().Set("tracing", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type ExchangeAdminable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetMailboxes()([]Mailboxable)
     GetMessageTraces()([]MessageTraceable)
+    GetTracing()(MessageTracingRootable)
     SetMailboxes(value []Mailboxable)()
     SetMessageTraces(value []MessageTraceable)()
+    SetTracing(value MessageTracingRootable)()
 }

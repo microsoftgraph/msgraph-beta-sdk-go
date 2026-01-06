@@ -99,6 +99,16 @@ func (m *AdhocCallsRequestBuilder) Get(ctx context.Context, requestConfiguration
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.AdhocCallCollectionResponseable), nil
 }
+// GetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTime provides operations to call the getAllRecordings method.
+// returns a *AdhocCallsGetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilder when successful
+func (m *AdhocCallsRequestBuilder) GetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTime()(*AdhocCallsGetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewAdhocCallsGetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
+// GetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTime provides operations to call the getAllTranscripts method.
+// returns a *AdhocCallsGetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilder when successful
+func (m *AdhocCallsRequestBuilder) GetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTime()(*AdhocCallsGetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilder) {
+    return NewAdhocCallsGetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Post create new navigation property to adhocCalls for communications
 // returns a AdhocCallable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code

@@ -192,7 +192,7 @@ func (m *Workspace) GetFloorNumber()(*int32) {
     }
     return nil
 }
-// GetMode gets the mode property value. The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms Pro management portal.unavailablePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.
+// GetMode gets the mode property value. The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms pro management portal.unavailablePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.
 // returns a PlaceModeable when successful
 func (m *Workspace) GetMode()(PlaceModeable) {
     val, err := m.GetBackingStore().Get("mode")
@@ -216,7 +216,7 @@ func (m *Workspace) GetNickname()(*string) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. An alternate immutable unique identifier of the workspace. Read-only.
+// GetPlaceId gets the placeId property value. An alternative immutable unique identifier of the workspace. Read-only.
 // returns a *string when successful
 func (m *Workspace) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -332,7 +332,7 @@ func (m *Workspace) SetFloorNumber(value *int32)() {
         panic(err)
     }
 }
-// SetMode sets the mode property value. The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms Pro management portal.unavailablePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.
+// SetMode sets the mode property value. The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms pro management portal.unavailablePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.
 func (m *Workspace) SetMode(value PlaceModeable)() {
     err := m.GetBackingStore().Set("mode", value)
     if err != nil {
@@ -346,7 +346,7 @@ func (m *Workspace) SetNickname(value *string)() {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. An alternate immutable unique identifier of the workspace. Read-only.
+// SetPlaceId sets the placeId property value. An alternative immutable unique identifier of the workspace. Read-only.
 func (m *Workspace) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {

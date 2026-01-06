@@ -173,6 +173,11 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemReques
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) SharedWithTeams()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// StartMigration provides operations to call the startMigration method.
+// returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemStartMigrationRequestBuilder when successful
+func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) StartMigration()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemStartMigrationRequestBuilder) {
+    return NewTeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 // returns a *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsRequestBuilder when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsChannelItemRequestBuilder) Tabs()(*TeamTemplatesItemDefinitionsItemTeamDefinitionChannelsItemTabsRequestBuilder) {

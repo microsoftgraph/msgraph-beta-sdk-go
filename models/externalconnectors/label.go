@@ -35,10 +35,29 @@ const (
     PRIORITYNORMALIZED_LABEL
     REPORTEDBY_LABEL
     SECONDARYID_LABEL
+    PERSONEMAILS_LABEL
+    PERSONADDRESSES_LABEL
+    PERSONANNIVERSARIES_LABEL
+    PERSONNAME_LABEL
+    PERSONNOTE_LABEL
+    PERSONPHONES_LABEL
+    PERSONCURRENTPOSITION_LABEL
+    PERSONWEBACCOUNTS_LABEL
+    PERSONWEBSITE_LABEL
+    PERSONSKILLS_LABEL
+    PERSONPROJECTS_LABEL
+    PERSONACCOUNT_LABEL
+    PERSONAWARDS_LABEL
+    PERSONCERTIFICATIONS_LABEL
+    PERSONASSISTANTS_LABEL
+    PERSONCOLLEAGUES_LABEL
+    PERSONMANAGER_LABEL
+    PERSONALTERNATECONTACTS_LABEL
+    PERSONEMERGENCYCONTACTS_LABEL
 )
 
 func (i Label) String() string {
-    return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension", "unknownFutureValue", "containerName", "containerUrl", "iconUrl", "assignedToPeople", "closedBy", "closedDate", "priority", "sprintName", "tags", "severity", "state", "dueDate", "itemParentId", "itemPath", "itemType", "numberOfReactions", "parentUrl", "priorityNormalized", "reportedBy", "secondaryId"}[i]
+    return []string{"title", "url", "createdBy", "lastModifiedBy", "authors", "createdDateTime", "lastModifiedDateTime", "fileName", "fileExtension", "unknownFutureValue", "containerName", "containerUrl", "iconUrl", "assignedToPeople", "closedBy", "closedDate", "priority", "sprintName", "tags", "severity", "state", "dueDate", "itemParentId", "itemPath", "itemType", "numberOfReactions", "parentUrl", "priorityNormalized", "reportedBy", "secondaryId", "personEmails", "personAddresses", "personAnniversaries", "personName", "personNote", "personPhones", "personCurrentPosition", "personWebAccounts", "personWebSite", "personSkills", "personProjects", "personAccount", "personAwards", "personCertifications", "personAssistants", "personColleagues", "personManager", "personAlternateContacts", "personEmergencyContacts"}[i]
 }
 func ParseLabel(v string) (any, error) {
     result := TITLE_LABEL
@@ -103,6 +122,44 @@ func ParseLabel(v string) (any, error) {
             result = REPORTEDBY_LABEL
         case "secondaryId":
             result = SECONDARYID_LABEL
+        case "personEmails":
+            result = PERSONEMAILS_LABEL
+        case "personAddresses":
+            result = PERSONADDRESSES_LABEL
+        case "personAnniversaries":
+            result = PERSONANNIVERSARIES_LABEL
+        case "personName":
+            result = PERSONNAME_LABEL
+        case "personNote":
+            result = PERSONNOTE_LABEL
+        case "personPhones":
+            result = PERSONPHONES_LABEL
+        case "personCurrentPosition":
+            result = PERSONCURRENTPOSITION_LABEL
+        case "personWebAccounts":
+            result = PERSONWEBACCOUNTS_LABEL
+        case "personWebSite":
+            result = PERSONWEBSITE_LABEL
+        case "personSkills":
+            result = PERSONSKILLS_LABEL
+        case "personProjects":
+            result = PERSONPROJECTS_LABEL
+        case "personAccount":
+            result = PERSONACCOUNT_LABEL
+        case "personAwards":
+            result = PERSONAWARDS_LABEL
+        case "personCertifications":
+            result = PERSONCERTIFICATIONS_LABEL
+        case "personAssistants":
+            result = PERSONASSISTANTS_LABEL
+        case "personColleagues":
+            result = PERSONCOLLEAGUES_LABEL
+        case "personManager":
+            result = PERSONMANAGER_LABEL
+        case "personAlternateContacts":
+            result = PERSONALTERNATECONTACTS_LABEL
+        case "personEmergencyContacts":
+            result = PERSONEMERGENCYCONTACTS_LABEL
         default:
             return nil, nil
     }

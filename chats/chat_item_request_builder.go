@@ -187,6 +187,11 @@ func (m *ChatItemRequestBuilder) RemoveAllAccessForUser()(*ItemRemoveAllAccessFo
 func (m *ChatItemRequestBuilder) SendActivityNotification()(*ItemSendActivityNotificationRequestBuilder) {
     return NewItemSendActivityNotificationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// StartMigration provides operations to call the startMigration method.
+// returns a *ItemStartMigrationRequestBuilder when successful
+func (m *ChatItemRequestBuilder) StartMigration()(*ItemStartMigrationRequestBuilder) {
+    return NewItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Tabs provides operations to manage the tabs property of the microsoft.graph.chat entity.
 // returns a *ItemTabsRequestBuilder when successful
 func (m *ChatItemRequestBuilder) Tabs()(*ItemTabsRequestBuilder) {

@@ -23,7 +23,7 @@ func NewCustomBlockPage()(*CustomBlockPage) {
 func CreateCustomBlockPageFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewCustomBlockPage(), nil
 }
-// GetConfiguration gets the configuration property value. The configuration property
+// GetConfiguration gets the configuration property value. The current configuration of the customized message. The body can be input in limited markdown language, supporting links via the format: link.
 // returns a BlockPageConfigurationBaseable when successful
 func (m *CustomBlockPage) GetConfiguration()(BlockPageConfigurationBaseable) {
     val, err := m.GetBackingStore().Get("configuration")
@@ -94,7 +94,7 @@ func (m *CustomBlockPage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0
     }
     return nil
 }
-// SetConfiguration sets the configuration property value. The configuration property
+// SetConfiguration sets the configuration property value. The current configuration of the customized message. The body can be input in limited markdown language, supporting links via the format: link.
 func (m *CustomBlockPage) SetConfiguration(value BlockPageConfigurationBaseable)() {
     err := m.GetBackingStore().Set("configuration", value)
     if err != nil {

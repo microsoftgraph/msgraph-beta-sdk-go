@@ -40,7 +40,7 @@ func (m *UnavailablePlaceMode) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetReason gets the reason property value. Reason for marking a place unavailable.
+// GetReason gets the reason property value. The reason a place is marked unavailable.
 // returns a *string when successful
 func (m *UnavailablePlaceMode) GetReason()(*string) {
     val, err := m.GetBackingStore().Get("reason")
@@ -66,7 +66,7 @@ func (m *UnavailablePlaceMode) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetReason sets the reason property value. Reason for marking a place unavailable.
+// SetReason sets the reason property value. The reason a place is marked unavailable.
 func (m *UnavailablePlaceMode) SetReason(value *string)() {
     err := m.GetBackingStore().Set("reason", value)
     if err != nil {

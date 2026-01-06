@@ -24,7 +24,7 @@ func NewTeamsUserConfiguration()(*TeamsUserConfiguration) {
 func CreateTeamsUserConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewTeamsUserConfiguration(), nil
 }
-// GetAccountType gets the accountType property value. The type of the account in the Teams context. The possible values are: user, resourceAccount, guest, sfbOnPremUser, unknown, unknownFutureValue, ineligibleUser. Use the Prefer: include-unknown-enum-members request header to get the following value from this enum evolvable enum: ineligibleUser.
+// GetAccountType gets the accountType property value. The accountType property
 // returns a *AccountType when successful
 func (m *TeamsUserConfiguration) GetAccountType()(*AccountType) {
     val, err := m.GetBackingStore().Get("accountType")
@@ -349,7 +349,7 @@ func (m *TeamsUserConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
-// SetAccountType sets the accountType property value. The type of the account in the Teams context. The possible values are: user, resourceAccount, guest, sfbOnPremUser, unknown, unknownFutureValue, ineligibleUser. Use the Prefer: include-unknown-enum-members request header to get the following value from this enum evolvable enum: ineligibleUser.
+// SetAccountType sets the accountType property value. The accountType property
 func (m *TeamsUserConfiguration) SetAccountType(value *AccountType)() {
     err := m.GetBackingStore().Set("accountType", value)
     if err != nil {

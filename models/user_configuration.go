@@ -48,7 +48,57 @@ func (m *UserConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330
         }
         return nil
     }
+    res["structuredData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateStructuredDataEntryFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]StructuredDataEntryable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(StructuredDataEntryable)
+                }
+            }
+            m.SetStructuredData(res)
+        }
+        return nil
+    }
+    res["xmlData"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetXmlData(val)
+        }
+        return nil
+    }
     return res
+}
+// GetStructuredData gets the structuredData property value. Key-value pairs of supported data types.
+// returns a []StructuredDataEntryable when successful
+func (m *UserConfiguration) GetStructuredData()([]StructuredDataEntryable) {
+    val, err := m.GetBackingStore().Get("structuredData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]StructuredDataEntryable)
+    }
+    return nil
+}
+// GetXmlData gets the xmlData property value. Binary data for storing serialized XML.
+// returns a []byte when successful
+func (m *UserConfiguration) GetXmlData()([]byte) {
+    val, err := m.GetBackingStore().Get("xmlData")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
 }
 // Serialize serializes information the current object
 func (m *UserConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
@@ -62,6 +112,24 @@ func (m *UserConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27
             return err
         }
     }
+    if m.GetStructuredData() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetStructuredData()))
+        for i, v := range m.GetStructuredData() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("structuredData", cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteByteArrayValue("xmlData", m.GetXmlData())
+        if err != nil {
+            return err
+        }
+    }
     return nil
 }
 // SetBinaryData sets the binaryData property value. Arbitrary binary data.
@@ -71,9 +139,27 @@ func (m *UserConfiguration) SetBinaryData(value []byte)() {
         panic(err)
     }
 }
+// SetStructuredData sets the structuredData property value. Key-value pairs of supported data types.
+func (m *UserConfiguration) SetStructuredData(value []StructuredDataEntryable)() {
+    err := m.GetBackingStore().Set("structuredData", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetXmlData sets the xmlData property value. Binary data for storing serialized XML.
+func (m *UserConfiguration) SetXmlData(value []byte)() {
+    err := m.GetBackingStore().Set("xmlData", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type UserConfigurationable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetBinaryData()([]byte)
+    GetStructuredData()([]StructuredDataEntryable)
+    GetXmlData()([]byte)
     SetBinaryData(value []byte)()
+    SetStructuredData(value []StructuredDataEntryable)()
+    SetXmlData(value []byte)()
 }
