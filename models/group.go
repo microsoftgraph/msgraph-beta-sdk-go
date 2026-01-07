@@ -1274,6 +1274,16 @@ func (m *Group) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388
         }
         return nil
     }
+    res["welcomeMessageEnabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetWelcomeMessageEnabled(val)
+        }
+        return nil
+    }
     res["writebackConfiguration"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateGroupWritebackConfigurationFromDiscriminatorValue)
         if err != nil {
@@ -1982,6 +1992,18 @@ func (m *Group) GetVisibility()(*string) {
     }
     return nil
 }
+// GetWelcomeMessageEnabled gets the welcomeMessageEnabled property value. The welcomeMessageEnabled property
+// returns a *bool when successful
+func (m *Group) GetWelcomeMessageEnabled()(*bool) {
+    val, err := m.GetBackingStore().Get("welcomeMessageEnabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
 // GetWritebackConfiguration gets the writebackConfiguration property value. Specifies whether or not a group is configured to write back group object properties to on-premises Active Directory. These properties are used when group writeback is configured in the Microsoft Entra Connect sync client.
 // returns a GroupWritebackConfigurationable when successful
 func (m *Group) GetWritebackConfiguration()(GroupWritebackConfigurationable) {
@@ -2632,6 +2654,12 @@ func (m *Group) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c4
         }
     }
     {
+        err = writer.WriteBoolValue("welcomeMessageEnabled", m.GetWelcomeMessageEnabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteObjectValue("writebackConfiguration", m.GetWritebackConfiguration())
         if err != nil {
             return err
@@ -3199,6 +3227,13 @@ func (m *Group) SetVisibility(value *string)() {
         panic(err)
     }
 }
+// SetWelcomeMessageEnabled sets the welcomeMessageEnabled property value. The welcomeMessageEnabled property
+func (m *Group) SetWelcomeMessageEnabled(value *bool)() {
+    err := m.GetBackingStore().Set("welcomeMessageEnabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetWritebackConfiguration sets the writebackConfiguration property value. Specifies whether or not a group is configured to write back group object properties to on-premises Active Directory. These properties are used when group writeback is configured in the Microsoft Entra Connect sync client.
 func (m *Group) SetWritebackConfiguration(value GroupWritebackConfigurationable)() {
     err := m.GetBackingStore().Set("writebackConfiguration", value)
@@ -3289,6 +3324,7 @@ type Groupable interface {
     GetUnseenCount()(*int32)
     GetUnseenMessagesCount()(*int32)
     GetVisibility()(*string)
+    GetWelcomeMessageEnabled()(*bool)
     GetWritebackConfiguration()(GroupWritebackConfigurationable)
     SetAcceptedSenders(value []DirectoryObjectable)()
     SetAccessType(value *GroupAccessType)()
@@ -3370,5 +3406,6 @@ type Groupable interface {
     SetUnseenCount(value *int32)()
     SetUnseenMessagesCount(value *int32)()
     SetVisibility(value *string)()
+    SetWelcomeMessageEnabled(value *bool)()
     SetWritebackConfiguration(value GroupWritebackConfigurationable)()
 }

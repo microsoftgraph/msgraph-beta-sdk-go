@@ -853,6 +853,14 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewCopilotAdminSetting(), nil
                     case "#microsoft.graph.copilotCommunicationsRoot":
                         return NewCopilotCommunicationsRoot(), nil
+                    case "#microsoft.graph.copilotConversation":
+                        return NewCopilotConversation(), nil
+                    case "#microsoft.graph.copilotConversationMessage":
+                        return NewCopilotConversationMessage(), nil
+                    case "#microsoft.graph.copilotConversationRequestMessage":
+                        return NewCopilotConversationRequestMessage(), nil
+                    case "#microsoft.graph.copilotConversationResponseMessage":
+                        return NewCopilotConversationResponseMessage(), nil
                     case "#microsoft.graph.copilotPackage":
                         return NewCopilotPackage(), nil
                     case "#microsoft.graph.copilotPackageDetail":
@@ -1425,6 +1433,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewExactMatchUploadAgent(), nil
                     case "#microsoft.graph.exchangeAdmin":
                         return NewExchangeAdmin(), nil
+                    case "#microsoft.graph.exchangeMessageTrace":
+                        return NewExchangeMessageTrace(), nil
+                    case "#microsoft.graph.exchangeMessageTraceDetail":
+                        return NewExchangeMessageTraceDetail(), nil
                     case "#microsoft.graph.exchangeProtectionPolicy":
                         return NewExchangeProtectionPolicy(), nil
                     case "#microsoft.graph.exchangeRestoreSession":
@@ -2073,6 +2085,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewMessageRule(), nil
                     case "#microsoft.graph.messageTrace":
                         return NewMessageTrace(), nil
+                    case "#microsoft.graph.messageTracingRoot":
+                        return NewMessageTracingRoot(), nil
                     case "#microsoft.graph.mfaCompletionMetric":
                         return NewMfaCompletionMetric(), nil
                     case "#microsoft.graph.mfaFailure":
@@ -3797,10 +3811,16 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewWorkbookWorksheetProtection(), nil
                     case "#microsoft.graph.workforceIntegration":
                         return NewWorkforceIntegration(), nil
+                    case "#microsoft.graph.workHoursAndLocationsSetting":
+                        return NewWorkHoursAndLocationsSetting(), nil
                     case "#microsoft.graph.workingTimeSchedule":
                         return NewWorkingTimeSchedule(), nil
                     case "#microsoft.graph.workplaceSensorDevice":
                         return NewWorkplaceSensorDevice(), nil
+                    case "#microsoft.graph.workPlanOccurrence":
+                        return NewWorkPlanOccurrence(), nil
+                    case "#microsoft.graph.workPlanRecurrence":
+                        return NewWorkPlanRecurrence(), nil
                     case "#microsoft.graph.workPosition":
                         return NewWorkPosition(), nil
                     case "#microsoft.graph.workspace":

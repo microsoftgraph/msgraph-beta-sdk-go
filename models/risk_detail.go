@@ -26,10 +26,11 @@ const (
     ADMINCONFIRMEDAGENTSAFE_RISKDETAIL
     ADMINCONFIRMEDAGENTCOMPROMISED_RISKDETAIL
     ADMINDISMISSEDRISKFORAGENT_RISKDETAIL
+    MICROSOFTREVOKEDSESSIONS_RISKDETAIL
 )
 
 func (i RiskDetail) String() string {
-    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal", "m365DAdminDismissedDetection", "userChangedPasswordOnPremises", "adminDismissedRiskForSignIn", "adminConfirmedAccountSafe", "adminConfirmedAgentSafe", "adminConfirmedAgentCompromised", "adminDismissedRiskForAgent"}[i]
+    return []string{"none", "adminGeneratedTemporaryPassword", "userPerformedSecuredPasswordChange", "userPerformedSecuredPasswordReset", "adminConfirmedSigninSafe", "aiConfirmedSigninSafe", "userPassedMFADrivenByRiskBasedPolicy", "adminDismissedAllRiskForUser", "adminConfirmedSigninCompromised", "hidden", "adminConfirmedUserCompromised", "unknownFutureValue", "adminConfirmedServicePrincipalCompromised", "adminDismissedAllRiskForServicePrincipal", "m365DAdminDismissedDetection", "userChangedPasswordOnPremises", "adminDismissedRiskForSignIn", "adminConfirmedAccountSafe", "adminConfirmedAgentSafe", "adminConfirmedAgentCompromised", "adminDismissedRiskForAgent", "microsoftRevokedSessions"}[i]
 }
 func ParseRiskDetail(v string) (any, error) {
     result := NONE_RISKDETAIL
@@ -76,6 +77,8 @@ func ParseRiskDetail(v string) (any, error) {
             result = ADMINCONFIRMEDAGENTCOMPROMISED_RISKDETAIL
         case "adminDismissedRiskForAgent":
             result = ADMINDISMISSEDRISKFORAGENT_RISKDETAIL
+        case "microsoftRevokedSessions":
+            result = MICROSOFTREVOKEDSESSIONS_RISKDETAIL
         default:
             return nil, nil
     }

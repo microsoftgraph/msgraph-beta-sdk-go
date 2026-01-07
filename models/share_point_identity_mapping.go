@@ -43,10 +43,32 @@ func CreateSharePointIdentityMappingFromDiscriminatorValue(parseNode i878a80d233
     }
     return NewSharePointIdentityMapping(), nil
 }
+// GetDeleted gets the deleted property value. Indicates that an identity mapping was deleted successfully.
+// returns a Deletedable when successful
+func (m *SharePointIdentityMapping) GetDeleted()(Deletedable) {
+    val, err := m.GetBackingStore().Get("deleted")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(Deletedable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *SharePointIdentityMapping) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Entity.GetFieldDeserializers()
+    res["deleted"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateDeletedFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetDeleted(val.(Deletedable))
+        }
+        return nil
+    }
     res["sourceOrganizationId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetUUIDValue()
         if err != nil {
@@ -78,12 +100,25 @@ func (m *SharePointIdentityMapping) Serialize(writer i878a80d2330e89d26896388a3f
         return err
     }
     {
+        err = writer.WriteObjectValue("deleted", m.GetDeleted())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteUUIDValue("sourceOrganizationId", m.GetSourceOrganizationId())
         if err != nil {
             return err
         }
     }
     return nil
+}
+// SetDeleted sets the deleted property value. Indicates that an identity mapping was deleted successfully.
+func (m *SharePointIdentityMapping) SetDeleted(value Deletedable)() {
+    err := m.GetBackingStore().Set("deleted", value)
+    if err != nil {
+        panic(err)
+    }
 }
 // SetSourceOrganizationId sets the sourceOrganizationId property value. The unique identifier of the source organization in the migration.
 func (m *SharePointIdentityMapping) SetSourceOrganizationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)() {
@@ -95,6 +130,8 @@ func (m *SharePointIdentityMapping) SetSourceOrganizationId(value *i561e97a8befe
 type SharePointIdentityMappingable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetDeleted()(Deletedable)
     GetSourceOrganizationId()(*i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)
+    SetDeleted(value Deletedable)()
     SetSourceOrganizationId(value *i561e97a8befe7661a44c8f54600992b4207a3a0cf6770e5559949bc276de2e22.UUID)()
 }

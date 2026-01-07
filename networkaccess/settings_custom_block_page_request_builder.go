@@ -21,7 +21,7 @@ type SettingsCustomBlockPageRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// SettingsCustomBlockPageRequestBuilderGetQueryParameters get customBlockPage from networkAccess
+// SettingsCustomBlockPageRequestBuilderGetQueryParameters read the properties and relationships of microsoft.graph.networkaccess.customBlockPage object.
 type SettingsCustomBlockPageRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *SettingsCustomBlockPageRequestBuilder) Delete(ctx context.Context, requ
     }
     return nil
 }
-// Get get customBlockPage from networkAccess
+// Get read the properties and relationships of microsoft.graph.networkaccess.customBlockPage object.
 // returns a CustomBlockPageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-customblockpage-get?view=graph-rest-beta
 func (m *SettingsCustomBlockPageRequestBuilder) Get(ctx context.Context, requestConfiguration *SettingsCustomBlockPageRequestBuilderGetRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CustomBlockPageable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -93,9 +96,12 @@ func (m *SettingsCustomBlockPageRequestBuilder) Get(ctx context.Context, request
     }
     return res.(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CustomBlockPageable), nil
 }
-// Patch update the navigation property customBlockPage in networkAccess
+// Patch update the properties of a customBlockPage object.
 // returns a CustomBlockPageable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/networkaccess-customblockpage-update?view=graph-rest-beta
 func (m *SettingsCustomBlockPageRequestBuilder) Patch(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CustomBlockPageable, requestConfiguration *SettingsCustomBlockPageRequestBuilderPatchRequestConfiguration)(i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CustomBlockPageable, error) {
     requestInfo, err := m.ToPatchRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -124,7 +130,7 @@ func (m *SettingsCustomBlockPageRequestBuilder) ToDeleteRequestInformation(ctx c
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get customBlockPage from networkAccess
+// ToGetRequestInformation read the properties and relationships of microsoft.graph.networkaccess.customBlockPage object.
 // returns a *RequestInformation when successful
 func (m *SettingsCustomBlockPageRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *SettingsCustomBlockPageRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -138,7 +144,7 @@ func (m *SettingsCustomBlockPageRequestBuilder) ToGetRequestInformation(ctx cont
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPatchRequestInformation update the navigation property customBlockPage in networkAccess
+// ToPatchRequestInformation update the properties of a customBlockPage object.
 // returns a *RequestInformation when successful
 func (m *SettingsCustomBlockPageRequestBuilder) ToPatchRequestInformation(ctx context.Context, body i43e723cc778f0f3f3a05d36b9df74faa56771e9360d8ed793c50bdaacec8d5d2.CustomBlockPageable, requestConfiguration *SettingsCustomBlockPageRequestBuilderPatchRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PATCH, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

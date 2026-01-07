@@ -149,7 +149,7 @@ func (m *IdentityContainer) GetSensorCandidateActivationConfiguration()(SensorCa
     }
     return nil
 }
-// GetSensorCandidates gets the sensorCandidates property value. Represents Microsoft Defender for Identity sensors that are ready to be activated.
+// GetSensorCandidates gets the sensorCandidates property value. The sensorCandidates property
 // returns a []SensorCandidateable when successful
 func (m *IdentityContainer) GetSensorCandidates()([]SensorCandidateable) {
     val, err := m.GetBackingStore().Get("sensorCandidates")
@@ -173,7 +173,7 @@ func (m *IdentityContainer) GetSensors()([]Sensorable) {
     }
     return nil
 }
-// GetSettings gets the settings property value. Represents a container for security identities settings APIs.
+// GetSettings gets the settings property value. The settings property
 // returns a SettingsContainerable when successful
 func (m *IdentityContainer) GetSettings()(SettingsContainerable) {
     val, err := m.GetBackingStore().Get("settings")
@@ -274,7 +274,7 @@ func (m *IdentityContainer) SetSensorCandidateActivationConfiguration(value Sens
         panic(err)
     }
 }
-// SetSensorCandidates sets the sensorCandidates property value. Represents Microsoft Defender for Identity sensors that are ready to be activated.
+// SetSensorCandidates sets the sensorCandidates property value. The sensorCandidates property
 func (m *IdentityContainer) SetSensorCandidates(value []SensorCandidateable)() {
     err := m.GetBackingStore().Set("sensorCandidates", value)
     if err != nil {
@@ -288,7 +288,7 @@ func (m *IdentityContainer) SetSensors(value []Sensorable)() {
         panic(err)
     }
 }
-// SetSettings sets the settings property value. Represents a container for security identities settings APIs.
+// SetSettings sets the settings property value. The settings property
 func (m *IdentityContainer) SetSettings(value SettingsContainerable)() {
     err := m.GetBackingStore().Set("settings", value)
     if err != nil {

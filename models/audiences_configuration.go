@@ -39,14 +39,14 @@ func (m *AudiencesConfiguration) GetAdditionalData()(map[string]any) {
     return val.(map[string]any)
 }
 // GetAzureAdMultipleOrgs gets the azureAdMultipleOrgs property value. Setting to allow or disallow creation of apps with multitenant signInAudience.
-// returns a AudienceRestrictionable when successful
-func (m *AudiencesConfiguration) GetAzureAdMultipleOrgs()(AudienceRestrictionable) {
+// returns a AzureAdMultipleOrgsAudienceRestrictionable when successful
+func (m *AudiencesConfiguration) GetAzureAdMultipleOrgs()(AzureAdMultipleOrgsAudienceRestrictionable) {
     val, err := m.GetBackingStore().Get("azureAdMultipleOrgs")
     if err != nil {
         panic(err)
     }
     if val != nil {
-        return val.(AudienceRestrictionable)
+        return val.(AzureAdMultipleOrgsAudienceRestrictionable)
     }
     return nil
 }
@@ -60,12 +60,12 @@ func (m *AudiencesConfiguration) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd0
 func (m *AudiencesConfiguration) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
     res["azureAdMultipleOrgs"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetObjectValue(CreateAudienceRestrictionFromDiscriminatorValue)
+        val, err := n.GetObjectValue(CreateAzureAdMultipleOrgsAudienceRestrictionFromDiscriminatorValue)
         if err != nil {
             return err
         }
         if val != nil {
-            m.SetAzureAdMultipleOrgs(val.(AudienceRestrictionable))
+            m.SetAzureAdMultipleOrgs(val.(AzureAdMultipleOrgsAudienceRestrictionable))
         }
         return nil
     }
@@ -151,7 +151,7 @@ func (m *AudiencesConfiguration) SetAdditionalData(value map[string]any)() {
     }
 }
 // SetAzureAdMultipleOrgs sets the azureAdMultipleOrgs property value. Setting to allow or disallow creation of apps with multitenant signInAudience.
-func (m *AudiencesConfiguration) SetAzureAdMultipleOrgs(value AudienceRestrictionable)() {
+func (m *AudiencesConfiguration) SetAzureAdMultipleOrgs(value AzureAdMultipleOrgsAudienceRestrictionable)() {
     err := m.GetBackingStore().Set("azureAdMultipleOrgs", value)
     if err != nil {
         panic(err)
@@ -179,11 +179,11 @@ type AudiencesConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
-    GetAzureAdMultipleOrgs()(AudienceRestrictionable)
+    GetAzureAdMultipleOrgs()(AzureAdMultipleOrgsAudienceRestrictionable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetPersonalMicrosoftAccount()(AudienceRestrictionable)
-    SetAzureAdMultipleOrgs(value AudienceRestrictionable)()
+    SetAzureAdMultipleOrgs(value AzureAdMultipleOrgsAudienceRestrictionable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetPersonalMicrosoftAccount(value AudienceRestrictionable)()

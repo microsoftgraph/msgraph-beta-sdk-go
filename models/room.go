@@ -280,7 +280,7 @@ func (m *Room) GetNickname()(*string) {
     }
     return nil
 }
-// GetPlaceId gets the placeId property value. An alternate immutable unique identifier of the room. Read-only.
+// GetPlaceId gets the placeId property value. An alternative immutable unique identifier of the room. Read-only.
 // returns a *string when successful
 func (m *Room) GetPlaceId()(*string) {
     val, err := m.GetBackingStore().Get("placeId")
@@ -474,7 +474,7 @@ func (m *Room) SetNickname(value *string)() {
         panic(err)
     }
 }
-// SetPlaceId sets the placeId property value. An alternate immutable unique identifier of the room. Read-only.
+// SetPlaceId sets the placeId property value. An alternative immutable unique identifier of the room. Read-only.
 func (m *Room) SetPlaceId(value *string)() {
     err := m.GetBackingStore().Set("placeId", value)
     if err != nil {

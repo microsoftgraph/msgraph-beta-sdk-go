@@ -28,6 +28,22 @@ func CreateAgentIdentityBlueprintFromDiscriminatorValue(parseNode i878a80d2330e8
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AgentIdentityBlueprint) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := m.Application.GetFieldDeserializers()
+    res["inheritablePermissions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateInheritablePermissionFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]InheritablePermissionable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(InheritablePermissionable)
+                }
+            }
+            m.SetInheritablePermissions(res)
+        }
+        return nil
+    }
     res["sponsors"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateDirectoryObjectFromDiscriminatorValue)
         if err != nil {
@@ -45,6 +61,18 @@ func (m *AgentIdentityBlueprint) GetFieldDeserializers()(map[string]func(i878a80
         return nil
     }
     return res
+}
+// GetInheritablePermissions gets the inheritablePermissions property value. Defines scopes of a resource application that may be automatically granted to agent identities without additional consent.
+// returns a []InheritablePermissionable when successful
+func (m *AgentIdentityBlueprint) GetInheritablePermissions()([]InheritablePermissionable) {
+    val, err := m.GetBackingStore().Get("inheritablePermissions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]InheritablePermissionable)
+    }
+    return nil
 }
 // GetSponsors gets the sponsors property value. The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances. Required during the create operation.
 // returns a []DirectoryObjectable when successful
@@ -64,6 +92,18 @@ func (m *AgentIdentityBlueprint) Serialize(writer i878a80d2330e89d26896388a3f487
     if err != nil {
         return err
     }
+    if m.GetInheritablePermissions() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetInheritablePermissions()))
+        for i, v := range m.GetInheritablePermissions() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err = writer.WriteCollectionOfObjectValues("inheritablePermissions", cast)
+        if err != nil {
+            return err
+        }
+    }
     if m.GetSponsors() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetSponsors()))
         for i, v := range m.GetSponsors() {
@@ -78,6 +118,13 @@ func (m *AgentIdentityBlueprint) Serialize(writer i878a80d2330e89d26896388a3f487
     }
     return nil
 }
+// SetInheritablePermissions sets the inheritablePermissions property value. Defines scopes of a resource application that may be automatically granted to agent identities without additional consent.
+func (m *AgentIdentityBlueprint) SetInheritablePermissions(value []InheritablePermissionable)() {
+    err := m.GetBackingStore().Set("inheritablePermissions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSponsors sets the sponsors property value. The sponsors for this agent identity blueprint. Sponsors are users or groups who can authorize and manage the lifecycle of agent identity instances. Required during the create operation.
 func (m *AgentIdentityBlueprint) SetSponsors(value []DirectoryObjectable)() {
     err := m.GetBackingStore().Set("sponsors", value)
@@ -88,6 +135,8 @@ func (m *AgentIdentityBlueprint) SetSponsors(value []DirectoryObjectable)() {
 type AgentIdentityBlueprintable interface {
     Applicationable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetInheritablePermissions()([]InheritablePermissionable)
     GetSponsors()([]DirectoryObjectable)
+    SetInheritablePermissions(value []InheritablePermissionable)()
     SetSponsors(value []DirectoryObjectable)()
 }

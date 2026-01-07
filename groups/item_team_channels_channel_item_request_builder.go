@@ -173,6 +173,11 @@ func (m *ItemTeamChannelsChannelItemRequestBuilder) RemoveEmail()(*ItemTeamChann
 func (m *ItemTeamChannelsChannelItemRequestBuilder) SharedWithTeams()(*ItemTeamChannelsItemSharedWithTeamsRequestBuilder) {
     return NewItemTeamChannelsItemSharedWithTeamsRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
+// StartMigration provides operations to call the startMigration method.
+// returns a *ItemTeamChannelsItemStartMigrationRequestBuilder when successful
+func (m *ItemTeamChannelsChannelItemRequestBuilder) StartMigration()(*ItemTeamChannelsItemStartMigrationRequestBuilder) {
+    return NewItemTeamChannelsItemStartMigrationRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Tabs provides operations to manage the tabs property of the microsoft.graph.channel entity.
 // returns a *ItemTeamChannelsItemTabsRequestBuilder when successful
 func (m *ItemTeamChannelsChannelItemRequestBuilder) Tabs()(*ItemTeamChannelsItemTabsRequestBuilder) {

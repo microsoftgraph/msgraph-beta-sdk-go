@@ -21,7 +21,7 @@ type IdentitiesSettingsRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// IdentitiesSettingsRequestBuilderGetQueryParameters represents a container for security identities settings APIs.
+// IdentitiesSettingsRequestBuilderGetQueryParameters get settings from security
 type IdentitiesSettingsRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,7 +73,7 @@ func (m *IdentitiesSettingsRequestBuilder) Delete(ctx context.Context, requestCo
     }
     return nil
 }
-// Get represents a container for security identities settings APIs.
+// Get get settings from security
 // returns a SettingsContainerable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *IdentitiesSettingsRequestBuilder) Get(ctx context.Context, requestConfiguration *IdentitiesSettingsRequestBuilderGetRequestConfiguration)(i084fa7ab3bba802bf5cc3b408e230cc64c167a57976e0d42c37e17154afd5b78.SettingsContainerable, error) {
@@ -124,7 +124,7 @@ func (m *IdentitiesSettingsRequestBuilder) ToDeleteRequestInformation(ctx contex
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation represents a container for security identities settings APIs.
+// ToGetRequestInformation get settings from security
 // returns a *RequestInformation when successful
 func (m *IdentitiesSettingsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *IdentitiesSettingsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

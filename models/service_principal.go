@@ -702,6 +702,16 @@ func (m *ServicePrincipal) GetFieldDeserializers()(map[string]func(i878a80d2330e
         }
         return nil
     }
+    res["isDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDisabled(val)
+        }
+        return nil
+    }
     res["keyCredentials"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetCollectionOfObjectValues(CreateKeyCredentialFromDiscriminatorValue)
         if err != nil {
@@ -1153,6 +1163,18 @@ func (m *ServicePrincipal) GetInfo()(InformationalUrlable) {
     }
     if val != nil {
         return val.(InformationalUrlable)
+    }
+    return nil
+}
+// GetIsDisabled gets the isDisabled property value. Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
+// returns a *bool when successful
+func (m *ServicePrincipal) GetIsDisabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isDisabled")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
     }
     return nil
 }
@@ -1780,6 +1802,12 @@ func (m *ServicePrincipal) Serialize(writer i878a80d2330e89d26896388a3f487eef27b
             return err
         }
     }
+    {
+        err = writer.WriteBoolValue("isDisabled", m.GetIsDisabled())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetKeyCredentials() != nil {
         cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetKeyCredentials()))
         for i, v := range m.GetKeyCredentials() {
@@ -2242,6 +2270,13 @@ func (m *ServicePrincipal) SetInfo(value InformationalUrlable)() {
         panic(err)
     }
 }
+// SetIsDisabled sets the isDisabled property value. Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
+func (m *ServicePrincipal) SetIsDisabled(value *bool)() {
+    err := m.GetBackingStore().Set("isDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetKeyCredentials sets the keyCredentials property value. The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
 func (m *ServicePrincipal) SetKeyCredentials(value []KeyCredentialable)() {
     err := m.GetBackingStore().Set("keyCredentials", value)
@@ -2497,6 +2532,7 @@ type ServicePrincipalable interface {
     GetHomepage()(*string)
     GetHomeRealmDiscoveryPolicies()([]HomeRealmDiscoveryPolicyable)
     GetInfo()(InformationalUrlable)
+    GetIsDisabled()(*bool)
     GetKeyCredentials()([]KeyCredentialable)
     GetLicenseDetails()([]LicenseDetailsable)
     GetLoginUrl()(*string)
@@ -2557,6 +2593,7 @@ type ServicePrincipalable interface {
     SetHomepage(value *string)()
     SetHomeRealmDiscoveryPolicies(value []HomeRealmDiscoveryPolicyable)()
     SetInfo(value InformationalUrlable)()
+    SetIsDisabled(value *bool)()
     SetKeyCredentials(value []KeyCredentialable)()
     SetLicenseDetails(value []LicenseDetailsable)()
     SetLoginUrl(value *string)()
