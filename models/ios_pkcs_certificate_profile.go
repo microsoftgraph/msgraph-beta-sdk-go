@@ -25,7 +25,7 @@ func NewIosPkcsCertificateProfile()(*IosPkcsCertificateProfile) {
 func CreateIosPkcsCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewIosPkcsCertificateProfile(), nil
 }
-// GetCertificateStore gets the certificateStore property value. Target store certificate. The possible values are: user, machine.
+// GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 // returns a *CertificateStore when successful
 func (m *IosPkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
@@ -288,7 +288,7 @@ func (m *IosPkcsCertificateProfile) Serialize(writer i878a80d2330e89d26896388a3f
     }
     return nil
 }
-// SetCertificateStore sets the certificateStore property value. Target store certificate. The possible values are: user, machine.
+// SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *IosPkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {

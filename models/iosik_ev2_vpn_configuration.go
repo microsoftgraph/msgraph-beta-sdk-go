@@ -85,7 +85,7 @@ func (m *IosikEv2VpnConfiguration) GetClientAuthenticationType()(*VpnClientAuthe
     }
     return nil
 }
-// GetDeadPeerDetectionRate gets the deadPeerDetectionRate property value. Determine how often to check if a peer connection is still active. . The possible values are: medium, none, low, high.
+// GetDeadPeerDetectionRate gets the deadPeerDetectionRate property value. Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.
 // returns a *VpnDeadPeerDetectionRate when successful
 func (m *IosikEv2VpnConfiguration) GetDeadPeerDetectionRate()(*VpnDeadPeerDetectionRate) {
     val, err := m.GetBackingStore().Get("deadPeerDetectionRate")
@@ -489,7 +489,7 @@ func (m *IosikEv2VpnConfiguration) GetServerCertificateIssuerCommonName()(*strin
     }
     return nil
 }
-// GetServerCertificateType gets the serverCertificateType property value. The type of certificate the VPN server will present to the VPN client for authentication. The possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.
+// GetServerCertificateType gets the serverCertificateType property value. The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.
 // returns a *VpnServerCertificateType when successful
 func (m *IosikEv2VpnConfiguration) GetServerCertificateType()(*VpnServerCertificateType) {
     val, err := m.GetBackingStore().Get("serverCertificateType")
@@ -722,7 +722,7 @@ func (m *IosikEv2VpnConfiguration) SetClientAuthenticationType(value *VpnClientA
         panic(err)
     }
 }
-// SetDeadPeerDetectionRate sets the deadPeerDetectionRate property value. Determine how often to check if a peer connection is still active. . The possible values are: medium, none, low, high.
+// SetDeadPeerDetectionRate sets the deadPeerDetectionRate property value. Determine how often to check if a peer connection is still active. . Possible values are: medium, none, low, high.
 func (m *IosikEv2VpnConfiguration) SetDeadPeerDetectionRate(value *VpnDeadPeerDetectionRate)() {
     err := m.GetBackingStore().Set("deadPeerDetectionRate", value)
     if err != nil {
@@ -820,7 +820,7 @@ func (m *IosikEv2VpnConfiguration) SetServerCertificateIssuerCommonName(value *s
         panic(err)
     }
 }
-// SetServerCertificateType sets the serverCertificateType property value. The type of certificate the VPN server will present to the VPN client for authentication. The possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.
+// SetServerCertificateType sets the serverCertificateType property value. The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.
 func (m *IosikEv2VpnConfiguration) SetServerCertificateType(value *VpnServerCertificateType)() {
     err := m.GetBackingStore().Set("serverCertificateType", value)
     if err != nil {

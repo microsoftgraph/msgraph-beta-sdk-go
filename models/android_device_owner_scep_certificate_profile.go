@@ -25,7 +25,7 @@ func NewAndroidDeviceOwnerScepCertificateProfile()(*AndroidDeviceOwnerScepCertif
 func CreateAndroidDeviceOwnerScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerScepCertificateProfile(), nil
 }
-// GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. The possible values are: userApproval, specificApps, unknownFutureValue.
+// GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 // returns a *AndroidDeviceOwnerCertificateAccessType when successful
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
     val, err := m.GetBackingStore().Get("certificateAccessType")
@@ -37,7 +37,7 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) GetCertificateAccessType()(*A
     }
     return nil
 }
-// GetCertificateStore gets the certificateStore property value. Target store certificate. The possible values are: user, machine.
+// GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 // returns a *CertificateStore when successful
 func (m *AndroidDeviceOwnerScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
@@ -394,14 +394,14 @@ func (m *AndroidDeviceOwnerScepCertificateProfile) Serialize(writer i878a80d2330
     }
     return nil
 }
-// SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. The possible values are: userApproval, specificApps, unknownFutureValue.
+// SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
     err := m.GetBackingStore().Set("certificateAccessType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetCertificateStore sets the certificateStore property value. Target store certificate. The possible values are: user, machine.
+// SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *AndroidDeviceOwnerScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {

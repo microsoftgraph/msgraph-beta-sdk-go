@@ -39,7 +39,7 @@ func (m *CryptographySuite) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
-// GetAuthenticationTransformConstants gets the authenticationTransformConstants property value. Authentication Transform Constants. The possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.
+// GetAuthenticationTransformConstants gets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.
 // returns a *AuthenticationTransformConstant when successful
 func (m *CryptographySuite) GetAuthenticationTransformConstants()(*AuthenticationTransformConstant) {
     val, err := m.GetBackingStore().Get("authenticationTransformConstants")
@@ -56,7 +56,7 @@ func (m *CryptographySuite) GetAuthenticationTransformConstants()(*Authenticatio
 func (m *CryptographySuite) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetCipherTransformConstants gets the cipherTransformConstants property value. Cipher Transform Constants. The possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
+// GetCipherTransformConstants gets the cipherTransformConstants property value. Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 // returns a *VpnEncryptionAlgorithmType when successful
 func (m *CryptographySuite) GetCipherTransformConstants()(*VpnEncryptionAlgorithmType) {
     val, err := m.GetBackingStore().Get("cipherTransformConstants")
@@ -68,7 +68,7 @@ func (m *CryptographySuite) GetCipherTransformConstants()(*VpnEncryptionAlgorith
     }
     return nil
 }
-// GetDhGroup gets the dhGroup property value. Diffie Hellman Group. The possible values are: group1, group2, group14, ecp256, ecp384, group24.
+// GetDhGroup gets the dhGroup property value. Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.
 // returns a *DiffieHellmanGroup when successful
 func (m *CryptographySuite) GetDhGroup()(*DiffieHellmanGroup) {
     val, err := m.GetBackingStore().Get("dhGroup")
@@ -80,7 +80,7 @@ func (m *CryptographySuite) GetDhGroup()(*DiffieHellmanGroup) {
     }
     return nil
 }
-// GetEncryptionMethod gets the encryptionMethod property value. Encryption Method. The possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
+// GetEncryptionMethod gets the encryptionMethod property value. Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 // returns a *VpnEncryptionAlgorithmType when successful
 func (m *CryptographySuite) GetEncryptionMethod()(*VpnEncryptionAlgorithmType) {
     val, err := m.GetBackingStore().Get("encryptionMethod")
@@ -168,7 +168,7 @@ func (m *CryptographySuite) GetFieldDeserializers()(map[string]func(i878a80d2330
     }
     return res
 }
-// GetIntegrityCheckMethod gets the integrityCheckMethod property value. Integrity Check Method. The possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
+// GetIntegrityCheckMethod gets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
 // returns a *VpnIntegrityAlgorithmType when successful
 func (m *CryptographySuite) GetIntegrityCheckMethod()(*VpnIntegrityAlgorithmType) {
     val, err := m.GetBackingStore().Get("integrityCheckMethod")
@@ -192,7 +192,7 @@ func (m *CryptographySuite) GetOdataType()(*string) {
     }
     return nil
 }
-// GetPfsGroup gets the pfsGroup property value. Perfect Forward Secrecy Group. The possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
+// GetPfsGroup gets the pfsGroup property value. Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
 // returns a *PerfectForwardSecrecyGroup when successful
 func (m *CryptographySuite) GetPfsGroup()(*PerfectForwardSecrecyGroup) {
     val, err := m.GetBackingStore().Get("pfsGroup")
@@ -269,7 +269,7 @@ func (m *CryptographySuite) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
-// SetAuthenticationTransformConstants sets the authenticationTransformConstants property value. Authentication Transform Constants. The possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.
+// SetAuthenticationTransformConstants sets the authenticationTransformConstants property value. Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.
 func (m *CryptographySuite) SetAuthenticationTransformConstants(value *AuthenticationTransformConstant)() {
     err := m.GetBackingStore().Set("authenticationTransformConstants", value)
     if err != nil {
@@ -280,28 +280,28 @@ func (m *CryptographySuite) SetAuthenticationTransformConstants(value *Authentic
 func (m *CryptographySuite) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetCipherTransformConstants sets the cipherTransformConstants property value. Cipher Transform Constants. The possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
+// SetCipherTransformConstants sets the cipherTransformConstants property value. Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 func (m *CryptographySuite) SetCipherTransformConstants(value *VpnEncryptionAlgorithmType)() {
     err := m.GetBackingStore().Set("cipherTransformConstants", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDhGroup sets the dhGroup property value. Diffie Hellman Group. The possible values are: group1, group2, group14, ecp256, ecp384, group24.
+// SetDhGroup sets the dhGroup property value. Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.
 func (m *CryptographySuite) SetDhGroup(value *DiffieHellmanGroup)() {
     err := m.GetBackingStore().Set("dhGroup", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEncryptionMethod sets the encryptionMethod property value. Encryption Method. The possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
+// SetEncryptionMethod sets the encryptionMethod property value. Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.
 func (m *CryptographySuite) SetEncryptionMethod(value *VpnEncryptionAlgorithmType)() {
     err := m.GetBackingStore().Set("encryptionMethod", value)
     if err != nil {
         panic(err)
     }
 }
-// SetIntegrityCheckMethod sets the integrityCheckMethod property value. Integrity Check Method. The possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
+// SetIntegrityCheckMethod sets the integrityCheckMethod property value. Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.
 func (m *CryptographySuite) SetIntegrityCheckMethod(value *VpnIntegrityAlgorithmType)() {
     err := m.GetBackingStore().Set("integrityCheckMethod", value)
     if err != nil {
@@ -315,7 +315,7 @@ func (m *CryptographySuite) SetOdataType(value *string)() {
         panic(err)
     }
 }
-// SetPfsGroup sets the pfsGroup property value. Perfect Forward Secrecy Group. The possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
+// SetPfsGroup sets the pfsGroup property value. Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.
 func (m *CryptographySuite) SetPfsGroup(value *PerfectForwardSecrecyGroup)() {
     err := m.GetBackingStore().Set("pfsGroup", value)
     if err != nil {

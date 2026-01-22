@@ -44,7 +44,7 @@ func (m *BitLockerFixedDrivePolicy) GetAdditionalData()(map[string]any) {
 func (m *BitLockerFixedDrivePolicy) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
     return m.backingStore
 }
-// GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for fixed drives. The possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
+// GetEncryptionMethod gets the encryptionMethod property value. Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
 // returns a *BitLockerEncryptionMethod when successful
 func (m *BitLockerFixedDrivePolicy) GetEncryptionMethod()(*BitLockerEncryptionMethod) {
     val, err := m.GetBackingStore().Get("encryptionMethod")
@@ -184,7 +184,7 @@ func (m *BitLockerFixedDrivePolicy) SetAdditionalData(value map[string]any)() {
 func (m *BitLockerFixedDrivePolicy) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetEncryptionMethod sets the encryptionMethod property value. Select the encryption method for fixed drives. The possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
+// SetEncryptionMethod sets the encryptionMethod property value. Select the encryption method for fixed drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
 func (m *BitLockerFixedDrivePolicy) SetEncryptionMethod(value *BitLockerEncryptionMethod)() {
     err := m.GetBackingStore().Set("encryptionMethod", value)
     if err != nil {

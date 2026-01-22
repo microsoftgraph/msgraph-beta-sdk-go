@@ -36,6 +36,8 @@ func CreateProcessContentMetadataBaseFromDiscriminatorValue(parseNode i878a80d23
             }
             if mappingValue != nil {
                 switch *mappingValue {
+                    case "#microsoft.graph.contentActivityMetadata":
+                        return NewContentActivityMetadata(), nil
                     case "#microsoft.graph.processConversationMetadata":
                         return NewProcessConversationMetadata(), nil
                     case "#microsoft.graph.processFileMetadata":

@@ -94,7 +94,7 @@ func (m *ExchangeAdmin) GetMessageTraces()([]MessageTraceable) {
     }
     return nil
 }
-// GetTracing gets the tracing property value. The tracing property
+// GetTracing gets the tracing property value. Represents a container for administrative resources to trace messages.
 // returns a MessageTracingRootable when successful
 func (m *ExchangeAdmin) GetTracing()(MessageTracingRootable) {
     val, err := m.GetBackingStore().Get("tracing")
@@ -158,7 +158,7 @@ func (m *ExchangeAdmin) SetMessageTraces(value []MessageTraceable)() {
         panic(err)
     }
 }
-// SetTracing sets the tracing property value. The tracing property
+// SetTracing sets the tracing property value. Represents a container for administrative resources to trace messages.
 func (m *ExchangeAdmin) SetTracing(value MessageTracingRootable)() {
     err := m.GetBackingStore().Set("tracing", value)
     if err != nil {

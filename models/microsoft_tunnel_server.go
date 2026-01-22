@@ -36,7 +36,7 @@ func (m *MicrosoftTunnelServer) GetAgentImageDigest()(*string) {
     }
     return nil
 }
-// GetDeploymentMode gets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only. The possible values are: standaloneRootful, standaloneRootless, podRootful, podRootless, unknownFutureValue.
+// GetDeploymentMode gets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only. Possible values are: standaloneRootful, standaloneRootless, podRootful, podRootless, unknownFutureValue.
 // returns a *MicrosoftTunnelDeploymentMode when successful
 func (m *MicrosoftTunnelServer) GetDeploymentMode()(*MicrosoftTunnelDeploymentMode) {
     val, err := m.GetBackingStore().Get("deploymentMode")
@@ -215,7 +215,7 @@ func (m *MicrosoftTunnelServer) SetAgentImageDigest(value *string)() {
         panic(err)
     }
 }
-// SetDeploymentMode sets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only. The possible values are: standaloneRootful, standaloneRootless, podRootful, podRootless, unknownFutureValue.
+// SetDeploymentMode sets the deploymentMode property value. Microsoft Tunnel server deployment mode. The value is set when the server is registered. Possible values are standaloneRootful, standaloneRootless, podRootful, podRootless. Default value: standaloneRootful. Supports: $filter, $select, $top, $skip, $orderby. $search is not supported. Read-only. Possible values are: standaloneRootful, standaloneRootless, podRootful, podRootless, unknownFutureValue.
 func (m *MicrosoftTunnelServer) SetDeploymentMode(value *MicrosoftTunnelDeploymentMode)() {
     err := m.GetBackingStore().Set("deploymentMode", value)
     if err != nil {

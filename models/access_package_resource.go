@@ -137,6 +137,18 @@ func (m *AccessPackageResource) GetDisplayName()(*string) {
     }
     return nil
 }
+// GetExternalOriginResourceConnector gets the externalOriginResourceConnector property value. The externalOriginResourceConnector property
+// returns a ExternalOriginResourceConnectorable when successful
+func (m *AccessPackageResource) GetExternalOriginResourceConnector()(ExternalOriginResourceConnectorable) {
+    val, err := m.GetBackingStore().Get("externalOriginResourceConnector")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(ExternalOriginResourceConnectorable)
+    }
+    return nil
+}
 // GetFieldDeserializers the deserialization information for the current model
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
@@ -236,6 +248,16 @@ func (m *AccessPackageResource) GetFieldDeserializers()(map[string]func(i878a80d
         }
         if val != nil {
             m.SetDisplayName(val)
+        }
+        return nil
+    }
+    res["externalOriginResourceConnector"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateExternalOriginResourceConnectorFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetExternalOriginResourceConnector(val.(ExternalOriginResourceConnectorable))
         }
         return nil
     }
@@ -452,6 +474,12 @@ func (m *AccessPackageResource) Serialize(writer i878a80d2330e89d26896388a3f487e
         }
     }
     {
+        err = writer.WriteObjectValue("externalOriginResourceConnector", m.GetExternalOriginResourceConnector())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isPendingOnboarding", m.GetIsPendingOnboarding())
         if err != nil {
             return err
@@ -551,6 +579,13 @@ func (m *AccessPackageResource) SetDisplayName(value *string)() {
         panic(err)
     }
 }
+// SetExternalOriginResourceConnector sets the externalOriginResourceConnector property value. The externalOriginResourceConnector property
+func (m *AccessPackageResource) SetExternalOriginResourceConnector(value ExternalOriginResourceConnectorable)() {
+    err := m.GetBackingStore().Set("externalOriginResourceConnector", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsPendingOnboarding sets the isPendingOnboarding property value. True if the resource is not yet available for assignment. Read-only.
 func (m *AccessPackageResource) SetIsPendingOnboarding(value *bool)() {
     err := m.GetBackingStore().Set("isPendingOnboarding", value)
@@ -604,6 +639,7 @@ type AccessPackageResourceable interface {
     GetAttributes()([]AccessPackageResourceAttributeable)
     GetDescription()(*string)
     GetDisplayName()(*string)
+    GetExternalOriginResourceConnector()(ExternalOriginResourceConnectorable)
     GetIsPendingOnboarding()(*bool)
     GetOriginId()(*string)
     GetOriginSystem()(*string)
@@ -618,6 +654,7 @@ type AccessPackageResourceable interface {
     SetAttributes(value []AccessPackageResourceAttributeable)()
     SetDescription(value *string)()
     SetDisplayName(value *string)()
+    SetExternalOriginResourceConnector(value ExternalOriginResourceConnectorable)()
     SetIsPendingOnboarding(value *bool)()
     SetOriginId(value *string)()
     SetOriginSystem(value *string)()

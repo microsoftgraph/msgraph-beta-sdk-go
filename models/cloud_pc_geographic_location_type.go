@@ -20,10 +20,11 @@ const (
     CENTRALAMERICA_CLOUDPCGEOGRAPHICLOCATIONTYPE
     USGOVERNMENT_CLOUDPCGEOGRAPHICLOCATIONTYPE
     UNKNOWNFUTUREVALUE_CLOUDPCGEOGRAPHICLOCATIONTYPE
+    MEXICO_CLOUDPCGEOGRAPHICLOCATIONTYPE
 )
 
 func (i CloudPcGeographicLocationType) String() string {
-    return []string{"default", "asia", "australasia", "canada", "europe", "india", "africa", "usCentral", "usEast", "usWest", "southAmerica", "middleEast", "centralAmerica", "usGovernment", "unknownFutureValue"}[i]
+    return []string{"default", "asia", "australasia", "canada", "europe", "india", "africa", "usCentral", "usEast", "usWest", "southAmerica", "middleEast", "centralAmerica", "usGovernment", "unknownFutureValue", "mexico"}[i]
 }
 func ParseCloudPcGeographicLocationType(v string) (any, error) {
     result := DEFAULT_CLOUDPCGEOGRAPHICLOCATIONTYPE
@@ -58,6 +59,8 @@ func ParseCloudPcGeographicLocationType(v string) (any, error) {
             result = USGOVERNMENT_CLOUDPCGEOGRAPHICLOCATIONTYPE
         case "unknownFutureValue":
             result = UNKNOWNFUTUREVALUE_CLOUDPCGEOGRAPHICLOCATIONTYPE
+        case "mexico":
+            result = MEXICO_CLOUDPCGEOGRAPHICLOCATIONTYPE
         default:
             return nil, nil
     }

@@ -14,7 +14,7 @@ import (
 type ItemTeamChannelsItemEnabledAppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamChannelsItemEnabledAppsRequestBuilderGetQueryParameters get enabledApps from groups
+// ItemTeamChannelsItemEnabledAppsRequestBuilderGetQueryParameters a collection of enabled apps in the channel.
 type ItemTeamChannelsItemEnabledAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewItemTeamChannelsItemEnabledAppsRequestBuilder(rawUrl string, requestAdap
 func (m *ItemTeamChannelsItemEnabledAppsRequestBuilder) Count()(*ItemTeamChannelsItemEnabledAppsCountRequestBuilder) {
     return NewItemTeamChannelsItemEnabledAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get enabledApps from groups
+// Get a collection of enabled apps in the channel.
 // returns a TeamsAppCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamChannelsItemEnabledAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamChannelsItemEnabledAppsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *ItemTeamChannelsItemEnabledAppsRequestBuilder) Get(ctx context.Context,
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppCollectionResponseable), nil
 }
-// ToGetRequestInformation get enabledApps from groups
+// ToGetRequestInformation a collection of enabled apps in the channel.
 // returns a *RequestInformation when successful
 func (m *ItemTeamChannelsItemEnabledAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamChannelsItemEnabledAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

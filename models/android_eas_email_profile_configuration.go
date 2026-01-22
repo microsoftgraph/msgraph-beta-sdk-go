@@ -381,7 +381,7 @@ func (m *AndroidEasEmailProfileConfiguration) GetSyncTasks()(*bool) {
     }
     return nil
 }
-// GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. The possible values are: fullDomainName, netBiosDomainName.
+// GetUserDomainNameSource gets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
 // returns a *DomainNameSource when successful
 func (m *AndroidEasEmailProfileConfiguration) GetUserDomainNameSource()(*DomainNameSource) {
     val, err := m.GetBackingStore().Get("userDomainNameSource")
@@ -626,7 +626,7 @@ func (m *AndroidEasEmailProfileConfiguration) SetSyncTasks(value *bool)() {
         panic(err)
     }
 }
-// SetUserDomainNameSource sets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. The possible values are: fullDomainName, netBiosDomainName.
+// SetUserDomainNameSource sets the userDomainNameSource property value. UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.
 func (m *AndroidEasEmailProfileConfiguration) SetUserDomainNameSource(value *DomainNameSource)() {
     err := m.GetBackingStore().Set("userDomainNameSource", value)
     if err != nil {

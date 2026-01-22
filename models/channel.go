@@ -83,7 +83,7 @@ func (m *Channel) GetEmail()(*string) {
     }
     return nil
 }
-// GetEnabledApps gets the enabledApps property value. The enabledApps property
+// GetEnabledApps gets the enabledApps property value. A collection of enabled apps in the channel.
 // returns a []TeamsAppable when successful
 func (m *Channel) GetEnabledApps()([]TeamsAppable) {
     val, err := m.GetBackingStore().Get("enabledApps")
@@ -763,7 +763,7 @@ func (m *Channel) SetEmail(value *string)() {
         panic(err)
     }
 }
-// SetEnabledApps sets the enabledApps property value. The enabledApps property
+// SetEnabledApps sets the enabledApps property value. A collection of enabled apps in the channel.
 func (m *Channel) SetEnabledApps(value []TeamsAppable)() {
     err := m.GetBackingStore().Set("enabledApps", value)
     if err != nil {

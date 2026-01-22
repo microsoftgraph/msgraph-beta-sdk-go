@@ -89,6 +89,11 @@ func (m *CatalogsItemAccessPackageResourcesAccessPackageResourceItemRequestBuild
     }
     return nil
 }
+// ExternalOriginResourceConnector provides operations to manage the externalOriginResourceConnector property of the microsoft.graph.accessPackageResource entity.
+// returns a *CatalogsItemAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilder when successful
+func (m *CatalogsItemAccessPackageResourcesAccessPackageResourceItemRequestBuilder) ExternalOriginResourceConnector()(*CatalogsItemAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilder) {
+    return NewCatalogsItemAccessPackageResourcesItemExternalOriginResourceConnectorRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // Get get accessPackageResources from identityGovernance
 // Deprecated:  as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31
 // returns a AccessPackageResourceable when successful

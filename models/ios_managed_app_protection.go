@@ -49,7 +49,7 @@ func (m *IosManagedAppProtection) GetAllowWidgetContentSync()(*bool) {
     }
     return nil
 }
-// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). The possible values are: block, wipe, warn, blockWhenSettingIsSupported.
+// GetAppActionIfAccountIsClockedOut gets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn, blockWhenSettingIsSupported.
 // returns a *ManagedAppRemediationAction when successful
 func (m *IosManagedAppProtection) GetAppActionIfAccountIsClockedOut()(*ManagedAppRemediationAction) {
     val, err := m.GetBackingStore().Get("appActionIfAccountIsClockedOut")
@@ -485,7 +485,7 @@ func (m *IosManagedAppProtection) GetFilterOpenInToOnlyManagedApps()(*bool) {
     }
     return nil
 }
-// GetGenmojiConfigurationState gets the genmojiConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence Genmoji setting. The possible values are: notBlocked, blocked, unknownFutureValue.
+// GetGenmojiConfigurationState gets the genmojiConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence Genmoji setting. Possible values are: notBlocked, blocked, unknownFutureValue.
 // returns a *GenmojiIosManagedAppConfigurationState when successful
 func (m *IosManagedAppProtection) GetGenmojiConfigurationState()(*GenmojiIosManagedAppConfigurationState) {
     val, err := m.GetBackingStore().Get("genmojiConfigurationState")
@@ -569,7 +569,7 @@ func (m *IosManagedAppProtection) GetProtectInboundDataFromUnknownSources()(*boo
     }
     return nil
 }
-// GetScreenCaptureConfigurationState gets the screenCaptureConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence screen capture setting. The possible values are: notBlocked, blocked, unknownFutureValue.
+// GetScreenCaptureConfigurationState gets the screenCaptureConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence screen capture setting. Possible values are: notBlocked, blocked, unknownFutureValue.
 // returns a *ScreenCaptureIosManagedAppConfigurationState when successful
 func (m *IosManagedAppProtection) GetScreenCaptureConfigurationState()(*ScreenCaptureIosManagedAppConfigurationState) {
     val, err := m.GetBackingStore().Get("screenCaptureConfigurationState")
@@ -593,7 +593,7 @@ func (m *IosManagedAppProtection) GetThirdPartyKeyboardsBlocked()(*bool) {
     }
     return nil
 }
-// GetWritingToolsConfigurationState gets the writingToolsConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence writing tools setting. The possible values are: notBlocked, blocked, unknownFutureValue.
+// GetWritingToolsConfigurationState gets the writingToolsConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence writing tools setting. Possible values are: notBlocked, blocked, unknownFutureValue.
 // returns a *WritingToolsIosManagedAppConfigurationState when successful
 func (m *IosManagedAppProtection) GetWritingToolsConfigurationState()(*WritingToolsIosManagedAppConfigurationState) {
     val, err := m.GetBackingStore().Get("writingToolsConfigurationState")
@@ -795,7 +795,7 @@ func (m *IosManagedAppProtection) SetAllowWidgetContentSync(value *bool)() {
         panic(err)
     }
 }
-// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). The possible values are: block, wipe, warn, blockWhenSettingIsSupported.
+// SetAppActionIfAccountIsClockedOut sets the appActionIfAccountIsClockedOut property value. Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn, blockWhenSettingIsSupported.
 func (m *IosManagedAppProtection) SetAppActionIfAccountIsClockedOut(value *ManagedAppRemediationAction)() {
     err := m.GetBackingStore().Set("appActionIfAccountIsClockedOut", value)
     if err != nil {
@@ -886,7 +886,7 @@ func (m *IosManagedAppProtection) SetFilterOpenInToOnlyManagedApps(value *bool)(
         panic(err)
     }
 }
-// SetGenmojiConfigurationState sets the genmojiConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence Genmoji setting. The possible values are: notBlocked, blocked, unknownFutureValue.
+// SetGenmojiConfigurationState sets the genmojiConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence Genmoji setting. Possible values are: notBlocked, blocked, unknownFutureValue.
 func (m *IosManagedAppProtection) SetGenmojiConfigurationState(value *GenmojiIosManagedAppConfigurationState)() {
     err := m.GetBackingStore().Set("genmojiConfigurationState", value)
     if err != nil {
@@ -935,7 +935,7 @@ func (m *IosManagedAppProtection) SetProtectInboundDataFromUnknownSources(value 
         panic(err)
     }
 }
-// SetScreenCaptureConfigurationState sets the screenCaptureConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence screen capture setting. The possible values are: notBlocked, blocked, unknownFutureValue.
+// SetScreenCaptureConfigurationState sets the screenCaptureConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence screen capture setting. Possible values are: notBlocked, blocked, unknownFutureValue.
 func (m *IosManagedAppProtection) SetScreenCaptureConfigurationState(value *ScreenCaptureIosManagedAppConfigurationState)() {
     err := m.GetBackingStore().Set("screenCaptureConfigurationState", value)
     if err != nil {
@@ -949,7 +949,7 @@ func (m *IosManagedAppProtection) SetThirdPartyKeyboardsBlocked(value *bool)() {
         panic(err)
     }
 }
-// SetWritingToolsConfigurationState sets the writingToolsConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence writing tools setting. The possible values are: notBlocked, blocked, unknownFutureValue.
+// SetWritingToolsConfigurationState sets the writingToolsConfigurationState property value. Configuration state (blocked or not blocked) for Apple Intelligence writing tools setting. Possible values are: notBlocked, blocked, unknownFutureValue.
 func (m *IosManagedAppProtection) SetWritingToolsConfigurationState(value *WritingToolsIosManagedAppConfigurationState)() {
     err := m.GetBackingStore().Set("writingToolsConfigurationState", value)
     if err != nil {

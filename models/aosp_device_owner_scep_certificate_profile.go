@@ -25,7 +25,7 @@ func NewAospDeviceOwnerScepCertificateProfile()(*AospDeviceOwnerScepCertificateP
 func CreateAospDeviceOwnerScepCertificateProfileFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAospDeviceOwnerScepCertificateProfile(), nil
 }
-// GetCertificateStore gets the certificateStore property value. Target store certificate. This collection can contain a maximum of 500 elements. The possible values are: user, machine.
+// GetCertificateStore gets the certificateStore property value. Target store certificate. This collection can contain a maximum of 500 elements. Possible values are: user, machine.
 // returns a *CertificateStore when successful
 func (m *AospDeviceOwnerScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
@@ -325,7 +325,7 @@ func (m *AospDeviceOwnerScepCertificateProfile) Serialize(writer i878a80d2330e89
     }
     return nil
 }
-// SetCertificateStore sets the certificateStore property value. Target store certificate. This collection can contain a maximum of 500 elements. The possible values are: user, machine.
+// SetCertificateStore sets the certificateStore property value. Target store certificate. This collection can contain a maximum of 500 elements. Possible values are: user, machine.
 func (m *AospDeviceOwnerScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {

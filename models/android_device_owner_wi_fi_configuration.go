@@ -203,7 +203,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) GetFieldDeserializers()(map[string
     }
     return res
 }
-// GetMacAddressRandomizationMode gets the macAddressRandomizationMode property value. The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. The possible values are: automatic, hardware, unknownFutureValue.
+// GetMacAddressRandomizationMode gets the macAddressRandomizationMode property value. The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. Possible values are: automatic, hardware, unknownFutureValue.
 // returns a *MacAddressRandomizationMode when successful
 func (m *AndroidDeviceOwnerWiFiConfiguration) GetMacAddressRandomizationMode()(*MacAddressRandomizationMode) {
     val, err := m.GetBackingStore().Get("macAddressRandomizationMode")
@@ -438,7 +438,7 @@ func (m *AndroidDeviceOwnerWiFiConfiguration) SetConnectWhenNetworkNameIsHidden(
         panic(err)
     }
 }
-// SetMacAddressRandomizationMode sets the macAddressRandomizationMode property value. The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. The possible values are: automatic, hardware, unknownFutureValue.
+// SetMacAddressRandomizationMode sets the macAddressRandomizationMode property value. The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. Possible values are: automatic, hardware, unknownFutureValue.
 func (m *AndroidDeviceOwnerWiFiConfiguration) SetMacAddressRandomizationMode(value *MacAddressRandomizationMode)() {
     err := m.GetBackingStore().Set("macAddressRandomizationMode", value)
     if err != nil {

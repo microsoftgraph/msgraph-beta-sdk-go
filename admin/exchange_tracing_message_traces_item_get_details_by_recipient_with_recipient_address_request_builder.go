@@ -13,7 +13,7 @@ import (
 type ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetQueryParameters invoke function getDetailsByRecipient
+// ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetQueryParameters get a list of exchangeMessageTraceDetail objects filtered on the recipient.
 type ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -57,10 +57,13 @@ func NewExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddres
     urlParams["request-raw-url"] = rawUrl
     return NewExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderInternal(urlParams, requestAdapter, nil)
 }
-// Get invoke function getDetailsByRecipient
+// Get get a list of exchangeMessageTraceDetail objects filtered on the recipient.
 // Deprecated: This method is obsolete. Use GetAsGetDetailsByRecipientWithRecipientAddressGetResponse instead.
 // returns a ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-beta
 func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetRequestConfiguration)(ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -78,10 +81,13 @@ func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddre
     }
     return res.(ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressResponseable), nil
 }
-// GetAsGetDetailsByRecipientWithRecipientAddressGetResponse invoke function getDetailsByRecipient
+// GetAsGetDetailsByRecipientWithRecipientAddressGetResponse get a list of exchangeMessageTraceDetail objects filtered on the recipient.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressGetResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-beta
 func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilder) GetAsGetDetailsByRecipientWithRecipientAddressGetResponse(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetRequestConfiguration)(ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressGetResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,7 +105,7 @@ func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddre
     }
     return res.(ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressGetResponseable), nil
 }
-// ToGetRequestInformation invoke function getDetailsByRecipient
+// ToGetRequestInformation get a list of exchangeMessageTraceDetail objects filtered on the recipient.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesItemGetDetailsByRecipientWithRecipientAddressRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
