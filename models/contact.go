@@ -437,6 +437,16 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         return nil
     }
+    res["primaryEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEmailAddressFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetPrimaryEmailAddress(val.(EmailAddressable))
+        }
+        return nil
+    }
     res["profession"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -444,6 +454,16 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetProfession(val)
+        }
+        return nil
+    }
+    res["secondaryEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEmailAddressFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSecondaryEmailAddress(val.(EmailAddressable))
         }
         return nil
     }
@@ -480,6 +500,16 @@ func (m *Contact) GetFieldDeserializers()(map[string]func(i878a80d2330e89d268963
         }
         if val != nil {
             m.SetSurname(val)
+        }
+        return nil
+    }
+    res["tertiaryEmailAddress"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateEmailAddressFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetTertiaryEmailAddress(val.(EmailAddressable))
         }
         return nil
     }
@@ -779,6 +809,18 @@ func (m *Contact) GetPostalAddresses()([]PhysicalAddressable) {
     }
     return nil
 }
+// GetPrimaryEmailAddress gets the primaryEmailAddress property value. The primary email address of the contact.
+// returns a EmailAddressable when successful
+func (m *Contact) GetPrimaryEmailAddress()(EmailAddressable) {
+    val, err := m.GetBackingStore().Get("primaryEmailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EmailAddressable)
+    }
+    return nil
+}
 // GetProfession gets the profession property value. The contact's profession.
 // returns a *string when successful
 func (m *Contact) GetProfession()(*string) {
@@ -788,6 +830,18 @@ func (m *Contact) GetProfession()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSecondaryEmailAddress gets the secondaryEmailAddress property value. The secondary email address of the contact.
+// returns a EmailAddressable when successful
+func (m *Contact) GetSecondaryEmailAddress()(EmailAddressable) {
+    val, err := m.GetBackingStore().Get("secondaryEmailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EmailAddressable)
     }
     return nil
 }
@@ -824,6 +878,18 @@ func (m *Contact) GetSurname()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetTertiaryEmailAddress gets the tertiaryEmailAddress property value. The tertiary email address of the contact.
+// returns a EmailAddressable when successful
+func (m *Contact) GetTertiaryEmailAddress()(EmailAddressable) {
+    val, err := m.GetBackingStore().Get("tertiaryEmailAddress")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(EmailAddressable)
     }
     return nil
 }
@@ -1098,7 +1164,19 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
         }
     }
     {
+        err = writer.WriteObjectValue("primaryEmailAddress", m.GetPrimaryEmailAddress())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteStringValue("profession", m.GetProfession())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("secondaryEmailAddress", m.GetSecondaryEmailAddress())
         if err != nil {
             return err
         }
@@ -1123,6 +1201,12 @@ func (m *Contact) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010
     }
     {
         err = writer.WriteStringValue("surname", m.GetSurname())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("tertiaryEmailAddress", m.GetTertiaryEmailAddress())
         if err != nil {
             return err
         }
@@ -1360,9 +1444,23 @@ func (m *Contact) SetPostalAddresses(value []PhysicalAddressable)() {
         panic(err)
     }
 }
+// SetPrimaryEmailAddress sets the primaryEmailAddress property value. The primary email address of the contact.
+func (m *Contact) SetPrimaryEmailAddress(value EmailAddressable)() {
+    err := m.GetBackingStore().Set("primaryEmailAddress", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProfession sets the profession property value. The contact's profession.
 func (m *Contact) SetProfession(value *string)() {
     err := m.GetBackingStore().Set("profession", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetSecondaryEmailAddress sets the secondaryEmailAddress property value. The secondary email address of the contact.
+func (m *Contact) SetSecondaryEmailAddress(value EmailAddressable)() {
+    err := m.GetBackingStore().Set("secondaryEmailAddress", value)
     if err != nil {
         panic(err)
     }
@@ -1384,6 +1482,13 @@ func (m *Contact) SetSpouseName(value *string)() {
 // SetSurname sets the surname property value. The contact's surname.
 func (m *Contact) SetSurname(value *string)() {
     err := m.GetBackingStore().Set("surname", value)
+    if err != nil {
+        panic(err)
+    }
+}
+// SetTertiaryEmailAddress sets the tertiaryEmailAddress property value. The tertiary email address of the contact.
+func (m *Contact) SetTertiaryEmailAddress(value EmailAddressable)() {
+    err := m.GetBackingStore().Set("tertiaryEmailAddress", value)
     if err != nil {
         panic(err)
     }
@@ -1460,10 +1565,13 @@ type Contactable interface {
     GetPhones()([]Phoneable)
     GetPhoto()(ProfilePhotoable)
     GetPostalAddresses()([]PhysicalAddressable)
+    GetPrimaryEmailAddress()(EmailAddressable)
     GetProfession()(*string)
+    GetSecondaryEmailAddress()(EmailAddressable)
     GetSingleValueExtendedProperties()([]SingleValueLegacyExtendedPropertyable)
     GetSpouseName()(*string)
     GetSurname()(*string)
+    GetTertiaryEmailAddress()(EmailAddressable)
     GetTitle()(*string)
     GetWebsites()([]Websiteable)
     GetWeddingAnniversary()(*i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)
@@ -1497,10 +1605,13 @@ type Contactable interface {
     SetPhones(value []Phoneable)()
     SetPhoto(value ProfilePhotoable)()
     SetPostalAddresses(value []PhysicalAddressable)()
+    SetPrimaryEmailAddress(value EmailAddressable)()
     SetProfession(value *string)()
+    SetSecondaryEmailAddress(value EmailAddressable)()
     SetSingleValueExtendedProperties(value []SingleValueLegacyExtendedPropertyable)()
     SetSpouseName(value *string)()
     SetSurname(value *string)()
+    SetTertiaryEmailAddress(value EmailAddressable)()
     SetTitle(value *string)()
     SetWebsites(value []Websiteable)()
     SetWeddingAnniversary(value *i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.DateOnly)()

@@ -169,6 +169,11 @@ func (m *ExchangeRequestBuilder) ToPatchRequestInformation(ctx context.Context, 
     }
     return requestInfo, nil
 }
+// Tracing provides operations to manage the tracing property of the microsoft.graph.exchangeAdmin entity.
+// returns a *ExchangeTracingRequestBuilder when successful
+func (m *ExchangeRequestBuilder) Tracing()(*ExchangeTracingRequestBuilder) {
+    return NewExchangeTracingRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
+}
 // WithUrl returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *ExchangeRequestBuilder when successful

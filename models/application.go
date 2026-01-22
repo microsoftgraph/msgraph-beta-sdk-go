@@ -486,6 +486,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["isDisabled"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetBoolValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetIsDisabled(val)
+        }
+        return nil
+    }
     res["isFallbackPublicClient"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetBoolValue()
         if err != nil {
@@ -690,6 +700,16 @@ func (m *Application) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26
         }
         return nil
     }
+    res["signInAudienceRestrictions"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateSignInAudienceRestrictionsBaseFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetSignInAudienceRestrictions(val.(SignInAudienceRestrictionsBaseable))
+        }
+        return nil
+    }
     res["spa"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetObjectValue(CreateSpaApplicationFromDiscriminatorValue)
         if err != nil {
@@ -862,6 +882,18 @@ func (m *Application) GetInfo()(InformationalUrlable) {
 // returns a *bool when successful
 func (m *Application) GetIsDeviceOnlyAuthSupported()(*bool) {
     val, err := m.GetBackingStore().Get("isDeviceOnlyAuthSupported")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*bool)
+    }
+    return nil
+}
+// GetIsDisabled gets the isDisabled property value. Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
+// returns a *bool when successful
+func (m *Application) GetIsDisabled()(*bool) {
+    val, err := m.GetBackingStore().Get("isDisabled")
     if err != nil {
         panic(err)
     }
@@ -1083,6 +1115,18 @@ func (m *Application) GetSignInAudience()(*string) {
     }
     if val != nil {
         return val.(*string)
+    }
+    return nil
+}
+// GetSignInAudienceRestrictions gets the signInAudienceRestrictions property value. The signInAudienceRestrictions property
+// returns a SignInAudienceRestrictionsBaseable when successful
+func (m *Application) GetSignInAudienceRestrictions()(SignInAudienceRestrictionsBaseable) {
+    val, err := m.GetBackingStore().Get("signInAudienceRestrictions")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(SignInAudienceRestrictionsBaseable)
     }
     return nil
 }
@@ -1369,6 +1413,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
         }
     }
     {
+        err = writer.WriteBoolValue("isDisabled", m.GetIsDisabled())
+        if err != nil {
+            return err
+        }
+    }
+    {
         err = writer.WriteBoolValue("isFallbackPublicClient", m.GetIsFallbackPublicClient())
         if err != nil {
             return err
@@ -1497,6 +1547,12 @@ func (m *Application) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6
     }
     {
         err = writer.WriteStringValue("signInAudience", m.GetSignInAudience())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteObjectValue("signInAudienceRestrictions", m.GetSignInAudienceRestrictions())
         if err != nil {
             return err
         }
@@ -1722,6 +1778,13 @@ func (m *Application) SetIsDeviceOnlyAuthSupported(value *bool)() {
         panic(err)
     }
 }
+// SetIsDisabled sets the isDisabled property value. Specifies whether the service principal of the app in a tenant or across tenants for multi-tenant apps can obtain new access tokens or access protected resources. When set to true, existing tokens remain valid until they expire based on their configured lifetimes, and the app stays visible in the Enterprise apps list but users cannot sign in.true if the application is deactivated (disabled); otherwise false.
+func (m *Application) SetIsDisabled(value *bool)() {
+    err := m.GetBackingStore().Set("isDisabled", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetIsFallbackPublicClient sets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can't determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.
 func (m *Application) SetIsFallbackPublicClient(value *bool)() {
     err := m.GetBackingStore().Set("isFallbackPublicClient", value)
@@ -1848,6 +1911,13 @@ func (m *Application) SetSignInAudience(value *string)() {
         panic(err)
     }
 }
+// SetSignInAudienceRestrictions sets the signInAudienceRestrictions property value. The signInAudienceRestrictions property
+func (m *Application) SetSignInAudienceRestrictions(value SignInAudienceRestrictionsBaseable)() {
+    err := m.GetBackingStore().Set("signInAudienceRestrictions", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetSpa sets the spa property value. Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
 func (m *Application) SetSpa(value SpaApplicationable)() {
     err := m.GetBackingStore().Set("spa", value)
@@ -1942,6 +2012,7 @@ type Applicationable interface {
     GetIdentifierUris()([]string)
     GetInfo()(InformationalUrlable)
     GetIsDeviceOnlyAuthSupported()(*bool)
+    GetIsDisabled()(*bool)
     GetIsFallbackPublicClient()(*bool)
     GetKeyCredentials()([]KeyCredentialable)
     GetLogo()([]byte)
@@ -1960,6 +2031,7 @@ type Applicationable interface {
     GetServiceManagementReference()(*string)
     GetServicePrincipalLockConfiguration()(ServicePrincipalLockConfigurationable)
     GetSignInAudience()(*string)
+    GetSignInAudienceRestrictions()(SignInAudienceRestrictionsBaseable)
     GetSpa()(SpaApplicationable)
     GetSynchronization()(Synchronizationable)
     GetTags()([]string)
@@ -1991,6 +2063,7 @@ type Applicationable interface {
     SetIdentifierUris(value []string)()
     SetInfo(value InformationalUrlable)()
     SetIsDeviceOnlyAuthSupported(value *bool)()
+    SetIsDisabled(value *bool)()
     SetIsFallbackPublicClient(value *bool)()
     SetKeyCredentials(value []KeyCredentialable)()
     SetLogo(value []byte)()
@@ -2009,6 +2082,7 @@ type Applicationable interface {
     SetServiceManagementReference(value *string)()
     SetServicePrincipalLockConfiguration(value ServicePrincipalLockConfigurationable)()
     SetSignInAudience(value *string)()
+    SetSignInAudienceRestrictions(value SignInAudienceRestrictionsBaseable)()
     SetSpa(value SpaApplicationable)()
     SetSynchronization(value Synchronizationable)()
     SetTags(value []string)()

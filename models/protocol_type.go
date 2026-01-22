@@ -35,12 +35,14 @@ const (
     PRTNONBROKERBASED_PROTOCOLTYPE = 8388608
     ONBEHALFOF_PROTOCOLTYPE = 16777216
     SAMLONBEHALFOF_PROTOCOLTYPE = 33554432
+    OFFICES2S_PROTOCOLTYPE = 67108864
+    WSTRUST_PROTOCOLTYPE = 134217728
 )
 
 func (i ProtocolType) String() string {
     var values []string
-    options := []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue", "authenticationTransfer", "nativeAuth", "implicitAccessTokenAndGetResponseMode", "implicitIdTokenAndGetResponseMode", "implicitAccessTokenAndPostResponseMode", "implicitIdTokenAndPostResponseMode", "authorizationCodeWithoutPkce", "authorizationCodeWithPkce", "clientCredentials", "refreshTokenGrant", "encryptedAuthorizeResponse", "directUserGrant", "kerberos", "prtGrant", "seamlessSso", "prtBrokerBased", "prtNonBrokerBased", "onBehalfOf", "samlOnBehalfOf"}
-    for p := 0; p < 26; p++ {
+    options := []string{"none", "oAuth2", "ropc", "wsFederation", "saml20", "deviceCode", "unknownFutureValue", "authenticationTransfer", "nativeAuth", "implicitAccessTokenAndGetResponseMode", "implicitIdTokenAndGetResponseMode", "implicitAccessTokenAndPostResponseMode", "implicitIdTokenAndPostResponseMode", "authorizationCodeWithoutPkce", "authorizationCodeWithPkce", "clientCredentials", "refreshTokenGrant", "encryptedAuthorizeResponse", "directUserGrant", "kerberos", "prtGrant", "seamlessSso", "prtBrokerBased", "prtNonBrokerBased", "onBehalfOf", "samlOnBehalfOf", "officeS2S", "wsTrust"}
+    for p := 0; p < 28; p++ {
         mantis := ProtocolType(int(math.Pow(2, float64(p))))
         if i&mantis == mantis {
             values = append(values, options[p])
@@ -105,6 +107,10 @@ func ParseProtocolType(v string) (any, error) {
                 result |= ONBEHALFOF_PROTOCOLTYPE
             case "samlOnBehalfOf":
                 result |= SAMLONBEHALFOF_PROTOCOLTYPE
+            case "officeS2S":
+                result |= OFFICES2S_PROTOCOLTYPE
+            case "wsTrust":
+                result |= WSTRUST_PROTOCOLTYPE
             default:
                 return nil, nil
         }
