@@ -131,7 +131,7 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
+// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue, mexico. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: mexico. The default value is default. Read-only.
 // returns a *CloudPcGeographicLocationType when successful
 func (m *CloudPcDomainJoinConfiguration) GetGeographicLocationType()(*CloudPcGeographicLocationType) {
     val, err := m.GetBackingStore().Get("geographicLocationType")
@@ -277,7 +277,7 @@ func (m *CloudPcDomainJoinConfiguration) SetDomainJoinType(value *CloudPcDomainJ
         panic(err)
     }
 }
-// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue. Default value is default. Read-only.
+// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue, mexico. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: mexico. The default value is default. Read-only.
 func (m *CloudPcDomainJoinConfiguration) SetGeographicLocationType(value *CloudPcGeographicLocationType)() {
     err := m.GetBackingStore().Set("geographicLocationType", value)
     if err != nil {

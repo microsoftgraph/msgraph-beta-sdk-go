@@ -1473,6 +1473,8 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewExternalMeetingRegistrant(), nil
                     case "#microsoft.graph.externalMeetingRegistration":
                         return NewExternalMeetingRegistration(), nil
+                    case "#microsoft.graph.externalOriginResourceConnector":
+                        return NewExternalOriginResourceConnector(), nil
                     case "#microsoft.graph.externalProfile":
                         return NewExternalProfile(), nil
                     case "#microsoft.graph.externalUserProfile":

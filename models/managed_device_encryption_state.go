@@ -23,7 +23,7 @@ func NewManagedDeviceEncryptionState()(*ManagedDeviceEncryptionState) {
 func CreateManagedDeviceEncryptionStateFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewManagedDeviceEncryptionState(), nil
 }
-// GetAdvancedBitLockerStates gets the advancedBitLockerStates property value. Advanced BitLocker State. The possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
+// GetAdvancedBitLockerStates gets the advancedBitLockerStates property value. Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
 // returns a *AdvancedBitLockerState when successful
 func (m *ManagedDeviceEncryptionState) GetAdvancedBitLockerStates()(*AdvancedBitLockerState) {
     val, err := m.GetBackingStore().Get("advancedBitLockerStates")
@@ -217,7 +217,7 @@ func (m *ManagedDeviceEncryptionState) GetFieldDeserializers()(map[string]func(i
     }
     return res
 }
-// GetFileVaultStates gets the fileVaultStates property value. FileVault State. The possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
+// GetFileVaultStates gets the fileVaultStates property value. FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
 // returns a *FileVaultState when successful
 func (m *ManagedDeviceEncryptionState) GetFileVaultStates()(*FileVaultState) {
     val, err := m.GetBackingStore().Get("fileVaultStates")
@@ -363,7 +363,7 @@ func (m *ManagedDeviceEncryptionState) Serialize(writer i878a80d2330e89d26896388
     }
     return nil
 }
-// SetAdvancedBitLockerStates sets the advancedBitLockerStates property value. Advanced BitLocker State. The possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
+// SetAdvancedBitLockerStates sets the advancedBitLockerStates property value. Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.
 func (m *ManagedDeviceEncryptionState) SetAdvancedBitLockerStates(value *AdvancedBitLockerState)() {
     err := m.GetBackingStore().Set("advancedBitLockerStates", value)
     if err != nil {
@@ -405,7 +405,7 @@ func (m *ManagedDeviceEncryptionState) SetEncryptionState(value *EncryptionState
         panic(err)
     }
 }
-// SetFileVaultStates sets the fileVaultStates property value. FileVault State. The possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
+// SetFileVaultStates sets the fileVaultStates property value. FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.
 func (m *ManagedDeviceEncryptionState) SetFileVaultStates(value *FileVaultState)() {
     err := m.GetBackingStore().Set("fileVaultStates", value)
     if err != nil {

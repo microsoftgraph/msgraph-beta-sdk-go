@@ -37,7 +37,7 @@ func (m *MacOSTrustedRootCertificate) GetCertFileName()(*string) {
     }
     return nil
 }
-// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 // returns a *AppleDeploymentChannel when successful
 func (m *MacOSTrustedRootCertificate) GetDeploymentChannel()(*AppleDeploymentChannel) {
     val, err := m.GetBackingStore().Get("deploymentChannel")
@@ -131,7 +131,7 @@ func (m *MacOSTrustedRootCertificate) SetCertFileName(value *string)() {
         panic(err)
     }
 }
-// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 func (m *MacOSTrustedRootCertificate) SetDeploymentChannel(value *AppleDeploymentChannel)() {
     err := m.GetBackingStore().Set("deploymentChannel", value)
     if err != nil {

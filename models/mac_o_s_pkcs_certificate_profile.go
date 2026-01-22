@@ -37,7 +37,7 @@ func (m *MacOSPkcsCertificateProfile) GetAllowAllAppsAccess()(*bool) {
     }
     return nil
 }
-// GetCertificateStore gets the certificateStore property value. Target store certificate. The possible values are: user, machine.
+// GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 // returns a *CertificateStore when successful
 func (m *MacOSPkcsCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
@@ -97,7 +97,7 @@ func (m *MacOSPkcsCertificateProfile) GetCustomSubjectAlternativeNames()([]Custo
     }
     return nil
 }
-// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 // returns a *AppleDeploymentChannel when successful
 func (m *MacOSPkcsCertificateProfile) GetDeploymentChannel()(*AppleDeploymentChannel) {
     val, err := m.GetBackingStore().Get("deploymentChannel")
@@ -352,7 +352,7 @@ func (m *MacOSPkcsCertificateProfile) SetAllowAllAppsAccess(value *bool)() {
         panic(err)
     }
 }
-// SetCertificateStore sets the certificateStore property value. Target store certificate. The possible values are: user, machine.
+// SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *MacOSPkcsCertificateProfile) SetCertificateStore(value *CertificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
@@ -387,7 +387,7 @@ func (m *MacOSPkcsCertificateProfile) SetCustomSubjectAlternativeNames(value []C
         panic(err)
     }
 }
-// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 func (m *MacOSPkcsCertificateProfile) SetDeploymentChannel(value *AppleDeploymentChannel)() {
     err := m.GetBackingStore().Set("deploymentChannel", value)
     if err != nil {

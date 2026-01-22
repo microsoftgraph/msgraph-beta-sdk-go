@@ -44,7 +44,7 @@ func (m *MessageTracingRoot) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetMessageTraces gets the messageTraces property value. The messageTraces property
+// GetMessageTraces gets the messageTraces property value. Represents the trace information of messages that pass-through Exchange Online organizations.
 // returns a []ExchangeMessageTraceable when successful
 func (m *MessageTracingRoot) GetMessageTraces()([]ExchangeMessageTraceable) {
     val, err := m.GetBackingStore().Get("messageTraces")
@@ -76,7 +76,7 @@ func (m *MessageTracingRoot) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetMessageTraces sets the messageTraces property value. The messageTraces property
+// SetMessageTraces sets the messageTraces property value. Represents the trace information of messages that pass-through Exchange Online organizations.
 func (m *MessageTracingRoot) SetMessageTraces(value []ExchangeMessageTraceable)() {
     err := m.GetBackingStore().Set("messageTraces", value)
     if err != nil {

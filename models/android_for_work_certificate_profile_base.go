@@ -187,7 +187,7 @@ func (m *AndroidForWorkCertificateProfileBase) GetRootCertificate()(AndroidForWo
     }
     return nil
 }
-// GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. The possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 // returns a *SubjectAlternativeNameType when successful
 func (m *AndroidForWorkCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
@@ -305,7 +305,7 @@ func (m *AndroidForWorkCertificateProfileBase) SetRootCertificate(value AndroidF
         panic(err)
     }
 }
-// SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. The possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 func (m *AndroidForWorkCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
     err := m.GetBackingStore().Set("subjectAlternativeNameType", value)
     if err != nil {

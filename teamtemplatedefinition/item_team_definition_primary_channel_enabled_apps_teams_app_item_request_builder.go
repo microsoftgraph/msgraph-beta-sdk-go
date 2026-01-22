@@ -14,7 +14,7 @@ import (
 type ItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilderGetQueryParameters get enabledApps from teamTemplateDefinition
+// ItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilderGetQueryParameters a collection of enabled apps in the channel.
 type ItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -43,7 +43,7 @@ func NewItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilder(ra
     urlParams["request-raw-url"] = rawUrl
     return NewItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilderInternal(urlParams, requestAdapter)
 }
-// Get get enabledApps from teamTemplateDefinition
+// Get a collection of enabled apps in the channel.
 // returns a TeamsAppable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable, error) {
@@ -63,7 +63,7 @@ func (m *ItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilder) 
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppable), nil
 }
-// ToGetRequestInformation get enabledApps from teamTemplateDefinition
+// ToGetRequestInformation a collection of enabled apps in the channel.
 // returns a *RequestInformation when successful
 func (m *ItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ItemTeamDefinitionPrimaryChannelEnabledAppsTeamsAppItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

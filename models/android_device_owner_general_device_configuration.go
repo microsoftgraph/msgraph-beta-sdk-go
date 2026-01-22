@@ -61,7 +61,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAllowInstallFromUn
     }
     return nil
 }
-// GetAppsAutoUpdatePolicy gets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. The possible values are: notConfigured, userChoice, never, wiFiOnly, always.
+// GetAppsAutoUpdatePolicy gets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
 // returns a *AndroidDeviceOwnerAppAutoUpdatePolicyType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAutoUpdatePolicy()(*AndroidDeviceOwnerAppAutoUpdatePolicyType) {
     val, err := m.GetBackingStore().Get("appsAutoUpdatePolicy")
@@ -73,7 +73,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsAutoUpdatePolicy()
     }
     return nil
 }
-// GetAppsDefaultPermissionPolicy gets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. The possible values are: deviceDefault, prompt, autoGrant, autoDeny.
+// GetAppsDefaultPermissionPolicy gets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
 // returns a *AndroidDeviceOwnerDefaultAppPermissionPolicyType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetAppsDefaultPermissionPolicy()(*AndroidDeviceOwnerDefaultAppPermissionPolicyType) {
     val, err := m.GetBackingStore().Get("appsDefaultPermissionPolicy")
@@ -181,7 +181,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAl
     }
     return nil
 }
-// GetCrossProfilePoliciesAllowDataSharing gets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. The possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
+// GetCrossProfilePoliciesAllowDataSharing gets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
 // returns a *AndroidDeviceOwnerCrossProfileDataSharing when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetCrossProfilePoliciesAllowDataSharing()(*AndroidDeviceOwnerCrossProfileDataSharing) {
     val, err := m.GetBackingStore().Get("crossProfilePoliciesAllowDataSharing")
@@ -241,7 +241,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDetailedHelpText()(And
     }
     return nil
 }
-// GetDeviceLocationMode gets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). The possible values are: notConfigured, disabled, unknownFutureValue.
+// GetDeviceLocationMode gets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.
 // returns a *AndroidDeviceOwnerLocationMode when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetDeviceLocationMode()(*AndroidDeviceOwnerLocationMode) {
     val, err := m.GetBackingStore().Get("deviceLocationMode")
@@ -1827,7 +1827,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationPowe
     }
     return nil
 }
-// GetKioskCustomizationStatusBar gets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. The possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
+// GetKioskCustomizationStatusBar gets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
 // returns a *AndroidDeviceOwnerKioskCustomizationStatusBar when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationStatusBar()(*AndroidDeviceOwnerKioskCustomizationStatusBar) {
     val, err := m.GetBackingStore().Get("kioskCustomizationStatusBar")
@@ -1851,7 +1851,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSyst
     }
     return nil
 }
-// GetKioskCustomizationSystemNavigation gets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. The possible values are: notConfigured, navigationEnabled, homeButtonOnly.
+// GetKioskCustomizationSystemNavigation gets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.
 // returns a *AndroidDeviceOwnerKioskCustomizationSystemNavigation when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskCustomizationSystemNavigation()(*AndroidDeviceOwnerKioskCustomizationSystemNavigation) {
     val, err := m.GetBackingStore().Get("kioskCustomizationSystemNavigation")
@@ -1959,7 +1959,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFlashlightCon
     }
     return nil
 }
-// GetKioskModeFolderIcon gets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. The possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
+// GetKioskModeFolderIcon gets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
 // returns a *AndroidDeviceOwnerKioskModeFolderIcon when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeFolderIcon()(*AndroidDeviceOwnerKioskModeFolderIcon) {
     val, err := m.GetBackingStore().Get("kioskModeFolderIcon")
@@ -1995,7 +1995,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeGridWidth()(*
     }
     return nil
 }
-// GetKioskModeIconSize gets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. The possible values are: notConfigured, smallest, small, regular, large, largest.
+// GetKioskModeIconSize gets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
 // returns a *AndroidDeviceOwnerKioskModeIconSize when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeIconSize()(*AndroidDeviceOwnerKioskModeIconSize) {
     val, err := m.GetBackingStore().Get("kioskModeIconSize")
@@ -2079,7 +2079,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeSc
     }
     return nil
 }
-// GetKioskModeManagedHomeScreenPinComplexity gets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. The possible values are: notConfigured, simple, complex.
+// GetKioskModeManagedHomeScreenPinComplexity gets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.
 // returns a *KioskModeManagedHomeScreenPinComplexity when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeManagedHomeScreenPinComplexity()(*KioskModeManagedHomeScreenPinComplexity) {
     val, err := m.GetBackingStore().Get("kioskModeManagedHomeScreenPinComplexity")
@@ -2175,7 +2175,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeMediaVolumeCo
     }
     return nil
 }
-// GetKioskModeScreenOrientation gets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. The possible values are: notConfigured, portrait, landscape, autoRotate.
+// GetKioskModeScreenOrientation gets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.
 // returns a *AndroidDeviceOwnerKioskModeScreenOrientation when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeScreenOrientation()(*AndroidDeviceOwnerKioskModeScreenOrientation) {
     val, err := m.GetBackingStore().Get("kioskModeScreenOrientation")
@@ -2271,7 +2271,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeShowDeviceInf
     }
     return nil
 }
-// GetKioskModeUseManagedHomeScreenApp gets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. The possible values are: notConfigured, singleAppMode, multiAppMode.
+// GetKioskModeUseManagedHomeScreenApp gets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.
 // returns a *KioskModeType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeUseManagedHomeScreenApp()(*KioskModeType) {
     val, err := m.GetBackingStore().Get("kioskModeUseManagedHomeScreenApp")
@@ -2295,7 +2295,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeBu
     }
     return nil
 }
-// GetKioskModeVirtualHomeButtonType gets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. The possible values are: notConfigured, swipeUp, floating.
+// GetKioskModeVirtualHomeButtonType gets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.
 // returns a *AndroidDeviceOwnerVirtualHomeButtonType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetKioskModeVirtualHomeButtonType()(*AndroidDeviceOwnerVirtualHomeButtonType) {
     val, err := m.GetBackingStore().Get("kioskModeVirtualHomeButtonType")
@@ -2439,7 +2439,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockP
     }
     return nil
 }
-// GetMicrosoftLauncherDockPresenceConfiguration gets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. The possible values are: notConfigured, show, hide, disabled.
+// GetMicrosoftLauncherDockPresenceConfiguration gets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.
 // returns a *MicrosoftLauncherDockPresence when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherDockPresenceConfiguration()(*MicrosoftLauncherDockPresence) {
     val, err := m.GetBackingStore().Get("microsoftLauncherDockPresenceConfiguration")
@@ -2475,7 +2475,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherFeedE
     }
     return nil
 }
-// GetMicrosoftLauncherSearchBarPlacementConfiguration gets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. The possible values are: notConfigured, top, bottom, hide.
+// GetMicrosoftLauncherSearchBarPlacementConfiguration gets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.
 // returns a *MicrosoftLauncherSearchBarPlacement when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetMicrosoftLauncherSearchBarPlacementConfiguration()(*MicrosoftLauncherSearchBarPlacement) {
     val, err := m.GetBackingStore().Get("microsoftLauncherSearchBarPlacementConfiguration")
@@ -2655,7 +2655,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordPreviousPasswo
     }
     return nil
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 // returns a *AndroidDeviceOwnerRequiredPasswordType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
@@ -2667,7 +2667,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequiredType()
     }
     return nil
 }
-// GetPasswordRequireUnlock gets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. The possible values are: deviceDefault, daily, unkownFutureValue.
+// GetPasswordRequireUnlock gets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
 // returns a *AndroidDeviceOwnerRequiredPasswordUnlock when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock) {
     val, err := m.GetBackingStore().Get("passwordRequireUnlock")
@@ -2727,7 +2727,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePersona
     }
     return nil
 }
-// GetPersonalProfilePlayStoreMode gets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. The possible values are: notConfigured, blockedApps, allowedApps.
+// GetPersonalProfilePlayStoreMode gets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.
 // returns a *PersonalProfilePersonalPlayStoreMode when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfilePlayStoreMode()(*PersonalProfilePersonalPlayStoreMode) {
     val, err := m.GetBackingStore().Get("personalProfilePlayStoreMode")
@@ -2751,7 +2751,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPersonalProfileScreenC
     }
     return nil
 }
-// GetPlayStoreMode gets the playStoreMode property value. Indicates the Play Store mode of the device. The possible values are: notConfigured, allowList, blockList.
+// GetPlayStoreMode gets the playStoreMode property value. Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.
 // returns a *AndroidDeviceOwnerPlayStoreMode when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetPlayStoreMode()(*AndroidDeviceOwnerPlayStoreMode) {
     val, err := m.GetBackingStore().Get("playStoreMode")
@@ -2907,7 +2907,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateFreezePeri
     }
     return nil
 }
-// GetSystemUpdateInstallType gets the systemUpdateInstallType property value. The type of system update configuration. The possible values are: deviceDefault, postpone, windowed, automatic.
+// GetSystemUpdateInstallType gets the systemUpdateInstallType property value. The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
 // returns a *AndroidDeviceOwnerSystemUpdateInstallType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetSystemUpdateInstallType()(*AndroidDeviceOwnerSystemUpdateInstallType) {
     val, err := m.GetBackingStore().Get("systemUpdateInstallType")
@@ -3147,7 +3147,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordPre
     }
     return nil
 }
-// GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// GetWorkProfilePasswordRequiredType gets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 // returns a *AndroidDeviceOwnerRequiredPasswordType when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("workProfilePasswordRequiredType")
@@ -3159,7 +3159,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordReq
     }
     return nil
 }
-// GetWorkProfilePasswordRequireUnlock gets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. The possible values are: deviceDefault, daily, unkownFutureValue.
+// GetWorkProfilePasswordRequireUnlock gets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
 // returns a *AndroidDeviceOwnerRequiredPasswordUnlock when successful
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) GetWorkProfilePasswordRequireUnlock()(*AndroidDeviceOwnerRequiredPasswordUnlock) {
     val, err := m.GetBackingStore().Get("workProfilePasswordRequireUnlock")
@@ -4122,14 +4122,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsAllowInstallFromUn
         panic(err)
     }
 }
-// SetAppsAutoUpdatePolicy sets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. The possible values are: notConfigured, userChoice, never, wiFiOnly, always.
+// SetAppsAutoUpdatePolicy sets the appsAutoUpdatePolicy property value. Indicates the value of the app auto update policy. Possible values are: notConfigured, userChoice, never, wiFiOnly, always.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsAutoUpdatePolicy(value *AndroidDeviceOwnerAppAutoUpdatePolicyType)() {
     err := m.GetBackingStore().Set("appsAutoUpdatePolicy", value)
     if err != nil {
         panic(err)
     }
 }
-// SetAppsDefaultPermissionPolicy sets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. The possible values are: deviceDefault, prompt, autoGrant, autoDeny.
+// SetAppsDefaultPermissionPolicy sets the appsDefaultPermissionPolicy property value. Indicates the permission policy for requests for runtime permissions if one is not defined for the app specifically. Possible values are: deviceDefault, prompt, autoGrant, autoDeny.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetAppsDefaultPermissionPolicy(value *AndroidDeviceOwnerDefaultAppPermissionPolicyType)() {
     err := m.GetBackingStore().Set("appsDefaultPermissionPolicy", value)
     if err != nil {
@@ -4192,7 +4192,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCrossProfilePoliciesAl
         panic(err)
     }
 }
-// SetCrossProfilePoliciesAllowDataSharing sets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. The possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
+// SetCrossProfilePoliciesAllowDataSharing sets the crossProfilePoliciesAllowDataSharing property value. Indicates whether data from one profile (personal or work) can be shared with apps in the other profile. Possible values are: notConfigured, crossProfileDataSharingBlocked, dataSharingFromWorkToPersonalBlocked, crossProfileDataSharingAllowed, unkownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetCrossProfilePoliciesAllowDataSharing(value *AndroidDeviceOwnerCrossProfileDataSharing)() {
     err := m.GetBackingStore().Set("crossProfilePoliciesAllowDataSharing", value)
     if err != nil {
@@ -4227,7 +4227,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDetailedHelpText(value
         panic(err)
     }
 }
-// SetDeviceLocationMode sets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). The possible values are: notConfigured, disabled, unknownFutureValue.
+// SetDeviceLocationMode sets the deviceLocationMode property value. Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetDeviceLocationMode(value *AndroidDeviceOwnerLocationMode)() {
     err := m.GetBackingStore().Set("deviceLocationMode", value)
     if err != nil {
@@ -4290,7 +4290,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationPowe
         panic(err)
     }
 }
-// SetKioskCustomizationStatusBar sets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. The possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
+// SetKioskCustomizationStatusBar sets the kioskCustomizationStatusBar property value. Indicates whether system info and notifications are disabled in Kiosk Mode. Possible values are: notConfigured, notificationsAndSystemInfoEnabled, systemInfoOnly.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationStatusBar(value *AndroidDeviceOwnerKioskCustomizationStatusBar)() {
     err := m.GetBackingStore().Set("kioskCustomizationStatusBar", value)
     if err != nil {
@@ -4304,7 +4304,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationSyst
         panic(err)
     }
 }
-// SetKioskCustomizationSystemNavigation sets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. The possible values are: notConfigured, navigationEnabled, homeButtonOnly.
+// SetKioskCustomizationSystemNavigation sets the kioskCustomizationSystemNavigation property value. Indicates which navigation features are enabled in Kiosk Mode. Possible values are: notConfigured, navigationEnabled, homeButtonOnly.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskCustomizationSystemNavigation(value *AndroidDeviceOwnerKioskCustomizationSystemNavigation)() {
     err := m.GetBackingStore().Set("kioskCustomizationSystemNavigation", value)
     if err != nil {
@@ -4367,7 +4367,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeFlashlightCon
         panic(err)
     }
 }
-// SetKioskModeFolderIcon sets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. The possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
+// SetKioskModeFolderIcon sets the kioskModeFolderIcon property value. Folder icon configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, darkSquare, darkCircle, lightSquare, lightCircle.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeFolderIcon(value *AndroidDeviceOwnerKioskModeFolderIcon)() {
     err := m.GetBackingStore().Set("kioskModeFolderIcon", value)
     if err != nil {
@@ -4388,7 +4388,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeGridWidth(val
         panic(err)
     }
 }
-// SetKioskModeIconSize sets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. The possible values are: notConfigured, smallest, small, regular, large, largest.
+// SetKioskModeIconSize sets the kioskModeIconSize property value. Icon size configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, smallest, small, regular, large, largest.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeIconSize(value *AndroidDeviceOwnerKioskModeIconSize)() {
     err := m.GetBackingStore().Set("kioskModeIconSize", value)
     if err != nil {
@@ -4437,7 +4437,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeSc
         panic(err)
     }
 }
-// SetKioskModeManagedHomeScreenPinComplexity sets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. The possible values are: notConfigured, simple, complex.
+// SetKioskModeManagedHomeScreenPinComplexity sets the kioskModeManagedHomeScreenPinComplexity property value. Complexity of PIN for sign-in session for Managed Home Screen. Possible values are: notConfigured, simple, complex.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeManagedHomeScreenPinComplexity(value *KioskModeManagedHomeScreenPinComplexity)() {
     err := m.GetBackingStore().Set("kioskModeManagedHomeScreenPinComplexity", value)
     if err != nil {
@@ -4493,7 +4493,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeMediaVolumeCo
         panic(err)
     }
 }
-// SetKioskModeScreenOrientation sets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. The possible values are: notConfigured, portrait, landscape, autoRotate.
+// SetKioskModeScreenOrientation sets the kioskModeScreenOrientation property value. Screen orientation configuration for managed home screen in Kiosk Mode. Possible values are: notConfigured, portrait, landscape, autoRotate.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeScreenOrientation(value *AndroidDeviceOwnerKioskModeScreenOrientation)() {
     err := m.GetBackingStore().Set("kioskModeScreenOrientation", value)
     if err != nil {
@@ -4549,7 +4549,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeShowDeviceInf
         panic(err)
     }
 }
-// SetKioskModeUseManagedHomeScreenApp sets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. The possible values are: notConfigured, singleAppMode, multiAppMode.
+// SetKioskModeUseManagedHomeScreenApp sets the kioskModeUseManagedHomeScreenApp property value. Whether or not to use single app kiosk mode or multi-app kiosk mode. Possible values are: notConfigured, singleAppMode, multiAppMode.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeUseManagedHomeScreenApp(value *KioskModeType)() {
     err := m.GetBackingStore().Set("kioskModeUseManagedHomeScreenApp", value)
     if err != nil {
@@ -4563,7 +4563,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeVirtualHomeBu
         panic(err)
     }
 }
-// SetKioskModeVirtualHomeButtonType sets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. The possible values are: notConfigured, swipeUp, floating.
+// SetKioskModeVirtualHomeButtonType sets the kioskModeVirtualHomeButtonType property value. Indicates whether the virtual home button is a swipe up home button or a floating home button. Possible values are: notConfigured, swipeUp, floating.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetKioskModeVirtualHomeButtonType(value *AndroidDeviceOwnerVirtualHomeButtonType)() {
     err := m.GetBackingStore().Set("kioskModeVirtualHomeButtonType", value)
     if err != nil {
@@ -4647,7 +4647,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherDockP
         panic(err)
     }
 }
-// SetMicrosoftLauncherDockPresenceConfiguration sets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. The possible values are: notConfigured, show, hide, disabled.
+// SetMicrosoftLauncherDockPresenceConfiguration sets the microsoftLauncherDockPresenceConfiguration property value. Indicates whether or not you want to configure the device dock. Possible values are: notConfigured, show, hide, disabled.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherDockPresenceConfiguration(value *MicrosoftLauncherDockPresence)() {
     err := m.GetBackingStore().Set("microsoftLauncherDockPresenceConfiguration", value)
     if err != nil {
@@ -4668,7 +4668,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherFeedE
         panic(err)
     }
 }
-// SetMicrosoftLauncherSearchBarPlacementConfiguration sets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. The possible values are: notConfigured, top, bottom, hide.
+// SetMicrosoftLauncherSearchBarPlacementConfiguration sets the microsoftLauncherSearchBarPlacementConfiguration property value. Indicates the search bar placement configuration on the device. Possible values are: notConfigured, top, bottom, hide.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetMicrosoftLauncherSearchBarPlacementConfiguration(value *MicrosoftLauncherSearchBarPlacement)() {
     err := m.GetBackingStore().Set("microsoftLauncherSearchBarPlacementConfiguration", value)
     if err != nil {
@@ -4773,14 +4773,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordPreviousPasswo
         panic(err)
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Indicates the minimum password quality required on the device. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
     err := m.GetBackingStore().Set("passwordRequiredType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetPasswordRequireUnlock sets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. The possible values are: deviceDefault, daily, unkownFutureValue.
+// SetPasswordRequireUnlock sets the passwordRequireUnlock property value. Indicates the timeout period after which a device must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPasswordRequireUnlock(value *AndroidDeviceOwnerRequiredPasswordUnlock)() {
     err := m.GetBackingStore().Set("passwordRequireUnlock", value)
     if err != nil {
@@ -4815,7 +4815,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfilePersona
         panic(err)
     }
 }
-// SetPersonalProfilePlayStoreMode sets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. The possible values are: notConfigured, blockedApps, allowedApps.
+// SetPersonalProfilePlayStoreMode sets the personalProfilePlayStoreMode property value. Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfilePlayStoreMode(value *PersonalProfilePersonalPlayStoreMode)() {
     err := m.GetBackingStore().Set("personalProfilePlayStoreMode", value)
     if err != nil {
@@ -4829,7 +4829,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPersonalProfileScreenC
         panic(err)
     }
 }
-// SetPlayStoreMode sets the playStoreMode property value. Indicates the Play Store mode of the device. The possible values are: notConfigured, allowList, blockList.
+// SetPlayStoreMode sets the playStoreMode property value. Indicates the Play Store mode of the device. Possible values are: notConfigured, allowList, blockList.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetPlayStoreMode(value *AndroidDeviceOwnerPlayStoreMode)() {
     err := m.GetBackingStore().Set("playStoreMode", value)
     if err != nil {
@@ -4920,7 +4920,7 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemUpdateFreezePeri
         panic(err)
     }
 }
-// SetSystemUpdateInstallType sets the systemUpdateInstallType property value. The type of system update configuration. The possible values are: deviceDefault, postpone, windowed, automatic.
+// SetSystemUpdateInstallType sets the systemUpdateInstallType property value. The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetSystemUpdateInstallType(value *AndroidDeviceOwnerSystemUpdateInstallType)() {
     err := m.GetBackingStore().Set("systemUpdateInstallType", value)
     if err != nil {
@@ -5060,14 +5060,14 @@ func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordPre
         panic(err)
     }
 }
-// SetWorkProfilePasswordRequiredType sets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// SetWorkProfilePasswordRequiredType sets the workProfilePasswordRequiredType property value. Indicates the minimum password quality required on the work profile password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
     err := m.GetBackingStore().Set("workProfilePasswordRequiredType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetWorkProfilePasswordRequireUnlock sets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. The possible values are: deviceDefault, daily, unkownFutureValue.
+// SetWorkProfilePasswordRequireUnlock sets the workProfilePasswordRequireUnlock property value. Indicates the timeout period after which a work profile must be unlocked using a form of strong authentication. Possible values are: deviceDefault, daily, unkownFutureValue.
 func (m *AndroidDeviceOwnerGeneralDeviceConfiguration) SetWorkProfilePasswordRequireUnlock(value *AndroidDeviceOwnerRequiredPasswordUnlock)() {
     err := m.GetBackingStore().Set("workProfilePasswordRequireUnlock", value)
     if err != nil {

@@ -25,7 +25,7 @@ func NewMacOSVpnConfiguration()(*MacOSVpnConfiguration) {
 func CreateMacOSVpnConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewMacOSVpnConfiguration(), nil
 }
-// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 // returns a *AppleDeploymentChannel when successful
 func (m *MacOSVpnConfiguration) GetDeploymentChannel()(*AppleDeploymentChannel) {
     val, err := m.GetBackingStore().Get("deploymentChannel")
@@ -96,7 +96,7 @@ func (m *MacOSVpnConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487e
     }
     return nil
 }
-// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 func (m *MacOSVpnConfiguration) SetDeploymentChannel(value *AppleDeploymentChannel)() {
     err := m.GetBackingStore().Set("deploymentChannel", value)
     if err != nil {

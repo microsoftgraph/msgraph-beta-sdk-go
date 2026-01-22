@@ -14,7 +14,7 @@ import (
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilderGetQueryParameters get enabledApps from teamwork
+// TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilderGetQueryParameters a collection of enabled apps in the channel.
 type TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -72,7 +72,7 @@ func NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsR
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilder) Count()(*TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsCountRequestBuilder) {
     return NewTeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get enabledApps from teamwork
+// Get a collection of enabled apps in the channel.
 // returns a TeamsAppCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilder) Get(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppCollectionResponseable, error) {
@@ -92,7 +92,7 @@ func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledApps
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.TeamsAppCollectionResponseable), nil
 }
-// ToGetRequestInformation get enabledApps from teamwork
+// ToGetRequestInformation a collection of enabled apps in the channel.
 // returns a *RequestInformation when successful
 func (m *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *TeamTemplatesItemDefinitionsItemTeamDefinitionPrimaryChannelEnabledAppsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

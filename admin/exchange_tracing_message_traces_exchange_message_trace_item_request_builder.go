@@ -21,7 +21,7 @@ type ExchangeTracingMessageTracesExchangeMessageTraceItemRequestBuilderDeleteReq
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeTracingMessageTracesExchangeMessageTraceItemRequestBuilderGetQueryParameters get messageTraces from admin
+// ExchangeTracingMessageTracesExchangeMessageTraceItemRequestBuilderGetQueryParameters represents the trace information of messages that pass-through Exchange Online organizations.
 type ExchangeTracingMessageTracesExchangeMessageTraceItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ExchangeTracingMessageTracesExchangeMessageTraceItemRequestBuilder) Del
     }
     return nil
 }
-// Get get messageTraces from admin
+// Get represents the trace information of messages that pass-through Exchange Online organizations.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a ExchangeMessageTraceable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -134,7 +134,7 @@ func (m *ExchangeTracingMessageTracesExchangeMessageTraceItemRequestBuilder) ToD
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get messageTraces from admin
+// ToGetRequestInformation represents the trace information of messages that pass-through Exchange Online organizations.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeTracingMessageTracesExchangeMessageTraceItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesExchangeMessageTraceItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

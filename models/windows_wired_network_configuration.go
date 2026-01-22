@@ -37,7 +37,7 @@ func (m *WindowsWiredNetworkConfiguration) GetAuthenticationBlockPeriodInMinutes
     }
     return nil
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Specify the authentication method. The possible values are: certificate, usernameAndPassword, derivedCredential. The possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
+// GetAuthenticationMethod gets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
 // returns a *WiredNetworkAuthenticationMethod when successful
 func (m *WindowsWiredNetworkConfiguration) GetAuthenticationMethod()(*WiredNetworkAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
@@ -73,7 +73,7 @@ func (m *WindowsWiredNetworkConfiguration) GetAuthenticationRetryDelayPeriodInSe
     }
     return nil
 }
-// GetAuthenticationType gets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. The possible values are: none, user, machine, machineOrUser, guest. The possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
+// GetAuthenticationType gets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
 // returns a *WiredNetworkAuthenticationType when successful
 func (m *WindowsWiredNetworkConfiguration) GetAuthenticationType()(*WiredNetworkAuthenticationType) {
     val, err := m.GetBackingStore().Get("authenticationType")
@@ -427,7 +427,7 @@ func (m *WindowsWiredNetworkConfiguration) GetIdentityCertificateForClientAuthen
     }
     return nil
 }
-// GetInnerAuthenticationProtocolForEAPTTLS gets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
+// GetInnerAuthenticationProtocolForEAPTTLS gets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 // returns a *NonEapAuthenticationMethodForEapTtlsType when successful
 func (m *WindowsWiredNetworkConfiguration) GetInnerAuthenticationProtocolForEAPTTLS()(*NonEapAuthenticationMethodForEapTtlsType) {
     val, err := m.GetBackingStore().Get("innerAuthenticationProtocolForEAPTTLS")
@@ -523,7 +523,7 @@ func (m *WindowsWiredNetworkConfiguration) GetRootCertificatesForServerValidatio
     }
     return nil
 }
-// GetSecondaryAuthenticationMethod gets the secondaryAuthenticationMethod property value. Specify the secondary authentication method. The possible values are: certificate, usernameAndPassword, derivedCredential. The possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
+// GetSecondaryAuthenticationMethod gets the secondaryAuthenticationMethod property value. Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
 // returns a *WiredNetworkAuthenticationMethod when successful
 func (m *WindowsWiredNetworkConfiguration) GetSecondaryAuthenticationMethod()(*WiredNetworkAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("secondaryAuthenticationMethod")
@@ -741,7 +741,7 @@ func (m *WindowsWiredNetworkConfiguration) SetAuthenticationBlockPeriodInMinutes
         panic(err)
     }
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Specify the authentication method. The possible values are: certificate, usernameAndPassword, derivedCredential. The possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
+// SetAuthenticationMethod sets the authenticationMethod property value. Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
 func (m *WindowsWiredNetworkConfiguration) SetAuthenticationMethod(value *WiredNetworkAuthenticationMethod)() {
     err := m.GetBackingStore().Set("authenticationMethod", value)
     if err != nil {
@@ -762,7 +762,7 @@ func (m *WindowsWiredNetworkConfiguration) SetAuthenticationRetryDelayPeriodInSe
         panic(err)
     }
 }
-// SetAuthenticationType sets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. The possible values are: none, user, machine, machineOrUser, guest. The possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
+// SetAuthenticationType sets the authenticationType property value. Specify whether to authenticate the user, the device, either, or to use guest authentication (none). If you're using certificate authentication, make sure the certificate type matches the authentication type. Possible values are: none, user, machine, machineOrUser, guest. Possible values are: none, user, machine, machineOrUser, guest, unknownFutureValue.
 func (m *WindowsWiredNetworkConfiguration) SetAuthenticationType(value *WiredNetworkAuthenticationType)() {
     err := m.GetBackingStore().Set("authenticationType", value)
     if err != nil {
@@ -818,7 +818,7 @@ func (m *WindowsWiredNetworkConfiguration) SetIdentityCertificateForClientAuthen
         panic(err)
     }
 }
-// SetInnerAuthenticationProtocolForEAPTTLS sets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. The possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
+// SetInnerAuthenticationProtocolForEAPTTLS sets the innerAuthenticationProtocolForEAPTTLS property value. Specify inner authentication protocol for EAP TTLS. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.
 func (m *WindowsWiredNetworkConfiguration) SetInnerAuthenticationProtocolForEAPTTLS(value *NonEapAuthenticationMethodForEapTtlsType)() {
     err := m.GetBackingStore().Set("innerAuthenticationProtocolForEAPTTLS", value)
     if err != nil {
@@ -874,7 +874,7 @@ func (m *WindowsWiredNetworkConfiguration) SetRootCertificatesForServerValidatio
         panic(err)
     }
 }
-// SetSecondaryAuthenticationMethod sets the secondaryAuthenticationMethod property value. Specify the secondary authentication method. The possible values are: certificate, usernameAndPassword, derivedCredential. The possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
+// SetSecondaryAuthenticationMethod sets the secondaryAuthenticationMethod property value. Specify the secondary authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential. Possible values are: certificate, usernameAndPassword, derivedCredential, unknownFutureValue.
 func (m *WindowsWiredNetworkConfiguration) SetSecondaryAuthenticationMethod(value *WiredNetworkAuthenticationMethod)() {
     err := m.GetBackingStore().Set("secondaryAuthenticationMethod", value)
     if err != nil {

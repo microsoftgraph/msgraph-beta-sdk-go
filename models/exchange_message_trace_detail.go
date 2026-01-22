@@ -23,7 +23,7 @@ func NewExchangeMessageTraceDetail()(*ExchangeMessageTraceDetail) {
 func CreateExchangeMessageTraceDetailFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewExchangeMessageTraceDetail(), nil
 }
-// GetAction gets the action property value. The action property
+// GetAction gets the action property value. The action taken on the message during the event.
 // returns a *string when successful
 func (m *ExchangeMessageTraceDetail) GetAction()(*string) {
     val, err := m.GetBackingStore().Get("action")
@@ -35,7 +35,7 @@ func (m *ExchangeMessageTraceDetail) GetAction()(*string) {
     }
     return nil
 }
-// GetData gets the data property value. The data property
+// GetData gets the data property value. Additional data associated with the event, containing supplementary information specific to the event.
 // returns a *string when successful
 func (m *ExchangeMessageTraceDetail) GetData()(*string) {
     val, err := m.GetBackingStore().Get("data")
@@ -47,7 +47,7 @@ func (m *ExchangeMessageTraceDetail) GetData()(*string) {
     }
     return nil
 }
-// GetDateTime gets the dateTime property value. The dateTime property
+// GetDateTime gets the dateTime property value. The date and time when the event occurred. The timestamp is in UTC format.
 // returns a *Time when successful
 func (m *ExchangeMessageTraceDetail) GetDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("dateTime")
@@ -59,7 +59,7 @@ func (m *ExchangeMessageTraceDetail) GetDateTime()(*i336074805fc853987abe6f7fe3a
     }
     return nil
 }
-// GetDescription gets the description property value. The description property
+// GetDescription gets the description property value. A detailed description that provides context about what happened during message processing.
 // returns a *string when successful
 func (m *ExchangeMessageTraceDetail) GetDescription()(*string) {
     val, err := m.GetBackingStore().Get("description")
@@ -71,7 +71,7 @@ func (m *ExchangeMessageTraceDetail) GetDescription()(*string) {
     }
     return nil
 }
-// GetEvent gets the event property value. The event property
+// GetEvent gets the event property value. The event that occurred during message processing.
 // returns a *string when successful
 func (m *ExchangeMessageTraceDetail) GetEvent()(*string) {
     val, err := m.GetBackingStore().Get("event")
@@ -149,7 +149,7 @@ func (m *ExchangeMessageTraceDetail) GetFieldDeserializers()(map[string]func(i87
     }
     return res
 }
-// GetMessageId gets the messageId property value. The messageId property
+// GetMessageId gets the messageId property value. The Message-ID header field of the message. The format depends on the messaging server that sent the message.
 // returns a *string when successful
 func (m *ExchangeMessageTraceDetail) GetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("messageId")
@@ -205,42 +205,42 @@ func (m *ExchangeMessageTraceDetail) Serialize(writer i878a80d2330e89d26896388a3
     }
     return nil
 }
-// SetAction sets the action property value. The action property
+// SetAction sets the action property value. The action taken on the message during the event.
 func (m *ExchangeMessageTraceDetail) SetAction(value *string)() {
     err := m.GetBackingStore().Set("action", value)
     if err != nil {
         panic(err)
     }
 }
-// SetData sets the data property value. The data property
+// SetData sets the data property value. Additional data associated with the event, containing supplementary information specific to the event.
 func (m *ExchangeMessageTraceDetail) SetData(value *string)() {
     err := m.GetBackingStore().Set("data", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDateTime sets the dateTime property value. The dateTime property
+// SetDateTime sets the dateTime property value. The date and time when the event occurred. The timestamp is in UTC format.
 func (m *ExchangeMessageTraceDetail) SetDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("dateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDescription sets the description property value. The description property
+// SetDescription sets the description property value. A detailed description that provides context about what happened during message processing.
 func (m *ExchangeMessageTraceDetail) SetDescription(value *string)() {
     err := m.GetBackingStore().Set("description", value)
     if err != nil {
         panic(err)
     }
 }
-// SetEvent sets the event property value. The event property
+// SetEvent sets the event property value. The event that occurred during message processing.
 func (m *ExchangeMessageTraceDetail) SetEvent(value *string)() {
     err := m.GetBackingStore().Set("event", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMessageId sets the messageId property value. The messageId property
+// SetMessageId sets the messageId property value. The Message-ID header field of the message. The format depends on the messaging server that sent the message.
 func (m *ExchangeMessageTraceDetail) SetMessageId(value *string)() {
     err := m.GetBackingStore().Set("messageId", value)
     if err != nil {

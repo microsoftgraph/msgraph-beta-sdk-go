@@ -193,7 +193,7 @@ func (m *AospDeviceOwnerCompliancePolicy) GetPasswordRequired()(*bool) {
     }
     return nil
 }
-// GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// GetPasswordRequiredType gets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 // returns a *AndroidDeviceOwnerRequiredPasswordType when successful
 func (m *AospDeviceOwnerCompliancePolicy) GetPasswordRequiredType()(*AndroidDeviceOwnerRequiredPasswordType) {
     val, err := m.GetBackingStore().Get("passwordRequiredType")
@@ -334,7 +334,7 @@ func (m *AospDeviceOwnerCompliancePolicy) SetPasswordRequired(value *bool)() {
         panic(err)
     }
 }
-// SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. The possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
+// SetPasswordRequiredType sets the passwordRequiredType property value. Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.
 func (m *AospDeviceOwnerCompliancePolicy) SetPasswordRequiredType(value *AndroidDeviceOwnerRequiredPasswordType)() {
     err := m.GetBackingStore().Set("passwordRequiredType", value)
     if err != nil {

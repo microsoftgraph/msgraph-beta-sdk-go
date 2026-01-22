@@ -79,7 +79,7 @@ func (m *Win32LobApp) GetAllowAvailableUninstall()(*bool) {
     }
     return nil
 }
-// GetAllowedArchitectures gets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. The possible values are: null, x86, x64, arm64. The possible values are: none, x86, x64, arm, neutral, arm64.
+// GetAllowedArchitectures gets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral, arm64.
 // returns a *WindowsArchitecture when successful
 func (m *Win32LobApp) GetAllowedArchitectures()(*WindowsArchitecture) {
     val, err := m.GetBackingStore().Get("allowedArchitectures")
@@ -475,7 +475,7 @@ func (m *Win32LobApp) GetMsiInformation()(Win32LobAppMsiInformationable) {
     }
     return nil
 }
-// GetRequirementRules gets the requirementRules property value. Indicates the requirement rules to detect Win32 Line of Business (LoB) app. The possible values are: Win32LobAppFileSystemRequirement, Win32LobAppPowerShellScriptRequirement, Win32LobAppRegistryRequirement.
+// GetRequirementRules gets the requirementRules property value. Indicates the requirement rules to detect Win32 Line of Business (LoB) app. Possible values are: Win32LobAppFileSystemRequirement, Win32LobAppPowerShellScriptRequirement, Win32LobAppRegistryRequirement.
 // returns a []Win32LobAppRequirementable when successful
 func (m *Win32LobApp) GetRequirementRules()([]Win32LobAppRequirementable) {
     val, err := m.GetBackingStore().Get("requirementRules")
@@ -499,7 +499,7 @@ func (m *Win32LobApp) GetReturnCodes()([]Win32LobAppReturnCodeable) {
     }
     return nil
 }
-// GetRules gets the rules property value. Indicates the detection and requirement rules for this app. The possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
+// GetRules gets the rules property value. Indicates the detection and requirement rules for this app. Possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
 // returns a []Win32LobAppRuleable when successful
 func (m *Win32LobApp) GetRules()([]Win32LobAppRuleable) {
     val, err := m.GetBackingStore().Get("rules")
@@ -716,7 +716,7 @@ func (m *Win32LobApp) SetAllowAvailableUninstall(value *bool)() {
         panic(err)
     }
 }
-// SetAllowedArchitectures sets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. The possible values are: null, x86, x64, arm64. The possible values are: none, x86, x64, arm, neutral, arm64.
+// SetAllowedArchitectures sets the allowedArchitectures property value. Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral, arm64.
 func (m *Win32LobApp) SetAllowedArchitectures(value *WindowsArchitecture)() {
     err := m.GetBackingStore().Set("allowedArchitectures", value)
     if err != nil {
@@ -807,7 +807,7 @@ func (m *Win32LobApp) SetMsiInformation(value Win32LobAppMsiInformationable)() {
         panic(err)
     }
 }
-// SetRequirementRules sets the requirementRules property value. Indicates the requirement rules to detect Win32 Line of Business (LoB) app. The possible values are: Win32LobAppFileSystemRequirement, Win32LobAppPowerShellScriptRequirement, Win32LobAppRegistryRequirement.
+// SetRequirementRules sets the requirementRules property value. Indicates the requirement rules to detect Win32 Line of Business (LoB) app. Possible values are: Win32LobAppFileSystemRequirement, Win32LobAppPowerShellScriptRequirement, Win32LobAppRegistryRequirement.
 func (m *Win32LobApp) SetRequirementRules(value []Win32LobAppRequirementable)() {
     err := m.GetBackingStore().Set("requirementRules", value)
     if err != nil {
@@ -821,7 +821,7 @@ func (m *Win32LobApp) SetReturnCodes(value []Win32LobAppReturnCodeable)() {
         panic(err)
     }
 }
-// SetRules sets the rules property value. Indicates the detection and requirement rules for this app. The possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
+// SetRules sets the rules property value. Indicates the detection and requirement rules for this app. Possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.
 func (m *Win32LobApp) SetRules(value []Win32LobAppRuleable)() {
     err := m.GetBackingStore().Set("rules", value)
     if err != nil {

@@ -37,7 +37,7 @@ func (m *MacOSScepCertificateProfile) GetAllowAllAppsAccess()(*bool) {
     }
     return nil
 }
-// GetCertificateStore gets the certificateStore property value. Target store certificate. The possible values are: user, machine.
+// GetCertificateStore gets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 // returns a *CertificateStore when successful
 func (m *MacOSScepCertificateProfile) GetCertificateStore()(*CertificateStore) {
     val, err := m.GetBackingStore().Get("certificateStore")
@@ -61,7 +61,7 @@ func (m *MacOSScepCertificateProfile) GetCustomSubjectAlternativeNames()([]Custo
     }
     return nil
 }
-// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
+// GetDeploymentChannel gets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 // returns a *AppleDeploymentChannel when successful
 func (m *MacOSScepCertificateProfile) GetDeploymentChannel()(*AppleDeploymentChannel) {
     val, err := m.GetBackingStore().Get("deploymentChannel")
@@ -245,7 +245,7 @@ func (m *MacOSScepCertificateProfile) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm. The possible values are: sha1, sha2.
+// GetHashAlgorithm gets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
 // returns a *HashAlgorithms when successful
 func (m *MacOSScepCertificateProfile) GetHashAlgorithm()(*HashAlgorithms) {
     val, err := m.GetBackingStore().Get("hashAlgorithm")
@@ -457,7 +457,7 @@ func (m *MacOSScepCertificateProfile) SetAllowAllAppsAccess(value *bool)() {
         panic(err)
     }
 }
-// SetCertificateStore sets the certificateStore property value. Target store certificate. The possible values are: user, machine.
+// SetCertificateStore sets the certificateStore property value. Target store certificate. Possible values are: user, machine.
 func (m *MacOSScepCertificateProfile) SetCertificateStore(value *CertificateStore)() {
     err := m.GetBackingStore().Set("certificateStore", value)
     if err != nil {
@@ -471,7 +471,7 @@ func (m *MacOSScepCertificateProfile) SetCustomSubjectAlternativeNames(value []C
         panic(err)
     }
 }
-// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. The possible values are: deviceChannel, userChannel, unknownFutureValue.
+// SetDeploymentChannel sets the deploymentChannel property value. Indicates the deployment channel type used to deploy the configuration profile. Possible values are deviceChannel, userChannel. Possible values are: deviceChannel, userChannel, unknownFutureValue.
 func (m *MacOSScepCertificateProfile) SetDeploymentChannel(value *AppleDeploymentChannel)() {
     err := m.GetBackingStore().Set("deploymentChannel", value)
     if err != nil {
@@ -485,7 +485,7 @@ func (m *MacOSScepCertificateProfile) SetExtendedKeyUsages(value []ExtendedKeyUs
         panic(err)
     }
 }
-// SetHashAlgorithm sets the hashAlgorithm property value. SCEP Hash Algorithm. The possible values are: sha1, sha2.
+// SetHashAlgorithm sets the hashAlgorithm property value. SCEP Hash Algorithm. Possible values are: sha1, sha2.
 func (m *MacOSScepCertificateProfile) SetHashAlgorithm(value *HashAlgorithms)() {
     err := m.GetBackingStore().Set("hashAlgorithm", value)
     if err != nil {

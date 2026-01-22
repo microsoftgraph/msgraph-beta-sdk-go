@@ -21,7 +21,7 @@ type ExchangeTracingRequestBuilderDeleteRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ExchangeTracingRequestBuilderGetQueryParameters get tracing from admin
+// ExchangeTracingRequestBuilderGetQueryParameters represents a container for administrative resources to trace messages.
 type ExchangeTracingRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -74,7 +74,7 @@ func (m *ExchangeTracingRequestBuilder) Delete(ctx context.Context, requestConfi
     }
     return nil
 }
-// Get get tracing from admin
+// Get represents a container for administrative resources to trace messages.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a MessageTracingRootable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
@@ -133,7 +133,7 @@ func (m *ExchangeTracingRequestBuilder) ToDeleteRequestInformation(ctx context.C
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get tracing from admin
+// ToGetRequestInformation represents a container for administrative resources to trace messages.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeTracingRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeTracingRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

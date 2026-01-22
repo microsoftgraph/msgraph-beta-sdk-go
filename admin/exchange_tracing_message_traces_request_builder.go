@@ -14,7 +14,7 @@ import (
 type ExchangeTracingMessageTracesRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ExchangeTracingMessageTracesRequestBuilderGetQueryParameters get messageTraces from admin
+// ExchangeTracingMessageTracesRequestBuilderGetQueryParameters get a list of exchangeMessageTrace objects.
 type ExchangeTracingMessageTracesRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -80,10 +80,13 @@ func NewExchangeTracingMessageTracesRequestBuilder(rawUrl string, requestAdapter
 func (m *ExchangeTracingMessageTracesRequestBuilder) Count()(*ExchangeTracingMessageTracesCountRequestBuilder) {
     return NewExchangeTracingMessageTracesCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get messageTraces from admin
+// Get get a list of exchangeMessageTrace objects.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a ExchangeMessageTraceCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/messagetracingroot-list-messagetraces?view=graph-rest-beta
 func (m *ExchangeTracingMessageTracesRequestBuilder) Get(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeMessageTraceCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -122,7 +125,7 @@ func (m *ExchangeTracingMessageTracesRequestBuilder) Post(ctx context.Context, b
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ExchangeMessageTraceable), nil
 }
-// ToGetRequestInformation get messageTraces from admin
+// ToGetRequestInformation get a list of exchangeMessageTrace objects.
 // Deprecated: Private preview for Import Export APIs as of 2021-08/PrivatePreview:importExport on 2021-08-19 and will be removed 2021-11-15
 // returns a *RequestInformation when successful
 func (m *ExchangeTracingMessageTracesRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ExchangeTracingMessageTracesRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {

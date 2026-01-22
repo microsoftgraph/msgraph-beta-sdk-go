@@ -119,7 +119,7 @@ func (m *ExchangeMessageTrace) GetFieldDeserializers()(map[string]func(i878a80d2
     }
     return res
 }
-// GetFromIP gets the fromIP property value. The fromIP property
+// GetFromIP gets the fromIP property value. The source IP address. For incoming messages, this value is the public IP address of the SMTP email server that sent the message.
 // returns a *string when successful
 func (m *ExchangeMessageTrace) GetFromIP()(*string) {
     val, err := m.GetBackingStore().Get("fromIP")
@@ -131,7 +131,7 @@ func (m *ExchangeMessageTrace) GetFromIP()(*string) {
     }
     return nil
 }
-// GetMessageId gets the messageId property value. The messageId property
+// GetMessageId gets the messageId property value. The Message-ID header field of the message. The format of the Message-ID depends on the messaging server that sent the message.
 // returns a *string when successful
 func (m *ExchangeMessageTrace) GetMessageId()(*string) {
     val, err := m.GetBackingStore().Get("messageId")
@@ -143,7 +143,7 @@ func (m *ExchangeMessageTrace) GetMessageId()(*string) {
     }
     return nil
 }
-// GetReceivedDateTime gets the receivedDateTime property value. The receivedDateTime property
+// GetReceivedDateTime gets the receivedDateTime property value. The date and time when the message was received by Exchange Online. The timestamp is in UTC format.
 // returns a *Time when successful
 func (m *ExchangeMessageTrace) GetReceivedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("receivedDateTime")
@@ -155,7 +155,7 @@ func (m *ExchangeMessageTrace) GetReceivedDateTime()(*i336074805fc853987abe6f7fe
     }
     return nil
 }
-// GetRecipientAddress gets the recipientAddress property value. The recipientAddress property
+// GetRecipientAddress gets the recipientAddress property value. The SMTP email address of the user that the message was addressed to.
 // returns a *string when successful
 func (m *ExchangeMessageTrace) GetRecipientAddress()(*string) {
     val, err := m.GetBackingStore().Get("recipientAddress")
@@ -167,7 +167,7 @@ func (m *ExchangeMessageTrace) GetRecipientAddress()(*string) {
     }
     return nil
 }
-// GetSenderAddress gets the senderAddress property value. The senderAddress property
+// GetSenderAddress gets the senderAddress property value. The SMTP email address of the user the message was purportedly from.
 // returns a *string when successful
 func (m *ExchangeMessageTrace) GetSenderAddress()(*string) {
     val, err := m.GetBackingStore().Get("senderAddress")
@@ -179,7 +179,7 @@ func (m *ExchangeMessageTrace) GetSenderAddress()(*string) {
     }
     return nil
 }
-// GetSize gets the size property value. The size property
+// GetSize gets the size property value. The size of the message in bytes.
 // returns a *int32 when successful
 func (m *ExchangeMessageTrace) GetSize()(*int32) {
     val, err := m.GetBackingStore().Get("size")
@@ -203,7 +203,7 @@ func (m *ExchangeMessageTrace) GetStatus()(*ExchangeMessageTraceStatus) {
     }
     return nil
 }
-// GetSubject gets the subject property value. The subject property
+// GetSubject gets the subject property value. The subject line of the message.
 // returns a *string when successful
 func (m *ExchangeMessageTrace) GetSubject()(*string) {
     val, err := m.GetBackingStore().Get("subject")
@@ -215,7 +215,7 @@ func (m *ExchangeMessageTrace) GetSubject()(*string) {
     }
     return nil
 }
-// GetToIP gets the toIP property value. The toIP property
+// GetToIP gets the toIP property value. The destination IP address. For outgoing messages, this value is the public IP address in the resolved MX record for the destination domain. For incoming messages to Exchange Online, this value is blank.
 // returns a *string when successful
 func (m *ExchangeMessageTrace) GetToIP()(*string) {
     val, err := m.GetBackingStore().Get("toIP")
@@ -290,42 +290,42 @@ func (m *ExchangeMessageTrace) Serialize(writer i878a80d2330e89d26896388a3f487ee
     }
     return nil
 }
-// SetFromIP sets the fromIP property value. The fromIP property
+// SetFromIP sets the fromIP property value. The source IP address. For incoming messages, this value is the public IP address of the SMTP email server that sent the message.
 func (m *ExchangeMessageTrace) SetFromIP(value *string)() {
     err := m.GetBackingStore().Set("fromIP", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMessageId sets the messageId property value. The messageId property
+// SetMessageId sets the messageId property value. The Message-ID header field of the message. The format of the Message-ID depends on the messaging server that sent the message.
 func (m *ExchangeMessageTrace) SetMessageId(value *string)() {
     err := m.GetBackingStore().Set("messageId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetReceivedDateTime sets the receivedDateTime property value. The receivedDateTime property
+// SetReceivedDateTime sets the receivedDateTime property value. The date and time when the message was received by Exchange Online. The timestamp is in UTC format.
 func (m *ExchangeMessageTrace) SetReceivedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("receivedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRecipientAddress sets the recipientAddress property value. The recipientAddress property
+// SetRecipientAddress sets the recipientAddress property value. The SMTP email address of the user that the message was addressed to.
 func (m *ExchangeMessageTrace) SetRecipientAddress(value *string)() {
     err := m.GetBackingStore().Set("recipientAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSenderAddress sets the senderAddress property value. The senderAddress property
+// SetSenderAddress sets the senderAddress property value. The SMTP email address of the user the message was purportedly from.
 func (m *ExchangeMessageTrace) SetSenderAddress(value *string)() {
     err := m.GetBackingStore().Set("senderAddress", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSize sets the size property value. The size property
+// SetSize sets the size property value. The size of the message in bytes.
 func (m *ExchangeMessageTrace) SetSize(value *int32)() {
     err := m.GetBackingStore().Set("size", value)
     if err != nil {
@@ -339,14 +339,14 @@ func (m *ExchangeMessageTrace) SetStatus(value *ExchangeMessageTraceStatus)() {
         panic(err)
     }
 }
-// SetSubject sets the subject property value. The subject property
+// SetSubject sets the subject property value. The subject line of the message.
 func (m *ExchangeMessageTrace) SetSubject(value *string)() {
     err := m.GetBackingStore().Set("subject", value)
     if err != nil {
         panic(err)
     }
 }
-// SetToIP sets the toIP property value. The toIP property
+// SetToIP sets the toIP property value. The destination IP address. For outgoing messages, this value is the public IP address in the resolved MX record for the destination domain. For incoming messages to Exchange Online, this value is blank.
 func (m *ExchangeMessageTrace) SetToIP(value *string)() {
     err := m.GetBackingStore().Set("toIP", value)
     if err != nil {

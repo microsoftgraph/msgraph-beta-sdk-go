@@ -187,7 +187,7 @@ func (m *AospDeviceOwnerCertificateProfileBase) GetRootCertificate()(AospDeviceO
     }
     return nil
 }
-// GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. The possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// GetSubjectAlternativeNameType gets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 // returns a *SubjectAlternativeNameType when successful
 func (m *AospDeviceOwnerCertificateProfileBase) GetSubjectAlternativeNameType()(*SubjectAlternativeNameType) {
     val, err := m.GetBackingStore().Get("subjectAlternativeNameType")
@@ -199,7 +199,7 @@ func (m *AospDeviceOwnerCertificateProfileBase) GetSubjectAlternativeNameType()(
     }
     return nil
 }
-// GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. This collection can contain a maximum of 500 elements. The possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// GetSubjectNameFormat gets the subjectNameFormat property value. Certificate Subject Name Format. This collection can contain a maximum of 500 elements. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
 // returns a *SubjectNameFormat when successful
 func (m *AospDeviceOwnerCertificateProfileBase) GetSubjectNameFormat()(*SubjectNameFormat) {
     val, err := m.GetBackingStore().Get("subjectNameFormat")
@@ -305,14 +305,14 @@ func (m *AospDeviceOwnerCertificateProfileBase) SetRootCertificate(value AospDev
         panic(err)
     }
 }
-// SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. The possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
+// SetSubjectAlternativeNameType sets the subjectAlternativeNameType property value. Certificate Subject Alternative Name Type. This collection can contain a maximum of 500 elements. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.
 func (m *AospDeviceOwnerCertificateProfileBase) SetSubjectAlternativeNameType(value *SubjectAlternativeNameType)() {
     err := m.GetBackingStore().Set("subjectAlternativeNameType", value)
     if err != nil {
         panic(err)
     }
 }
-// SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. This collection can contain a maximum of 500 elements. The possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
+// SetSubjectNameFormat sets the subjectNameFormat property value. Certificate Subject Name Format. This collection can contain a maximum of 500 elements. Possible values are: commonName, commonNameIncludingEmail, commonNameAsEmail, custom, commonNameAsIMEI, commonNameAsSerialNumber, commonNameAsAadDeviceId, commonNameAsIntuneDeviceId, commonNameAsDurableDeviceId.
 func (m *AospDeviceOwnerCertificateProfileBase) SetSubjectNameFormat(value *SubjectNameFormat)() {
     err := m.GetBackingStore().Set("subjectNameFormat", value)
     if err != nil {

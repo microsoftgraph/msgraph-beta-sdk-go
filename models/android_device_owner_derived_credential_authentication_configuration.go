@@ -25,7 +25,7 @@ func NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration()(*Androi
 func CreateAndroidDeviceOwnerDerivedCredentialAuthenticationConfigurationFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewAndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration(), nil
 }
-// GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. The possible values are: userApproval, specificApps, unknownFutureValue.
+// GetCertificateAccessType gets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 // returns a *AndroidDeviceOwnerCertificateAccessType when successful
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) GetCertificateAccessType()(*AndroidDeviceOwnerCertificateAccessType) {
     val, err := m.GetBackingStore().Get("certificateAccessType")
@@ -136,7 +136,7 @@ func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) Seriali
     }
     return nil
 }
-// SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. The possible values are: userApproval, specificApps, unknownFutureValue.
+// SetCertificateAccessType sets the certificateAccessType property value. Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
 func (m *AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration) SetCertificateAccessType(value *AndroidDeviceOwnerCertificateAccessType)() {
     err := m.GetBackingStore().Set("certificateAccessType", value)
     if err != nil {

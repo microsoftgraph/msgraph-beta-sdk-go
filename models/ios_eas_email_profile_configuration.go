@@ -37,7 +37,7 @@ func (m *IosEasEmailProfileConfiguration) GetAccountName()(*string) {
     }
     return nil
 }
-// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for this Email profile. The possible values are: usernameAndPassword, certificate, derivedCredential.
+// GetAuthenticationMethod gets the authenticationMethod property value. Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
 // returns a *EasAuthenticationMethod when successful
 func (m *IosEasEmailProfileConfiguration) GetAuthenticationMethod()(*EasAuthenticationMethod) {
     val, err := m.GetBackingStore().Get("authenticationMethod")
@@ -109,7 +109,7 @@ func (m *IosEasEmailProfileConfiguration) GetDurationOfEmailToSync()(*EmailSyncD
     }
     return nil
 }
-// GetEasServices gets the easServices property value. Exchange data to sync. The possible values are: none, calendars, contacts, email, notes, reminders.
+// GetEasServices gets the easServices property value. Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.
 // returns a *EasServices when successful
 func (m *IosEasEmailProfileConfiguration) GetEasServices()(*EasServices) {
     val, err := m.GetBackingStore().Get("easServices")
@@ -145,7 +145,7 @@ func (m *IosEasEmailProfileConfiguration) GetEmailAddressSource()(*UserEmailSour
     }
     return nil
 }
-// GetEncryptionCertificateType gets the encryptionCertificateType property value. Encryption Certificate type for this Email profile. The possible values are: none, certificate, derivedCredential.
+// GetEncryptionCertificateType gets the encryptionCertificateType property value. Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
 // returns a *EmailCertificateType when successful
 func (m *IosEasEmailProfileConfiguration) GetEncryptionCertificateType()(*EmailCertificateType) {
     val, err := m.GetBackingStore().Get("encryptionCertificateType")
@@ -493,7 +493,7 @@ func (m *IosEasEmailProfileConfiguration) GetRequireSsl()(*bool) {
     }
     return nil
 }
-// GetSigningCertificateType gets the signingCertificateType property value. Signing Certificate type for this Email profile. The possible values are: none, certificate, derivedCredential.
+// GetSigningCertificateType gets the signingCertificateType property value. Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
 // returns a *EmailCertificateType when successful
 func (m *IosEasEmailProfileConfiguration) GetSigningCertificateType()(*EmailCertificateType) {
     val, err := m.GetBackingStore().Get("signingCertificateType")
@@ -808,7 +808,7 @@ func (m *IosEasEmailProfileConfiguration) SetAccountName(value *string)() {
         panic(err)
     }
 }
-// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method for this Email profile. The possible values are: usernameAndPassword, certificate, derivedCredential.
+// SetAuthenticationMethod sets the authenticationMethod property value. Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.
 func (m *IosEasEmailProfileConfiguration) SetAuthenticationMethod(value *EasAuthenticationMethod)() {
     err := m.GetBackingStore().Set("authenticationMethod", value)
     if err != nil {
@@ -850,7 +850,7 @@ func (m *IosEasEmailProfileConfiguration) SetDurationOfEmailToSync(value *EmailS
         panic(err)
     }
 }
-// SetEasServices sets the easServices property value. Exchange data to sync. The possible values are: none, calendars, contacts, email, notes, reminders.
+// SetEasServices sets the easServices property value. Exchange data to sync. Possible values are: none, calendars, contacts, email, notes, reminders.
 func (m *IosEasEmailProfileConfiguration) SetEasServices(value *EasServices)() {
     err := m.GetBackingStore().Set("easServices", value)
     if err != nil {
@@ -871,7 +871,7 @@ func (m *IosEasEmailProfileConfiguration) SetEmailAddressSource(value *UserEmail
         panic(err)
     }
 }
-// SetEncryptionCertificateType sets the encryptionCertificateType property value. Encryption Certificate type for this Email profile. The possible values are: none, certificate, derivedCredential.
+// SetEncryptionCertificateType sets the encryptionCertificateType property value. Encryption Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
 func (m *IosEasEmailProfileConfiguration) SetEncryptionCertificateType(value *EmailCertificateType)() {
     err := m.GetBackingStore().Set("encryptionCertificateType", value)
     if err != nil {
@@ -913,7 +913,7 @@ func (m *IosEasEmailProfileConfiguration) SetRequireSsl(value *bool)() {
         panic(err)
     }
 }
-// SetSigningCertificateType sets the signingCertificateType property value. Signing Certificate type for this Email profile. The possible values are: none, certificate, derivedCredential.
+// SetSigningCertificateType sets the signingCertificateType property value. Signing Certificate type for this Email profile. Possible values are: none, certificate, derivedCredential.
 func (m *IosEasEmailProfileConfiguration) SetSigningCertificateType(value *EmailCertificateType)() {
     err := m.GetBackingStore().Set("signingCertificateType", value)
     if err != nil {

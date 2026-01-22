@@ -529,7 +529,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderCheckForSignatures
     }
     return nil
 }
-// GetDefenderCloudBlockLevel gets the defenderCloudBlockLevel property value. Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. The possible values are: notConfigured, high, highPlus, zeroTolerance.
+// GetDefenderCloudBlockLevel gets the defenderCloudBlockLevel property value. Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. Possible values are: notConfigured, high, highPlus, zeroTolerance.
 // returns a *DefenderCloudBlockLevelType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderCloudBlockLevel()(*DefenderCloudBlockLevelType) {
     val, err := m.GetBackingStore().Get("defenderCloudBlockLevel")
@@ -973,7 +973,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderOfficeMacroCodeAll
     }
     return nil
 }
-// GetDefenderPotentiallyUnwantedAppAction gets the defenderPotentiallyUnwantedAppAction property value. Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. The possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// GetDefenderPotentiallyUnwantedAppAction gets the defenderPotentiallyUnwantedAppAction property value. Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
 // returns a *DefenderProtectionType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderPotentiallyUnwantedAppAction()(*DefenderProtectionType) {
     val, err := m.GetBackingStore().Get("defenderPotentiallyUnwantedAppAction")
@@ -1033,7 +1033,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderProcessesToExclude
     }
     return nil
 }
-// GetDefenderScanDirection gets the defenderScanDirection property value. Controls which sets of files should be monitored. The possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
+// GetDefenderScanDirection gets the defenderScanDirection property value. Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
 // returns a *DefenderRealtimeScanDirection when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanDirection()(*DefenderRealtimeScanDirection) {
     val, err := m.GetBackingStore().Get("defenderScanDirection")
@@ -1057,7 +1057,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanMaxCpuPercenta
     }
     return nil
 }
-// GetDefenderScanType gets the defenderScanType property value. Selects whether to perform a quick scan or full scan. The possible values are: userDefined, disabled, quick, full.
+// GetDefenderScanType gets the defenderScanType property value. Selects whether to perform a quick scan or full scan. Possible values are: userDefined, disabled, quick, full.
 // returns a *DefenderScanType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScanType()(*DefenderScanType) {
     val, err := m.GetBackingStore().Get("defenderScanType")
@@ -1081,7 +1081,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderScheduledQuickScan
     }
     return nil
 }
-// GetDefenderScheduledScanDay gets the defenderScheduledScanDay property value. Selects the day that the Windows Defender scan should run. The possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
+// GetDefenderScheduledScanDay gets the defenderScheduledScanDay property value. Selects the day that the Windows Defender scan should run. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
 // returns a *WeeklySchedule when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderScheduledScanDay()(*WeeklySchedule) {
     val, err := m.GetBackingStore().Get("defenderScheduledScanDay")
@@ -1405,7 +1405,7 @@ func (m *Windows10EndpointProtectionConfiguration) GetDefenderSignatureUpdateInt
     }
     return nil
 }
-// GetDefenderSubmitSamplesConsentType gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. The possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
+// GetDefenderSubmitSamplesConsentType gets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
 // returns a *DefenderSubmitSamplesConsentType when successful
 func (m *Windows10EndpointProtectionConfiguration) GetDefenderSubmitSamplesConsentType()(*DefenderSubmitSamplesConsentType) {
     val, err := m.GetBackingStore().Get("defenderSubmitSamplesConsentType")
@@ -6776,7 +6776,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderCheckForSignatures
         panic(err)
     }
 }
-// SetDefenderCloudBlockLevel sets the defenderCloudBlockLevel property value. Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. The possible values are: notConfigured, high, highPlus, zeroTolerance.
+// SetDefenderCloudBlockLevel sets the defenderCloudBlockLevel property value. Added in Windows 10, version 1709. This policy setting determines how aggressive Windows Defender Antivirus will be in blocking and scanning suspicious files. Value type is integer. This feature requires the 'Join Microsoft MAPS' setting enabled in order to function. Possible values are: notConfigured, high, highPlus, zeroTolerance.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderCloudBlockLevel(value *DefenderCloudBlockLevelType)() {
     err := m.GetBackingStore().Set("defenderCloudBlockLevel", value)
     if err != nil {
@@ -7035,7 +7035,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderOfficeMacroCodeAll
         panic(err)
     }
 }
-// SetDefenderPotentiallyUnwantedAppAction sets the defenderPotentiallyUnwantedAppAction property value. Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. The possible values are: userDefined, enable, auditMode, warn, notConfigured.
+// SetDefenderPotentiallyUnwantedAppAction sets the defenderPotentiallyUnwantedAppAction property value. Added in Windows 10, version 1607. Specifies the level of detection for potentially unwanted applications (PUAs). Windows Defender alerts you when potentially unwanted software is being downloaded or attempts to install itself on your computer. Possible values are: userDefined, enable, auditMode, warn, notConfigured.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderPotentiallyUnwantedAppAction(value *DefenderProtectionType)() {
     err := m.GetBackingStore().Set("defenderPotentiallyUnwantedAppAction", value)
     if err != nil {
@@ -7070,7 +7070,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderProcessesToExclude
         panic(err)
     }
 }
-// SetDefenderScanDirection sets the defenderScanDirection property value. Controls which sets of files should be monitored. The possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
+// SetDefenderScanDirection sets the defenderScanDirection property value. Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanDirection(value *DefenderRealtimeScanDirection)() {
     err := m.GetBackingStore().Set("defenderScanDirection", value)
     if err != nil {
@@ -7084,7 +7084,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanMaxCpuPercenta
         panic(err)
     }
 }
-// SetDefenderScanType sets the defenderScanType property value. Selects whether to perform a quick scan or full scan. The possible values are: userDefined, disabled, quick, full.
+// SetDefenderScanType sets the defenderScanType property value. Selects whether to perform a quick scan or full scan. Possible values are: userDefined, disabled, quick, full.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScanType(value *DefenderScanType)() {
     err := m.GetBackingStore().Set("defenderScanType", value)
     if err != nil {
@@ -7098,7 +7098,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderScheduledQuickScan
         panic(err)
     }
 }
-// SetDefenderScheduledScanDay sets the defenderScheduledScanDay property value. Selects the day that the Windows Defender scan should run. The possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
+// SetDefenderScheduledScanDay sets the defenderScheduledScanDay property value. Selects the day that the Windows Defender scan should run. Possible values are: userDefined, everyday, sunday, monday, tuesday, wednesday, thursday, friday, saturday, noScheduledScan.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderScheduledScanDay(value *WeeklySchedule)() {
     err := m.GetBackingStore().Set("defenderScheduledScanDay", value)
     if err != nil {
@@ -7287,7 +7287,7 @@ func (m *Windows10EndpointProtectionConfiguration) SetDefenderSignatureUpdateInt
         panic(err)
     }
 }
-// SetDefenderSubmitSamplesConsentType sets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. The possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
+// SetDefenderSubmitSamplesConsentType sets the defenderSubmitSamplesConsentType property value. Checks for the user consent level in Windows Defender to send data. Possible values are: sendSafeSamplesAutomatically, alwaysPrompt, neverSend, sendAllSamplesAutomatically.
 func (m *Windows10EndpointProtectionConfiguration) SetDefenderSubmitSamplesConsentType(value *DefenderSubmitSamplesConsentType)() {
     err := m.GetBackingStore().Set("defenderSubmitSamplesConsentType", value)
     if err != nil {

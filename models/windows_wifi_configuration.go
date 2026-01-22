@@ -227,7 +227,7 @@ func (m *WindowsWifiConfiguration) GetForceFIPSCompliance()(*bool) {
     }
     return nil
 }
-// GetMeteredConnectionLimit gets the meteredConnectionLimit property value. Specify the metered connection limit type for the wifi connection. The possible values are: unrestricted, fixed, variable.
+// GetMeteredConnectionLimit gets the meteredConnectionLimit property value. Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.
 // returns a *MeteredConnectionLimitType when successful
 func (m *WindowsWifiConfiguration) GetMeteredConnectionLimit()(*MeteredConnectionLimitType) {
     val, err := m.GetBackingStore().Get("meteredConnectionLimit")
@@ -299,7 +299,7 @@ func (m *WindowsWifiConfiguration) GetProxyManualPort()(*int32) {
     }
     return nil
 }
-// GetProxySetting gets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. The possible values are: none, manual, automatic, unknownFutureValue.
+// GetProxySetting gets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.
 // returns a *WiFiProxySetting when successful
 func (m *WindowsWifiConfiguration) GetProxySetting()(*WiFiProxySetting) {
     val, err := m.GetBackingStore().Get("proxySetting")
@@ -323,7 +323,7 @@ func (m *WindowsWifiConfiguration) GetSsid()(*string) {
     }
     return nil
 }
-// GetWifiSecurityType gets the wifiSecurityType property value. Specify the Wifi Security Type. The possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
+// GetWifiSecurityType gets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
 // returns a *WiFiSecurityType when successful
 func (m *WindowsWifiConfiguration) GetWifiSecurityType()(*WiFiSecurityType) {
     val, err := m.GetBackingStore().Get("wifiSecurityType")
@@ -452,7 +452,7 @@ func (m *WindowsWifiConfiguration) SetForceFIPSCompliance(value *bool)() {
         panic(err)
     }
 }
-// SetMeteredConnectionLimit sets the meteredConnectionLimit property value. Specify the metered connection limit type for the wifi connection. The possible values are: unrestricted, fixed, variable.
+// SetMeteredConnectionLimit sets the meteredConnectionLimit property value. Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.
 func (m *WindowsWifiConfiguration) SetMeteredConnectionLimit(value *MeteredConnectionLimitType)() {
     err := m.GetBackingStore().Set("meteredConnectionLimit", value)
     if err != nil {
@@ -494,7 +494,7 @@ func (m *WindowsWifiConfiguration) SetProxyManualPort(value *int32)() {
         panic(err)
     }
 }
-// SetProxySetting sets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. The possible values are: none, manual, automatic, unknownFutureValue.
+// SetProxySetting sets the proxySetting property value. Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.
 func (m *WindowsWifiConfiguration) SetProxySetting(value *WiFiProxySetting)() {
     err := m.GetBackingStore().Set("proxySetting", value)
     if err != nil {
@@ -508,7 +508,7 @@ func (m *WindowsWifiConfiguration) SetSsid(value *string)() {
         panic(err)
     }
 }
-// SetWifiSecurityType sets the wifiSecurityType property value. Specify the Wifi Security Type. The possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
+// SetWifiSecurityType sets the wifiSecurityType property value. Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.
 func (m *WindowsWifiConfiguration) SetWifiSecurityType(value *WiFiSecurityType)() {
     err := m.GetBackingStore().Set("wifiSecurityType", value)
     if err != nil {
