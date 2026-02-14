@@ -23,7 +23,7 @@ func NewConfigurationDrift()(*ConfigurationDrift) {
 func CreateConfigurationDriftFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigurationDrift(), nil
 }
-// GetBaselineResourceDisplayName gets the baselineResourceDisplayName property value. The baselineResourceDisplayName property
+// GetBaselineResourceDisplayName gets the baselineResourceDisplayName property value. Resource instance for which the drift is detected.
 // returns a *string when successful
 func (m *ConfigurationDrift) GetBaselineResourceDisplayName()(*string) {
     val, err := m.GetBackingStore().Get("baselineResourceDisplayName")
@@ -35,7 +35,7 @@ func (m *ConfigurationDrift) GetBaselineResourceDisplayName()(*string) {
     }
     return nil
 }
-// GetDriftedProperties gets the driftedProperties property value. The driftedProperties property
+// GetDriftedProperties gets the driftedProperties property value. Properties within one or more resource instances in which drift is detected.
 // returns a []DriftedPropertyable when successful
 func (m *ConfigurationDrift) GetDriftedProperties()([]DriftedPropertyable) {
     val, err := m.GetBackingStore().Get("driftedProperties")
@@ -139,7 +139,7 @@ func (m *ConfigurationDrift) GetFieldDeserializers()(map[string]func(i878a80d233
     }
     return res
 }
-// GetFirstReportedDateTime gets the firstReportedDateTime property value. The firstReportedDateTime property
+// GetFirstReportedDateTime gets the firstReportedDateTime property value. The date and time at which drift is first detected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ConfigurationDrift) GetFirstReportedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("firstReportedDateTime")
@@ -151,7 +151,7 @@ func (m *ConfigurationDrift) GetFirstReportedDateTime()(*i336074805fc853987abe6f
     }
     return nil
 }
-// GetMonitorId gets the monitorId property value. The monitorId property
+// GetMonitorId gets the monitorId property value. Globally unique identifier (GUID) of the monitor. System-generated.
 // returns a *string when successful
 func (m *ConfigurationDrift) GetMonitorId()(*string) {
     val, err := m.GetBackingStore().Get("monitorId")
@@ -175,7 +175,7 @@ func (m *ConfigurationDrift) GetResourceInstanceIdentifier()(OpenComplexDictiona
     }
     return nil
 }
-// GetResourceType gets the resourceType property value. The resourceType property
+// GetResourceType gets the resourceType property value. Resource for which the drift is detected.
 // returns a *string when successful
 func (m *ConfigurationDrift) GetResourceType()(*string) {
     val, err := m.GetBackingStore().Get("resourceType")
@@ -199,7 +199,7 @@ func (m *ConfigurationDrift) GetStatus()(*DriftStatus) {
     }
     return nil
 }
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
 // returns a *string when successful
 func (m *ConfigurationDrift) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -232,28 +232,28 @@ func (m *ConfigurationDrift) Serialize(writer i878a80d2330e89d26896388a3f487eef2
     }
     return nil
 }
-// SetBaselineResourceDisplayName sets the baselineResourceDisplayName property value. The baselineResourceDisplayName property
+// SetBaselineResourceDisplayName sets the baselineResourceDisplayName property value. Resource instance for which the drift is detected.
 func (m *ConfigurationDrift) SetBaselineResourceDisplayName(value *string)() {
     err := m.GetBackingStore().Set("baselineResourceDisplayName", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDriftedProperties sets the driftedProperties property value. The driftedProperties property
+// SetDriftedProperties sets the driftedProperties property value. Properties within one or more resource instances in which drift is detected.
 func (m *ConfigurationDrift) SetDriftedProperties(value []DriftedPropertyable)() {
     err := m.GetBackingStore().Set("driftedProperties", value)
     if err != nil {
         panic(err)
     }
 }
-// SetFirstReportedDateTime sets the firstReportedDateTime property value. The firstReportedDateTime property
+// SetFirstReportedDateTime sets the firstReportedDateTime property value. The date and time at which drift is first detected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ConfigurationDrift) SetFirstReportedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("firstReportedDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMonitorId sets the monitorId property value. The monitorId property
+// SetMonitorId sets the monitorId property value. Globally unique identifier (GUID) of the monitor. System-generated.
 func (m *ConfigurationDrift) SetMonitorId(value *string)() {
     err := m.GetBackingStore().Set("monitorId", value)
     if err != nil {
@@ -267,7 +267,7 @@ func (m *ConfigurationDrift) SetResourceInstanceIdentifier(value OpenComplexDict
         panic(err)
     }
 }
-// SetResourceType sets the resourceType property value. The resourceType property
+// SetResourceType sets the resourceType property value. Resource for which the drift is detected.
 func (m *ConfigurationDrift) SetResourceType(value *string)() {
     err := m.GetBackingStore().Set("resourceType", value)
     if err != nil {
@@ -281,7 +281,7 @@ func (m *ConfigurationDrift) SetStatus(value *DriftStatus)() {
         panic(err)
     }
 }
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
 func (m *ConfigurationDrift) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {

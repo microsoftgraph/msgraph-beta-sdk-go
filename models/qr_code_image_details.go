@@ -55,7 +55,7 @@ func (m *QrCodeImageDetails) GetBinaryValue()([]byte) {
     }
     return nil
 }
-// GetErrorCorrectionLevel gets the errorCorrectionLevel property value. Specifies how much of the QRCode can be corrupted while still maintaining its readable. The possible values are: l  (Low), m (Medium), q (Quartile), h ( High), unknownFutureValue.
+// GetErrorCorrectionLevel gets the errorCorrectionLevel property value. Specifies how much of the QR code can be corrupted while still maintaining its readable. The possible values are: l  (Low), m (Medium), q (Quartile), h ( High), unknownFutureValue.
 // returns a *ErrorCorrectionLevel when successful
 func (m *QrCodeImageDetails) GetErrorCorrectionLevel()(*ErrorCorrectionLevel) {
     val, err := m.GetBackingStore().Get("errorCorrectionLevel")
@@ -218,7 +218,7 @@ func (m *QrCodeImageDetails) SetBinaryValue(value []byte)() {
         panic(err)
     }
 }
-// SetErrorCorrectionLevel sets the errorCorrectionLevel property value. Specifies how much of the QRCode can be corrupted while still maintaining its readable. The possible values are: l  (Low), m (Medium), q (Quartile), h ( High), unknownFutureValue.
+// SetErrorCorrectionLevel sets the errorCorrectionLevel property value. Specifies how much of the QR code can be corrupted while still maintaining its readable. The possible values are: l  (Low), m (Medium), q (Quartile), h ( High), unknownFutureValue.
 func (m *QrCodeImageDetails) SetErrorCorrectionLevel(value *ErrorCorrectionLevel)() {
     err := m.GetBackingStore().Set("errorCorrectionLevel", value)
     if err != nil {

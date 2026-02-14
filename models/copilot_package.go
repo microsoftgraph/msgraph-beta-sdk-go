@@ -205,6 +205,16 @@ func (m *CopilotPackage) GetFieldDeserializers()(map[string]func(i878a80d2330e89
         }
         return nil
     }
+    res["zipFile"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetByteArrayValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetZipFile(val)
+        }
+        return nil
+    }
     return res
 }
 // GetIsBlocked gets the isBlocked property value. The isBlocked property
@@ -279,6 +289,18 @@ func (m *CopilotPackage) GetTypeEscaped()(*PackageType) {
     }
     return nil
 }
+// GetZipFile gets the zipFile property value. The zipFile property
+// returns a []byte when successful
+func (m *CopilotPackage) GetZipFile()([]byte) {
+    val, err := m.GetBackingStore().Get("zipFile")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]byte)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *CopilotPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     err := m.Entity.Serialize(writer)
@@ -344,6 +366,12 @@ func (m *CopilotPackage) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a
     if m.GetTypeEscaped() != nil {
         cast := (*m.GetTypeEscaped()).String()
         err = writer.WriteStringValue("type", &cast)
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err = writer.WriteByteArrayValue("zipFile", m.GetZipFile())
         if err != nil {
             return err
         }
@@ -420,6 +448,13 @@ func (m *CopilotPackage) SetTypeEscaped(value *PackageType)() {
         panic(err)
     }
 }
+// SetZipFile sets the zipFile property value. The zipFile property
+func (m *CopilotPackage) SetZipFile(value []byte)() {
+    err := m.GetBackingStore().Set("zipFile", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CopilotPackageable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
@@ -433,6 +468,7 @@ type CopilotPackageable interface {
     GetShortDescription()(*string)
     GetSupportedHosts()([]string)
     GetTypeEscaped()(*PackageType)
+    GetZipFile()([]byte)
     SetAvailableTo(value *PackageStatus)()
     SetDeployedTo(value *PackageStatus)()
     SetDisplayName(value *string)()
@@ -443,4 +479,5 @@ type CopilotPackageable interface {
     SetShortDescription(value *string)()
     SetSupportedHosts(value []string)()
     SetTypeEscaped(value *PackageType)()
+    SetZipFile(value []byte)()
 }

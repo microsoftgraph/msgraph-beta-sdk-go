@@ -21,7 +21,7 @@ type ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitorin
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderGetQueryParameters get configurationMonitoringResults from admin
+// ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderGetQueryParameters read the properties and relationships of a configurationMonitoringResult object.
 type ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderGetQueryParameters struct {
     // Expand related entities
     Expand []string `uriparametername:"%24expand"`
@@ -73,9 +73,12 @@ func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonit
     }
     return nil
 }
-// Get get configurationMonitoringResults from admin
+// Get read the properties and relationships of a configurationMonitoringResult object.
 // returns a ConfigurationMonitoringResultable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/configurationmonitoringresult-get?view=graph-rest-beta
 func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitoringResultable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -124,7 +127,7 @@ func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonit
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToGetRequestInformation get configurationMonitoringResults from admin
+// ToGetRequestInformation read the properties and relationships of a configurationMonitoringResult object.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitoringResultsConfigurationMonitoringResultItemRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

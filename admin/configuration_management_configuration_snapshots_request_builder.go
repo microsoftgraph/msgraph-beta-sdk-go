@@ -14,7 +14,7 @@ import (
 type ConfigurationManagementConfigurationSnapshotsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConfigurationManagementConfigurationSnapshotsRequestBuilderGetQueryParameters get configurationSnapshots from admin
+// ConfigurationManagementConfigurationSnapshotsRequestBuilderGetQueryParameters a container for configuration snapshot baselines.
 type ConfigurationManagementConfigurationSnapshotsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,7 +79,7 @@ func NewConfigurationManagementConfigurationSnapshotsRequestBuilder(rawUrl strin
 func (m *ConfigurationManagementConfigurationSnapshotsRequestBuilder) Count()(*ConfigurationManagementConfigurationSnapshotsCountRequestBuilder) {
     return NewConfigurationManagementConfigurationSnapshotsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get configurationSnapshots from admin
+// Get a container for configuration snapshot baselines.
 // returns a ConfigurationBaselineCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
 func (m *ConfigurationManagementConfigurationSnapshotsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationSnapshotsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationBaselineCollectionResponseable, error) {
@@ -119,7 +119,7 @@ func (m *ConfigurationManagementConfigurationSnapshotsRequestBuilder) Post(ctx c
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationBaselineable), nil
 }
-// ToGetRequestInformation get configurationSnapshots from admin
+// ToGetRequestInformation a container for configuration snapshot baselines.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationSnapshotsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationSnapshotsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

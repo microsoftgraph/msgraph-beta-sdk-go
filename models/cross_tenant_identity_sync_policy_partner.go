@@ -104,7 +104,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) GetFieldDeserializers()(map[strin
     }
     return res
 }
-// GetGroupSyncInbound gets the groupSyncInbound property value. The groupSyncInbound property
+// GetGroupSyncInbound gets the groupSyncInbound property value. Defines whether groups can be synchronized from a partner tenant. Key.
 // returns a CrossTenantGroupSyncInboundable when successful
 func (m *CrossTenantIdentitySyncPolicyPartner) GetGroupSyncInbound()(CrossTenantGroupSyncInboundable) {
     val, err := m.GetBackingStore().Get("groupSyncInbound")
@@ -192,7 +192,7 @@ func (m *CrossTenantIdentitySyncPolicyPartner) SetExternalCloudAuthorizedApplica
         panic(err)
     }
 }
-// SetGroupSyncInbound sets the groupSyncInbound property value. The groupSyncInbound property
+// SetGroupSyncInbound sets the groupSyncInbound property value. Defines whether groups can be synchronized from a partner tenant. Key.
 func (m *CrossTenantIdentitySyncPolicyPartner) SetGroupSyncInbound(value CrossTenantGroupSyncInboundable)() {
     err := m.GetBackingStore().Set("groupSyncInbound", value)
     if err != nil {

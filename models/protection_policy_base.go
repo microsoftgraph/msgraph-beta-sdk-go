@@ -167,6 +167,16 @@ func (m *ProtectionPolicyBase) GetFieldDeserializers()(map[string]func(i878a80d2
         }
         return nil
     }
+    res["offboardRequestedDateTime"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetTimeValue()
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetOffboardRequestedDateTime(val)
+        }
+        return nil
+    }
     res["protectionMode"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetEnumValue(ParseBackupPolicyProtectionMode)
         if err != nil {
@@ -243,6 +253,18 @@ func (m *ProtectionPolicyBase) GetLastModifiedBy()(IdentitySetable) {
 // returns a *Time when successful
 func (m *ProtectionPolicyBase) GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("lastModifiedDateTime")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    }
+    return nil
+}
+// GetOffboardRequestedDateTime gets the offboardRequestedDateTime property value. The offboardRequestedDateTime property
+// returns a *Time when successful
+func (m *ProtectionPolicyBase) GetOffboardRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
+    val, err := m.GetBackingStore().Get("offboardRequestedDateTime")
     if err != nil {
         panic(err)
     }
@@ -347,6 +369,12 @@ func (m *ProtectionPolicyBase) Serialize(writer i878a80d2330e89d26896388a3f487ee
             return err
         }
     }
+    {
+        err = writer.WriteTimeValue("offboardRequestedDateTime", m.GetOffboardRequestedDateTime())
+        if err != nil {
+            return err
+        }
+    }
     if m.GetProtectionMode() != nil {
         cast := (*m.GetProtectionMode()).String()
         err = writer.WriteStringValue("protectionMode", &cast)
@@ -430,6 +458,13 @@ func (m *ProtectionPolicyBase) SetLastModifiedDateTime(value *i336074805fc853987
         panic(err)
     }
 }
+// SetOffboardRequestedDateTime sets the offboardRequestedDateTime property value. The offboardRequestedDateTime property
+func (m *ProtectionPolicyBase) SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
+    err := m.GetBackingStore().Set("offboardRequestedDateTime", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetProtectionMode sets the protectionMode property value. The protectionMode property
 func (m *ProtectionPolicyBase) SetProtectionMode(value *BackupPolicyProtectionMode)() {
     err := m.GetBackingStore().Set("protectionMode", value)
@@ -468,6 +503,7 @@ type ProtectionPolicyBaseable interface {
     GetIsEnabled()(*bool)
     GetLastModifiedBy()(IdentitySetable)
     GetLastModifiedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
+    GetOffboardRequestedDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetProtectionMode()(*BackupPolicyProtectionMode)
     GetProtectionPolicyArtifactCount()(ProtectionPolicyArtifactCountable)
     GetRetentionSettings()([]RetentionSettingable)
@@ -479,6 +515,7 @@ type ProtectionPolicyBaseable interface {
     SetIsEnabled(value *bool)()
     SetLastModifiedBy(value IdentitySetable)()
     SetLastModifiedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
+    SetOffboardRequestedDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetProtectionMode(value *BackupPolicyProtectionMode)()
     SetProtectionPolicyArtifactCount(value ProtectionPolicyArtifactCountable)()
     SetRetentionSettings(value []RetentionSettingable)()

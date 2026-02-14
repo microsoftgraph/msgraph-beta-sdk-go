@@ -23,7 +23,7 @@ func NewConfigurationMonitoringResult()(*ConfigurationMonitoringResult) {
 func CreateConfigurationMonitoringResultFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, error) {
     return NewConfigurationMonitoringResult(), nil
 }
-// GetDriftsCount gets the driftsCount property value. The driftsCount property
+// GetDriftsCount gets the driftsCount property value. Number of drifts observed during a monitor run.
 // returns a *int32 when successful
 func (m *ConfigurationMonitoringResult) GetDriftsCount()(*int32) {
     val, err := m.GetBackingStore().Get("driftsCount")
@@ -35,19 +35,7 @@ func (m *ConfigurationMonitoringResult) GetDriftsCount()(*int32) {
     }
     return nil
 }
-// GetDriftsFixed gets the driftsFixed property value. The driftsFixed property
-// returns a *int32 when successful
-func (m *ConfigurationMonitoringResult) GetDriftsFixed()(*int32) {
-    val, err := m.GetBackingStore().Get("driftsFixed")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*int32)
-    }
-    return nil
-}
-// GetErrorDetails gets the errorDetails property value. The errorDetails property
+// GetErrorDetails gets the errorDetails property value. All the error details that prevent the monitor from running successfully. The error details are a contained entity.
 // returns a []ErrorDetailable when successful
 func (m *ConfigurationMonitoringResult) GetErrorDetails()([]ErrorDetailable) {
     val, err := m.GetBackingStore().Get("errorDetails")
@@ -70,16 +58,6 @@ func (m *ConfigurationMonitoringResult) GetFieldDeserializers()(map[string]func(
         }
         if val != nil {
             m.SetDriftsCount(val)
-        }
-        return nil
-    }
-    res["driftsFixed"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetInt32Value()
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetDriftsFixed(val)
         }
         return nil
     }
@@ -139,16 +117,6 @@ func (m *ConfigurationMonitoringResult) GetFieldDeserializers()(map[string]func(
         }
         return nil
     }
-    res["runType"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
-        val, err := n.GetEnumValue(ParseMonitorRunType)
-        if err != nil {
-            return err
-        }
-        if val != nil {
-            m.SetRunType(val.(*MonitorRunType))
-        }
-        return nil
-    }
     res["tenantId"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -161,7 +129,7 @@ func (m *ConfigurationMonitoringResult) GetFieldDeserializers()(map[string]func(
     }
     return res
 }
-// GetMonitorId gets the monitorId property value. The monitorId property
+// GetMonitorId gets the monitorId property value. Globally unique identifier (GUID) of the monitor. System-generated.
 // returns a *string when successful
 func (m *ConfigurationMonitoringResult) GetMonitorId()(*string) {
     val, err := m.GetBackingStore().Get("monitorId")
@@ -173,7 +141,7 @@ func (m *ConfigurationMonitoringResult) GetMonitorId()(*string) {
     }
     return nil
 }
-// GetRunCompletionDateTime gets the runCompletionDateTime property value. The runCompletionDateTime property
+// GetRunCompletionDateTime gets the runCompletionDateTime property value. Date and time at which the monitor run completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ConfigurationMonitoringResult) GetRunCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("runCompletionDateTime")
@@ -185,7 +153,7 @@ func (m *ConfigurationMonitoringResult) GetRunCompletionDateTime()(*i336074805fc
     }
     return nil
 }
-// GetRunInitiationDateTime gets the runInitiationDateTime property value. The runInitiationDateTime property
+// GetRunInitiationDateTime gets the runInitiationDateTime property value. Date and time at which the monitor run initiated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 // returns a *Time when successful
 func (m *ConfigurationMonitoringResult) GetRunInitiationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time) {
     val, err := m.GetBackingStore().Get("runInitiationDateTime")
@@ -209,19 +177,7 @@ func (m *ConfigurationMonitoringResult) GetRunStatus()(*MonitorRunStatus) {
     }
     return nil
 }
-// GetRunType gets the runType property value. The runType property
-// returns a *MonitorRunType when successful
-func (m *ConfigurationMonitoringResult) GetRunType()(*MonitorRunType) {
-    val, err := m.GetBackingStore().Get("runType")
-    if err != nil {
-        panic(err)
-    }
-    if val != nil {
-        return val.(*MonitorRunType)
-    }
-    return nil
-}
-// GetTenantId gets the tenantId property value. The tenantId property
+// GetTenantId gets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
 // returns a *string when successful
 func (m *ConfigurationMonitoringResult) GetTenantId()(*string) {
     val, err := m.GetBackingStore().Get("tenantId")
@@ -246,51 +202,37 @@ func (m *ConfigurationMonitoringResult) Serialize(writer i878a80d2330e89d2689638
             return err
         }
     }
-    if m.GetRunType() != nil {
-        cast := (*m.GetRunType()).String()
-        err = writer.WriteStringValue("runType", &cast)
-        if err != nil {
-            return err
-        }
-    }
     return nil
 }
-// SetDriftsCount sets the driftsCount property value. The driftsCount property
+// SetDriftsCount sets the driftsCount property value. Number of drifts observed during a monitor run.
 func (m *ConfigurationMonitoringResult) SetDriftsCount(value *int32)() {
     err := m.GetBackingStore().Set("driftsCount", value)
     if err != nil {
         panic(err)
     }
 }
-// SetDriftsFixed sets the driftsFixed property value. The driftsFixed property
-func (m *ConfigurationMonitoringResult) SetDriftsFixed(value *int32)() {
-    err := m.GetBackingStore().Set("driftsFixed", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetErrorDetails sets the errorDetails property value. The errorDetails property
+// SetErrorDetails sets the errorDetails property value. All the error details that prevent the monitor from running successfully. The error details are a contained entity.
 func (m *ConfigurationMonitoringResult) SetErrorDetails(value []ErrorDetailable)() {
     err := m.GetBackingStore().Set("errorDetails", value)
     if err != nil {
         panic(err)
     }
 }
-// SetMonitorId sets the monitorId property value. The monitorId property
+// SetMonitorId sets the monitorId property value. Globally unique identifier (GUID) of the monitor. System-generated.
 func (m *ConfigurationMonitoringResult) SetMonitorId(value *string)() {
     err := m.GetBackingStore().Set("monitorId", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRunCompletionDateTime sets the runCompletionDateTime property value. The runCompletionDateTime property
+// SetRunCompletionDateTime sets the runCompletionDateTime property value. Date and time at which the monitor run completed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ConfigurationMonitoringResult) SetRunCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("runCompletionDateTime", value)
     if err != nil {
         panic(err)
     }
 }
-// SetRunInitiationDateTime sets the runInitiationDateTime property value. The runInitiationDateTime property
+// SetRunInitiationDateTime sets the runInitiationDateTime property value. Date and time at which the monitor run initiated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
 func (m *ConfigurationMonitoringResult) SetRunInitiationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)() {
     err := m.GetBackingStore().Set("runInitiationDateTime", value)
     if err != nil {
@@ -304,14 +246,7 @@ func (m *ConfigurationMonitoringResult) SetRunStatus(value *MonitorRunStatus)() 
         panic(err)
     }
 }
-// SetRunType sets the runType property value. The runType property
-func (m *ConfigurationMonitoringResult) SetRunType(value *MonitorRunType)() {
-    err := m.GetBackingStore().Set("runType", value)
-    if err != nil {
-        panic(err)
-    }
-}
-// SetTenantId sets the tenantId property value. The tenantId property
+// SetTenantId sets the tenantId property value. Globally unique identifier (GUID) of the tenant for which the monitor runs. Fetched automatically by the system.
 func (m *ConfigurationMonitoringResult) SetTenantId(value *string)() {
     err := m.GetBackingStore().Set("tenantId", value)
     if err != nil {
@@ -322,21 +257,17 @@ type ConfigurationMonitoringResultable interface {
     Entityable
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
     GetDriftsCount()(*int32)
-    GetDriftsFixed()(*int32)
     GetErrorDetails()([]ErrorDetailable)
     GetMonitorId()(*string)
     GetRunCompletionDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRunInitiationDateTime()(*i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)
     GetRunStatus()(*MonitorRunStatus)
-    GetRunType()(*MonitorRunType)
     GetTenantId()(*string)
     SetDriftsCount(value *int32)()
-    SetDriftsFixed(value *int32)()
     SetErrorDetails(value []ErrorDetailable)()
     SetMonitorId(value *string)()
     SetRunCompletionDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRunInitiationDateTime(value *i336074805fc853987abe6f7fe3ad97a6a6f3077a16391fec744f671a015fbd7e.Time)()
     SetRunStatus(value *MonitorRunStatus)()
-    SetRunType(value *MonitorRunType)()
     SetTenantId(value *string)()
 }

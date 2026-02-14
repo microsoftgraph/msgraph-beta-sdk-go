@@ -14,7 +14,7 @@ import (
 type ConfigurationManagementConfigurationMonitorsRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ConfigurationManagementConfigurationMonitorsRequestBuilderGetQueryParameters get configurationMonitors from admin
+// ConfigurationManagementConfigurationMonitorsRequestBuilderGetQueryParameters get a list of the configurationMonitor objects and their properties.
 type ConfigurationManagementConfigurationMonitorsRequestBuilderGetQueryParameters struct {
     // Include count of items
     Count *bool `uriparametername:"%24count"`
@@ -79,9 +79,12 @@ func NewConfigurationManagementConfigurationMonitorsRequestBuilder(rawUrl string
 func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) Count()(*ConfigurationManagementConfigurationMonitorsCountRequestBuilder) {
     return NewConfigurationManagementConfigurationMonitorsCountRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// Get get configurationMonitors from admin
+// Get get a list of the configurationMonitor objects and their properties.
 // returns a ConfigurationMonitorCollectionResponseable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/configurationmanagement-list-configurationmonitors?view=graph-rest-beta
 func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) Get(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitorsRequestBuilderGetRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorCollectionResponseable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
@@ -99,9 +102,12 @@ func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) Get(ctx con
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorCollectionResponseable), nil
 }
-// Post create new navigation property to configurationMonitors for admin
+// Post create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
 // returns a ConfigurationMonitorable when successful
 // returns a ODataError error when the service returns a 4XX or 5XX status code
+// [Find more info here]
+// 
+// [Find more info here]: https://learn.microsoft.com/graph/api/configurationmanagement-post-configurationmonitors?view=graph-rest-beta
 func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) Post(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable, requestConfiguration *ConfigurationManagementConfigurationMonitorsRequestBuilderPostRequestConfiguration)(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
@@ -119,7 +125,7 @@ func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) Post(ctx co
     }
     return res.(ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable), nil
 }
-// ToGetRequestInformation get configurationMonitors from admin
+// ToGetRequestInformation get a list of the configurationMonitor objects and their properties.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) ToGetRequestInformation(ctx context.Context, requestConfiguration *ConfigurationManagementConfigurationMonitorsRequestBuilderGetRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.GET, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
@@ -133,7 +139,7 @@ func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) ToGetReques
     requestInfo.Headers.TryAdd("Accept", "application/json")
     return requestInfo, nil
 }
-// ToPostRequestInformation create new navigation property to configurationMonitors for admin
+// ToPostRequestInformation create a new configurationMonitor object that runs periodically in the background at a scheduled frequency.
 // returns a *RequestInformation when successful
 func (m *ConfigurationManagementConfigurationMonitorsRequestBuilder) ToPostRequestInformation(ctx context.Context, body ie233ee762e29b4ba6970aa2a2efce4b7fde11697ca9ea81099d0f8269309c1be.ConfigurationMonitorable, requestConfiguration *ConfigurationManagementConfigurationMonitorsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)

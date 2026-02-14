@@ -18,10 +18,12 @@ const (
     SOURCEIMAGEWITHDATADISKNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
     SOURCEIMAGEWITHDISKENCRYPTIONSETNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
     SOURCEIMAGEWITHAZUREDISKENCRYPTIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+    FSLOGIXINSTALLEDSOURCEIMAGENOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+    STARTMENUAPPLIMITEXCEEDED_CLOUDPCDEVICEIMAGEERRORCODE
 )
 
 func (i CloudPcDeviceImageErrorCode) String() string {
-    return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue", "vmAlreadyAzureAdjoined", "paidSourceImageNotSupport", "sourceImageNotSupportCustomizeVMName", "sourceImageSizeExceedsLimitation", "sourceImageWithDataDiskNotSupported", "sourceImageWithDiskEncryptionSetNotSupported", "sourceImageWithAzureDiskEncryptionNotSupported"}[i]
+    return []string{"internalServerError", "sourceImageNotFound", "osVersionNotSupported", "sourceImageInvalid", "sourceImageNotGeneralized", "unknownFutureValue", "vmAlreadyAzureAdjoined", "paidSourceImageNotSupport", "sourceImageNotSupportCustomizeVMName", "sourceImageSizeExceedsLimitation", "sourceImageWithDataDiskNotSupported", "sourceImageWithDiskEncryptionSetNotSupported", "sourceImageWithAzureDiskEncryptionNotSupported", "fSLogixInstalledSourceImageNotSupported", "startMenuAppLimitExceeded"}[i]
 }
 func ParseCloudPcDeviceImageErrorCode(v string) (any, error) {
     result := INTERNALSERVERERROR_CLOUDPCDEVICEIMAGEERRORCODE
@@ -52,6 +54,10 @@ func ParseCloudPcDeviceImageErrorCode(v string) (any, error) {
             result = SOURCEIMAGEWITHDISKENCRYPTIONSETNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
         case "sourceImageWithAzureDiskEncryptionNotSupported":
             result = SOURCEIMAGEWITHAZUREDISKENCRYPTIONNOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+        case "fSLogixInstalledSourceImageNotSupported":
+            result = FSLOGIXINSTALLEDSOURCEIMAGENOTSUPPORTED_CLOUDPCDEVICEIMAGEERRORCODE
+        case "startMenuAppLimitExceeded":
+            result = STARTMENUAPPLIMITEXCEEDED_CLOUDPCDEVICEIMAGEERRORCODE
         default:
             return nil, nil
     }

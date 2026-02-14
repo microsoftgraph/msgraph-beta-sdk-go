@@ -6,21 +6,18 @@ type SiteTemplateType int
 
 const (
     SITEPAGEPUBLISHING_SITETEMPLATETYPE SiteTemplateType = iota
-    GROUP_SITETEMPLATETYPE
     STS_SITETEMPLATETYPE
     UNKNOWNFUTUREVALUE_SITETEMPLATETYPE
 )
 
 func (i SiteTemplateType) String() string {
-    return []string{"sitepagepublishing", "group", "sts", "unknownFutureValue"}[i]
+    return []string{"sitepagepublishing", "sts", "unknownFutureValue"}[i]
 }
 func ParseSiteTemplateType(v string) (any, error) {
     result := SITEPAGEPUBLISHING_SITETEMPLATETYPE
     switch v {
         case "sitepagepublishing":
             result = SITEPAGEPUBLISHING_SITETEMPLATETYPE
-        case "group":
-            result = GROUP_SITETEMPLATETYPE
         case "sts":
             result = STS_SITETEMPLATETYPE
         case "unknownFutureValue":

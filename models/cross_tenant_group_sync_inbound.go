@@ -69,7 +69,7 @@ func (m *CrossTenantGroupSyncInbound) GetFieldDeserializers()(map[string]func(i8
     }
     return res
 }
-// GetIsSyncAllowed gets the isSyncAllowed property value. The isSyncAllowed property
+// GetIsSyncAllowed gets the isSyncAllowed property value. Defines whether group objects should be synchronized from the partner tenant. false stops any current group synchronization from the source tenant to the target tenant. This property has no impact on existing groups that were synchronized.
 // returns a *bool when successful
 func (m *CrossTenantGroupSyncInbound) GetIsSyncAllowed()(*bool) {
     val, err := m.GetBackingStore().Get("isSyncAllowed")
@@ -126,7 +126,7 @@ func (m *CrossTenantGroupSyncInbound) SetAdditionalData(value map[string]any)() 
 func (m *CrossTenantGroupSyncInbound) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
 }
-// SetIsSyncAllowed sets the isSyncAllowed property value. The isSyncAllowed property
+// SetIsSyncAllowed sets the isSyncAllowed property value. Defines whether group objects should be synchronized from the partner tenant. false stops any current group synchronization from the source tenant to the target tenant. This property has no impact on existing groups that were synchronized.
 func (m *CrossTenantGroupSyncInbound) SetIsSyncAllowed(value *bool)() {
     err := m.GetBackingStore().Set("isSyncAllowed", value)
     if err != nil {

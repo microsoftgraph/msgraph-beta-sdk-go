@@ -38,6 +38,18 @@ func (m *GroupCloudLicensing) GetAdditionalData()(map[string]any) {
     }
     return val.(map[string]any)
 }
+// GetAssignments gets the assignments property value. The assignments property
+// returns a []Assignmentable when successful
+func (m *GroupCloudLicensing) GetAssignments()([]Assignmentable) {
+    val, err := m.GetBackingStore().Get("assignments")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.([]Assignmentable)
+    }
+    return nil
+}
 // GetBackingStore gets the BackingStore property value. Stores model information.
 // returns a BackingStore when successful
 func (m *GroupCloudLicensing) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore) {
@@ -47,6 +59,22 @@ func (m *GroupCloudLicensing) GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d
 // returns a map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error) when successful
 func (m *GroupCloudLicensing) GetFieldDeserializers()(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error)) {
     res := make(map[string]func(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode)(error))
+    res["assignments"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetCollectionOfObjectValues(CreateAssignmentFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            res := make([]Assignmentable, len(val))
+            for i, v := range val {
+                if v != nil {
+                    res[i] = v.(Assignmentable)
+                }
+            }
+            m.SetAssignments(res)
+        }
+        return nil
+    }
     res["@odata.type"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
         val, err := n.GetStringValue()
         if err != nil {
@@ -101,6 +129,18 @@ func (m *GroupCloudLicensing) GetUsageRights()([]UsageRightable) {
 }
 // Serialize serializes information the current object
 func (m *GroupCloudLicensing) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
+    if m.GetAssignments() != nil {
+        cast := make([]i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable, len(m.GetAssignments()))
+        for i, v := range m.GetAssignments() {
+            if v != nil {
+                cast[i] = v.(i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable)
+            }
+        }
+        err := writer.WriteCollectionOfObjectValues("assignments", cast)
+        if err != nil {
+            return err
+        }
+    }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
         if err != nil {
@@ -134,6 +174,13 @@ func (m *GroupCloudLicensing) SetAdditionalData(value map[string]any)() {
         panic(err)
     }
 }
+// SetAssignments sets the assignments property value. The assignments property
+func (m *GroupCloudLicensing) SetAssignments(value []Assignmentable)() {
+    err := m.GetBackingStore().Set("assignments", value)
+    if err != nil {
+        panic(err)
+    }
+}
 // SetBackingStore sets the BackingStore property value. Stores model information.
 func (m *GroupCloudLicensing) SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)() {
     m.backingStore = value
@@ -156,9 +203,11 @@ type GroupCloudLicensingable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.Parsable
+    GetAssignments()([]Assignmentable)
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetOdataType()(*string)
     GetUsageRights()([]UsageRightable)
+    SetAssignments(value []Assignmentable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetOdataType(value *string)()
     SetUsageRights(value []UsageRightable)()

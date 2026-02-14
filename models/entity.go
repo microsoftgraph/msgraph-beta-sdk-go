@@ -795,8 +795,6 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewConditionalAccessTemplate(), nil
                     case "#microsoft.graph.configManagerCollection":
                         return NewConfigManagerCollection(), nil
-                    case "#microsoft.graph.configurationApplication":
-                        return NewConfigurationApplication(), nil
                     case "#microsoft.graph.configurationBaseline":
                         return NewConfigurationBaseline(), nil
                     case "#microsoft.graph.configurationDrift":
@@ -2285,6 +2283,10 @@ func CreateEntityFromDiscriminatorValue(parseNode i878a80d2330e89d26896388a3f487
                         return NewOnlineMeetingEngagementConversation(), nil
                     case "#microsoft.graph.onOtpSendCustomExtension":
                         return NewOnOtpSendCustomExtension(), nil
+                    case "#microsoft.graph.onPasswordSubmitCustomExtension":
+                        return NewOnPasswordSubmitCustomExtension(), nil
+                    case "#microsoft.graph.onPasswordSubmitListener":
+                        return NewOnPasswordSubmitListener(), nil
                     case "#microsoft.graph.onPhoneMethodLoadStartListener":
                         return NewOnPhoneMethodLoadStartListener(), nil
                     case "#microsoft.graph.onPremAuthenticationPolicy":

@@ -89,6 +89,16 @@ func (m *CustomAppManagementApplicationConfiguration) GetFieldDeserializers()(ma
         }
         return nil
     }
+    res["redirectUris"] = func (n i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.ParseNode) error {
+        val, err := n.GetObjectValue(CreateRedirectUriConfigurationFromDiscriminatorValue)
+        if err != nil {
+            return err
+        }
+        if val != nil {
+            m.SetRedirectUris(val.(RedirectUriConfigurationable))
+        }
+        return nil
+    }
     return res
 }
 // GetIdentifierUris gets the identifierUris property value. Configuration for identifierUris restrictions.
@@ -115,6 +125,18 @@ func (m *CustomAppManagementApplicationConfiguration) GetOdataType()(*string) {
     }
     return nil
 }
+// GetRedirectUris gets the redirectUris property value. The redirectUris property
+// returns a RedirectUriConfigurationable when successful
+func (m *CustomAppManagementApplicationConfiguration) GetRedirectUris()(RedirectUriConfigurationable) {
+    val, err := m.GetBackingStore().Get("redirectUris")
+    if err != nil {
+        panic(err)
+    }
+    if val != nil {
+        return val.(RedirectUriConfigurationable)
+    }
+    return nil
+}
 // Serialize serializes information the current object
 func (m *CustomAppManagementApplicationConfiguration) Serialize(writer i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.SerializationWriter)(error) {
     {
@@ -131,6 +153,12 @@ func (m *CustomAppManagementApplicationConfiguration) Serialize(writer i878a80d2
     }
     {
         err := writer.WriteStringValue("@odata.type", m.GetOdataType())
+        if err != nil {
+            return err
+        }
+    }
+    {
+        err := writer.WriteObjectValue("redirectUris", m.GetRedirectUris())
         if err != nil {
             return err
         }
@@ -175,6 +203,13 @@ func (m *CustomAppManagementApplicationConfiguration) SetOdataType(value *string
         panic(err)
     }
 }
+// SetRedirectUris sets the redirectUris property value. The redirectUris property
+func (m *CustomAppManagementApplicationConfiguration) SetRedirectUris(value RedirectUriConfigurationable)() {
+    err := m.GetBackingStore().Set("redirectUris", value)
+    if err != nil {
+        panic(err)
+    }
+}
 type CustomAppManagementApplicationConfigurationable interface {
     i878a80d2330e89d26896388a3f487eef27b0a0e6c010c493bf80be1452208f91.AdditionalDataHolder
     ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackedModel
@@ -183,8 +218,10 @@ type CustomAppManagementApplicationConfigurationable interface {
     GetBackingStore()(ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)
     GetIdentifierUris()(IdentifierUriConfigurationable)
     GetOdataType()(*string)
+    GetRedirectUris()(RedirectUriConfigurationable)
     SetAudiences(value AudiencesConfigurationable)()
     SetBackingStore(value ie8677ce2c7e1b4c22e9c3827ecd078d41185424dd9eeb92b7d971ed2d49a392e.BackingStore)()
     SetIdentifierUris(value IdentifierUriConfigurationable)()
     SetOdataType(value *string)()
+    SetRedirectUris(value RedirectUriConfigurationable)()
 }

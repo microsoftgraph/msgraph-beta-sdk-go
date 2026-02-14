@@ -1992,7 +1992,7 @@ func (m *Group) GetVisibility()(*string) {
     }
     return nil
 }
-// GetWelcomeMessageEnabled gets the welcomeMessageEnabled property value. The welcomeMessageEnabled property
+// GetWelcomeMessageEnabled gets the welcomeMessageEnabled property value. Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 // returns a *bool when successful
 func (m *Group) GetWelcomeMessageEnabled()(*bool) {
     val, err := m.GetBackingStore().Get("welcomeMessageEnabled")
@@ -3227,7 +3227,7 @@ func (m *Group) SetVisibility(value *string)() {
         panic(err)
     }
 }
-// SetWelcomeMessageEnabled sets the welcomeMessageEnabled property value. The welcomeMessageEnabled property
+// SetWelcomeMessageEnabled sets the welcomeMessageEnabled property value. Indicates whether a welcome message is sent to new members when they are added to the group. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
 func (m *Group) SetWelcomeMessageEnabled(value *bool)() {
     err := m.GetBackingStore().Set("welcomeMessageEnabled", value)
     if err != nil {

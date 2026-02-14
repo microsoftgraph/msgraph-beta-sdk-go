@@ -33,10 +33,11 @@ const (
     FIDO2SECURITYKEY_USAGEAUTHMETHOD
     ONETIMEPASSCODE_USAGEAUTHMETHOD
     PASSKEYSYNCED_USAGEAUTHMETHOD
+    QRCODE_USAGEAUTHMETHOD
 )
 
 func (i UsageAuthMethod) String() string {
-    return []string{"email", "mobileSMS", "mobileCall", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobileCall", "fido", "appPassword", "unknownFutureValue", "externalAuthMethod", "hardwareOneTimePasscode", "windowsHelloForBusiness", "microsoftAuthenticatorPasswordless", "temporaryAccessPass", "macOsSecureEnclaveKey", "passKeyDeviceBound", "passKeyDeviceBoundAuthenticator", "passKeyDeviceBoundWindowsHello", "softwareOneTimePasscode", "microsoftAuthenticatorPush", "mobilePhone", "sms", "alternateMobilePhone", "fido2SecurityKey", "oneTimePasscode", "passKeySynced"}[i]
+    return []string{"email", "mobileSMS", "mobileCall", "officePhone", "securityQuestion", "appNotification", "appCode", "alternateMobileCall", "fido", "appPassword", "unknownFutureValue", "externalAuthMethod", "hardwareOneTimePasscode", "windowsHelloForBusiness", "microsoftAuthenticatorPasswordless", "temporaryAccessPass", "macOsSecureEnclaveKey", "passKeyDeviceBound", "passKeyDeviceBoundAuthenticator", "passKeyDeviceBoundWindowsHello", "softwareOneTimePasscode", "microsoftAuthenticatorPush", "mobilePhone", "sms", "alternateMobilePhone", "fido2SecurityKey", "oneTimePasscode", "passKeySynced", "qrCode"}[i]
 }
 func ParseUsageAuthMethod(v string) (any, error) {
     result := EMAIL_USAGEAUTHMETHOD
@@ -97,6 +98,8 @@ func ParseUsageAuthMethod(v string) (any, error) {
             result = ONETIMEPASSCODE_USAGEAUTHMETHOD
         case "passKeySynced":
             result = PASSKEYSYNCED_USAGEAUTHMETHOD
+        case "qrCode":
+            result = QRCODE_USAGEAUTHMETHOD
         default:
             return nil, nil
     }

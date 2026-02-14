@@ -173,7 +173,7 @@ func (m *IdentityContainer) GetSensors()([]Sensorable) {
     }
     return nil
 }
-// GetSettings gets the settings property value. The settings property
+// GetSettings gets the settings property value. Represents a container for security identities settings APIs.
 // returns a SettingsContainerable when successful
 func (m *IdentityContainer) GetSettings()(SettingsContainerable) {
     val, err := m.GetBackingStore().Get("settings")
@@ -288,7 +288,7 @@ func (m *IdentityContainer) SetSensors(value []Sensorable)() {
         panic(err)
     }
 }
-// SetSettings sets the settings property value. The settings property
+// SetSettings sets the settings property value. Represents a container for security identities settings APIs.
 func (m *IdentityContainer) SetSettings(value SettingsContainerable)() {
     err := m.GetBackingStore().Set("settings", value)
     if err != nil {

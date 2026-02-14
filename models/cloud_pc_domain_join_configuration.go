@@ -131,7 +131,7 @@ func (m *CloudPcDomainJoinConfiguration) GetFieldDeserializers()(map[string]func
     }
     return res
 }
-// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue, mexico. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: mexico. The default value is default. Read-only.
+// GetGeographicLocationType gets the geographicLocationType property value. The geographic location where the region is located. Read-only.
 // returns a *CloudPcGeographicLocationType when successful
 func (m *CloudPcDomainJoinConfiguration) GetGeographicLocationType()(*CloudPcGeographicLocationType) {
     val, err := m.GetBackingStore().Get("geographicLocationType")
@@ -167,7 +167,7 @@ func (m *CloudPcDomainJoinConfiguration) GetOnPremisesConnectionId()(*string) {
     }
     return nil
 }
-// GetRegionGroup gets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. The possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, southKorea, middleEast, mexico, australasia, europe. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: norway, switzerland, southKorea, middleEast, mexico, australasia, europe. Read-only.
+// GetRegionGroup gets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Read-only.
 // returns a *CloudPcRegionGroup when successful
 func (m *CloudPcDomainJoinConfiguration) GetRegionGroup()(*CloudPcRegionGroup) {
     val, err := m.GetBackingStore().Get("regionGroup")
@@ -277,7 +277,7 @@ func (m *CloudPcDomainJoinConfiguration) SetDomainJoinType(value *CloudPcDomainJ
         panic(err)
     }
 }
-// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. The possible values are: default, asia, australasia, canada, europe, india, africa, usCentral, usEast, usWest, southAmerica, middleEast, centralAmerica, usGovernment, unknownFutureValue, mexico. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: mexico. The default value is default. Read-only.
+// SetGeographicLocationType sets the geographicLocationType property value. The geographic location where the region is located. Read-only.
 func (m *CloudPcDomainJoinConfiguration) SetGeographicLocationType(value *CloudPcGeographicLocationType)() {
     err := m.GetBackingStore().Set("geographicLocationType", value)
     if err != nil {
@@ -298,7 +298,7 @@ func (m *CloudPcDomainJoinConfiguration) SetOnPremisesConnectionId(value *string
         panic(err)
     }
 }
-// SetRegionGroup sets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. The possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, southKorea, middleEast, mexico, australasia, europe. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: norway, switzerland, southKorea, middleEast, mexico, australasia, europe. Read-only.
+// SetRegionGroup sets the regionGroup property value. The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Read-only.
 func (m *CloudPcDomainJoinConfiguration) SetRegionGroup(value *CloudPcRegionGroup)() {
     err := m.GetBackingStore().Set("regionGroup", value)
     if err != nil {
